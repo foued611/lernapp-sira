@@ -45,6 +45,7 @@ Faustregel: Was mehr als eine App braucht, gehört nach `core/`. Was nur ein Fac
 | `rounds.boss()` | nein | Endgegner mit 12 Fragen. Frei, wenn alle Seiten mindestens einen Stern haben (anpassbar mit `bossUnlocked(state)`) |
 | `blitz()` | nein | Liefert eine einzelne Frage für den 45-Sekunden-Blitz |
 | `bossTitle` | nein | Name des Endgegners |
+| `words` | nein | Eigene Lob-Sprüche `praise`, Ergebnis-Titel `resultTitles` (für 1, 2, 3 Sterne) und `blitzTitle`. Standard ist Deutsch |
 | `badges` | ja | Liste von `{ id, n, d, when(state, result) }` |
 
 `main.js` ruft nur `mountApp(config, { header, main })` auf. Alles andere erledigt `core/js/shell.js`.
@@ -82,6 +83,7 @@ Die Zahlen stehen in `core/js/profile.js` und `rounds.js` und gelten für alle A
 - `prefers-reduced-motion` respektieren, Animationen abschaltbar halten.
 - Bedienbar mit Tastatur, sichtbarer Fokus, ausreichender Kontrast, Touch-Ziele mindestens 44 px. Wichtige Information nie nur über Farbe.
 - Oberflächentexte auf Deutsch, du-Ansprache, freundlich, ohne Kindersprache. Zielalter 12 bis 13. Keine Emojis, Icons kommen aus `core/js/icons.js`.
+- Theorie-Seiten nutzen `.tcard`, `.thead`, `.notes` und `.note` aus `core/styles/base.css`.
 - Eine App-spezifische Optik gehört in `apps/<name>/app.css` und baut auf den Tokens auf.
 
 ## Lehrplan

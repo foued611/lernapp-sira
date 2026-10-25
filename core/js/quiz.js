@@ -22,7 +22,6 @@ import { icon } from './icons.js';
 import { mascot } from './mascot.js';
 import { addXP, spendXP, multiplier } from './profile.js';
 
-const PRAISE = ['Richtig!', 'Genau!', 'Très bien !', 'Parfait !', 'Bravo !', 'Super !'];
 const ACCENTS = ['é', 'è', 'ê', 'à', 'â', 'ç', 'î', 'ï', 'ô', 'û', 'œ'];
 
 function defaultCheck(q) {
@@ -96,11 +95,11 @@ function questionHTML(q, run) {
     .join('')}</div></div>`;
 }
 
-function feedbackHTML(q, run) {
+function feedbackHTML(q, run, ctx) {
   const f = run.fb;
   const next = '<button class="btn" data-act="next" id="nx">Weiter</button>';
   if (f.kind === 'ok') {
-    const praise = f.mult > 1 ? `Serie ×${f.mult}!` : pick(PRAISE);
+    const praise = f.mult > 1 ? `Serie ×${f.mult}!` : pick(ctx.words.praise);
     return `<div class="fb ok" role="status">${mascot(f.mult > 1 ? 'cheer' : 'happy')}<div class="msg"><b>${praise}</b> <span class="gain">+${f.gain} XP${f.mult > 1 ? ` · Combo ×${f.mult}` : ''}</span>${q.sub ? `<p class="tr">= ${esc(q.sub)}</p>` : ''}</div>${next}</div>`;
   }
   if (f.kind === 'almost') {
@@ -149,7 +148,7 @@ export function startQuiz({ mount, ctx, mode, questions, hearts = mode === 'boss
     const fb = run.state === 'fb';
     const pct = ((run.i + (fb ? 1 : 0)) / run.questions.length) * 100;
     let foot;
-    if (fb) foot = feedbackHTML(q, run);
+    if (fb) foot = feedbackHTML(q, run, ctx);
     else if (q.kind === 'match') foot = '<p class="muted" style="margin:0;font-size:14px">Tippe links ein Element, dann rechts das passende.</p>';
     else {
       const ready = q.kind === 'type' ? run.typed.trim() : run.sel !== null;

@@ -104,3 +104,12 @@ h3{font-size:21px}
 @media (max-width:520px){.node{grid-template-columns:52px 1fr}.node .circ{width:52px;height:52px;font-size:19px}.node .stars{grid-column:2}.path::before{left:42px}.hero .row1{grid-template-columns:70px 1fr}.hero .mas{width:70px}.goalbox .btn{margin-left:0;width:100%}}
 
 .alla{font-size:13px;font-weight:600;color:var(--ink);text-decoration:none;border:2px solid var(--line);border-radius:20px;padding:2px 12px}
+
+/* Theorie-Seiten (für alle Apps): Kopfkarte und Merkzettel */
+.tcard{border-top:10px solid var(--lc)}
+.thead{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px}
+.thead .de{font-size:17px;color:var(--muted)}
+.notes{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.note{background:var(--note);padding:12px 14px;box-shadow:3px 4px 0 var(--shadow);font-size:14px;transform:rotate(-.5deg);border-radius:4px}
+.note:nth-child(even){transform:rotate(.6deg)}
+.note b{display:block;font-family:var(--f-head);font-weight:800;font-size:17px;line-height:1.15;color:var(--ink);margin-bottom:2px}

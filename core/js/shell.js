@@ -22,8 +22,15 @@ export function mountApp(config, { header, main }) {
   const appStore = openApp(config.id);
   const profile = profileStore.state;
   const app = appStore.state;
+  // Wörter für Lob und Ergebnis. Eine App kann sie mit config.words überschreiben (z. B. französisch).
+  const words = {
+    praise: ['Richtig!', 'Genau!', 'Super!', 'Stark!', 'Bravo!'],
+    resultTitles: ['Geschafft!', 'Sehr gut!', 'Perfekt!'],
+    blitzTitle: 'Blitzschnell!',
+    ...config.words
+  };
   const ctx = {
-    profile, app,
+    profile, app, words,
     save() { profileStore.save(); appStore.save(); },
     refreshHeader: renderHeader
   };
@@ -137,13 +144,13 @@ export function mountApp(config, { header, main }) {
     const lv = r.levelUp ? `<div class="lvup">Niveau ${r.levelUp} erreicht · ${esc(titleOf(r.levelUp))}</div>` : '';
     let title, sub, mood, facts, acts;
     if (r.mode === 'blitz') {
-      title = r.score >= 10 ? 'Éclair !' : 'Zeit um';
+      title = r.score >= 10 ? words.blitzTitle : 'Zeit um';
       sub = `${r.score} richtig in 45 Sekunden. Dein Bestwert liegt bei ${app.best.blitz || 0}.`;
       mood = r.score >= 10 ? 'cheer' : 'happy';
       facts = `<div class="fact"><b>${r.score}</b><span>richtig</span></div><div class="fact"><b>${r.xp}</b><span>XP</span></div><div class="fact"><b>×${multiplier(r.bestCombo)}</b><span>bester Combo</span></div>`;
       acts = '<button class="btn" data-act="blitz">Nochmal</button><button class="btn ghost" data-act="home">Zum Lernpfad</button>';
     } else {
-      title = r.failed ? 'Knapp daneben' : r.stars === 3 ? 'Parfait !' : r.stars === 2 ? 'Très bien !' : 'Bien joué !';
+      title = r.failed ? 'Knapp daneben' : words.resultTitles[Math.max(0, r.stars - 1)];
       sub = r.failed ? 'Das passiert jedem. Schau kurz in die Theorie, die nächste Runde läuft besser.'
         : r.mode === 'boss' ? 'Endgegner besiegt. 50 Bonus-XP gehören dir.'
           : r.mode === 'quick' ? 'Kurze Runde, echter Fortschritt.' : 'Seite geschafft. Mit mehr richtigen Antworten gibt es mehr Sterne.';

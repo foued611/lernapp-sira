@@ -28,6 +28,14 @@ export const APPS = [
   { id: 'mathe', subject: 'Mathematik', title: 'Mathe-App', desc: 'Rationale Zahlen, Terme und Gleichungen.', status: 'soon' },
   { id: 'deutsch', subject: 'Deutsch', title: 'Deutsch-App', desc: 'Textanalyse, Inhaltsangabe und Grammatik.', status: 'soon' },
   { id: 'englisch', subject: 'Englisch', title: 'Englisch-App', desc: 'Wortschatz und Grammatik.', status: 'soon' },
-  { id: 'informatik', subject: 'Informatik', title: 'Informatik-App', desc: 'Algorithmen, Daten und erstes Programmieren.', status: 'soon' },
+  {
+    id: 'info-zahlen',
+    subject: 'Informatik',
+    title: 'Zahlenwerkstatt',
+    desc: 'Binär und Hexadezimal: Lampen schalten, umrechnen und addieren wie ein Computer.',
+    href: 'apps/informatik/index.html',
+    units: 6,
+    status: 'live'
+  },
   { id: 'physik', subject: 'Physik', title: 'Physik-App', desc: 'Experimente, Messen und Kräfte.', status: 'soon' }
 ];

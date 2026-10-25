@@ -1,0 +1,53 @@
+/* Nur für die Zahlenwerkstatt: Spielzeuge der Theorie (Lampen, Tabellen, Schieberegler) und Spickzettel. */
+.mono{font-family:ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;font-variant-numeric:tabular-nums;font-weight:600}
+.toy{display:grid;gap:14px;border-top:10px solid var(--lc)}
+.toy-label{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.numin{font:600 20px ui-monospace,Menlo,Consolas,monospace;padding:8px 12px;border:2px solid var(--ink);border-radius:10px;background:var(--paper);color:var(--text);width:7em;max-width:100%}
+.numin:focus-visible,#slide:focus-visible,.bit:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+.btn.small{padding:7px 14px;font-size:14px;min-height:44px}
+.sumline{text-align:center;font-size:17px;min-height:1.6em;overflow-wrap:anywhere}
+.sumline b{font-size:26px;color:var(--ink)}
+.tablewrap{overflow-x:auto}
+.place{border-collapse:separate;border-spacing:6px;margin:0 auto}
+.place td{min-width:58px;text-align:center;padding:8px 6px;border-radius:10px;background:var(--paper);border:1.5px solid var(--line)}
+.place tr.head td{font-size:12px;font-weight:600;color:var(--muted);background:transparent;border:0;padding:0}
+.place tr.digit td{font:600 26px ui-monospace,Menlo,Consolas,monospace}
+
+.bits{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:6px}
+.bit{display:flex;flex-direction:column;align-items:center;gap:4px;border:0;background:none;cursor:pointer;padding:0;color:var(--text);min-height:44px}
+.bit .w{font:600 12px ui-monospace,Menlo,Consolas,monospace;color:var(--muted)}
+.bit .bulb{width:100%;max-width:56px;aspect-ratio:1;border-radius:50%;border:2px solid var(--ink);background:var(--grid-weak);display:grid;place-items:center;font:700 20px ui-monospace,Menlo,Consolas,monospace;color:var(--muted);transition:background .15s,box-shadow .15s}
+.bit.on .bulb{background:var(--sun);color:var(--sun-fg);box-shadow:0 0 16px var(--sun)}
+.bit.gap{margin-left:8px}
+@media (max-width:520px){.bit.gap{margin-left:4px}.bit .bulb{font-size:16px}}
+
+.steps{display:grid;gap:6px;font:500 16px ui-monospace,Menlo,Consolas,monospace}
+.steps div{display:flex;gap:10px;flex-wrap:wrap;align-items:baseline}
+.steps .yes{color:var(--ok);font-weight:700}
+.steps .no{color:var(--muted)}
+
+.adder{display:inline-grid;gap:2px;text-align:right;white-space:pre;font-size:22px}
+.adder .line{border-top:2px solid var(--ink);margin-top:4px;padding-top:4px}
+
+.hexgrid{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:6px}
+.hexgrid>div{background:var(--paper);border:1.5px solid var(--line);border-radius:10px;text-align:center;padding:6px 2px}
+.hexgrid .d{font:700 20px ui-monospace,Menlo,Consolas,monospace;color:var(--ink)}
+.hexgrid .v{font-size:12px;color:var(--muted)}
+@media (max-width:520px){.hexgrid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+#slide{width:100%;accent-color:var(--btn-bg)}
+.trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.trio>div{background:var(--paper);border:1.5px solid var(--line);border-radius:12px;padding:10px;text-align:center;min-width:0}
+.trio .k{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.trio .val{font-size:22px;overflow-wrap:anywhere}
+@media (max-width:440px){.trio .val{font-size:16px}}
+
+.nibbles{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.nib{display:grid;justify-items:center;gap:4px}
+.nib .grp{font:700 24px ui-monospace,Menlo,Consolas,monospace;letter-spacing:.12em;background:var(--paper);border:2px dashed var(--ink);border-radius:10px;padding:4px 10px}
+.nib .h{font:800 34px var(--f-head);color:var(--ink)}
+
+/* Spickzettel in den Aufgaben */
+.cheat{display:flex;flex-wrap:wrap;gap:6px;font:500 14px ui-monospace,Menlo,Consolas,monospace}
+.cheat span{background:var(--paper);border:1.5px solid var(--line);border-radius:6px;padding:1px 8px}
+@media (prefers-reduced-motion:reduce){.bit .bulb{transition:none}}

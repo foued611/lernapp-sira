@@ -1,7 +1,4 @@
 /* Nur für diese App: Konjugationstabelle, Merkzettel, Beispielsätze. */
-.tcard{border-top:10px solid var(--lc)}
-.thead{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px}
-.thead .de{font-size:17px;color:var(--muted)}
 .conj{width:100%;border-collapse:collapse}
 .conj td{padding:9px 6px;border-bottom:1.5px dashed var(--line);vertical-align:middle}
 .conj tr:last-child td{border-bottom:0}
@@ -16,10 +13,6 @@
 .conj .fm.hid .val{display:none}
 .conj .fm.hid .qm{display:inline}
 .say{background:none;border:0;cursor:pointer;color:var(--ink);font-size:20px;padding:4px}
-.notes{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
-.note{background:var(--note);padding:12px 14px;box-shadow:3px 4px 0 var(--shadow);font-size:14px;transform:rotate(-.5deg);border-radius:4px}
-.note:nth-child(even){transform:rotate(.6deg)}
-.note b{display:block;font-family:var(--f-head);font-weight:800;font-size:17px;line-height:1.15;color:var(--ink);margin-bottom:2px}
 .ex{display:grid;gap:10px;margin:0;padding:0;list-style:none}
 .ex li{display:flex;justify-content:space-between;gap:10px;align-items:center;border-bottom:1.5px dashed var(--line);padding-bottom:8px}
 .ex li:last-child{border-bottom:0;padding-bottom:0}

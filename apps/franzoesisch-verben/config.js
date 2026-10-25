@@ -11,6 +11,11 @@ export default {
   greeting: 'Salut',
   bossTitle: 'Le Grand Défi',
   intro: 'Présent: être, avoir, aller, faire und die regelmäßigen Verben. Starte irgendwo. Die Reihenfolge ist nur ein Vorschlag.',
+  words: {
+    praise: ['Richtig!', 'Genau!', 'Très bien !', 'Parfait !', 'Bravo !', 'Super !'],
+    resultTitles: ['Bien joué !', 'Très bien !', 'Parfait !'],
+    blitzTitle: 'Éclair !'
+  },
   units: UNITS,
   theory: renderTheory,
   rounds: { lesson: lessonRound, boss: bossRound, quick: quickRound },

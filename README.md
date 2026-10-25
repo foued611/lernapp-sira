@@ -8,7 +8,8 @@ Live: https://foued611.github.io/lernapp-sira/
 | App | Fach | Ordner | Stand |
 |---|---|---|---|
 | Cahier de Verbes | Französisch | `apps/franzoesisch-verben/` | fertig |
-| Mathe, Deutsch, Englisch, Informatik, Physik | | | geplant |
+| Zahlenwerkstatt | Informatik | `apps/informatik/` | fertig |
+| Mathe, Deutsch, Englisch, Physik | | | geplant |
 
 ## Lokal starten
 ```

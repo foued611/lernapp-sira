@@ -28,10 +28,10 @@ async function playRound(w,maxSteps=40){
     // match
     if($(w,'.match')){
       for(let guard=0;guard<60&&!$(w,'#nx');guard++){
-        const lefts=()=>$$(w,'.mb').slice(0,6),rights=()=>$$(w,'.mb').slice(6);
+        const half=$$(w,'.mb').length/2,lefts=()=>$$(w,'.mb').slice(0,half),rights=()=>$$(w,'.mb').slice(half);
         const li=lefts().findIndex(b=>!b.classList.contains('dn'));
         if(li<0)break;
-        for(let j=0;j<6&&!$(w,'#nx');j++){
+        for(let j=0;j<half&&!$(w,'#nx');j++){
           if(lefts()[li].classList.contains('dn'))break;
           click(w,lefts()[li]);
           if(rights()[j]&&!rights()[j].classList.contains('dn'))click(w,rights()[j]);
@@ -52,6 +52,7 @@ async function playRound(w,maxSteps=40){
 const results=[];
 const appCode=await bundle('apps/franzoesisch-verben/main.js');
 const dashCode=await bundle('dashboard.js');
+const infoCode=await bundle('apps/informatik/main.js');
 
 // 1) Alle Seiten durchspielen
 {
@@ -103,6 +104,31 @@ const dashCode=await bundle('dashboard.js');
   results.push(['Fehler Boss: '+errors.length,errors.length===0]);
   if(errors.length)console.log(errors.slice(0,5));
 }
+// 2b) Zahlenwerkstatt: Theorie-Spielzeuge und eine Runde je Seite
+{
+  const {w,errors}=boot('apps/informatik/index.html',infoCode);
+  results.push(['Info: Home rendert',!!$(w,'.hero')&&$$(w,'.node').length===6]);
+  for(const id of ['stellen','binaer','dez2bin','addieren','hex','binhex']){
+    click(w,$(w,`.node[data-id="${id}"]`));
+    results.push([`Info Theorie ${id}`,!!$(w,'.toy')&&$$(w,'.note').length>=2]);
+    if(id==='binaer'){
+      const before=$(w,'[data-sum]').textContent;
+      click(w,$(w,'.bit[data-i="0"]'));
+      results.push(['Lampe schaltet Summe',$(w,'[data-sum]').textContent!==before&&$(w,'[data-sum]').textContent.includes('139')]);
+    }
+    if(id==='binhex'){click(w,$(w,'.bit[data-i="7"]'));results.push(['Vierergruppen',$$(w,'.nib').length===2]);}
+    if(id==='hex'){const sl=$(w,'#slide');sl.value='47';sl.dispatchEvent(new w.Event('input',{bubbles:true}));results.push(['Schieberegler Hex',$(w,'[data-hex]').textContent==='2F']);}
+    click(w,$(w,'[data-act="start"]'));
+    const r=await playRound(w);
+    results.push([`Info Runde ${id} -> ${r}`,r==='result']);
+    click(w,$(w,'[data-act="home"]'));
+  }
+  click(w,$(w,'[data-act="quick"]'));
+  results.push(['Info Quick -> '+await playRound(w),!!$(w,'.res')]);
+  click(w,$(w,'[data-act="home"]'));
+  results.push(['Info: Fehler '+errors.length,errors.length===0]);
+  if(errors.length)console.log(errors.slice(0,5));
+}
 // 3) Dashboard
 {
   const today=new Date();const d=today.getFullYear()+'-'+String(today.getMonth()+1).padStart(2,'0')+'-'+String(today.getDate()).padStart(2,'0');
@@ -110,7 +136,7 @@ const dashCode=await bundle('dashboard.js');
     'lernwerkstatt:profile':JSON.stringify({name:'Sira',xp:120,streak:2,lastDay:d,lastApp:'fr-verben',day:{d,xp:20}}),
     'lernwerkstatt:app:fr-verben':JSON.stringify({xp:120,stars:{etre:3,avoir:1},badges:{first:true},best:{}})});
   results.push(['Dashboard Kacheln = 6',$$(w,'.tile').length===6]);
-  results.push(['Live-Kachel verlinkt',$$(w,'a.tile').length===1&&$(w,'a.tile').getAttribute('href').includes('franzoesisch')]);
+  results.push(['Live-Kacheln verlinkt',$$(w,'a.tile').length===2&&$$(w,'a.tile').some(a=>a.getAttribute('href').includes('informatik'))]);
   results.push(['Fortschritt 2 von 6',$(w,'a.tile .lab').textContent.includes('2 von 6')]);
   results.push(['Weiter-Karte',!$(w,'#cont-sec').hidden]);
   results.push(['Hero Name',$(w,'#hero h1').textContent.includes('Sira')]);
