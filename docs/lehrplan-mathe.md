@@ -17,9 +17,13 @@ Das Inhaltsverzeichnis wurde am 25.10.2026 per Foto geprüft. Kapitel: I Terme m
 | I | 1 Zahlterme mit rationalen Zahlen | Seite `vorzeichen` |
 | I | 2 Terme mit einer Variable, 3 Summen, 4 Produkte, 5 Ausmultiplizieren und Ausklammern | Seite `terme` |
 | II | 1 Proportionale, 2 Antiproportionale Zusammenhänge | Seite `zuordnungen` |
-| III | Abstände, Mittelsenkrechte, Winkelhalbierende, Dreiecke konstruieren, Eindeutigkeit, Größen konstruieren | Geometrie-App (in Arbeit) |
+| III | 1 Abstände, 2 Mittelsenkrechte, 3 Winkelhalbierende, 4 Dreiecke konstruieren, 5 Eindeutigkeit | Geometrie-Werkstatt: Seiten `mittelsenkrechte`, `winkelhalbierende`, `dreiecke` |
+| III | 6 Größen durch Konstruieren bestimmen | fehlt noch |
 | IV | 1 Gleichungen aufstellen, 2 Äquivalenzumformungen, 3 vereinfachen und lösen, 4 Anzahl der Lösungen, 5 Sachzusammenhang | Seite `gleichungen` (Textaufgaben nur als Gleichung aufstellen) |
-| V | Winkel, Winkelsumme, gleichschenklige Dreiecke, Thales, Umkreis, Inkreis | Geometrie-App (in Arbeit) |
+| V | 1 Winkel an Geraden, 2 Winkelsumme, 3 gleichschenklige Dreiecke | Geometrie-Werkstatt: Seite `winkel` |
+| V | 4 Satz des Thales | Seite `thales` |
+| V | 5 Umkreis, 6 Inkreis | Seite `kreise` |
+| V | 7 Geometrische Probleme lösen | fehlt noch |
 | VI | 1 bis 4 Prozente, Prozentsätze, Prozentwerte, Grundwerte | Seite `prozent` |
 | VI | 5 Zins und Zinseszins | Seite `zinsen` |
 | VI | 6 Kredit und Tilgung | fehlt noch |
@@ -28,5 +32,6 @@ Das Inhaltsverzeichnis wurde am 25.10.2026 per Foto geprüft. Kapitel: I Terme m
 Hinweise: Die IDs der Seiten bleiben unverändert, nur die Reihenfolge in `data.js` wurde angepasst, gespeicherte Sterne bleiben erhalten. Die Zusatz-Seiten stehen nicht im Inhaltsverzeichnis. Ob sie bleiben oder entfernt werden, entscheidet Foued.
 
 ## Offene Prüfpunkte
-- Kredit und Tilgung (VI.6) ist noch nicht umgesetzt.
+- Kredit und Tilgung (VI.6), Größen durch Konstruieren (III.6) und Geometrische Probleme lösen (V.7) sind noch nicht umgesetzt.
+- Die Geometrie-Werkstatt hat keine Zeichenfläche. Die Konstruktionen sind als Bilder und Schritt-für-Schritt-Anleitung erklärt, gezeichnet wird auf Papier mit Zirkel und Lineal. Eine interaktive Zeichenfläche wäre ein eigenes Projekt.
 - Begriffe und Schreibweisen der Aufgaben mit Siras Buch vergleichen (z. B. „Lösungsmenge“, „Äquivalenzumformung“).

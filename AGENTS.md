@@ -33,6 +33,8 @@ tests/         Unit- und Vertragstests (node:test)
 scripts/       smoke.mjs (Browser-Simulation mit jsdom)
 ```
 
+Gemeinsame Rechenhelfer (Zahlen formatieren, tolerante Eingabeprüfung, Brüche) liegen in `core/js/mathkit.js` und dürfen von allen Mathe-nahen Apps genutzt werden.
+
 Faustregel: Was mehr als eine App braucht, gehört nach `core/`. Was nur ein Fach betrifft, bleibt in `apps/<name>/`. Apps importieren aus `core/`, nie aus anderen Apps. `core/` kennt keine einzelne App.
 
 ## App-Vertrag

@@ -34,6 +34,15 @@ export const APPS = [
     units: 8,
     status: 'live'
   },
+  {
+    id: 'geometrie',
+    subject: 'Mathematik',
+    title: 'Geometrie-Werkstatt',
+    desc: 'Mittelsenkrechte, Winkelhalbierende, Dreiecke konstruieren, Winkel, Thales, Umkreis und Inkreis.',
+    href: 'apps/geometrie/index.html',
+    units: 6,
+    status: 'live'
+  },
   { id: 'deutsch', subject: 'Deutsch', title: 'Deutsch-App', desc: 'Textanalyse, Inhaltsangabe und Grammatik.', status: 'soon' },
   { id: 'englisch', subject: 'Englisch', title: 'Englisch-App', desc: 'Wortschatz und Grammatik.', status: 'soon' },
   {
