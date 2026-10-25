@@ -51,12 +51,41 @@ function minusBracket() {
     why: `Minus vor der Klammer dreht beide Vorzeichen um: ${k} ${MINUS} x + ${c} = ${linear(-1, k + c)}.` };
 }
 
+function ausklammern() {
+  const g = pick([2, 3, 4, 5, 6]), a = rnd(2, 5), c = rnd(2, 6), A = g * a, C = g * c;
+  const right = `${g} · (${linear(a, c)})`;
+  return { prompt: `Klammere den größten gemeinsamen Faktor aus: ${linear(A, C)}`, answer: right,
+    wrong: [`${g} · (${linear(a, C)})`, `${g * 2} · (${linear(a, c)})`, `${a} · (${linear(g, c)})`, `${g} · (${linear(A, c)})`],
+    choiceOnly: true, label: 'Ausklammern',
+    why: `Gemeinsamer Faktor von ${A} und ${C} ist ${g}. Teile jeden Summanden durch ${g}: ${linear(a, c)}. Probe durch Ausmultiplizieren: ${g}·${a}x + ${g}·${c} = ${linear(A, C)}.` };
+}
+
 function solve() {
   const x = nz(-9, 9), a = rnd(2, 9), b = nz(-12, 12), c = a * x + b;
   const prompt = `${linear(a, b)} = ${fmt(c)}`;
   const wrong = [(c + b) / a, c - b, x * -1, (c - b) * a];
   return { prompt, answer: fmt(x), value: x, numeric: true, wrong: nearby(x, wrong.filter(Number.isInteger)).map(fmt),
     why: `${b < 0 ? '+' + Math.abs(b) : MINUS + b}: ${a}x = ${fmt(c - b)}. Dann : ${a}, und es folgt x = ${fmt(x)}. Probe: ${a}·${par(x)} ${b < 0 ? MINUS : '+'} ${Math.abs(b)} = ${fmt(c)}.`, label: 'Löse nach x auf' };
+}
+
+function anzahlLoesungen() {
+  const k = rnd(2, 5), c = rnd(1, 6), d = rnd(1, 6) + c;
+  const cases = [
+    [`${linear(k, c)} = ${linear(k, d)}`, 'keine Lösung', `Auf beiden Seiten steht ${k}x. Zieht man es ab, bleibt ${c} = ${d}. Das ist falsch, also gibt es keine Lösung.`],
+    [`${k} · (x + ${c}) = ${linear(k, k * c)}`, 'unendlich viele Lösungen', `Links ausmultiplizieren ergibt ${linear(k, k * c)}, genau die rechte Seite. Die Gleichung stimmt für jedes x.`],
+    [`${linear(k, c)} = ${k * (c + 1) + c}`, 'genau eine Lösung', `Hier steht links ein x-Term und rechts nur eine Zahl. Das ergibt genau einen Wert für x.`]
+  ];
+  const [eq, ans, why] = pick(cases);
+  const all = ['keine Lösung', 'genau eine Lösung', 'unendlich viele Lösungen', 'genau zwei Lösungen'];
+  return { prompt: eq, answer: ans, wrong: all.filter((o) => o !== ans), choiceOnly: true, label: 'Wie viele Lösungen hat die Gleichung?', why };
+}
+
+function aufstellen() {
+  const k = rnd(2, 6), c = rnd(2, 9), x = rnd(2, 8), r = k * x + c;
+  const eq = `${k}x + ${c} = ${r}`;
+  return { prompt: `Das ${k}-Fache einer Zahl, vermehrt um ${c}, ergibt ${r}. Welche Gleichung gehört dazu?`, answer: eq,
+    wrong: [`${k + c}x = ${r}`, `${k}x ${MINUS} ${c} = ${r}`, `${c}x + ${k} = ${r}`, `${k}(x + ${c}) = ${r}`], choiceOnly: true, label: 'Gleichung aufstellen',
+    why: `„Das ${k}-Fache einer Zahl“ ist ${k}x. „Vermehrt um ${c}“ heißt + ${c}. „Ergibt ${r}“ ist = ${r}. Lösung: x = ${x}.` };
 }
 
 function firstStep() {
@@ -120,6 +149,14 @@ function zinsMonate() {
   const k = pick([1200, 2400, 3600, 6000]), p = pick([2, 3, 4, 5]), m = pick([3, 6, 9]), z = k * p / 100 * m / 12;
   return { prompt: `${fmt(k)} € werden ${m} Monate lang zu ${p} % angelegt. Wie hoch sind die Zinsen?`, answer: fmt(z), value: z, numeric: true, wrong: nearby(z, [k * p / 100, z * 2, k * p / 100 * m]).map(fmt),
     why: `Für ein ganzes Jahr gäbe es ${fmt(k * p / 100)} €. ${m} Monate sind ${m}/12 eines Jahres: ${fmt(k * p / 100)} · ${m}/12 = ${fmt(z)} €.` };
+}
+
+function zinseszins() {
+  const [k, p, n] = pick([[1000, 10, 2], [2000, 10, 2], [1000, 10, 3], [2000, 5, 2], [4000, 5, 2], [4000, 10, 2]]);
+  const r = k * (1 + p / 100) ** n;
+  return { prompt: `${fmt(k)} € werden ${n} Jahre zu ${p} % angelegt, die Zinsen bleiben auf dem Konto (Zinseszins). Wie viel Geld ist es am Ende?`, answer: fmt(r), value: r, numeric: true,
+    wrong: nearby(r, [k * (1 + n * p / 100), k * p / 100 * n, k * (1 + p / 100) * n]).map(fmt),
+    why: `Jedes Jahr wächst das Kapital auf ${100 + p} %, also mal ${fmt(1 + p / 100)}. Nach ${n} Jahren: ${fmt(k)} · ${fmt(1 + p / 100)}${n === 2 ? ' · ' + fmt(1 + p / 100) : n === 3 ? ' · ' + fmt(1 + p / 100) + ' · ' + fmt(1 + p / 100) : ''} = ${fmt(r)} €. Ohne Zinseszins wären es weniger.` };
 }
 
 function dreisatzProp() {
@@ -213,10 +250,10 @@ function relativ() {
 
 export const POOLS = {
   vorzeichen: [addSub, addSub, mulDiv],
-  terme: [collect, collectMixed, expand, minusBracket],
-  gleichungen: [solve, solve, firstStep],
+  terme: [collect, collectMixed, expand, minusBracket, ausklammern],
+  gleichungen: [solve, solve, firstStep, aufstellen, anzahlLoesungen],
   prozent: [prozentwert, grundwert, prozentsatz, rabatt],
-  zinsen: [zinsen, kapital, zinssatz, zinsMonate],
+  zinsen: [zinsen, kapital, zinssatz, zinsMonate, zinseszins],
   zuordnungen: [dreisatzProp, dreisatzAnti, erkennen, dreisatzProp, dreisatzAnti],
   daten: [mittelwert, median, spannweite, modus],
   zufall: [wuerfel, urne, relativ]

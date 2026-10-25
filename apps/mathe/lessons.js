@@ -56,7 +56,7 @@ export const LESSONS = {
       ]
     },
     pitfall: { html: '<p>Vergisst du den zweiten Summanden, entsteht <b>4x + 3</b> statt 4x + 12. Zeichne dir Bögen von der 4 zu <b>beiden</b> Summanden.</p><p>Bei <b>10 − (x − 3)</b> musst du beide Vorzeichen drehen: 10 − x + 3 = 13 − x.</p>' },
-    rule: 'Distributivgesetz: a · (b + c) = a · b + a · c. Minus vor der Klammer dreht alle Vorzeichen.',
+    rule: 'Distributivgesetz: a · (b + c) = a · b + a · c. Rückwärts heißt es Ausklammern: 12x + 18 = 6 · (2x + 3). Minus vor der Klammer dreht alle Vorzeichen.',
     check: {
       q: 'Fasse zusammen: <b>5x + 2 + 3x</b>',
       options: [opt('8x + 2'), opt('10x'), opt('8x²'), opt('5x + 5')],
@@ -148,8 +148,8 @@ export const LESSONS = {
         'Zinsen: 96 € · 6/12 = <b>48 €</b>. Probe: Halbes Jahr, halbe Zinsen.'
       ]
     },
-    pitfall: { html: '<p>Die Zinsen sind <b>nicht</b> das, was du am Ende auf dem Konto hast. Auf dem Konto liegen Kapital <b>plus</b> Zinsen: 1000 € + 30 € = 1030 €.</p><p>Und denk an die Zeit: Der Zinssatz gilt immer für ein ganzes Jahr.</p>' },
-    rule: 'Z = K · p/100 für ein Jahr. Für m Monate: Z = K · p/100 · m/12.',
+    pitfall: { html: '<p>Die Zinsen sind <b>nicht</b> das, was du am Ende auf dem Konto hast. Auf dem Konto liegen Kapital <b>plus</b> Zinsen: 1000 € + 30 € = 1030 €.</p><p>Und denk an die Zeit: Der Zinssatz gilt immer für ein ganzes Jahr.</p><p><b>Zinseszins:</b> Lässt du die Zinsen auf dem Konto, werden sie im nächsten Jahr mitverzinst. Aus 1000 € bei 10 % werden nach 2 Jahren 1000 · 1,1 · 1,1 = <b>1210 €</b>, nicht 1200 €.</p>' },
+    rule: 'Z = K · p/100 für ein Jahr. Für m Monate: Z = K · p/100 · m/12. Mit Zinseszins nach n Jahren: K · (1 + p/100)ⁿ.',
     check: {
       q: 'Wie viel Zinsen bringen <b>500 €</b> bei <b>2 %</b> in einem Jahr?',
       options: [opt('10 €'), opt('100 €'), opt('1000 €'), opt('2 €')],

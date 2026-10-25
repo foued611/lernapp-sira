@@ -117,3 +117,24 @@ test('Wahrscheinlichkeiten: Prüfer akzeptiert Bruch, Dezimalzahl und Prozent', 
     assert.ok(!it.wrong.includes(it.answer));
   }
 });
+
+test('Zinseszins, Ausklammern, Aufstellen und Lösungsanzahl stimmen', () => {
+  const val = (s) => Number(s.replace(/−/g, '-').replace(',', '.'));
+  const [, , , , zz] = POOLS.zinsen;
+  const [, , , , aus] = POOLS.terme;
+  const [, , , auf, anz] = POOLS.gleichungen;
+  for (let i = 0; i < 300; i++) {
+    const z = zz();
+    const [k, n, p] = [z.prompt.match(/^(\d+) €/)[1], z.prompt.match(/(\d+) Jahre/)[1], z.prompt.match(/zu (\d+) %/)[1]].map(Number);
+    assert.ok(Math.abs(val(z.answer) - k * (1 + p / 100) ** n) < 1e-6, z.prompt);
+    const a = aus();
+    const m = a.prompt.match(/: (\d+)x \+ (\d+)$/), r = a.answer.match(/^(\d+) · \((\d+)x \+ (\d+)\)$/);
+    assert.equal(Number(r[1]) * Number(r[2]), Number(m[1]));
+    assert.equal(Number(r[1]) * Number(r[3]), Number(m[2]));
+    const q = auf();
+    const [, k2, c2, r2] = q.answer.match(/^(\d+)x \+ (\d+) = (\d+)$/).map(Number);
+    assert.ok((r2 - c2) % k2 === 0, q.prompt);
+    const l = anz();
+    assert.ok(['keine Lösung', 'genau eine Lösung', 'unendlich viele Lösungen'].includes(l.answer));
+  }
+});
