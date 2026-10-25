@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { APPS } from '../registry.js';
-import { assertValidConfig } from './helpers.js';
+import { assertValidConfig, assertValidLesson } from './helpers.js';
 
 const folderOf = (href) => href.replace(/index\.html$/, '');
 
@@ -18,3 +18,13 @@ test('App-Vorlage erfüllt den Vertrag', async () => {
   const { default: config } = await import('../apps/_template/config.js');
   assertValidConfig(config);
 });
+
+for (const app of APPS.filter((a) => a.status === 'live')) {
+  test(`Lektionen: ${app.id}`, async () => {
+    const { default: config } = await import(new URL(`../${folderOf(app.href)}config.js`, import.meta.url));
+    for (const unit of config.units) {
+      await assertValidLesson(config.lessons[unit.id], `${app.id}/${unit.id}`);
+      assert.ok(unit.card && unit.card.name && unit.card.fact, `Sammelkarte fehlt bei ${unit.id}`);
+    }
+  });
+}

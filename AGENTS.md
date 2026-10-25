@@ -20,7 +20,7 @@ Anweisungen für Coding-Agenten und Mitwirkende. Lies diese Datei vor jeder Änd
 ```
 index.html, dashboard.js, dashboard.css   Dashboard (Startseite)
 registry.js                               Liste aller Apps, steuert die Kacheln
-core/styles/   tokens.css  base.css  quiz.css   gemeinsames Design
+core/styles/   tokens.css  base.css  quiz.css  lesson.css   gemeinsames Design
 core/js/       ui.js store.js profile.js quiz.js rounds.js shell.js icons.js mascot.js confetti.js
 apps/<name>/   eine App: index.html, main.js, config.js, data.js, builders.js, theory.js, badges.js, app.css
 apps/_template/ Vorlage für neue Apps (wird von den Tests geprüft)
@@ -39,13 +39,15 @@ Faustregel: Was mehr als eine App braucht, gehört nach `core/`. Was nur ein Fac
 | `id` | ja | Stabil und eindeutig, Kleinbuchstaben mit Bindestrich. Bestimmt den Speicherschlüssel |
 | `title`, `greeting`, `intro` | ja | Texte im Kopf der App |
 | `units` | ja | Liste von `{ id, title, de, ic, color }`, die Seiten des Lernpfads |
-| `theory(box, unit)` | ja | Schreibt die Theorie einer Seite in `box` |
+| `theory(box, unit)` | ja | Schreibt die Theorie einer Seite in `box`. Nutzt dafür `lessonTop`, `lessonBottom` und `wireLesson` aus `core/js/lesson.js` |
+| `lessons` | ja | `{ [unit.id]: Lektion }`, siehe "Lektionen" |
+| `units[].card` | ja | `{ name, fact }` für das Sammelalbum: Titel und ein Fakt, den man sich gern merkt |
 | `rounds.lesson(unit)` | ja | Liefert die Fragen einer Übungsrunde |
 | `rounds.quick()` | nein | Kurze Runde mit 5 Fragen |
 | `rounds.boss()` | nein | Endgegner mit 12 Fragen. Frei, wenn alle Seiten mindestens einen Stern haben (anpassbar mit `bossUnlocked(state)`) |
 | `blitz()` | nein | Liefert eine einzelne Frage für den 45-Sekunden-Blitz |
 | `bossTitle` | nein | Name des Endgegners |
-| `words` | nein | Eigene Lob-Sprüche `praise`, Ergebnis-Titel `resultTitles` (für 1, 2, 3 Sterne) und `blitzTitle`. Standard ist Deutsch |
+| `words` | nein | Eigene Lob-Sprüche `praise`, Ergebnis-Titel `resultTitles` (für 1, 2, 3 Sterne), `blitzTitle` und `levelTitles`. Standard ist Deutsch |
 | `badges` | ja | Liste von `{ id, n, d, when(state, result) }` |
 
 `main.js` ruft nur `mountApp(config, { header, main })` auf. Alles andere erledigt `core/js/shell.js`.
@@ -79,7 +81,16 @@ Alles, was in `html` oder `prompt` landet und aus Daten stammt, muss mit `esc()`
 
 ## Spielregeln (Gamification)
 
-Die Zahlen stehen in `core/js/profile.js` und `rounds.js` und gelten für alle Apps gleich: Level-Schwelle 30·n·(n−1) XP, Combo-Faktor bis ×4, 5 Herzen (Boss 3), Sterne ab 70 % (2) und 90 % (3), Tagesziel 30 XP, Serie mit einem Gnadentag. Änderungen daran wirken auf alle Apps und brauchen angepasste Tests.
+Die Zahlen stehen in `core/js/profile.js`, `rounds.js` und `quiz.js` und gelten für alle Apps gleich: Level-Schwelle 30·n·(n−1) XP, Combo-Faktor bis ×4, 5 Herzen (Boss 3), Sterne ab 70 % (2) und 90 % (3), Tagesziel 30 XP, Serie mit einem Gnadentag. Änderungen daran wirken auf alle Apps und brauchen angepasste Tests.
+
+Die Mechaniken sind so gewählt, dass sie das Lernen fördern und nicht nur belohnen:
+
+- **Zweiter Versuch:** Eine falsch beantwortete Frage kommt am Ende der Runde noch einmal (nicht im Endgegner, nicht bei Zuordnungen). Sie zählt nicht für Genauigkeit und Herzen, bringt aber 5 XP. Wiederholen nach dem Fehler festigt am meisten.
+- **Auffrischen:** Eine Seite mit Sternen wird nach `DUE_DAYS` (3) Tagen als "Zeit zum Auffrischen" markiert. Wer sie dann übt, bekommt 10 Bonus-XP. Verteiltes Wiederholen bringt Wissen ins Langzeitgedächtnis. Dafür speichert die App `app.last[unitId]` (Tag) und `app.acc[unitId]` (letzte Genauigkeit).
+- **Gezieltes Training:** Die Startseite schlägt die fällige oder schwächste Seite vor (`weakestUnit`).
+- **Sammelalbum:** Jede Seite hat eine Karte mit einem Fakt. Sie wird mit 1, 2 oder 3 Sternen zu Bronze, Silber, Gold. So gibt es ein sichtbares Ziel pro Seite.
+- **Mini-Check in der Lektion:** Eine Frage direkt nach der Theorie, ohne Druck und ohne XP. Sich selbst abfragen lernt besser als Nachlesen.
+- **Ereignisprotokoll:** Jede Runde wird mit `logEvent` gespeichert. Daraus lassen sich später Verläufe und Wiederholungspläne bauen.
 
 ## Design
 
@@ -90,6 +101,29 @@ Die Zahlen stehen in `core/js/profile.js` und `rounds.js` und gelten für alle A
 - Oberflächentexte auf Deutsch, du-Ansprache, freundlich, ohne Kindersprache. Zielalter 12 bis 13. Keine Emojis, Icons kommen aus `core/js/icons.js`.
 - Theorie-Seiten nutzen `.tcard`, `.thead`, `.notes` und `.note` aus `core/styles/base.css`.
 - Eine App-spezifische Optik gehört in `apps/<name>/app.css` und baut auf den Tokens auf.
+
+## Lektionen
+
+Jede Seite hat eine Lektion in `apps/<name>/lessons.js`, aufgebaut mit `core/js/lesson.js`. Die Reihenfolge ist für alle Apps gleich und folgt dem, wie 12- bis 13-Jährige lernen: erst Ziel, dann Bild, dann selbst tun.
+
+| Teil | Zweck |
+|---|---|
+| `goal` | "Du kannst danach …": ein Satz, was die Seite bringt |
+| `tldr` | 2 bis 4 kurze Sätze, "In 30 Sekunden" |
+| `analogy` | Vergleich aus dem Alltag ("Stell dir vor: …") |
+| `figure` | Diagramm als SVG mit Bildunterschrift |
+| Spielzeug | Etwas zum Anklicken oder Eintippen (Lampen, Regler, Tabelle). Nur in der App, kein Pflichtfeld |
+| `steps` | Ein durchgerechnetes Beispiel, Schritt für Schritt aufklappbar |
+| `pitfall`, `rule` | Typische Falle und ein Merksatz |
+| `check` | Mini-Check mit drei oder vier Antworten und Erklärung |
+
+Regeln für Texte und Bilder:
+
+- Kurze Sätze, du-Ansprache, ein Beispiel pro Gedanke. Fachwort fett, dann sofort erklären.
+- Diagramme entstehen als Text-SVG mit den Helfern aus `core/js/svg.js` (kein Bild-Upload, keine externen Bilder). Farben nur über die CSS-Klassen aus `core/styles/lesson.css` (`box`, `hi`, `acc`, `off`, `mu` …), damit sie in hell und dunkel passen.
+- Jedes Diagramm braucht `role="img"` und einen aussagekräftigen `aria-label` (macht `svg()` automatisch, wenn du ihn angibst).
+- Zahlen im Diagramm werden berechnet, nicht von Hand getippt. So können sie nicht von den Aufgaben abweichen.
+- Der Vertragstest (`assertValidLesson`) prüft alle Pflichtteile und ob jedes SVG gültiges XML ist.
 
 ## Lehrplan
 

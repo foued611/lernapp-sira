@@ -31,12 +31,12 @@ export const V={
 };
 Object.keys(V).forEach(k=>{const v=V[k];v.key=k;if(!v.inf)v.inf=k;if(v.forms){v.irr=true}else{v.ends=GE[v.group];v.forms=v.ends.map(e=>v.stem+e)}});
 export const UNITS=[
- {id:'etre',color:'#9B7BFF',title:'être',de:'sein · unregelmäßig',ic:'être',irr:true,verbs:['etre']},
- {id:'avoir',color:'#FF6B88',title:'avoir',de:'haben · unregelmäßig',ic:'avoir',irr:true,verbs:['avoir']},
- {id:'aller',color:'#3DD6B0',title:'aller',de:'gehen · unregelmäßig',ic:'aller',irr:true,verbs:['aller']},
- {id:'faire',color:'#4CC3F5',title:'faire',de:'machen · unregelmäßig',ic:'faire',irr:true,verbs:['faire']},
- {id:'er',color:'#FFC933',title:'Verben auf -er',de:'regelmäßig · parler, aimer, jouer …',ic:'-er',irr:false,verbs:['parler','aimer','habiter','jouer','chanter','regarder','ecouter']},
- {id:'irre',color:'#FF8AD0',title:'Verben auf -ir und -re',de:'regelmäßig · finir, attendre … (Bonus)',ic:'-ir',irr:false,verbs:['finir','choisir','attendre','repondre','vendre']}
+ {id:'etre',color:'#9B7BFF',title:'être',de:'sein · unregelmäßig',ic:'être',irr:true,verbs:['etre'],card:{name:"Das wichtigste Verb",fact:"être gehört zu den am häufigsten benutzten Wörtern im Französischen. Fast jeder Text enthält es."}},
+ {id:'avoir',color:'#FF6B88',title:'avoir',de:'haben · unregelmäßig',ic:'avoir',irr:true,verbs:['avoir'],card:{name:"Alter mit avoir",fact:"Auf Französisch „hat“ man sein Alter: J'ai treize ans heißt wörtlich „Ich habe dreizehn Jahre“."}},
+ {id:'aller',color:'#3DD6B0',title:'aller',de:'gehen · unregelmäßig',ic:'aller',irr:true,verbs:['aller'],card:{name:"Allez !",fact:"Allez ! ruft man im Sport zum Anfeuern, wörtlich „geht!“. Im Fußball hört man oft: Allez les Bleus !"}},
+ {id:'faire',color:'#4CC3F5',title:'faire',de:'machen · unregelmäßig',ic:'faire',irr:true,verbs:['faire'],card:{name:"Der Alleskönner",fact:"Mit faire sagst du auch das Wetter: Il fait beau heißt „Es ist schönes Wetter“, Il fait froid heißt „Es ist kalt“."}},
+ {id:'er',color:'#FFC933',title:'Verben auf -er',de:'regelmäßig · parler, aimer, jouer …',ic:'-er',irr:false,verbs:['parler','aimer','habiter','jouer','chanter','regarder','ecouter'],card:{name:"Die große Gruppe",fact:"Die allermeisten französischen Verben enden auf -er. Dieses eine Muster öffnet dir also fast die ganze Sprache."}},
+ {id:'irre',color:'#FF8AD0',title:'Verben auf -ir und -re',de:'regelmäßig · finir, attendre … (Bonus)',ic:'-ir',irr:false,verbs:['finir','choisir','attendre','repondre','vendre'],card:{name:"Der Plural-Trick",fact:"Bei -ir-Verben wie finir kommt im Plural ein -iss- dazu: nous finissons. Das hört man deutlich."}}
 ];
 export const RAW={
  etre:[['etre',0,'Je ___ à la maison.','Ich bin zu Hause.'],['etre',1,'Tu ___ mon meilleur ami.','Du bist mein bester Freund.'],['etre',2,'Elle ___ à Paris.','Sie ist in Paris.'],['etre',3,'Nous ___ en classe.','Wir sind im Klassenzimmer.'],['etre',4,'Vous ___ très gentils !','Ihr seid sehr nett!'],['etre',5,'Ils ___ au cinéma.','Sie sind im Kino.'],['etre',5,'Léa et Tom ___ amis.','Léa und Tom sind Freunde.'],['etre',2,'Mon frère ___ malade.','Mein Bruder ist krank.']],

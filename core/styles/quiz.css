@@ -54,3 +54,5 @@
 .timer i{display:block;height:100%;width:100%;background:var(--flame)}
 .score{font-family:var(--f-head);font-weight:800;font-size:30px;color:var(--ink);line-height:1;min-width:64px;text-align:right}
 @media (max-width:520px){.opts{grid-template-columns:1fr}}
+
+.retry-tag{margin:0 0 10px;display:inline-block;background:var(--marker);color:var(--text);border-radius:8px;padding:2px 10px;font-size:13px;font-weight:600}

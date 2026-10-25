@@ -4,6 +4,7 @@ import { UNITS } from './data.js';
 import { lessonRound, bossRound, quickRound, blitzQuestion } from './builders.js';
 import { renderTheory } from './theory.js';
 import { BADGES } from './badges.js';
+import { LESSONS } from './lessons.js';
 
 export default {
   id: 'fr-verben',
@@ -14,10 +15,12 @@ export default {
   words: {
     praise: ['Richtig!', 'Genau!', 'Très bien !', 'Parfait !', 'Bravo !', 'Super !'],
     resultTitles: ['Bien joué !', 'Très bien !', 'Parfait !'],
-    blitzTitle: 'Éclair !'
+    blitzTitle: 'Éclair !',
+    levelTitles: ['Neuling', 'Wortlehrling', 'Verbkenner', 'Konjugations-Ass', 'Grammatik-Profi', 'Maître des Verbes', 'Légende']
   },
   units: UNITS,
   theory: renderTheory,
+  lessons: LESSONS,
   rounds: { lesson: lessonRound, boss: bossRound, quick: quickRound },
   blitz: blitzQuestion,
   badges: BADGES

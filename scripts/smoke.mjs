@@ -114,6 +114,15 @@ const infoCode=await bundle('apps/informatik/main.js');
   for(const id of ['stellen','binaer','dez2bin','addieren','hex','binhex']){
     click(w,$(w,`.node[data-id="${id}"]`));
     results.push([`Info Theorie ${id}`,!!$(w,'.toy')&&$$(w,'.note').length>=2]);
+    {
+      const items=$$(w,'.lsn-list li');const shown=()=>items.filter(li=>!li.hidden).length;
+      results.push([`Info ${id}: Lektion vollständig`,!!$(w,'.lsn-tldr')&&!!$(w,'.lsn-fig svg')&&!!$(w,'.lsn-pit')&&!!$(w,'.lsn-check')&&shown()===1]);
+      const nx=$(w,'[data-lsn="next"]');click(w,nx);results.push([`Info ${id}: Schritt klappt auf`,shown()===2]);
+      for(let i=0;i<8;i++)if(!nx.hidden)click(w,nx);
+      results.push([`Info ${id}: alle Schritte, Button weg`,shown()===items.length&&nx.hidden]);
+      const wrong=$$(w,'.lsn-opts .opt').find(b=>b.dataset.id!==$(w,'.lsn-opts').dataset.answer);
+      click(w,wrong);results.push([`Info ${id}: Mini-Check meldet falsch und zeigt Lösung`,$(w,'.lsn-fb').classList.contains('bad')&&!!$(w,'.lsn-opts .opt.right')&&$$(w,'.lsn-opts .opt').every(b=>b.disabled)]);
+    }
     if(id==='binaer'){
       const before=$(w,'[data-sum]').textContent;
       click(w,$(w,'.bit[data-i="0"]'));
@@ -132,11 +141,29 @@ const infoCode=await bundle('apps/informatik/main.js');
   results.push(['Info: Fehler '+errors.length,errors.length===0]);
   if(errors.length)console.log(errors.slice(0,5));
 }
+// 2b2) Falsche Antwort: Aufgabe kommt am Ende noch einmal (zweiter Versuch), ohne die Genauigkeit zu verändern
+{
+  const code=(await build({stdin:{contents:`import {startQuiz} from '${repo}/core/js/quiz.js'; window.__startQuiz=startQuiz;`,resolveDir:repo},bundle:true,format:'iife',write:false})).outputFiles[0].text;
+  const dom=new JSDOM('<div id="m"></div>',{runScripts:'outside-only',url:'https://x.test/',pretendToBeVisual:true});
+  const w=dom.window;w.scrollTo=()=>{};w.eval(code);
+  const q=(n)=>({kind:'choice',label:'T',prompt:'Frage '+n,answer:'a',options:[{id:'a',html:'a'},{id:'b',html:'b'}],why:'weil'});
+  let result=null;
+  const profile={xp:0,day:{d:'',xp:0}},app={xp:0};
+  w.__startQuiz({mount:w.document.getElementById('m'),ctx:{profile,app,save(){},refreshHeader(){},words:{praise:['ok']}},mode:'lesson',questions:[q(1),q(2),q(3)],onExit(){},onFinish(r){result=r}});
+  const answer=(id)=>{click(w,$$(w,'.opt').find(b=>b.textContent.includes(id)));click(w,$(w,'#chk'));click(w,$(w,'#nx'))};
+  answer('b');answer('a');answer('a');
+  const retryShown=!!$(w,'.retry-tag');
+  answer('a');
+  results.push(['Zweiter Versuch erscheint nach Fehler',retryShown]);
+  results.push(['Zweiter Versuch: Runde endet mit 3 Aufgaben',!!result&&result.total===3&&result.wrong===1&&result.correct===2&&result.relearned===1]);
+  results.push(['Zweiter Versuch: Genauigkeit zählt nur Erstversuche',!!result&&Math.abs(result.accuracy-2/3)<1e-9]);
+}
 // 2c) Browser-Datenbank (IndexedDB): Fortschritt landet dort, alter localStorage-Stand wird übernommen
 {
   const idb=new IDBFactory();
   const {w,errors}=await boot('apps/informatik/index.html',infoCode,{'lernwerkstatt:app:info-zahlen':JSON.stringify({xp:40,stars:{stellen:2},badges:{},best:{},__v:1})},idb);
   results.push(['IDB: Home rendert',!!$(w,'.hero')]);
+  results.push(['Sammelalbum: 6 Karten, 1 freigeschaltet',$$(w,'.gcard').length===6&&$$(w,'.gcard.t2').length===1]);
   results.push(['IDB: Altstand übernommen (1 Seite)',$$(w,'.node .stars .on').length===2]);
   results.push(['IDB: localStorage aufgeräumt',w.localStorage.getItem('lernwerkstatt:app:info-zahlen')===null]);
   click(w,$(w,'.node[data-id="stellen"]'));click(w,$(w,'[data-act="start"]'));

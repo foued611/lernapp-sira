@@ -17,7 +17,7 @@
 //   why?: string                 kurze Erklärung bei Fehler
 //   help?: html                  Inhalt des Spickzettels
 // }
-import { $, esc, pick, norm, stripAccents } from './ui.js';
+import { $, esc, pick, shuffle, norm, stripAccents } from './ui.js';
 import { icon } from './icons.js';
 import { mascot } from './mascot.js';
 import { addXP, spendXP, multiplier } from './profile.js';
@@ -37,7 +37,7 @@ function newRun(mode, questions, maxHearts) {
     mode, questions, i: 0, hearts: maxHearts, maxHearts,
     xp: 0, correct: 0, almost: 0, wrong: 0, combo: 0, bestCombo: 0,
     state: 'ask', fb: null, sel: null, typed: '', peek: false, peeked: false, m: null,
-    levelUp: null, goalHit: false
+    levelUp: null, goalHit: false, relearned: 0
   };
 }
 
@@ -99,7 +99,7 @@ function feedbackHTML(q, run, ctx) {
   const f = run.fb;
   const next = '<button class="btn" data-act="next" id="nx">Weiter</button>';
   if (f.kind === 'ok') {
-    const praise = f.mult > 1 ? `Serie ×${f.mult}!` : pick(ctx.words.praise);
+    const praise = f.retry ? 'Diesmal sitzt es!' : f.mult > 1 ? `Serie ×${f.mult}!` : pick(ctx.words.praise);
     return `<div class="fb ok" role="status">${mascot(f.mult > 1 ? 'cheer' : 'happy')}<div class="msg"><b>${praise}</b> <span class="gain">+${f.gain} XP${f.mult > 1 ? ` · Combo ×${f.mult}` : ''}</span>${q.sub ? `<p class="tr">= ${esc(q.sub)}</p>` : ''}</div>${next}</div>`;
   }
   if (f.kind === 'almost') {
@@ -123,7 +123,9 @@ function feedbackHTML(q, run, ctx) {
  * @returns {{destroy:()=>void}}
  */
 export function startQuiz({ mount, ctx, mode, questions, hearts = mode === 'boss' ? 3 : 5, color = '', onExit, onFinish }) {
-  const run = newRun(mode, questions, hearts);
+  // Falsch beantwortete Fragen kommen am Ende noch einmal (Wiederholen festigt). Darum arbeiten wir auf einer Kopie.
+  const baseCount = questions.length;
+  const run = newRun(mode, questions.slice(), hearts);
   const ac = new AbortController();
   const cur = () => run.questions[run.i];
 
@@ -159,7 +161,7 @@ export function startQuiz({ mount, ctx, mode, questions, hearts = mode === 'boss
     mount.innerHTML = `
       <div class="playbar"><button class="x" data-act="exit" aria-label="Abbrechen">${icon('close')}</button><div class="pbar"><i style="width:${pct}%"></i></div>${heartsHTML(run)}</div>
       <div class="combo">${run.combo >= 3 ? `Combo ×${multiplier(run.combo)} · ${run.combo} in Folge` : ''}</div>
-      <section class="card qcard">${questionHTML(q, run)}${help}</section>
+      <section class="card qcard">${q.retry ? '<p class="retry-tag">Noch einmal: jetzt, wo du die Lösung kennst</p>' : ''}${questionHTML(q, run)}${help}</section>
       <div class="foot" aria-live="polite">${foot}</div>`;
     const input = $('#ans', mount);
     if (input && !fb) input.focus();
@@ -167,6 +169,16 @@ export function startQuiz({ mount, ctx, mode, questions, hearts = mode === 'boss
 
   function settle(kind) {
     let amount = 0, mult = 1;
+    const q = cur();
+    if (q.retry) {
+      // Zweiter Versuch: zählt nicht für Genauigkeit und Herzen, bringt aber XP fürs Dazulernen.
+      if (kind === 'ok' || kind === 'almost') { amount = 5; run.relearned++; }
+      gain(amount);
+      run.fb = { kind: amount ? 'ok' : 'bad', gain: amount, mult: 1, retry: true };
+      run.state = 'fb';
+      render();
+      return;
+    }
     if (kind === 'ok') {
       run.correct++; run.combo++; run.bestCombo = Math.max(run.bestCombo, run.combo);
       mult = multiplier(run.combo); amount = 10 * mult;
@@ -174,6 +186,9 @@ export function startQuiz({ mount, ctx, mode, questions, hearts = mode === 'boss
       run.almost++; amount = 5;
     } else {
       run.wrong++; run.combo = 0; run.hearts--;
+      if (mode !== 'boss' && q.kind !== 'match' && run.hearts > 0) {
+        run.questions.push({ ...q, retry: true, options: q.options ? shuffle(q.options) : q.options });
+      }
     }
     gain(amount);
     run.fb = { kind, gain: amount, mult };
@@ -198,12 +213,12 @@ export function startQuiz({ mount, ctx, mode, questions, hearts = mode === 'boss
   }
 
   function finish(failed) {
-    const total = run.questions.length;
+    const total = baseCount;
     const accuracy = (run.correct + 0.5 * run.almost) / total;
     onFinish({
       mode, failed, total, accuracy,
       correct: run.correct, almost: run.almost, wrong: run.wrong,
-      bestCombo: run.bestCombo, xp: run.xp,
+      bestCombo: run.bestCombo, xp: run.xp, relearned: run.relearned,
       levelUp: run.levelUp, goalHit: run.goalHit
     });
   }

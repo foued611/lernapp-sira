@@ -3,6 +3,7 @@ import { UNITS } from './data.js';
 import { lessonRound, bossRound, quickRound, blitzQuestion } from './builders.js';
 import { renderTheory } from './theory.js';
 import { BADGES } from './badges.js';
+import { LESSONS } from './lessons.js';
 
 export default {
   id: 'info-zahlen',
@@ -13,10 +14,12 @@ export default {
   words: {
     praise: ['Richtig!', 'Genau!', 'Stark!', 'Super!', 'Bit für Bit richtig!'],
     resultTitles: ['Geschafft!', 'Sehr gut!', 'Alles richtig!'],
-    blitzTitle: 'Blitzrechner!'
+    blitzTitle: 'Blitzrechner!',
+    levelTitles: ['Bit-Neuling', 'Schalter-Schüler', 'Binär-Knacker', 'Hex-Entdecker', 'Byte-Profi', 'Code-Meister', 'Zahlen-Legende']
   },
   units: UNITS,
   theory: renderTheory,
+  lessons: LESSONS,
   rounds: { lesson: lessonRound, boss: bossRound, quick: quickRound },
   blitz: blitzQuestion,
   badges: BADGES

@@ -113,3 +113,16 @@ h3{font-size:21px}
 .note{background:var(--note);padding:12px 14px;box-shadow:3px 4px 0 var(--shadow);font-size:14px;transform:rotate(-.5deg);border-radius:4px}
 .note:nth-child(even){transform:rotate(.6deg)}
 .note b{display:block;font-family:var(--f-head);font-weight:800;font-size:17px;line-height:1.15;color:var(--ink);margin-bottom:2px}
+
+/* Auffrischen, Sammelalbum */
+.due{display:inline-block;margin-top:4px;background:var(--marker);color:var(--text);border-radius:8px;padding:1px 8px;font-size:12px;font-weight:600}
+.album{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.gcard{position:relative;background:var(--card);border:2px solid var(--ink);border-top:10px solid var(--lc,var(--line));border-radius:14px;padding:14px;box-shadow:3px 4px 0 var(--shadow);display:grid;gap:6px;align-content:start}
+.gcard h3{margin:0;font-size:18px}
+.gcard p{margin:0;font-size:14px;color:var(--muted)}
+.gcard .medal{justify-self:start;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:2px 10px;background:var(--paper);border:1.5px solid var(--ink)}
+.gcard.t1 .medal{background:#E7B58B;color:#3A210E}
+.gcard.t2 .medal{background:#DDE3EA;color:#1F2A37}
+.gcard.t3{box-shadow:0 0 0 3px var(--star),3px 4px 0 var(--shadow)}
+.gcard.t3 .medal{background:var(--star);color:#3B2A00}
+.gcard.t0{opacity:.75;border-style:dashed;border-top-color:var(--line)}

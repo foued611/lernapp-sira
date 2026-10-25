@@ -8,7 +8,7 @@ import { startQuiz, startBlitz } from './quiz.js';
 import { finalizeRound } from './rounds.js';
 import { logEvent, exportAll, importAll } from './db.js';
 import {
-  GOAL, openProfile, openApp, appDefaults, levelOf, lvlAt, titleOf, dailyXP, streakNow, multiplier
+  GOAL, openProfile, openApp, appDefaults, levelOf, lvlAt, titleOf, dailyXP, streakNow, multiplier, isDue, weakestUnit
 } from './profile.js';
 
 const stars = (n) =>
@@ -26,6 +26,7 @@ export async function mountApp(config, { header, main }) {
   const words = {
     praise: ['Richtig!', 'Genau!', 'Super!', 'Stark!', 'Bravo!'],
     resultTitles: ['Geschafft!', 'Sehr gut!', 'Perfekt!'],
+    levelTitles: undefined,
     blitzTitle: 'Blitzschnell!',
     ...config.words
   };
@@ -53,7 +54,7 @@ export async function mountApp(config, { header, main }) {
     const a = lvlAt(level), b = lvlAt(level + 1);
     const pct = Math.round(((profile.xp - a) / (b - a)) * 100);
     header.innerHTML = `<button class="brand" data-act="home">${esc(config.title)}</button><a class="alla" href="${esc(config.dashboardHref || '../../index.html')}">Alle Apps</a>
-      <div class="stats"><div class="lvl" title="${esc(titleOf(level))}"><span>Niveau ${level}</span><div class="xpbar" role="progressbar" aria-valuenow="${pct}" aria-valuemin="0" aria-valuemax="100"><i style="width:${pct}%"></i></div><span>${profile.xp} XP</span></div>
+      <div class="stats"><div class="lvl" title="${esc(titleOf(level, words.levelTitles))}"><span>Niveau ${level}</span><div class="xpbar" role="progressbar" aria-valuenow="${pct}" aria-valuemin="0" aria-valuemax="100"><i style="width:${pct}%"></i></div><span>${profile.xp} XP</span></div>
       <div class="streak" title="Tage in Folge geübt">${icon('flame')}<b>${streakNow(profile)}</b></div></div>`;
   }
 
@@ -71,12 +72,27 @@ export async function mountApp(config, { header, main }) {
     main.style.removeProperty('--lc');
     const done = config.units.filter((u) => (app.stars[u.id] || 0) > 0).length;
     const x = dailyXP(profile), ratio = Math.min(1, x / GOAL), C = 2 * Math.PI * 32;
-    const nodes = config.units.map((u) => `<button class="node" style="--lc:${esc(u.color)}" data-act="open" data-id="${esc(u.id)}"><span class="circ">${esc(u.ic)}</span><span><h3>${esc(u.title)}</h3><small>${esc(u.de)}</small></span>${stars(app.stars[u.id] || 0)}</button>`).join('');
+    const nodes = config.units.map((u) => `<button class="node" style="--lc:${esc(u.color)}" data-act="open" data-id="${esc(u.id)}"><span class="circ">${esc(u.ic)}</span><span><h3>${esc(u.title)}</h3><small>${esc(u.de)}</small>${isDue(app, u.id) ? '<span class="due">Zeit zum Auffrischen</span>' : ''}</span>${stars(app.stars[u.id] || 0)}</button>`).join('');
     const badges = config.badges.map((b) => `<div class="badge ${app.badges[b.id] ? 'got' : ''}"><b>${esc(b.n)}</b><span>${esc(b.d)}</span></div>`).join('');
     const greet = `${esc(config.greeting || 'Hallo')}${profile.name ? ', ' + esc(profile.name) : ''} !`;
     const nameForm = profile.name ? '' : '<div class="name"><input id="nm" placeholder="Wie heißt du?" maxlength="20" autocomplete="off" aria-label="Dein Name"><button class="btn sun" data-act="savename">Los</button></div>';
     const hasBoss = Boolean(config.rounds.boss), open = bossOpen();
+    const weak = weakestUnit(app, config.units);
+    const training = weak
+      ? `<div class="card"><h3>Gezieltes Training</h3><p>${esc(weak.reason)}: <b>${esc(weak.unit.title)}</b>. Wer gezielt Schwächen übt, lernt am schnellsten. Auffrischen bringt außerdem 10 Bonus-XP.</p><button class="btn" data-act="weak" data-id="${esc(weak.unit.id)}">Jetzt trainieren</button></div>`
+      : '';
+    const cardUnits = config.units.filter((u) => u.card);
+    const medal = ['', 'Bronze', 'Silber', 'Gold'];
+    const album = cardUnits.length
+      ? `<section><h2>Sammelalbum</h2><p class="muted" style="margin:4px 0 14px;font-size:14px">Für jede Seite gibt es eine Karte. Mit mehr Sternen wird sie wertvoller: Bronze, Silber, Gold.</p><div class="album">${cardUnits.map((u) => {
+        const n = app.stars[u.id] || 0;
+        return n
+          ? `<article class="gcard t${n}" style="--lc:${esc(u.color)}"><span class="medal">${medal[n]}</span><h3>${esc(u.card.name)}</h3><p>${esc(u.card.fact)}</p></article>`
+          : `<article class="gcard t0"><span class="medal">Gesperrt</span><h3>Geheimkarte</h3><p>Schaffe die Seite „${esc(u.title)}“, um sie freizuschalten.</p></article>`;
+      }).join('')}</div></section>`
+      : '';
     const modes = [
+      training,
       config.blitz ? `<div class="card"><h3>Blitz</h3><p>45 Sekunden Tempo. Wie viele schaffst du? Bestwert: <b>${app.best.blitz || 0}</b></p><button class="btn" data-act="blitz">Blitz starten</button></div>` : '',
       hasBoss ? `<div class="card"><h3>${esc(config.bossTitle || 'Endgegner')}</h3><p>${open ? '12 gemischte Aufgaben mit nur 3 Herzen. Wer gewinnt, bekommt 50 Bonus-XP.' : 'Der Endgegner wartet, sobald alle Seiten mindestens einen Stern haben.'}</p><button class="btn" data-act="boss" ${open ? '' : 'disabled'}>${open ? 'Endgegner starten' : 'Noch gesperrt'}</button></div>` : ''
     ].join('');
@@ -92,6 +108,7 @@ export async function mountApp(config, { header, main }) {
       </section>
       <section><h2>Dein Lernpfad</h2><p class="muted" style="margin:4px 0 14px;font-size:14px">${esc(config.intro || 'Starte irgendwo. Die Reihenfolge ist nur ein Vorschlag.')}</p><div class="path">${nodes}</div></section>
       ${modes ? `<section><h2>Spielmodi</h2><div class="modes" style="margin-top:12px">${modes}</div></section>` : ''}
+      ${album}
       <section><h2>Trophäen</h2><div class="badges" style="margin-top:12px">${badges}</div></section>
       <p class="muted" style="font-size:13px">Dein Fortschritt wird in diesem Browser gespeichert. ${resetAsk ? '<button class="link" data-act="resetok">Wirklich alles löschen?</button>' : '<button class="link" data-act="reset">Fortschritt dieser App zurücksetzen</button>'}</p>
       <p class="muted" style="font-size:13px"><button class="link" data-act="backup">Fortschritt sichern (Datei)</button> · <label class="link" style="cursor:pointer">Sicherung einspielen<input type="file" accept="application/json,.json" id="restore" hidden></label><span id="bmsg" role="status"></span></p>`;
@@ -143,7 +160,7 @@ export async function mountApp(config, { header, main }) {
     renderHeader();
     main.style.removeProperty('--lc');
     const nb = r.newBadges.map((b) => `<div class="badge got"><b>${esc(b.n)}</b><span>${esc(b.d)}</span></div>`).join('');
-    const lv = r.levelUp ? `<div class="lvup">Niveau ${r.levelUp} erreicht · ${esc(titleOf(r.levelUp))}</div>` : '';
+    const lv = r.levelUp ? `<div class="lvup">Niveau ${r.levelUp} erreicht · ${esc(titleOf(r.levelUp, words.levelTitles))}</div>` : '';
     let title, sub, mood, facts, acts;
     if (r.mode === 'blitz') {
       title = r.score >= 10 ? words.blitzTitle : 'Zeit um';
@@ -155,7 +172,8 @@ export async function mountApp(config, { header, main }) {
       title = r.failed ? 'Knapp daneben' : words.resultTitles[Math.max(0, r.stars - 1)];
       sub = r.failed ? 'Das passiert jedem. Schau kurz in die Theorie, die nächste Runde läuft besser.'
         : r.mode === 'boss' ? 'Endgegner besiegt. 50 Bonus-XP gehören dir.'
-          : r.mode === 'quick' ? 'Kurze Runde, echter Fortschritt.' : 'Seite geschafft. Mit mehr richtigen Antworten gibt es mehr Sterne.';
+          : r.mode === 'quick' ? 'Kurze Runde, echter Fortschritt.' : r.refresh ? 'Aufgefrischt! Dafür gibt es 10 Bonus-XP. Wiederholen nach ein paar Tagen bringt dein Wissen ins Langzeitgedächtnis.' : 'Seite geschafft. Mit mehr richtigen Antworten gibt es mehr Sterne.';
+      if (!r.failed && r.relearned) sub += ` ${r.relearned} falsche Aufgabe${r.relearned > 1 ? 'n' : ''} hast du im zweiten Versuch richtig gelöst.`;
       mood = r.failed ? 'hmm' : r.stars === 3 ? 'cheer' : 'happy';
       facts = `<div class="fact"><b>${Math.round(r.accuracy * 100)} %</b><span>richtig</span></div><div class="fact"><b>${r.xp + r.bonus}</b><span>XP</span></div><div class="fact"><b>${r.bestCombo}</b><span>längste Serie</span></div>`;
       const again = r.mode === 'boss' ? '<button class="btn" data-act="boss">Nochmal</button>'
@@ -185,6 +203,7 @@ export async function mountApp(config, { header, main }) {
     start: (el) => startRound('lesson', el.dataset.id),
     quick: () => startRound('quick'),
     boss: () => { if (bossOpen()) startRound('boss'); },
+    weak: (el) => startRound('lesson', el.dataset.id),
     blitz: startBlitzRound,
     savename: saveName,
     backup: async () => {

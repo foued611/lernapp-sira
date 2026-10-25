@@ -2,8 +2,8 @@
 // Jede Seite (unit) hat eine Liste von Aufgaben: Frage, richtige Antwort, falsche Antworten, Erklärung.
 
 export const UNITS = [
-  { id: 'start', color: '#4CC3F5', ic: '1', title: 'Erste Seite', de: 'Beschreibung der Seite' },
-  { id: 'weiter', color: '#FF9F43', ic: '2', title: 'Zweite Seite', de: 'Beschreibung der Seite' }
+  { id: 'start', color: '#4CC3F5', ic: '1', title: 'Erste Seite', de: 'Beschreibung der Seite', card: { name: 'Titel der Sammelkarte', fact: 'Ein kurzer Fakt, den man sich gern merkt.' } },
+  { id: 'weiter', color: '#FF9F43', ic: '2', title: 'Zweite Seite', de: 'Beschreibung der Seite', card: { name: 'Titel der Sammelkarte', fact: 'Ein kurzer Fakt, den man sich gern merkt.' } }
 ];
 
 export const ITEMS = {

@@ -1,11 +1,11 @@
 // Lernstoff "Zahlenwerkstatt": Seiten des Lernpfads und Merkzettel. Fragen entstehen in builders.js.
 export const UNITS = [
-  { id: 'stellen', color: '#4CC3F5', ic: '10', title: 'Stellenwerte', de: 'Wie unser Zehnersystem funktioniert' },
-  { id: 'binaer', color: '#FFC933', ic: '01', title: 'Binär lesen', de: 'Bits, Lampen und Verdopplung' },
-  { id: 'dez2bin', color: '#FF8AD0', ic: '→2', title: 'Normal → Binär', de: 'Passt der Stellenwert noch hinein?' },
-  { id: 'addieren', color: '#3DD6B0', ic: '1+1', title: 'Binär addieren', de: 'Schriftlich rechnen mit Übertrag' },
-  { id: 'hex', color: '#9B7BFF', ic: 'F', title: 'Hexadezimal', de: '16 Ziffern von 0 bis F' },
-  { id: 'binhex', color: '#FF6B88', ic: '4:1', title: 'Binär ↔ Hex', de: 'Der Trick mit den Vierergruppen' }
+  { id: 'stellen', color: '#4CC3F5', ic: '10', title: 'Stellenwerte', de: 'Wie unser Zehnersystem funktioniert', card: { name: 'Die Zehn-Regel', fact: 'Wir rechnen vermutlich im Zehnersystem, weil wir zehn Finger haben.' } },
+  { id: 'binaer', color: '#FFC933', ic: '01', title: 'Binär lesen', de: 'Bits, Lampen und Verdopplung', card: { name: 'Das Bit', fact: 'Bit kommt von binary digit, also Binärziffer. Acht Bits sind ein Byte.' } },
+  { id: 'dez2bin', color: '#FF8AD0', ic: '→2', title: 'Normal → Binär', de: 'Passt der Stellenwert noch hinein?', card: { name: 'Der Wiegesatz', fact: 'Mit den acht Gewichten 128 bis 1 Gramm kannst du jedes ganze Gewicht von 0 bis 255 Gramm abwiegen.' } },
+  { id: 'addieren', color: '#3DD6B0', ic: '1+1', title: 'Binär addieren', de: 'Schriftlich rechnen mit Übertrag', card: { name: 'Eins merken', fact: 'In jedem Prozessor stecken Schaltungen, die genau so addieren. Sie heißen Volladdierer und reichen den Übertrag weiter.' } },
+  { id: 'hex', color: '#9B7BFF', ic: 'F', title: 'Hexadezimal', de: '16 Ziffern von 0 bis F', card: { name: 'Hex-Farben', fact: 'Im Web steht #FF0000 für Rot: FF Rot, 00 Grün, 00 Blau. Jeder Farbwert geht von 00 bis FF, also von 0 bis 255.' } },
+  { id: 'binhex', color: '#FF6B88', ic: '4:1', title: 'Binär ↔ Hex', de: 'Der Trick mit den Vierergruppen', card: { name: 'Das Byte', fact: 'Ein Byte hat 8 Bits und passt in genau zwei Hex-Ziffern. Zum Beispiel 11111111 = FF = 255.' } }
 ];
 
 export const TIPS = {

@@ -2,6 +2,8 @@
 // Jedes Spielzeug ist eine eigene Funktion, die sich an einen Container hängt und keinen Zustand außerhalb hält.
 import { esc, $ } from '../../core/js/ui.js';
 import { TIPS } from './data.js';
+import { lessonTop, lessonBottom, wireLesson } from '../../core/js/lesson.js';
+import { LESSONS } from './lessons.js';
 import { WEIGHTS, HEX, toBin, toHex, placeDigits, placeSum, decToBinHTML } from './numbers.js';
 
 const clampInt = (value, max) => Math.max(0, Math.min(max, parseInt(value, 10) || 0));
@@ -128,26 +130,20 @@ const TOYS = {
   }
 };
 
-const INTRO = {
-  stellen: 'Wir rechnen im Zehnersystem mit zehn Ziffern, 0 bis 9. Nach der 9 fehlt eine Ziffer, also schreiben wir 10: ein Zehner und null Einer. Jede Stelle ist 10-mal so viel wert wie die rechts daneben.',
-  binaer: 'Ein Computer kennt nur zwei Zustände: Strom an (1) oder Strom aus (0). Eine solche Stelle heißt Bit. Die Stellenwerte verdoppeln sich von rechts nach links: 1, 2, 4, 8, 16, 32, 64, 128.',
-  dez2bin: 'Fange links beim größten Stellenwert an und frage jedes Mal: Passt er noch hinein? Wenn ja, schreibe 1 und ziehe ihn ab. Wenn nein, schreibe 0.',
-  addieren: 'Binär addierst du wie schriftlich: von rechts nach links, mit Übertrag. Es gibt nur vier Regeln: 0+0=0, 0+1=1, 1+1=10 (schreibe 0, merke 1) und 1+1+1=11 (schreibe 1, merke 1).',
-  hex: 'Im Sechzehnersystem brauchst du 16 Ziffern. Nach der 9 nehmen wir Buchstaben: A=10 bis F=15. Die Stellenwerte wachsen jetzt mit 16: 1, 16, 256 …',
-  binhex: 'Vier Bits können höchstens 1111 sein, also 8+4+2+1 = 15, und das ist genau F. Darum schneidest du eine Binärzahl in Vierergruppen und übersetzt jede einzeln. Programmierer nutzen Hex als Kurzschrift.'
-};
-
 /** Wird von der Shell mit einem frischen Container aufgerufen. */
 export function renderTheory(box, unit) {
+  const spec = LESSONS[unit.id];
   const notes = (TIPS[unit.id] || []).map((t) => `<div class="note"><b>${esc(t[0])}</b>${esc(t[1])}</div>`).join('');
   box.innerHTML = `
-    <div style="display:grid;gap:26px">
-      <section class="card tcard"><div class="thead"><h1>${esc(unit.title)}</h1><span class="de">${esc(unit.de)}</span></div>
-        <p style="margin:14px 0 0">${esc(INTRO[unit.id] || '')}</p></section>
+    <div style="display:grid;gap:22px">
+      <section class="card tcard"><div class="thead"><h1>${esc(unit.title)}</h1><span class="de">${esc(unit.de)}</span></div></section>
+      ${lessonTop(spec)}
       <div data-toy></div>
+      ${lessonBottom(spec)}
       <section><h2>Merkzettel</h2><div class="notes" style="margin-top:12px">${notes}</div></section>
       <div><button class="btn" data-act="start" data-id="${esc(unit.id)}">Übung starten · 8 Aufgaben</button></div>
     </div>`;
   const slot = box.querySelector('[data-toy]');
   if (TOYS[unit.id]) TOYS[unit.id](slot);
+  wireLesson(box, spec);
 }

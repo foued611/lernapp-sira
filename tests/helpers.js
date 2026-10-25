@@ -30,6 +30,7 @@ export function assertValidConfig(config, { rounds = 20 } = {}) {
   assert.equal(new Set(config.units.map((u) => u.id)).size, config.units.length, 'unit-IDs eindeutig');
   config.units.forEach((u) => ['id', 'title', 'de', 'ic', 'color'].forEach((k) => assert.ok(u[k], `unit.${k} fehlt bei ${u.id}`)));
   assert.equal(typeof config.theory, 'function', 'theory muss eine Funktion sein');
+  assert.ok(config.lessons && config.units.every((u) => config.lessons[u.id]), 'lessons: jede Seite braucht eine Lektion');
   assert.equal(typeof config.rounds.lesson, 'function', 'rounds.lesson fehlt');
   assert.ok(Array.isArray(config.badges) && config.badges.length > 0, 'badges fehlen');
   assert.equal(new Set(config.badges.map((b) => b.id)).size, config.badges.length, 'badge-IDs eindeutig');
@@ -51,4 +52,21 @@ export function assertValidConfig(config, { rounds = 20 } = {}) {
       assertValidQuestion(q);
     }
   }
+}
+
+/** Prüft eine Lektionsbeschreibung (core/js/lesson.js). Die Diagramme müssen gültiges XML sein. */
+export async function assertValidLesson(spec, name = 'Lektion') {
+  const { JSDOM } = await import('jsdom');
+  assert.ok(spec.goal && spec.goal.length > 15, `${name}: goal fehlt`);
+  assert.ok(Array.isArray(spec.tldr) && spec.tldr.length >= 2 && spec.tldr.length <= 4, `${name}: tldr braucht 2 bis 4 Sätze`);
+  assert.ok(spec.analogy && spec.analogy.title && spec.analogy.html, `${name}: analogy fehlt`);
+  assert.ok(spec.figure && spec.figure.caption && spec.figure.svg.startsWith('<svg'), `${name}: figure fehlt`);
+  new JSDOM(spec.figure.svg, { contentType: 'image/svg+xml' }); // wirft bei fehlerhaftem XML
+  assert.ok(/role="img"/.test(spec.figure.svg) && /aria-label="[^"]{10,}"/.test(spec.figure.svg), `${name}: Diagramm braucht eine Beschreibung (aria-label)`);
+  assert.ok(spec.steps && spec.steps.items.length >= 3, `${name}: Beispiel braucht mindestens 3 Schritte`);
+  assert.ok(spec.pitfall && spec.pitfall.html, `${name}: pitfall fehlt`);
+  assert.ok(spec.rule, `${name}: rule fehlt`);
+  const ids = spec.check.options.map((o) => o.id);
+  assert.ok(spec.check.q && ids.length >= 3 && ids.includes(spec.check.answer) && new Set(ids).size === ids.length, `${name}: check ungültig`);
+  assert.ok(spec.check.why, `${name}: check.why fehlt`);
 }

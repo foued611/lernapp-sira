@@ -60,3 +60,38 @@ test('spendXP macht XP nie negativ', () => {
   assert.equal(profile.xp, 0);
   assert.equal(app.xp, 0);
 });
+
+import { isDue, weakestUnit, appDefaults as appDef, DUE_DAYS } from '../core/js/profile.js';
+import { finalizeRound as finalize } from '../core/js/rounds.js';
+
+test('Auffrischen: fällig nach DUE_DAYS Tagen, nur mit Sternen', () => {
+  const app = { ...appDef(), stars: { a: 2, b: 0 }, last: { a: '2026-10-01', b: '2026-10-01' } };
+  assert.equal(isDue(app, 'a', '2026-10-0' + (1 + DUE_DAYS)), true);
+  assert.equal(isDue(app, 'a', '2026-10-02'), false);
+  assert.equal(isDue(app, 'b', '2026-10-09'), false);
+});
+
+test('Gezieltes Training: fällige Seite zuerst, sonst schwächste', () => {
+  const units = [{ id: 'a' }, { id: 'b' }, { id: 'c' }];
+  const app = { ...appDef(), stars: { a: 1, b: 1, c: 3 }, last: { a: '2026-10-09', b: '2026-10-01' }, acc: { a: 0.5, b: 0.95, c: 0.4 } };
+  assert.equal(weakestUnit(app, units, '2026-10-10').unit.id, 'b');
+  assert.equal(weakestUnit(app, units, '2026-10-10').reason, 'Zeit zum Auffrischen');
+  const app2 = { ...appDef(), stars: { a: 1, c: 3 }, last: { a: '2026-10-09' }, acc: { a: 0.5, c: 0.4 } };
+  assert.equal(weakestUnit(app2, units, '2026-10-10').unit.id, 'a');
+  assert.equal(weakestUnit(appDef(), units), null);
+});
+
+test('Runde beendet: merkt Tag und Genauigkeit, Auffrischen gibt 10 Bonus-XP', () => {
+  const profile = { name: '', xp: 0, streak: 0, lastDay: '', lastApp: '', day: { d: '', xp: 0 } };
+  const app = { ...appDef(), stars: { a: 2 }, last: { a: '2026-10-01' } };
+  const result = { mode: 'lesson', unit: { id: 'a' }, accuracy: 0.9, failed: false };
+  finalize({ config: { id: 'x', badges: [] }, profile, app, result, day: '2026-10-10' });
+  assert.equal(result.refresh, true);
+  assert.equal(result.bonus, 10);
+  assert.equal(app.xp, 10);
+  assert.equal(app.last.a, '2026-10-10');
+  assert.equal(app.acc.a, 0.9);
+  const again = { mode: 'lesson', unit: { id: 'a' }, accuracy: 1, failed: false };
+  finalize({ config: { id: 'x', badges: [] }, profile, app, result: again, day: '2026-10-10' });
+  assert.equal(again.refresh, undefined);
+});
