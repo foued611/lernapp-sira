@@ -9,7 +9,8 @@ export const fmt = (n) => (n < 0 ? MINUS : '') + String(Math.abs(Math.round(n * 
 /** In Klammern, wenn negativ: 5 + (−3). */
 export const par = (n) => (n < 0 ? `(${fmt(n)})` : fmt(n));
 
-const clean = (s) => String(s).trim().toLowerCase().replace(/−|–/g, '-').replace(/\s+/g, '').replace(/[€%]|euro|cm|m²?/g, '');
+const base = (s) => String(s).trim().toLowerCase().replace(/\u2212|\u2013/g, '-').replace(/\s+/g, '');
+const clean = (s) => base(s).replace(/[€%]|euro|cm|m²?/g, '');
 
 /** Zahlenprüfer: akzeptiert Komma oder Punkt und beide Minuszeichen. */
 export const numCheck = (answer) => (input) => {
@@ -37,3 +38,19 @@ export function linear(a, c, v = 'x') {
 }
 
 export { pick, shuffle };
+
+export const gcd = (a, b) => (b ? gcd(b, a % b) : Math.abs(a));
+/** Gekürzter Bruch als Text: frac(2, 6) -> "1/3", frac(4, 2) -> "2". */
+export function frac(n, d) {
+  const g = gcd(n, d);
+  return d / g === 1 ? String(n / g) : `${n / g}/${d / g}`;
+}
+
+/** Prüfer für Wahrscheinlichkeiten: Bruch, Dezimalzahl oder Prozent sind gleichwertig. */
+export const probCheck = (value) => (input) => {
+  const s = base(input).replace(',', '.');
+  let v;
+  if (s.endsWith('%')) v = Number(s.slice(0, -1)) / 100;
+  else if (s.includes('/')) { const [a, b] = s.split('/'); v = Number(a) / Number(b); } else v = Number(s);
+  return s !== '' && Number.isFinite(v) && Math.abs(v - value) < 1e-9 ? 'ok' : 'bad';
+};

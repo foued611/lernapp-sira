@@ -90,3 +90,31 @@ export function interestDiagram(k = 1000, p = 3) {
   out += text(260, 160, `Z = K · p/100 = ${fmt(k)} · ${p}/100 = ${fmt(z)} €`, 'md mono');
   return svg(520, 180, out, `Kapital ${fmt(k)} Euro bringt bei ${p} Prozent in einem Jahr ${fmt(z)} Euro Zinsen`);
 }
+
+/** Geordnete Werte als Kacheln. Der Median ist hervorgehoben, darunter Mittelwert und Spannweite (berechnet). */
+export function dataDiagram(xs = [3, 9, 4, 4, 7]) {
+  const s = [...xs].sort((a, b) => a - b), n = s.length, mid = (n - 1) / 2;
+  const w = 56, x0 = 260 - (n * w) / 2;
+  let out = text(260, 24, 'der Größe nach geordnet', 'sm mu');
+  s.forEach((v, i) => {
+    out += rect(x0 + i * w + 3, 40, w - 6, 48, i === mid ? 'hi' : 'box') + text(x0 + i * w + w / 2, 72, String(v), `md mono${i === mid ? ' on-sun' : ''}`);
+  });
+  out += text(x0 + mid * w + w / 2, 112, 'Median', 'sm mu');
+  const mean = s.reduce((a, b) => a + b, 0) / n;
+  out += text(260, 150, `Mittelwert = ${s.join(' + ')} : ${n} = ${fmt(mean)}`, 'md mono');
+  out += text(260, 180, `Spannweite = ${s[n - 1]} \u2212 ${s[0]} = ${s[n - 1] - s[0]}`, 'md mono');
+  return svg(520, 200, out, `Werte ${s.join(', ')}: Median ${s[mid]}, Mittelwert ${fmt(mean)}, Spannweite ${s[n - 1] - s[0]}`);
+}
+
+/** Urne mit roten und blauen Kugeln und der Laplace-Formel. */
+export function urnDiagram(r = 3, b = 5) {
+  const n = r + b, cols = 4;
+  let out = rect(150, 30, 220, 130, 'box', 24);
+  for (let i = 0; i < n; i++) {
+    const cx = 185 + (i % cols) * 50, cy = 62 + Math.floor(i / cols) * 44;
+    out += circle(cx, cy, 16, i < r ? 'hi' : 'off');
+  }
+  out += text(260, 190, `P(rot) = ${r} : ${n} = ${r}/${n}`, 'md mono');
+  out += text(260, 214, 'günstige Ergebnisse : alle Ergebnisse', 'sm mu');
+  return svg(520, 230, out, `Urne mit ${r} roten und ${b} blauen Kugeln, Wahrscheinlichkeit für rot ${r} von ${n}`);
+}

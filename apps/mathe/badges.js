@@ -11,6 +11,8 @@ export const BADGES = [
   { id: 'percent', n: 'Rabatt-Detektiv', d: 'Prozentrechnung geschafft', when: (s) => has(s, 'prozent') },
   { id: 'interest', n: 'Zins-Zauberer', d: 'Zinsrechnung geschafft', when: (s) => has(s, 'zinsen') },
   { id: 'three', n: 'Dreisatz-Detektiv', d: 'Zuordnungen und Dreisatz geschafft', when: (s) => has(s, 'zuordnungen') },
+  { id: 'data', n: 'Daten-Detektiv', d: 'Daten auswerten geschafft', when: (s) => has(s, 'daten') },
+  { id: 'chance', n: 'Würfel-Weise', d: 'Zufall und Wahrscheinlichkeit geschafft', when: (s) => has(s, 'zufall') },
   { id: 'perfect', n: 'Fehlerfrei', d: 'Eine Runde ohne Fehler', when: (s, r) => r.mode !== 'blitz' && !r.failed && r.wrong === 0 && r.almost === 0 },
   { id: 'combo5', n: 'Serie von 5', d: 'Fünf richtige in Folge', when: (s, r) => r.bestCombo >= 5 },
   { id: 'blitz10', n: 'Blitzrechner', d: '10 richtige im Blitz-Modus', when: (s, r) => r.mode === 'blitz' && r.score >= 10 },

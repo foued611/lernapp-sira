@@ -10,7 +10,7 @@ export default {
   title: 'Mathe-Werkstatt',
   greeting: 'Hallo',
   bossTitle: 'Der Rechen-Boss',
-  intro: 'Starte mit den Vorzeichen. Danach bauen Terme, Gleichungen, Prozente, Zinsen und der Dreisatz darauf auf.',
+  intro: 'Starte mit den Vorzeichen. Danach bauen Terme, Gleichungen, Prozente, Zinsen und der Dreisatz darauf auf. Am Ende kommen Daten und Zufall.',
   words: { levelTitles: ['Zahlen-Neuling', 'Rechenlehrling', 'Termjäger', 'Gleichungslöser', 'Prozent-Profi', 'Mathe-Meister'] },
   units: UNITS,
   theory: renderTheory,

@@ -1,6 +1,6 @@
 # Lehrplan-Abgleich Mathematik Klasse 7 (Gymnasium Baden-Württemberg)
 
-Stand: 25.10.2026. **Wichtig:** Der amtliche Bildungsplan 2016 (bildungsplan-bw.de) war aus der Entwicklungsumgebung nicht abrufbar. Der Abgleich beruht auf Beispielcurricula und Stoffverteilungen von Schulbuchverlagen. Bitte vor dem Einsatz einmal mit dem Mathebuch von Sira oder dem Schul-Lehrplan gegenprüfen. Der BW-Bildungsplan fasst Klasse 7 und 8 als Doppelstufe zusammen, die Schule legt fest, was in welches Jahr kommt.
+Stand: 25.10.2026. **Wichtig:** Der amtliche Bildungsplan 2016 (bildungsplan-bw.de) war aus der Entwicklungsumgebung nicht abrufbar. Der Abgleich beruht auf Beispielcurricula und Stoffverteilungen von Schulbuchverlagen. Sira nutzt laut Foued Lambacher Schweizer, Ausgabe Baden-Württemberg. Dessen Inhaltsverzeichnis lag nicht vor, die Klett-Quelle unten ist die Ausgabe für Berlin. Bitte vor dem Einsatz einmal mit dem Mathebuch von Sira oder dem Schul-Lehrplan gegenprüfen. Der BW-Bildungsplan fasst Klasse 7 und 8 als Doppelstufe zusammen, die Schule legt fest, was in welches Jahr kommt.
 
 ## Quellen
 - Stoffverteilung Klasse 7 zum Bildungsplan 2016 (mathe.delta 7, C.C. Buchner): [PDF](https://www.ccbuchner.de/_files_media/mediathek/downloads/2466.pdf). Reihenfolge: Prozent und Zins, Daten und Zufall, Terme und Gleichungen, Zusammenhänge im Dreieck, Zuordnungen und lineare Funktionen, geometrische Orte.
@@ -17,7 +17,8 @@ Stand: 25.10.2026. **Wichtig:** Der amtliche Bildungsplan 2016 (bildungsplan-bw.
 | Prozentrechnung (Grundaufgaben, Rabatt) | Seite 4 `prozent` | Vermehrter/verminderter Grundwert nur als Rabatt |
 | Zinsrechnung (Jahreszinsen, Monate) | Seite 5 `zinsen` | Zinseszins bewusst nicht enthalten (laut Verlagsplan teils Klasse 8) |
 | Zuordnungen: proportional, antiproportional, Dreisatz | Seite 6 `zuordnungen` | Graphen und lineare Funktionen noch nicht |
-| Daten und Zufall (Kennwerte, Wahrscheinlichkeit) | fehlt | Kandidat für Seite 7 |
+| Daten: Mittelwert, Median, Modus, Spannweite | Seite 7 `daten` | Boxplots und Diagramme lesen noch nicht |
+| Zufall: relative Häufigkeit, Laplace | Seite 8 `zufall` | mehrstufige Zufallsversuche nicht enthalten |
 | Dreiecke, Kongruenz, Konstruktion, Umkreis/Inkreis | fehlt | gehört in eine eigene Geometrie-App (Konstruktionen brauchen Zeichenfläche) |
 | Brüche und Dezimalzahlen | bewusst nicht | Stoff der Klasse 5 und 6 |
 

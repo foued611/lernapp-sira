@@ -1,6 +1,6 @@
 // Lektionen der Mathe-App (Klasse 7, Gymnasium BW). Aufbau und Pflichtteile: core/js/lesson.js.
 import { option as opt } from '../../core/js/questions.js';
-import { lineDiagram, tilesDiagram, balanceDiagram, percentDiagram, interestDiagram, tableDiagram } from './diagrams.js';
+import { lineDiagram, tilesDiagram, balanceDiagram, percentDiagram, interestDiagram, tableDiagram, dataDiagram, urnDiagram } from './diagrams.js';
 
 export const LESSONS = {
   vorzeichen: {
@@ -186,6 +186,68 @@ export const LESSONS = {
       options: [opt('3 Tage'), opt('12 Tage'), opt('10 Tage'), opt('2 Tage')],
       answer: '3 Tage',
       why: 'Doppelt so viele Maurer brauchen nur die halbe Zeit: 6 : 2 = 3 Tage (antiproportional).'
+    }
+  },
+
+  daten: {
+    goal: 'Du kannst Daten mit Mittelwert, Median, Modus und Spannweite beschreiben.',
+    tldr: [
+      'Der Mittelwert ist die „gerechte Verteilung“: alles addieren, durch die Anzahl teilen.',
+      'Der Median ist der Wert in der Mitte, wenn man die Werte ordnet.',
+      'Der Modus ist der häufigste Wert, die Spannweite ist größter minus kleinster Wert.'
+    ],
+    analogy: {
+      title: 'Stell dir vor: Taschengeld in deiner Klasse',
+      html: '<p>Fünf Kinder haben 3, 4, 4, 7 und 9 € Taschengeld. Würdest du das Geld gerecht verteilen, bekäme jedes <b>5,40 €</b>. Das ist der <b>Mittelwert</b>.</p><p>Stell die Kinder der Größe nach in eine Reihe. Das Kind in der Mitte hat <b>4 €</b>. Das ist der <b>Median</b>.</p>'
+    },
+    figure: { svg: dataDiagram([3, 9, 4, 4, 7]), caption: 'Die Werte stehen geordnet in einer Reihe. Der gelbe Wert in der Mitte ist der Median.' },
+    steps: {
+      title: 'So wertest du die Noten 2, 5, 3, 3, 1 aus',
+      items: [
+        'Ordne die Werte: <b>1, 2, 3, 3, 5</b>.',
+        'Median: Das ist der mittlere Wert, also <b>3</b>. Modus: Die 3 kommt am häufigsten vor.',
+        'Mittelwert: (1 + 2 + 3 + 3 + 5) : 5 = 14 : 5 = <b>2,8</b>.',
+        'Spannweite: 5 − 1 = <b>4</b>.'
+      ]
+    },
+    pitfall: { html: '<p>Den Median musst du <b>immer erst ordnen</b>. Nimmst du einfach den Wert in der Mitte der ungeordneten Liste, ist das falsch.</p><p>Bei einer geraden Anzahl gibt es zwei mittlere Werte. Dann nimmst du den Mittelwert der beiden.</p>' },
+    rule: 'Mittelwert = Summe : Anzahl. Median = mittlerer Wert der geordneten Liste. Spannweite = Größter − Kleinster.',
+    check: {
+      q: 'Bestimme den Median von <b>7, 2, 9, 4, 5</b>.',
+      options: [opt('5'), opt('9'), opt('4'), opt('5,4')],
+      answer: '5',
+      why: 'Geordnet: 2, 4, 5, 7, 9. In der Mitte steht die 5. Der Mittelwert wäre 5,4, aber danach war nicht gefragt.'
+    }
+  },
+
+  zufall: {
+    goal: 'Du kannst die relative Häufigkeit berechnen und die Wahrscheinlichkeit bei gleich wahrscheinlichen Ergebnissen bestimmen (Laplace).',
+    tldr: [
+      'Die relative Häufigkeit sagt, wie oft etwas bei einem Versuch wirklich passiert ist.',
+      'Die Wahrscheinlichkeit sagt, wie oft man es erwartet. Bei gleich wahrscheinlichen Ergebnissen gilt: günstige : alle.',
+      'Je mehr Versuche, desto näher kommt die relative Häufigkeit der Wahrscheinlichkeit.'
+    ],
+    analogy: {
+      title: 'Stell dir vor: eine Lostrommel',
+      html: '<p>In der Trommel sind 8 Lose, 3 davon Gewinne. Die Chance auf einen Gewinn ist <b>3 von 8</b>, also 3/8.</p><p>Wenn du 80 Mal ziehst (und das Los jedes Mal zurücklegst), erwartest du ungefähr 30 Gewinne. Genau 30 muss es aber nicht werden.</p>'
+    },
+    figure: { svg: urnDiagram(3, 5), caption: 'Urne mit 3 roten und 5 blauen Kugeln: P(rot) = 3/8.' },
+    steps: {
+      title: 'So bestimmst du die Wahrscheinlichkeit für eine gerade Zahl beim Würfeln',
+      items: [
+        'Zähle alle möglichen Ergebnisse: 1, 2, 3, 4, 5, 6. Das sind <b>6</b>.',
+        'Zähle die günstigen Ergebnisse: 2, 4, 6. Das sind <b>3</b>.',
+        'Bilde den Bruch: P = 3/6.',
+        'Kürze: 3/6 = <b>1/2</b>, also 50 %. Probe: Die Hälfte der Zahlen ist gerade.'
+      ]
+    },
+    pitfall: { html: '<p>Laplace gilt nur, wenn <b>alle Ergebnisse gleich wahrscheinlich</b> sind. Bei einem manipulierten Würfel stimmt die Formel nicht.</p><p>Und: Eine Wahrscheinlichkeit liegt immer zwischen 0 und 1. 5/4 kann nie stimmen.</p>' },
+    rule: 'P = günstige Ergebnisse : alle Ergebnisse. Relative Häufigkeit = absolute Häufigkeit : Anzahl der Versuche.',
+    check: {
+      q: 'Eine Urne hat <b>2 rote und 6 blaue</b> Kugeln. Wie groß ist die Wahrscheinlichkeit für <b>Rot</b>?',
+      options: [opt('1/4'), opt('1/3'), opt('2/6'), opt('3/4')],
+      answer: '1/4',
+      why: '2 günstige von 8 Kugeln: 2/8 = 1/4. Wer 2/6 rechnet, vergleicht rot mit blau und nicht mit allen Kugeln.'
     }
   }
 };

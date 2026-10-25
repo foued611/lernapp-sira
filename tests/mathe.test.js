@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { fmt, par, numCheck, termCheck, linear, nearby } from '../apps/mathe/math.js';
+import { fmt, par, numCheck, termCheck, probCheck, linear, nearby } from '../apps/mathe/math.js';
 import { POOLS } from '../apps/mathe/builders.js';
 
 test('Zahlen werden mit Minuszeichen und Komma ausgegeben', () => {
@@ -85,5 +85,35 @@ test('Zinsen und Dreisatz: Ergebnis wird unabhängig nachgerechnet', () => {
     const b = anti();
     const [w1, d, w2] = nums(b.prompt);
     assert.equal(val(b.answer), (w1 * d) / w2, b.prompt);
+  }
+});
+
+test('Daten und Zufall: Ergebnisse unabhängig nachgerechnet', () => {
+  const val = (s) => Number(s.replace(/−/g, '-').replace(',', '.'));
+  const ints = (s) => (s.split(': ')[1] || '').split(', ').map(Number);
+  const [mw, med, span, mod] = POOLS.daten;
+  for (let i = 0; i < 300; i++) {
+    let it = mw(), xs = ints(it.prompt);
+    assert.equal(val(it.answer), xs.reduce((a, b) => a + b, 0) / xs.length, it.prompt);
+    it = med(); xs = ints(it.prompt);
+    assert.equal(val(it.answer), [...xs].sort((a, b) => a - b)[(xs.length - 1) / 2], it.prompt);
+    it = span(); xs = it.prompt.split('? ')[1].split(', ').map(Number);
+    assert.equal(val(it.answer), Math.max(...xs) - Math.min(...xs), it.prompt);
+    it = mod(); xs = it.prompt.split('? ')[1].split(', ').map(Number);
+    const counts = xs.reduce((m, v) => ((m[v] = (m[v] || 0) + 1), m), {});
+    const top = Math.max(...Object.values(counts));
+    assert.deepEqual(Object.keys(counts).filter((k) => counts[k] === top), [String(val(it.answer))], it.prompt);
+  }
+});
+
+test('Wahrscheinlichkeiten: Prüfer akzeptiert Bruch, Dezimalzahl und Prozent', () => {
+  const c = probCheck(0.25);
+  for (const v of ['1/4', '2/8', '0,25', '0.25', '25 %', '25%']) assert.equal(c(v), 'ok', v);
+  for (const v of ['1/3', '25', '', '1/0']) assert.equal(c(v), 'bad', v);
+  for (let i = 0; i < 300; i++) for (const gen of POOLS.zufall) {
+    const it = gen();
+    assert.equal(it.check(it.answer), 'ok', it.prompt);
+    assert.ok(it.value > 0 && it.value <= 1, it.prompt);
+    assert.ok(!it.wrong.includes(it.answer));
   }
 });

@@ -2,7 +2,7 @@
 import { choiceQuestion, typedQuestion } from '../../core/js/questions.js';
 import { esc } from '../../core/js/ui.js';
 import { UNITS } from './data.js';
-import { rnd, fmt, par, MINUS, nearby, numCheck, termCheck, linear, pick, shuffle } from './math.js';
+import { rnd, fmt, par, MINUS, nearby, numCheck, termCheck, probCheck, frac, linear, pick, shuffle } from './math.js';
 
 const nz = (a, b) => { let n = 0; while (n === 0) n = rnd(a, b); return n; };
 
@@ -148,13 +148,78 @@ function erkennen() {
   return { prompt: s, answer: a, wrong: all.filter((o) => o !== a), choiceOnly: true, label: 'Welche Zuordnung ist das?', why: why[a] };
 }
 
+// --- Daten und Zufall ---
+
+const sum = (xs) => xs.reduce((s, v) => s + v, 0);
+const list = (xs) => xs.join(', ');
+
+function mittelwert() {
+  const n = pick([4, 5, 6]), xs = Array.from({ length: n - 1 }, () => rnd(1, 12));
+  let last = rnd(1, 12);
+  while ((sum(xs) + last) % n) last = (last % 12) + 1;
+  xs.push(last);
+  const r = sum(xs) / n, med = [...xs].sort((a, b) => a - b);
+  return { prompt: `Berechne den Mittelwert: ${list(xs)}`, answer: fmt(r), value: r, numeric: true, wrong: nearby(r, [sum(xs), Math.max(...xs), med[Math.floor(n / 2)]]).map(fmt),
+    why: `Mittelwert = Summe : Anzahl. Summe: ${sum(xs)}, Anzahl: ${n}. ${sum(xs)} : ${n} = ${fmt(r)}.` };
+}
+
+function median() {
+  const n = pick([5, 7]);
+  let xs;
+  do xs = Array.from({ length: n }, () => rnd(1, 15)); while (new Set(xs).size < n - 1);
+  const s = [...xs].sort((a, b) => a - b), r = s[(n - 1) / 2];
+  return { prompt: `Bestimme den Median: ${list(xs)}`, answer: fmt(r), value: r, numeric: true, wrong: nearby(r, [xs[(n - 1) / 2], sum(xs) / n, s[n - 1]]).map(fmt),
+    why: `Erst der Größe nach ordnen: ${list(s)}. Der Median ist der Wert in der Mitte, hier ${fmt(r)}.` };
+}
+
+function spannweite() {
+  const xs = Array.from({ length: 6 }, () => rnd(2, 30)), mx = Math.max(...xs), mn = Math.min(...xs), r = mx - mn;
+  return { prompt: `Wie groß ist die Spannweite? ${list(xs)}`, answer: fmt(r), value: r, numeric: true, wrong: nearby(r, [mx, mn, mx + mn]).map(fmt),
+    why: `Spannweite = größter Wert minus kleinster Wert = ${mx} ${MINUS} ${mn} = ${r}.` };
+}
+
+function modus() {
+  const m = rnd(1, 9), others = shuffle([1, 2, 3, 4, 5, 6, 7, 8, 9].filter((v) => v !== m)).slice(0, 3);
+  const xs = shuffle([m, m, m, ...others, others[0]]);
+  return { prompt: `Welcher Wert kommt am häufigsten vor (Modus)? ${list(xs)}`, answer: fmt(m), value: m, numeric: true, wrong: nearby(m, [...others, Math.max(...xs)]).map(fmt),
+    why: `Der Modus ist der häufigste Wert. Die ${m} steht dreimal in der Liste, jeder andere Wert höchstens zweimal.` };
+}
+
+const EVENTS = [
+  ['eine gerade Zahl', 3], ['eine Zahl größer als 4', 2], ['eine Zahl kleiner als 3', 2], ['die Zahl 6', 1], ['eine Zahl, die kleiner als 7 ist', 6], ['keine 6', 5]
+];
+
+function wuerfel() {
+  const [text, k] = pick(EVENTS), r = k / 6;
+  const wrong = [frac(6 - k, 6), frac(k, 5), frac(1, k + 1), frac(k + 1, 6), frac(6, k), frac(k, 3)].filter((w) => w !== frac(k, 6));
+  return { prompt: `Wie groß ist die Wahrscheinlichkeit, mit einem Würfel ${text} zu würfeln?`, answer: frac(k, 6), check: probCheck(r), value: r, wrong: [...new Set(wrong)],
+    why: `Laplace: günstige Ergebnisse : alle Ergebnisse. Es gibt ${k} günstige von 6, also ${k}/6 = ${frac(k, 6)}.` };
+}
+
+function urne() {
+  const r = rnd(2, 6), b = rnd(2, 6), n = r + b, w = frac(r, n), c = rnd(1, 2);
+  const color = c === 1 ? 'rote' : 'blaue', k = c === 1 ? r : b, fav = frac(k, n);
+  return { prompt: `In einer Urne liegen ${r} rote und ${b} blaue Kugeln. Wie groß ist die Wahrscheinlichkeit, eine ${color} Kugel zu ziehen?`, answer: fav, check: probCheck(k / n), value: k / n,
+    wrong: [...new Set([frac(n - k, n), frac(k, n - k), frac(1, n), frac(k, n + 1), frac(n - k, k)])].filter((x) => x !== fav),
+    why: `${k} günstige Kugeln, ${n} Kugeln insgesamt. P = ${k}/${n}${fav === `${k}/${n}` ? '' : ' = ' + fav}.` };
+}
+
+function relativ() {
+  const n = pick([20, 25, 40, 50, 100]), k = rnd(2, n - 2), r = k / n;
+  return { prompt: `Eine Münze wurde ${n}-mal geworfen. Dabei fiel ${k}-mal Zahl. Wie groß ist die relative Häufigkeit für Zahl?`, answer: fmt(r), check: probCheck(r), value: r,
+    wrong: [fmt((n - k) / n), fmt(k / (n - k)), fmt(n / k)].filter((x) => x !== fmt(r)).concat([fmt(Math.round((k + 1) / n * 1000) / 1000)]),
+    why: `Relative Häufigkeit = absolute Häufigkeit : Anzahl der Versuche = ${k} : ${n} = ${fmt(r)} (also ${fmt(r * 100)} %).` };
+}
+
 export const POOLS = {
   vorzeichen: [addSub, addSub, mulDiv],
   terme: [collect, collectMixed, expand, minusBracket],
   gleichungen: [solve, solve, firstStep],
   prozent: [prozentwert, grundwert, prozentsatz, rabatt],
   zinsen: [zinsen, kapital, zinssatz, zinsMonate],
-  zuordnungen: [dreisatzProp, dreisatzAnti, erkennen, dreisatzProp, dreisatzAnti]
+  zuordnungen: [dreisatzProp, dreisatzAnti, erkennen, dreisatzProp, dreisatzAnti],
+  daten: [mittelwert, median, spannweite, modus],
+  zufall: [wuerfel, urne, relativ]
 };
 
 // --- Aufgabe zu Frage ---
@@ -168,10 +233,10 @@ function choice(item) {
 }
 
 function typed(item) {
-  const check = item.choiceOnly ? undefined : item.numeric ? numCheck(item.value) : termCheck(item.answer);
+  const check = item.choiceOnly ? undefined : item.check || (item.numeric ? numCheck(item.value) : termCheck(item.answer));
   return typedQuestion({
-    label: item.choiceOnly ? 'Schreibe den Schritt' : 'Gib das Ergebnis ein', prompt: esc(item.prompt), promptStyle: item.prompt.length > 28 ? 'sentence' : 'big',
-    answer: item.answer, check, placeholder: item.numeric ? 'Zahl eintippen' : item.choiceOnly ? '| …' : 'Term eintippen', why: item.why, format: (v) => `<span class="mono">${esc(v)}</span>`
+    label: 'Gib das Ergebnis ein', prompt: esc(item.prompt), promptStyle: item.prompt.length > 28 ? 'sentence' : 'big',
+    answer: item.answer, check, placeholder: item.check ? 'Bruch, Dezimalzahl oder Prozent' : item.numeric ? 'Zahl eintippen' : item.choiceOnly ? '| …' : 'Term eintippen', why: item.why, format: (v) => `<span class="mono">${esc(v)}</span>`
   });
 }
 
