@@ -1,0 +1,33 @@
+// Register aller Lern-Apps. Das Dashboard (index.html) baut daraus seine Kacheln.
+// Neue App: Ordner apps/<name>/ anlegen, hier einen Eintrag ergänzen. Details in AGENTS.md.
+//
+// id        eindeutig und stabil. Daraus entsteht der Speicherschlüssel (siehe core/js/profile.js)
+// subject   Fach, bestimmt Farbe und Filter
+// units     Anzahl der Lernpfad-Seiten, für die Fortschrittsanzeige
+// status    'live' (verlinkt) oder 'soon' (Platzhalter)
+
+export const SUBJECT_COLORS = {
+  Französisch: '#9B7BFF',
+  Mathematik: '#4CC3F5',
+  Deutsch: '#FF6B88',
+  Englisch: '#3DD6B0',
+  Informatik: '#FF9F43',
+  Physik: '#8BD450'
+};
+
+export const APPS = [
+  {
+    id: 'fr-verben',
+    subject: 'Französisch',
+    title: 'Cahier de Verbes',
+    desc: 'être, avoir, aller, faire und die regelmäßigen Verben im Présent. Erst Theorie, dann sofort üben.',
+    href: 'apps/franzoesisch-verben/index.html',
+    units: 6,
+    status: 'live'
+  },
+  { id: 'mathe', subject: 'Mathematik', title: 'Mathe-App', desc: 'Rationale Zahlen, Terme und Gleichungen.', status: 'soon' },
+  { id: 'deutsch', subject: 'Deutsch', title: 'Deutsch-App', desc: 'Textanalyse, Inhaltsangabe und Grammatik.', status: 'soon' },
+  { id: 'englisch', subject: 'Englisch', title: 'Englisch-App', desc: 'Wortschatz und Grammatik.', status: 'soon' },
+  { id: 'informatik', subject: 'Informatik', title: 'Informatik-App', desc: 'Algorithmen, Daten und erstes Programmieren.', status: 'soon' },
+  { id: 'physik', subject: 'Physik', title: 'Physik-App', desc: 'Experimente, Messen und Kräfte.', status: 'soon' }
+];

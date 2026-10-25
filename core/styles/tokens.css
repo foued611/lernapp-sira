@@ -1,0 +1,29 @@
+/* Design-Tokens: Farben, Schriften, Hell/Dunkel. Farbwerte nur hier ändern. */
+:root{
+  --paper:#F3F0FF; --card:#FFFFFF; --ink:#2A1A63; --text:#1D1740; --muted:#625C8A;
+  --grid-strong:#DCD5F7; --grid-weak:#EAE5FB; --line:#D3CAF2; --shadow:rgba(42,26,99,.18);
+  --pen:#D92B4B; --pen-bg:#FFE8EC; --ok:#0F8F66; --ok-bg:#DAF6EA;
+  --marker:#FFE066; --note:#FFF2A8; --star:#FFB100; --flame:#F2590F;
+  --hero-bg:#2A1A63; --hero-fg:#FFFFFF; --hero-soft:#CFC6FF;
+  --btn-bg:#E8365A; --btn-fg:#FFFFFF; --btn-shadow:#9E1B38;
+  --sun:#FFC933; --sun-fg:#2A1A63;
+  --f-head:'Bricolage Grotesque','Avenir Next','Trebuchet MS',system-ui,sans-serif;
+  --f-body:'Lexend',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --f-pen:'Caveat','Segoe Print','Bradley Hand',cursive;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#15102E; --card:#211A45; --ink:#BBAEFF; --text:#F3F0FF; --muted:#ACA5D6;
+  --grid-strong:#2A2253; --grid-weak:#1C1640; --line:#3A3070; --shadow:rgba(0,0,0,.45);
+  --pen:#FF8496; --pen-bg:#3D2030; --ok:#55DDA6; --ok-bg:#15372F;
+  --marker:rgba(255,224,102,.42); --note:#4A411C; --star:#FFD23F; --flame:#FF9442;
+  --hero-bg:#33248A; --hero-fg:#FFFFFF; --hero-soft:#D9D2FF;
+  --btn-bg:#FF6B88; --btn-fg:#2A0F1A; --btn-shadow:#A93450;
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#15102E; --card:#211A45; --ink:#BBAEFF; --text:#F3F0FF; --muted:#ACA5D6;
+  --grid-strong:#2A2253; --grid-weak:#1C1640; --line:#3A3070; --shadow:rgba(0,0,0,.45);
+  --pen:#FF8496; --pen-bg:#3D2030; --ok:#55DDA6; --ok-bg:#15372F;
+  --marker:rgba(255,224,102,.42); --note:#4A411C; --star:#FFD23F; --flame:#FF9442;
+  --hero-bg:#33248A; --hero-fg:#FFFFFF; --hero-soft:#D9D2FF;
+  --btn-bg:#FF6B88; --btn-fg:#2A0F1A; --btn-shadow:#A93450;
+  color-scheme:dark}
