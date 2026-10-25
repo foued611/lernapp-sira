@@ -25,7 +25,15 @@ export const APPS = [
     units: 6,
     status: 'live'
   },
-  { id: 'mathe', subject: 'Mathematik', title: 'Mathe-App', desc: 'Rationale Zahlen, Terme und Gleichungen.', status: 'soon' },
+  {
+    id: 'mathe',
+    subject: 'Mathematik',
+    title: 'Mathe-Werkstatt',
+    desc: 'Vorzeichen, Terme, Gleichungen und Prozente. Mit Waage, Zahlenstrahl und Kacheln erklärt.',
+    href: 'apps/mathe/index.html',
+    units: 4,
+    status: 'live'
+  },
   { id: 'deutsch', subject: 'Deutsch', title: 'Deutsch-App', desc: 'Textanalyse, Inhaltsangabe und Grammatik.', status: 'soon' },
   { id: 'englisch', subject: 'Englisch', title: 'Englisch-App', desc: 'Wortschatz und Grammatik.', status: 'soon' },
   {
