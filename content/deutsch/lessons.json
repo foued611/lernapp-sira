@@ -1,0 +1,463 @@
+{
+  "inhaltsangabe": {
+    "goal": "Du kannst eine Geschichte in einer kurzen, sachlichen Inhaltsangabe zusammenfassen.",
+    "tldr": [
+      "Eine Inhaltsangabe beginnt mit einem Basissatz: Textsorte, Titel, Autor, Thema.",
+      "Du schreibst im Präsens, sachlich und in eigenen Worten.",
+      "Nur das Wesentliche kommt hinein, in der Reihenfolge der Handlung."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: du erzählst einem Freund einen Film",
+      "html": "<p>Dein Freund kennt den Film nicht. Du sagst nicht jede Szene und nicht jedes Wort, sondern nur, <b>worum es geht</b> und was die wichtigsten Dinge sind, die passieren.</p><p>Genau das ist eine Inhaltsangabe, nur schriftlich und sachlich.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "flowDiagram",
+        "args": [
+          [
+            "Basissatz|Textsorte, Titel,|Autor, Thema",
+            "Hauptteil|Handlung in der|Reihenfolge, Präsens",
+            "Schluss|nur wenn verlangt:|Kernaussage"
+          ],
+          "Aufbau einer Inhaltsangabe"
+        ]
+      },
+      "caption": "Der Aufbau: erst der Basissatz, dann die Handlung, am Ende (falls verlangt) die Kernaussage."
+    },
+    "steps": {
+      "title": "So schreibst du den Anfang einer Inhaltsangabe",
+      "items": [
+        "Lies den Text und markiere, wer etwas tut und was sich verändert.",
+        "Schreibe den Basissatz: „In der Kurzgeschichte … von … geht es um …“",
+        "Fasse die Handlung in zeitlicher Reihenfolge zusammen. Nutze Verbindungen wie <b>zuerst, danach, schließlich</b>.",
+        "Prüfe: Alles im Präsens? Keine wörtliche Rede? Keine Meinung?"
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Typische Fehler: <b>Zeitmischung</b> („Max sah den Hund und läuft fort“), wörtliche Rede und Gefühlswörter wie „arm“ oder „furchtbar“.</p><p>Auch zu lang: Wer jede Einzelheit erzählt, hat keine Zusammenfassung mehr.</p>"
+    },
+    "rule": "Basissatz, Präsens, sachlich, eigene Worte, nur das Wesentliche.",
+    "check": {
+      "q": "In der Vorlage steht: „Lea ging nach Hause und weinte.“ Was schreibst du in der Inhaltsangabe?",
+      "options": [
+        {
+          "id": "Lea geht nach Hause und weint.",
+          "html": "Lea geht nach Hause und weint."
+        },
+        {
+          "id": "Lea ging nach Hause und weinte.",
+          "html": "Lea ging nach Hause und weinte."
+        },
+        {
+          "id": "Lea ist nach Hause gegangen und hat geweint.",
+          "html": "Lea ist nach Hause gegangen und hat geweint."
+        },
+        {
+          "id": "Die arme Lea ging nach Hause.",
+          "html": "Die arme Lea ging nach Hause."
+        }
+      ],
+      "answer": "Lea geht nach Hause und weint.",
+      "why": "Die Inhaltsangabe steht im Präsens und ist sachlich. „Die arme Lea“ wäre außerdem eine Wertung."
+    }
+  },
+  "adverbial": {
+    "goal": "Du kannst Adverbialsätze erkennen und ihre Art bestimmen.",
+    "tldr": [
+      "Ein Adverbialsatz ist ein Nebensatz, der zum Geschehen im Hauptsatz etwas angibt: Zeit, Grund, Bedingung, Gegengrund, Zweck oder Art und Weise.",
+      "Du findest die Art mit dem passenden Fragewort.",
+      "Die Konjunktion verrät dir viel: weil, wenn, obwohl, damit …"
+    ],
+    "analogy": {
+      "title": "Stell dir vor: Detektivfragen",
+      "html": "<p>Ein Detektiv fragt: <b>Wann</b> ist es passiert? <b>Warum</b>? <b>Wozu</b>? Unter welcher <b>Bedingung</b>? <b>Trotz</b> wovon?</p><p>Ein Adverbialsatz liefert genau diese Antworten, nur als ganzer Nebensatz.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Art",
+            "Frage",
+            "Konjunktion"
+          ],
+          [
+            [
+              "temporal",
+              "Wann?",
+              "als, nachdem, während"
+            ],
+            [
+              "kausal",
+              "Warum?",
+              "weil, da"
+            ],
+            [
+              "konditional",
+              "Bedingung?",
+              "wenn, falls"
+            ],
+            [
+              "konzessiv",
+              "Gegengrund?",
+              "obwohl"
+            ],
+            [
+              "final",
+              "Wozu?",
+              "damit"
+            ],
+            [
+              "modal",
+              "Wie?",
+              "indem"
+            ]
+          ],
+          [
+            2,
+            2,
+            3
+          ],
+          "Adverbialsätze"
+        ]
+      },
+      "caption": "Sechs Arten von Adverbialsätzen mit Frage und typischen Konjunktionen."
+    },
+    "steps": {
+      "title": "So bestimmst du die Art: „Obwohl es regnete, gingen wir spazieren.“",
+      "items": [
+        "Finde den Nebensatz: „Obwohl es regnete“. Das Verb steht am Ende.",
+        "Lies die Konjunktion: <b>obwohl</b>.",
+        "Stelle die Frage: Trotz welchen Gegengrundes gingen wir spazieren? Trotz des Regens.",
+        "Ergebnis: <b>konzessiv</b> (Gegengrund)."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Verwechsle nicht <b>weil</b> (Grund) und <b>damit</b> (Zweck). „Er lernt, weil morgen ein Test ist“ nennt den Grund. „Er lernt, damit er eine gute Note bekommt“ nennt das Ziel.</p>"
+    },
+    "rule": "Konjunktion lesen, Fragewort stellen, Art bestimmen.",
+    "check": {
+      "q": "„Er spart, damit er sich ein Rad kaufen kann.“ Welche Art Adverbialsatz?",
+      "options": [
+        {
+          "id": "final (Zweck)",
+          "html": "final (Zweck)"
+        },
+        {
+          "id": "kausal (Grund)",
+          "html": "kausal (Grund)"
+        },
+        {
+          "id": "temporal (Zeit)",
+          "html": "temporal (Zeit)"
+        },
+        {
+          "id": "konzessiv (Gegengrund)",
+          "html": "konzessiv (Gegengrund)"
+        }
+      ],
+      "answer": "final (Zweck)",
+      "why": "„Damit“ nennt das Ziel, also den Zweck. Die Frage lautet: Wozu spart er?"
+    }
+  },
+  "kommas": {
+    "goal": "Du kannst Haupt- und Nebensätze unterscheiden und die Kommas richtig setzen.",
+    "tldr": [
+      "Ein Hauptsatz kann allein stehen, ein Nebensatz nicht.",
+      "Im Nebensatz steht das gebeugte Verb am Ende.",
+      "Zwischen Haupt- und Nebensatz steht immer ein Komma."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: Wagen und Anhänger",
+      "html": "<p>Der <b>Hauptsatz</b> ist ein Auto, das allein fahren kann. Der <b>Nebensatz</b> ist ein Anhänger: Er braucht das Auto, um irgendwohin zu kommen.</p><p>Die Kupplung dazwischen ist das <b>Komma</b>.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "flowDiagram",
+        "args": [
+          [
+            "Hauptsatz|Ich bleibe zu Hause",
+            "Komma|,",
+            "Nebensatz|weil ich krank bin|(Verb am Ende)"
+          ],
+          "Satzgefüge"
+        ]
+      },
+      "caption": "Hauptsatz, Komma, Nebensatz: In „weil ich krank bin“ steht das Verb ganz hinten."
+    },
+    "steps": {
+      "title": "So setzt du das Komma: „Wenn es regnet bleibe ich zu Hause“",
+      "items": [
+        "Suche die Konjunktion: <b>wenn</b>. Hier beginnt ein Nebensatz.",
+        "Finde das Ende des Nebensatzes: Das gebeugte Verb „regnet“ steht am Ende.",
+        "Setze nach dem Verb ein Komma: „Wenn es regnet, bleibe ich zu Hause.“",
+        "Prüfe den Hauptsatz: Er beginnt mit dem Verb „bleibe“."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Vergiss das Komma vor <b>weil</b> und <b>dass</b> nicht. Und setze es nicht an die falsche Stelle, zum Beispiel nach „weil“.</p><p>Nach einem vorangestellten Nebensatz kommt im Hauptsatz zuerst das Verb: „Weil es regnet, <b>bleibe</b> ich zu Hause.“</p>"
+    },
+    "rule": "Konjunktion vorn, Verb hinten, Komma zwischen Nebensatz und Hauptsatz.",
+    "check": {
+      "q": "Welcher Satz ist richtig?",
+      "options": [
+        {
+          "id": "Ich glaube, dass er kommt.",
+          "html": "Ich glaube, dass er kommt."
+        },
+        {
+          "id": "Ich glaube dass er kommt.",
+          "html": "Ich glaube dass er kommt."
+        },
+        {
+          "id": "Ich glaube dass, er kommt.",
+          "html": "Ich glaube dass, er kommt."
+        },
+        {
+          "id": "Ich, glaube dass er kommt.",
+          "html": "Ich, glaube dass er kommt."
+        }
+      ],
+      "answer": "Ich glaube, dass er kommt.",
+      "why": "Das Komma steht vor „dass“, denn dort beginnt der Nebensatz."
+    }
+  },
+  "dassdas": {
+    "goal": "Du kannst „das“ und „dass“ mit der Ersatzprobe sicher unterscheiden.",
+    "tldr": [
+      "„Dass“ ist eine Konjunktion und leitet einen Nebensatz ein.",
+      "„Das“ ist ein Artikel oder Pronomen.",
+      "Die Ersatzprobe hilft: Passt „dieses“ oder „welches“, schreibst du „das“."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Schlüsseltest",
+      "html": "<p>Du hast zwei Türen und einen Schlüsselbund. „Dieses“ und „welches“ sind der Schlüssel zur <b>das</b>-Tür. Passt der Schlüssel, ist es „das“. Passt er nicht, nimmst du die <b>dass</b>-Tür.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Wort",
+            "Ersatzprobe",
+            "Beispiel"
+          ],
+          [
+            [
+              "das",
+              "dieses / welches passt",
+              "Das Haus, das ich meine"
+            ],
+            [
+              "dass",
+              "nichts passt",
+              "Ich weiß, dass du kommst"
+            ]
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          "das oder dass"
+        ]
+      },
+      "caption": "Passt „dieses“ oder „welches“, schreibst du „das“. Sonst „dass“."
+    },
+    "steps": {
+      "title": "So entscheidest du: „Das Buch, ___ ich lese, ist spannend.“",
+      "items": [
+        "Setze „welches“ ein: „Das Buch, welches ich lese, ist spannend.“",
+        "Das passt, also ist die Lücke ein <b>das</b>.",
+        "Zur Kontrolle bei „Ich weiß, ___ du kommst“: „Ich weiß, welches du kommst“ passt nicht, also <b>dass</b>."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Nicht nach dem Gefühl entscheiden. Auch nach einem Komma kann „das“ stehen („Das ist das Haus, <b>das</b> ich meine“). Mache immer die Ersatzprobe.</p>"
+    },
+    "rule": "Passt dieses oder welches: das. Sonst: dass.",
+    "check": {
+      "q": "Welches Wort gehört in die Lücke? „Ich hoffe, ___ du kommst.“",
+      "options": [
+        {
+          "id": "dass",
+          "html": "dass"
+        },
+        {
+          "id": "das",
+          "html": "das"
+        },
+        {
+          "id": "dasss",
+          "html": "dasss"
+        }
+      ],
+      "answer": "dass",
+      "why": "„Ich hoffe, welches du kommst“ passt nicht. Also ist es die Konjunktion „dass“."
+    }
+  },
+  "passiv": {
+    "goal": "Du kannst Sätze vom Aktiv ins Passiv umformen und umgekehrt.",
+    "tldr": [
+      "Aktiv: Der Handelnde ist Subjekt. Passiv: Die Handlung steht im Mittelpunkt.",
+      "Das Passiv bildest du mit werden + Partizip II.",
+      "Beim Umformen wird das Akkusativobjekt zum Subjekt."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: eine Schlagzeile",
+      "html": "<p>„Das Rathaus wird renoviert.“ Wer renoviert, steht nicht da, weil die Handlung zählt. Im Aktiv würde es heißen: „Die Handwerker renovieren das Rathaus.“</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "swapDiagram",
+        "args": [
+          [
+            "Der Koch|(Subjekt)",
+            "brät|(Verb)",
+            "das Fleisch|(Akkusativobjekt)"
+          ],
+          [
+            "Das Fleisch|(Subjekt)",
+            "wird|(werden)",
+            "vom Koch|(Handelnder)",
+            "gebraten|(Partizip II)"
+          ],
+          [
+            2,
+            1,
+            0
+          ],
+          [
+            "Aktiv",
+            "Passiv"
+          ]
+        ]
+      },
+      "caption": "Aus „das Fleisch“ wird das neue Subjekt, der Koch steht mit „von“ im Satz."
+    },
+    "steps": {
+      "title": "So formst du um: „Der Koch brät das Fleisch.“",
+      "items": [
+        "Finde das Akkusativobjekt: <b>das Fleisch</b> (Wen oder was brät der Koch?).",
+        "Mach daraus das Subjekt: „Das Fleisch …“",
+        "Bilde die Verbform mit werden in derselben Zeitform: <b>wird gebraten</b> (Präsens).",
+        "Hänge den Handelnden mit „von“ an: „… vom Koch.“"
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Behalte die <b>Zeitform</b>. „Der Koch brät“ (Präsens) wird „wird gebraten“, nicht „wurde gebraten“.</p><p>Und: Das Passiv braucht <b>werden</b>, nicht „sein“.</p>"
+    },
+    "rule": "Passiv = werden + Partizip II. Das Akkusativobjekt wird Subjekt.",
+    "check": {
+      "q": "Welcher Satz ist das Passiv von „Die Kinder bauen eine Hütte.“?",
+      "options": [
+        {
+          "id": "Eine Hütte wird von den Kindern gebaut.",
+          "html": "Eine Hütte wird von den Kindern gebaut."
+        },
+        {
+          "id": "Eine Hütte baut von den Kindern.",
+          "html": "Eine Hütte baut von den Kindern."
+        },
+        {
+          "id": "Die Kinder werden eine Hütte gebaut.",
+          "html": "Die Kinder werden eine Hütte gebaut."
+        },
+        {
+          "id": "Eine Hütte ist von den Kindern gebaut.",
+          "html": "Eine Hütte ist von den Kindern gebaut."
+        }
+      ],
+      "answer": "Eine Hütte wird von den Kindern gebaut.",
+      "why": "Die Hütte (Akkusativobjekt) wird Subjekt, dazu „wird gebaut“ im Präsens."
+    }
+  },
+  "stilmittel": {
+    "goal": "Du kannst Vergleich, Metapher, Personifikation und Hyperbel erkennen.",
+    "tldr": [
+      "Sprachliche Bilder machen Texte anschaulich.",
+      "Vergleich: mit „wie“. Metapher: ohne „wie“.",
+      "Personifikation: Dinge handeln wie Menschen. Hyperbel: starke Übertreibung."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: Malen mit Wörtern",
+      "html": "<p>„Es regnet sehr stark“ ist eine Information. „Es schüttet wie aus Eimern“ ist ein <b>Bild</b>: Du siehst es sofort vor dir.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Stilmittel",
+            "Merkmal",
+            "Beispiel"
+          ],
+          [
+            [
+              "Vergleich",
+              "mit „wie“",
+              "stark wie ein Bär"
+            ],
+            [
+              "Metapher",
+              "ohne „wie“",
+              "Zeit ist Geld"
+            ],
+            [
+              "Personifikation",
+              "Ding handelt",
+              "die Sonne lacht"
+            ],
+            [
+              "Hyperbel",
+              "Übertreibung",
+              "tausendmal gesagt"
+            ]
+          ],
+          [
+            2,
+            2,
+            3
+          ],
+          "Sprachliche Bilder"
+        ]
+      },
+      "caption": "Vier wichtige sprachliche Bilder mit Merkmal und Beispiel."
+    },
+    "steps": {
+      "title": "So bestimmst du das Stilmittel: „Die Sonne lacht.“",
+      "items": [
+        "Frage: Kann das wirklich so passieren? Eine Sonne kann nicht lachen.",
+        "Prüfe das Wort „wie“: Es steht nicht da, also kein Vergleich.",
+        "Wer handelt hier wie ein Mensch? Die Sonne. Das ist eine <b>Personifikation</b>."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Vergleich und Metapher verwechseln viele. Merke: <b>wie</b> im Satz heißt Vergleich. Fehlt es, ist es eine Metapher.</p>"
+    },
+    "rule": "wie = Vergleich. Ohne wie = Metapher. Ding handelt wie ein Mensch = Personifikation.",
+    "check": {
+      "q": "„Er ist ein Fels in der Brandung.“ Welches Stilmittel?",
+      "options": [
+        {
+          "id": "Metapher",
+          "html": "Metapher"
+        },
+        {
+          "id": "Vergleich",
+          "html": "Vergleich"
+        },
+        {
+          "id": "Personifikation",
+          "html": "Personifikation"
+        },
+        {
+          "id": "Alliteration",
+          "html": "Alliteration"
+        }
+      ],
+      "answer": "Metapher",
+      "why": "Es steht kein „wie“ im Satz. Der Mensch wird direkt mit einem Fels gleichgesetzt."
+    }
+  }
+}

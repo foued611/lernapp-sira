@@ -9,9 +9,10 @@ Live: https://foued611.github.io/lernapp-sira/
 |---|---|---|---|
 | Cahier de Verbes | Französisch | `apps/franzoesisch-verben/` | fertig |
 | Zahlenwerkstatt | Informatik | `apps/informatik/` | fertig |
-| Mathe-Werkstatt | Mathematik | `apps/mathe/` | fertig (8 Seiten) |
-| Geometrie-Werkstatt | Mathematik | `apps/geometrie/` | fertig (6 Seiten) |
-| Deutsch, Englisch, Physik | | | geplant |
+| Mathe-Werkstatt | Mathematik | `apps/mathe/` | fertig (9 Seiten) |
+| Geometrie-Werkstatt | Mathematik | `apps/geometrie/` | fertig (8 Seiten) |
+| Deutsch-Werkstatt | Deutsch | `apps/deutsch/` | fertig (6 Seiten) |
+| Englisch, Physik | | | geplant |
 
 ## Lokal starten
 ```

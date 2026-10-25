@@ -341,5 +341,120 @@
       "answer": "in der Mitte der Hypotenuse",
       "why": "Die Hypotenuse ist der Durchmesser des Thaleskreises. Darum ist ihre Mitte der Mittelpunkt des Umkreises."
     }
+  },
+  "groessen": {
+    "goal": "Du kannst Längen im Maßstab umrechnen und eine Größe bestimmen, die du nicht direkt messen kannst.",
+    "tldr": [
+      "Der Maßstab 1 : n sagt, wie stark eine Zeichnung verkleinert ist: 1 cm zeichnest du für n cm in Wirklichkeit.",
+      "Von der Zeichnung zur Wirklichkeit rechnest du mal n, zurück durch n.",
+      "Winkel bleiben beim Verkleinern gleich. So kannst du aus einem kleinen Dreieck eine große Länge ablesen."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: eine Landkarte",
+      "html": "<p>Auf der Karte sind es von deiner Schule bis zum Bahnhof <b>4 cm</b>. Der Maßstab ist 1 : 25 000. Dann sind es in Wirklichkeit 4 · 25 000 cm = 100 000 cm = <b>1 km</b>.</p><p>Die Karte ist eine verkleinerte Kopie. Alles ist im selben Verhältnis kleiner geworden.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "scaleDiagram",
+        "args": [
+          4,
+          200
+        ]
+      },
+      "caption": "Maßstab 1 : 200: 4 cm in der Zeichnung sind 8 m in Wirklichkeit."
+    },
+    "steps": {
+      "title": "So bestimmst du die Höhe eines Turms mit einer Konstruktion",
+      "items": [
+        "Miss, was du erreichen kannst: Du stehst 20 m vom Turm entfernt und peilst die Spitze unter 45° an.",
+        "Zeichne im Maßstab 1 : 500: Die Standlinie ist 20 m : 5 m pro cm = 4 cm lang. Trage bei ihrem Ende einen rechten Winkel ab, am Anfang 45°.",
+        "Lies die Turmhöhe in der Zeichnung ab: ebenfalls 4 cm.",
+        "Rechne zurück: 4 cm · 500 = 2000 cm = <b>20 m</b>. Probe: Bei 45° sind Abstand und Höhe gleich."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Der Klassiker: <b>mal</b> und <b>durch</b> verwechseln. Eine Zeichnung ist kleiner als die Wirklichkeit. Also wird die Zahl von der Zeichnung zur Wirklichkeit <b>größer</b> (mal n).</p><p>Und denk an die Einheiten: 100 cm sind 1 m, 100 000 cm sind 1 km.</p>"
+    },
+    "rule": "Maßstab 1 : n: Zeichnung · n = Wirklichkeit, Wirklichkeit : n = Zeichnung. Winkel bleiben gleich.",
+    "check": {
+      "q": "Maßstab <b>1 : 200</b>. Eine Strecke ist in der Zeichnung 6 cm lang. Wie lang ist sie in Wirklichkeit?",
+      "options": [
+        {
+          "id": "12 m",
+          "html": "12 m"
+        },
+        {
+          "id": "1200 m",
+          "html": "1200 m"
+        },
+        {
+          "id": "3 cm",
+          "html": "3 cm"
+        },
+        {
+          "id": "1,2 m",
+          "html": "1,2 m"
+        }
+      ],
+      "answer": "12 m",
+      "why": "6 cm · 200 = 1200 cm. 100 cm sind 1 m, also sind das 12 m."
+    }
+  },
+  "probleme": {
+    "goal": "Du kannst bei einem Problem mehrere Sätze nacheinander benutzen und deinen Weg begründen.",
+    "tldr": [
+      "Zuerst eine Skizze: Was ist gegeben, was ist gesucht?",
+      "Dann Sätze sammeln, die zur Skizze passen: Winkelsumme, gleichschenkliges Dreieck, Thales, Nebenwinkel.",
+      "Schritt für Schritt vorgehen und jeden Schritt kurz begründen."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Krimi",
+      "html": "<p>Ein Detektiv hat ein paar Spuren (Gegebenes) und sucht den Täter (Gesuchtes). Jede Spur führt zur nächsten.</p><p>In der Geometrie sind die Spuren Winkel und gleich lange Strecken. Die Sätze sind deine Werkzeuge.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "problemDiagram",
+        "args": [
+          35
+        ]
+      },
+      "caption": "C liegt auf dem Halbkreis, M ist die Mitte von AB. Winkel MAC = 35°, also AMC = 110°."
+    },
+    "steps": {
+      "title": "So findest du den Winkel AMC, wenn der Winkel MAC 35° misst",
+      "items": [
+        "Skizze: C liegt auf dem Halbkreis über AB, M ist die Mitte von AB.",
+        "Erkenne: MA und MC sind Radien des Kreises, also gleich lang. Das Dreieck AMC ist gleichschenklig.",
+        "Dann sind die Basiswinkel gleich: Der Winkel bei C ist auch 35°.",
+        "Winkelsumme: 180° − 35° − 35° = <b>110°</b>. Fertig, mit Begründung."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Fehler Nummer 1: Man springt direkt zur Rechnung. Ohne Skizze übersiehst du, dass zwei Radien ein <b>gleichschenkliges</b> Dreieck ergeben.</p><p>Fehler Nummer 2: Die Basiswinkel mit dem Winkel an der Spitze verwechseln. Die gleichen Winkel liegen immer an der Basis, gegenüber den gleich langen Seiten.</p>"
+    },
+    "rule": "Skizze, Gegebenes, passender Satz, Schritt begründen. Zwei Radien ergeben ein gleichschenkliges Dreieck.",
+    "check": {
+      "q": "Ein gleichschenkliges Dreieck hat Basiswinkel von <b>50°</b>. Wie groß ist der Winkel an der Spitze?",
+      "options": [
+        {
+          "id": "80°",
+          "html": "80°"
+        },
+        {
+          "id": "50°",
+          "html": "50°"
+        },
+        {
+          "id": "130°",
+          "html": "130°"
+        },
+        {
+          "id": "100°",
+          "html": "100°"
+        }
+      ],
+      "answer": "80°",
+      "why": "Die Winkelsumme ist 180°. Die zwei Basiswinkel ergeben 100°. Bleiben 180° − 100° = 80° für die Spitze."
+    }
   }
 }

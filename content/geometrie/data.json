@@ -201,5 +201,97 @@
       "kein Dreieck",
       "Die Winkelsumme im Dreieck ist 180°. Schon 100° + 90° ist 190°, das passt nicht."
     ]
+  ],
+  "grFacts": [
+    {
+      "prompt": "Was bedeutet der Maßstab 1 : 100?",
+      "answer": "1 cm in der Zeichnung sind 100 cm in Wirklichkeit",
+      "wrong": [
+        "1 cm in Wirklichkeit sind 100 cm in der Zeichnung",
+        "Die Zeichnung ist 100-mal größer als die Wirklichkeit",
+        "Die Zeichnung hat 100 cm Länge"
+      ],
+      "why": "Die erste Zahl gehört zur Zeichnung, die zweite zur Wirklichkeit. Bei 1 : 100 wird alles auf ein Hundertstel verkleinert.",
+      "label": "Maßstab"
+    },
+    {
+      "prompt": "Warum zeichnest du ein großes Grundstück im Maßstab?",
+      "answer": "Damit es verkleinert auf das Blatt passt und alle Längen im gleichen Verhältnis bleiben",
+      "wrong": [
+        "Damit man die Winkel weglassen kann",
+        "Damit alle Strecken gleich lang aussehen",
+        "Damit man nicht mehr messen muss"
+      ],
+      "why": "Im Maßstab werden alle Längen mit demselben Faktor verkleinert. Winkel bleiben dabei gleich, und man kann die wirklichen Längen später zurückrechnen.",
+      "label": "Maßstab"
+    },
+    {
+      "prompt": "Wie bestimmst du eine unzugängliche Länge, zum Beispiel die Breite eines Flusses?",
+      "answer": "Du zeichnest ein Dreieck mit gemessenen Größen im Maßstab und liest die gesuchte Länge ab",
+      "wrong": [
+        "Du schätzt sie nach Augenmaß",
+        "Du zeichnest das Dreieck beliebig groß und nimmst die Zahl so, wie sie ist",
+        "Du verdoppelst die Länge der nächsten Strecke"
+      ],
+      "why": "Du misst, was du erreichen kannst (Strecken und Winkel), konstruierst daraus ein Dreieck im Maßstab und liest die gesuchte Strecke ab. Dann rechnest du mit dem Maßstab auf die Wirklichkeit um.",
+      "label": "Konstruieren"
+    },
+    {
+      "prompt": "Ein Dreieck wird im Maßstab 1 : 200 gezeichnet. Was passiert mit den Winkeln?",
+      "answer": "Sie bleiben gleich groß",
+      "wrong": [
+        "Sie werden 200-mal kleiner",
+        "Sie werden halbiert",
+        "Sie werden 200-mal größer"
+      ],
+      "why": "Beim Verkleinern ändern sich nur die Längen. Die Form bleibt gleich, deshalb bleiben auch alle Winkel gleich.",
+      "label": "Maßstab"
+    }
+  ],
+  "prFacts": [
+    {
+      "prompt": "Was ist der erste Schritt bei einem geometrischen Problem?",
+      "answer": "Eine Skizze zeichnen und alles Gegebene eintragen",
+      "wrong": [
+        "Sofort rechnen",
+        "Das Ergebnis schätzen und aufschreiben",
+        "Die Aufgabe überspringen"
+      ],
+      "why": "Mit einer Skizze siehst du, was gegeben und was gesucht ist. Erst dann kannst du passende Sätze auswählen.",
+      "label": "Strategie"
+    },
+    {
+      "prompt": "Du suchst einen Winkel und kennst zwei Winkel eines Dreiecks. Was hilft dir?",
+      "answer": "Die Winkelsumme im Dreieck: 180°",
+      "wrong": [
+        "Der Satz des Thales",
+        "Die Mittelsenkrechte",
+        "Der Umkreisradius"
+      ],
+      "why": "Die Winkelsumme im Dreieck ist immer 180°. Kennst du zwei Winkel, ist der dritte festgelegt.",
+      "label": "Strategie"
+    },
+    {
+      "prompt": "In einem Dreieck sind zwei Seiten Radien desselben Kreises. Was folgt daraus?",
+      "answer": "Das Dreieck ist gleichschenklig, die Basiswinkel sind gleich",
+      "wrong": [
+        "Das Dreieck ist rechtwinklig",
+        "Das Dreieck ist gleichseitig",
+        "Es folgt nichts Besonderes"
+      ],
+      "why": "Zwei Radien sind gleich lang. Zwei gleich lange Seiten bedeuten ein gleichschenkliges Dreieck, dessen Basiswinkel gleich groß sind.",
+      "label": "Strategie"
+    },
+    {
+      "prompt": "Wie schreibst du eine Begründung auf?",
+      "answer": "Behauptung, Sätze oder Regeln, die du benutzt, und dann die Folgerung",
+      "wrong": [
+        "Nur das Ergebnis",
+        "Nur die Skizze",
+        "Eine lange Rechnung ohne Worte"
+      ],
+      "why": "Eine Begründung zeigt, warum etwas stimmt: Was weiß ich, welche Regel benutze ich, was folgt daraus?",
+      "label": "Begründen"
+    }
   ]
 }

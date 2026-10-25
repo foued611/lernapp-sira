@@ -1,0 +1,169 @@
+{
+  "schema": 1,
+  "id": "deutsch",
+  "title": "Deutsch-Werkstatt",
+  "greeting": "Hallo",
+  "intro": "Inhaltsangabe, Adverbialsätze, Kommas, das und dass, Passiv und sprachliche Bilder. Starte irgendwo. Die Reihenfolge ist nur ein Vorschlag.",
+  "bossTitle": "Der Grammatik-Boss",
+  "words": {
+    "levelTitles": [
+      "Wort-Neuling",
+      "Satz-Schreiber",
+      "Komma-Kenner",
+      "Satzbau-Profi",
+      "Stil-Meister",
+      "Grammatik-Ass",
+      "Deutsch-Legende"
+    ]
+  },
+  "units": [
+    {
+      "id": "inhaltsangabe",
+      "color": "#FF6B88",
+      "ic": "IA",
+      "title": "Inhaltsangabe",
+      "de": "Basissatz, Präsens, sachlich",
+      "card": {
+        "name": "Kurz-Fasser",
+        "fact": "Eine Inhaltsangabe steht immer im Präsens, auch wenn die Geschichte vor hundert Jahren spielt."
+      }
+    },
+    {
+      "id": "adverbial",
+      "color": "#4CC3F5",
+      "ic": "AS",
+      "title": "Adverbialsätze",
+      "de": "Wann? Warum? Wozu? Unter welcher Bedingung?",
+      "card": {
+        "name": "Satz-Detektiv",
+        "fact": "Mit einem Adverbialsatz beantwortest du Fragen wie Wann?, Warum? oder Wozu? zu einem Geschehen."
+      }
+    },
+    {
+      "id": "kommas",
+      "color": "#9B7BFF",
+      "ic": ",",
+      "title": "Nebensätze und Kommas",
+      "de": "Haupt- und Nebensatz, Satzbau",
+      "card": {
+        "name": "Komma-Kommissar",
+        "fact": "Vor „weil“, „dass“ und „obwohl“ steht immer ein Komma, denn mit ihnen beginnt ein Nebensatz."
+      }
+    },
+    {
+      "id": "dassdas",
+      "color": "#FFC933",
+      "ic": "ss",
+      "title": "das oder dass?",
+      "de": "Ersatzprobe mit dieses und welches",
+      "card": {
+        "name": "Ersatzprobe-Profi",
+        "fact": "Lässt sich „das“ durch „dieses“ oder „welches“ ersetzen, schreibst du es mit einem s."
+      }
+    },
+    {
+      "id": "passiv",
+      "color": "#3DD6B0",
+      "ic": "P",
+      "title": "Aktiv und Passiv",
+      "de": "werden plus Partizip II",
+      "card": {
+        "name": "Passiv-Pirat",
+        "fact": "Im Passiv rückt die Handlung in den Mittelpunkt: „Das Fenster wird geöffnet“ sagt nicht, wer es tut."
+      }
+    },
+    {
+      "id": "stilmittel",
+      "color": "#FF9F43",
+      "ic": "~",
+      "title": "Sprachliche Bilder",
+      "de": "Vergleich, Metapher, Personifikation",
+      "card": {
+        "name": "Bild-Zauberer",
+        "fact": "„Ein Fels in der Brandung“ ist eine Metapher: Niemand ist wirklich ein Fels, aber alle verstehen das Bild."
+      }
+    }
+  ],
+  "notes": {
+    "inhaltsangabe": [
+      [
+        "Basissatz",
+        "Textsorte, Titel, Autor und Thema in einem Satz."
+      ],
+      [
+        "Zeitform",
+        "Immer Präsens. Wörtliche Rede wird zusammengefasst."
+      ],
+      [
+        "Sachlich",
+        "Keine Meinung, keine Gefühlswörter, nur das Wesentliche."
+      ]
+    ],
+    "adverbial": [
+      [
+        "Fragewörter",
+        "Wann? temporal · Warum? kausal · Unter welcher Bedingung? konditional · Trotz welchen Gegengrundes? konzessiv · Wozu? final · Wie? modal."
+      ],
+      [
+        "Wörter",
+        "als, nachdem · weil, da · wenn, falls · obwohl · damit · indem."
+      ]
+    ],
+    "kommas": [
+      [
+        "Komma",
+        "Zwischen Hauptsatz und Nebensatz steht immer ein Komma."
+      ],
+      [
+        "Verb",
+        "Im Nebensatz steht das gebeugte Verb am Ende."
+      ],
+      [
+        "Wortstellung",
+        "Steht der Nebensatz vorn, beginnt der Hauptsatz mit dem Verb."
+      ]
+    ],
+    "dassdas": [
+      [
+        "Ersatzprobe",
+        "Passt „dieses“ oder „welches“, schreibst du „das“. Sonst „dass“."
+      ],
+      [
+        "dass",
+        "Leitet einen Nebensatz ein, nach Verben wie sagen, wissen, hoffen."
+      ]
+    ],
+    "passiv": [
+      [
+        "Bildung",
+        "werden + Partizip II."
+      ],
+      [
+        "Umformen",
+        "Akkusativobjekt wird Subjekt. Der Handelnde steht mit „von“ oder fällt weg."
+      ],
+      [
+        "Zeitform",
+        "Die Zeitform von „werden“ bestimmt die Zeitform: wird / wurde."
+      ]
+    ],
+    "stilmittel": [
+      [
+        "Vergleich",
+        "Mit „wie“: stark wie ein Bär."
+      ],
+      [
+        "Metapher",
+        "Ohne „wie“: Zeit ist Geld."
+      ],
+      [
+        "Personifikation",
+        "Dinge handeln wie Menschen: Die Sonne lacht."
+      ],
+      [
+        "Hyperbel",
+        "Starke Übertreibung: tausendmal gesagt."
+      ]
+    ]
+  }
+}

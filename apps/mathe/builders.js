@@ -252,12 +252,50 @@ function relativ() {
     why: `Relative Häufigkeit = absolute Häufigkeit : Anzahl der Versuche = ${k} : ${n} = ${fmt(r)} (also ${fmt(r * 100)} %).` };
 }
 
+// --- Kredit und Tilgung: gleichbleibende Tilgung, Zinsen immer auf die Restschuld ---
+
+const kredit = () => {
+  const n = pick([4, 5, 6, 8, 10]), t = pick([100, 200, 250, 300, 400, 500]);
+  return { n, t, k: n * t, p: pick([2, 3, 4, 5, 6]) };
+};
+
+function kreditZinsen() {
+  const { k, p } = kredit(), z = k * p / 100;
+  return { prompt: `Tom leiht sich ${fmt(k)} € zu ${p} % Zinsen pro Jahr. Wie hoch sind die Zinsen im ersten Jahr?`, answer: fmt(z), value: z, numeric: true, wrong: nearby(z, [k + z, k * p, k / p]).map(fmt),
+    why: `Im ersten Jahr schuldet Tom noch den ganzen Kredit. Zinsen = ${fmt(k)} · ${p}/100 = ${fmt(z)} €.` };
+}
+
+function kreditRate() {
+  const { k, t, p } = kredit(), z = k * p / 100, rate = t + z;
+  return { prompt: `Ein Kredit über ${fmt(k)} € kostet ${p} % Zinsen pro Jahr. Jedes Jahr werden ${fmt(t)} € getilgt. Wie hoch ist die Rate im ersten Jahr (Tilgung plus Zinsen)?`, answer: fmt(rate), value: rate, numeric: true, wrong: nearby(rate, [z, t, k + z]).map(fmt),
+    why: `Zinsen im ersten Jahr: ${fmt(k)} · ${p}/100 = ${fmt(z)} €. Rate = Tilgung + Zinsen = ${fmt(t)} + ${fmt(z)} = ${fmt(rate)} €.` };
+}
+
+function restschuld() {
+  const { n, t, k } = kredit(), m = rnd(1, n - 1), rest = k - m * t;
+  return { prompt: `Ein Kredit über ${fmt(k)} € wird jedes Jahr mit ${fmt(t)} € getilgt. Wie hoch ist die Restschuld nach ${m} ${m === 1 ? 'Jahr' : 'Jahren'}?`, answer: fmt(rest), value: rest, numeric: true, wrong: nearby(rest, [m * t, k - (m + 1) * t, k + m * t]).map(fmt),
+    why: `Die Tilgung verkleinert die Schuld. ${m} · ${fmt(t)} = ${fmt(m * t)} € sind getilgt. Restschuld = ${fmt(k)} ${MINUS} ${fmt(m * t)} = ${fmt(rest)} €.` };
+}
+
+function zinsenZweitesJahr() {
+  const { k, t, p } = kredit(), rest = k - t, z = rest * p / 100;
+  return { prompt: `Ein Kredit über ${fmt(k)} € wird jährlich mit ${fmt(t)} € getilgt, der Zinssatz ist ${p} %. Wie hoch sind die Zinsen im zweiten Jahr?`, answer: fmt(z), value: z, numeric: true, wrong: nearby(z, [k * p / 100, t * p / 100, rest]).map(fmt),
+    why: `Im zweiten Jahr zahlt man nur noch Zinsen auf die Restschuld: ${fmt(k)} ${MINUS} ${fmt(t)} = ${fmt(rest)} €. Zinsen = ${fmt(rest)} · ${p}/100 = ${fmt(z)} €.` };
+}
+
+function laufzeit() {
+  const { n, t, k } = kredit();
+  return { prompt: `Ein Kredit über ${fmt(k)} € wird jedes Jahr mit ${fmt(t)} € getilgt. Nach wie vielen Jahren ist er abbezahlt?`, answer: String(n), value: n, numeric: true, wrong: nearby(n, [k - t, n * 2, n - 1]).map(String),
+    why: `So oft passt die Tilgung in den Kredit: ${fmt(k)} : ${fmt(t)} = ${n} Jahre.` };
+}
+
 export const POOLS = {
   vorzeichen: [addSub, addSub, mulDiv],
   terme: [collect, collectMixed, expand, minusBracket, ausklammern],
   gleichungen: [solve, solve, firstStep, aufstellen, anzahlLoesungen],
   prozent: [prozentwert, grundwert, prozentsatz, rabatt],
   zinsen: [zinsen, kapital, zinssatz, zinsMonate, zinseszins],
+  kredit: [kreditZinsen, kreditRate, restschuld, zinsenZweitesJahr, laufzeit],
   zuordnungen: [dreisatzProp, dreisatzAnti, erkennen, dreisatzProp, dreisatzAnti],
   daten: [mittelwert, median, spannweite, modus],
   zufall: [wuerfel, urne, relativ]

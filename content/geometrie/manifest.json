@@ -50,6 +50,17 @@
       }
     },
     {
+      "id": "groessen",
+      "color": "#FFC933",
+      "ic": "1:n",
+      "title": "Größen durch Konstruieren",
+      "de": "Kapitel III: Maßstab, Längen aus Zeichnungen",
+      "card": {
+        "name": "Maßstab-Meister",
+        "fact": "Auf Landkarten steht der Maßstab oft als 1 : 25 000. Dann sind 4 cm auf der Karte genau 1 km in Wirklichkeit."
+      }
+    },
+    {
       "id": "winkel",
       "color": "#9B7BFF",
       "ic": "α",
@@ -80,6 +91,17 @@
       "card": {
         "name": "Kreis-Künstler",
         "fact": "Der Umkreis geht durch alle drei Ecken, der Inkreis berührt alle drei Seiten von innen."
+      }
+    },
+    {
+      "id": "probleme",
+      "color": "#FF8AD0",
+      "ic": "?",
+      "title": "Geometrische Probleme lösen",
+      "de": "Kapitel V: mehrere Sätze verbinden",
+      "card": {
+        "name": "Problem-Löser",
+        "fact": "Gute Geometrie heißt: Skizze, Gegebenes eintragen, passenden Satz suchen. Mit zwei Sätzen kommst du oft schon ans Ziel."
       }
     }
   ],
@@ -174,6 +196,34 @@
       [
         "Lage",
         "Der Umkreismittelpunkt liegt bei spitzwinkligen Dreiecken innen, bei rechtwinkligen auf der Hypotenuse, bei stumpfwinkligen außen."
+      ]
+    ],
+    "groessen": [
+      [
+        "Maßstab",
+        "1 : n heißt: 1 cm in der Zeichnung sind n cm in Wirklichkeit."
+      ],
+      [
+        "Umrechnen",
+        "Zeichnung → Wirklichkeit: mal n. Wirklichkeit → Zeichnung: durch n."
+      ],
+      [
+        "Winkel",
+        "Beim Verkleinern bleiben alle Winkel gleich, nur die Längen ändern sich."
+      ]
+    ],
+    "probleme": [
+      [
+        "Skizze",
+        "Immer zuerst eine Skizze mit dem Gegebenen und dem Gesuchten."
+      ],
+      [
+        "Sätze sammeln",
+        "Winkelsumme 180°, Basiswinkel im gleichschenkligen Dreieck, Satz des Thales, Nebenwinkel."
+      ],
+      [
+        "Begründen",
+        "Schreibe auf: Was weiß ich? Welche Regel nutze ich? Was folgt daraus?"
       ]
     ]
   }

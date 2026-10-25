@@ -470,5 +470,64 @@
       "answer": "1/4",
       "why": "2 günstige von 8 Kugeln: 2/8 = 1/4. Wer 2/6 rechnet, vergleicht rot mit blau und nicht mit allen Kugeln."
     }
+  },
+  "kredit": {
+    "goal": "Du kannst bei einem Kredit Zinsen, Rate und Restschuld Jahr für Jahr berechnen.",
+    "tldr": [
+      "Bei einem Kredit leihst du dir Geld und zahlst dafür Zinsen. Du zahlst es in Raten zurück.",
+      "Jede Rate besteht aus Tilgung (verkleinert die Schuld) und Zinsen (der Preis fürs Leihen).",
+      "Die Zinsen werden immer auf die Restschuld berechnet. Darum werden sie von Jahr zu Jahr kleiner."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: du leihst dir Geld für ein Fahrrad",
+      "html": "<p>Du leihst dir <b>1000 €</b> und zahlst jedes Jahr <b>250 €</b> zurück, das ist die <b>Tilgung</b>. Nach einem Jahr schuldest du nur noch <b>750 €</b>, die <b>Restschuld</b>.</p><p>Zusätzlich verlangt die Bank Zinsen. Aber nur auf das, was du noch schuldest: Je weniger Schulden, desto weniger Zinsen.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "kreditDiagram",
+        "args": [
+          2000,
+          500,
+          4
+        ]
+      },
+      "caption": "2000 € Kredit, jedes Jahr 500 € getilgt: Die Restschuld schrumpft, die Zinsen schrumpfen mit."
+    },
+    "steps": {
+      "title": "So berechnest du die Rate im zweiten Jahr: Kredit 2000 €, Tilgung 500 € pro Jahr, Zinssatz 4 %",
+      "items": [
+        "Restschuld nach dem ersten Jahr: 2000 € − 500 € = <b>1500 €</b>.",
+        "Zinsen im zweiten Jahr, nur auf die Restschuld: 1500 · 4/100 = <b>60 €</b>.",
+        "Rate = Tilgung + Zinsen = 500 € + 60 € = <b>560 €</b>.",
+        "Probe: Im ersten Jahr waren die Zinsen 2000 · 4/100 = 80 €. Im zweiten Jahr sind sie kleiner, das passt."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Der häufigste Fehler: Die Zinsen jedes Jahr auf den <b>ganzen</b> Kredit rechnen. Das stimmt nur im ersten Jahr. Danach zählt die <b>Restschuld</b>.</p><p>Auch nicht verwechseln: Die <b>Rate</b> ist mehr als die Tilgung, weil die Zinsen dazukommen.</p>"
+    },
+    "rule": "Rate = Tilgung + Zinsen. Zinsen = Restschuld · p/100. Restschuld nach n Jahren = Kredit − n · Tilgung.",
+    "check": {
+      "q": "Kredit 1000 €, Tilgung 250 € pro Jahr, Zinssatz 5 %. Wie hoch sind die Zinsen im <b>zweiten</b> Jahr?",
+      "options": [
+        {
+          "id": "37,50 €",
+          "html": "37,50 €"
+        },
+        {
+          "id": "50 €",
+          "html": "50 €"
+        },
+        {
+          "id": "12,50 €",
+          "html": "12,50 €"
+        },
+        {
+          "id": "75 €",
+          "html": "75 €"
+        }
+      ],
+      "answer": "37,50 €",
+      "why": "Nach dem ersten Jahr ist die Restschuld 1000 − 250 = 750 €. Zinsen: 750 · 5/100 = 37,50 €. Die 50 € wären die Zinsen im ersten Jahr."
+    }
   }
 }

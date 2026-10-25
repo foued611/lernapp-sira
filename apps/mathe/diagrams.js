@@ -118,3 +118,18 @@ export function urnDiagram(r = 3, b = 5) {
   out += text(260, 214, 'günstige Ergebnisse : alle Ergebnisse', 'sm mu');
   return svg(520, 230, out, `Urne mit ${r} roten und ${b} blauen Kugeln, Wahrscheinlichkeit für rot ${r} von ${n}`);
 }
+
+/** Restschuld Jahr für Jahr: gleichbleibende Tilgung, Zinsen nur auf den Rest. Alle Zahlen werden berechnet. */
+export function kreditDiagram(k = 2000, t = 500, p = 4) {
+  const years = Math.min(Math.round(k / t), 5), W = 70, base = 150, top = 36;
+  let out = '';
+  for (let i = 0; i < years; i++) {
+    const rest = k - i * t, h = Math.round((rest / k) * (base - top)), x = 30 + i * 96;
+    out += rect(x, base - h, W, h, i === 0 ? 'hi' : 'box', 8);
+    out += text(x + W / 2, base - h + 24, `${fmt(rest)} €`, `sm mono${i === 0 ? ' on-sun' : ''}`);
+    out += text(x + W / 2, base + 20, `Jahr ${i + 1}`, 'sm mu');
+    out += text(x + W / 2, base + 40, 'Zinsen', 'sm mu') + text(x + W / 2, base + 58, `${fmt(rest * p / 100)} €`, 'sm mono');
+  }
+  out += text(260, 20, `Restschuld am Jahresanfang, Tilgung ${fmt(t)} € pro Jahr, Zinssatz ${p} %`, 'sm mu');
+  return svg(520, 218, out, `Kredit ${fmt(k)} Euro, jedes Jahr ${fmt(t)} Euro getilgt: Die Restschuld sinkt, darum sinken auch die Zinsen`);
+}

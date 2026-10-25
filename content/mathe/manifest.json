@@ -83,6 +83,17 @@
       }
     },
     {
+      "id": "kredit",
+      "color": "#FF6B88",
+      "ic": "€",
+      "title": "Kredit und Tilgung",
+      "de": "Kapitel VI: Rate, Tilgung, Restschuld",
+      "card": {
+        "name": "Schulden-Schrumpfer",
+        "fact": "Mit jeder Tilgung sinkt die Restschuld. Weil die Zinsen nur auf die Restschuld berechnet werden, wird auch der Zinsbetrag von Jahr zu Jahr kleiner."
+      }
+    },
+    {
       "id": "daten",
       "color": "#4CC3F5",
       "ic": "∅",
@@ -236,6 +247,20 @@
       [
         "Große Zahlen",
         "Je mehr Versuche, desto näher liegt die relative Häufigkeit an der Wahrscheinlichkeit."
+      ]
+    ],
+    "kredit": [
+      [
+        "Begriffe",
+        "Kredit: geliehenes Geld. Tilgung: der Teil, der die Schuld verkleinert. Restschuld: was noch zurückzuzahlen ist."
+      ],
+      [
+        "Rate",
+        "Rate = Tilgung + Zinsen. Hier ist die Tilgung jedes Jahr gleich groß."
+      ],
+      [
+        "Zinsen",
+        "Die Zinsen berechnest du nur auf die Restschuld: Z = Restschuld · p/100. Sie werden jedes Jahr kleiner."
       ]
     ]
   }

@@ -142,3 +142,22 @@ test('Zinseszins, Ausklammern, Aufstellen und Lösungsanzahl stimmen', () => {
     assert.ok(['keine Lösung', 'genau eine Lösung', 'unendlich viele Lösungen'].includes(l.answer));
   }
 });
+
+test('Kredit und Tilgung: Ergebnis wird unabhängig nachgerechnet', () => {
+  const val = (s) => Number(s.replace(/−/g, '-').replace(',', '.').replace(/\.(?=\d{3}\b)/g, ''));
+  const nums = (s) => (s.replace(/\d+\.\d{3}\b/g, (m) => m.replace('.', '')).match(/\d+(?:,\d+)?/g) || []).map((n) => Number(n.replace(',', '.')));
+  const [zins, rate, rest, zweites, laufzeit] = POOLS.kredit;
+  for (let i = 0; i < 300; i++) {
+    let it = zins(), [k, p] = nums(it.prompt);
+    assert.equal(val(it.answer), k * p / 100, it.prompt);
+    it = rate(); const [k2, p2, t2] = nums(it.prompt);
+    assert.equal(val(it.answer), t2 + k2 * p2 / 100, it.prompt);
+    it = rest(); const [k3, t3, m3] = nums(it.prompt);
+    assert.equal(val(it.answer), k3 - m3 * t3, it.prompt);
+    assert.ok(m3 * t3 < k3, 'Restschuld bleibt positiv');
+    it = zweites(); const [k4, t4, p4] = nums(it.prompt);
+    assert.equal(val(it.answer), (k4 - t4) * p4 / 100, it.prompt);
+    it = laufzeit(); const [k5, t5] = nums(it.prompt);
+    assert.equal(val(it.answer), k5 / t5, it.prompt);
+  }
+});

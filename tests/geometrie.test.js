@@ -57,3 +57,28 @@ test('Winkelaufgaben rechnen richtig', () => {
     assert.equal(num(it.answer), 90 - al, it.prompt);
   }
 });
+
+test('Maßstab und Probleme: Ergebnis wird unabhängig nachgerechnet', () => {
+  const val = (s) => Number(s.replace(/[^\d,−-]/g, '').replace('−', '-').replace(',', '.'));
+  const first = (text, re) => val(text.match(re)[1]);
+  const [wirklichkeit, zeichnung, massstab, baum] = POOLS.groessen;
+  const [mitte, rechtGleich, aussen, kette] = POOLS.probleme;
+  for (let i = 0; i < 300; i++) {
+    let it = wirklichkeit();
+    assert.equal(val(it.answer), first(it.prompt, /darin (\d+) cm/) * first(it.prompt, /1 : (\d+)/) / 100, it.prompt);
+    it = zeichnung();
+    assert.equal(val(it.answer), first(it.prompt, /ist ([\d,]+) m lang/) * 100 / first(it.prompt, /1 : (\d+)/), it.prompt);
+    it = massstab();
+    assert.equal(it.answer, `1 : ${first(it.prompt, /([\d,]+) m lang/) * 100 / first(it.prompt, /Zeichnung (\d+) cm/)}`, it.prompt);
+    it = baum();
+    assert.equal(val(it.answer), first(it.prompt, /stehst ([\d,]+) m/), it.prompt);
+    it = mitte();
+    assert.equal(val(it.answer), 180 - 2 * first(it.prompt, /misst (\d+)/), it.prompt);
+    assert.equal(val(rechtGleich().answer), 45);
+    it = aussen();
+    const [a, b] = it.prompt.match(/\d+/g).map(Number);
+    assert.equal(val(it.answer), a + b, it.prompt);
+    it = kette();
+    assert.equal(val(it.answer), 180 - 2 * first(it.prompt, /von (\d+)/), it.prompt);
+  }
+});

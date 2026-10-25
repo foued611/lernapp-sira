@@ -1,11 +1,11 @@
 // Erzeugt Geometrie-Fragen. Rechenaufgaben mit Zufallswerten, dazu Begriffs- und Konstruktionsfragen als feste Auswahl.
 import { choiceQuestion, typedQuestion } from '../../core/js/questions.js';
 import { esc, pick, shuffle } from '../../core/js/ui.js';
-import { rnd, fmt, nearby, numCheck } from '../../core/js/mathkit.js';
+import { rnd, fmt, nearby, numCheck, MINUS } from '../../core/js/mathkit.js';
 
 // Seiten und Aufgabendaten kommen aus content/geometrie/ (siehe init). Hier liegt nur die Logik der Aufgaben.
 let UNITS = [];
-let MS_FACTS = [], WH_FACTS = [], DR_FACTS = [], TH_FACTS = [], KR_FACTS = [], THEOREMS = [], EINDEUTIG = [];
+let MS_FACTS = [], WH_FACTS = [], DR_FACTS = [], TH_FACTS = [], KR_FACTS = [], GR_FACTS = [], PR_FACTS = [], THEOREMS = [], EINDEUTIG = [];
 const asWords = (list) => list.map((item) => ({ ...item, choiceOnly: true }));
 
 /** Bekommt Seitenliste und Aufgabendaten, bevor die erste Runde entsteht. */
@@ -16,6 +16,8 @@ export function init({ data, manifest }) {
   DR_FACTS = asWords(data.drFacts);
   TH_FACTS = asWords(data.thFacts);
   KR_FACTS = asWords(data.krFacts);
+  GR_FACTS = asWords(data.grFacts);
+  PR_FACTS = asWords(data.prFacts);
   THEOREMS = data.theorems;
   EINDEUTIG = data.eindeutig;
 }
@@ -155,6 +157,62 @@ function umkreisLage() {
     { spitzwinkliges: 'Bei drei spitzen Winkeln treffen sich die Mittelsenkrechten im Inneren.', rechtwinkliges: 'Beim rechten Winkel ist die Hypotenuse Durchmesser des Thaleskreises, der Mittelpunkt liegt auf ihr.', stumpfwinkliges: 'Beim stumpfen Winkel wandert der Mittelpunkt aus dem Dreieck hinaus.' }[kind], 'Lage');
 }
 
+// --- Größen durch Konstruieren bestimmen (Maßstab) ------------------------------------------------------
+
+const SCALES = [50, 100, 200, 500];
+const meters = (cm, scale) => (cm * scale) / 100;
+
+function wirklichkeit() {
+  const n = pick(SCALES), d = rnd(2, 9), m = meters(d, n);
+  return num(m, `Eine Zeichnung hat den Maßstab 1 : ${n}. Eine Strecke ist darin ${d} cm lang. Wie lang ist sie in Wirklichkeit?`,
+    `Maßstab 1 : ${n} heißt: 1 cm in der Zeichnung sind ${n} cm in Wirklichkeit. ${d} · ${n} cm = ${d * n} cm = ${fmt(m)} m.`, 'Maßstab', [d * n, m * 10, m / 10, d + n / 100], ' m');
+}
+
+function zeichnung() {
+  const n = pick([50, 100, 200]), d = rnd(3, 12), real = meters(d, n);
+  return num(d, `Ein Haus ist ${fmt(real)} m lang. Du zeichnest es im Maßstab 1 : ${n}. Wie lang ist die Strecke in der Zeichnung?`,
+    `${fmt(real)} m = ${real * 100} cm. Im Maßstab 1 : ${n} teilst du durch ${n}: ${real * 100} cm : ${n} = ${d} cm.`, 'Maßstab', [real * 100, d * 10, real * n, d + 2], ' cm');
+}
+
+function massstabFinden() {
+  const n = pick(SCALES), d = rnd(2, 8), real = meters(d, n);
+  const fmtScale = (v) => `1 : ${v}`;
+  return words(`Eine Strecke ist in Wirklichkeit ${fmt(real)} m lang und in der Zeichnung ${d} cm. Welchen Maßstab hat die Zeichnung?`, fmtScale(n),
+    [fmtScale(n * 10), fmtScale(n / 2), fmtScale(n * 2)].filter((o) => o !== fmtScale(n)),
+    `${fmt(real)} m = ${real * 100} cm. ${real * 100} cm : ${d} cm = ${n}. Also steht 1 cm in der Zeichnung für ${n} cm in Wirklichkeit: Maßstab 1 : ${n}.`, 'Maßstab');
+}
+
+function hoeheBaum() {
+  const e = rnd(6, 30);
+  return num(e, `Du stehst ${e} m vom Fuß eines Baumes entfernt und peilst die Spitze unter einem Winkel von 45° an. Die Augenhöhe lässt du weg. Wie hoch ist der Baum?`,
+    `Das Dreieck hat einen rechten Winkel am Boden und einen Winkel von 45°. Der dritte Winkel ist auch 45°, das Dreieck ist gleichschenklig. Also ist die Höhe so groß wie der Abstand: ${e} m.`, 'Konstruieren', [2 * e, e / 2, e + 45], ' m');
+}
+
+// --- Geometrische Probleme lösen ---------------------------------------------------------------------------------
+
+function thalesMitte() {
+  const a = rnd(20, 70);
+  return num(180 - 2 * a, `C liegt auf dem Halbkreis über AB, M ist der Mittelpunkt von AB. Der Winkel MAC misst ${a}${D}. Wie groß ist der Winkel AMC?`,
+    `MA und MC sind Radien, das Dreieck AMC ist gleichschenklig. Die Basiswinkel bei A und C sind beide ${a}${D}. Winkel AMC = 180${D} ${MINUS} 2 · ${a}${D} = ${180 - 2 * a}${D}.`, 'Problem lösen', [a, 180 - a, 2 * a, 90 - a], D);
+}
+
+function thalesGleichschenklig() {
+  return num(45, 'Das Dreieck ABC hat bei C einen rechten Winkel und ist gleichschenklig (CA = CB). Wie groß ist der Winkel bei A?',
+    'Die Winkelsumme ist 180°. Bei C sind es 90°, bleiben 90° für zwei gleiche Winkel: 90° : 2 = 45°.', 'Problem lösen', [90, 30, 60], D);
+}
+
+function aussenwinkel() {
+  const a = rnd(30, 80), b = rnd(30, 80), c = 180 - a - b;
+  return num(a + b, `Im Dreieck ABC ist α = ${a}${D} und β = ${b}${D}. Die Seite BC wird über C hinaus verlängert. Der Nebenwinkel zu γ heißt Außenwinkel. Wie groß ist er?`,
+    `Erst γ: 180${D} ${MINUS} ${a}${D} ${MINUS} ${b}${D} = ${c}${D}. Der Außenwinkel ist Nebenwinkel zu γ: 180${D} ${MINUS} ${c}${D} = ${a + b}${D}. Er ist so groß wie α + β.`, 'Problem lösen', [c, 180 - a, 180 - b, a + b + c], D);
+}
+
+function winkelKette() {
+  const a = rnd(20, 50), t = 180 - 2 * a;
+  return num(t, `Ein gleichschenkliges Dreieck hat Basiswinkel von ${a}${D}. Wie groß ist der Winkel an der Spitze?`,
+    `Die Winkelsumme ist 180${D}. Zwei Basiswinkel ergeben ${2 * a}${D}, bleiben ${t}${D} für die Spitze.`, 'Problem lösen', [a, 180 - a, 90 - a], D);
+}
+
 // Die Pools werden erst in init() gefüllt, daher wird die Liste beim Ziehen über eine Funktion geholt.
 const fixed = (getList) => () => pick(getList());
 export const POOLS = {
@@ -163,7 +221,9 @@ export const POOLS = {
   dreiecke: [dreieckSeiten, dreieckUngleichung, kongruenzsatz, eindeutig, eindeutig, fixed(() => DR_FACTS)],
   winkel: [winkelPaar, winkelPaar, winkelsumme, gleichschenklig],
   thales: [thalesGamma, thalesBeta, thalesBeta, thalesRadius, fixed(() => TH_FACTS)],
-  kreise: [fixed(() => KR_FACTS), fixed(() => KR_FACTS), umkreisLage, thalesRadius]
+  kreise: [fixed(() => KR_FACTS), fixed(() => KR_FACTS), umkreisLage, thalesRadius],
+  groessen: [wirklichkeit, zeichnung, massstabFinden, hoeheBaum, fixed(() => GR_FACTS)],
+  probleme: [thalesMitte, thalesGleichschenklig, aussenwinkel, winkelKette, fixed(() => PR_FACTS)]
 };
 
 function make(unitId) {

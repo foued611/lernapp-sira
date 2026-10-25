@@ -31,7 +31,7 @@ export const APPS = [
     title: 'Mathe-Werkstatt',
     desc: 'Vorzeichen, Terme, Gleichungen, Prozente, Zinsen, Dreisatz, Daten und Zufall. Mit Waage, Zahlenstrahl und Kacheln erklärt.',
     href: 'apps/mathe/index.html',
-    units: 8,
+    units: 9,
     status: 'live'
   },
   {
@@ -40,10 +40,9 @@ export const APPS = [
     title: 'Geometrie-Werkstatt',
     desc: 'Mittelsenkrechte, Winkelhalbierende, Dreiecke konstruieren, Winkel, Thales, Umkreis und Inkreis.',
     href: 'apps/geometrie/index.html',
-    units: 6,
+    units: 8,
     status: 'live'
   },
-  { id: 'deutsch', subject: 'Deutsch', title: 'Deutsch-App', desc: 'Textanalyse, Inhaltsangabe und Grammatik.', status: 'soon' },
   { id: 'englisch', subject: 'Englisch', title: 'Englisch-App', desc: 'Wortschatz und Grammatik.', status: 'soon' },
   {
     id: 'info-zahlen',
@@ -51,6 +50,15 @@ export const APPS = [
     title: 'Zahlenwerkstatt',
     desc: 'Binär und Hexadezimal: Lampen schalten, umrechnen und addieren wie ein Computer.',
     href: 'apps/informatik/index.html',
+    units: 6,
+    status: 'live'
+  },
+  {
+    id: 'deutsch',
+    subject: 'Deutsch',
+    title: 'Deutsch-Werkstatt',
+    desc: 'Inhaltsangabe, Adverbialsätze, Kommas, das und dass, Passiv und sprachliche Bilder.',
+    href: 'apps/deutsch/index.html',
     units: 6,
     status: 'live'
   },

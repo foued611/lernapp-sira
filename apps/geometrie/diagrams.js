@@ -1,5 +1,5 @@
 // Konstruktionsbilder der Geometrie-Werkstatt. Alle Punkte werden berechnet, nicht von Hand getippt.
-import { svg, text, path, line } from '../../core/js/svg.js';
+import { svg, text, path, line, rect, arrow } from '../../core/js/svg.js';
 import { at, arc, segment, dot, fullCircle, rightAngle, circumcenter, incircle, dist, f1, rad } from './geom.js';
 
 /** Mittelsenkrechte: zwei Bögen mit gleichem Radius, Gerade durch die Schnittpunkte. */
@@ -85,4 +85,26 @@ export function circlesDiagram() {
   [A2, B2, C2].forEach((P) => { out += segment(P, I, 'ln-soft'); });
   out += dot(I, 'I', 12, -8) + text(390, 20, 'Inkreis', 'md') + text(390, 288, 'Winkelhalbierende', 'sm mu');
   return svg(520, 296, out, 'Links der Umkreis eines Dreiecks mit den drei Mittelsenkrechten, die sich im Mittelpunkt U treffen. Rechts der Inkreis desselben Dreiecks mit den drei Winkelhalbierenden, die sich im Mittelpunkt I treffen.');
+}
+
+/** Maßstab: oben die Zeichnung in cm, unten die Wirklichkeit in m. Alle Werte werden berechnet. */
+export function scaleDiagram(d = 4, n = 200) {
+  const real = (d * n) / 100, w = 60 * d, x0 = 70;
+  let out = text(260, 24, `Maßstab 1 : ${n}`, 'md');
+  out += text(52, 74, 'Zeichnung', 'sm mu') + rect(x0 + 40, 56, w, 28, 'box', 6) + text(x0 + 40 + w / 2, 76, `${d} cm`, 'md mono');
+  out += arrow(x0 + 40 + w / 2, 90, x0 + 40 + w / 2, 128);
+  out += text(x0 + 40 + w / 2 + 70, 114, `mal ${n}`, 'sm mu');
+  out += text(52, 164, 'Wirklichkeit', 'sm mu') + rect(x0 + 40, 140, w, 36, 'hi', 6) + text(x0 + 40 + w / 2, 164, `${f1(real)} m`.replace('.', ','), 'md mono on-sun');
+  return svg(520, 200, out, `Maßstab 1 zu ${n}: ${d} Zentimeter in der Zeichnung sind ${f1(real)} Meter in Wirklichkeit`.replace('.', ','));
+}
+
+/** Problem lösen: Thaleskreis mit Mittelpunkt M. Das Dreieck AMC ist gleichschenklig, alle Winkel werden berechnet. */
+export function problemDiagram(alpha = 35) {
+  const M = [260, 190], r = 140, A = [M[0] - r, M[1]], B = [M[0] + r, M[1]], C = at(M[0], M[1], r, 2 * alpha);
+  let out = path(`M${A[0]} ${A[1]} A${r} ${r} 0 0 1 ${B[0]} ${B[1]}`, 'ln-soft');
+  out += segment(A, B) + segment(A, C) + segment(B, C) + segment(M, C, 'ln-soft');
+  out += dot(A, 'A', -4, 24) + dot(B, 'B', 4, 24) + dot(C, 'C', 4, -12) + dot(M, 'M', 0, 24);
+  out += text(A[0] + 52, A[1] - 8, `${alpha}°`, 'sm mono') + text(C[0] - 24, C[1] + 34, `${alpha}°`, 'sm mono') + text(M[0] - 40, M[1] - 20, `${180 - 2 * alpha}°`, 'sm mono');
+  out += text(260, 238, 'MA und MC sind Radien: Dreieck AMC ist gleichschenklig', 'sm mu');
+  return svg(520, 252, out, `Thaleskreis mit Mittelpunkt M. Im gleichschenkligen Dreieck AMC sind die Basiswinkel ${alpha} Grad, der Winkel bei M ist ${180 - 2 * alpha} Grad.`);
 }
