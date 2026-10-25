@@ -1,0 +1,205 @@
+{
+  "msFacts": [
+    {
+      "prompt": "Was gilt für jeden Punkt der Mittelsenkrechten von AB?",
+      "answer": "Er ist von A und B gleich weit entfernt.",
+      "wrong": [
+        "Er liegt auf der Strecke AB.",
+        "Er ist doppelt so weit von A wie von B entfernt.",
+        "Er liegt immer genau 90° von A entfernt."
+      ],
+      "why": "Das ist die wichtigste Eigenschaft der Mittelsenkrechten. Darum benutzt man sie, um einen Punkt zu finden, der von zwei Orten gleich weit weg ist.",
+      "label": "Eigenschaft"
+    },
+    {
+      "prompt": "Wie misst du den Abstand eines Punktes P von einer Geraden g?",
+      "answer": "Länge der senkrechten Strecke von P zu g",
+      "wrong": [
+        "Länge irgendeiner Strecke von P zu g",
+        "Länge der längsten Strecke von P zu g",
+        "Abstand von P zum Anfang der Geraden"
+      ],
+      "why": "Der kürzeste Weg von einem Punkt zu einer Geraden führt senkrecht auf sie zu. Diese Länge heißt Abstand.",
+      "label": "Abstand"
+    },
+    {
+      "prompt": "Womit beginnst du die Konstruktion der Mittelsenkrechten von AB?",
+      "answer": "Mit einem Kreisbogen um A, der AB halb überschreitet",
+      "wrong": [
+        "Mit dem Lineal durch die Mitte von AB",
+        "Mit dem Geodreieck an einer beliebigen Stelle",
+        "Mit einem Kreis um M"
+      ],
+      "why": "Erst zwei gleich große Kreisbögen um A und um B, danach die Gerade durch die beiden Schnittpunkte. Die Mitte M kennst du am Anfang noch nicht.",
+      "label": "Konstruktion"
+    }
+  ],
+  "whFacts": [
+    {
+      "prompt": "Was gilt für jeden Punkt auf der Winkelhalbierenden?",
+      "answer": "Er hat zu beiden Schenkeln denselben Abstand.",
+      "wrong": [
+        "Er hat vom Scheitel den Abstand 0.",
+        "Er liegt auf einem der beiden Schenkel.",
+        "Er ist von beiden Schenkeln 90° entfernt."
+      ],
+      "why": "Genau deshalb ist die Winkelhalbierende nützlich: Sie findet alle Punkte, die zu zwei Geraden gleichen Abstand haben.",
+      "label": "Eigenschaft"
+    },
+    {
+      "prompt": "Wie konstruierst du eine Winkelhalbierende?",
+      "answer": "Bogen um den Scheitel, dann zwei gleich große Bögen um die Schnittpunkte mit den Schenkeln",
+      "wrong": [
+        "Zwei Bögen um die Endpunkte der Schenkel",
+        "Mit dem Lineal in die Mitte zwischen die Schenkel zeichnen",
+        "Den Winkel messen und mit dem Geodreieck halbieren"
+      ],
+      "why": "So geht es nur mit Zirkel und Lineal: Der Bogen um den Scheitel S liefert zwei Punkte U und V. Von U und V aus zeichnest du zwei gleich große Bögen. Ihr Schnittpunkt W liegt auf der Winkelhalbierenden.",
+      "label": "Konstruktion"
+    }
+  ],
+  "drFacts": [
+    {
+      "prompt": "Womit beginnst du das Konstruieren eines Dreiecks aus a, b und c?",
+      "answer": "Mit einer Seite, zum Beispiel c",
+      "wrong": [
+        "Mit dem Kreis um C",
+        "Mit der Höhe",
+        "Mit dem Umkreis"
+      ],
+      "why": "Zuerst zeichnest du eine Seite. Die Ecke C findest du danach als Schnittpunkt zweier Kreisbögen, deren Radien die Seiten b und a sind.",
+      "label": "Konstruktion"
+    },
+    {
+      "prompt": "Wie finden die Kreisbögen bei SSS die Ecke C?",
+      "answer": "C ist der Schnittpunkt von Bogen um A (Radius b) und Bogen um B (Radius a)",
+      "wrong": [
+        "C liegt auf der Mitte von AB",
+        "C liegt auf dem Bogen um M",
+        "C liegt auf einem beliebigen Punkt über AB"
+      ],
+      "why": "C hat von A den Abstand b und von B den Abstand a. Beide Bedingungen zusammen treffen nur auf den Schnittpunkt der Bögen zu.",
+      "label": "Konstruktion"
+    }
+  ],
+  "thFacts": [
+    {
+      "prompt": "Wo liegt der Mittelpunkt des Umkreises eines rechtwinkligen Dreiecks?",
+      "answer": "in der Mitte der Hypotenuse",
+      "wrong": [
+        "im Schnittpunkt der Höhen",
+        "in der Mitte der längeren Kathete",
+        "außerhalb des Dreiecks"
+      ],
+      "why": "Die Hypotenuse ist der Durchmesser des Thaleskreises. Ihre Mitte ist daher der Mittelpunkt des Umkreises.",
+      "label": "Thales"
+    },
+    {
+      "prompt": "Das Dreieck ABC hat bei C einen rechten Winkel. Wo liegt C?",
+      "answer": "auf dem Kreis mit dem Durchmesser AB",
+      "wrong": [
+        "auf der Mittelsenkrechten von AB",
+        "auf der Winkelhalbierenden bei A",
+        "auf der Strecke AB"
+      ],
+      "why": "Das ist die Umkehrung des Satzes von Thales: Ein rechter Winkel bei C bedeutet, dass C auf dem Thaleskreis über AB liegt.",
+      "label": "Umkehrung"
+    }
+  ],
+  "krFacts": [
+    {
+      "prompt": "Der Mittelpunkt des Umkreises ist der Schnittpunkt der …",
+      "answer": "Mittelsenkrechten",
+      "wrong": [
+        "Winkelhalbierenden",
+        "Höhen",
+        "Seitenhalbierenden"
+      ],
+      "why": "Der Mittelpunkt muss von allen drei Ecken gleich weit entfernt sein. Das erfüllen genau die Punkte der Mittelsenkrechten.",
+      "label": "Umkreis"
+    },
+    {
+      "prompt": "Der Mittelpunkt des Inkreises ist der Schnittpunkt der …",
+      "answer": "Winkelhalbierenden",
+      "wrong": [
+        "Mittelsenkrechten",
+        "Höhen",
+        "Seitenhalbierenden"
+      ],
+      "why": "Der Mittelpunkt muss von allen drei Seiten gleich weit entfernt sein. Das erfüllen genau die Punkte der Winkelhalbierenden.",
+      "label": "Inkreis"
+    },
+    {
+      "prompt": "Welcher Kreis geht durch alle drei Ecken eines Dreiecks?",
+      "answer": "der Umkreis",
+      "wrong": [
+        "der Inkreis",
+        "der Thaleskreis in jedem Fall",
+        "der Kreis um den Schwerpunkt"
+      ],
+      "why": "Der Umkreis läuft durch A, B und C. Der Inkreis dagegen berührt die drei Seiten von innen.",
+      "label": "Kreise"
+    },
+    {
+      "prompt": "Welcher Kreis berührt alle drei Seiten eines Dreiecks von innen?",
+      "answer": "der Inkreis",
+      "wrong": [
+        "der Umkreis",
+        "der Kreis um die längste Seite",
+        "es gibt keinen solchen Kreis"
+      ],
+      "why": "Der Inkreis liegt ganz im Dreieck und berührt jede Seite in einem Punkt.",
+      "label": "Kreise"
+    }
+  ],
+  "theorems": [
+    [
+      "drei Seiten",
+      "SSS"
+    ],
+    [
+      "zwei Seiten und der eingeschlossene Winkel",
+      "SWS"
+    ],
+    [
+      "eine Seite und die beiden anliegenden Winkel",
+      "WSW"
+    ],
+    [
+      "zwei Seiten und der Winkel, der der längeren Seite gegenüberliegt",
+      "SsW"
+    ]
+  ],
+  "eindeutig": [
+    [
+      "a = 5 cm, b = 7 cm, α = 40°. Der Winkel α liegt der kürzeren Seite a gegenüber.",
+      "höchstens zwei Dreiecke möglich",
+      "Liegt der Winkel der kürzeren Seite gegenüber, kann der Kreisbogen die Seite zweimal treffen. Das ist kein Kongruenzsatz."
+    ],
+    [
+      "a = 7 cm, b = 5 cm, α = 40°. Der Winkel α liegt der längeren Seite a gegenüber.",
+      "genau ein Dreieck",
+      "Der Winkel liegt der längeren Seite gegenüber. Das ist der Kongruenzsatz SsW, das Dreieck ist eindeutig."
+    ],
+    [
+      "α = 40°, β = 60°, γ = 80°",
+      "unendlich viele Dreiecke (verschieden groß)",
+      "Drei Winkel legen nur die Form fest, nicht die Größe. Man kann das Dreieck beliebig vergrößern. Für Eindeutigkeit braucht man mindestens eine Seite."
+    ],
+    [
+      "b = 5 cm, c = 7 cm, α = 50° (α liegt zwischen b und c)",
+      "genau ein Dreieck",
+      "Zwei Seiten und der eingeschlossene Winkel: Kongruenzsatz SWS."
+    ],
+    [
+      "c = 6 cm, α = 50°, β = 60°",
+      "genau ein Dreieck",
+      "Eine Seite und die beiden anliegenden Winkel: Kongruenzsatz WSW."
+    ],
+    [
+      "α = 100°, β = 90°, c = 5 cm",
+      "kein Dreieck",
+      "Die Winkelsumme im Dreieck ist 180°. Schon 100° + 90° ist 190°, das passt nicht."
+    ]
+  ]
+}

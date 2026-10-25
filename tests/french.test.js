@@ -1,8 +1,11 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { assertValidQuestion } from './helpers.js';
-import { V, UNITS, SP, RAW } from '../apps/franzoesisch-verben/data.js';
+import { assertValidQuestion, diskSource } from './helpers.js';
+import { V, UNITS, SP, RAW, init } from '../apps/franzoesisch-verben/model.js';
 import { lessonRound, bossRound, quickRound, blitzQuestion, checkForm, hint, distract } from '../apps/franzoesisch-verben/builders.js';
+
+// Das Modell wird wie im Browser aus content/fr-verben/ gefüllt.
+{ const bundle = await diskSource().load('fr-verben'); init({ data: bundle.data, manifest: bundle.manifest }); }
 
 test('Jede Lernpfad-Seite liefert 8 gültige Fragen (200 Zufallsrunden)', () => {
   for (let n = 0; n < 200; n++) {

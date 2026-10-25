@@ -1,5 +1,4 @@
-// Startpunkt der App: bindet die Konfiguration an die gemeinsame Shell.
-import { mountApp } from '../../core/js/shell.js';
-import config from './config.js';
+import { bootApp } from '../../core/js/boot.js';
+import logic from './logic.js';
 
-mountApp(config, { header: document.getElementById('hdr'), main: document.getElementById('app') });
+bootApp({ id: 'fr-verben', logic });

@@ -54,3 +54,31 @@ export async function assertValidLesson(spec, name = 'Lektion') {
   assert.ok(spec.check.q && ids.length >= 3 && ids.includes(spec.check.answer) && new Set(ids).size === ids.length, `${name}: check ungültig`);
   assert.ok(spec.check.why, `${name}: check.why fehlt`);
 }
+
+// --- Konfiguration aus content/ + logic.js bauen (derselbe Weg wie im Browser, nur mit Dateien statt fetch) ---
+import { readFile } from 'node:fs/promises';
+import { fileURLToPath } from 'node:url';
+import { createStaticSource } from '../core/js/content.js';
+import { buildConfig } from '../core/js/appconfig.js';
+
+const ROOT = fileURLToPath(new URL('../', import.meta.url));
+
+/** fetch-Ersatz: liest https://x.test/content/... aus dem Repo. */
+export async function diskFetch(url) {
+  const path = String(url).replace(/^https:\/\/x\.test\//, ROOT);
+  try {
+    const text = await readFile(path, 'utf8');
+    return { ok: true, status: 200, json: async () => JSON.parse(text) };
+  } catch {
+    return { ok: false, status: 404, json: async () => ({}) };
+  }
+}
+
+export const diskSource = () => createStaticSource('https://x.test/content/', diskFetch);
+
+/** Lädt die Konfiguration einer App wie im Browser: Inhalte aus content/<id>/ plus apps/<name>/logic.js. */
+export async function loadAppConfig(id, folder) {
+  const dir = `${ROOT}${folder.replace(/^\.?\//, '')}`;
+  const logic = (await import(`${dir}logic.js`)).default;
+  return buildConfig(await diskSource().load(id), logic);
+}

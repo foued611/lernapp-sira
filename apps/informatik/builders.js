@@ -1,7 +1,13 @@
 // Baut aus Zufallszahlen Fragen im Quiz-Format (siehe core/js/quiz.js).
 import { esc, shuffle, pick } from '../../core/js/ui.js';
 import { choiceQuestion, typedQuestion } from '../../core/js/questions.js';
-import { UNITS } from './data.js';
+// Seiten kommen aus content/info-zahlen/ (siehe init). Hier liegt nur die Logik der Aufgaben.
+let UNITS = [];
+
+/** Bekommt die Seitenliste, bevor die erste Runde entsteht. */
+export function init({ manifest }) {
+  UNITS = manifest.units;
+}
 import {
   HEX, toBin, toHex, rnd, placeSum, placeDigits, onesWeights, checker, distractors, mono,
   explainBinToDec, explainDecToBin, explainHexToDec, explainDecToHex, explainBinToHex, explainAdd

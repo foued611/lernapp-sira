@@ -1,7 +1,11 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { fmt, par, numCheck, termCheck, probCheck, linear, nearby } from '../apps/mathe/math.js';
-import { POOLS } from '../apps/mathe/builders.js';
+import { POOLS, init } from '../apps/mathe/builders.js';
+import { diskSource } from './helpers.js';
+
+// Die Erzeuger bekommen Seiten und Aufgabendaten wie im Browser aus content/mathe/.
+{ const bundle = await diskSource().load('mathe'); init({ data: bundle.data, manifest: bundle.manifest }); }
 
 test('Zahlen werden mit Minuszeichen und Komma ausgegeben', () => {
   assert.equal(fmt(-3.5), '−3,5');

@@ -2,7 +2,10 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { toBin, toHex, normInput, checker, decToBinSteps, onesWeights, placeSum, distractors, HEX } from '../apps/informatik/numbers.js';
 import * as b from '../apps/informatik/builders.js';
-import config from '../apps/informatik/config.js';
+import { loadAppConfig, diskSource } from './helpers.js';
+
+const config = await loadAppConfig('info-zahlen', 'apps/informatik/');
+{ const bundle = await diskSource().load('info-zahlen'); b.init({ data: bundle.data, manifest: bundle.manifest }); }
 import { assertValidQuestion } from './helpers.js';
 
 test('Umrechnung Binär und Hex', () => {

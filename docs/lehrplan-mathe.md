@@ -29,7 +29,7 @@ Das Inhaltsverzeichnis wurde am 25.10.2026 per Foto geprüft. Kapitel: I Terme m
 | VI | 6 Kredit und Tilgung | fehlt noch |
 | nicht im Buch | Mittelwert, Median, Modus, relative Häufigkeit, Laplace | Seiten `daten` und `zufall`, als „Zusatz“ gekennzeichnet und am Ende der Liste |
 
-Hinweise: Die IDs der Seiten bleiben unverändert, nur die Reihenfolge in `data.js` wurde angepasst, gespeicherte Sterne bleiben erhalten. Die Zusatz-Seiten stehen nicht im Inhaltsverzeichnis. Ob sie bleiben oder entfernt werden, entscheidet Foued.
+Hinweise: Die IDs der Seiten bleiben unverändert, nur die Reihenfolge in `content/mathe/manifest.json` wurde angepasst, gespeicherte Sterne bleiben erhalten. Die Zusatz-Seiten stehen nicht im Inhaltsverzeichnis. Ob sie bleiben oder entfernt werden, entscheidet Foued.
 
 ## Offene Prüfpunkte
 - Kredit und Tilgung (VI.6), Größen durch Konstruieren (III.6) und Geometrische Probleme lösen (V.7) sind noch nicht umgesetzt.

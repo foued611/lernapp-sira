@@ -1,0 +1,594 @@
+{
+ "endings": {
+  "er": [
+   "e",
+   "es",
+   "e",
+   "ons",
+   "ez",
+   "ent"
+  ],
+  "ir": [
+   "is",
+   "is",
+   "it",
+   "issons",
+   "issez",
+   "issent"
+  ],
+  "re": [
+   "s",
+   "s",
+   "",
+   "ons",
+   "ez",
+   "ent"
+  ]
+ },
+ "pron": [
+  "je",
+  "tu",
+  "il / elle / on",
+  "nous",
+  "vous",
+  "ils / elles"
+ ],
+ "pqv": [
+  [
+   "je"
+  ],
+  [
+   "tu"
+  ],
+  [
+   "il",
+   "elle",
+   "on"
+  ],
+  [
+   "nous"
+  ],
+  [
+   "vous"
+  ],
+  [
+   "ils",
+   "elles"
+  ]
+ ],
+ "verbs": {
+  "etre": {
+   "inf": "être",
+   "de": "sein",
+   "forms": [
+    "suis",
+    "es",
+    "est",
+    "sommes",
+    "êtes",
+    "sont"
+   ],
+   "deF": [
+    "ich bin",
+    "du bist",
+    "er/sie/es ist",
+    "wir sind",
+    "ihr seid",
+    "sie sind"
+   ]
+  },
+  "avoir": {
+   "de": "haben",
+   "forms": [
+    "ai",
+    "as",
+    "a",
+    "avons",
+    "avez",
+    "ont"
+   ],
+   "deF": [
+    "ich habe",
+    "du hast",
+    "er/sie/es hat",
+    "wir haben",
+    "ihr habt",
+    "sie haben"
+   ]
+  },
+  "aller": {
+   "de": "gehen",
+   "forms": [
+    "vais",
+    "vas",
+    "va",
+    "allons",
+    "allez",
+    "vont"
+   ],
+   "deF": [
+    "ich gehe",
+    "du gehst",
+    "er/sie/es geht",
+    "wir gehen",
+    "ihr geht",
+    "sie gehen"
+   ]
+  },
+  "faire": {
+   "de": "machen",
+   "forms": [
+    "fais",
+    "fais",
+    "fait",
+    "faisons",
+    "faites",
+    "font"
+   ],
+   "deF": [
+    "ich mache",
+    "du machst",
+    "er/sie/es macht",
+    "wir machen",
+    "ihr macht",
+    "sie machen"
+   ]
+  },
+  "parler": {
+   "de": "sprechen",
+   "stem": "parl",
+   "group": "er"
+  },
+  "aimer": {
+   "de": "mögen, lieben",
+   "stem": "aim",
+   "group": "er"
+  },
+  "habiter": {
+   "de": "wohnen",
+   "stem": "habit",
+   "group": "er"
+  },
+  "jouer": {
+   "de": "spielen",
+   "stem": "jou",
+   "group": "er"
+  },
+  "chanter": {
+   "de": "singen",
+   "stem": "chant",
+   "group": "er"
+  },
+  "regarder": {
+   "de": "anschauen",
+   "stem": "regard",
+   "group": "er"
+  },
+  "ecouter": {
+   "inf": "écouter",
+   "de": "zuhören",
+   "stem": "écout",
+   "group": "er"
+  },
+  "finir": {
+   "de": "beenden",
+   "stem": "fin",
+   "group": "ir"
+  },
+  "choisir": {
+   "de": "wählen",
+   "stem": "chois",
+   "group": "ir"
+  },
+  "attendre": {
+   "de": "warten",
+   "stem": "attend",
+   "group": "re"
+  },
+  "repondre": {
+   "inf": "répondre",
+   "de": "antworten",
+   "stem": "répond",
+   "group": "re"
+  },
+  "vendre": {
+   "de": "verkaufen",
+   "stem": "vend",
+   "group": "re"
+  }
+ },
+ "sentences": {
+  "etre": [
+   [
+    "etre",
+    0,
+    "Je ___ à la maison.",
+    "Ich bin zu Hause."
+   ],
+   [
+    "etre",
+    1,
+    "Tu ___ mon meilleur ami.",
+    "Du bist mein bester Freund."
+   ],
+   [
+    "etre",
+    2,
+    "Elle ___ à Paris.",
+    "Sie ist in Paris."
+   ],
+   [
+    "etre",
+    3,
+    "Nous ___ en classe.",
+    "Wir sind im Klassenzimmer."
+   ],
+   [
+    "etre",
+    4,
+    "Vous ___ très gentils !",
+    "Ihr seid sehr nett!"
+   ],
+   [
+    "etre",
+    5,
+    "Ils ___ au cinéma.",
+    "Sie sind im Kino."
+   ],
+   [
+    "etre",
+    5,
+    "Léa et Tom ___ amis.",
+    "Léa und Tom sind Freunde."
+   ],
+   [
+    "etre",
+    2,
+    "Mon frère ___ malade.",
+    "Mein Bruder ist krank."
+   ]
+  ],
+  "avoir": [
+   [
+    "avoir",
+    0,
+    "J'___ un chien.",
+    "Ich habe einen Hund."
+   ],
+   [
+    "avoir",
+    1,
+    "Tu ___ un frère ?",
+    "Hast du einen Bruder?"
+   ],
+   [
+    "avoir",
+    2,
+    "Il ___ onze ans.",
+    "Er ist elf Jahre alt."
+   ],
+   [
+    "avoir",
+    3,
+    "Nous ___ cours de maths.",
+    "Wir haben Matheunterricht."
+   ],
+   [
+    "avoir",
+    4,
+    "Vous ___ faim ?",
+    "Habt ihr Hunger?"
+   ],
+   [
+    "avoir",
+    5,
+    "Elles ___ une idée.",
+    "Sie haben eine Idee."
+   ],
+   [
+    "avoir",
+    2,
+    "Ma sœur ___ un vélo.",
+    "Meine Schwester hat ein Fahrrad."
+   ],
+   [
+    "avoir",
+    5,
+    "Mes parents ___ une voiture.",
+    "Meine Eltern haben ein Auto."
+   ]
+  ],
+  "aller": [
+   [
+    "aller",
+    0,
+    "Je ___ à l'école.",
+    "Ich gehe zur Schule."
+   ],
+   [
+    "aller",
+    1,
+    "Tu ___ à la piscine ?",
+    "Gehst du ins Schwimmbad?"
+   ],
+   [
+    "aller",
+    2,
+    "Il ___ chez son ami.",
+    "Er geht zu seinem Freund."
+   ],
+   [
+    "aller",
+    3,
+    "Nous ___ au cinéma.",
+    "Wir gehen ins Kino."
+   ],
+   [
+    "aller",
+    4,
+    "Vous ___ à Berlin ?",
+    "Fahrt ihr nach Berlin?"
+   ],
+   [
+    "aller",
+    5,
+    "Elles ___ à la maison.",
+    "Sie gehen nach Hause."
+   ],
+   [
+    "aller",
+    2,
+    "Ça ___ très bien !",
+    "Es geht mir sehr gut!"
+   ],
+   [
+    "aller",
+    5,
+    "Mes amis ___ au parc.",
+    "Meine Freunde gehen in den Park."
+   ]
+  ],
+  "faire": [
+   [
+    "faire",
+    0,
+    "Je ___ mes devoirs.",
+    "Ich mache meine Hausaufgaben."
+   ],
+   [
+    "faire",
+    1,
+    "Tu ___ du sport ?",
+    "Machst du Sport?"
+   ],
+   [
+    "faire",
+    2,
+    "Elle ___ un gâteau.",
+    "Sie macht einen Kuchen."
+   ],
+   [
+    "faire",
+    3,
+    "Nous ___ du vélo.",
+    "Wir fahren Rad."
+   ],
+   [
+    "faire",
+    4,
+    "Vous ___ une pause ?",
+    "Macht ihr eine Pause?"
+   ],
+   [
+    "faire",
+    5,
+    "Ils ___ la cuisine.",
+    "Sie kochen."
+   ],
+   [
+    "faire",
+    2,
+    "Il ___ beau aujourd'hui.",
+    "Heute ist schönes Wetter."
+   ],
+   [
+    "faire",
+    5,
+    "Mes frères ___ du judo.",
+    "Meine Brüder machen Judo."
+   ]
+  ],
+  "er": [
+   [
+    "parler",
+    0,
+    "Je ___ français.",
+    "Ich spreche Französisch."
+   ],
+   [
+    "aimer",
+    1,
+    "Tu ___ le chocolat.",
+    "Du magst Schokolade."
+   ],
+   [
+    "habiter",
+    2,
+    "Elle ___ à Munich.",
+    "Sie wohnt in München."
+   ],
+   [
+    "chanter",
+    3,
+    "Nous ___ une chanson.",
+    "Wir singen ein Lied."
+   ],
+   [
+    "regarder",
+    4,
+    "Vous ___ un film ?",
+    "Seht ihr einen Film an?"
+   ],
+   [
+    "jouer",
+    5,
+    "Ils ___ au foot.",
+    "Sie spielen Fußball."
+   ],
+   [
+    "aimer",
+    0,
+    "J'___ la musique.",
+    "Ich mag Musik."
+   ],
+   [
+    "ecouter",
+    2,
+    "Mon père ___ la radio.",
+    "Mein Vater hört Radio."
+   ]
+  ],
+  "irre": [
+   [
+    "finir",
+    0,
+    "Je ___ mes devoirs à cinq heures.",
+    "Ich beende meine Hausaufgaben um fünf."
+   ],
+   [
+    "choisir",
+    1,
+    "Tu ___ un livre.",
+    "Du wählst ein Buch."
+   ],
+   [
+    "finir",
+    2,
+    "Le cours ___ à midi.",
+    "Der Unterricht endet um zwölf."
+   ],
+   [
+    "choisir",
+    3,
+    "Nous ___ un cadeau.",
+    "Wir wählen ein Geschenk."
+   ],
+   [
+    "finir",
+    4,
+    "Vous ___ bientôt ?",
+    "Seid ihr bald fertig?"
+   ],
+   [
+    "finir",
+    5,
+    "Les élèves ___ le test.",
+    "Die Schüler beenden den Test."
+   ],
+   [
+    "attendre",
+    0,
+    "J'___ le bus.",
+    "Ich warte auf den Bus."
+   ],
+   [
+    "repondre",
+    1,
+    "Tu ___ au professeur.",
+    "Du antwortest dem Lehrer."
+   ],
+   [
+    "attendre",
+    2,
+    "Il ___ son ami.",
+    "Er wartet auf seinen Freund."
+   ],
+   [
+    "vendre",
+    3,
+    "Nous ___ des livres.",
+    "Wir verkaufen Bücher."
+   ],
+   [
+    "repondre",
+    4,
+    "Vous ___ à la question.",
+    "Ihr antwortet auf die Frage."
+   ],
+   [
+    "attendre",
+    5,
+    "Elles ___ le train.",
+    "Sie warten auf den Zug."
+   ]
+  ]
+ },
+ "traps": {
+  "faire": {
+   "4": [
+    "faisez"
+   ],
+   "5": [
+    "faisent"
+   ]
+  },
+  "etre": {
+   "4": [
+    "êtez"
+   ],
+   "5": [
+    "êtent"
+   ]
+  },
+  "aller": {
+   "0": [
+    "alle"
+   ],
+   "5": [
+    "allent"
+   ]
+  },
+  "avoir": {
+   "2": [
+    "ha"
+   ],
+   "5": [
+    "avent"
+   ]
+  }
+ },
+ "hints": {
+  "etre": [
+   "je suis – Ich bin.",
+   "tu es – Du bist. Nur zwei Buchstaben: e-s.",
+   "il / elle / on est – Er, sie, man ist. Das gilt auch für Namen: Léa est …",
+   "nous sommes – Wir sind. Merke das doppelte m.",
+   "vous êtes – Ihr seid / Sie sind. Der Dach-Akzent ê ist Pflicht, „vous êtez“ gibt es nicht.",
+   "ils / elles sont – Sie sind. Alle Mehrzahl-Subjekte (Léa et Tom) brauchen sont."
+  ],
+  "avoir": [
+   "j'ai – Ich habe. Vor einem Vokal wird je zu j'.",
+   "tu as – Du hast.",
+   "il / elle / on a – Er, sie hat. Das Alter sagt man mit avoir: Il a onze ans.",
+   "nous avons – Wir haben.",
+   "vous avez – Ihr habt / Sie haben.",
+   "ils / elles ont – Sie haben (Mehrzahl)."
+  ],
+  "aller": [
+   "je vais – Ich gehe. Es heißt nicht „je vas“.",
+   "tu vas – Du gehst.",
+   "il / elle / on va – Er, sie geht. Nur zwei Buchstaben, kein s.",
+   "nous allons – Wir gehen. Hier taucht der Stamm all- wieder auf.",
+   "vous allez – Ihr geht / Sie gehen.",
+   "ils / elles vont – Sie gehen. Wie ils font und ils sont: Endung -ont."
+  ],
+  "faire": [
+   "je fais – Ich mache.",
+   "tu fais – Du machst. Klingt und schreibt sich wie je fais.",
+   "il / elle / on fait – Er, sie macht. Hier steht ein t am Ende.",
+   "nous faisons – Wir machen.",
+   "vous faites – Ihr macht / Sie machen. Nicht „faisez“! Wie vous êtes eine Ausnahme auf -tes.",
+   "ils / elles font – Sie machen. Eine der vier -ont-Formen."
+  ]
+ }
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "id": "first",
+    "n": "Erster Schritt",
+    "d": "Die erste Seite geschafft",
+    "rule": {
+      "type": "anyUnit"
+    }
+  },
+  {
+    "id": "perfect",
+    "n": "Fehlerfrei",
+    "d": "Eine Runde ohne Fehler",
+    "rule": {
+      "type": "perfectRound"
+    }
+  }
+]

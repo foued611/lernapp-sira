@@ -1,0 +1,36 @@
+{
+  "situations": [
+    [
+      "Anzahl der Brötchen ↔ Preis",
+      "proportional"
+    ],
+    [
+      "Anzahl der Kopien ↔ Gesamtkosten",
+      "proportional"
+    ],
+    [
+      "gelaufene Zeit bei gleichem Tempo ↔ Strecke",
+      "proportional"
+    ],
+    [
+      "Anzahl der Arbeiter ↔ Zeit für dieselbe Arbeit",
+      "antiproportional"
+    ],
+    [
+      "Geschwindigkeit ↔ Fahrzeit auf einer festen Strecke",
+      "antiproportional"
+    ],
+    [
+      "Anzahl der Teilnehmer ↔ Preis pro Person bei festem Gesamtpreis",
+      "antiproportional"
+    ],
+    [
+      "Alter eines Kindes ↔ seine Körpergröße",
+      "weder noch"
+    ],
+    [
+      "Schuhgröße ↔ Mathenote",
+      "weder noch"
+    ]
+  ]
+}

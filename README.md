@@ -27,6 +27,6 @@ npm run smoke   # App im simulierten Browser durchspielen
 ```
 
 ## Weiterentwickeln
-Aufbau, App-Vertrag und die Schritte für neue Apps stehen in [AGENTS.md](AGENTS.md). Neue Apps entstehen aus der Vorlage `apps/_template/`.
+Aufbau, App-Vertrag und die Schritte für neue Apps stehen in [AGENTS.md](AGENTS.md). Neue Apps entstehen aus der Vorlage `apps/_template/` und `content/vorlage/`. Inhalte (JSON in `content/`) und Logik (`apps/<name>/logic.js`) sind getrennt, damit die Inhalte später aus einer Datenbank kommen können: [docs/inhalte.md](docs/inhalte.md).
 
 Der Fortschritt liegt in der Browser-Datenbank (IndexedDB) und wird nicht übertragen. Über "Fortschritt sichern" auf der Startseite einer App lässt er sich als Datei sichern und wieder einspielen.

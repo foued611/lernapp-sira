@@ -8,12 +8,13 @@ Anweisungen für Coding-Agenten und Mitwirkende. Lies diese Datei vor jeder Änd
 
 ## Technik
 
-- Statische Seite, kein Build-Schritt, kein Framework. Vanilla JavaScript als ES-Module, CSS mit Custom Properties.
+- Statische Seite, kein Build-Schritt, kein UI-Framework. Vanilla JavaScript als ES-Module, CSS mit Custom Properties. Die Begründung (und warum kein React, TypeScript oder Vite) steht in `docs/inhalte.md`.
+- Daten und Logik sind getrennt: Inhalte liegen als JSON in `content/<id>/`, Code in `core/` und `apps/<name>/`. Siehe "Inhalte und Daten".
 - Läuft über GitHub Pages (Branch `main`, Ordner `/`). Ein Push auf `main` veröffentlicht.
 - ES-Module brauchen http(s). Lokal testen mit `npm run serve` und `http://localhost:8000`. Ein Doppelklick auf die HTML-Datei (file://) funktioniert nicht.
 - Node (nur für Tests): `npm install`, `npm test`, `npm run smoke`.
 - Alle Pfade im HTML und in Imports sind relativ, weil die Seite unter `/lernapp-sira/` liegt.
-- Keine Laufzeit-Abhängigkeiten (Tests nutzen `fake-indexeddb`, `jsdom`, `esbuild`). Schriften liegen selbst gehostet in `core/fonts/` (WOFF2, Lizenzen OFL daneben), es gibt keine Anfragen an Google. Neue externe Skripte oder Dienste nur nach Absprache (Datenschutz, DSGVO).
+- Keine Laufzeit-Abhängigkeiten (Tests nutzen `fake-indexeddb`, `jsdom`, `esbuild`, `ajv`). Schriften liegen selbst gehostet in `core/fonts/` (WOFF2, Lizenzen OFL daneben), es gibt keine Anfragen an Google. Neue externe Skripte oder Dienste nur nach Absprache (Datenschutz, DSGVO).
 
 ## Struktur
 
@@ -24,10 +25,14 @@ core/styles/   app.css (einziger Einstieg, bindet tokens, fonts, base, quiz, les
 core/fonts/    selbst gehostete Schriften mit Lizenzen
 core/js/       db.js store.js profile.js rounds.js shell.js   Speicher, Spielregeln, App-Rahmen
                qtypes.js quiz.js blitz.js questions.js         Fragetypen, Rundenmotor, Blitz, Frage-Bausteine
-               lesson.js svg.js                                Lektionen und Diagramme
+               lesson.js svg.js theory.js                      Lektionen, Diagramme, Standard-Theorie
+               content.js appconfig.js rules.js validate.js    Inhaltsquellen, Konfiguration aus Inhalten, Trophäen-Regeln, Paketprüfung
+               boot.js                                         Startet eine App: laden, bauen, einhängen
                views/home.js result.js backup.js               Ansichten als reine HTML-Funktionen
                ui.js icons.js mascot.js confetti.js
-apps/<name>/   eine App: index.html, main.js, config.js, data.js, builders.js, lessons.js, diagrams.js, theory.js, badges.js, app.css, optional smoke.mjs
+content/<id>/  die Inhalte einer App als JSON: manifest.json, lessons.json, badges.json, data.json (optional)
+schemas/       bundle.schema.json: JSON-Schema für ein Inhaltspaket (von den Tests mit Ajv geprüft)
+apps/<name>/   eine App: index.html, main.js, logic.js, builders.js, diagrams.js, app.css, optional theory.js und smoke.mjs
 apps/_template/ Vorlage für neue Apps (wird von den Tests geprüft)
 tests/         Unit- und Vertragstests (node:test)
 scripts/       smoke.mjs (Browser-Simulation mit jsdom)
@@ -37,9 +42,33 @@ Gemeinsame Rechenhelfer (Zahlen formatieren, tolerante Eingabeprüfung, Brüche)
 
 Faustregel: Was mehr als eine App braucht, gehört nach `core/`. Was nur ein Fach betrifft, bleibt in `apps/<name>/`. Apps importieren aus `core/`, nie aus anderen Apps. `core/` kennt keine einzelne App.
 
+## Inhalte und Daten
+
+Eine App besteht aus zwei Teilen, die sich nie mischen:
+
+- **Inhalt** (`content/<id>/`): alles, was ein Redakteur oder später eine Datenbank liefern kann. Seiten, Lektionen, Trophäen, Merkzettel, Aufgabenpools. Nur JSON, kein Code.
+- **Logik** (`apps/<name>/logic.js`): alles, was rechnet oder zeichnet. Aufgaben-Erzeuger, Diagramme, ein Theorie-Spielzeug. Kein Lernstoff als Text.
+
+Das Inhaltspaket (`bundle`) hat immer dieselbe Form `{ manifest, lessons, badges, data }`, beschrieben in `schemas/bundle.schema.json` und `docs/inhalte.md`. Eine Quelle (`core/js/content.js`) liefert es: heute `createStaticSource` (JSON-Dateien), später `createHttpSource` (Datenbank-API), optional mit `withCache` für den Offline-Betrieb. `core/js/boot.js` lädt das Paket, `buildConfig` (`core/js/appconfig.js`) macht daraus die App-Konfiguration, `shell.js` zeigt sie an.
+
+| Datei | Inhalt |
+|---|---|
+| `manifest.json` | `schema: 1`, `id`, `title`, `greeting`, `intro`, optional `bossTitle`, `words`, `inputChars`; `units` (Seiten mit Karte), `notes` (Merkzettel je Seite) |
+| `lessons.json` | Lektion je Seite (Teile siehe "Lektionen"). Bilder als Verweis `{ "diagram": { "name", "args" }, "caption" }` auf `logic.diagrams` |
+| `badges.json` | Trophäen `{ id, n, d, rule }` mit einer deklarativen Regel (`anyUnit`, `unit`, `units`, `perfectRound`, `combo`, `blitz`, `boss`, `streak`, `all`, `any`), Beschreibung in `core/js/rules.js` |
+| `data.json` | Aufgabendaten, deren Form die Logik der App festlegt (z. B. Faktenpools) |
+
+Regeln:
+
+- Neue Texte, Fragen und Fakten gehören nach `content/`, nicht in `.js`. Neue Rechenarten oder Diagramme gehören in `logic.js`.
+- `logic.init({ data, manifest })` bekommt die Daten, bevor die erste Runde entsteht. Erzeuger lesen daraus, nie aus einem Import.
+- Eine neue Trophäen-Regel ist ein neuer Eintrag in `TYPES` in `rules.js` plus Test, kein Code in den Daten.
+- Inhalte, die später aus einer Datenbank kommen, dürfen kein ausführbares JavaScript enthalten. HTML-Felder (`html`) kommen aus vertrauenswürdigen Redaktionen und werden vor dem Einspielen geprüft.
+- Der Ordnername in `content/` ist die App-`id`. `npm test` prüft jedes Paket gegen das Schema (Ajv) und die Querverweise.
+
 ## App-Vertrag
 
-`apps/<name>/config.js` exportiert per `export default` ein Objekt. Es enthält keinen Browser-Code (kein `document`), damit es in Node testbar bleibt.
+`buildConfig(bundle, logic)` erzeugt ein Konfigurationsobjekt ohne Browser-Code (kein `document`), das auch in Node testbar bleibt. Die Tabelle beschreibt dieses Objekt; die Felder kommen aus dem Inhaltspaket und aus `logic.js`.
 
 | Feld | Pflicht | Bedeutung |
 |---|---|---|
@@ -58,7 +87,18 @@ Faustregel: Was mehr als eine App braucht, gehört nach `core/`. Was nur ein Fac
 | `words` | nein | Eigene Lob-Sprüche `praise`, Ergebnis-Titel `resultTitles` (für 1, 2, 3 Sterne), `blitzTitle` und `levelTitles`. Standard ist Deutsch |
 | `badges` | ja | Liste von `{ id, n, d, when(state, result) }` |
 
-`main.js` ruft nur `mountApp(config, { header, main })` auf. Alles andere erledigt `core/js/shell.js`; die Ansichten (Start, Ergebnis, Sicherung) liegen in `core/js/views/`.
+`logic.js` exportiert per `export default`:
+
+| Feld | Pflicht | Bedeutung |
+|---|---|---|
+| `rounds` | ja | `{ lesson(unit), quick?(), boss?() }`, siehe Tabelle oben |
+| `blitz` | nein | Funktion, die eine Frage liefert |
+| `diagrams` | wenn Lektionen Diagramme nutzen | `{ name: (…args) => svgString }` |
+| `init({ data, manifest })` | nein | Wird vor der ersten Runde aufgerufen |
+| `theory(box, unit, ctx)` | nein | Eigene Theorie-Seite, sonst die Standard-Seite aus `core/js/theory.js`. `ctx` hat `lessons`, `notes`, `data`, `manifest`, `start` |
+| `bossUnlocked(state)` | nein | Eigene Freischaltung des Endgegners |
+
+`main.js` ruft nur `bootApp({ id, logic })` auf. `core/js/boot.js` lädt die Inhalte, baut die Konfiguration und startet `core/js/shell.js`; die Ansichten (Start, Ergebnis, Sicherung) liegen in `core/js/views/`. Mit `<meta name="lw-content-api" content="https://…">` in der `index.html` kommen die Inhalte stattdessen aus einer API.
 
 ## Fragenformat
 
@@ -112,14 +152,14 @@ Die Mechaniken sind so gewählt, dass sie das Lernen fördern und nicht nur belo
 
 ## Lektionen
 
-Jede Seite hat eine Lektion in `apps/<name>/lessons.js`, aufgebaut mit `core/js/lesson.js`. Die Reihenfolge ist für alle Apps gleich und folgt dem, wie 12- bis 13-Jährige lernen: erst Ziel, dann Bild, dann selbst tun.
+Jede Seite hat eine Lektion in `content/<id>/lessons.json`, gezeichnet mit `core/js/lesson.js`. Die Reihenfolge ist für alle Apps gleich und folgt dem, wie 12- bis 13-Jährige lernen: erst Ziel, dann Bild, dann selbst tun.
 
 | Teil | Zweck |
 |---|---|
 | `goal` | "Du kannst danach …": ein Satz, was die Seite bringt |
 | `tldr` | 2 bis 4 kurze Sätze, "In 30 Sekunden" |
 | `analogy` | Vergleich aus dem Alltag ("Stell dir vor: …") |
-| `figure` | Diagramm als SVG mit Bildunterschrift |
+| `figure` | Diagramm mit Bildunterschrift: Verweis `{ diagram: { name, args } }` auf `logic.diagrams` (oder fertiges `svg`) |
 | Spielzeug | Etwas zum Anklicken oder Eintippen (Lampen, Regler, Tabelle). Nur in der App, kein Pflichtfeld |
 | `steps` | Ein durchgerechnetes Beispiel, Schritt für Schritt aufklappbar |
 | `pitfall`, `rule` | Typische Falle und ein Merksatz |
@@ -144,23 +184,23 @@ Regeln für Texte und Bilder:
 
 ## Neue App anlegen
 
-1. `apps/_template/` nach `apps/<name>/` kopieren.
-2. In `config.js` `id`, `title`, `greeting`, `intro` setzen. In `index.html` den `<title>`.
-3. Inhalte in `data.js`, Fragen in `builders.js`, Theorie in `theory.js`, Trophäen in `badges.js` anpassen.
+1. `apps/_template/` nach `apps/<name>/` und `content/vorlage/` nach `content/<id>/` kopieren.
+2. In `content/<id>/manifest.json` `id`, `title`, `greeting`, `intro` setzen, in `main.js` dieselbe `id`, in `index.html` den `<title>`.
+3. Seiten und Merkzettel im Manifest, Lektionen in `lessons.json`, Trophäen in `badges.json`, Aufgabendaten in `data.json` anpassen. Fragen-Erzeuger in `builders.js`, Diagramme in `diagrams.js`.
 4. In `registry.js` den Eintrag auf `status: 'live'` setzen, `href` und `units` ergänzen (oder neuen Eintrag anlegen).
 5. `npm test` und `npm run smoke` ausführen. Der Vertragstest prüft die Konfiguration und alle Fragen automatisch.
 6. Lokal mit `npm run serve` ansehen: Theorie, eine Runde, Boss, hell und dunkel, schmales Fenster.
 
 ## Neue Seite, Trophäe oder Fragetyp
 
-- Seite: Eintrag in `units`, Inhalte in `data.js`, `units` in `registry.js` erhöhen. Neue Seiten hinten anfügen, nicht umsortieren.
-- Trophäe: Eintrag in `badges.js` mit neuer, nie verwendeter `id`.
+- Seite: Eintrag in `manifest.json` (`units`, `notes`), Lektion in `lessons.json`, Aufgaben in `data.json`/`builders.js`, `units` in `registry.js` erhöhen. Neue Seiten hinten anfügen, nicht umsortieren.
+- Trophäe: Eintrag in `badges.json` mit neuer, nie verwendeter `id` und einer Regel.
 - Fragetyp: In `core/js/qtypes.js` mit `registerQuestionType('name', { validate, render, canCheck, grade, init?, actions?, onInput?, onKey? })` anmelden (Beschreibung am Dateianfang), Stil in `quiz.css`, Test in `tests/qtypes.test.js`. `quiz.js`, `shell.js` und `tests/helpers.js` bleiben unverändert, die Tests prüfen den neuen Typ automatisch über sein `validate`. Nie nur in einer App einen Sonderweg bauen.
 
 ## Code-Stil
 
 - ES-Module, `const`/`let`, Pfeilfunktionen für kurze Callbacks, Semikolons, einfache Anführungszeichen.
-- Kleine Funktionen mit einer Aufgabe. Daten (`data.js`) getrennt von Logik (`builders.js`) und Darstellung (`theory.js`).
+- Kleine Funktionen mit einer Aufgabe. Inhalt (`content/`) getrennt von Logik (`logic.js`, `builders.js`) und Darstellung (`core/js/views`, `theory.js`).
 - Kein `innerHTML` mit ungeprüften Daten. Event-Handling über `data-act` und die Delegation in `shell.js` bzw. `quiz.js`, keine Inline-Handler.
 - Kommentare erklären das Warum. Kommentare und Oberflächentexte sind Deutsch, Bezeichner Englisch oder Deutsch, aber je Datei einheitlich.
 - Keine Funktionen mit Zufall ohne Möglichkeit, sie zu testen: Fragen werden aus Daten gebaut, die Tests prüfen jede mögliche Frage.
@@ -171,7 +211,8 @@ Regeln für Texte und Bilder:
 - `npm run smoke`: spielt in jsdom alle Apps aus `registry.js` durch (benötigt `npm install`). App-spezifische Prüfungen liegen in `apps/<name>/smoke.mjs` und werden automatisch gefunden. Eine neue App braucht keine Änderung am Skript.
 - `tests/db.test.js` prüft den Speicher mit einer simulierten IndexedDB. Der Durchspiel-Test deckt IndexedDB und die Übernahme alter Daten ab.
 - `tests/qtypes.test.js` und `tests/views.test.js` decken Fragetypen und Ansichten ab.
-- Neue Logik in `core/` bekommt einen Test. Neue Inhalte werden durch den Vertragstest abgedeckt.
+- Neue Logik in `core/` bekommt einen Test. Neue Inhalte werden durch den Schema- und Vertragstest (`tests/content.test.js`, `tests/contract.test.js`) abgedeckt.
+- `tests/helpers.js` baut Konfigurationen mit `loadAppConfig(id, ordner)` auf demselben Weg wie der Browser, nur mit Dateien statt `fetch`. Der Durchspiel-Test ersetzt `fetch` im Browser-Fenster durch denselben Dateizugriff.
 
 ## Deployment
 

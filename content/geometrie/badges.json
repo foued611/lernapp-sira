@@ -1,0 +1,13 @@
+[
+  { "id": "first", "n": "Erster Strich", "d": "Die erste Seite geschafft", "rule": { "type": "anyUnit" } },
+  { "id": "compass", "n": "Zirkel-Zauberer", "d": "Mittelsenkrechte und Winkelhalbierende geschafft", "rule": { "type": "units", "ids": ["mittelsenkrechte", "winkelhalbierende"] } },
+  { "id": "builder", "n": "Dreiecks-Baumeister", "d": "Dreiecke konstruieren geschafft", "rule": { "type": "unit", "id": "dreiecke" } },
+  { "id": "angles", "n": "Winkel-Detektiv", "d": "Drei Sterne bei Winkel und Beweise", "rule": { "type": "unit", "id": "winkel", "stars": 3 } },
+  { "id": "thales", "n": "Thales-Tüftler", "d": "Satz des Thales geschafft", "rule": { "type": "unit", "id": "thales" } },
+  { "id": "circles", "n": "Kreis-Künstler", "d": "Umkreis und Inkreis geschafft", "rule": { "type": "unit", "id": "kreise" } },
+  { "id": "perfect", "n": "Fehlerfrei", "d": "Eine Runde ohne Fehler", "rule": { "type": "perfectRound" } },
+  { "id": "combo5", "n": "Serie von 5", "d": "Fünf richtige in Folge", "rule": { "type": "combo", "min": 5 } },
+  { "id": "blitz10", "n": "Blitz-Geometer", "d": "10 richtige im Blitz-Modus", "rule": { "type": "blitz", "min": 10 } },
+  { "id": "boss", "n": "Geometrie-Boss besiegt", "d": "Den Endgegner geschafft", "rule": { "type": "boss" } },
+  { "id": "streak3", "n": "Dranbleiber", "d": "Drei Tage in Folge geübt", "rule": { "type": "streak", "days": 3 } }
+]

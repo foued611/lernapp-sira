@@ -4,6 +4,7 @@ import { readFileSync } from 'node:fs';
 import { IDBFactory } from 'fake-indexeddb';
 import { existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
+import { diskFetch, loadAppConfig } from '../tests/helpers.js';
 const repo=fileURLToPath(new URL('..', import.meta.url));
 async function bundle(entry){const r=await build({entryPoints:[repo+'/'+entry],bundle:true,format:'iife',write:false});return r.outputFiles[0].text}
 async function boot(htmlFile,code,store={},idb=null){
@@ -11,7 +12,7 @@ async function boot(htmlFile,code,store={},idb=null){
   const errors=[];
   const vc=new VirtualConsole();vc.on('jsdomError',e=>{if(!/not implemented/i.test(e.message))errors.push(e.message)});
   const dom=new JSDOM(html,{runScripts:'outside-only',url:'https://x.test/',virtualConsole:vc,pretendToBeVisual:true});
-  const w=dom.window;w.scrollTo=()=>{};
+  const w=dom.window;w.scrollTo=()=>{};w.fetch=(url)=>diskFetch(String(url));
   if(idb)w.indexedDB=idb;
   for(const [k,v] of Object.entries(store))w.localStorage.setItem(k,v);
   w.addEventListener('error',e=>errors.push(String(e.message)));
@@ -73,7 +74,7 @@ async function loadHooks(app){
 
 for(const app of live){
   const folder=folderOf(app), tag=app.id+': ';
-  const {default:config}=await import(repo+'/'+folder+'config.js');
+  const config=await loadAppConfig(app.id,folder);
   const hooks=await loadHooks(app);
   const code=await bundle(folder+'main.js');
   const key='lernwerkstatt:app:'+app.id;
@@ -168,7 +169,7 @@ for(const app of live){
 // Dashboard: Kacheln, Fortschritt, Weiter-Karte, Filter
 {
   const app=live[0];
-  const {default:config}=await import(repo+'/'+folderOf(app)+'config.js');
+  const config=await loadAppConfig(app.id,folderOf(app));
   const day=(d=>d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'))(new Date());
   const ids=config.units.map(u=>u.id);
   const {w,errors}=await boot('index.html',dashCode,{

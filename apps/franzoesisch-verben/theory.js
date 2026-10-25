@@ -1,10 +1,9 @@
 // Theorie-Seite: Konjugationstabelle, Merkzettel und Beispielsätze. Hier steckt nur Darstellung, kein Lernstoff.
 import { esc } from '../../core/js/ui.js';
 import { icon } from '../../core/js/icons.js';
-import { V, SP, TIPS } from './data.js';
+import { V, SP } from './model.js';
 import { elides, lab } from './builders.js';
 import { lessonTop, lessonBottom, wireLesson } from '../../core/js/lesson.js';
-import { LESSONS } from './lessons.js';
 
 const canSpeak = () => 'speechSynthesis' in window;
 
@@ -31,10 +30,10 @@ function formCell(v, i) {
 }
 
 /** Wird von der Shell mit einem frischen Container aufgerufen. */
-export function renderTheory(box, unit) {
+export function renderTheory(box, unit, { lessons, notes: allNotes }) {
   const state = { verb: unit.verbs[0], cover: false };
-  const spec = LESSONS[unit.id];
-  const notes = TIPS[unit.id].map((t) => `<div class="note"><b>${esc(t[0])}</b>${esc(t[1])}</div>`).join('');
+  const spec = lessons[unit.id];
+  const notes = (allNotes[unit.id] || []).map((t) => `<div class="note"><b>${esc(t[0])}</b>${esc(t[1])}</div>`).join('');
   const examples = SP[unit.id].slice(0, 3).map((s) => {
     const form = s.v.forms[s.p];
     return `<li><div><div class="fr">${esc(s.fr).replace('___', `<span class="mk">${esc(form)}</span>`)}</div><div class="de">${esc(s.de)}</div></div>${speakButton(s.fr.replace('___', form))}</li>`;

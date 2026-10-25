@@ -2,7 +2,23 @@
 import { choiceQuestion, typedQuestion } from '../../core/js/questions.js';
 import { esc, pick, shuffle } from '../../core/js/ui.js';
 import { rnd, fmt, nearby, numCheck } from '../../core/js/mathkit.js';
-import { UNITS } from './data.js';
+
+// Seiten und Aufgabendaten kommen aus content/geometrie/ (siehe init). Hier liegt nur die Logik der Aufgaben.
+let UNITS = [];
+let MS_FACTS = [], WH_FACTS = [], DR_FACTS = [], TH_FACTS = [], KR_FACTS = [], THEOREMS = [], EINDEUTIG = [];
+const asWords = (list) => list.map((item) => ({ ...item, choiceOnly: true }));
+
+/** Bekommt Seitenliste und Aufgabendaten, bevor die erste Runde entsteht. */
+export function init({ data, manifest }) {
+  UNITS = manifest.units;
+  MS_FACTS = asWords(data.msFacts);
+  WH_FACTS = asWords(data.whFacts);
+  DR_FACTS = asWords(data.drFacts);
+  TH_FACTS = asWords(data.thFacts);
+  KR_FACTS = asWords(data.krFacts);
+  THEOREMS = data.theorems;
+  EINDEUTIG = data.eindeutig;
+}
 
 const D = '°';
 const num = (value, prompt, why, label, extras = [], unit = '') => ({
@@ -32,17 +48,6 @@ function zirkelRadius() {
     `Die Kreisbögen um A und B müssen sich in zwei Punkten schneiden. Das klappt nur, wenn der Radius größer ist als die Hälfte der Strecke (${h} cm). Bei genau ${h} cm berühren sich die Bögen nur in M, bei weniger treffen sie sich gar nicht.`, 'Konstruktion');
 }
 
-const MS_FACTS = [
-  words('Was gilt für jeden Punkt der Mittelsenkrechten von AB?', 'Er ist von A und B gleich weit entfernt.',
-    ['Er liegt auf der Strecke AB.', 'Er ist doppelt so weit von A wie von B entfernt.', 'Er liegt immer genau 90° von A entfernt.'],
-    'Das ist die wichtigste Eigenschaft der Mittelsenkrechten. Darum benutzt man sie, um einen Punkt zu finden, der von zwei Orten gleich weit weg ist.', 'Eigenschaft'),
-  words('Wie misst du den Abstand eines Punktes P von einer Geraden g?', 'Länge der senkrechten Strecke von P zu g',
-    ['Länge irgendeiner Strecke von P zu g', 'Länge der längsten Strecke von P zu g', 'Abstand von P zum Anfang der Geraden'],
-    'Der kürzeste Weg von einem Punkt zu einer Geraden führt senkrecht auf sie zu. Diese Länge heißt Abstand.', 'Abstand'),
-  words('Womit beginnst du die Konstruktion der Mittelsenkrechten von AB?', 'Mit einem Kreisbogen um A, der AB halb überschreitet',
-    ['Mit dem Lineal durch die Mitte von AB', 'Mit dem Geodreieck an einer beliebigen Stelle', 'Mit einem Kreis um M'],
-    'Erst zwei gleich große Kreisbögen um A und um B, danach die Gerade durch die beiden Schnittpunkte. Die Mitte M kennst du am Anfang noch nicht.', 'Konstruktion')
-];
 
 // --- Winkelhalbierende -----------------------------------------------------------------------------
 
@@ -58,14 +63,6 @@ function ganzerWinkel() {
     `Zwei gleiche Teile ergeben den ganzen Winkel: 2 · ${h}${D} = ${2 * h}${D}.`, 'Rechne', [h, h + 90, 3 * h], D);
 }
 
-const WH_FACTS = [
-  words('Was gilt für jeden Punkt auf der Winkelhalbierenden?', 'Er hat zu beiden Schenkeln denselben Abstand.',
-    ['Er hat vom Scheitel den Abstand 0.', 'Er liegt auf einem der beiden Schenkel.', 'Er ist von beiden Schenkeln 90° entfernt.'],
-    'Genau deshalb ist die Winkelhalbierende nützlich: Sie findet alle Punkte, die zu zwei Geraden gleichen Abstand haben.', 'Eigenschaft'),
-  words('Wie konstruierst du eine Winkelhalbierende?', 'Bogen um den Scheitel, dann zwei gleich große Bögen um die Schnittpunkte mit den Schenkeln',
-    ['Zwei Bögen um die Endpunkte der Schenkel', 'Mit dem Lineal in die Mitte zwischen die Schenkel zeichnen', 'Den Winkel messen und mit dem Geodreieck halbieren'],
-    'So geht es nur mit Zirkel und Lineal: Der Bogen um den Scheitel S liefert zwei Punkte U und V. Von U und V aus zeichnest du zwei gleich große Bögen. Ihr Schnittpunkt W liegt auf der Winkelhalbierenden.', 'Konstruktion')
-];
 
 // --- Dreiecke konstruieren ---------------------------------------------------------------------------
 
@@ -84,12 +81,6 @@ function dreieckUngleichung() {
     `Die beiden kurzen Seiten ${a} cm und ${b} cm sind zusammen nur ${a + b} cm lang und reichen nicht bis zur Seite c = ${c} cm. Die Kreisbögen schneiden sich nicht. Zwei Seiten müssen zusammen immer länger sein als die dritte.`, 'Dreiecksungleichung');
 }
 
-const THEOREMS = [
-  ['drei Seiten', 'SSS'],
-  ['zwei Seiten und der eingeschlossene Winkel', 'SWS'],
-  ['eine Seite und die beiden anliegenden Winkel', 'WSW'],
-  ['zwei Seiten und der Winkel, der der längeren Seite gegenüberliegt', 'SsW']
-];
 
 function kongruenzsatz() {
   const [given, name] = pick(THEOREMS);
@@ -97,14 +88,6 @@ function kongruenzsatz() {
     `${name} steht für „${given}“. Mit dieser Angabe ist das Dreieck bis auf Spiegelung und Drehung eindeutig festgelegt.`, 'Kongruenzsatz');
 }
 
-const EINDEUTIG = [
-  ['a = 5 cm, b = 7 cm, α = 40°. Der Winkel α liegt der kürzeren Seite a gegenüber.', 'höchstens zwei Dreiecke möglich', 'Liegt der Winkel der kürzeren Seite gegenüber, kann der Kreisbogen die Seite zweimal treffen. Das ist kein Kongruenzsatz.'],
-  ['a = 7 cm, b = 5 cm, α = 40°. Der Winkel α liegt der längeren Seite a gegenüber.', 'genau ein Dreieck', 'Der Winkel liegt der längeren Seite gegenüber. Das ist der Kongruenzsatz SsW, das Dreieck ist eindeutig.'],
-  ['α = 40°, β = 60°, γ = 80°', 'unendlich viele Dreiecke (verschieden groß)', 'Drei Winkel legen nur die Form fest, nicht die Größe. Man kann das Dreieck beliebig vergrößern. Für Eindeutigkeit braucht man mindestens eine Seite.'],
-  ['b = 5 cm, c = 7 cm, α = 50° (α liegt zwischen b und c)', 'genau ein Dreieck', 'Zwei Seiten und der eingeschlossene Winkel: Kongruenzsatz SWS.'],
-  ['c = 6 cm, α = 50°, β = 60°', 'genau ein Dreieck', 'Eine Seite und die beiden anliegenden Winkel: Kongruenzsatz WSW.'],
-  ['α = 100°, β = 90°, c = 5 cm', 'kein Dreieck', 'Die Winkelsumme im Dreieck ist 180°. Schon 100° + 90° ist 190°, das passt nicht.']
-];
 
 function eindeutig() {
   const [given, ans, why] = pick(EINDEUTIG);
@@ -112,14 +95,6 @@ function eindeutig() {
   return words(`Wie viele Dreiecke passen zu den Angaben? ${given}`, ans, all.filter((o) => o !== ans), why, 'Eindeutigkeit');
 }
 
-const DR_FACTS = [
-  words('Womit beginnst du das Konstruieren eines Dreiecks aus a, b und c?', 'Mit einer Seite, zum Beispiel c',
-    ['Mit dem Kreis um C', 'Mit der Höhe', 'Mit dem Umkreis'],
-    'Zuerst zeichnest du eine Seite. Die Ecke C findest du danach als Schnittpunkt zweier Kreisbögen, deren Radien die Seiten b und a sind.', 'Konstruktion'),
-  words('Wie finden die Kreisbögen bei SSS die Ecke C?', 'C ist der Schnittpunkt von Bogen um A (Radius b) und Bogen um B (Radius a)',
-    ['C liegt auf der Mitte von AB', 'C liegt auf dem Bogen um M', 'C liegt auf einem beliebigen Punkt über AB'],
-    'C hat von A den Abstand b und von B den Abstand a. Beide Bedingungen zusammen treffen nur auf den Schnittpunkt der Bögen zu.', 'Konstruktion')
-];
 
 // --- Winkel und Beweise ----------------------------------------------------------------------------------
 
@@ -168,27 +143,9 @@ function thalesRadius() {
     `Die Hypotenuse ist der Durchmesser des Thaleskreises. Radius = ${2 * r} cm : 2 = ${r} cm.`, 'Thales', [2 * r, r + 1, 2 * r + 2], ' cm');
 }
 
-const TH_FACTS = [
-  words('Wo liegt der Mittelpunkt des Umkreises eines rechtwinkligen Dreiecks?', 'in der Mitte der Hypotenuse',
-    ['im Schnittpunkt der Höhen', 'in der Mitte der längeren Kathete', 'außerhalb des Dreiecks'],
-    'Die Hypotenuse ist der Durchmesser des Thaleskreises. Ihre Mitte ist daher der Mittelpunkt des Umkreises.', 'Thales'),
-  words('Das Dreieck ABC hat bei C einen rechten Winkel. Wo liegt C?', 'auf dem Kreis mit dem Durchmesser AB',
-    ['auf der Mittelsenkrechten von AB', 'auf der Winkelhalbierenden bei A', 'auf der Strecke AB'],
-    'Das ist die Umkehrung des Satzes von Thales: Ein rechter Winkel bei C bedeutet, dass C auf dem Thaleskreis über AB liegt.', 'Umkehrung')
-];
 
 // --- Umkreis und Inkreis --------------------------------------------------------------------------------------
 
-const KR_FACTS = [
-  words('Der Mittelpunkt des Umkreises ist der Schnittpunkt der …', 'Mittelsenkrechten', ['Winkelhalbierenden', 'Höhen', 'Seitenhalbierenden'],
-    'Der Mittelpunkt muss von allen drei Ecken gleich weit entfernt sein. Das erfüllen genau die Punkte der Mittelsenkrechten.', 'Umkreis'),
-  words('Der Mittelpunkt des Inkreises ist der Schnittpunkt der …', 'Winkelhalbierenden', ['Mittelsenkrechten', 'Höhen', 'Seitenhalbierenden'],
-    'Der Mittelpunkt muss von allen drei Seiten gleich weit entfernt sein. Das erfüllen genau die Punkte der Winkelhalbierenden.', 'Inkreis'),
-  words('Welcher Kreis geht durch alle drei Ecken eines Dreiecks?', 'der Umkreis', ['der Inkreis', 'der Thaleskreis in jedem Fall', 'der Kreis um den Schwerpunkt'],
-    'Der Umkreis läuft durch A, B und C. Der Inkreis dagegen berührt die drei Seiten von innen.', 'Kreise'),
-  words('Welcher Kreis berührt alle drei Seiten eines Dreiecks von innen?', 'der Inkreis', ['der Umkreis', 'der Kreis um die längste Seite', 'es gibt keinen solchen Kreis'],
-    'Der Inkreis liegt ganz im Dreieck und berührt jede Seite in einem Punkt.', 'Kreise')
-];
 
 function umkreisLage() {
   const kind = pick(['spitzwinkliges', 'rechtwinkliges', 'stumpfwinkliges']);
@@ -198,14 +155,15 @@ function umkreisLage() {
     { spitzwinkliges: 'Bei drei spitzen Winkeln treffen sich die Mittelsenkrechten im Inneren.', rechtwinkliges: 'Beim rechten Winkel ist die Hypotenuse Durchmesser des Thaleskreises, der Mittelpunkt liegt auf ihr.', stumpfwinkliges: 'Beim stumpfen Winkel wandert der Mittelpunkt aus dem Dreieck hinaus.' }[kind], 'Lage');
 }
 
-const fixed = (list) => () => pick(list);
+// Die Pools werden erst in init() gefüllt, daher wird die Liste beim Ziehen über eine Funktion geholt.
+const fixed = (getList) => () => pick(getList());
 export const POOLS = {
-  mittelsenkrechte: [gleichWeit, mitteStrecke, zirkelRadius, fixed(MS_FACTS), fixed(MS_FACTS)],
-  winkelhalbierende: [haelfte, ganzerWinkel, fixed(WH_FACTS), haelfte],
-  dreiecke: [dreieckSeiten, dreieckUngleichung, kongruenzsatz, eindeutig, eindeutig, fixed(DR_FACTS)],
+  mittelsenkrechte: [gleichWeit, mitteStrecke, zirkelRadius, fixed(() => MS_FACTS), fixed(() => MS_FACTS)],
+  winkelhalbierende: [haelfte, ganzerWinkel, fixed(() => WH_FACTS), haelfte],
+  dreiecke: [dreieckSeiten, dreieckUngleichung, kongruenzsatz, eindeutig, eindeutig, fixed(() => DR_FACTS)],
   winkel: [winkelPaar, winkelPaar, winkelsumme, gleichschenklig],
-  thales: [thalesGamma, thalesBeta, thalesBeta, thalesRadius, fixed(TH_FACTS)],
-  kreise: [fixed(KR_FACTS), fixed(KR_FACTS), umkreisLage, thalesRadius]
+  thales: [thalesGamma, thalesBeta, thalesBeta, thalesRadius, fixed(() => TH_FACTS)],
+  kreise: [fixed(() => KR_FACTS), fixed(() => KR_FACTS), umkreisLage, thalesRadius]
 };
 
 function make(unitId) {

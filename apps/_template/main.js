@@ -1,4 +1,5 @@
-import { mountApp } from '../../core/js/shell.js';
-import config from './config.js';
+import { bootApp } from '../../core/js/boot.js';
+import logic from './logic.js';
 
-mountApp(config, { header: document.getElementById('hdr'), main: document.getElementById('app') });
+// Die id bestimmt den Ordner in content/ und den Speicherschlüssel.
+bootApp({ id: 'vorlage', logic });

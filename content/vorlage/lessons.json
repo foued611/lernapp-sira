@@ -1,0 +1,108 @@
+{
+  "start": {
+    "goal": "Du kannst das Addieren erklären und ein Beispiel selbst rechnen.",
+    "tldr": [
+      "Hier steht die Kernidee in einem kurzen Satz.",
+      "Hier der zweite Satz mit dem wichtigsten Merkmal."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Beispiel aus dem Alltag",
+      "html": "<p>Ein Vergleich, den ein 13-Jähriger sofort versteht.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "sumDiagram",
+        "args": [
+          2,
+          3,
+          "+"
+        ]
+      },
+      "caption": "Bildunterschrift: Was zeigt das Bild?"
+    },
+    "steps": {
+      "title": "So geht es Schritt für Schritt",
+      "items": [
+        "Erster Schritt.",
+        "Zweiter Schritt.",
+        "Ergebnis und Probe."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Der häufigste Fehler und wie man ihn vermeidet.</p>"
+    },
+    "rule": "Ein Merksatz zum Einprägen.",
+    "check": {
+      "q": "Wie viel ist 2 + 3?",
+      "options": [
+        {
+          "id": "5",
+          "html": "5"
+        },
+        {
+          "id": "0",
+          "html": "0"
+        },
+        {
+          "id": "1",
+          "html": "1"
+        }
+      ],
+      "answer": "5",
+      "why": "Kurze Erklärung der richtigen Antwort."
+    }
+  },
+  "weiter": {
+    "goal": "Du kannst das Multiplizieren erklären und ein Beispiel selbst rechnen.",
+    "tldr": [
+      "Hier steht die Kernidee in einem kurzen Satz.",
+      "Hier der zweite Satz mit dem wichtigsten Merkmal."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Beispiel aus dem Alltag",
+      "html": "<p>Ein Vergleich, den ein 13-Jähriger sofort versteht.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "sumDiagram",
+        "args": [
+          2,
+          3,
+          "×"
+        ]
+      },
+      "caption": "Bildunterschrift: Was zeigt das Bild?"
+    },
+    "steps": {
+      "title": "So geht es Schritt für Schritt",
+      "items": [
+        "Erster Schritt.",
+        "Zweiter Schritt.",
+        "Ergebnis und Probe."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Der häufigste Fehler und wie man ihn vermeidet.</p>"
+    },
+    "rule": "Ein Merksatz zum Einprägen.",
+    "check": {
+      "q": "Wie viel ist 2 × 3?",
+      "options": [
+        {
+          "id": "6",
+          "html": "6"
+        },
+        {
+          "id": "0",
+          "html": "0"
+        },
+        {
+          "id": "1",
+          "html": "1"
+        }
+      ],
+      "answer": "6",
+      "why": "Kurze Erklärung der richtigen Antwort."
+    }
+  }
+}

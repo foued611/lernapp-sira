@@ -2,10 +2,11 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { finalizeRound } from '../core/js/rounds.js';
 import { profileDefaults, appDefaults } from '../core/js/profile.js';
-import { BADGES } from '../apps/franzoesisch-verben/badges.js';
-import { UNITS } from '../apps/franzoesisch-verben/data.js';
+import { loadAppConfig } from './helpers.js';
 
-const config = { id: 'fr-verben', badges: BADGES };
+const full = await loadAppConfig('fr-verben', 'apps/franzoesisch-verben/');
+const UNITS = full.units;
+const config = { id: 'fr-verben', badges: full.badges };
 const unit = (id) => UNITS.find((u) => u.id === id);
 const lesson = (id, extra = {}) => ({ mode: 'lesson', unit: unit(id), failed: false, accuracy: 1, correct: 8, almost: 0, wrong: 0, bestCombo: 8, xp: 100, ...extra });
 
@@ -77,5 +78,5 @@ test('Bereits erhaltene Trophäen werden nicht doppelt vergeben', () => {
 });
 
 test('Trophäen-IDs sind eindeutig', () => {
-  assert.equal(new Set(BADGES.map((b) => b.id)).size, BADGES.length);
+  assert.equal(new Set(full.badges.map((b) => b.id)).size, full.badges.length);
 });

@@ -1,8 +1,17 @@
 // Erzeugt Mathe-Fragen aus Zufallszahlen. Jede Aufgabe kennt typische Fehlerwege und bietet sie als falsche Antworten an.
 import { choiceQuestion, typedQuestion } from '../../core/js/questions.js';
 import { esc } from '../../core/js/ui.js';
-import { UNITS } from './data.js';
 import { rnd, fmt, par, MINUS, nearby, numCheck, termCheck, probCheck, frac, linear, pick, shuffle } from './math.js';
+
+// Inhalte kommen aus content/mathe/ (siehe init). Hier liegt nur die Logik der Aufgaben.
+let UNITS = [];
+let SITUATIONS = [];
+
+/** Bekommt Seitenliste und Aufgabendaten, bevor die erste Runde entsteht. */
+export function init({ data, manifest }) {
+  UNITS = manifest.units;
+  SITUATIONS = data.situations;
+}
 
 const nz = (a, b) => { let n = 0; while (n === 0) n = rnd(a, b); return n; };
 
@@ -172,11 +181,6 @@ function dreisatzAnti() {
     why: `Mehr Arbeiter, weniger Tage (antiproportional). Das Produkt bleibt gleich: ${w1} · ${d} = ${total} Arbeitertage. Geteilt durch ${w2} Arbeiter sind das ${fmt(r)} Tage.` };
 }
 
-const SITUATIONS = [
-  ['Anzahl der Brötchen ↔ Preis', 'proportional'], ['Anzahl der Kopien ↔ Gesamtkosten', 'proportional'], ['gelaufene Zeit bei gleichem Tempo ↔ Strecke', 'proportional'],
-  ['Anzahl der Arbeiter ↔ Zeit für dieselbe Arbeit', 'antiproportional'], ['Geschwindigkeit ↔ Fahrzeit auf einer festen Strecke', 'antiproportional'], ['Anzahl der Teilnehmer ↔ Preis pro Person bei festem Gesamtpreis', 'antiproportional'],
-  ['Alter eines Kindes ↔ seine Körpergröße', 'weder noch'], ['Schuhgröße ↔ Mathenote', 'weder noch']
-];
 
 function erkennen() {
   const [s, a] = pick(SITUATIONS);

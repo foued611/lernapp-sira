@@ -1,7 +1,11 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { circumcenter, incircle, dist, at } from '../apps/geometrie/geom.js';
-import { POOLS } from '../apps/geometrie/builders.js';
+import { POOLS, init } from '../apps/geometrie/builders.js';
+import { diskSource } from './helpers.js';
+
+// Die Erzeuger bekommen Seiten und Aufgabendaten wie im Browser aus content/geometrie/.
+{ const bundle = await diskSource().load('geometrie'); init({ data: bundle.data, manifest: bundle.manifest }); }
 import { numCheck } from '../core/js/mathkit.js';
 
 test('Umkreismittelpunkt ist von allen Ecken gleich weit entfernt', () => {

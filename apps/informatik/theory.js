@@ -1,9 +1,7 @@
 // Theorie-Seiten mit kleinen Spielzeugen zum Ausprobieren (Lampen, Eingabefelder, Schieberegler).
 // Jedes Spielzeug ist eine eigene Funktion, die sich an einen Container hängt und keinen Zustand außerhalb hält.
 import { esc, $ } from '../../core/js/ui.js';
-import { TIPS } from './data.js';
 import { lessonTop, lessonBottom, wireLesson } from '../../core/js/lesson.js';
-import { LESSONS } from './lessons.js';
 import { WEIGHTS, HEX, toBin, toHex, placeDigits, placeSum, decToBinHTML } from './numbers.js';
 
 const clampInt = (value, max) => Math.max(0, Math.min(max, parseInt(value, 10) || 0));
@@ -131,9 +129,10 @@ const TOYS = {
 };
 
 /** Wird von der Shell mit einem frischen Container aufgerufen. */
-export function renderTheory(box, unit) {
-  const spec = LESSONS[unit.id];
-  const notes = (TIPS[unit.id] || []).map((t) => `<div class="note"><b>${esc(t[0])}</b>${esc(t[1])}</div>`).join('');
+/** Standard-Theorie plus ein Spielzeug je Seite. Lektionen und Merkzettel kommen aus content/ (ctx). */
+export function renderTheory(box, unit, { lessons, notes: allNotes }) {
+  const spec = lessons[unit.id];
+  const notes = (allNotes[unit.id] || []).map((t) => `<div class="note"><b>${esc(t[0])}</b>${esc(t[1])}</div>`).join('');
   box.innerHTML = `
     <div style="display:grid;gap:22px">
       <section class="card tcard"><div class="thead"><h1>${esc(unit.title)}</h1><span class="de">${esc(unit.de)}</span></div></section>

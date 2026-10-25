@@ -1,6 +1,6 @@
-// Aus dem Lernstoff (data.js) werden Fragen im Quiz-Format (siehe core/js/quiz.js).
+// Aus dem Lernstoff (content/fr-verben/, über model.js) werden Fragen im Quiz-Format (siehe core/js/quiz.js).
 import { esc, shuffle, pick, norm, stripAccents } from '../../core/js/ui.js';
-import { V, UNITS, SP, TRAP, HINT, PRON, PQV } from './data.js';
+import { V, UNITS, SP, TRAP, HINT, PRON, PQV } from './model.js';
 
 export const elides = (v) => /^[aeiouhéèêàâîôû]/i.test(v.forms[0]);
 export const lab = (v, p) => (p === 0 ? (elides(v) ? "j'" : 'je') : PRON[p]);

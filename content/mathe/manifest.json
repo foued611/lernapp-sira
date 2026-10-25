@@ -1,0 +1,242 @@
+{
+  "schema": 1,
+  "id": "mathe",
+  "title": "Mathe-Werkstatt",
+  "greeting": "Hallo",
+  "intro": "Starte mit den Vorzeichen. Danach bauen Terme, Gleichungen, Prozente, Zinsen und der Dreisatz darauf auf. Am Ende kommen Daten und Zufall.",
+  "bossTitle": "Der Rechen-Boss",
+  "words": {
+    "levelTitles": [
+      "Zahlen-Neuling",
+      "Rechenlehrling",
+      "Termjäger",
+      "Gleichungslöser",
+      "Prozent-Profi",
+      "Mathe-Meister"
+    ]
+  },
+  "units": [
+    {
+      "id": "vorzeichen",
+      "color": "#4CC3F5",
+      "ic": "±",
+      "title": "Rechnen mit Vorzeichen",
+      "de": "Kapitel I: Zahlterme mit rationalen Zahlen",
+      "card": {
+        "name": "Zahlenstrahl-Wanderer",
+        "fact": "Minus mal Minus ergibt Plus. Zwei Verneinungen heben sich auf, so wie „nicht unmöglich“."
+      }
+    },
+    {
+      "id": "terme",
+      "color": "#FF9F43",
+      "ic": "x",
+      "title": "Terme vereinfachen",
+      "de": "Kapitel I: Terme vereinfachen, ausmultiplizieren, ausklammern",
+      "card": {
+        "name": "Klammer-Knacker",
+        "fact": "Das Distributivgesetz a·(b + c) = a·b + a·c ist der wichtigste Trick der Algebra."
+      }
+    },
+    {
+      "id": "zuordnungen",
+      "color": "#8BD450",
+      "ic": "⇄",
+      "title": "Zuordnungen und Dreisatz",
+      "de": "Kapitel II: proportional und antiproportional",
+      "card": {
+        "name": "Dreisatz-Detektiv",
+        "fact": "Beim Dreisatz springst du über die Zahl 1: erst auf eine Einheit, dann auf die gesuchte Menge."
+      }
+    },
+    {
+      "id": "gleichungen",
+      "color": "#3DD6B0",
+      "ic": "=",
+      "title": "Gleichungen lösen",
+      "de": "Kapitel IV: Gleichungen aufstellen und lösen",
+      "card": {
+        "name": "Waagen-Meister",
+        "fact": "Das Gleichheitszeichen wurde 1557 erfunden, weil zwei parallele Striche „nichts sind gleicher“."
+      }
+    },
+    {
+      "id": "prozent",
+      "color": "#9B7BFF",
+      "ic": "%",
+      "title": "Prozentrechnung",
+      "de": "Kapitel VI: Prozentsatz, Prozentwert, Grundwert",
+      "card": {
+        "name": "Rabatt-Detektiv",
+        "fact": "„Prozent“ kommt von „pro centum“, lateinisch für „pro Hundert“."
+      }
+    },
+    {
+      "id": "zinsen",
+      "color": "#FF6B88",
+      "ic": "€",
+      "title": "Zinsrechnung",
+      "de": "Kapitel VI: Zins und Zinseszins",
+      "card": {
+        "name": "Zins-Zauberer",
+        "fact": "Schon im alten Babylon vor 4000 Jahren wurden Zinsen berechnet, damals oft auf Getreide."
+      }
+    },
+    {
+      "id": "daten",
+      "color": "#4CC3F5",
+      "ic": "∅",
+      "title": "Daten auswerten",
+      "de": "Zusatz, nicht im Buch: Mittelwert, Median, Modus",
+      "card": {
+        "name": "Daten-Detektiv",
+        "fact": "Der Median ist robust: Ein einzelner Ausreißer ändert ihn kaum, den Mittelwert aber stark."
+      }
+    },
+    {
+      "id": "zufall",
+      "color": "#FF9F43",
+      "ic": "?",
+      "title": "Zufall und Wahrscheinlichkeit",
+      "de": "Zusatz, nicht im Buch: relative Häufigkeit, Laplace",
+      "card": {
+        "name": "Würfel-Weise",
+        "fact": "Je öfter du würfelst, desto näher kommt die relative Häufigkeit der Wahrscheinlichkeit. Das ist das Gesetz der großen Zahlen."
+      }
+    }
+  ],
+  "notes": {
+    "vorzeichen": [
+      [
+        "Gleiche Vorzeichen",
+        "Betragsmäßig addieren, das Vorzeichen bleibt: (−3) + (−4) = −7."
+      ],
+      [
+        "Verschiedene Vorzeichen",
+        "Die kleinere Zahl von der größeren abziehen, die größere bestimmt das Vorzeichen."
+      ],
+      [
+        "Minus minus",
+        "Subtrahieren heißt, die Gegenzahl addieren: 5 − (−3) = 5 + 3."
+      ],
+      [
+        "Mal und geteilt",
+        "Gleiche Vorzeichen ergeben Plus, verschiedene ergeben Minus."
+      ]
+    ],
+    "terme": [
+      [
+        "Zusammenfassen",
+        "Nur gleichartige Summanden: 3x + 5x = 8x, aber 3x + 5 bleibt stehen."
+      ],
+      [
+        "Distributivgesetz",
+        "Jeden Summanden in der Klammer mit dem Faktor davor multiplizieren."
+      ],
+      [
+        "Minusklammer",
+        "Steht ein Minus vor der Klammer, drehen sich alle Vorzeichen darin um."
+      ],
+      [
+        "Ausklammern",
+        "Rückwärts-Ausmultiplizieren: den größten gemeinsamen Faktor vor die Klammer schreiben, 12x + 18 = 6 · (2x + 3)."
+      ]
+    ],
+    "gleichungen": [
+      [
+        "Waage",
+        "Was du links machst, machst du rechts. Dann bleibt die Waage im Gleichgewicht."
+      ],
+      [
+        "Reihenfolge",
+        "Erst Addition oder Subtraktion rückgängig machen, dann Multiplikation oder Division."
+      ],
+      [
+        "Probe",
+        "Setze die Lösung in die ursprüngliche Gleichung ein. Links und rechts müssen gleich sein."
+      ],
+      [
+        "Anzahl der Lösungen",
+        "Eine lineare Gleichung hat entweder genau eine, keine (x + 3 = x + 5) oder unendlich viele Lösungen (2x + 4 = 2·(x + 2))."
+      ],
+      [
+        "Aufstellen",
+        "Erst festlegen, wofür x steht. Dann den Text Stück für Stück in einen Term übersetzen."
+      ]
+    ],
+    "prozent": [
+      [
+        "Formel",
+        "Prozentwert = Grundwert · Prozentsatz. Alle drei lassen sich umstellen."
+      ],
+      [
+        "Dreisatz",
+        "100 % entsprechen dem Grundwert. Erst auf 1 % rechnen, dann auf den gesuchten Satz."
+      ],
+      [
+        "Vermehrt, vermindert",
+        "Preis − 20 % bedeutet: du zahlst 80 % des alten Preises."
+      ]
+    ],
+    "zinsen": [
+      [
+        "Begriffe",
+        "Kapital K ist der Grundwert, Zinssatz p % der Prozentsatz, Zinsen Z der Prozentwert."
+      ],
+      [
+        "Jahreszinsen",
+        "Z = K · p/100. Beim Umstellen: K = Z : p · 100 und p = Z : K · 100."
+      ],
+      [
+        "Teil eines Jahres",
+        "Für m Monate rechnest du Jahreszinsen · m/12."
+      ],
+      [
+        "Zinseszins",
+        "Die Zinsen werden mitverzinst. Nach n Jahren: K · (1 + p/100)ⁿ. Jedes Jahr wächst das Kapital um denselben Faktor."
+      ]
+    ],
+    "zuordnungen": [
+      [
+        "Proportional",
+        "Doppelt so viel gibt doppelt so viel. Der Quotient y : x bleibt gleich."
+      ],
+      [
+        "Antiproportional",
+        "Doppelt so viel gibt halb so viel. Das Produkt x · y bleibt gleich."
+      ],
+      [
+        "Dreisatz",
+        "Erst auf die Einheit 1 rechnen, dann auf die gesuchte Menge. Vorher entscheiden, ob proportional oder antiproportional."
+      ]
+    ],
+    "daten": [
+      [
+        "Mittelwert",
+        "Alle Werte addieren und durch die Anzahl teilen."
+      ],
+      [
+        "Median",
+        "Werte der Größe nach ordnen, der mittlere Wert ist der Median. Bei gerader Anzahl: Mittelwert der beiden mittleren."
+      ],
+      [
+        "Modus und Spannweite",
+        "Modus = häufigster Wert. Spannweite = größter minus kleinster Wert."
+      ]
+    ],
+    "zufall": [
+      [
+        "Relative Häufigkeit",
+        "Absolute Häufigkeit : Anzahl der Versuche. Sie liegt immer zwischen 0 und 1."
+      ],
+      [
+        "Laplace",
+        "Alle Ergebnisse gleich wahrscheinlich: P = günstige Ergebnisse : alle Ergebnisse."
+      ],
+      [
+        "Große Zahlen",
+        "Je mehr Versuche, desto näher liegt die relative Häufigkeit an der Wahrscheinlichkeit."
+      ]
+    ]
+  }
+}

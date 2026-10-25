@@ -1,6 +1,6 @@
 // Diagramme des Cahier de Verbes (SVG-Text, siehe core/js/svg.js).
 import { svg, rect, text } from '../../core/js/svg.js';
-import { V, PRON } from './data.js';
+import { V, PRON } from './model.js';
 
 const VOWEL = /^[aeiouhéèêàâîôû]/i;
 const SHORT = ['je', 'tu', 'il / elle / on', 'nous', 'vous', 'ils / elles'];

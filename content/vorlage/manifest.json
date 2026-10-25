@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "id": "vorlage",
+  "title": "Neue Lern-App",
+  "greeting": "Hallo",
+  "intro": "Starte irgendwo. Die Reihenfolge ist nur ein Vorschlag.",
+  "units": [
+    {
+      "id": "start",
+      "color": "#4CC3F5",
+      "ic": "1",
+      "title": "Erste Seite",
+      "de": "Beschreibung der Seite",
+      "card": {
+        "name": "Titel der Sammelkarte",
+        "fact": "Ein kurzer Fakt, den man sich gern merkt."
+      }
+    },
+    {
+      "id": "weiter",
+      "color": "#FF9F43",
+      "ic": "2",
+      "title": "Zweite Seite",
+      "de": "Beschreibung der Seite",
+      "card": {
+        "name": "Titel der Sammelkarte",
+        "fact": "Ein kurzer Fakt, den man sich gern merkt."
+      }
+    }
+  ],
+  "notes": {
+    "start": [
+      [
+        "Merke",
+        "Beim Addieren zählst du die Zahlen zusammen."
+      ]
+    ],
+    "weiter": [
+      [
+        "Merke",
+        "Beim Multiplizieren addierst du eine Zahl mehrfach."
+      ]
+    ]
+  }
+}

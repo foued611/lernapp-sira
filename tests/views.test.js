@@ -3,7 +3,9 @@ import assert from 'node:assert/strict';
 import { homeHTML } from '../core/js/views/home.js';
 import { resultView } from '../core/js/views/result.js';
 import { appDefaults } from '../core/js/profile.js';
-import config from '../apps/franzoesisch-verben/config.js';
+import { loadAppConfig } from './helpers.js';
+
+const config = await loadAppConfig('fr-verben', 'apps/franzoesisch-verben/');
 
 const profile = () => ({ name: '', xp: 0, streak: 0, daily: {}, last: null });
 const state = (over = {}) => ({ config, profile: { ...profile(), ...over }, app: appDefaults(), bossOpen: false, resetAsk: false });
