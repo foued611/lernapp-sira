@@ -6,6 +6,7 @@ import { mascot } from './mascot.js';
 import { confetti } from './confetti.js';
 import { startQuiz, startBlitz } from './quiz.js';
 import { finalizeRound } from './rounds.js';
+import { logEvent, exportAll, importAll } from './db.js';
 import {
   GOAL, openProfile, openApp, appDefaults, levelOf, lvlAt, titleOf, dailyXP, streakNow, multiplier
 } from './profile.js';
@@ -17,9 +18,8 @@ const stars = (n) =>
  * @param {object} config   App-Konfiguration (App-Vertrag)
  * @param {{header:HTMLElement, main:HTMLElement}} roots
  */
-export function mountApp(config, { header, main }) {
-  const profileStore = openProfile();
-  const appStore = openApp(config.id);
+export async function mountApp(config, { header, main }) {
+  const [profileStore, appStore] = await Promise.all([openProfile(), openApp(config.id)]);
   const profile = profileStore.state;
   const app = appStore.state;
   // Wörter für Lob und Ergebnis. Eine App kann sie mit config.words überschreiben (z. B. französisch).
@@ -93,7 +93,8 @@ export function mountApp(config, { header, main }) {
       <section><h2>Dein Lernpfad</h2><p class="muted" style="margin:4px 0 14px;font-size:14px">${esc(config.intro || 'Starte irgendwo. Die Reihenfolge ist nur ein Vorschlag.')}</p><div class="path">${nodes}</div></section>
       ${modes ? `<section><h2>Spielmodi</h2><div class="modes" style="margin-top:12px">${modes}</div></section>` : ''}
       <section><h2>Trophäen</h2><div class="badges" style="margin-top:12px">${badges}</div></section>
-      <p class="muted" style="font-size:13px">Dein Fortschritt wird in diesem Browser gespeichert. ${resetAsk ? '<button class="link" data-act="resetok">Wirklich alles löschen?</button>' : '<button class="link" data-act="reset">Fortschritt dieser App zurücksetzen</button>'}</p>`;
+      <p class="muted" style="font-size:13px">Dein Fortschritt wird in diesem Browser gespeichert. ${resetAsk ? '<button class="link" data-act="resetok">Wirklich alles löschen?</button>' : '<button class="link" data-act="reset">Fortschritt dieser App zurücksetzen</button>'}</p>
+      <p class="muted" style="font-size:13px"><button class="link" data-act="backup">Fortschritt sichern (Datei)</button> · <label class="link" style="cursor:pointer">Sicherung einspielen<input type="file" accept="application/json,.json" id="restore" hidden></label><span id="bmsg" role="status"></span></p>`;
   }
 
   function renderTheory(unitId) {
@@ -132,6 +133,7 @@ export function mountApp(config, { header, main }) {
   function finishRound(result) {
     finalizeRound({ config, profile, app, result });
     ctx.save();
+    logEvent({ app: config.id, type: 'round', mode: result.mode, unit: result.unit ? result.unit.id : null, accuracy: result.accuracy, stars: result.stars, failed: Boolean(result.failed), score: result.score, xp: result.xp });
     stop();
     renderResult(result);
   }
@@ -185,6 +187,14 @@ export function mountApp(config, { header, main }) {
     boss: () => { if (bossOpen()) startRound('boss'); },
     blitz: startBlitzRound,
     savename: saveName,
+    backup: async () => {
+      const blob = new Blob([JSON.stringify(await exportAll(), null, 2)], { type: 'application/json' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = `lernwerkstatt-sicherung-${new Date().toISOString().slice(0, 10)}.json`;
+      link.click();
+      setTimeout(() => URL.revokeObjectURL(link.href), 1000);
+    },
     reset: () => { resetAsk = true; renderHome(); },
     resetok: () => {
       Object.keys(app).forEach((k) => delete app[k]);
@@ -202,6 +212,16 @@ export function mountApp(config, { header, main }) {
   }
   main.addEventListener('click', onClick);
   header.addEventListener('click', onClick);
+  main.addEventListener('change', async (e) => {
+    if (e.target.id !== 'restore' || !e.target.files[0]) return;
+    const note = $('#bmsg', main);
+    try {
+      await importAll(JSON.parse(await e.target.files[0].text()));
+      location.reload();
+    } catch (error) {
+      if (note) note.textContent = ' ' + (error.message || 'Die Datei konnte nicht gelesen werden.');
+    }
+  });
   main.addEventListener('keydown', (e) => { if (e.target.id === 'nm' && e.key === 'Enter') saveName(); });
 
   renderHome();

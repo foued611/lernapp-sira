@@ -13,7 +13,7 @@ Anweisungen für Coding-Agenten und Mitwirkende. Lies diese Datei vor jeder Änd
 - ES-Module brauchen http(s). Lokal testen mit `npm run serve` und `http://localhost:8000`. Ein Doppelklick auf die HTML-Datei (file://) funktioniert nicht.
 - Node (nur für Tests): `npm install`, `npm test`, `npm run smoke`.
 - Alle Pfade im HTML und in Imports sind relativ, weil die Seite unter `/lernapp-sira/` liegt.
-- Keine Laufzeit-Abhängigkeiten. Schriften kommen von Google Fonts. Neue externe Skripte nur nach Absprache.
+- Keine Laufzeit-Abhängigkeiten (Tests nutzen `fake-indexeddb`, `jsdom`, `esbuild`). Schriften kommen von Google Fonts. Neue externe Skripte nur nach Absprache.
 
 ## Struktur
 
@@ -65,12 +65,17 @@ Alles, was in `html` oder `prompt` landet und aus Daten stammt, muss mit `esc()`
 
 ## Speicher
 
-- Alles liegt in `localStorage`, Namensraum `lernwerkstatt:`.
-- `lernwerkstatt:profile`: Name, XP, Serie, letzte App, Tages-XP.
-- `lernwerkstatt:app:<id>`: XP, Sterne je Seite, Trophäen, Bestwerte der App.
-- Stores werden mit `createStore(key, defaults, { version, migrate })` angelegt. Wer die Form eines Stores ändert, erhöht `version` und schreibt eine Migration, damit vorhandener Fortschritt nicht verloren geht.
+- Alles liegt in der Browser-Datenbank IndexedDB (`core/js/db.js`, Datenbank `lernwerkstatt`). Ist sie nicht verfügbar, wechselt die App selbstständig auf `localStorage` oder zuletzt auf den Arbeitsspeicher.
+- Zwei Sammlungen: `docs` (JSON-Dokumente unter einem Schlüssel) und `log` (beliebige Ereignisse, z. B. jede beendete Runde mit App, Seite, Genauigkeit, Sternen).
+- `lernwerkstatt:profile`: Name, XP, Serie, letzte App, Tages-XP. `lernwerkstatt:app:<id>`: XP, Sterne je Seite, Trophäen, Bestwerte der App.
+- Das Schema ist offen. `createStore(key, defaults, { version, migrate })` ist asynchron (`await`), danach ist `store.state` synchron nutzbar, `store.save()` schreibt im Hintergrund. Gespeicherte Felder bleiben erhalten, neue Standardfelder werden beim Laden ergänzt (auch verschachtelt). Neue Felder brauchen deshalb keine Migration.
+- Eine Migration (`version` erhöhen, `migrate(old, fromVersion)`) ist nur nötig, wenn sich die Bedeutung vorhandener Felder ändert.
+- Eine neue Sammlung (z. B. für Karteikarten) braucht `DB_VERSION` in `db.js` plus einen Zweig in `upgrade()`. Bestehende Sammlungen nie umbauen.
+- Daten aus dem früheren `localStorage` werden beim ersten Start automatisch übernommen und dort entfernt.
+- Sicherung: Startseite jeder App, "Fortschritt sichern" lädt alles als JSON, "Sicherung einspielen" stellt es wieder her. Das schützt auch davor, dass Safari die Daten einer lange nicht genutzten Seite löscht.
+- Ereignisse schreibst du mit `logEvent({ app, type, ... })`, liest sie mit `listEvents({ app, limit })`. Eigene Felder sind frei wählbar, `ts` kommt automatisch.
 - `id` einer App und `id` von Seiten und Trophäen sind Teil der gespeicherten Daten. Sie werden nie umbenannt.
-- Jeder Zugriff auf `localStorage` ist durch try/catch geschützt (steckt in `store.js`). Die App muss auch ohne Speicher laufen.
+- Jeder Zugriff ist gegen Fehler abgesichert. Die App muss auch ohne Speicher laufen.
 
 ## Spielregeln (Gamification)
 
@@ -121,6 +126,7 @@ Die Zahlen stehen in `core/js/profile.js` und `rounds.js` und gelten für alle A
 
 - `npm test`: Unit- und Vertragstests ohne Abhängigkeiten. Sie müssen vor jedem Commit grün sein.
 - `npm run smoke`: spielt in jsdom eine App durch (benötigt `npm install`).
+- `tests/db.test.js` prüft den Speicher mit einer simulierten IndexedDB. Der Durchspiel-Test deckt IndexedDB und die Übernahme alter Daten ab.
 - Neue Logik in `core/` bekommt einen Test. Neue Inhalte werden durch den Vertragstest abgedeckt.
 
 ## Deployment

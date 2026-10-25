@@ -27,4 +27,4 @@ npm run smoke   # App im simulierten Browser durchspielen
 ## Weiterentwickeln
 Aufbau, App-Vertrag und die Schritte für neue Apps stehen in [AGENTS.md](AGENTS.md). Neue Apps entstehen aus der Vorlage `apps/_template/`.
 
-Der Fortschritt liegt im Browser (localStorage) und wird nicht übertragen.
+Der Fortschritt liegt in der Browser-Datenbank (IndexedDB) und wird nicht übertragen. Über "Fortschritt sichern" auf der Startseite einer App lässt er sich als Datei sichern und wieder einspielen.

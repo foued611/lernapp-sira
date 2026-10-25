@@ -10,6 +10,7 @@ export const TITLES = ['Neuling', 'Wortlehrling', 'Verbkenner', 'Konjugations-As
 export const profileDefaults = () => ({ name: '', xp: 0, streak: 0, lastDay: '', lastApp: '', day: { d: '', xp: 0 } });
 export const appDefaults = () => ({ xp: 0, stars: {}, badges: {}, best: {} });
 
+// Beide sind asynchron, weil die Browser-Datenbank erst geöffnet werden muss.
 export const openProfile = () => createStore(PROFILE_KEY, profileDefaults());
 export const openApp = (appId, extra = {}) => createStore(appKey(appId), { ...appDefaults(), ...extra });
 
