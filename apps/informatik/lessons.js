@@ -1,8 +1,8 @@
 // Lektionen der Zahlenwerkstatt: Ziel, Vergleich, Diagramm, Beispiel, Falle, Merksatz und Mini-Check.
 // Aufbau und Pflichtteile: core/js/lesson.js. Texte sind für 12- bis 13-Jährige geschrieben.
+import { option as opt } from '../../core/js/questions.js';
 import { placeDiagram, lampDiagram, blocksDiagram, addDiagram, hexPlaceDiagram, nibbleDiagram } from './diagrams.js';
 
-const opt = (id, html = id) => ({ id, html });
 
 export const LESSONS = {
   stellen: {

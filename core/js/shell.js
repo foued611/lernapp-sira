@@ -32,6 +32,7 @@ export async function mountApp(config, { header, main }) {
   };
   const ctx = {
     profile, app, words,
+    inputChars: config.inputChars || [],
     save() { profileStore.save(); appStore.save(); },
     refreshHeader: renderHeader
   };

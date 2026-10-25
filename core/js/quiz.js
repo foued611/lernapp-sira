@@ -11,7 +11,7 @@
 //   answer: string               choice: Option-id, type: erwarteter Text
 //   options?: [{ id, html, fill? }]   choice; fill = Text für die Lücke
 //   optionsLayout?: 'list'       Optionen untereinander (für ganze Sätze)
-//   placeholder?: string, accents?: boolean, check?: (input) => 'ok'|'almost'|'bad'   type
+//   placeholder?: string, accents?: boolean (Zeichenleiste aus ctx.inputChars, Standard an), check?: (input) => 'ok'|'almost'|'bad'   type
 //   left?: [html], right?: [{ value, html }], leftValues?: [value]                    match
 //   reveal?: html                Korrektur bei Fehler (Stiftschrift)
 //   why?: string                 kurze Erklärung bei Fehler
@@ -22,7 +22,6 @@ import { icon } from './icons.js';
 import { mascot } from './mascot.js';
 import { addXP, spendXP, multiplier } from './profile.js';
 
-const ACCENTS = ['é', 'è', 'ê', 'à', 'â', 'ç', 'î', 'ï', 'ô', 'û', 'œ'];
 
 function defaultCheck(q) {
   return (input) => {
@@ -58,7 +57,7 @@ function blankHTML(q, run, fb) {
   return `<span class="blank ${fb ? 'ok' : ''}">${inner}</span>`;
 }
 
-function questionHTML(q, run) {
+function questionHTML(q, run, chars = []) {
   const fb = run.state === 'fb';
   const disabled = fb ? 'disabled' : '';
   const chip = q.chip ? q.chip : '';
@@ -81,8 +80,8 @@ function questionHTML(q, run) {
 
   if (q.kind === 'type') {
     const state = fb ? (run.fb.kind === 'bad' ? 'bad' : 'ok') : '';
-    const accents = !fb && q.accents !== false
-      ? `<div class="acc">${ACCENTS.map((c) => `<button class="chip" data-act="ch" data-c="${c}" type="button">${c}</button>`).join('')}</div>`
+    const accents = !fb && q.accents !== false && chars.length
+      ? `<div class="acc">${chars.map((c) => `<button class="chip" data-act="ch" data-c="${c}" type="button">${c}</button>`).join('')}</div>`
       : '';
     return `${label}${chip}${prompt}${sub}<input id="ans" class="ans ${state}" type="text" autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false" value="${esc(run.typed)}" ${fb ? 'readonly' : ''} placeholder="${esc(q.placeholder || 'Antwort eintippen')}">${accents}`;
   }
@@ -161,7 +160,7 @@ export function startQuiz({ mount, ctx, mode, questions, hearts = mode === 'boss
     mount.innerHTML = `
       <div class="playbar"><button class="x" data-act="exit" aria-label="Abbrechen">${icon('close')}</button><div class="pbar"><i style="width:${pct}%"></i></div>${heartsHTML(run)}</div>
       <div class="combo">${run.combo >= 3 ? `Combo ×${multiplier(run.combo)} · ${run.combo} in Folge` : ''}</div>
-      <section class="card qcard">${q.retry ? '<p class="retry-tag">Noch einmal: jetzt, wo du die Lösung kennst</p>' : ''}${questionHTML(q, run)}${help}</section>
+      <section class="card qcard">${q.retry ? '<p class="retry-tag">Noch einmal: jetzt, wo du die Lösung kennst</p>' : ''}${questionHTML(q, run, ctx.inputChars)}${help}</section>
       <div class="foot" aria-live="polite">${foot}</div>`;
     const input = $('#ans', mount);
     if (input && !fb) input.focus();

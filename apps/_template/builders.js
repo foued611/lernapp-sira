@@ -20,7 +20,7 @@ function typed(item) {
     label: 'Schreibe die Antwort',
     prompt: esc(item.q),
     answer: item.a,
-    accents: false,
+   
     placeholder: 'Antwort eintippen',
     why: item.explain
   };

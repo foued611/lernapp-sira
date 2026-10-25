@@ -28,3 +28,10 @@ for (const app of APPS.filter((a) => a.status === 'live')) {
     }
   });
 }
+
+for (const app of APPS.filter((a) => a.status === 'live')) {
+  test(`Registry und Konfiguration stimmen überein: ${app.id}`, async () => {
+    const { default: config } = await import(new URL(`../${folderOf(app.href)}config.js`, import.meta.url));
+    assert.equal(config.title, app.title, 'Titel in registry.js und config.js muss gleich sein');
+  });
+}

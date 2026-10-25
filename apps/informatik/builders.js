@@ -1,5 +1,6 @@
 // Baut aus Zufallszahlen Fragen im Quiz-Format (siehe core/js/quiz.js).
 import { esc, shuffle, pick } from '../../core/js/ui.js';
+import { choiceQuestion, typedQuestion } from '../../core/js/questions.js';
 import { UNITS } from './data.js';
 import {
   HEX, toBin, toHex, rnd, placeSum, placeDigits, onesWeights, checker, distractors, mono,
@@ -12,13 +13,13 @@ const cheatsheet = '<p class="muted" style="margin:0 0 6px">Hex-Ziffern</p><div 
 const weightsSheet = '<p class="muted" style="margin:0 0 6px">Stellenwerte</p><div class="cheat">' +
   [128, 64, 32, 16, 8, 4, 2, 1].map((w) => `<span>${w}</span>`).join('') + '</div>';
 
-function choice({ label, prompt, answer, wrong, why, reveal, help, promptStyle = 'big', chip }) {
-  const options = shuffle([answer, ...distractors(answer, wrong, 3)]).map((v) => ({ id: v, html: mono(v) }));
-  return { kind: 'choice', label, chip, prompt, promptStyle, answer, options, reveal: reveal || mono(answer), why, help };
+/** Auswahlfrage mit Zahlen in Schreibmaschinenschrift. wrong = mögliche falsche Antworten. */
+function choice({ answer, wrong, ...rest }) {
+  return choiceQuestion({ ...rest, answer, choices: [answer, ...distractors(answer, wrong, 3)], format: mono, promptStyle: rest.promptStyle || 'big' });
 }
 
-function typed({ label, prompt, answer, type, why, help, placeholder, promptStyle = 'big' }) {
-  return { kind: 'type', label, prompt, promptStyle, answer, check: checker(type, answer), accents: false, placeholder, reveal: mono(answer), why, help };
+function typed({ type, answer, ...rest }) {
+  return typedQuestion({ ...rest, answer, check: checker(type, answer), format: mono, promptStyle: rest.promptStyle || 'big' });
 }
 
 const flipBits = (bin) => bin.split('').map((c) => (c === '1' ? '0' : '1')).join('');

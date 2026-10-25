@@ -18,6 +18,7 @@ export default {
     blitzTitle: 'Éclair !',
     levelTitles: ['Neuling', 'Wortlehrling', 'Verbkenner', 'Konjugations-Ass', 'Grammatik-Profi', 'Maître des Verbes', 'Légende']
   },
+  inputChars: ['é', 'è', 'ê', 'à', 'â', 'ç', 'î', 'ï', 'ô', 'û', 'œ'],
   units: UNITS,
   theory: renderTheory,
   lessons: LESSONS,

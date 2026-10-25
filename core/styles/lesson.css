@@ -46,3 +46,8 @@
 .dg .ar{stroke:var(--ink);stroke-width:2;fill:none;marker-end:url(#arw)}
 .dg .arw-head{fill:var(--ink)}
 .lsn-list li[hidden]{display:none}
+
+/* Gemeinsame Helfer: Schreibmaschinenschrift für Zahlen und Code, Spickzettel-Zeile */
+.mono{font-family:ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;font-variant-numeric:tabular-nums;font-weight:600}
+.cheat{display:flex;flex-wrap:wrap;gap:6px;font:500 14px ui-monospace,Menlo,Consolas,monospace}
+.cheat span{background:var(--paper);border:1.5px solid var(--line);border-radius:6px;padding:1px 8px}

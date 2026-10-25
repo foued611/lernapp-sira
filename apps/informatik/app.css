@@ -1,5 +1,4 @@
 /* Nur für die Zahlenwerkstatt: Spielzeuge der Theorie (Lampen, Tabellen, Schieberegler) und Spickzettel. */
-.mono{font-family:ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;font-variant-numeric:tabular-nums;font-weight:600}
 .toy{display:grid;gap:14px;border-top:10px solid var(--lc)}
 .toy-label{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 .row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
@@ -48,6 +47,4 @@
 .nib .h{font:800 34px var(--f-head);color:var(--ink)}
 
 /* Spickzettel in den Aufgaben */
-.cheat{display:flex;flex-wrap:wrap;gap:6px;font:500 14px ui-monospace,Menlo,Consolas,monospace}
-.cheat span{background:var(--paper);border:1.5px solid var(--line);border-radius:6px;padding:1px 8px}
 @media (prefers-reduced-motion:reduce){.bit .bulb{transition:none}}

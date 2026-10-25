@@ -1,9 +1,9 @@
 // Lektionen des Cahier de Verbes: Ziel, Vergleich, Diagramm, Beispiel, Falle, Merksatz und Mini-Check.
 // Aufbau und Pflichtteile: core/js/lesson.js. Texte sind für 12- bis 13-Jährige geschrieben.
+import { option as opt } from '../../core/js/questions.js';
 import { personDiagram, endingsDiagram } from './diagrams.js';
 import { ER, IR, RE } from './data.js';
 
-const opt = (id) => ({ id, html: id });
 
 export const LESSONS = {
   etre: {
