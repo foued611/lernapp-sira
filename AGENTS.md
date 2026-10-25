@@ -13,16 +13,21 @@ Anweisungen für Coding-Agenten und Mitwirkende. Lies diese Datei vor jeder Änd
 - ES-Module brauchen http(s). Lokal testen mit `npm run serve` und `http://localhost:8000`. Ein Doppelklick auf die HTML-Datei (file://) funktioniert nicht.
 - Node (nur für Tests): `npm install`, `npm test`, `npm run smoke`.
 - Alle Pfade im HTML und in Imports sind relativ, weil die Seite unter `/lernapp-sira/` liegt.
-- Keine Laufzeit-Abhängigkeiten (Tests nutzen `fake-indexeddb`, `jsdom`, `esbuild`). Schriften kommen von Google Fonts. Neue externe Skripte nur nach Absprache.
+- Keine Laufzeit-Abhängigkeiten (Tests nutzen `fake-indexeddb`, `jsdom`, `esbuild`). Schriften liegen selbst gehostet in `core/fonts/` (WOFF2, Lizenzen OFL daneben), es gibt keine Anfragen an Google. Neue externe Skripte oder Dienste nur nach Absprache (Datenschutz, DSGVO).
 
 ## Struktur
 
 ```
 index.html, dashboard.js, dashboard.css   Dashboard (Startseite)
 registry.js                               Liste aller Apps, steuert die Kacheln
-core/styles/   tokens.css  base.css  quiz.css  lesson.css   gemeinsames Design
-core/js/       ui.js store.js profile.js quiz.js rounds.js shell.js icons.js mascot.js confetti.js
-apps/<name>/   eine App: index.html, main.js, config.js, data.js, builders.js, theory.js, badges.js, app.css
+core/styles/   app.css (einziger Einstieg, bindet tokens, fonts, base, quiz, lesson ein)
+core/fonts/    selbst gehostete Schriften mit Lizenzen
+core/js/       db.js store.js profile.js rounds.js shell.js   Speicher, Spielregeln, App-Rahmen
+               qtypes.js quiz.js blitz.js questions.js         Fragetypen, Rundenmotor, Blitz, Frage-Bausteine
+               lesson.js svg.js                                Lektionen und Diagramme
+               views/home.js result.js backup.js               Ansichten als reine HTML-Funktionen
+               ui.js icons.js mascot.js confetti.js
+apps/<name>/   eine App: index.html, main.js, config.js, data.js, builders.js, lessons.js, diagrams.js, theory.js, badges.js, app.css, optional smoke.mjs
 apps/_template/ Vorlage für neue Apps (wird von den Tests geprüft)
 tests/         Unit- und Vertragstests (node:test)
 scripts/       smoke.mjs (Browser-Simulation mit jsdom)
@@ -37,7 +42,8 @@ Faustregel: Was mehr als eine App braucht, gehört nach `core/`. Was nur ein Fac
 | Feld | Pflicht | Bedeutung |
 |---|---|---|
 | `id` | ja | Stabil und eindeutig, Kleinbuchstaben mit Bindestrich. Bestimmt den Speicherschlüssel |
-| `title`, `greeting`, `intro` | ja | Texte im Kopf der App |
+| `title`, `greeting`, `intro` | ja | Texte im Kopf der App. `title` muss mit dem Titel in `registry.js` übereinstimmen (Test) |
+| `inputChars` | nein | Sonderzeichen für die Leiste bei Eingabefragen, z. B. `['é','è','ç']`. Ohne Angabe gibt es keine Leiste |
 | `units` | ja | Liste von `{ id, title, de, ic, color }`, die Seiten des Lernpfads |
 | `theory(box, unit)` | ja | Schreibt die Theorie einer Seite in `box`. Nutzt dafür `lessonTop`, `lessonBottom` und `wireLesson` aus `core/js/lesson.js` |
 | `lessons` | ja | `{ [unit.id]: Lektion }`, siehe "Lektionen" |
@@ -50,11 +56,11 @@ Faustregel: Was mehr als eine App braucht, gehört nach `core/`. Was nur ein Fac
 | `words` | nein | Eigene Lob-Sprüche `praise`, Ergebnis-Titel `resultTitles` (für 1, 2, 3 Sterne), `blitzTitle` und `levelTitles`. Standard ist Deutsch |
 | `badges` | ja | Liste von `{ id, n, d, when(state, result) }` |
 
-`main.js` ruft nur `mountApp(config, { header, main })` auf. Alles andere erledigt `core/js/shell.js`.
+`main.js` ruft nur `mountApp(config, { header, main })` auf. Alles andere erledigt `core/js/shell.js`; die Ansichten (Start, Ergebnis, Sicherung) liegen in `core/js/views/`.
 
 ## Fragenformat
 
-Ein Fragenobjekt wird von `core/js/quiz.js` gezeichnet. Die Tests prüfen es mit `assertValidQuestion` (`tests/helpers.js`).
+Ein Fragenobjekt wird über das Register `core/js/qtypes.js` gezeichnet und geprüft, der Rundenablauf steckt in `core/js/quiz.js`. Die Tests prüfen jede Frage mit `assertValidQuestion` (`tests/helpers.js`), das den `validate` des jeweiligen Typs aufruft. Fragen baust du mit `choiceQuestion` und `typedQuestion` aus `core/js/questions.js`.
 
 - `kind`: `choice` (Auswahl), `type` (Eintippen) oder `match` (Zuordnen)
 - Gemeinsam: `label`, `prompt`, `answer`, `why` (Erklärung nach der Antwort), optional `chip`, `sub`, `help`
@@ -146,21 +152,22 @@ Regeln für Texte und Bilder:
 
 - Seite: Eintrag in `units`, Inhalte in `data.js`, `units` in `registry.js` erhöhen. Neue Seiten hinten anfügen, nicht umsortieren.
 - Trophäe: Eintrag in `badges.js` mit neuer, nie verwendeter `id`.
-- Fragetyp: erst in `core/js/quiz.js` und `quiz.css` umsetzen, dann in `tests/helpers.js` in die Prüfung aufnehmen, dann in einer App nutzen. Nie nur in einer App einen Sonderweg bauen.
+- Fragetyp: In `core/js/qtypes.js` mit `registerQuestionType('name', { validate, render, canCheck, grade, init?, actions?, onInput?, onKey? })` anmelden (Beschreibung am Dateianfang), Stil in `quiz.css`, Test in `tests/qtypes.test.js`. `quiz.js`, `shell.js` und `tests/helpers.js` bleiben unverändert, die Tests prüfen den neuen Typ automatisch über sein `validate`. Nie nur in einer App einen Sonderweg bauen.
 
 ## Code-Stil
 
 - ES-Module, `const`/`let`, Pfeilfunktionen für kurze Callbacks, Semikolons, einfache Anführungszeichen.
 - Kleine Funktionen mit einer Aufgabe. Daten (`data.js`) getrennt von Logik (`builders.js`) und Darstellung (`theory.js`).
-- Kein `innerHTML` mit ungeprüften Daten. Event-Handling über `data-act` und die Delegation in `shell.js`, keine Inline-Handler.
+- Kein `innerHTML` mit ungeprüften Daten. Event-Handling über `data-act` und die Delegation in `shell.js` bzw. `quiz.js`, keine Inline-Handler.
 - Kommentare erklären das Warum. Kommentare und Oberflächentexte sind Deutsch, Bezeichner Englisch oder Deutsch, aber je Datei einheitlich.
 - Keine Funktionen mit Zufall ohne Möglichkeit, sie zu testen: Fragen werden aus Daten gebaut, die Tests prüfen jede mögliche Frage.
 
 ## Tests
 
 - `npm test`: Unit- und Vertragstests ohne Abhängigkeiten. Sie müssen vor jedem Commit grün sein.
-- `npm run smoke`: spielt in jsdom eine App durch (benötigt `npm install`).
+- `npm run smoke`: spielt in jsdom alle Apps aus `registry.js` durch (benötigt `npm install`). App-spezifische Prüfungen liegen in `apps/<name>/smoke.mjs` und werden automatisch gefunden. Eine neue App braucht keine Änderung am Skript.
 - `tests/db.test.js` prüft den Speicher mit einer simulierten IndexedDB. Der Durchspiel-Test deckt IndexedDB und die Übernahme alter Daten ab.
+- `tests/qtypes.test.js` und `tests/views.test.js` decken Fragetypen und Ansichten ab.
 - Neue Logik in `core/` bekommt einen Test. Neue Inhalte werden durch den Vertragstest abgedeckt.
 
 ## Deployment

@@ -1,25 +1,9 @@
 // Gemeinsame Prüfungen für alle Apps. Beschreibt den App-Vertrag aus AGENTS.md als ausführbaren Test.
 import assert from 'node:assert/strict';
+import { validateQuestion } from '../core/js/qtypes.js';
 
 export function assertValidQuestion(q) {
-  assert.ok(['choice', 'type', 'match'].includes(q.kind), `kind: ${q.kind}`);
-  assert.ok(q.label, 'label fehlt');
-  if (q.kind === 'choice') {
-    const ids = q.options.map((o) => o.id);
-    assert.ok(ids.includes(q.answer), `Antwort fehlt in den Optionen: ${q.label}`);
-    assert.equal(new Set(ids).size, ids.length, 'Optionen müssen eindeutig sein');
-    assert.ok(ids.length >= 2 && ids.length <= 4, 'zwei bis vier Optionen');
-    if (q.prompt && q.prompt.includes('{{blank}}')) assert.ok(q.options.every((o) => o.fill !== undefined), 'Lücke braucht fill');
-  }
-  if (q.kind === 'type') {
-    assert.ok(q.answer, 'answer fehlt');
-    if (q.check) assert.equal(q.check(q.answer), 'ok', 'die richtige Antwort muss ok sein');
-  }
-  if (q.kind === 'match') {
-    assert.equal(q.left.length, q.right.length);
-    assert.equal(q.left.length, q.leftValues.length);
-    assert.deepEqual([...q.leftValues].sort(), q.right.map((r) => r.value).sort());
-  }
+  validateQuestion(q, assert);
 }
 
 /** Prüft eine App-Konfiguration gegen den App-Vertrag. */
