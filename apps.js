@@ -33,12 +33,16 @@ window.APPS = [
   },
   { id: 'mathe', subject: 'Mathematik', title: 'Mathe-App', desc: 'Rationale Zahlen, Terme und Gleichungen.', status: 'soon' },
   { id: 'deutsch', subject: 'Deutsch', title: 'Deutsch-App', desc: 'Textanalyse, Inhaltsangabe und Grammatik.', status: 'soon' },
-  { id: 'englisch', subject: 'Englisch', title: 'Englisch-App', desc: 'Wortschatz und Grammatik.', status: 'soon' }
+  { id: 'englisch', subject: 'Englisch', title: 'Englisch-App', desc: 'Wortschatz und Grammatik.', status: 'soon' },
+  { id: 'informatik', subject: 'Informatik', title: 'Informatik-App', desc: 'Algorithmen, Daten und erstes Programmieren.', status: 'soon' },
+  { id: 'physik', subject: 'Physik', title: 'Physik-App', desc: 'Experimente, Messen und Kräfte.', status: 'soon' }
 ];
 
 window.SUBJECT_COLORS = {
   'Französisch': '#9B7BFF',
   'Mathematik': '#4CC3F5',
   'Deutsch': '#FF6B88',
-  'Englisch': '#3DD6B0'
+  'Englisch': '#3DD6B0',
+  'Informatik': '#FF9F43',
+  'Physik': '#8BD450'
 };
