@@ -44,7 +44,7 @@ test('jede Aufgabe: Antwort stimmt, Prüfer erkennt sie', () => {
     for (let i = 0; i < 300; i++) for (const gen of pool) {
       const it = gen();
       if (it.numeric) assert.equal(numCheck(it.value)(it.answer), 'ok', `${unit}: ${it.prompt} -> ${it.answer}`);
-      else if (!it.words) assert.equal(termCheck(it.answer)(it.answer), 'ok', `${unit}: ${it.prompt}`);
+      else if (!it.choiceOnly) assert.equal(termCheck(it.answer)(it.answer), 'ok', `${unit}: ${it.prompt}`);
     }
   }
 });
@@ -64,5 +64,26 @@ test('Rechenaufgaben: Ergebnis wird unabhängig nachgerechnet', () => {
     const m = l.match(/^(\d+)x(?: ([+−]) (\d+))?$/);
     const b = m[3] ? (m[2] === '+' ? 1 : -1) * Number(m[3]) : 0;
     assert.equal(Number(m[1]) * x + b, val(r), it.prompt);
+  }
+});
+
+test('Zinsen und Dreisatz: Ergebnis wird unabhängig nachgerechnet', () => {
+  const val = (s) => Number(s.replace(/−/g, '-').replace(',', '.'));
+  const nums = (s) => (s.replace(/\d+\.\d+|\d{1,3}(?:\.\d{3})+/g, (m) => m.replace('.', '')).match(/\d+(?:,\d+)?/g) || []).map((n) => Number(n.replace(',', '.')));
+  for (let i = 0; i < 300; i++) {
+    const [zinsen,, , monate] = POOLS.zinsen;
+    const z = zinsen();
+    const [k, p] = nums(z.prompt);
+    assert.equal(val(z.answer), k * p / 100, z.prompt);
+    const m = monate();
+    const [k2, mo, p2] = nums(m.prompt);
+    assert.equal(val(m.answer), k2 * p2 / 100 * mo / 12, m.prompt);
+    const [prop, anti] = POOLS.zuordnungen;
+    const a = prop();
+    const [n1, p1, n2] = nums(a.prompt);
+    assert.equal(val(a.answer), (p1 / n1) * n2, a.prompt);
+    const b = anti();
+    const [w1, d, w2] = nums(b.prompt);
+    assert.equal(val(b.answer), (w1 * d) / w2, b.prompt);
   }
 });

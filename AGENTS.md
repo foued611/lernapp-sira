@@ -135,6 +135,7 @@ Regeln für Texte und Bilder:
 
 - Inhalt entspricht dem Gymnasium Baden-Württemberg, Klasse 7. Kein Stoff ab Klasse 8.
 - Orientierung an den Lehrwerken: Lambacher Schweizer 7 (Mathe), Deutschbuch 7 / P.A.U.L. D. 7 (Deutsch), Green Line 3 / Access 3 (Englisch), Découvertes 2 (Französisch).
+- Der Abgleich der Mathe-App mit dem Bildungsplan steht in `docs/lehrplan-mathe.md`. Dort ist auch vermerkt, was nicht amtlich geprüft ist. Neue Themen dort eintragen.
 - Korrekte Fachbegriffe verwenden und kurz erklären.
 - Jede Frage hat eine Erklärung (`why`), die den Denkfehler benennt. Keine Fragen, deren Antwort ohne Vorwissen zu erraten ist.
 - Fachliche Richtigkeit ist wichtiger als Umfang. Im Zweifel eine Aufgabe weglassen.

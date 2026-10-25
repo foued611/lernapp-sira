@@ -64,3 +64,29 @@ export function percentDiagram(g = 200, p = 25) {
   out += text(260, 220, `${g} · ${p}/100 = ${fmt(w)}`, 'md mono mu');
   return svg(520, 236, out, `Balken: ${p} Prozent von ${g} Euro sind ${fmt(w)} Euro`);
 }
+
+/** Wertetabelle mit Pfeilen: proportional (Quotient bleibt gleich) oder antiproportional (Produkt bleibt gleich). */
+export function tableDiagram(kind = 'prop', k = 3) {
+  const xs = [1, 2, 3, 4], total = 12;
+  const ys = xs.map((x) => (kind === 'prop' ? x * k : total / x));
+  const prop = kind === 'prop';
+  let out = text(60, 56, prop ? 'Hefte' : 'Arbeiter', 'sm mu') + text(60, 116, prop ? 'Preis in €' : 'Tage', 'sm mu');
+  xs.forEach((x, i) => {
+    const cx = 160 + i * 100;
+    out += rect(cx - 36, 34, 72, 36, 'box') + text(cx, 59, String(x), 'md mono');
+    out += rect(cx - 36, 94, 72, 36, i === 1 ? 'hi' : 'box') + text(cx, 119, fmt(ys[i]), `md mono${i === 1 ? ' on-sun' : ''}`);
+  });
+  out += text(260, 168, prop ? 'x 2 oben, x 2 unten: Quotient y : x bleibt gleich' : 'x 2 oben, : 2 unten: Produkt x · y bleibt gleich', 'sm mu');
+  out += text(260, 196, prop ? `Immer ${k} € pro Heft` : `Immer ${total} Arbeitertage`, 'md mono');
+  return svg(520, 212, out, prop ? `Tabelle proportional: Preis ist immer ${k} mal die Anzahl` : `Tabelle antiproportional: Anzahl mal Tage ergibt immer ${total}`);
+}
+
+/** Zinsen-Zeitstrahl: Kapital wächst um die Zinsen. */
+export function interestDiagram(k = 1000, p = 3) {
+  const z = k * p / 100;
+  let out = rect(30, 50, 180, 70, 'box') + text(120, 80, 'Kapital K', 'sm mu') + text(120, 106, `${fmt(k)} €`, 'md mono');
+  out += arrow(212, 85, 298, 85) + text(255, 68, `${p} % Zinssatz`, 'sm mu') + text(255, 108, '1 Jahr', 'sm mu');
+  out += rect(300, 50, 190, 70, 'hi') + text(395, 80, 'Zinsen Z', 'sm on-sun') + text(395, 106, `${fmt(z)} €`, 'md mono on-sun');
+  out += text(260, 160, `Z = K · p/100 = ${fmt(k)} · ${p}/100 = ${fmt(z)} €`, 'md mono');
+  return svg(520, 180, out, `Kapital ${fmt(k)} Euro bringt bei ${p} Prozent in einem Jahr ${fmt(z)} Euro Zinsen`);
+}

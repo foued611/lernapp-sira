@@ -29,9 +29,9 @@ export const APPS = [
     id: 'mathe',
     subject: 'Mathematik',
     title: 'Mathe-Werkstatt',
-    desc: 'Vorzeichen, Terme, Gleichungen und Prozente. Mit Waage, Zahlenstrahl und Kacheln erklärt.',
+    desc: 'Vorzeichen, Terme, Gleichungen, Prozente, Zinsen und Dreisatz. Mit Waage, Zahlenstrahl und Kacheln erklärt.',
     href: 'apps/mathe/index.html',
-    units: 4,
+    units: 6,
     status: 'live'
   },
   { id: 'deutsch', subject: 'Deutsch', title: 'Deutsch-App', desc: 'Textanalyse, Inhaltsangabe und Grammatik.', status: 'soon' },

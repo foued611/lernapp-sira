@@ -64,7 +64,7 @@ function firstStep() {
   const eq = plus ? `${a}x + ${b} = ${c}` : `${a}x ${MINUS} ${b} = ${a * x - b}`;
   const step = plus ? `| ${MINUS} ${b}` : `| + ${b}`;
   return { prompt: eq, answer: step, wrong: [`| : ${a}`, plus ? `| + ${b}` : `| ${MINUS} ${b}`, `| · ${a}`],
-    why: `Zuerst wird das ${plus ? 'Plus' : 'Minus'} neben dem x rückgängig gemacht (${step}). Das Teilen durch ${a} kommt danach.`, label: 'Welcher Umformungsschritt kommt zuerst?', words: true };
+    why: `Zuerst wird das ${plus ? 'Plus' : 'Minus'} neben dem x rückgängig gemacht (${step}). Das Teilen durch ${a} kommt danach.`, label: 'Welcher Umformungsschritt kommt zuerst?', choiceOnly: true };
 }
 
 const GRUND = [40, 50, 60, 80, 120, 150, 200, 250, 400, 500, 800];
@@ -94,11 +94,67 @@ function rabatt() {
     why: `Rabatt: ${fmt(g * p / 100)} €. Neuer Preis: ${g} ${MINUS} ${fmt(g * p / 100)} = ${fmt(n)} €. Kurz: Du zahlst ${100 - p} %.` };
 }
 
+
+const KAP = [200, 400, 500, 800, 1000, 1500, 2000, 2500, 4000];
+const ZINS = [1, 2, 3, 4, 5];
+
+function zinsen() {
+  const k = pick(KAP), p = pick(ZINS), z = k * p / 100;
+  return { prompt: `Lena legt ${fmt(k)} € für ein Jahr zu ${p} % Zinsen an. Wie viel Zinsen bekommt sie?`, answer: fmt(z), value: z, numeric: true, wrong: nearby(z, [k + z, k * p, k / p]).map(fmt),
+    why: `Jahreszinsen = Kapital · Zinssatz = ${fmt(k)} · ${p}/100 = ${fmt(z)} €.` };
+}
+
+function kapital() {
+  const k = pick(KAP), p = pick(ZINS), z = k * p / 100;
+  return { prompt: `Ein Sparbuch bringt bei ${p} % Zinssatz in einem Jahr ${fmt(z)} € Zinsen. Wie hoch ist das Kapital?`, answer: fmt(k), value: k, numeric: true, wrong: nearby(k, [z * p, k / 2, z + p]).map(fmt),
+    why: `${p} % entsprechen ${fmt(z)} €. 1 % sind ${fmt(z / p)} €, 100 % sind ${fmt(k)} €. Das Kapital ist der Grundwert.` };
+}
+
+function zinssatz() {
+  const k = pick(KAP), p = pick(ZINS), z = k * p / 100;
+  return { prompt: `Auf ${fmt(k)} € gibt es nach einem Jahr ${fmt(z)} € Zinsen. Wie hoch ist der Zinssatz in Prozent?`, answer: String(p), value: p, numeric: true, wrong: nearby(p, [100 - p, p * 2, z / 10]).map(fmt),
+    why: `Zinssatz = Zinsen : Kapital = ${fmt(z)} : ${fmt(k)} = ${p / 100} = ${p} %.` };
+}
+
+function zinsMonate() {
+  const k = pick([1200, 2400, 3600, 6000]), p = pick([2, 3, 4, 5]), m = pick([3, 6, 9]), z = k * p / 100 * m / 12;
+  return { prompt: `${fmt(k)} € werden ${m} Monate lang zu ${p} % angelegt. Wie hoch sind die Zinsen?`, answer: fmt(z), value: z, numeric: true, wrong: nearby(z, [k * p / 100, z * 2, k * p / 100 * m]).map(fmt),
+    why: `Für ein ganzes Jahr gäbe es ${fmt(k * p / 100)} €. ${m} Monate sind ${m}/12 eines Jahres: ${fmt(k * p / 100)} · ${m}/12 = ${fmt(z)} €.` };
+}
+
+function dreisatzProp() {
+  const n1 = pick([3, 4, 5, 6, 8]), u = pick([2, 3, 4, 5, 6]), n2 = pick([2, 7, 9, 10, 12].filter((n) => n !== n1)), p1 = n1 * u, r = n2 * u;
+  return { prompt: `${n1} Hefte kosten ${p1} €. Wie viel kosten ${n2} Hefte?`, answer: fmt(r), value: r, numeric: true, wrong: nearby(r, [p1 + (n2 - n1), p1 * n2, p1 * n1 / n2]).map(fmt),
+    why: `Je mehr Hefte, desto mehr Geld (proportional). 1 Heft kostet ${p1} : ${n1} = ${u} €. ${n2} Hefte kosten ${n2} · ${u} = ${fmt(r)} €.` };
+}
+
+function dreisatzAnti() {
+  const w1 = pick([2, 3, 4, 6]), d = pick([6, 8, 12, 24]), total = w1 * d;
+  const w2 = pick([2, 3, 4, 6, 8, 12].filter((w) => w !== w1 && total % w === 0)), r = total / w2;
+  return { prompt: `${w1} Arbeiter brauchen für eine Aufgabe ${d} Tage. Wie lange brauchen ${w2} Arbeiter?`, answer: fmt(r), value: r, numeric: true, wrong: nearby(r, [d * w2 / w1, d + (w2 - w1), total]).map(fmt),
+    why: `Mehr Arbeiter, weniger Tage (antiproportional). Das Produkt bleibt gleich: ${w1} · ${d} = ${total} Arbeitertage. Geteilt durch ${w2} Arbeiter sind das ${fmt(r)} Tage.` };
+}
+
+const SITUATIONS = [
+  ['Anzahl der Brötchen ↔ Preis', 'proportional'], ['Anzahl der Kopien ↔ Gesamtkosten', 'proportional'], ['gelaufene Zeit bei gleichem Tempo ↔ Strecke', 'proportional'],
+  ['Anzahl der Arbeiter ↔ Zeit für dieselbe Arbeit', 'antiproportional'], ['Geschwindigkeit ↔ Fahrzeit auf einer festen Strecke', 'antiproportional'], ['Anzahl der Teilnehmer ↔ Preis pro Person bei festem Gesamtpreis', 'antiproportional'],
+  ['Alter eines Kindes ↔ seine Körpergröße', 'weder noch'], ['Schuhgröße ↔ Mathenote', 'weder noch']
+];
+
+function erkennen() {
+  const [s, a] = pick(SITUATIONS);
+  const all = ['proportional', 'antiproportional', 'weder noch', 'beides'];
+  const why = { proportional: 'Doppelt so viel von der einen Größe heißt doppelt so viel von der anderen.', antiproportional: 'Doppelt so viel von der einen Größe heißt nur halb so viel von der anderen. Das Produkt bleibt gleich.', 'weder noch': 'Hier gibt es keine feste Regel. Der Zusammenhang ist weder ein festes Vielfaches noch ein festes Produkt.' };
+  return { prompt: s, answer: a, wrong: all.filter((o) => o !== a), choiceOnly: true, label: 'Welche Zuordnung ist das?', why: why[a] };
+}
+
 export const POOLS = {
   vorzeichen: [addSub, addSub, mulDiv],
   terme: [collect, collectMixed, expand, minusBracket],
   gleichungen: [solve, solve, firstStep],
-  prozent: [prozentwert, grundwert, prozentsatz, rabatt]
+  prozent: [prozentwert, grundwert, prozentsatz, rabatt],
+  zinsen: [zinsen, kapital, zinssatz, zinsMonate],
+  zuordnungen: [dreisatzProp, dreisatzAnti, erkennen, dreisatzProp, dreisatzAnti]
 };
 
 // --- Aufgabe zu Frage ---
@@ -112,10 +168,10 @@ function choice(item) {
 }
 
 function typed(item) {
-  const check = item.words ? undefined : item.numeric ? numCheck(item.value) : termCheck(item.answer);
+  const check = item.choiceOnly ? undefined : item.numeric ? numCheck(item.value) : termCheck(item.answer);
   return typedQuestion({
-    label: item.words ? 'Schreibe den Schritt' : 'Gib das Ergebnis ein', prompt: esc(item.prompt), promptStyle: item.prompt.length > 28 ? 'sentence' : 'big',
-    answer: item.answer, check, placeholder: item.numeric ? 'Zahl eintippen' : item.words ? '| …' : 'Term eintippen', why: item.why, format: (v) => `<span class="mono">${esc(v)}</span>`
+    label: item.choiceOnly ? 'Schreibe den Schritt' : 'Gib das Ergebnis ein', prompt: esc(item.prompt), promptStyle: item.prompt.length > 28 ? 'sentence' : 'big',
+    answer: item.answer, check, placeholder: item.numeric ? 'Zahl eintippen' : item.choiceOnly ? '| …' : 'Term eintippen', why: item.why, format: (v) => `<span class="mono">${esc(v)}</span>`
   });
 }
 
@@ -127,7 +183,7 @@ function make(unitId) {
     if (item.wrong.length >= 3) return item;
   }
 }
-const canType = (item) => !item.words;
+const canType = (item) => !item.choiceOnly;
 
 /** 8 Fragen, jede dritte zum Eintippen. */
 export function lessonRound(unit) {

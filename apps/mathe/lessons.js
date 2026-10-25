@@ -1,6 +1,6 @@
 // Lektionen der Mathe-App (Klasse 7, Gymnasium BW). Aufbau und Pflichtteile: core/js/lesson.js.
 import { option as opt } from '../../core/js/questions.js';
-import { lineDiagram, tilesDiagram, balanceDiagram, percentDiagram } from './diagrams.js';
+import { lineDiagram, tilesDiagram, balanceDiagram, percentDiagram, interestDiagram, tableDiagram } from './diagrams.js';
 
 export const LESSONS = {
   vorzeichen: {
@@ -124,6 +124,68 @@ export const LESSONS = {
       options: [opt('30 €'), opt('10 €'), opt('15 €'), opt('50 €')],
       answer: '30 €',
       why: '25 % von 40 € sind 10 €. Das ist der Rabatt. Du zahlst 40 € − 10 € = 30 €, also 75 % vom alten Preis.'
+    }
+  },
+
+  zinsen: {
+    goal: 'Du kannst Zinsen, Kapital und Zinssatz berechnen und erklären, was die Bank dir für dein Geld zahlt.',
+    tldr: [
+      'Wer Geld bei der Bank anlegt, bekommt dafür Zinsen. Sie sind der „Lohn“ fürs Verleihen.',
+      'Zinsrechnung ist Prozentrechnung: Kapital = Grundwert, Zinssatz = Prozentsatz, Zinsen = Prozentwert.',
+      'Für ein Jahr gilt Z = K · p/100. Für einen Teil des Jahres rechnest du anteilig.'
+    ],
+    analogy: {
+      title: 'Stell dir vor: du leihst einem Freund Geld',
+      html: '<p>Du leihst deinem Freund <b>100 €</b>. Er gibt dir nach einem Jahr <b>103 €</b> zurück. Die 3 € sind die <b>Zinsen</b>, der <b>Zinssatz</b> ist 3 %.</p><p>Bei der Sparkasse bist du der Verleiher, und die Bank ist der Freund.</p>'
+    },
+    figure: { svg: interestDiagram(1000, 3), caption: '1000 € bei 3 % Zinssatz bringen in einem Jahr 30 € Zinsen.' },
+    steps: {
+      title: 'So berechnest du die Zinsen für 2400 € bei 4 % in 6 Monaten',
+      items: [
+        'Benenne die Größen: Kapital K = 2400 €, Zinssatz p = 4 %.',
+        'Jahreszinsen: 2400 · 4/100 = <b>96 €</b>.',
+        '6 Monate sind die Hälfte eines Jahres, also 6/12.',
+        'Zinsen: 96 € · 6/12 = <b>48 €</b>. Probe: Halbes Jahr, halbe Zinsen.'
+      ]
+    },
+    pitfall: { html: '<p>Die Zinsen sind <b>nicht</b> das, was du am Ende auf dem Konto hast. Auf dem Konto liegen Kapital <b>plus</b> Zinsen: 1000 € + 30 € = 1030 €.</p><p>Und denk an die Zeit: Der Zinssatz gilt immer für ein ganzes Jahr.</p>' },
+    rule: 'Z = K · p/100 für ein Jahr. Für m Monate: Z = K · p/100 · m/12.',
+    check: {
+      q: 'Wie viel Zinsen bringen <b>500 €</b> bei <b>2 %</b> in einem Jahr?',
+      options: [opt('10 €'), opt('100 €'), opt('1000 €'), opt('2 €')],
+      answer: '10 €',
+      why: '2 % von 500 € sind 500 · 2/100 = 10 €.'
+    }
+  },
+
+  zuordnungen: {
+    goal: 'Du kannst entscheiden, ob eine Zuordnung proportional oder antiproportional ist, und mit dem Dreisatz rechnen.',
+    tldr: [
+      'Proportional: Doppelt so viel gibt doppelt so viel. Beispiel: Menge und Preis.',
+      'Antiproportional: Doppelt so viel gibt halb so viel. Beispiel: Arbeiter und Zeit.',
+      'Dreisatz: erst auf die Einheit 1 rechnen, dann auf die gesuchte Menge.'
+    ],
+    analogy: {
+      title: 'Stell dir vor: Hefte und Pizza',
+      html: '<p><b>Hefte:</b> 1 Heft kostet 3 €, dann kosten 4 Hefte 12 €. Mehr Hefte, mehr Geld.</p><p><b>Pizza:</b> Eine Pizza wird gleichmäßig verteilt. Bei 2 Personen bekommt jeder die Hälfte, bei 4 Personen nur ein Viertel. Mehr Personen, weniger für jeden.</p>'
+    },
+    figure: { svg: tableDiagram('prop', 3), caption: 'Proportional: Wird die obere Zahl verdoppelt, verdoppelt sich auch die untere.' },
+    steps: {
+      title: 'So löst du: 3 Arbeiter brauchen 8 Tage, wie lange brauchen 6?',
+      items: [
+        'Entscheide: Mehr Arbeiter schaffen es schneller. Das ist <b>antiproportional</b>.',
+        'Rechne auf die Einheit: 1 Arbeiter braucht 3 · 8 = 24 Tage.',
+        'Rechne auf die gesuchte Menge: 6 Arbeiter brauchen 24 : 6 = <b>4 Tage</b>.',
+        'Probe: Doppelt so viele Arbeiter, halbe Zeit. 8 : 2 = 4. Stimmt.'
+      ]
+    },
+    pitfall: { html: '<p>Nicht alles, was „mehr“ bedeutet, ist proportional. Bei Arbeitern und Zeit führt <b>mehr</b> zu <b>weniger</b>.</p><p>Frage dich vor jeder Rechnung: <b>Wird das andere auch mehr oder weniger?</b></p>' },
+    rule: 'Proportional: Quotient y : x bleibt gleich. Antiproportional: Produkt x · y bleibt gleich.',
+    check: {
+      q: '4 Maurer brauchen 6 Tage. Wie lange brauchen <b>8 Maurer</b>?',
+      options: [opt('3 Tage'), opt('12 Tage'), opt('10 Tage'), opt('2 Tage')],
+      answer: '3 Tage',
+      why: 'Doppelt so viele Maurer brauchen nur die halbe Zeit: 6 : 2 = 3 Tage (antiproportional).'
     }
   }
 };

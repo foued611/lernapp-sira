@@ -7,7 +7,11 @@ export const UNITS = [
   { id: 'gleichungen', color: '#3DD6B0', ic: '=', title: 'Gleichungen lösen', de: 'Äquivalenzumformung Schritt für Schritt',
     card: { name: 'Waagen-Meister', fact: 'Das Gleichheitszeichen wurde 1557 erfunden, weil zwei parallele Striche „nichts sind gleicher“.' } },
   { id: 'prozent', color: '#9B7BFF', ic: '%', title: 'Prozentrechnung', de: 'Grundwert, Prozentwert, Prozentsatz',
-    card: { name: 'Rabatt-Detektiv', fact: '„Prozent“ kommt von „pro centum“, lateinisch für „pro Hundert“.' } }
+    card: { name: 'Rabatt-Detektiv', fact: '„Prozent“ kommt von „pro centum“, lateinisch für „pro Hundert“.' } },
+  { id: 'zinsen', color: '#FF6B88', ic: '€', title: 'Zinsrechnung', de: 'Kapital, Zinssatz, Zinsen',
+    card: { name: 'Zins-Zauberer', fact: 'Schon im alten Babylon vor 4000 Jahren wurden Zinsen berechnet, damals oft auf Getreide.' } },
+  { id: 'zuordnungen', color: '#8BD450', ic: '⇄', title: 'Zuordnungen und Dreisatz', de: 'proportional und antiproportional',
+    card: { name: 'Dreisatz-Detektiv', fact: 'Beim Dreisatz springst du über die Zahl 1: erst auf eine Einheit, dann auf die gesuchte Menge.' } }
 ];
 
 export const NOTES = {
@@ -31,5 +35,15 @@ export const NOTES = {
     ['Formel', 'Prozentwert = Grundwert · Prozentsatz. Alle drei lassen sich umstellen.'],
     ['Dreisatz', '100 % entsprechen dem Grundwert. Erst auf 1 % rechnen, dann auf den gesuchten Satz.'],
     ['Vermehrt, vermindert', 'Preis − 20 % bedeutet: du zahlst 80 % des alten Preises.']
+  ],
+  zinsen: [
+    ['Begriffe', 'Kapital K ist der Grundwert, Zinssatz p % der Prozentsatz, Zinsen Z der Prozentwert.'],
+    ['Jahreszinsen', 'Z = K · p/100. Beim Umstellen: K = Z : p · 100 und p = Z : K · 100.'],
+    ['Teil eines Jahres', 'Für m Monate rechnest du Jahreszinsen · m/12.']
+  ],
+  zuordnungen: [
+    ['Proportional', 'Doppelt so viel gibt doppelt so viel. Der Quotient y : x bleibt gleich.'],
+    ['Antiproportional', 'Doppelt so viel gibt halb so viel. Das Produkt x · y bleibt gleich.'],
+    ['Dreisatz', 'Erst auf die Einheit 1 rechnen, dann auf die gesuchte Menge. Vorher entscheiden, ob proportional oder antiproportional.']
   ]
 };
