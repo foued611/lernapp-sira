@@ -5,6 +5,12 @@
   "greeting": "Hallo",
   "intro": "Inhaltsangabe, Adverbialsätze, Kommas, das und dass, Passiv und sprachliche Bilder. Dazu Rechtschreibung (doppelte Mitlaute, lange Vokale, s-Laute, Verlängern, Groß und klein) und Lesen mit Strategie. Starte irgendwo. Die Reihenfolge ist nur ein Vorschlag.",
   "bossTitle": "Der Grammatik-Boss",
+  "tracks": {
+    "lrs": {
+      "label": "LRS-Förderung",
+      "desc": "Zusatzprogramm Rechtschreiben und Lesen. Nicht Teil des Standardprogramms."
+    }
+  },
   "words": {
     "levelTitles": [
       "Wort-Neuling",
@@ -92,7 +98,8 @@
       "card": {
         "name": "Doppel-Detektiv",
         "fact": "Hörst du einen kurzen Vokal, folgt meist ein doppelter Mitlaut: Sonne, Mutter, Bett."
-      }
+      },
+      "track": "lrs"
     },
     {
       "id": "dehnung",
@@ -103,7 +110,8 @@
       "card": {
         "name": "Dehnungs-Held",
         "fact": "Das lange i schreibst du meistens als ie: Tier, Wiese, Spiegel. Nur wenige Wörter wie Tiger und Igel haben ein einfaches i."
-      }
+      },
+      "track": "lrs"
     },
     {
       "id": "slaute",
@@ -114,7 +122,8 @@
       "card": {
         "name": "S-Laut-Kenner",
         "fact": "Ein zischendes s nach langem Vokal schreibst du mit ß: Fuß, Straße, heiß."
-      }
+      },
+      "track": "lrs"
     },
     {
       "id": "ableiten",
@@ -125,7 +134,8 @@
       "card": {
         "name": "Verlängerungs-Profi",
         "fact": "Bei Hund oder Hunt hilft die Verlängerung: Aus Hund wird Hunde, und dort hörst du das d."
-      }
+      },
+      "track": "lrs"
     },
     {
       "id": "gross",
@@ -136,7 +146,8 @@
       "card": {
         "name": "Groß-Schreiber",
         "fact": "Nach beim, zum, etwas und nichts schreibst du groß: beim Lesen, etwas Neues."
-      }
+      },
+      "track": "lrs"
     },
     {
       "id": "lesen",
@@ -147,7 +158,8 @@
       "card": {
         "name": "Lese-Detektiv",
         "fact": "Schlüsselwörter tragen die wichtigsten Informationen eines Absatzes. Du brauchst nur ein bis drei pro Absatz."
-      }
+      },
+      "track": "lrs"
     },
     {
       "id": "redewiedergabe",
@@ -405,7 +417,8 @@
     {
       "title": "Merkwörter-Schatzkiste und FRESCH-Karte",
       "desc": "25 Sets mit je 4 häufigen Merkwörtern zum Abhaken, dazu die Strategie-Karte zum Ausschneiden fürs Mäppchen.",
-      "href": "files/merkwoerter-fresch.pdf"
+      "href": "files/merkwoerter-fresch.pdf",
+      "track": "lrs"
     }
   ]
 }

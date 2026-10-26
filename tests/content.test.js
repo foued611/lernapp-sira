@@ -52,3 +52,11 @@ test('Schema lehnt kaputte Pakete ab', async () => {
     assert.ok(bundleErrors(copy).length > 0, `Laufzeitprüfung lehnt href ab: ${href}`);
   }
 });
+
+test('Strang-Verweise: unbekannter Strang wird gemeldet', async () => {
+  const { bundleErrors } = await import('../core/js/validate.js');
+  const b = structuredClone(await diskSource().load('deutsch'));
+  assert.deepEqual(bundleErrors(b), []);
+  b.manifest.units[0].track = 'xyz';
+  assert.ok(bundleErrors(b).some((e) => e.includes('xyz')));
+});

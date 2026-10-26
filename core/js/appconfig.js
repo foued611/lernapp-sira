@@ -37,6 +37,7 @@ export function buildConfig(bundle, logic) {
     words: manifest.words,
     inputChars: manifest.inputChars,
     dashboardHref: manifest.dashboardHref,
+    tracks: manifest.tracks || {},
     units: manifest.units,
     resources: manifest.resources || [],
     lessons,

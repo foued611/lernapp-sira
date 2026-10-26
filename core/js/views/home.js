@@ -2,6 +2,7 @@
 import { esc, pick } from '../ui.js';
 import { icon } from '../icons.js';
 import { mascot } from '../mascot.js';
+import { trackOf, trackBadge } from '../tracks.js';
 import { GOAL, dailyXP, isDue, weakestUnit } from '../profile.js';
 
 export const starsHTML = (n) =>
@@ -20,7 +21,7 @@ export function minouSays(profile) {
 export function homeHTML({ config, profile, app, bossOpen: open, resetAsk }) {
   const done = config.units.filter((u) => (app.stars[u.id] || 0) > 0).length;
   const x = dailyXP(profile), ratio = Math.min(1, x / GOAL), C = 2 * Math.PI * 32;
-  const nodes = config.units.map((u) => `<button class="node" style="--lc:${esc(u.color)}" data-act="open" data-id="${esc(u.id)}"><span class="circ">${esc(u.ic)}</span><span><h3>${esc(u.title)}</h3><small>${esc(u.de)}</small>${isDue(app, u.id) ? '<span class="due">Zeit zum Auffrischen</span>' : ''}</span>${starsHTML(app.stars[u.id] || 0)}</button>`).join('');
+  const nodes = config.units.map((u) => `<button class="node" style="--lc:${esc(u.color)}" data-act="open" data-id="${esc(u.id)}"><span class="circ">${esc(u.ic)}</span><span><h3>${esc(u.title)}</h3><small>${esc(u.de)}</small>${trackBadge(trackOf(config.tracks, u))}${isDue(app, u.id) ? '<span class="due">Zeit zum Auffrischen</span>' : ''}</span>${starsHTML(app.stars[u.id] || 0)}</button>`).join('');
   const badges = config.badges.map((b) => `<div class="badge ${app.badges[b.id] ? 'got' : ''}"><b>${esc(b.n)}</b><span>${esc(b.d)}</span></div>`).join('');
   const greet = `${esc(config.greeting || 'Hallo')}${profile.name ? ', ' + esc(profile.name) : ''} !`;
   const nameForm = profile.name ? '' : '<div class="name"><input id="nm" placeholder="Wie heißt du?" maxlength="20" autocomplete="off" aria-label="Dein Name"><button class="btn sun" data-act="savename">Los</button></div>';
@@ -45,7 +46,7 @@ export function homeHTML({ config, profile, app, bossOpen: open, resetAsk }) {
     hasBoss ? `<div class="card"><h3>${esc(config.bossTitle || 'Endgegner')}</h3><p>${open ? '12 gemischte Aufgaben mit nur 3 Herzen. Wer gewinnt, bekommt 50 Bonus-XP.' : 'Der Endgegner wartet, sobald alle Seiten mindestens einen Stern haben.'}</p><button class="btn" data-act="boss" ${open ? '' : 'disabled'}>${open ? 'Endgegner starten' : 'Noch gesperrt'}</button></div>` : ''
   ].join('');
   const resources = (config.resources || []).length
-    ? `<section><h2>Zum Ausdrucken</h2><div class="modes" style="margin-top:12px">${config.resources.map((r) => `<div class="card"><h3>${esc(r.title)}</h3>${r.desc ? `<p>${esc(r.desc)}</p>` : ''}<a class="btn ghost" href="${esc(r.href)}" target="_blank" rel="noopener">Öffnen</a></div>`).join('')}</div></section>`
+    ? `<section><h2>Zum Ausdrucken</h2><div class="modes" style="margin-top:12px">${config.resources.map((r) => `<div class="card"><h3>${esc(r.title)}</h3>${trackBadge(trackOf(config.tracks, r))}${r.desc ? `<p>${esc(r.desc)}</p>` : ''}<a class="btn ghost" href="${esc(r.href)}" target="_blank" rel="noopener">Öffnen</a></div>`).join('')}</div></section>`
     : '';
   return `
     <section class="card hero">

@@ -20,7 +20,11 @@ export function bundleErrors(bundle) {
   const ids = manifest.units.map((u) => u.id);
   if (new Set(ids).size !== ids.length) errors.push('Seiten-IDs sind nicht eindeutig');
   manifest.units.forEach((u) => ['id', 'title', 'de', 'ic', 'color'].forEach((k) => { if (!u[k]) errors.push(`Seite ${u.id || '?'}: ${k} fehlt`); }));
+  const tracks = isObj(manifest.tracks) ? manifest.tracks : {};
+  Object.entries(tracks).forEach(([k, t]) => { if (!t || !t.label) errors.push(`tracks.${k}: label fehlt`); });
+  manifest.units.forEach((u) => { if (u.track && !tracks[u.track]) errors.push(`Seite ${u.id}: Strang "${u.track}" ist in tracks nicht definiert`); });
   (manifest.resources || []).forEach((r, i) => {
+    if (r && r.track && !tracks[r.track]) errors.push(`resources[${i}]: Strang "${r.track}" ist in tracks nicht definiert`);
     if (!r || !r.title) errors.push(`resources[${i}]: title fehlt`);
     if (!r || !isSafeHref(r.href)) errors.push(`resources[${i}]: href muss ein relativer Pfad sein`);
   });

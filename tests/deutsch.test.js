@@ -64,3 +64,23 @@ test('Deutsch: Material zum Ausdrucken liegt im App-Ordner', async () => {
   assert.ok(bundle.manifest.resources.length >= 1);
   for (const r of bundle.manifest.resources) await access(new URL(`../apps/deutsch/${r.href}`, import.meta.url));
 });
+
+const LRS = ['doppelt', 'dehnung', 'slaute', 'ableiten', 'gross', 'lesen'];
+
+test('Deutsch: LRS-Seiten und Material tragen das Etikett, das Standardprogramm nicht', () => {
+  const tagged = bundle.manifest.units.filter((u) => u.track === 'lrs').map((u) => u.id);
+  assert.deepEqual(tagged, LRS);
+  assert.ok(bundle.manifest.resources.every((r) => r.track === 'lrs'));
+  assert.equal(bundle.manifest.tracks.lrs.label, 'LRS-Förderung');
+});
+
+test('Deutsch: Fragen der LRS-Seiten zeigen das Etikett, andere nicht', () => {
+  for (const [unit, list] of items) {
+    for (const item of list.slice(0, 3)) {
+      const q = choice(item);
+      if (LRS.includes(unit)) assert.match(q.chip, /LRS-Förderung/, unit);
+      else assert.equal(q.chip || '', '', unit);
+      if (item.kind === 'gap') assert.equal(/LRS-Förderung/.test(typed(item).chip), LRS.includes(unit));
+    }
+  }
+});

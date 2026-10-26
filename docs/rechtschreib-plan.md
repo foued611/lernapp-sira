@@ -2,6 +2,14 @@
 
 Stand: sechs Seiten sind in `content/deutsch/` ergänzt. Sie stehen hinter den bisherigen sechs Seiten (neue Seiten werden immer hinten angefügt).
 
+## Kennzeichnung
+
+Alle LRS-Inhalte tragen das Etikett „LRS-Förderung“, damit man sie vom Standardprogramm unterscheiden kann:
+Die sechs Seiten (`doppelt`, `dehnung`, `slaute`, `ableiten`, `gross`, `lesen`) und das Merkwörter-PDF haben im Manifest `track: "lrs"`.
+Das Etikett erscheint auf der Startseite, im Kopf der Theorieseite und über jeder Übungsfrage dieser Seiten (auch in Schnellrunde, Blitz und Endgegner).
+Definiert ist der Strang in `manifest.tracks.lrs`. Ein weiterer Strang braucht nur einen neuen Eintrag dort und `track` an den Seiten.
+Offen: Ob `dassdas` ebenfalls zur Förderung zählen soll, ist noch nicht entschieden.
+
 ## Seiten
 
 | Seite (`id`) | Thema | Aufgabenform |

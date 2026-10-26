@@ -53,7 +53,7 @@ Das Inhaltspaket (`bundle`) hat immer dieselbe Form `{ manifest, lessons, badges
 
 | Datei | Inhalt |
 |---|---|
-| `manifest.json` | `schema: 1`, `id`, `title`, `greeting`, `intro`, optional `bossTitle`, `words`, `inputChars`, `resources` (Material zum Öffnen oder Ausdrucken, `{ title, desc?, href }` mit relativem Pfad zur `index.html`, Dateien liegen in `apps/<name>/files/`); `units` (Seiten mit Karte), `notes` (Merkzettel je Seite) |
+| `manifest.json` | `schema: 1`, `id`, `title`, `greeting`, `intro`, optional `bossTitle`, `words`, `inputChars`, `tracks` (Lernstränge, z. B. `lrs`: `{ label, desc? }`; Seiten und Material verweisen per `track` darauf und bekommen ein Etikett, Fragen zeigen es als `chip`), `resources` (Material zum Öffnen oder Ausdrucken, `{ title, desc?, track?, href }` mit relativem Pfad zur `index.html`, Dateien liegen in `apps/<name>/files/`); `units` (Seiten mit Karte), `notes` (Merkzettel je Seite) |
 | `lessons.json` | Lektion je Seite (Teile siehe "Lektionen"). Bilder als Verweis `{ "diagram": { "name", "args" }, "caption" }` auf `logic.diagrams` |
 | `badges.json` | Trophäen `{ id, n, d, rule }` mit einer deklarativen Regel (`anyUnit`, `unit`, `units`, `perfectRound`, `combo`, `blitz`, `boss`, `streak`, `all`, `any`), Beschreibung in `core/js/rules.js` |
 | `data.json` | Aufgabendaten, deren Form die Logik der App festlegt (z. B. Faktenpools) |

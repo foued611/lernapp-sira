@@ -7,29 +7,37 @@
 //   a       richtige Antwort, wrong: falsche Antworten (bei 'gap' genügt eine)
 //   accept  optional: weitere richtige Eingaben beim Eintippen
 import { esc, shuffle, pick, norm } from '../../core/js/ui.js';
+import { trackOf, trackBadge } from '../../core/js/tracks.js';
 import { choiceQuestion, typedQuestion, option } from '../../core/js/questions.js';
 
 let UNITS = [];
 let ITEMS = {};
+let TRACKS = {};
+const OWNER = new WeakMap(); // Aufgabe -> Seite, damit Fragen ihren Strang kennen
 
 /** Bekommt Seitenliste und Aufgaben, bevor die erste Runde entsteht. */
 export function init({ data, manifest }) {
   UNITS = manifest.units;
   ITEMS = data.items;
+  TRACKS = manifest.tracks || {};
+  manifest.units.forEach((u) => (ITEMS[u.id] || []).forEach((it) => OWNER.set(it, u)));
 }
 
 const isGap = (item) => item.kind === 'gap';
 const gapText = (s) => s.split('___').map(esc).join('{{blank}}');
 const filled = (s, word) => s.split('___').map(esc).join(`<span class="mk">${esc(word)}</span>`);
 
+/** Etikett des Strangs (z. B. LRS-Förderung) über der Frage, leer im Standardprogramm. */
+const chipFor = (item) => trackBadge(trackOf(TRACKS, OWNER.get(item)));
+
 export function choice(item) {
   const label = item.label || (isGap(item) ? 'Lücke füllen' : 'Wähle die richtige Antwort');
   if (isGap(item)) {
     const options = shuffle([item.a, ...item.wrong]).map((w) => option(w, esc(w), w));
-    return { kind: 'choice', label, prompt: gapText(item.s), sub: item.q, answer: item.a, options, reveal: filled(item.s, item.a), why: item.why };
+    return { kind: 'choice', label, chip: chipFor(item), prompt: gapText(item.s), sub: item.q, answer: item.a, options, reveal: filled(item.s, item.a), why: item.why };
   }
   return choiceQuestion({
-    label, prompt: esc(item.q) + (item.s ? `<br><em>${esc(item.s)}</em>` : ''), answer: item.a,
+    label, chip: chipFor(item), prompt: esc(item.q) + (item.s ? `<br><em>${esc(item.s)}</em>` : ''), answer: item.a,
     choices: [item.a, ...shuffle(item.wrong).slice(0, 3)], why: item.why, optionsLayout: item.a.length > 40 ? 'list' : undefined
   });
 }
@@ -37,7 +45,7 @@ export function choice(item) {
 export function typed(item) {
   const accepted = [item.a, ...(item.accept || [])].map(norm);
   return typedQuestion({
-    label: 'Schreibe das Wort', prompt: gapText(item.s), sub: item.q, answer: item.a,
+    label: 'Schreibe das Wort', chip: chipFor(item), prompt: gapText(item.s), sub: item.q, answer: item.a,
     check: (input) => (accepted.includes(norm(input)) ? 'ok' : 'bad'), placeholder: 'Wort eintippen',
     reveal: filled(item.s, item.a), why: item.why
   });

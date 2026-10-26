@@ -127,3 +127,6 @@ a.btn{display:inline-block;text-align:center;text-decoration:none}
 .gcard.t3{box-shadow:0 0 0 3px var(--star),3px 4px 0 var(--shadow)}
 .gcard.t3 .medal{background:var(--star);color:#3B2A00}
 .gcard.t0{opacity:.75;border-style:dashed;border-top-color:var(--line)}
+.trk{display:inline-block;margin:0 0 8px;padding:1px 10px;border:1.5px solid var(--ink);border-radius:12px;background:var(--sun,#FFC933);color:#1B1240;font-size:12px;font-weight:700;letter-spacing:.02em;vertical-align:middle}
+.node .trk{margin:4px 0 0}
+.thead .trk{margin:0}
