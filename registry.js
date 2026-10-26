@@ -59,7 +59,7 @@ export const APPS = [
     title: 'Deutsch-Werkstatt',
     desc: 'Inhaltsangabe, Adverbialsätze, Kommas, das und dass, Passiv, sprachliche Bilder, Rechtschreibung und Lesen.',
     href: 'apps/deutsch/index.html',
-    units: 12,
+    units: 15,
     status: 'live'
   },
   { id: 'physik', subject: 'Physik', title: 'Physik-App', desc: 'Experimente, Messen und Kräfte.', status: 'soon' }

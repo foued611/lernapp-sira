@@ -36,5 +36,4 @@ Hinweise: Die IDs der Seiten bleiben unverändert, nur die Reihenfolge in `conte
 - Die Geometrie-Werkstatt hat keine Zeichenfläche. Die Konstruktionen sind als Bilder und Schritt-für-Schritt-Anleitung erklärt, gezeichnet wird auf Papier mit Zirkel und Lineal. Eine interaktive Zeichenfläche wäre ein eigenes Projekt.
 - Begriffe und Schreibweisen der Aufgaben mit Siras Buch vergleichen (z. B. „Lösungsmenge“, „Äquivalenzumformung“).
 
-## Deutsch-Werkstatt (Klasse 7, Orientierung Deutschbuch 7 / P.A.U.L. D. 7)
-Seiten: Inhaltsangabe, Adverbialsätze, Nebensätze und Kommas, das oder dass, Aktiv und Passiv, sprachliche Bilder. Die Auswahl und die Aufgabenformen sind nicht gegen Siras Lehrbuch geprüft. Stoff ab Klasse 8 (z. B. Konjunktiv I, indirekte Rede) ist bewusst nicht enthalten. Bitte mit dem Inhaltsverzeichnis des Deutschbuchs abgleichen.
+Die Deutsch-Werkstatt ist in [lehrplan-deutsch.md](lehrplan-deutsch.md) abgeglichen.

@@ -174,5 +174,32 @@
         "gross"
       ]
     }
+  },
+  {
+    "id": "reported",
+    "n": "Zitat-Verwandler",
+    "d": "Indirekte Rede und Konjunktiv geschafft",
+    "rule": {
+      "type": "unit",
+      "id": "redewiedergabe"
+    }
+  },
+  {
+    "id": "attribute",
+    "n": "Nomen-Verzierer",
+    "d": "Attribute geschafft",
+    "rule": {
+      "type": "unit",
+      "id": "attribute"
+    }
+  },
+  {
+    "id": "wordtypes",
+    "n": "Wort-Sortierer",
+    "d": "Präposition, Konjunktion, Adverb geschafft",
+    "rule": {
+      "type": "unit",
+      "id": "wortarten"
+    }
   }
 ]

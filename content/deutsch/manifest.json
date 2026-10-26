@@ -148,6 +148,39 @@
         "name": "Lese-Detektiv",
         "fact": "Schlüsselwörter tragen die wichtigsten Informationen eines Absatzes. Du brauchst nur ein bis drei pro Absatz."
       }
+    },
+    {
+      "id": "redewiedergabe",
+      "color": "#FF6B88",
+      "ic": "„“",
+      "title": "Indirekte Rede und Konjunktiv",
+      "de": "Redewiedergabe, er sagt, er sei …",
+      "card": {
+        "name": "Zitat-Verwandler",
+        "fact": "Mit der indirekten Rede gibst du weiter, was jemand gesagt hat, ohne ihn wörtlich zu zitieren."
+      }
+    },
+    {
+      "id": "attribute",
+      "color": "#4CC3F5",
+      "ic": "At",
+      "title": "Attribute und Attributsätze",
+      "de": "Nomen genauer beschreiben",
+      "card": {
+        "name": "Nomen-Verzierer",
+        "fact": "Ein Attribut ist kein eigenes Satzglied. Es hängt an einem Nomen und wandert bei der Umstellprobe mit ihm."
+      }
+    },
+    {
+      "id": "wortarten",
+      "color": "#3DD6B0",
+      "ic": "W",
+      "title": "Präposition, Konjunktion, Adverb",
+      "de": "Wörter, die nicht gebeugt werden",
+      "card": {
+        "name": "Wort-Sortierer",
+        "fact": "Präpositionen, Konjunktionen und Adverbien verändern sich nie. Man nennt sie unveränderliche Wörter."
+      }
     }
   ],
   "notes": {
@@ -313,6 +346,52 @@
       [
         "Danach",
         "Den Inhalt mit eigenen Worten in ein bis zwei Sätzen zusammenfassen."
+      ]
+    ],
+    "redewiedergabe": [
+      [
+        "Indirekte Rede",
+        "Ohne Anführungszeichen, mit Verb des Sagens: Sie sagt, sie sei müde."
+      ],
+      [
+        "Konjunktiv I",
+        "3. Person Singular: Stamm + e (er komme, er habe). Sonderfall: sein, er sei."
+      ],
+      [
+        "Ersatzform",
+        "Sieht der Konjunktiv I aus wie das Präsens, nimmst du den Konjunktiv II: sie hätten, sie kämen."
+      ]
+    ],
+    "attribute": [
+      [
+        "Attribut",
+        "Beschreibt ein Nomen näher und ist Teil eines Satzglieds."
+      ],
+      [
+        "Arten",
+        "Adjektivattribut, Genitivattribut, Präpositionalattribut, Attributsatz."
+      ],
+      [
+        "Probe",
+        "Umstellprobe: Das Attribut wandert mit seinem Nomen."
+      ]
+    ],
+    "wortarten": [
+      [
+        "Präposition",
+        "Steht vor einem Nomen und verlangt einen Fall: mit + Dativ, für + Akkusativ."
+      ],
+      [
+        "Konjunktion",
+        "Verbindet Sätze oder Wörter: und, aber, weil, obwohl."
+      ],
+      [
+        "Adverb",
+        "Gibt Umstände an und bleibt unverändert: gestern, dort, oft."
+      ],
+      [
+        "Wechselpräpositionen",
+        "Wo? Dativ. Wohin? Akkusativ."
       ]
     ]
   },

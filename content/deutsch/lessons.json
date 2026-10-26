@@ -937,5 +937,257 @@
       "answer": "Ich lese den Satz davor und danach und überlege, was passt.",
       "why": "Der Zusammenhang verrät oft die Bedeutung. Erst wenn das nicht reicht, schlägst du nach."
     }
+  },
+  "redewiedergabe": {
+    "goal": "Du kannst wörtliche Rede in indirekte Rede umformen und den Konjunktiv I benutzen.",
+    "tldr": [
+      "Die indirekte Rede gibt wieder, was jemand gesagt hat, ohne Anführungszeichen.",
+      "Das Verb steht meist im Konjunktiv I: er sei, er habe, er komme.",
+      "Sieht der Konjunktiv I aus wie das Präsens, nimmst du eine Ersatzform: sie hätten."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: du bist Reporter",
+      "html": "<p>Du hörst, wie Anna sagt: „Ich bin müde.“ Im Radio sagst du: „Anna sagt, sie <b>sei</b> müde.“ Du gibst weiter, was gesagt wurde, aber du sprichst nicht mit ihrer Stimme.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Wörtliche Rede",
+            "Indirekte Rede"
+          ],
+          [
+            [
+              "„Ich bin müde.“",
+              "Sie sagt, sie sei müde."
+            ],
+            [
+              "„Ich habe Hunger.“",
+              "Er sagt, er habe Hunger."
+            ],
+            [
+              "„Wir kommen.“",
+              "Sie sagen, sie kämen."
+            ]
+          ],
+          [
+            1,
+            1
+          ],
+          "Wörtliche und indirekte Rede"
+        ]
+      },
+      "caption": "Aus „ich“ wird „sie“ oder „er“, das Verb wechselt in den Konjunktiv I oder die Ersatzform."
+    },
+    "steps": {
+      "title": "So formst du um: Tom sagt: „Ich habe Hunger.“",
+      "items": [
+        "Lass die Anführungszeichen weg und schreibe ein Komma: „Tom sagt, …“",
+        "Ändere das Pronomen: „ich“ wird zu „er“.",
+        "Setze das Verb in den Konjunktiv I: „habe“ (3. Person Singular).",
+        "Ergebnis: <b>Tom sagt, er habe Hunger.</b>"
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Vergiss das Pronomen nicht: „Tom sagt, <b>ich</b> habe Hunger“ ist falsch. Und im Plural sieht der Konjunktiv I oft aus wie das Präsens („sie haben“). Dann brauchst du die Ersatzform („sie <b>hätten</b>“).</p>"
+    },
+    "rule": "Ohne Anführungszeichen, Pronomen anpassen, Konjunktiv I; Ersatzform, wenn er gleich aussieht wie das Präsens.",
+    "check": {
+      "q": "Wie lautet die indirekte Rede? Mia sagt: „Ich bin zu Hause.“",
+      "options": [
+        {
+          "id": "Mia sagt, sie sei zu Hause.",
+          "html": "Mia sagt, sie sei zu Hause."
+        },
+        {
+          "id": "Mia sagt, ich sei zu Hause.",
+          "html": "Mia sagt, ich sei zu Hause."
+        },
+        {
+          "id": "Mia sagt, sie ist zu Hause.",
+          "html": "Mia sagt, sie ist zu Hause."
+        },
+        {
+          "id": "Mia sagt, sie war zu Hause.",
+          "html": "Mia sagt, sie war zu Hause."
+        }
+      ],
+      "answer": "Mia sagt, sie sei zu Hause.",
+      "why": "„Ich“ wird zu „sie“, und „sein“ steht im Konjunktiv I: „sei“."
+    }
+  },
+  "attribute": {
+    "goal": "Du kannst Attribute erkennen und ihre Art bestimmen.",
+    "tldr": [
+      "Ein Attribut beschreibt ein Nomen näher.",
+      "Es gibt vier Arten: Adjektiv, Genitiv, Präposition, Nebensatz.",
+      "Bei der Umstellprobe wandert das Attribut mit seinem Nomen."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Eis mit Extras",
+      "html": "<p>„Das Eis“ ist das Nomen. Mit Attributen wird es genauer: „das <b>große</b> Eis“, „das Eis <b>von Oma</b>“, „das Eis, <b>das ich liebe</b>“. Du weißt dann viel besser, welches gemeint ist.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Art",
+            "Beispiel",
+            "Frage"
+          ],
+          [
+            [
+              "Adjektivattribut",
+              "das rote Auto",
+              "Was für ein?"
+            ],
+            [
+              "Genitivattribut",
+              "das Auto des Vaters",
+              "Wessen?"
+            ],
+            [
+              "Präp.-Attribut",
+              "das Haus mit Dach",
+              "Was für ein?"
+            ],
+            [
+              "Attributsatz",
+              "das Buch, das ich lese",
+              "Welches?"
+            ]
+          ],
+          [
+            3,
+            4,
+            3
+          ],
+          "Attribute"
+        ]
+      },
+      "caption": "Vier Arten von Attributen mit Beispiel und Frage."
+    },
+    "steps": {
+      "title": "So bestimmst du das Attribut: „Das Auto des Vaters ist neu.“",
+      "items": [
+        "Finde das Nomen: „Auto“.",
+        "Was gehört dazu? „des Vaters“. Frage: Wessen Auto?",
+        "Prüfe mit der Umstellprobe: „Das Auto des Vaters“ wandert zusammen: „Neu ist das Auto des Vaters.“",
+        "Ergebnis: <b>Genitivattribut</b>."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Verwechsle das Attribut nicht mit einem eigenen Satzglied. „Er repariert das Auto <b>des Vaters</b>“: „des Vaters“ lässt sich nicht allein nach vorn stellen. Es gehört fest zu „Auto“.</p>"
+    },
+    "rule": "Attribut = Beschreibung eines Nomens. Es wandert bei der Umstellprobe mit seinem Nomen.",
+    "check": {
+      "q": "Welche Art Attribut ist „das Buch, das ich lese“?",
+      "options": [
+        {
+          "id": "Attributsatz",
+          "html": "Attributsatz"
+        },
+        {
+          "id": "Adjektivattribut",
+          "html": "Adjektivattribut"
+        },
+        {
+          "id": "Genitivattribut",
+          "html": "Genitivattribut"
+        },
+        {
+          "id": "Präpositionalattribut",
+          "html": "Präpositionalattribut"
+        }
+      ],
+      "answer": "Attributsatz",
+      "why": "Das Attribut ist ein ganzer Nebensatz und gehört zum Nomen „Buch“."
+    }
+  },
+  "wortarten": {
+    "goal": "Du kannst Präpositionen, Konjunktionen und Adverbien erkennen und richtig verwenden.",
+    "tldr": [
+      "Präpositionen stehen vor Nomen und verlangen einen Fall.",
+      "Konjunktionen verbinden Wörter und Sätze.",
+      "Adverbien geben Umstände an und bleiben unverändert."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: Verkehrsschilder und Klebeband",
+      "html": "<p><b>Präpositionen</b> sind wie Wegweiser: auf, unter, neben. <b>Konjunktionen</b> sind Klebeband: Sie halten Sätze zusammen. <b>Adverbien</b> sind Hinweisschilder wie „hier“, „heute“, „gern“.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Wortart",
+            "Merkmal",
+            "Beispiele"
+          ],
+          [
+            [
+              "Präposition",
+              "steht vor dem Nomen",
+              "auf, mit, für"
+            ],
+            [
+              "Konjunktion",
+              "verbindet Sätze",
+              "und, weil, obwohl"
+            ],
+            [
+              "Adverb",
+              "unveränderlich",
+              "gestern, dort, oft"
+            ]
+          ],
+          [
+            2,
+            3,
+            3
+          ],
+          "Unveränderliche Wörter"
+        ]
+      },
+      "caption": "Drei unveränderliche Wortarten im Überblick."
+    },
+    "steps": {
+      "title": "So bestimmst du die Wortart von „weil“ im Satz „Ich lerne, weil morgen ein Test ist.“",
+      "items": [
+        "Frage: Steht das Wort vor einem Nomen und verlangt einen Fall? Nein, also keine Präposition.",
+        "Frage: Verbindet es zwei Sätze? Ja: „Ich lerne“ und „morgen ein Test ist“.",
+        "Frage: Steht das Verb danach am Ende? Ja, das ist ein Nebensatz.",
+        "Ergebnis: <b>Konjunktion</b> (genauer: Subjunktion)."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Bei Wechselpräpositionen (auf, in, unter, neben …) hilft die Frage: <b>Wo?</b> Dann Dativ („auf dem Tisch“). <b>Wohin?</b> Dann Akkusativ („auf den Tisch“).</p>"
+    },
+    "rule": "Präposition + Fall, Konjunktion verbindet, Adverb bleibt unverändert. Wo? Dativ, wohin? Akkusativ.",
+    "check": {
+      "q": "Welche Wortart ist „dort“ in „Sie wohnt dort“?",
+      "options": [
+        {
+          "id": "Adverb",
+          "html": "Adverb"
+        },
+        {
+          "id": "Präposition",
+          "html": "Präposition"
+        },
+        {
+          "id": "Konjunktion",
+          "html": "Konjunktion"
+        },
+        {
+          "id": "Adjektiv",
+          "html": "Adjektiv"
+        }
+      ],
+      "answer": "Adverb",
+      "why": "„dort“ gibt den Ort an und lässt sich nicht verändern."
+    }
   }
 }
