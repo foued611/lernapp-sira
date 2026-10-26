@@ -3,7 +3,7 @@
   "id": "deutsch",
   "title": "Deutsch-Werkstatt",
   "greeting": "Hallo",
-  "intro": "Inhaltsangabe, Adverbialsätze, Kommas, das und dass, Passiv und sprachliche Bilder. Starte irgendwo. Die Reihenfolge ist nur ein Vorschlag.",
+  "intro": "Inhaltsangabe, Adverbialsätze, Kommas, das und dass, Passiv und sprachliche Bilder. Dazu Rechtschreibung (doppelte Mitlaute, lange Vokale, s-Laute, Verlängern, Groß und klein) und Lesen mit Strategie. Starte irgendwo. Die Reihenfolge ist nur ein Vorschlag.",
   "bossTitle": "Der Grammatik-Boss",
   "words": {
     "levelTitles": [
@@ -81,6 +81,72 @@
       "card": {
         "name": "Bild-Zauberer",
         "fact": "„Ein Fels in der Brandung“ ist eine Metapher: Niemand ist wirklich ein Fels, aber alle verstehen das Bild."
+      }
+    },
+    {
+      "id": "doppelt",
+      "color": "#E56B9F",
+      "ic": "tt",
+      "title": "Doppelte Mitlaute",
+      "de": "Kurzer Vokal, danach doppelt, ck und tz",
+      "card": {
+        "name": "Doppel-Detektiv",
+        "fact": "Hörst du einen kurzen Vokal, folgt meist ein doppelter Mitlaut: Sonne, Mutter, Bett."
+      }
+    },
+    {
+      "id": "dehnung",
+      "color": "#5B8DEF",
+      "ic": "ie",
+      "title": "Lange Vokale",
+      "de": "ie, Dehnungs-h und Doppelvokal",
+      "card": {
+        "name": "Dehnungs-Held",
+        "fact": "Das lange i schreibst du meistens als ie: Tier, Wiese, Spiegel. Nur wenige Wörter wie Tiger und Igel haben ein einfaches i."
+      }
+    },
+    {
+      "id": "slaute",
+      "color": "#8AC926",
+      "ic": "ß",
+      "title": "s, ss oder ß?",
+      "de": "Summt es, ist der Vokal kurz oder lang?",
+      "card": {
+        "name": "S-Laut-Kenner",
+        "fact": "Ein zischendes s nach langem Vokal schreibst du mit ß: Fuß, Straße, heiß."
+      }
+    },
+    {
+      "id": "ableiten",
+      "color": "#F28C38",
+      "ic": "d/t",
+      "title": "Verlängern und Ableiten",
+      "de": "b oder p, d oder t, g oder k, ä oder e",
+      "card": {
+        "name": "Verlängerungs-Profi",
+        "fact": "Bei Hund oder Hunt hilft die Verlängerung: Aus Hund wird Hunde, und dort hörst du das d."
+      }
+    },
+    {
+      "id": "gross",
+      "color": "#B388EB",
+      "ic": "Aa",
+      "title": "Groß und klein",
+      "de": "Nomen, Nominalisierung und Signalwörter",
+      "card": {
+        "name": "Groß-Schreiber",
+        "fact": "Nach beim, zum, etwas und nichts schreibst du groß: beim Lesen, etwas Neues."
+      }
+    },
+    {
+      "id": "lesen",
+      "color": "#2EC4B6",
+      "ic": "Le",
+      "title": "Lesen mit Strategie",
+      "de": "Vorher, beim Lesen, danach",
+      "card": {
+        "name": "Lese-Detektiv",
+        "fact": "Schlüsselwörter tragen die wichtigsten Informationen eines Absatzes. Du brauchst nur ein bis drei pro Absatz."
       }
     }
   ],
@@ -164,6 +230,96 @@
         "Hyperbel",
         "Starke Übertreibung: tausendmal gesagt."
       ]
+    ],
+    "doppelt": [
+      [
+        "Regel",
+        "Kurzer Vokal, dann meist ein doppelter Mitlaut: Sonne, Bett, Mutter."
+      ],
+      [
+        "ck und tz",
+        "Statt kk schreibst du ck, statt zz schreibst du tz: Brücke, Katze."
+      ],
+      [
+        "Aber",
+        "Folgen zwei verschiedene Mitlaute, bleibt es dabei: Hand, Wolke."
+      ]
+    ],
+    "dehnung": [
+      [
+        "ie",
+        "Das lange i schreibst du meistens ie. Ausnahmen: Tiger, Igel, Biber."
+      ],
+      [
+        "Dehnungs-h",
+        "Es steht oft vor l, m, n, r: Zahl, Sohn, Uhr. Verwandte Wörter helfen."
+      ],
+      [
+        "Doppelvokal",
+        "Nur wenige Wörter: Meer, Boot, Haar, Paar, Tee."
+      ]
+    ],
+    "slaute": [
+      [
+        "Summt es?",
+        "Summendes s schreibst du einfach: Rose, lesen."
+      ],
+      [
+        "ss",
+        "Zischendes s nach kurzem Vokal: Wasser, Fluss, müssen."
+      ],
+      [
+        "ß",
+        "Zischendes s nach langem Vokal oder Zwielaut: Fuß, Straße, heiß."
+      ]
+    ],
+    "ableiten": [
+      [
+        "Verlängern",
+        "Hund: Hunde. Berg: Berge. Korb: Körbe. Am Wortende hörst du es dann deutlich."
+      ],
+      [
+        "Ableiten",
+        "Äpfel kommt von Apfel, Bäume von Baum. Aus a wird ä, aus au wird äu."
+      ],
+      [
+        "Ausnahme",
+        "Eltern schreibst du mit e, obwohl es mit alt verwandt ist."
+      ]
+    ],
+    "gross": [
+      [
+        "Signalwörter",
+        "der, die, das, beim, zum, im, etwas, nichts, viel, alles."
+      ],
+      [
+        "Nominalisierung",
+        "Verben und Adjektive werden zu Nomen: das Lesen, etwas Neues."
+      ],
+      [
+        "Zeit",
+        "heute Morgen, gestern Abend, aber morgen früh."
+      ]
+    ],
+    "lesen": [
+      [
+        "Vorher",
+        "Überschrift und Bilder ansehen: Worum könnte es gehen?"
+      ],
+      [
+        "Beim Lesen",
+        "Absatz für Absatz lesen und nur Schlüsselwörter markieren."
+      ],
+      [
+        "Danach",
+        "Den Inhalt mit eigenen Worten in ein bis zwei Sätzen zusammenfassen."
+      ]
     ]
-  }
+  },
+  "inputChars": [
+    "ä",
+    "ö",
+    "ü",
+    "ß"
+  ]
 }

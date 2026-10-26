@@ -104,5 +104,75 @@
       "type": "streak",
       "days": 3
     }
+  },
+  {
+    "id": "doubles",
+    "n": "Doppel-Detektiv",
+    "d": "Doppelte Mitlaute geschafft",
+    "rule": {
+      "type": "unit",
+      "id": "doppelt"
+    }
+  },
+  {
+    "id": "long-vowels",
+    "n": "Dehnungs-Held",
+    "d": "Lange Vokale geschafft",
+    "rule": {
+      "type": "unit",
+      "id": "dehnung"
+    }
+  },
+  {
+    "id": "s-sounds",
+    "n": "S-Laut-Kenner",
+    "d": "Drei Sterne bei s, ss oder ß",
+    "rule": {
+      "type": "unit",
+      "id": "slaute",
+      "stars": 3
+    }
+  },
+  {
+    "id": "extend",
+    "n": "Verlängerungs-Profi",
+    "d": "Verlängern und Ableiten geschafft",
+    "rule": {
+      "type": "unit",
+      "id": "ableiten"
+    }
+  },
+  {
+    "id": "caps",
+    "n": "Groß-Schreiber",
+    "d": "Groß und klein geschafft",
+    "rule": {
+      "type": "unit",
+      "id": "gross"
+    }
+  },
+  {
+    "id": "reader",
+    "n": "Lese-Detektiv",
+    "d": "Lesen mit Strategie geschafft",
+    "rule": {
+      "type": "unit",
+      "id": "lesen"
+    }
+  },
+  {
+    "id": "spelling-all",
+    "n": "Rechtschreib-Meister",
+    "d": "Alle fünf Rechtschreib-Seiten geschafft",
+    "rule": {
+      "type": "units",
+      "ids": [
+        "doppelt",
+        "dehnung",
+        "slaute",
+        "ableiten",
+        "gross"
+      ]
+    }
   }
 ]

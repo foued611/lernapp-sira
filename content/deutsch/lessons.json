@@ -459,5 +459,483 @@
       "answer": "Metapher",
       "why": "Es steht kein „wie“ im Satz. Der Mensch wird direkt mit einem Fels gleichgesetzt."
     }
+  },
+  "doppelt": {
+    "goal": "Du kannst erkennen, wann nach einem kurzen Vokal ein Mitlaut doppelt geschrieben wird.",
+    "tldr": [
+      "Hörst du einen kurzen Vokal, folgt meist ein doppelter Mitlaut: Sonne, Bett, Mutter.",
+      "Statt kk schreibst du ck, statt zz schreibst du tz: Brücke, Katze.",
+      "Ist der Vokal lang, bleibt der Mitlaut einfach: Miete, Ofen."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: eine Vollbremsung",
+      "html": "<p>Ein kurzer Vokal bremst das Wort scharf ab. Damit der Wagen sicher steht, braucht er zwei Bremsklötze: <b>zwei</b> Mitlaute. Bei einem langen Vokal rollt das Wort sanft aus, und ein Bremsklotz genügt.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Vokal",
+            "Beispiel",
+            "Schreibung"
+          ],
+          [
+            [
+              "kurz",
+              "Mitte",
+              "tt (doppelt)"
+            ],
+            [
+              "lang",
+              "Miete",
+              "t (einfach)"
+            ],
+            [
+              "kurz",
+              "Brücke",
+              "ck statt kk"
+            ],
+            [
+              "kurz",
+              "Katze",
+              "tz statt zz"
+            ]
+          ],
+          [
+            2,
+            3,
+            3
+          ],
+          "Kurz oder lang"
+        ]
+      },
+      "caption": "Kurzer Vokal: doppelter Mitlaut. Langer Vokal: einfacher Mitlaut."
+    },
+    "steps": {
+      "title": "So prüfst du: Pfanne oder Pfane?",
+      "items": [
+        "Sprich das Wort langsam und klatsche die Silben: Pfan-ne.",
+        "Höre auf den Vokal vor dem Mitlaut: Das a ist kurz.",
+        "Nach kurzem Vokal folgt ein doppelter Mitlaut. Also schreibst du <b>Pfanne</b> mit nn."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Nicht jeder kurze Vokal bekommt einen doppelten Mitlaut. Folgen zwei verschiedene Mitlaute, bleibt es dabei: <b>Hand</b>, <b>Wolke</b>, <b>Fenster</b>. Doppelt wird nur, wenn nach dem kurzen Vokal <b>ein</b> Mitlaut käme.</p>"
+    },
+    "rule": "Kurzer Vokal, dann doppelter Mitlaut. Aus kk wird ck, aus zz wird tz.",
+    "check": {
+      "q": "Welches Wort ist richtig geschrieben?",
+      "options": [
+        {
+          "id": "Brücke",
+          "html": "Brücke"
+        },
+        {
+          "id": "Brüke",
+          "html": "Brüke"
+        },
+        {
+          "id": "Brükke",
+          "html": "Brükke"
+        }
+      ],
+      "answer": "Brücke",
+      "why": "Das ü ist kurz, deshalb folgt ck statt kk."
+    }
+  },
+  "dehnung": {
+    "goal": "Du kannst lange Vokale richtig schreiben: mit ie, mit Dehnungs-h oder mit Doppelvokal.",
+    "tldr": [
+      "Das lange i schreibst du meistens als ie: Tier, Wiese, Ziel.",
+      "Ein Dehnungs-h steht oft vor l, m, n, r: Zahl, Sohn, Uhr.",
+      "Manchmal verdoppelt sich der Vokal: Meer, Boot, Haar."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Gummiband",
+      "html": "<p>Ein langer Vokal ist wie ein gedehntes Gummiband. Manchmal zeigt ein <b>e</b> hinter dem i die Dehnung (<b>ie</b>), manchmal ein stilles <b>h</b>, manchmal ein zweiter gleicher Vokal. Welches Zeichen gilt, lernst du am besten am Wort selbst.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Dehnung",
+            "Beispiel",
+            "Merkhilfe"
+          ],
+          [
+            [
+              "ie",
+              "Spiegel",
+              "meist bei langem i"
+            ],
+            [
+              "h",
+              "Bahn",
+              "oft vor l, m, n, r"
+            ],
+            [
+              "aa, ee, oo",
+              "Meer",
+              "nur wenige Wörter"
+            ],
+            [
+              "kein Zeichen",
+              "Hase",
+              "sehr häufig"
+            ]
+          ],
+          [
+            2,
+            2,
+            3
+          ],
+          "Lange Vokale"
+        ]
+      },
+      "caption": "Es gibt mehrere Wege, einen langen Vokal zu schreiben."
+    },
+    "steps": {
+      "title": "So entscheidest du: Wal oder Wahl?",
+      "items": [
+        "Beide klingen gleich, das a ist lang.",
+        "Überlege die Bedeutung: Das Tier im Meer heißt Wal, ohne h.",
+        "Bei der Abstimmung gibt es die Wahl, mit h. Das verwandte Wort wählen zeigt das h."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Es gibt keine Regel, die dir verrät, ob ein Wort ein Dehnungs-h hat. Schau dir <b>verwandte Wörter</b> an (wohnen, Wohnung) und merke dir häufige Wörter einzeln. Ausnahmen beim ie: <b>Tiger</b>, <b>Igel</b>, <b>Biber</b>.</p>"
+    },
+    "rule": "Langes i meist ie. Dehnungs-h oft vor l, m, n, r. Merkwörter einzeln lernen.",
+    "check": {
+      "q": "Welches Wort ist richtig geschrieben?",
+      "options": [
+        {
+          "id": "Spiegel",
+          "html": "Spiegel"
+        },
+        {
+          "id": "Spigel",
+          "html": "Spigel"
+        },
+        {
+          "id": "Spihgel",
+          "html": "Spihgel"
+        }
+      ],
+      "answer": "Spiegel",
+      "why": "Das lange i schreibst du meistens als ie."
+    }
+  },
+  "slaute": {
+    "goal": "Du kannst entscheiden, ob du s, ss oder ß schreibst.",
+    "tldr": [
+      "Nach kurzem Vokal schreibst du ss: Wasser, müssen, Fluss.",
+      "Nach langem Vokal oder Zwielaut schreibst du ß, wenn das s zischt: Straße, heiß, draußen.",
+      "Summt das s, schreibst du ein einfaches s: Rose, lesen."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: eine Biene und eine Schlange",
+      "html": "<p>Ein summendes s klingt wie eine Biene: <b>Rose</b>, <b>lesen</b>. Ein zischendes s klingt wie eine Schlange. Dann schaust du auf den Vokal davor: kurz ergibt <b>ss</b> (Fluss), lang ergibt <b>ß</b> (Fuß).</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "s-Laut",
+            "Vokal davor",
+            "Schreibung",
+            "Beispiel"
+          ],
+          [
+            [
+              "summt",
+              "egal",
+              "s",
+              "Rose"
+            ],
+            [
+              "zischt",
+              "kurz",
+              "ss",
+              "Fluss"
+            ],
+            [
+              "zischt",
+              "lang, Zwielaut",
+              "ß",
+              "Fuß, heiß"
+            ]
+          ],
+          [
+            2,
+            3,
+            2,
+            3
+          ],
+          "s, ss oder ß"
+        ]
+      },
+      "caption": "Erst hören, ob das s summt oder zischt, dann auf den Vokal achten."
+    },
+    "steps": {
+      "title": "So entscheidest du: Fuss oder Fuß?",
+      "items": [
+        "Sprich das Wort: Fuß. Das s zischt, es summt nicht.",
+        "Der Vokal davor ist lang: Fuuuß.",
+        "Zischendes s nach langem Vokal ergibt <b>ß</b>. Probe: Die Mehrzahl Füße behält das ß."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Bei <b>Haus</b> hörst du am Ende ein zischendes s. Verlängere: Häuser. Dort summt das s, also schreibst du ein einfaches <b>s</b>. Bei <b>Gruß</b> bleibt es auch verlängert scharf (Grüße) und wird mit <b>ß</b> geschrieben.</p>"
+    },
+    "rule": "Summt: s. Zischt nach kurzem Vokal: ss. Zischt nach langem Vokal oder Zwielaut: ß.",
+    "check": {
+      "q": "Welches Wort ist richtig geschrieben?",
+      "options": [
+        {
+          "id": "Straße",
+          "html": "Straße"
+        },
+        {
+          "id": "Strasse",
+          "html": "Strasse"
+        },
+        {
+          "id": "Strase",
+          "html": "Strase"
+        }
+      ],
+      "answer": "Straße",
+      "why": "Das a ist lang und das s zischt, also ß."
+    }
+  },
+  "ableiten": {
+    "goal": "Du kannst unklare Buchstaben mit Verlängern und Ableiten richtig schreiben.",
+    "tldr": [
+      "Bei b oder p, d oder t, g oder k am Wortende hilft das Verlängern: Hund, Hunde.",
+      "Bei ä oder e hilft das Ableiten: Äpfel kommt von Apfel.",
+      "Bei äu oder eu suchst du ein verwandtes Wort mit au: Bäume, Baum."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: eine Lupe",
+      "html": "<p>Am Wortende hörst du manchmal nicht, welcher Buchstabe dahintersteckt. Mit der Lupe machst du das Wort länger oder suchst ein verwandtes Wort. Dort wird der Buchstabe deutlich hörbar.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Wort",
+            "Probe",
+            "Ergebnis"
+          ],
+          [
+            [
+              "Hun?",
+              "Hunde",
+              "Hund (d)"
+            ],
+            [
+              "Ber?",
+              "Berge",
+              "Berg (g)"
+            ],
+            [
+              "Kor?",
+              "Körbe",
+              "Korb (b)"
+            ],
+            [
+              "?pfel",
+              "Apfel",
+              "Äpfel (ä)"
+            ]
+          ],
+          [
+            2,
+            3,
+            3
+          ],
+          "Verlängern und Ableiten"
+        ]
+      },
+      "caption": "Das Wort länger machen oder ein verwandtes Wort suchen."
+    },
+    "steps": {
+      "title": "So prüfst du: Kind oder Kint?",
+      "items": [
+        "Mache das Wort länger: ein Kind, viele Kinder.",
+        "Höre auf das Ende der Silbe: Kin-der hat ein d.",
+        "Also schreibst du auch Kind mit <b>d</b>."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Das Verlängern klappt nur mit dem passenden Wort. Bei Verben nimmst du die Grundform, bei Adjektiven eine Endung (<b>klug</b>, kluge). Ausnahmen gibt es auch: <b>Eltern</b> ist mit <b>alt</b> verwandt, wird aber mit e geschrieben.</p>"
+    },
+    "rule": "Unsicher am Wortende: verlängern. Unsicher bei ä oder äu: verwandtes Wort mit a oder au suchen.",
+    "check": {
+      "q": "Die Mehrzahl heißt Wälder. Wie schreibst du die Einzahl?",
+      "options": [
+        {
+          "id": "Wald",
+          "html": "Wald"
+        },
+        {
+          "id": "Walt",
+          "html": "Walt"
+        },
+        {
+          "id": "Walld",
+          "html": "Walld"
+        }
+      ],
+      "answer": "Wald",
+      "why": "In Wälder hörst du ein d, also schreibst du auch Wald mit d."
+    }
+  },
+  "gross": {
+    "goal": "Du kannst erkennen, wann ein Wort großgeschrieben wird.",
+    "tldr": [
+      "Nomen schreibst du groß. Auch Verben und Adjektive, die zu Nomen werden.",
+      "Signalwörter zeigen das: Artikel (das), beim, zum, im und Wörter wie etwas, nichts, viel, alles.",
+      "Das erste Wort eines Satzes schreibst du immer groß."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Namensschild",
+      "html": "<p>Wörter, die für Dinge, Lebewesen oder Ideen stehen, tragen ein Namensschild: den großen Anfangsbuchstaben. Auch ein Verb oder Adjektiv bekommt das Schild, sobald es wie ein Nomen benutzt wird: <b>das Lesen</b>, <b>etwas Neues</b>.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Signalwort",
+            "Beispiel",
+            "Das Wort wird"
+          ],
+          [
+            [
+              "das",
+              "das Lesen",
+              "Nomen"
+            ],
+            [
+              "beim",
+              "beim Lesen",
+              "Nomen"
+            ],
+            [
+              "etwas",
+              "etwas Neues",
+              "Nomen"
+            ],
+            [
+              "viel",
+              "viel Schönes",
+              "Nomen"
+            ]
+          ],
+          [
+            2,
+            3,
+            2
+          ],
+          "Signalwörter"
+        ]
+      },
+      "caption": "Nach einem Signalwort wird das Verb oder Adjektiv zum Nomen."
+    },
+    "steps": {
+      "title": "So prüfst du: beim lesen oder beim Lesen?",
+      "items": [
+        "Schau, ob vor dem Wort ein Artikel oder ein verschmolzenes Wort wie „beim“ steht.",
+        "Hier steht „beim“ (bei dem). Dahinter gehört ein Nomen.",
+        "Also wird das Verb zum Nomen: beim <b>Lesen</b>."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Nicht jedes „morgen“ oder „früh“ ist ein Nomen. <b>morgen früh</b> schreibst du klein. <b>heute Morgen</b> schreibst du mit großem M, weil Morgen hier die Tageszeit nennt.</p>"
+    },
+    "rule": "Steht ein Signalwort davor (der, das, beim, zum, etwas, nichts, viel), schreibst du groß.",
+    "check": {
+      "q": "Welcher Satz ist richtig geschrieben?",
+      "options": [
+        {
+          "id": "Beim Schwimmen vergesse ich die Zeit.",
+          "html": "Beim Schwimmen vergesse ich die Zeit."
+        },
+        {
+          "id": "Beim schwimmen vergesse ich die Zeit.",
+          "html": "Beim schwimmen vergesse ich die Zeit."
+        },
+        {
+          "id": "beim Schwimmen vergesse ich die Zeit.",
+          "html": "beim Schwimmen vergesse ich die Zeit."
+        }
+      ],
+      "answer": "Beim Schwimmen vergesse ich die Zeit.",
+      "why": "Beim ist ein Signalwort, deshalb wird Schwimmen zum Nomen. Der Satz beginnt mit einem großen Buchstaben."
+    }
+  },
+  "lesen": {
+    "goal": "Du kannst einen Text mit einer Strategie lesen und verstehen.",
+    "tldr": [
+      "Vor dem Lesen: Überschrift und Bilder ansehen.",
+      "Beim Lesen: Absatz für Absatz, Schlüsselwörter markieren.",
+      "Nach dem Lesen: den Inhalt mit eigenen Worten zusammenfassen."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: eine Wanderkarte",
+      "html": "<p>Wer ohne Karte loswandert, verirrt sich leicht. Überschrift und Bilder sind deine Karte: Sie zeigen vorab, wohin der Text führt. Schlüsselwörter sind die Wegmarken unterwegs.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "flowDiagram",
+        "args": [
+          [
+            "Vorher|Überschrift",
+            "Beim Lesen|Schlüsselwörter",
+            "Danach|zusammenfassen"
+          ],
+          "Lesestrategie"
+        ]
+      },
+      "caption": "Drei Schritte: vorher einstimmen, beim Lesen markieren, danach zusammenfassen."
+    },
+    "steps": {
+      "title": "So gehst du bei einem kurzen Sachtext vor",
+      "items": [
+        "Lies die Überschrift und überlege: Was weiß ich schon dazu?",
+        "Lies den ersten Absatz und unterstreiche ein bis drei Schlüsselwörter.",
+        "Ein Wort fehlt? Lies den Satz davor und danach. Oft verrät der Zusammenhang die Bedeutung.",
+        "Schreibe am Ende in einem Satz auf, worum es geht."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Wer alles markiert, markiert nichts. Wähle pro Absatz nur die wichtigsten ein bis drei Wörter aus. Langsames Lesen allein hilft nicht, du musst dir den Text auch selbst erklären.</p>"
+    },
+    "rule": "Vorher einstimmen, beim Lesen markieren, danach zusammenfassen.",
+    "check": {
+      "q": "Was machst du bei einem unbekannten Wort zuerst?",
+      "options": [
+        {
+          "id": "Ich lese den Satz davor und danach und überlege, was passt.",
+          "html": "Ich lese den Satz davor und danach und überlege, was passt."
+        },
+        {
+          "id": "Ich überspringe den ganzen Absatz.",
+          "html": "Ich überspringe den ganzen Absatz."
+        },
+        {
+          "id": "Ich höre mit dem Lesen auf.",
+          "html": "Ich höre mit dem Lesen auf."
+        }
+      ],
+      "answer": "Ich lese den Satz davor und danach und überlege, was passt.",
+      "why": "Der Zusammenhang verrät oft die Bedeutung. Erst wenn das nicht reicht, schlägst du nach."
+    }
   }
 }

@@ -35,7 +35,9 @@ test('Deutsch: Lücken-Aufgaben lassen sich auswählen und eintippen', () => {
     const t = typed(item);
     assertValidQuestion(t);
     assert.equal(t.check(item.a), 'ok');
-    assert.equal(t.check(` ${item.a.toUpperCase()} `), 'ok', 'Groß/Klein und Leerzeichen werden toleriert');
+    // Wechselnde Groß-/Kleinschreibung statt toUpperCase(): Das macht aus „ß“ ein „SS“ und würde die Aufgabe verfälschen.
+    const mixedCase = [...item.a].map((c, i) => (c === 'ß' ? c : i % 2 ? c.toLowerCase() : c.toUpperCase())).join('');
+    assert.equal(t.check(` ${mixedCase} `), 'ok', 'Groß/Klein und Leerzeichen werden toleriert');
     assert.equal(t.check(item.wrong[0]), 'bad');
   }
 });

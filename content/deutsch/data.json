@@ -902,6 +902,1116 @@
     "why": "Bilder wecken Vorstellungen. Deshalb passen sie in Gedichte und Erzählungen, nicht in eine Inhaltsangabe.",
     "label": "Wirkung"
    }
+  ],
+  "doppelt": [
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Im Sommer scheint die ___ vom Himmel.",
+    "kind": "gap",
+    "a": "Sonne",
+    "wrong": [
+     "Sone"
+    ],
+    "why": "Das o ist kurz, danach folgen zwei n: Son-ne. Kurzer Vokal, doppelter Mitlaut.",
+    "label": "Kurzer Vokal"
+   },
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Meine ___ kocht heute Kartoffelsuppe.",
+    "kind": "gap",
+    "a": "Mutter",
+    "wrong": [
+     "Muter"
+    ],
+    "why": "Das u ist kurz. Danach steht der Mitlaut doppelt: Mut-ter.",
+    "label": "Kurzer Vokal"
+   },
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Abends lege ich mich in mein ___.",
+    "kind": "gap",
+    "a": "Bett",
+    "wrong": [
+     "Bet"
+    ],
+    "why": "Das e ist kurz, deshalb schreibst du zwei t.",
+    "label": "Kurzer Vokal"
+   },
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Wir fahren mit dem ___ auf die Insel.",
+    "kind": "gap",
+    "a": "Schiff",
+    "wrong": [
+     "Schif"
+    ],
+    "why": "Das i ist kurz, danach folgt ein doppeltes f: Schiff.",
+    "label": "Kurzer Vokal"
+   },
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Du darfst gern zu uns ___.",
+    "kind": "gap",
+    "a": "kommen",
+    "wrong": [
+     "komen"
+    ],
+    "why": "Das o ist kurz: kom-men mit zwei m.",
+    "label": "Kurzer Vokal"
+   },
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Zur Suppe gehört ein ___.",
+    "kind": "gap",
+    "a": "Löffel",
+    "wrong": [
+     "Löfel"
+    ],
+    "why": "Das ö ist kurz, also zwei f: Löf-fel.",
+    "label": "Kurzer Vokal"
+   },
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Bitte stell den ___ auf den Tisch.",
+    "kind": "gap",
+    "a": "Teller",
+    "wrong": [
+     "Teler"
+    ],
+    "why": "Das e ist kurz, also zwei l: Tel-ler.",
+    "label": "Kurzer Vokal"
+   },
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Im Schwimmbad darfst du ___.",
+    "kind": "gap",
+    "a": "schwimmen",
+    "wrong": [
+     "schwimen"
+    ],
+    "why": "Das i ist kurz: schwim-men mit zwei m.",
+    "label": "Kurzer Vokal"
+   },
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Wir treffen uns in der ___ des Marktplatzes.",
+    "kind": "gap",
+    "a": "Mitte",
+    "wrong": [
+     "Mite"
+    ],
+    "why": "Das i ist kurz: Mit-te mit zwei t. Bei Miete (Geld für die Wohnung) ist das i lang.",
+    "label": "Kurzer Vokal"
+   },
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Über den Fluss führt eine alte ___.",
+    "kind": "gap",
+    "a": "Brücke",
+    "wrong": [
+     "Brüke"
+    ],
+    "why": "Nach kurzem Vokal schreibst du ck statt kk: Brü-cke.",
+    "label": "ck und tz"
+   },
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Die ___ liegt faul auf dem Sofa.",
+    "kind": "gap",
+    "a": "Katze",
+    "wrong": [
+     "Kaze"
+    ],
+    "why": "Nach kurzem Vokal steht tz statt zz: Kat-ze.",
+    "label": "ck und tz"
+   },
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Im Winter trage ich einen warmen ___.",
+    "kind": "gap",
+    "a": "Schal",
+    "wrong": [
+     "Schall"
+    ],
+    "why": "In Schal ist das a lang, der Mitlaut bleibt einfach. Schall (ein Geräusch) hat ein kurzes a.",
+    "label": "Kurz oder lang?"
+   },
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Der ___ der Glocke war im ganzen Dorf zu hören.",
+    "kind": "gap",
+    "a": "Schall",
+    "wrong": [
+     "Schal"
+    ],
+    "why": "Hier ist das a kurz, deshalb ll. Der Schal wärmt, der Schall ist zu hören.",
+    "label": "Kurz oder lang?"
+   },
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Darf ich dich um Hilfe ___?",
+    "kind": "gap",
+    "a": "bitten",
+    "wrong": [
+     "bieten"
+    ],
+    "why": "In bitten ist das i kurz, deshalb tt. Bei bieten ist es lang und wird ie geschrieben.",
+    "label": "Kurz oder lang?"
+   },
+   {
+    "q": "Bei welchem Wort ist der Vokal kurz?",
+    "a": "Mitte",
+    "wrong": [
+     "Miete",
+     "Kamel",
+     "Ofen"
+    ],
+    "why": "In Mitte ist das i kurz, deshalb tt. In Miete, Kamel und Ofen sind die Vokale lang.",
+    "label": "Kurz oder lang?"
+   },
+   {
+    "q": "Warum schreibst du „backen“ mit ck?",
+    "a": "Nach kurzem Vokal schreibst du ck statt kk.",
+    "wrong": [
+     "Weil das a lang ist.",
+     "Weil ck immer am Wortende steht.",
+     "Weil alle Verben ck haben."
+    ],
+    "why": "Das a in backen ist kurz. Statt kk steht dann ck.",
+    "label": "Regel"
+   },
+   {
+    "q": "Welche Regel stimmt?",
+    "a": "Nach einem kurzen Vokal folgt meist ein doppelter Mitlaut.",
+    "wrong": [
+     "Nach einem langen Vokal folgt immer ein doppelter Mitlaut.",
+     "Doppelte Mitlaute gibt es nur am Wortanfang.",
+     "Vor einem doppelten Mitlaut steht immer ein h."
+    ],
+    "why": "Kurzer Vokal, dann meist ein doppelter Mitlaut. Nach langem Vokal bleibt er einfach.",
+    "label": "Regel"
+   }
+  ],
+  "dehnung": [
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Auf der ___ spielen die Kinder Fußball.",
+    "kind": "gap",
+    "a": "Wiese",
+    "wrong": [
+     "Wise"
+    ],
+    "why": "Das lange i schreibst du meistens ie: Wie-se.",
+    "label": "ie"
+   },
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Der Löwe ist ein wildes ___.",
+    "kind": "gap",
+    "a": "Tier",
+    "wrong": [
+     "Tir"
+    ],
+    "why": "Das lange i wird zu ie: Tier, Tiere.",
+    "label": "ie"
+   },
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Schau in den ___, ob deine Haare sitzen.",
+    "kind": "gap",
+    "a": "Spiegel",
+    "wrong": [
+     "Spigel"
+    ],
+    "why": "Langes i, geschrieben als ie: Spie-gel.",
+    "label": "ie"
+   },
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Wir haben unser ___ erreicht.",
+    "kind": "gap",
+    "a": "Ziel",
+    "wrong": [
+     "Zil"
+    ],
+    "why": "Langes i, geschrieben als ie: Ziel.",
+    "label": "ie"
+   },
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Welche ___ ist größer, 12 oder 21?",
+    "kind": "gap",
+    "a": "Zahl",
+    "wrong": [
+     "Zal"
+    ],
+    "why": "Dehnungs-h vor l: Zahl. Verwandt: zählen.",
+    "label": "Dehnungs-h"
+   },
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Die ___ hat heute Verspätung.",
+    "kind": "gap",
+    "a": "Bahn",
+    "wrong": [
+     "Ban"
+    ],
+    "why": "Dehnungs-h vor n: Bahn.",
+    "label": "Dehnungs-h"
+   },
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Wie spät ist es? Ich schaue auf die ___.",
+    "kind": "gap",
+    "a": "Uhr",
+    "wrong": [
+     "Ur"
+    ],
+    "why": "Dehnungs-h vor r: Uhr.",
+    "label": "Dehnungs-h"
+   },
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Meine Tante hat einen ___.",
+    "kind": "gap",
+    "a": "Sohn",
+    "wrong": [
+     "Son"
+    ],
+    "why": "Dehnungs-h vor n: Sohn.",
+    "label": "Dehnungs-h"
+   },
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Wir ___ in einem kleinen Haus.",
+    "kind": "gap",
+    "a": "wohnen",
+    "wrong": [
+     "wonen"
+    ],
+    "why": "Dehnungs-h vor n. Verwandte Wörter helfen: Wohnung, wohnlich.",
+    "label": "Dehnungs-h"
+   },
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Auf dem See schwimmt ein ___.",
+    "kind": "gap",
+    "a": "Boot",
+    "wrong": [
+     "Bot"
+    ],
+    "why": "Hier verdoppelt sich der Vokal: Boot mit oo.",
+    "label": "Doppelvokal"
+   },
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Im Urlaub fahren wir ans ___.",
+    "kind": "gap",
+    "a": "Meer",
+    "wrong": [
+     "Mer"
+    ],
+    "why": "Meer schreibst du mit ee. Verwechsle es nicht mit mehr.",
+    "label": "Doppelvokal"
+   },
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Ich möchte noch ___ Kuchen.",
+    "kind": "gap",
+    "a": "mehr",
+    "wrong": [
+     "meer"
+    ],
+    "why": "Mehr hat ein Dehnungs-h. Das Meer (Ozean) schreibst du mit ee.",
+    "label": "Meer oder mehr?"
+   },
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Der ___ ist ein Säugetier und lebt im Meer.",
+    "kind": "gap",
+    "a": "Wal",
+    "wrong": [
+     "Wahl"
+    ],
+    "why": "Das Tier schreibst du ohne h: der Wal. Mit h gibt es die Wahl.",
+    "label": "Wal oder Wahl?"
+   },
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Bei der ___ darf jeder abstimmen.",
+    "kind": "gap",
+    "a": "Wahl",
+    "wrong": [
+     "Wal"
+    ],
+    "why": "Verwandt ist wählen, deshalb mit Dehnungs-h: die Wahl.",
+    "label": "Wal oder Wahl?"
+   },
+   {
+    "q": "Wo steht ein Dehnungs-h oft?",
+    "a": "Vor l, m, n oder r.",
+    "wrong": [
+     "Immer vor t.",
+     "Nur am Wortanfang.",
+     "Nur bei Verben."
+    ],
+    "why": "Zahl, Lehm, Sohn und Uhr zeigen es: Das Dehnungs-h steht oft vor l, m, n und r.",
+    "label": "Dehnungs-h"
+   },
+   {
+    "q": "Welches Wort hat ein langes i ohne ie?",
+    "a": "Tiger",
+    "wrong": [
+     "Tier",
+     "Wiese",
+     "Brief"
+    ],
+    "why": "Tiger, Igel und Biber sind Ausnahmen. Sie haben ein einfaches i.",
+    "label": "Ausnahme"
+   },
+   {
+    "q": "Welches Wort schreibst du mit Doppelvokal?",
+    "a": "Meer",
+    "wrong": [
+     "Lehrer",
+     "Bahn",
+     "Stuhl"
+    ],
+    "why": "Meer hat ee. Lehrer, Bahn und Stuhl haben ein Dehnungs-h.",
+    "label": "Doppelvokal"
+   }
+  ],
+  "slaute": [
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Wir wohnen in einer ruhigen ___.",
+    "kind": "gap",
+    "a": "Straße",
+    "wrong": [
+     "Strasse"
+    ],
+    "why": "Das a ist lang und das s zischt, also ß. Die Mehrzahl Straßen behält das ß.",
+    "label": "s, ss oder ß?"
+   },
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Sie lief mit ___ Füßen über den Sand.",
+    "kind": "gap",
+    "a": "bloßen",
+    "wrong": [
+     "blossen"
+    ],
+    "why": "Langes o, zischendes s: ß. Das Wort heißt bloß, bloße, bloßen.",
+    "label": "s, ss oder ß?"
+   },
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Nach der Wanderung tut mir der ___ weh.",
+    "kind": "gap",
+    "a": "Fuß",
+    "wrong": [
+     "Fuss"
+    ],
+    "why": "Langes u, zischendes s: ß. Die Mehrzahl heißt Füße.",
+    "label": "s, ss oder ß?"
+   },
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Heute ist es draußen sehr ___.",
+    "kind": "gap",
+    "a": "heiß",
+    "wrong": [
+     "heiss"
+    ],
+    "why": "Nach dem Zwielaut ei steht ß, wenn das s zischt: heiß.",
+    "label": "s, ss oder ß?"
+   },
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Das Spiel hat mir viel ___ gemacht.",
+    "kind": "gap",
+    "a": "Spaß",
+    "wrong": [
+     "Spass"
+    ],
+    "why": "Langes a, zischendes s: Spaß.",
+    "label": "s, ss oder ß?"
+   },
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Der Elefant ist sehr ___.",
+    "kind": "gap",
+    "a": "groß",
+    "wrong": [
+     "gross"
+    ],
+    "why": "Langes o, zischendes s: groß. Die Steigerung heißt größer.",
+    "label": "s, ss oder ß?"
+   },
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Zum Frühstück möchte ich ein Brötchen ___.",
+    "kind": "gap",
+    "a": "essen",
+    "wrong": [
+     "esen"
+    ],
+    "why": "Das e ist kurz, deshalb ss: es-sen. Nur nach langem Vokal schreibst du ß.",
+    "label": "s, ss oder ß?"
+   },
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Der ___ ist heute sehr breit.",
+    "kind": "gap",
+    "a": "Fluss",
+    "wrong": [
+     "Fluß"
+    ],
+    "why": "Das u ist kurz, deshalb ss. Die Mehrzahl heißt Flüsse.",
+    "label": "s, ss oder ß?"
+   },
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Wir ___ jetzt nach Hause gehen.",
+    "kind": "gap",
+    "a": "müssen",
+    "wrong": [
+     "müßen"
+    ],
+    "why": "Das ü ist kurz, deshalb ss: müs-sen.",
+    "label": "s, ss oder ß?"
+   },
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "In der Flasche ist kaltes ___.",
+    "kind": "gap",
+    "a": "Wasser",
+    "wrong": [
+     "Waser"
+    ],
+    "why": "Das a ist kurz, das s zischt: Was-ser mit ss.",
+    "label": "s, ss oder ß?"
+   },
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Im Garten blüht eine rote ___.",
+    "kind": "gap",
+    "a": "Rose",
+    "wrong": [
+     "Roße"
+    ],
+    "why": "Das s summt, deshalb schreibst du ein einfaches s: Rose, Rosen.",
+    "label": "Summendes s"
+   },
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Am Wochenende möchte ich ein Buch ___.",
+    "kind": "gap",
+    "a": "lesen",
+    "wrong": [
+     "leßen"
+    ],
+    "why": "Das s summt (lesen, er liest), deshalb ein einfaches s.",
+    "label": "Summendes s"
+   },
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Mein Pullover ist ___.",
+    "kind": "gap",
+    "a": "weiß",
+    "wrong": [
+     "weiss"
+    ],
+    "why": "Zwielaut ei und zischendes s: weiß.",
+    "label": "s, ss oder ß?"
+   },
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Bei Sonnenschein spielen wir ___.",
+    "kind": "gap",
+    "a": "draußen",
+    "wrong": [
+     "draussen"
+    ],
+    "why": "Zwielaut au und zischendes s: draußen.",
+    "label": "s, ss oder ß?"
+   },
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Die ___ des Tisches sind zwei Meter mal ein Meter.",
+    "kind": "gap",
+    "a": "Maße",
+    "wrong": [
+     "Masse"
+    ],
+    "why": "Das a in Maße ist lang, deshalb ß. Masse hat ein kurzes a.",
+    "label": "Maße oder Masse?"
+   },
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Eine große ___ von Menschen wartete vor dem Stadion.",
+    "kind": "gap",
+    "a": "Masse",
+    "wrong": [
+     "Maße"
+    ],
+    "why": "Das a in Masse ist kurz, deshalb ss. Masse bedeutet eine große Menge.",
+    "label": "Maße oder Masse?"
+   },
+   {
+    "q": "Wann schreibst du ß?",
+    "a": "Nach langem Vokal oder Zwielaut, wenn das s zischt.",
+    "wrong": [
+     "Nach jedem kurzen Vokal.",
+     "Am Anfang jedes Wortes.",
+     "Immer vor einem t."
+    ],
+    "why": "Fuß, Straße, heiß: langer Vokal oder Zwielaut und ein zischendes s. Nach kurzem Vokal steht ss.",
+    "label": "Regel"
+   },
+   {
+    "q": "Wann schreibst du ss?",
+    "a": "Nach kurzem Vokal, wenn das s zischt.",
+    "wrong": [
+     "Nach langem Vokal, wenn das s summt.",
+     "Immer am Wortende.",
+     "Nach jedem Zwielaut."
+    ],
+    "why": "Wasser, Fluss, müssen: kurzer Vokal und zischendes s ergeben ss.",
+    "label": "Regel"
+   },
+   {
+    "q": "Warum schreibst du „Haus“ mit einfachem s?",
+    "a": "Verlängert heißt es Häuser. Dort summt das s.",
+    "wrong": [
+     "Weil das Wort kurz ist.",
+     "Weil nach au immer ein einfaches s steht.",
+     "Weil Haus ein Nomen ist."
+    ],
+    "why": "Mit der Verlängerung (Häuser) hörst du ein summendes s. Das schreibst du einfach.",
+    "label": "Probe"
+   },
+   {
+    "q": "Bei welchem Wort ist ß richtig?",
+    "a": "Gruß",
+    "wrong": [
+     "Muß",
+     "Kuß",
+     "Nuß"
+    ],
+    "why": "Gruß hat ein langes u (Grüße). Muss, Kuss und Nuss haben ein kurzes u, deshalb ss.",
+    "label": "Richtig geschrieben"
+   }
+  ],
+  "ableiten": [
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Sie trägt einen ___ voller Äpfel.",
+    "kind": "gap",
+    "a": "Korb",
+    "wrong": [
+     "Korp"
+    ],
+    "why": "Verlängern: Körbe. Dort hörst du ein b.",
+    "label": "b oder p"
+   },
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Der ___ bellt vor dem Gartentor.",
+    "kind": "gap",
+    "a": "Hund",
+    "wrong": [
+     "Hunt"
+    ],
+    "why": "Verlängern: Hunde. Dort hörst du ein d.",
+    "label": "d oder t"
+   },
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Wir steigen auf einen hohen ___.",
+    "kind": "gap",
+    "a": "Berg",
+    "wrong": [
+     "Berk"
+    ],
+    "why": "Verlängern: Berge. Dort hörst du ein g.",
+    "label": "g oder k"
+   },
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Das war nicht sehr ___ von dir.",
+    "kind": "gap",
+    "a": "klug",
+    "wrong": [
+     "kluk"
+    ],
+    "why": "Verlängern: kluge Idee, klüger. Dort hörst du ein g.",
+    "label": "g oder k"
+   },
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Das ___ spielt im Sandkasten.",
+    "kind": "gap",
+    "a": "Kind",
+    "wrong": [
+     "Kint"
+    ],
+    "why": "Verlängern: Kinder. Dort hörst du ein d.",
+    "label": "d oder t"
+   },
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Das Reh läuft in den ___.",
+    "kind": "gap",
+    "a": "Wald",
+    "wrong": [
+     "Walt"
+    ],
+    "why": "Verlängern: Wälder. Dort hörst du ein d.",
+    "label": "d oder t"
+   },
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Wir wohnen in einer großen ___.",
+    "kind": "gap",
+    "a": "Stadt",
+    "wrong": [
+     "Statt"
+    ],
+    "why": "Verlängern: Städte. Statt ist ein anderes Wort (anstelle von).",
+    "label": "d oder t"
+   },
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Ich trinke Tee ___ Kaffee.",
+    "kind": "gap",
+    "a": "statt",
+    "wrong": [
+     "Stadt"
+    ],
+    "why": "Statt (anstelle von) schreibst du mit tt. Stadt gehört zu Städte.",
+    "label": "d oder t"
+   },
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Das Bild ist sehr ___.",
+    "kind": "gap",
+    "a": "bunt",
+    "wrong": [
+     "bund"
+    ],
+    "why": "Verlängern: bunte Bilder. Dort hörst du ein t.",
+    "label": "d oder t"
+   },
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Im Herbst ernten wir viele ___.",
+    "kind": "gap",
+    "a": "Äpfel",
+    "wrong": [
+     "Epfel"
+    ],
+    "why": "Ableiten: der Apfel. Aus a wird ä.",
+    "label": "ä oder e"
+   },
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Meine ___ sind kalt vom Schnee.",
+    "kind": "gap",
+    "a": "Hände",
+    "wrong": [
+     "Hende"
+    ],
+    "why": "Ableiten: die Hand. Aus a wird ä.",
+    "label": "ä oder e"
+   },
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Mein Bruder ist ___ als ich.",
+    "kind": "gap",
+    "a": "älter",
+    "wrong": [
+     "elter"
+    ],
+    "why": "Ableiten: alt. Aus a wird ä.",
+    "label": "ä oder e"
+   },
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Im Park stehen viele alte ___.",
+    "kind": "gap",
+    "a": "Bäume",
+    "wrong": [
+     "Beume"
+    ],
+    "why": "Ableiten: der Baum. Aus au wird äu.",
+    "label": "äu oder eu"
+   },
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Im Keller sitzen zwei kleine ___.",
+    "kind": "gap",
+    "a": "Mäuse",
+    "wrong": [
+     "Meuse"
+    ],
+    "why": "Ableiten: die Maus. Aus au wird äu.",
+    "label": "äu oder eu"
+   },
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Im Garten wachsen viele ___.",
+    "kind": "gap",
+    "a": "Kräuter",
+    "wrong": [
+     "Kreuter"
+    ],
+    "why": "Ableiten: das Kraut. Aus au wird äu.",
+    "label": "äu oder eu"
+   },
+   {
+    "q": "Setze das richtige Wort ein.",
+    "s": "Meine ___ holen mich später ab.",
+    "kind": "gap",
+    "a": "Eltern",
+    "wrong": [
+     "Ältern"
+    ],
+    "why": "Eltern ist eine Ausnahme: Das Wort ist mit alt verwandt, du schreibst es aber mit e.",
+    "label": "Ausnahme"
+   },
+   {
+    "q": "Wie findest du heraus, ob am Wortende b oder p steht?",
+    "a": "Ich verlängere das Wort: Korb, Körbe.",
+    "wrong": [
+     "Ich schreibe es so, wie ich es höre.",
+     "Ich zähle die Silben.",
+     "Ich lese das Wort rückwärts."
+    ],
+    "why": "Beim Verlängern hörst du den Buchstaben deutlich: Körbe hat ein b.",
+    "label": "Verlängern"
+   },
+   {
+    "q": "Welches Wort gehört zu „Räder“?",
+    "a": "Rad",
+    "wrong": [
+     "Rat",
+     "Radt",
+     "Raht"
+    ],
+    "why": "Räder hat ein d, also Rad. Rat (Ratschlag) gehört zu Ratschläge.",
+    "label": "Verlängern"
+   },
+   {
+    "q": "Von welchem Wort leitest du „fröhlich“ ab?",
+    "a": "froh",
+    "wrong": [
+     "Frosch",
+     "frei",
+     "Frau"
+    ],
+    "why": "Fröhlich kommt von froh. Aus o wird ö.",
+    "label": "Ableiten"
+   }
+  ],
+  "gross": [
+   {
+    "q": "Welcher Satz ist richtig geschrieben?",
+    "a": "Beim Lesen habe ich die Zeit vergessen.",
+    "wrong": [
+     "Beim lesen habe ich die Zeit vergessen.",
+     "beim Lesen habe ich die Zeit vergessen.",
+     "Beim Lesen habe ich die zeit vergessen."
+    ],
+    "why": "Nach beim (bei dem) wird das Verb zum Nomen. Zeit ist ein Nomen, und der Satz beginnt groß.",
+    "label": "Groß oder klein?"
+   },
+   {
+    "q": "Welcher Satz ist richtig geschrieben?",
+    "a": "Wir wünschen dir alles Gute.",
+    "wrong": [
+     "Wir wünschen dir alles gute.",
+     "Wir wünschen dir Alles Gute.",
+     "wir wünschen dir alles Gute."
+    ],
+    "why": "Nach alles wird das Adjektiv zum Nomen: alles Gute. Alles selbst bleibt klein.",
+    "label": "Groß oder klein?"
+   },
+   {
+    "q": "Welcher Satz ist richtig geschrieben?",
+    "a": "Sie hat nichts Neues erfahren.",
+    "wrong": [
+     "Sie hat nichts neues erfahren.",
+     "Sie hat Nichts Neues erfahren.",
+     "sie hat nichts Neues erfahren."
+    ],
+    "why": "Nach nichts schreibst du das Adjektiv groß: nichts Neues. Nichts bleibt klein.",
+    "label": "Groß oder klein?"
+   },
+   {
+    "q": "Welcher Satz ist richtig geschrieben?",
+    "a": "Zum Glück ist nichts passiert.",
+    "wrong": [
+     "Zum glück ist nichts passiert.",
+     "Zum Glück ist Nichts passiert.",
+     "zum Glück ist nichts passiert."
+    ],
+    "why": "Glück ist ein Nomen, und zum ist ein Signalwort. Nichts steht hier ohne Adjektiv und bleibt klein.",
+    "label": "Groß oder klein?"
+   },
+   {
+    "q": "Welcher Satz ist richtig geschrieben?",
+    "a": "Ich habe heute Morgen verschlafen.",
+    "wrong": [
+     "Ich habe heute morgen verschlafen.",
+     "Ich habe Heute Morgen verschlafen.",
+     "ich habe heute Morgen verschlafen."
+    ],
+    "why": "Morgen nennt hier die Tageszeit und ist ein Nomen: heute Morgen, gestern Abend.",
+    "label": "Groß oder klein?"
+   },
+   {
+    "q": "Welcher Satz ist richtig geschrieben?",
+    "a": "Wir treffen uns morgen früh.",
+    "wrong": [
+     "Wir treffen uns Morgen früh.",
+     "Wir treffen uns morgen Früh.",
+     "wir treffen uns morgen früh."
+    ],
+    "why": "Morgen (am nächsten Tag) und früh sind Adverbien und stehen klein.",
+    "label": "Groß oder klein?"
+   },
+   {
+    "q": "Welcher Satz ist richtig geschrieben?",
+    "a": "Das Reden fällt ihr schwer.",
+    "wrong": [
+     "Das reden fällt ihr schwer.",
+     "Das Reden fällt ihr Schwer.",
+     "das Reden fällt ihr schwer."
+    ],
+    "why": "Nach das wird das Verb zum Nomen: das Reden. Schwer ist ein Adjektiv und bleibt klein.",
+    "label": "Groß oder klein?"
+   },
+   {
+    "q": "Welcher Satz ist richtig geschrieben?",
+    "a": "Das Beste kommt zum Schluss.",
+    "wrong": [
+     "Das beste kommt zum Schluss.",
+     "Das Beste kommt zum schluss.",
+     "das Beste kommt zum Schluss."
+    ],
+    "why": "Nach das wird das Adjektiv zum Nomen: das Beste. Schluss ist ein Nomen.",
+    "label": "Groß oder klein?"
+   },
+   {
+    "q": "Welcher Satz ist richtig geschrieben?",
+    "a": "Im Zoo gibt es viel Interessantes zu sehen.",
+    "wrong": [
+     "Im Zoo gibt es viel interessantes zu sehen.",
+     "Im Zoo gibt es Viel Interessantes zu sehen.",
+     "Im Zoo gibt es viel Interessantes zu Sehen."
+    ],
+    "why": "Nach viel wird das Adjektiv zum Nomen: viel Interessantes. Zu sehen ist ein Verb und bleibt klein.",
+    "label": "Groß oder klein?"
+   },
+   {
+    "q": "Welcher Satz ist richtig geschrieben?",
+    "a": "Nach dem Essen gehen wir spazieren.",
+    "wrong": [
+     "Nach dem essen gehen wir spazieren.",
+     "Nach dem Essen gehen wir Spazieren.",
+     "nach dem Essen gehen wir spazieren."
+    ],
+    "why": "Nach dem steht das Nomen Essen. Spazieren ist hier ein Verb.",
+    "label": "Groß oder klein?"
+   },
+   {
+    "q": "Woran erkennst du ein nominalisiertes Verb?",
+    "a": "Davor steht ein Artikel oder ein Wort wie beim, zum, im.",
+    "wrong": [
+     "Es endet immer auf -en.",
+     "Es steht immer am Satzanfang.",
+     "Es steht immer vor einem Komma."
+    ],
+    "why": "Artikel und verschmolzene Wörter wie beim und zum sind Signalwörter für ein Nomen: das Lesen, beim Lesen, zum Lesen.",
+    "label": "Signalwörter"
+   },
+   {
+    "q": "Wie schreibst du Adjektive nach etwas, nichts, viel, alles?",
+    "a": "Groß, weil sie zu Nomen werden: etwas Neues.",
+    "wrong": [
+     "Immer klein.",
+     "Nur am Satzanfang groß.",
+     "In Anführungszeichen."
+    ],
+    "why": "Nach etwas, nichts, viel und alles wird das Adjektiv zum Nomen: etwas Neues, nichts Besonderes.",
+    "label": "Signalwörter"
+   }
+  ],
+  "lesen": [
+   {
+    "q": "Was machst du als Erstes, bevor du einen Text liest?",
+    "a": "Überschrift und Bilder ansehen und überlegen, worum es geht.",
+    "wrong": [
+     "Sofort den letzten Satz lesen.",
+     "Alle Wörter einzeln nachschlagen.",
+     "Den Text abschreiben."
+    ],
+    "why": "Überschrift und Bilder geben erste Hinweise. So weißt du schon, worauf du achten musst.",
+    "label": "Vor dem Lesen"
+   },
+   {
+    "q": "Wofür sind Schlüsselwörter da?",
+    "a": "Sie tragen die wichtigsten Informationen eines Absatzes.",
+    "wrong": [
+     "Sie sind immer die längsten Wörter.",
+     "Sie stehen immer am Satzanfang.",
+     "Sie sind alle Nomen des Textes."
+    ],
+    "why": "Schlüsselwörter helfen dir, einen Absatz zu verstehen und später zusammenzufassen. Pro Absatz genügen ein bis drei.",
+    "label": "Schlüsselwörter"
+   },
+   {
+    "q": "Was bedeutet „erschöpft“ hier wahrscheinlich?",
+    "s": "Die Expedition kehrte erschöpft zurück. Alle Teilnehmer schliefen sofort ein, so müde waren sie.",
+    "a": "sehr müde und ohne Kraft",
+    "wrong": [
+     "sehr glücklich",
+     "gut gelaunt",
+     "verärgert"
+    ],
+    "why": "Der nächste Satz verrät es: Alle schliefen sofort ein, so müde waren sie.",
+    "label": "Wörter erschließen"
+   },
+   {
+    "q": "Worum geht es in dem Text?",
+    "s": "Lena packte ihren Rucksack: eine Regenjacke, Proviant für den ganzen Tag und eine Karte. Dann machte sie sich auf den Weg zum Berg.",
+    "a": "Lena bereitet eine Wanderung vor.",
+    "wrong": [
+     "Lena verliert ihren Rucksack.",
+     "Lena kauft neue Schuhe.",
+     "Lena streitet mit ihrem Bruder."
+    ],
+    "why": "Regenjacke, Proviant, Karte und der Weg zum Berg weisen auf eine Wanderung hin.",
+    "label": "Worum geht es?"
+   },
+   {
+    "q": "Welche Frage beantwortet der Text nicht?",
+    "s": "Am Samstag fand im Stadtpark ein Flohmarkt statt. Über 50 Stände boten Bücher, Spielzeug und Kleidung an. Der Erlös geht an das Tierheim.",
+    "a": "Wer hat den Flohmarkt organisiert?",
+    "wrong": [
+     "Wann fand der Flohmarkt statt?",
+     "Wo fand der Flohmarkt statt?",
+     "Wohin geht der Erlös?"
+    ],
+    "why": "Der Text nennt Zeit (Samstag), Ort (Stadtpark) und Verwendung (Tierheim), aber nicht, wer den Flohmarkt organisiert hat.",
+    "label": "W-Fragen"
+   },
+   {
+    "q": "Welche Aussage stimmt mit dem Text überein?",
+    "s": "Der Biber baut Dämme aus Ästen und Schlamm. Dadurch staut er Bäche zu kleinen Teichen auf, in denen er seine Burg errichtet.",
+    "a": "Biber stauen Bäche mit Dämmen auf.",
+    "wrong": [
+     "Biber bauen ihre Burg auf Bäumen.",
+     "Biber leben in Wüsten.",
+     "Biber fressen ihre Dämme sofort wieder auf."
+    ],
+    "why": "Im Text steht, dass Biber mit Dämmen Bäche zu kleinen Teichen aufstauen. Die anderen Aussagen kommen nicht vor.",
+    "label": "Aussage prüfen"
+   },
+   {
+    "q": "Wozu helfen Zwischenüberschriften beim Lesen?",
+    "a": "Sie zeigen, worum es im nächsten Abschnitt geht.",
+    "wrong": [
+     "Sie ersetzen den Text.",
+     "Sie sagen, ob der Text wahr ist.",
+     "Sie zeigen den Autor des Textes."
+    ],
+    "why": "Zwischenüberschriften gliedern den Text und geben vorab einen Hinweis auf den Inhalt des Abschnitts.",
+    "label": "Gliederung"
+   },
+   {
+    "q": "Um welche Textsorte handelt es sich?",
+    "s": "Zutaten: 200 g Mehl, 2 Eier, 1 Prise Salz. Verrühre alles zu einem glatten Teig und lass ihn zehn Minuten ruhen.",
+    "a": "Eine Anleitung (Rezept)",
+    "wrong": [
+     "Eine Erzählung",
+     "Ein Gedicht",
+     "Ein Zeitungsbericht"
+    ],
+    "why": "Eine Zutatenliste und Aufforderungen wie „Verrühre“ gehören zu einer Anleitung.",
+    "label": "Textsorte"
+   },
+   {
+    "q": "Welche Stimmung herrscht in dem Text?",
+    "s": "Plötzlich knackte es im Gebüsch. Tim hielt den Atem an. Zwei gelbe Augen leuchteten in der Dunkelheit.",
+    "a": "Spannung und Angst",
+    "wrong": [
+     "Ausgelassene Freude",
+     "Langeweile",
+     "Stolz"
+    ],
+    "why": "Das Knacken, der angehaltene Atem und die Augen in der Dunkelheit erzeugen Spannung.",
+    "label": "Stimmung"
+   },
+   {
+    "q": "Was hilft dir nach dem Lesen, den Text wirklich zu verstehen?",
+    "a": "Den Inhalt mit eigenen Worten kurz zusammenfassen.",
+    "wrong": [
+     "Den Text noch dreimal schnell überfliegen.",
+     "Nur die Überschrift merken.",
+     "Die Seitenzahl notieren."
+    ],
+    "why": "Wer den Inhalt in eigenen Worten wiedergeben kann, hat ihn verstanden.",
+    "label": "Nach dem Lesen"
+   },
+   {
+    "q": "Wer bedankt sich?",
+    "s": "Mia gab Jonas ihr Fahrrad, weil er seins vergessen hatte. Er bedankte sich bei ihr.",
+    "a": "Jonas",
+    "wrong": [
+     "Mia",
+     "Beide",
+     "Das Fahrrad"
+    ],
+    "why": "Mia gibt Jonas das Fahrrad, weil er seins vergessen hat. Er bezieht sich auf Jonas, ihr auf Mia.",
+    "label": "Bezüge"
+   },
+   {
+    "q": "Wie verstehst du das Wort „Drehleiter“, ohne nachzuschlagen?",
+    "s": "Die Feuerwehr rückte mit der Drehleiter aus.",
+    "a": "Ich zerlege es in Drehen und Leiter.",
+    "wrong": [
+     "Ich überspringe den ganzen Satz.",
+     "Ich rate irgendein Wort.",
+     "Ich lese nur die Endung."
+    ],
+    "why": "Zusammengesetzte Wörter erklären sich oft durch ihre Teile: eine Leiter, die sich drehen lässt.",
+    "label": "Wörter erschließen"
+   },
+   {
+    "q": "Welcher Satz ist eine Meinung?",
+    "a": "Der Film ist der beste des Jahres.",
+    "wrong": [
+     "Der Film dauert 95 Minuten.",
+     "Der Film läuft seit Donnerstag im Kino.",
+     "Im Film spielen drei Kinder mit."
+    ],
+    "why": "Der beste bewertet den Film. Die anderen Sätze enthalten Fakten, die du überprüfen kannst.",
+    "label": "Fakt oder Meinung"
+   },
+   {
+    "q": "Was bedeutet „beinahe“ hier?",
+    "s": "Die Suppe war so heiß, dass er sich beinahe die Zunge verbrannte. Vorsichtig pustete er auf seinen Löffel.",
+    "a": "fast, aber nicht ganz",
+    "wrong": [
+     "sofort",
+     "absichtlich",
+     "nie"
+    ],
+    "why": "Er verbrannte sich die Zunge nicht wirklich, sondern fast. Deshalb pustete er vorsichtig.",
+    "label": "Wörter erschließen"
+   }
   ]
  }
 }
