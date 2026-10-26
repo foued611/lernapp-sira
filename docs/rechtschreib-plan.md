@@ -25,12 +25,6 @@ Alle Texte und Beispielsätze sind eigene Formulierungen. Es wird nichts aus Leh
 
 Auf der Startseite der Deutsch-Werkstatt steht unter „Zum Ausdrucken“ die PDF `apps/deutsch/files/merkwoerter-fresch.pdf`: 25 Sets mit je vier Merkwörtern (die 100 häufigsten Fehlerwörter) zum Abhaken und die Strategie-Karte der vier FRESCH-Strategien zum Ausschneiden. Eingetragen ist sie im Manifest unter `resources`.
 
-## Geplant: Wörtertraining
+## Merkwörter
 
-Ein Karteikasten für häufige Fehlerwörter (Auswertung nach Menzel 1985, 300 Wörter) mit einem Durchgang alle vier Tage:
-
-- Ein Wort gilt als gelernt, wenn es in vier Durchgängen nacheinander richtig war. Dann rückt ein neues Wort nach.
-- Pro Wort ein FRESCH-Tag (Schwingen, Verlängern, Ableiten, Merken), der bei einem Fehler als Hinweis erscheint.
-- Der Wortbestand kommt als eigene Datei (`words.json`) in `content/deutsch/`. Die Quelle der Liste vor der Veröffentlichung klären und im Dateikopf nennen.
-- Der Fortschritt je Wort braucht eine neue Sammlung im Speicher (`DB_VERSION` in `core/js/db.js` erhöhen, siehe `AGENTS.md`, Abschnitt „Speicher“).
-- Der Abstand von vier Tagen ist eine Einstellung des Wörtertrainings. `DUE_DAYS` (3 Tage) in `core/js/profile.js` gilt für alle Seiten und bleibt unverändert.
+Die Merkwörter werden auf Papier geübt: Sira schreibt sie in ihr Merkwörterheft und hakt die Sets in der PDF ab. Die App enthält dafür bewusst kein Karteikarten- oder Wörtertraining. Die Seiten zu Rechtschreibung und Lesen ergänzen das Heft mit Regeln und Übungen am Bildschirm.
