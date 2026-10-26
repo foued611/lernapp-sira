@@ -54,7 +54,7 @@ test('Startseite zeigt Material zum Ausdrucken und maskiert es', () => {
 test('Startseite kennzeichnet Seiten eines Strangs und lässt das Standardprogramm unmarkiert', async () => {
   const de = await loadAppConfig('deutsch', 'apps/deutsch/');
   const html = homeHTML({ ...state(), config: de });
-  const nodes = html.split('<button class="node"').slice(1);
+  const nodes = html.split('<button class="node"').slice(1).map((n) => n.split('</button>')[0]);
   const lrs = nodes.filter((n) => n.includes('LRS-Förderung')).length;
   assert.equal(lrs, 6);
   assert.equal(nodes.length, de.units.length);
