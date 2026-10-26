@@ -129,10 +129,10 @@ Modules: core/js/db.js, core/js/store.js, core/js/content.js, core/js/validate.j
 Scale: S
 Risk: hoch; Datenverlust beim Speichern und Einspielen (Schuld 1 bis 3, SEC-001). Gegenmaßnahme: eine Transaktion je Ersetzung, Rohdaten sichern bevor Standardwerte gelten, Typprüfung in der Einspielung. Zweitens: alter Stand wird nicht gelesen (Datenbank lernwerkstatt, Sammlungen docs und log, Schlüssel lernwerkstatt:app:<id>). Gegenmaßnahme: Lesetest mit einer echten Sicherung aus der Legacy-App, mit erfundenem Namen.
 Entry criteria:
-- [ ] Phase 1 erfüllt
+- [x] Phase 1 erfüllt (abgenommen 2026-10-26)
 - [x] RULE-125, RULE-126 und RULE-135 entschieden (Frage 2 in §7, nach Empfehlung bestätigt)
 - [x] Frage 3 zur Entfernung des Altstands beantwortet (RULE-187, nach Empfehlung bestätigt)
-- [ ] Fixture: eine Sicherungsdatei aus der Legacy-App, mit erfundenem Namen, außerhalb des Repos oder ohne echte Daten
+- [x] Fixture: eine Sicherungsdatei aus der Legacy-App, mit erfundenem Namen, außerhalb des Repos oder ohne echte Daten (Stand: Browser-Test der Sicherung mit Fixture, UAT_P5B.md)
 Exit criteria:
 - [x] Die neue Datenschicht liest Sicherung und Legacy-IndexedDB vollständig; ein Test vergleicht den Stand Feld für Feld (speicher/tests/legacy.test.js, 3 Tests grün)
 - [x] Schuld 1, 2, 3 und SEC-001 je mit einem Test, der den alten Fehler nachstellt (rot vor dem Fix, grün danach)
@@ -153,14 +153,14 @@ Modules: core/js/quiz.js, core/js/qtypes.js, core/js/questions.js, core/js/blitz
 Scale: M
 Risk: mittel; Rundenablauf ändert sich unbemerkt (Herzen, zweiter Versuch, Combo, Boss). Gegenmaßnahme: Dual-Execution mit festem Seed gegen den Legacy-Lauf. Zweitens: Antwortprüfung weicht ab (Normalisierung, fast richtig). Gegenmaßnahme: Eigenschaftstests über alle Fragen.
 Entry criteria:
-- [ ] Phase 2 erfüllt
-- [ ] Zufall ist testbar: Erzeuger bekommen Zufallsquelle oder Seed als Parameter (AGENTS.md)
-- [ ] Keine offene Regel dieser Phase (Prüfung abgeschlossen)
+- [x] Phase 2 erfüllt (abgenommen 2026-10-26)
+- [x] Zufall ist testbar: Erzeuger bekommen Zufallsquelle oder Seed als Parameter (AGENTS.md). Stand: alle Erzeuger nehmen `rng`.
+- [x] Keine offene Regel dieser Phase (Prüfung abgeschlossen)
 Exit criteria:
-- [ ] Tests zu RULE-243, 151, 166 und 137 bestehen
-- [ ] Legacy und neuer Lauf liefern bei gleichem Seed dieselbe Fragenfolge und dieselben Punkte (Test)
+- [x] Tests zu RULE-243, 151, 166 und 137 bestehen (runde/tests/rule-243.test.js, rule-151.test.js, rule-166.test.js, rule-137.test.js)
+- [x] Legacy und neuer Lauf liefern bei gleichem Seed dieselbe Fragenfolge und dieselben Punkte (Test). Stand: umgesetzt in Phase 5a/5b als Dual-Execution (analysis/modulare/dual/*.mjs): deutsch, info-zahlen, fr-verben 0 Abweichungen, mathe nur RULE-056
   Proposed revision: Der Legacy-Lauf ist DOM-gebunden (quiz.js rendert). Ersatz in Phase 3: Regeltests mit festen Antworten (RULE-243, 151, 166, 137, 193) und Herzen-Test. Der Vergleich mit dem Legacy-Lauf folgt in Phase 5a, wo echte Apps laufen.
-- [ ] Die gemeinsame Fabrik für Rundenbausteine existiert (Schuld 4); die Apps nutzen sie noch nicht
+- [x] Die gemeinsame Fabrik für Rundenbausteine existiert (Schuld 4); die Apps nutzen sie (Stand: runde/index.js, von allen Apps in apps/*/builders.js importiert)
 ```
 
 #### Phase 4 — App-Rahmen, Startseite und Lektionen
@@ -171,7 +171,7 @@ Modules: core/js/ui.js, core/js/icons.js, core/js/mascot.js, core/js/confetti.js
 Scale: S
 Risk: mittel; die Startseite bleibt leer, wenn der Speicher fehlt (Schuld 8, RULE-202 im Widerspruch zu AGENTS.md). Gegenmaßnahme: Fehlerpfad mit Meldung, Entscheidung in Frage 4. Zweitens: Sicherung in der Oberfläche verliert Funktion. Gegenmaßnahme: Abnahmeliste für Sicherung und Einspielen.
 Entry criteria:
-- [ ] Phase 3 erfüllt
+- [x] Phase 3 erfüllt (abgenommen 2026-10-26)
 - [x] RULE-075 entschieden (Frage 2): erledigt ab 2 von 3 Sternen, Fortschritt in Prozent
 - [x] Frage 4 zu RULE-202 beantwortet: ohne Speicher leerer Stand mit Meldung, kein Abbruch
 Exit criteria:
@@ -220,7 +220,7 @@ Exit criteria:
 - [x] RULE-165 und RULE-206 bestehen als Tests für mathe, info-zahlen und fr-verben
 - [x] Dual-Execution für jede App: gleiche Seeds, gleiche Fragen wie im Legacy-Lauf. deutsch, info-zahlen, fr-verben: 0 Abweichungen. mathe: alle Abweichungen durch RULE-056 (gerade Anzahl im Median-Pool), siehe UAT_P5B.md. Punkte über Konstanten.
 - [x] Sicherung aus der Legacy-App vor dem Umzug in die neue App eingespielt; Stichprobe des Stands stimmt (Browser, Fixture)
-- [ ] Veröffentlichung über GitHub Pages aus dist/ läuft; die Legacy-Dateien werden erst nach Freigabe entfernt (offen: Freigabe für Push und Merge nach main)
+- [x] Veröffentlichung über GitHub Pages aus dist/ läuft; die Legacy-Dateien werden erst nach Freigabe entfernt. Stand: Pages-Lauf 40375885648 (Commit 519c964) erfolgreich. Legacy-Dateien bleiben auf Wunsch vorerst (Entscheidung im Chat).
 - [x] AGENTS.md und README an den neuen Aufbau angepasst
 ```
 
@@ -318,7 +318,7 @@ Persona **Elternteil, das den Lernstand sichert**, Ablauf „Lernstand sichern�
 Jede Frage braucht eine Entscheidung vor der genannten Phase.
 
 1. [x] Behavior Contract: die Liste in §5 als P0 führen. Entschieden im Chat: "Die P0-Liste aus Brief §5 gilt, nichts streichen."
-2. [ ] Die neun Unsicher-Regeln (Phasen-Sperren in §3):
+2. [x] Die neun Unsicher-Regeln (Phasen-Sperren in §3):
    - [x] RULE-112 (Phase 1): Entschieden im Chat: Zielverhalten bestätigt.
    - [x] RULE-128 (Phase 1): Entschieden im Chat: Zielverhalten bestätigt, Rundung kaufmännisch.
    - [x] RULE-125 (Phase 2): Entschieden im Chat: behalten (keep).
@@ -334,10 +334,10 @@ Jede Frage braucht eine Entscheidung vor der genannten Phase.
 6. [x] Sicherheitsprüfung: Entschieden im Chat: der Scan im Assessment reicht, `harden` läuft nicht. SEC-001 bis SEC-003 sind im Neubau umgesetzt.
 7. [x] Quelle `legacy/modulare` (Preflight Check 7): Entschieden im Chat: so lassen. `legacy/` bleibt, ein nested Git-Repo, von der Haupt-Repo ignoriert.
 8. [x] Pilot: deutsch als erste App in Phase 5a (Vorschlag), entschieden im Chat am 2026-10-26.
-9. [x] Gespeicherte IDs (App, Seiten, Trophäen, Schlüssel) bleiben unverändert, wie in AGENTS.md. Umsetzung: App-IDs in `seiten/registry.js` und `content/` sind gleich, Phase-2-Abnahme ohne Einwand. Bitte bestätigen, falls nicht gemeint.
-10. [x] Test-Runner: node:test beibehalten, kein neues Paket. Umgesetzt und mit Phase-1-Abnahme akzeptiert. Bitte bestätigen, falls nicht gemeint.
-11. [x] Schuld 1 bis 3 und SEC-001 als Pflicht umgesetzt (Phase 2), mit Phase-2-Abnahme akzeptiert. Bitte bestätigen, falls nicht gemeint.
-12. [ ] Offen aus der Vorprüfung: CI-Dauer nachtragen (blockiert nichts). Nicht blockierend, bleibt offen.
+9. [x] Gespeicherte IDs (App, Seiten, Trophäen, Schlüssel) bleiben unverändert, wie in AGENTS.md. Bestätigt durch die Person im Chat.
+10. [x] Test-Runner: node:test beibehalten, kein neues Paket. Bestätigt durch die Person im Chat.
+11. [x] Schuld 1 bis 3 und SEC-001 sind Pflicht des Umbaus, nicht Übernahme des Alten. Bestätigt durch die Person im Chat.
+12. [x] Offen aus der Vorprüfung: CI-Dauer nachgetragen. Pages-Workflow: 41 s (Lauf 40369218816), 53 s (Lauf 40375885648). Blockiert nichts.
 
 ---
 
