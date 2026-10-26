@@ -2,3 +2,10 @@ node_modules/
 package-lock.json
 .DS_Store
 *.log
+
+# Lokale Ablage: Legacy-Klon (eigenes Repo), Werkzeug-Caches, Build-Ausgabe des Neubaus
+legacy/
+.claude/
+.impeccable/
+dist/
+**/public/content/

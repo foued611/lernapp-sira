@@ -2,25 +2,38 @@
 
 Kleine Lern-Apps für Sira mit einem Dashboard als Startseite. Jede Seite hat eine Lektion mit Bild, Beispiel und Mini-Check, danach Übung mit Punkten, Sternen, Trophäen, Sammelkarten und Auffrisch-Erinnerung.
 
-Live: https://foued611.github.io/lernapp-sira/
+Live: https://foued611.github.io/lernapp-sira/ (wird aus `dist/` des Neubaus per GitHub Actions veröffentlicht, siehe `.github/workflows/pages.yml`)
 
 ## Apps
 | App | Fach | Ordner | Stand |
 |---|---|---|---|
-| Cahier de Verbes | Französisch | `apps/franzoesisch-verben/` | fertig |
-| Zahlenwerkstatt | Informatik | `apps/informatik/` | fertig |
+| Cahier de Verbes | Französisch | `apps/franzoesisch-verben/` (Neubau: `apps/fr-verben/`) | fertig |
+| Zahlenwerkstatt | Informatik | `apps/informatik/` (Neubau: `apps/info-zahlen/`) | fertig |
 | Mathe-Werkstatt | Mathematik | `apps/mathe/` | fertig (9 Seiten) |
 | Geometrie-Werkstatt | Mathematik | `apps/geometrie/` | fertig (8 Seiten) |
 | Deutsch-Werkstatt | Deutsch | `apps/deutsch/` | fertig (6 Seiten) |
 | Englisch, Physik | | | geplant |
 
-## Lokal starten
+## Neubau (React und Vite)
+
+Der Neubau liegt in `modernized/modulare-reimagined/`. Dort sind alle fünf Live-Apps umgezogen: Deutsch, Geometrie, Mathe, Zahlenwerkstatt und Cahier de Verbes.
+
+```
+cd modernized/modulare-reimagined
+npm install
+npm run dev         # Entwicklungsserver
+npm test            # alle Tests, inkl. Smoke über alle Apps
+npm run build       # erzeugt dist/
+npm run preview     # dist/ lokal ansehen
+```
+
+## Lokal starten (bisheriger Code)
 ```
 npm run serve
 ```
 Dann `http://localhost:8000` öffnen. Ein Doppelklick auf die Datei reicht nicht, weil ES-Module einen Webserver brauchen.
 
-## Tests
+## Tests (bisheriger Code)
 ```
 npm install
 npm test        # Unit- und Vertragstests

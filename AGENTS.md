@@ -8,13 +8,13 @@ Anweisungen für Coding-Agenten und Mitwirkende. Lies diese Datei vor jeder Änd
 
 ## Technik
 
-- Framework und Build: React mit Vite ist für den Umbau erlaubt (Entscheidung 2026-10-26, siehe `analysis/modulare/INTENT.md`). Bis der Umbau fertig ist, bleibt der bestehende Code Vanilla JavaScript als ES-Module, CSS mit Custom Properties, ohne Build-Schritt. TypeScript ist weiter nicht vorgesehen. Die Begründung steht in `docs/inhalte.md`.
+- Framework und Build: React 19 mit Vite (Entscheidung 2026-10-26, siehe `analysis/modulare/INTENT.md`). Der Neubau liegt in `modernized/modulare-reimagined/` (Abschnitt "Neubau" unten). Der bisherige Code unter `core/`, `apps/`, `dashboard.js` bleibt, bis die Umstellung entschieden ist. TypeScript ist weiter nicht vorgesehen. Die Begründung steht in `docs/inhalte.md`.
 - Daten und Logik sind getrennt: Inhalte liegen als JSON in `content/<id>/`, Code in `core/` und `apps/<name>/`. Siehe "Inhalte und Daten".
 - Läuft über GitHub Pages (Branch `main`, Ordner `/`). Ein Push auf `main` veröffentlicht.
 - ES-Module brauchen http(s). Lokal testen mit `npm run serve` und `http://localhost:8000`. Ein Doppelklick auf die HTML-Datei (file://) funktioniert nicht.
 - Node (nur für Tests): `npm install`, `npm test`, `npm run smoke`.
 - Alle Pfade im HTML und in Imports sind relativ, weil die Seite unter `/lernapp-sira/` liegt.
-- Laufzeit-Abhängigkeiten nur, was der Umbau braucht (React). Der bestehende Code hat keine. Tests nutzen `fake-indexeddb`, `jsdom`, `esbuild`, `ajv`). Schriften liegen selbst gehostet in `core/fonts/` (WOFF2, Lizenzen OFL daneben), es gibt keine Anfragen an Google. Neue externe Skripte oder Dienste nur nach Absprache (Datenschutz, DSGVO).
+- Laufzeit-Abhängigkeiten nur, was der Umbau braucht (React). Der bisherige Code hat keine. Tests nutzen `fake-indexeddb`, `jsdom`, `esbuild`, `ajv`). Schriften liegen selbst gehostet in `core/fonts/` (WOFF2, Lizenzen OFL daneben), es gibt keine Anfragen an Google. Neue externe Skripte oder Dienste nur nach Absprache (Datenschutz, DSGVO).
 
 ## Struktur
 
@@ -41,6 +41,27 @@ scripts/       smoke.mjs (Browser-Simulation mit jsdom)
 Gemeinsame Rechenhelfer (Zahlen formatieren, tolerante Eingabeprüfung, Brüche) liegen in `core/js/mathkit.js` und dürfen von allen Mathe-nahen Apps genutzt werden.
 
 Faustregel: Was mehr als eine App braucht, gehört nach `core/`. Was nur ein Fach betrifft, bleibt in `apps/<name>/`. Apps importieren aus `core/`, nie aus anderen Apps. `core/` kennt keine einzelne App.
+
+## Neubau (modernized/modulare-reimagined)
+
+Der Neubau hat dieselben Inhalte (`content/`, gleiche JSON-Form) und dieselben Spielregeln, aber eine andere Struktur:
+
+```
+regeln/      reine Spielregeln (XP, Serie, Fälligkeit, Trophäen), ohne Speicher und ohne Oberfläche
+helfer/      Zufall mit Seed (createRng, shuffle, pick), Zahlen (rnd, fmt, nearby, numCheck)
+runde/       Fragenbauer (choiceQuestion, typedQuestion, matchQuestion), Rundenmotor, Blitz, Textvergleich
+inhalte/     Inhaltspaket prüfen, Konfiguration bauen (buildConfig), Quellen
+speicher/    IndexedDB mit localStorage- und Arbeitsspeicher-Ausweichen, Sicherung, Altstand
+komponenten/ React-Bausteine: Lektion, Theorie, Diagramme (svg.js), Minou, Symbole, Lernstränge
+seiten/      Startseite, App-Rahmen (Runde starten, auswerten, speichern), Ergebnis, Sicherung
+apps/<id>/   Logik einer Fach-App: builders.js, diagrams.js, logic.js, optional eigene Theorie (Theory)
+apps/index.js  Zuordnung Kennung -> Logik (logicFor)
+```
+
+- Grenzen: `regeln/` und `helfer/` importieren nicht aus `speicher/`, `komponenten/`, `seiten/`, `apps/` und nicht aus React. Nur `speicher/` greift auf IndexedDB und localStorage zu. Apps importieren nie aus anderen Apps. `grenzen`-Tests prüfen das.
+- Zufall ist immer Parameter `rng`. Ohne `rng` gibt es keine Aufgabe. Gleicher Seed muss gleiche Aufgaben liefern.
+- Eine App liefert `logic.js` mit `init`, `diagrams`, `rounds` (`lesson(unit, rng)`, `quick(rng)`, `boss(rng)`), `blitz(rng)` und optional `Theory` (React-Komponente mit `{ unit, config, onStart }`) und `bossUnlocked`.
+- Befehle: `npm install`, `npm test` (node:test, alle Suiten inkl. Smoke über alle Live-Apps), `npm run build` (kopiert `content/` nach `public/content` und baut `dist/`), `npm run dev`, `npm run preview`.
 
 ## Inhalte und Daten
 
@@ -184,6 +205,10 @@ Regeln für Texte und Bilder:
 
 ## Neue App anlegen
 
+Im Neubau: `apps/_template/` nach `apps/<id>/` kopieren, `content/vorlage/` nach `content/<id>/`, Logik in `apps/index.js` eintragen, `status: 'live'` in `seiten/registry.js`. `apps/tests/smoke.test.js` und `apps/tests/endgegner.test.js` prüfen die App automatisch.
+
+Im bisherigen Code (bis zur Umstellung):
+
 1. `apps/_template/` nach `apps/<name>/` und `content/vorlage/` nach `content/<id>/` kopieren.
 2. In `content/<id>/manifest.json` `id`, `title`, `greeting`, `intro` setzen, in `main.js` dieselbe `id`, in `index.html` den `<title>`.
 3. Seiten und Merkzettel im Manifest, Lektionen in `lessons.json`, Trophäen in `badges.json`, Aufgabendaten in `data.json` anpassen. Fragen-Erzeuger in `builders.js`, Diagramme in `diagrams.js`.
@@ -207,7 +232,7 @@ Regeln für Texte und Bilder:
 
 ## Tests
 
-- `npm test`: Unit- und Vertragstests ohne Abhängigkeiten. Sie müssen vor jedem Commit grün sein.
+- `npm test` im Neubau (`modernized/modulare-reimagined`): alle Suiten, derzeit 606 Tests. Sie müssen vor jedem Commit grün sein. Im Legacy-Code: Unit- und Vertragstests ohne Abhängigkeiten.
 - `npm run smoke`: spielt in jsdom alle Apps aus `registry.js` durch (benötigt `npm install`). App-spezifische Prüfungen liegen in `apps/<name>/smoke.mjs` und werden automatisch gefunden. Eine neue App braucht keine Änderung am Skript.
 - `tests/db.test.js` prüft den Speicher mit einer simulierten IndexedDB. Der Durchspiel-Test deckt IndexedDB und die Übernahme alter Daten ab.
 - `tests/qtypes.test.js` und `tests/views.test.js` decken Fragetypen und Ansichten ab.
