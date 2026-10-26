@@ -24,11 +24,13 @@ Wichtig: Das Buch führt **Konjunktiv und indirekte Rede** (S. 222 bis 226) scho
 | Die Inhaltsangabe: Merkmale, Basissatz, Redewiedergabe | 36 bis 57 | `inhaltsangabe`, `redewiedergabe` |
 | Lesen: Lesetechniken und -strategien | 70 bis 79 | `lesen` |
 
-## Noch nicht in der App
+## Offene Punkte (bewusst nicht umgesetzt)
+
+Regel: Die App deckt nur ab, was bekannt und im Buch eindeutig ist. Alles andere steht hier als offener Punkt und wird erst gebaut, wenn der Stoff geklärt ist.
 
 - Miteinander sprechen und argumentieren (10 bis 21), Szenisches Spiel (58 bis 69), Überzeugend präsentieren (176 bis 187): mündlich, passen schlecht zu einem Quiz.
 - Literarisches und gestaltendes Schreiben (22 bis 35): kreatives Schreiben, nicht automatisch prüfbar.
-- Texte und Medien: Kurzgeschichten, Kalendergeschichten, Novelle „Kleider machen Leute“, Jugendbuch „Train Kids“, Balladen, Sachtexte, Literaturverfilmung. Hier hängt der Stoff von den Texten ab, die in Siras Klasse gelesen werden. Möglich wären Merkmal-Quiz je Gattung.
+- Texte und Medien: Kurzgeschichten, Kalendergeschichten, Novelle „Kleider machen Leute“, Jugendbuch „Train Kids“, Balladen, Sachtexte, Literaturverfilmung. Offen: Welche Texte liest Siras Klasse? Erst dann sind Merkmal-Quiz je Gattung sinnvoll.
 - Gedichte: Reim, Metrum, klangliche Stilmittel (136 bis 139).
 - Sprachgebrauch: Prädikat und Satzglieder (201 bis 203), Tempusformen (229), Adjektive (231), Pronomen (232), Wortbildung und Fachwörter (246 bis 249), Wort- und Sprachkunde (238 bis 245), Getrennt- und Zusammenschreibung (261 bis 263), Fremdwörter (256), Sprache und Identität (274 bis 282).
 
@@ -37,3 +39,9 @@ Wichtig: Das Buch führt **Konjunktiv und indirekte Rede** (S. 222 bis 226) scho
 - Alle Aufgaben sind eigene Beispiele und keine Aufgaben aus dem Buch.
 - Begriffe stimmen mit dem Buch überein (z. B. „Adverbialsätze“, „Attributsätze“, „Redewiedergabe“), die Reihenfolge der App folgt dem Buch nicht.
 - Vor der Klassenarbeit prüfen, welche Kapitel in Siras Klasse wirklich behandelt wurden.
+
+## Zu klären
+
+1. Welche Buchkapitel werden in Siras Klasse in welcher Reihenfolge behandelt (Klassenarbeiten)?
+2. Welche Ganzschrift oder Texte werden gelesen (Nibelungenlied, Kleider machen Leute, Train Kids)?
+3. Gibt es Lehrer-Vorgaben zur Inhaltsangabe (Aufbau, Länge), die vom Buch abweichen?
