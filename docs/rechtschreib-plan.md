@@ -10,6 +10,10 @@ Das Etikett erscheint auf der Startseite, im Kopf der Theorieseite und über jed
 Definiert ist der Strang in `manifest.tracks.lrs`. Ein weiterer Strang braucht nur einen neuen Eintrag dort und `track` an den Seiten.
 Offen: Ob `dassdas` ebenfalls zur Förderung zählen soll, ist noch nicht entschieden.
 
+## Profi-Tricks
+
+Jede LRS-Seite hat im Merkzettel Tricks mit dem Namen „Profi-Trick“ (zum Beispiel Dehnprobe, Endung -ieren, Einschiebeprobe, Lineal beim Lesen). Dazu gibt es Übungsfragen mit dem Fragetitel „Profi-Trick“. Die Tricks sind Lernhilfen, die nicht in jedem Unterricht vorkommen. Sie gelten nicht als Schulregel: Bitte mit den Vorgaben der Lehrkraft abgleichen.
+
 ## Seiten
 
 | Seite (`id`) | Thema | Aufgabenform |

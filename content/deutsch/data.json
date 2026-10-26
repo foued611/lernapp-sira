@@ -1090,6 +1090,50 @@
         ],
         "why": "Kurzer Vokal, dann meist ein doppelter Mitlaut. Nach langem Vokal bleibt er einfach.",
         "label": "Regel"
+      },
+      {
+        "q": "Welches Wort hat einen langen Vokal und deshalb keinen doppelten Mitlaut?",
+        "a": "Besen",
+        "wrong": [
+          "Kette",
+          "Sonne",
+          "Mutter"
+        ],
+        "why": "Bei Be-sen kannst du das e lang ziehen: Beeesen. Dann gibt es keinen Doppelmitlaut.",
+        "label": "Profi-Trick"
+      },
+      {
+        "q": "Setze das richtige Wort ein.",
+        "s": "Mit dem ___ schneidest du das Brot.",
+        "kind": "gap",
+        "a": "Messer",
+        "wrong": [
+          "Meser"
+        ],
+        "why": "Soooon-ne und Meeesser klingen falsch, das e ist kurz. Also doppelter Mitlaut: Mes-ser.",
+        "label": "Profi-Trick"
+      },
+      {
+        "q": "Du bist unsicher: Kater oder Katter? Was hilft dir?",
+        "a": "Die erste Silbe lang ziehen: Kaaa-ter klingt richtig, also nur ein t.",
+        "wrong": [
+          "Immer zwei Mitlaute schreiben, sicher ist sicher.",
+          "Das Wort rückwärts lesen.",
+          "Den ersten Buchstaben groß schreiben."
+        ],
+        "why": "Die Dehnprobe zeigt, ob der Vokal lang ist. Bei langem Vokal steht kein Doppelmitlaut.",
+        "label": "Profi-Trick"
+      },
+      {
+        "q": "Setze das richtige Wort ein.",
+        "s": "Im Winter streue ich ___ auf den Weg.",
+        "kind": "gap",
+        "a": "Salz",
+        "wrong": [
+          "Saltz"
+        ],
+        "why": "Vor dem z steht schon ein Mitlaut (l). Nach einem Mitlaut gibt es kein tz.",
+        "label": "Profi-Trick"
       }
     ],
     "dehnung": [
@@ -1279,6 +1323,61 @@
         ],
         "why": "Meer hat ee. Lehrer, Bahn und Stuhl haben ein Dehnungs-h.",
         "label": "Doppelvokal"
+      },
+      {
+        "q": "Setze das richtige Wort ein.",
+        "s": "Ich möchte das neue Essen ___.",
+        "kind": "gap",
+        "a": "probieren",
+        "wrong": [
+          "probiren"
+        ],
+        "why": "Verben auf -ieren schreibst du immer mit ie.",
+        "label": "Profi-Trick"
+      },
+      {
+        "q": "Welche Verbendung schreibst du immer mit ie?",
+        "a": "-ieren, zum Beispiel telefonieren",
+        "wrong": [
+          "-ern, zum Beispiel wandern",
+          "-eln, zum Beispiel sammeln",
+          "-igen, zum Beispiel reinigen"
+        ],
+        "why": "Alle Verben auf -ieren haben ein ie: studieren, telefonieren, probieren.",
+        "label": "Profi-Trick"
+      },
+      {
+        "q": "Setze das richtige Wort ein.",
+        "s": "Im Zoo sehen wir einen ___.",
+        "kind": "gap",
+        "a": "Tiger",
+        "wrong": [
+          "Tieger"
+        ],
+        "why": "Tiger ist eine Ausnahme: langes i ohne e.",
+        "label": "Profi-Trick"
+      },
+      {
+        "q": "Welches Wort hat ein langes i ohne ie?",
+        "a": "Maschine",
+        "wrong": [
+          "Wiese",
+          "Spiegel",
+          "Ziegel"
+        ],
+        "why": "Maschine, Tiger und Krokodil sind Fremdwörter mit langem i ohne ie.",
+        "label": "Profi-Trick"
+      },
+      {
+        "q": "Setze das richtige Wort ein.",
+        "s": "Wir machen eine ___ mit dem Zug.",
+        "kind": "gap",
+        "a": "Fahrt",
+        "wrong": [
+          "Fart"
+        ],
+        "why": "Das h bleibt in der Wortfamilie von fahren: Fahrt, Fahrer.",
+        "label": "Profi-Trick"
       }
     ],
     "slaute": [
@@ -1501,6 +1600,50 @@
         ],
         "why": "Gruß hat ein langes u (Grüße). Muss, Kuss und Nuss haben ein kurzes u, deshalb ss.",
         "label": "Richtig geschrieben"
+      },
+      {
+        "q": "Wie schreibst du die Mehrzahl von Ergebnis?",
+        "a": "Ergebnisse",
+        "wrong": [
+          "Ergebnise",
+          "Ergebniße",
+          "Ergebnisße"
+        ],
+        "why": "Bei Wörtern auf -nis steht in der Mehrzahl ss: Ergebnisse.",
+        "label": "Profi-Trick"
+      },
+      {
+        "q": "Setze das richtige Wort ein.",
+        "s": "Im Sommer baden wir im ___.",
+        "kind": "gap",
+        "a": "Fluss",
+        "wrong": [
+          "Fluß"
+        ],
+        "why": "Beim Verlängern hörst du Flüsse mit kurzem Vokal. Nach kurzem Vokal steht ss.",
+        "label": "Profi-Trick"
+      },
+      {
+        "q": "Du bist unsicher: Fuß oder Fuss? Was hilft?",
+        "a": "Verlängern: Füße. Das ü ist lang, also ß.",
+        "wrong": [
+          "Am Wortende steht immer ss.",
+          "Am Wortende steht immer ß.",
+          "Das Wort dreimal abschreiben."
+        ],
+        "why": "Die Mehrzahl zeigt den Vokal: langes ü, deshalb ß.",
+        "label": "Profi-Trick"
+      },
+      {
+        "q": "Setze das richtige Wort ein.",
+        "s": "Auf der ___ fahren viele Autos.",
+        "kind": "gap",
+        "a": "Straße",
+        "wrong": [
+          "Strasse"
+        ],
+        "why": "Das a in Straße ist lang. Nach langem Vokal steht ß.",
+        "label": "Profi-Trick"
       }
     ],
     "ableiten": [
@@ -1712,6 +1855,61 @@
         ],
         "why": "Fröhlich kommt von froh. Aus o wird ö.",
         "label": "Ableiten"
+      },
+      {
+        "q": "Welches Wort schreibst du mit äu, weil es von au kommt?",
+        "a": "Läufer",
+        "wrong": [
+          "Leufer",
+          "Laufer",
+          "Läfer"
+        ],
+        "why": "Läufer kommt von laufen: aus au wird äu.",
+        "label": "Profi-Trick"
+      },
+      {
+        "q": "Setze das richtige Wort ein.",
+        "s": "Im Herbst sind die Blätter ___.",
+        "kind": "gap",
+        "a": "bunt",
+        "wrong": [
+          "bund"
+        ],
+        "why": "Beuge das Wort: bunte Blätter. Du hörst ein t, also schreibst du t.",
+        "label": "Profi-Trick"
+      },
+      {
+        "q": "Setze das richtige Wort ein.",
+        "s": "Im Garten steht ein ___ voller Äpfel.",
+        "kind": "gap",
+        "a": "Korb",
+        "wrong": [
+          "Korp"
+        ],
+        "why": "Verlängern: Körbe. Du hörst ein b, also schreibst du b.",
+        "label": "Profi-Trick"
+      },
+      {
+        "q": "Wie findest du heraus, ob ein Wort am Ende d oder t hat?",
+        "a": "Verlängern und hinhören, zum Beispiel Hund, Hunde.",
+        "wrong": [
+          "Raten und dann prüfen.",
+          "Immer d schreiben.",
+          "Das Wort kleinschreiben."
+        ],
+        "why": "Beim Verlängern wird der Laut deutlich: Hunde mit d.",
+        "label": "Profi-Trick"
+      },
+      {
+        "q": "Setze das richtige Wort ein.",
+        "s": "Der ___ der Blume ist grün.",
+        "kind": "gap",
+        "a": "Stängel",
+        "wrong": [
+          "Stengel"
+        ],
+        "why": "Stängel kommt von Stange, also schreibst du ä.",
+        "label": "Profi-Trick"
       }
     ],
     "gross": [
@@ -1846,6 +2044,61 @@
         ],
         "why": "Nach etwas, nichts, viel und alles wird das Adjektiv zum Nomen: etwas Neues, nichts Besonderes.",
         "label": "Signalwörter"
+      },
+      {
+        "q": "Welcher Satz ist richtig geschrieben?",
+        "a": "Beim Laufen wird mir warm.",
+        "wrong": [
+          "Beim laufen wird mir warm.",
+          "beim Laufen wird mir warm.",
+          "Beim Laufen wird mir Warm."
+        ],
+        "why": "Du kannst ein Adjektiv einschieben: beim schnellen Laufen. Also Nomen, großgeschrieben.",
+        "label": "Profi-Trick"
+      },
+      {
+        "q": "Welche Probe hilft bei Groß oder klein?",
+        "a": "Kann ein Artikel oder ein Adjektiv davor stehen?",
+        "wrong": [
+          "Ist das Wort lang?",
+          "Steht es am Satzanfang?",
+          "Klingt das Wort schön?"
+        ],
+        "why": "Wenn ein Artikel oder Adjektiv passt, ist das Wort ein Nomen.",
+        "label": "Profi-Trick"
+      },
+      {
+        "q": "Welcher Satz ist richtig geschrieben?",
+        "a": "Wir treffen uns heute Abend im Park.",
+        "wrong": [
+          "Wir treffen uns heute abend im Park.",
+          "Wir treffen uns Heute Abend im Park.",
+          "Wir treffen uns heute Abend im park."
+        ],
+        "why": "Nach heute schreibst du Tageszeiten groß: heute Abend.",
+        "label": "Profi-Trick"
+      },
+      {
+        "q": "Welcher Satz ist richtig geschrieben?",
+        "a": "Er isst gern etwas Süßes.",
+        "wrong": [
+          "Er isst gern etwas süßes.",
+          "Er isst Gern etwas Süßes.",
+          "Er isst gern Etwas süßes."
+        ],
+        "why": "Nach etwas wird ein Adjektiv zum Nomen: etwas Süßes.",
+        "label": "Profi-Trick"
+      },
+      {
+        "q": "Welcher Satz ist richtig geschrieben?",
+        "a": "Wir sehen uns morgen früh.",
+        "wrong": [
+          "Wir sehen uns morgen Früh.",
+          "Wir sehen uns Morgen früh.",
+          "Wir sehen uns morgen FRÜH."
+        ],
+        "why": "morgen früh schreibst du klein. früh ist hier ein Adverb.",
+        "label": "Profi-Trick"
       }
     ],
     "lesen": [
@@ -2011,6 +2264,61 @@
         ],
         "why": "Er verbrannte sich die Zunge nicht wirklich, sondern fast. Deshalb pustete er vorsichtig.",
         "label": "Wörter erschließen"
+      },
+      {
+        "q": "Du kennst ein Wort nicht. Was machst du zuerst?",
+        "a": "Weiterlesen und das Wort aus dem Satz erschließen.",
+        "wrong": [
+          "Sofort aufgeben.",
+          "Den Text von vorn beginnen.",
+          "Das Wort einfach erfinden."
+        ],
+        "why": "Oft erklärt der Satz das Wort. Nachschlagen kannst du am Ende.",
+        "label": "Profi-Trick"
+      },
+      {
+        "q": "Wie verrutschst du beim Lesen nicht in der Zeile?",
+        "a": "Ein Lineal oder Blatt unter die Zeile legen.",
+        "wrong": [
+          "Schneller lesen.",
+          "Die Augen schließen.",
+          "Nur jede zweite Zeile lesen."
+        ],
+        "why": "Das Lineal führt den Blick und verhindert Zeilensprünge.",
+        "label": "Profi-Trick"
+      },
+      {
+        "q": "Welche Fragen stellst du dir vor dem Lesen?",
+        "a": "Wer? Was? Wo? Wann? Warum?",
+        "wrong": [
+          "Wie viele Seiten hat der Text?",
+          "Wie schön ist das Bild?",
+          "Wer hat den Text gedruckt?"
+        ],
+        "why": "W-Fragen lenken die Aufmerksamkeit auf das Wichtige.",
+        "label": "Profi-Trick"
+      },
+      {
+        "q": "Woran merkst du, dass du einen Absatz verstanden hast?",
+        "a": "Du kannst ihn in einem Satz mit eigenen Worten sagen.",
+        "wrong": [
+          "Du hast ihn zweimal gelesen.",
+          "Du hast alle Wörter gezählt.",
+          "Du kannst ihn auswendig."
+        ],
+        "why": "Mit eigenen Worten zusammenfassen zeigt echtes Verstehen.",
+        "label": "Profi-Trick"
+      },
+      {
+        "q": "Du verstehst einen Absatz nicht. Was hilft?",
+        "a": "Noch einmal langsam lesen und Schlüsselwörter markieren.",
+        "wrong": [
+          "Zum nächsten Absatz springen und hoffen.",
+          "Den Text weglegen.",
+          "Nur die Überschrift lesen."
+        ],
+        "why": "Zweites, gezieltes Lesen mit Markieren bringt meist das Verständnis.",
+        "label": "Profi-Trick"
       }
     ],
     "redewiedergabe": [
