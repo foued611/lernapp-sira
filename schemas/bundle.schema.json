@@ -43,6 +43,20 @@
           "type": "object",
           "description": "Merkzettel je Seite: Liste aus [Überschrift, Text]",
           "additionalProperties": { "type": "array", "items": { "type": "array", "prefixItems": [{ "$ref": "#/$defs/text" }, { "$ref": "#/$defs/text" }], "minItems": 2, "maxItems": 2 } }
+        },
+        "resources": {
+          "type": "array",
+          "description": "Material zum Öffnen oder Ausdrucken (z. B. PDF). href ist ein relativer Pfad zur index.html der App, ohne Schema, ohne führenden Slash, ohne ..",
+          "items": {
+            "type": "object",
+            "required": ["title", "href"],
+            "additionalProperties": false,
+            "properties": {
+              "title": { "$ref": "#/$defs/text" },
+              "desc": { "$ref": "#/$defs/text" },
+              "href": { "type": "string", "pattern": "^(?![a-zA-Z][a-zA-Z0-9+.-]*:)(?!/)(?!.*\\.\\.)[^\\s\"'<>]+$" }
+            }
+          }
         }
       }
     },

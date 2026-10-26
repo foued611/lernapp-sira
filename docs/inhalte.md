@@ -21,7 +21,7 @@ Merksatz: Wer Text ändert, fasst nur `content/` an. Wer eine neue Art von Aufga
 
 Eine Quelle liefert pro App ein Paket `{ manifest, lessons, badges, data }`. Die genaue Form steht in `schemas/bundle.schema.json`, `npm test` prüft jedes Paket in `content/` dagegen.
 
-- **manifest**: `schema` (Version, heute 1), `id`, `title`, `greeting`, `intro`, optional `bossTitle`, `words`, `inputChars`, `units[]`, `notes{}`.
+- **manifest**: `schema` (Version, heute 1), `id`, `title`, `greeting`, `intro`, optional `bossTitle`, `words`, `inputChars`, `resources[]` (Material zum Öffnen oder Ausdrucken, z. B. PDF: `{ title, desc?, href }`, `href` nur relativ), `units[]`, `notes{}`.
 - **lessons**: je Seite genau eine Lektion mit `goal`, `tldr`, `analogy`, `figure`, `steps`, `pitfall`, `rule`, `check`. Bilder sind Verweise auf Diagramm-Funktionen der App, kein eingebettetes SVG.
 - **badges**: `{ id, n, d, rule }`. Die Regel ist ein Datenobjekt (`core/js/rules.js`), kein Code. So kann eine Datenbank Trophäen speichern, ohne Code auszuführen.
 - **data**: freie Aufgabendaten. Ihre Form legt `logic.js` fest und wird nur dort interpretiert.

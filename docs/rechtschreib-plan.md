@@ -21,6 +21,10 @@ Alle Texte und Beispielsätze sind eigene Formulierungen. Es wird nichts aus Leh
 - Eingaben mit „ß“: Die Sonderzeichen-Leiste (`inputChars`) bietet ä, ö, ü und ß an.
 - Der Vertragstest in `tests/deutsch.test.js` prüft Groß- und Kleinschreibung beim Eintippen mit wechselnder Schreibung, weil `toUpperCase()` aus „ß“ ein „SS“ machen würde.
 
+## Material zum Ausdrucken
+
+Auf der Startseite der Deutsch-Werkstatt steht unter „Zum Ausdrucken“ die PDF `apps/deutsch/files/merkwoerter-fresch.pdf`: 25 Sets mit je vier Merkwörtern (die 100 häufigsten Fehlerwörter) zum Abhaken und die Strategie-Karte der vier FRESCH-Strategien zum Ausschneiden. Eingetragen ist sie im Manifest unter `resources`.
+
 ## Geplant: Wörtertraining
 
 Ein Karteikasten für häufige Fehlerwörter (Auswertung nach Menzel 1985, 300 Wörter) mit einem Durchgang alle vier Tage:

@@ -321,5 +321,12 @@
     "ö",
     "ü",
     "ß"
+  ],
+  "resources": [
+    {
+      "title": "Merkwörter-Schatzkiste und FRESCH-Karte",
+      "desc": "25 Sets mit je 4 häufigen Merkwörtern zum Abhaken, dazu die Strategie-Karte zum Ausschneiden fürs Mäppchen.",
+      "href": "files/merkwoerter-fresch.pdf"
+    }
   ]
 }

@@ -44,6 +44,9 @@ export function homeHTML({ config, profile, app, bossOpen: open, resetAsk }) {
     config.blitz ? `<div class="card"><h3>Blitz</h3><p>45 Sekunden Tempo. Wie viele schaffst du? Bestwert: <b>${app.best.blitz || 0}</b></p><button class="btn" data-act="blitz">Blitz starten</button></div>` : '',
     hasBoss ? `<div class="card"><h3>${esc(config.bossTitle || 'Endgegner')}</h3><p>${open ? '12 gemischte Aufgaben mit nur 3 Herzen. Wer gewinnt, bekommt 50 Bonus-XP.' : 'Der Endgegner wartet, sobald alle Seiten mindestens einen Stern haben.'}</p><button class="btn" data-act="boss" ${open ? '' : 'disabled'}>${open ? 'Endgegner starten' : 'Noch gesperrt'}</button></div>` : ''
   ].join('');
+  const resources = (config.resources || []).length
+    ? `<section><h2>Zum Ausdrucken</h2><div class="modes" style="margin-top:12px">${config.resources.map((r) => `<div class="card"><h3>${esc(r.title)}</h3>${r.desc ? `<p>${esc(r.desc)}</p>` : ''}<a class="btn ghost" href="${esc(r.href)}" target="_blank" rel="noopener">Öffnen</a></div>`).join('')}</div></section>`
+    : '';
   return `
     <section class="card hero">
       <div class="row1">${mascot('happy')}<div><h1>${greet}</h1><div class="bubble" style="margin-top:10px">${esc(minouSays(profile))}</div></div></div>
@@ -56,6 +59,7 @@ export function homeHTML({ config, profile, app, bossOpen: open, resetAsk }) {
     </section>
     <section><h2>Dein Lernpfad</h2><p class="muted" style="margin:4px 0 14px;font-size:14px">${esc(config.intro || 'Starte irgendwo. Die Reihenfolge ist nur ein Vorschlag.')}</p><div class="path">${nodes}</div></section>
     ${modes ? `<section><h2>Spielmodi</h2><div class="modes" style="margin-top:12px">${modes}</div></section>` : ''}
+    ${resources}
     ${album}
     <section><h2>Trophäen</h2><div class="badges" style="margin-top:12px">${badges}</div></section>
     <p class="muted" style="font-size:13px">Dein Fortschritt wird in diesem Browser gespeichert. ${resetAsk ? '<button class="link" data-act="resetok">Wirklich alles löschen?</button>' : '<button class="link" data-act="reset">Fortschritt dieser App zurücksetzen</button>'}</p>

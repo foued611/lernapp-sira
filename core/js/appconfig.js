@@ -38,6 +38,7 @@ export function buildConfig(bundle, logic) {
     inputChars: manifest.inputChars,
     dashboardHref: manifest.dashboardHref,
     units: manifest.units,
+    resources: manifest.resources || [],
     lessons,
     notes,
     data,

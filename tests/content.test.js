@@ -6,6 +6,7 @@ import { fileURLToPath } from 'node:url';
 import Ajv2020 from 'ajv/dist/2020.js';
 import { diskSource } from './helpers.js';
 import { ruleErrors } from '../core/js/rules.js';
+import { bundleErrors } from '../core/js/validate.js';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const schema = JSON.parse(await readFile(root + 'schemas/bundle.schema.json', 'utf8'));
@@ -43,4 +44,11 @@ test('Schema lehnt kaputte Pakete ab', async () => {
   assert.ok(!bad((b) => { b.badges[0].rule = { type: 'zauberei' }; }), 'Regeltyp unbekannt');
   assert.ok(!bad((b) => { b.lessons.start.tldr = ['nur einer']; }), 'zu wenige Kernsätze');
   assert.ok(!bad((b) => { b.manifest.schema = 2; }), 'Schemaversion');
+  assert.ok(bad((b) => { b.manifest.resources = [{ title: 'Blatt', href: 'files/blatt.pdf' }]; }), 'relativer Pfad ist erlaubt');
+  for (const href of ['javascript:alert(1)', 'https://example.org/x.pdf', '/x.pdf', '../x.pdf', 'files/a b.pdf']) {
+    assert.ok(!bad((b) => { b.manifest.resources = [{ title: 'Blatt', href }]; }), `Schema lehnt href ab: ${href}`);
+    const copy = structuredClone(good);
+    copy.manifest.resources = [{ title: 'Blatt', href }];
+    assert.ok(bundleErrors(copy).length > 0, `Laufzeitprüfung lehnt href ab: ${href}`);
+  }
 });

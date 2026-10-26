@@ -1,5 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
+import { access } from 'node:fs/promises';
 import { assertValidQuestion, diskSource } from './helpers.js';
 import { init, lessonRound, bossRound, typed, choice } from '../apps/deutsch/builders.js';
 import { flowDiagram, tableDiagram, swapDiagram } from '../apps/deutsch/diagrams.js';
@@ -57,4 +58,9 @@ test('Deutsch: Diagramme sind gültiges SVG und enthalten ihre Texte', () => {
   assert.match(flow, />A</);
   assert.match(table, />4</);
   assert.match(swap, />d</);
+});
+
+test('Deutsch: Material zum Ausdrucken liegt im App-Ordner', async () => {
+  assert.ok(bundle.manifest.resources.length >= 1);
+  for (const r of bundle.manifest.resources) await access(new URL(`../apps/deutsch/${r.href}`, import.meta.url));
 });

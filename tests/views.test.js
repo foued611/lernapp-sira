@@ -41,3 +41,12 @@ test('Ergebnisansicht: Runde, durchgefallen, Blitz', () => {
   assert.match(blitz.html, /Blitz!/);
   assert.equal(blitz.celebrate, true);
 });
+
+test('Startseite zeigt Material zum Ausdrucken und maskiert es', () => {
+  const resources = [{ title: '<b>Blatt</b>', desc: 'Zum Ausdrucken', href: 'files/blatt.pdf' }];
+  const html = homeHTML({ ...state(), config: { ...config, resources } });
+  assert.match(html, /Zum Ausdrucken/);
+  assert.match(html, /href="files\/blatt\.pdf" target="_blank" rel="noopener"/);
+  assert.ok(!html.includes('<b>Blatt</b>'), 'Titel wird maskiert');
+  assert.ok(!homeHTML(state()).includes('Zum Ausdrucken'), 'ohne Material kein Abschnitt');
+});

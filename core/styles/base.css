@@ -35,6 +35,7 @@ h3{font-size:21px}
 .btn{cursor:pointer;font-weight:600;border:2px solid var(--ink);background:var(--btn-bg);color:var(--btn-fg);padding:12px 24px;border-radius:12px;box-shadow:0 5px 0 var(--btn-shadow);transition:transform .08s,box-shadow .08s;font-size:16px}
 .btn:hover:not(:disabled){filter:brightness(1.06)}
 .btn:active:not(:disabled){transform:translateY(4px);box-shadow:0 1px 0 var(--btn-shadow)}
+a.btn{display:inline-block;text-align:center;text-decoration:none}
 .btn.ghost{background:var(--card);color:var(--ink);box-shadow:0 5px 0 var(--shadow)}
 .btn.sun{background:var(--sun);color:var(--sun-fg);box-shadow:0 5px 0 #B8860B;border-color:var(--sun-fg)}
 .btn:disabled{opacity:.4;cursor:not-allowed}

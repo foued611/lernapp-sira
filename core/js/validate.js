@@ -4,6 +4,9 @@ import { ruleErrors } from './rules.js';
 
 const LESSON_KEYS = ['goal', 'tldr', 'analogy', 'figure', 'steps', 'pitfall', 'rule', 'check'];
 
+/** Nur relative Pfade: kein Schema (javascript:, https:), kein führender Slash, kein "..", keine Leerzeichen oder Anführungszeichen. */
+export const isSafeHref = (href) => typeof href === 'string' && /^(?![a-zA-Z][a-zA-Z0-9+.-]*:)(?!\/)(?!.*\.\.)[^\s"'<>]+$/.test(href);
+
 /** Gibt eine Liste verständlicher Fehler zurück. Leer heißt gültig. */
 export function bundleErrors(bundle) {
   const errors = [];
@@ -17,6 +20,10 @@ export function bundleErrors(bundle) {
   const ids = manifest.units.map((u) => u.id);
   if (new Set(ids).size !== ids.length) errors.push('Seiten-IDs sind nicht eindeutig');
   manifest.units.forEach((u) => ['id', 'title', 'de', 'ic', 'color'].forEach((k) => { if (!u[k]) errors.push(`Seite ${u.id || '?'}: ${k} fehlt`); }));
+  (manifest.resources || []).forEach((r, i) => {
+    if (!r || !r.title) errors.push(`resources[${i}]: title fehlt`);
+    if (!r || !isSafeHref(r.href)) errors.push(`resources[${i}]: href muss ein relativer Pfad sein`);
+  });
   if (!isObj(lessons)) errors.push('lessons fehlt');
   else ids.forEach((id) => {
     const l = lessons[id];
