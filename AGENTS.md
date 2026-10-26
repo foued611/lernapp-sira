@@ -8,13 +8,13 @@ Anweisungen für Coding-Agenten und Mitwirkende. Lies diese Datei vor jeder Änd
 
 ## Technik
 
-- Statische Seite, kein Build-Schritt, kein UI-Framework. Vanilla JavaScript als ES-Module, CSS mit Custom Properties. Die Begründung (und warum kein React, TypeScript oder Vite) steht in `docs/inhalte.md`.
+- Framework und Build: React mit Vite ist für den Umbau erlaubt (Entscheidung 2026-10-26, siehe `analysis/modulare/INTENT.md`). Bis der Umbau fertig ist, bleibt der bestehende Code Vanilla JavaScript als ES-Module, CSS mit Custom Properties, ohne Build-Schritt. TypeScript ist weiter nicht vorgesehen. Die Begründung steht in `docs/inhalte.md`.
 - Daten und Logik sind getrennt: Inhalte liegen als JSON in `content/<id>/`, Code in `core/` und `apps/<name>/`. Siehe "Inhalte und Daten".
 - Läuft über GitHub Pages (Branch `main`, Ordner `/`). Ein Push auf `main` veröffentlicht.
 - ES-Module brauchen http(s). Lokal testen mit `npm run serve` und `http://localhost:8000`. Ein Doppelklick auf die HTML-Datei (file://) funktioniert nicht.
 - Node (nur für Tests): `npm install`, `npm test`, `npm run smoke`.
 - Alle Pfade im HTML und in Imports sind relativ, weil die Seite unter `/lernapp-sira/` liegt.
-- Keine Laufzeit-Abhängigkeiten (Tests nutzen `fake-indexeddb`, `jsdom`, `esbuild`, `ajv`). Schriften liegen selbst gehostet in `core/fonts/` (WOFF2, Lizenzen OFL daneben), es gibt keine Anfragen an Google. Neue externe Skripte oder Dienste nur nach Absprache (Datenschutz, DSGVO).
+- Laufzeit-Abhängigkeiten nur, was der Umbau braucht (React). Der bestehende Code hat keine. Tests nutzen `fake-indexeddb`, `jsdom`, `esbuild`, `ajv`). Schriften liegen selbst gehostet in `core/fonts/` (WOFF2, Lizenzen OFL daneben), es gibt keine Anfragen an Google. Neue externe Skripte oder Dienste nur nach Absprache (Datenschutz, DSGVO).
 
 ## Struktur
 

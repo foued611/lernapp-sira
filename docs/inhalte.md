@@ -63,8 +63,8 @@ Bleiben muss: IDs von Apps, Seiten und Trophäen ändern sich nie, weil der Lern
 | JSON Schema + Ajv | Inhalte maschinell prüfbar, auch für Datenbank-Importe | nur Test-Abhängigkeit | **eingeführt** (Tests) |
 | JSDoc-Typen | Typen ohne Build, Editor-Hilfe | etwas Schreibarbeit | schrittweise bei neuen Modulen |
 | TypeScript | stärkere Typen | Build-Schritt, Tooling | nein, Nutzen zu klein für die Größe |
-| Vite | Bündelung, Hot Reload | Build-Schritt, Deploy-Änderung | nein, solange keine Bündelung nötig ist |
-| React/Vue/Svelte | Zustandsverwaltung, Komponenten | Build, Laufzeit-Abhängigkeit, Umbau aller Ansichten | nein, die Shell ist klein und getestet |
+| Vite | Bündelung, Hot Reload | Build-Schritt, Deploy-Änderung | **ja für den Umbau** (Entscheidung 2026-10-26); Deploy-Änderung im Umbau-Plan |
+| React/Vue/Svelte | Zustandsverwaltung, Komponenten | Build, Laufzeit-Abhängigkeit, Umbau aller Ansichten | **React ja für den Umbau** (Entscheidung 2026-10-26); bis dahin Vanilla |
 | Zod/Valibot statt Schema | Prüfung im Code | Laufzeit-Abhängigkeit, kein Austauschformat | nein, das Schema ist auch für Redaktions-Tools nutzbar |
 
 Neu bewerten, wenn: Inhalte von mehreren Personen gepflegt werden (Editor-Oberfläche nötig), die Ansichten stark interaktiver werden oder die Paketgröße Ladezeit spürbar macht.
