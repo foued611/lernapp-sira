@@ -17,7 +17,7 @@ Stand: 2026-10-26. Build und Tests im Neubau: `modernized/modulare-reimagined`. 
 | Dual-Execution (gleiche Seeds, 200) | deutsch 3600, info-zahlen 1800, fr-verben 1800 Vergleiche, 0 Abweichungen. mathe 2400 Vergleiche, 177 Abweichungen, alle durch RULE-056 (siehe unten) | analysis/modulare/dual/*_dual.mjs |
 | Sicherung aus Legacy (Fixture) im Browser eingespielt | bestanden | Plan: 2 Speicherstände, 2 Ereignisse. Stand danach: 120 XP, 3 Tage in Folge, 1 Trophäe, Name maskiert (Stichprobe wie expected.json) |
 | Browser: mathe, info-zahlen, fr-verben (Theorie, Übung, Spickzettel) | bestanden | Theorie mit Toy in info-zahlen, Konjugationstabelle in fr-verben |
-| npm test | 606 grün | |
+| npm test | 614 grün | |
 
 ## Neue Gemeinsame Teile in dieser Phase
 - Zuordnungsfragen (`match`) sind in der Spielansicht beantwortbar (seiten/rahmen.js, MatchAnswer). Vorher stand dort nur der Hinweis, der Rundenmotor kann sie.
@@ -37,5 +37,5 @@ Stand: 2026-10-26. Build und Tests im Neubau: `modernized/modulare-reimagined`. 
 ## Offen
 - Veröffentlichung: GitHub Pages baut heute das Repo-Root (Dashboard und Legacy-Apps). Die Umstellung auf `dist/` braucht einen Workflow und ein Merge nach `main`. Das ist ohne Freigabe nicht gemacht.
 - Legacy-Dateien (core/, apps/, dashboard.js) bleiben, bis die Umstellung freigegeben ist.
-- Blitz ist nicht an den Rahmen gebunden.
+- Blitz: an den Rahmen gebunden (seiten/blitz.js, Auswertung in rahmen.js). Tests RULE-229, RULE-166, RULE-193, RULE-195. Browser-Test am Dev-Server für deutsch und mathe: Start, Antwort, Ablauf, Ergebnis, Verlassen. Tasten 1 bis 9 wählen die Antwort (wie Legacy).
 - Sichtprüfung der Diagramme von deutsch und mathe im Browser nicht gemacht.

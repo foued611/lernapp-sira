@@ -2,13 +2,14 @@
 // in zwei Schritten und die Seite der App. Die Regeln stehen in regeln/, die Aufgaben in runde/.
 // Die Modellfunktionen oben sind rein bzw. async über injizierte Speicher. Die Komponenten unten zeichnen nur.
 import { createElement, useReducer, useState } from 'react';
-import { createRound } from '../runde/index.js';
+import { BLITZ_SECONDS, createRound } from '../runde/index.js';
 import { createRng } from '../helfer/index.js';
 import { REFRESH_BONUS_XP, awardXP, currentStreak, dailyXP, finishRound, isRefreshDue, updateStreak, weakestUnit } from '../regeln/index.js';
 import { Button, StarRow, starsOf } from '../komponenten/ui.js';
 import { TrackLabel } from '../komponenten/tracks.js';
 import { richText } from '../komponenten/rich.js';
 import { TheoryPage } from '../komponenten/theory.js';
+import { BlitzPlay, startBlitz } from './blitz.js';
 import { Ergebnis, messagesOf, resultModel, wordsFor } from './ergebnis.js';
 import { Sicherung } from './sicherung.js';
 import { unitTrack } from './registry.js';
@@ -96,7 +97,7 @@ export function evaluateRound({ appId, mode, unit, roundResult, profile, app, da
     wrong: roundResult.wrong,
     almost: roundResult.almost,
     bestCombo: roundResult.bestCombo,
-    score: 0,
+    score: roundResult.score || 0,
     levelUp,
     goalHit,
     profile,
@@ -119,6 +120,7 @@ export function summaryOf({ mode, unit, roundResult, result }) {
     almost: roundResult.almost,
     bestCombo: roundResult.bestCombo,
     relearned: roundResult.relearned,
+    score: roundResult.score || 0,
     xp: roundResult.xp,
     bonus: result.bonus,
     stars: result.stars,
@@ -158,7 +160,7 @@ export async function settleRound({ appId, mode, unit, roundResult, profile, app
     accuracy: roundResult.accuracy,
     stars: result.stars,
     failed: roundResult.failed,
-    score: 0,
+    score: roundResult.score || 0,
     xp: roundResult.xp
   });
   return { result, saved, logged, summary: summaryOf({ mode, unit, roundResult, result }) };
@@ -184,11 +186,21 @@ export async function settleLeave({ round, profile, app, profileStore, appStore,
   const earned = cur ? cur.xp : 0;
   const answered = answeredOf(cur);
   round.leave();
+  return settleUnscored({ earned, answered, profile, app, profileStore, appStore, day });
+}
+
+// Gemeinsamer Teil beim Verlassen, für Runde und Blitz: XP gutschreiben, Tag für die Serie zählen, speichern.
+async function settleUnscored({ earned, answered, profile, app, profileStore, appStore, day }) {
   if (answered === 0) return { earned, answered, saved: { ok: true }, paid: null, streakCounted: false };
   const paid = earned > 0 ? awardXP(profile, app, earned, day) : null;
   updateStreak(profile, day);
   const saved = await saveBoth(profileStore, appStore);
   return { earned, answered, saved, paid, streakCounted: true };
+}
+
+/** Blitz verlassen: kein Ergebnis, aber die XP der bisherigen Treffer bleiben (wie bei einer Runde, RULE-193). */
+export function settleBlitzLeave({ earned, answered, profile, app, profileStore, appStore, day }) {
+  return settleUnscored({ earned, answered, profile, app, profileStore, appStore, day });
 }
 
 /** Der Hinweis nach dem Verlassen. Ehrlich: Die XP stehen gut, die Runde zählt nicht (RULE-193). */
@@ -440,6 +452,15 @@ function AppHome({ app, config, appState, profile, day, storage, notice, storeMe
         h('p', null, open ? 'Der Endgegner ist offen. 12 gemischte Aufgaben, nur 3 Herzen.' : 'Endgegner gesperrt: Jede Seite braucht mindestens einen Stern.'),
         h(Button, { disabled: !open, onClick: () => onStart('boss') }, open ? 'Endgegner starten' : 'Noch gesperrt'))
     ),
+    typeof config.blitz === 'function'
+      ? h(
+        'section',
+        { className: 'card blitz-card' },
+        h('h2', null, 'Blitz'),
+        h('p', null, `${BLITZ_SECONDS} Sekunden Tempo. Wie viele schaffst du? Bestwert: `, h('b', null, appState.best.blitz || 0)),
+        h(Button, { onClick: () => onStart('blitz') }, 'Blitz starten')
+      )
+      : null,
     h(
       'section',
       { className: 'reset' },
@@ -475,8 +496,10 @@ export function AppFrame({ app, profileStore, day, storage }) {
   const [notice, setNotice] = useState(null);
   const [resetPhase, setResetPhase] = useState('idle');
   const [theoryUnit, setTheoryUnit] = useState(null);
+  const [blitz, setBlitz] = useState(null);
   const [, bump] = useReducer((n) => n + 1, 0);
   const storeMessage = app.storeMessage || null;
+  const logRow = (row) => (storage.handle ? storage.handle.logEvent(row) : Promise.resolve({ ok: false, error: NO_STORAGE }));
 
   function begin(mode, unit = null) {
     const started = startRound({ config, mode, unit, app: appState, profile, rng: createRng(seedNow()) });
@@ -515,7 +538,7 @@ export function AppFrame({ app, profileStore, day, storage }) {
       app: appState,
       profileStore,
       appStore,
-      log: (row) => (storage.handle ? storage.handle.logEvent(row) : Promise.resolve({ ok: false, error: NO_STORAGE })),
+      log: logRow,
       day,
       badges: config.badges,
       unitIds
@@ -527,11 +550,53 @@ export function AppFrame({ app, profileStore, day, storage }) {
 
   function home() {
     setSession(null);
+    setBlitz(null);
     setSettled(null);
     setNotice(null);
     setResetPhase('idle');
     setTheoryUnit(null);
     setScreen('home');
+  }
+
+  // Blitz hat keine Seite und keine Runde aus rounds (Legacy: shell.js startBlitzRound).
+  function beginBlitz() {
+    const started = startBlitz({ config, rng: createRng(seedNow()) });
+    if (!started.ok) {
+      setNotice(started.message);
+      return;
+    }
+    setNotice(null);
+    setBlitz(started.run);
+    setScreen('blitz');
+  }
+
+  // Die Zeit ist um: der Blitz wird wie eine Runde ausgewertet, nur ohne Sterne (regeln/round.js).
+  async function finishBlitz(roundResult) {
+    setScreen('saving');
+    const outcome = await settleRound({
+      appId: entry.id,
+      mode: 'blitz',
+      unit: null,
+      roundResult,
+      profile,
+      app: appState,
+      profileStore,
+      appStore,
+      log: logRow,
+      day,
+      badges: config.badges,
+      unitIds
+    });
+    setBlitz(null);
+    setSettled(outcome);
+    setScreen('result');
+  }
+
+  async function leaveBlitz() {
+    const { earned, answered } = blitz.leave();
+    const outcome = await settleBlitzLeave({ earned, answered, profile, app: appState, profileStore, appStore, day });
+    home();
+    setNotice(leaveNotice(outcome));
   }
 
   // Erst die Theorie der Seite, dann die Übung (AGENTS.md: Theorie, direkt danach Übung).
@@ -564,6 +629,9 @@ export function AppFrame({ app, profileStore, day, storage }) {
   if (screen === 'play' && session) {
     return h(Play, { session, onAnswer: answer, onNext: advance, onLeave: leave, onPeek: peek });
   }
+  if (screen === 'blitz' && blitz) {
+    return h(BlitzPlay, { run: blitz, onFinish: finishBlitz, onLeave: leaveBlitz });
+  }
   if (screen === 'theory' && theoryUnit) {
     return h(TheoryScreen, { config, unit: theoryUnit, onBack: home, onStart: () => begin('lesson', theoryUnit) });
   }
@@ -571,9 +639,11 @@ export function AppFrame({ app, profileStore, day, storage }) {
     return h('section', { className: 'card' }, h('p', null, 'Ergebnis wird gespeichert …'));
   }
   if (screen === 'result' && settled) {
-    const onAction = (id) => (id === 'again'
-      ? begin(settled.summary.mode, settled.summary.unitId ? config.units.find((u) => u.id === settled.summary.unitId) : null)
-      : home());
+    const onAction = (id) => {
+      if (id !== 'again') home();
+      else if (settled.summary.mode === 'blitz') beginBlitz();
+      else begin(settled.summary.mode, settled.summary.unitId ? config.units.find((u) => u.id === settled.summary.unitId) : null);
+    };
     return h(Ergebnis, {
       model: resultModel(settled.summary, { profile, day, words }),
       messages: messagesOf(settled),
@@ -583,7 +653,7 @@ export function AppFrame({ app, profileStore, day, storage }) {
   return h(AppHome, {
     app, config, appState, profile, day, storage, notice, storeMessage, resetPhase,
     onStudy: study,
-    onStart: (mode, unit) => begin(mode, unit || null),
+    onStart: (mode, unit) => (mode === 'blitz' ? beginBlitz() : begin(mode, unit || null)),
     onReset: reset
   });
 }

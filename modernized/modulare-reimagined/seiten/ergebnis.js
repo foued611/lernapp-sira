@@ -1,7 +1,8 @@
 // Ergebnis einer Runde: Titel, Sterne, Zahlen, Tagesziel, Stufe, neue Trophäen und die Wege weiter.
 // Herkunft: legacy/modulare/core/js/views/result.js. Abweichungen stehen an der Stelle.
 import { createElement } from 'react';
-import { BOSS_BONUS_XP, DAILY_GOAL_XP, REFRESH_BONUS_XP, dailyXP } from '../regeln/index.js';
+import { BOSS_BONUS_XP, DAILY_GOAL_XP, REFRESH_BONUS_XP, comboMultiplier, dailyXP } from '../regeln/index.js';
+import { BLITZ_SECONDS } from '../runde/index.js';
 import { Button, StarRow } from '../komponenten/ui.js';
 import { Mascot } from '../komponenten/mascot.js';
 import { Confetti } from '../komponenten/confetti.js';
@@ -23,10 +24,14 @@ export const wordsFor = (config) => ({ ...DEFAULT_WORDS, ...(config.words || {})
 
 const againLabel = (mode) => (mode === 'quick' ? 'Noch eine Runde' : 'Nochmal');
 
+// Ab so vielen richtigen Antworten gilt ein Blitz als gelungen (Legacy result.js:13 und celebrate).
+const BLITZ_GOAL = 10;
+
 // Der Text unter dem Titel. Die Reihenfolge der Fälle folgt result.js:20-23.
 function subtitleFor(summary) {
   if (summary.failed) return 'Das passiert jedem. Schau kurz in die Theorie, die nächste Runde läuft besser.';
   let text;
+  if (summary.mode === 'blitz') return `${summary.score} richtig in ${BLITZ_SECONDS} Sekunden.`;
   if (summary.mode === 'boss') text = `Endgegner besiegt. ${BOSS_BONUS_XP} Bonus-XP gehören dir.`;
   else if (summary.mode === 'quick') text = 'Kurze Runde, echter Fortschritt.';
   else if (summary.refresh) text = `Aufgefrischt! Dafür gibt es ${REFRESH_BONUS_XP} Bonus-XP. Wiederholen nach ein paar Tagen bringt dein Wissen ins Langzeitgedächtnis.`;
@@ -47,21 +52,33 @@ export function resultModel(summary, { profile, day, words }) {
   const level = summary.levelUp
     ? `Niveau ${summary.levelUp} erreicht · ${titles[Math.min(summary.levelUp - 1, titles.length - 1)]}`
     : null;
+  // Blitz hat keine Sterne. Titel, Stimmung und Zahlen folgen Legacy result.js:12-16.
+  const blitz = summary.mode === 'blitz';
+  const blitzWell = summary.score >= BLITZ_GOAL;
+  let title = words.resultTitles[Math.max(0, summary.stars - 1)];
+  if (summary.failed) title = 'Knapp daneben';
+  else if (blitz) title = blitzWell ? words.blitzTitle : 'Zeit um';
   return {
-    title: summary.failed ? 'Knapp daneben' : words.resultTitles[Math.max(0, summary.stars - 1)],
+    title,
     subtitle: subtitleFor(summary),
-    mood: summary.failed ? 'hmm' : summary.stars === 3 ? 'cheer' : 'happy',
-    stars: summary.stars,
-    facts: [
-      { value: `${Math.round(summary.accuracy * 100)} %`, label: 'richtig' },
-      { value: summary.xp + summary.bonus, label: 'XP' },
-      { value: summary.bestCombo, label: 'längste Serie' }
-    ],
+    mood: summary.failed ? 'hmm' : blitz ? (blitzWell ? 'cheer' : 'happy') : summary.stars === 3 ? 'cheer' : 'happy',
+    stars: blitz ? null : summary.stars,
+    facts: blitz
+      ? [
+        { value: summary.score, label: 'richtig' },
+        { value: summary.xp + summary.bonus, label: 'XP' },
+        { value: `×${comboMultiplier(summary.bestCombo)}`, label: 'bester Combo' }
+      ]
+      : [
+        { value: `${Math.round(summary.accuracy * 100)} %`, label: 'richtig' },
+        { value: summary.xp + summary.bonus, label: 'XP' },
+        { value: summary.bestCombo, label: 'längste Serie' }
+      ],
     daily: { xp: x, goal: DAILY_GOAL_XP, reached: x >= DAILY_GOAL_XP },
     levelLine: level,
     badges: summary.newBadges.map((badge) => ({ id: badge.id, n: badge.n, d: badge.d })),
     actions: [{ id: 'again', label: againLabel(summary.mode) }, { id: 'home', label: 'Zum Lernpfad' }],
-    celebrate: Boolean(summary.goalHit || (!summary.failed && (summary.mode === 'boss' || summary.stars >= 2)))
+    celebrate: Boolean(summary.goalHit || (!summary.failed && (blitz ? blitzWell : (summary.mode === 'boss' || summary.stars >= 2))))
   };
 }
 
@@ -75,7 +92,7 @@ export function Ergebnis({ model, messages = [], onAction }) {
     { className: 'card res' },
     h(Mascot, { mood: model.mood }),
     h('h1', null, model.title),
-    h(StarRow, { stars: model.stars }),
+    model.stars === null ? null : h(StarRow, { stars: model.stars }),
     h('p', { className: 'sub' }, model.subtitle),
     h(
       'div',

@@ -37,7 +37,8 @@ export function questions(count, tag, seed = 1) {
 }
 
 /** Eine Konfiguration in der Form, die buildConfig liefert. Rundenquellen liefern Fragen aus questions(). */
-export function configOf({ units = UNITS, bossUnlocked, quick = true, boss = true } = {}) {
+export function configOf({ units = UNITS, bossUnlocked, quick = true, boss = true, blitz = true } = {}) {
+  const blitzRng = createRng(4);
   return {
     id: 'mathe',
     title: 'Mathe-Werkstatt',
@@ -54,6 +55,8 @@ export function configOf({ units = UNITS, bossUnlocked, quick = true, boss = tru
       quick: quick ? () => questions(6, 'quick', 2) : undefined,
       boss: boss ? () => questions(14, 'boss', 3) : undefined
     },
+    // Eine Auswahlfrage je Aufruf, wie der Blitz sie braucht (kind choice).
+    blitz: blitz ? () => choiceQuestion({ label: 'Blitz', prompt: 'Blitz-Frage', answer: 'richtig', choices: ['richtig', 'falsch'], rng: blitzRng, why: 'Weil es so ist.' }) : undefined,
     bossUnlocked,
     badges: [
       { id: 'first', n: 'Erster Schritt', d: 'Die erste Seite geschafft', rule: { type: 'anyUnit' } },

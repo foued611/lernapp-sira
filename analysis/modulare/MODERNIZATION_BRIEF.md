@@ -317,27 +317,27 @@ Persona **Elternteil, das den Lernstand sichert**, Ablauf „Lernstand sichern�
 
 Jede Frage braucht eine Entscheidung vor der genannten Phase.
 
-1. [ ] Behavior Contract: die Liste in §5 als P0 führen, ja, nein oder mit Änderungen?
+1. [x] Behavior Contract: die Liste in §5 als P0 führen. Entschieden im Chat: "Die P0-Liste aus Brief §5 gilt, nichts streichen."
 2. [ ] Die neun Unsicher-Regeln (Phasen-Sperren in §3):
-   - [ ] RULE-112 (Phase 1): Wahrscheinlichkeit als Bruch, Dezimalzahl oder Prozent richtig, Zahl ohne Prozentzeichen falsch. Gewollt?
-   - [ ] RULE-128 (Phase 1): Gerundete Antwort (0,333 für 1/3) richtig? Falls ja, braucht die Prüfung eine Toleranz.
-   - [ ] RULE-125 (Phase 2): Soll die Inhalte-API bei der Umstellung den Adressaufbau `…/apps/<id>/content` behalten?
-   - [ ] RULE-126 (Phase 2): Soll Einspielen den Ereignis-Log ersetzen oder zusammenführen, und vorher nachfragen?
-   - [ ] RULE-135 (Phase 2): Unlesbarer Stand fällt auf Standardwerte zurück. Gewollt, oder Rohdaten sichern und melden (Schuld 1)?
-   - [ ] RULE-075 (Phase 4): Eine Seite gilt als erledigt ab einem Stern, der Fortschritt wird in Prozent angezeigt. Gewollt?
+   - [x] RULE-112 (Phase 1): Entschieden im Chat: Zielverhalten bestätigt.
+   - [x] RULE-128 (Phase 1): Entschieden im Chat: Zielverhalten bestätigt, Rundung kaufmännisch.
+   - [x] RULE-125 (Phase 2): Entschieden im Chat: behalten (keep).
+   - [x] RULE-126 (Phase 2): Entschieden im Chat: zusammenführen, vorher nachfragen.
+   - [x] RULE-135 (Phase 2): Entschieden im Chat: Rohdaten sichern und melden.
+   - [x] RULE-075 (Phase 4): Entschieden im Chat: erledigt ab 2 von 3 Sternen, so umgesetzt (Sterne ab 70 % (2) und 90 % (3)). Nicht ab einem Stern.
    - [x] RULE-223 (Phase 5a): Auswahlfragen mit richtiger Antwort und höchstens drei falschen, zufällig sortiert. Gewollt? Entschieden im Chat am 2026-10-26: wie beschrieben.
-   - [ ] RULE-119 (Phase 5b): Eingabe nach Bereinigung gleich dem Ergebnis gilt als richtig, nur richtig oder falsch, keine Teilpunkte. Gewollt?
-   - [ ] RULE-056 (Phase 5b): Gibt es Datenreihen mit gerader Anzahl Werte? Falls ja, soll der Median das Mittel der beiden mittleren Werte zeigen?
-3. [ ] RULE-187 (Phase 2, bestätigt): Soll der Altstand im localStorage erst nach erfolgreichem Schreiben in IndexedDB entfernt werden? Empfehlung: ja (behebt Schuld 2).
-4. [ ] RULE-202 (Phase 4, bestätigt): Die Startseite zeichnet ohne Speicher nichts. AGENTS.md verlangt Lauffähigkeit ohne Speicher. Empfehlung: Startseite zeigt mit leerem Stand und Meldung.
-5. [ ] Veröffentlichung (Phase 5b): GitHub Pages veröffentlicht dist/ aus Vite-Build (Empfehlung), oder ein anderer Weg?
-6. [ ] Sicherheitsprüfung: Der Scan im Assessment ist erledigt (SEC-001 bis SEC-007). `harden` ist nicht gelaufen. Reicht der Scan, oder vor Phase 1 `harden` laufen lassen?
-7. [ ] Quelle `legacy/modulare` (Preflight Check 7): Symlink auf das Arbeits-Repo lassen, oder eigene Kopie anlegen? Entscheidung vor Phase 1.
+   - [x] RULE-119 (Phase 5b): Entschieden im Chat (Phase-5b-Freigabe): nur richtig oder falsch, keine Teilpunkte.
+   - [x] RULE-056 (Phase 5b): Entschieden im Chat (Phase-5b-Freigabe): ja, bei gerader Anzahl das Mittel der beiden mittleren Werte.
+3. [x] RULE-187 (Phase 2, bestätigt): Entschieden im Chat: ja, Altstand erst nach erfolgreichem Schreiben entfernen.
+4. [x] RULE-202 (Phase 4, bestätigt): Entschieden im Chat: Empfehlung folgen (Startseite mit leerem Stand und Meldung).
+5. [x] Veröffentlichung (Phase 5b): Entschieden im Chat: GitHub Pages aus dist/. Workflow `.github/workflows/pages.yml`, Lauf 40369218816 erfolgreich.
+6. [x] Sicherheitsprüfung: Entschieden im Chat: der Scan im Assessment reicht, `harden` läuft nicht. SEC-001 bis SEC-003 sind im Neubau umgesetzt.
+7. [x] Quelle `legacy/modulare` (Preflight Check 7): Entschieden im Chat: so lassen. `legacy/` bleibt, ein nested Git-Repo, von der Haupt-Repo ignoriert.
 8. [x] Pilot: deutsch als erste App in Phase 5a (Vorschlag), entschieden im Chat am 2026-10-26.
-9. [ ] Gespeicherte IDs (App, Seiten, Trophäen, Schlüssel) bleiben unverändert, wie in AGENTS.md. Bestätigen (Preflight-Hinweis).
-10. [ ] Test-Runner: node:test beibehalten (kein neues Paket), oder Vitest als neue Dev-Abhängigkeit?
-11. [ ] Schuld 1 bis 3 und SEC-001 sind Pflicht-Anforderungen des Umbaus, nicht Übernahme des Alten (Empfehlung: ja).
-12. [ ] Offen aus der Vorprüfung: CI-Dauer nachtragen (blockiert nichts).
+9. [x] Gespeicherte IDs (App, Seiten, Trophäen, Schlüssel) bleiben unverändert, wie in AGENTS.md. Umsetzung: App-IDs in `seiten/registry.js` und `content/` sind gleich, Phase-2-Abnahme ohne Einwand. Bitte bestätigen, falls nicht gemeint.
+10. [x] Test-Runner: node:test beibehalten, kein neues Paket. Umgesetzt und mit Phase-1-Abnahme akzeptiert. Bitte bestätigen, falls nicht gemeint.
+11. [x] Schuld 1 bis 3 und SEC-001 als Pflicht umgesetzt (Phase 2), mit Phase-2-Abnahme akzeptiert. Bitte bestätigen, falls nicht gemeint.
+12. [ ] Offen aus der Vorprüfung: CI-Dauer nachtragen (blockiert nichts). Nicht blockierend, bleibt offen.
 
 ---
 
