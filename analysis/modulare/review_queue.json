@@ -1,0 +1,929 @@
+[
+ {
+  "id": "RULE-007",
+  "title": "Missing triangle angle = 180° minus the two given angles",
+  "conf": "Medium",
+  "plain": "In a triangle with two known angles, the third angle is 180 degrees minus the sum of those two.",
+  "gwt": "A generated sum task whose prompt contains two angles written as '= N°'. | The task is generated 300 times and the answer is parsed. | Answer = 180 − a − b, where a and b are the two angles in the prompt.",
+  "src": "apps/geometrie/builders.js:117-121",
+  "q": "Stimmt die Regel so, wie der Code sie umsetzt?"
+ },
+ {
+  "id": "RULE-008",
+  "title": "Thaleskreis: rechter Winkel bei C und Restwinkel",
+  "conf": "Medium",
+  "plain": "Liegt C auf dem Halbkreis über dem Durchmesser AB, ist der Winkel bei C immer 90°, und β ergibt sich als 90° minus α.",
+  "gwt": "Dreieck ABC, C auf dem Thaleskreis über AB, α = 35° | Die Frage nach β erzeugt wird | Die richtige Antwort ist β = 180° − 90° − 35° = 55°. Die Frage nach dem Winkel bei C hat immer die Antwort 90°, Falsche: 60°, 180°, 4…",
+  "src": "apps/geometrie/builders.js:131-140",
+  "q": "Stimmt die Regel so, wie der Code sie umsetzt?"
+ },
+ {
+  "id": "RULE-010",
+  "title": "Maßstab: Umrechnung zwischen Zeichnung und Wirklichkeit",
+  "conf": "Medium",
+  "plain": "Im Maßstab 1 : n entspricht 1 cm in der Zeichnung n cm in der Wirklichkeit; Wirklichkeit in Meter ist Zeichnung in cm mal n geteilt durch 100.",
+  "gwt": "Maßstab 1 : 200 und 3 cm in der Zeichnung | Die Aufgabe 'Wie lang ist sie in Wirklichkeit?' erzeugt wird | Die richtige Antwort ist 3 · 200 cm = 600 cm = 6 m. Andere Richtungen: Haus 6 m im Maßstab 1 : 100 ergibt 6 cm i…",
+  "src": "apps/geometrie/builders.js:162-183",
+  "q": "Stimmt die Regel so, wie der Code sie umsetzt?"
+ },
+ {
+  "id": "RULE-011",
+  "title": "Höhe eines Baumes bei 45° Peilwinkel",
+  "conf": "Medium",
+  "plain": "Steht man vom Baum so weit weg, wie man 45° hoch peilt, ist der Baum genauso hoch wie der Abstand (gleichschenkliges Dreieck).",
+  "gwt": "Abstand zum Fuß des Baumes 12 m, Peilwinkel 45° | Die Aufgabe erzeugt wird | Die richtige Antwort ist 12 m. Falsche Antworten: 24 m, 6 m, 57 m, mit Nahwerten aufgefüllt.",
+  "src": "apps/geometrie/builders.js:185-189",
+  "q": "Is this intended, or is a calculation step (for example a shadow ratio) missing?"
+ },
+ {
+  "id": "RULE-012",
+  "title": "Außenwinkel im Dreieck",
+  "conf": "Medium",
+  "plain": "Der Außenwinkel an einer Ecke ist so groß wie die beiden gegenüberliegenden Innenwinkel zusammen.",
+  "gwt": "Im Dreieck ABC ist α = 40° und β = 70° | Die Frage nach dem Außenwinkel bei C erzeugt wird | Die richtige Antwort ist α + β = 110°. Der Weg läuft über γ = 180° − 40° − 70° = 70°, Außenwinkel = 180° − γ = 110°. Falsche A…",
+  "src": "apps/geometrie/builders.js:204-208",
+  "q": "Are the first two numbers in the prompt always those two angles?"
+ },
+ {
+  "id": "RULE-035",
+  "title": "Zinsrechnung für ein Jahr: Zinsen, Kapital, Zinssatz",
+  "conf": "Medium",
+  "plain": "Jahreszinsen sind Kapital mal Zinssatz. Je nach Aufgabe wird Zinsen, Kapital oder Zinssatz gesucht.",
+  "gwt": "Kapital K aus {200, 400, 500, 800, 1000, 1500, 2000, 2500, 4000} Euro; Zinssatz p aus {1, 2, 3, 4, 5} Prozent; Zinsen Z = K * p / 100. | Eine Zinsaufgabe wird erzeugt. | Zinsen: Z = K * p / 100 (Zeile 140). Kapital: K =…",
+  "src": "apps/mathe/builders.js:136-155",
+  "q": "Stimmt die Regel so, wie der Code sie umsetzt?"
+ },
+ {
+  "id": "RULE-036",
+  "title": "Zinseszins: Endkapital nach mehreren Jahren",
+  "conf": "Medium",
+  "plain": "Die Zinsen bleiben auf dem Konto und werden mitverzinst. Am Ende steht K * (1 + p/100) hoch n.",
+  "gwt": "Eine feste Auswahl von sechs Kombinationen (K, p, n): (1000, 10, 2), (2000, 10, 2), (1000, 10, 3), (2000, 5, 2), (4000, 5, 2), (4000, 10, 2). | Eine Zinseszins-Aufgabe wird erzeugt. | Endkapital = K * (1 + p/100)^n (Zei…",
+  "src": "apps/mathe/builders.js:163-169",
+  "q": "Stimmt die Regel so, wie der Code sie umsetzt?"
+ },
+ {
+  "id": "RULE-037",
+  "title": "Dreisatz: proportional und antiproportional",
+  "conf": "Medium",
+  "plain": "Bei proportionalen Größen (mehr Hefte, mehr Geld) wird der Einzelpreis mit der neuen Menge multipliziert. Bei antiproportionalen Größen (mehr Arbeiter, weniger Tage) bleibt das Produkt gleich und wir…",
+  "gwt": "Proportional: n1 aus {3,4,5,6,8}, Stückpreis-Faktor u aus 2..6, n2 aus {2,7,9,10,12}, p1 = n1 * u. Antiproportional: w1 aus {2,3,4,6}, Tage d aus {6,8,12,24}, total = w1 * d, w2 aus {2,3,4,6,8,12} mit w2 ungleich w1 und…",
+  "src": "apps/mathe/builders.js:171-182",
+  "q": "Stimmt die Regel so, wie der Code sie umsetzt?"
+ },
+ {
+  "id": "RULE-039",
+  "title": "Statistik-Kennzahlen: Mittelwert, Median, Spannweite, Modus",
+  "conf": "Medium",
+  "plain": "Mean, median, range and mode of a data list are computed with the standard definitions, and the generator only asks for a mode when one value occurs most often.",
+  "gwt": "A generated list of whole numbers (pool 'daten'). | A mean, median, range or mode question is generated. | Mean = sum ÷ count. Median = middle element of the sorted list at index (n − 1) ÷ 2. Range = largest − smallest.…",
+  "src": "apps/mathe/builders.js:197-226",
+  "q": "Stimmt die Regel so, wie der Code sie umsetzt?"
+ },
+ {
+  "id": "RULE-047",
+  "title": "Tilgungsplan: Rate, Restschuld, Zins auf Restschuld, Laufzeit",
+  "conf": "Medium",
+  "plain": "A loan with fixed repayments: each installment is the fixed repayment plus interest on the loan amount; the remaining debt is the loan minus repayments made; interest on the reduced balance and loan …",
+  "gwt": "A loan amount K, a rate p, a fixed repayment t per period, and m periods paid. | The installment, remaining debt, interest or term question is generated. | Installment = t + K × p ÷ 100. Remaining debt = K − m × t, and …",
+  "src": "apps/mathe/builders.js:257-290",
+  "q": "Also, does 'zweites Jahr' (second year) describe the balance-after-first-repayment interest, and are remaining-debt values rounded?"
+ },
+ {
+  "id": "RULE-052",
+  "title": "Lineare Gleichung nach x lösen",
+  "conf": "Medium",
+  "plain": "Eine Gleichung der Form a x + b = c wird nach x gelöst. Der Schüler gibt x ein oder wählt es aus. Die Lösung ist immer eine ganze Zahl.",
+  "gwt": "x aus -9..9 ohne 0; a aus 2..9; b aus -12..12 ohne 0. Die Konstante wird als c = a*x + b gebildet. | Eine Gleichungs-Aufgabe wird erzeugt. | Richtige Antwort ist x. Lösungsweg: erst b auf die andere Seite bringen, dann …",
+  "src": "apps/mathe/builders.js:72-78",
+  "q": "Stimmt die Regel so, wie der Code sie umsetzt?"
+ },
+ {
+  "id": "RULE-056",
+  "title": "Datendiagramm: Median, Mittelwert, Spannweite",
+  "conf": "Medium",
+  "plain": "Das Diagramm zeigt die sortierten Werte mit Median, Mittelwert und Spannweite. Der Median ist der mittlere Wert (bei ungerader Anzahl).",
+  "gwt": "Eine Liste von Werten xs (Standard 3, 9, 4, 4, 7), n Werte. | Das Datendiagramm wird gezeichnet. | Sortiert. Median-Position mid = (n - 1)/2 wird hervorgehoben (Zeile 96, 100). Mittelwert = Summe / n (Zeile 103). Spannw…",
+  "src": "apps/mathe/diagrams.js:94-107",
+  "q": "Fehlerverdacht: Bei gerader Anzahl von Werten ist der Median nicht berechnet (mid = 1,5). Die Anzeige hat keinen hervorgehobenen Wert und die Beschriftung lautet 'Median undefined'."
+ },
+ {
+  "id": "RULE-059",
+  "title": "Ausweichzahlen für Multiple-Choice nahe der richtigen Zahl",
+  "conf": "Medium",
+  "plain": "Zu einer richtigen Zahl werden bis zu drei falsche Zahlen in der Nähe erzeugt, ohne die richtige und ohne Doppelte. Vorgegebene Ausweichzahlen haben Vorrang.",
+  "gwt": "Richtige Antwort 12 ohne Vorgaben. | nearby(12) wird aufgerufen. | Es entstehen bis zu drei Falschantworten, die sich von der richtigen unterscheiden.",
+  "src": "core/js/mathkit.js:24-28",
+  "q": "- **RULE-059** (Medium): Sollen Ausweichzahlen auch negativ oder null sein dürfen, wenn die Aufgabe nur positive Größen wie Längen oder Preise kennt?"
+ },
+ {
+  "id": "RULE-061",
+  "title": "Level-Schwelle aus gesammelten XP",
+  "conf": "Medium",
+  "plain": "A player reaches level n once total XP reaches 30 × n × (n − 1); level 1 starts at zero.",
+  "gwt": "A total XP value. | The level is looked up from XP. | lvlAt(2) = 60. levelOf(0) = 1, levelOf(59) = 1, levelOf(60) = 2, levelOf(180) = 3.",
+  "src": "core/js/profile.js:28-34",
+  "q": "Stimmt die Regel so, wie der Code sie umsetzt?"
+ },
+ {
+  "id": "RULE-062",
+  "title": "XP-Gutschrift: Profil, App, Tagesziel und Level-Aufstieg",
+  "conf": "Medium",
+  "plain": "Awarding XP adds the amount to the player profile, the app's own XP and today's XP total, and reports whether a level was crossed and whether today's daily goal was reached.",
+  "gwt": "A profile, an app record and an XP amount on a given day (for example 25 then 40 on 2026-10-25). | XP is awarded. | After 25 XP: no level-up, goal not reached. After another 40 (total 65): levelUp = 2 and goalHit = true…",
+  "src": "core/js/profile.js:53-65",
+  "q": "Stimmt die Regel so, wie der Code sie umsetzt?"
+ },
+ {
+  "id": "RULE-063",
+  "title": "Combo-Faktor bis ×4",
+  "conf": "Medium",
+  "plain": "Consecutive correct answers raise the XP multiplier in steps up to a cap of ×4.",
+  "gwt": "A combo count (consecutive correct answers). | The multiplier for the combo is looked up. | combo 0 → ×1, 2 → ×1, 3 → ×2, 6 → ×3, 9 → ×4, 30 → ×4 (the cap).",
+  "src": "core/js/profile.js:73",
+  "q": "The sample values fit min(4, 1 + floor(combo ÷ 3)), but is that the intended rule?"
+ },
+ {
+  "id": "RULE-064",
+  "title": "Stars are awarded from the accuracy of a finished round",
+  "conf": "Medium",
+  "plain": "A finished lesson round earns 3 stars at 90 % accuracy or better, 2 stars at 70 % or better, and 1 star otherwise. A failed round earns 0 stars.",
+  "gwt": "A lesson round on the unit 'etre' with accuracy 1.0 (8 of 8 correct), and a failed lesson round on 'aller' with accuracy 0.4. | The round is finalised. | The first round has 3 stars. The failed round has 0 stars.",
+  "src": "core/js/profile.js:76",
+  "q": "Stimmt die Regel so, wie der Code sie umsetzt?"
+ },
+ {
+  "id": "RULE-067",
+  "title": "Genauigkeit zählt nur Erstversuche",
+  "conf": "Medium",
+  "plain": "Die Genauigkeit einer Runde ist der Anteil der richtigen Erstantworten. Die Wiederholung einer falschen Frage verbessert die Genauigkeit nicht.",
+  "gwt": "Eine Runde mit 3 Fragen: eine falsch im Erstversuch, zwei richtig. Die falsche Frage wird wiederholt und dort richtig beantwortet. | Das Rundenergebnis wird berechnet. | accuracy = richtige Erstversuche / Anzahl Fragen …",
+  "src": "core/js/quiz.js:113-121",
+  "q": "Stimmt die Regel so, wie der Code sie umsetzt?"
+ },
+ {
+  "id": "RULE-069",
+  "title": "Round accuracy (Trefferquote)",
+  "conf": "Medium",
+  "plain": "Accuracy for a round is the number of correct answers plus half the number of nearly correct answers, divided by the number of original questions.",
+  "gwt": "A round built from 10 original questions; 7 answered correctly on first try, 2 answered almost correctly, 1 answered wrong and not recovered. | The round finishes (completed or failed). | accuracy = (7 + 0.5 x 2) / 10 =…",
+  "src": "core/js/quiz.js:147-149",
+  "q": "Stimmt die Regel so, wie der Code sie umsetzt?"
+ },
+ {
+  "id": "RULE-071",
+  "title": "Boss round reward: 50 bonus XP and a trophy only when won",
+  "conf": "Medium",
+  "plain": "Winning the end boss gives 50 bonus XP and the 'Le Grand Défi' trophy. Losing the boss gives no bonus and no trophy.",
+  "gwt": "A boss round with accuracy 0.9, not failed, and a boss round with accuracy 0.3, failed. | Each boss round is finalised, starting from 0 XP. | Won: bonus is 50, profile XP is 50, and 'boss' is in the new trophies. Lost: …",
+  "src": "core/js/rounds.js:33-35",
+  "q": "Stimmt die Regel so, wie der Code sie umsetzt?"
+ },
+ {
+  "id": "RULE-075",
+  "title": "Unit completion and per-app progress percentage",
+  "conf": "Medium",
+  "plain": "A page counts as done as soon as it has at least one star; the app's progress is the share of its pages that are done, shown as a percentage bar.",
+  "gwt": "A live app's saved star map (stars, keyed by page id, values 0 to 3) and its page count units from registry.js. | A tile or the 'Weiter' card is drawn. | done = number of entries in stars whose value is greater than 0. …",
+  "src": "dashboard.js:19",
+  "q": "Fehlerverdacht: Percentage is not capped at 100 and done is not filtered against the current page list (dashboard.js:19, 50), so a stale star entry can make the bar overflow."
+ },
+ {
+  "id": "RULE-078",
+  "title": "Konjugation: Stamm plus Endung je Verbgruppe",
+  "conf": "Medium",
+  "plain": "Die sechs Präsensformen eines regelmäßigen Verbs entstehen, indem man die Endungen seiner Gruppe (-er, -ir, -re) an den Stamm hängt. Verben mit einer festen Formenliste gelten als unregelmäßig und we…",
+  "gwt": "Ein Verb aus data.json mit einer Gruppe (er, ir oder re) und einem Stamm, oder ein Verb mit einer vollständigen Liste von sechs Formen. | logic.init() läuft, bevor die erste Runde gebaut wird. | Bei regelmäßigen Verben …",
+  "src": "legacy/modulare/apps/franzoesisch-verben/model.js:31-35",
+  "q": "Stimmt die Regel so, wie der Code sie umsetzt?"
+ },
+ {
+  "id": "RULE-079",
+  "title": "Base angle of an isosceles triangle = (180° − apex angle) ÷ 2",
+  "conf": "Medium",
+  "plain": "In an isosceles triangle, each base angle is half of the difference between 180 degrees and the apex angle.",
+  "gwt": "A generated task with apex angle 'Winkel N°' in the prompt. | The task is generated 300 times. | Answer = (180 − N) ÷ 2.",
+  "src": "legacy/modulare/apps/geometrie/builders.js:123-126",
+  "q": "Stimmt die Regel so, wie der Code sie umsetzt?"
+ },
+ {
+  "id": "RULE-080",
+  "title": "Apex angle of an isosceles triangle = 180° − 2 × base angle (two problem types)",
+  "conf": "Medium",
+  "plain": "In an isosceles triangle with a known base angle, the apex angle is 180 degrees minus twice that base angle; this applies to the 'mitte' problem (number after 'misst') and the 'kette' problem (number…",
+  "gwt": "A 'mitte' problem with 'misst N' in the prompt and a 'kette' problem with 'von N' in the prompt. | The problems are generated 300 times. | Answer = 180 − 2 × N in both cases.",
+  "src": "legacy/modulare/apps/geometrie/builders.js:193-197",
+  "q": "- **RULE-080** (Medium): Are the numbers after 'misst' (mitte) and 'von' (kette) always base angles of isosceles triangles, so that the answer is the apex angle?"
+ },
+ {
+  "id": "RULE-081",
+  "title": "Circumcenter and incircle are equidistant; point on a circle uses screen coordinates",
+  "conf": "Medium",
+  "plain": "The circumcenter of a triangle is equally far from its three corners, the incircle touches all three sides at the same distance, and a point at angle θ on a circle is placed with the y-axis pointing …",
+  "gwt": "Random triangles with corners in 0 to 300, and a fixed triangle A(30,220), B(220,200), C(90,50). Also a circle at (0,0) with radius 10. | circumcenter(A,B,C), incircle(A,B,C) and at(0,0,10,90) are computed. | Distances …",
+  "src": "legacy/modulare/apps/geometrie/geom.js:7",
+  "q": "Stimmt die Regel so, wie der Code sie umsetzt?"
+ },
+ {
+  "id": "RULE-082",
+  "title": "Binär-Addition und Hex-zu-Dezimal-Aufgaben haben die richtige Lösung",
+  "conf": "Medium",
+  "plain": "Every generated binary addition question has the correct binary sum as its answer, and every hex-to-decimal question has the correct decimal answer.",
+  "gwt": "300 generated 'hard' binary addition questions and hex-to-decimal questions. | The question generator (addQ, hexToDecQ) builds a question. | The two binary numbers in the prompt, a and c, satisfy: the answer equals the …",
+  "src": "legacy/modulare/apps/informatik/builders.js:140-150",
+  "q": "Stimmt die Regel so, wie der Code sie umsetzt?"
+ },
+ {
+  "id": "RULE-083",
+  "title": "Binär- und Hex-Umrechnung, Stellenwerte, Schrittfolge bis 255",
+  "conf": "Medium",
+  "plain": "Numbers are converted between decimal, binary and hexadecimal, and a decimal number is split into 8-bit steps whose bits add back up to the same number.",
+  "gwt": "A decimal number n between 0 and 255 (for example 13 or 255), or a place-value number such as 352. | The number is converted to binary or hex, decomposed into place values, or decomposed into 8-bit steps. | toBin(13) is…",
+  "src": "legacy/modulare/apps/informatik/numbers.js:3-39",
+  "q": "Stimmt die Regel so, wie der Code sie umsetzt?"
+ },
+ {
+  "id": "RULE-084",
+  "title": "Vorzeichenrechnung und lineare Gleichungen haben korrekte Lösungen",
+  "conf": "Medium",
+  "plain": "Generated signed-number sums and differences and one-variable linear equations carry the mathematically correct answer.",
+  "gwt": "300 generated signed arithmetic items (pool 'vorzeichen') and 300 linear equations (pool 'gleichungen'). | An item is generated and its answer is recomputed independently from the prompt. | For 'a + b' or 'a − b' (secon…",
+  "src": "tests/mathe.test.js:56-71",
+  "q": "Stimmt die Regel so, wie der Code sie umsetzt?"
+ },
+ {
+  "id": "RULE-088",
+  "title": "Right-isosceles problem answer is always 45°",
+  "conf": "Medium",
+  "plain": "The 'rechtGleich' problem always has the answer 45 degrees.",
+  "gwt": "The rechtGleich problem generator. | It is run 300 times. | The answer value is 45.",
+  "src": "apps/geometrie/builders.js:199-202",
+  "q": "Does the prompt always describe an isosceles right triangle, so that the base angles are 45 degrees, and is the 45 never derived from a number in the prompt?"
+ },
+ {
+  "id": "RULE-096",
+  "title": "Nibble matching question (four bits to hex digit)",
+  "conf": "Medium",
+  "plain": "The child matches four 4-bit groups with their hex digits. The groups are chosen from a fixed set of values that excludes 0, 3, 6 and 7.",
+  "gwt": "Four distinct values are drawn at random from [1,2,4,5,8,9,10,11,12,13,14,15] (builders.js:236). The values 0, 3, 6 and 7 are never drawn. | The match question is built. Left column: 4-bit binary of each value. Right co…",
+  "src": "apps/informatik/builders.js:235-243",
+  "q": "If not, should the set be the full 0 to 15 range?"
+ },
+ {
+  "id": "RULE-109",
+  "title": "Subjektdarstellung: j' vor Vokal und h, Pronomenvariante in der dritten Person",
+  "conf": "Medium",
+  "plain": "Vor einem Verb, das mit Vokal oder stummem h beginnt, steht bei 'je' die Kurzform j'. Bei den anderen Personen wird das Pronomen zufällig aus den erlaubten Varianten gewählt.",
+  "gwt": "Die je-Form eines Verbs (forms[0]) und eine Personen-Nummer. | Aufgabentext oder Theorie-Tabelle wird aufgebaut. | Beginnt forms[0] mit einem Vokal oder h (inklusive é, è, ê, à, â, î, ô, û), steht j' ohne Leerzeichen. S…",
+  "src": "legacy/modulare/apps/franzoesisch-verben/builders.js:5-7",
+  "q": "haïr), bei denen die je-Form nicht mit j' stehen darf?"
+ },
+ {
+  "id": "RULE-111",
+  "title": "Gap answers are graded tolerantly: case and surrounding spaces ignored, a wrong word is 'bad'",
+  "conf": "Medium",
+  "plain": "When a student types or picks the missing word, the correct word counts whatever its capitalisation or extra spaces, but a wrong word does not.",
+  "gwt": "A gap item with correct answer a and wrong[0] as a distractor. | The choice question and the typed question are built and checked: check(a), check(' ' + mixed-case a + ' '), check(wrong[0]). | The choice question has an…",
+  "src": "/Users/dghaies/Sites/lernapp-sira/legacy/modulare/apps/deutsch/builders.js:33-50",
+  "q": "Stimmt die Regel so, wie der Code sie umsetzt?"
+ },
+ {
+  "id": "RULE-112",
+  "title": "Wahrscheinlichkeitsantwort: Bruch, Dezimalzahl oder Prozent",
+  "conf": "Medium",
+  "plain": "A probability answer counts as correct in fraction, decimal or percent form; a bare number without percent sign, an empty answer, or a zero denominator is rejected. Generated probabilities lie strict…",
+  "gwt": "The correct probability 0.25. | The student types an answer, or a probability question is generated. | '1/4', '2/8', '0,25', '0.25', '25 %' and '25%' pass. '1/3', '25', '' and '1/0' fail. Every generated probability val…",
+  "src": "/Users/dghaies/Sites/lernapp-sira/legacy/modulare/core/js/mathkit.js:37-44",
+  "q": "Fehlerverdacht: „1/2/3“ wird stillschweigend als 1/2 gewertet, weil nur die ersten beiden Teile eines Bruchs gelesen werden (mathkit.js:42)."
+ },
+ {
+  "id": "RULE-113",
+  "title": "Prüfung einer Eingabe-Antwort (Wort eintippen)",
+  "conf": "Medium",
+  "plain": "A typed answer counts as correct if it matches the correct word or an accepted variant, ignoring case, surrounding spaces, extra inner spaces and typographic apostrophes; otherwise it is wrong.",
+  "gwt": "A typed item with correct answer a and an optional list of accepted variants | The learner submits a typed answer | The input and every accepted form (a plus accept[]) are normalised with norm(): trim, lower-case, curly…",
+  "src": "apps/deutsch/builders.js:45-51",
+  "q": "md guidance suggests a near-correct tier using stripAccents)?"
+ },
+ {
+  "id": "RULE-115",
+  "title": "Distraktor-Generator: mindestens drei verschiedene falsche Antworten",
+  "conf": "Medium",
+  "plain": "Jede Aufgabe muss genau eine richtige Antwort und mindestens drei verschiedene falsche Antworten haben; sonst wird neu gezogen.",
+  "gwt": "Eine Aufgabe liefert falsche Antworten [6 cm, 6 cm, 12 cm], richtig ist 6 cm | make() die Aufgabe prüft | Dubletten fallen weg und die richtige Antwort wird entfernt, es bleibt nur '12 cm' (weniger als drei). Die Aufgab…",
+  "src": "apps/geometrie/builders.js:229-235",
+  "q": "json (msFacts, whFacts, drFacts, thFacts, krFacts, grFacts, prFacts) mindestens drei verschiedene falsche Antworten und ist jeder Faktenpool gefüllt?"
+ },
+ {
+  "id": "RULE-117",
+  "title": "Kongruenzsatz- und Eindeutigkeits-Zuordnungen aus Datentabellen",
+  "conf": "Medium",
+  "plain": "Die Zuordnung 'Angaben zu Kongruenzsatz' und 'Angaben zu Anzahl der Dreiecke' kommt aus Datentabellen; die falschen Antworten werden aus einer festen Liste ohne die richtige Antwort gebildet.",
+  "gwt": "Ein Tabelleneintrag: Angabe 'zwei Seiten und der eingeschlossene Winkel', Name 'SWS' | Die Frage 'Welcher Kongruenzsatz passt?' erzeugt wird | Die richtige Antwort ist 'SWS'. Falsche Antworten sind die übrigen Namen aus…",
+  "src": "apps/geometrie/builders.js:87-98",
+  "q": "Ist der Distraktor 'SsW' bewusst als falsche Antwort gewollt?"
+ },
+ {
+  "id": "RULE-118",
+  "title": "Typed answer is correct only after normalization",
+  "conf": "Medium",
+  "plain": "A typed answer counts as correct only if it equals the expected value after harmless formatting (spaces, underscores, case, a leading 0X, leading zeros) is removed; anything else is wrong.",
+  "gwt": "A typed question whose answer is stored as a string, e.g. binary 101010 (decimal 42), with type 'bin'. | The child submits an input, checked by checker(type, answer), which calls normInput on both input and answer (numb…",
+  "src": "apps/informatik/builders.js:27-29",
+  "q": "Stimmt die Regel so, wie der Code sie umsetzt?"
+ },
+ {
+  "id": "RULE-119",
+  "title": "Antwortprüfung durch Vergleich nach Normalisierung",
+  "conf": "Medium",
+  "plain": "Eine getippte Antwort gilt als richtig, wenn sie nach der Bereinigung dem gespeicherten Ergebnis entspricht. Es gibt nur richtig oder falsch, keine Teilpunkte.",
+  "gwt": "Eine Aufgabe mit richtiger Antwort, z. B. Typ 'bin' und Antwort '1011'. | Der Schüler gibt eine Antwort ein und sie wird geprüft. | Beide Seiten werden mit normInput bereinigt. Sind sie gleich, ist das Ergebnis 'ok', so…",
+  "src": "apps/informatik/numbers.js:66-74",
+  "q": "Fehlerverdacht: Ist die gespeicherte Lösung selbst ungültig (normInput liefert null), dann ergibt jede ungültige Eingabe ebenfalls null und damit 'ok' (numbers.js:74, null === null). Das betrifft nur fehlerhaft gepflegte Inhalte, ist aber ein stiller Fehlalar…"
+ },
+ {
+  "id": "RULE-124",
+  "title": "Abbildung einer Lektion aufloesen",
+  "conf": "Medium",
+  "plain": "Eine Lektion zeigt entweder fertiges SVG oder verweist auf ein Diagramm der App. Ein Verweis auf ein nicht vorhandenes Diagramm bricht den Start ab.",
+  "gwt": "Eine Lektion mit figure { diagram: { name: 'bruchbalken', args: [3, 4] }, caption: '...' } und logic.diagrams mit bruchbalken. | buildConfig loest die Abbildungen aller Lektionen auf (core/js/appconfig.js:27). | Das Dia…",
+  "src": "core/js/appconfig.js:16-21",
+  "q": "Stimmt die Regel so, wie der Code sie umsetzt?"
+ },
+ {
+  "id": "RULE-125",
+  "title": "HTTP-Quelle holt und prüft das Paket",
+  "conf": "Medium",
+  "plain": "Die Inhalte können später von einer Datenbank-API kommen. Die Quelle ruft die Adresse der App auf, schickt den Zugangsschlüssel mit und prüft das Ergebnis. Fehler der API und ungültige Pakete werden …",
+  "gwt": "Eine API-Basisadresse, ein Zugangs-Header und eine App-Kennung. | Das Paket wird geladen (load). | Die Adresse ist '<Basis>apps/<id>/content'. Der Header wird mitgeschickt. Antwort mit Status 503 wird abgelehnt. Antwort…",
+  "src": "core/js/content.js:34-41",
+  "q": "Fehlerverdacht: Bei der API-Quelle fehlt data als Pflicht. Die statische Quelle setzt data auf {}, die API-Quelle nicht. Die Paketpruefung prueft data nicht (validate.js:47-51). Eine API-Antwort ohne data koennte deshalb zu einem undefined-Wert bei logic.init…"
+ },
+ {
+  "id": "RULE-126",
+  "title": "Restore only from a valid Lernwerkstatt file, then reload",
+  "conf": "Medium",
+  "plain": "A chosen file is restored only if it is readable JSON marked as a Lernwerkstatt backup. Restore overwrites stored documents with the same key, replaces the event log, and reloads the page.",
+  "gwt": "The player selects a file in 'Sicherung einspielen'. | The file input's change event fires (core/js/shell.js:154-156). | No file: nothing happens. The file is parsed as JSON (core/js/views/backup.js:15-15). importAll re…",
+  "src": "core/js/db.js:126-127",
+  "q": "Fehlerverdacht: The event log is replaced wholesale without confirmation (core/js/db.js:132), and parser errors show English text (core/js/shell.js:161)."
+ },
+ {
+  "id": "RULE-128",
+  "title": "Numerische Antwort ist richtig bei exakter Übereinstimmung (Toleranz 1e-9)",
+  "conf": "Medium",
+  "plain": "Eine Zahlenantwort gilt als richtig, wenn sie nach Bereinigung exakt dem Sollwert entspricht. Gerundete Eingaben werden nicht toleriert.",
+  "gwt": "Eine Zahlenaufgabe mit Sollwert 2,5 (value = 2.5, numeric = true). | Die Lernerin gibt „2,5“, „2.5“, „2,5 cm“ oder „2,50“ ein, oder eine leere Eingabe, „2,4“, „abc“ oder „5/2“. | „2,5“, „2.5“, „2,5 cm“ und „2,50“ ergebe…",
+  "src": "core/js/mathkit.js:18-21",
+  "q": "Fehlerverdacht: Anzeige-Antwort (fmt, drei Nachkommastellen) und Prüfwert (exakt, 1e-9) passen nicht zusammen, wenn der Sollwert nicht endlich dezimal ist, z. B. 1/3. Ob das sichtbar wird, hängt davon ab, wie die Anzeige die richtige Antwort ausgibt."
+ },
+ {
+  "id": "RULE-131",
+  "title": "Perfect-round and combo trophies",
+  "conf": "Medium",
+  "plain": "The 'perfect' trophy goes to a lesson or boss round with no wrong and no 'almost' answers that is not failed. The 'combo5' trophy goes to a round whose longest streak of correct answers is at least 5.",
+  "gwt": "A lesson round on 'etre' with 8 correct, 0 almost, 0 wrong and best combo 8, not failed. | The round is finalised. | The new trophies include 'perfect' and 'combo5'. The failed round in the 'Gescheiterte Runde' test doe…",
+  "src": "core/js/rules.js:20-21",
+  "q": "Stimmt die Regel so, wie der Code sie umsetzt?"
+ },
+ {
+  "id": "RULE-132",
+  "title": "Trophäen-Aufbau prüfen (Tippfehler finden)",
+  "conf": "Medium",
+  "plain": "Jede Trophäen-Regel wird vor dem Start auf Aufbau geprüft. Unbekannte Typen und Regeln mit fehlenden Angaben werden als Fehler gemeldet, damit sie nicht still nie erreicht werden.",
+  "gwt": "Eine Trophäen-Regel aus badges.json mit Typ, Seiten-ID und Parametern. | Die Regel wird ohne Auswertung auf Aufbau geprüft (ruleErrors). | Ein unbekannter Typ, eine unbekannte Seiten-ID, fehlende ids bei 'units', leere …",
+  "src": "core/js/rules.js:39-52",
+  "q": "Stimmt die Regel so, wie der Code sie umsetzt?"
+ },
+ {
+  "id": "RULE-133",
+  "title": "Reset of one app's progress requires two confirmations",
+  "conf": "Medium",
+  "plain": "Resetting one app's progress takes two clicks. It erases that app's stars, trophies, best scores, accuracy history and app XP, but keeps the player's name, total XP and streak.",
+  "gwt": "The home screen is shown. | 'Fortschritt dieser App zurücksetzen' is clicked (core/js/views/home.js:66-66), then 'Wirklich alles löschen?' is clicked. | The first click sets the confirmation flag and shows the second li…",
+  "src": "core/js/shell.js:137-144",
+  "q": "- **RULE-133** (Medium): P0 panel split on whether this is critical to the system's core purpose or a costly-if-wrong rule (Compliance-Blick: Würde ein Regulierer oder Prüfer eine stille Änderung bemerken?"
+ },
+ {
+  "id": "RULE-135",
+  "title": "Unreadable or non-object stored document falls back to defaults",
+  "conf": "Medium",
+  "plain": "A learner's stored progress is used only if it is a readable plain object. Otherwise the app starts from the default state.",
+  "gwt": "A document key is requested (for example the profile or an app's progress). | createStore() loads the document. | The stored value is read from IndexedDB; if the read throws, it is treated as absent. If nothing is store…",
+  "src": "core/js/store.js:25-36",
+  "q": "Fehlerverdacht: A transient IndexedDB read error followed by a save() can overwrite good stored progress with defaults. The code does not distinguish 'not found' from 'read failed' (core/js/store.js:27-28)."
+ },
+ {
+  "id": "RULE-136",
+  "title": "Missing lesson has no fallback",
+  "conf": "Medium",
+  "plain": "If a unit has no lesson in the content, the theory page cannot be built and has no fallback message.",
+  "gwt": "A unit whose id has no entry in the lessons map. | renderDefaultTheory runs. | spec is undefined (theory.js:8). lessonTop(spec) reads spec.tldr at lesson.js:26 and throws a TypeError before anything is drawn. No guard, …",
+  "src": "core/js/theory.js:8",
+  "q": "- **RULE-136** (Medium): Should a unit without a lesson in production show an explicit 'Lektion folgt' notice, or is a missing lesson treated as a content error that must never reach users?"
+ },
+ {
+  "id": "RULE-137",
+  "title": "Texteingabe wird vor dem Vergleich vereinheitlicht (Groß/Klein, Apostroph, Leerzeichen, Akzente)",
+  "conf": "Medium",
+  "plain": "Texte werden für den Vergleich in eine Standardform gebracht. Für die Erkennung von „fast richtig“ werden zusätzlich Akzente entfernt.",
+  "gwt": "Richtige Antwort „êtes“. | Die Eingabe ist „ ÊTES “ bzw. „etes“. | Die Eingabe wird normalisiert und mit der Lösung verglichen.",
+  "src": "core/js/ui.js:20-24",
+  "q": "Und soll eine Antwort ohne Akzente (etes statt êtes, Madchen statt Mädchen) dort Punkte bekommen?"
+ },
+ {
+  "id": "RULE-143",
+  "title": "Inhaltspaket als Ganzes pruefen (Tor vor dem Start)",
+  "conf": "Medium",
+  "plain": "Ein Inhaltspaket wird als Ganzes abgelehnt, sobald eine Pruefung fehlschlaegt. Eine halb kaputte App startet nicht.",
+  "gwt": "Ein Inhaltspaket { manifest, lessons, badges, data } kommt aus der statischen Quelle, aus der HTTP-API oder aus dem lokalen Cache. | assertBundle ruft bundleErrors auf (core/js/validate.js:11-45). | Gibt es Fehler, wirf…",
+  "src": "core/js/validate.js:47-51",
+  "q": "Stimmt die Regel so, wie der Code sie umsetzt?"
+ },
+ {
+  "id": "RULE-144",
+  "title": "Materiallinks nur als sichere relative Pfade",
+  "conf": "Medium",
+  "plain": "Material zum Öffnen oder Ausdrucken darf nur auf Dateien im eigenen Ordner 'files/' zeigen. Fremde Adressen, Skript-Links und Pfade mit Leerzeichen werden abgelehnt, sowohl beim Schema als auch zur L…",
+  "gwt": "Ein Material-Eintrag (resources) mit href. | Das Paket wird gegen das Schema und zur Laufzeit (bundleErrors) geprüft. | Ein relativer Pfad wie 'files/blatt.pdf' ist erlaubt. Abgelehnt werden: 'javascript:alert(1)', 'htt…",
+  "src": "core/js/validate.js:8",
+  "q": "Fehlerverdacht: Der Ausdruck verbietet nur den Schraegstrich am Anfang, nicht den Backslash. Ein Wert, der mit zwei Backslashes und einem Host beginnt, wuerde von vielen Browsern wie eine externe Adresse (zwei Schraegstriche) behandelt und trotz der Pruefung …"
+ },
+ {
+  "id": "RULE-145",
+  "title": "Player name is required to be hidden once set, and is always shown escaped",
+  "conf": "Medium",
+  "plain": "The name entry box is shown only while no name is set. A stored name is shown as plain text, never as markup, so a name with HTML tags is displayed literally.",
+  "gwt": "A profile with no name, and a profile whose name is '<b>x</b>'. | The start page is rendered for each. | With no name, the name entry field id 'nm' is shown. With the name '<b>x</b>', the raw tag is not in the output an…",
+  "src": "core/js/views/home.js:26-27",
+  "q": "js:27 emits the name form (input id=\"nm\", placeholder \"Wie heißt du?"
+ },
+ {
+  "id": "RULE-146",
+  "title": "Every verb form has a hint and distractors that exclude the correct form",
+  "conf": "Medium",
+  "plain": "For every verb and every person there is a hint text, and the wrong options offered in a multiple-choice question never include the correct form.",
+  "gwt": "Every verb in V and every person index 0 to 5. | hint(verb, p) and distract(verb, p, 3) are built. | The hint is longer than 5 characters. The distractor list does not contain the correct form forms[p].",
+  "src": "legacy/modulare/apps/franzoesisch-verben/builders.js:10-26",
+  "q": "Stimmt die Regel so, wie der Code sie umsetzt?"
+ },
+ {
+  "id": "RULE-147",
+  "title": "Typed verb answers: pronoun prefix and case ignored, missing accent is 'almost', wrong letters are 'bad'",
+  "conf": "Medium",
+  "plain": "A typed verb form is accepted with or without a subject pronoun, in any capitalisation and with stray spaces; a form that differs only by a missing accent gets a partial 'almost' mark; a different wo…",
+  "gwt": "checkForm('êtes') for the form 'êtes', and checkForm('ai') for the form 'ai'. | The inputs are checked: 'êtes', 'vous êtes', ' ÊTES ', 'etes', 'étez', \"j'ai\", and 'j’ai' with a typographic apostrophe. | 'êtes', 'vous êt…",
+  "src": "legacy/modulare/apps/franzoesisch-verben/builders.js:34-41",
+  "q": "Stimmt die Regel so, wie der Code sie umsetzt?"
+ },
+ {
+  "id": "RULE-150",
+  "title": "Eintipp-Prüfung für numerische Antworten",
+  "conf": "Medium",
+  "plain": "Eine eingetippte Zahl gilt nur dann als richtig, wenn sie exakt dem Ergebnis entspricht; Einheiten, Leerzeichen und Dezimalkomma werden dabei ignoriert.",
+  "gwt": "Die richtige Antwort ist 2,5 m (Wert 2,5) | Die Schülerin oder der Schüler gibt etwas ein | '2,5 m', '2,5', '2.5', '2,50' gelten als richtig; '2' und '2,4' gelten als falsch; eine leere Eingabe gilt als falsch.",
+  "src": "legacy/modulare/core/js/mathkit.js:12-20",
+  "q": "Fehlerverdacht: Einheitenfehler werden stillschweigend akzeptiert. Eine Antwort in Metern (5 m) oder Millimetern (5 mm) gilt für eine Aufgabe in Zentimetern als richtig, weil die Einheit nie gegen die Aufgabe geprüft wird."
+ },
+ {
+  "id": "RULE-151",
+  "title": "Typed answer is graded exact, 'almost' if only accents differ, otherwise wrong",
+  "conf": "Medium",
+  "plain": "A typed answer is compared after normalising case, spaces and typographic apostrophes. If the only difference is accents, the answer is 'almost' right. Anything else is wrong.",
+  "gwt": "A typed question whose answer is 'chanté'. | The learner types 'chanté', then 'chante', then 'gesungen'. | 'chanté' grades 'ok'. 'chante' grades 'almost' (accent missing). 'gesungen' grades 'bad'.",
+  "src": "legacy/modulare/core/js/qtypes.js:37-43",
+  "q": "Stimmt die Regel so, wie der Code sie umsetzt?"
+ },
+ {
+  "id": "RULE-158",
+  "title": "Verb conjugation tables give the six correct forms in person order",
+  "conf": "Medium",
+  "plain": "The French reference forms for the core verbs must be exactly right, in the order je, tu, il/elle, nous, vous, ils/elles, because a wrong form would teach a wrong French form.",
+  "gwt": "The verb model V loaded from content/fr-verben. | The forms of etre, faire, parler, finir and attendre are compared. | etre: suis, es, est, sommes, êtes, sont. faire: fais, fais, fait, faisons, faites, font. parler: par…",
+  "src": "tests/french.test.js:32-38",
+  "q": "Stimmt die Regel so, wie der Code sie umsetzt?"
+ },
+ {
+  "id": "RULE-160",
+  "title": "Generated geometry tasks have a correct answer outside the wrong options and numeric answers pass the number checker",
+  "conf": "Medium",
+  "plain": "Every generated geometry task must have an answer that is not among its wrong options, and numeric answers must be accepted by the shared number checker.",
+  "gwt": "Every task generator in every geometry pool, 200 times each. | Each generated task is checked. | The answer is not in wrong. wrong has at least two entries (the condition written is '>= 3 or >= 2'). If the task is numer…",
+  "src": "tests/geometrie.test.js:33-42",
+  "q": "Fehlerverdacht: tests/geometrie.test.js:38 reads 'wrong.length >= 3 || wrong.length >= 2', which is the same as '>= 2'; the intended minimum of three is not enforced."
+ },
+ {
+  "id": "RULE-161",
+  "title": "Every app configuration has a valid id, unique unit and badge ids, complete fields, and a lesson per unit",
+  "conf": "Medium",
+  "plain": "An app is accepted only if its id is lowercase letters, digits and hyphens, every unit and badge has its required fields, ids are unique, every unit has a lesson, and the required functions exist.",
+  "gwt": "An app configuration object built from content and logic. | assertValidConfig checks it. | id matches ^[a-z0-9-]+$. Unit ids are unique and each unit has id, title, de, ic, color. Theory is a function. Every unit has a …",
+  "src": "tests/helpers.js:10-22",
+  "q": "Stimmt die Regel so, wie der Code sie umsetzt?"
+ },
+ {
+  "id": "RULE-165",
+  "title": "Jede Aufgabe akzeptiert ihre eigene richtige Antwort",
+  "conf": "Medium",
+  "plain": "Every generated question in every math pool carries an answer that the app's own checker accepts, so no question can mark its own correct answer wrong.",
+  "gwt": "300 generated items for each unit pool in the mathe app (and in the informatik app, tests/informatik.test.js:52-62, for all question makers). | An item is generated. | Numeric items: the checker for the item's value acc…",
+  "src": "tests/mathe.test.js:46-54",
+  "q": "Stimmt die Regel so, wie der Code sie umsetzt?"
+ },
+ {
+  "id": "RULE-166",
+  "title": "Single-choice answer is correct only when the picked option matches the stored answer",
+  "conf": "Medium",
+  "plain": "A multiple-choice question can only be checked after the learner picks an option, and it counts as correct only if the picked option's id equals the question's answer.",
+  "gwt": "A choice question with options 'a' and 'b' and answer 'b'. | No option is picked, then option index 1 (b) is picked, then option index 0 (a) is picked. | With no pick the check is not allowed (canCheck false). Picking b…",
+  "src": "tests/qtypes.test.js:19-25",
+  "q": "Stimmt die Regel so, wie der Code sie umsetzt?"
+ },
+ {
+  "id": "RULE-172",
+  "title": "XP-Ausgabe nie unter null",
+  "conf": "Medium",
+  "plain": "Spending XP cannot make a total negative; spending more than is available leaves zero.",
+  "gwt": "A profile and app with 2 XP, and an attempt to spend 3 XP. | spendXP is called. | profile.xp = 0 and app.xp = 0.",
+  "src": "core/js/profile.js:68-71",
+  "q": "Stimmt die Regel so, wie der Code sie umsetzt?"
+ },
+ {
+  "id": "RULE-173",
+  "title": "Streak trophy after three days in a row",
+  "conf": "Medium",
+  "plain": "The 'Dranbleiber' trophy is earned when the learner has practised on three days in a row.",
+  "gwt": "Profile streak 2 with last practice day 2026-10-24, and a lesson round on 2026-10-25. | The round is finalised. | The streak becomes 3, and 'streak3' is in the new trophies.",
+  "src": "core/js/rounds.js:41-46",
+  "q": "Stimmt die Regel so, wie der Code sie umsetzt?"
+ },
+ {
+  "id": "RULE-185",
+  "title": "Offline-Zwischenspeicher fuer API-Inhalte",
+  "conf": "Medium",
+  "plain": "Jedes erfolgreich geladene Paket wird lokal gespeichert. Scheitert das Laden spaeter, zum Beispiel ohne Netz, wird das letzte gespeicherte Paket verwendet. Gibt es keines, bleibt der Fehler.",
+  "gwt": "Die API hat die App 'deutsch' zuletzt erfolgreich geliefert, und jetzt ist das Netz weg. | withCache.load('deutsch') ruft die Quelle auf, die einen Fehler wirft. | Das gespeicherte Paket unter dem Schluessel lernwerksta…",
+  "src": "core/js/content.js:50-66",
+  "q": "Stimmt die Regel so, wie der Code sie umsetzt?"
+ },
+ {
+  "id": "RULE-186",
+  "title": "Storage backend selection with fallback",
+  "conf": "Low",
+  "plain": "The app stores progress in the browser's IndexedDB when it works, and falls back to localStorage (or memory only) when it does not. The choice is made once per page load.",
+  "gwt": "The app needs to read or write progress and no database has been opened yet in this page session. | getDB() is called for the first time (any read or write goes through it). | It opens IndexedDB 'lernwerkstatt' at versi…",
+  "src": "core/js/db.js:100-112",
+  "q": "Fehlerverdacht: tests/db.test.js:77 title says memory-only fallback, but tests/db.test.js:81 asserts backend 'localstorage' while localStorage is undefined."
+ },
+ {
+  "id": "RULE-187",
+  "title": "Altstand aus localStorage wird in IndexedDB übernommen",
+  "conf": "Medium",
+  "plain": "Beim ersten Start mit der neuen Datenbank werden die alten Fortschrittsdaten aus dem Browser-Zwischenspeicher übernommen. Danach sind sie in der neuen Datenbank und im alten Speicher entfernt. Der Ve…",
+  "gwt": "Alter Stand im localStorage mit xp 40, einem Stern auf der ersten Seite, Versionsfeld __v 1, und eine leere IndexedDB. | Die App startet, die Startseite wird geladen, dann wird eine Runde gespielt. | Zwei Sterne sind an…",
+  "src": "core/js/db.js:54-60",
+  "q": "Fehlerverdacht: Removal happens before the parse and before confirmed storage. A corrupt or failed write loses the legacy data (core/js/db.js:56-59 and core/js/store.js:30)."
+ },
+ {
+  "id": "RULE-188",
+  "title": "Auffrischen: Seite ist fällig nach drei Tagen",
+  "conf": "Medium",
+  "plain": "A unit that already has stars is due for a refresh once three days have passed since it was last practised; units without stars are never due.",
+  "gwt": "Unit a with 2 stars last practised on 2026-10-01; unit b with 0 stars last practised on 2026-10-01. | isDue is checked on 10-02, on 10-04, and for unit b on 10-09. | Unit a is not due on 10-02 (one day later) and is due…",
+  "src": "core/js/profile.js:12",
+  "q": "Stimmt die Regel so, wie der Code sie umsetzt?"
+ },
+ {
+  "id": "RULE-189",
+  "title": "A failed lesson round gives no star progress and no perfect trophy",
+  "conf": "Medium",
+  "plain": "If a lesson round is failed, the unit gets no stars and does not count as progress, and the perfect-round trophy is not awarded.",
+  "gwt": "A lesson round on 'aller' that is failed, with accuracy 0.4, 2 correct and 5 wrong, and no earlier stars. | The round is finalised. | Stars for this round are 0. app.stars.aller stays undefined. The 'perfect' trophy is …",
+  "src": "core/js/profile.js:76",
+  "q": "Fehlerverdacht: Possible: a failed repeat of an already-starred unit restarts the 'Zeit zum Auffrischen' clock (core/js/rounds.js:26), so the due date moves even though the learner did not succeed. Low confidence, confirm with the SME."
+ },
+ {
+  "id": "RULE-190",
+  "title": "Matching question starts with zero pairs solved and is graded by the number of slips",
+  "conf": "Medium",
+  "plain": "A matching question starts with no pairs matched. The learner picks a left item and then the right item it belongs to. Each correct pair is locked. A wrong pick counts as a slip. The question is 'ok'…",
+  "gwt": "A new matching question with 2 left items. | The question is initialised, then rendered. | The matched counter n is 0. The rendered HTML contains the left-item buttons (data-act=\"mleft\").",
+  "src": "core/js/qtypes.js:152-183",
+  "q": "js:176-178)?"
+ },
+ {
+  "id": "RULE-193",
+  "title": "XP is kept when a round is left early",
+  "conf": "Medium",
+  "plain": "XP is added to the profile and saved after each answer, so leaving a round or blitz early keeps the XP already earned; leaving does not produce a round result.",
+  "gwt": "A quiz round where 4 correct answers gave 10 XP each and one hint cost 3 XP; the player then presses the exit button. | The player presses exit before the round ends. | The 37 XP net stay in the profile and app totals (…",
+  "src": "core/js/quiz.js:83-87",
+  "q": "Should an abandoned round produce any record in the learning log?"
+ },
+ {
+  "id": "RULE-194",
+  "title": "Abschluss einer Lektionsrunde: Tag, Genauigkeit und Auffrischen-Bonus",
+  "conf": "Medium",
+  "plain": "When a lesson round ends, the unit's last-practice day and accuracy are recorded; if the unit was due, a 10 XP refresh bonus is paid and flagged once.",
+  "gwt": "Unit a with 2 stars, last practised 2026-10-01, a round with 90 % accuracy and no failure, finished on 2026-10-10. | The round is finalised, then a second round on the same day with 100 % accuracy is finalised. | First …",
+  "src": "core/js/rounds.js:16-28",
+  "q": "Stimmt die Regel so, wie der Code sie umsetzt?"
+ },
+ {
+  "id": "RULE-195",
+  "title": "Finishing a round evaluates, saves, logs and shows the result",
+  "conf": "Medium",
+  "plain": "When a round ends normally, its result is evaluated, progress is saved, the round is logged, and the result screen is shown.",
+  "gwt": "A round (lesson, quick, boss or blitz) has completed and calls onFinish. | finishRound runs. | (1) finalizeRound updates stars, bests, bonus, streak and trophies (core/js/rounds.js, outside the listed files). (2) The pr…",
+  "src": "core/js/shell.js:101-107",
+  "q": "Stimmt die Regel so, wie der Code sie umsetzt?"
+ },
+ {
+  "id": "RULE-197",
+  "title": "Saved progress is restored after reload; reset returns state to defaults",
+  "conf": "Medium",
+  "plain": "Progress written to the browser database is still there when the app starts again, and a reset puts the in-memory state back to its defaults.",
+  "gwt": "A store is created with defaults { xp: 0, stars: {} } under key 'lernwerkstatt:t'. | xp is set to 12 and stars.x to 3, the state is saved, the database connection is reset, and the store is created again with the same k…",
+  "src": "core/js/store.js:24-56",
+  "q": "Stimmt die Regel so, wie der Code sie umsetzt?"
+ },
+ {
+  "id": "RULE-202",
+  "title": "Home screen loads all data first, then draws once",
+  "conf": "Medium",
+  "plain": "The home screen waits until the learner profile and every live app's saved progress are loaded, then draws the whole page once. It only reads data.",
+  "gwt": "The learner profile and the saved store of each live app (created with default values if missing). | The home page is opened. | The profile is opened. The stores of all live apps are opened in parallel with appDefaults(…",
+  "src": "dashboard.js:9-16",
+  "q": "Fehlerverdacht: load() has no try/catch (dashboard.js:9-16). If a store cannot be opened the page stays empty, although AGENTS.md requires every storage access to tolerate errors and the app to run without storage."
+ },
+ {
+  "id": "RULE-204",
+  "title": "Blitz: best score only goes up and the blitz trophy starts at 10 correct",
+  "conf": "Medium",
+  "plain": "The blitz record keeps the highest score. A blitz round with 10 or more correct answers earns the 'Éclair' trophy. A lower score does not change the record and earns no trophy.",
+  "gwt": "Best blitz score 8. Blitz round with score 12, then a separate blitz round with score 5 against the same best of 8. | Each blitz round is finalised. | Score 12: best becomes 12 and 'blitz10' is awarded. Score 5: best st…",
+  "src": "legacy/modulare/core/js/rounds.js:30-31",
+  "q": "Stimmt die Regel so, wie der Code sie umsetzt?"
+ },
+ {
+  "id": "RULE-205",
+  "title": "Zurücksetzen leert Fortschritt",
+  "conf": "Medium",
+  "plain": "Mit 'Zurücksetzen' wird der Fortschritt einer App gelöscht: XP auf 0 und alle Sterne weg.",
+  "gwt": "Eine App mit XP und Sternen gespeichert. | Der Nutzer wählt Zurücksetzen und bestätigt. | Der gespeicherte App-Stand hat xp = 0 und keine Sterne mehr (stars ist leer).",
+  "src": "legacy/modulare/core/js/shell.js:137-144",
+  "q": "Stimmt die Regel so, wie der Code sie umsetzt?"
+ },
+ {
+  "id": "RULE-206",
+  "title": "Endgegner wird freigeschaltet, wenn alle Seiten einen Stern haben",
+  "conf": "Medium",
+  "plain": "Der Endgegner (Boss) ist erst spielbar, wenn jede Seite mindestens einen Stern hat.",
+  "gwt": "Lernstand mit einem Stern auf jeder Seite. | Die Startseite wird geladen. | Der Boss-Knopf ist aktiv (nicht disabled). Die Boss-Runde läuft bis zum Ergebnis.",
+  "src": "legacy/modulare/core/js/shell.js:43",
+  "q": "js:46), and is this the gate the shell actually enforces?"
+ },
+ {
+  "id": "RULE-207",
+  "title": "Stored data keeps unknown fields, gains new default fields, and migrates on version bump",
+  "conf": "Medium",
+  "plain": "When the app adds new fields, old saved progress keeps its values and gets the new defaults; when the data format is versioned up, a migration function converts the old data.",
+  "gwt": "Saved state { xp: 0, alt: 'bleibt' } is reopened with defaults { xp: 0, neu: { feld: 1 } }. Separately, a state { punkte: 5 } saved at version 1 is reopened at version 2 with migrate = old => ({ xp: old.punkte * 10 }). …",
+  "src": "legacy/modulare/core/js/store.js:10-16",
+  "q": "Stimmt die Regel so, wie der Code sie umsetzt?"
+ },
+ {
+  "id": "RULE-208",
+  "title": "Serie: Folgetag, Gnadentag, Neustart und Verfall",
+  "conf": "Medium",
+  "plain": "A daily streak grows by one for each consecutive day of practice, survives one skipped day, restarts after a longer break, and expires after a longer time without practice.",
+  "gwt": "A streak that started on 2026-10-20. | Practice is recorded on 10-21, again on 10-21, on 10-23, on 10-27, and the streak is checked on 10-28 and 11-05. | Streak is 2 after 10-21. Same day again: still 2. After 10-23 (on…",
+  "src": "tests/profile.test.js:32-45",
+  "q": "Fehlerverdacht: Possible: a failed round keeps the practice streak alive, although the unit was not learned (core/js/rounds.js:41). Low confidence, confirm with the SME."
+ },
+ {
+  "id": "RULE-211",
+  "title": "Initialisation: round content is bound once, before the first round",
+  "conf": "Medium",
+  "plain": "Before any round is generated, the app must load the page list and the question pools. Until then, no round can be built.",
+  "gwt": "The app boot has loaded the content bundle (manifest and data) | init({ data, manifest }) runs, before the first round | UNITS is set to manifest.units and ITEMS to data.items. Round builders read only these module vari…",
+  "src": "apps/_template/builders.js:5-12",
+  "q": "json nicht leer ist)?"
+ },
+ {
+  "id": "RULE-217",
+  "title": "Minou-Stimmung wählt das Gesicht, unbekannte Stimmung wird zu „fröhlich“",
+  "conf": "Medium",
+  "plain": "Minou hat vier Stimmungen (fröhlich, jubelnd, traurig, nachdenklich). Die Stimmung bestimmt Augen und Mund. Eine unbekannte oder fehlende Stimmung ergibt fröhlich.",
+  "gwt": "mascot() ohne Argument oder mit einer unbekannten Stimmung, z. B. „verwirrt“. | Das Maskottchen wird gezeichnet. | Es wird eine der vier Stimmungen gezeichnet.",
+  "src": "core/js/mascot.js:18-19",
+  "q": "jubelnd bei einem Stern, traurig bei einer falschen Antwort, nachdenklich bei Hinweisen)?"
+ },
+ {
+  "id": "RULE-218",
+  "title": "Tagesziel wird einmal pro Tag gemeldet",
+  "conf": "Medium",
+  "plain": "The daily goal is announced only once per day, on the XP award that first reaches it.",
+  "gwt": "A daily goal (GOAL) and a day. | XP reaching the goal is awarded, then more XP is awarded the same day. | The first award that reaches GOAL reports goalHit = true; further awards on the same day report goalHit = false.",
+  "src": "core/js/profile.js:63",
+  "q": "Stimmt die Regel so, wie der Code sie umsetzt?"
+ },
+ {
+  "id": "RULE-220",
+  "title": "Collection album card tier from stars",
+  "conf": "Medium",
+  "plain": "Each unit with a card has a collectible card. It is locked with no stars and becomes Bronze, Silber or Gold with 1, 2 or 3 stars.",
+  "gwt": "The unit has a card, and app.stars[unit] holds its star count. | The home screen is drawn. | 0 stars: card labelled 'Gesperrt', titled 'Geheimkarte', with a hint to finish the unit. 1 star: Bronze. 2 stars: Silber. 3 st…",
+  "src": "core/js/views/home.js:33-41",
+  "q": "Stimmt die Regel so, wie der Code sie umsetzt?"
+ },
+ {
+  "id": "RULE-222",
+  "title": "Theorie-Seite: Tabelle, Selbsttest und Verbwechsel",
+  "conf": "Medium",
+  "plain": "Auf der Theorie-Seite zeigt die Tabelle die sechs Formen. Die Lektion wird einmal gezeichnet und bleibt beim Verbwechsel erhalten. Im Selbsttest sind die Formen abgedeckt und können einzeln aufgedeck…",
+  "gwt": "Eine Seite mit Lektion und Verben (das erste Verb ist voreingestellt). | Die Seite wird geöffnet, ein Verb gewechselt, der Selbsttest ein- oder ausgeschaltet oder eine Form angetippt. | Beim Öffnen steht das erste Verb …",
+  "src": "legacy/modulare/apps/franzoesisch-verben/theory.js:42-46",
+  "q": "Stimmt die Regel so, wie der Code sie umsetzt?"
+ },
+ {
+  "id": "RULE-223",
+  "title": "Multiple-choice options: correct answer plus up to three distractors, shuffled",
+  "conf": "Medium",
+  "plain": "Each choice question offers the correct answer together with at most three wrong answers, in random order, and the stored correct answer is the only one marked right.",
+  "gwt": "An item with a = \"Stuhl\" and wrong = [\"Tisch\", \"Lampe\", \"Bett\", \"Sofa\"], and a question prompt q and explanation explain | A choice question is built for this item | Options are \"Stuhl\" plus the first three wrong answer…",
+  "src": "apps/_template/builders.js:14-17",
+  "q": "Fehlerverdacht: builders.js:16 passes item.explain unescaped into 'why'. Not verified: if quiz.js renders 'why' as HTML, data containing < or & would be injected. Compare builders.js:20, which also passes explain raw."
+ },
+ {
+  "id": "RULE-224",
+  "title": "Typed-answer question: the stored answer is the only expected answer, no options shown",
+  "conf": "Medium",
+  "plain": "A typed question shows the prompt and an empty input field. The expected answer is the stored answer text, and the learner must type it.",
+  "gwt": "An item with q = \"Wie heißt die Hauptstadt von Frankreich?\", a = \"Paris\", explain = \"...\" | A typed question is built for this item | The question has kind 'type', label 'Schreibe die Antwort', prompt = esc(q), answer =…",
+  "src": "apps/_template/builders.js:19-21",
+  "q": "'etes' for 'êtes')?"
+ },
+ {
+  "id": "RULE-226",
+  "title": "Random question pick across all pages for the quick round and the blitz",
+  "conf": "Medium",
+  "plain": "The quick round (5 questions) and the 45-second blitz question are drawn at random from all pages together. Every question is multiple-choice.",
+  "gwt": "The page list UNITS (from manifest) and each page's pool in ITEMS | quickRound() or blitzQuestion() is called | quickRound returns 5 choice questions. Each one picks a page uniformly at random (pick(UNITS)) and then one…",
+  "src": "apps/_template/builders.js:29-32",
+  "q": "Should a quick round avoid showing the same item twice?"
+ },
+ {
+  "id": "RULE-229",
+  "title": "Round sizes: lesson round 8 questions, boss 12, quick 5, blitz always multiple choice",
+  "conf": "Medium",
+  "plain": "Each French lesson page gives an eight-question round, the boss fight 12 questions, the quick round 5, and the 45-second blitz always shows multiple-choice questions.",
+  "gwt": "Every page in UNITS, sampled 200 times, with the data loaded from content/fr-verben. | lessonRound, bossRound, quickRound and blitzQuestion are generated. | Lesson rounds have 8 valid questions; boss has 12; quick has 5…",
+  "src": "apps/franzoesisch-verben/builders.js:104-132",
+  "q": "Stimmt die Regel so, wie der Code sie umsetzt?"
+ },
+ {
+  "id": "RULE-231",
+  "title": "Number ranges per difficulty level",
+  "conf": "Medium",
+  "plain": "Each question type draws its numbers from a fixed range that depends on the difficulty level (easy, mid).",
+  "gwt": "A question generator called with level 'easy' or 'mid' (default 'mid'). | The generator draws its random operand or target number. | Binary/decimal (binToDecQ, decToBinQ) draw from RANGE: easy 2 to 15, mid 10 to 63. Hex…",
+  "src": "apps/informatik/builders.js:16",
+  "q": "And is the 'hard' level (40 to 255) meant to come back for any unit, or can it be removed?"
+ },
+ {
+  "id": "RULE-242",
+  "title": "Training recommendation: due first, then weakest unit",
+  "conf": "Medium",
+  "plain": "The home screen recommends one unit to practise: the oldest due unit first, otherwise the unit with the lowest last accuracy below 90 percent.",
+  "gwt": "app.last, app.acc and app.stars per unit. | The home screen is drawn. | If any unit is due, recommend the one practised longest ago, with reason 'Zeit zum Auffrischen'. Otherwise, among units with a stored accuracy belo…",
+  "src": "core/js/profile.js:88-95",
+  "q": "Stimmt die Regel so, wie der Code sie umsetzt?"
+ },
+ {
+  "id": "RULE-243",
+  "title": "Second attempt: re-ask a wrong question at the end of the round",
+  "conf": "Medium",
+  "plain": "A question answered wrong comes back once more at the end of the same round, with its answer options shuffled, unless it is a boss fight, a match question, or the wrong answer used up the last heart.",
+  "gwt": "A normal lesson round with 5 questions. Question 2 is answered wrong and the player still has 4 hearts afterwards. | The wrong answer is settled. | A copy of question 2 is appended to the end of the round list with retr…",
+  "src": "core/js/quiz.js:129-131",
+  "q": "Stimmt die Regel so, wie der Code sie umsetzt?"
+ },
+ {
+  "id": "RULE-244",
+  "title": "Trophäe Endgegner besiegt",
+  "conf": "Medium",
+  "plain": "Wer den Endgegner (Boss) ohne Niederlage schafft, erhält die Boss-Trophäe.",
+  "gwt": "Rundenergebnis mit mode 'boss' und failed. | Die Trophäe 'boss' wird ausgewertet. | Wahr nur, wenn die Runde im Boss-Modus war und nicht fehlgeschlagen ist (failed = false). Sonst falsch.",
+  "src": "core/js/rules.js:23",
+  "q": "Stimmt die Regel so, wie der Code sie umsetzt?"
+ },
+ {
+  "id": "RULE-245",
+  "title": "Trophäe Serie (Tage in Folge)",
+  "conf": "Medium",
+  "plain": "Wer an genügend Tagen hintereinander geübt hat, erhält die Serien-Trophäe.",
+  "gwt": "Der Lernstand enthält streak (Anzahl Tage in Folge) als Zahl. | Die Trophäe 'streak' mit days wird ausgewertet. | Wahr, wenn streak mindestens days ist. Sonst falsch.",
+  "src": "core/js/rules.js:24",
+  "q": "- **RULE-245** (Medium): Wie wird 'Tage in Folge' berechnet, und zählt der Gnadentag (AGENTS: Serie mit einem Gnadentag) als Tag für die Trophäe?"
+ },
+ {
+  "id": "RULE-246",
+  "title": "Trophäen-Kombination UND / ODER",
+  "conf": "Medium",
+  "plain": "Trophäen dürfen mehrere Bedingungen verbinden: 'alle müssen erfüllt sein' (all) oder 'eine genügt' (any).",
+  "gwt": "Zwei Teil-Regeln: Seite a und Seite b, je mit mindestens einem Stern. Lernstand: nur Seite a hat einen Stern. | Die Trophäe 'all' bzw. 'any' mit diesen Teil-Regeln wird ausgewertet. | all ist falsch, weil Seite b fehlt.…",
+  "src": "core/js/rules.js:25-26",
+  "q": "Stimmt die Regel so, wie der Code sie umsetzt?"
+ },
+ {
+  "id": "RULE-247",
+  "title": "Profil und App-Stand werden nach einer Runde gespeichert, Runde wird protokolliert",
+  "conf": "Medium",
+  "plain": "Nach einer Runde werden Name, Punkte und Sterne gespeichert. Jede beendete Runde landet im Protokoll mit App und Seite.",
+  "gwt": "Ein Name wird eingegeben und gespeichert; danach wird eine Runde auf einer Seite gespielt. | Die Runde endet, das Protokoll wird gelesen. | Das Profil enthält den Namen, XP größer 0. Der App-Stand hat eine Zahl als xp u…",
+  "src": "core/js/shell.js:101-106",
+  "q": "Stimmt die Regel so, wie der Code sie umsetzt?"
+ },
+ {
+  "id": "RULE-255",
+  "title": "App-Kennung für den gespeicherten Fortschritt",
+  "conf": "Medium",
+  "plain": "Die App speichert ihren Fortschritt unter der Kennung 'fr-verben'. Diese Kennung darf sich nicht ändern, sonst ist der gespeicherte Stand weg.",
+  "gwt": "Der Startaufruf der App. | Die App startet. | bootApp({ id: 'fr-verben', logic }) lädt die Inhalte und den Speicher unter dieser Kennung.",
+  "src": "legacy/modulare/apps/franzoesisch-verben/main.js:4",
+  "q": "js zu prüfen, nicht in dieser Liste), und darf die Kennung dauerhaft nicht geändert werden?"
+ },
+ {
+  "id": "RULE-256",
+  "title": "Backup export contains all saved data and events; import restores it and rejects foreign data",
+  "conf": "Medium",
+  "plain": "The user can export everything the app has stored (progress and the event log) as one file and later restore it; a file of the wrong shape is refused.",
+  "gwt": "Two events are logged (app 'x' with stars 3, app 'y' with stars 1) and a store 'lernwerkstatt:e' has xp 7. | The full backup is exported, the database is wiped, the backup is imported (after a JSON round trip), and an o…",
+  "src": "legacy/modulare/core/js/db.js:117-142",
+  "q": "Stimmt die Regel so, wie der Code sie umsetzt?"
+ },
+ {
+  "id": "RULE-257",
+  "title": "Trophäen-Schwelle Combo und Blitz-Punkte",
+  "conf": "Medium",
+  "plain": "Eine Trophäe verlangt eine Mindest-Combo in einer Runde oder eine Mindestpunktzahl im Blitz.",
+  "gwt": "Eine Trophäe mit min = 5 (Beispiel) und eine Runde mit bestCombo bzw. Blitz-Punkten score. | Die Trophäe 'combo' oder 'blitz' wird ausgewertet. | combo ist wahr, wenn die beste Combo der Runde (bestCombo) mindestens min…",
+  "src": "legacy/modulare/core/js/rules.js:21-22",
+  "q": "Stimmt die Regel so, wie der Code sie umsetzt?"
+ },
+ {
+  "id": "RULE-258",
+  "title": "Learning-track label appears on LRS pages only",
+  "conf": "Medium",
+  "plain": "Pages that belong to the 'LRS-Förderung' track are labelled as such on the start page. The standard programme pages are not labelled, and every page is listed once.",
+  "gwt": "The Deutsch app, which has 15 pages, of which 6 belong to the LRS track. | The start page is rendered. | Exactly 6 page nodes contain 'LRS-Förderung', and the number of nodes equals the number of pages.",
+  "src": "legacy/modulare/core/js/views/home.js:24",
+  "q": "Stimmt die Regel so, wie der Code sie umsetzt?"
+ },
+ {
+  "id": "RULE-259",
+  "title": "Page counts per app are maintained by hand in the registry",
+  "conf": "Medium",
+  "plain": "The number of lesson pages per app is typed into the registry and used as the denominator for all progress figures.",
+  "gwt": "Live apps with units: fr-verben 6, mathe 9, geometrie 8, info-zahlen 6, deutsch 15 (44 in total). | Progress is calculated (see the unit completion rule). | These numbers are the denominator for every percentage and for…",
+  "src": "registry.js:18-66",
+  "q": "js match the number of pages in each app's content manifest, and is there a test that enforces it?"
+ },
+ {
+  "id": "RULE-261",
+  "title": "Trophäe Perfekte Runde",
+  "conf": "Medium",
+  "plain": "Eine Runde ohne jeden Fehler, außerhalb des Blitz-Modus und nicht abgebrochen, erhält die Trophäe 'Perfekte Runde'.",
+  "gwt": "Das Rundenergebnis enthält mode, failed, wrong und almost. Ausgangslage: mode 'lesson', failed false, wrong 0, almost 0. | Die Trophäe 'perfectRound' wird nach einer Runde ausgewertet. | Wahr, wenn die Runde nicht im Bl…",
+  "src": "tests/core-content.test.js:24-27",
+  "q": "- **RULE-261** (Medium): Zählt eine knapp falsche Antwort (almost) als Fehler für die Trophäe 'Perfekte Runde'?"
+ },
+ {
+  "id": "RULE-266",
+  "title": "Vorher-Nachher-Diagramm: Pfeile zeigen das Umformen",
+  "conf": "Medium",
+  "plain": "A before-and-after diagram shows two rows of boxes with arrows from each top item to its matching bottom item, and marks the bottom items that receive an arrow.",
+  "gwt": "A top list, a bottom list, a map where map[i] is the bottom index that top[i] maps to, and labels (default Aktiv and Passiv) | swapDiagram is drawn | Each top box gets an arrow to bottom[map[i]]. Bottom boxes that are t…",
+  "src": "apps/deutsch/diagrams.js:36-46",
+  "q": "- **RULE-266** (Medium): Is the highlighting of target boxes meant to show which sentence part changes (for example the Passiv subject), and should the diagram ever show boxes without an arrow in the highlight colour?"
+ },
+ {
+  "id": "RULE-280",
+  "title": "LRS-Förderung track marks six units, all printed material, and the questions of those units",
+  "conf": "Medium",
+  "plain": "Six Deutsch units belong to the LRS support track; the track's label and tag appear on those units, on the printable material, and on their questions, and nowhere else.",
+  "gwt": "The manifest units and resources, and the question chips for the first three items of each unit. | The track tags are checked. | Units tagged 'lrs' are exactly doppelt, dehnung, slaute, ableiten, gross, lesen. Every res…",
+  "src": "legacy/modulare/content/deutsch/manifest.json:8-13",
+  "q": "Stimmt die Regel so, wie der Code sie umsetzt?"
+ },
+ {
+  "id": "RULE-281",
+  "title": "Result title depends on stars, failure and blitz score",
+  "conf": "Medium",
+  "plain": "The result headline reflects how the round went: a failed round says 'Knapp daneben', a lesson round uses the title for its star level, and a blitz round says the blitz title at 10 or more or 'Zeit u…",
+  "gwt": "Result titles ['A','B','C'], a 3-star lesson round, a failed round, and a blitz round with score 12 and blitz title 'Blitz!'. | The result view is built. | The 3-star headline is 'C'. The failed headline is 'Knapp daneb…",
+  "src": "legacy/modulare/core/js/views/result.js:13-19",
+  "q": "score >= 10 ?"
+ }
+]

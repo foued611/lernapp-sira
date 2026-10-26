@@ -1,0 +1,149 @@
+Knoten: builders.js
+Id: apps/franzoesisch-verben/builders.js
+Art: module
+Datei: apps/franzoesisch-verben/builders.js
+Zeilen: 113
+
+Ausgehend (dieser Knoten nutzt):
+  call -> core/js/ui.js
+  call -> apps/franzoesisch-verben/model.js
+
+Eingehend (diese Knoten nutzen ihn):
+  apps/franzoesisch-verben/logic.js -> call
+  apps/franzoesisch-verben/theory.js -> call
+  tests/french.test.js -> call
+
+Quelltext (erste 150 Zeilen, Zugangsdaten maskiert):
+   1  // Aus dem Lernstoff (content/fr-verben/, über model.js) werden Fragen im Quiz-Format (siehe core/js/quiz.js).
+   2  import { esc, shuffle, pick, norm, stripAccents } from '../../core/js/ui.js';
+   3  import { V, UNITS, SP, TRAP, HINT, PRON, PQV } from './model.js';
+   4  
+   5  export const elides = (v) => /^[aeiouhéèêàâîôû]/i.test(v.forms[0]);
+   6  export const lab = (v, p) => (p === 0 ? (elides(v) ? "j'" : 'je') : PRON[p]);
+   7  const subjectFor = (v, p) => (p === 0 ? (elides(v) ? "j'" : 'je ') : pick(PQV[p]) + ' ');
+   8  
+   9  /** Erklärung zur Form, wird bei Fehlern angezeigt. */
+  10  export function hint(v, p) {
+  11    if (HINT[v.key]) return HINT[v.key][p];
+  12    const ending = v.ends[p];
+  13    let text = `${v.inf}: Stamm „${v.stem}-“ plus ` + (ending ? `Endung „-${ending}“.` : 'keine Endung.');
+  14    if (v.group === 'ir' && p >= 3) text += ' Bei -ir-Verben kommt im Plural -iss- dazu.';
+  15    if (v.group === 're' && p === 2) text += ' Das d vom Stamm bleibt stehen.';
+  16    if (v.group === 'er' && p !== 3 && p !== 4) text += ' Du hörst die Endung nicht, musst sie aber schreiben.';
+  17    return text;
+  18  }
+  19  
+  20  /** Falsche, aber plausible Antworten: typische Fehlformen zuerst, dann andere Formen desselben Verbs. */
+  21  export function distract(v, p, count) {
+  22    const answer = v.forms[p];
+  23    const others = shuffle([...new Set(v.forms)].filter((f) => f !== answer));
+  24    const traps = (TRAP[v.key] && TRAP[v.key][p]) || [];
+  25    return [...traps.slice(0, 1), ...others].filter((x, i, all) => all.indexOf(x) === i).slice(0, count);
+  26  }
+  27  
+  28  const chip = (v) => `<span class="vchip">Verb: <b>${esc(v.inf)}</b> · ${esc(v.de)}</span>`;
+  29  const miniTable = (v) => `<table class="mini">${[0, 1, 2, 3, 4, 5].map((i) => `<tr><td>${esc(lab(v, i))}</td><td><b>${esc(v.forms[i])}</b></td></tr>`).join('')}</table>`;
+  30  const gap = (fr) => fr.split('___').map(esc).join('{{blank}}');
+  31  const filled = (fr, form) => fr.split('___').map(esc).join(`<span class="mk">${esc(form)}</span>`);
+  32  
+  33  /** Prüft getippte Formen. Pronomen davor sind erlaubt, ein fehlender Akzent zählt als "fast". */
+  34  export function checkForm(answer) {
+  35    const stripPronoun = (s) => s.replace(/^(j'|je |tu |il |elle |on |nous |vous |ils |elles )/, '');
+  36    return (input) => {
+  37      const given = stripPronoun(norm(input)), expected = norm(answer);
+  38      if (given === expected) return 'ok';
+  39      return stripAccents(given) === stripAccents(expected) ? 'almost' : 'bad';
+  40    };
+  41  }
+  42  
+  43  const optionsFor = (v, p, count) => shuffle([v.forms[p], ...distract(v, p, count)]).map((f) => ({ id: f, html: esc(f), fill: f }));
+  44  
+  45  export function choiceQ(it) {
+  46    const { v, p } = it, answer = v.forms[p];
+  47    return { kind: 'choice', label: 'Lücke füllen', chip: chip(v), prompt: gap(it.fr), sub: it.de, answer, options: optionsFor(v, p, 3), reveal: filled(it.fr, answer), why: hint(v, p), help: miniTable(v) };
+  48  }
+  49  
+  50  export function typeQ(it) {
+  51    const { v, p } = it, answer = v.forms[p];
+  52    return { kind: 'type', label: 'Schreibe die richtige Form', chip: chip(v), prompt: gap(it.fr), sub: it.de, answer, check: checkForm(answer), placeholder: 'Form eintippen', reveal: filled(it.fr, answer), why: hint(v, p), help: miniTable(v) };
+  53  }
+  54  
+  55  export function sentenceQ(it) {
+  56    const { v, p } = it, answer = v.forms[p];
+  57    const options = shuffle([answer, ...distract(v, p, 2)]).map((f) => ({ id: f, html: esc(it.fr.replace('___', f)) }));
+  58    return { kind: 'choice', label: 'Welcher Satz ist richtig?', chip: chip(v), sub: it.de, answer, options, optionsLayout: 'list', reveal: filled(it.fr, answer), why: hint(v, p), help: miniTable(v) };
+  59  }
+  60  
+  61  export function formQ(v, p) {
+  62    const answer = v.forms[p], subject = subjectFor(v, p).trim();
+  63    return { kind: 'type', label: 'Konjugiere im Présent', prompt: `${esc(subject)} + ${esc(v.inf)} <span class="muted">→ ?</span>`, promptStyle: 'big', sub: v.de, answer, check: checkForm(answer), placeholder: `z. B. ${v.forms[3]}`, reveal: esc(`${subject} ${answer}`), why: hint(v, p), help: miniTable(v) };
+  64  }
+  65  
+  66  export function endingQ(v, p) {
+  67    const answer = v.ends[p], subject = subjectFor(v, p);
+  68    const pool = shuffle([...new Set(v.ends)].filter((e) => e && e !== answer)).slice(0, 3);
+  69    const options = shuffle([answer, ...pool]).map((e) => ({ id: e, html: `-${esc(e)}`, fill: e }));
+  70    return { kind: 'choice', label: 'Welche Endung fehlt?', chip: chip(v), prompt: `${esc(subject)}${esc(v.stem)}{{blank}}`, promptStyle: 'big', answer, options, reveal: `${esc(subject)}${esc(v.stem)}<span class="mk">${esc(answer)}</span>`, why: hint(v, p), help: miniTable(v) };
+  71  }
+  72  
+  73  export function matchQ(v) {
+  74    return { kind: 'match', label: 'Verbinde Pronomen und Form', chip: chip(v), left: [0, 1, 2, 3, 4, 5].map((i) => esc(lab(v, i))), leftValues: v.forms.slice(), right: shuffle(v.forms).map((f) => ({ value: f, html: esc(f) })), why: 'Schau dir die Tabelle noch einmal an.', help: miniTable(v) };
+  75  }
+  76  
+  77  const randomPerson = (v, needEnding) => {
+  78    let p;
+  79    do { p = Math.floor(Math.random() * 6); } while (needEnding && !v.ends[p]);
+  80    return p;
+  81  };
+  82  
+  83  /** Wählt Beispielsätze so, dass sich innerhalb einer Runde möglichst keiner wiederholt. */
+  84  function sentencePicker() {
+  85    const used = {};
+  86    return (unit) => {
+  87      const pool = SP[unit.id], free = pool.filter((s) => !used[s.id]);
+  88      const item = pick(free.length ? free : pool);
+  89      used[item.id] = 1;
+  90      return item;
+  91    };
+  92  }
+  93  
+  94  function build(type, unit, nextSentence) {
+  95    if (type === 'choice') return choiceQ(nextSentence(unit));
+  96    if (type === 'type') return typeQ(nextSentence(unit));
+  97    if (type === 'sent') return sentenceQ(nextSentence(unit));
+  98    const v = V[pick(unit.verbs)];
+  99    if (type === 'form') return formQ(v, randomPerson(v));
+ 100    if (type === 'end') return unit.irr ? choiceQ(nextSentence(unit)) : endingQ(v, randomPerson(v, true));
+ 101    return matchQ(v);
+ 102  }
+ 103  
+ 104  const LESSON_IRREGULAR = ['choice', 'choice', 'form', 'match', 'type', 'sent', 'choice', 'type'];
+ 105  const LESSON_REGULAR = ['choice', 'end', 'form', 'match', 'type', 'sent', 'end', 'type'];
+ 106  const BOSS = ['choice', 'type', 'sent', 'form', 'choice', 'end', 'match', 'type', 'sent', 'choice', 'form', 'type'];
+ 107  const QUICK = ['choice', 'sent', 'choice', 'end', 'type'];
+ 108  
+ 109  export function lessonRound(unit) {
+ 110    const next = sentencePicker();
+ 111    return (unit.irr ? LESSON_IRREGULAR : LESSON_REGULAR).map((t) => build(t, unit, next));
+ 112  }
+ 113  
+ 114  function mixedRound(types) {
+ 115    const next = sentencePicker();
+ 116    return types.map((t) => {
+ 117      const unit = t === 'end' ? pick(UNITS.filter((u) => !u.irr)) : pick(UNITS);
+ 118      return build(t, unit, next);
+ 119    });
+ 120  }
+ 121  
+ 122  export const bossRound = () => mixedRound(BOSS);
+ 123  export const quickRound = () => mixedRound(QUICK);
+ 124  
+ 125  /** Eine Frage für den Blitz-Modus (immer Auswahl). */
+ 126  export function blitzQuestion() {
+ 127    const unit = pick(UNITS);
+ 128    if (!unit.irr && Math.random() < 0.25) {
+ 129      const v = V[pick(unit.verbs)];
+ 130      return endingQ(v, randomPerson(v, true));
+ 131    }
+ 132    return choiceQ(pick(SP[unit.id]));
+ 133  }

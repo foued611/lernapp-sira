@@ -1,0 +1,109 @@
+Knoten: helpers.js
+Id: tests/helpers.js
+Art: module
+Datei: tests/helpers.js
+Zeilen: 75
+
+Ausgehend (dieser Knoten nutzt):
+  call -> core/js/qtypes.js
+  call -> core/js/content.js
+  call -> core/js/appconfig.js
+
+Eingehend (diese Knoten nutzen ihn):
+  scripts/smoke.mjs -> call
+  tests/content.test.js -> call
+  tests/contract.test.js -> call
+  tests/core-content.test.js -> call
+  tests/deutsch.test.js -> call
+  tests/french.test.js -> call
+  tests/geometrie.test.js -> call
+  tests/informatik.test.js -> call
+  tests/mathe.test.js -> call
+  tests/rounds.test.js -> call
+  tests/views.test.js -> call
+
+Quelltext (erste 150 Zeilen, Zugangsdaten maskiert):
+   1  // Gemeinsame Prüfungen für alle Apps. Beschreibt den App-Vertrag aus AGENTS.md als ausführbaren Test.
+   2  import assert from 'node:assert/strict';
+   3  import { validateQuestion } from '../core/js/qtypes.js';
+   4  
+   5  export function assertValidQuestion(q) {
+   6    validateQuestion(q, assert);
+   7  }
+   8  
+   9  /** Prüft eine App-Konfiguration gegen den App-Vertrag. */
+  10  export function assertValidConfig(config, { rounds = 20 } = {}) {
+  11    assert.ok(config.id && /^[a-z0-9-]+$/.test(config.id), 'id: Kleinbuchstaben, Ziffern, Bindestrich');
+  12    assert.ok(config.title, 'title fehlt');
+  13    assert.ok(Array.isArray(config.units) && config.units.length > 0, 'units fehlen');
+  14    assert.equal(new Set(config.units.map((u) => u.id)).size, config.units.length, 'unit-IDs eindeutig');
+  15    config.units.forEach((u) => ['id', 'title', 'de', 'ic', 'color'].forEach((k) => assert.ok(u[k], `unit.${k} fehlt bei ${u.id}`)));
+  16    assert.equal(typeof config.theory, 'function', 'theory muss eine Funktion sein');
+  17    assert.ok(config.lessons && config.units.every((u) => config.lessons[u.id]), 'lessons: jede Seite braucht eine Lektion');
+  18    assert.equal(typeof config.rounds.lesson, 'function', 'rounds.lesson fehlt');
+  19    assert.ok(Array.isArray(config.badges) && config.badges.length > 0, 'badges fehlen');
+  20    assert.equal(new Set(config.badges.map((b) => b.id)).size, config.badges.length, 'badge-IDs eindeutig');
+  21    config.badges.forEach((b) => ['id', 'n', 'd'].forEach((k) => assert.ok(b[k], `badge.${k} fehlt`)));
+  22    config.badges.forEach((b) => assert.equal(typeof b.when, 'function', `badge.when fehlt bei ${b.id}`));
+  23  
+  24    for (let i = 0; i < rounds; i++) {
+  25      for (const unit of config.units) {
+  26        const round = config.rounds.lesson(unit);
+  27        assert.ok(round.length >= 3, `Runde zu kurz bei ${unit.id}`);
+  28        round.forEach(assertValidQuestion);
+  29      }
+  30      for (const mode of ['boss', 'quick']) {
+  31        if (config.rounds[mode]) config.rounds[mode]().forEach(assertValidQuestion);
+  32      }
+  33      if (config.blitz) {
+  34        const q = config.blitz();
+  35        assert.equal(q.kind, 'choice', 'Blitz braucht Auswahlfragen');
+  36        assertValidQuestion(q);
+  37      }
+  38    }
+  39  }
+  40  
+  41  /** Prüft eine Lektionsbeschreibung (core/js/lesson.js). Die Diagramme müssen gültiges XML sein. */
+  42  export async function assertValidLesson(spec, name = 'Lektion') {
+  43    const { JSDOM } = await import('jsdom');
+  44    assert.ok(spec.goal && spec.goal.length > 15, `${name}: goal fehlt`);
+  45    assert.ok(Array.isArray(spec.tldr) && spec.tldr.length >= 2 && spec.tldr.length <= 4, `${name}: tldr braucht 2 bis 4 Sätze`);
+  46    assert.ok(spec.analogy && spec.analogy.title && spec.analogy.html, `${name}: analogy fehlt`);
+  47    assert.ok(spec.figure && spec.figure.caption && spec.figure.svg.startsWith('<svg'), `${name}: figure fehlt`);
+  48    new JSDOM(spec.figure.svg, { contentType: 'image/svg+xml' }); // wirft bei fehlerhaftem XML
+  49    assert.ok(/role="img"/.test(spec.figure.svg) && /aria-label="[^"]{10,}"/.test(spec.figure.svg), `${name}: Diagramm braucht eine Beschreibung (aria-label)`);
+  50    assert.ok(spec.steps && spec.steps.items.length >= 3, `${name}: Beispiel braucht mindestens 3 Schritte`);
+  51    assert.ok(spec.pitfall && spec.pitfall.html, `${name}: pitfall fehlt`);
+  52    assert.ok(spec.rule, `${name}: rule fehlt`);
+  53    const ids = spec.check.options.map((o) => o.id);
+  54    assert.ok(spec.check.q && ids.length >= 3 && ids.includes(spec.check.answer) && new Set(ids).size === ids.length, `${name}: check ungültig`);
+  55    assert.ok(spec.check.why, `${name}: check.why fehlt`);
+  56  }
+  57  
+  58  // --- Konfiguration aus content/ + logic.js bauen (derselbe Weg wie im Browser, nur mit Dateien statt fetch) ---
+  59  import { readFile } from 'node:fs/promises';
+  60  import { fileURLToPath } from 'node:url';
+  61  import { createStaticSource } from '../core/js/content.js';
+  62  import { buildConfig } from '../core/js/appconfig.js';
+  63  
+  64  const ROOT = fileURLToPath(new URL('../', import.meta.url));
+  65  
+  66  /** fetch-Ersatz: liest https://x.test/content/... aus dem Repo. */
+  67  export async function diskFetch(url) {
+  68    const path = String(url).replace(/^https:\/\/x\.test\//, ROOT);
+  69    try {
+  70      const text = await readFile(path, 'utf8');
+  71      return { ok: true, status: 200, json: async () => JSON.parse(text) };
+  72    } catch {
+  73      return { ok: false, status: 404, json: async () => ({}) };
+  74    }
+  75  }
+  76  
+  77  export const diskSource = () => createStaticSource('https://x.test/content/', diskFetch);
+  78  
+  79  /** Lädt die Konfiguration einer App wie im Browser: Inhalte aus content/<id>/ plus apps/<name>/logic.js. */
+  80  export async function loadAppConfig(id, folder) {
+  81    const dir = `${ROOT}${folder.replace(/^\.?\//, '')}`;
+  82    const logic = (await import(`${dir}logic.js`)).default;
+  83    return buildConfig(await diskSource().load(id), logic);
+  84  }

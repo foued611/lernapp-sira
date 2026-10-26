@@ -1,0 +1,84 @@
+Knoten: registry.js
+Id: registry.js
+Art: module
+Datei: registry.js
+Zeilen: 64
+
+Ausgehend (dieser Knoten nutzt):
+  keine
+
+Eingehend (diese Knoten nutzen ihn):
+  dashboard.js -> call
+  scripts/smoke.mjs -> call
+  tests/content.test.js -> dispatch
+  tests/contract.test.js -> call
+  tests/pages.test.js -> call
+  tests/registry.test.js -> call
+
+Quelltext (erste 150 Zeilen, Zugangsdaten maskiert):
+   1  // Register aller Lern-Apps. Das Dashboard (index.html) baut daraus seine Kacheln.
+   2  // Neue App: Ordner apps/<name>/ anlegen, hier einen Eintrag ergänzen. Details in AGENTS.md.
+   3  //
+   4  // id        eindeutig und stabil. Daraus entsteht der Speicherschlüssel (siehe core/js/profile.js)
+   5  // subject   Fach, bestimmt Farbe und Filter
+   6  // units     Anzahl der Lernpfad-Seiten, für die Fortschrittsanzeige
+   7  // status    'live' (verlinkt) oder 'soon' (Platzhalter)
+   8  
+   9  export const SUBJECT_COLORS = {
+  10    Französisch: '#9B7BFF',
+  11    Mathematik: '#4CC3F5',
+  12    Deutsch: '#FF6B88',
+  13    Englisch: '#3DD6B0',
+  14    Informatik: '#FF9F43',
+  15    Physik: '#8BD450'
+  16  };
+  17  
+  18  export const APPS = [
+  19    {
+  20      id: 'fr-verben',
+  21      subject: 'Französisch',
+  22      title: 'Cahier de Verbes',
+  23      desc: 'être, avoir, aller, faire und die regelmäßigen Verben im Présent. Erst Theorie, dann sofort üben.',
+  24      href: 'apps/franzoesisch-verben/index.html',
+  25      units: 6,
+  26      status: 'live'
+  27    },
+  28    {
+  29      id: 'mathe',
+  30      subject: 'Mathematik',
+  31      title: 'Mathe-Werkstatt',
+  32      desc: 'Vorzeichen, Terme, Gleichungen, Prozente, Zinsen, Dreisatz, Daten und Zufall. Mit Waage, Zahlenstrahl und Kacheln erklärt.',
+  33      href: 'apps/mathe/index.html',
+  34      units: 9,
+  35      status: 'live'
+  36    },
+  37    {
+  38      id: 'geometrie',
+  39      subject: 'Mathematik',
+  40      title: 'Geometrie-Werkstatt',
+  41      desc: 'Mittelsenkrechte, Winkelhalbierende, Dreiecke konstruieren, Winkel, Thales, Umkreis und Inkreis.',
+  42      href: 'apps/geometrie/index.html',
+  43      units: 8,
+  44      status: 'live'
+  45    },
+  46    { id: 'englisch', subject: 'Englisch', title: 'Englisch-App', desc: 'Wortschatz und Grammatik.', status: 'soon' },
+  47    {
+  48      id: 'info-zahlen',
+  49      subject: 'Informatik',
+  50      title: 'Zahlenwerkstatt',
+  51      desc: 'Binär und Hexadezimal: Lampen schalten, umrechnen und addieren wie ein Computer.',
+  52      href: 'apps/informatik/index.html',
+  53      units: 6,
+  54      status: 'live'
+  55    },
+  56    {
+  57      id: 'deutsch',
+  58      subject: 'Deutsch',
+  59      title: 'Deutsch-Werkstatt',
+  60      desc: 'Inhaltsangabe, Adverbialsätze, Kommas, das und dass, Passiv, sprachliche Bilder, Rechtschreibung und Lesen.',
+  61      href: 'apps/deutsch/index.html',
+  62      units: 15,
+  63      status: 'live'
+  64    },
+  65    { id: 'physik', subject: 'Physik', title: 'Physik-App', desc: 'Experimente, Messen und Kräfte.', status: 'soon' }
+  66  ];

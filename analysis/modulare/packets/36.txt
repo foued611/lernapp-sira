@@ -1,0 +1,77 @@
+Knoten: views.test.js
+Id: tests/views.test.js
+Art: module
+Datei: tests/views.test.js
+Zeilen: 53
+
+Ausgehend (dieser Knoten nutzt):
+  call -> core/js/views/home.js
+  call -> core/js/views/result.js
+  call -> core/js/profile.js
+  call -> tests/helpers.js
+
+Eingehend (diese Knoten nutzen ihn):
+  keine
+
+Quelltext (erste 150 Zeilen, Zugangsdaten maskiert):
+   1  import { test } from 'node:test';
+   2  import assert from 'node:assert/strict';
+   3  import { homeHTML } from '../core/js/views/home.js';
+   4  import { resultView } from '../core/js/views/result.js';
+   5  import { appDefaults } from '../core/js/profile.js';
+   6  import { loadAppConfig } from './helpers.js';
+   7  
+   8  const config = await loadAppConfig('fr-verben', 'apps/franzoesisch-verben/');
+   9  
+  10  const profile = () => ({ name: '', xp: 0, streak: 0, daily: {}, last: null });
+  11  const state = (over = {}) => ({ config, profile: { ...profile(), ...over }, app: appDefaults(), bossOpen: false, resetAsk: false });
+  12  
+  13  test('Startseite zeigt alle Seiten, Trophäen und sperrt den Endgegner', () => {
+  14    const html = homeHTML(state());
+  15    for (const u of config.units) assert.ok(html.includes(`data-id="${u.id}"`), u.id);
+  16    assert.match(html, /Noch gesperrt/);
+  17    assert.match(html, /id="nm"/); // Namensfeld, solange kein Name gesetzt ist
+  18  });
+  19  
+  20  test('Startseite maskiert den Namen', () => {
+  21    const html = homeHTML(state({ name: '<b>x</b>' }));
+  22    assert.ok(!html.includes('<b>x</b>'));
+  23    assert.ok(!html.includes('id="nm"'));
+  24  });
+  25  
+  26  test('Zurücksetzen fragt erst nach', () => {
+  27    assert.match(homeHTML({ ...state(), resetAsk: true }), /data-act="resetok"/);
+  28    assert.match(homeHTML(state()), /data-act="reset"/);
+  29  });
+  30  
+  31  test('Ergebnisansicht: Runde, durchgefallen, Blitz', () => {
+  32    const ctx = { profile: profile(), app: appDefaults(), words: { resultTitles: ['A', 'B', 'C'], blitzTitle: 'Blitz!' } };
+  33    const unit = config.units[0];
+  34    const ok = resultView({ mode: 'lesson', unit, stars: 3, accuracy: 1, xp: 50, bonus: 0, bestCombo: 5, newBadges: [], relearned: 0 }, ctx);
+  35    assert.match(ok.html, /C<\/h1>/);
+  36    assert.equal(ok.celebrate, true);
+  37    const bad = resultView({ mode: 'lesson', unit, stars: 0, failed: true, accuracy: 0.2, xp: 5, bonus: 0, bestCombo: 0, newBadges: [] }, ctx);
+  38    assert.match(bad.html, /Knapp daneben/);
+  39    assert.equal(bad.celebrate, false);
+  40    const blitz = resultView({ mode: 'blitz', score: 12, xp: 80, bestCombo: 4, newBadges: [] }, ctx);
+  41    assert.match(blitz.html, /Blitz!/);
+  42    assert.equal(blitz.celebrate, true);
+  43  });
+  44  
+  45  test('Startseite zeigt Material zum Ausdrucken und maskiert es', () => {
+  46    const resources = [{ title: '<b>Blatt</b>', desc: 'Zum Ausdrucken', href: 'files/blatt.pdf' }];
+  47    const html = homeHTML({ ...state(), config: { ...config, resources } });
+  48    assert.match(html, /Zum Ausdrucken/);
+  49    assert.match(html, /href="files\/blatt\.pdf" target="_blank" rel="noopener"/);
+  50    assert.ok(!html.includes('<b>Blatt</b>'), 'Titel wird maskiert');
+  51    assert.ok(!homeHTML(state()).includes('Zum Ausdrucken'), 'ohne Material kein Abschnitt');
+  52  });
+  53  
+  54  test('Startseite kennzeichnet Seiten eines Strangs und lässt das Standardprogramm unmarkiert', async () => {
+  55    const de = await loadAppConfig('deutsch', 'apps/deutsch/');
+  56    const html = homeHTML({ ...state(), config: de });
+  57    const nodes = html.split('<button class="node"').slice(1).map((n) => n.split('</button>')[0]);
+  58    const lrs = nodes.filter((n) => n.includes('LRS-Förderung')).length;
+  59    assert.equal(lrs, 6);
+  60    assert.equal(nodes.length, de.units.length);
+  61  });

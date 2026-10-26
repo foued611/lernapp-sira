@@ -1,0 +1,91 @@
+Knoten: informatik.test.js
+Id: tests/informatik.test.js
+Art: module
+Datei: tests/informatik.test.js
+Zeilen: 67
+
+Ausgehend (dieser Knoten nutzt):
+  call -> apps/informatik/numbers.js
+  call -> apps/informatik/builders.js
+  call -> tests/helpers.js
+
+Eingehend (diese Knoten nutzen ihn):
+  keine
+
+Quelltext (erste 150 Zeilen, Zugangsdaten maskiert):
+   1  import { test } from 'node:test';
+   2  import assert from 'node:assert/strict';
+   3  import { toBin, toHex, normInput, checker, decToBinSteps, onesWeights, placeSum, distractors, HEX } from '../apps/informatik/numbers.js';
+   4  import * as b from '../apps/informatik/builders.js';
+   5  import { loadAppConfig, diskSource } from './helpers.js';
+   6  
+   7  const config = await loadAppConfig('info-zahlen', 'apps/informatik/');
+   8  { const bundle = await diskSource().load('info-zahlen'); b.init({ data: bundle.data, manifest: bundle.manifest }); }
+   9  import { assertValidQuestion } from './helpers.js';
+  10  
+  11  test('Umrechnung Binär und Hex', () => {
+  12    assert.equal(toBin(13), '1101');
+  13    assert.equal(toHex(255), 'FF');
+  14    assert.equal(HEX[10], 'A');
+  15  });
+  16  
+  17  test('Stellenwerte zerlegen', () => {
+  18    assert.equal(placeSum(352), '3×100 + 5×10 + 2×1');
+  19    assert.equal(placeSum(0), '0');
+  20    assert.deepEqual(onesWeights('1011'), [8, 2, 1]);
+  21  });
+  22  
+  23  test('Normal → Binär Schritte ergeben die richtige Zahl', () => {
+  24    for (let n = 0; n <= 255; n++) {
+  25      const bits = decToBinSteps(n).map((s) => (s.fits ? '1' : '0')).join('');
+  26      assert.equal(parseInt(bits || '0', 2), n, `n=${n}`);
+  27    }
+  28  });
+  29  
+  30  test('Eingaben werden großzügig geprüft', () => {
+  31    assert.equal(normInput(' 1010 ', 'bin'), '1010');
+  32    assert.equal(normInput('0010', 'bin'), '10');
+  33    assert.equal(normInput('0x2f', 'hex'), '2F');
+  34    assert.equal(normInput('2 F', 'hex'), '2F');
+  35    assert.equal(normInput('12', 'bin'), null);
+  36    assert.equal(normInput('abc', 'dec'), null);
+  37    assert.equal(checker('hex', '2F')('2f'), 'ok');
+  38    assert.equal(checker('bin', '1010')('01010'), 'ok');
+  39    assert.equal(checker('dec', '47')('48'), 'bad');
+  40  });
+  41  
+  42  test('Ablenker sind eindeutig und enthalten nie die Antwort', () => {
+  43    for (let i = 0; i < 200; i++) {
+  44      const answer = String(Math.floor(Math.random() * 200));
+  45      const wrong = distractors(answer, [answer, 'NaN', '-3', answer, answer + 1]);
+  46      assert.equal(new Set(wrong).size, wrong.length);
+  47      assert.ok(!wrong.includes(answer));
+  48      assert.equal(wrong.length, 3);
+  49    }
+  50  });
+  51  
+  52  test('Jeder Fragengenerator liefert gültige Fragen mit richtiger Antwort', () => {
+  53    const makers = Object.entries(b).filter(([name]) => name.endsWith('Q') && name !== 'blitzQuestion');
+  54    assert.ok(makers.length >= 12);
+  55    for (let i = 0; i < 300; i++) {
+  56      for (const [, make] of makers) {
+  57        const q = make();
+  58        assertValidQuestion(q);
+  59        if (q.kind === 'type') assert.equal(q.check(q.answer), 'ok');
+  60      }
+  61    }
+  62  });
+  63  
+  64  test('Rechenfragen haben mathematisch richtige Antworten', () => {
+  65    for (let i = 0; i < 300; i++) {
+  66      const q = b.addQ('hard');
+  67      const [a, c] = q.prompt.match(/[01]+/g).map((x) => parseInt(x, 2));
+  68      assert.equal(parseInt(q.answer, 2), a + c);
+  69      const h = b.hexToDecQ('hard');
+  70      if (h.kind === 'type') assert.equal(parseInt(h.prompt.match(/class="mono">([0-9A-F]+)</)[1], 16), Number(h.answer));
+  71    }
+  72  });
+  73  
+  74  test('Konfiguration nutzt eigene Wörter', () => {
+  75    assert.equal(config.words.resultTitles.length, 3);
+  76  });

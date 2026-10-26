@@ -1,0 +1,164 @@
+Knoten: smoke.mjs
+Id: scripts/smoke.mjs
+Art: module
+Datei: scripts/smoke.mjs
+Zeilen: 181
+
+Ausgehend (dieser Knoten nutzt):
+  call -> tests/helpers.js
+  call -> registry.js
+
+Eingehend (diese Knoten nutzen ihn):
+  keine
+
+Quelltext (erste 150 Zeilen, Zugangsdaten maskiert):
+   1  import { build } from 'esbuild';
+   2  import { JSDOM, VirtualConsole } from 'jsdom';
+   3  import { readFileSync } from 'node:fs';
+   4  import { IDBFactory } from 'fake-indexeddb';
+   5  import { existsSync } from 'node:fs';
+   6  import { fileURLToPath } from 'node:url';
+   7  import { diskFetch, loadAppConfig } from '../tests/helpers.js';
+   8  const repo=fileURLToPath(new URL('..', import.meta.url));
+   9  async function bundle(entry){const r=await build({entryPoints:[repo+'/'+entry],bundle:true,format:'iife',write:false});return r.outputFiles[0].text}
+  10  async function boot(htmlFile,code,store={},idb=null){
+  11    const html=readFileSync(repo+'/'+htmlFile,'utf8').replace(/<script[^>]*><\/script>/g,'').replace(/<link[^>]*>/g,'');
+  12    const errors=[];
+  13    const vc=new VirtualConsole();vc.on('jsdomError',e=>{if(!/not implemented/i.test(e.message))errors.push(e.message)});
+  14    const dom=new JSDOM(html,{runScripts:'outside-only',url:'https://x.test/',virtualConsole:vc,pretendToBeVisual:true});
+  15    const w=dom.window;w.scrollTo=()=>{};w.fetch=(url)=>diskFetch(String(url));
+  16    if(idb)w.indexedDB=idb;
+  17    for(const [k,v] of Object.entries(store))w.localStorage.setItem(k,v);
+  18    w.addEventListener('error',e=>errors.push(String(e.message)));
+  19    try{w.eval(code)}catch(e){errors.push('eval: '+e.stack)}
+  20    await new Promise(r=>setTimeout(r,80));
+  21    return {w,errors};
+  22  }
+  23  const click=(w,el)=>el.dispatchEvent(new w.MouseEvent('click',{bubbles:true}));
+  24  const $=(w,s)=>w.document.querySelector(s);
+  25  const $$=(w,s)=>[...w.document.querySelectorAll(s)];
+  26  const tick=()=>new Promise(r=>setTimeout(r,5));
+  27  
+  28  async function playRound(w,maxSteps=40){
+  29    let steps=0;
+  30    while(steps++<maxSteps){
+  31      if($(w,'.res'))return 'result';
+  32      const q=$(w,'.qcard');if(!q)return 'noqcard';
+  33      // match
+  34      if($(w,'.match')){
+  35        for(let guard=0;guard<60&&!$(w,'#nx');guard++){
+  36          const half=$$(w,'.mb').length/2,lefts=()=>$$(w,'.mb').slice(0,half),rights=()=>$$(w,'.mb').slice(half);
+  37          const li=lefts().findIndex(b=>!b.classList.contains('dn'));
+  38          if(li<0)break;
+  39          for(let j=0;j<half&&!$(w,'#nx');j++){
+  40            if(lefts()[li].classList.contains('dn'))break;
+  41            click(w,lefts()[li]);
+  42            if(rights()[j]&&!rights()[j].classList.contains('dn'))click(w,rights()[j]);
+  43          }
+  44        }
+  45      } else if($(w,'#ans')){
+  46        const inp=$(w,'#ans');inp.value='x';inp.dispatchEvent(new w.Event('input',{bubbles:true}));click(w,$(w,'#chk'));
+  47      } else {
+  48        click(w,$(w,'.opt'));click(w,$(w,'#chk'));
+  49      }
+  50      const nx=$(w,'#nx');
+  51      if(nx)click(w,nx);
+  52      await tick();
+  53    }
+  54    return 'timeout';
+  55  }
+  56  
+  57  // ---------------------------------------------------------------------------
+  58  // Durchspiel-Test für ALLE Apps aus registry.js. Es steht kein App-Name im Skript.
+  59  // App-spezifische Prüfungen (z. B. Lampen, Verbtabellen) liegen in apps/<name>/smoke.mjs:
+  60  //   export default { theory: async ({ w, unit, click, $, $$ }) => [[Name, ok], ...] }
+  61  // ---------------------------------------------------------------------------
+  62  import { APPS } from '../registry.js';
+  63  
+  64  const results=[];
+  65  const live=APPS.filter(a=>a.status==='live');
+  66  const folderOf=a=>a.href.replace(/index\.html$/,'');
+  67  const dashCode=await bundle('dashboard.js');
+  68  const api={click,$,$$};
+  69  
+  70  async function loadHooks(app){
+  71    const f=folderOf(app)+'smoke.mjs';
+  72    return existsSync(repo+'/'+f)?(await import(repo+'/'+f)).default:{};
+  73  }
+  74  
+  75  for(const app of live){
+  76    const folder=folderOf(app), tag=app.id+': ';
+  77    const config=await loadAppConfig(app.id,folder);
+  78    const hooks=await loadHooks(app);
+  79    const code=await bundle(folder+'main.js');
+  80    const key='lernwerkstatt:app:'+app.id;
+  81    const unitIds=config.units.map(u=>u.id);
+  82  
+  83    // 1) Startseite, jede Seite: Lektion, Theorie-Spielzeug, Runde
+  84    {
+  85      const {w,errors}=await boot(folder+'index.html',code);
+  86      results.push([tag+'Startseite mit '+unitIds.length+' Seiten',!!$(w,'.hero')&&$$(w,'.node').length===unitIds.length]);
+  87      results.push([tag+'Sammelalbum hat eine Karte je Seite',$$(w,'.gcard').length===config.units.filter(u=>u.card).length]);
+  88      for(const unit of config.units){
+  89        click(w,$(w,`.node[data-id="${unit.id}"]`));
+  90        const items=$$(w,'.lsn-list li'),shown=()=>items.filter(li=>!li.hidden).length;
+  91        results.push([tag+unit.id+': Lektion vollständig',!!$(w,'.lsn-goal')&&!!$(w,'.lsn-tldr')&&!!$(w,'.lsn-fig svg')&&!!$(w,'.lsn-pit')&&!!$(w,'.lsn-check')&&shown()===1]);
+  92        const nx=$(w,'[data-lsn="next"]');click(w,nx);
+  93        results.push([tag+unit.id+': Schritt klappt auf',shown()===2]);
+  94        for(let i=0;i<10;i++)if(!nx.hidden)click(w,nx);
+  95        results.push([tag+unit.id+': alle Schritte, Button weg',shown()===items.length&&nx.hidden]);
+  96        const group=$(w,'.lsn-opts'),wrong=$$(w,'.lsn-opts .opt').find(b=>b.dataset.id!==group.dataset.answer);
+  97        click(w,wrong);
+  98        results.push([tag+unit.id+': Mini-Check zeigt Lösung',$(w,'.lsn-fb').classList.contains('bad')&&!!$(w,'.lsn-opts .opt.right')]);
+  99        if(hooks.theory)for(const [n,ok] of await hooks.theory({w,unit,...api}))results.push([tag+unit.id+': '+n,ok]);
+ 100        click(w,$(w,'[data-act="start"]'));
+ 101        const r=await playRound(w);
+ 102        results.push([tag+unit.id+': Runde -> '+r,r==='result']);
+ 103        click(w,$(w,'[data-act="home"]'));
+ 104      }
+ 105      if(config.rounds.quick){click(w,$(w,'[data-act="quick"]'));results.push([tag+'Quick -> '+await playRound(w),!!$(w,'.res')]);click(w,$(w,'[data-act="home"]'))}
+ 106      if(config.blitz){
+ 107        click(w,$(w,'[data-act="blitz"]'));results.push([tag+'Blitz startet',!!$(w,'.timer')]);
+ 108        click(w,$(w,'.opt'));await new Promise(r=>setTimeout(r,400));click(w,$(w,'[data-act="exit"]'));
+ 109        results.push([tag+'Blitz Exit -> Home',!!$(w,'.hero')]);
+ 110      }
+ 111      const nm=$(w,'#nm');nm.value='Sira';click(w,$(w,'[data-act="savename"]'));
+ 112      results.push([tag+'Name wird angezeigt',$(w,'.hero h1').textContent.includes('Sira')]);
+ 113      const prof=JSON.parse(w.localStorage.getItem('lernwerkstatt:profile')),appS=JSON.parse(w.localStorage.getItem(key));
+ 114      results.push([tag+'Profil und App gespeichert',prof.name==='Sira'&&prof.xp>0&&typeof appS.xp==='number'&&typeof appS.stars==='object']);
+ 115      results.push([tag+'Fehler: '+errors.length,errors.length===0]);
+ 116      if(errors.length)console.log(errors.slice(0,5));
+ 117    }
+ 118  
+ 119    // 2) Endgegner mit freigeschalteten Seiten, danach Zurücksetzen
+ 120    if(config.rounds.boss){
+ 121      const stars=Object.fromEntries(unitIds.map(id=>[id,1]));
+ 122      const {w,errors}=await boot(folder+'index.html',code,{[key]:JSON.stringify({xp:10,stars,badges:{},best:{}})});
+ 123      const b=$(w,'[data-act="boss"]');results.push([tag+'Endgegner frei',!b.disabled]);
+ 124      click(w,b);results.push([tag+'Endgegner -> '+await playRound(w,60),!!$(w,'.res')]);
+ 125      click(w,$(w,'[data-act="home"]'));
+ 126      click(w,$(w,'[data-act="reset"]'));click(w,$(w,'[data-act="resetok"]'));
+ 127      const s=JSON.parse(w.localStorage.getItem(key));
+ 128      results.push([tag+'Zurücksetzen speichert leer',s.xp===0&&Object.keys(s.stars).length===0]);
+ 129      click(w,$(w,'[data-act="quick"]')||$(w,'.node'));
+ 130      results.push([tag+'Fehler Endgegner: '+errors.length,errors.length===0]);
+ 131      if(errors.length)console.log(errors.slice(0,5));
+ 132    }
+ 133  
+ 134    // 3) Browser-Datenbank: alter localStorage-Stand wird übernommen, neuer landet in IndexedDB und im Protokoll
+ 135    {
+ 136      const idb=new IDBFactory(), first=unitIds[0];
+ 137      const {w,errors}=await boot(folder+'index.html',code,{[key]:JSON.stringify({xp:40,stars:{[first]:2},badges:{},best:{},__v:1})},idb);
+ 138      results.push([tag+'IDB: Altstand übernommen',$$(w,'.node .stars .on').length===2&&w.localStorage.getItem(key)===null]);
+ 139      results.push([tag+'IDB: Sammelkarte Silber',$$(w,'.gcard.t2').length===1]);
+ 140      click(w,$(w,`.node[data-id="${first}"]`));click(w,$(w,'[data-act="start"]'));
+ 141      results.push([tag+'IDB: Runde -> '+await playRound(w),!!$(w,'.res')]);
+ 142      await new Promise(r=>setTimeout(r,100));
+ 143      const rows=await new Promise((res,rej)=>{const o=idb.open('lernwerkstatt');o.onsuccess=()=>{const t=o.result.transaction(['docs','log']);const d=t.objectStore('docs').getAll(),l=t.objectStore('log').getAll();t.oncomplete=()=>res({docs:d.result,log:l.result})};o.onerror=()=>rej(o.error)});
+ 144      const doc=rows.docs.find(r=>r.key===key);
+ 145      results.push([tag+'IDB: App-Dokument und Profil gespeichert',!!doc&&doc.value.xp>=40&&doc.value.__v===1&&rows.docs.some(r=>r.key==='lernwerkstatt:profile')]);
+ 146      results.push([tag+'IDB: Runde im Protokoll',rows.log.length===1&&rows.log[0].unit===first&&rows.log[0].app===app.id]);
+ 147      results.push([tag+'IDB: Fehler '+errors.length,errors.length===0]);
+ 148      if(errors.length)console.log(errors.slice(0,5));
+ 149    }
+ 150  }

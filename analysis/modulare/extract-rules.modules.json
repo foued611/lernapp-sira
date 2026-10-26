@@ -1,0 +1,226 @@
+[
+ {
+  "name": "App _template:small-1",
+  "domain": "App _template",
+  "files": [
+   "apps/_template/builders.js",
+   "apps/_template/diagrams.js",
+   "apps/_template/logic.js",
+   "apps/_template/main.js"
+  ],
+  "loc": 46
+ },
+ {
+  "name": "App deutsch:small-1",
+  "domain": "App deutsch",
+  "files": [
+   "apps/deutsch/builders.js",
+   "apps/deutsch/diagrams.js",
+   "apps/deutsch/logic.js",
+   "apps/deutsch/main.js"
+  ],
+  "loc": 111
+ },
+ {
+  "name": "App franzoesisch-verben:small-1",
+  "domain": "App franzoesisch-verben",
+  "files": [
+   "apps/franzoesisch-verben/builders.js",
+   "apps/franzoesisch-verben/diagrams.js",
+   "apps/franzoesisch-verben/logic.js",
+   "apps/franzoesisch-verben/main.js",
+   "apps/franzoesisch-verben/model.js",
+   "apps/franzoesisch-verben/smoke.mjs",
+   "apps/franzoesisch-verben/theory.js"
+  ],
+  "loc": 290
+ },
+ {
+  "name": "App geometrie:small-1",
+  "domain": "App geometrie",
+  "files": [
+   "apps/geometrie/builders.js",
+   "apps/geometrie/diagrams.js"
+  ],
+  "loc": 316
+ },
+ {
+  "name": "App geometrie:small-2",
+  "domain": "App geometrie",
+  "files": [
+   "apps/geometrie/geom.js",
+   "apps/geometrie/logic.js",
+   "apps/geometrie/main.js"
+  ],
+  "loc": 40
+ },
+ {
+  "name": "App informatik:small-1",
+  "domain": "App informatik",
+  "files": [
+   "apps/informatik/builders.js",
+   "apps/informatik/diagrams.js"
+  ],
+  "loc": 363
+ },
+ {
+  "name": "App informatik:small-2",
+  "domain": "App informatik",
+  "files": [
+   "apps/informatik/logic.js",
+   "apps/informatik/main.js",
+   "apps/informatik/numbers.js",
+   "apps/informatik/smoke.mjs",
+   "apps/informatik/theory.js"
+  ],
+  "loc": 250
+ },
+ {
+  "name": "App mathe:small-1",
+  "domain": "App mathe",
+  "files": [
+   "apps/mathe/builders.js",
+   "apps/mathe/diagrams.js"
+  ],
+  "loc": 417
+ },
+ {
+  "name": "App mathe:small-2",
+  "domain": "App mathe",
+  "files": [
+   "apps/mathe/logic.js",
+   "apps/mathe/main.js",
+   "apps/mathe/math.js"
+  ],
+  "loc": 23
+ },
+ {
+  "name": "Start und Inhalte:small-1",
+  "domain": "Start und Inhalte",
+  "files": [
+   "core/js/appconfig.js",
+   "core/js/boot.js",
+   "core/js/content.js",
+   "core/js/validate.js"
+  ],
+  "loc": 183
+ },
+ {
+  "name": "Einstieg (Startseite):small-1",
+  "domain": "Einstieg (Startseite)",
+  "files": [
+   "dashboard.js",
+   "registry.js"
+  ],
+  "loc": 131
+ },
+ {
+  "name": "Lektionen und Diagramme:small-1",
+  "domain": "Lektionen und Diagramme",
+  "files": [
+   "core/js/lesson.js",
+   "core/js/svg.js",
+   "core/js/theory.js",
+   "core/js/tracks.js"
+  ],
+  "loc": 105
+ },
+ {
+  "name": "Speicher:small-1",
+  "domain": "Speicher",
+  "files": [
+   "core/js/db.js",
+   "core/js/store.js"
+  ],
+  "loc": 182
+ },
+ {
+  "name": "Rundenmotor:small-1",
+  "domain": "Rundenmotor",
+  "files": [
+   "core/js/blitz.js",
+   "core/js/qtypes.js",
+   "core/js/questions.js",
+   "core/js/quiz.js"
+  ],
+  "loc": 469
+ },
+ {
+  "name": "Spielregeln:small-1",
+  "domain": "Spielregeln",
+  "files": [
+   "core/js/profile.js",
+   "core/js/rounds.js",
+   "core/js/rules.js"
+  ],
+  "loc": 171
+ },
+ {
+  "name": "Gemeinsame Helfer:small-1",
+  "domain": "Gemeinsame Helfer",
+  "files": [
+   "core/js/confetti.js",
+   "core/js/icons.js",
+   "core/js/mascot.js",
+   "core/js/mathkit.js",
+   "core/js/ui.js"
+  ],
+  "loc": 96
+ },
+ {
+  "name": "Shell und Ansichten:small-1",
+  "domain": "Shell und Ansichten",
+  "files": [
+   "core/js/shell.js",
+   "core/js/views/backup.js",
+   "core/js/views/home.js",
+   "core/js/views/result.js"
+  ],
+  "loc": 266
+ },
+ {
+  "name": "Tests und Smoke-Test:small-1",
+  "domain": "Tests und Smoke-Test",
+  "files": [
+   "scripts/smoke.mjs",
+   "tests/content.test.js",
+   "tests/contract.test.js",
+   "tests/core-content.test.js"
+  ],
+  "loc": 382
+ },
+ {
+  "name": "Tests und Smoke-Test:small-2",
+  "domain": "Tests und Smoke-Test",
+  "files": [
+   "tests/db.test.js",
+   "tests/deutsch.test.js",
+   "tests/french.test.js",
+   "tests/geometrie.test.js",
+   "tests/helpers.js"
+  ],
+  "loc": 367
+ },
+ {
+  "name": "Tests und Smoke-Test:small-3",
+  "domain": "Tests und Smoke-Test",
+  "files": [
+   "tests/informatik.test.js",
+   "tests/mathe.test.js",
+   "tests/pages.test.js",
+   "tests/profile.test.js"
+  ],
+  "loc": 330
+ },
+ {
+  "name": "Tests und Smoke-Test:small-4",
+  "domain": "Tests und Smoke-Test",
+  "files": [
+   "tests/qtypes.test.js",
+   "tests/registry.test.js",
+   "tests/rounds.test.js",
+   "tests/views.test.js"
+  ],
+  "loc": 186
+ }
+]

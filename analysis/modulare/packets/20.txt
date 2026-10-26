@@ -1,0 +1,101 @@
+Knoten: deutsch.test.js
+Id: tests/deutsch.test.js
+Art: module
+Datei: tests/deutsch.test.js
+Zeilen: 77
+
+Ausgehend (dieser Knoten nutzt):
+  call -> tests/helpers.js
+  call -> apps/deutsch/builders.js
+  call -> apps/deutsch/diagrams.js
+
+Eingehend (diese Knoten nutzen ihn):
+  keine
+
+Quelltext (erste 150 Zeilen, Zugangsdaten maskiert):
+   1  import { test } from 'node:test';
+   2  import assert from 'node:assert/strict';
+   3  import { access } from 'node:fs/promises';
+   4  import { assertValidQuestion, diskSource } from './helpers.js';
+   5  import { init, lessonRound, bossRound, typed, choice } from '../apps/deutsch/builders.js';
+   6  import { flowDiagram, tableDiagram, swapDiagram } from '../apps/deutsch/diagrams.js';
+   7  
+   8  const bundle = await diskSource().load('deutsch');
+   9  init({ data: bundle.data, manifest: bundle.manifest });
+  10  const items = Object.entries(bundle.data.items);
+  11  
+  12  test('Deutsch: jede Aufgabe ist in sich stimmig', () => {
+  13    for (const [unit, list] of items) {
+  14      assert.ok(list.length >= 10, `${unit}: zu wenige Aufgaben`);
+  15      assert.equal(new Set(list.map((i) => `${i.q}|${i.s || ''}|${i.a}`)).size, list.length, `${unit}: doppelte Aufgabe`);
+  16      for (const item of list) {
+  17        const id = `${unit}: ${item.q} ${item.s || ''}`;
+  18        assert.ok(item.why && item.why.length > 10, `${id}: Erklärung fehlt`);
+  19        assert.ok(!item.wrong.includes(item.a), `${id}: richtige Antwort steht bei den falschen`);
+  20        assert.equal(new Set(item.wrong).size, item.wrong.length, `${id}: falsche Antworten doppelt`);
+  21        if (item.kind === 'gap') {
+  22          assert.equal(item.s.split('___').length, 2, `${id}: genau eine Lücke`);
+  23          assert.ok(item.wrong.length >= 1);
+  24        } else {
+  25          assert.ok(item.wrong.length >= 3, `${id}: mindestens drei falsche Antworten`);
+  26        }
+  27      }
+  28    }
+  29  });
+  30  
+  31  test('Deutsch: Lücken-Aufgaben lassen sich auswählen und eintippen', () => {
+  32    for (const [, list] of items) for (const item of list.filter((i) => i.kind === 'gap')) {
+  33      const c = choice(item);
+  34      assertValidQuestion(c);
+  35      assert.ok(c.options.some((o) => o.id === item.a && o.fill === item.a));
+  36      const t = typed(item);
+  37      assertValidQuestion(t);
+  38      assert.equal(t.check(item.a), 'ok');
+  39      // Wechselnde Groß-/Kleinschreibung statt toUpperCase(): Das macht aus „ß“ ein „SS“ und würde die Aufgabe verfälschen.
+  40      const mixedCase = [...item.a].map((c, i) => (c === 'ß' ? c : i % 2 ? c.toLowerCase() : c.toUpperCase())).join('');
+  41      assert.equal(t.check(` ${mixedCase} `), 'ok', 'Groß/Klein und Leerzeichen werden toleriert');
+  42      assert.equal(t.check(item.wrong[0]), 'bad');
+  43    }
+  44  });
+  45  
+  46  test('Deutsch: Runden liefern gültige Fragen', () => {
+  47    for (let n = 0; n < 100; n++) {
+  48      for (const unit of bundle.manifest.units) { const round = lessonRound(unit); assert.equal(round.length, 8); round.forEach(assertValidQuestion); }
+  49      bossRound().forEach(assertValidQuestion);
+  50    }
+  51  });
+  52  
+  53  test('Deutsch: Diagramme sind gültiges SVG und enthalten ihre Texte', () => {
+  54    const flow = flowDiagram(['A|B', 'C'], 'Test');
+  55    const table = tableDiagram(['x', 'y'], [['1', '2'], ['3', '4']]);
+  56    const swap = swapDiagram(['a', 'b', 'c'], ['c', 'b', 'a', 'd'], [2, 1, 0]);
+  57    for (const s of [flow, table, swap]) { assert.match(s, /^<svg/); assert.match(s, /role="img"/); }
+  58    assert.match(flow, />A</);
+  59    assert.match(table, />4</);
+  60    assert.match(swap, />d</);
+  61  });
+  62  
+  63  test('Deutsch: Material zum Ausdrucken liegt im App-Ordner', async () => {
+  64    assert.ok(bundle.manifest.resources.length >= 1);
+  65    for (const r of bundle.manifest.resources) await access(new URL(`../apps/deutsch/${r.href}`, import.meta.url));
+  66  });
+  67  
+  68  const LRS = ['doppelt', 'dehnung', 'slaute', 'ableiten', 'gross', 'lesen'];
+  69  
+  70  test('Deutsch: LRS-Seiten und Material tragen das Etikett, das Standardprogramm nicht', () => {
+  71    const tagged = bundle.manifest.units.filter((u) => u.track === 'lrs').map((u) => u.id);
+  72    assert.deepEqual(tagged, LRS);
+  73    assert.ok(bundle.manifest.resources.every((r) => r.track === 'lrs'));
+  74    assert.equal(bundle.manifest.tracks.lrs.label, 'LRS-Förderung');
+  75  });
+  76  
+  77  test('Deutsch: Fragen der LRS-Seiten zeigen das Etikett, andere nicht', () => {
+  78    for (const [unit, list] of items) {
+  79      for (const item of list.slice(0, 3)) {
+  80        const q = choice(item);
+  81        if (LRS.includes(unit)) assert.match(q.chip, /LRS-Förderung/, unit);
+  82        else assert.equal(q.chip || '', '', unit);
+  83        if (item.kind === 'gap') assert.equal(/LRS-Förderung/.test(typed(item).chip), LRS.includes(unit));
+  84      }
+  85    }
+  86  });

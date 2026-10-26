@@ -1,0 +1,86 @@
+Knoten: french.test.js
+Id: tests/french.test.js
+Art: module
+Datei: tests/french.test.js
+Zeilen: 64
+
+Ausgehend (dieser Knoten nutzt):
+  call -> tests/helpers.js
+  call -> apps/franzoesisch-verben/model.js
+  call -> apps/franzoesisch-verben/builders.js
+
+Eingehend (diese Knoten nutzen ihn):
+  keine
+
+Quelltext (erste 150 Zeilen, Zugangsdaten maskiert):
+   1  import { test } from 'node:test';
+   2  import assert from 'node:assert/strict';
+   3  import { assertValidQuestion, diskSource } from './helpers.js';
+   4  import { V, UNITS, SP, RAW, init } from '../apps/franzoesisch-verben/model.js';
+   5  import { lessonRound, bossRound, quickRound, blitzQuestion, checkForm, hint, distract } from '../apps/franzoesisch-verben/builders.js';
+   6  
+   7  // Das Modell wird wie im Browser aus content/fr-verben/ gefüllt.
+   8  { const bundle = await diskSource().load('fr-verben'); init({ data: bundle.data, manifest: bundle.manifest }); }
+   9  
+  10  test('Jede Lernpfad-Seite liefert 8 gültige Fragen (200 Zufallsrunden)', () => {
+  11    for (let n = 0; n < 200; n++) {
+  12      for (const unit of UNITS) {
+  13        const round = lessonRound(unit);
+  14        assert.equal(round.length, 8);
+  15        round.forEach(assertValidQuestion);
+  16      }
+  17    }
+  18  });
+  19  
+  20  test('Boss 12, Quick 5, Blitz immer Auswahl', () => {
+  21    for (let n = 0; n < 200; n++) {
+  22      assert.equal(bossRound().length, 12);
+  23      assert.equal(quickRound().length, 5);
+  24      bossRound().forEach(assertValidQuestion);
+  25      quickRound().forEach(assertValidQuestion);
+  26      const b = blitzQuestion();
+  27      assert.equal(b.kind, 'choice');
+  28      assertValidQuestion(b);
+  29    }
+  30  });
+  31  
+  32  test('Formen der unregelmäßigen und regelmäßigen Verben stimmen', () => {
+  33    assert.deepEqual(V.etre.forms, ['suis', 'es', 'est', 'sommes', 'êtes', 'sont']);
+  34    assert.deepEqual(V.faire.forms, ['fais', 'fais', 'fait', 'faisons', 'faites', 'font']);
+  35    assert.deepEqual(V.parler.forms, ['parle', 'parles', 'parle', 'parlons', 'parlez', 'parlent']);
+  36    assert.deepEqual(V.finir.forms, ['finis', 'finis', 'finit', 'finissons', 'finissez', 'finissent']);
+  37    assert.deepEqual(V.attendre.forms, ['attends', 'attends', 'attend', 'attendons', 'attendez', 'attendent']);
+  38  });
+  39  
+  40  test('Jeder Beispielsatz hat genau eine Lücke und eine gültige Person', () => {
+  41    for (const [unit, rows] of Object.entries(RAW)) {
+  42      assert.ok(UNITS.some((u) => u.id === unit), `Unbekannte Seite ${unit}`);
+  43      rows.forEach(([verb, person, fr, de]) => {
+  44        assert.ok(V[verb], `Unbekanntes Verb ${verb}`);
+  45        assert.ok(person >= 0 && person <= 5);
+  46        assert.equal(fr.split('___').length, 2, fr);
+  47        assert.ok(de.length > 3);
+  48      });
+  49      assert.equal(SP[unit].length, rows.length);
+  50    }
+  51  });
+  52  
+  53  test('Eingabeprüfung: Pronomen erlaubt, fehlender Akzent ist "fast"', () => {
+  54    const check = checkForm('êtes');
+  55    assert.equal(check('êtes'), 'ok');
+  56    assert.equal(check('vous êtes'), 'ok');
+  57    assert.equal(check('  ÊTES '), 'ok');
+  58    assert.equal(check('etes'), 'almost');
+  59    assert.equal(check('étez'), 'bad');
+  60    assert.equal(checkForm('ai')("j'ai"), 'ok');
+  61    assert.equal(checkForm('ai')('j’ai'), 'ok');
+  62  });
+  63  
+  64  test('Hinweise und Ablenker sind vorhanden', () => {
+  65    for (const key of Object.keys(V)) {
+  66      for (let p = 0; p < 6; p++) {
+  67        assert.ok(hint(V[key], p).length > 5);
+  68        assert.ok(!distract(V[key], p, 3).includes(V[key].forms[p]));
+  69      }
+  70    }
+  71  });

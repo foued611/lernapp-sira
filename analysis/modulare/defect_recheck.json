@@ -1,0 +1,121 @@
+[
+ {
+  "id": "RULE-056",
+  "title": "Datendiagramm: Median, Mittelwert, Spannweite",
+  "src": "apps/mathe/diagrams.js:94-107",
+  "plain": "Das Diagramm zeigt die sortierten Werte mit Median, Mittelwert und Spannweite. Der Median ist der mittlere Wert (bei ungerader Anzahl).",
+  "defect": "Bei gerader Anzahl von Werten ist der Median nicht berechnet (mid = 1,5). Die Anzeige hat keinen hervorgehobenen Wert und die Beschriftung lautet 'Median undefined'."
+ },
+ {
+  "id": "RULE-075",
+  "title": "Unit completion and per-app progress percentage",
+  "src": "dashboard.js:19",
+  "plain": "A page counts as done as soon as it has at least one star; the app's progress is the share of its pages that are done, shown as a percentage bar.",
+  "defect": "Percentage is not capped at 100 and done is not filtered against the current page list (dashboard.js:19, 50), so a stale star entry can make the bar overflow."
+ },
+ {
+  "id": "RULE-112",
+  "title": "Wahrscheinlichkeitsantwort: Bruch, Dezimalzahl oder Prozent",
+  "src": "/Users/dghaies/Sites/lernapp-sira/legacy/modulare/core/js/mathkit.js:37-44",
+  "plain": "A probability answer counts as correct in fraction, decimal or percent form; a bare number without percent sign, an empty answer, or a zero denominator is rejec",
+  "defect": "„1/2/3“ wird stillschweigend als 1/2 gewertet, weil nur die ersten beiden Teile eines Bruchs gelesen werden (mathkit.js:42)."
+ },
+ {
+  "id": "RULE-119",
+  "title": "Antwortprüfung durch Vergleich nach Normalisierung",
+  "src": "apps/informatik/numbers.js:66-74",
+  "plain": "Eine getippte Antwort gilt als richtig, wenn sie nach der Bereinigung dem gespeicherten Ergebnis entspricht. Es gibt nur richtig oder falsch, keine Teilpunkte.",
+  "defect": "Ist die gespeicherte Lösung selbst ungültig (normInput liefert null), dann ergibt jede ungültige Eingabe ebenfalls null und damit 'ok' (numbers.js:74, null === null). Das betrifft nur fehlerhaft gepflegte Inhalte, ist aber ein sti"
+ },
+ {
+  "id": "RULE-125",
+  "title": "HTTP-Quelle holt und prüft das Paket",
+  "src": "core/js/content.js:34-41",
+  "plain": "Die Inhalte können später von einer Datenbank-API kommen. Die Quelle ruft die Adresse der App auf, schickt den Zugangsschlüssel mit und prüft das Ergebnis. Fehl",
+  "defect": "Bei der API-Quelle fehlt data als Pflicht. Die statische Quelle setzt data auf {}, die API-Quelle nicht. Die Paketpruefung prueft data nicht (validate.js:47-51). Eine API-Antwort ohne data koennte deshalb zu einem undefined-Wert b"
+ },
+ {
+  "id": "RULE-126",
+  "title": "Restore only from a valid Lernwerkstatt file, then reload",
+  "src": "core/js/db.js:126-127",
+  "plain": "A chosen file is restored only if it is readable JSON marked as a Lernwerkstatt backup. Restore overwrites stored documents with the same key, replaces the even",
+  "defect": "The event log is replaced wholesale without confirmation (core/js/db.js:132), and parser errors show English text (core/js/shell.js:161)."
+ },
+ {
+  "id": "RULE-128",
+  "title": "Numerische Antwort ist richtig bei exakter Übereinstimmung (Toleranz 1e-9)",
+  "src": "core/js/mathkit.js:18-21",
+  "plain": "Eine Zahlenantwort gilt als richtig, wenn sie nach Bereinigung exakt dem Sollwert entspricht. Gerundete Eingaben werden nicht toleriert.",
+  "defect": "Anzeige-Antwort (fmt, drei Nachkommastellen) und Prüfwert (exakt, 1e-9) passen nicht zusammen, wenn der Sollwert nicht endlich dezimal ist, z. B. 1/3. Ob das sichtbar wird, hängt davon ab, wie die Anzeige die richtige Antwort ausg"
+ },
+ {
+  "id": "RULE-135",
+  "title": "Unreadable or non-object stored document falls back to defaults",
+  "src": "core/js/store.js:25-36",
+  "plain": "A learner's stored progress is used only if it is a readable plain object. Otherwise the app starts from the default state.",
+  "defect": "A transient IndexedDB read error followed by a save() can overwrite good stored progress with defaults. The code does not distinguish 'not found' from 'read failed' (core/js/store.js:27-28)."
+ },
+ {
+  "id": "RULE-144",
+  "title": "Materiallinks nur als sichere relative Pfade",
+  "src": "core/js/validate.js:8",
+  "plain": "Material zum Öffnen oder Ausdrucken darf nur auf Dateien im eigenen Ordner 'files/' zeigen. Fremde Adressen, Skript-Links und Pfade mit Leerzeichen werden abgel",
+  "defect": "Der Ausdruck verbietet nur den Schraegstrich am Anfang, nicht den Backslash. Ein Wert, der mit zwei Backslashes und einem Host beginnt, wuerde von vielen Browsern wie eine externe Adresse (zwei Schraegstriche) behandelt und trotz "
+ },
+ {
+  "id": "RULE-150",
+  "title": "Eintipp-Prüfung für numerische Antworten",
+  "src": "legacy/modulare/core/js/mathkit.js:12-20",
+  "plain": "Eine eingetippte Zahl gilt nur dann als richtig, wenn sie exakt dem Ergebnis entspricht; Einheiten, Leerzeichen und Dezimalkomma werden dabei ignoriert.",
+  "defect": "Einheitenfehler werden stillschweigend akzeptiert. Eine Antwort in Metern (5 m) oder Millimetern (5 mm) gilt für eine Aufgabe in Zentimetern als richtig, weil die Einheit nie gegen die Aufgabe geprüft wird."
+ },
+ {
+  "id": "RULE-160",
+  "title": "Generated geometry tasks have a correct answer outside the wrong options and numeric answers pass the number checker",
+  "src": "tests/geometrie.test.js:33-42",
+  "plain": "Every generated geometry task must have an answer that is not among its wrong options, and numeric answers must be accepted by the shared number checker.",
+  "defect": "tests/geometrie.test.js:38 reads 'wrong.length >= 3 || wrong.length >= 2', which is the same as '>= 2'; the intended minimum of three is not enforced."
+ },
+ {
+  "id": "RULE-186",
+  "title": "Storage backend selection with fallback",
+  "src": "core/js/db.js:100-112",
+  "plain": "The app stores progress in the browser's IndexedDB when it works, and falls back to localStorage (or memory only) when it does not. The choice is made once per ",
+  "defect": "tests/db.test.js:77 title says memory-only fallback, but tests/db.test.js:81 asserts backend 'localstorage' while localStorage is undefined."
+ },
+ {
+  "id": "RULE-187",
+  "title": "Altstand aus localStorage wird in IndexedDB übernommen",
+  "src": "core/js/db.js:54-60",
+  "plain": "Beim ersten Start mit der neuen Datenbank werden die alten Fortschrittsdaten aus dem Browser-Zwischenspeicher übernommen. Danach sind sie in der neuen Datenbank",
+  "defect": "Removal happens before the parse and before confirmed storage. A corrupt or failed write loses the legacy data (core/js/db.js:56-59 and core/js/store.js:30)."
+ },
+ {
+  "id": "RULE-189",
+  "title": "A failed lesson round gives no star progress and no perfect trophy",
+  "src": "core/js/profile.js:76",
+  "plain": "If a lesson round is failed, the unit gets no stars and does not count as progress, and the perfect-round trophy is not awarded.",
+  "defect": "Possible: a failed repeat of an already-starred unit restarts the 'Zeit zum Auffrischen' clock (core/js/rounds.js:26), so the due date moves even though the learner did not succeed. Low confidence, confirm with the SME."
+ },
+ {
+  "id": "RULE-202",
+  "title": "Home screen loads all data first, then draws once",
+  "src": "dashboard.js:9-16",
+  "plain": "The home screen waits until the learner profile and every live app's saved progress are loaded, then draws the whole page once. It only reads data.",
+  "defect": "load() has no try/catch (dashboard.js:9-16). If a store cannot be opened the page stays empty, although AGENTS.md requires every storage access to tolerate errors and the app to run without storage."
+ },
+ {
+  "id": "RULE-208",
+  "title": "Serie: Folgetag, Gnadentag, Neustart und Verfall",
+  "src": "tests/profile.test.js:32-45",
+  "plain": "A daily streak grows by one for each consecutive day of practice, survives one skipped day, restarts after a longer break, and expires after a longer time witho",
+  "defect": "Possible: a failed round keeps the practice streak alive, although the unit was not learned (core/js/rounds.js:41). Low confidence, confirm with the SME."
+ },
+ {
+  "id": "RULE-223",
+  "title": "Multiple-choice options: correct answer plus up to three distractors, shuffled",
+  "src": "apps/_template/builders.js:14-17",
+  "plain": "Each choice question offers the correct answer together with at most three wrong answers, in random order, and the stored correct answer is the only one marked ",
+  "defect": "builders.js:16 passes item.explain unescaped into 'why'. Not verified: if quiz.js renders 'why' as HTML, data containing < or & would be injected. Compare builders.js:20, which also passes explain raw."
+ }
+]

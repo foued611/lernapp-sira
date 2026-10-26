@@ -1,0 +1,173 @@
+Knoten: shell.js
+Id: core/js/shell.js
+Art: module
+Datei: core/js/shell.js
+Zeilen: 152
+
+Ausgehend (dieser Knoten nutzt):
+  call -> core/js/ui.js
+  call -> core/js/icons.js
+  call -> core/js/confetti.js
+  call -> core/js/quiz.js
+  call -> core/js/blitz.js
+  call -> core/js/rounds.js
+  call -> core/js/db.js
+  call -> core/js/views/home.js
+  call -> core/js/views/result.js
+  call -> core/js/views/backup.js
+  call -> core/js/profile.js
+
+Eingehend (diese Knoten nutzen ihn):
+  core/js/boot.js -> call
+
+Quelltext (erste 150 Zeilen, Zugangsdaten maskiert):
+   1  // App-Shell: Kopfzeile, Navigation zwischen den Ansichten und Verdrahtung der Runden. Die Ansichten selbst liegen in views/.
+   2  // Eine App besteht nur noch aus ihrer Konfiguration (siehe AGENTS.md, "App-Vertrag").
+   3  import { $, esc } from './ui.js';
+   4  import { icon } from './icons.js';
+   5  import { confetti } from './confetti.js';
+   6  import { startQuiz } from './quiz.js';
+   7  import { startBlitz } from './blitz.js';
+   8  import { finalizeRound } from './rounds.js';
+   9  import { logEvent } from './db.js';
+  10  import { homeHTML } from './views/home.js';
+  11  import { resultView } from './views/result.js';
+  12  import { downloadBackup, restoreBackup } from './views/backup.js';
+  13  import { openProfile, openApp, appDefaults, levelOf, lvlAt, titleOf, streakNow } from './profile.js';
+  14  
+  15  /**
+  16   * @param {object} config   App-Konfiguration (App-Vertrag)
+  17   * @param {{header:HTMLElement, main:HTMLElement}} roots
+  18   */
+  19  export async function mountApp(config, { header, main }) {
+  20    const [profileStore, appStore] = await Promise.all([openProfile(), openApp(config.id)]);
+  21    const profile = profileStore.state;
+  22    const app = appStore.state;
+  23    // Wörter für Lob und Ergebnis. Eine App kann sie mit config.words überschreiben (z. B. französisch).
+  24    const words = {
+  25      praise: ['Richtig!', 'Genau!', 'Super!', 'Stark!', 'Bravo!'],
+  26      resultTitles: ['Geschafft!', 'Sehr gut!', 'Perfekt!'],
+  27      levelTitles: undefined,
+  28      blitzTitle: 'Blitzschnell!',
+  29      ...config.words
+  30    };
+  31    const ctx = {
+  32      profile, app, words,
+  33      inputChars: config.inputChars || [],
+  34      save() { profileStore.save(); appStore.save(); },
+  35      refreshHeader: renderHeader
+  36    };
+  37  
+  38    let view = 'home';
+  39    let controller = null;
+  40    let resetAsk = false;
+  41  
+  42    const unitById = (id) => config.units.find((u) => u.id === id);
+  43    const bossOpen = () => (config.bossUnlocked ? config.bossUnlocked(ctx) : config.units.every((u) => (app.stars[u.id] || 0) > 0));
+  44  
+  45    function stop() {
+  46      if (controller) controller.destroy();
+  47      controller = null;
+  48      main.querySelectorAll('.cf').forEach((n) => n.remove());
+  49    }
+  50  
+  51    function renderHeader() {
+  52      const level = levelOf(profile.xp);
+  53      const a = lvlAt(level), b = lvlAt(level + 1);
+  54      const pct = Math.round(((profile.xp - a) / (b - a)) * 100);
+  55      header.innerHTML = `<button class="brand" data-act="home">${esc(config.title)}</button><a class="alla" href="${esc(config.dashboardHref || '../../index.html')}">Alle Apps</a>
+  56        <div class="stats"><div class="lvl" title="${esc(titleOf(level, words.levelTitles))}"><span>Niveau ${level}</span><div class="xpbar" role="progressbar" aria-valuenow="${pct}" aria-valuemin="0" aria-valuemax="100"><i style="width:${pct}%"></i></div><span>${profile.xp} XP</span></div>
+  57        <div class="streak" title="Tage in Folge geübt">${icon('flame')}<b>${streakNow(profile)}</b></div></div>`;
+  58    }
+  59  
+  60    function renderHome() {
+  61      stop();
+  62      view = 'home';
+  63      renderHeader();
+  64      main.style.removeProperty('--lc');
+  65      main.innerHTML = homeHTML({ config, profile, app, bossOpen: bossOpen(), resetAsk });
+  66    }
+  67  
+  68    function renderTheory(unitId) {
+  69      stop();
+  70      view = 'theory';
+  71      renderHeader();
+  72      const unit = unitById(unitId);
+  73      main.style.setProperty('--lc', unit.color);
+  74      main.innerHTML = '<button class="link back" data-act="home">← Zum Lernpfad</button><div id="theory"></div>';
+  75      config.theory($('#theory', main), unit, { start: () => startRound('lesson', unit.id) });
+  76      window.scrollTo(0, 0);
+  77    }
+  78  
+  79    function startRound(mode, unitId) {
+  80      stop();
+  81      view = 'play';
+  82      const unit = unitId ? unitById(unitId) : null;
+  83      const questions = mode === 'lesson' ? config.rounds.lesson(unit) : config.rounds[mode]();
+  84      controller = startQuiz({
+  85        mount: main, ctx, mode, questions,
+  86        color: unit ? unit.color : '',
+  87        onExit: renderHome,
+  88        onFinish: (result) => finishRound({ ...result, unit })
+  89      });
+  90    }
+  91  
+  92    function startBlitzRound() {
+  93      stop();
+  94      view = 'play';
+  95      controller = startBlitz({
+  96        mount: main, ctx, nextQuestion: config.blitz, onExit: renderHome,
+  97        onFinish: (result) => finishRound(result)
+  98      });
+  99    }
+ 100  
+ 101    function finishRound(result) {
+ 102      finalizeRound({ config, profile, app, result });
+ 103      ctx.save();
+ 104      logEvent({ app: config.id, type: 'round', mode: result.mode, unit: result.unit ? result.unit.id : null, accuracy: result.accuracy, stars: result.stars, failed: Boolean(result.failed), score: result.score, xp: result.xp });
+ 105      stop();
+ 106      renderResult(result);
+ 107    }
+ 108  
+ 109    function renderResult(r) {
+ 110      view = 'result';
+ 111      renderHeader();
+ 112      main.style.removeProperty('--lc');
+ 113      const { html, celebrate } = resultView(r, { profile, app, words });
+ 114      main.innerHTML = html;
+ 115      if (celebrate) confetti();
+ 116      window.scrollTo(0, 0);
+ 117    }
+ 118  
+ 119    function saveName() {
+ 120      const input = $('#nm', main);
+ 121      if (!input || !input.value.trim()) return;
+ 122      profile.name = input.value.trim().slice(0, 20);
+ 123      ctx.save();
+ 124      renderHome();
+ 125    }
+ 126  
+ 127    const actions = {
+ 128      home: () => { resetAsk = false; renderHome(); },
+ 129      open: (el) => renderTheory(el.dataset.id),
+ 130      start: (el) => startRound('lesson', el.dataset.id),
+ 131      quick: () => startRound('quick'),
+ 132      boss: () => { if (bossOpen()) startRound('boss'); },
+ 133      weak: (el) => startRound('lesson', el.dataset.id),
+ 134      blitz: startBlitzRound,
+ 135      savename: saveName,
+ 136      backup: downloadBackup,
+ 137      reset: () => { resetAsk = true; renderHome(); },
+ 138      resetok: () => {
+ 139        Object.keys(app).forEach((k) => delete app[k]);
+ 140        Object.assign(app, appDefaults());
+ 141        appStore.save();
+ 142        resetAsk = false;
+ 143        renderHome();
+ 144      }
+ 145    };
+ 146  
+ 147    function onClick(e) {
+ 148      const el = e.target.closest('[data-act]');
+ 149      if (!el || el.disabled || !actions[el.dataset.act]) return;
+ 150      actions[el.dataset.act](el);

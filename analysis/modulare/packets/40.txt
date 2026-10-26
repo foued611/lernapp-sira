@@ -1,0 +1,65 @@
+Knoten: qtypes.test.js
+Id: tests/qtypes.test.js
+Art: module
+Datei: tests/qtypes.test.js
+Zeilen: 45
+
+Ausgehend (dieser Knoten nutzt):
+  call -> core/js/qtypes.js
+
+Eingehend (diese Knoten nutzen ihn):
+  keine
+
+Quelltext (erste 150 Zeilen, Zugangsdaten maskiert):
+   1  import { test } from 'node:test';
+   2  import assert from 'node:assert/strict';
+   3  import { registerQuestionType, questionKinds, questionType, defaultCheck, renderQuestion, validateQuestion, findAction } from '../core/js/qtypes.js';
+   4  
+   5  const run = (extra = {}) => ({ state: 'ask', sel: null, typed: '', fb: null, m: null, ...extra });
+   6  
+   7  test('die drei Standardtypen sind registriert', () => {
+   8    assert.deepEqual(questionKinds().slice(0, 3), ['choice', 'type', 'match']);
+   9    assert.throws(() => questionType('gibtsnicht'), /Unbekannter Fragetyp/);
+  10  });
+  11  
+  12  test('defaultCheck unterscheidet ok, fast (Akzent) und falsch', () => {
+  13    const c = defaultCheck({ answer: 'chanté' });
+  14    assert.equal(c('chanté'), 'ok');
+  15    assert.equal(c('chante'), 'almost');
+  16    assert.equal(c('gesungen'), 'bad');
+  17  });
+  18  
+  19  test('Auswahl: Bewertung und Prüfen-Freigabe', () => {
+  20    const q = { kind: 'choice', label: 'x', answer: 'b', options: [{ id: 'a', html: 'A' }, { id: 'b', html: 'B' }] };
+  21    const t = questionType('choice');
+  22    assert.equal(t.canCheck(q, run()), false);
+  23    assert.equal(t.grade(q, run({ sel: 1 })), 'ok');
+  24    assert.equal(t.grade(q, run({ sel: 0 })), 'bad');
+  25  });
+  26  
+  27  test('Zuordnen: Anfangszustand und Render ohne Fehler', () => {
+  28    const q = { kind: 'match', label: 'm', left: ['1', '2'], right: [{ html: 'x', value: 'a' }, { html: 'y', value: 'b' }], leftValues: ['a', 'b'] };
+  29    const m = questionType('match').init(q);
+  30    assert.equal(m.n, 0);
+  31    assert.match(renderQuestion(q, run({ m }), {}), /data-act="mleft"/);
+  32    validateQuestion(q, assert);
+  33  });
+  34  
+  35  test('eigener Fragetyp lässt sich ohne Änderung am Kern anmelden', () => {
+  36    registerQuestionType('ja-nein', {
+  37      validate: (q, a) => a.ok(typeof q.answer === 'boolean'),
+  38      render: (q, r, p) => `${p.label}<button data-act="jn-ja">Ja</button>`,
+  39      canCheck: (q, r) => r.sel !== null,
+  40      grade: (q, r) => ((r.sel === 1) === q.answer ? 'ok' : 'bad'),
+  41      actions: { 'jn-ja': () => {} }
+  42    });
+  43    const q = { kind: 'ja-nein', label: 'Stimmt das?', answer: true };
+  44    validateQuestion(q, assert);
+  45    assert.match(renderQuestion(q, run(), {}), /jn-ja/);
+  46    assert.equal(questionType('ja-nein').grade(q, run({ sel: 1 })), 'ok');
+  47    assert.equal(typeof findAction('jn-ja'), 'function');
+  48  });
+  49  
+  50  test('Frage ohne Label ist ungültig', () => {
+  51    assert.throws(() => validateQuestion({ kind: 'type', answer: 'a' }, assert));
+  52  });

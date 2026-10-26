@@ -1,0 +1,53 @@
+graph TD
+  subgraph Entry
+    D["Dashboard"]
+  end
+  subgraph Core
+    B["Bootstrap and content"]
+    S["Shell and views"]
+    Q["Round engine"]
+    G["Gamification rules"]
+    P["Persistence"]
+    L["Lessons and diagrams"]
+    U["Shared helpers"]
+  end
+  subgraph Apps
+    A["Subject apps"]
+    Y["Styles and fonts"]
+  end
+  subgraph Data
+    C["content JSON and schema"]
+  end
+  subgraph Quality
+    T["Tests and smoke"]
+  end
+  D --> U
+  D --> G
+  D --> P
+  B -.->|fetch| C
+  B --> S
+  B --> G
+  B --> L
+  B --> P
+  B --> U
+  S --> Q
+  S --> G
+  S --> P
+  S --> L
+  S --> U
+  Q --> G
+  Q --> U
+  G --> P
+  L --> U
+  A --> B
+  A --> Q
+  A --> L
+  A --> U
+  D -.->|CSS| Y
+  A -.->|CSS| Y
+  T --> A
+  T --> B
+  T --> G
+  T --> P
+  T --> Q
+  T --> L

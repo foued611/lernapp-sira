@@ -1,0 +1,100 @@
+Knoten: blitz.js
+Id: core/js/blitz.js
+Art: module
+Datei: core/js/blitz.js
+Zeilen: 77
+
+Ausgehend (dieser Knoten nutzt):
+  call -> core/js/ui.js
+  call -> core/js/icons.js
+  call -> core/js/profile.js
+
+Eingehend (diese Knoten nutzen ihn):
+  core/js/shell.js -> call
+
+Quelltext (erste 150 Zeilen, Zugangsdaten maskiert):
+   1  // Blitz-Modus: 45 Sekunden, nur Auswahlfragen, Combo und XP. Eigener Ablauf, getrennt vom Rundenmotor in quiz.js.
+   2  import { $, esc } from './ui.js';
+   3  import { icon } from './icons.js';
+   4  import { addXP, multiplier } from './profile.js';
+   5  
+   6  /**
+   7   * Blitz-Modus: Zeitlimit, nur Auswahlfragen.
+   8   * @param {object} o
+   9   * @param {HTMLElement} o.mount
+  10   * @param {object} o.ctx
+  11   * @param {()=>object} o.nextQuestion   liefert eine Frage mit kind "choice"
+  12   * @param {number} [o.seconds]
+  13   * @param {()=>void} o.onExit
+  14   * @param {(result:object)=>void} o.onFinish
+  15   */
+  16  export function startBlitz({ mount, ctx, nextQuestion, seconds = 45, onExit, onFinish }) {
+  17    const ac = new AbortController();
+  18    const run = { score: 0, xp: 0, combo: 0, bestCombo: 0, lock: false, q: nextQuestion(), t0: performance.now(), levelUp: null, goalHit: false, done: false };
+  19    let tick = 0, timeout = 0;
+  20  
+  21    function render() {
+  22      ctx.refreshHeader();
+  23      const q = run.q;
+  24      const prompt = q.prompt ? `<p class="${q.promptStyle === 'big' ? 'big' : 'sentence'}">${q.prompt.replace('{{blank}}', '<span class="blank">&nbsp;</span>')}</p>` : '';
+  25      mount.style.setProperty('--lc', 'var(--btn-bg)');
+  26      mount.innerHTML = `
+  27        <div class="playbar"><button class="x" data-act="exit" aria-label="Abbrechen">${icon('close')}</button><div class="timer" style="flex:1"><i id="tbar" style="width:100%"></i></div><span class="score" id="tleft">${seconds} s</span></div>
+  28        <div class="combo">${run.combo >= 3 ? `Combo ×${multiplier(run.combo)} · ${run.combo} in Folge` : 'Richtig: ' + run.score}</div>
+  29        <section class="card qcard"><p class="qlabel">${esc(q.label)}</p>${q.chip || ''}${prompt}${q.sub ? `<p class="tr">${esc(q.sub)}</p>` : ''}
+  30          <div class="opts">${q.options.map((o, i) => `<button class="opt" data-act="pick" data-i="${i}"><kbd>${i + 1}</kbd>${o.html}</button>`).join('')}</div></section>`;
+  31    }
+  32  
+  33    function pickOption(i) {
+  34      if (run.lock || run.done) return;
+  35      const q = run.q, ok = q.options[i].id === q.answer;
+  36      run.lock = true;
+  37      mount.querySelectorAll('.opt').forEach((b, k) => {
+  38        if (q.options[k].id === q.answer) b.classList.add('right');
+  39        else if (k === i) b.classList.add('wrong');
+  40      });
+  41      if (ok) {
+  42        run.score++; run.combo++; run.bestCombo = Math.max(run.bestCombo, run.combo);
+  43        const amount = 5 * multiplier(run.combo);
+  44        run.xp += amount;
+  45        const r = addXP(ctx.profile, ctx.app, amount);
+  46        if (r.levelUp) run.levelUp = r.levelUp;
+  47        if (r.goalHit) run.goalHit = true;
+  48        ctx.save();
+  49      } else run.combo = 0;
+  50      timeout = setTimeout(() => { if (run.done) return; run.q = nextQuestion(); run.lock = false; render(); }, ok ? 280 : 900);
+  51    }
+  52  
+  53    function end() {
+  54      if (run.done) return;
+  55      run.done = true;
+  56      destroy();
+  57      onFinish({ mode: 'blitz', score: run.score, xp: run.xp, bestCombo: run.bestCombo, levelUp: run.levelUp, goalHit: run.goalHit });
+  58    }
+  59  
+  60    function destroy() {
+  61      clearInterval(tick); clearTimeout(timeout); ac.abort();
+  62    }
+  63  
+  64    mount.addEventListener('click', (e) => {
+  65      const el = e.target.closest('[data-act]');
+  66      if (!el) return;
+  67      if (el.dataset.act === 'exit') { run.done = true; destroy(); onExit(); }
+  68      else if (el.dataset.act === 'pick') pickOption(+el.dataset.i);
+  69    }, { signal: ac.signal });
+  70  
+  71    document.addEventListener('keydown', (e) => {
+  72      if (/^[1-9]$/.test(e.key) && run.q.options[+e.key - 1]) pickOption(+e.key - 1);
+  73    }, { signal: ac.signal });
+  74  
+  75    render();
+  76    tick = setInterval(() => {
+  77      const left = Math.max(0, seconds - (performance.now() - run.t0) / 1000);
+  78      const bar = $('#tbar', mount), label = $('#tleft', mount);
+  79      if (bar) bar.style.width = (left / seconds) * 100 + '%';
+  80      if (label) label.textContent = Math.ceil(left) + ' s';
+  81      if (left <= 0) end();
+  82    }, 100);
+  83    window.scrollTo(0, 0);
+  84    return { destroy };
+  85  }

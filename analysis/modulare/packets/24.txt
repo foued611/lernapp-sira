@@ -1,0 +1,98 @@
+Knoten: db.test.js
+Id: tests/db.test.js
+Art: module
+Datei: tests/db.test.js
+Zeilen: 74
+
+Ausgehend (dieser Knoten nutzt):
+  dispatch -> core/js/db.js
+  dispatch -> core/js/store.js
+
+Eingehend (diese Knoten nutzen ihn):
+  keine
+
+Quelltext (erste 150 Zeilen, Zugangsdaten maskiert):
+   1  import { test, beforeEach } from 'node:test';
+   2  import assert from 'node:assert/strict';
+   3  import { IDBFactory } from 'fake-indexeddb';
+   4  
+   5  // Jeder Test bekommt eine frische, leere Datenbank.
+   6  beforeEach(async () => {
+   7    globalThis.indexedDB = new IDBFactory();
+   8    globalThis.localStorage = undefined;
+   9    (await import('../core/js/db.js')).resetDBForTests();
+  10  });
+  11  
+  12  const { createStore, deepMerge } = await import('../core/js/store.js');
+  13  const db = await import('../core/js/db.js');
+  14  
+  15  test('deepMerge ergänzt neue Standardfelder und behält unbekannte', () => {
+  16    const merged = deepMerge({ a: 1, n: { x: 1, y: 2 } }, { n: { x: 9 }, extra: true });
+  17    assert.deepEqual(merged, { a: 1, n: { x: 9, y: 2 }, extra: true });
+  18  });
+  19  
+  20  test('Store speichert in IndexedDB und lädt wieder', async () => {
+  21    const a = await createStore('lernwerkstatt:t', { xp: 0, stars: {} });
+  22    assert.equal(a.backend, 'indexeddb');
+  23    a.state.xp = 12; a.state.stars.x = 3;
+  24    a.save();
+  25    await new Promise((r) => setTimeout(r, 20));
+  26    db.resetDBForTests();
+  27    const b = await createStore('lernwerkstatt:t', { xp: 0, stars: {} });
+  28    assert.equal(b.state.xp, 12);
+  29    assert.equal(b.state.stars.x, 3);
+  30  });
+  31  
+  32  test('Altes Schema bekommt neue Felder, unbekannte bleiben', async () => {
+  33    const a = await createStore('lernwerkstatt:s', { xp: 0 });
+  34    a.state.alt = 'bleibt'; a.save();
+  35    await new Promise((r) => setTimeout(r, 20));
+  36    db.resetDBForTests();
+  37    const b = await createStore('lernwerkstatt:s', { xp: 0, neu: { feld: 1 } });
+  38    assert.equal(b.state.alt, 'bleibt');
+  39    assert.deepEqual(b.state.neu, { feld: 1 });
+  40  });
+  41  
+  42  test('Migration läuft bei neuer Version', async () => {
+  43    const a = await createStore('lernwerkstatt:m', { punkte: 0 }, { version: 1 });
+  44    a.state.punkte = 5; a.save();
+  45    await new Promise((r) => setTimeout(r, 20));
+  46    db.resetDBForTests();
+  47    const b = await createStore('lernwerkstatt:m', { xp: 0 }, { version: 2, migrate: (old) => ({ xp: old.punkte * 10 }) });
+  48    assert.equal(b.state.xp, 50);
+  49  });
+  50  
+  51  test('Reset setzt auf Standard zurück', async () => {
+  52    const a = await createStore('lernwerkstatt:r', { xp: 0 });
+  53    a.state.xp = 9; a.save(); a.reset();
+  54    assert.equal(a.state.xp, 0);
+  55  });
+  56  
+  57  test('Protokoll, Export und Import', async () => {
+  58    await db.logEvent({ app: 'x', type: 'round', stars: 3 });
+  59    await db.logEvent({ app: 'y', type: 'round', stars: 1 });
+  60    assert.equal((await db.listEvents({ app: 'x' })).length, 1);
+  61    const s = await createStore('lernwerkstatt:e', { xp: 0 });
+  62    s.state.xp = 7; s.save();
+  63    await new Promise((r) => setTimeout(r, 20));
+  64    const backup = await db.exportAll();
+  65    assert.equal(backup.docs['lernwerkstatt:e'].xp, 7);
+  66    assert.equal(backup.log.length, 2);
+  67  
+  68    globalThis.indexedDB = new IDBFactory();
+  69    db.resetDBForTests();
+  70    await db.importAll(JSON.parse(JSON.stringify(backup)));
+  71    const again = await createStore('lernwerkstatt:e', { xp: 0 });
+  72    assert.equal(again.state.xp, 7);
+  73    assert.equal((await db.listEvents()).length, 2);
+  74    await assert.rejects(() => db.importAll({ nope: 1 }));
+  75  });
+  76  
+  77  test('Ohne IndexedDB und ohne localStorage läuft die App im Arbeitsspeicher weiter', async () => {
+  78    globalThis.indexedDB = undefined;
+  79    db.resetDBForTests();
+  80    const s = await createStore('lernwerkstatt:f', { xp: 0 });
+  81    assert.equal(s.backend, 'localstorage');
+  82    s.state.xp = 3; s.save();
+  83    assert.equal(s.state.xp, 3);
+  84  });

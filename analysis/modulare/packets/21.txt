@@ -1,0 +1,100 @@
+Knoten: geometrie.test.js
+Id: tests/geometrie.test.js
+Art: module
+Datei: tests/geometrie.test.js
+Zeilen: 77
+
+Ausgehend (dieser Knoten nutzt):
+  call -> apps/geometrie/geom.js
+  call -> apps/geometrie/builders.js
+  call -> tests/helpers.js
+  call -> core/js/mathkit.js
+
+Eingehend (diese Knoten nutzen ihn):
+  keine
+
+Quelltext (erste 150 Zeilen, Zugangsdaten maskiert):
+   1  import { test } from 'node:test';
+   2  import assert from 'node:assert/strict';
+   3  import { circumcenter, incircle, dist, at } from '../apps/geometrie/geom.js';
+   4  import { POOLS, init } from '../apps/geometrie/builders.js';
+   5  import { diskSource } from './helpers.js';
+   6  
+   7  // Die Erzeuger bekommen Seiten und Aufgabendaten wie im Browser aus content/geometrie/.
+   8  { const bundle = await diskSource().load('geometrie'); init({ data: bundle.data, manifest: bundle.manifest }); }
+   9  import { numCheck } from '../core/js/mathkit.js';
+  10  
+  11  test('Umkreismittelpunkt ist von allen Ecken gleich weit entfernt', () => {
+  12    for (let i = 0; i < 100; i++) {
+  13      const A = [Math.random() * 300, Math.random() * 300], B = [Math.random() * 300, Math.random() * 300], C = [Math.random() * 300, Math.random() * 300];
+  14      const area = Math.abs((B[0] - A[0]) * (C[1] - A[1]) - (C[0] - A[0]) * (B[1] - A[1]));
+  15      if (area < 500) continue;
+  16      const U = circumcenter(A, B, C);
+  17      assert.ok(Math.abs(dist(U, A) - dist(U, B)) < 1e-6 && Math.abs(dist(U, B) - dist(U, C)) < 1e-6);
+  18    }
+  19  });
+  20  
+  21  test('Inkreis berührt alle drei Seiten (gleicher Abstand)', () => {
+  22    const A = [30, 220], B = [220, 200], C = [90, 50];
+  23    const { I, r } = incircle(A, B, C);
+  24    const d = (P, Q) => Math.abs((Q[0] - P[0]) * (P[1] - I[1]) - (P[0] - I[0]) * (Q[1] - P[1])) / dist(P, Q);
+  25    for (const [P, Q] of [[A, B], [B, C], [C, A]]) assert.ok(Math.abs(d(P, Q) - r) < 1e-6);
+  26  });
+  27  
+  28  test('Punkt auf dem Kreis: Winkel stimmen mit at() überein', () => {
+  29    const [x, y] = at(0, 0, 10, 90);
+  30    assert.ok(Math.abs(x) < 1e-9 && Math.abs(y + 10) < 1e-9);
+  31  });
+  32  
+  33  test('jede Aufgabe: richtige Antwort ist nicht unter den falschen, Zahlen werden akzeptiert', () => {
+  34    for (const [unit, pool] of Object.entries(POOLS)) {
+  35      for (let i = 0; i < 200; i++) for (const gen of pool) {
+  36        const it = gen();
+  37        assert.ok(!it.wrong.includes(it.answer), `${unit}: ${it.prompt}`);
+  38        assert.ok(it.wrong.length >= 3 || it.wrong.length >= 2, `${unit}: ${it.prompt}`);
+  39        if (it.numeric) assert.equal(numCheck(it.value)(it.answer), 'ok', `${unit}: ${it.prompt}`);
+  40      }
+  41    }
+  42  });
+  43  
+  44  test('Winkelaufgaben rechnen richtig', () => {
+  45    const num = (s) => Number(s.replace(/[^\d,−-]/g, '').replace('−', '-').replace(',', '.'));
+  46    for (let i = 0; i < 300; i++) {
+  47      const [, , sum, gs] = POOLS.winkel;
+  48      let it = sum();
+  49      const [a, b] = [...it.prompt.matchAll(/= (\d+)°/g)].map((m) => Number(m[1]));
+  50      assert.equal(num(it.answer), 180 - a - b, it.prompt);
+  51      it = gs();
+  52      const top = Number(it.prompt.match(/Winkel (\d+)°/)[1]);
+  53      assert.equal(num(it.answer), (180 - top) / 2, it.prompt);
+  54      const [, tb] = [POOLS.thales[0], POOLS.thales[1]];
+  55      it = tb();
+  56      const al = Number(it.prompt.match(/α = (\d+)°/)[1]);
+  57      assert.equal(num(it.answer), 90 - al, it.prompt);
+  58    }
+  59  });
+  60  
+  61  test('Maßstab und Probleme: Ergebnis wird unabhängig nachgerechnet', () => {
+  62    const val = (s) => Number(s.replace(/[^\d,−-]/g, '').replace('−', '-').replace(',', '.'));
+  63    const first = (text, re) => val(text.match(re)[1]);
+  64    const [wirklichkeit, zeichnung, massstab, baum] = POOLS.groessen;
+  65    const [mitte, rechtGleich, aussen, kette] = POOLS.probleme;
+  66    for (let i = 0; i < 300; i++) {
+  67      let it = wirklichkeit();
+  68      assert.equal(val(it.answer), first(it.prompt, /darin (\d+) cm/) * first(it.prompt, /1 : (\d+)/) / 100, it.prompt);
+  69      it = zeichnung();
+  70      assert.equal(val(it.answer), first(it.prompt, /ist ([\d,]+) m lang/) * 100 / first(it.prompt, /1 : (\d+)/), it.prompt);
+  71      it = massstab();
+  72      assert.equal(it.answer, `1 : ${first(it.prompt, /([\d,]+) m lang/) * 100 / first(it.prompt, /Zeichnung (\d+) cm/)}`, it.prompt);
+  73      it = baum();
+  74      assert.equal(val(it.answer), first(it.prompt, /stehst ([\d,]+) m/), it.prompt);
+  75      it = mitte();
+  76      assert.equal(val(it.answer), 180 - 2 * first(it.prompt, /misst (\d+)/), it.prompt);
+  77      assert.equal(val(rechtGleich().answer), 45);
+  78      it = aussen();
+  79      const [a, b] = it.prompt.match(/\d+/g).map(Number);
+  80      assert.equal(val(it.answer), a + b, it.prompt);
+  81      it = kette();
+  82      assert.equal(val(it.answer), 180 - 2 * first(it.prompt, /von (\d+)/), it.prompt);
+  83    }
+  84  });

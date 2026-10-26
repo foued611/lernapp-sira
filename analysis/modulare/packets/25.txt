@@ -1,0 +1,97 @@
+Knoten: rounds.test.js
+Id: tests/rounds.test.js
+Art: module
+Datei: tests/rounds.test.js
+Zeilen: 71
+
+Ausgehend (dieser Knoten nutzt):
+  call -> core/js/rounds.js
+  call -> core/js/profile.js
+  call -> tests/helpers.js
+
+Eingehend (diese Knoten nutzen ihn):
+  keine
+
+Quelltext (erste 150 Zeilen, Zugangsdaten maskiert):
+   1  import { test } from 'node:test';
+   2  import assert from 'node:assert/strict';
+   3  import { finalizeRound } from '../core/js/rounds.js';
+   4  import { profileDefaults, appDefaults } from '../core/js/profile.js';
+   5  import { loadAppConfig } from './helpers.js';
+   6  
+   7  const full = await loadAppConfig('fr-verben', 'apps/franzoesisch-verben/');
+   8  const UNITS = full.units;
+   9  const config = { id: 'fr-verben', badges: full.badges };
+  10  const unit = (id) => UNITS.find((u) => u.id === id);
+  11  const lesson = (id, extra = {}) => ({ mode: 'lesson', unit: unit(id), failed: false, accuracy: 1, correct: 8, almost: 0, wrong: 0, bestCombo: 8, xp: 100, ...extra });
+  12  
+  13  function run(result, state = {}) {
+  14    const profile = Object.assign(profileDefaults(), state.profile);
+  15    const app = Object.assign(appDefaults(), state.app);
+  16    finalizeRound({ config, profile, app, result, day: '2026-10-25' });
+  17    return { profile, app, result };
+  18  }
+  19  
+  20  test('Erfolgreiche Runde vergibt Sterne, Bestwert und erste Trophäen', () => {
+  21    const { app, result } = run(lesson('etre'));
+  22    assert.equal(result.stars, 3);
+  23    assert.equal(app.stars.etre, 3);
+  24    const ids = result.newBadges.map((b) => b.id);
+  25    for (const id of ['first', 'etre3', 'perfect', 'combo5']) assert.ok(ids.includes(id), id);
+  26    assert.ok(app.badges.first);
+  27  });
+  28  
+  29  test('Ein schlechteres Ergebnis überschreibt keine bessere Wertung', () => {
+  30    const { app } = run(lesson('etre', { accuracy: 0.5 }), { app: { stars: { etre: 3 } } });
+  31    assert.equal(app.stars.etre, 3);
+  32  });
+  33  
+  34  test('Gescheiterte Runde: 0 Sterne, kein Fortschritt, keine perfect-Trophäe', () => {
+  35    const { app, result } = run(lesson('aller', { failed: true, accuracy: 0.4, wrong: 5, correct: 2 }));
+  36    assert.equal(result.stars, 0);
+  37    assert.equal(app.stars.aller, undefined);
+  38    assert.ok(!result.newBadges.some((b) => b.id === 'perfect'));
+  39  });
+  40  
+  41  test('"Les Quatre" und "Endungs-Ass" nach den jeweiligen Seiten', () => {
+  42    const four = run(lesson('faire'), { app: { stars: { etre: 1, avoir: 1, aller: 1 } } });
+  43    assert.ok(four.result.newBadges.some((b) => b.id === 'four'));
+  44    const regs = run(lesson('irre'), { app: { stars: { er: 1 } } });
+  45    assert.ok(regs.result.newBadges.some((b) => b.id === 'regs'));
+  46  });
+  47  
+  48  test('Boss gewonnen: 50 Bonus-XP und Trophäe, verloren: nichts', () => {
+  49    const won = run({ mode: 'boss', failed: false, accuracy: 0.9, correct: 11, almost: 0, wrong: 1, bestCombo: 6, xp: 80 });
+  50    assert.equal(won.result.bonus, 50);
+  51    assert.equal(won.profile.xp, 50);
+  52    assert.ok(won.result.newBadges.some((b) => b.id === 'boss'));
+  53    const lost = run({ mode: 'boss', failed: true, accuracy: 0.3, correct: 3, almost: 0, wrong: 3, bestCombo: 2, xp: 20 });
+  54    assert.equal(lost.result.bonus, 0);
+  55    assert.ok(!lost.result.newBadges.some((b) => b.id === 'boss'));
+  56  });
+  57  
+  58  test('Blitz: Bestwert wird nur verbessert, Trophäe ab 10', () => {
+  59    const a = run({ mode: 'blitz', score: 12, xp: 60, bestCombo: 4 }, { app: { best: { blitz: 8 } } });
+  60    assert.equal(a.app.best.blitz, 12);
+  61    assert.ok(a.result.newBadges.some((b) => b.id === 'blitz10'));
+  62    const b = run({ mode: 'blitz', score: 5, xp: 20, bestCombo: 1 }, { app: { best: { blitz: 8 } } });
+  63    assert.equal(b.app.best.blitz, 8);
+  64    assert.ok(!b.result.newBadges.some((x) => x.id === 'blitz10'));
+  65  });
+  66  
+  67  test('Streak-Trophäe nach drei Tagen, Profil merkt sich die zuletzt genutzte App', () => {
+  68    const { profile, result } = run(lesson('etre'), { profile: { streak: 2, lastDay: '2026-10-24' } });
+  69    assert.equal(profile.streak, 3);
+  70    assert.equal(profile.lastApp, 'fr-verben');
+  71    assert.ok(result.newBadges.some((b) => b.id === 'streak3'));
+  72  });
+  73  
+  74  test('Bereits erhaltene Trophäen werden nicht doppelt vergeben', () => {
+  75    const { result } = run(lesson('etre'), { app: { badges: { first: true, perfect: true } } });
+  76    const ids = result.newBadges.map((b) => b.id);
+  77    assert.ok(!ids.includes('first') && !ids.includes('perfect'));
+  78  });
+  79  
+  80  test('Trophäen-IDs sind eindeutig', () => {
+  81    assert.equal(new Set(full.badges.map((b) => b.id)).size, full.badges.length);
+  82  });

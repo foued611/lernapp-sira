@@ -1,0 +1,86 @@
+Knoten: builders.js
+Id: apps/deutsch/builders.js
+Art: module
+Datei: apps/deutsch/builders.js
+Zeilen: 61
+
+Ausgehend (dieser Knoten nutzt):
+  call -> core/js/ui.js
+  call -> core/js/tracks.js
+  call -> core/js/questions.js
+
+Eingehend (diese Knoten nutzen ihn):
+  apps/deutsch/logic.js -> call
+  tests/deutsch.test.js -> call
+
+Quelltext (erste 150 Zeilen, Zugangsdaten maskiert):
+   1  // Macht aus den Aufgaben in content/deutsch/data.json Fragen im Quiz-Format (siehe core/js/quiz.js).
+   2  //
+   3  // Eine Aufgabe: { q, s?, kind?, a, wrong[], why, label?, accept? }
+   4  //   q       Frage oder Anweisung (reiner Text)
+   5  //   s       optional: ein Beispielsatz, der unter der Frage steht
+   6  //   kind    'gap' = Lückensatz. In s steht ___ als Lücke. Dann sind Auswahl und Eintippen möglich
+   7  //   a       richtige Antwort, wrong: falsche Antworten (bei 'gap' genügt eine)
+   8  //   accept  optional: weitere richtige Eingaben beim Eintippen
+   9  import { esc, shuffle, pick, norm } from '../../core/js/ui.js';
+  10  import { trackOf, trackBadge } from '../../core/js/tracks.js';
+  11  import { choiceQuestion, typedQuestion, option } from '../../core/js/questions.js';
+  12  
+  13  let UNITS = [];
+  14  let ITEMS = {};
+  15  let TRACKS = {};
+  16  const OWNER = new WeakMap(); // Aufgabe -> Seite, damit Fragen ihren Strang kennen
+  17  
+  18  /** Bekommt Seitenliste und Aufgaben, bevor die erste Runde entsteht. */
+  19  export function init({ data, manifest }) {
+  20    UNITS = manifest.units;
+  21    ITEMS = data.items;
+  22    TRACKS = manifest.tracks || {};
+  23    manifest.units.forEach((u) => (ITEMS[u.id] || []).forEach((it) => OWNER.set(it, u)));
+  24  }
+  25  
+  26  const isGap = (item) => item.kind === 'gap';
+  27  const gapText = (s) => s.split('___').map(esc).join('{{blank}}');
+  28  const filled = (s, word) => s.split('___').map(esc).join(`<span class="mk">${esc(word)}</span>`);
+  29  
+  30  /** Etikett des Strangs (z. B. LRS-Förderung) über der Frage, leer im Standardprogramm. */
+  31  const chipFor = (item) => trackBadge(trackOf(TRACKS, OWNER.get(item)));
+  32  
+  33  export function choice(item) {
+  34    const label = item.label || (isGap(item) ? 'Lücke füllen' : 'Wähle die richtige Antwort');
+  35    if (isGap(item)) {
+  36      const options = shuffle([item.a, ...item.wrong]).map((w) => option(w, esc(w), w));
+  37      return { kind: 'choice', label, chip: chipFor(item), prompt: gapText(item.s), sub: item.q, answer: item.a, options, reveal: filled(item.s, item.a), why: item.why };
+  38    }
+  39    return choiceQuestion({
+  40      label, chip: chipFor(item), prompt: esc(item.q) + (item.s ? `<br><em>${esc(item.s)}</em>` : ''), answer: item.a,
+  41      choices: [item.a, ...shuffle(item.wrong).slice(0, 3)], why: item.why, optionsLayout: item.a.length > 40 ? 'list' : undefined
+  42    });
+  43  }
+  44  
+  45  export function typed(item) {
+  46    const accepted = [item.a, ...(item.accept || [])].map(norm);
+  47    return typedQuestion({
+  48      label: 'Schreibe das Wort', chip: chipFor(item), prompt: gapText(item.s), sub: item.q, answer: item.a,
+  49      check: (input) => (accepted.includes(norm(input)) ? 'ok' : 'bad'), placeholder: 'Wort eintippen',
+  50      reveal: filled(item.s, item.a), why: item.why
+  51    });
+  52  }
+  53  
+  54  const pickItems = (unitId, count) => {
+  55    const pool = shuffle(ITEMS[unitId]);
+  56    return Array.from({ length: count }, (_, i) => pool[i % pool.length]);
+  57  };
+  58  
+  59  /** 8 Fragen einer Seite, jede dritte Lücke zum Eintippen. */
+  60  export function lessonRound(unit) {
+  61    return pickItems(unit.id, 8).map((item, i) => (i % 3 === 2 && isGap(item) ? typed(item) : choice(item)));
+  62  }
+  63  
+  64  const anyItem = () => pick(ITEMS[pick(UNITS).id]);
+  65  export const quickRound = () => Array.from({ length: 5 }, () => choice(anyItem()));
+  66  export const blitzQuestion = () => choice(anyItem());
+  67  export const bossRound = () => Array.from({ length: 12 }, (_, i) => {
+  68    const item = pick(ITEMS[UNITS[i % UNITS.length].id]);
+  69    return i % 4 === 3 && isGap(item) ? typed(item) : choice(item);
+  70  });

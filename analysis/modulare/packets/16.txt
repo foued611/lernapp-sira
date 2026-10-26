@@ -1,0 +1,111 @@
+Knoten: profile.test.js
+Id: tests/profile.test.js
+Art: module
+Datei: tests/profile.test.js
+Zeilen: 87
+
+Ausgehend (dieser Knoten nutzt):
+  call -> core/js/profile.js
+  call -> core/js/rounds.js
+
+Eingehend (diese Knoten nutzen ihn):
+  keine
+
+Quelltext (erste 150 Zeilen, Zugangsdaten maskiert):
+   1  import { test } from 'node:test';
+   2  import assert from 'node:assert/strict';
+   3  import { levelOf, lvlAt, addXP, touchStreak, streakNow, starsFor, multiplier, dailyXP, spendXP, GOAL, profileDefaults, appDefaults } from '../core/js/profile.js';
+   4  
+   5  test('Niveaus beginnen bei 30·n·(n−1) XP', () => {
+   6    assert.equal(lvlAt(2), 60);
+   7    assert.equal(levelOf(0), 1);
+   8    assert.equal(levelOf(59), 1);
+   9    assert.equal(levelOf(60), 2);
+  10    assert.equal(levelOf(180), 3);
+  11  });
+  12  
+  13  test('addXP schreibt in Profil, App und Tagesziel und meldet Level-Up und Ziel', () => {
+  14    const profile = profileDefaults(), app = appDefaults();
+  15    const first = addXP(profile, app, 25, '2026-10-25');
+  16    assert.deepEqual(first, { levelUp: null, goalHit: false });
+  17    const second = addXP(profile, app, 40, '2026-10-25');
+  18    assert.equal(second.levelUp, 2);
+  19    assert.equal(second.goalHit, true);
+  20    assert.equal(profile.xp, 65);
+  21    assert.equal(app.xp, 65);
+  22    assert.equal(dailyXP(profile, '2026-10-25'), 65);
+  23    assert.equal(dailyXP(profile, '2026-10-26'), 0);
+  24  });
+  25  
+  26  test('Tagesziel wird nur einmal pro Tag gemeldet', () => {
+  27    const profile = profileDefaults(), app = appDefaults();
+  28    assert.equal(addXP(profile, app, GOAL, '2026-10-25').goalHit, true);
+  29    assert.equal(addXP(profile, app, 10, '2026-10-25').goalHit, false);
+  30  });
+  31  
+  32  test('Streak: Folgetag zählt, ein ausgelassener Tag bleibt erhalten, danach Neustart', () => {
+  33    const p = profileDefaults();
+  34    touchStreak(p, '2026-10-20');
+  35    touchStreak(p, '2026-10-21');
+  36    assert.equal(p.streak, 2);
+  37    touchStreak(p, '2026-10-21');
+  38    assert.equal(p.streak, 2, 'derselbe Tag zählt nicht doppelt');
+  39    touchStreak(p, '2026-10-23');
+  40    assert.equal(p.streak, 3, 'Gnadentag');
+  41    touchStreak(p, '2026-10-27');
+  42    assert.equal(p.streak, 1, 'zu lange Pause');
+  43    assert.equal(streakNow(p, '2026-10-28'), 1);
+  44    assert.equal(streakNow(p, '2026-11-05'), 0);
+  45  });
+  46  
+  47  test('Sterne und Combo-Faktor', () => {
+  48    assert.equal(starsFor(1, false), 3);
+  49    assert.equal(starsFor(0.9, false), 3);
+  50    assert.equal(starsFor(0.7, false), 2);
+  51    assert.equal(starsFor(0.2, false), 1);
+  52    assert.equal(starsFor(1, true), 0);
+  53    assert.deepEqual([0, 2, 3, 6, 9, 30].map(multiplier), [1, 1, 2, 3, 4, 4]);
+  54  });
+  55  
+  56  test('spendXP macht XP nie negativ', () => {
+  57    const profile = profileDefaults(), app = appDefaults();
+  58    addXP(profile, app, 2, '2026-10-25');
+  59    spendXP(profile, app, 3);
+  60    assert.equal(profile.xp, 0);
+  61    assert.equal(app.xp, 0);
+  62  });
+  63  
+  64  import { isDue, weakestUnit, appDefaults as appDef, DUE_DAYS } from '../core/js/profile.js';
+  65  import { finalizeRound as finalize } from '../core/js/rounds.js';
+  66  
+  67  test('Auffrischen: fällig nach DUE_DAYS Tagen, nur mit Sternen', () => {
+  68    const app = { ...appDef(), stars: { a: 2, b: 0 }, last: { a: '2026-10-01', b: '2026-10-01' } };
+  69    assert.equal(isDue(app, 'a', '2026-10-0' + (1 + DUE_DAYS)), true);
+  70    assert.equal(isDue(app, 'a', '2026-10-02'), false);
+  71    assert.equal(isDue(app, 'b', '2026-10-09'), false);
+  72  });
+  73  
+  74  test('Gezieltes Training: fällige Seite zuerst, sonst schwächste', () => {
+  75    const units = [{ id: 'a' }, { id: 'b' }, { id: 'c' }];
+  76    const app = { ...appDef(), stars: { a: 1, b: 1, c: 3 }, last: { a: '2026-10-09', b: '2026-10-01' }, acc: { a: 0.5, b: 0.95, c: 0.4 } };
+  77    assert.equal(weakestUnit(app, units, '2026-10-10').unit.id, 'b');
+  78    assert.equal(weakestUnit(app, units, '2026-10-10').reason, 'Zeit zum Auffrischen');
+  79    const app2 = { ...appDef(), stars: { a: 1, c: 3 }, last: { a: '2026-10-09' }, acc: { a: 0.5, c: 0.4 } };
+  80    assert.equal(weakestUnit(app2, units, '2026-10-10').unit.id, 'a');
+  81    assert.equal(weakestUnit(appDef(), units), null);
+  82  });
+  83  
+  84  test('Runde beendet: merkt Tag und Genauigkeit, Auffrischen gibt 10 Bonus-XP', () => {
+  85    const profile = { name: '', xp: 0, streak: 0, lastDay: '', lastApp: '', day: { d: '', xp: 0 } };
+  86    const app = { ...appDef(), stars: { a: 2 }, last: { a: '2026-10-01' } };
+  87    const result = { mode: 'lesson', unit: { id: 'a' }, accuracy: 0.9, failed: false };
+  88    finalize({ config: { id: 'x', badges: [] }, profile, app, result, day: '2026-10-10' });
+  89    assert.equal(result.refresh, true);
+  90    assert.equal(result.bonus, 10);
+  91    assert.equal(app.xp, 10);
+  92    assert.equal(app.last.a, '2026-10-10');
+  93    assert.equal(app.acc.a, 0.9);
+  94    const again = { mode: 'lesson', unit: { id: 'a' }, accuracy: 1, failed: false };
+  95    finalize({ config: { id: 'x', badges: [] }, profile, app, result: again, day: '2026-10-10' });
+  96    assert.equal(again.refresh, undefined);
+  97  });

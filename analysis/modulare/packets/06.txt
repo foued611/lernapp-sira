@@ -1,0 +1,165 @@
+Knoten: qtypes.js
+Id: core/js/qtypes.js
+Art: module
+Datei: core/js/qtypes.js
+Zeilen: 174
+
+Ausgehend (dieser Knoten nutzt):
+  call -> core/js/ui.js
+
+Eingehend (diese Knoten nutzen ihn):
+  core/js/quiz.js -> call
+  tests/helpers.js -> call
+  tests/qtypes.test.js -> call
+
+Quelltext (erste 150 Zeilen, Zugangsdaten maskiert):
+   1  // Fragetypen als Register. Jeder Typ beschreibt selbst, wie er aussieht, wie er geprüft wird und wie er
+   2  // auf Klicks reagiert. Einen neuen Typ anlegen heißt: registerQuestionType('name', { ... }) aufrufen,
+   3  // ohne quiz.js oder shell.js anzufassen (siehe AGENTS.md, "Neuer Fragetyp").
+   4  //
+   5  // Ein Typ ist ein Objekt mit:
+   6  //   validate(q, assert)          prüft eine Frage dieses Typs (wird von den Tests benutzt)
+   7  //   init?(q)                     Startzustand pro Frage, landet in run.m
+   8  //   render(q, run, p)            HTML der Frage. p = { label, chip, prompt, sub, fb }
+   9  //   canCheck?(q, run)            darf "Prüfen" gedrückt werden? Fehlt die Funktion, gibt es keinen Prüfen-Knopf
+  10  //   grade?(q, run, mount)        'ok' | 'almost' | 'bad' | null (null = noch keine Antwort)
+  11  //   footHint?                    Text statt Prüfen-Knopf (z. B. bei Zuordnungen)
+  12  //   actions?                     { 'data-act-Name': (element, h) => void }, h = { run, q, settle, render, mount }
+  13  //   onInput?(event, h), onKey?(event, h)
+  14  import { $, esc, norm, stripAccents } from './ui.js';
+  15  
+  16  const registry = new Map();
+  17  
+  18  export function registerQuestionType(kind, impl) {
+  19    registry.set(kind, impl);
+  20  }
+  21  
+  22  export function questionType(kind) {
+  23    const type = registry.get(kind);
+  24    if (!type) throw new Error(`Unbekannter Fragetyp: ${kind}`);
+  25    return type;
+  26  }
+  27  
+  28  export const questionKinds = () => [...registry.keys()];
+  29  
+  30  /** Findet den Klick-Handler zu einem data-act-Namen, egal welcher Typ ihn mitbringt. */
+  31  export function findAction(name) {
+  32    for (const type of registry.values()) if (type.actions && type.actions[name]) return type.actions[name];
+  33    return null;
+  34  }
+  35  
+  36  /** Standardprüfung für Eingabefragen: gleich ist ok, nur Akzent fehlt ist "fast". */
+  37  export function defaultCheck(q) {
+  38    return (input) => {
+  39      const a = norm(input), b = norm(q.answer);
+  40      if (a === b) return 'ok';
+  41      return stripAccents(a) === stripAccents(b) ? 'almost' : 'bad';
+  42    };
+  43  }
+  44  
+  45  function blankHTML(q, run, fb) {
+  46    let inner = '&nbsp;';
+  47    if (!fb && q.kind === 'choice' && run.sel !== null) {
+  48      const o = q.options[run.sel];
+  49      inner = esc(o.fill !== undefined ? o.fill : '') || '&nbsp;';
+  50    }
+  51    if (fb) {
+  52      const right = q.kind === 'choice' ? q.options.find((o) => o.id === q.answer) : null;
+  53      inner = esc(right && right.fill !== undefined ? right.fill : q.answer);
+  54    }
+  55    return `<span class="blank ${fb ? 'ok' : ''}">${inner}</span>`;
+  56  }
+  57  
+  58  /** Kopf jeder Frage: Überschrift, Info-Feld, Haupttext, graue Zeile. */
+  59  export function questionParts(q, run, ctx = {}) {
+  60    const fb = run.state === 'fb';
+  61    return {
+  62      fb,
+  63      label: `<p class="qlabel">${esc(q.label)}</p>`,
+  64      chip: q.chip ? q.chip : '',
+  65      prompt: q.prompt ? `<p class="${q.promptStyle === 'big' ? 'big' : 'sentence'}">${q.prompt.replace('{{blank}}', blankHTML(q, run, fb))}</p>` : '',
+  66      sub: q.sub ? `<p class="tr">${esc(q.sub)}</p>` : '',
+  67      chars: ctx.inputChars || []
+  68    };
+  69  }
+  70  
+  71  export const renderQuestion = (q, run, ctx) => questionType(q.kind).render(q, run, questionParts(q, run, ctx));
+  72  
+  73  // --- Auswahl ---------------------------------------------------------------
+  74  
+  75  registerQuestionType('choice', {
+  76    validate(q, assert) {
+  77      const ids = q.options.map((o) => o.id);
+  78      assert.ok(ids.includes(q.answer), `Antwort fehlt in den Optionen: ${q.label}`);
+  79      assert.equal(new Set(ids).size, ids.length, 'Optionen müssen eindeutig sein');
+  80      assert.ok(ids.length >= 2 && ids.length <= 4, 'zwei bis vier Optionen');
+  81      if (q.prompt && q.prompt.includes('{{blank}}')) assert.ok(q.options.every((o) => o.fill !== undefined), 'Lücke braucht fill');
+  82    },
+  83    render(q, run, p) {
+  84      const cls = (o, i) => {
+  85        if (p.fb) return o.id === q.answer ? 'opt right' : run.sel === i ? 'opt wrong' : 'opt';
+  86        return run.sel === i ? 'opt sel' : 'opt';
+  87      };
+  88      const list = q.optionsLayout === 'list';
+  89      return `${p.label}${p.chip}${p.prompt}${p.sub}<div class="${list ? '' : 'opts'}" ${list ? 'style="display:grid;gap:12px"' : ''}>${q.options
+  90        .map((o, i) => `<button class="${cls(o, i)}" ${p.fb ? 'disabled' : ''} data-act="pick" data-i="${i}"><kbd>${i + 1}</kbd>${o.html}</button>`)
+  91        .join('')}</div>`;
+  92    },
+  93    canCheck: (q, run) => run.sel !== null,
+  94    grade: (q, run) => (q.options[run.sel].id === q.answer ? 'ok' : 'bad'),
+  95    actions: { pick: (el, h) => { if (h.run.state === 'ask') { h.run.sel = +el.dataset.i; h.render(); } } },
+  96    onKey(e, h) {
+  97      if (h.run.state === 'ask' && /^[1-9]$/.test(e.key) && h.q.options[+e.key - 1]) { h.run.sel = +e.key - 1; h.render(); }
+  98    }
+  99  });
+ 100  
+ 101  // --- Eingabe ---------------------------------------------------------------
+ 102  
+ 103  registerQuestionType('type', {
+ 104    validate(q, assert) {
+ 105      assert.ok(q.answer, 'answer fehlt');
+ 106      if (q.check) assert.equal(q.check(q.answer), 'ok', 'die richtige Antwort muss ok sein');
+ 107    },
+ 108    render(q, run, p) {
+ 109      const state = p.fb ? (run.fb.kind === 'bad' ? 'bad' : 'ok') : '';
+ 110      const chars = !p.fb && q.accents !== false && p.chars.length
+ 111        ? `<div class="acc">${p.chars.map((c) => `<button class="chip" data-act="ch" data-c="${esc(c)}" type="button">${esc(c)}</button>`).join('')}</div>`
+ 112        : '';
+ 113      return `${p.label}${p.chip}${p.prompt}${p.sub}<input id="ans" class="ans ${state}" type="text" autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false" value="${esc(run.typed)}" ${p.fb ? 'readonly' : ''} placeholder="${esc(q.placeholder || 'Antwort eintippen')}">${chars}`;
+ 114    },
+ 115    canCheck: (q, run) => Boolean(run.typed.trim()),
+ 116    grade(q, run, mount) {
+ 117      const input = $('#ans', mount);
+ 118      const raw = input ? input.value : run.typed;
+ 119      if (!raw.trim()) return null;
+ 120      run.typed = raw;
+ 121      return (q.check || defaultCheck(q))(raw);
+ 122    },
+ 123    actions: {
+ 124      ch(el, h) {
+ 125        const input = $('#ans', h.mount);
+ 126        if (!input) return;
+ 127        const c = el.dataset.c;
+ 128        const s = input.selectionStart == null ? input.value.length : input.selectionStart;
+ 129        const e = input.selectionEnd == null ? s : input.selectionEnd;
+ 130        input.value = input.value.slice(0, s) + c + input.value.slice(e);
+ 131        input.focus();
+ 132        input.setSelectionRange(s + 1, s + 1);
+ 133        input.dispatchEvent(new Event('input', { bubbles: true }));
+ 134      }
+ 135    },
+ 136    onInput(e, h) {
+ 137      if (e.target.id !== 'ans') return;
+ 138      h.run.typed = e.target.value;
+ 139      const btn = $('#chk', h.mount);
+ 140      if (btn) btn.disabled = !e.target.value.trim();
+ 141    }
+ 142  });
+ 143  
+ 144  // --- Zuordnen --------------------------------------------------------------
+ 145  
+ 146  registerQuestionType('match', {
+ 147    validate(q, assert) {
+ 148      assert.equal(q.left.length, q.right.length);
+ 149      assert.equal(q.left.length, q.leftValues.length);
+ 150      assert.deepEqual([...q.leftValues].sort(), q.right.map((r) => r.value).sort());

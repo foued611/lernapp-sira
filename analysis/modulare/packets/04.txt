@@ -1,0 +1,167 @@
+Knoten: quiz.js
+Id: core/js/quiz.js
+Art: module
+Datei: core/js/quiz.js
+Zeilen: 196
+
+Ausgehend (dieser Knoten nutzt):
+  call -> core/js/ui.js
+  call -> core/js/icons.js
+  call -> core/js/mascot.js
+  call -> core/js/profile.js
+  call -> core/js/qtypes.js
+
+Eingehend (diese Knoten nutzen ihn):
+  core/js/shell.js -> call
+
+Quelltext (erste 150 Zeilen, Zugangsdaten maskiert):
+   1  // Universeller Quiz-Motor: Runde mit Herzen, Combo, XP, Spickzettel und Feedback sowie der Blitz-Modus.
+   2  // Er kennt keinen Lernstoff. Jede App liefert Fragen im folgenden Format.
+   3  //
+   4  // Frage = {
+   5  //   kind:   'choice' | 'type' | 'match' (oder ein eigener Typ aus core/js/qtypes.js)
+   6  //   label:  string               kleine Überschrift, z. B. "Lücke füllen"
+   7  //   chip?:  html                 kleines Info-Feld über der Frage
+   8  //   prompt?: html                Haupttext, darf {{blank}} als Lücke enthalten
+   9  //   promptStyle?: 'sentence' | 'big'
+  10  //   sub?:   string               graue Zeile (z. B. Übersetzung), erscheint bei Erfolg als "= …"
+  11  //   answer: string               choice: Option-id, type: erwarteter Text
+  12  //   options?: [{ id, html, fill? }]   choice; fill = Text für die Lücke
+  13  //   optionsLayout?: 'list'       Optionen untereinander (für ganze Sätze)
+  14  //   placeholder?: string, accents?: boolean (Zeichenleiste aus ctx.inputChars, Standard an), check?: (input) => 'ok'|'almost'|'bad'   type
+  15  //   left?: [html], right?: [{ value, html }], leftValues?: [value]                    match
+  16  //   reveal?: html                Korrektur bei Fehler (Stiftschrift)
+  17  //   why?: string                 kurze Erklärung bei Fehler
+  18  //   help?: html                  Inhalt des Spickzettels
+  19  // }
+  20  import { $, esc, pick, shuffle } from './ui.js';
+  21  import { icon } from './icons.js';
+  22  import { mascot } from './mascot.js';
+  23  import { addXP, spendXP, multiplier } from './profile.js';
+  24  import { questionType, renderQuestion, findAction } from './qtypes.js';
+  25  
+  26  function newRun(mode, questions, maxHearts) {
+  27    return {
+  28      mode, questions, i: 0, hearts: maxHearts, maxHearts,
+  29      xp: 0, correct: 0, almost: 0, wrong: 0, combo: 0, bestCombo: 0,
+  30      state: 'ask', fb: null, sel: null, typed: '', peek: false, peeked: false, m: null,
+  31      levelUp: null, goalHit: false, relearned: 0
+  32    };
+  33  }
+  34  
+  35  const heartsHTML = (run) =>
+  36    `<div class="hearts" aria-label="${run.hearts} Herzen">${Array.from({ length: run.maxHearts }, (_, i) =>
+  37      `<span class="h ${i < run.hearts ? 'on' : 'off'}">${icon('heart')}</span>`).join('')}</div>`;
+  38  
+  39  function feedbackHTML(q, run, ctx) {
+  40    const f = run.fb;
+  41    const next = '<button class="btn" data-act="next" id="nx">Weiter</button>';
+  42    if (f.kind === 'ok') {
+  43      const praise = f.retry ? 'Diesmal sitzt es!' : f.mult > 1 ? `Serie ×${f.mult}!` : pick(ctx.words.praise);
+  44      return `<div class="fb ok" role="status">${mascot(f.mult > 1 ? 'cheer' : 'happy')}<div class="msg"><b>${praise}</b> <span class="gain">+${f.gain} XP${f.mult > 1 ? ` · Combo ×${f.mult}` : ''}</span>${q.sub ? `<p class="tr">= ${esc(q.sub)}</p>` : ''}</div>${next}</div>`;
+  45    }
+  46    if (f.kind === 'almost') {
+  47      return `<div class="fb almost" role="status">${mascot('hmm')}<div class="msg"><b>Fast! Nur die Schreibweise:</b><div class="pen">${esc(q.answer)}</div><span class="gain">+${f.gain} XP</span></div>${next}</div>`;
+  48    }
+  49    const reveal = q.kind === 'match' ? '' : `<div class="pen">${q.reveal || esc(q.answer)}</div>`;
+  50    return `<div class="fb bad" role="status">${mascot('sad')}<div class="msg"><b>Kein Problem, so geht es:</b>${reveal}<div class="why">${esc(q.why || 'Schau dir die Formen noch einmal an, dann klappt es.')}</div></div>${next}</div>`;
+  51  }
+  52  
+  53  /**
+  54   * Startet eine Übungsrunde.
+  55   * @param {object} o
+  56   * @param {HTMLElement} o.mount     Container für die Oberfläche
+  57   * @param {{profile:object, app:object, words:object, inputChars:string[], save:()=>void, refreshHeader:()=>void}} o.ctx
+  58   * @param {'lesson'|'boss'|'quick'} o.mode
+  59   * @param {object[]} o.questions
+  60   * @param {number} [o.hearts]
+  61   * @param {string} [o.color]        Unit-Farbe (CSS-Wert) für Fortschrittsbalken und Rand
+  62   * @param {()=>void} o.onExit
+  63   * @param {(result:object)=>void} o.onFinish
+  64   * @returns {{destroy:()=>void}}
+  65   */
+  66  export function startQuiz({ mount, ctx, mode, questions, hearts = mode === 'boss' ? 3 : 5, color = '', onExit, onFinish }) {
+  67    // Falsch beantwortete Fragen kommen am Ende noch einmal (Wiederholen festigt). Darum arbeiten wir auf einer Kopie.
+  68    const baseCount = questions.length;
+  69    const run = newRun(mode, questions.slice(), hearts);
+  70    const ac = new AbortController();
+  71    const cur = () => run.questions[run.i];
+  72    // Gibt den Fragetypen ihren Zugriff auf den Rundenzustand.
+  73    const handle = () => ({ run, q: cur(), settle, render, mount });
+  74  
+  75    function initQuestion() {
+  76      const q = cur(), type = questionType(q.kind);
+  77      Object.assign(run, { state: 'ask', fb: null, sel: null, typed: '', peek: false, peeked: false });
+  78      run.m = type.init ? type.init(q) : null;
+  79    }
+  80  
+  81    function gain(amount) {
+  82      if (!amount) return;
+  83      run.xp += amount;
+  84      const r = addXP(ctx.profile, ctx.app, amount);
+  85      if (r.levelUp) run.levelUp = r.levelUp;
+  86      if (r.goalHit) run.goalHit = true;
+  87      ctx.save();
+  88    }
+  89  
+  90    function render() {
+  91      ctx.refreshHeader();
+  92      const q = cur(), type = questionType(q.kind);
+  93      const fb = run.state === 'fb';
+  94      const pct = ((run.i + (fb ? 1 : 0)) / run.questions.length) * 100;
+  95      let foot;
+  96      if (fb) foot = feedbackHTML(q, run, ctx);
+  97      else if (type.canCheck) foot = `<div class="row"><button class="btn" id="chk" data-act="check" ${type.canCheck(q, run) ? '' : 'disabled'}>Prüfen</button></div>`;
+  98      else foot = `<p class="muted" style="margin:0;font-size:14px">${esc(type.footHint || '')}</p>`;
+  99      const help = q.help ? `<div style="margin-top:14px"><button class="link" data-act="peek">${run.peek ? 'Spickzettel schließen' : 'Spickzettel öffnen (−3 XP)'}</button></div>${run.peek ? `<div class="peek">${q.help}</div>` : ''}` : '';
+ 100      mount.style.setProperty('--lc', color || 'var(--btn-bg)');
+ 101      mount.innerHTML = `
+ 102        <div class="playbar"><button class="x" data-act="exit" aria-label="Abbrechen">${icon('close')}</button><div class="pbar"><i style="width:${pct}%"></i></div>${heartsHTML(run)}</div>
+ 103        <div class="combo">${run.combo >= 3 ? `Combo ×${multiplier(run.combo)} · ${run.combo} in Folge` : ''}</div>
+ 104        <section class="card qcard">${q.retry ? '<p class="retry-tag">Noch einmal: jetzt, wo du die Lösung kennst</p>' : ''}${renderQuestion(q, run, ctx)}${help}</section>
+ 105        <div class="foot" aria-live="polite">${foot}</div>`;
+ 106      const input = $('#ans', mount);
+ 107      if (input && !fb) input.focus();
+ 108    }
+ 109  
+ 110    function settle(kind) {
+ 111      let amount = 0, mult = 1;
+ 112      const q = cur();
+ 113      if (q.retry) {
+ 114        // Zweiter Versuch: zählt nicht für Genauigkeit und Herzen, bringt aber XP fürs Dazulernen.
+ 115        if (kind === 'ok' || kind === 'almost') { amount = 5; run.relearned++; }
+ 116        gain(amount);
+ 117        run.fb = { kind: amount ? 'ok' : 'bad', gain: amount, mult: 1, retry: true };
+ 118        run.state = 'fb';
+ 119        render();
+ 120        return;
+ 121      }
+ 122      if (kind === 'ok') {
+ 123        run.correct++; run.combo++; run.bestCombo = Math.max(run.bestCombo, run.combo);
+ 124        mult = multiplier(run.combo); amount = 10 * mult;
+ 125      } else if (kind === 'almost') {
+ 126        run.almost++; amount = 5;
+ 127      } else {
+ 128        run.wrong++; run.combo = 0; run.hearts--;
+ 129        if (mode !== 'boss' && q.kind !== 'match' && run.hearts > 0) {
+ 130          run.questions.push({ ...q, retry: true, options: q.options ? shuffle(q.options) : q.options });
+ 131        }
+ 132      }
+ 133      gain(amount);
+ 134      run.fb = { kind, gain: amount, mult };
+ 135      run.state = 'fb';
+ 136      render();
+ 137    }
+ 138  
+ 139    function check() {
+ 140      if (run.state !== 'ask') return;
+ 141      const q = cur(), type = questionType(q.kind);
+ 142      if (!type.grade || (type.canCheck && !type.canCheck(q, run))) return;
+ 143      const kind = type.grade(q, run, mount);
+ 144      if (kind) settle(kind);
+ 145    }
+ 146  
+ 147    function finish(failed) {
+ 148      const total = baseCount;
+ 149      const accuracy = (run.correct + 0.5 * run.almost) / total;
+ 150      onFinish({

@@ -1,0 +1,166 @@
+Knoten: builders.js
+Id: apps/geometrie/builders.js
+Art: module
+Datei: apps/geometrie/builders.js
+Zeilen: 214
+
+Ausgehend (dieser Knoten nutzt):
+  call -> core/js/questions.js
+  call -> core/js/ui.js
+  call -> core/js/mathkit.js
+
+Eingehend (diese Knoten nutzen ihn):
+  apps/geometrie/logic.js -> call
+  tests/geometrie.test.js -> call
+
+Quelltext (erste 150 Zeilen, Zugangsdaten maskiert):
+   1  // Erzeugt Geometrie-Fragen. Rechenaufgaben mit Zufallswerten, dazu Begriffs- und Konstruktionsfragen als feste Auswahl.
+   2  import { choiceQuestion, typedQuestion } from '../../core/js/questions.js';
+   3  import { esc, pick, shuffle } from '../../core/js/ui.js';
+   4  import { rnd, fmt, nearby, numCheck, MINUS } from '../../core/js/mathkit.js';
+   5  
+   6  // Seiten und Aufgabendaten kommen aus content/geometrie/ (siehe init). Hier liegt nur die Logik der Aufgaben.
+   7  let UNITS = [];
+   8  let MS_FACTS = [], WH_FACTS = [], DR_FACTS = [], TH_FACTS = [], KR_FACTS = [], GR_FACTS = [], PR_FACTS = [], THEOREMS = [], EINDEUTIG = [];
+   9  const asWords = (list) => list.map((item) => ({ ...item, choiceOnly: true }));
+  10  
+  11  /** Bekommt Seitenliste und Aufgabendaten, bevor die erste Runde entsteht. */
+  12  export function init({ data, manifest }) {
+  13    UNITS = manifest.units;
+  14    MS_FACTS = asWords(data.msFacts);
+  15    WH_FACTS = asWords(data.whFacts);
+  16    DR_FACTS = asWords(data.drFacts);
+  17    TH_FACTS = asWords(data.thFacts);
+  18    KR_FACTS = asWords(data.krFacts);
+  19    GR_FACTS = asWords(data.grFacts);
+  20    PR_FACTS = asWords(data.prFacts);
+  21    THEOREMS = data.theorems;
+  22    EINDEUTIG = data.eindeutig;
+  23  }
+  24  
+  25  const D = '°';
+  26  const num = (value, prompt, why, label, extras = [], unit = '') => ({
+  27    prompt, answer: fmt(value) + unit, value, numeric: true, why, label,
+  28    wrong: nearby(value, extras).map((v) => fmt(v) + unit), unit
+  29  });
+  30  const words = (prompt, answer, wrong, why, label) => ({ prompt, answer, wrong, why, label, choiceOnly: true });
+  31  
+  32  // --- Mittelsenkrechte ---------------------------------------------------------------------------
+  33  
+  34  function gleichWeit() {
+  35    const x = rnd(3, 12);
+  36    return num(x, `Der Punkt P liegt auf der Mittelsenkrechten der Strecke AB. Es ist PA = ${x} cm. Wie lang ist PB?`,
+  37      `Jeder Punkt der Mittelsenkrechten ist von A und B gleich weit entfernt. Also ist PB = PA = ${x} cm.`, 'Rechne', [x * 2, x / 2, x + 1], ' cm');
+  38  }
+  39  
+  40  function mitteStrecke() {
+  41    const h = rnd(2, 9);
+  42    return num(h, `Die Strecke AB ist ${2 * h} cm lang. Die Mittelsenkrechte schneidet AB im Punkt M. Wie lang ist AM?`,
+  43      `M ist der Mittelpunkt der Strecke. AM = ${2 * h} cm : 2 = ${h} cm.`, 'Rechne', [2 * h, h + 2, h * 2 + 1], ' cm');
+  44  }
+  45  
+  46  function zirkelRadius() {
+  47    const ab = pick([4, 6, 8, 10]), h = ab / 2;
+  48    return words(`Du konstruierst die Mittelsenkrechte der Strecke AB mit AB = ${ab} cm. Welchen Zirkelradius darfst du einstellen?`,
+  49      `mehr als ${h} cm`, [`genau ${h} cm`, `weniger als ${h} cm`, `genau ${ab * 2} cm, sonst nichts`],
+  50      `Die Kreisbögen um A und B müssen sich in zwei Punkten schneiden. Das klappt nur, wenn der Radius größer ist als die Hälfte der Strecke (${h} cm). Bei genau ${h} cm berühren sich die Bögen nur in M, bei weniger treffen sie sich gar nicht.`, 'Konstruktion');
+  51  }
+  52  
+  53  
+  54  // --- Winkelhalbierende -----------------------------------------------------------------------------
+  55  
+  56  function haelfte() {
+  57    const h = rnd(15, 60);
+  58    return num(h, `Der Winkel α = ${2 * h}${D} wird von einer Winkelhalbierenden geteilt. Wie groß ist jeder Teilwinkel?`,
+  59      `Die Winkelhalbierende teilt in zwei gleich große Teile: ${2 * h}${D} : 2 = ${h}${D}.`, 'Rechne', [2 * h, 90 - h, h + 10], D);
+  60  }
+  61  
+  62  function ganzerWinkel() {
+  63    const h = rnd(15, 60);
+  64    return num(2 * h, `Eine Winkelhalbierende teilt einen Winkel in zwei Teile zu je ${h}${D}. Wie groß ist der ganze Winkel?`,
+  65      `Zwei gleiche Teile ergeben den ganzen Winkel: 2 · ${h}${D} = ${2 * h}${D}.`, 'Rechne', [h, h + 90, 3 * h], D);
+  66  }
+  67  
+  68  
+  69  // --- Dreiecke konstruieren ---------------------------------------------------------------------------
+  70  
+  71  function dreieckSeiten() {
+  72    let a, b, c;
+  73    do { a = rnd(3, 9); b = rnd(3, 9); c = rnd(3, 9); } while (a + b <= c || a + c <= b || b + c <= a);
+  74    return words(`Ein Dreieck hat die Seiten a = ${a} cm, b = ${b} cm und c = ${c} cm. Wie viele Dreiecke gibt es dazu?`, 'genau eines (bis auf Spiegelung und Drehung)',
+  75      ['kein einziges', 'unendlich viele', 'genau zwei verschiedene'],
+  76      `Bei drei Seiten (SSS) gibt es höchstens ein Dreieck, und weil jede Seite kürzer ist als die beiden anderen zusammen, gibt es auch eines.`, 'Eindeutigkeit');
+  77  }
+  78  
+  79  function dreieckUngleichung() {
+  80    const a = rnd(2, 6), b = rnd(2, 6), c = a + b + rnd(1, 4);
+  81    return words(`Kann man ein Dreieck mit a = ${a} cm, b = ${b} cm und c = ${c} cm zeichnen?`, 'Nein, a + b ist nicht größer als c',
+  82      ['Ja, mit SSS geht es immer', 'Ja, aber nur mit einem Winkelmesser', 'Ja, wenn man c etwas kürzer zeichnet'],
+  83      `Die beiden kurzen Seiten ${a} cm und ${b} cm sind zusammen nur ${a + b} cm lang und reichen nicht bis zur Seite c = ${c} cm. Die Kreisbögen schneiden sich nicht. Zwei Seiten müssen zusammen immer länger sein als die dritte.`, 'Dreiecksungleichung');
+  84  }
+  85  
+  86  
+  87  function kongruenzsatz() {
+  88    const [given, name] = pick(THEOREMS);
+  89    return words(`Gegeben sind ${given}. Welcher Kongruenzsatz passt?`, name, ['SSS', 'SWS', 'WSW', 'SsW'].filter((n) => n !== name),
+  90      `${name} steht für „${given}“. Mit dieser Angabe ist das Dreieck bis auf Spiegelung und Drehung eindeutig festgelegt.`, 'Kongruenzsatz');
+  91  }
+  92  
+  93  
+  94  function eindeutig() {
+  95    const [given, ans, why] = pick(EINDEUTIG);
+  96    const all = ['genau ein Dreieck', 'höchstens zwei Dreiecke möglich', 'unendlich viele Dreiecke (verschieden groß)', 'kein Dreieck'];
+  97    return words(`Wie viele Dreiecke passen zu den Angaben? ${given}`, ans, all.filter((o) => o !== ans), why, 'Eindeutigkeit');
+  98  }
+  99  
+ 100  
+ 101  // --- Winkel und Beweise ----------------------------------------------------------------------------------
+ 102  
+ 103  const ANGLE_KINDS = [
+ 104    ['Scheitelwinkel', (a) => a, 'Scheitelwinkel liegen sich gegenüber und sind gleich groß.'],
+ 105    ['Nebenwinkel', (a) => 180 - a, 'Nebenwinkel ergeben zusammen 180°.'],
+ 106    ['Stufenwinkel', (a) => a, 'An parallelen Geraden sind Stufenwinkel gleich groß.'],
+ 107    ['Wechselwinkel', (a) => a, 'An parallelen Geraden sind Wechselwinkel gleich groß.']
+ 108  ];
+ 109  
+ 110  function winkelPaar() {
+ 111    const [kind, fn, why] = pick(ANGLE_KINDS), a = rnd(2, 17) * 10, v = fn(a);
+ 112    const needsParallel = kind === 'Stufenwinkel' || kind === 'Wechselwinkel';
+ 113    return num(v, `${needsParallel ? 'Zwei parallele Geraden werden von einer dritten geschnitten.' : 'Zwei Geraden schneiden sich.'} Ein Winkel misst ${a}${D}. Wie groß ist der ${kind}?`,
+ 114      `${why} Also ${fmt(v)}${D}.`, 'Winkel', [180 - a, a, 90 - (a % 90)].filter((x) => x > 0), D);
+ 115  }
+ 116  
+ 117  function winkelsumme() {
+ 118    const a = rnd(30, 80), b = rnd(30, 80), c = 180 - a - b;
+ 119    return num(c, `Ein Dreieck hat die Winkel α = ${a}${D} und β = ${b}${D}. Wie groß ist γ?`,
+ 120      `Die Winkelsumme im Dreieck ist 180°. γ = 180${D} ${'−'} ${a}${D} ${'−'} ${b}${D} = ${c}${D}.`, 'Winkelsumme', [a + b, 360 - a - b, c + 10], D);
+ 121  }
+ 122  
+ 123  function gleichschenklig() {
+ 124    const base = rnd(25, 75), top = 180 - 2 * base;
+ 125    return num(base, `Ein gleichschenkliges Dreieck hat an der Spitze den Winkel ${top}${D}. Wie groß ist jeder Basiswinkel?`,
+ 126      `Die zwei Basiswinkel sind gleich groß. (180${D} ${'−'} ${top}${D}) : 2 = ${base}${D}.`, 'Gleichschenklig', [top, 180 - top, base + 10], D);
+ 127  }
+ 128  
+ 129  // --- Thales -----------------------------------------------------------------------------------------------------
+ 130  
+ 131  function thalesGamma() {
+ 132    return num(90, 'Der Punkt C liegt auf dem Halbkreis über der Strecke AB (Thaleskreis). Wie groß ist der Winkel bei C?',
+ 133      'Satz des Thales: Der Winkel im Halbkreis ist immer ein rechter Winkel, also 90°.', 'Thales', [60, 180, 45], D);
+ 134  }
+ 135  
+ 136  function thalesBeta() {
+ 137    const a = rnd(20, 70);
+ 138    return num(90 - a, `Das Dreieck ABC hat bei C einen rechten Winkel (C liegt auf dem Thaleskreis über AB). Es ist α = ${a}${D}. Wie groß ist β?`,
+ 139      `Bei C sind es 90°. Die Winkelsumme ist 180°, also β = 180${D} ${'−'} 90${D} ${'−'} ${a}${D} = ${90 - a}${D}.`, 'Thales', [a, 180 - a, 90 + a], D);
+ 140  }
+ 141  
+ 142  function thalesRadius() {
+ 143    const r = rnd(2, 9);
+ 144    return num(r, `Die Hypotenuse eines rechtwinkligen Dreiecks ist ${2 * r} cm lang. Wie groß ist der Radius des Umkreises?`,
+ 145      `Die Hypotenuse ist der Durchmesser des Thaleskreises. Radius = ${2 * r} cm : 2 = ${r} cm.`, 'Thales', [2 * r, r + 1, 2 * r + 2], ' cm');
+ 146  }
+ 147  
+ 148  
+ 149  // --- Umkreis und Inkreis --------------------------------------------------------------------------------------
+ 150  

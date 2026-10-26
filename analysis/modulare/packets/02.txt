@@ -1,0 +1,166 @@
+Knoten: builders.js
+Id: apps/informatik/builders.js
+Art: module
+Datei: apps/informatik/builders.js
+Zeilen: 254
+
+Ausgehend (dieser Knoten nutzt):
+  call -> core/js/ui.js
+  call -> core/js/questions.js
+  call -> apps/informatik/numbers.js
+
+Eingehend (diese Knoten nutzen ihn):
+  apps/informatik/logic.js -> call
+  tests/informatik.test.js -> call
+
+Quelltext (erste 150 Zeilen, Zugangsdaten maskiert):
+   1  // Baut aus Zufallszahlen Fragen im Quiz-Format (siehe core/js/quiz.js).
+   2  import { esc, shuffle, pick } from '../../core/js/ui.js';
+   3  import { choiceQuestion, typedQuestion } from '../../core/js/questions.js';
+   4  // Seiten kommen aus content/info-zahlen/ (siehe init). Hier liegt nur die Logik der Aufgaben.
+   5  let UNITS = [];
+   6  
+   7  /** Bekommt die Seitenliste, bevor die erste Runde entsteht. */
+   8  export function init({ manifest }) {
+   9    UNITS = manifest.units;
+  10  }
+  11  import {
+  12    HEX, toBin, toHex, rnd, placeSum, placeDigits, onesWeights, checker, distractors, mono,
+  13    explainBinToDec, explainDecToBin, explainHexToDec, explainDecToHex, explainBinToHex, explainAdd
+  14  } from './numbers.js';
+  15  
+  16  const RANGE = { easy: [2, 15], mid: [10, 63], hard: [40, 255] };
+  17  const cheatsheet = '<p class="muted" style="margin:0 0 6px">Hex-Ziffern</p><div class="cheat">' +
+  18    HEX.split('').map((c, i) => `<span>${c}=${i}</span>`).join('') + '</div>';
+  19  const weightsSheet = '<p class="muted" style="margin:0 0 6px">Stellenwerte</p><div class="cheat">' +
+  20    [128, 64, 32, 16, 8, 4, 2, 1].map((w) => `<span>${w}</span>`).join('') + '</div>';
+  21  
+  22  /** Auswahlfrage mit Zahlen in Schreibmaschinenschrift. wrong = mögliche falsche Antworten. */
+  23  function choice({ answer, wrong, ...rest }) {
+  24    return choiceQuestion({ ...rest, answer, choices: [answer, ...distractors(answer, wrong, 3)], format: mono, promptStyle: rest.promptStyle || 'big' });
+  25  }
+  26  
+  27  function typed({ type, answer, ...rest }) {
+  28    return typedQuestion({ ...rest, answer, check: checker(type, answer), format: mono, promptStyle: rest.promptStyle || 'big' });
+  29  }
+  30  
+  31  const flipBits = (bin) => bin.split('').map((c) => (c === '1' ? '0' : '1')).join('');
+  32  const reversed = (bin) => bin.split('').reverse().join('');
+  33  
+  34  // --- Seite 1: Stellenwerte -------------------------------------------------
+  35  
+  36  export function placeValueQ() {
+  37    const kind = rnd(0, 2);
+  38    const n = rnd(100, 9999);
+  39    const d = placeDigits(n);
+  40    const names = ['Tausender', 'Hunderter', 'Zehner', 'Einer'];
+  41    if (kind === 0) {
+  42      const i = rnd(0, 3);
+  43      const digit = d[i];
+  44      const value = String(Number(digit) * [1000, 100, 10, 1][i]);
+  45      return choice({
+  46        label: 'Stellenwert erkennen',
+  47        prompt: `Welchen Wert hat die <b>${digit}</b> in ${mono(String(n))}?`,
+  48        promptStyle: 'sentence',
+  49        answer: value,
+  50        wrong: [Number(digit) * 10 * [1000, 100, 10, 1][i], Number(digit), Number(digit) * [1000, 100, 10, 1][Math.min(3, i + 1)], Number(digit) * [1000, 100, 10, 1][Math.max(0, i - 1)]],
+  51        why: `Die ${digit} steht an der ${names[i]}-Stelle (${names[i]} = ${[1000, 100, 10, 1][i]}). Also ${digit} × ${[1000, 100, 10, 1][i]} = ${value}.`
+  52      });
+  53    }
+  54    if (kind === 1) {
+  55      return choice({
+  56        label: 'Zahl zerlegen',
+  57        prompt: `Zerlege ${mono(String(n))}:`,
+  58        promptStyle: 'sentence',
+  59        answer: placeSum(n),
+  60        wrong: [placeSum(Number(d.slice().reverse().join(''))), placeSum(n + 10), placeSum(n - 100), placeSum(Number(d[1] + d[0] + d[3] + d[2]))],
+  61        why: `Jede Ziffer wird mit ihrem Stellenwert multipliziert: ${placeSum(n)}.`
+  62      });
+  63    }
+  64    return typed({
+  65      label: 'Zahl zusammensetzen',
+  66      prompt: `${placeSum(n).replace(/×/g, ' × ')} = ?`,
+  67      answer: String(n),
+  68      type: 'dec',
+  69      why: `Rechne jeden Teil aus und addiere: ${placeSum(n)} = ${n}.`,
+  70      placeholder: 'Zahl eintippen'
+  71    });
+  72  }
+  73  
+  74  // --- Seite 2: Binär lesen --------------------------------------------------
+  75  
+  76  export function binToDecQ(level = 'mid') {
+  77    const [lo, hi] = RANGE[level];
+  78    const n = rnd(lo, hi);
+  79    const bin = toBin(n);
+  80    const answer = String(n);
+  81    if (rnd(0, 1)) {
+  82      return choice({
+  83        label: 'Binär → Normal',
+  84        prompt: `Was ist ${mono(bin)} als normale Zahl?`, promptStyle: 'sentence',
+  85        answer, wrong: [parseInt(reversed(bin), 2), parseInt(flipBits(bin), 2), n + 1, n - 1, n + 2],
+  86        why: explainBinToDec(bin), help: weightsSheet
+  87      });
+  88    }
+  89    return typed({
+  90      label: 'Binär → Normal', prompt: `Was ist ${mono(bin)} als normale Zahl?`, promptStyle: 'sentence',
+  91      answer, type: 'dec', why: explainBinToDec(bin), help: weightsSheet, placeholder: 'z. B. 42'
+  92    });
+  93  }
+  94  
+  95  export function lampsQ() {
+  96    const n = rnd(3, 255);
+  97    const bin = toBin(n).padStart(8, '0');
+  98    const lit = onesWeights(bin);
+  99    return choice({
+ 100      label: 'Lampen lesen',
+ 101      prompt: `Diese Lampen leuchten: ${mono(lit.join(' + '))}. Wie lautet die Zahl?`, promptStyle: 'sentence',
+ 102      answer: String(n), wrong: [n + 1, n - 1, n + 16, n - 2, lit.length],
+ 103      why: `Zähle die leuchtenden Stellenwerte zusammen: ${lit.join(' + ')} = ${n}.`, help: weightsSheet
+ 104    });
+ 105  }
+ 106  
+ 107  // --- Seite 3: Normal → Binär ----------------------------------------------
+ 108  
+ 109  export function decToBinQ(level = 'mid') {
+ 110    const [lo, hi] = RANGE[level];
+ 111    const n = rnd(lo, hi);
+ 112    const bin = toBin(n);
+ 113    if (rnd(0, 1)) {
+ 114      return choice({
+ 115        label: 'Normal → Binär',
+ 116        prompt: `Schreibe ${mono(String(n))} binär.`, promptStyle: 'sentence',
+ 117        answer: bin, wrong: [reversed(bin), flipBits(bin), toBin(n + 1), toBin(n - 1), toBin(n + 2)],
+ 118        why: explainDecToBin(n), help: weightsSheet
+ 119      });
+ 120    }
+ 121    return typed({
+ 122      label: 'Normal → Binär', prompt: `Schreibe ${mono(String(n))} binär.`, promptStyle: 'sentence',
+ 123      answer: bin, type: 'bin', why: explainDecToBin(n), help: weightsSheet, placeholder: 'z. B. 1010'
+ 124    });
+ 125  }
+ 126  
+ 127  export function largestWeightQ() {
+ 128    const n = rnd(5, 255);
+ 129    const w = [128, 64, 32, 16, 8, 4, 2, 1].find((x) => x <= n);
+ 130    return choice({
+ 131      label: 'Den Anfang finden',
+ 132      prompt: `Welcher Stellenwert ist der <b>größte</b>, der noch in ${mono(String(n))} passt?`, promptStyle: 'sentence',
+ 133      answer: String(w), wrong: [w * 2, w / 2, n, w * 4].map(Math.floor),
+ 134      why: `${w} passt noch hinein (${w} ≤ ${n}), der nächstgrößere Stellenwert ${w * 2} aber nicht. Dort fängst du an.`, help: weightsSheet
+ 135    });
+ 136  }
+ 137  
+ 138  // --- Seite 4: Binär addieren ----------------------------------------------
+ 139  
+ 140  export function addQ(level = 'mid') {
+ 141    const max = level === 'easy' ? 7 : level === 'mid' ? 15 : 63;
+ 142    const a = rnd(1, max), b = rnd(1, max);
+ 143    return typed({
+ 144      label: 'Binär addieren',
+ 145      prompt: `${mono(toBin(a))} + ${mono(toBin(b))} = ?`,
+ 146      answer: toBin(a + b), type: 'bin', why: explainAdd(a, b),
+ 147      help: '<div class="cheat"><span>0+0=0</span><span>0+1=1</span><span>1+1=10</span><span>1+1+1=11</span></div>',
+ 148      placeholder: 'Ergebnis binär'
+ 149    });
+ 150  }

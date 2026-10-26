@@ -1,0 +1,79 @@
+Knoten: content.test.js
+Id: tests/content.test.js
+Art: module
+Datei: tests/content.test.js
+Zeilen: 57
+
+Ausgehend (dieser Knoten nutzt):
+  call -> tests/helpers.js
+  call -> core/js/rules.js
+  call -> core/js/validate.js
+  dispatch -> registry.js
+  dispatch -> core/js/validate.js
+
+Eingehend (diese Knoten nutzen ihn):
+  keine
+
+Quelltext (erste 150 Zeilen, Zugangsdaten maskiert):
+   1  // Prüft alle Inhaltspakete in content/ gegen das JSON-Schema (Ajv) und gegen die Querverweise, die ein Schema nicht kennt.
+   2  import { test } from 'node:test';
+   3  import assert from 'node:assert/strict';
+   4  import { readFile, readdir } from 'node:fs/promises';
+   5  import { fileURLToPath } from 'node:url';
+   6  import Ajv2020 from 'ajv/dist/2020.js';
+   7  import { diskSource } from './helpers.js';
+   8  import { ruleErrors } from '../core/js/rules.js';
+   9  import { bundleErrors } from '../core/js/validate.js';
+  10  
+  11  const root = fileURLToPath(new URL('../', import.meta.url));
+  12  const schema = JSON.parse(await readFile(root + 'schemas/bundle.schema.json', 'utf8'));
+  13  const validate = new Ajv2020({ allErrors: true, strict: false }).compile(schema);
+  14  const ids = (await readdir(root + 'content', { withFileTypes: true })).filter((e) => e.isDirectory()).map((e) => e.name);
+  15  
+  16  test('jeder Ordner in content/ gehört zu einer App der Registry oder zur Vorlage', async () => {
+  17    const { APPS } = await import('../registry.js');
+  18    const known = new Set([...APPS.map((a) => a.id), 'vorlage']);
+  19    ids.forEach((id) => assert.ok(known.has(id), `content/${id} gehört zu keiner App`));
+  20    APPS.filter((a) => a.status === 'live').forEach((a) => assert.ok(ids.includes(a.id), `content/${a.id} fehlt`));
+  21  });
+  22  
+  23  for (const id of ids) {
+  24    test(`Schema und Querverweise: ${id}`, async () => {
+  25      const bundle = await diskSource().load(id);
+  26      assert.ok(validate(bundle), JSON.stringify(validate.errors, null, 1).slice(0, 1500));
+  27      assert.equal(bundle.manifest.id, id, 'manifest.id muss dem Ordnernamen entsprechen');
+  28      const unitIds = bundle.manifest.units.map((u) => u.id);
+  29      assert.equal(new Set(unitIds).size, unitIds.length, 'Seiten-IDs eindeutig');
+  30      assert.deepEqual(Object.keys(bundle.lessons).sort(), [...unitIds].sort(), 'jede Seite hat genau eine Lektion');
+  31      Object.keys(bundle.manifest.notes || {}).forEach((u) => assert.ok(unitIds.includes(u), `Merkzettel für unbekannte Seite ${u}`));
+  32      assert.equal(new Set(bundle.badges.map((b) => b.id)).size, bundle.badges.length, 'Trophäen-IDs eindeutig');
+  33      bundle.badges.forEach((b) => assert.deepEqual(ruleErrors(b.rule, unitIds, b.id), []));
+  34      Object.entries(bundle.lessons).forEach(([unit, l]) => assert.ok(l.check.options.some((o) => o.id === l.check.answer), `${unit}: Antwort des Mini-Checks fehlt in den Optionen`));
+  35    });
+  36  }
+  37  
+  38  test('Schema lehnt kaputte Pakete ab', async () => {
+  39    const good = await diskSource().load('vorlage');
+  40    const bad = (edit) => { const copy = structuredClone(good); edit(copy); return validate(copy); };
+  41    assert.ok(!bad((b) => { delete b.manifest.title; }), 'Titel fehlt');
+  42    assert.ok(!bad((b) => { b.manifest.units[0].color = 'rot'; }), 'Farbe ungültig');
+  43    assert.ok(!bad((b) => { delete b.lessons.start.figure.diagram; }), 'Bild fehlt');
+  44    assert.ok(!bad((b) => { b.badges[0].rule = { type: 'zauberei' }; }), 'Regeltyp unbekannt');
+  45    assert.ok(!bad((b) => { b.lessons.start.tldr = ['nur einer']; }), 'zu wenige Kernsätze');
+  46    assert.ok(!bad((b) => { b.manifest.schema = 2; }), 'Schemaversion');
+  47    assert.ok(bad((b) => { b.manifest.resources = [{ title: 'Blatt', href: 'files/blatt.pdf' }]; }), 'relativer Pfad ist erlaubt');
+  48    for (const href of ['javascript:alert(1)', 'https://example.org/x.pdf', '/x.pdf', '../x.pdf', 'files/a b.pdf']) {
+  49      assert.ok(!bad((b) => { b.manifest.resources = [{ title: 'Blatt', href }]; }), `Schema lehnt href ab: ${href}`);
+  50      const copy = structuredClone(good);
+  51      copy.manifest.resources = [{ title: 'Blatt', href }];
+  52      assert.ok(bundleErrors(copy).length > 0, `Laufzeitprüfung lehnt href ab: ${href}`);
+  53    }
+  54  });
+  55  
+  56  test('Strang-Verweise: unbekannter Strang wird gemeldet', async () => {
+  57    const { bundleErrors } = await import('../core/js/validate.js');
+  58    const b = structuredClone(await diskSource().load('deutsch'));
+  59    assert.deepEqual(bundleErrors(b), []);
+  60    b.manifest.units[0].track = 'xyz';
+  61    assert.ok(bundleErrors(b).some((e) => e.includes('xyz')));
+  62  });

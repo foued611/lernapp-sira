@@ -1,0 +1,100 @@
+Knoten: theory.js
+Id: apps/franzoesisch-verben/theory.js
+Art: module
+Datei: apps/franzoesisch-verben/theory.js
+Zeilen: 75
+
+Ausgehend (dieser Knoten nutzt):
+  call -> core/js/ui.js
+  call -> core/js/icons.js
+  call -> apps/franzoesisch-verben/model.js
+  call -> apps/franzoesisch-verben/builders.js
+  call -> core/js/lesson.js
+
+Eingehend (diese Knoten nutzen ihn):
+  apps/franzoesisch-verben/logic.js -> call
+
+Quelltext (erste 150 Zeilen, Zugangsdaten maskiert):
+   1  // Theorie-Seite: Konjugationstabelle, Merkzettel und Beispielsätze. Hier steckt nur Darstellung, kein Lernstoff.
+   2  import { esc } from '../../core/js/ui.js';
+   3  import { icon } from '../../core/js/icons.js';
+   4  import { V, SP } from './model.js';
+   5  import { elides, lab } from './builders.js';
+   6  import { lessonTop, lessonBottom, wireLesson } from '../../core/js/lesson.js';
+   7  
+   8  const canSpeak = () => 'speechSynthesis' in window;
+   9  
+  10  function speak(text) {
+  11    try {
+  12      if (!canSpeak()) return;
+  13      const utterance = new SpeechSynthesisUtterance(text);
+  14      utterance.lang = 'fr-FR';
+  15      utterance.rate = 0.85;
+  16      speechSynthesis.cancel();
+  17      speechSynthesis.speak(utterance);
+  18    } catch (error) {
+  19      /* Sprachausgabe nicht verfügbar: die Seite funktioniert ohne. */
+  20    }
+  21  }
+  22  
+  23  const speakButton = (text) =>
+  24    canSpeak() ? `<button class="say" data-act="say" data-t="${esc(text)}" aria-label="Vorlesen">${icon('say')}</button>` : '';
+  25  
+  26  function formCell(v, i) {
+  27    if (v.irr) return `<b>${esc(v.forms[i])}</b>`;
+  28    const ending = v.ends[i];
+  29    return `<span class="stem">${esc(v.stem)}</span><span class="end">${ending ? esc(ending) : '∅'}</span>`;
+  30  }
+  31  
+  32  /** Wird von der Shell mit einem frischen Container aufgerufen. */
+  33  export function renderTheory(box, unit, { lessons, notes: allNotes }) {
+  34    const state = { verb: unit.verbs[0], cover: false };
+  35    const spec = lessons[unit.id];
+  36    const notes = (allNotes[unit.id] || []).map((t) => `<div class="note"><b>${esc(t[0])}</b>${esc(t[1])}</div>`).join('');
+  37    const examples = SP[unit.id].slice(0, 3).map((s) => {
+  38      const form = s.v.forms[s.p];
+  39      return `<li><div><div class="fr">${esc(s.fr).replace('___', `<span class="mk">${esc(form)}</span>`)}</div><div class="de">${esc(s.de)}</div></div>${speakButton(s.fr.replace('___', form))}</li>`;
+  40    }).join('');
+  41    // Die Lektion wird nur einmal gezeichnet, damit Schritte und Mini-Check beim Wechseln der Verben erhalten bleiben.
+  42    box.innerHTML = `
+  43      <div style="display:grid;gap:22px">
+  44        <div data-conj></div>
+  45        ${lessonTop(spec)}
+  46        ${lessonBottom(spec)}
+  47        <section class="card"><h3 style="margin-bottom:10px">So sieht das im Satz aus</h3><ul class="ex">${examples}</ul></section>
+  48        <section><h2>Merkzettel</h2><div class="notes" style="margin-top:12px">${notes}</div></section>
+  49        <div><button class="btn" data-act="start" data-id="${esc(unit.id)}">Übung starten · 8 Aufgaben</button></div>
+  50      </div>`;
+  51    const conj = box.querySelector('[data-conj]');
+  52  
+  53    function paint() {
+  54      const v = V[state.verb];
+  55      const chips = unit.verbs.length > 1
+  56        ? `<div class="chips">${unit.verbs.map((k) => `<button class="chip ${k === state.verb ? 'on' : ''}" data-act="verb" data-v="${esc(k)}">${esc(V[k].inf)}</button>`).join('')}</div>`
+  57        : '';
+  58      const rows = [0, 1, 2, 3, 4, 5].map((i) => {
+  59        const third = v.irr ? esc(v.deF[i]) : (v.ends[i] ? `Endung -${esc(v.ends[i])}` : 'keine Endung');
+  60        const speech = lab(v, i) + (i === 0 && elides(v) ? '' : ' ') + v.forms[i];
+  61        return `<tr><td class="pr">${esc(lab(v, i))}</td><td class="fm ${state.cover ? 'hid' : ''}" data-act="reveal"><span class="val">${formCell(v, i)}</span><span class="qm">tippen</span></td><td class="third">${third}</td><td class="sp">${speakButton(speech)}</td></tr>`;
+  62      }).join('');
+  63      conj.innerHTML = `
+  64        <section class="card tcard"><div class="thead"><h1>${esc(unit.irr ? v.inf : unit.title)}</h1><span class="de">${esc(unit.irr ? v.de + ' · unregelmäßig' : unit.de)}</span></div>
+  65          <div style="margin:14px 0 8px;display:grid;gap:10px">${chips}<div><button class="chip ${state.cover ? 'on' : ''}" data-act="cover">Selbsttest: Formen abdecken</button></div></div>
+  66          <table class="conj"><tbody>${rows}</tbody></table>
+  67          ${v.irr ? '' : '<p class="muted" style="font-size:13px;margin:8px 0 0">Gelb markiert ist die Endung. Der Stamm bleibt gleich.</p>'}
+  68        </section>`;
+  69    }
+  70  
+  71    box.addEventListener('click', (e) => {
+  72      const el = e.target.closest('[data-act]');
+  73      if (!el) return;
+  74      const act = el.dataset.act;
+  75      if (act === 'verb') { state.verb = el.dataset.v; paint(); }
+  76      else if (act === 'cover') { state.cover = !state.cover; paint(); }
+  77      else if (act === 'reveal') el.classList.remove('hid');
+  78      else if (act === 'say') speak(el.dataset.t);
+  79    });
+  80  
+  81    paint();
+  82    wireLesson(box, spec);
+  83  }

@@ -1,0 +1,162 @@
+Knoten: db.js
+Id: core/js/db.js
+Art: module
+Datei: core/js/db.js
+Zeilen: 128
+
+Ausgehend (dieser Knoten nutzt):
+  write -> ds:indexeddb
+  read -> ds:indexeddb
+  write -> ds:localstorage
+  read -> ds:localstorage
+
+Eingehend (diese Knoten nutzen ihn):
+  core/js/content.js -> call
+  core/js/shell.js -> call
+  core/js/store.js -> call
+  core/js/views/backup.js -> call
+  tests/db.test.js -> dispatch
+
+Quelltext (erste 150 Zeilen, Zugangsdaten maskiert):
+   1  // Browser-Datenbank: IndexedDB mit automatischem Ausweichen auf localStorage.
+   2  // Das Schema ist bewusst offen: "docs" speichert beliebige JSON-Dokumente unter einem Schlüssel,
+   3  // "log" speichert beliebige Ereignisse (z. B. beendete Runden). Neue Felder brauchen keine Migration.
+   4  // Neue Sammlungen: DB_VERSION erhöhen und in upgrade() ergänzen (siehe AGENTS.md).
+   5  
+   6  const DB_NAME = 'lernwerkstatt';
+   7  const DB_VERSION = 1;
+   8  const PREFIX = 'lernwerkstatt:';
+   9  const LOG_KEY = `${PREFIX}log`;
+  10  const LOG_MAX = 1000;
+  11  
+  12  const wrap = (request) => new Promise((resolve, reject) => {
+  13    request.onsuccess = () => resolve(request.result);
+  14    request.onerror = () => reject(request.error);
+  15  });
+  16  
+  17  function upgrade(db) {
+  18    if (!db.objectStoreNames.contains('docs')) db.createObjectStore('docs', { keyPath: 'key' });
+  19    if (!db.objectStoreNames.contains('log')) {
+  20      const log = db.createObjectStore('log', { keyPath: 'id', autoIncrement: true });
+  21      log.createIndex('app', 'app');
+  22      log.createIndex('ts', 'ts');
+  23    }
+  24  }
+  25  
+  26  function openIndexedDB() {
+  27    return new Promise((resolve, reject) => {
+  28      if (typeof indexedDB === 'undefined') { reject(new Error('IndexedDB fehlt')); return; }
+  29      let request;
+  30      try { request = indexedDB.open(DB_NAME, DB_VERSION); } catch (error) { reject(error); return; }
+  31      request.onupgradeneeded = () => upgrade(request.result);
+  32      request.onsuccess = () => resolve(request.result);
+  33      request.onerror = () => reject(request.error);
+  34      request.onblocked = () => reject(new Error('IndexedDB blockiert'));
+  35    });
+  36  }
+  37  
+  38  /** Haupt-Backend. Alle Methoden sind asynchron. */
+  39  function idbBackend(db) {
+  40    const tx = (store, mode = 'readonly') => db.transaction(store, mode).objectStore(store);
+  41    return {
+  42      name: 'indexeddb',
+  43      async get(key) {
+  44        const row = await wrap(tx('docs').get(key));
+  45        return row ? row.value : undefined;
+  46      },
+  47      async put(key, value) { await wrap(tx('docs', 'readwrite').put({ key, value, updatedAt: Date.now() })); },
+  48      async remove(key) { await wrap(tx('docs', 'readwrite').delete(key)); },
+  49      async all() {
+  50        const rows = await wrap(tx('docs').getAll());
+  51        return Object.fromEntries(rows.map((r) => [r.key, r.value]));
+  52      },
+  53      async legacy(key) {
+  54        // Alte Daten aus localStorage übernehmen und danach dort entfernen.
+  55        try {
+  56          const raw = localStorage.getItem(key);
+  57          if (!raw) return undefined;
+  58          localStorage.removeItem(key);
+  59          return JSON.parse(raw);
+  60        } catch (error) { return undefined; }
+  61      },
+  62      async logAdd(entry) { await wrap(tx('log', 'readwrite').add(entry)); },
+  63      async logList({ app, limit = 200 } = {}) {
+  64        const rows = await wrap(tx('log').getAll());
+  65        const filtered = app ? rows.filter((r) => r.app === app) : rows;
+  66        return filtered.slice(-limit);
+  67      },
+  68      async logReplace(entries) {
+  69        const store = tx('log', 'readwrite');
+  70        await wrap(store.clear());
+  71        for (const entry of entries) { const { id, ...rest } = entry; await wrap(tx('log', 'readwrite').add(rest)); }
+  72      }
+  73    };
+  74  }
+  75  
+  76  /** Ausweichlösung: localStorage, wenn vorhanden, sonst nur Arbeitsspeicher. Schreibt synchron. */
+  77  function fallbackBackend() {
+  78    const memory = new Map();
+  79    const read = (key) => { try { return localStorage.getItem(key); } catch (error) { return memory.get(key) ?? null; } };
+  80    const write = (key, raw) => { try { localStorage.setItem(key, raw); } catch (error) { memory.set(key, raw); } };
+  81    const keys = () => { try { return Object.keys(localStorage).filter((k) => k.startsWith(PREFIX)); } catch (error) { return [...memory.keys()]; } };
+  82    const readLog = () => { try { return JSON.parse(read(LOG_KEY)) || []; } catch (error) { return []; } };
+  83    return {
+  84      name: 'localstorage',
+  85      sync: true,
+  86      async get(key) { const raw = read(key); return raw ? JSON.parse(raw) : undefined; },
+  87      async put(key, value) { write(key, JSON.stringify(value)); },
+  88      async remove(key) { try { localStorage.removeItem(key); } catch (error) { memory.delete(key); } },
+  89      async all() { return Object.fromEntries(keys().filter((k) => k !== LOG_KEY).map((k) => [k, JSON.parse(read(k))])); },
+  90      async legacy() { return undefined; },
+  91      async logAdd(entry) { write(LOG_KEY, JSON.stringify([...readLog(), { id: Date.now() + Math.random(), ...entry }].slice(-LOG_MAX))); },
+  92      async logList({ app, limit = 200 } = {}) { const rows = readLog(); return (app ? rows.filter((r) => r.app === app) : rows).slice(-limit); },
+  93      async logReplace(entries) { write(LOG_KEY, JSON.stringify(entries.slice(-LOG_MAX))); }
+  94    };
+  95  }
+  96  
+  97  let opening = null;
+  98  
+  99  /** Öffnet die Datenbank genau einmal. Gibt immer ein funktionierendes Backend zurück. */
+ 100  export function getDB() {
+ 101    if (!opening) {
+ 102      opening = openIndexedDB()
+ 103        .then(async (db) => {
+ 104          const backend = idbBackend(db);
+ 105          await backend.get('__probe'); // schlägt fehl, wenn der Browser IndexedDB sperrt
+ 106          try { if (navigator.storage && navigator.storage.persist) navigator.storage.persist(); } catch (error) { /* optional */ }
+ 107          return backend;
+ 108        })
+ 109        .catch(() => fallbackBackend());
+ 110    }
+ 111    return opening;
+ 112  }
+ 113  
+ 114  /** Nur für Tests: zurücksetzen, damit ein neues Backend gewählt wird. */
+ 115  export function resetDBForTests() { opening = null; }
+ 116  
+ 117  // --- Sicherung ---------------------------------------------------------------
+ 118  
+ 119  /** Alle Daten als einfaches Objekt (für den Download). */
+ 120  export async function exportAll() {
+ 121    const db = await getDB();
+ 122    return { app: 'lernwerkstatt', format: 1, exportedAt: new Date().toISOString(), docs: await db.all(), log: await db.logList({ limit: LOG_MAX }) };
+ 123  }
+ 124  
+ 125  /** Spielt eine Sicherung ein. Vorhandene Dokumente mit gleichem Schlüssel werden ersetzt. */
+ 126  export async function importAll(data) {
+ 127    if (!data || data.app !== 'lernwerkstatt' || typeof data.docs !== 'object') throw new Error('Das ist keine Sicherung der Lernwerkstatt.');
+ 128    const db = await getDB();
+ 129    for (const [key, value] of Object.entries(data.docs)) {
+ 130      if (key.startsWith(PREFIX) && value && typeof value === 'object') await db.put(key, value);
+ 131    }
+ 132    if (Array.isArray(data.log)) await db.logReplace(data.log);
+ 133  }
+ 134  
+ 135  /** Ein Ereignis ins Protokoll schreiben. Fehler bremsen die App nie. */
+ 136  export async function logEvent(entry) {
+ 137    try { await (await getDB()).logAdd({ ts: Date.now(), ...entry }); } catch (error) { /* Protokoll ist optional */ }
+ 138  }
+ 139  
+ 140  export async function listEvents(options) {
+ 141    try { return await (await getDB()).logList(options); } catch (error) { return []; }
+ 142  }

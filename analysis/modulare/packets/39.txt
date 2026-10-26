@@ -1,0 +1,68 @@
+Knoten: validate.js
+Id: core/js/validate.js
+Art: module
+Datei: core/js/validate.js
+Zeilen: 47
+
+Ausgehend (dieser Knoten nutzt):
+  call -> core/js/rules.js
+
+Eingehend (diese Knoten nutzen ihn):
+  core/js/appconfig.js -> call
+  core/js/content.js -> call
+  tests/content.test.js -> call
+  tests/content.test.js -> dispatch
+  tests/core-content.test.js -> call
+
+Quelltext (erste 150 Zeilen, Zugangsdaten maskiert):
+   1  // Prüft ein Inhaltspaket (Bundle) beim Laden. Kommt es aus einer Datenbank, fangen wir kaputte Daten hier ab,
+   2  // bevor die App halb kaputt aussieht. Die strenge Prüfung per JSON-Schema läuft in den Tests (schemas/).
+   3  import { ruleErrors } from './rules.js';
+   4  
+   5  const LESSON_KEYS = ['goal', 'tldr', 'analogy', 'figure', 'steps', 'pitfall', 'rule', 'check'];
+   6  
+   7  /** Nur relative Pfade: kein Schema (javascript:, https:), kein führender Slash, kein "..", keine Leerzeichen oder Anführungszeichen. */
+   8  export const isSafeHref = (href) => typeof href === 'string' && /^(?![a-zA-Z][a-zA-Z0-9+.-]*:)(?!\/)(?!.*\.\.)[^\s"'<>]+$/.test(href);
+   9  
+  10  /** Gibt eine Liste verständlicher Fehler zurück. Leer heißt gültig. */
+  11  export function bundleErrors(bundle) {
+  12    const errors = [];
+  13    const isObj = (v) => v && typeof v === 'object' && !Array.isArray(v);
+  14    if (!isObj(bundle)) return ['Inhaltspaket fehlt'];
+  15    const { manifest, lessons, badges } = bundle;
+  16    if (!isObj(manifest)) return ['manifest fehlt'];
+  17    if (!/^[a-z0-9-]+$/.test(manifest.id || '')) errors.push('manifest.id: Kleinbuchstaben, Ziffern, Bindestrich');
+  18    ['title', 'greeting', 'intro'].forEach((k) => { if (!manifest[k]) errors.push(`manifest.${k} fehlt`); });
+  19    if (!Array.isArray(manifest.units) || !manifest.units.length) return [...errors, 'manifest.units fehlt'];
+  20    const ids = manifest.units.map((u) => u.id);
+  21    if (new Set(ids).size !== ids.length) errors.push('Seiten-IDs sind nicht eindeutig');
+  22    manifest.units.forEach((u) => ['id', 'title', 'de', 'ic', 'color'].forEach((k) => { if (!u[k]) errors.push(`Seite ${u.id || '?'}: ${k} fehlt`); }));
+  23    const tracks = isObj(manifest.tracks) ? manifest.tracks : {};
+  24    Object.entries(tracks).forEach(([k, t]) => { if (!t || !t.label) errors.push(`tracks.${k}: label fehlt`); });
+  25    manifest.units.forEach((u) => { if (u.track && !tracks[u.track]) errors.push(`Seite ${u.id}: Strang "${u.track}" ist in tracks nicht definiert`); });
+  26    (manifest.resources || []).forEach((r, i) => {
+  27      if (r && r.track && !tracks[r.track]) errors.push(`resources[${i}]: Strang "${r.track}" ist in tracks nicht definiert`);
+  28      if (!r || !r.title) errors.push(`resources[${i}]: title fehlt`);
+  29      if (!r || !isSafeHref(r.href)) errors.push(`resources[${i}]: href muss ein relativer Pfad sein`);
+  30    });
+  31    if (!isObj(lessons)) errors.push('lessons fehlt');
+  32    else ids.forEach((id) => {
+  33      const l = lessons[id];
+  34      if (!l) { errors.push(`Lektion fehlt: ${id}`); return; }
+  35      LESSON_KEYS.forEach((k) => { if (!l[k]) errors.push(`Lektion ${id}: ${k} fehlt`); });
+  36      if (l.figure && !l.figure.svg && !l.figure.diagram) errors.push(`Lektion ${id}: figure braucht diagram oder svg`);
+  37    });
+  38    if (!Array.isArray(badges) || !badges.length) errors.push('badges fehlen');
+  39    else {
+  40      const badgeIds = badges.map((b) => b.id);
+  41      if (new Set(badgeIds).size !== badgeIds.length) errors.push('Trophäen-IDs sind nicht eindeutig');
+  42      badges.forEach((b) => { ['id', 'n', 'd'].forEach((k) => { if (!b[k]) errors.push(`Trophäe ${b.id || '?'}: ${k} fehlt`); }); errors.push(...ruleErrors(b.rule, ids, `Trophäe ${b.id}.rule`)); });
+  43    }
+  44    return errors;
+  45  }
+  46  
+  47  export function assertBundle(bundle) {
+  48    const errors = bundleErrors(bundle);
+  49    if (errors.length) throw new Error(`Inhalte ungültig:\n- ${errors.slice(0, 10).join('\n- ')}`);
+  50    return bundle;
+  51  }

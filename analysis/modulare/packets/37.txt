@@ -1,0 +1,69 @@
+Knoten: appconfig.js
+Id: core/js/appconfig.js
+Art: module
+Datei: core/js/appconfig.js
+Zeilen: 50
+
+Ausgehend (dieser Knoten nutzt):
+  call -> core/js/validate.js
+  call -> core/js/rules.js
+  call -> core/js/theory.js
+
+Eingehend (diese Knoten nutzen ihn):
+  core/js/boot.js -> call
+  tests/core-content.test.js -> call
+  tests/helpers.js -> call
+
+Quelltext (erste 150 Zeilen, Zugangsdaten maskiert):
+   1  // Baut aus Inhalten (Bundle, Daten) und Logik (Fragen-Erzeuger, Diagramme, Sonderseiten) die App-Konfiguration,
+   2  // die shell.js erwartet (App-Vertrag, siehe AGENTS.md). Reine Funktion, deshalb in Node testbar.
+   3  import { assertBundle } from './validate.js';
+   4  import { evaluateRule } from './rules.js';
+   5  import { renderDefaultTheory } from './theory.js';
+   6  
+   7  /**
+   8   * Logik einer App:
+   9   *   rounds    { lesson(unit), quick?(), boss?() }   Fragen-Erzeuger
+  10   *   blitz?    () => Frage
+  11   *   diagrams? { name: (...args) => svg-Text }        Bilder, auf die Lektionen per Namen verweisen
+  12   *   init?     ({ data, manifest }) => void           bekommt die Daten, bevor Fragen entstehen
+  13   *   theory?   (box, unit, ctx) => void               Sonderseite statt der Standard-Theorie
+  14   *   bossUnlocked? (ctx) => boolean
+  15   */
+  16  export function resolveFigure(figure, diagrams = {}, where = '') {
+  17    if (figure.svg) return figure;
+  18    const { name, args = [] } = figure.diagram;
+  19    if (typeof diagrams[name] !== 'function') throw new Error(`Diagramm "${name}" gibt es nicht${where ? ` (${where})` : ''}`);
+  20    return { svg: diagrams[name](...args), caption: figure.caption };
+  21  }
+  22  
+  23  export function buildConfig(bundle, logic) {
+  24    assertBundle(bundle);
+  25    const { manifest, badges, data } = bundle;
+  26    if (logic.init) logic.init({ data, manifest });
+  27    const lessons = Object.fromEntries(Object.entries(bundle.lessons).map(([id, spec]) => [id, { ...spec, figure: resolveFigure(spec.figure, logic.diagrams, id) }]));
+  28    const notes = manifest.notes || {};
+  29    const view = { lessons, notes, data, manifest };
+  30    const render = logic.theory || renderDefaultTheory;
+  31    return {
+  32      id: manifest.id,
+  33      title: manifest.title,
+  34      greeting: manifest.greeting,
+  35      intro: manifest.intro,
+  36      bossTitle: manifest.bossTitle,
+  37      words: manifest.words,
+  38      inputChars: manifest.inputChars,
+  39      dashboardHref: manifest.dashboardHref,
+  40      tracks: manifest.tracks || {},
+  41      units: manifest.units,
+  42      resources: manifest.resources || [],
+  43      lessons,
+  44      notes,
+  45      data,
+  46      theory: (box, unit, api) => render(box, unit, { ...view, ...api }),
+  47      rounds: logic.rounds,
+  48      blitz: logic.blitz,
+  49      bossUnlocked: logic.bossUnlocked,
+  50      badges: badges.map((b) => ({ id: b.id, n: b.n, d: b.d, rule: b.rule, when: (state, result) => evaluateRule(b.rule, state, result, manifest.units) }))
+  51    };
+  52  }

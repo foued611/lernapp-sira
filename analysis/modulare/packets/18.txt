@@ -1,0 +1,117 @@
+Knoten: profile.js
+Id: core/js/profile.js
+Art: module
+Datei: core/js/profile.js
+Zeilen: 79
+
+Ausgehend (dieser Knoten nutzt):
+  call -> core/js/store.js
+
+Eingehend (diese Knoten nutzen ihn):
+  core/js/blitz.js -> call
+  core/js/quiz.js -> call
+  core/js/rounds.js -> call
+  core/js/shell.js -> call
+  core/js/views/home.js -> call
+  core/js/views/result.js -> call
+  dashboard.js -> call
+  tests/profile.test.js -> call
+  tests/rounds.test.js -> call
+  tests/views.test.js -> call
+
+Quelltext (erste 150 Zeilen, Zugangsdaten maskiert):
+   1  // Gamification, die für alle Apps gleich gilt: Profil, XP, Level, Tagesziel, Streak.
+   2  // Reine Funktionen auf Zustandsobjekten, damit sie ohne Browser getestet werden können.
+   3  import { createStore } from './store.js';
+   4  
+   5  export const GOAL = 30;
+   6  export const PROFILE_KEY = 'lernwerkstatt:profile';
+   7  export const appKey = (appId) => `lernwerkstatt:app:${appId}`;
+   8  // Standardtitel der Niveaus. Eine App kann eigene mit config.words.levelTitles setzen.
+   9  export const TITLES = ['Neuling', 'Entdecker', 'Könner', 'Profi', 'Meister', 'Expert', 'Legende'];
+  10  
+  11  /** Nach so vielen Tagen ohne Übung ist eine Seite zum Auffrischen fällig. */
+  12  export const DUE_DAYS = 3;
+  13  
+  14  export const profileDefaults = () => ({ name: '', xp: 0, streak: 0, lastDay: '', lastApp: '', day: { d: '', xp: 0 } });
+  15  // last = letzter Übungstag je Seite, acc = letzte Genauigkeit je Seite. Beides steuert Auffrischen und gezieltes Training.
+  16  export const appDefaults = () => ({ xp: 0, stars: {}, badges: {}, best: {}, last: {}, acc: {} });
+  17  
+  18  // Beide sind asynchron, weil die Browser-Datenbank erst geöffnet werden muss.
+  19  export const openProfile = () => createStore(PROFILE_KEY, profileDefaults());
+  20  export const openApp = (appId, extra = {}) => createStore(appKey(appId), { ...appDefaults(), ...extra });
+  21  
+  22  export const today = (now = new Date()) =>
+  23    `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+  24  
+  25  export const dayDiff = (from, to) =>
+  26    Math.round((new Date(`${to}T12:00:00`) - new Date(`${from}T12:00:00`)) / 864e5);
+  27  
+  28  /** Niveau n beginnt bei 30·n·(n−1) XP. */
+  29  export const lvlAt = (n) => 30 * n * (n - 1);
+  30  export const levelOf = (xp) => {
+  31    let n = 1;
+  32    while (xp >= lvlAt(n + 1)) n++;
+  33    return n;
+  34  };
+  35  export const titleOf = (level, titles = TITLES) => titles[Math.min(level - 1, titles.length - 1)];
+  36  
+  37  export const dailyXP = (profile, day = today()) => (profile.day && profile.day.d === day ? profile.day.xp : 0);
+  38  
+  39  /** Eine Serie bleibt bestehen, wenn höchstens ein Tag ausgelassen wurde (Gnadentag). */
+  40  export const streakNow = (profile, day = today()) =>
+  41    profile.lastDay && dayDiff(profile.lastDay, day) <= 2 ? profile.streak : 0;
+  42  
+  43  export function touchStreak(profile, day = today()) {
+  44    if (profile.lastDay === day) return;
+  45    profile.streak = profile.lastDay && dayDiff(profile.lastDay, day) <= 2 ? profile.streak + 1 : 1;
+  46    profile.lastDay = day;
+  47  }
+  48  
+  49  /**
+  50   * Schreibt XP in Profil und App gut.
+  51   * @returns {{levelUp: number|null, goalHit: boolean}}
+  52   */
+  53  export function addXP(profile, app, amount, day = today()) {
+  54    const levelBefore = levelOf(profile.xp);
+  55    const goalBefore = dailyXP(profile, day);
+  56    profile.xp += amount;
+  57    app.xp += amount;
+  58    if (!profile.day || profile.day.d !== day) profile.day = { d: day, xp: 0 };
+  59    profile.day.xp += amount;
+  60    const levelAfter = levelOf(profile.xp);
+  61    return {
+  62      levelUp: levelAfter > levelBefore ? levelAfter : null,
+  63      goalHit: goalBefore < GOAL && profile.day.xp >= GOAL
+  64    };
+  65  }
+  66  
+  67  /** Zieht XP ab (z. B. Spickzettel). XP werden nie negativ. */
+  68  export function spendXP(profile, app, amount) {
+  69    profile.xp = Math.max(0, profile.xp - amount);
+  70    app.xp = Math.max(0, app.xp - amount);
+  71  }
+  72  
+  73  export const multiplier = (combo) => Math.min(4, Math.floor(combo / 3) + 1);
+  74  
+  75  /** Sterne nach Trefferquote: ≥90 % drei, ≥70 % zwei, sonst einer. Null bei Misserfolg. */
+  76  export const starsFor = (accuracy, failed) => (failed ? 0 : accuracy >= 0.9 ? 3 : accuracy >= 0.7 ? 2 : 1);
+  77  
+  78  /** Eine Seite ist fällig, wenn sie schon Sterne hat, aber seit DUE_DAYS Tagen nicht geübt wurde. */
+  79  export function isDue(app, unitId, day = today()) {
+  80    const last = app.last && app.last[unitId];
+  81    return Boolean(last) && (app.stars[unitId] || 0) > 0 && dayDiff(last, day) >= DUE_DAYS;
+  82  }
+  83  
+  84  /**
+  85   * Welche Seite sollte als Nächstes trainiert werden? Zuerst fällige (die älteste), danach die mit der
+  86   * schwächsten letzten Runde (unter 90 %). Gibt null zurück, wenn gerade nichts ansteht.
+  87   */
+  88  export function weakestUnit(app, units, day = today()) {
+  89    const due = units.filter((u) => isDue(app, u.id, day)).sort((a, b) => dayDiff(app.last[b.id], app.last[a.id]));
+  90    if (due.length) return { unit: due[0], reason: 'Zeit zum Auffrischen' };
+  91    const weak = units
+  92      .filter((u) => app.acc && typeof app.acc[u.id] === 'number' && app.acc[u.id] < 0.9 && (app.stars[u.id] || 0) < 3)
+  93      .sort((a, b) => app.acc[a.id] - app.acc[b.id]);
+  94    return weak.length ? { unit: weak[0], reason: 'Hier ist noch Luft nach oben' } : null;
+  95  }

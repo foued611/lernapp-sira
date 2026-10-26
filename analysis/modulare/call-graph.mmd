@@ -1,0 +1,64 @@
+graph TD
+  dom_app__template["App _template"]
+  dom_app_deutsch["App deutsch"]
+  dom_app_franzoesisch_verben["App franzoesisch-verben"]
+  dom_app_geometrie["App geometrie"]
+  dom_app_informatik["App informatik"]
+  dom_app_mathe["App mathe"]
+  dom_bootstrap["Start und Inhalte"]
+  dom_entry["Einstieg (Startseite)"]
+  dom_lessons["Lektionen und Diagramme"]
+  dom_persistence["Speicher"]
+  dom_rounds["Rundenmotor"]
+  dom_rules["Spielregeln"]
+  dom_shared["Gemeinsame Helfer"]
+  dom_shell["Shell und Ansichten"]
+  dom_tests["Tests und Smoke-Test"]
+  dom_shell -->|9| dom_shared
+  dom_rounds -->|7| dom_shared
+  dom_tests -->|7| dom_rules
+  dom_tests -->|7| dom_bootstrap
+  dom_lessons -->|5| dom_shared
+  dom_tests -->|5| dom_entry
+  dom_shell -->|4| dom_rules
+  dom_app_franzoesisch_verben -->|3| dom_shared
+  dom_app_informatik -->|3| dom_shared
+  dom_app_mathe -->|3| dom_shared
+  dom_app_deutsch -->|2| dom_lessons
+  dom_app_franzoesisch_verben -->|2| dom_lessons
+  dom_app_geometrie -->|2| dom_shared
+  dom_app_geometrie -->|2| dom_lessons
+  dom_app_informatik -->|2| dom_lessons
+  dom_bootstrap -->|2| dom_rules
+  dom_rounds -->|2| dom_rules
+  dom_shell -->|2| dom_rounds
+  dom_shell -->|2| dom_persistence
+  dom_entry -->|2| dom_shared
+  dom_tests -->|2| dom_persistence
+  dom_tests -->|2| dom_app_deutsch
+  dom_tests -->|2| dom_app_franzoesisch_verben
+  dom_tests -->|2| dom_app_geometrie
+  dom_tests -->|2| dom_rounds
+  dom_tests -->|2| dom_app_informatik
+  dom_tests -->|2| dom_app_mathe
+  dom_tests -->|2| dom_shell
+  dom_app__template -->|1| dom_shared
+  dom_app__template -->|1| dom_lessons
+  dom_app__template -->|1| dom_bootstrap
+  dom_app_deutsch -->|1| dom_shared
+  dom_app_deutsch -->|1| dom_rounds
+  dom_app_deutsch -->|1| dom_bootstrap
+  dom_app_franzoesisch_verben -->|1| dom_bootstrap
+  dom_app_geometrie -->|1| dom_rounds
+  dom_app_geometrie -->|1| dom_bootstrap
+  dom_app_informatik -->|1| dom_rounds
+  dom_app_informatik -->|1| dom_bootstrap
+  dom_app_mathe -->|1| dom_rounds
+  style dom_app__template stroke:#cc785c,stroke-width:3px
+  style dom_app_deutsch stroke:#cc785c,stroke-width:3px
+  style dom_app_franzoesisch_verben stroke:#cc785c,stroke-width:3px
+  style dom_app_geometrie stroke:#cc785c,stroke-width:3px
+  style dom_app_informatik stroke:#cc785c,stroke-width:3px
+  style dom_app_mathe stroke:#cc785c,stroke-width:3px
+  style dom_entry stroke:#cc785c,stroke-width:3px
+  style dom_tests stroke:#cc785c,stroke-width:3px

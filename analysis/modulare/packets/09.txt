@@ -1,0 +1,163 @@
+Knoten: theory.js
+Id: apps/informatik/theory.js
+Art: module
+Datei: apps/informatik/theory.js
+Zeilen: 137
+
+Ausgehend (dieser Knoten nutzt):
+  call -> core/js/ui.js
+  call -> core/js/lesson.js
+  call -> apps/informatik/numbers.js
+
+Eingehend (diese Knoten nutzen ihn):
+  apps/informatik/logic.js -> call
+
+Quelltext (erste 150 Zeilen, Zugangsdaten maskiert):
+   1  // Theorie-Seiten mit kleinen Spielzeugen zum Ausprobieren (Lampen, Eingabefelder, Schieberegler).
+   2  // Jedes Spielzeug ist eine eigene Funktion, die sich an einen Container hängt und keinen Zustand außerhalb hält.
+   3  import { esc, $ } from '../../core/js/ui.js';
+   4  import { lessonTop, lessonBottom, wireLesson } from '../../core/js/lesson.js';
+   5  import { WEIGHTS, HEX, toBin, toHex, placeDigits, placeSum, decToBinHTML } from './numbers.js';
+   6  
+   7  const clampInt = (value, max) => Math.max(0, Math.min(max, parseInt(value, 10) || 0));
+   8  
+   9  function lampBoard(bits, { groups = false } = {}) {
+  10    const lamps = WEIGHTS.map((w, i) => `<button type="button" class="bit${bits[i] ? ' on' : ''}${groups && i === 4 ? ' gap' : ''}" data-i="${i}" aria-pressed="${bits[i] ? 'true' : 'false'}" aria-label="Stellenwert ${w}"><span class="w">${w}</span><span class="bulb">${bits[i]}</span></button>`).join('');
+  11    return `<div class="bits">${lamps}</div>`;
+  12  }
+  13  
+  14  /** Lampen-Tafel, die auf Klicks reagiert. onChange bekommt die Bits und füllt den Ergebnisbereich. */
+  15  function mountLamps(root, initial, onChange, options) {
+  16    let bits = initial.slice();
+  17    const board = root.querySelector('[data-board]');
+  18    const paint = () => {
+  19      board.innerHTML = lampBoard(bits, options);
+  20      onChange(bits);
+  21    };
+  22    board.addEventListener('click', (e) => {
+  23      const lamp = e.target.closest('.bit');
+  24      if (!lamp) return;
+  25      const i = Number(lamp.dataset.i);
+  26      bits[i] = bits[i] ? 0 : 1;
+  27      paint();
+  28      board.querySelector(`.bit[data-i="${i}"]`).focus();
+  29    });
+  30    root.querySelectorAll('[data-set]').forEach((btn) => btn.addEventListener('click', () => {
+  31      bits = btn.dataset.set === 'all' ? Array(8).fill(1) : Array(8).fill(0);
+  32      paint();
+  33    }));
+  34    paint();
+  35  }
+  36  
+  37  const toy = (label, inner) => `<section class="card toy"><span class="toy-label">${esc(label)}</span>${inner}</section>`;
+  38  
+  39  const TOYS = {
+  40    stellen(box) {
+  41      box.innerHTML = toy('Ausprobieren', `
+  42        <div class="row"><label for="decIn">Zahl (0 bis 9999)</label><input class="numin" id="decIn" type="number" inputmode="numeric" min="0" max="9999" value="352"></div>
+  43        <div class="tablewrap"><table class="place"><tbody>
+  44          <tr class="head"><td>Tausender</td><td>Hunderter</td><td>Zehner</td><td>Einer</td></tr>
+  45          <tr class="head"><td>1000</td><td>100</td><td>10</td><td>1</td></tr>
+  46          <tr class="digit" data-digits></tr>
+  47        </tbody></table></div>
+  48        <div class="sumline" data-sum aria-live="polite"></div>`);
+  49      const input = $('#decIn', box);
+  50      const update = () => {
+  51        const n = clampInt(input.value, 9999);
+  52        box.querySelector('[data-digits]').innerHTML = placeDigits(n).map((d) => `<td>${d}</td>`).join('');
+  53        box.querySelector('[data-sum]').innerHTML = `${esc(placeSum(n))} = <b>${n}</b>`;
+  54      };
+  55      input.addEventListener('input', update);
+  56      update();
+  57    },
+  58  
+  59    binaer(box) {
+  60      box.innerHTML = toy('Lampen-Tafel: tippe auf die Lampen', `
+  61        <div data-board></div>
+  62        <div class="sumline" data-sum aria-live="polite"></div>
+  63        <div class="row"><button type="button" class="btn small ghost" data-set="none">Alle aus</button><button type="button" class="btn small ghost" data-set="all">Alle an</button></div>`);
+  64      mountLamps(box, [0, 0, 0, 0, 1, 0, 1, 1], (bits) => {
+  65        const on = WEIGHTS.filter((w, i) => bits[i]);
+  66        box.querySelector('[data-sum]').innerHTML = `${bits.join('')} → ${on.length ? on.join(' + ') : '0'} = <b>${on.reduce((a, b) => a + b, 0)}</b>`;
+  67      });
+  68    },
+  69  
+  70    dez2bin(box) {
+  71      box.innerHTML = toy('Schritt für Schritt', `
+  72        <div class="row"><label for="d2b">Zahl (0 bis 255)</label><input class="numin" id="d2b" type="number" inputmode="numeric" min="0" max="255" value="13"></div>
+  73        <div class="steps" data-steps aria-live="polite"></div>`);
+  74      const input = $('#d2b', box);
+  75      const update = () => { box.querySelector('[data-steps]').innerHTML = decToBinHTML(clampInt(input.value, 255)); };
+  76      input.addEventListener('input', update);
+  77      update();
+  78    },
+  79  
+  80    addieren(box) {
+  81      box.innerHTML = toy('Rechne selbst nach', `
+  82        <div class="row"><label for="ad1">Erste Zahl</label><input class="numin" id="ad1" type="number" inputmode="numeric" min="0" max="127" value="11">
+  83        <label for="ad2">Zweite Zahl</label><input class="numin" id="ad2" type="number" inputmode="numeric" min="0" max="127" value="6"></div>
+  84        <div class="sumline mono" data-calc aria-live="polite"></div>`);
+  85      const a = $('#ad1', box), b = $('#ad2', box);
+  86      const update = () => {
+  87        const x = clampInt(a.value, 127), y = clampInt(b.value, 127), width = toBin(x + y).length;
+  88        box.querySelector('[data-calc]').innerHTML = `<div class="adder"><span>${toBin(x).padStart(width, ' ')}</span><span>+ ${toBin(y).padStart(width, ' ')}</span><span class="line">= ${toBin(x + y)}</span></div><div class="muted">normal: ${x} + ${y} = <b>${x + y}</b></div>`;
+  89      };
+  90      a.addEventListener('input', update);
+  91      b.addEventListener('input', update);
+  92      update();
+  93    },
+  94  
+  95    hex(box) {
+  96      const grid = HEX.split('').map((c, i) => `<div><div class="d">${c}</div><div class="v">${i}</div></div>`).join('');
+  97      box.innerHTML = toy('Eine Zahl, drei Schreibweisen', `
+  98        <div class="hexgrid" aria-label="Hex-Ziffern von 0 bis F">${grid}</div>
+  99        <input type="range" id="slide" min="0" max="255" value="200" aria-label="Zahl wählen">
+ 100        <div class="trio">
+ 101          <div><div class="k">Normal</div><div class="val mono" data-dec></div></div>
+ 102          <div><div class="k">Binär</div><div class="val mono" data-bin></div></div>
+ 103          <div><div class="k">Hex</div><div class="val mono" data-hex></div></div>
+ 104        </div>
+ 105        <div class="steps" data-steps aria-live="polite"></div>`);
+ 106      const slide = $('#slide', box);
+ 107      const update = () => {
+ 108        const n = Number(slide.value), q = Math.floor(n / 16), r = n % 16;
+ 109        box.querySelector('[data-dec]').textContent = n;
+ 110        box.querySelector('[data-bin]').textContent = toBin(n);
+ 111        box.querySelector('[data-hex]').textContent = toHex(n);
+ 112        box.querySelector('[data-steps]').innerHTML = `<div>${n} : 16 = ${q} Rest ${r}</div><div class="no">${q} → ${HEX[q]}, ${r} → ${HEX[r]}</div><div><b>${n} = ${toHex(n)}</b></div>`;
+ 113      };
+ 114      slide.addEventListener('input', update);
+ 115      update();
+ 116    },
+ 117  
+ 118    binhex(box) {
+ 119      box.innerHTML = toy('Lampen-Tafel mit Vierergruppen', `
+ 120        <div data-board></div>
+ 121        <div class="nibbles" data-nibbles aria-live="polite"></div>`);
+ 122      mountLamps(box, [1, 1, 0, 1, 0, 1, 1, 0], (bits) => {
+ 123        box.querySelector('[data-nibbles]').innerHTML = [bits.slice(0, 4), bits.slice(4)].map((g) => {
+ 124          const v = parseInt(g.join(''), 2);
+ 125          return `<div class="nib"><div class="grp">${g.join('')}</div><div class="muted">= ${v}</div><div class="h">${HEX[v]}</div></div>`;
+ 126        }).join('');
+ 127      }, { groups: true });
+ 128    }
+ 129  };
+ 130  
+ 131  /** Wird von der Shell mit einem frischen Container aufgerufen. */
+ 132  /** Standard-Theorie plus ein Spielzeug je Seite. Lektionen und Merkzettel kommen aus content/ (ctx). */
+ 133  export function renderTheory(box, unit, { lessons, notes: allNotes }) {
+ 134    const spec = lessons[unit.id];
+ 135    const notes = (allNotes[unit.id] || []).map((t) => `<div class="note"><b>${esc(t[0])}</b>${esc(t[1])}</div>`).join('');
+ 136    box.innerHTML = `
+ 137      <div style="display:grid;gap:22px">
+ 138        <section class="card tcard"><div class="thead"><h1>${esc(unit.title)}</h1><span class="de">${esc(unit.de)}</span></div></section>
+ 139        ${lessonTop(spec)}
+ 140        <div data-toy></div>
+ 141        ${lessonBottom(spec)}
+ 142        <section><h2>Merkzettel</h2><div class="notes" style="margin-top:12px">${notes}</div></section>
+ 143        <div><button class="btn" data-act="start" data-id="${esc(unit.id)}">Übung starten · 8 Aufgaben</button></div>
+ 144      </div>`;
+ 145    const slot = box.querySelector('[data-toy]');
+ 146    if (TOYS[unit.id]) TOYS[unit.id](slot);
+ 147    wireLesson(box, spec);
+ 148  }

@@ -1,0 +1,166 @@
+Knoten: builders.js
+Id: apps/mathe/builders.js
+Art: module
+Datei: apps/mathe/builders.js
+Zeilen: 291
+
+Ausgehend (dieser Knoten nutzt):
+  call -> core/js/questions.js
+  call -> core/js/ui.js
+  call -> apps/mathe/math.js
+
+Eingehend (diese Knoten nutzen ihn):
+  apps/mathe/logic.js -> call
+  tests/mathe.test.js -> call
+
+Quelltext (erste 150 Zeilen, Zugangsdaten maskiert):
+   1  // Erzeugt Mathe-Fragen aus Zufallszahlen. Jede Aufgabe kennt typische Fehlerwege und bietet sie als falsche Antworten an.
+   2  import { choiceQuestion, typedQuestion } from '../../core/js/questions.js';
+   3  import { esc } from '../../core/js/ui.js';
+   4  import { rnd, fmt, par, MINUS, nearby, numCheck, termCheck, probCheck, frac, linear, pick, shuffle } from './math.js';
+   5  
+   6  // Inhalte kommen aus content/mathe/ (siehe init). Hier liegt nur die Logik der Aufgaben.
+   7  let UNITS = [];
+   8  let SITUATIONS = [];
+   9  
+  10  /** Bekommt Seitenliste und Aufgabendaten, bevor die erste Runde entsteht. */
+  11  export function init({ data, manifest }) {
+  12    UNITS = manifest.units;
+  13    SITUATIONS = data.situations;
+  14  }
+  15  
+  16  const nz = (a, b) => { let n = 0; while (n === 0) n = rnd(a, b); return n; };
+  17  
+  18  // --- Aufgabenvorlagen. Jede liefert { prompt, answer, wrong[], why, numeric?, value? } ---
+  19  
+  20  function addSub() {
+  21    const a = nz(-12, 12), b = nz(-12, 12), sub = Math.random() < 0.5;
+  22    const r = sub ? a - b : a + b;
+  23    const expr = `${fmt(a)} ${sub ? MINUS : '+'} ${par(b)}`;
+  24    const wrong = sub ? [a + b, -(a - b), Math.abs(a) - Math.abs(b)] : [-(a + b), Math.abs(a) + Math.abs(b), a - b];
+  25    return { prompt: expr, answer: fmt(r), value: r, numeric: true, wrong: nearby(r, wrong).map(fmt),
+  26      why: sub ? `Subtrahieren heißt Gegenzahl addieren: ${fmt(a)} + ${par(-b)} = ${fmt(r)}.` : `${fmt(a)} + ${par(b)} = ${fmt(r)}. Bei verschiedenen Vorzeichen rechnest du den Unterschied der Beträge.` };
+  27  }
+  28  
+  29  function mulDiv() {
+  30    const a = nz(-9, 9), b = nz(-9, 9), div = Math.random() < 0.4;
+  31    const r = div ? a : a * b;
+  32    const expr = div ? `${fmt(a * b)} : ${par(b)}` : `${par(a)} · ${par(b)}`;
+  33    const wrong = [-r, Math.abs(r), a + b];
+  34    return { prompt: expr, answer: fmt(r), value: r, numeric: true, wrong: nearby(r, wrong).map(fmt),
+  35      why: `${(a < 0) === (b < 0) ? 'Gleiche' : 'Verschiedene'} Vorzeichen ergeben ${(a < 0) === (b < 0) ? 'Plus' : 'Minus'}, also ${fmt(r)}.` };
+  36  }
+  37  
+  38  function collect() {
+  39    const a = rnd(2, 9), b = rnd(2, 9), c = rnd(1, 6), r = a + b - c;
+  40    const prompt = `${a}x + ${b}x ${MINUS} ${c}x`;
+  41    return { prompt, answer: `${r}x`, wrong: [`${a + b + c}x`, `${a + b - c}`, `${a * b - c}x`], why: `Gleichartige Summanden zusammenfassen: ${a} + ${b} ${MINUS} ${c} = ${r}, also ${r}x.` };
+  42  }
+  43  
+  44  function collectMixed() {
+  45    const a = rnd(3, 9), c = rnd(1, 2), k = rnd(2, 9), m = rnd(2, 9);
+  46    const ra = a - c, rc = k + m;
+  47    return { prompt: `${a}x + ${k} ${MINUS} ${c}x + ${m}`, answer: linear(ra, rc), wrong: [linear(a + c, rc), `${ra + rc}x`, linear(ra, k - m)],
+  48      why: `Die x-Summanden: ${a}x ${MINUS} ${c}x = ${ra}x. Die Zahlen: ${k} + ${m} = ${rc}. Zusammen: ${linear(ra, rc)}.` };
+  49  }
+  50  
+  51  function expand() {
+  52    const f = rnd(2, 9), c = rnd(1, 9);
+  53    return { prompt: `${f} · (x + ${c})`, answer: linear(f, f * c), wrong: [linear(f, c), linear(1, f * c), linear(f, f + c)],
+  54      why: `Distributivgesetz: ${f}·x + ${f}·${c} = ${linear(f, f * c)}. Der Faktor gilt für jeden Summanden.` };
+  55  }
+  56  
+  57  function minusBracket() {
+  58    const k = rnd(5, 20), c = rnd(1, 9);
+  59    return { prompt: `${k} ${MINUS} (x ${MINUS} ${c})`, answer: linear(-1, k + c), wrong: [linear(-1, k - c), linear(1, k + c), linear(-1, c - k)],
+  60      why: `Minus vor der Klammer dreht beide Vorzeichen um: ${k} ${MINUS} x + ${c} = ${linear(-1, k + c)}.` };
+  61  }
+  62  
+  63  function ausklammern() {
+  64    const g = pick([2, 3, 4, 5, 6]), a = rnd(2, 5), c = rnd(2, 6), A = g * a, C = g * c;
+  65    const right = `${g} · (${linear(a, c)})`;
+  66    return { prompt: `Klammere den größten gemeinsamen Faktor aus: ${linear(A, C)}`, answer: right,
+  67      wrong: [`${g} · (${linear(a, C)})`, `${g * 2} · (${linear(a, c)})`, `${a} · (${linear(g, c)})`, `${g} · (${linear(A, c)})`],
+  68      choiceOnly: true, label: 'Ausklammern',
+  69      why: `Gemeinsamer Faktor von ${A} und ${C} ist ${g}. Teile jeden Summanden durch ${g}: ${linear(a, c)}. Probe durch Ausmultiplizieren: ${g}·${a}x + ${g}·${c} = ${linear(A, C)}.` };
+  70  }
+  71  
+  72  function solve() {
+  73    const x = nz(-9, 9), a = rnd(2, 9), b = nz(-12, 12), c = a * x + b;
+  74    const prompt = `${linear(a, b)} = ${fmt(c)}`;
+  75    const wrong = [(c + b) / a, c - b, x * -1, (c - b) * a];
+  76    return { prompt, answer: fmt(x), value: x, numeric: true, wrong: nearby(x, wrong.filter(Number.isInteger)).map(fmt),
+  77      why: `${b < 0 ? '+' + Math.abs(b) : MINUS + b}: ${a}x = ${fmt(c - b)}. Dann : ${a}, und es folgt x = ${fmt(x)}. Probe: ${a}·${par(x)} ${b < 0 ? MINUS : '+'} ${Math.abs(b)} = ${fmt(c)}.`, label: 'Löse nach x auf' };
+  78  }
+  79  
+  80  function anzahlLoesungen() {
+  81    const k = rnd(2, 5), c = rnd(1, 6), d = rnd(1, 6) + c;
+  82    const cases = [
+  83      [`${linear(k, c)} = ${linear(k, d)}`, 'keine Lösung', `Auf beiden Seiten steht ${k}x. Zieht man es ab, bleibt ${c} = ${d}. Das ist falsch, also gibt es keine Lösung.`],
+  84      [`${k} · (x + ${c}) = ${linear(k, k * c)}`, 'unendlich viele Lösungen', `Links ausmultiplizieren ergibt ${linear(k, k * c)}, genau die rechte Seite. Die Gleichung stimmt für jedes x.`],
+  85      [`${linear(k, c)} = ${k * (c + 1) + c}`, 'genau eine Lösung', `Hier steht links ein x-Term und rechts nur eine Zahl. Das ergibt genau einen Wert für x.`]
+  86    ];
+  87    const [eq, ans, why] = pick(cases);
+  88    const all = ['keine Lösung', 'genau eine Lösung', 'unendlich viele Lösungen', 'genau zwei Lösungen'];
+  89    return { prompt: eq, answer: ans, wrong: all.filter((o) => o !== ans), choiceOnly: true, label: 'Wie viele Lösungen hat die Gleichung?', why };
+  90  }
+  91  
+  92  function aufstellen() {
+  93    const k = rnd(2, 6), c = rnd(2, 9), x = rnd(2, 8), r = k * x + c;
+  94    const eq = `${k}x + ${c} = ${r}`;
+  95    return { prompt: `Das ${k}-Fache einer Zahl, vermehrt um ${c}, ergibt ${r}. Welche Gleichung gehört dazu?`, answer: eq,
+  96      wrong: [`${k + c}x = ${r}`, `${k}x ${MINUS} ${c} = ${r}`, `${c}x + ${k} = ${r}`, `${k}(x + ${c}) = ${r}`], choiceOnly: true, label: 'Gleichung aufstellen',
+  97      why: `„Das ${k}-Fache einer Zahl“ ist ${k}x. „Vermehrt um ${c}“ heißt + ${c}. „Ergibt ${r}“ ist = ${r}. Lösung: x = ${x}.` };
+  98  }
+  99  
+ 100  function firstStep() {
+ 101    const a = rnd(2, 9), b = rnd(2, 15), x = rnd(2, 9), c = a * x + b, plus = Math.random() < 0.5;
+ 102    const eq = plus ? `${a}x + ${b} = ${c}` : `${a}x ${MINUS} ${b} = ${a * x - b}`;
+ 103    const step = plus ? `| ${MINUS} ${b}` : `| + ${b}`;
+ 104    return { prompt: eq, answer: step, wrong: [`| : ${a}`, plus ? `| + ${b}` : `| ${MINUS} ${b}`, `| · ${a}`],
+ 105      why: `Zuerst wird das ${plus ? 'Plus' : 'Minus'} neben dem x rückgängig gemacht (${step}). Das Teilen durch ${a} kommt danach.`, label: 'Welcher Umformungsschritt kommt zuerst?', choiceOnly: true };
+ 106  }
+ 107  
+ 108  const GRUND = [40, 50, 60, 80, 120, 150, 200, 250, 400, 500, 800];
+ 109  const SATZ = [5, 10, 20, 25, 30, 40, 50, 75];
+ 110  
+ 111  function prozentwert() {
+ 112    const g = pick(GRUND), p = pick(SATZ), w = g * p / 100;
+ 113    return { prompt: `Wie viel sind ${p} % von ${g} €?`, answer: fmt(w), value: w, numeric: true, wrong: nearby(w, [g - w, g + w, p]).map(fmt),
+ 114      why: `${p} % = ${p}/100. Also ${g} · ${p}/100 = ${fmt(w)} €.` };
+ 115  }
+ 116  
+ 117  function grundwert() {
+ 118    const g = pick(GRUND), p = pick(SATZ), w = g * p / 100;
+ 119    return { prompt: `${p} % eines Preises sind ${fmt(w)} €. Wie hoch ist der ganze Preis (der Grundwert)?`, answer: fmt(g), value: g, numeric: true, wrong: nearby(g, [w * p, g / 2, w + p]).map(fmt),
+ 120      why: `${p} % sind ${fmt(w)} €. 1 % sind ${fmt(w / p)} €. 100 % sind ${fmt(g)} €.` };
+ 121  }
+ 122  
+ 123  function prozentsatz() {
+ 124    const g = pick(GRUND), p = pick(SATZ), w = g * p / 100;
+ 125    return { prompt: `Von ${g} Schülern spielen ${fmt(w)} ein Instrument. Wie viel Prozent sind das?`, answer: String(p), value: p, numeric: true, wrong: nearby(p, [100 - p, w, p * 2]).map(String),
+ 126      why: `Prozentsatz = Prozentwert : Grundwert = ${fmt(w)} : ${g} = ${p / 100} = ${p} %.` };
+ 127  }
+ 128  
+ 129  function rabatt() {
+ 130    const g = pick([40, 60, 80, 120, 150, 200]), p = pick([10, 20, 25, 50]), n = g * (100 - p) / 100;
+ 131    return { prompt: `Eine Jacke kostet ${g} €. Im Sale gibt es ${p} % Rabatt. Was kostet sie jetzt?`, answer: fmt(n), value: n, numeric: true, wrong: nearby(n, [g * p / 100, g + g * p / 100, g - p]).map(fmt),
+ 132      why: `Rabatt: ${fmt(g * p / 100)} €. Neuer Preis: ${g} ${MINUS} ${fmt(g * p / 100)} = ${fmt(n)} €. Kurz: Du zahlst ${100 - p} %.` };
+ 133  }
+ 134  
+ 135  
+ 136  const KAP = [200, 400, 500, 800, 1000, 1500, 2000, 2500, 4000];
+ 137  const ZINS = [1, 2, 3, 4, 5];
+ 138  
+ 139  function zinsen() {
+ 140    const k = pick(KAP), p = pick(ZINS), z = k * p / 100;
+ 141    return { prompt: `Lena legt ${fmt(k)} € für ein Jahr zu ${p} % Zinsen an. Wie viel Zinsen bekommt sie?`, answer: fmt(z), value: z, numeric: true, wrong: nearby(z, [k + z, k * p, k / p]).map(fmt),
+ 142      why: `Jahreszinsen = Kapital · Zinssatz = ${fmt(k)} · ${p}/100 = ${fmt(z)} €.` };
+ 143  }
+ 144  
+ 145  function kapital() {
+ 146    const k = pick(KAP), p = pick(ZINS), z = k * p / 100;
+ 147    return { prompt: `Ein Sparbuch bringt bei ${p} % Zinssatz in einem Jahr ${fmt(z)} € Zinsen. Wie hoch ist das Kapital?`, answer: fmt(k), value: k, numeric: true, wrong: nearby(k, [z * p, k / 2, z + p]).map(fmt),
+ 148      why: `${p} % entsprechen ${fmt(z)} €. 1 % sind ${fmt(z / p)} €, 100 % sind ${fmt(k)} €. Das Kapital ist der Grundwert.` };
+ 149  }
+ 150  

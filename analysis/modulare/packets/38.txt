@@ -1,0 +1,69 @@
+Knoten: rules.js
+Id: core/js/rules.js
+Art: module
+Datei: core/js/rules.js
+Zeilen: 48
+
+Ausgehend (dieser Knoten nutzt):
+  keine
+
+Eingehend (diese Knoten nutzen ihn):
+  core/js/appconfig.js -> call
+  core/js/validate.js -> call
+  tests/content.test.js -> call
+  tests/core-content.test.js -> call
+
+Quelltext (erste 150 Zeilen, Zugangsdaten maskiert):
+   1  // Trophäen-Regeln als Daten. So können Trophäen in einer Datenbank stehen, ohne dass dort Code gespeichert wird.
+   2  // Eine Regel ist ein Objekt mit "type". Unbekannte Typen sind ein Fehler, damit Tippfehler nicht still "nie erreicht" bedeuten.
+   3  //
+   4  //   { type: 'anyUnit' }                          mindestens eine Seite hat einen Stern
+   5  //   { type: 'unit', id, stars?: 1 }               Seite id hat mindestens stars Sterne (Standard 1)
+   6  //   { type: 'units', ids: [...] }                 alle genannten Seiten haben einen Stern
+   7  //   { type: 'perfectRound' }                      Runde ohne Fehler (nicht im Blitz)
+   8  //   { type: 'combo', min }                        längste Serie in der Runde
+   9  //   { type: 'blitz', min }                        Punkte im Blitz
+  10  //   { type: 'boss' }                              Endgegner besiegt
+  11  //   { type: 'streak', days }                      Tage in Folge geübt
+  12  //   { type: 'all' | 'any', rules: [...] }         Kombinationen
+  13  
+  14  const started = (state, id, min = 1) => (state.app.stars[id] || 0) >= min;
+  15  
+  16  const TYPES = {
+  17    anyUnit: (r, s, res, units) => units.some((u) => started(s, u.id)),
+  18    unit: (r, s) => started(s, r.id, r.stars || 1),
+  19    units: (r, s) => r.ids.every((id) => started(s, id)),
+  20    perfectRound: (r, s, res) => res.mode !== 'blitz' && !res.failed && res.wrong === 0 && res.almost === 0,
+  21    combo: (r, s, res) => res.bestCombo >= r.min,
+  22    blitz: (r, s, res) => res.mode === 'blitz' && res.score >= r.min,
+  23    boss: (r, s, res) => res.mode === 'boss' && !res.failed,
+  24    streak: (r, s) => s.streak >= r.days,
+  25    all: (r, s, res, units) => r.rules.every((x) => evaluateRule(x, s, res, units)),
+  26    any: (r, s, res, units) => r.rules.some((x) => evaluateRule(x, s, res, units))
+  27  };
+  28  
+  29  export const ruleTypes = () => Object.keys(TYPES);
+  30  
+  31  /** Prüft eine Regel gegen Zustand und Rundenergebnis. */
+  32  export function evaluateRule(rule, state, result, units) {
+  33    const fn = TYPES[rule && rule.type];
+  34    if (!fn) throw new Error(`Unbekannte Trophäen-Regel: ${rule && rule.type}`);
+  35    return Boolean(fn(rule, state, result || {}, units));
+  36  }
+  37  
+  38  /** Prüft eine Regel auf Aufbau (ohne sie auszuwerten). Gibt eine Liste von Fehlern zurück. */
+  39  export function ruleErrors(rule, unitIds, path = 'rule') {
+  40    const errors = [];
+  41    if (!rule || !TYPES[rule.type]) return [`${path}: unbekannter Typ "${rule && rule.type}"`];
+  42    if (rule.type === 'unit' && !unitIds.includes(rule.id)) errors.push(`${path}: Seite "${rule.id}" gibt es nicht`);
+  43    if (rule.type === 'units') (rule.ids || []).forEach((id) => { if (!unitIds.includes(id)) errors.push(`${path}: Seite "${id}" gibt es nicht`); });
+  44    if (rule.type === 'units' && !Array.isArray(rule.ids)) errors.push(`${path}: ids fehlt`);
+  45    if ((rule.type === 'all' || rule.type === 'any')) {
+  46      if (!Array.isArray(rule.rules) || !rule.rules.length) errors.push(`${path}: rules fehlt`);
+  47      else rule.rules.forEach((x, i) => errors.push(...ruleErrors(x, unitIds, `${path}.rules[${i}]`)));
+  48    }
+  49    if (rule.type === 'combo' && !(rule.min > 0)) errors.push(`${path}: min fehlt`);
+  50    if (rule.type === 'blitz' && !(rule.min > 0)) errors.push(`${path}: min fehlt`);
+  51    if (rule.type === 'streak' && !(rule.days > 0)) errors.push(`${path}: days fehlt`);
+  52    return errors;
+  53  }

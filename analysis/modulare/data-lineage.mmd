@@ -1,0 +1,12 @@
+graph LR
+  apps__template_main_js["apps/_template/main.js"] -->|read| ds_content_vorlage[("ds:content:vorlage")]
+  apps_deutsch_main_js["apps/deutsch/main.js"] -->|read| ds_content_deutsch[("ds:content:deutsch")]
+  apps_franzoesisch_verben_main_js["apps/franzoesisch-verben/main.js"] -->|read| ds_content_fr_verben[("ds:content:fr-verben")]
+  apps_geometrie_main_js["apps/geometrie/main.js"] -->|read| ds_content_geometrie[("ds:content:geometrie")]
+  apps_informatik_main_js["apps/informatik/main.js"] -->|read| ds_content_info_zahlen[("ds:content:info-zahlen")]
+  apps_mathe_main_js["apps/mathe/main.js"] -->|read| ds_content_mathe[("ds:content:mathe")]
+  core_js_db_js["core/js/db.js"] -->|write| ds_indexeddb[("ds:indexeddb")]
+  core_js_db_js["core/js/db.js"] -->|read| ds_indexeddb[("ds:indexeddb")]
+  core_js_db_js["core/js/db.js"] -->|write| ds_localstorage[("ds:localstorage")]
+  core_js_db_js["core/js/db.js"] -->|read| ds_localstorage[("ds:localstorage")]
+  core_js_boot_js["core/js/boot.js"] -->|read| ds_content_api[("ds:content-api")]

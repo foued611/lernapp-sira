@@ -1,0 +1,140 @@
+Knoten: core-content.test.js
+Id: tests/core-content.test.js
+Art: module
+Datei: tests/core-content.test.js
+Zeilen: 112
+
+Ausgehend (dieser Knoten nutzt):
+  call -> core/js/rules.js
+  call -> core/js/validate.js
+  call -> core/js/content.js
+  call -> core/js/appconfig.js
+  call -> tests/helpers.js
+
+Eingehend (diese Knoten nutzen ihn):
+  keine
+
+Quelltext (erste 150 Zeilen, Zugangsdaten maskiert):
+   1  // Tests für den Inhalts-Unterbau: Trophäen-Regeln, Paketprüfung, Quellen (statisch, HTTP, Cache) und buildConfig.
+   2  import { test } from 'node:test';
+   3  import assert from 'node:assert/strict';
+   4  import { evaluateRule, ruleErrors, ruleTypes } from '../core/js/rules.js';
+   5  import { bundleErrors, assertBundle } from '../core/js/validate.js';
+   6  import { createStaticSource, createHttpSource, withCache } from '../core/js/content.js';
+   7  import { resolveFigure, buildConfig } from '../core/js/appconfig.js';
+   8  import { diskFetch, diskSource } from './helpers.js';
+   9  
+  10  const units = [{ id: 'a' }, { id: 'b' }];
+  11  const state = (stars = {}, streak = 0) => ({ app: { stars }, streak });
+  12  const ev = (rule, s = state(), r = {}) => evaluateRule(rule, s, r, units);
+  13  
+  14  test('Regeln: Seiten und Sterne', () => {
+  15    assert.equal(ev({ type: 'anyUnit' }), false);
+  16    assert.equal(ev({ type: 'anyUnit' }, state({ b: 1 })), true);
+  17    assert.equal(ev({ type: 'unit', id: 'a' }, state({ a: 1 })), true);
+  18    assert.equal(ev({ type: 'unit', id: 'a', stars: 3 }, state({ a: 2 })), false);
+  19    assert.equal(ev({ type: 'units', ids: ['a', 'b'] }, state({ a: 1 })), false);
+  20    assert.equal(ev({ type: 'units', ids: ['a', 'b'] }, state({ a: 1, b: 2 })), true);
+  21  });
+  22  
+  23  test('Regeln: Runde, Serie, Blitz, Boss, Tage', () => {
+  24    const clean = { mode: 'lesson', failed: false, wrong: 0, almost: 0 };
+  25    assert.equal(ev({ type: 'perfectRound' }, state(), clean), true);
+  26    assert.equal(ev({ type: 'perfectRound' }, state(), { ...clean, wrong: 1 }), false);
+  27    assert.equal(ev({ type: 'perfectRound' }, state(), { ...clean, mode: 'blitz' }), false);
+  28    assert.equal(ev({ type: 'combo', min: 5 }, state(), { bestCombo: 5 }), true);
+  29    assert.equal(ev({ type: 'combo', min: 5 }, state(), { bestCombo: 4 }), false);
+  30    assert.equal(ev({ type: 'blitz', min: 10 }, state(), { mode: 'blitz', score: 10 }), true);
+  31    assert.equal(ev({ type: 'blitz', min: 10 }, state(), { mode: 'lesson', score: 99 }), false);
+  32    assert.equal(ev({ type: 'boss' }, state(), { mode: 'boss', failed: false }), true);
+  33    assert.equal(ev({ type: 'boss' }, state(), { mode: 'boss', failed: true }), false);
+  34    assert.equal(ev({ type: 'streak', days: 3 }, state({}, 3)), true);
+  35    assert.equal(ev({ type: 'streak', days: 3 }, state({}, 2)), false);
+  36  });
+  37  
+  38  test('Regeln: all und any kombinieren', () => {
+  39    const rules = [{ type: 'unit', id: 'a' }, { type: 'unit', id: 'b' }];
+  40    assert.equal(ev({ type: 'all', rules }, state({ a: 1 })), false);
+  41    assert.equal(ev({ type: 'any', rules }, state({ a: 1 })), true);
+  42  });
+  43  
+  44  test('Regeln: unbekannter Typ ist ein Fehler, ruleErrors findet Tippfehler', () => {
+  45    assert.throws(() => ev({ type: 'zauberei' }), /Unbekannte/);
+  46    assert.ok(ruleTypes().includes('combo'));
+  47    assert.deepEqual(ruleErrors({ type: 'unit', id: 'a' }, ['a', 'b']), []);
+  48    assert.ok(ruleErrors({ type: 'unit', id: 'x' }, ['a', 'b']).length > 0, 'unbekannte Seite');
+  49    assert.ok(ruleErrors({ type: 'combo' }, ['a']).length > 0, 'min fehlt');
+  50    assert.ok(ruleErrors({ type: 'zauberei' }, ['a']).length > 0, 'unbekannter Typ');
+  51  });
+  52  
+  53  test('Paketprüfung: gültiges Paket besteht, kaputte werden benannt', async () => {
+  54    const good = await diskSource().load('vorlage');
+  55    assert.deepEqual(bundleErrors(good), []);
+  56    const broken = structuredClone(good);
+  57    delete broken.lessons.start.rule;
+  58    broken.badges[0].rule = { type: 'zauberei' };
+  59    const errors = bundleErrors(broken).join('\n');
+  60    assert.match(errors, /rule/);
+  61    assert.match(errors, /zauberei|Regel|rule/i);
+  62    assert.throws(() => assertBundle(broken));
+  63  });
+  64  
+  65  test('Bilder in Lektionen: Verweis wird über die Diagramme der App aufgelöst', () => {
+  66    const diagrams = { dia: (a, b) => `<svg>${a}${b}</svg>` };
+  67    assert.deepEqual(resolveFigure({ diagram: { name: 'dia', args: [1, 2] }, caption: 'c' }, diagrams), { svg: '<svg>12</svg>', caption: 'c' });
+  68    assert.deepEqual(resolveFigure({ svg: '<svg/>', caption: 'c' }, diagrams), { svg: '<svg/>', caption: 'c' });
+  69    assert.throws(() => resolveFigure({ diagram: { name: 'fehlt' }, caption: 'c' }, diagrams), /fehlt/);
+  70  });
+  71  
+  72  test('Statische Quelle lädt Teile, data.json ist optional, fehlende Pflichtteile melden die URL', async () => {
+  73    const bundle = await createStaticSource('https://x.test/content/', diskFetch).load('vorlage');
+  74    assert.equal(bundle.manifest.id, 'vorlage');
+  75    const noData = async (url) => (String(url).endsWith('data.json') ? { ok: false, status: 404 } : diskFetch(url));
+  76    assert.deepEqual((await createStaticSource('https://x.test/content', noData).load('vorlage')).data, {});
+  77    await assert.rejects(createStaticSource('https://x.test/content/', diskFetch).load('gibt-es-nicht'), /gibt-es-nicht/);
+  78  });
+  79  
+  80  test('HTTP-Quelle: holt das Paket von der API und prüft es', async () => {
+  81    const good = await diskSource().load('vorlage');
+  82    const calls = [];
+  83    const fetchFn = async (url, init) => { calls.push([String(url), init]); return { ok: true, status: 200, json: async () => good }; };
+  84    const bundle = await createHttpSource('https://api.test/v1/', fetchFn, { Authorization: 'Bearer t' }).load('vorlage');
+  85    assert.equal(bundle.manifest.id, 'vorlage');
+  86    assert.equal(calls[0][0], 'https://api.test/v1/apps/vorlage/content');
+  87    assert.equal(calls[0][1].headers.Authorization, 'Bearer t');
+  88    await assert.rejects(createHttpSource('https://api.test', async () => ({ ok: false, status: 503 })).load('vorlage'), /503/);
+  89    await assert.rejects(createHttpSource('https://api.test', async () => ({ ok: true, json: async () => ({ manifest: {} }) })).load('vorlage'));
+  90  });
+  91  
+  92  test('Cache: speichert nach Erfolg und liefert offline aus dem Speicher', async () => {
+  93    const good = await diskSource().load('vorlage');
+  94    const mem = new Map();
+  95    const storage = { get: async (k) => mem.get(k), put: async (k, v) => { mem.set(k, v); } };
+  96    let online = true;
+  97    const source = { name: 'fake', load: async () => { if (!online) throw new Error('offline'); return good; } };
+  98    const cached = withCache(source, storage);
+  99    await cached.load('vorlage');
+ 100    assert.ok(mem.has('lernwerkstatt:content:vorlage'));
+ 101    online = false;
+ 102    assert.equal((await cached.load('vorlage')).manifest.id, 'vorlage');
+ 103    await assert.rejects(cached.load('andere'), /offline/);
+ 104  });
+ 105  
+ 106  test('buildConfig: ruft init auf, baut Lektionen, Trophäen und Theorie-Funktion', async () => {
+ 107    const bundle = await diskSource().load('vorlage');
+ 108    let initArgs = null;
+ 109    const logic = {
+ 110      init: (a) => { initArgs = a; },
+ 111      diagrams: { sumDiagram: () => '<svg></svg>' },
+ 112      rounds: { lesson: () => [] }
+ 113    };
+ 114    const config = buildConfig(bundle, logic);
+ 115    assert.ok(initArgs && initArgs.manifest.id === 'vorlage' && initArgs.data.items);
+ 116    assert.equal(config.id, 'vorlage');
+ 117    assert.equal(typeof config.theory, 'function');
+ 118    assert.equal(config.lessons.start.figure.svg, '<svg></svg>');
+ 119    const first = config.badges.find((b) => b.id === 'first');
+ 120    assert.equal(first.when({ app: { stars: { start: 1 } }, streak: 0 }, {}), true);
+ 121    assert.equal(first.when({ app: { stars: {} }, streak: 0 }, {}), false);
+ 122    assert.throws(() => buildConfig(bundle, { ...logic, diagrams: {} }), /sumDiagram/);
+ 123  });

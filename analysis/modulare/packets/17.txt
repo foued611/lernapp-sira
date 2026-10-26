@@ -1,0 +1,111 @@
+Knoten: numbers.js
+Id: apps/informatik/numbers.js
+Art: module
+Datei: apps/informatik/numbers.js
+Zeilen: 83
+
+Ausgehend (dieser Knoten nutzt):
+  call -> core/js/ui.js
+
+Eingehend (diese Knoten nutzen ihn):
+  apps/informatik/builders.js -> call
+  apps/informatik/diagrams.js -> call
+  apps/informatik/theory.js -> call
+  tests/informatik.test.js -> call
+
+Quelltext (erste 150 Zeilen, Zugangsdaten maskiert):
+   1  // Reine Zahlen-Hilfen für Binär und Hex. Kein Browser-Code, deshalb gut testbar.
+   2  import { esc } from '../../core/js/ui.js';
+   3  
+   4  export const WEIGHTS = [128, 64, 32, 16, 8, 4, 2, 1];
+   5  export const HEX = '0123456789ABCDEF';
+   6  
+   7  export const toBin = (n) => n.toString(2);
+   8  export const toHex = (n) => n.toString(16).toUpperCase();
+   9  export const rnd = (a, b) => a + Math.floor(Math.random() * (b - a + 1));
+  10  
+  11  /** Ziffern einer Zahl mit 4 Stellen (Tausender bis Einer). */
+  12  export const placeDigits = (n) => String(Math.max(0, Math.min(9999, n))).padStart(4, '0').split('');
+  13  
+  14  /** "352" wird zu "3×100 + 5×10 + 2×1". */
+  15  export function placeSum(n) {
+  16    const d = placeDigits(n);
+  17    const parts = [[1000, d[0]], [100, d[1]], [10, d[2]], [1, d[3]]].filter((p) => p[1] !== '0').map((p) => `${p[1]}×${p[0]}`);
+  18    return parts.length ? parts.join(' + ') : '0';
+  19  }
+  20  
+  21  /** Stellenwerte, über denen in der Binärzahl eine 1 steht. */
+  22  export function onesWeights(bin) {
+  23    const len = bin.length;
+  24    return bin.split('').map((c, i) => (c === '1' ? 2 ** (len - 1 - i) : 0)).filter(Boolean);
+  25  }
+  26  
+  27  /** Schritte beim Umrechnen von Normal nach Binär: "Passt der Stellenwert noch hinein?" */
+  28  export function decToBinSteps(n) {
+  29    const steps = [];
+  30    let rest = n;
+  31    let started = false;
+  32    for (const w of WEIGHTS) {
+  33      if (!started && w > n && w !== 1) continue;
+  34      started = true;
+  35      const fits = w <= rest;
+  36      steps.push({ w, rest, fits });
+  37      if (fits) rest -= w;
+  38    }
+  39    return steps;
+  40  }
+  41  
+  42  /** Schritte als HTML (nur Zahlen, daher sicher). */
+  43  export function decToBinHTML(n) {
+  44    const rows = decToBinSteps(n).map((s) => (s.fits
+  45      ? `<div><span class="yes">Passt ${s.w} in ${s.rest}? Ja → 1</span><span class="no">Rest ${s.rest - s.w}</span></div>`
+  46      : `<div><span class="no">Passt ${s.w} in ${s.rest}? Nein → 0</span></div>`));
+  47    rows.push(`<div><b>${n} = ${toBin(n)}</b></div>`);
+  48    return rows.join('');
+  49  }
+  50  
+  51  /** Kurze Erklärungen als Text für das Feedback. */
+  52  export const explainBinToDec = (bin) => {
+  53    const w = onesWeights(bin);
+  54    return `${bin}: ${w.length ? w.join(' + ') : '0'} = ${parseInt(bin, 2)}. Zähle die Stellenwerte zusammen, über denen eine 1 steht.`;
+  55  };
+  56  export const explainDecToBin = (n) => `${n} = ${toBin(n)}. Gehe von links durch die Stellenwerte (128, 64, 32 …): Passt er noch hinein, schreibe 1 und ziehe ihn ab, sonst 0.`;
+  57  export const explainHexToDec = (n) => `${toHex(n)} = ${Math.floor(n / 16)} × 16 + ${n % 16} = ${n}. Die linke Ziffer zählt 16-fach (A=10 … F=15).`;
+  58  export const explainDecToHex = (n) => `${n} : 16 = ${Math.floor(n / 16)} Rest ${n % 16}. Das ergibt ${HEX[Math.floor(n / 16)]} und ${HEX[n % 16]}, also ${toHex(n)}.`;
+  59  export const explainBinToHex = (bin) => {
+  60    const groups = bin.padStart(Math.ceil(bin.length / 4) * 4, '0').match(/.{4}/g);
+  61    return `Vierergruppen: ${groups.map((g) => `${g} = ${HEX[parseInt(g, 2)]}`).join(', ')}.`;
+  62  };
+  63  export const explainAdd = (a, b) => `${toBin(a)} = ${a} und ${toBin(b)} = ${b}. ${a} + ${b} = ${a + b} und das ist ${toBin(a + b)}. Rechne von rechts: 1 + 1 = 10, schreibe 0 und merke dir 1.`;
+  64  
+  65  /** Eingabe vereinheitlichen: ohne Leerzeichen, ohne 0x, ohne führende Nullen, Hex in Großbuchstaben. */
+  66  export function normInput(raw, type) {
+  67    const s = String(raw).trim().toUpperCase().replace(/[\s_]+/g, '').replace(/^0X/, '');
+  68    if (type === 'dec') return /^\d+$/.test(s) ? String(parseInt(s, 10)) : null;
+  69    if (type === 'bin') return /^[01]+$/.test(s) ? s.replace(/^0+(?=.)/, '') : null;
+  70    return /^[0-9A-F]+$/.test(s) ? s.replace(/^0+(?=.)/, '') : null;
+  71  }
+  72  
+  73  /** Prüffunktion für Eingabefragen. */
+  74  export const checker = (type, answer) => (input) => (normInput(input, type) === normInput(answer, type) ? 'ok' : 'bad');
+  75  
+  76  /** Falsche Antworten für Auswahlfragen, ohne Dopplungen und ohne die richtige Antwort. */
+  77  export function distractors(answer, candidates, count = 3) {
+  78    const seen = new Set([String(answer)]);
+  79    const out = [];
+  80    for (const c of candidates) {
+  81      const v = String(c);
+  82      if (!seen.has(v) && v !== 'NaN' && !v.startsWith('-')) { seen.add(v); out.push(v); }
+  83      if (out.length === count) return out;
+  84    }
+  85    // Auffüllen mit Nachbarzahlen, falls zu wenige Kandidaten da waren
+  86    const num = parseInt(answer, 10);
+  87    for (let d = 1; out.length < count && !Number.isNaN(num); d++) {
+  88      for (const v of [String(num + d), String(num - d)]) {
+  89        if (!seen.has(v) && !v.startsWith('-') && out.length < count) { seen.add(v); out.push(v); }
+  90      }
+  91    }
+  92    return out;
+  93  }
+  94  
+  95  export const mono = (text) => `<span class="mono">${esc(text)}</span>`;

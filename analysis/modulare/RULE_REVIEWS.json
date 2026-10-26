@@ -1,0 +1,624 @@
+{
+  "system": "modulare",
+  "version": 1,
+  "reviews": {
+    "RULE-007": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T14:56:35+01:00",
+      "title": "Missing triangle angle = 180° minus the two given angles",
+      "note": ""
+    },
+    "RULE-008": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T14:56:35+01:00",
+      "title": "Thaleskreis: rechter Winkel bei C und Restwinkel",
+      "note": ""
+    },
+    "RULE-010": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T14:56:35+01:00",
+      "title": "Maßstab: Umrechnung zwischen Zeichnung und Wirklichkeit",
+      "note": ""
+    },
+    "RULE-011": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T14:56:35+01:00",
+      "title": "Höhe eines Baumes bei 45° Peilwinkel",
+      "note": ""
+    },
+    "RULE-012": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T14:56:35+01:00",
+      "title": "Außenwinkel im Dreieck",
+      "note": ""
+    },
+    "RULE-035": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T14:56:35+01:00",
+      "title": "Zinsrechnung für ein Jahr: Zinsen, Kapital, Zinssatz",
+      "note": ""
+    },
+    "RULE-036": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T14:56:35+01:00",
+      "title": "Zinseszins: Endkapital nach mehreren Jahren",
+      "note": ""
+    },
+    "RULE-037": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T14:56:35+01:00",
+      "title": "Dreisatz: proportional und antiproportional",
+      "note": ""
+    },
+    "RULE-039": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T14:56:35+01:00",
+      "title": "Statistik-Kennzahlen: Mittelwert, Median, Spannweite, Modus",
+      "note": ""
+    },
+    "RULE-047": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T14:56:35+01:00",
+      "title": "Tilgungsplan: Rate, Restschuld, Zins auf Restschuld, Laufzei",
+      "note": ""
+    },
+    "RULE-052": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T14:56:35+01:00",
+      "title": "Lineare Gleichung nach x lösen",
+      "note": ""
+    },
+    "RULE-056": {
+      "verdict": "discuss",
+      "at": "2026-10-26T15:03:38+01:00",
+      "title": "Datendiagramm: Median, Mittelwert, Spannweite",
+      "note": ""
+    },
+    "RULE-059": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T14:56:35+01:00",
+      "title": "Ausweichzahlen für Multiple-Choice nahe der richtigen Zahl",
+      "note": ""
+    },
+    "RULE-061": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T14:56:35+01:00",
+      "title": "Level-Schwelle aus gesammelten XP",
+      "note": ""
+    },
+    "RULE-062": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T14:56:35+01:00",
+      "title": "XP-Gutschrift: Profil, App, Tagesziel und Level-Aufstieg",
+      "note": ""
+    },
+    "RULE-063": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T14:56:35+01:00",
+      "title": "Combo-Faktor bis ×4",
+      "note": ""
+    },
+    "RULE-064": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T14:57:27+01:00",
+      "title": "Stars are awarded from the accuracy of a finished round",
+      "note": ""
+    },
+    "RULE-067": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T14:57:27+01:00",
+      "title": "Genauigkeit zählt nur Erstversuche",
+      "note": ""
+    },
+    "RULE-069": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T14:57:27+01:00",
+      "title": "Round accuracy (Trefferquote)",
+      "note": ""
+    },
+    "RULE-071": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T14:57:27+01:00",
+      "title": "Boss round reward: 50 bonus XP and a trophy only when won",
+      "note": ""
+    },
+    "RULE-075": {
+      "verdict": "wrong",
+      "at": "2026-10-26T16:14:36+01:00",
+      "title": "Unit completion and per-app progress percentage",
+      "note": "Entscheidung der Person: Eine Seite gilt als erledigt ab 2 von 3 Sternen. Der Fortschritt der App wird in Prozent angezeigt."
+    },
+    "RULE-078": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T14:57:27+01:00",
+      "title": "Konjugation: Stamm plus Endung je Verbgruppe",
+      "note": ""
+    },
+    "RULE-079": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T14:57:27+01:00",
+      "title": "Base angle of an isosceles triangle = (180° − apex angle) ÷ ",
+      "note": ""
+    },
+    "RULE-080": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T14:57:27+01:00",
+      "title": "Apex angle of an isosceles triangle = 180° − 2 × base angle ",
+      "note": ""
+    },
+    "RULE-081": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T14:57:27+01:00",
+      "title": "Circumcenter and incircle are equidistant; point on a circle",
+      "note": ""
+    },
+    "RULE-082": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T14:57:27+01:00",
+      "title": "Binär-Addition und Hex-zu-Dezimal-Aufgaben haben die richtig",
+      "note": ""
+    },
+    "RULE-083": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T14:57:27+01:00",
+      "title": "Binär- und Hex-Umrechnung, Stellenwerte, Schrittfolge bis 25",
+      "note": ""
+    },
+    "RULE-084": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T14:57:27+01:00",
+      "title": "Vorzeichenrechnung und lineare Gleichungen haben korrekte Lö",
+      "note": ""
+    },
+    "RULE-088": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T14:58:32+01:00",
+      "title": "Right-isosceles problem answer is always 45°",
+      "note": ""
+    },
+    "RULE-096": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T14:58:32+01:00",
+      "title": "Nibble matching question (four bits to hex digit)",
+      "note": ""
+    },
+    "RULE-109": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T14:58:32+01:00",
+      "title": "Subjektdarstellung: j' vor Vokal und h, Pronomenvariante in ",
+      "note": ""
+    },
+    "RULE-111": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T14:58:32+01:00",
+      "title": "Gap answers are graded tolerantly: case and surrounding spac",
+      "note": ""
+    },
+    "RULE-112": {
+      "verdict": "wrong",
+      "at": "2026-10-26T15:23:52+01:00",
+      "title": "Wahrscheinlichkeitsantwort: Bruch, Dezimalzahl oder Prozent",
+      "note": "Entscheidung delegiert, nach Schulstandard, von der Person bestätigt: Bruch, Dezimalzahl (0 bis 1) und Prozent sind gleichwertig richtig. Eine Zahl ohne Prozentzeichen wird als Dezimalzahl gewertet, nicht abgelehnt. Werte außerhalb 0 bis 1 und Nenner 0 sind falsch."
+    },
+    "RULE-113": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T14:58:32+01:00",
+      "title": "Prüfung einer Eingabe-Antwort (Wort eintippen)",
+      "note": ""
+    },
+    "RULE-115": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T14:58:32+01:00",
+      "title": "Distraktor-Generator: mindestens drei verschiedene falsche A",
+      "note": ""
+    },
+    "RULE-117": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T14:58:32+01:00",
+      "title": "Kongruenzsatz- und Eindeutigkeits-Zuordnungen aus Datentabel",
+      "note": ""
+    },
+    "RULE-118": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T14:58:32+01:00",
+      "title": "Typed answer is correct only after normalization",
+      "note": ""
+    },
+    "RULE-119": {
+      "verdict": "discuss",
+      "at": "2026-10-26T15:03:38+01:00",
+      "title": "Antwortprüfung durch Vergleich nach Normalisierung",
+      "note": ""
+    },
+    "RULE-124": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T14:58:32+01:00",
+      "title": "Abbildung einer Lektion aufloesen",
+      "note": ""
+    },
+    "RULE-125": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T15:46:27+01:00",
+      "title": "HTTP-Quelle holt und prüft das Paket",
+      "note": "Entscheidung nach Empfehlung, von der Person bestätigt: Adressaufbau …/apps/<id>/content bleibt."
+    },
+    "RULE-126": {
+      "verdict": "wrong",
+      "at": "2026-10-26T15:46:27+01:00",
+      "title": "Restore only from a valid Lernwerkstatt file, then reload",
+      "note": "Entscheidung nach Empfehlung, von der Person bestätigt: Einspielen führt das Protokoll zusammen statt es zu ersetzen, und fragt vor dem Überschreiben nach."
+    },
+    "RULE-128": {
+      "verdict": "wrong",
+      "at": "2026-10-26T15:23:52+01:00",
+      "title": "Numerische Antwort ist richtig bei exakter Übereinstimmung (",
+      "note": "Entscheidung delegiert, nach Schulstandard, von der Person bestätigt: Eine Antwort ist richtig, wenn sie auf die in der Aufgabe verlangte Stellenzahl gerundet ist (0,333 für 1/3 bei drei Stellen). Ohne Rundungsangabe gilt exakte Übereinstimmung."
+    },
+    "RULE-131": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T14:58:32+01:00",
+      "title": "Perfect-round and combo trophies",
+      "note": ""
+    },
+    "RULE-132": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T14:58:32+01:00",
+      "title": "Trophäen-Aufbau prüfen (Tippfehler finden)",
+      "note": ""
+    },
+    "RULE-133": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T14:58:32+01:00",
+      "title": "Reset of one app's progress requires two confirmations",
+      "note": ""
+    },
+    "RULE-135": {
+      "verdict": "wrong",
+      "at": "2026-10-26T15:46:27+01:00",
+      "title": "Unreadable or non-object stored document falls back to defau",
+      "note": "Entscheidung nach Empfehlung, von der Person bestätigt: Unlesbarer Stand wird zuerst gesichert und gemeldet, erst dann gelten Standardwerte."
+    },
+    "RULE-136": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T14:58:32+01:00",
+      "title": "Missing lesson has no fallback",
+      "note": ""
+    },
+    "RULE-137": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T14:58:32+01:00",
+      "title": "Texteingabe wird vor dem Vergleich vereinheitlicht (Groß/Kle",
+      "note": ""
+    },
+    "RULE-143": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T14:59:17+01:00",
+      "title": "Inhaltspaket als Ganzes pruefen (Tor vor dem Start)",
+      "note": ""
+    },
+    "RULE-144": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T15:03:38+01:00",
+      "title": "Materiallinks nur als sichere relative Pfade",
+      "note": ""
+    },
+    "RULE-145": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T14:59:17+01:00",
+      "title": "Player name is required to be hidden once set, and is always",
+      "note": ""
+    },
+    "RULE-146": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T14:59:17+01:00",
+      "title": "Every verb form has a hint and distractors that exclude the ",
+      "note": ""
+    },
+    "RULE-147": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T14:59:17+01:00",
+      "title": "Typed verb answers: pronoun prefix and case ignored, missing",
+      "note": ""
+    },
+    "RULE-150": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T15:03:38+01:00",
+      "title": "Eintipp-Prüfung für numerische Antworten",
+      "note": ""
+    },
+    "RULE-151": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T14:59:17+01:00",
+      "title": "Typed answer is graded exact, 'almost' if only accents diffe",
+      "note": ""
+    },
+    "RULE-158": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T14:59:17+01:00",
+      "title": "Verb conjugation tables give the six correct forms in person",
+      "note": ""
+    },
+    "RULE-160": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T15:03:38+01:00",
+      "title": "Generated geometry tasks have a correct answer outside the w",
+      "note": ""
+    },
+    "RULE-161": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T14:59:17+01:00",
+      "title": "Every app configuration has a valid id, unique unit and badg",
+      "note": ""
+    },
+    "RULE-165": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T14:59:17+01:00",
+      "title": "Jede Aufgabe akzeptiert ihre eigene richtige Antwort",
+      "note": ""
+    },
+    "RULE-166": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T14:59:17+01:00",
+      "title": "Single-choice answer is correct only when the picked option ",
+      "note": ""
+    },
+    "RULE-172": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T14:59:17+01:00",
+      "title": "XP-Ausgabe nie unter null",
+      "note": ""
+    },
+    "RULE-173": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T14:59:17+01:00",
+      "title": "Streak trophy after three days in a row",
+      "note": ""
+    },
+    "RULE-185": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T14:59:17+01:00",
+      "title": "Offline-Zwischenspeicher fuer API-Inhalte",
+      "note": ""
+    },
+    "RULE-186": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T15:03:38+01:00",
+      "title": "Storage backend selection with fallback",
+      "note": ""
+    },
+    "RULE-187": {
+      "verdict": "wrong",
+      "at": "2026-10-26T15:46:27+01:00",
+      "title": "Altstand aus localStorage wird in IndexedDB übernommen",
+      "note": "Entscheidung nach Empfehlung, von der Person bestätigt: Altstand aus localStorage wird erst nach bestätigtem Schreiben in IndexedDB entfernt."
+    },
+    "RULE-188": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T14:59:17+01:00",
+      "title": "Auffrischen: Seite ist fällig nach drei Tagen",
+      "note": ""
+    },
+    "RULE-189": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T15:03:38+01:00",
+      "title": "A failed lesson round gives no star progress and no perfect ",
+      "note": ""
+    },
+    "RULE-190": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T14:59:17+01:00",
+      "title": "Matching question starts with zero pairs solved and is grade",
+      "note": ""
+    },
+    "RULE-193": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T15:00:25+01:00",
+      "title": "XP is kept when a round is left early",
+      "note": ""
+    },
+    "RULE-194": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T15:00:25+01:00",
+      "title": "Abschluss einer Lektionsrunde: Tag, Genauigkeit und Auffrisc",
+      "note": ""
+    },
+    "RULE-195": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T15:00:25+01:00",
+      "title": "Finishing a round evaluates, saves, logs and shows the resul",
+      "note": ""
+    },
+    "RULE-197": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T15:00:25+01:00",
+      "title": "Saved progress is restored after reload; reset returns state",
+      "note": ""
+    },
+    "RULE-202": {
+      "verdict": "wrong",
+      "at": "2026-10-26T16:14:36+01:00",
+      "title": "Home screen loads all data first, then draws once",
+      "note": "Entscheidung der Person: Ohne Speicher zeigt die Startseite einen leeren Stand mit Meldung. Sie bricht nicht ab (AGENTS.md: die App läuft ohne Speicher)."
+    },
+    "RULE-204": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T15:00:25+01:00",
+      "title": "Blitz: best score only goes up and the blitz trophy starts a",
+      "note": ""
+    },
+    "RULE-205": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T15:00:25+01:00",
+      "title": "Zurücksetzen leert Fortschritt",
+      "note": ""
+    },
+    "RULE-206": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T15:00:25+01:00",
+      "title": "Endgegner wird freigeschaltet, wenn alle Seiten einen Stern ",
+      "note": ""
+    },
+    "RULE-207": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T15:00:25+01:00",
+      "title": "Stored data keeps unknown fields, gains new default fields, ",
+      "note": ""
+    },
+    "RULE-208": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T15:03:38+01:00",
+      "title": "Serie: Folgetag, Gnadentag, Neustart und Verfall",
+      "note": ""
+    },
+    "RULE-211": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T15:00:25+01:00",
+      "title": "Initialisation: round content is bound once, before the firs",
+      "note": ""
+    },
+    "RULE-217": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T15:00:25+01:00",
+      "title": "Minou-Stimmung wählt das Gesicht, unbekannte Stimmung wird z",
+      "note": ""
+    },
+    "RULE-218": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T15:00:25+01:00",
+      "title": "Tagesziel wird einmal pro Tag gemeldet",
+      "note": ""
+    },
+    "RULE-220": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T15:00:25+01:00",
+      "title": "Collection album card tier from stars",
+      "note": ""
+    },
+    "RULE-222": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T15:00:25+01:00",
+      "title": "Theorie-Seite: Tabelle, Selbsttest und Verbwechsel",
+      "note": ""
+    },
+    "RULE-223": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T17:59:47+01:00",
+      "title": "Multiple-choice options: correct answer plus up to three dis",
+      "note": "Entschieden im Chat bei der Freigabe von Phase 5a: wie beschrieben (richtige Antwort plus höchstens drei falsche, zufällig sortiert)."
+    },
+    "RULE-224": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T15:00:25+01:00",
+      "title": "Typed-answer question: the stored answer is the only expecte",
+      "note": ""
+    },
+    "RULE-226": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T15:00:25+01:00",
+      "title": "Random question pick across all pages for the quick round an",
+      "note": ""
+    },
+    "RULE-229": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T15:00:25+01:00",
+      "title": "Round sizes: lesson round 8 questions, boss 12, quick 5, bli",
+      "note": ""
+    },
+    "RULE-231": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T15:00:25+01:00",
+      "title": "Number ranges per difficulty level",
+      "note": ""
+    },
+    "RULE-242": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T15:01:06+01:00",
+      "title": "Training recommendation: due first, then weakest unit",
+      "note": ""
+    },
+    "RULE-243": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T15:01:06+01:00",
+      "title": "Second attempt: re-ask a wrong question at the end of the ro",
+      "note": ""
+    },
+    "RULE-244": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T15:01:06+01:00",
+      "title": "Trophäe Endgegner besiegt",
+      "note": ""
+    },
+    "RULE-245": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T15:01:06+01:00",
+      "title": "Trophäe Serie (Tage in Folge)",
+      "note": ""
+    },
+    "RULE-246": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T15:01:06+01:00",
+      "title": "Trophäen-Kombination UND / ODER",
+      "note": ""
+    },
+    "RULE-247": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T15:01:06+01:00",
+      "title": "Profil und App-Stand werden nach einer Runde gespeichert, Ru",
+      "note": ""
+    },
+    "RULE-255": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T15:01:06+01:00",
+      "title": "App-Kennung für den gespeicherten Fortschritt",
+      "note": ""
+    },
+    "RULE-256": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T15:01:06+01:00",
+      "title": "Backup export contains all saved data and events; import res",
+      "note": ""
+    },
+    "RULE-257": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T15:01:06+01:00",
+      "title": "Trophäen-Schwelle Combo und Blitz-Punkte",
+      "note": ""
+    },
+    "RULE-258": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T15:01:06+01:00",
+      "title": "Learning-track label appears on LRS pages only",
+      "note": ""
+    },
+    "RULE-259": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T15:01:06+01:00",
+      "title": "Page counts per app are maintained by hand in the registry",
+      "note": ""
+    },
+    "RULE-261": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T15:01:06+01:00",
+      "title": "Trophäe Perfekte Runde",
+      "note": ""
+    },
+    "RULE-266": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T15:01:06+01:00",
+      "title": "Vorher-Nachher-Diagramm: Pfeile zeigen das Umformen",
+      "note": ""
+    },
+    "RULE-280": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T15:01:06+01:00",
+      "title": "LRS-Förderung track marks six units, all printed material, a",
+      "note": ""
+    },
+    "RULE-281": {
+      "verdict": "confirmed",
+      "at": "2026-10-26T15:01:06+01:00",
+      "title": "Result title depends on stars, failure and blitz score",
+      "note": ""
+    }
+  }
+}

@@ -1,0 +1,83 @@
+Knoten: content.js
+Id: core/js/content.js
+Art: module
+Datei: core/js/content.js
+Zeilen: 62
+
+Ausgehend (dieser Knoten nutzt):
+  call -> core/js/db.js
+  call -> core/js/validate.js
+
+Eingehend (diese Knoten nutzen ihn):
+  core/js/boot.js -> call
+  tests/core-content.test.js -> call
+  tests/helpers.js -> call
+
+Quelltext (erste 150 Zeilen, Zugangsdaten maskiert):
+   1  // Inhaltsquellen: Woher kommen Seiten, Lektionen, Trophäen und Aufgabenpools einer App?
+   2  //
+   3  // Eine Quelle ist ein Objekt { name, load(appId) → Promise<Bundle> }. Ein Bundle hat immer dieselbe Form:
+   4  //   { manifest, lessons, badges, data }     (siehe schemas/bundle.schema.json und docs/inhalte.md)
+   5  // Heute liefert createStaticSource die JSON-Dateien aus content/<appId>/. Später kann createHttpSource
+   6  // dieselbe Form aus einer Datenbank-API holen. Die Apps merken davon nichts.
+   7  import { getDB } from './db.js';
+   8  import { assertBundle } from './validate.js';
+   9  
+  10  const PARTS = [['manifest', true], ['lessons', true], ['badges', true], ['data', false]];
+  11  
+  12  async function getJSON(fetchFn, url, required) {
+  13    const response = await fetchFn(url);
+  14    if (!response.ok) {
+  15      if (!required) return undefined;
+  16      throw new Error(`Inhalt nicht gefunden: ${url} (${response.status})`);
+  17    }
+  18    return response.json();
+  19  }
+  20  
+  21  /** JSON-Dateien: <baseUrl>/<appId>/manifest.json, lessons.json, badges.json, data.json (optional). */
+  22  export function createStaticSource(baseUrl, fetchFn = (...args) => fetch(...args)) {
+  23    const base = String(baseUrl).replace(/\/?$/, '/');
+  24    return {
+  25      name: 'static',
+  26      async load(appId) {
+  27        const [manifest, lessons, badges, data] = await Promise.all(PARTS.map(([part, required]) => getJSON(fetchFn, `${base}${appId}/${part}.json`, required)));
+  28        return assertBundle({ manifest, lessons, badges, data: data || {} });
+  29      }
+  30    };
+  31  }
+  32  
+  33  /** API: GET <apiUrl>/apps/<appId>/content liefert das Bundle als JSON. Für eine spätere Datenbank. */
+  34  export function createHttpSource(apiUrl, fetchFn = (...args) => fetch(...args), headers = {}) {
+  35    const base = String(apiUrl).replace(/\/$/, '');
+  36    return {
+  37      name: 'http',
+  38      async load(appId) {
+  39        const response = await fetchFn(`${base}/apps/${encodeURIComponent(appId)}/content`, { headers: { Accept: 'application/json', ...headers } });
+  40        if (!response.ok) throw new Error(`Inhalte nicht erreichbar (${response.status})`);
+  41        return assertBundle(await response.json());
+  42      }
+  43    };
+  44  }
+  45  
+  46  /**
+  47   * Legt jedes erfolgreich geladene Bundle lokal ab (IndexedDB) und liefert es bei fehlendem Netz von dort.
+  48   * So bleibt die App offline nutzbar, auch wenn die Inhalte aus einer Datenbank kommen.
+  49   */
+  50  export function withCache(source, storage = { get: async (k) => (await getDB()).get(k), put: async (k, v) => (await getDB()).put(k, v) }) {
+  51    const key = (appId) => `lernwerkstatt:content:${appId}`;
+  52    return {
+  53      name: `${source.name}+cache`,
+  54      async load(appId) {
+  55        try {
+  56          const bundle = await source.load(appId);
+  57          try { await storage.put(key(appId), bundle); } catch (error) { /* Cache ist optional */ }
+  58          return bundle;
+  59        } catch (error) {
+  60          let cached;
+  61          try { cached = await storage.get(key(appId)); } catch (e) { /* weiter */ }
+  62          if (cached) return assertBundle(cached);
+  63          throw error;
+  64        }
+  65      }
+  66    };
+  67  }

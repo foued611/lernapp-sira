@@ -1,0 +1,88 @@
+Knoten: lesson.js
+Id: core/js/lesson.js
+Art: module
+Datei: core/js/lesson.js
+Zeilen: 67
+
+Ausgehend (dieser Knoten nutzt):
+  call -> core/js/ui.js
+  call -> core/js/mascot.js
+
+Eingehend (diese Knoten nutzen ihn):
+  apps/franzoesisch-verben/theory.js -> call
+  apps/informatik/theory.js -> call
+  core/js/theory.js -> call
+
+Quelltext (erste 150 Zeilen, Zugangsdaten maskiert):
+   1  // Bausteine für Lektionen (Theorie-Seiten), die für alle Apps gleich aufgebaut sind.
+   2  // Aufbau einer Lektion, in dieser Reihenfolge:
+   3  //   Ziel · In 30 Sekunden · Stell dir vor · Bild · [Ausprobieren] · Schritt für Schritt · Falle und Merksatz · Mini-Check
+   4  // Eine App liefert die Inhalte als "Lektionsbeschreibung" (siehe assertValidLesson in tests/helpers.js).
+   5  import { esc } from './ui.js';
+   6  import { mascot } from './mascot.js';
+   7  
+   8  /**
+   9   * Lektionsbeschreibung:
+  10   * {
+  11   *   goal:     string                      "Du kannst danach …" (ein Satz)
+  12   *   tldr:     string[]                    zwei bis vier kurze Sätze (HTML erlaubt)
+  13   *   analogy:  { title, html }             Vergleich aus dem Alltag
+  14   *   figure:   { svg, caption }            Diagramm (SVG-Text) mit Bildunterschrift
+  15   *   steps:    { title, items: html[] }    durchgerechnetes Beispiel, Schritt für Schritt
+  16   *   pitfall:  { html }                    typischer Fehler
+  17   *   rule:     string                      Merksatz
+  18   *   check:    { q, options:[{id,html}], answer, why }   eine Frage zum Ausprobieren
+  19   * }
+  20   */
+  21  
+  22  const section = (cls, inner) => `<section class="card lsn ${cls}">${inner}</section>`;
+  23  
+  24  /** Teil vor dem Ausprobieren: Ziel, 30 Sekunden, Vergleich, Bild. */
+  25  export function lessonTop(spec) {
+  26    const tldr = spec.tldr.map((t) => `<li>${t}</li>`).join('');
+  27    return `
+  28      <section class="lsn-goal"><span class="lsn-flag">Ziel</span> ${esc(spec.goal)}</section>
+  29      ${section('lsn-tldr', `<div class="lsn-who">${mascot('happy')}<div><h2>In 30 Sekunden</h2><ul>${tldr}</ul></div></div>`)}
+  30      ${section('lsn-analogy', `<h2>${esc(spec.analogy.title)}</h2><div class="lsn-body">${spec.analogy.html}</div>`)}
+  31      <figure class="card lsn lsn-fig">${spec.figure.svg}<figcaption>${spec.figure.caption}</figcaption></figure>`;
+  32  }
+  33  
+  34  /** Teil nach dem Ausprobieren: Beispiel, Falle, Merksatz, Mini-Check. */
+  35  export function lessonBottom(spec) {
+  36    const items = spec.steps.items.map((t, i) => `<li class="${i === 0 ? '' : 'later'}" ${i === 0 ? '' : 'hidden'}><span class="n">${i + 1}</span><div>${t}</div></li>`).join('');
+  37    const opts = spec.check.options.map((o) => `<button type="button" class="opt" data-lsn="opt" data-id="${esc(o.id)}">${o.html}</button>`).join('');
+  38    return `
+  39      ${section('lsn-steps', `<h2>${esc(spec.steps.title)}</h2><ol class="lsn-list" data-lsn-steps>${items}</ol>${spec.steps.items.length > 1 ? '<button type="button" class="btn small ghost" data-lsn="next">Nächster Schritt</button>' : ''}`)}
+  40      <div class="lsn-two">
+  41        ${section('lsn-pit', `<h2>Typische Falle</h2><div class="lsn-body">${spec.pitfall.html}</div>`)}
+  42        ${section('lsn-rule', `<h2>Merksatz</h2><p class="lsn-mark">${spec.rule}</p>`)}
+  43      </div>
+  44      ${section('lsn-check', `<h2>Mini-Check</h2><p class="lsn-q">${spec.check.q}</p><div class="opts lsn-opts" data-answer="${esc(spec.check.answer)}">${opts}</div><div class="lsn-fb" role="status" hidden></div>`)}`;
+  45  }
+  46  
+  47  /** Macht Schritt-für-Schritt und Mini-Check klickbar. Einmal pro Theorie-Seite aufrufen. */
+  48  export function wireLesson(box, spec) {
+  49    box.addEventListener('click', (e) => {
+  50      const next = e.target.closest('[data-lsn="next"]');
+  51      if (next) {
+  52        const list = box.querySelector('[data-lsn-steps]');
+  53        const hidden = list.querySelector('li[hidden]');
+  54        if (hidden) hidden.hidden = false;
+  55        if (!list.querySelector('li[hidden]')) next.hidden = true;
+  56        return;
+  57      }
+  58      const opt = e.target.closest('[data-lsn="opt"]');
+  59      if (!opt || opt.disabled) return;
+  60      const group = opt.closest('[data-answer]');
+  61      const right = opt.dataset.id === group.dataset.answer;
+  62      group.querySelectorAll('.opt').forEach((b) => {
+  63        b.disabled = true;
+  64        if (b.dataset.id === group.dataset.answer) b.classList.add('right');
+  65      });
+  66      if (!right) opt.classList.add('wrong');
+  67      const fb = box.querySelector('.lsn-fb');
+  68      fb.hidden = false;
+  69      fb.className = `lsn-fb ${right ? 'ok' : 'bad'}`;
+  70      fb.textContent = `${right ? 'Richtig! ' : 'Nicht ganz. '}${spec.check.why}`;
+  71    });
+  72  }

@@ -1,0 +1,129 @@
+Knoten: diagrams.js
+Id: apps/informatik/diagrams.js
+Art: module
+Datei: apps/informatik/diagrams.js
+Zeilen: 109
+
+Ausgehend (dieser Knoten nutzt):
+  call -> core/js/svg.js
+  call -> apps/informatik/numbers.js
+
+Eingehend (diese Knoten nutzen ihn):
+  apps/informatik/logic.js -> call
+
+Quelltext (erste 150 Zeilen, Zugangsdaten maskiert):
+   1  // Diagramme der Zahlenwerkstatt. Reine Textbausteine (SVG), deshalb ohne Browser testbar.
+   2  import { svg, rect, circle, text, line, arrow, path } from '../../core/js/svg.js';
+   3  import { WEIGHTS, HEX, toBin, onesWeights } from './numbers.js';
+   4  
+   5  /** Stellenwert-Haus: vier Fächer, jede Stelle ist 10-mal so viel wert wie die rechts daneben. */
+   6  export function placeDiagram(n = 352) {
+   7    const digits = String(n).padStart(4, '0').split('');
+   8    const names = ['Tausender', 'Hunderter', 'Zehner', 'Einer'];
+   9    const weights = [1000, 100, 10, 1];
+  10    let out = '';
+  11    digits.forEach((d, i) => {
+  12      const x = 20 + i * 126;
+  13      out += rect(x, 40, 96, 130, i === 3 ? 'hi' : 'box');
+  14      out += text(x + 48, 30, names[i], 'sm mu');
+  15      out += text(x + 48, 105, d, `lg mono${i === 3 ? ' on-sun' : ''}`);
+  16      out += text(x + 48, 150, `${d} × ${weights[i]}`, `sm mono${i === 3 ? ' on-sun' : ''}`);
+  17      if (i < 3) {
+  18        out += text(x + 111, 96, '× 10', 'sm mu');
+  19        out += arrow(x + 126, 108, x + 98, 108);
+  20      }
+  21    });
+  22    const parts = digits.map((d, i) => `${d}×${weights[i]}`).filter((p) => !p.startsWith('0'));
+  23    out += text(260, 206, 'Nach links wird jede Stelle 10-mal so viel wert', 'sm mu');
+  24    out += text(260, 238, `${Number(n)} = ${parts.join(' + ')}`, 'md mono');
+  25    return svg(520, 252, out, `Stellenwert-Tafel der Zahl ${n}: Tausender, Hunderter, Zehner und Einer`);
+  26  }
+  27  
+  28  /** Lampenreihe mit Verdopplung. bits: 8 Werte aus 0 und 1. */
+  29  export function lampDiagram(bits = [0, 0, 0, 0, 1, 0, 1, 1]) {
+  30    let out = '';
+  31    bits.forEach((b, i) => {
+  32      const x = 36 + i * 64;
+  33      out += circle(x, 78, 24, b ? 'hi' : 'off');
+  34      out += text(x, 85, String(b), `md mono ${b ? 'on-sun' : 'mu'}`);
+  35      out += text(x, 130, String(WEIGHTS[i]), 'md mono');
+  36      if (i < 7) out += text(x + 32, 44, '÷2', 'sm mu');
+  37    });
+  38    out += text(260, 22, 'Die Werte halbieren sich nach rechts und verdoppeln sich nach links', 'sm mu');
+  39    const lit = WEIGHTS.filter((w, i) => bits[i]);
+  40    out += text(260, 168, `${lit.length ? lit.join(' + ') : '0'} = ${lit.reduce((a, b) => a + b, 0)}`, 'lg mono');
+  41    return svg(520, 185, out, `Acht Lampen mit den Stellenwerten 128 bis 1. Leuchtende Lampen ergeben zusammen ${lit.reduce((a, b) => a + b, 0)}`);
+  42  }
+  43  
+  44  /** Balken, der sich aus Stellenwert-Klötzen zusammensetzt (z. B. 13 = 8 + 4 + 1). */
+  45  export function blocksDiagram(n = 13) {
+  46    const parts = onesWeights(toBin(n));
+  47    const scale = 440 / n;
+  48    let x = 40, out = text(260, 24, `So baust du ${n} aus Stellenwerten`, 'md');
+  49    parts.forEach((w, i) => {
+  50      const width = w * scale;
+  51      out += rect(x, 50, width - 4, 60, i % 2 ? 'hi' : 'acc', 8);
+  52      out += text(x + (width - 4) / 2, 88, String(w), `md mono ${i % 2 ? 'on-sun' : 'on-acc'}`);
+  53      x += width;
+  54    });
+  55    out += path('M40 124 L40 134 L480 134 L480 124');
+  56    out += text(260, 158, `${parts.join(' + ')} = ${n}`, 'md mono');
+  57    out += text(260, 190, `Darum: ${n} = ${toBin(n)}`, 'lg mono');
+  58    const all = WEIGHTS.slice(WEIGHTS.indexOf(Math.max(...WEIGHTS.filter((w) => w <= n)))).map((w) => `${w}:${parts.includes(w) ? 1 : 0}`).join('  ');
+  59    out += text(260, 214, all, 'sm mu mono');
+  60    return svg(520, 226, out, `Die Zahl ${n} besteht aus den Stellenwerten ${parts.join(', ')}. Binär ist das ${toBin(n)}`);
+  61  }
+  62  
+  63  /** Schriftliche Addition in Binär mit Übertrag. */
+  64  export function addDiagram(a = 11, b = 6) {
+  65    const sum = a + b;
+  66    const width = toBin(sum).length;
+  67    const A = toBin(a).padStart(width, '0'), B = toBin(b).padStart(width, '0'), S = toBin(sum).padStart(width, '0');
+  68    const carry = Array(width + 1).fill(0);
+  69    for (let i = width - 1; i >= 0; i--) carry[i] = (Number(A[i]) + Number(B[i]) + carry[i + 1]) > 1 ? 1 : 0;
+  70    const colX = (i) => 260 + (i - (width - 1) / 2) * 56;
+  71    let out = '';
+  72    for (let i = 0; i < width; i++) {
+  73      if (carry[i + 1]) out += circle(colX(i), 36, 14, 'hi') + text(colX(i), 41, '1', 'md mono on-sun');
+  74      out += text(colX(i), 92, A[i], 'lg mono');
+  75      out += text(colX(i), 132, B[i], 'lg mono');
+  76      out += text(colX(i), 192, S[i], 'lg mono');
+  77    }
+  78    out += text(colX(0) - 56, 132, '+', 'lg mono');
+  79    out += line(colX(0) - 40, 152, colX(width - 1) + 40, 152);
+  80    out += text(colX(0) - 56, 41, 'Übertrag', 'sm mu');
+  81    return svg(520, 215, out, `Binär addieren: ${toBin(a)} plus ${toBin(b)} ergibt ${toBin(sum)}`);
+  82  }
+  83  
+  84  /** Hex-Zahl als Stellenwerte: 2F = 2 × 16 + 15 × 1. */
+  85  export function hexPlaceDiagram(hex = '2F') {
+  86    const [hi, lo] = hex.split('');
+  87    const hv = HEX.indexOf(hi), lv = HEX.indexOf(lo);
+  88    let out = '';
+  89    out += rect(60, 50, 150, 100, 'box') + text(135, 40, 'Sechzehner', 'sm mu') + text(135, 108, hi, 'lg mono') + text(135, 134, `= ${hv}`, 'sm mono mu');
+  90    out += rect(310, 50, 150, 100, 'hi') + text(385, 40, 'Einer', 'sm mu') + text(385, 108, lo, 'lg mono on-sun') + text(385, 134, `= ${lv}`, 'sm mono on-sun');
+  91    out += text(260, 108, '+', 'lg');
+  92    out += text(135, 176, `${hv} × 16 = ${hv * 16}`, 'md mono') + text(385, 176, `${lv} × 1 = ${lv}`, 'md mono');
+  93    out += text(260, 214, `${hex} = ${hv * 16} + ${lv} = ${hv * 16 + lv}`, 'lg mono');
+  94    return svg(520, 230, out, `Die Hex-Zahl ${hex} besteht aus ${hv} mal 16 plus ${lv} mal 1 und ist ${hv * 16 + lv}`);
+  95  }
+  96  
+  97  /** Acht Bits werden zu zwei Vierergruppen und zwei Hex-Ziffern. */
+  98  export function nibbleDiagram(bits = [1, 1, 0, 1, 0, 1, 1, 0]) {
+  99    let out = '';
+ 100    bits.forEach((b, i) => {
+ 101      const x = 50 + i * 52 + (i > 3 ? 36 : 0);
+ 102      out += rect(x - 20, 40, 40, 44, b ? 'hi' : 'off', 8) + text(x, 70, String(b), `md mono ${b ? 'on-sun' : 'mu'}`);
+ 103    });
+ 104    const groups = [bits.slice(0, 4), bits.slice(4)];
+ 105    groups.forEach((g, gi) => {
+ 106      const x1 = 50 + gi * (4 * 52 + 36) - 20, x2 = x1 + 4 * 52 - 12;
+ 107      const v = parseInt(g.join(''), 2), cx = (x1 + x2) / 2;
+ 108      out += path(`M${x1} 96 L${x1} 106 L${x2} 106 L${x2} 96`);
+ 109      out += text(cx, 126, `${g.join('')} = ${v}`, 'md mono');
+ 110      out += arrow(cx, 134, cx, 168);
+ 111      out += rect(cx - 28, 174, 56, 56, 'acc', 12) + text(cx, 214, HEX[v], 'lg mono on-acc');
+ 112    });
+ 113    out += text(260, 20, 'Von rechts in Vierergruppen schneiden', 'sm mu');
+ 114    return svg(520, 246, out, `Acht Bits werden in zwei Vierergruppen geteilt und zu den Hex-Ziffern ${HEX[parseInt(groups[0].join(''), 2)]} und ${HEX[parseInt(groups[1].join(''), 2)]}`);
+ 115  }

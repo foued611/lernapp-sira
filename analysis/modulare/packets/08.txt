@@ -1,0 +1,165 @@
+Knoten: mathe.test.js
+Id: tests/mathe.test.js
+Art: module
+Datei: tests/mathe.test.js
+Zeilen: 150
+
+Ausgehend (dieser Knoten nutzt):
+  call -> apps/mathe/math.js
+  call -> apps/mathe/builders.js
+  call -> tests/helpers.js
+
+Eingehend (diese Knoten nutzen ihn):
+  keine
+
+Quelltext (erste 150 Zeilen, Zugangsdaten maskiert):
+   1  import { test } from 'node:test';
+   2  import assert from 'node:assert/strict';
+   3  import { fmt, par, numCheck, termCheck, probCheck, linear, nearby } from '../apps/mathe/math.js';
+   4  import { POOLS, init } from '../apps/mathe/builders.js';
+   5  import { diskSource } from './helpers.js';
+   6  
+   7  // Die Erzeuger bekommen Seiten und Aufgabendaten wie im Browser aus content/mathe/.
+   8  { const bundle = await diskSource().load('mathe'); init({ data: bundle.data, manifest: bundle.manifest }); }
+   9  
+  10  test('Zahlen werden mit Minuszeichen und Komma ausgegeben', () => {
+  11    assert.equal(fmt(-3.5), '−3,5');
+  12    assert.equal(par(-2), '(−2)');
+  13    assert.equal(par(4), '4');
+  14  });
+  15  
+  16  test('Zahlenprüfer akzeptiert Komma, Punkt, Minusvarianten und Einheiten', () => {
+  17    const c = numCheck(-2.5);
+  18    for (const v of ['-2,5', '-2.5', '−2,5', ' -2,5 ']) assert.equal(c(v), 'ok', v);
+  19    assert.equal(numCheck(30)('30 €'), 'ok');
+  20    assert.equal(numCheck(30)('3'), 'bad');
+  21    assert.equal(numCheck(0)(''), 'bad');
+  22  });
+  23  
+  24  test('Termprüfer ignoriert Leerzeichen und Malpunkt', () => {
+  25    assert.equal(termCheck('4x + 12')('4x+12'), 'ok');
+  26    assert.equal(termCheck('4x + 12')('4 x + 12'), 'ok');
+  27    assert.equal(termCheck('4x + 12')('4x + 21'), 'bad');
+  28    assert.equal(termCheck(linear(-1, 13))('-x+13'), 'ok');
+  29  });
+  30  
+  31  test('linear schreibt Terme ohne überflüssige Teile', () => {
+  32    assert.equal(linear(1, 0), 'x');
+  33    assert.equal(linear(-1, 5), '−x + 5');
+  34    assert.equal(linear(3, -2), '3x − 2');
+  35    assert.equal(linear(0, 7), '7');
+  36  });
+  37  
+  38  test('nearby liefert drei verschiedene falsche Zahlen', () => {
+  39    for (let i = 0; i < 50; i++) {
+  40      const r = nearby(i - 25, [i, i - 25, i - 25]);
+  41      assert.equal(new Set(r).size, 3);
+  42      assert.ok(!r.includes(i - 25));
+  43    }
+  44  });
+  45  
+  46  test('jede Aufgabe: Antwort stimmt, Prüfer erkennt sie', () => {
+  47    for (const [unit, pool] of Object.entries(POOLS)) {
+  48      for (let i = 0; i < 300; i++) for (const gen of pool) {
+  49        const it = gen();
+  50        if (it.numeric) assert.equal(numCheck(it.value)(it.answer), 'ok', `${unit}: ${it.prompt} -> ${it.answer}`);
+  51        else if (!it.choiceOnly) assert.equal(termCheck(it.answer)(it.answer), 'ok', `${unit}: ${it.prompt}`);
+  52      }
+  53    }
+  54  });
+  55  
+  56  test('Rechenaufgaben: Ergebnis wird unabhängig nachgerechnet', () => {
+  57    const val = (s) => Number(s.replace(/−/g, '-').replace(',', '.'));
+  58    for (let i = 0; i < 300; i++) {
+  59      const it = POOLS.vorzeichen[0]();
+  60      const m = it.prompt.match(/^(\S+) ([+−]) (\(?\S+?\)?)$/);
+  61      const a = val(m[1]), b = val(m[3].replace(/[()]/g, ''));
+  62      assert.equal(val(it.answer), m[2] === '+' ? a + b : a - b, it.prompt);
+  63    }
+  64    for (let i = 0; i < 300; i++) {
+  65      const it = POOLS.gleichungen[0]();
+  66      const [l, r] = it.prompt.split(' = ');
+  67      const x = val(it.answer);
+  68      const m = l.match(/^(\d+)x(?: ([+−]) (\d+))?$/);
+  69      const b = m[3] ? (m[2] === '+' ? 1 : -1) * Number(m[3]) : 0;
+  70      assert.equal(Number(m[1]) * x + b, val(r), it.prompt);
+  71    }
+  72  });
+  73  
+  74  test('Zinsen und Dreisatz: Ergebnis wird unabhängig nachgerechnet', () => {
+  75    const val = (s) => Number(s.replace(/−/g, '-').replace(',', '.'));
+  76    const nums = (s) => (s.replace(/\d+\.\d+|\d{1,3}(?:\.\d{3})+/g, (m) => m.replace('.', '')).match(/\d+(?:,\d+)?/g) || []).map((n) => Number(n.replace(',', '.')));
+  77    for (let i = 0; i < 300; i++) {
+  78      const [zinsen,, , monate] = POOLS.zinsen;
+  79      const z = zinsen();
+  80      const [k, p] = nums(z.prompt);
+  81      assert.equal(val(z.answer), k * p / 100, z.prompt);
+  82      const m = monate();
+  83      const [k2, mo, p2] = nums(m.prompt);
+  84      assert.equal(val(m.answer), k2 * p2 / 100 * mo / 12, m.prompt);
+  85      const [prop, anti] = POOLS.zuordnungen;
+  86      const a = prop();
+  87      const [n1, p1, n2] = nums(a.prompt);
+  88      assert.equal(val(a.answer), (p1 / n1) * n2, a.prompt);
+  89      const b = anti();
+  90      const [w1, d, w2] = nums(b.prompt);
+  91      assert.equal(val(b.answer), (w1 * d) / w2, b.prompt);
+  92    }
+  93  });
+  94  
+  95  test('Daten und Zufall: Ergebnisse unabhängig nachgerechnet', () => {
+  96    const val = (s) => Number(s.replace(/−/g, '-').replace(',', '.'));
+  97    const ints = (s) => (s.split(': ')[1] || '').split(', ').map(Number);
+  98    const [mw, med, span, mod] = POOLS.daten;
+  99    for (let i = 0; i < 300; i++) {
+ 100      let it = mw(), xs = ints(it.prompt);
+ 101      assert.equal(val(it.answer), xs.reduce((a, b) => a + b, 0) / xs.length, it.prompt);
+ 102      it = med(); xs = ints(it.prompt);
+ 103      assert.equal(val(it.answer), [...xs].sort((a, b) => a - b)[(xs.length - 1) / 2], it.prompt);
+ 104      it = span(); xs = it.prompt.split('? ')[1].split(', ').map(Number);
+ 105      assert.equal(val(it.answer), Math.max(...xs) - Math.min(...xs), it.prompt);
+ 106      it = mod(); xs = it.prompt.split('? ')[1].split(', ').map(Number);
+ 107      const counts = xs.reduce((m, v) => ((m[v] = (m[v] || 0) + 1), m), {});
+ 108      const top = Math.max(...Object.values(counts));
+ 109      assert.deepEqual(Object.keys(counts).filter((k) => counts[k] === top), [String(val(it.answer))], it.prompt);
+ 110    }
+ 111  });
+ 112  
+ 113  test('Wahrscheinlichkeiten: Prüfer akzeptiert Bruch, Dezimalzahl und Prozent', () => {
+ 114    const c = probCheck(0.25);
+ 115    for (const v of ['1/4', '2/8', '0,25', '0.25', '25 %', '25%']) assert.equal(c(v), 'ok', v);
+ 116    for (const v of ['1/3', '25', '', '1/0']) assert.equal(c(v), 'bad', v);
+ 117    for (let i = 0; i < 300; i++) for (const gen of POOLS.zufall) {
+ 118      const it = gen();
+ 119      assert.equal(it.check(it.answer), 'ok', it.prompt);
+ 120      assert.ok(it.value > 0 && it.value <= 1, it.prompt);
+ 121      assert.ok(!it.wrong.includes(it.answer));
+ 122    }
+ 123  });
+ 124  
+ 125  test('Zinseszins, Ausklammern, Aufstellen und Lösungsanzahl stimmen', () => {
+ 126    const val = (s) => Number(s.replace(/−/g, '-').replace(',', '.'));
+ 127    const [, , , , zz] = POOLS.zinsen;
+ 128    const [, , , , aus] = POOLS.terme;
+ 129    const [, , , auf, anz] = POOLS.gleichungen;
+ 130    for (let i = 0; i < 300; i++) {
+ 131      const z = zz();
+ 132      const [k, n, p] = [z.prompt.match(/^(\d+) €/)[1], z.prompt.match(/(\d+) Jahre/)[1], z.prompt.match(/zu (\d+) %/)[1]].map(Number);
+ 133      assert.ok(Math.abs(val(z.answer) - k * (1 + p / 100) ** n) < 1e-6, z.prompt);
+ 134      const a = aus();
+ 135      const m = a.prompt.match(/: (\d+)x \+ (\d+)$/), r = a.answer.match(/^(\d+) · \((\d+)x \+ (\d+)\)$/);
+ 136      assert.equal(Number(r[1]) * Number(r[2]), Number(m[1]));
+ 137      assert.equal(Number(r[1]) * Number(r[3]), Number(m[2]));
+ 138      const q = auf();
+ 139      const [, k2, c2, r2] = q.answer.match(/^(\d+)x \+ (\d+) = (\d+)$/).map(Number);
+ 140      assert.ok((r2 - c2) % k2 === 0, q.prompt);
+ 141      const l = anz();
+ 142      assert.ok(['keine Lösung', 'genau eine Lösung', 'unendlich viele Lösungen'].includes(l.answer));
+ 143    }
+ 144  });
+ 145  
+ 146  test('Kredit und Tilgung: Ergebnis wird unabhängig nachgerechnet', () => {
+ 147    const val = (s) => Number(s.replace(/−/g, '-').replace(',', '.').replace(/\.(?=\d{3}\b)/g, ''));
+ 148    const nums = (s) => (s.replace(/\d+\.\d{3}\b/g, (m) => m.replace('.', '')).match(/\d+(?:,\d+)?/g) || []).map((n) => Number(n.replace(',', '.')));
+ 149    const [zins, rate, rest, zweites, laufzeit] = POOLS.kredit;
+ 150    for (let i = 0; i < 300; i++) {
