@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- SEC-004: nur eigene Skripte, keine Objekte, keine Drittquellen. Stile bleiben inline erlaubt. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; object-src 'none'; img-src 'self' data:; base-uri 'self'; form-action 'none'" />
+    <title>Lernwerkstatt</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="./seiten/main.js"></script>
+  </body>
+</html>

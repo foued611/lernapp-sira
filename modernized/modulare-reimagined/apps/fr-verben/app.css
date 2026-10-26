@@ -1,0 +1,51 @@
+/* Nur für das Cahier de Verbes: Konjugationstabelle, Sprachausgabe, Beispielsätze.
+   Farben nur aus den Tokens in seiten/tokens.css (AGENTS.md, Design). */
+.conj-controls { display: grid; gap: var(--space-1); margin: 0 0 var(--space-2); }
+.conj-card { display: grid; gap: var(--space-2); }
+
+.conj { width: 100%; border-collapse: collapse; }
+.conj th, .conj td {
+  padding: 9px 6px;
+  border-bottom: 1.5px dashed var(--color-border);
+  vertical-align: middle;
+  text-align: left;
+}
+.conj tr:last-child > * { border-bottom: 0; }
+.conj .pr { color: var(--color-muted); width: 34%; text-align: right; padding-right: 10px; font-size: 15px; font-weight: 400; }
+.conj .fm { font-size: 24px; font-weight: 600; min-width: 130px; }
+.conj .fm.hid .val { display: none; }
+.conj .third { color: var(--color-muted); font-size: 14px; }
+.conj .sp { width: 44px; text-align: right; }
+.conj .stem { font-weight: 600; }
+.conj .end { background: linear-gradient(transparent 50%, var(--color-note) 50%); }
+.conj-note { font-size: 13px; margin: 8px 0 0; }
+
+.say {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  color: var(--color-text);
+  padding: 4px;
+  min-width: 44px;
+  min-height: 44px;
+}
+.say .ic { width: 24px; height: 24px; fill: currentColor; }
+
+.ex { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.ex li {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+  border-bottom: 1.5px dashed var(--color-border);
+  padding-bottom: 8px;
+}
+.ex li:last-child { border-bottom: 0; padding-bottom: 0; }
+.ex .fr { font-size: 18px; font-weight: 500; }
+.ex .de { font-size: 13px; color: var(--color-muted); }
+.ex .mk { color: var(--color-accent); font-weight: 700; }
+
+@media (max-width: 520px) {
+  .conj .third { display: none; }
+  .conj .pr { width: 30%; }
+}

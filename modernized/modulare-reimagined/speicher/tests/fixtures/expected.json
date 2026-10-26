@@ -1,0 +1,33 @@
+{
+  "profile": {
+    "name": "Testkind",
+    "xp": 120,
+    "streak": 3,
+    "lastDay": "2026-10-25",
+    "lastApp": "mathe",
+    "day": {
+      "d": "2026-10-25",
+      "xp": 40
+    }
+  },
+  "app": {
+    "xp": 120,
+    "stars": {
+      "mathe-1": 3,
+      "mathe-2": 1
+    },
+    "badges": {
+      "perfekt": true
+    },
+    "best": {
+      "blitz": 12
+    },
+    "last": {
+      "mathe-1": "2026-10-24"
+    },
+    "acc": {
+      "mathe-1": 0.9
+    }
+  },
+  "logCount": 2
+}

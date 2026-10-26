@@ -1,0 +1,335 @@
+/* Stil der Seiten. Nur Tokens aus tokens.css, keine festen Farbwerte (AGENTS.md, Design). */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-size: var(--font-size-base);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+.seiten {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: var(--space-3);
+  display: grid;
+  /* minmax(0, 1fr): die Spalte wächst nicht über die Breite des Fensters (375 px ohne Scrollen). */
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-3);
+}
+
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  padding: var(--space-3);
+}
+
+.muted {
+  color: var(--color-muted);
+}
+
+.notice {
+  color: var(--color-text);
+  background: var(--color-warn-soft);
+  border: 1px solid var(--color-warn);
+  border-radius: var(--radius-control);
+  padding: var(--space-2);
+  margin: 0;
+}
+
+.notice-card h1 {
+  margin-top: 0;
+}
+
+/* Knöpfe und Links sind mindestens 44 px hoch (Berührungsziele). */
+.btn,
+button,
+.link {
+  min-height: var(--touch-min);
+  min-width: var(--touch-min);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-control);
+  font: inherit;
+  cursor: pointer;
+}
+
+.btn,
+button.btn {
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+  border: 2px solid var(--color-accent);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.btn.ghost,
+button.ghost {
+  background: transparent;
+  color: var(--color-text);
+  border: 2px solid var(--color-border);
+}
+
+.btn:disabled,
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+}
+
+.chip[aria-pressed="true"] {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.tiles {
+  display: grid;
+  gap: var(--space-2);
+  grid-template-columns: repeat(auto-fill, minmax(min(240px, 100%), 1fr));
+}
+
+.tile {
+  display: grid;
+  gap: var(--space-1);
+  color: inherit;
+  text-decoration: none;
+}
+
+.tile.soon,
+.tile.error {
+  opacity: 0.95;
+}
+
+.tag {
+  font-size: 0.85em;
+  color: var(--color-muted);
+}
+
+.pill {
+  justify-self: start;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 0 var(--space-1);
+}
+
+.boss.locked {
+  color: var(--color-warn);
+}
+
+.boss.open {
+  color: var(--color-ok);
+}
+
+.progress-track {
+  height: 10px;
+  background: var(--color-track);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-fill,
+.goal-bar i {
+  display: block;
+  height: 100%;
+  background: var(--color-fill);
+}
+
+.goal-bar {
+  height: 10px;
+  background: var(--color-track);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.stars-row {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.stars .ic {
+  width: 18px;
+  height: 18px;
+  fill: var(--color-star-off);
+}
+
+.stars .ic.on {
+  fill: var(--color-star-on);
+}
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-4);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.units {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: var(--space-2);
+}
+
+.unit-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  align-items: center;
+  justify-content: space-between;
+}
+
+.play .opts {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.opt {
+  text-align: left;
+  background: var(--color-surface);
+  color: var(--color-text);
+  border: 2px solid var(--color-border);
+}
+
+.prompt {
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
+.verdict {
+  font-weight: 700;
+}
+
+.hint {
+  color: var(--color-muted);
+  font-size: 0.9em;
+  margin: 0;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+.name {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+}
+
+.name input,
+.typed input,
+.file-pick input {
+  min-height: var(--touch-min);
+  padding: var(--space-1);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-control);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font: inherit;
+}
+
+.res .facts {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.fact b {
+  font-size: 1.4em;
+  display: block;
+}
+
+.badge {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-control);
+  padding: var(--space-1) var(--space-2);
+}
+
+.badge.got {
+  border-color: var(--color-ok);
+}
+
+.acts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.confetti {
+  pointer-events: none;
+}
+
+/* Sichtbarer Fokus für Tastatur. Der Rahmen ist dicker als der Standard, damit er auf jedem Hintergrund erkennbar bleibt. */
+:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* Bewegung abschalten, wenn das System es verlangt (AGENTS.md). */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .confetti {
+    display: none;
+  }
+}
+
+/* Die Dateiauswahl hat eine eigene Mindestbreite; sie bleibt im Fenster (375 px ohne Scrollen). */
+.file-pick {
+  display: block;
+  max-width: 100%;
+}
+
+.file-pick input[type='file'] {
+  max-width: 100%;
+}
+
+/* Untertitel einer Frage, z. B. "Setze das richtige Wort ein." */
+.play .sub {
+  margin: 0 0 6px;
+  color: var(--color-muted);
+  font-size: 15px;
+}
+
+/* Zuordnung: zwei Spalten, auf schmalen Breiten untereinander. */
+.match {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-2);
+}
+.match-col { display: grid; gap: var(--space-2); align-content: start; }
+@media (max-width: 520px) {
+  .match { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* Spickzettel: Hilfetext der Frage, mit Tokens statt festen Farben. */
+.cheat-sheet {
+  background: var(--color-note);
+  color: var(--color-text);
+  border-radius: var(--radius-control);
+  padding: var(--space-2);
+  font-size: 15px;
+}

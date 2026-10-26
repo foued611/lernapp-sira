@@ -1,0 +1,22 @@
+{
+  "name": "modulare-reimagined",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test 'regeln/**/*.test.js' 'helfer/**/*.test.js' 'speicher/**/*.test.js' 'inhalte/**/*.test.js' 'runde/**/*.test.js' 'komponenten/**/*.test.js' 'seiten/**/*.test.js' 'apps/**/*.test.js'",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "prebuild": "rm -rf public/content && mkdir -p public && cp -R ../../content public/content"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.1.2",
+    "ajv": "^8.20.0",
+    "fake-indexeddb": "^6.2.6",
+    "vite": "^8.3.5"
+  },
+  "dependencies": {
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  }
+}
