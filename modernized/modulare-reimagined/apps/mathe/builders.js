@@ -7,7 +7,7 @@
 //   numeric     Antwort ist eine Zahl, geprüft mit numCheck(value)
 //   check       eigener Prüfer (Brüche und Wahrscheinlichkeiten)
 //   choiceOnly  nur Auswahl, kein Eintippen
-import { choiceQuestion, typedQuestion, esc } from '../../runde/index.js';
+import { choiceQuestion, typedQuestion, esc, distinctSlots } from '../../runde/index.js';
 import { pick, shuffle, rnd, fmt, nearby, numCheck, probCheck, MINUS } from '../../helfer/index.js';
 import { par, linear, frac, termCheck } from './math.js';
 
@@ -350,16 +350,17 @@ const canType = (item) => !item.choiceOnly;
 
 /** 8 Fragen, jede dritte zum Eintippen. */
 export function lessonRound(unit, rng) {
-  return Array.from({ length: 8 }, (_, i) => {
-    const item = make(unit.id, rng);
-    return i % 3 === 2 && canType(item) ? typed(item) : choice(item, rng);
+  // Jeder Platz wird neu gewürfelt, solange er eine schon gezeigte Aufgabe liefert (runde/src/vielfalt.js).
+  return distinctSlots(8, rng, (i, r) => {
+    const item = make(unit.id, r);
+    return i % 3 === 2 && canType(item) ? typed(item) : choice(item, r);
   });
 }
 
 const anyItem = (rng) => make(pick(UNITS, rng).id, rng);
-export const quickRound = (rng) => Array.from({ length: 5 }, () => choice(anyItem(rng), rng));
+export const quickRound = (rng) => distinctSlots(5, rng, (_, r) => choice(anyItem(r), r));
 export const blitzQuestion = (rng) => choice(anyItem(rng), rng);
-export const bossRound = (rng) => Array.from({ length: 12 }, (_, i) => {
-  const item = make(UNITS[i % UNITS.length].id, rng);
-  return i % 4 === 3 && canType(item) ? typed(item) : choice(item, rng);
+export const bossRound = (rng) => distinctSlots(12, rng, (i, r) => {
+  const item = make(UNITS[i % UNITS.length].id, r);
+  return i % 4 === 3 && canType(item) ? typed(item) : choice(item, r);
 });

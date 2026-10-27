@@ -3,6 +3,7 @@
 // (blitz.js:76-82). Hier steht dafür timeLeft() und over() bereit.
 import { comboMultiplier } from '../../regeln/index.js';
 import { BLITZ_SECONDS, XP } from './rules.js';
+import { questionKey } from './vielfalt.js';
 
 /**
  * @param {object} o
@@ -15,10 +16,18 @@ export function createBlitz({ nextQuestion, now, seconds = BLITZ_SECONDS }) {
   if (typeof now !== 'function') throw new TypeError('now ist Pflicht');
   if (!(seconds > 0)) throw new RangeError(`seconds muss positiv sein: ${seconds}`);
 
+  // Vielfalt: eine Frage, die in diesem Blitz schon kam, wird möglichst nicht wiederholt. Nach 40 Versuchen
+  // (Wertebereich erschöpft) kommt sie trotzdem, damit der Blitz weiterläuft.
+  const shown = new Set();
   const nextChoice = () => {
-    const q = nextQuestion();
-    // Der Blitz kennt nur Auswahlfragen (blitz.js:11).
-    if (!q || q.kind !== 'choice') throw new TypeError('Der Blitz braucht Auswahlfragen (kind choice)');
+    let q = null;
+    for (let t = 0; t < 40; t++) {
+      q = nextQuestion();
+      // Der Blitz kennt nur Auswahlfragen (blitz.js:11).
+      if (!q || q.kind !== 'choice') throw new TypeError('Der Blitz braucht Auswahlfragen (kind choice)');
+      if (!shown.has(questionKey(q))) break;
+    }
+    shown.add(questionKey(q));
     return q;
   };
 
