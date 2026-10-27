@@ -4,6 +4,9 @@
 /** Tagesziel in XP (profile.js:5). */
 export const DAILY_GOAL_XP = 30;
 
+/** Tagesziele, aus denen die Lernenden wählen. Alles andere im Profil gilt als nicht gesetzt (dailyGoal). */
+export const GOAL_CHOICES = Object.freeze([20, 30, 50]);
+
 /** Nach so vielen Tagen ohne Übung ist eine Seite zum Auffrischen fällig (profile.js:12). */
 export const DUE_DAYS = 3;
 

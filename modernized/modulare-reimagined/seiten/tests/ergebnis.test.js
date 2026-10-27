@@ -80,3 +80,12 @@ test('SEITE-A11Y Die Standardwörter bleiben, wenn eine App nichts überschreibt
   assert.equal(DEFAULT_WORDS.resultTitles.length, 3);
   assert.equal(wordsFor({}).resultTitles[0], 'Geschafft!');
 });
+
+test('SEITE-WOCHENZIEL Die Ergebnisansicht rechnet mit dem gewählten Tagesziel', () => {
+  const result = model({}, { goal: 50, day: { d: DAY, xp: 20 } });
+  assert.equal(result.daily.goal, 50);
+  assert.equal(result.daily.reached, false);
+  const markup = renderToStaticMarkup(h(Ergebnis, { model: result, onAction: () => {} }));
+  assert.match(markup, /Tagesziel: noch 30 XP/);
+  assert.equal(model({}, { goal: 20, day: { d: DAY, xp: 20 } }).daily.reached, true);
+});

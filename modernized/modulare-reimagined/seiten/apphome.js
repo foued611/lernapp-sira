@@ -2,7 +2,7 @@
 // Zurücksetzen. Das Markup folgt legacy/modulare/core/js/views/home.js (Pixelparität, analysis/modulare/PARITAET.md).
 // Die Entscheidungen (Empfehlung, Endgegner offen) kommen von außen, damit es keinen Import-Kreis mit rahmen.js gibt.
 import { createElement, useState } from 'react';
-import { DAILY_GOAL_XP, REFRESH_BONUS_XP, currentStreak, dailyXP, isRefreshDue, levelOf, levelThreshold } from '../regeln/index.js';
+import { DAILY_GOAL_XP, REFRESH_BONUS_XP, currentStreak, dailyGoal, dailyXP, isRefreshDue, levelOf, levelThreshold } from '../regeln/index.js';
 import { LEVEL_TITLES } from './ergebnis.js';
 import { doneUnits, starsOf } from '../komponenten/ui.js';
 import { Mascot } from '../komponenten/mascot.js';
@@ -22,10 +22,10 @@ const START_LINES = Object.freeze([
 ]);
 const dayIndex = (day) => [...String(day)].reduce((sum, ch) => sum + ch.charCodeAt(0), 0);
 
-export function minouOf(xp, day) {
-  if (xp >= DAILY_GOAL_XP) return 'Tagesziel geschafft. Alles ab jetzt ist Bonus.';
+export function minouOf(xp, day, goal = DAILY_GOAL_XP) {
+  if (xp >= goal) return 'Tagesziel geschafft. Alles ab jetzt ist Bonus.';
   if (xp === 0) return START_LINES[dayIndex(day) % START_LINES.length];
-  return `Noch ${DAILY_GOAL_XP - xp} XP bis zum Tagesziel. Das ist ungefähr eine Runde.`;
+  return `Noch ${goal - xp} XP bis zum Tagesziel. Das ist ungefähr eine Runde.`;
 }
 
 // Die Sterne einer Seite, wie legacy home.js:8-9: sichtbar als Symbole, dazu der Text für Screenreader.
@@ -38,16 +38,16 @@ function Stars({ n }) {
 }
 
 // Der Ring mit dem Tagesstand. Gleiche Maße wie in Legacy (viewBox 76, Radius 32).
-function Ring({ xp }) {
+function Ring({ xp, goal }) {
   const C = 2 * Math.PI * 32;
-  const ratio = Math.min(1, xp / DAILY_GOAL_XP);
+  const ratio = Math.min(1, xp / goal);
   return h(
     'div',
-    { className: 'ring', role: 'img', 'aria-label': `Tagesziel ${Math.min(xp, DAILY_GOAL_XP)} von ${DAILY_GOAL_XP} XP` },
+    { className: 'ring', role: 'img', 'aria-label': `Tagesziel ${Math.min(xp, goal)} von ${goal} XP` },
     h('svg', { viewBox: '0 0 76 76' },
       h('circle', { className: 't', cx: 38, cy: 38, r: 32, fill: 'none', strokeWidth: 8 }),
       h('circle', { className: 'p', cx: 38, cy: 38, r: 32, fill: 'none', strokeWidth: 8, strokeLinecap: 'round', strokeDasharray: C.toFixed(1), strokeDashoffset: (C * (1 - ratio)).toFixed(1) })),
-    h('b', { style: { display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' } }, String(Math.min(xp, DAILY_GOAL_XP)), h('small', { style: { display: 'block', lineHeight: 1, fontSize: '11px', fontWeight: 600 } }, `/ ${DAILY_GOAL_XP}`))
+    h('b', { style: { display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' } }, String(Math.min(xp, goal)), h('small', { style: { display: 'block', lineHeight: 1, fontSize: '11px', fontWeight: 600 } }, `/ ${goal}`))
   );
 }
 
@@ -78,6 +78,7 @@ export function AppHome({ config, app, profile, day, rec, open, notice, storeMes
   const units = config.units;
   const done = doneUnits(app.stars, units.map((u) => u.id));
   const x = dailyXP(profile, day);
+  const goal = dailyGoal(profile);
   const masked = maskName(profile.name);
   const greeting = `${config.greeting || 'Hallo'}${masked ? `, ${masked}` : ''} !`;
   const bossHasRounds = Boolean(config.rounds && typeof config.rounds.boss === 'function');
@@ -94,15 +95,15 @@ export function AppHome({ config, app, profile, day, rec, open, notice, storeMes
       { className: 'card hero' },
       h('div', { className: 'row1' }, h(Mascot, { mood: 'happy' }), h('div', null,
         h('h1', null, greeting),
-        h('div', { className: 'bubble', style: { marginTop: '10px' } }, minouOf(x, day)))),
+        h('div', { className: 'bubble', style: { marginTop: '10px' } }, minouOf(x, day, goal)))),
       !profile.name && profileStore ? h(NameForm, { onSave: onName }) : null,
       h(
         'div',
         { className: 'goalbox' },
-        h(Ring, { xp: x }),
+        h(Ring, { xp: x, goal }),
         h('p', null,
-          h('strong', null, `Tagesziel: ${DAILY_GOAL_XP} XP`),
-          ` ${x >= DAILY_GOAL_XP ? 'Geschafft. Du bist heute fertig.' : 'Eine kurze Runde bringt dich nah ran.'}`,
+          h('strong', null, `Tagesziel: ${goal} XP`),
+          ` ${x >= goal ? 'Geschafft. Du bist heute fertig.' : 'Eine kurze Runde bringt dich nah ran.'}`,
           // Das Tagesziel zählt XP aus allen Apps. Der Seitenstand gilt nur für diese App, deshalb getrennt.
           h('span', { style: { display: 'block', marginTop: '4px' } }, `In dieser App: ${done} von ${units.length} Seiten geschafft.`)),
         config.rounds && typeof config.rounds.quick === 'function'
