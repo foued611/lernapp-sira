@@ -168,10 +168,18 @@ Die früheren Werte von 2 bis 4 % (Deutsch, Mathe, Geometrie) waren ein Messfehl
 
 Restabweichung unter 0,2 % sind Kanten der Schrift (Antialiasing), keine Abweichung im Layout.
 
-### Entscheidung Namenshinweis
+### Entscheidung Namenshinweis (Entscheidung der Person)
 
-- Der Hinweis "Die Datei enthält deinen Namen." bleibt im Neubau. Er ist Teil von SEC-007 (Name steht in der Datei, muss sichtbar gesagt werden) und steht bereits in der Sicherung. Legacy hat ihn nicht. Das ist eine bewusste Abweichung aus Datenschutzgründen, keine Layout-Abweichung. Rückgängig machen: Zeile `sicherung.js` mit `NAME_IN_FILE` entfernen und die beiden Tests in `seiten/tests/sicherung.test.js` anpassen.
+- Die Person hat entschieden: Der Hinweis "Die Datei enthält deinen Namen." bleibt im Neubau. Begründung: SEC-007 (der Name steht in der Datei, das muss sichtbar gesagt werden). Legacy hat ihn nicht. Bewusste Abweichung aus Datenschutzgründen, keine Layout-Abweichung. Rückgängig machen wäre: Zeile `sicherung.js` mit `NAME_IN_FILE` entfernen und die beiden Tests in `seiten/tests/sicherung.test.js` anpassen.
+- Sicherung: Der Bestätigungsschritt beim Einspielen (Legacy ohne) ist die von der Person freigegebene Abweichung "Sicherung mit Bestätigung".
 
 ### Pixel-Abnahme Runde und Ergebnis
 
-- Die Spielinhalte sind zufällig. Verglichen wurden Struktur, Höhen und Ablauf (Durchspiel oben), nicht Pixel.
+- Die Spielinhalte sind zufällig. Verglichen wurden Struktur, Höhen und Ablauf (Durchspiel oben), nicht Pixel. Entscheidung der Person: Strukturell reicht für die Abnahme. Das Ergebnis-Layout wurde für Französisch schon pixelgenau gemessen (116a9d3).
+
+## Abnahme-Status (Umbau)
+
+- Abgenommen: Startseite, App-Startseite, Theorie (alle 44 Seiten unter 0,2 %), Runde und Ergebnis (strukturell, Entscheidung der Person), Blitz (Durchspiel ohne Fehler), Sicherung (Rundlauf, Bestätigung als freigegebene Abweichung).
+- Entscheidungen der Person: Namenshinweis bleibt (SEC-007). Runde und Ergebnis strukturell abgenommen.
+- Bewusste Abweichungen (freigegeben): RULE-075, RULE-056, RULE-202, maskierter Name, Bestätigungsschritt beim Einspielen.
+- Offen: nichts aus den Abnahmepunkten. Die Legacy-Entfernung von `main` ist nicht freigegeben und bleibt eine eigene Entscheidung.
