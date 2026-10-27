@@ -1,7 +1,7 @@
 // Tests für die Wochenmissionen: Zählen, Wochenwechsel am Montag, Grenze 90 %, jede Mission nur einmal.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { MISSIONS, missionProgress, recordMission } from '../src/missions.js';
+import { MISSIONS, missionProgress, migrateProfile, recordMission } from '../src/missions.js';
 
 // 2026-10-26 ist ein Montag, 2026-10-25 der Sonntag davor.
 const MONDAY = '2026-10-26';
@@ -135,3 +135,24 @@ test('Uhr zurückgestellt: ein Wochenblock mit späterem Montag bleibt, der Fort
   assert.deepEqual(profile.week.units, ['mathe/a', 'mathe/b']);
 });
 
+
+test('Umstellung auf Version 2: ein Wochenblock mit nackten Seiten-IDs wird verworfen, die Woche beginnt neu', () => {
+  const profile = { xp: 40, week: { start: MONDAY, units: ['a', 'b'], refreshes: 1, strong: 0, done: [] } };
+  migrateProfile(profile, 1);
+  assert.equal(profile.week, undefined);
+  assert.equal(profile.xp, 40, 'der Rest des Profils bleibt');
+});
+
+test('Umstellung auf Version 2: ein Wochenblock mit app/seite-Schlüsseln bleibt', () => {
+  const week = { start: MONDAY, units: ['mathe/a'], refreshes: 0, strong: 0, done: [] };
+  assert.deepEqual(migrateProfile({ week: { ...week } }, 1).week, week);
+});
+
+test('Umstellung läuft nur von Version 1, ein Block aus Version 2 wird nicht angerührt', () => {
+  const week = { start: MONDAY, units: ['a'], refreshes: 0, strong: 0, done: [] };
+  assert.deepEqual(migrateProfile({ week: { ...week } }, 2).week, week);
+});
+
+test('Ein Profil ohne Wochenblock bleibt bei der Umstellung ohne Block', () => {
+  assert.deepEqual(migrateProfile({ xp: 5 }, 1), { xp: 5 });
+});

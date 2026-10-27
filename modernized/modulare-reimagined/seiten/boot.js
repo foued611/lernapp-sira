@@ -3,7 +3,7 @@
 // Herkunft: legacy/modulare/core/js/boot.js und dashboard.js:9-16 (dort ohne Fehlerbehandlung).
 import { assertAppId, buildConfig, createStaticSource } from '../inhalte/index.js';
 import { openApp, openProfile, openStore } from '../speicher/index.js';
-import { evaluateTrophyRule } from '../regeln/index.js';
+import { PROFILE_VERSION, evaluateTrophyRule, migrateProfile } from '../regeln/index.js';
 import { appDefaults, dayOf, profileDefaults } from './rahmen.js';
 import { APPS, LIVE, validateRegistry } from './registry.js';
 
@@ -42,7 +42,7 @@ async function openSession(openStorage) {
   if (!handle) return { storage: unavailable(null, MSG.unavailable), profileStore: null };
   const memory = handle.backend === 'memory';
   try {
-    const profileStore = await openProfile(handle, profileDefaults());
+    const profileStore = await openProfile(handle, profileDefaults(), { version: PROFILE_VERSION, migrate: migrateProfile });
     if (profileStore.blocked) return { storage: unavailable(handle, profileStore.blocked.message), profileStore: null };
     return {
       storage: { handle, backend: handle.backend, status: memory ? 'memory' : 'ok', message: memory ? MSG.memory : null },
