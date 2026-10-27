@@ -56,8 +56,6 @@ export function validateRegistry(entries) {
   return errors;
 }
 
-export const liveApps = (entries) => entries.filter((entry) => entry.status === LIVE);
-
 /** Fächer in der Reihenfolge der Liste, ohne Dopplungen. Für die Auswahl auf der Startseite. */
 export const subjectsOf = (entries) => [...new Set(entries.map((entry) => entry.subject))];
 
