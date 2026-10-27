@@ -30,21 +30,24 @@ export function personDiagram(key, hi = []) {
 export function endingsDiagram(rows) {
   const parts = [];
   rows.forEach((row, r) => {
-    const y = 14 + r * 124;
-    parts.push(text(60, y + 12, row.inf, 'sm mu'), rect(8, y + 22, 104, 62, 'acc'), text(60, y + 62, `${row.stem}-`, 'lg on-acc'));
+    const y = 36 + r * 124;
+    // Die Grundform steht zentriert über der Zeile, damit sie nicht in die Endungen läuft.
+    parts.push(text(260, y - 12, row.inf, 'sm mu'), rect(8, y + 22, 104, 62, 'acc'), text(60, y + 62, `${row.stem}-`, 'lg on-acc'));
     row.ends.forEach((end, i) => {
       const x = 124 + i * 65;
       const quiet = (row.silent || []).includes(i);
       const label = SHORT[i].replace(' / elle / on', '').replace(' / elles', '');
+      // Lange Endungen (-issons) werden auf zwei Zeilen verteilt, sonst laufen sie über die Kästen.
+      const pieces = end && end.length > 4 ? [`-${end.slice(0, 3)}`, end.slice(3)] : [end ? `-${end}` : '–'];
       parts.push(
         text(x + 29, y + 12, label, 'sm mu'),
         rect(x, y + 22, 58, 62, quiet ? 'box-soft' : 'hi', 12),
-        text(x + 29, y + 62, end ? `-${end}` : '–', `${end.length > 3 ? 'sm' : 'md'} mono${quiet ? ' mu' : ' on-sun'}`)
+        ...pieces.map((p, k) => text(x + 29, y + 62 + (k - (pieces.length - 1) / 2) * 24, p, `${pieces.length > 1 || end.length > 3 ? 'sm' : 'md'} mono${quiet ? ' mu' : ' on-sun'}`))
       );
     });
   });
-  const height = rows.length * 124 + 18;
-  parts.push(text(260, height - 6, 'Grau: Diese Endung hörst du nicht, du musst sie aber schreiben.', 'sm mu'));
+  const height = rows.length * 124 + 62;
+  parts.push(text(260, height - 30, 'Grau: Diese Endung hörst du nicht,', 'sm mu'), text(260, height - 8, 'du musst sie aber schreiben.', 'sm mu'));
   const label = `Stamm und Endungen: ${rows.map((r) => `${r.inf} hat den Stamm ${r.stem} mit den Endungen ${r.ends.map((e) => e || 'keine').join(', ')}`).join('. ')}`;
-  return diagram(520, height + 8, label, parts);
+  return diagram(520, height, label, parts);
 }

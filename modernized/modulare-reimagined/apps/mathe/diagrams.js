@@ -128,15 +128,15 @@ export function urnDiagram(r = 3, b = 5) {
 
 /** Restschuld Jahr für Jahr: gleichbleibende Tilgung, Zinsen nur auf den Rest. Alle Zahlen werden berechnet. */
 export function kreditDiagram(k = 2000, t = 500, p = 4) {
-  const years = Math.min(Math.round(k / t), 5), W = 70, base = 150, top = 36;
+  const years = Math.min(Math.round(k / t), 5), W = 84, base = 150, top = 36;
   const parts = [];
   for (let i = 0; i < years; i++) {
-    const rest = k - i * t, h = Math.round((rest / k) * (base - top)), x = 30 + i * 96;
+    const rest = k - i * t, h = Math.round((rest / k) * (base - top)), x = 22 + i * 100;
     parts.push(rect(x, base - h, W, h, i === 0 ? 'hi' : 'box', 8));
     parts.push(text(x + W / 2, base - h + 24, `${fmt(rest)} €`, `sm mono${i === 0 ? ' on-sun' : ''}`));
-    parts.push(text(x + W / 2, base + 20, `Jahr ${i + 1}`, 'sm mu'));
-    parts.push(text(x + W / 2, base + 40, 'Zinsen', 'sm mu'), text(x + W / 2, base + 58, `${fmt(rest * p / 100)} €`, 'sm mono'));
+    parts.push(text(x + W / 2, base + 24, `Jahr ${i + 1}`, 'sm mu'));
+    parts.push(text(x + W / 2, base + 50, 'Zinsen', 'sm mu'), text(x + W / 2, base + 76, `${fmt(rest * p / 100)} €`, 'sm mono'));
   }
-  parts.push(text(260, 20, `Restschuld am Jahresanfang, Tilgung ${fmt(t)} € pro Jahr, Zinssatz ${p} %`, 'sm mu'));
-  return diagram(520, 218, `Kredit ${fmt(k)} Euro, jedes Jahr ${fmt(t)} Euro getilgt: Die Restschuld sinkt, darum sinken auch die Zinsen`, parts);
+  parts.push(text(260, 20, `Restschuld, Tilgung ${fmt(t)} €, Zins ${p} %`, 'sm mu'));
+  return diagram(520, 236, `Kredit ${fmt(k)} Euro, jedes Jahr ${fmt(t)} Euro getilgt: Die Restschuld sinkt, darum sinken auch die Zinsen`, parts);
 }
