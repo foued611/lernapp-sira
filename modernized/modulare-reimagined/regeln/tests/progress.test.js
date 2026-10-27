@@ -107,3 +107,19 @@ test('RULE-242: Ohne fällige oder schwache Seite gibt es keine Empfehlung', () 
   const app = { stars: { u1: 3 }, last: { u1: '2026-10-09' }, acc: { u1: 0.95 } };
   assert.equal(weakestUnit(app, units, '2026-10-10'), null);
 });
+
+test('Auffrischen: ab 90 % erst nach 7 Tagen fällig', () => {
+  const app = { stars: { a: 2 }, last: { a: '2026-10-20' }, acc: { a: 0.9 } };
+  assert.equal(isRefreshDue(app, 'a', '2026-10-26'), false); // 6 Tage
+  assert.equal(isRefreshDue(app, 'a', '2026-10-27'), true); // 7 Tage
+});
+
+test('Auffrischen: knapp unter 90 % bleibt bei 3 Tagen', () => {
+  const app = { stars: { a: 2 }, last: { a: '2026-10-24' }, acc: { a: 0.89 } };
+  assert.equal(isRefreshDue(app, 'a', '2026-10-27'), true);
+});
+
+test('Auffrischen: ohne Genauigkeit gilt weiter 3 Tage', () => {
+  const app = { stars: { a: 1 }, last: { a: '2026-10-24' } };
+  assert.equal(isRefreshDue(app, 'a', '2026-10-27'), true);
+});

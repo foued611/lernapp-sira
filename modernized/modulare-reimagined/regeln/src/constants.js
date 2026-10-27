@@ -8,6 +8,16 @@ export const DAILY_GOAL_XP = 30;
 export const DUE_DAYS = 3;
 
 /**
+ * Seiten, die zuletzt mit mindestens REFRESH_STRONG_ACCURACY gelöst wurden, sitzen fester:
+ * sie sind erst nach so vielen Tagen zum Auffrischen fällig (Spec Gamification: Lernwirkung,
+ * Auffrischen nach Genauigkeit). Ohne gespeicherte Genauigkeit gilt weiter DUE_DAYS.
+ */
+export const DUE_DAYS_STRONG = 7;
+
+/** Ab dieser letzten Genauigkeit gilt die längere Frist DUE_DAYS_STRONG (gleiche Schwelle wie 3 Sterne). */
+export const REFRESH_STRONG_ACCURACY = 0.9;
+
+/**
  * Höchstens so viele Kalendertage dürfen zwischen zwei Übungstagen liegen, damit die Serie
  * bleibt. Der eine ausgelassene Tag ist der Gnadentag (profile.js:39-41).
  */
