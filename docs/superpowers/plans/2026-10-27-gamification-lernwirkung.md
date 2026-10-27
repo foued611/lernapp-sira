@@ -466,3 +466,51 @@ Expected: Stationen lesbar, Ziel-Auswahl bedienbar per Tastatur, kein horizontal
 ## Execution Handoff
 
 Plan gespeichert unter `docs/superpowers/plans/2026-10-27-gamification-lernwirkung.md`. Bitte prüfen. Für die Ausführung empfehle ich den nativen Weg (`superpowers:executing-plans`), weil die Aufgaben über `regeln/` aufeinander aufbauen und die Schnittstellen eng sind. Welcher Weg?
+
+## Task 10: Fehler-Abruf (Spec 5.2)
+
+**Files:**
+- Modify: `runde/src/round.js` (jeder Versuch trägt `label`; Ergebnis liefert `missedLabels`)
+- Create: `runde/src/abruf.js` (`withMissed(pool, missedLabels, size, rng)`)
+- Modify: `regeln/src/round.js` (`finishRound` nimmt `missedLabels`, `settleLesson` schreibt `app.missed[unitId]`)
+- Modify: `seiten/rahmen.js` (Lektionspool über `withMissed` bauen, `missedLabels` durchreichen)
+- Test: `runde/tests/abruf.test.js` (neu), `runde/tests/runde-fabrik.test.js` (ergänzen), `regeln/tests/round.test.js` (ergänzen), `seiten/tests/rahmen.test.js` (ergänzen)
+
+**Interfaces:**
+- Consumes: Fragen mit `label` (string). Labels sind feste Kategorien je Fragetyp, keine Zufallszahlen (geprüft in apps/*/builders.js).
+- Produces: Ergebnisfeld `missedLabels: string[]` in `runde/src/round.js` finish(). Eindeutige Labels der Fragen, deren ERSTER Versuch `outcome === 'bad'` war. Wiederholungen (`retry`) und `almost` zählen nicht. Reihenfolge: erstes Vorkommen.
+- Produces: `withMissed(pool, missedLabels, size, rng) → pool'`. Liefert `size` Fragen aus dem Pool (ohne Zurücklegen, mit `rng`). Ist mindestens eine Frage mit `label` aus `missedLabels` im Pool, ist mindestens eine davon in der Auswahl. Ohne Treffer gleich wie `shuffle(pool, rng).slice(0, size)`.
+- Produces: `finishRound({ ..., missedLabels })` schreibt `app.missed[unitId] = missedLabels` bei jeder Lektionsrunde. Ersetzt den alten Stand, sammelt nicht. Fehlt der Eintrag, gilt `[]`.
+- Regel R13 (Controller): "zuerst" in Spec 5.2 heißt "garantiert enthalten", nicht "vorn in der Reihenfolge". `createRound` mischt die Reihenfolge; eine feste Vorn-Position würde die Engine umbauen. Kosten bei Fehler: eine Frage erscheint irgendwo in der Runde statt vorn.
+
+- [ ] **Step 1: Write the failing tests**
+
+Tests zuerst, mit konkreten Fixtures nach dem Muster der bestehenden Dateien (R3). Werte aus dieser Task und der Spec 5.2.
+- runde: Ein Lektionsversuch mit `bad` im ersten Versuch liefert `missedLabels` mit dem Label. Ein `retry`-Versuch, der richtig wird, nimmt das Label nicht auf. Ein `almost` nimmt es nicht auf.
+- runde/abruf: `withMissed` enthält eine Frage mit einem missed-Label, wenn eine im Pool ist. Ohne missed-Labels ist das Ergebnis dasselbe wie `shuffle(pool, rng).slice(0, size)` mit gleichem Seed. Gleicher Seed gibt gleiche Auswahl.
+- regeln: `finishRound` mit `missedLabels: ['Lücke füllen']` setzt `app.missed.<unitId>` auf genau diese Liste. Eine zweite Lektionsrunde mit `[]` setzt es auf `[]` (ersetzt, sammelt nicht).
+- seiten/rahmen: Eine Lektionsrunde mit gespeichertem `app.missed` baut den Pool über `withMissed`. Der Log-Eintrag bleibt unverändert, keine neuen Felder.
+
+- [ ] **Step 2: Run tests to verify they fail**
+
+Run: `node --test runde/tests/abruf.test.js regeln/tests/round.test.js` (aus modernized/modulare-reimagined)
+Expected: FAIL (fehlendes Modul, fehlendes Feld).
+
+- [ ] **Step 3: Implement**
+
+1. `runde/src/round.js`: Versuch-Eintrag um `label: q.label` ergänzen. Im Ergebnis `missedLabels` aus den ersten Versuchen mit `outcome === 'bad'` und `retry` false bilden, eindeutig.
+2. `runde/src/abruf.js`: `withMissed` wie oben, mit `rng` und ohne Zufall aus `Math.random`.
+3. `regeln/src/round.js`: `missedLabels` als Eingabe (Standard `[]`), in `settleLesson` nach dem Übungstag in `app.missed[unitId]` schreiben. Das Ergebnis `missedLabels` durchreichen.
+4. `seiten/rahmen.js`: Vor `createRound` (um Zeile 99) bei Lektionsrunden den Pool über `withMissed` mit `app.missed[unit.id]` bauen. `missedLabels` aus dem Rundenergebnis an `finishRound` übergeben (dort, wo `retryRight` schon übergeben wird).
+
+- [ ] **Step 4: Run tests**
+
+Run: `npm test` (volle Suite grün)
+Expected: alle Suiten grün, Zahl der Tests steigt um die neuen.
+
+- [ ] **Step 5: Commit**
+
+```bash
+git add runde regeln seiten
+git commit -m "Fehler-Abruf: Fragen aus der letzten Runde kommen wieder vor"
+```
