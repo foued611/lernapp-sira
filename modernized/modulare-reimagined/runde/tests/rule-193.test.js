@@ -105,7 +105,7 @@ test('RULE-193: Blitz liefert das Ergebnis erst nach Ablauf der 45 Sekunden', ()
   t = 45_000;
   assert.equal(blitz.current().over, true);
   const result = blitz.finish();
-  assert.deepEqual(result, { mode: 'blitz', score: 1, xp: 5, bestCombo: 1 });
+  assert.deepEqual(result, { mode: 'blitz', score: 1, xp: 5, bestCombo: 1, wrong: 0 });
   assert.equal(blitz.finish(), result, 'ein zweiter Aufruf liefert dasselbe Ergebnis');
 });
 

@@ -24,3 +24,11 @@ const toUTC = (day) => {
 export function dayDiff(from, to) {
   return Math.round((toUTC(to) - toUTC(from)) / MS_PER_DAY);
 }
+
+/** Montag der Woche, in der der Tag liegt, als 'YYYY-MM-DD'. Die Woche läuft Montag bis Sonntag. */
+export function weekStart(day) {
+  const time = toUTC(day);
+  const weekday = new Date(time).getUTCDay(); // Sonntag = 0
+  const sinceMonday = (weekday + 6) % 7;
+  return new Date(time - sinceMonday * MS_PER_DAY).toISOString().slice(0, 10);
+}

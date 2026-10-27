@@ -1,6 +1,7 @@
 // Fortschritt je Seite: Sterne, Trefferquote, Auffrischen und Empfehlung.
 import {
-  ALMOST_WEIGHT, DUE_DAYS, MAX_STARS, STAR_THRESHOLDS, WEAK_ACCURACY
+  ALMOST_WEIGHT, DUE_DAYS, DUE_DAYS_STRONG, MAX_STARS, REFRESH_STRONG_ACCURACY, STAR_THRESHOLDS,
+  WEAK_ACCURACY
 } from './constants.js';
 import { assertDay, dayDiff } from './dates.js';
 
@@ -45,12 +46,16 @@ const starsOf = (app, unitId) => (app.stars && app.stars[unitId]) || 0;
 
 /**
  * Eine Seite ist fällig, wenn sie schon einen Stern hat und seit DUE_DAYS Tagen nicht geübt wurde
- * (profile.js:79-82).
+ * (profile.js:79-82). Lag die letzte Genauigkeit bei REFRESH_STRONG_ACCURACY oder darüber, gilt
+ * die längere Frist DUE_DAYS_STRONG; ohne gespeicherte Genauigkeit bleibt es bei DUE_DAYS.
  */
 export function isRefreshDue(app, unitId, day) {
   assertDay(day);
   const last = app.last && app.last[unitId];
-  return Boolean(last) && starsOf(app, unitId) > 0 && dayDiff(last, day) >= DUE_DAYS;
+  if (!last || starsOf(app, unitId) <= 0) return false;
+  const acc = app.acc && app.acc[unitId];
+  const strong = typeof acc === 'number' && acc >= REFRESH_STRONG_ACCURACY;
+  return dayDiff(last, day) >= (strong ? DUE_DAYS_STRONG : DUE_DAYS);
 }
 
 // ISO-Tage ('YYYY-MM-DD') sortieren lexikografisch genauso wie in der Zeit.

@@ -85,7 +85,8 @@
     "d": "10 richtige im Blitz-Modus",
     "rule": {
       "type": "blitz",
-      "min": 10
+      "min": 10,
+      "maxWrong": 1
     }
   },
   {
@@ -200,6 +201,34 @@
     "rule": {
       "type": "unit",
       "id": "wortarten"
+    }
+  },
+  {
+    "id": "besser-geworden",
+    "n": "Besser geworden",
+    "d": "Bei „Inhaltsangabe“ 20 Prozentpunkte besser als beim letzten Mal",
+    "rule": {
+      "type": "improved",
+      "unit": "inhaltsangabe",
+      "by": 0.2
+    }
+  },
+  {
+    "id": "nicht-aufgegeben",
+    "n": "Nicht aufgegeben",
+    "d": "Zwei Fehler im zweiten Versuch richtig gemacht",
+    "rule": {
+      "type": "retryRecovered",
+      "min": 2
+    }
+  },
+  {
+    "id": "zurueckgekommen",
+    "n": "Zurückgekommen",
+    "d": "Eine Seite nach Pause wieder aufgefrischt",
+    "rule": {
+      "type": "refresh",
+      "count": 1
     }
   }
 ]

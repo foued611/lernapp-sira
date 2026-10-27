@@ -4,8 +4,21 @@
 /** Tagesziel in XP (profile.js:5). */
 export const DAILY_GOAL_XP = 30;
 
+/** Tagesziele, aus denen die Lernenden wählen. Alles andere im Profil gilt als nicht gesetzt (dailyGoal). */
+export const GOAL_CHOICES = Object.freeze([20, 30, 50]);
+
 /** Nach so vielen Tagen ohne Übung ist eine Seite zum Auffrischen fällig (profile.js:12). */
 export const DUE_DAYS = 3;
+
+/**
+ * Seiten, die zuletzt mit mindestens REFRESH_STRONG_ACCURACY gelöst wurden, sitzen fester:
+ * sie sind erst nach so vielen Tagen zum Auffrischen fällig (Spec Gamification: Lernwirkung,
+ * Auffrischen nach Genauigkeit). Ohne gespeicherte Genauigkeit gilt weiter DUE_DAYS.
+ */
+export const DUE_DAYS_STRONG = 7;
+
+/** Ab dieser letzten Genauigkeit gilt die längere Frist DUE_DAYS_STRONG (gleiche Schwelle wie 3 Sterne). */
+export const REFRESH_STRONG_ACCURACY = 0.9;
 
 /**
  * Höchstens so viele Kalendertage dürfen zwischen zwei Übungstagen liegen, damit die Serie
@@ -36,3 +49,6 @@ export const WEAK_ACCURACY = 0.9;
 
 /** Ab so vielen Sternen gilt eine Seite als abgeschlossen (profile.js:92). */
 export const MAX_STARS = 3;
+
+/** Belohnung je erfüllter Wochenmission, einmal pro Woche und Mission (Spec Gamification: Lernwirkung, 5.7). */
+export const MISSION_REWARD_XP = 20;

@@ -53,12 +53,14 @@ Regeln:
 
 ## Spielregeln (Gamification)
 
-Die Zahlen stehen in `core/js/profile.js`, `rounds.js` und `quiz.js` und gelten für alle Apps gleich: Level-Schwelle 30·n·(n−1) XP, Combo-Faktor bis ×4, 5 Herzen (Boss 3), Sterne ab 70 % (2) und 90 % (3), Tagesziel 30 XP, Serie mit einem Gnadentag. Änderungen daran wirken auf alle Apps und brauchen angepasste Tests.
+Die Zahlen stehen in `core/js/profile.js`, `rounds.js` und `quiz.js` und gelten für alle Apps gleich: Level-Schwelle 30·n·(n−1) XP, Combo-Faktor bis ×4, 5 Herzen (Boss 3), Sterne ab 70 % (2) und 90 % (3), Tagesziel nach Wahl der Lernenden (20, 30 oder 50 XP, Standard 30), Serie mit einem Gnadentag. Änderungen daran wirken auf alle Apps und brauchen angepasste Tests.
 
 Die Mechaniken sind so gewählt, dass sie das Lernen fördern und nicht nur belohnen:
 
 - **Zweiter Versuch:** Eine falsch beantwortete Frage kommt am Ende der Runde noch einmal (nicht im Endgegner, nicht bei Zuordnungen). Sie zählt nicht für Genauigkeit und Herzen, bringt aber 5 XP. Wiederholen nach dem Fehler festigt am meisten.
-- **Auffrischen:** Eine Seite mit Sternen wird nach `DUE_DAYS` (3) Tagen als "Zeit zum Auffrischen" markiert. Wer sie dann übt, bekommt 10 Bonus-XP. Verteiltes Wiederholen bringt Wissen ins Langzeitgedächtnis. Dafür speichert die App `app.last[unitId]` (Tag) und `app.acc[unitId]` (letzte Genauigkeit).
+- **Auffrischen:** Eine Seite mit Sternen wird nach 3 Tagen (`DUE_DAYS`) als "Zeit zum Auffrischen" markiert, bei einer letzten Genauigkeit von mindestens 90 % erst nach 7 Tagen (`DUE_DAYS_STRONG`). Wer sie dann übt, bekommt 10 Bonus-XP. Verteiltes Wiederholen bringt Wissen ins Langzeitgedächtnis. Dafür speichert die App `app.last[unitId]` (Tag) und `app.acc[unitId]` (letzte Genauigkeit).
+- **Wochenmissionen:** Pro Woche (ab Montag) gibt es drei Missionen: drei verschiedene Seiten üben, eine Seite auffrischen, eine Runde mit mindestens 90 % Genauigkeit. Jede bringt 20 XP und wird pro Woche nur einmal bezahlt. Ein Blitz zählt nicht für die Runde mit 90 %, weil er keine echte Genauigkeit hat.
+- **Neue Trophäen-Typen:** `improved` (Genauigkeit einer Seite gegenüber dem letzten Mal um einen Mindestwert gestiegen), `retryRecovered` (Fehler der Runde im zweiten Versuch richtig beantwortet) und `refresh` (Zahl bezahlter Auffrischungen).
 - **Gezieltes Training:** Die Startseite schlägt die fällige oder schwächste Seite vor (`weakestUnit`).
 - **Sammelalbum:** Jede Seite hat eine Karte mit einem Fakt. Sie wird mit 1, 2 oder 3 Sternen zu Bronze, Silber, Gold. So gibt es ein sichtbares Ziel pro Seite.
 - **Mini-Check in der Lektion:** Eine Frage direkt nach der Theorie, ohne Druck und ohne XP. Sich selbst abfragen lernt besser als Nachlesen.

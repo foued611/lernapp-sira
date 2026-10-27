@@ -5,5 +5,8 @@
   { "id": "streak", "n": "Dranbleiben", "d": "Drei Tage in Folge geübt", "rule": { "type": "streak", "days": 3 } },
   { "id": "boss", "n": "Final Check", "d": "Den Endgegner besiegt", "rule": { "type": "boss" } },
   { "id": "unit1", "n": "Unit 1 geschafft", "d": "Alle Seiten der Unit 1 mit mindestens einem Stern", "rule": { "type": "units", "ids": ["simple-past", "present-perfect", "past-or-perfect", "perfect-progressive", "past-progressive"] } },
-  { "id": "alle", "n": "Grammatik-Profi", "d": "Alle Seiten mit mindestens einem Stern", "rule": { "type": "units", "ids": ["simple-past", "present-perfect", "past-or-perfect", "perfect-progressive", "past-progressive", "will-future", "conditional-1", "conditional-2", "relative-clauses", "contact-clauses", "passive", "modal-verbs", "modal-substitutes", "past-perfect", "reflexive-pronouns", "indirect-speech"] } }
+  { "id": "alle", "n": "Grammatik-Profi", "d": "Alle Seiten mit mindestens einem Stern", "rule": { "type": "units", "ids": ["simple-past", "present-perfect", "past-or-perfect", "perfect-progressive", "past-progressive", "will-future", "conditional-1", "conditional-2", "relative-clauses", "contact-clauses", "passive", "modal-verbs", "modal-substitutes", "past-perfect", "reflexive-pronouns", "indirect-speech"] } },
+  { "id": "besser-geworden", "n": "Besser geworden", "d": "Bei „Simple Past“ 20 Prozentpunkte besser als beim letzten Mal", "rule": { "type": "improved", "unit": "simple-past", "by": 0.2 } },
+  { "id": "nicht-aufgegeben", "n": "Nicht aufgegeben", "d": "Zwei Fehler im zweiten Versuch richtig gemacht", "rule": { "type": "retryRecovered", "min": 2 } },
+  { "id": "zurueckgekommen", "n": "Zurückgekommen", "d": "Eine Seite nach Pause wieder aufgefrischt", "rule": { "type": "refresh", "count": 1 } }
 ]

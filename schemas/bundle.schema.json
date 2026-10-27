@@ -126,7 +126,11 @@
         { "type": "object", "required": ["type"], "additionalProperties": false, "properties": { "type": { "enum": ["anyUnit", "perfectRound", "boss"] } } },
         { "type": "object", "required": ["type", "id"], "additionalProperties": false, "properties": { "type": { "const": "unit" }, "id": { "$ref": "#/$defs/id" }, "stars": { "type": "integer", "minimum": 1, "maximum": 3 } } },
         { "type": "object", "required": ["type", "ids"], "additionalProperties": false, "properties": { "type": { "const": "units" }, "ids": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/id" } } } },
-        { "type": "object", "required": ["type", "min"], "additionalProperties": false, "properties": { "type": { "enum": ["combo", "blitz"] }, "min": { "type": "integer", "minimum": 1 } } },
+        { "type": "object", "required": ["type", "min"], "additionalProperties": false, "properties": { "type": { "const": "combo" }, "min": { "type": "integer", "minimum": 1 } } },
+        { "type": "object", "required": ["type", "min"], "additionalProperties": false, "properties": { "type": { "const": "blitz" }, "min": { "type": "integer", "minimum": 1 }, "maxWrong": { "type": "integer", "minimum": 0 } } },
+        { "type": "object", "required": ["type", "unit", "by"], "additionalProperties": false, "properties": { "type": { "const": "improved" }, "unit": { "$ref": "#/$defs/id" }, "by": { "type": "number", "exclusiveMinimum": 0, "maximum": 1 } } },
+        { "type": "object", "required": ["type", "min"], "additionalProperties": false, "properties": { "type": { "const": "retryRecovered" }, "min": { "type": "integer", "minimum": 1 } } },
+        { "type": "object", "required": ["type", "count"], "additionalProperties": false, "properties": { "type": { "const": "refresh" }, "count": { "type": "integer", "minimum": 1 } } },
         { "type": "object", "required": ["type", "days"], "additionalProperties": false, "properties": { "type": { "const": "streak" }, "days": { "type": "integer", "minimum": 2 } } },
         { "type": "object", "required": ["type", "rules"], "additionalProperties": false, "properties": { "type": { "enum": ["all", "any"] }, "rules": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/rule" } } } }
       ]

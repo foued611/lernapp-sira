@@ -41,7 +41,7 @@ export function createBlitz({ nextQuestion, now, seconds = BLITZ_SECONDS, known 
   };
 
   const deadline = now() + seconds * 1000; // blitz.js:18, t0 beim Start
-  const b = { status: 'run', question: nextChoice(), score: 0, xp: 0, combo: 0, bestCombo: 0, result: null };
+  const b = { status: 'run', question: nextChoice(), score: 0, wrong: 0, xp: 0, combo: 0, bestCombo: 0, result: null };
 
   const timeLeft = () => Math.max(0, deadline - now());
   const over = () => now() >= deadline;
@@ -73,6 +73,7 @@ export function createBlitz({ nextQuestion, now, seconds = BLITZ_SECONDS, known 
       multiplier = comboMultiplier(b.combo);
       amount = XP.blitzCorrect * multiplier;
     } else {
+      b.wrong++;
       b.combo = 0;
     }
     b.xp += amount;
@@ -89,7 +90,7 @@ export function createBlitz({ nextQuestion, now, seconds = BLITZ_SECONDS, known 
     if (b.status === 'done') return b.result;
     if (b.status !== 'run' || !over()) return null;
     b.status = 'done';
-    b.result = { mode: 'blitz', score: b.score, xp: b.xp, bestCombo: b.bestCombo };
+    b.result = { mode: 'blitz', score: b.score, xp: b.xp, bestCombo: b.bestCombo, wrong: b.wrong };
     return b.result;
   }
 

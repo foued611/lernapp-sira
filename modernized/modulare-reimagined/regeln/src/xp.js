@@ -1,5 +1,5 @@
 // XP, Level, Tagesziel und Combo-Faktor. Verändert nur die übergebenen Zustandsobjekte.
-import { COMBO_STEP, DAILY_GOAL_XP, MAX_MULTIPLIER } from './constants.js';
+import { COMBO_STEP, DAILY_GOAL_XP, GOAL_CHOICES, MAX_MULTIPLIER } from './constants.js';
 import { assertDay } from './dates.js';
 
 /** Niveau n beginnt bei 30·n·(n−1) XP (profile.js:29). */
@@ -17,6 +17,17 @@ export function dailyXP(profile, day) {
   return profile.day && profile.day.d === day ? profile.day.xp : 0;
 }
 
+/** Tagesziel des Profils: der gewählte Wert aus GOAL_CHOICES, sonst DAILY_GOAL_XP. */
+export function dailyGoal(profile) {
+  return GOAL_CHOICES.includes(profile.goal) ? profile.goal : DAILY_GOAL_XP;
+}
+
+/** Setzt das Tagesziel. Nur Werte aus GOAL_CHOICES sind erlaubt, sonst bleibt das Profil unverändert. */
+export function setDailyGoal(profile, value) {
+  if (!GOAL_CHOICES.includes(value)) throw new RangeError(`Tagesziel muss eines von ${GOAL_CHOICES.join(', ')} sein: ${value}`);
+  profile.goal = value;
+}
+
 /**
  * Schreibt XP in Profil, App und Tagesbilanz gut.
  * Meldet einen Level-Aufstieg (neues Niveau) und das Erreichen des Tagesziels, nur beim ersten Mal.
@@ -27,6 +38,7 @@ export function awardXP(profile, app, amount, day) {
   if (!(amount >= 0)) throw new RangeError(`XP-Betrag muss ≥ 0 sein: ${amount}`);
   const levelBefore = levelOf(profile.xp);
   const goalBefore = dailyXP(profile, day);
+  const goal = dailyGoal(profile);
   profile.xp += amount;
   app.xp += amount;
   // Ein neuer Tag beginnt bei 0. Die Bilanz von gestern zählt nicht zum heutigen Ziel.
@@ -35,7 +47,7 @@ export function awardXP(profile, app, amount, day) {
   const levelAfter = levelOf(profile.xp);
   return {
     levelUp: levelAfter > levelBefore ? levelAfter : null,
-    goalHit: goalBefore < DAILY_GOAL_XP && profile.day.xp >= DAILY_GOAL_XP
+    goalHit: goalBefore < goal && profile.day.xp >= goal
   };
 }
 

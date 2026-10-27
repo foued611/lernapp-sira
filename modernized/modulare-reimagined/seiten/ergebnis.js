@@ -1,7 +1,7 @@
 // Ergebnis einer Runde: Titel, Sterne, Zahlen, Tagesziel, Stufe, neue Trophäen und die Wege weiter.
 // Herkunft: legacy/modulare/core/js/views/result.js. Abweichungen stehen an der Stelle.
 import { createElement } from 'react';
-import { BOSS_BONUS_XP, DAILY_GOAL_XP, REFRESH_BONUS_XP, comboMultiplier, dailyXP } from '../regeln/index.js';
+import { BOSS_BONUS_XP, REFRESH_BONUS_XP, comboMultiplier, dailyGoal, dailyXP } from '../regeln/index.js';
 import { BLITZ_SECONDS } from '../runde/index.js';
 import { Button } from '../komponenten/ui.js';
 import { Icon } from '../komponenten/icons.js';
@@ -49,6 +49,7 @@ function subtitleFor(summary) {
  */
 export function resultModel(summary, { profile, day, words }) {
   const x = dailyXP(profile, day);
+  const goal = dailyGoal(profile);
   const titles = words.levelTitles || LEVEL_TITLES;
   const level = summary.levelUp
     ? `Niveau ${summary.levelUp} erreicht · ${titles[Math.min(summary.levelUp - 1, titles.length - 1)]}`
@@ -75,7 +76,7 @@ export function resultModel(summary, { profile, day, words }) {
         { value: summary.xp + summary.bonus, label: 'XP' },
         { value: summary.bestCombo, label: 'längste Serie' }
       ],
-    daily: { xp: x, goal: DAILY_GOAL_XP, reached: x >= DAILY_GOAL_XP },
+    daily: { xp: x, goal, reached: x >= goal },
     levelLine: level,
     badges: summary.newBadges.map((badge) => ({ id: badge.id, n: badge.n, d: badge.d })),
     // Legacy result.js: Theorie nur nach einer Lektionsrunde, dann der Weg zurück.
@@ -113,8 +114,8 @@ export function Ergebnis({ model, messages = [], onAction }) {
     h(
       'div',
       { className: 'gline' },
-      h('b', null, model.daily.reached ? 'Tagesziel geschafft!' : `Tagesziel: noch ${DAILY_GOAL_XP - model.daily.xp} XP`),
-      h('div', { className: 'bar' }, h('i', { style: { width: `${Math.min(100, (model.daily.xp / DAILY_GOAL_XP) * 100)}%` } }))
+      h('b', null, model.daily.reached ? 'Tagesziel geschafft!' : `Tagesziel: noch ${model.daily.goal - model.daily.xp} XP`),
+      h('div', { className: 'bar' }, h('i', { style: { width: `${Math.min(100, (model.daily.xp / model.daily.goal) * 100)}%` } }))
     ),
     model.levelLine ? h('p', { className: 'lvup' }, model.levelLine) : null,
     model.badges.length

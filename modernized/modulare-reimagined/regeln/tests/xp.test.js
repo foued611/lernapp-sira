@@ -1,7 +1,7 @@
 // Tests für Level, XP-Gutschrift, Tagesziel, Combo und XP-Abzug.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { awardXP, comboMultiplier, dailyXP, levelOf, levelThreshold, spendXP } from '../src/xp.js';
+import { awardXP, comboMultiplier, dailyGoal, dailyXP, levelOf, levelThreshold, setDailyGoal, spendXP } from '../src/xp.js';
 
 const newProfile = () => ({ xp: 0, day: { d: '', xp: 0 }, streak: 0, lastDay: '', lastApp: '' });
 const newApp = () => ({ xp: 0 });
@@ -79,4 +79,40 @@ test('RULE-172: Abzug aus einem größeren Stand lässt den Rest stehen', () => 
   spendXP(profile, app, 3);
   assert.equal(profile.xp, 7);
   assert.equal(app.xp, 7);
+});
+
+test('Standard ist 30 XP ohne gesetztes Ziel', () => {
+  assert.equal(dailyGoal({ xp: 0 }), 30);
+});
+
+test('gesetztes Ziel wird genutzt', () => {
+  assert.equal(dailyGoal({ xp: 0, goal: 50 }), 50);
+});
+
+test('unbekannter Wert fällt auf 30 zurück', () => {
+  assert.equal(dailyGoal({ xp: 0, goal: 42 }), 30);
+});
+
+test('setDailyGoal wirft bei unbekanntem Wert', () => {
+  assert.throws(() => setDailyGoal({ xp: 0 }, 42), RangeError);
+});
+
+test('setDailyGoal schreibt einen erlaubten Wert ins Profil', () => {
+  const profile = newProfile();
+  setDailyGoal(profile, 50);
+  assert.equal(profile.goal, 50);
+});
+
+test('setDailyGoal lässt das Profil bei unbekanntem Wert unverändert', () => {
+  const profile = { ...newProfile(), goal: 20 };
+  assert.throws(() => setDailyGoal(profile, 42), RangeError);
+  assert.equal(profile.goal, 20);
+});
+
+test('awardXP meldet das Tagesziel nach dem gewählten Wert, nicht nach 30', () => {
+  const profile = { ...newProfile(), goal: 20 };
+  assert.equal(awardXP(profile, newApp(), 20, '2026-10-25').goalHit, true);
+  const high = { ...newProfile(), goal: 50 };
+  assert.equal(awardXP(high, newApp(), 40, '2026-10-25').goalHit, false);
+  assert.equal(awardXP(high, newApp(), 10, '2026-10-25').goalHit, true);
 });

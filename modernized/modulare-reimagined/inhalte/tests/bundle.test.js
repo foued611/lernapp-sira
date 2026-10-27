@@ -31,6 +31,11 @@ const mutations = [
   ['keine Seiten', (b) => { b.manifest.units = []; }],
   ['Trophäe mit unbekannter Seite', (b) => { b.badges[1].rule = { type: 'units', ids: ['start', 'nichtda'] }; }],
   ['Trophäe mit unbekanntem Regeltyp', (b) => { b.badges[0].rule = { type: 'magie' }; }],
+  ['Blitz-Regel mit negativem maxWrong', (b) => { b.badges[0].rule = { type: 'blitz', min: 10, maxWrong: -1 }; }],
+  ['improved mit unbekannter Seite', (b) => { b.badges[0].rule = { type: 'improved', unit: 'nichtda', by: 0.2 }; }],
+  ['improved ohne by', (b) => { b.badges[0].rule = { type: 'improved', unit: 'start' }; }],
+  ['retryRecovered ohne min', (b) => { b.badges[0].rule = { type: 'retryRecovered' }; }],
+  ['refresh ohne count', (b) => { b.badges[0].rule = { type: 'refresh' }; }],
   ['Trophäen-ID doppelt', (b) => { b.badges[1].id = 'first'; }],
   ['keine Trophäen', (b) => { b.badges = []; }],
   ['Merkzettel nicht als Paare', (b) => { b.manifest.notes.start = ['nur ein Text']; }],
@@ -45,6 +50,18 @@ for (const [name, mutate] of mutations) {
     assert.throws(() => assertBundle(bundle), /das ganze Paket wird abgelehnt/);
   });
 }
+
+test('RULE-143: die Regeln blitz mit maxWrong, improved, retryRecovered und refresh werden angenommen', () => {
+  const bundle = validBundle();
+  const rules = [
+    { type: 'blitz', min: 10, maxWrong: 1 },
+    { type: 'improved', unit: 'start', by: 0.2 },
+    { type: 'retryRecovered', min: 2 },
+    { type: 'refresh', count: 1 }
+  ];
+  bundle.badges = rules.map((rule, i) => ({ id: `neu${i}`, n: 'Neu', d: 'Neu', rule }));
+  assert.deepEqual(bundleErrors(bundle), []);
+});
 
 test('RULE-143: alle Fehler werden gesammelt, nicht nur der erste', () => {
   const bundle = validBundle();

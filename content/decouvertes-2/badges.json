@@ -5,5 +5,8 @@
   { "id": "streak", "n": "Persévérant", "d": "Drei Tage in Folge geübt", "rule": { "type": "streak", "days": 3 } },
   { "id": "boss", "n": "Le Grand Défi", "d": "Den Endgegner besiegt", "rule": { "type": "boss" } },
   { "id": "unit1", "n": "Unité 1 geschafft", "d": "Alle Seiten der Unité 1 mit mindestens einem Stern", "rule": { "type": "units", "ids": ["connaitre-savoir", "quel", "relativ-pronomen", "demonstrativ"] } },
-  { "id": "alle", "n": "Grammairien", "d": "Alle Seiten mit mindestens einem Stern", "rule": { "type": "units", "ids": ["connaitre-savoir", "quel", "relativ-pronomen", "demonstrativ", "pc-avoir", "voir", "vouloir-pouvoir", "venir", "pc-etre", "teilungsartikel", "acheter-payer-boire", "objekt-direkt", "objekt-person", "indirekte-rede", "sortir", "beau-nouveau-vieux", "devoir-recevoir", "choisir", "lui-leur", "tout"] } }
+  { "id": "alle", "n": "Grammairien", "d": "Alle Seiten mit mindestens einem Stern", "rule": { "type": "units", "ids": ["connaitre-savoir", "quel", "relativ-pronomen", "demonstrativ", "pc-avoir", "voir", "vouloir-pouvoir", "venir", "pc-etre", "teilungsartikel", "acheter-payer-boire", "objekt-direkt", "objekt-person", "indirekte-rede", "sortir", "beau-nouveau-vieux", "devoir-recevoir", "choisir", "lui-leur", "tout"] } },
+  { "id": "besser-geworden", "n": "Besser geworden", "d": "Bei „connaître und savoir“ 20 Prozentpunkte besser als beim letzten Mal", "rule": { "type": "improved", "unit": "connaitre-savoir", "by": 0.2 } },
+  { "id": "nicht-aufgegeben", "n": "Nicht aufgegeben", "d": "Zwei Fehler im zweiten Versuch richtig gemacht", "rule": { "type": "retryRecovered", "min": 2 } },
+  { "id": "zurueckgekommen", "n": "Zurückgekommen", "d": "Eine Seite nach Pause wieder aufgefrischt", "rule": { "type": "refresh", "count": 1 } }
 ]
