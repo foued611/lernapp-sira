@@ -5,7 +5,10 @@
   { "id": "combo5", "n": "Série de 5", "d": "Fünf richtige in Folge", "rule": { "type": "combo", "min": 5 } },
   { "id": "four", "n": "Les Quatre", "d": "être, avoir, aller, faire geschafft", "rule": { "type": "units", "ids": ["etre", "avoir", "aller", "faire"] } },
   { "id": "regs", "n": "Endungs-Ass", "d": "Beide Seiten zu den regelmäßigen Verben", "rule": { "type": "units", "ids": ["er", "irre"] } },
-  { "id": "blitz10", "n": "Éclair", "d": "10 richtige im Blitz-Modus", "rule": { "type": "blitz", "min": 10 } },
+  { "id": "blitz10", "n": "Éclair", "d": "10 richtige im Blitz-Modus", "rule": { "type": "blitz", "min": 10, "maxWrong": 1 } },
   { "id": "boss", "n": "Le Grand Défi", "d": "Den Endgegner besiegt", "rule": { "type": "boss" } },
-  { "id": "streak3", "n": "Dranbleiber", "d": "Drei Tage in Folge geübt", "rule": { "type": "streak", "days": 3 } }
+  { "id": "streak3", "n": "Dranbleiber", "d": "Drei Tage in Folge geübt", "rule": { "type": "streak", "days": 3 } },
+  { "id": "besser-geworden", "n": "Besser geworden", "d": "Bei „être“ 20 Prozentpunkte besser als beim letzten Mal", "rule": { "type": "improved", "unit": "etre", "by": 0.2 } },
+  { "id": "nicht-aufgegeben", "n": "Nicht aufgegeben", "d": "Zwei Fehler im zweiten Versuch richtig gemacht", "rule": { "type": "retryRecovered", "min": 2 } },
+  { "id": "zurueckgekommen", "n": "Zurückgekommen", "d": "Eine Seite nach Pause wieder aufgefrischt", "rule": { "type": "refresh", "count": 1 } }
 ]

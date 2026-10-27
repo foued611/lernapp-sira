@@ -46,6 +46,27 @@ test('RULE-257: combo verlangt die Mindest-Combo, blitz die Mindestpunkte im Bli
   assert.equal(evaluateTrophyRule({ type: 'blitz', min: 10 }, state(), { ...blitz, mode: 'lesson' }), false);
 });
 
+test('RULE-257: blitz mit maxWrong verlangt die Treffer UND höchstens so viele Fehler', () => {
+  const rule = { type: 'blitz', min: 10, maxWrong: 1 };
+  const blitz = { ...lesson, mode: 'blitz', score: 10 };
+  assert.equal(evaluateTrophyRule(rule, state(), { ...blitz, wrong: 0 }), true);
+  assert.equal(evaluateTrophyRule(rule, state(), { ...blitz, wrong: 1 }), true);
+  assert.equal(evaluateTrophyRule(rule, state(), { ...blitz, wrong: 2 }), false);
+  assert.equal(evaluateTrophyRule(rule, state(), { ...blitz, score: 9, wrong: 0 }), false);
+});
+
+test('RULE-257: blitz ohne maxWrong ignoriert Fehler (bisheriges Verhalten)', () => {
+  const blitz = { ...lesson, mode: 'blitz', score: 10, wrong: 30 };
+  assert.equal(evaluateTrophyRule({ type: 'blitz', min: 10 }, state(), blitz), true);
+});
+
+test('RULE-257: ruleErrors prüft maxWrong als Zahl ab 0', () => {
+  assert.deepEqual(ruleErrors({ type: 'blitz', min: 10, maxWrong: 0 }, []), []);
+  assert.deepEqual(ruleErrors({ type: 'blitz', min: 10, maxWrong: 1 }, []), []);
+  assert.deepEqual(ruleErrors({ type: 'blitz', min: 10, maxWrong: -1 }, []), ['rule: maxWrong muss eine Zahl ab 0 sein']);
+  assert.deepEqual(ruleErrors({ type: 'blitz', min: 10, maxWrong: 'x' }, []), ['rule: maxWrong muss eine Zahl ab 0 sein']);
+});
+
 test('RULE-261: perfectRound verlangt eine fehlerfreie Runde außerhalb des Blitz', () => {
   const perfect = { type: 'perfectRound' };
   assert.equal(evaluateTrophyRule(perfect, state(), lesson), true);

@@ -6,7 +6,7 @@
 //   { type: 'units', ids }                  alle genannten Seiten haben einen Stern
 //   { type: 'perfectRound' }                Runde ohne Fehler (nicht im Blitz)
 //   { type: 'combo', min }                  längste Combo der Runde
-//   { type: 'blitz', min }                  Punkte im Blitz
+//   { type: 'blitz', min, maxWrong? }       Punkte im Blitz, optional mit höchstens maxWrong Fehlern (Standard: beliebig viele)
 //   { type: 'boss' }                        Endgegner besiegt
 //   { type: 'streak', days }                Tage in Folge geübt
 //   { type: 'improved', unit, by }          Genauigkeit der Seite ist um mindestens by (0 bis 1) gegenüber dem letzten Mal gestiegen
@@ -28,7 +28,9 @@ const TYPES = {
   perfectRound: (rule, state, result) =>
     result.mode !== 'blitz' && !result.failed && result.wrong === 0 && result.almost === 0,
   combo: (rule, state, result) => result.bestCombo >= rule.min,
-  blitz: (rule, state, result) => result.mode === 'blitz' && result.score >= rule.min,
+  // Ohne maxWrong zählt nur das Tempo wie bisher. Mit maxWrong gilt ein Treffer-Rausch mit Raten nicht mehr.
+  blitz: (rule, state, result) => result.mode === 'blitz' && result.score >= rule.min
+    && (result.wrong || 0) <= (rule.maxWrong ?? Infinity),
   boss: (rule, state, result) => result.mode === 'boss' && !result.failed,
   streak: (rule, state) => state.streak >= rule.days,
   // prevAcc ist der Wert vor dieser Runde (null bei der ersten Übung). Gilt nur für die Seite der Runde.
@@ -77,7 +79,12 @@ export function ruleErrors(rule, unitIds, path = 'rule') {
     else rule.rules.forEach((x, i) => errors.push(...ruleErrors(x, unitIds, `${path}.rules[${i}]`)));
   }
   if (rule.type === 'combo' && !(rule.min > 0)) errors.push(`${path}: min fehlt`);
-  if (rule.type === 'blitz' && !(rule.min > 0)) errors.push(`${path}: min fehlt`);
+  if (rule.type === 'blitz') {
+    if (!(rule.min > 0)) errors.push(`${path}: min fehlt`);
+    if (rule.maxWrong !== undefined && !(Number.isFinite(rule.maxWrong) && rule.maxWrong >= 0)) {
+      errors.push(`${path}: maxWrong muss eine Zahl ab 0 sein`);
+    }
+  }
   if (rule.type === 'streak' && !(rule.days > 0)) errors.push(`${path}: days fehlt`);
   if (rule.type === 'improved') {
     if (!unitIds.includes(rule.unit)) errors.push(missingUnit(rule.unit));

@@ -18,6 +18,16 @@ test('RULE-064: Ein Blitz-Ergebnis vergibt nie Sterne, der Punkte-Bestwert wird 
   assert.deepEqual(app.stars, {});
 });
 
+test('RULE-257: finishRound reicht die Blitz-Fehler an die Trophäe weiter (blitz10 mit maxWrong)', () => {
+  const blitz10 = { id: 'blitz10', rule: { type: 'blitz', min: 10, maxWrong: 1 } };
+  const run = (wrong) => finishRound({
+    appId: 'mathe', mode: 'blitz', accuracy: 0.8, score: 10, wrong, badges: [blitz10],
+    profile: newProfile(), app: newApp(), day: '2026-10-25'
+  });
+  assert.deepEqual(run(1).newBadges.map((b) => b.id), ['blitz10']);
+  assert.deepEqual(run(2).newBadges, []);
+});
+
 test('RULE-064: Gespeicherte Sterne gehen nur nach oben', () => {
   const app = newApp({ stars: { u1: 3 } });
   finishRound({
