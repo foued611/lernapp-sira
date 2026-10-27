@@ -8,60 +8,17 @@ Anweisungen für Coding-Agenten und Mitwirkende. Lies diese Datei vor jeder Änd
 
 ## Technik
 
-- Framework und Build: React 19 mit Vite (Entscheidung 2026-10-26, siehe `analysis/modulare/INTENT.md`). Der Neubau liegt in `modernized/modulare-reimagined/` (Abschnitt "Neubau" unten). Der bisherige Code (`core/`, `apps/`, `dashboard.js`) ist seit 2026-10-28 aus `main` entfernt und im Branch `legacy` erhalten. TypeScript ist weiter nicht vorgesehen. Die Begründung steht in `docs/inhalte.md`.
+- Framework und Build: React 19 mit Vite (Entscheidung 2026-10-26, siehe `analysis/modulare/INTENT.md`). Der Neubau liegt in `modernized/modulare-reimagined/`, seine Regeln in `modernized/modulare-reimagined/CLAUDE.md`. Der bisherige Code (`core/`, `apps/`, `dashboard.js`) ist seit 2026-10-28 aus `main` entfernt und im Branch `legacy` erhalten. TypeScript ist weiter nicht vorgesehen. Die Begründung steht in `docs/inhalte.md`.
 - Daten und Logik sind getrennt: Inhalte liegen als JSON in `content/<id>/`, Code in `core/` und `apps/<name>/`. Siehe "Inhalte und Daten".
 - Läuft über GitHub Pages (Branch `main`, Ordner `/`). Ein Push auf `main` veröffentlicht.
 - ES-Module brauchen http(s). Lokal testen mit `npm run serve` und `http://localhost:8000`. Ein Doppelklick auf die HTML-Datei (file://) funktioniert nicht.
-- Node (nur für Tests): `npm install`, `npm test`, `npm run smoke`.
+- Node (nur für Tests): `npm install`, `npm test`.
 - Alle Pfade im HTML und in Imports sind relativ, weil die Seite unter `/lernapp-sira/` liegt.
-- Laufzeit-Abhängigkeiten nur, was der Umbau braucht (React). Der bisherige Code hat keine. Tests nutzen `fake-indexeddb`, `jsdom`, `esbuild`, `ajv`). Schriften liegen selbst gehostet in `core/fonts/` (WOFF2, Lizenzen OFL daneben), es gibt keine Anfragen an Google. Neue externe Skripte oder Dienste nur nach Absprache (Datenschutz, DSGVO).
+- Schriften liegen selbst gehostet in `core/fonts/` (WOFF2, Lizenzen OFL daneben), es gibt keine Anfragen an Google. Neue externe Skripte oder Dienste nur nach Absprache (Datenschutz, DSGVO).
 
-## Struktur
+## Neubau
 
-```
-index.html, dashboard.js, dashboard.css   Dashboard (Startseite)
-registry.js                               Liste aller Apps, steuert die Kacheln
-core/styles/   app.css (einziger Einstieg, bindet tokens, fonts, base, quiz, lesson ein)
-core/fonts/    selbst gehostete Schriften mit Lizenzen
-core/js/       db.js store.js profile.js rounds.js shell.js   Speicher, Spielregeln, App-Rahmen
-               qtypes.js quiz.js blitz.js questions.js         Fragetypen, Rundenmotor, Blitz, Frage-Bausteine
-               lesson.js svg.js theory.js                      Lektionen, Diagramme, Standard-Theorie
-               content.js appconfig.js rules.js validate.js    Inhaltsquellen, Konfiguration aus Inhalten, Trophäen-Regeln, Paketprüfung
-               boot.js                                         Startet eine App: laden, bauen, einhängen
-               views/home.js result.js backup.js               Ansichten als reine HTML-Funktionen
-               ui.js icons.js mascot.js confetti.js
-content/<id>/  die Inhalte einer App als JSON: manifest.json, lessons.json, badges.json, data.json (optional)
-schemas/       bundle.schema.json: JSON-Schema für ein Inhaltspaket (von den Tests mit Ajv geprüft)
-apps/<name>/   eine App: index.html, main.js, logic.js, builders.js, diagrams.js, app.css, optional theory.js und smoke.mjs
-apps/_template/ Vorlage für neue Apps (wird von den Tests geprüft)
-tests/         Unit- und Vertragstests (node:test)
-scripts/       smoke.mjs (Browser-Simulation mit jsdom)
-```
-
-Gemeinsame Rechenhelfer (Zahlen formatieren, tolerante Eingabeprüfung, Brüche) liegen in `core/js/mathkit.js` und dürfen von allen Mathe-nahen Apps genutzt werden.
-
-Faustregel: Was mehr als eine App braucht, gehört nach `core/`. Was nur ein Fach betrifft, bleibt in `apps/<name>/`. Apps importieren aus `core/`, nie aus anderen Apps. `core/` kennt keine einzelne App.
-
-## Neubau (modernized/modulare-reimagined)
-
-Der Neubau hat dieselben Inhalte (`content/`, gleiche JSON-Form) und dieselben Spielregeln, aber eine andere Struktur:
-
-```
-regeln/      reine Spielregeln (XP, Serie, Fälligkeit, Trophäen), ohne Speicher und ohne Oberfläche
-helfer/      Zufall mit Seed (createRng, shuffle, pick), Zahlen (rnd, fmt, nearby, numCheck)
-runde/       Fragenbauer (choiceQuestion, typedQuestion, matchQuestion), Rundenmotor, Blitz, Textvergleich
-inhalte/     Inhaltspaket prüfen, Konfiguration bauen (buildConfig), Quellen
-speicher/    IndexedDB mit localStorage- und Arbeitsspeicher-Ausweichen, Sicherung, Altstand
-komponenten/ React-Bausteine: Lektion, Theorie, Diagramme (svg.js), Minou, Symbole, Lernstränge
-seiten/      Startseite, App-Rahmen (Runde starten, auswerten, speichern), Ergebnis, Sicherung
-apps/<id>/   Logik einer Fach-App: builders.js, diagrams.js, logic.js, optional eigene Theorie (Theory)
-apps/index.js  Zuordnung Kennung -> Logik (logicFor)
-```
-
-- Grenzen: `regeln/` und `helfer/` importieren nicht aus `speicher/`, `komponenten/`, `seiten/`, `apps/` und nicht aus React. Nur `speicher/` greift auf IndexedDB und localStorage zu. Apps importieren nie aus anderen Apps. `grenzen`-Tests prüfen das.
-- Zufall ist immer Parameter `rng`. Ohne `rng` gibt es keine Aufgabe. Gleicher Seed muss gleiche Aufgaben liefern.
-- Eine App liefert `logic.js` mit `init`, `diagrams`, `rounds` (`lesson(unit, rng)`, `quick(rng)`, `boss(rng)`), `blitz(rng)` und optional `Theory` (React-Komponente mit `{ unit, config, onStart }`) und `bossUnlocked`.
-- Befehle: `npm install`, `npm test` (node:test, alle Suiten inkl. Smoke über alle Live-Apps), `npm run build` (kopiert `content/` nach `public/content` und baut `dist/`), `npm run dev`, `npm run preview`.
+Die Regeln des Neubaus (Grenzen, Zufall, App-Vertrag, Befehle) stehen in `modernized/modulare-reimagined/CLAUDE.md`. Sie gelten nur beim Arbeiten in diesem Ordner.
 
 ## Inhalte und Daten
 
@@ -72,13 +29,6 @@ Eine App besteht aus zwei Teilen, die sich nie mischen:
 
 Das Inhaltspaket (`bundle`) hat immer dieselbe Form `{ manifest, lessons, badges, data }`, beschrieben in `schemas/bundle.schema.json` und `docs/inhalte.md`. Eine Quelle (`core/js/content.js`) liefert es: heute `createStaticSource` (JSON-Dateien), später `createHttpSource` (Datenbank-API), optional mit `withCache` für den Offline-Betrieb. `core/js/boot.js` lädt das Paket, `buildConfig` (`core/js/appconfig.js`) macht daraus die App-Konfiguration, `shell.js` zeigt sie an.
 
-| Datei | Inhalt |
-|---|---|
-| `manifest.json` | `schema: 1`, `id`, `title`, `greeting`, `intro`, optional `bossTitle`, `words`, `inputChars`, `tracks` (Lernstränge, z. B. `lrs`: `{ label, desc? }`; Seiten und Material verweisen per `track` darauf und bekommen ein Etikett, Fragen zeigen es als `chip`), `resources` (Material zum Öffnen oder Ausdrucken, `{ title, desc?, track?, href }` mit relativem Pfad zur `index.html`, Dateien liegen in `apps/<name>/files/`); `units` (Seiten mit Karte), `notes` (Merkzettel je Seite) |
-| `lessons.json` | Lektion je Seite (Teile siehe "Lektionen"). Bilder als Verweis `{ "diagram": { "name", "args" }, "caption" }` auf `logic.diagrams` |
-| `badges.json` | Trophäen `{ id, n, d, rule }` mit einer deklarativen Regel (`anyUnit`, `unit`, `units`, `perfectRound`, `combo`, `blitz`, `boss`, `streak`, `all`, `any`), Beschreibung in `core/js/rules.js` |
-| `data.json` | Aufgabendaten, deren Form die Logik der App festlegt (z. B. Faktenpools) |
-
 Regeln:
 
 - Neue Texte, Fragen und Fakten gehören nach `content/`, nicht in `.js`. Neue Rechenarten oder Diagramme gehören in `logic.js`.
@@ -86,53 +36,6 @@ Regeln:
 - Eine neue Trophäen-Regel ist ein neuer Eintrag in `TYPES` in `rules.js` plus Test, kein Code in den Daten.
 - Inhalte, die später aus einer Datenbank kommen, dürfen kein ausführbares JavaScript enthalten. HTML-Felder (`html`) kommen aus vertrauenswürdigen Redaktionen und werden vor dem Einspielen geprüft.
 - Der Ordnername in `content/` ist die App-`id`. `npm test` prüft jedes Paket gegen das Schema (Ajv) und die Querverweise.
-
-## App-Vertrag
-
-`buildConfig(bundle, logic)` erzeugt ein Konfigurationsobjekt ohne Browser-Code (kein `document`), das auch in Node testbar bleibt. Die Tabelle beschreibt dieses Objekt; die Felder kommen aus dem Inhaltspaket und aus `logic.js`.
-
-| Feld | Pflicht | Bedeutung |
-|---|---|---|
-| `id` | ja | Stabil und eindeutig, Kleinbuchstaben mit Bindestrich. Bestimmt den Speicherschlüssel |
-| `title`, `greeting`, `intro` | ja | Texte im Kopf der App. `title` muss mit dem Titel in `registry.js` übereinstimmen (Test) |
-| `inputChars` | nein | Sonderzeichen für die Leiste bei Eingabefragen, z. B. `['é','è','ç']`. Ohne Angabe gibt es keine Leiste |
-| `units` | ja | Liste von `{ id, title, de, ic, color }`, die Seiten des Lernpfads |
-| `theory(box, unit)` | ja | Schreibt die Theorie einer Seite in `box`. Nutzt dafür `lessonTop`, `lessonBottom` und `wireLesson` aus `core/js/lesson.js` |
-| `lessons` | ja | `{ [unit.id]: Lektion }`, siehe "Lektionen" |
-| `units[].card` | ja | `{ name, fact }` für das Sammelalbum: Titel und ein Fakt, den man sich gern merkt |
-| `rounds.lesson(unit)` | ja | Liefert die Fragen einer Übungsrunde |
-| `rounds.quick()` | nein | Kurze Runde mit 5 Fragen |
-| `rounds.boss()` | nein | Endgegner mit 12 Fragen. Frei, wenn alle Seiten mindestens einen Stern haben (anpassbar mit `bossUnlocked(state)`) |
-| `blitz()` | nein | Liefert eine einzelne Frage für den 45-Sekunden-Blitz |
-| `bossTitle` | nein | Name des Endgegners |
-| `words` | nein | Eigene Lob-Sprüche `praise`, Ergebnis-Titel `resultTitles` (für 1, 2, 3 Sterne), `blitzTitle` und `levelTitles`. Standard ist Deutsch |
-| `badges` | ja | Liste von `{ id, n, d, when(state, result) }` |
-
-`logic.js` exportiert per `export default`:
-
-| Feld | Pflicht | Bedeutung |
-|---|---|---|
-| `rounds` | ja | `{ lesson(unit), quick?(), boss?() }`, siehe Tabelle oben |
-| `blitz` | nein | Funktion, die eine Frage liefert |
-| `diagrams` | wenn Lektionen Diagramme nutzen | `{ name: (…args) => svgString }` |
-| `init({ data, manifest })` | nein | Wird vor der ersten Runde aufgerufen |
-| `theory(box, unit, ctx)` | nein | Eigene Theorie-Seite, sonst die Standard-Seite aus `core/js/theory.js`. `ctx` hat `lessons`, `notes`, `data`, `manifest`, `start` |
-| `bossUnlocked(state)` | nein | Eigene Freischaltung des Endgegners |
-
-`main.js` ruft nur `bootApp({ id, logic })` auf. `core/js/boot.js` lädt die Inhalte, baut die Konfiguration und startet `core/js/shell.js`; die Ansichten (Start, Ergebnis, Sicherung) liegen in `core/js/views/`. Mit `<meta name="lw-content-api" content="https://…">` in der `index.html` kommen die Inhalte stattdessen aus einer API.
-
-## Fragenformat
-
-Ein Fragenobjekt wird über das Register `core/js/qtypes.js` gezeichnet und geprüft, der Rundenablauf steckt in `core/js/quiz.js`. Die Tests prüfen jede Frage mit `assertValidQuestion` (`tests/helpers.js`), das den `validate` des jeweiligen Typs aufruft. Fragen baust du mit `choiceQuestion` und `typedQuestion` aus `core/js/questions.js`.
-
-- `kind`: `choice` (Auswahl), `type` (Eintippen) oder `match` (Zuordnen)
-- Gemeinsam: `label`, `prompt`, `answer`, `why` (Erklärung nach der Antwort), optional `chip`, `sub`, `help`
-- `choice`: `options` als `[{ id, html }]`, optional `optionsLayout: 'list'`
-- `type`: optional `placeholder`, `accents` (Sonderzeichen-Leiste), `check(eingabe)` für eigene Prüfung
-- `match`: `left`, `right`, optional `leftValues`
-- Lücken im Text: `{{blank}}` im `prompt`
-
-Alles, was in `html` oder `prompt` landet und aus Daten stammt, muss mit `esc()` aus `core/js/ui.js` maskiert werden.
 
 ## Speicher
 
@@ -227,12 +130,8 @@ Der bisherige Code ist aus `main` entfernt (Branch `legacy`). Neue Apps nur im N
 
 ## Tests
 
-- `npm test` im Neubau (`modernized/modulare-reimagined`): alle Suiten, derzeit 642 Tests. Sie müssen vor jedem Commit grün sein.
-- `npm run smoke`: spielt in jsdom alle Apps aus `registry.js` durch (benötigt `npm install`). App-spezifische Prüfungen liegen in `apps/<name>/smoke.mjs` und werden automatisch gefunden. Eine neue App braucht keine Änderung am Skript.
-- `tests/db.test.js` prüft den Speicher mit einer simulierten IndexedDB. Der Durchspiel-Test deckt IndexedDB und die Übernahme alter Daten ab.
-- `tests/qtypes.test.js` und `tests/views.test.js` decken Fragetypen und Ansichten ab.
-- Neue Logik in `core/` bekommt einen Test. Neue Inhalte werden durch den Schema- und Vertragstest (`tests/content.test.js`, `tests/contract.test.js`) abgedeckt.
-- `tests/helpers.js` baut Konfigurationen mit `loadAppConfig(id, ordner)` auf demselben Weg wie der Browser, nur mit Dateien statt `fetch`. Der Durchspiel-Test ersetzt `fetch` im Browser-Fenster durch denselben Dateizugriff.
+- `npm test` im Neubau (`modernized/modulare-reimagined`) muss vor jedem Commit grün sein.
+- Neue Logik bekommt einen Test. Neue Inhalte werden durch den Schema- und Vertragstest geprüft.
 
 ## Deployment
 
@@ -248,12 +147,12 @@ Kurze, deutsche Betreffzeile im Präsens oder Perfekt ("Mathe-App ergänzt", "Bo
 - IDs in gespeicherten Daten nie ändern.
 - Eingaben vergleichen über `norm()` und `stripAccents()`, nicht mit eigenem Vergleich.
 - Zufall (`shuffle`, `pick`) nie so nutzen, dass die richtige Antwort immer an derselben Stelle steht.
-- Sonderzeichen in Texten (Anführungszeichen, `<`, `&`) über `esc()` ausgeben.
+- Sonderzeichen in Texten (Anführungszeichen, `<`, `&`) über `esc()` ausgeben. Das gilt auch für alles, was aus Daten in `html` oder `prompt` landet.
 - Nichts mit Namen oder personenbezogenen Daten ins Repo. Namen von Lernenden liegen nur im lokalen Browserspeicher.
 
 ## Checkliste vor dem Commit
 
-- [ ] `npm test` grün, `npm run smoke` grün
+- [ ] `npm test` grün
 - [ ] Hell und dunkel angesehen, schmale Breite geprüft
 - [ ] Keine neuen festen Farben, keine absoluten Pfade
 - [ ] Inhalte passen zu Klasse 7 Gymnasium BW

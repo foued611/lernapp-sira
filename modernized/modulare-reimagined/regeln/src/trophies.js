@@ -49,8 +49,6 @@ const TYPES = {
 // Object.hasOwn statt TYPES[type], damit Namen wie "constructor" nicht als Typ durchgehen.
 const knownType = (type) => Object.hasOwn(TYPES, type);
 
-export const trophyRuleTypes = () => Object.keys(TYPES);
-
 /**
  * Prüft eine Regel gegen Zustand, Rundenergebnis und Seitenliste.
  * @param {object} rule
