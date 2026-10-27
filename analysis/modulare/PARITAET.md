@@ -10,7 +10,10 @@ Vergleich im Browser: Legacy über `python3 -m http.server 5174` (Repo-Stand 88e
 - Theorie: Inhaltsangabe und Terme vereinfachen (mathe) mit Legacy verglichen. Aufbau, Farben (Vergleich olivgrün), Diagramm und Zurück-Link stimmen überein. Kein Pixel-Diff gemacht.
 - Reveal (Auflösung bei falscher Antwort): umgesetzt.
 - Browser geprüft: Runden (deutsch, mathe), Blitz (deutsch, mathe), Ergebnis mobil, Speicher (XP, Name, Reset, Sicherung, Einspielen, Arbeitsspeicher), Diagramme aller 24 Lektionen.
-- Offen: Pixel-Diff der Theorie-Seiten, besonders Französisch (Selbsttest als Pill gegen Knopf, Titelzeile). Auswertung je App (Französisch, Informatik, Geometrie) noch nicht im Browser verglichen. RULE-150 ist eine Frage an die Person.
+- Französisch-Theorie (être) gegen Legacy gemessen: Titel 46 px Bricolage Grotesque, Selbsttest-Pill 246×35 px, Schrift 15 px, Kartenrand 10 px in Lila. Stimmt überein. Ein Pixel-Diff ist das nicht.
+- Auswertung Informatik gegen Legacy: Titel, Sterne, Untertitel, drei Kennzahlen, Tagesziel-Leiste, Niveau-Aufstieg und Konfetti stimmen im Aufbau überein. Geometrie nutzt dieselbe Ergebnis-Komponente (`seiten/ergebnis.js`).
+- Nicht verglichen: Auswertung Französisch. Die Zuordnungsfrage lässt sich in Legacy per Skript nicht durchspielen (die Paare lösen sich nicht zuverlässig aus). Der Neubau spielt sie.
+- Offen: RULE-150 ist eine Frage an die Person. Im Repo steht der Name aus dem Französisch-Text (`content/fr-verben/lessons.json`, zweimal). AGENTS.md verbietet Namen im Repo. Die Ersetzung ist eine Entscheidung der Person, weil Legacy dieselbe Datei nutzt.
 
 Die Befunde unten stammen vom 26.10. und sind teils überholt.
 
