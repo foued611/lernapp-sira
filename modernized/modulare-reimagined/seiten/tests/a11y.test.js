@@ -5,7 +5,9 @@ import { readFileSync } from 'node:fs';
 import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { Startseite } from '../startseite.js';
-import { bootFixture } from './helpers.js';
+import { AppHome } from '../apphome.js';
+import { appDefaults, profileDefaults } from '../rahmen.js';
+import { bootFixture, configOf, DAY } from './helpers.js';
 
 const h = createElement;
 const read = (name) => readFileSync(new URL(`../${name}`, import.meta.url), 'utf8');
@@ -88,4 +90,33 @@ test('SEITE-A11Y Das Namensfeld hat eine Beschriftung, die nicht nur ein Platzha
   const markup = renderToStaticMarkup(h(Startseite, { state: boot.state }));
   assert.match(markup, /aria-label="Dein Name"/);
   assert.match(markup, /placeholder="Wie heißt du\?"/);
+});
+
+const pathMarkup = () => {
+  const markup = renderToStaticMarkup(h(AppHome, {
+    config: configOf(), app: { ...appDefaults(), stars: { start: 3 }, last: { start: DAY } }, profile: profileDefaults(), day: DAY,
+    rec: null, open: false, notice: null, storeMessage: null, persistent: false, resetPhase: 'idle', profileStore: null,
+    onStudy() {}, onStart() {}, onReset() {}, onName() {}
+  }));
+  return /<ol class="path"[\s\S]*?<\/ol>/.exec(markup)[0];
+};
+
+test('SEITE-A11Y Jede Station des Lernpfads ist ein Button mit Text, der Zustand steht als Wort da', () => {
+  const stations = pathMarkup().match(/<li[\s\S]*?<\/li>/g);
+  assert.equal(stations.length, 2);
+  for (const station of stations) {
+    const button = /<button[^>]*type="button"[^>]*>([\s\S]*?)<\/button>/.exec(station);
+    assert.ok(button, 'die Station ist ein Button');
+    const text = button[1].replace(/<svg[\s\S]*?<\/svg>/g, '').replace(/<[^>]+>/g, ' ');
+    assert.match(text, /\b(Offen|Geübt|Gemeistert|Zeit zum Auffrischen)\b/, 'Zustand als Text, nicht nur Farbe');
+    assert.match(text, /Seite/, 'der Titel der Seite steht im Button');
+  }
+});
+
+test('SEITE-A11Y Die Stationen des Lernpfads sind mindestens 44 px hoch, ohne feste Farben', () => {
+  const base = read('design/styles/base.css');
+  const rule = /\.node\{[^}]*\}/.exec(base)[0];
+  assert.match(rule, /min-height:\s*(var\(--touch-min,\s*44px\)|44px)/);
+  const mapRules = base.split('\n').filter((line) => /^\.(node|path|station|state)/.test(line)).join('\n');
+  assert.equal(/#[0-9a-fA-F]{3,6}\b/.test(mapRules), false, 'Lernpfad-CSS nutzt nur Tokens');
 });

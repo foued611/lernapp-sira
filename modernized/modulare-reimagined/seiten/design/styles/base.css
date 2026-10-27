@@ -62,9 +62,10 @@ a.btn{display:inline-block;text-align:center;text-decoration:none}
 .goalbox p{margin:0;font-size:14px;color:var(--hero-soft)}
 .goalbox p strong{color:var(--hero-fg);display:block;font-size:17px;font-family:var(--f-head);font-weight:800}
 .goalbox .btn{margin-left:auto}
-.path{display:grid;gap:14px;position:relative}
+.path{display:grid;gap:14px;position:relative;list-style:none;margin:0;padding:0}
+.station{margin:0}
 .path::before{content:"";position:absolute;left:46px;top:30px;bottom:30px;border-left:3px dashed var(--line)}
-.node{position:relative;display:grid;grid-template-columns:60px 1fr auto;align-items:center;gap:14px;width:100%;text-align:left;cursor:pointer;background:var(--card);border:2px solid var(--ink);border-radius:14px;box-shadow:4px 5px 0 var(--shadow);padding:12px 16px;transition:transform .1s}
+.node{position:relative;display:grid;grid-template-columns:60px 1fr auto;align-items:center;gap:14px;width:100%;text-align:left;cursor:pointer;background:var(--card);border:2px solid var(--ink);border-radius:14px;box-shadow:4px 5px 0 var(--shadow);padding:12px 16px;min-height:var(--touch-min,44px);transition:transform .1s}
 .node:hover{transform:translate(-1px,-2px)}
 .node .circ{width:60px;height:60px;border-radius:18px;border:2px solid var(--ink);background:var(--lc);color:var(--on-accent);display:grid;place-items:center;font-family:var(--f-head);font-weight:800;font-size:22px;line-height:1;transform:rotate(-4deg)}
 .node h3{font-size:22px}
@@ -122,7 +123,6 @@ a.btn{display:inline-block;text-align:center;text-decoration:none}
 .note b{display:block;font-family:var(--f-head);font-weight:800;font-size:17px;line-height:1.15;color:var(--ink);margin-bottom:2px}
 
 /* Auffrischen, Sammelalbum */
-.due{display:inline-block;margin-top:4px;background:var(--marker);color:var(--text);border-radius:8px;padding:1px 8px;font-size:13px;font-weight:600}
 .album{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
 .gcard{position:relative;background:var(--card);border:2px solid var(--ink);border-top:10px solid var(--lc,var(--line));border-radius:14px;padding:14px;box-shadow:3px 4px 0 var(--shadow);display:grid;gap:6px;align-content:start}
 .gcard h3{margin:0;font-size:18px}
@@ -149,3 +149,15 @@ a.btn{display:inline-block;text-align:center;text-decoration:none}
 .mission .mtext{display:grid;gap:2px}
 .mission .mtext b{font-size:15px;color:var(--ink)}
 .mission .mtext small{font-size:13px;color:var(--muted)}
+
+/* Lernpfad-Karte: Zustand als Wort mit Symbol, die nächste Station mit Rahmen und Text, nichts ist gesperrt */
+.node .state{display:inline-flex;align-items:center;gap:4px;margin-top:4px;font-size:13px;font-weight:700;color:var(--muted)}
+.node .state svg.ic{width:16px;height:16px}
+.node .state .dot{width:10px;height:10px;border:2px solid var(--muted);border-radius:50%}
+.node .s-gemeistert{color:var(--ink)}
+.node .s-gemeistert svg.ic{fill:var(--ok)}
+.node .s-geübt svg.ic{fill:var(--star)}
+.node .s-fällig{background:var(--marker);color:var(--text);border-radius:8px;padding:1px 8px}
+.node .s-fällig svg.ic{fill:var(--flame)}
+.node.next{border-width:4px;padding:10px 14px}
+.node .nexttag{display:block;width:fit-content;margin-top:6px;background:var(--ink);color:var(--paper);border-radius:8px;padding:1px 8px;font-size:13px;font-weight:700}

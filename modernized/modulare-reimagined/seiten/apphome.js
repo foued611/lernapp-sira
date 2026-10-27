@@ -63,6 +63,43 @@ function Stars({ n }) {
   );
 }
 
+// Zustand einer Station. "fällig" hat Vorrang, weil das Auffrischen die nächste sinnvolle Handlung ist.
+export function stationState(app, unit, day) {
+  const n = starsOf(app.stars, unit.id);
+  if (n <= 0) return 'offen';
+  if (isRefreshDue(app, unit.id, day)) return 'fällig';
+  return n >= 3 ? 'gemeistert' : 'geübt';
+}
+
+// Text und Symbol je Zustand. Das Symbol ist dekorativ (Icon ist aria-hidden), der Text trägt die Bedeutung.
+const STATION_TEXT = Object.freeze({
+  offen: { label: 'Offen', icon: null },
+  geübt: { label: 'Geübt', icon: 'star' },
+  gemeistert: { label: 'Gemeistert', icon: 'check' },
+  fällig: { label: 'Zeit zum Auffrischen', icon: 'flame' }
+});
+
+// Eine Station der Lernpfad-Karte: ein Knopf mit Titel, Zustand als Wort und Symbol und den Sternen.
+function Station({ unit, track, state, stars, next, onStudy }) {
+  const { label, icon } = STATION_TEXT[state];
+  return h(
+    'li',
+    { className: 'station' },
+    h(
+      'button',
+      { type: 'button', className: `node${next ? ' next' : ''}`, style: { '--lc': unit.color }, 'aria-current': next ? 'step' : undefined, onClick: () => onStudy(unit) },
+      h('span', { className: 'circ' }, unit.ic),
+      h('span', null,
+        h('h3', null, unit.title),
+        h('small', null, unit.de),
+        h(TrackLabel, { track }),
+        h('span', { className: `state s-${state}` }, icon ? h(Icon, { name: icon }) : h('span', { className: 'dot', 'aria-hidden': 'true' }), label),
+        next ? h('span', { className: 'nexttag' }, 'Als Nächstes') : null),
+      h(Stars, { n: stars })
+    )
+  );
+}
+
 // Der Ring mit dem Tagesstand. Gleiche Maße wie in Legacy (viewBox 76, Radius 32).
 function Ring({ xp, goal }) {
   const C = 2 * Math.PI * 32;
@@ -110,6 +147,9 @@ export function AppHome({ config, app, profile, day, rec, open, notice, storeMes
   const bossHasRounds = Boolean(config.rounds && typeof config.rounds.boss === 'function');
   const cardUnits = units.filter((u) => u.card);
   const medal = ['', 'Bronze', 'Silber', 'Gold'];
+  // Die nächste Station ist die erste ohne Stern. Sie wird nur hervorgehoben, nie gesperrt.
+  const nextUnit = units.find((u) => starsOf(app.stars, u.id) === 0);
+  const nextId = nextUnit ? nextUnit.id : null;
 
   return h(
     'div',
@@ -144,19 +184,9 @@ export function AppHome({ config, app, profile, day, rec, open, notice, storeMes
       h('h2', null, 'Dein Lernpfad'),
       h('p', { className: 'muted', style: { margin: '4px 0 14px', fontSize: '14px' } }, config.intro || 'Starte irgendwo. Die Reihenfolge ist nur ein Vorschlag.'),
       h(
-        'div',
+        'ol',
         { className: 'path' },
-        ...units.map((u) => h(
-          'button',
-          { key: u.id, type: 'button', className: 'node', style: { '--lc': u.color }, onClick: () => onStudy(u) },
-          h('span', { className: 'circ' }, u.ic),
-          h('span', null,
-            h('h3', null, u.title),
-            h('small', null, u.de),
-            h(TrackLabel, { track: unitTrack(config.tracks, u) }),
-            isRefreshDue(app, u.id, day) ? h('span', { className: 'due' }, 'Zeit zum Auffrischen') : null),
-          h(Stars, { n: starsOf(app.stars, u.id) })
-        ))
+        ...units.map((u) => h(Station, { key: u.id, unit: u, track: unitTrack(config.tracks, u), state: stationState(app, u, day), stars: starsOf(app.stars, u.id), next: u.id === nextId, onStudy }))
       )
     ),
     h(
