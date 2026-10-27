@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- SEC-004: nur eigene Skripte, keine Objekte, keine Drittquellen. Stile bleiben inline erlaubt. -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; object-src 'none'; img-src 'self' data:; base-uri 'self'; form-action 'none'" />
+    <!-- Eigenes Symbol als Daten-Adresse: ohne Angabe fragt der Browser /favicon.ico an und bekommt 404. Farben wie das Markenzeichen (tokens.css). -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='13' cy='17' r='9' fill='%23E8365A'/%3E%3Ccircle cx='22' cy='11' r='6' fill='%23FFC933'/%3E%3C/svg%3E" />
     <title>Lernwerkstatt</title>
   </head>
   <body>

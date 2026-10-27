@@ -8,7 +8,7 @@ const dir = new URL('.', import.meta.url);
 const ASSIGNED = ['RULE-193', 'RULE-208', 'RULE-195', 'RULE-247', 'RULE-133', 'RULE-205', 'RULE-202', 'RULE-206', 'RULE-075', 'RULE-242', 'RULE-258', 'RULE-256', 'RULE-229', 'RULE-166'];
 // RULE-259 ist nicht zugewiesen. Die Seitenzahl aus der Liste kommt hinzu und wird unter dieser Kennung geprüft.
 const EXTRA = ['RULE-259'];
-const PREFIXES = ['SEITE-MASKIERUNG', 'SEITE-A11Y', 'SEITE-SPEICHER-FEHLER'];
+const PREFIXES = ['SEITE-MASKIERUNG', 'SEITE-A11Y', 'SEITE-SPEICHER-FEHLER', 'SEITE-VIELFALT'];
 
 function titlesOf() {
   const titles = [];

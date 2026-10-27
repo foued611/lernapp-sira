@@ -6,7 +6,7 @@
 //   - Schreibmaschinenschrift (span.mono) wird zu <b>, weil richText nur b, strong, i, em, p, ul, ol, li, br kennt.
 //   - help (Spickzettel) ist Text. Die Oberfläche zeigt ihn über den Spickzettel-Knopf.
 //   - Eingaben werden nach normInput() verglichen wie in Legacy (Leerzeichen, 0x und führende Nullen werden entfernt).
-import { choiceQuestion, typedQuestion, matchQuestion, esc } from '../../runde/index.js';
+import { choiceQuestion, typedQuestion, matchQuestion, esc, distinctQuestions } from '../../runde/index.js';
 import { pick, shuffle, rnd } from '../../helfer/index.js';
 import {
   HEX, WEIGHTS, toBin, toHex, placeDigits, placeSum, onesWeights, distractors,
@@ -284,25 +284,15 @@ const POOLS = {
 /** Erzeuger einer Seite (für Tests und die Dual-Prüfung). */
 export const makersFor = (unitId) => POOLS[unitId] || [];
 
-/** Eine Lektionsrunde: 8 Fragen, die sich nicht direkt wiederholen. */
+/** Eine Lektionsrunde: 8 verschiedene Fragen (keine Aufgabe kommt zweimal vor, siehe runde/src/vielfalt.js). */
 export function lessonRound(unit, rng) {
-  const pool = POOLS[unit.id];
-  const out = [];
-  let last = null;
-  for (let i = 0; i < 8; i++) {
-    let make;
-    do { make = pick(pool, rng); } while (pool.length > 1 && make === last);
-    last = make;
-    out.push(make(rng));
-  }
-  return out;
+  return distinctQuestions(POOLS[unit.id], 8, rng);
 }
 
 const allMakers = () => UNITS.flatMap((u) => POOLS[u.id]);
-const mixed = (count, rng) => Array.from({ length: count }, () => pick(allMakers(), rng)(rng));
 
-export const bossRound = (rng) => mixed(12, rng);
-export const quickRound = (rng) => mixed(5, rng);
+export const bossRound = (rng) => distinctQuestions(allMakers(), 12, rng);
+export const quickRound = (rng) => distinctQuestions(allMakers(), 5, rng);
 
 /** Blitz: nur Auswahlfragen, damit man schnell antworten kann. */
 export function blitzQuestion(rng) {

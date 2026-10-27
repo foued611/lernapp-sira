@@ -5,4 +5,5 @@ export { createBlitz } from './src/blitz.js';
 export { choiceQuestion, typedQuestion, matchQuestion, option } from './src/questions.js';
 export { esc, normalise, stripAccents } from './src/text.js';
 export { compareTyped } from './src/check.js';
+export { questionKey, distinctQuestions, distinctSlots, freshPool } from './src/vielfalt.js';
 export { HEARTS, XP, BLITZ_SECONDS, PEEK_XP } from './src/rules.js';
