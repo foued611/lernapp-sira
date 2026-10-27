@@ -1,7 +1,7 @@
 // Auswertung einer beendeten Runde (rounds.js): Sterne, Auffrischen, Bestwerte, Endgegner,
 // Serie und Trophäen. Verändert profile und app. Das Ergebnis ist ein neues Objekt.
 import { BOSS_BONUS_XP, REFRESH_BONUS_XP } from './constants.js';
-import { assertDay } from './dates.js';
+import { assertDay, dayDiff } from './dates.js';
 import { currentStreak, updateStreak } from './streak.js';
 import { isRefreshDue, starsFor } from './progress.js';
 import { awardXP } from './xp.js';
@@ -69,8 +69,11 @@ export function finishRound(input) {
   const stars = mode === 'blitz' ? 0 : starsFor(accuracy, failed);
   // Der alte Wert muss vor settleLesson gelesen werden, das app.acc überschreibt. Nur Lektionsrunden haben einen.
   const prevAcc = mode === 'lesson' && app.acc ? (app.acc[unit.id] ?? null) : null;
+  // Ebenso der letzte Übungstag der Seite: settleLesson setzt app.last auf heute. Ohne Eintrag null.
+  const lastDay = mode === 'lesson' && app.last ? app.last[unit.id] : undefined;
+  const gapDays = lastDay ? dayDiff(lastDay, day) : null;
   const result = {
-    mode, failed, accuracy, wrong, almost, bestCombo, score, retryRight, prevAcc,
+    mode, failed, accuracy, wrong, almost, bestCombo, score, retryRight, prevAcc, gapDays,
     unitId: mode === 'lesson' ? unit.id : null,
     stars, bonus: 0, refresh: false, levelUp, goalHit, newBadges: []
   };

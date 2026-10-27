@@ -178,6 +178,35 @@ test('prevAcc: außerhalb einer Lektionsrunde null', () => {
   assert.equal(result.prevAcc, null);
 });
 
+test('gapDays: erste Übung einer Seite ergibt null', () => {
+  const result = finishRound({
+    appId: 'mathe', mode: 'lesson', unit: { id: 'a' }, accuracy: 0.8, profile: newProfile(), app: newApp(), day: '2026-10-27'
+  });
+  assert.equal(result.gapDays, null);
+});
+
+test('gapDays: zählt Tage seit der letzten Übung derselben Seite, vor dem Überschreiben gelesen', () => {
+  const app = newApp({ last: { a: '2026-10-24', b: '2026-10-01' } });
+  const result = finishRound({
+    appId: 'mathe', mode: 'lesson', unit: { id: 'a' }, accuracy: 0.8, profile: newProfile(), app, day: '2026-10-27'
+  });
+  assert.equal(result.gapDays, 3, 'nur die eigene Seite zählt, nicht Seite b');
+  assert.equal(app.last.a, '2026-10-27');
+});
+
+test('gapDays: am selben Tag ist es 0, außerhalb einer Lektionsrunde null', () => {
+  const same = finishRound({
+    appId: 'mathe', mode: 'lesson', unit: { id: 'a' }, accuracy: 0.8, profile: newProfile(),
+    app: newApp({ last: { a: '2026-10-27' } }), day: '2026-10-27'
+  });
+  assert.equal(same.gapDays, 0);
+  const quick = finishRound({
+    appId: 'mathe', mode: 'quick', accuracy: 0.8, profile: newProfile(),
+    app: newApp({ last: { a: '2026-10-24' } }), day: '2026-10-27'
+  });
+  assert.equal(quick.gapDays, null);
+});
+
 test('improved-Trophäe: Anstieg von 60 auf 90 Prozent wird in derselben Runde vergeben', () => {
   const rule = { id: 'besser', rule: { type: 'improved', unit: 'a', by: 0.2 } };
   const app = newApp({ acc: { a: 0.6 }, stars: { a: 1 }, last: { a: '2026-10-24' } });

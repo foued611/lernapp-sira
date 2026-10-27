@@ -182,7 +182,10 @@ export async function settleRound({ appId, mode, unit, roundResult, profile, app
     stars: result.stars,
     failed: roundResult.failed,
     score: roundResult.score || 0,
-    xp: roundResult.xp
+    xp: roundResult.xp,
+    // Messung für spätere Auswertung: Abstand zur letzten Übung der Seite und Genauigkeit davor. Keine Person.
+    gapDays: result.gapDays,
+    prevAcc: result.prevAcc
   });
   return { result, saved, logged, summary: summaryOf({ mode, unit, roundResult, result }) };
 }

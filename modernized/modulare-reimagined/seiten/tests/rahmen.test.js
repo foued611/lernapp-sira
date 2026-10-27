@@ -4,6 +4,7 @@ import assert from 'node:assert/strict';
 import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { createRng } from '../../helfer/index.js';
+import { dayDiff } from '../../regeln/index.js';
 import { openApp, openProfile, PROFILE_KEY } from '../../speicher/index.js';
 import {
   AppFrame, NO_STORAGE, Play, appDefaults, bossOpen, profileDefaults, resetApp, resetAppState, resetStep,
@@ -47,6 +48,32 @@ test('RULE-195 Rundenende: Auswertung, Speichern und Protokoll laufen in einem A
   assert.equal(out.summary.stars, 3, 'alle richtig ergibt drei Sterne');
   assert.equal(out.summary.accuracy, 1);
   assert.equal(env.appStore.state.stars.start, 3);
+});
+
+test('RULE-247 Protokoll: eine Lektionsrunde schreibt gapDays und prevAcc, sonst keine neuen Felder', async () => {
+  const env = await setup();
+  const rows = [];
+  env.log = (row) => { rows.push(row); return env.handle.logEvent(row); };
+  const unit = env.config.units[0];
+  env.appStore.state.last[unit.id] = '2026-10-24';
+  env.appStore.state.acc[unit.id] = 0.6;
+  await finishLesson(env);
+  assert.equal(rows.length, 1);
+  assert.equal(rows[0].gapDays, dayDiff('2026-10-24', DAY));
+  assert.equal(rows[0].prevAcc, 0.6);
+  assert.deepEqual(
+    Object.keys(rows[0]).sort(),
+    ['accuracy', 'app', 'failed', 'gapDays', 'mode', 'prevAcc', 'score', 'stars', 'type', 'unit', 'xp']
+  );
+});
+
+test('RULE-247 Protokoll: bei der ersten Übung sind gapDays und prevAcc null', async () => {
+  const env = await setup();
+  const rows = [];
+  env.log = (row) => { rows.push(row); return env.handle.logEvent(row); };
+  await finishLesson(env);
+  assert.equal(rows[0].gapDays, null);
+  assert.equal(rows[0].prevAcc, null);
 });
 
 test('RULE-195 Schlägt das Protokoll fehl, bleibt das Ergebnis und die Meldung steht dabei', async () => {
