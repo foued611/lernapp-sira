@@ -136,3 +136,16 @@ a.btn{display:inline-block;text-align:center;text-decoration:none}
 .trk{display:inline-block;margin:0 0 8px;padding:1px 10px;border:1.5px solid var(--ink);border-radius:12px;background:var(--sun);color:var(--on-accent);font-size:13px;font-weight:700;letter-spacing:.02em;vertical-align:middle}
 .node .trk{margin:4px 0 0}
 .thead .trk{margin:0}
+
+/* Wochenmissionen: Stand als Text und Häkchen, die Farbe unterstützt nur */
+.missions{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.mission{display:flex;align-items:center;gap:12px;min-height:44px;padding:8px 12px;border:2px dashed var(--line);border-radius:14px;background:var(--card)}
+.mission.done{border:2px solid var(--ok);background:var(--ok-bg)}
+.mission .mark{display:inline-flex;align-items:center;gap:4px;min-width:84px;font-size:13px;font-weight:700;color:var(--muted)}
+.mission.done .mark{color:var(--ink)}
+.mission.done .mark svg.ic{fill:var(--ok)}
+.mission.done .mtext small{color:var(--ink)}
+.mission .mark svg.ic{width:18px;height:18px}
+.mission .mtext{display:grid;gap:2px}
+.mission .mtext b{font-size:15px;color:var(--ink)}
+.mission .mtext small{font-size:13px;color:var(--muted)}

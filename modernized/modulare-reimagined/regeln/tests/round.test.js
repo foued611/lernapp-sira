@@ -2,9 +2,13 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { finishRound } from '../src/round.js';
+import { weekStart } from '../src/dates.js';
 
 const newProfile = (extra = {}) => ({ xp: 0, day: { d: '', xp: 0 }, streak: 0, lastDay: '', lastApp: '', ...extra });
 const newApp = (extra = {}) => ({ xp: 0, stars: {}, badges: {}, best: {}, last: {}, acc: {}, ...extra });
+// Eine Runde mit 90 % oder eine Auffrischung erfüllt auch Wochenmissionen (+20 XP je Mission). Wo ein Test nur den
+// Bonus der Runde prüft, sind die Missionen der Woche des Tages schon erledigt.
+const missionsDone = (day) => ({ start: weekStart(day), units: ['x', 'y', 'z'], refreshes: 1, strong: 1, done: ['units3', 'refresh1', 'strong90'] });
 const PERFECT = { id: 'perfect', rule: { type: 'perfectRound' } };
 const BOSS = { id: 'boss', rule: { type: 'boss' } };
 
@@ -37,7 +41,7 @@ test('RULE-064: Gespeicherte Sterne gehen nur nach oben', () => {
 });
 
 test('RULE-071: Endgegner gewonnen gibt 50 Bonus-XP und die Trophäe', () => {
-  const profile = newProfile();
+  const profile = newProfile({ week: missionsDone('2026-10-25') });
   const app = newApp();
   const result = finishRound({
     appId: 'mathe', mode: 'boss', accuracy: 0.9, failed: false, badges: [BOSS],
@@ -93,7 +97,7 @@ test('RULE-189: Auch ohne Fehlerzähler verhindert ein Misserfolg die Perfekt-Tr
 });
 
 test('RULE-194: Abschluss speichert Tag und Genauigkeit und zahlt den Auffrischen-Bonus einmal', () => {
-  const profile = newProfile();
+  const profile = newProfile({ week: missionsDone('2026-10-10') });
   const app = newApp({ stars: { a: 2 }, last: { a: '2026-10-01' } });
 
   const first = finishRound({
@@ -260,4 +264,79 @@ test('app.refreshes: eine gescheiterte Runde zählt nicht', () => {
     profile: newProfile(), app, day: '2026-10-10'
   });
   assert.equal(app.refreshes, undefined);
+});
+
+// Wochenmissionen: 2026-10-26 ist ein Montag. Die Belohnung läuft über awardXP (Tagesziel, Level).
+const MISSION_DAY = '2026-10-26';
+const lesson = (extra) => finishRound({ appId: 'mathe', mode: 'lesson', accuracy: 0.5, ...extra });
+
+test('Wochenmission: strong90 zahlt 20 XP über awardXP und nur einmal pro Woche', () => {
+  const profile = newProfile();
+  const app = newApp();
+  const first = lesson({ unit: { id: 'a' }, accuracy: 0.9, profile, app, day: MISSION_DAY });
+  assert.equal(first.bonus, 20);
+  assert.equal(profile.xp, 20);
+  assert.equal(app.xp, 20);
+  assert.equal(profile.day.xp, 20);
+  assert.deepEqual(profile.week.done, ['strong90']);
+
+  const second = lesson({ unit: { id: 'a' }, accuracy: 1, profile, app, day: MISSION_DAY });
+  assert.equal(second.bonus, 0);
+  assert.equal(profile.xp, 20);
+});
+
+test('Wochenmission: drei verschiedene Seiten bringen 20 XP, dieselbe Seite dreimal nicht', () => {
+  const same = newProfile();
+  const sameApp = newApp();
+  for (let i = 0; i < 3; i += 1) lesson({ unit: { id: 'a' }, profile: same, app: sameApp, day: MISSION_DAY });
+  assert.equal(same.xp, 0);
+
+  const profile = newProfile();
+  const app = newApp();
+  ['a', 'b', 'c'].forEach((id) => lesson({ unit: { id }, profile, app, day: MISSION_DAY }));
+  assert.equal(profile.xp, 20);
+  assert.deepEqual(profile.week.done, ['units3']);
+});
+
+test('Wochenmission: Auffrischen und starke Runde zugleich zahlen je 20 XP, jede Mission einmal', () => {
+  const profile = newProfile();
+  const app = newApp({ stars: { a: 2 }, last: { a: '2026-10-20' } });
+  const result = lesson({ unit: { id: 'a' }, accuracy: 0.95, profile, app, day: MISSION_DAY });
+  assert.equal(result.refresh, true);
+  // 10 Auffrischen-Bonus, 20 für refresh1, 20 für strong90.
+  assert.equal(result.bonus, 50);
+  assert.equal(profile.xp, 50);
+  assert.equal(app.xp, 50);
+  assert.deepEqual(profile.week.done, ['refresh1', 'strong90']);
+});
+
+test('Wochenmission: Level-Aufstieg und Tagesziel durch die Mission stehen im Ergebnis', () => {
+  const profile = newProfile({ xp: 45, day: { d: MISSION_DAY, xp: 15 } });
+  const result = lesson({ unit: { id: 'a' }, accuracy: 0.9, profile, app: newApp(), day: MISSION_DAY });
+  assert.equal(profile.xp, 65);
+  assert.equal(result.levelUp, 2);
+  assert.equal(result.goalHit, true);
+});
+
+test('Wochenmission: eine gescheiterte Runde zählt nicht', () => {
+  const profile = newProfile();
+  lesson({ unit: { id: 'a' }, accuracy: 0.9, failed: true, profile, app: newApp(), day: MISSION_DAY });
+  assert.equal(profile.xp, 0);
+  assert.equal(profile.week, undefined);
+});
+
+test('Wochenmission: Der Endgegner zählt zur starken Runde, aber nicht zu den Seiten', () => {
+  const profile = newProfile();
+  const result = finishRound({ appId: 'mathe', mode: 'boss', accuracy: 0.9, profile, app: newApp(), day: MISSION_DAY });
+  // 50 Endgegner-Bonus plus 20 für strong90.
+  assert.equal(result.bonus, 70);
+  assert.deepEqual(profile.week.units, []);
+});
+
+test('Wochenmission: In der neuen Woche zahlt dieselbe Mission wieder', () => {
+  const profile = newProfile();
+  const app = newApp();
+  lesson({ unit: { id: 'a' }, accuracy: 1, profile, app, day: '2026-10-25' });
+  lesson({ unit: { id: 'a' }, accuracy: 1, profile, app, day: MISSION_DAY });
+  assert.equal(profile.xp, 40);
 });

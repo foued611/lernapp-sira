@@ -6,3 +6,4 @@ export * from './src/streak.js';
 export * from './src/progress.js';
 export * from './src/round.js';
 export * from './src/trophies.js';
+export * from './src/missions.js';

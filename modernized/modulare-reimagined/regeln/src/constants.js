@@ -49,3 +49,6 @@ export const WEAK_ACCURACY = 0.9;
 
 /** Ab so vielen Sternen gilt eine Seite als abgeschlossen (profile.js:92). */
 export const MAX_STARS = 3;
+
+/** Belohnung je erfüllter Wochenmission, einmal pro Woche und Mission (Spec Gamification: Lernwirkung, 5.7). */
+export const MISSION_REWARD_XP = 20;

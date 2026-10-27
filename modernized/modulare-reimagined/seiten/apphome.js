@@ -2,7 +2,7 @@
 // Zurücksetzen. Das Markup folgt legacy/modulare/core/js/views/home.js (Pixelparität, analysis/modulare/PARITAET.md).
 // Die Entscheidungen (Empfehlung, Endgegner offen) kommen von außen, damit es keinen Import-Kreis mit rahmen.js gibt.
 import { createElement, useState } from 'react';
-import { DAILY_GOAL_XP, REFRESH_BONUS_XP, currentStreak, dailyGoal, dailyXP, isRefreshDue, levelOf, levelThreshold } from '../regeln/index.js';
+import { DAILY_GOAL_XP, MISSION_REWARD_XP, REFRESH_BONUS_XP, currentStreak, dailyGoal, dailyXP, isRefreshDue, levelOf, levelThreshold, missionProgress } from '../regeln/index.js';
 import { LEVEL_TITLES } from './ergebnis.js';
 import { doneUnits, starsOf } from '../komponenten/ui.js';
 import { Mascot } from '../komponenten/mascot.js';
@@ -26,6 +26,32 @@ export function minouOf(xp, day, goal = DAILY_GOAL_XP) {
   if (xp >= goal) return 'Tagesziel geschafft. Alles ab jetzt ist Bonus.';
   if (xp === 0) return START_LINES[dayIndex(day) % START_LINES.length];
   return `Noch ${goal - xp} XP bis zum Tagesziel. Das ist ungefähr eine Runde.`;
+}
+
+// Texte der Wochenmissionen. Die IDs kommen aus regeln (MISSIONS), die Reihenfolge ebenfalls.
+const MISSION_TEXT = Object.freeze({
+  units3: { title: 'Übe 3 verschiedene Seiten', unit: (n) => (n === 1 ? 'Seite' : 'Seiten') },
+  refresh1: { title: 'Frische eine Seite auf', unit: (n) => (n === 1 ? 'Auffrischung' : 'Auffrischungen') },
+  strong90: { title: 'Schaffe eine Runde mit mindestens 90 %', unit: (n) => (n === 1 ? 'Runde' : 'Runden') }
+});
+
+// Die Karte "Diese Woche". Der Stand ist Text ("Erledigt" oder "Offen") mit Häkchen, nicht nur eine Farbe.
+function WeekCard({ profile, day }) {
+  return h(
+    'section',
+    { className: 'card week', 'aria-labelledby': 'week-h' },
+    h('h2', { id: 'week-h' }, 'Diese Woche'),
+    h('p', { className: 'muted', style: { margin: '4px 0 12px', fontSize: '14px' } }, `Drei Missionen. Jede bringt einmal pro Woche ${MISSION_REWARD_XP} XP. Am Montag geht es von vorn los.`),
+    h('ul', { className: 'missions' }, ...missionProgress(profile, day).map(({ id, need, count, done }) => {
+      const text = MISSION_TEXT[id];
+      return h(
+        'li',
+        { key: id, className: `mission${done ? ' done' : ''}` },
+        h('span', { className: 'mark' }, done ? h(Icon, { name: 'check' }) : null, done ? 'Erledigt' : 'Offen'),
+        h('span', { className: 'mtext' }, h('b', null, text.title), h('small', null, `${count} von ${need} ${text.unit(need)}`))
+      );
+    }))
+  );
 }
 
 // Die Sterne einer Seite, wie legacy home.js:8-9: sichtbar als Symbole, dazu der Text für Screenreader.
@@ -111,6 +137,7 @@ export function AppHome({ config, app, profile, day, rec, open, notice, storeMes
           : null
       )
     ),
+    h(WeekCard, { profile, day }),
     h(
       'section',
       null,

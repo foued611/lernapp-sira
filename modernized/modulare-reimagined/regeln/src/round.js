@@ -1,11 +1,12 @@
 // Auswertung einer beendeten Runde (rounds.js): Sterne, Auffrischen, Bestwerte, Endgegner,
 // Serie und Trophäen. Verändert profile und app. Das Ergebnis ist ein neues Objekt.
-import { BOSS_BONUS_XP, REFRESH_BONUS_XP } from './constants.js';
+import { BOSS_BONUS_XP, MISSION_REWARD_XP, REFRESH_BONUS_XP } from './constants.js';
 import { assertDay, dayDiff } from './dates.js';
 import { currentStreak, updateStreak } from './streak.js';
 import { isRefreshDue, starsFor } from './progress.js';
 import { awardXP } from './xp.js';
 import { evaluateTrophyRule } from './trophies.js';
+import { recordMission } from './missions.js';
 
 const MODES = new Set(['lesson', 'boss', 'quick', 'blitz']);
 
@@ -33,6 +34,16 @@ function settleLesson(ctx, unitId) {
   // Sterne gehen nur nach oben. Ein schwächerer Versuch nimmt keinen Stern weg (rounds.js:28).
   // Ohne Stern bleibt der Eintrag leer (RULE-189).
   if (result.stars > ((app.stars && app.stars[unitId]) || 0)) app.stars[unitId] = result.stars;
+}
+
+// Wochenmissionen verbuchen, nachdem die Runde ihre eigenen XP gezahlt hat. Mehrere Missionen in einer Runde
+// gehen als eine Gutschrift über payBonus, so meldet sich ein Niveau-Aufstieg nur einmal.
+// Eine gescheiterte Runde zählt nicht, wie beim Auffrischen.
+function settleMissions(ctx, unitId) {
+  const { result, profile, day } = ctx;
+  if (result.failed) return;
+  const { completed } = recordMission(profile, { unit: unitId, refreshed: result.refresh, accuracy: result.accuracy }, day);
+  if (completed.length) payBonus(ctx, completed.length * MISSION_REWARD_XP);
 }
 
 /**
@@ -92,6 +103,8 @@ export function finishRound(input) {
     payBonus(ctx, BOSS_BONUS_XP);
     app.best.boss = true;
   }
+
+  settleMissions(ctx, result.unitId);
 
   updateStreak(profile, day);
   profile.lastApp = appId;
