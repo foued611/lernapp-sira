@@ -4,7 +4,7 @@
 .zw-toy { display: grid; gap: 14px; border-top: 10px solid var(--lc, var(--btn-bg)); }
 /* Kleiner Knopf nur auf den Zahlenwerkstatt-Seiten (legacy: apps/informatik/app.css). */
 .zw-theory .btn.small { padding: 7px 14px; font-size: 14px; min-height: 44px; }
-.zw-toy-label { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.zw-toy-label { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
 .zw-mono { font-family: ui-monospace, Menlo, Consolas, monospace; }
 .zw-muted { color: var(--muted); }
 .zw-no { color: var(--muted); }
@@ -31,7 +31,7 @@
   background: var(--paper); border: 1.5px solid var(--line);
   font: 600 26px ui-monospace, Menlo, Consolas, monospace;
 }
-.zw-place tr.head td { font-size: 12px; font-weight: 600; line-height: 1.5; color: var(--muted); background: transparent; border: 0; padding: 0; }
+.zw-place tr.head td { font-size: 13px; font-weight: 600; line-height: 1.5; color: var(--muted); background: transparent; border: 0; padding: 0; }
 
 .zw-bits { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 6px; }
 .zw-bit {
@@ -62,7 +62,7 @@
   border-radius: 10px; text-align: center; padding: 6px 2px;
 }
 .zw-d { font: 700 20px ui-monospace, Menlo, Consolas, monospace; color: var(--ink); }
-.zw-v { font-size: 12px; color: var(--muted); }
+.zw-v { font-size: 13px; color: var(--muted); }
 @media (max-width: 520px) { .zw-hexgrid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 .zw-slide { width: 100%; accent-color: var(--btn-bg); }
 .zw-trio { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
@@ -70,7 +70,7 @@
   background: var(--paper); border: 1.5px solid var(--line);
   border-radius: 12px; padding: 10px; text-align: center; min-width: 0;
 }
-.zw-k { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.zw-k { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
 .zw-val { font-size: 22px; overflow-wrap: anywhere; }
 @media (max-width: 440px) { .zw-val { font-size: 16px; } }
 

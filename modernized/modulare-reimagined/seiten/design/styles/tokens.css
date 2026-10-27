@@ -7,6 +7,8 @@
   --hero-bg:#2A1A63; --hero-fg:#FFFFFF; --hero-soft:#CFC6FF;
   --btn-bg:#E8365A; --btn-fg:#FFFFFF; --btn-shadow:#9E1B38;
   --sun:#FFC933; --sun-fg:#2A1A63;
+  --sun-shadow:#B8860B; --on-accent:#1B1240; --gold-fg:#3B2A00; --ring-track:rgba(255,255,255,.2);
+  --medal-bronze:#E7B58B; --medal-bronze-fg:#3A210E; --medal-silver:#DDE3EA; --medal-silver-fg:#1F2A37;
   --f-head:'Bricolage Grotesque','Avenir Next','Trebuchet MS',system-ui,sans-serif;
   --f-body:'Lexend',system-ui,-apple-system,'Segoe UI',sans-serif;
   --f-pen:'Caveat','Segoe Print','Bradley Hand',cursive;
