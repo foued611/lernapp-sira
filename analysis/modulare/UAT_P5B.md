@@ -32,10 +32,13 @@ Stand: 2026-10-26. Build und Tests im Neubau: `modernized/modulare-reimagined`. 
 3. Schreibmaschinenschrift (span.mono) ist durch b ersetzt, weil richText nur erlaubte Tags zeigt.
 4. Die Fragen einer Runde werden neu gemischt (createRound). Die Auswahl der Fragen bleibt gleich.
 5. Die Punkte sind über Konstanten geprüft (Herzen, XP, Combo). Der Legacy-Rundenmotor ist DOM-gebunden.
-6. Reveal (Auflösung) wird nicht angezeigt; die Shell zeigt nur die Erklärung.
+6. Reveal (Auflösung): erledigt. Bei falscher Antwort zeigt die Rückmeldung die richtige Antwort und die Erklärung (`seiten/spiel.js`, Feedback `bad`).
 
 ## Offen
-- Veröffentlichung: GitHub Pages baut heute das Repo-Root (Dashboard und Legacy-Apps). Die Umstellung auf `dist/` braucht einen Workflow und ein Merge nach `main`. Das ist ohne Freigabe nicht gemacht.
-- Legacy-Dateien (core/, apps/, dashboard.js) bleiben, bis die Umstellung freigegeben ist.
-- Blitz: an den Rahmen gebunden (seiten/blitz.js, Auswertung in rahmen.js). Tests RULE-229, RULE-166, RULE-193, RULE-195. Browser-Test am Dev-Server für deutsch und mathe: Start, Antwort, Ablauf, Ergebnis, Verlassen. Tasten 1 bis 9 wählen die Antwort (wie Legacy).
-- Sichtprüfung der Diagramme von deutsch und mathe im Browser nicht gemacht.
+Stand 2026-10-27:
+- Veröffentlichung: erledigt. Pages baut `dist/` des Neubaus (Workflow, Commit cb9887d). Die Legacy-Dateien im Repo-Root bleiben, bis du die Entfernung freigibst.
+- Blitz: erledigt. Browser am Dev-Server für deutsch und mathe: Start, Antwort, Rückmeldung mit richtiger Antwort, Zähler, Verlassen. Tasten 1 bis 9 wählen die Antwort (wie Legacy).
+- Sichtprüfung der Diagramme: erledigt. Alle 15 Lektionen von deutsch und alle 9 von mathe zeichnen ihr Diagramm (Breite 520 px, kein leeres SVG). Stichprobe im Bild: Sammelkarten (mathe), Präposition-Tabelle (deutsch).
+- Runde mathe bis zum Ergebnis: erledigt, ohne Fehler.
+- Konsole: im Dev-Server meldet die CSP einen blockierten Inline-Script (Vite-Präambel für React Fast Refresh). Der Produktionsbau (`dist/index.html`) hat kein Inline-Script. Kein Befund für die App.
+- Offen: RULE-150 (Einheiten werden bei Zahleneingabe ignoriert). Frage an dich, nicht entschieden.

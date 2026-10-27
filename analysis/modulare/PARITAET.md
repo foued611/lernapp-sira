@@ -4,6 +4,16 @@ Stand: 2026-10-26. Vorgabe der Person: Legacy wird erst aus `main` entfernt, wen
 
 Vergleich im Browser: Legacy über `python3 -m http.server 5174` (Repo-Stand 88e3d74), Neubau über `npm run dev` in `modernized/modulare-reimagined` (Port 5173).
 
+## Stand 2026-10-27 (gilt vor den Befunden unten)
+
+- Startseite und App-Startseite: Kopfleiste, Tagesziel-Ring, Sammelalbum, Trophäen und Kacheln sind umgesetzt. Mobil (375 px) ohne Überlauf.
+- Theorie: Inhaltsangabe und Terme vereinfachen (mathe) mit Legacy verglichen. Aufbau, Farben (Vergleich olivgrün), Diagramm und Zurück-Link stimmen überein. Kein Pixel-Diff gemacht.
+- Reveal (Auflösung bei falscher Antwort): umgesetzt.
+- Browser geprüft: Runden (deutsch, mathe), Blitz (deutsch, mathe), Ergebnis mobil, Speicher (XP, Name, Reset, Sicherung, Einspielen, Arbeitsspeicher), Diagramme aller 24 Lektionen.
+- Offen: Pixel-Diff der Theorie-Seiten, besonders Französisch (Selbsttest als Pill gegen Knopf, Titelzeile). Auswertung je App (Französisch, Informatik, Geometrie) noch nicht im Browser verglichen. RULE-150 ist eine Frage an die Person.
+
+Die Befunde unten stammen vom 26.10. und sind teils überholt.
+
 ## Befund Startseite
 
 | Merkmal | Legacy | Neubau |
