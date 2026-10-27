@@ -17,7 +17,7 @@
   font: 600 20px ui-monospace, Menlo, Consolas, monospace;
   padding: 8px 12px;
   border: 2px solid var(--ink); border-radius: 10px;
-  background: var(--card); color: var(--text);
+  background: var(--paper); color: var(--text);
   width: 7em; max-width: 100%;
 }
 .zw-num:focus-visible, .zw-slide:focus-visible, .zw-bit:focus-visible { outline: 3px solid var(--sun); outline-offset: 2px; }
@@ -28,7 +28,7 @@
 .zw-place { border-collapse: separate; border-spacing: 6px; margin: 0 auto; }
 .zw-place td {
   min-width: 58px; text-align: center; padding: 8px 6px; border-radius: 10px;
-  background: var(--card); border: 1.5px solid var(--line);
+  background: var(--paper); border: 1.5px solid var(--line);
   font: 600 26px ui-monospace, Menlo, Consolas, monospace;
 }
 .zw-place tr.head td { font-size: 12px; font-weight: 600; line-height: 1.5; color: var(--muted); background: transparent; border: 0; padding: 0; }
@@ -58,7 +58,7 @@
 
 .zw-hexgrid { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 6px; }
 .zw-hexgrid > div {
-  background: var(--card); border: 1.5px solid var(--line);
+  background: var(--paper); border: 1.5px solid var(--line);
   border-radius: 10px; text-align: center; padding: 6px 2px;
 }
 .zw-d { font: 700 20px ui-monospace, Menlo, Consolas, monospace; color: var(--ink); }
@@ -67,7 +67,7 @@
 .zw-slide { width: 100%; accent-color: var(--btn-bg); }
 .zw-trio { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
 .zw-trio > div {
-  background: var(--card); border: 1.5px solid var(--line);
+  background: var(--paper); border: 1.5px solid var(--line);
   border-radius: 12px; padding: 10px; text-align: center; min-width: 0;
 }
 .zw-k { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }

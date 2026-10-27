@@ -156,9 +156,22 @@ Skript: `play.cjs` im Scratchpad (nicht im Repo). Es spielt eine Lektionsrunde o
 - Startseite (Französisch): Layout gleich, Begrüßungssatz wird zufällig gewählt (in beiden Versionen).
 - Behoben in dieser Runde: Verbchip und Lücke im Blitz wie Legacy, Kartenrand Blitz, Raster der Runde (`.seiten`), Startseite-CSS begrenzt, PDF Merkwörter.
 
-### Offen (keine Entscheidung getroffen)
+### Pixel-Abnahme nach Korrektur der Messung (2026-10-27)
 
-- Pixelabweichung Deutsch (2,5 bis 4,3 %) und Mathe (2,4 bis 4,2 %): gleiche Höhe, Unterschied in Kopfzeile und Textkanten. Ursache nicht geklärt.
-- Hexadezimal: 7,8 %, Binär ↔ Hex 3,6 %.
-- Hinweis "Die Datei enthält deinen Namen." steht im Neubau unter dem Sichern-Link, Legacy nicht. Entscheidung nötig: behalten oder entfernen.
-- Pixel-Abnahme der Runde und des Ergebnisses: Die Spielinhalte sind zufällig, deshalb nur Struktur verglichen, nicht Pixel.
+Die früheren Werte von 2 bis 4 % (Deutsch, Mathe, Geometrie) waren ein Messfehler: Die Seite war beim Screenshot unterschiedlich weit gescrollt, der sticky Kopf stand an verschiedenen Stellen. `pixdiff.cjs` setzt den Scroll jetzt vor jedem Screenshot auf 0.
+
+- Deutsch: 0,00 bis 0,01 % (alle 15 Seiten).
+- Mathe: 0,00 bis 0,01 % (alle 9 Seiten).
+- Geometrie: 0,00 bis 0,02 % (alle 8 Seiten).
+- Französisch: 0,07 bis 0,13 % (alle 6 Seiten).
+- Zahlenwerkstatt: Stellenwerte 0,18 %, Binär addieren 0,07 %, Hexadezimal 0,04 %, übrige 0,01 %. Ursachen behoben: Hintergrund der Zellen und Eingabefelder (`--paper` statt `--card`) wie in Legacy.
+
+Restabweichung unter 0,2 % sind Kanten der Schrift (Antialiasing), keine Abweichung im Layout.
+
+### Entscheidung Namenshinweis
+
+- Der Hinweis "Die Datei enthält deinen Namen." bleibt im Neubau. Er ist Teil von SEC-007 (Name steht in der Datei, muss sichtbar gesagt werden) und steht bereits in der Sicherung. Legacy hat ihn nicht. Das ist eine bewusste Abweichung aus Datenschutzgründen, keine Layout-Abweichung. Rückgängig machen: Zeile `sicherung.js` mit `NAME_IN_FILE` entfernen und die beiden Tests in `seiten/tests/sicherung.test.js` anpassen.
+
+### Pixel-Abnahme Runde und Ergebnis
+
+- Die Spielinhalte sind zufällig. Verglichen wurden Struktur, Höhen und Ablauf (Durchspiel oben), nicht Pixel.
