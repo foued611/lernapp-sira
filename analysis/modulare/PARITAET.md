@@ -41,7 +41,7 @@ Gemessen wie oben, Höhen Legacy gegen Neubau in Pixeln, Abweichung in Prozent d
 - Pro Seite gilt: Keine Zeile mit horizontalem Überlauf bei 375 px (Startseite und je eine Theorie je App).
 - Browser-Abnahme (Neubau, Theorie öffnen, Runde starten, eine Antwort geben): alle fünf Apps ohne Fehler. Vorher 404 auf das Merkwörter-PDF, jetzt behoben.
 - Offen, nicht in dieser Runde: Ursachen der 2 bis 4 % in Deutsch, Mathe und Geometrie (Kopfzeile, Schatten), Hexadezimal-Raster, Runde, Ergebnis, Blitz und Sicherung pixelweise. Startseite: Name-Feld erscheint nur im Neubau, weil der Legacy-Ursprung schon einen Namen hat (Datenstand, kein Layout).
-- Nebenbefund, nicht behoben: `seiten/design/styles/dashboard.css` lädt global. Seine Regeln (`.chips`, `.hero`, `.tile`) wirken auf alle Seiten. Legacy lädt sie nur auf der Startseite.
+- Nebenbefund, behoben (b34d024): `seiten/design/styles/dashboard.css` wirkte global. Jetzt nur noch unter `.shell.dash` (Startseite). Legacy lädt sie nur auf der Startseite.
 
 ## Befund Startseite
 
@@ -139,3 +139,26 @@ Ohne Entscheidung über diese Punkte ist "1zu1 funktional" nicht erfüllbar.
 - Französisch-Runde: Lückenfrage mit Verb-Chip, Eingabe mit Akzent-Leiste, Spickzettel, Prüfen. Stimmt überein.
 - Informatik-Runde: Eingabefrage und Auswahlfrage, Aufbau stimmt überein.
 - Fragen sind zufällig, deshalb verschieden. Der Aufbau ist gleich.
+
+## Durchspiel-Abnahme (2026-10-27, Browser)
+
+Skript: `play.cjs` im Scratchpad (nicht im Repo). Es spielt eine Lektionsrunde oder einen Blitz bis zum Ergebnis, mit richtigen Zuordnungspaaren aus `fr-forms.json` (erzeugt aus dem Neubau-Modell). Ergebnis je Lauf: Ergebnis-Ansicht erreicht, Seitenfehler gesammelt.
+
+| App | Runde Legacy | Runde Neubau | Blitz Legacy | Blitz Neubau | Seitenfehler |
+|---|---|---|---|---|---|
+| Französisch | Ergebnis | Ergebnis | Ende (11 richtig) | Ende (17 richtig) | keine |
+| Deutsch | Ergebnis | Ergebnis | Ende | Ende | keine |
+| Mathe | Ergebnis | Ergebnis | Ende | Ende | keine |
+| Geometrie | Ergebnis | Ergebnis | Ende | Ende | keine |
+| Zahlenwerkstatt | Ergebnis | Ergebnis | Ende | Ende | keine |
+
+- Sicherung (Französisch): Neubau exportiert, spielt die Datei wieder ein. Es erscheint der Bestätigungsschritt mit Zahl der Speicherstände, dann "Einspielen". Legacy spielt direkt ein, ohne Bestätigung. Der Bestätigungsschritt ist eine bereits freigegebene Abweichung (Sicherung mit Bestätigung).
+- Startseite (Französisch): Layout gleich, Begrüßungssatz wird zufällig gewählt (in beiden Versionen).
+- Behoben in dieser Runde: Verbchip und Lücke im Blitz wie Legacy, Kartenrand Blitz, Raster der Runde (`.seiten`), Startseite-CSS begrenzt, PDF Merkwörter.
+
+### Offen (keine Entscheidung getroffen)
+
+- Pixelabweichung Deutsch (2,5 bis 4,3 %) und Mathe (2,4 bis 4,2 %): gleiche Höhe, Unterschied in Kopfzeile und Textkanten. Ursache nicht geklärt.
+- Hexadezimal: 7,8 %, Binär ↔ Hex 3,6 %.
+- Hinweis "Die Datei enthält deinen Namen." steht im Neubau unter dem Sichern-Link, Legacy nicht. Entscheidung nötig: behalten oder entfernen.
+- Pixel-Abnahme der Runde und des Ergebnisses: Die Spielinhalte sind zufällig, deshalb nur Struktur verglichen, nicht Pixel.
