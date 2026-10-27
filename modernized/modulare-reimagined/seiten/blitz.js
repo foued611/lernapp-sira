@@ -1,10 +1,10 @@
 // Blitz: 45 Sekunden, nur Auswahlfragen, Combo und XP. Herkunft: legacy/modulare/core/js/blitz.js.
 // Die Regeln stehen in runde/ (createBlitz). Hier liegen Uhr, Anzeige und die Umrechnung in ein Rundenergebnis,
 // damit Auswertung und Speicher denselben Weg nehmen wie bei einer Runde (settleRound in rahmen.js).
-import { createElement, useEffect, useReducer, useRef, useState } from 'react';
+import { createElement, Fragment, useEffect, useReducer, useRef, useState } from 'react';
 import { BLITZ_SECONDS, createBlitz } from '../runde/index.js';
 import { richText } from '../komponenten/rich.js';
-import { TrackLabel } from '../komponenten/tracks.js';
+import { QuestionChip } from '../komponenten/tracks.js';
 import { Icon } from '../komponenten/icons.js';
 import { comboMultiplier } from '../regeln/index.js';
 
@@ -13,7 +13,10 @@ const h = createElement;
 const VERDICT = Object.freeze({ ok: 'Richtig!', bad: 'Leider nicht.' });
 // Wie lange die Rückmeldung steht, bevor die nächste Frage kommt (legacy blitz.js:52).
 const FEEDBACK_MS = Object.freeze({ ok: 280, bad: 900 });
-const blankOut = (text) => String(text || '').split('{{blank}}').join('____');
+// Die Lücke ist wie in legacy ein unterstrichenes Feld (span.blank), kein Text aus Strichen.
+const promptNodes = (text) => h(Fragment, null, ...String(text || '').split('{{blank}}').flatMap((part, i) => (i === 0
+  ? [richText(part)]
+  : [h('span', { key: `b${i}`, className: 'blank' }, ' '), richText(part)])));
 
 /**
  * Umrechnung in die Form einer Rundenauswertung (regeln/src/round.js). Blitz wertet nie als gescheitert
@@ -145,7 +148,7 @@ export function BlitzPlay({ run, onFinish, onLeave }) {
   const combo = cur.combo >= 3 ? `Combo ×${comboMultiplier(cur.combo)} · ${cur.combo} in Folge` : `Richtig: ${cur.score}`;
   return h(
     'div',
-    null,
+    { className: 'seiten' },
     h(
       'div',
       { className: 'playbar' },
@@ -153,14 +156,14 @@ export function BlitzPlay({ run, onFinish, onLeave }) {
       h('div', { className: 'timer', style: { flex: 1 } }, h('i', { style: { width: `${pct}%` } })),
       h('span', { className: 'score' }, `${seconds} s`)
     ),
-    // Die Karte hat einen negativen Rand nach oben (Legacy). Im Blitz steht hier immer Text, daher Abstand darunter.
-    h('div', { className: 'combo', style: { marginBottom: '10px' } }, combo),
+    // Wie legacy: die Karte hat einen negativen Rand nach oben, der Abstand kommt vom Raster der Seite (.seiten).
+    h('div', { className: 'combo' }, combo),
     h(
       'section',
-      { className: 'card qcard' },
+      { className: 'card qcard', style: { '--lc': 'var(--btn-bg)' } },
       h('p', { className: 'qlabel' }, shown.label),
-      shown.chip ? h(TrackLabel, { track: shown.chip }) : null,
-      h('p', { className: 'sentence' }, richText(blankOut(shown.prompt || ''))),
+      shown.chip ? h(QuestionChip, { chip: shown.chip }) : null,
+      h('p', { className: shown.promptStyle === 'big' ? 'big' : 'sentence' }, promptNodes(shown.prompt)),
       shown.sub ? h('p', { className: 'tr' }, shown.sub) : null,
       h(
         'div',

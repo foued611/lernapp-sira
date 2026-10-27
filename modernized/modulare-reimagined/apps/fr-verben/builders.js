@@ -32,8 +32,8 @@ export function distract(v, p, count, rng) {
   return [...traps.slice(0, 1), ...others].filter((x, i, all) => all.indexOf(x) === i).slice(0, count);
 }
 
-// Verbetikett wie im Legacy-Chip "Verb: être · sein". Das Etikett nutzt die Strang-Darstellung des Rahmens (TrackLabel).
-const chipOf = (v) => ({ id: CHIP_ID, label: `Verb: ${v.inf} · ${v.de}` });
+// Verbetikett wie im Legacy-Chip "Verb: être · sein" (.vchip, siehe komponenten/tracks.js QuestionChip).
+const chipOf = (v) => ({ id: CHIP_ID, label: `Verb: ${v.inf} · ${v.de}`, verb: { inf: v.inf, de: v.de } });
 // Spickzettel-Inhalt mit erlaubten Tags (richText kennt nur b, br ...): je Person ein Zeilenumbruch.
 const helpOf = (v) => PERSONS.map((i) => `${esc(lab(v, i))} <b>${esc(v.forms[i])}</b>`).join('<br>');
 const gap = (fr) => fr.split('___').map(esc).join('{{blank}}');

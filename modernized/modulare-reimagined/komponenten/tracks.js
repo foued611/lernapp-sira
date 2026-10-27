@@ -20,3 +20,15 @@ export function TrackLabel({ track }) {
   if (!track) return null;
   return h('span', { className: `trk trk-${track.id}`, title: track.desc || undefined }, track.label);
 }
+
+/**
+ * Kleines Info-Feld über der Frage. Ein Verbchip (chip.verb = { inf, de }) sieht aus wie legacy .vchip
+ * ("Verb: être · sein"), alles andere ist ein Lernstrang-Etikett.
+ */
+export function QuestionChip({ chip }) {
+  if (!chip) return null;
+  if (chip.verb) {
+    return h('span', { className: 'vchip' }, 'Verb: ', h('b', null, chip.verb.inf), ` · ${chip.verb.de}`);
+  }
+  return h(TrackLabel, { track: chip });
+}

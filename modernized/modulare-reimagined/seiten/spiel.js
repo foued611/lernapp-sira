@@ -6,7 +6,7 @@ import { comboMultiplier } from '../regeln/index.js';
 import { Icon } from '../komponenten/icons.js';
 import { Mascot } from '../komponenten/mascot.js';
 import { richText } from '../komponenten/rich.js';
-import { TrackLabel } from '../komponenten/tracks.js';
+import { QuestionChip } from '../komponenten/tracks.js';
 
 const h = createElement;
 
@@ -265,7 +265,7 @@ function PlayBody({ session, praise, inputChars = [], onAnswer, onNext, onLeave,
 
   return h(
     'div',
-    null,
+    { className: 'seiten' },
     h(
       'div',
       { className: 'playbar' },
@@ -280,7 +280,7 @@ function PlayBody({ session, praise, inputChars = [], onAnswer, onNext, onLeave,
       { className: 'card qcard', 'aria-live': 'polite' },
       cur.retry ? h('p', { className: 'retry-tag' }, 'Noch einmal: jetzt, wo du die Lösung kennst') : null,
       label,
-      q.chip ? h(TrackLabel, { track: q.chip }) : null,
+      q.chip ? h(QuestionChip, { chip: q.chip }) : null,
       prompt,
       sub,
       answer,
