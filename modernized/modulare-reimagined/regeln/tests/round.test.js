@@ -333,6 +333,23 @@ test('Wochenmission: Der Endgegner zählt zur starken Runde, aber nicht zu den S
   assert.deepEqual(profile.week.units, []);
 });
 
+test('Wochenmission (R12): Ein Blitz mit Genauigkeit 1 zählt nicht für strong90', () => {
+  const profile = newProfile();
+  const result = finishRound({ appId: 'mathe', mode: 'blitz', accuracy: 1, score: 12, profile, app: newApp(), day: MISSION_DAY });
+  assert.equal(result.bonus, 0);
+  assert.equal(profile.xp, 0);
+  assert.equal(profile.week.strong, 0);
+  assert.deepEqual(profile.week.done, []);
+});
+
+test('Wochenmission (R12): Eine Lektionsrunde mit Genauigkeit 0,9 zählt weiter für strong90', () => {
+  const profile = newProfile();
+  const result = lesson({ unit: { id: 'a' }, accuracy: 0.9, profile, app: newApp(), day: MISSION_DAY });
+  assert.equal(result.bonus, 20);
+  assert.equal(profile.week.strong, 1);
+  assert.deepEqual(profile.week.done, ['strong90']);
+});
+
 test('Wochenmission: In der neuen Woche zahlt dieselbe Mission wieder', () => {
   const profile = newProfile();
   const app = newApp();

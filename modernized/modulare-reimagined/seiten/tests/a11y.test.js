@@ -71,6 +71,11 @@ test('SEITE-A11Y Der sichtbare Fokus ist im Stylesheet mit einem Rahmen definier
   assert.match(styles, /:focus-visible\s*\{[^}]*outline:\s*3px/);
 });
 
+test('SEITE-A11Y Im Hero nutzt der Fokus die Vordergrundfarbe, weil --ink dort dem Hintergrund gleicht', () => {
+  const base = read('design/styles/base.css');
+  assert.match(base, /\.hero\s+:focus-visible\s*\{[^}]*outline-color:\s*var\(--hero-fg\)/);
+});
+
 test('SEITE-A11Y Knöpfe sind mindestens 44 px hoch, über das Token', () => {
   assert.match(tokens, /--touch-min:\s*44px/);
   assert.match(styles, /min-height:\s*var\(--touch-min\)/);

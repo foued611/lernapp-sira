@@ -54,7 +54,8 @@ export function missionProgress(profile, day) {
  * Verbucht eine beendete Runde im Wochenblock des Profils und setzt den Block zurück, wenn eine neue Woche
  * begonnen hat. Der Tag kommt von außen.
  * @param {object} profile
- * @param {{unit?: string|null, refreshed?: boolean, accuracy: number}} event unit nur bei Lektionsrunden
+ * @param {{unit?: string|null, refreshed?: boolean, accuracy: number, strongEligible?: boolean}} event unit nur bei Lektionsrunden;
+ *   strongEligible false: die Runde zählt nicht für die starke Runde (Blitz hat keine echte Genauigkeit)
  * @param {string} day YYYY-MM-DD
  * @returns {{completed: string[]}} die IDs der Missionen, die diese Runde zum ersten Mal erfüllt hat
  */
@@ -62,10 +63,10 @@ export function recordMission(profile, event, day) {
   assertDay(day);
   const week = weekFor(profile, day);
   profile.week = week;
-  const { unit = null, refreshed = false, accuracy } = event;
+  const { unit = null, refreshed = false, accuracy, strongEligible = true } = event;
   if (unit && !week.units.includes(unit)) week.units.push(unit);
   if (refreshed) week.refreshes += 1;
-  if (accuracy >= STRONG_ACCURACY) week.strong += 1;
+  if (strongEligible && accuracy >= STRONG_ACCURACY) week.strong += 1;
   const completed = MISSIONS
     .filter(({ id, need }) => !week.done.includes(id) && COUNTERS[id](week) >= need)
     .map(({ id }) => id);

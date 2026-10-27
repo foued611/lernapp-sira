@@ -39,13 +39,15 @@ function settleLesson(ctx, unitId) {
 // Wochenmissionen verbuchen, nachdem die Runde ihre eigenen XP gezahlt hat. Mehrere Missionen in einer Runde
 // gehen als eine Gutschrift über payBonus, so meldet sich ein Niveau-Aufstieg nur einmal.
 // Eine gescheiterte Runde zählt nicht, wie beim Auffrischen.
+// Der Blitz zählt nicht für die starke Runde: seine "Genauigkeit" ist Punkte durch Antworten, keine echte (R12).
 // Das Profil gilt für alle Apps, deshalb heißt eine Seite im Wochenblock "app/seite": gleiche Seiten-IDs
 // in zwei Apps sind zwei Seiten.
 function settleMissions(ctx, appId, unitId) {
   const { result, profile, day } = ctx;
   if (result.failed) return;
   const unit = unitId ? `${appId}/${unitId}` : null;
-  const { completed } = recordMission(profile, { unit, refreshed: result.refresh, accuracy: result.accuracy }, day);
+  const event = { unit, refreshed: result.refresh, accuracy: result.accuracy, strongEligible: result.mode !== 'blitz' };
+  const { completed } = recordMission(profile, event, day);
   if (completed.length) payBonus(ctx, completed.length * MISSION_REWARD_XP);
 }
 

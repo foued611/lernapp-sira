@@ -47,6 +47,8 @@ a.btn{display:inline-block;text-align:center;text-decoration:none}
 .link::after{content:"";position:absolute;inset:-6px -4px}
 .hero{background:var(--hero-bg);color:var(--hero-fg);border-color:var(--ink);display:grid;gap:16px;overflow:hidden;position:relative}
 .hero h1{color:var(--hero-fg)}
+/* Im Hero gleicht --ink (hell) dem Hintergrund, der globale Fokusring wäre dort unsichtbar. */
+.hero :focus-visible{outline-color:var(--hero-fg)}
 .hero .row1{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center}
 .bubble{position:relative;background:var(--card);color:var(--text);border-radius:14px;padding:10px 14px;font-size:15px;font-weight:500}
 .bubble::before{content:"";position:absolute;left:-8px;top:50%;margin-top:-8px;border:8px solid transparent;border-left:0;border-right-color:var(--card)}
