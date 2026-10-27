@@ -155,7 +155,9 @@ export function createRound({ pool, size, rng, boss = false }) {
       boss, failed, total: originalCount,
       accuracy: roundAccuracy(s.attempts, originalCount),
       correct: s.correct, almost: s.almost, wrong: s.wrong,
-      bestCombo: s.bestCombo, xp: s.xp, relearned: s.relearned
+      bestCombo: s.bestCombo, xp: s.xp, relearned: s.relearned,
+      // Nur richtige Wiederholungen (outcome ok), knappe zählen nicht. Für die Trophäe retryRecovered.
+      retryRight: s.attempts.filter((a) => a.retry && a.outcome === 'ok').length
     };
     return { done: true, result: s.result };
   }

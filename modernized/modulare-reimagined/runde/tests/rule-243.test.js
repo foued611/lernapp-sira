@@ -124,3 +124,29 @@ test('RULE-243: falsche Wiederholung kostet kein Herz und keine Combo', () => {
   assert.equal(round.result().wrong, 1, 'die zweite Falsche zählt nicht erneut');
   assert.equal(round.current(), null);
 });
+
+test('RULE-243: retryRight zählt die richtigen Wiederholungen im Ergebnis', () => {
+  const pool = ['A', 'B', 'C'].map((l) => sampleChoice(l));
+  const round = createRound({ pool, size: 3, rng: rngFor(3) });
+  // Erste und zweite Frage falsch, dritte richtig. Beide Wiederholungen richtig.
+  round.submit(wrongResponse(round.current().question));
+  round.next();
+  round.submit(wrongResponse(round.current().question));
+  round.next();
+  round.submit(correctResponse(round.current().question));
+  round.next();
+  round.submit(correctResponse(round.current().question));
+  round.next();
+  round.submit(wrongResponse(round.current().question));
+  round.next();
+
+  assert.equal(round.result().relearned, 1);
+  assert.equal(round.result().retryRight, 1, 'nur die richtige Wiederholung, nicht die falsche');
+});
+
+test('RULE-243: ohne Wiederholung ist retryRight 0', () => {
+  const round = createRound({ pool: [sampleChoice('X')], size: 1, rng: rngFor() });
+  round.submit(correctResponse(round.current().question));
+  round.next();
+  assert.equal(round.result().retryRight, 0);
+});

@@ -9,10 +9,16 @@
 //   { type: 'blitz', min }                  Punkte im Blitz
 //   { type: 'boss' }                        Endgegner besiegt
 //   { type: 'streak', days }                Tage in Folge geübt
+//   { type: 'improved', unit, by }          Genauigkeit der Seite ist um mindestens by (0 bis 1) gegenüber dem letzten Mal gestiegen
+//   { type: 'retryRecovered', min }         Zahl der Fehler, die in der Runde im zweiten Versuch richtig wurden
+//   { type: 'refresh', count }              Zahl bezahlter Auffrischungen (app.refreshes)
 //   { type: 'all' | 'any', rules }          Kombinationen
 
 // Eine Seite gilt als begonnen, sobald sie mindestens einen Stern hat. Fehlende Seiten zählen als 0.
 const started = (state, unitId, min = 1) => ((state.app.stars && state.app.stars[unitId]) || 0) >= min;
+
+// Rundungsfehler bei Differenzen wie 0.7 - 0.5 (= 0.1999...) dürfen die Grenze nicht kippen.
+const EPSILON = 1e-9;
 
 const TYPES = {
   anyUnit: (rule, state, result, unitIds) => unitIds.some((id) => started(state, id)),
@@ -25,6 +31,15 @@ const TYPES = {
   blitz: (rule, state, result) => result.mode === 'blitz' && result.score >= rule.min,
   boss: (rule, state, result) => result.mode === 'boss' && !result.failed,
   streak: (rule, state) => state.streak >= rule.days,
+  // prevAcc ist der Wert vor dieser Runde (null bei der ersten Übung). Gilt nur für die Seite der Runde.
+  improved: (rule, state, result) => {
+    if (result.prevAcc == null) return false;
+    if (result.unitId !== undefined && result.unitId !== rule.unit) return false;
+    const now = state.app.acc && state.app.acc[rule.unit];
+    return typeof now === 'number' && now - result.prevAcc >= rule.by - EPSILON;
+  },
+  retryRecovered: (rule, state, result) => (result.retryRight || 0) >= rule.min,
+  refresh: (rule, state) => (state.app.refreshes || 0) >= rule.count,
   all: (rule, state, result, unitIds) => rule.rules.every((x) => evaluateTrophyRule(x, state, result, unitIds)),
   any: (rule, state, result, unitIds) => rule.rules.some((x) => evaluateTrophyRule(x, state, result, unitIds))
 };
@@ -64,5 +79,11 @@ export function ruleErrors(rule, unitIds, path = 'rule') {
   if (rule.type === 'combo' && !(rule.min > 0)) errors.push(`${path}: min fehlt`);
   if (rule.type === 'blitz' && !(rule.min > 0)) errors.push(`${path}: min fehlt`);
   if (rule.type === 'streak' && !(rule.days > 0)) errors.push(`${path}: days fehlt`);
+  if (rule.type === 'improved') {
+    if (!unitIds.includes(rule.unit)) errors.push(missingUnit(rule.unit));
+    if (!(rule.by > 0)) errors.push(`${path}: by fehlt`);
+  }
+  if (rule.type === 'retryRecovered' && !(rule.min > 0)) errors.push(`${path}: min fehlt`);
+  if (rule.type === 'refresh' && !(rule.count > 0)) errors.push(`${path}: count fehlt`);
   return errors;
 }

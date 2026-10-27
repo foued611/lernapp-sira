@@ -25,6 +25,7 @@ function settleLesson(ctx, unitId) {
   // Eine gescheiterte Runde bekommt keinen Bonus (rounds.js:19).
   if (isRefreshDue(app, unitId, day) && !result.failed) {
     result.refresh = true;
+    app.refreshes = (app.refreshes || 0) + 1;
     payBonus(ctx, REFRESH_BONUS_XP);
   }
   app.last[unitId] = day;
@@ -44,6 +45,7 @@ function settleLesson(ctx, unitId) {
  * @param {number} [input.wrong]
  * @param {number} [input.almost]
  * @param {number} [input.bestCombo]
+ * @param {number} [input.retryRight]   richtige Wiederholungen der Runde (zweiter Versuch), kommt aus dem Rundenergebnis
  * @param {number} [input.score]        Punkte, nur für den Blitz-Bestwert
  * @param {number|null} [input.levelUp] Niveau-Aufstieg, den schon die Runde selbst ausgelöst hat
  * @param {boolean} [input.goalHit]     Tagesziel, das schon die Runde selbst erreicht hat
@@ -55,7 +57,7 @@ function settleLesson(ctx, unitId) {
  */
 export function finishRound(input) {
   const {
-    appId, mode, unit, failed = false, accuracy, wrong = 0, almost = 0, bestCombo = 0, score = 0,
+    appId, mode, unit, failed = false, accuracy, wrong = 0, almost = 0, bestCombo = 0, score = 0, retryRight = 0,
     levelUp = null, goalHit = false, badges = [], unitIds = [], profile, app, day
   } = input;
   assertDay(day);
@@ -65,8 +67,11 @@ export function finishRound(input) {
 
   // Blitz vergibt nie Sterne (rounds.js:11).
   const stars = mode === 'blitz' ? 0 : starsFor(accuracy, failed);
+  // Der alte Wert muss vor settleLesson gelesen werden, das app.acc überschreibt. Nur Lektionsrunden haben einen.
+  const prevAcc = mode === 'lesson' && app.acc ? (app.acc[unit.id] ?? null) : null;
   const result = {
-    mode, failed, accuracy, wrong, almost, bestCombo, score,
+    mode, failed, accuracy, wrong, almost, bestCombo, score, retryRight, prevAcc,
+    unitId: mode === 'lesson' ? unit.id : null,
     stars, bonus: 0, refresh: false, levelUp, goalHit, newBadges: []
   };
   const ctx = { result, profile, app, day };

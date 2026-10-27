@@ -76,3 +76,54 @@ test('RULE-246: all verlangt alle Teilregeln, any mindestens eine', () => {
   assert.equal(evaluateTrophyRule(either, state({}, 1), lesson), false);
   assert.equal(evaluateTrophyRule(either, state({}, 5), lesson), true);
 });
+
+test('improved wahr bei Anstieg um mindestens by', () => {
+  const s = { profile: {}, app: { acc: { a: 0.9 } }, streak: 0 };
+  assert.equal(evaluateTrophyRule({ type: 'improved', unit: 'a', by: 0.2 }, s, { prevAcc: 0.6 }), true);
+});
+
+test('improved feuert nicht ohne vorherigen Wert', () => {
+  const s = { profile: {}, app: { acc: { a: 0.9 } }, streak: 0 };
+  assert.equal(evaluateTrophyRule({ type: 'improved', unit: 'a', by: 0.2 }, s, { prevAcc: null }), false);
+});
+
+test('improved feuert nicht bei zu kleinem Anstieg', () => {
+  const s = { profile: {}, app: { acc: { a: 0.7 } }, streak: 0 };
+  assert.equal(evaluateTrophyRule({ type: 'improved', unit: 'a', by: 0.2 }, s, { prevAcc: 0.6 }), false);
+});
+
+test('improved verträgt Rundungsfehler an der Grenze (0.7 - 0.5)', () => {
+  const s = { profile: {}, app: { acc: { a: 0.7 } }, streak: 0 };
+  assert.equal(evaluateTrophyRule({ type: 'improved', unit: 'a', by: 0.2 }, s, { prevAcc: 0.5 }), true);
+});
+
+test('improved gilt nur für die Seite der Runde', () => {
+  const s = { profile: {}, app: { acc: { a: 0.9, b: 0.3 } }, streak: 0 };
+  const rule = { type: 'improved', unit: 'a', by: 0.2 };
+  assert.equal(evaluateTrophyRule(rule, s, { unitId: 'b', prevAcc: 0.6 }), false);
+  assert.equal(evaluateTrophyRule(rule, s, { unitId: 'a', prevAcc: 0.6 }), true);
+});
+
+test('retryRecovered zählt richtige Wiederholungen', () => {
+  const s = { profile: {}, app: {}, streak: 0 };
+  assert.equal(evaluateTrophyRule({ type: 'retryRecovered', min: 2 }, s, { retryRight: 2 }), true);
+  assert.equal(evaluateTrophyRule({ type: 'retryRecovered', min: 2 }, s, { retryRight: 1 }), false);
+  assert.equal(evaluateTrophyRule({ type: 'retryRecovered', min: 2 }, s, {}), false);
+});
+
+test('refresh zählt app.refreshes', () => {
+  assert.equal(evaluateTrophyRule({ type: 'refresh', count: 1 }, { profile: {}, app: { refreshes: 1 }, streak: 0 }, {}), true);
+  assert.equal(evaluateTrophyRule({ type: 'refresh', count: 2 }, { profile: {}, app: { refreshes: 1 }, streak: 0 }, {}), false);
+  assert.equal(evaluateTrophyRule({ type: 'refresh', count: 1 }, { profile: {}, app: {}, streak: 0 }, {}), false);
+});
+
+test('ruleErrors prüft die Pflichtfelder der neuen Typen', () => {
+  const ids = ['a'];
+  assert.deepEqual(ruleErrors({ type: 'improved', unit: 'a', by: 0.2 }, ids), []);
+  assert.equal(ruleErrors({ type: 'improved', unit: 'x', by: 0.2 }, ids).length, 1);
+  assert.equal(ruleErrors({ type: 'improved', unit: 'a' }, ids).length, 1);
+  assert.deepEqual(ruleErrors({ type: 'retryRecovered', min: 2 }, ids), []);
+  assert.equal(ruleErrors({ type: 'retryRecovered' }, ids).length, 1);
+  assert.deepEqual(ruleErrors({ type: 'refresh', count: 1 }, ids), []);
+  assert.equal(ruleErrors({ type: 'refresh' }, ids).length, 1);
+});

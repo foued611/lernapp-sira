@@ -117,6 +117,7 @@ export function evaluateRound({ appId, mode, unit, roundResult, profile, app, da
     wrong: roundResult.wrong,
     almost: roundResult.almost,
     bestCombo: roundResult.bestCombo,
+    retryRight: roundResult.retryRight || 0,
     score: roundResult.score || 0,
     levelUp,
     goalHit,
