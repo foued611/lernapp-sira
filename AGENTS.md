@@ -232,7 +232,7 @@ Im bisherigen Code (bis zur Umstellung):
 
 ## Tests
 
-- `npm test` im Neubau (`modernized/modulare-reimagined`): alle Suiten, derzeit 614 Tests. Sie müssen vor jedem Commit grün sein. Im Legacy-Code: Unit- und Vertragstests ohne Abhängigkeiten.
+- `npm test` im Neubau (`modernized/modulare-reimagined`): alle Suiten, derzeit 616 Tests. Sie müssen vor jedem Commit grün sein. Im Legacy-Code: Unit- und Vertragstests ohne Abhängigkeiten.
 - `npm run smoke`: spielt in jsdom alle Apps aus `registry.js` durch (benötigt `npm install`). App-spezifische Prüfungen liegen in `apps/<name>/smoke.mjs` und werden automatisch gefunden. Eine neue App braucht keine Änderung am Skript.
 - `tests/db.test.js` prüft den Speicher mit einer simulierten IndexedDB. Der Durchspiel-Test deckt IndexedDB und die Übernahme alter Daten ab.
 - `tests/qtypes.test.js` und `tests/views.test.js` decken Fragetypen und Ansichten ab.
