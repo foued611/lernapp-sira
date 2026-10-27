@@ -221,8 +221,8 @@ test('SEITE-A11Y Das Startseiten-Markup enthält keine Inline-Handler und jeder 
 
 test('SEITE-A11Y Die Mindestgröße der Knöpfe und Kacheln steht im Stylesheet, nicht im Markup', async () => {
   const { readFileSync } = await import('node:fs');
-  const css = readFileSync(new URL('../seiten.css', import.meta.url), 'utf8');
-  assert.match(css, /min-height: var\(--touch-min\)/);
+  const css = readFileSync(new URL('../design/styles/base.css', import.meta.url), 'utf8');
+  assert.match(css, /min-height:var\(--touch-min/);
   assert.equal(/style="[^"]*min-height/.test(renderToStaticMarkup(h(Startseite, { state: (await bootFixture()).state }))), false);
 });
 
