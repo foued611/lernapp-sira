@@ -34,7 +34,8 @@ export const profileDefaults = () => ({ name: '', xp: 0, streak: 0, lastDay: '',
 // last und acc steuern Auffrischen und gezieltes Training (legacy profile.js:15).
 // seen: Schlüssel der Aufgaben, die richtig beantwortet wurden. Neue Runden bevorzugen andere (runde/src/vielfalt.js).
 // missed: je Seite die Labels der Fragen, die in der letzten Lektionsrunde im ersten Versuch falsch waren (Fehler-Abruf).
-export const appDefaults = () => ({ xp: 0, stars: {}, badges: {}, best: {}, last: {}, acc: {}, seen: {}, missed: {} });
+// refreshes: Zahl der bezahlten Auffrischungen (Trophäe refresh, Wochenmission refresh1 zählt separat).
+export const appDefaults = () => ({ xp: 0, stars: {}, badges: {}, best: {}, last: {}, acc: {}, seen: {}, missed: {}, refreshes: 0 });
 // Obergrenze je App, damit der Stand klein bleibt. Die ältesten Schlüssel fallen zuerst weg.
 export const SEEN_MAX = 2000;
 const RIGHT = Object.freeze(new Set(['ok', 'almost']));
@@ -160,7 +161,8 @@ export function summaryOf({ mode, unit, roundResult, result }) {
     refresh: result.refresh,
     levelUp: result.levelUp,
     goalHit: result.goalHit,
-    newBadges: result.newBadges
+    newBadges: result.newBadges,
+    missions: result.missions || []
   };
 }
 

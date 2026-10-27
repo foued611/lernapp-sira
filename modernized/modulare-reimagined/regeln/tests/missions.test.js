@@ -126,3 +126,12 @@ test('In der neuen Woche zahlt dieselbe Mission wieder', () => {
 test('recordMission prüft den Tag', () => {
   assert.throws(() => recordMission(profileOf(), event(), '26.10.2026'), TypeError);
 });
+
+test('Uhr zurückgestellt: ein Wochenblock mit späterem Montag bleibt, der Fortschritt geht nicht verloren', () => {
+  const later = { start: '2026-11-02', units: ['mathe/a'], refreshes: 0, strong: 0, done: [] };
+  const profile = { week: later };
+  recordMission(profile, event({ unit: 'mathe/b' }), SUNDAY_BEFORE);
+  assert.equal(profile.week.start, '2026-11-02');
+  assert.deepEqual(profile.week.units, ['mathe/a', 'mathe/b']);
+});
+

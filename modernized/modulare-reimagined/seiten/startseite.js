@@ -184,14 +184,21 @@ export async function saveGoal(profileStore, value) {
 export function GoalChoice({ goal, onChoose }) {
   return h(
     'div',
-    { className: 'chips', role: 'group', 'aria-label': 'Tagesziel wählen' },
-    ...GOAL_CHOICES.map((value) => h('button', { key: value, type: 'button', className: 'chip', 'data-goal': value, 'aria-pressed': value === goal, onClick: () => onChoose(value) }, `${value} XP`))
+    { className: 'goalpick' },
+    // Der Text steht sichtbar über den Schaltflächen. aria-label allein reicht Sehenden nicht.
+    h('p', { className: 'muted', style: { margin: '0 0 8px', fontSize: '14px' } }, 'Tagesziel wählen'),
+    h(
+      'div',
+      { className: 'chips', role: 'group', 'aria-label': 'Tagesziel wählen' },
+      ...GOAL_CHOICES.map((value) => h('button', { key: value, type: 'button', className: 'chip', 'data-goal': value, 'aria-pressed': value === goal, onClick: () => onChoose(value) }, `${value} XP`))
+    )
   );
 }
 
-/** Die Startseite. Hält nur die Fachauswahl. Alles andere kommt aus dem Modell. */
+/** Die Startseite. Hält nur die Fachauswahl und eine Meldung zum Tagesziel. Alles andere kommt aus dem Modell. */
 export function Startseite({ state }) {
   const [subject, setSubject] = useState(ALL);
+  const [goalNote, setGoalNote] = useState(null);
   const [, bump] = useReducer((n) => n + 1, 0);
   const model = startseiteModel({ day: state.day, storage: state.storage, profileStore: state.profileStore, apps: state.apps, subject });
   const full = model.mode === 'full';
@@ -201,7 +208,8 @@ export function Startseite({ state }) {
     bump();
   }
   async function chooseGoal(value) {
-    await saveGoal(state.profileStore, value);
+    const saved = await saveGoal(state.profileStore, value);
+    setGoalNote(saved.ok ? null : saved.error || 'Das Tagesziel konnte nicht gespeichert werden.');
     bump();
   }
   return h(
@@ -229,7 +237,8 @@ export function Startseite({ state }) {
           h('div', { className: 'stat' }, h('b', null, String(model.trophies)), h('span', null, 'Trophäen'))
         )
         : null,
-      full ? h(GoalChoice, { goal: model.goal.goal, onChoose: chooseGoal }) : null
+      full ? h(GoalChoice, { goal: model.goal.goal, onChoose: chooseGoal }) : null,
+      full && goalNote ? h('p', { className: 'notice', role: 'status' }, goalNote) : null
     ),
     model.message ? h('p', { className: 'notice', role: 'status' }, model.message) : null,
     cont

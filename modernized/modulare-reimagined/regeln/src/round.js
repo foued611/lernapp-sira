@@ -15,7 +15,8 @@ function payBonus(ctx, amount) {
   const { result, profile, app, day } = ctx;
   result.bonus += amount;
   const paid = awardXP(profile, app, amount, day);
-  if (paid.levelUp) result.levelUp = paid.levelUp;
+  // Mehrere Gutschriften können mehrere Stufen überspringen. Gemeldet wird die höchste erreichte Stufe.
+  if (paid.levelUp) result.levelUp = Math.max(result.levelUp || 0, paid.levelUp);
   if (paid.goalHit) result.goalHit = true;
 }
 
@@ -32,7 +33,8 @@ function settleLesson(ctx, unitId, missedLabels) {
   app.last[unitId] = day;
   app.acc[unitId] = result.accuracy;
   // Fehlerkategorien für den Abruf (Spec 5.2). Ersetzt den alten Stand, sammelt nicht. Auch eine gescheiterte Runde speichert.
-  app.missed = app.missed || {};
+  // Ein fremder Wert aus einer Sicherung oder alten Version wird ersetzt. Ein Text würde beim Schreiben werfen.
+  if (!app.missed || typeof app.missed !== 'object' || Array.isArray(app.missed)) app.missed = {};
   app.missed[unitId] = Array.isArray(missedLabels) ? [...missedLabels] : [];
   // Sterne gehen nur nach oben. Ein schwächerer Versuch nimmt keinen Stern weg (rounds.js:28).
   // Ohne Stern bleibt der Eintrag leer (RULE-189).
@@ -51,6 +53,8 @@ function settleMissions(ctx, appId, unitId) {
   const unit = unitId ? `${appId}/${unitId}` : null;
   const event = { unit, refreshed: result.refresh, accuracy: result.accuracy, strongEligible: result.mode !== 'blitz' };
   const { completed } = recordMission(profile, event, day);
+  // Die erfüllten Missionen stehen im Ergebnis, damit die Ansicht sie nennen kann.
+  ctx.result.missions = completed;
   if (completed.length) payBonus(ctx, completed.length * MISSION_REWARD_XP);
 }
 
@@ -91,11 +95,12 @@ export function finishRound(input) {
   const prevAcc = mode === 'lesson' && app.acc ? (app.acc[unit.id] ?? null) : null;
   // Ebenso der letzte Übungstag der Seite: settleLesson setzt app.last auf heute. Ohne Eintrag null.
   const lastDay = mode === 'lesson' && app.last ? app.last[unit.id] : undefined;
-  const gapDays = lastDay ? dayDiff(lastDay, day) : null;
+  // Liegt der letzte Übungstag in der Zukunft (Uhr zurückgestellt), zählt 0 statt einer negativen Zahl.
+  const gapDays = lastDay ? Math.max(0, dayDiff(lastDay, day)) : null;
   const result = {
     mode, failed, accuracy, wrong, almost, bestCombo, score, retryRight, prevAcc, gapDays,
     unitId: mode === 'lesson' ? unit.id : null,
-    stars, bonus: 0, refresh: false, levelUp, goalHit, newBadges: []
+    stars, bonus: 0, refresh: false, levelUp, goalHit, newBadges: [], missions: []
   };
   const ctx = { result, profile, app, day };
 

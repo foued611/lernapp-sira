@@ -1,5 +1,7 @@
 /* Design-Tokens: Farben, Schriften, Hell/Dunkel. Farbwerte nur hier ändern. */
 :root{
+  /* Mindestgröße für Knöpfe und Kacheln (AGENTS.md: Touch-Ziele mindestens 44 px). */
+  --touch-min:44px;
   --paper:#F3F0FF; --card:#FFFFFF; --ink:#2A1A63; --text:#1D1740; --muted:#625C8A;
   --grid-strong:#DCD5F7; --grid-weak:#EAE5FB; --line:#D3CAF2; --shadow:rgba(42,26,99,.18);
   --pen:#D92B4B; --pen-bg:#FFE8EC; --ok:#0F8F66; --ok-bg:#DAF6EA;

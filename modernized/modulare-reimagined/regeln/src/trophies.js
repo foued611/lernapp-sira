@@ -11,6 +11,7 @@
 //   { type: 'streak', days }                Tage in Folge geübt
 //   { type: 'improved', unit, by }          Genauigkeit der Seite ist um mindestens by (0 bis 1) gegenüber dem letzten Mal gestiegen
 //   { type: 'retryRecovered', min }         Zahl der Fehler, die in der Runde im zweiten Versuch richtig wurden
+//                                           (nur ganz richtig zählt, eine knappe Wiederholung nicht)
 //   { type: 'refresh', count }              Zahl bezahlter Auffrischungen (app.refreshes)
 //   { type: 'all' | 'any', rules }          Kombinationen
 
@@ -79,14 +80,15 @@ export function ruleErrors(rule, unitIds, path = 'rule') {
   if (rule.type === 'combo' && !(rule.min > 0)) errors.push(`${path}: min fehlt`);
   if (rule.type === 'blitz') {
     if (!(rule.min > 0)) errors.push(`${path}: min fehlt`);
-    if (rule.maxWrong !== undefined && !(Number.isFinite(rule.maxWrong) && rule.maxWrong >= 0)) {
-      errors.push(`${path}: maxWrong muss eine Zahl ab 0 sein`);
+    if (rule.maxWrong !== undefined && !(Number.isInteger(rule.maxWrong) && rule.maxWrong >= 0)) {
+      errors.push(`${path}: maxWrong muss eine ganze Zahl ab 0 sein`);
     }
   }
   if (rule.type === 'streak' && !(rule.days > 0)) errors.push(`${path}: days fehlt`);
   if (rule.type === 'improved') {
     if (!unitIds.includes(rule.unit)) errors.push(missingUnit(rule.unit));
-    if (!(rule.by > 0)) errors.push(`${path}: by fehlt`);
+    // Mehr als 100 Prozentpunkte gibt es nicht. Das Schema verlangt dasselbe (improved.by <= 1).
+    if (!(rule.by > 0 && rule.by <= 1)) errors.push(`${path}: by muss über 0 und höchstens 1 sein`);
   }
   if (rule.type === 'retryRecovered' && !(rule.min > 0)) errors.push(`${path}: min fehlt`);
   if (rule.type === 'refresh' && !(rule.count > 0)) errors.push(`${path}: count fehlt`);

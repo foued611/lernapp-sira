@@ -1,10 +1,11 @@
 // Wochenmissionen: drei feste Aufgaben pro Woche (Montag bis Sonntag), die Lernhandlungen zählen, keine Zeit.
 // Die Funktionen hier zählen nur. Die XP-Belohnung zahlt die Rundenauswertung (round.js) über awardXP,
 // damit Tagesziel und Level wie bei jedem anderen Bonus wirken.
+import { STAR_THRESHOLDS } from './constants.js';
 import { assertDay, weekStart } from './dates.js';
 
 /** Ab dieser Genauigkeit zählt eine Runde als stark (gleiche Schwelle wie 3 Sterne). */
-const STRONG_ACCURACY = 0.9;
+const STRONG_ACCURACY = STAR_THRESHOLDS.three;
 
 // IDs sind gespeicherte Daten (profile.week.done) und bleiben stabil.
 export const MISSIONS = Object.freeze([
@@ -24,12 +25,14 @@ const freshWeek = (start) => ({ start, units: [], refreshes: 0, strong: 0, done:
 const isCount = (value) => Number.isInteger(value) && value >= 0;
 
 // Ein Block aus einem Backup oder einer älteren Version kann beliebig aussehen. Nur ein vollständiger Block zählt.
-const isWeek = (week, start) => Boolean(week) && week.start === start
+// Ein Block mit späterem Montag bleibt stehen: die Uhr ist zurückgestellt, der Fortschritt geht nicht verloren.
+// Erst ein Block aus einer früheren Woche wird ersetzt (Zeichenketten YYYY-MM-DD sortieren wie die Zeit).
+const isWeek = (week, start) => Boolean(week) && typeof week.start === 'string' && week.start >= start
   && Array.isArray(week.units) && Array.isArray(week.done) && isCount(week.refreshes) && isCount(week.strong);
 
 /**
- * Der Wochenstand für diesen Tag, ohne das Profil zu verändern. Gehört der gespeicherte Block zu einer anderen
- * Woche (oder fehlt er), ist es ein leerer Block.
+ * Der Wochenstand für diesen Tag, ohne das Profil zu verändern. Gehört der gespeicherte Block zu einer früheren
+ * Woche (oder fehlt er), ist es ein leerer Block. Ein späterer Block bleibt (siehe isWeek).
  */
 const weekFor = (profile, day) => {
   const start = weekStart(day);
