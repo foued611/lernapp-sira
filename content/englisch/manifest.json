@@ -1,0 +1,92 @@
+{
+  "schema": 1,
+  "id": "englisch",
+  "title": "Englisch-Werkstatt",
+  "greeting": "Hi",
+  "intro": "Die Seiten folgen den Units von English G Access 3 (Klasse 7). Erst die Lektion, dann die Übung. Du kannst auch springen.",
+  "bossTitle": "Final Check",
+  "units": [
+    { "id": "simple-past", "color": "#FF9F43", "ic": "1a", "title": "Simple Past", "de": "Erzählen, was passiert ist · Unit 1", "card": { "name": "Die Zeit der Geschichten", "fact": "Die meisten Geschichten laufen im Simple Past. Viele wichtige Verben sind unregelmäßig und müssen auswendig gelernt werden." } },
+    { "id": "present-perfect", "color": "#FF9F43", "ic": "1b", "title": "Present Perfect", "de": "have/has + Partizip II · Unit 1", "card": { "name": "Die Brücke zu heute", "fact": "Mit have oder has verbindest du Vergangenes mit heute: I have seen this film heißt, dass du ihn kennst." } },
+    { "id": "past-or-perfect", "color": "#FF9F43", "ic": "1c", "title": "Simple Past oder Present Perfect?", "de": "Die Zeitangabe entscheidet · Unit 1", "card": { "name": "Das richtige Signalwort", "fact": "Steht ein fester Zeitpunkt wie yesterday, nimmt man den Simple Past. Ohne Zeitangabe oder mit Bezug zu heute: Present Perfect." } },
+    { "id": "perfect-progressive", "color": "#FF9F43", "ic": "1d", "title": "Present Perfect Progressive", "de": "for und since · seit wann, wie lange · Unit 1", "card": { "name": "Seit wann?", "fact": "for steht vor einem Zeitraum (for two hours), since vor einem Zeitpunkt (since Monday)." } },
+    { "id": "past-progressive", "color": "#FF9F43", "ic": "1e", "title": "Past Progressive", "de": "Verlauf in der Vergangenheit · Unit 1", "card": { "name": "Mitten im Film", "fact": "Das Past Progressive ist wie eine Szene, die gerade läuft. Wenn etwas dazwischenkommt, steht es im Simple Past." } },
+    { "id": "will-future", "color": "#3DD6B0", "ic": "2a", "title": "Will-Future", "de": "Vorhersagen und spontane Entscheidungen · Unit 2", "card": { "name": "Spontan entschieden", "fact": "Das Telefon klingelt, und du sagst: I will answer it. Das will entsteht genau in diesem Moment." } },
+    { "id": "conditional-1", "color": "#3DD6B0", "ic": "2b", "title": "Wenn es klappen kann", "de": "if + Präsens, will + Grundform · Unit 2", "card": { "name": "Die echte Möglichkeit", "fact": "Im if-Satz steht das Präsens, auch wenn es um die Zukunft geht: If it rains, we will stay home." } },
+    { "id": "conditional-2", "color": "#3DD6B0", "ic": "2c", "title": "Wenn es nur ein Traum wäre", "de": "if + Simple Past, would + Grundform · Unit 2", "card": { "name": "Der Wunsch-Satz", "fact": "Im Konditional 2 heißt es oft If I were you, auch für I. Das ist die klassische Form." } },
+    { "id": "relative-clauses", "color": "#9B7BFF", "ic": "3a", "title": "Relativsätze", "de": "who, which, that, where, whose · Unit 3", "card": { "name": "Der Erklärer-Satz", "fact": "Relativsätze sagen genauer, welche Person oder welches Ding gemeint ist: The girl who sings is my cousin." } },
+    { "id": "contact-clauses", "color": "#9B7BFF", "ic": "3b", "title": "Relativsätze ohne Pronomen", "de": "Das Pronomen fällt weg · Unit 3", "card": { "name": "Die kurze Form", "fact": "Ist das Relativpronomen Objekt, darf es wegfallen: The film we watched was funny." } },
+    { "id": "passive", "color": "#9B7BFF", "ic": "3c", "title": "Passiv", "de": "be + Partizip II · Unit 3", "card": { "name": "Wer war es?", "fact": "Im Passiv steht die Handlung im Mittelpunkt, nicht der Täter: The bridge was built in 1990." } },
+    { "id": "modal-verbs", "color": "#4CC3F5", "ic": "4a", "title": "Modale Verben", "de": "can, must, mustn't, needn't · Unit 4", "card": { "name": "Verboten oder nicht nötig?", "fact": "mustn't heißt verboten, needn't heißt nicht nötig. Diese Verwechslung passiert fast allen am Anfang." } },
+    { "id": "modal-substitutes", "color": "#4CC3F5", "ic": "4b", "title": "Ersatz für modale Verben", "de": "have to, be able to, be allowed to · Unit 4", "card": { "name": "Der Ersatzspieler", "fact": "Modale Verben haben keine Vergangenheit und Zukunft. Dann springen have to und be able to ein: I had to, I will be able to." } },
+    { "id": "past-perfect", "color": "#4CC3F5", "ic": "4c", "title": "Past Perfect", "de": "had + Partizip II · Unit 4", "card": { "name": "Schon vorbei", "fact": "Past Perfect zeigt: Das war schon vorbei, bevor etwas anderes passierte. Meist steht ein Simple Past daneben." } },
+    { "id": "reflexive-pronouns", "color": "#FF6B88", "ic": "5a", "title": "Reflexivpronomen", "de": "myself, yourself, each other · Unit 5", "card": { "name": "Das Spiegel-Wort", "fact": "Wenn Subjekt und Objekt dieselbe Person sind, endet das Pronomen auf -self: She hurt herself." } },
+    { "id": "indirect-speech", "color": "#FF6B88", "ic": "5b", "title": "Indirekte Rede", "de": "Aussagen wiedergeben, Zeiten verschieben · Unit 5", "card": { "name": "Was hat sie gesagt?", "fact": "In der indirekten Rede rückt die Zeit eine Stufe zurück: I am tired wird zu She said she was tired." } }
+  ],
+  "notes": {
+    "simple-past": [
+      ["Regelmäßig", "Grundform + -ed: play – played. Endet das Verb auf -e, nur -d: live – lived."],
+      ["Unregelmäßig", "Auswendig lernen, zum Beispiel go – went, see – saw, buy – bought."]
+    ],
+    "present-perfect": [
+      ["Bildung", "have/has + Partizip II: I have seen, she has gone."],
+      ["Signalwörter", "ever, never, already, yet, just."]
+    ],
+    "past-or-perfect": [
+      ["Feste Zeit", "yesterday, last week, in 2020, ago: Simple Past."],
+      ["Ohne feste Zeit", "Erfahrung oder Bezug zu heute: Present Perfect."]
+    ],
+    "perfect-progressive": [
+      ["Bildung", "have/has been + Verb mit -ing."],
+      ["for und since", "for + Zeitraum (for two hours), since + Zeitpunkt (since Monday)."]
+    ],
+    "past-progressive": [
+      ["Bildung", "was/were + Verb mit -ing: I was reading, they were playing."],
+      ["Zusammen mit Simple Past", "when vor dem kurzen Ereignis, while vor dem Verlauf."]
+    ],
+    "will-future": [
+      ["Bildung", "will + Grundform. Verneinung: won't (will not)."],
+      ["Gebrauch", "Vorhersagen und spontane Entscheidungen im Moment des Sprechens."]
+    ],
+    "conditional-1": [
+      ["Bildung", "if + Präsens, will + Grundform."],
+      ["Gebrauch", "Eine Bedingung, die wirklich eintreten kann."]
+    ],
+    "conditional-2": [
+      ["Bildung", "if + Simple Past, would + Grundform."],
+      ["Gebrauch", "Eine Bedingung, die nicht wahr ist oder unwahrscheinlich ist."]
+    ],
+    "relative-clauses": [
+      ["who, which, that", "who für Personen, which für Dinge, that für beides."],
+      ["where, whose", "where für Orte, whose für Besitz: whose bag."]
+    ],
+    "contact-clauses": [
+      ["Regel", "Das Relativpronomen darf wegfallen, wenn danach ein Subjekt folgt."],
+      ["Nicht weglassen", "Folgt direkt ein Verb, bleibt who oder which."]
+    ],
+    "passive": [
+      ["Bildung", "be + Partizip II. Die Zeit steckt im be."],
+      ["Der Täter", "mit by, oder er fehlt ganz."]
+    ],
+    "modal-verbs": [
+      ["Ohne to, ohne -s", "can go, nicht can to go. he can, nicht he cans."],
+      ["Verbote", "mustn't = verboten, needn't = nicht nötig."]
+    ],
+    "modal-substitutes": [
+      ["Ersatz", "have to, be able to, be allowed to."],
+      ["Verneinung", "don't have to heißt: nicht nötig."]
+    ],
+    "past-perfect": [
+      ["Bildung", "had + Partizip II."],
+      ["Gebrauch", "Die ältere von zwei Vergangenheitshandlungen."]
+    ],
+    "reflexive-pronouns": [
+      ["Singular", "myself, yourself, himself, herself, itself."],
+      ["Plural", "ourselves, yourselves, themselves und each other."]
+    ],
+    "indirect-speech": [
+      ["Zeit zurück", "am/is → was, will → would, can → could, have → had."],
+      ["Zeitangaben", "now → then, today → that day, tomorrow → the next day, yesterday → the day before."]
+    ]
+  }
+}

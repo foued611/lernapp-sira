@@ -1,0 +1,9 @@
+[
+  { "id": "first", "n": "Erster Schritt", "d": "Die erste Seite geübt", "rule": { "type": "anyUnit" } },
+  { "id": "perfect", "n": "Fehlerfrei", "d": "Eine Runde ohne Fehler", "rule": { "type": "perfectRound" } },
+  { "id": "combo", "n": "Im Lauf", "d": "Fünf richtige Antworten hintereinander", "rule": { "type": "combo", "min": 5 } },
+  { "id": "streak", "n": "Dranbleiben", "d": "Drei Tage in Folge geübt", "rule": { "type": "streak", "days": 3 } },
+  { "id": "boss", "n": "Final Check", "d": "Den Endgegner besiegt", "rule": { "type": "boss" } },
+  { "id": "unit1", "n": "Unit 1 geschafft", "d": "Alle Seiten der Unit 1 mit mindestens einem Stern", "rule": { "type": "units", "ids": ["simple-past", "present-perfect", "past-or-perfect", "perfect-progressive", "past-progressive"] } },
+  { "id": "alle", "n": "Grammatik-Profi", "d": "Alle Seiten mit mindestens einem Stern", "rule": { "type": "units", "ids": ["simple-past", "present-perfect", "past-or-perfect", "perfect-progressive", "past-progressive", "will-future", "conditional-1", "conditional-2", "relative-clauses", "contact-clauses", "passive", "modal-verbs", "modal-substitutes", "past-perfect", "reflexive-pronouns", "indirect-speech"] } }
+]

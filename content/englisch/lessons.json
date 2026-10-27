@@ -1,0 +1,609 @@
+{
+  "simple-past": {
+    "goal": "Du kannst Erlebtes in der Vergangenheit erzählen und den Simple Past regelmäßiger und unregelmäßiger Verben bilden.",
+    "tldr": [
+      "Der Simple Past beschreibt etwas, das in der Vergangenheit passiert ist und abgeschlossen ist.",
+      "Regelmäßige Verben bekommen -ed. Unregelmäßige Verben musst du lernen, zum Beispiel go – went."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Foto aus dem Urlaub",
+      "html": "<p>Ein Foto hält einen Moment fest, der vorbei ist. So ist der Simple Past: Das Ereignis ist abgeschlossen, und oft steht dabei eine feste Zeit wie „yesterday“.</p>"
+    },
+    "figure": {
+      "diagram": { "name": "tableDiagram", "args": [["Grundform", "Simple Past", "Regel"], [["play", "played", "+ -ed"], ["live", "lived", "nur -d, weil -e"], ["go", "went", "unregelmäßig"], ["see", "saw", "unregelmäßig"]], [1, 1, 1.4], "Tabelle: Grundform, Simple Past und Regel"] },
+      "caption": "Regelmäßig: nur -ed anhängen. Unregelmäßig: die Form auswendig lernen."
+    },
+    "steps": {
+      "title": "So bildest du den Simple Past",
+      "items": [
+        "Regelmäßige Verben: Grundform + -ed. Beispiel: play wird zu played.",
+        "Unregelmäßige Verben: die zweite Form aus der Verbliste. Beispiel: go wird zu went, see wird zu saw.",
+        "Frage und Verneinung: did beziehungsweise did not + Grundform. Beispiel: Did you go? I did not go.",
+        "Probe: Steht eine feste Zeit wie yesterday oder last week im Satz? Dann passt der Simple Past."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Nach „did“ und „did not“ steht immer die <b>Grundform</b>: „She did not go“, nicht „She did not went“.</p>"
+    },
+    "rule": "Simple Past: regelmäßig mit -ed, unregelmäßig auswendig. Nach did steht die Grundform.",
+    "check": {
+      "q": "Wie lautet der Simple Past von „see“?",
+      "options": [
+        { "id": "saw", "html": "saw" },
+        { "id": "seed", "html": "seed" },
+        { "id": "seen", "html": "seen" }
+      ],
+      "answer": "saw",
+      "why": "see ist unregelmäßig: see, saw, seen. Seen ist das Partizip II, das man mit have braucht."
+    }
+  },
+  "present-perfect": {
+    "goal": "Du kannst mit have oder has und dem Partizip II sagen, was man schon erlebt hat oder was bis heute gilt.",
+    "tldr": [
+      "Das Present Perfect bildest du mit have oder has und dem Partizip II.",
+      "Es verbindet Vergangenes mit heute. Typische Signalwörter sind ever, never, already, yet und just."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Rucksack",
+      "html": "<p>Die Handlung ist vorbei, aber du trägst sie noch mit dir. „I have seen this film“ heißt: Du kennst den Film heute noch.</p>"
+    },
+    "figure": {
+      "diagram": { "name": "tableDiagram", "args": [["Person", "have / has", "Partizip II"], [["I, you, we, they", "have", "worked"], ["he, she, it", "has", "gone"]], [1.4, 1, 1], "Tabelle: have oder has, dazu das Partizip II"] },
+      "caption": "Das Hilfsverb richtet sich nach der Person. Das Partizip II bleibt immer gleich."
+    },
+    "steps": {
+      "title": "So bildest du den Present Perfect",
+      "items": [
+        "Nimm have bei I, you, we, they und has bei he, she, it. Dann folgt das Partizip II.",
+        "Regelmäßige Partizipien enden auf -ed: worked, played. Unregelmäßige musst du lernen: seen, written, gone.",
+        "Verneinung: have not oder has not plus Partizip II. Frage: Have you ever …?",
+        "Probe: Steht eine feste Zeit wie yesterday oder in 2019 im Satz? Dann ist es Simple Past."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Mit „yesterday“ steht der Simple Past: „I visited Rome yesterday“, nicht „I have visited Rome yesterday“.</p>"
+    },
+    "rule": "have/has + Partizip II für Erfahrungen und Ergebnisse, die bis heute wirken.",
+    "check": {
+      "q": "Welcher Satz drückt eine Erfahrung ohne feste Zeit aus?",
+      "options": [
+        { "id": "I have been to London.", "html": "I have been to London." },
+        { "id": "I went to London yesterday.", "html": "I went to London yesterday." },
+        { "id": "I have went to London.", "html": "I have went to London." }
+      ],
+      "answer": "I have been to London.",
+      "why": "Eine Erfahrung ohne feste Zeit steht im Present Perfect: have plus Partizip II. Das Partizip von be ist been. went ist Simple Past und kein Partizip."
+    }
+  },
+  "past-or-perfect": {
+    "goal": "Du kannst entscheiden, ob ein Satz Simple Past oder Present Perfect braucht, und dafür auf die Zeitangabe achten.",
+    "tldr": [
+      "Steht eine feste Zeit in der Vergangenheit, zum Beispiel yesterday, last year oder in 2020, nimmst du den Simple Past.",
+      "Ohne feste Zeit, mit ever, never, just oder already, oder mit Bezug zu heute: Present Perfect."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Kalender",
+      "html": "<p>Der Simple Past ist ein Eintrag mit Datum: Am Montag war ich dort. Das Present Perfect ist ein Eintrag ohne Datum oder mit Wirkung bis heute: Ich war schon mal dort.</p>"
+    },
+    "figure": {
+      "diagram": { "name": "tableDiagram", "args": [["Signal", "Zeitbezug", "Zeitform"], [["yesterday, last week, in 2020", "abgeschlossen, mit Datum", "Simple Past"], ["ever, never, already, yet, just", "bis heute, ohne Datum", "Present Perfect"]], [1.4, 1.4, 1.2], "Tabelle: Signalwörter und die passende Zeitform"] },
+      "caption": "Die Zeitangabe entscheidet, nicht das Gefühl für Vergangenheit."
+    },
+    "steps": {
+      "title": "So entscheidest du",
+      "items": [
+        "Suche nach einer festen Zeit wie yesterday, last night oder in 1999. Dann nimmst du den Simple Past.",
+        "Ist keine feste Zeit genannt, geht es aber um eine Erfahrung oder ein Ergebnis heute? Dann Present Perfect: I have lost my keys.",
+        "Fragst du nach dem Zeitpunkt mit when? Dann Simple Past: When did you arrive?"
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Present Perfect und eine feste Zeit passen nicht zusammen: „I have seen it last week“ ist falsch. Richtig: „I saw it last week“.</p>"
+    },
+    "rule": "Feste Zeit in der Vergangenheit = Simple Past. Ohne Datum oder mit Bezug zu heute = Present Perfect.",
+    "check": {
+      "q": "Welcher Satz ist richtig?",
+      "options": [
+        { "id": "We watched the match last Sunday.", "html": "We watched the match last Sunday." },
+        { "id": "We have watched the match last Sunday.", "html": "We have watched the match last Sunday." },
+        { "id": "We are watching the match last Sunday.", "html": "We are watching the match last Sunday." }
+      ],
+      "answer": "We watched the match last Sunday.",
+      "why": "Mit last Sunday steht ein fester Zeitpunkt in der Vergangenheit. Dafür braucht man den Simple Past."
+    }
+  },
+  "perfect-progressive": {
+    "goal": "Du kannst sagen, wie lange etwas schon dauert und noch andauert, mit for und since.",
+    "tldr": [
+      "have/has been + Verb mit -ing beschreibt eine Handlung, die vor einiger Zeit begann und noch andauert.",
+      "for nennt die Dauer, zum Beispiel for two hours. since nennt den Startpunkt, zum Beispiel since 8 o'clock."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Wasserhahn",
+      "html": "<p>Der Hahn läuft seit dem Morgen, und man sieht noch den Strahl. Die Handlung läuft also noch. Dafür steht have been plus -ing.</p>"
+    },
+    "figure": {
+      "diagram": { "name": "flowDiagram", "args": [["since 8 o'clock|(Start)", "now|(still going on)"], "Zeitlinie: Start um acht Uhr, jetzt läuft es noch"] },
+      "caption": "Die Handlung beginnt in der Vergangenheit und läuft bis jetzt weiter."
+    },
+    "steps": {
+      "title": "So bildest du den Satz",
+      "items": [
+        "Bilde den Satz mit have been oder has been und dem Verb mit -ing: I have been waiting.",
+        "Dauer mit for: for two hours, for a week.",
+        "Startpunkt mit since: since Monday, since 7 o'clock.",
+        "Frage: How long have you been …? Antwort: For an hour. Oder: Since lunch."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>„for“ und „since“ nicht verwechseln: „for two hours“ ist richtig, „since two hours“ ist falsch. Nach since steht ein Zeitpunkt.</p>"
+    },
+    "rule": "for + Zeitraum, since + Zeitpunkt. Wie lange? how long oder for. Seit wann? since.",
+    "check": {
+      "q": "Welcher Satz ist richtig?",
+      "options": [
+        { "id": "They have been playing for two hours.", "html": "They have been playing for two hours." },
+        { "id": "They have been playing since two hours.", "html": "They have been playing since two hours." },
+        { "id": "They are playing since two hours.", "html": "They are playing since two hours." }
+      ],
+      "answer": "They have been playing for two hours.",
+      "why": "for steht vor einem Zeitraum, since vor einem Zeitpunkt. Außerdem braucht die Handlung, die noch läuft, have been mit -ing."
+    }
+  },
+  "past-progressive": {
+    "goal": "Du kannst beschreiben, was gerade lief, als etwas anderes passierte, mit was oder were und -ing.",
+    "tldr": [
+      "Past Progressive = was oder were + Verb mit -ing. Es beschreibt eine Handlung, die in der Vergangenheit gerade lief.",
+      "Ein kurzes Ereignis, das dazwischenkommt, steht im Simple Past, meist nach when."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Film mitten in einer Szene",
+      "html": "<p>Du drückst auf Pause, wenn das Telefon klingelt. Der Film lief schon, das Klingeln unterbricht ihn. Der Film ist das Past Progressive, das Klingeln ist der Simple Past.</p>"
+    },
+    "figure": {
+      "diagram": { "name": "flowDiagram", "args": [["While I was cooking|(Verlauf, Past Progressive)", "the phone rang|(Ereignis, Simple Past)"], "Ablauf: Das Kochen läuft, dann klingelt das Telefon"] },
+      "caption": "Der lange Verlauf steht im Past Progressive, das kurze Ereignis im Simple Past."
+    },
+    "steps": {
+      "title": "So bildest du den Satz",
+      "items": [
+        "Nimm was bei I, he, she, it und were bei you, we, they. Dann folgt das Verb mit -ing: They were playing.",
+        "Für einen Moment in der Vergangenheit: At eight o'clock I was doing my homework.",
+        "Unterbrechung mit when und Simple Past: I was sleeping when the phone rang.",
+        "Gleichzeitig mit while: While I was cooking, my sister was reading."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Nach „was“ oder „were“ steht das Verb mit -ing, nie die Grundform: „I was play“ ist falsch, richtig ist „I was playing“.</p>"
+    },
+    "rule": "Past Progressive = was/were + -ing für den Verlauf. Simple Past für das Ereignis, das dazwischenkommt.",
+    "check": {
+      "q": "Welcher Satz ist richtig?",
+      "options": [
+        { "id": "When the bell rang, the children were eating.", "html": "When the bell rang, the children were eating." },
+        { "id": "When the bell rang, the children was eating.", "html": "When the bell rang, the children was eating." },
+        { "id": "When the bell rang, the children are eating.", "html": "When the bell rang, the children are eating." }
+      ],
+      "answer": "When the bell rang, the children were eating.",
+      "why": "Der Verlauf steht mit were, weil children im Plural ist. Das Klingeln unterbricht, deshalb rang im Simple Past."
+    }
+  },
+  "will-future": {
+    "goal": "Du kannst mit will Vorhersagen machen, spontan entscheiden und Versprechen geben.",
+    "tldr": [
+      "will + Grundform beschreibt die Zukunft, zum Beispiel bei Vermutungen mit I think.",
+      "Spontane Entscheidungen im Moment des Sprechens bekommen auch will: I will answer it."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: eine Wetter-App",
+      "html": "<p>Die App sagt voraus, was morgen passiert: „It will rain tomorrow.“ Das will ist eine Vorhersage aus dem Wissen oder Gefühl im Moment.</p>"
+    },
+    "figure": {
+      "diagram": { "name": "tableDiagram", "args": [["Satz", "Hilfsverb", "Grundform"], [["She", "will", "call you"], ["I", "won't", "forget"], ["Will", "they", "come?"]], [1.2, 1, 1.4], "Tabelle: Bejahung, Verneinung und Frage mit will"] },
+      "caption": "will bleibt bei allen Personen gleich. Verneinung: won't."
+    },
+    "steps": {
+      "title": "So bildest du den Satz",
+      "items": [
+        "Bejahung: Subjekt + will + Grundform: She will call you.",
+        "Verneinung: won't (will not) + Grundform: I won't forget.",
+        "Frage: Will + Subjekt + Grundform: Will they come?",
+        "Spontan: Das Telefon klingelt. I will answer it."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Nach „will“ steht immer die Grundform, ohne -s und ohne „to“: „She will comes“ ist falsch, richtig ist „She will come“.</p>"
+    },
+    "rule": "will + Grundform für Vorhersagen, spontane Entscheidungen und Versprechen.",
+    "check": {
+      "q": "Welcher Satz ist richtig?",
+      "options": [
+        { "id": "It will be sunny tomorrow.", "html": "It will be sunny tomorrow." },
+        { "id": "It will is sunny tomorrow.", "html": "It will is sunny tomorrow." },
+        { "id": "It will to be sunny tomorrow.", "html": "It will to be sunny tomorrow." }
+      ],
+      "answer": "It will be sunny tomorrow.",
+      "why": "Nach will steht die Grundform be, ohne to und ohne is."
+    }
+  },
+  "conditional-1": {
+    "goal": "Du kannst über echte Möglichkeiten in der Zukunft sprechen: Wenn das passiert, dann passiert das.",
+    "tldr": [
+      "Im if-Satz steht das Präsens, im Hauptsatz will mit der Grundform.",
+      "Der if-Satz darf auch hinten stehen: We will stay home if it rains."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Versprechen mit Bedingung",
+      "html": "<p>Ein Freund sagt: „Wenn wir früh losfahren, sind wir pünktlich.“ Die Bedingung ist realistisch, deshalb steht sie im Präsens.</p>"
+    },
+    "figure": {
+      "diagram": { "name": "flowDiagram", "args": [["If it rains|(if + Präsens)", "we will stay home|(will + Grundform)"], "Ablauf: Wenn es regnet, bleiben wir zu Hause"] },
+      "caption": "Der if-Satz beschreibt die Bedingung, der Hauptsatz die Folge."
+    },
+    "steps": {
+      "title": "So bildest du den Satz",
+      "items": [
+        "Bilde den if-Satz im Präsens: If it rains, auch wenn es um die Zukunft geht.",
+        "Setze im Hauptsatz will plus Grundform: we will stay home.",
+        "Die Reihenfolge ist frei: We will stay home if it rains. Steht der if-Satz vorn, kommt ein Komma.",
+        "Probe: Kann die Bedingung wirklich eintreten? Dann ist es Konditional 1."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Im if-Satz kein „will“: „If it will rain“ ist falsch. Richtig ist „If it rains“.</p>"
+    },
+    "rule": "if + Präsens, will + Grundform. Realistische Bedingung, realistische Folge.",
+    "check": {
+      "q": "Welcher Satz ist richtig?",
+      "options": [
+        { "id": "If it will stop raining, we will go out.", "html": "If it will stop raining, we will go out." },
+        { "id": "If it stops raining, we will goes out.", "html": "If it stops raining, we will goes out." },
+        { "id": "If it stops raining, we will go out.", "html": "If it stops raining, we will go out." }
+      ],
+      "answer": "If it stops raining, we will go out.",
+      "why": "Im if-Satz steht das Präsens (stops). Im Hauptsatz steht will mit der Grundform go, ohne -s."
+    }
+  },
+  "conditional-2": {
+    "goal": "Du kannst über Wünsche und unwahrscheinliche Fälle sprechen, zum Beispiel: Wenn ich mehr Zeit hätte, würde ich reisen.",
+    "tldr": [
+      "Im if-Satz steht der Simple Past, im Hauptsatz would plus Grundform.",
+      "Die Bedingung ist nur gedacht, also nicht wahr oder sehr unwahrscheinlich."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Wunschzettel",
+      "html": "<p>Du träumst: „Wenn ich ein Pferd hätte, würde ich jeden Tag reiten.“ Du hast kein Pferd. Deshalb steht die Form, die nur gedacht ist, im Simple Past.</p>"
+    },
+    "figure": {
+      "diagram": { "name": "flowDiagram", "args": [["If I had time|(if + Simple Past, nur gedacht)", "I would travel|(would + Grundform)"], "Ablauf: Wenn ich Zeit hätte, würde ich reisen"] },
+      "caption": "Die Bedingung ist nicht wahr. Deshalb steht im if-Satz die Vergangenheitsform, obwohl es um jetzt geht."
+    },
+    "steps": {
+      "title": "So bildest du den Satz",
+      "items": [
+        "Im if-Satz steht der Simple Past: If I had …, If she lived …",
+        "Im Hauptsatz steht would plus Grundform: … I would travel.",
+        "Bei be steht meist were, für alle Personen: If I were you …",
+        "Kein would im if-Satz: If I would have time ist falsch."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Im if-Satz kein „would“: „If I would have time“ ist falsch. Richtig ist „If I had time“.</p>"
+    },
+    "rule": "if + Simple Past, would + Grundform: nur gedacht, nicht wahr.",
+    "check": {
+      "q": "Welcher Satz ist richtig?",
+      "options": [
+        { "id": "If I would have more money, I would buy a bike.", "html": "If I would have more money, I would buy a bike." },
+        { "id": "If I have more money, I would buy a bike.", "html": "If I have more money, I would buy a bike." },
+        { "id": "If I had more money, I would buy a bike.", "html": "If I had more money, I would buy a bike." }
+      ],
+      "answer": "If I had more money, I would buy a bike.",
+      "why": "Im if-Satz steht der Simple Past (had), im Hauptsatz would plus Grundform. would gehört nicht in den if-Satz."
+    }
+  },
+  "relative-clauses": {
+    "goal": "Du kannst Personen, Dinge und Orte mit who, which, that, where und whose genauer beschreiben.",
+    "tldr": [
+      "who steht für Personen, which für Dinge, that für beides.",
+      "where steht für Orte, whose für Besitz: whose bag heißt Tasche von jemandem."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Steckbrief",
+      "html": "<p>Wenn du jemanden suchst, sagst du: „Die Person, die singt.“ Der Relativsatz ist der Teil, der genauer erklärt, wer oder was gemeint ist.</p>"
+    },
+    "figure": {
+      "diagram": { "name": "flowDiagram", "args": [["The girl|(Person)", "who sings|(Relativsatz)", "is my cousin|(Hauptsatz)"], "Ablauf: Das Mädchen, das singt, ist meine Cousine"] },
+      "caption": "Der Relativsatz steht direkt hinter dem Wort, das er erklärt."
+    },
+    "steps": {
+      "title": "So wählst du das Wort",
+      "items": [
+        "Person: who oder that. Beispiel: the man who lives here.",
+        "Ding: which oder that. Beispiel: the book which I read.",
+        "Ort: where. Beispiel: the town where I grew up.",
+        "Besitz: whose plus Hauptwort. Beispiel: the girl whose bike is red."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Nie zwei Subjekte: „the man who he lives here“ ist falsch. Das Relativpronomen ist selbst das Subjekt des Relativsatzes.</p>"
+    },
+    "rule": "who = Person, which = Ding, that = beides, where = Ort, whose = wessen.",
+    "check": {
+      "q": "Welches Wort passt zu einer Person?",
+      "options": [
+        { "id": "who", "html": "who" },
+        { "id": "which", "html": "which" },
+        { "id": "where", "html": "where" }
+      ],
+      "answer": "who",
+      "why": "Für Personen steht who. which passt zu Dingen, where zu Orten."
+    }
+  },
+  "contact-clauses": {
+    "goal": "Du kannst Relativsätze ohne Pronomen bilden, wenn das Pronomen Objekt ist, zum Beispiel: the film we watched.",
+    "tldr": [
+      "Ist das Relativpronomen Objekt, darf es wegfallen: the film (that) we watched.",
+      "Ist es Subjekt, darf es nicht fehlen: the girl who sings."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: eine Abkürzung im Gespräch",
+      "html": "<p>Du sagst „the cake Grandma baked“ statt „the cake that Grandma baked“. Beides ist verständlich, weil nach dem Hauptwort schon ein Subjekt und ein Verb folgen.</p>"
+    },
+    "figure": {
+      "diagram": { "name": "flowDiagram", "args": [["The cake|(Hauptwort)", "Grandma baked|(Relativsatz ohne Pronomen)"], "Ablauf: Der Kuchen, den Oma gebacken hat"] },
+      "caption": "Nach dem Hauptwort folgt direkt ein Subjekt und ein Verb. Daran erkennt man den Relativsatz."
+    },
+    "steps": {
+      "title": "So prüfst du das Pronomen",
+      "items": [
+        "Steht nach dem Pronomen ein Subjekt wie we oder Grandma? Dann darf das Pronomen weg.",
+        "The film we watched was funny. Das Pronomen war hier Objekt, deshalb fällt es weg.",
+        "Folgt direkt nach dem Pronomen ein Verb? Dann bleibt es: The girl who sings is my cousin.",
+        "Das Verb im Hauptsatz richtet sich nach dem Hauptwort: The shoes I bought are small."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Nicht jedes Pronomen darf weg. „The girl sings is my cousin“ klingt nach zwei Hauptsätzen und ist falsch.</p>"
+    },
+    "rule": "Das Pronomen darf weg, wenn danach ein Subjekt folgt.",
+    "check": {
+      "q": "In welchem Satz darf das Pronomen wegfallen?",
+      "options": [
+        { "id": "The bag I bought yesterday is red.", "html": "The bag I bought yesterday is red." },
+        { "id": "The man lives next door is my uncle.", "html": "The man lives next door is my uncle." },
+        { "id": "The woman who sings is my aunt.", "html": "The woman who sings is my aunt." }
+      ],
+      "answer": "The bag I bought yesterday is red.",
+      "why": "Hier fällt das Objekt-Pronomen weg, weil danach das Subjekt I folgt. Bei the man lives fehlt das Subjekt, und bei who steht das Pronomen, weil danach das Verb folgt."
+    }
+  },
+  "passive": {
+    "goal": "Du kannst das Passiv in Präsens und Präteritum bilden und erkennst, wann der Täter wegfällt.",
+    "tldr": [
+      "Passiv = be + Partizip II. Das Objekt wird zum Subjekt: The cake is baked.",
+      "Die Zeit steckt im Hilfsverb be. Der Täter steht mit by oder fehlt ganz."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: eine Zeitungsmeldung",
+      "html": "<p>Die Schlagzeile lautet: „Die Brücke wurde 1990 gebaut.“ Wer sie gebaut hat, ist nicht wichtig. Genau das macht das Passiv: Die Handlung steht im Mittelpunkt.</p>"
+    },
+    "figure": {
+      "diagram": { "name": "swapDiagram", "args": [["Mum", "bakes", "the cake"], ["The cake", "is baked", "by Mum"], [2, 1, 0], ["Aktiv", "Passiv"]] },
+      "caption": "Das Objekt des Aktivsatzes wird zum Subjekt des Passivsatzes."
+    },
+    "steps": {
+      "title": "So bildest du den Passivsatz",
+      "items": [
+        "Das Objekt des Aktivsatzes wird Subjekt: Mum bakes the cake wird zu The cake …",
+        "Verb: be in der Zeit des Aktivsatzes plus Partizip II. bakes wird zu is baked, baked wird zu was baked.",
+        "Der Täter steht mit by: by Mum. Oft bleibt er weg, wenn er unwichtig ist.",
+        "Probe: Steht be vor dem Partizip II? Dann ist es Passiv."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Das Partizip II ist die dritte Form, nicht die Grundform: „The cake is bake“ ist falsch, richtig ist „is baked“.</p>"
+    },
+    "rule": "be + Partizip II. Die Zeit steckt im be. Der Täter kommt mit by oder fehlt.",
+    "check": {
+      "q": "Welcher Satz ist im Passiv richtig?",
+      "options": [
+        { "id": "The window was broken by the storm.", "html": "The window was broken by the storm." },
+        { "id": "The window was break by the storm.", "html": "The window was break by the storm." },
+        { "id": "The window is broken the storm.", "html": "The window is broken the storm." }
+      ],
+      "answer": "The window was broken by the storm.",
+      "why": "Das Passiv braucht be und das Partizip II broken. Den Täter nennt man mit by."
+    }
+  },
+  "modal-verbs": {
+    "goal": "Du kannst mit can, must, mustn't und needn't Fähigkeit, Pflicht, Verbot und Notwendigkeit ausdrücken.",
+    "tldr": [
+      "Modale Verben stehen ohne to und ohne -s: She can swim.",
+      "mustn't heißt verboten, needn't heißt nicht nötig. Diese Verwechslung ist häufig."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: zwei Schilder am Schwimmbad",
+      "html": "<p>Auf dem einen Schild steht „You mustn't run“: Rennen ist verboten. Auf dem anderen steht „You needn't bring a towel“: Ein Handtuch ist nicht nötig, es gibt welche vor Ort.</p>"
+    },
+    "figure": {
+      "diagram": { "name": "tableDiagram", "args": [["Modal", "Bedeutung", "Beispiel"], [["can", "Fähigkeit", "I can swim."], ["must", "Pflicht", "You must wear a helmet."], ["mustn't", "Verbot", "You mustn't smoke here."], ["needn't", "nicht nötig", "You needn't hurry."]], [1, 1.3, 2], "Tabelle: modale Verben mit Bedeutung und Beispiel"] },
+      "caption": "mustn't verbietet etwas. needn't sagt nur, dass es nicht nötig ist."
+    },
+    "steps": {
+      "title": "So verwendest du modale Verben",
+      "items": [
+        "Modal plus Grundform ohne to: You must go, nicht You must to go.",
+        "Kein -s bei he, she, it: He can swim, nicht He cans swim.",
+        "Verneinung von can: cannot oder can't heißt nicht können. mustn't heißt verboten.",
+        "Vergangenheit von can ist could: I could ride a bike at six."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>„You mustn't go“ heißt: Du darfst nicht gehen. „You needn't go“ heißt: Du musst nicht gehen. Das ist etwas völlig anderes.</p>"
+    },
+    "rule": "Modal + Grundform ohne to, kein -s. mustn't = verboten, needn't = nicht nötig.",
+    "check": {
+      "q": "Was heißt „You needn't bring a pen“?",
+      "options": [
+        { "id": "Du musst keinen Stift mitbringen.", "html": "Du musst keinen Stift mitbringen." },
+        { "id": "Du darfst keinen Stift mitbringen.", "html": "Du darfst keinen Stift mitbringen." },
+        { "id": "Du musst einen Stift mitbringen.", "html": "Du musst einen Stift mitbringen." }
+      ],
+      "answer": "Du musst keinen Stift mitbringen.",
+      "why": "needn't heißt nicht nötig. Verboten wäre mustn't, Pflicht wäre must."
+    }
+  },
+  "modal-substitutes": {
+    "goal": "Du kannst Pflicht, Fähigkeit und Erlaubnis auch in der Vergangenheit und Zukunft ausdrücken, mit have to, be able to und be allowed to.",
+    "tldr": [
+      "Modale Verben haben keine Zukunft und keine Vergangenheit. Dann helfen Ersatzformen.",
+      "have to = Pflicht, be able to = Fähigkeit, be allowed to = Erlaubnis."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Ersatzspieler",
+      "html": "<p>Wenn der Stammspieler fehlt, springt ein Ersatz ein. Must hat keine Vergangenheit, deshalb springt had to ein. Genauso bei can: will be able to.</p>"
+    },
+    "figure": {
+      "diagram": { "name": "tableDiagram", "args": [["Modal", "Ersatz", "Beispiel"], [["must", "have to", "I have to get up early."], ["can", "be able to", "She will be able to swim."], ["may, can (Erlaubnis)", "be allowed to", "We are allowed to use the bus."]], [1, 1.2, 2], "Tabelle: modale Verben und ihre Ersatzformen"] },
+      "caption": "Ersatzformen gibt es für alle Zeiten. Verneinung von have to: don't have to heißt nicht nötig."
+    },
+    "steps": {
+      "title": "So verwendest du die Ersatzformen",
+      "items": [
+        "have to für Pflicht: I have to, I had to, I will have to.",
+        "Verneinung: I don't have to heißt: Ich muss nicht. Dafür braucht man do oder does.",
+        "be able to für Fähigkeit in jeder Zeit: I was able to, I will be able to.",
+        "be allowed to für Erlaubnis: We are allowed to. Nicht: We can to."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Es gibt kein „musted“ und kein „canned“. In der Vergangenheit sagt man „had to“ und „was able to“.</p>"
+    },
+    "rule": "Für Zeiten, die modale Verben nicht haben: have to, be able to, be allowed to.",
+    "check": {
+      "q": "Wie sagt man: Ich musste gestern früh aufstehen?",
+      "options": [
+        { "id": "I had to get up early yesterday.", "html": "I had to get up early yesterday." },
+        { "id": "I musted get up early yesterday.", "html": "I musted get up early yesterday." },
+        { "id": "I must get up early yesterday.", "html": "I must get up early yesterday." }
+      ],
+      "answer": "I had to get up early yesterday.",
+      "why": "must hat keine Vergangenheit. Dafür nimmt man had to. musted gibt es nicht."
+    }
+  },
+  "past-perfect": {
+    "goal": "Du kannst beschreiben, was schon vorbei war, bevor etwas anderes in der Vergangenheit passierte.",
+    "tldr": [
+      "Past Perfect = had + Partizip II.",
+      "Es steht für die ältere von zwei Handlungen in der Vergangenheit. Die jüngere steht im Simple Past."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: der verpasste Zug",
+      "html": "<p>Als du am Bahnhof ankamst, war der Zug schon weg. Erst fuhr der Zug ab, dann kamst du an. Das ältere Ereignis steht im Past Perfect: „The train had left.“</p>"
+    },
+    "figure": {
+      "diagram": { "name": "flowDiagram", "args": [["The train had left|(zuerst, älter)", "I arrived|(danach, Simple Past)"], "Ablauf: Erst fuhr der Zug ab, dann kam ich an"] },
+      "caption": "Das frühere Ereignis steht im Past Perfect, das spätere im Simple Past."
+    },
+    "steps": {
+      "title": "So bildest du den Satz",
+      "items": [
+        "Bilde den Satz mit had und dem Partizip II: had left, had seen, had eaten.",
+        "Ältere Handlung im Past Perfect, jüngere im Simple Past: When I arrived, the train had left.",
+        "Typische Signalwörter: already, before, by the time, when.",
+        "Verneinung: hadn't plus Partizip II: She hadn't eaten."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Gibt es nur eine Vergangenheitshandlung, reicht der Simple Past. Past Perfect braucht man, wenn die Reihenfolge zweier Handlungen wichtig ist.</p>"
+    },
+    "rule": "had + Partizip II: Das war schon vorbei, bevor etwas anderes passierte.",
+    "check": {
+      "q": "Welcher Satz ist richtig?",
+      "options": [
+        { "id": "When we got to the station, the train had already left.", "html": "When we got to the station, the train had already left." },
+        { "id": "When we got to the station, the train has already left.", "html": "When we got to the station, the train has already left." },
+        { "id": "When we got to the station, the train already had leave.", "html": "When we got to the station, the train already had leave." }
+      ],
+      "answer": "When we got to the station, the train had already left.",
+      "why": "Die Abfahrt war zuerst, deshalb had left. has left ist Present Perfect und passt nicht in die Vergangenheit."
+    }
+  },
+  "reflexive-pronouns": {
+    "goal": "Du kannst Reflexivpronomen wie myself und each other richtig einsetzen.",
+    "tldr": [
+      "Sind Subjekt und Objekt dieselbe Person, endet das Pronomen auf -self: She hurt herself.",
+      "Wenn sich zwei oder mehr Personen gegenseitig betreffen, sagt man each other."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Spiegel",
+      "html": "<p>Wer sich im Spiegel ansieht, schaut auf sich selbst. Das Pronomen zeigt zurück auf dieselbe Person: „I look at myself.“</p>"
+    },
+    "figure": {
+      "diagram": { "name": "tableDiagram", "args": [["Person", "Reflexivpronomen"], [["I", "myself"], ["you", "yourself"], ["he", "himself"], ["she", "herself"], ["we", "ourselves"], ["they", "themselves"]], [1, 1.5], "Tabelle: Personalpronomen und Reflexivpronomen"] },
+      "caption": "Im Singular endet es auf -self, im Plural auf -selves."
+    },
+    "steps": {
+      "title": "So wählst du das Pronomen",
+      "items": [
+        "Person ist Subjekt und Objekt zugleich: He cut himself.",
+        "Verstärkung im Sinne von selbst: I did it myself.",
+        "Gegenseitig bei zwei oder mehr Personen: They like each other.",
+        "Probe: Ist das Objekt dieselbe Person wie das Subjekt? Dann -self. Sonst him, her, them."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Es heißt „herself“, nicht „hers“ oder „her self“. Und es gibt kein „hisself“.</p>"
+    },
+    "rule": "Subjekt = Objekt: -self. Gegenseitig: each other.",
+    "check": {
+      "q": "Welcher Satz ist richtig?",
+      "options": [
+        { "id": "He cut himself with a knife.", "html": "He cut himself with a knife." },
+        { "id": "He cut him with a knife.", "html": "He cut him with a knife." },
+        { "id": "He cut hisself with a knife.", "html": "He cut hisself with a knife." }
+      ],
+      "answer": "He cut himself with a knife.",
+      "why": "Subjekt und Objekt sind dieselbe Person, deshalb himself. hisself gibt es nicht."
+    }
+  },
+  "indirect-speech": {
+    "goal": "Du kannst wiedergeben, was jemand gesagt hat, mit passender Zeit und passenden Pronomen.",
+    "tldr": [
+      "In der indirekten Rede rückt die Zeit eine Stufe zurück: am wird was, will wird would.",
+      "Pronomen und Zeitangaben ändern sich: I wird she, tomorrow wird the next day."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: Stille Post",
+      "html": "<p>Du erzählst einer Freundin, was der Lehrer gesagt hat. Du wiederholst nicht seine Worte, sondern berichtest aus deiner Sicht: „He said he was tired.“</p>"
+    },
+    "figure": {
+      "diagram": { "name": "swapDiagram", "args": [["I", "am", "tired"], ["She", "was", "tired"], [0, 1, 2], ["Direkt", "Indirekt"]] },
+      "caption": "Direkte Rede: I am tired. Indirekte Rede: She was tired."
+    },
+    "steps": {
+      "title": "So gibst du Aussagen wieder",
+      "items": [
+        "Nach said oder told folgt die Person bei told: She told me that … Bei say steht keine Person direkt danach.",
+        "Zeit eine Stufe zurück: is oder am wird was, will wird would, can wird could, have wird had.",
+        "Zeitangaben ändern sich: now wird then, today wird that day, tomorrow wird the next day, yesterday wird the day before.",
+        "Befehle mit to: Open your books wird zu told us to open our books."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Die Zeit rückt nur zurück, wenn der Hauptsatz in der Vergangenheit steht, zum Beispiel „she said“. Bei „she says“ bleibt die Zeit meist gleich.</p>"
+    },
+    "rule": "Zeit eine Stufe zurück, Pronomen und Zeitangaben anpassen.",
+    "check": {
+      "q": "Welcher Satz ist richtig?",
+      "options": [
+        { "id": "She said that she was hungry.", "html": "She said that she was hungry." },
+        { "id": "She said me that she was hungry.", "html": "She said me that she was hungry." },
+        { "id": "She told that she was hungry.", "html": "She told that she was hungry." }
+      ],
+      "answer": "She said that she was hungry.",
+      "why": "Bei said folgt keine Person. Bei told müsste eine Person folgen: told me. Ohne Person klingt told unvollständig."
+    }
+  }
+}

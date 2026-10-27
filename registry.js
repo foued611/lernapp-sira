@@ -43,7 +43,15 @@ export const APPS = [
     units: 8,
     status: 'live'
   },
-  { id: 'englisch', subject: 'Englisch', title: 'Englisch-App', desc: 'Wortschatz und Grammatik.', status: 'soon' },
+  {
+    id: 'englisch',
+    subject: 'Englisch',
+    title: 'Englisch-Werkstatt',
+    desc: 'Simple Past, Present Perfect, Konditionalsätze, Relativsätze, Passiv und indirekte Rede. Nach den Units von Access 3.',
+    href: 'apps/englisch/index.html',
+    units: 16,
+    status: 'live'
+  },
   {
     id: 'info-zahlen',
     subject: 'Informatik',
