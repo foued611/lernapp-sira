@@ -5,8 +5,9 @@ import mathe from './mathe/logic.js';
 import frVerben from './fr-verben/logic.js';
 import infoZahlen from './info-zahlen/logic.js';
 import geometrie from './geometrie/logic.js';
+import englisch from './englisch/logic.js';
 
-const LOGIC = { deutsch, geometrie, mathe, 'fr-verben': frVerben, 'info-zahlen': infoZahlen };
+const LOGIC = { deutsch, geometrie, mathe, englisch, 'fr-verben': frVerben, 'info-zahlen': infoZahlen };
 
 /** Logik der App mit der Kennung id, sonst ein leeres Objekt. */
 export const logicFor = (id) => (Object.hasOwn(LOGIC, id) ? LOGIC[id] : {});
