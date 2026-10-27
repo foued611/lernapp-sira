@@ -58,7 +58,7 @@ Die Person hat 103 Regeln im Pop-up geprüft. Einige Regeln hat die Person nach 
 | RULE-145 | Richtig | 2026-10-26T14:59 | Player name is required to be hidden once set, and is always |  |
 | RULE-146 | Richtig | 2026-10-26T14:59 | Every verb form has a hint and distractors that exclude the  |  |
 | RULE-147 | Richtig | 2026-10-26T14:59 | Typed verb answers: pronoun prefix and case ignored, missing |  |
-| RULE-150 | Richtig | 2026-10-26T15:03 | Eintipp-Prüfung für numerische Antworten |  |
+| RULE-150 | Falsch oder nicht gewollt | 2026-10-27T10:14 | Eintipp-Prüfung für numerische Antworten | Geändert: Einheiten werden geprüft, wo die Aufgabe eine Einheit hat (5 m ist für cm falsch). Ohne Einheit bleibt die Zahl gültig. |
 | RULE-151 | Richtig | 2026-10-26T14:59 | Typed answer is graded exact, 'almost' if only accents diffe |  |
 | RULE-158 | Richtig | 2026-10-26T14:59 | Verb conjugation tables give the six correct forms in person |  |
 | RULE-160 | Richtig | 2026-10-26T15:03 | Generated geometry tasks have a correct answer outside the w |  |

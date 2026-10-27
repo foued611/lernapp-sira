@@ -15,7 +15,7 @@ Vergleich im Browser: Legacy über `python3 -m http.server 5174` (Repo-Stand 88e
 - Nicht verglichen: Auswertung Französisch. Die Zuordnungsfrage lässt sich in Legacy per Skript nicht durchspielen (die Paare lösen sich nicht zuverlässig aus). Der Neubau spielt sie.
 - Erledigt: Der Name aus dem Französisch-Text (`content/fr-verben/lessons.json`, zweimal) ist durch „Lena“ ersetzt. Die Person hat das entschieden. Legacy liest dieselbe Datei.
 - Offen: Der Name steht noch in `AGENTS.md`, `README.md`, `docs/*.md` und `scripts/smoke.mjs`. Für den Inhalt gilt die Regel jetzt, für diese Dateien noch nicht geprüft.
-- Offen: RULE-150 ist eine Frage an die Person.
+- Bewusste Abweichung (Entscheidung der Person, RULE-150): Eine mitgetippte Einheit muss zur Aufgabe passen, wo die Aufgabe eine Einheit hat. Geometrie gibt die Einheit der Aufgabe an (`helfer/number.js`, `numCheck` mit `unit`). "5 m" ist für eine Aufgabe in cm falsch. Ohne Einheit in der Eingabe bleibt die Zahl gültig. Mathe-Aufgaben haben im Datenfeld keine Einheit, dort gilt weiter die Legacy-Regel.
 
 Die Befunde unten stammen vom 26.10. und sind teils überholt.
 

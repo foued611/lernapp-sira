@@ -299,7 +299,7 @@ export function choice(item, rng) {
 export function typed(item) {
   return typedQuestion({
     label: 'Gib das Ergebnis ein', prompt: esc(item.prompt), promptStyle: 'sentence', answer: item.answer,
-    check: numCheck(item.value), placeholder: item.unit ? `Zahl eintippen (${item.unit.trim()})` : 'Zahl eintippen', why: item.why
+    check: numCheck(item.value, { unit: item.unit }), placeholder: item.unit ? `Zahl eintippen (${item.unit.trim()})` : 'Zahl eintippen', why: item.why
   });
 }
 

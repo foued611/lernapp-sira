@@ -321,10 +321,10 @@
       "note": ""
     },
     "RULE-150": {
-      "verdict": "confirmed",
-      "at": "2026-10-26T15:03:38+01:00",
+      "verdict": "wrong",
+      "at": "2026-10-27T10:14:00+01:00",
       "title": "Eintipp-Prüfung für numerische Antworten",
-      "note": ""
+      "note": "Geändert: Einheiten werden geprüft, wo die Aufgabe eine Einheit hat (5 m ist für cm falsch). Ohne Einheit in der Eingabe bleibt die Zahl gültig. Umsetzung in helfer/number.js (numCheck mit unit), Geometrie übergibt die Einheit der Aufgabe."
     },
     "RULE-151": {
       "verdict": "confirmed",

@@ -28,18 +28,35 @@ export function roundTo(value, places) {
   return value < 0 ? -rounded : rounded;
 }
 
+// Schreibweisen, die dieselbe Einheit meinen. Alles andere wird klein geschrieben und wörtlich verglichen.
+const SAME_UNIT = { euro: '€', grad: '°' };
+const normalUnit = (unit) => {
+  const text = String(unit).trim().toLowerCase();
+  return SAME_UNIT[text] || text;
+};
+
+/** Die Einheit am Ende der Eingabe, klein geschrieben, oder '' wenn keine dasteht. "2,5 m" gibt 'm', "2,5" gibt ''. */
+export function unitOfInput(raw) {
+  const match = baseInput(raw).match(/[^\d,.\-]+$/);
+  return match ? normalUnit(match[0]) : '';
+}
+
 /**
  * Zahlenprüfer. Ergibt 'ok' oder 'bad'.
  * Ohne `places` gilt exakte Übereinstimmung (bis 1e-9). Mit `places` wird der Sollwert auf so viele
  * Nachkommastellen gerundet, wie die Aufgabe verlangt, und die Eingabe muss genau dieser Wert sein
  * (RULE-128). Eine genauere Eingabe ist damit falsch: 0,3333 gilt bei drei Stellen nicht für 1/3.
  */
-export function numCheck(answer, { places } = {}) {
+export function numCheck(answer, { places, unit } = {}) {
   if (places !== undefined && !(Number.isInteger(places) && places >= 0)) {
     throw new RangeError('places muss eine ganze Zahl ab 0 sein');
   }
   const target = places === undefined ? answer : roundTo(answer, places);
+  const expected = unit === undefined ? '' : normalUnit(unit);
   return (input) => {
+    // Eine mitgetippte Einheit muss zur Aufgabe passen. "5 m" ist für eine Aufgabe in cm falsch.
+    const given = unitOfInput(input);
+    if (expected && given && given !== expected) return 'bad';
     const cleaned = cleanInput(input);
     // Nur das erste Komma wird ersetzt, wie im Legacy-Code. Ein zweites Komma macht die Zahl ungültig.
     const value = Number(cleaned.replace(',', '.'));

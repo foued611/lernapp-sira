@@ -1,7 +1,7 @@
 // Tests für den Zahlenprüfer (RULE-128). Jeder Testname beginnt mit der Regel-ID, damit die Rückverfolgung gilt.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { numCheck, roundTo } from '../number.js';
+import { numCheck, roundTo, unitOfInput } from '../number.js';
 
 test('RULE-128 Sollwert 2,5 ist ohne Rundung richtig bei 2,5, 2.5, 2,5 cm und 2,50', () => {
   const check = numCheck(2.5);
@@ -83,4 +83,31 @@ test('RULE-128 ungültige Stellenzahl (negativ, Bruch, Text) wirft RangeError be
   assert.throws(() => numCheck(1, { places: -1 }), RangeError);
   assert.throws(() => numCheck(1, { places: 1.5 }), RangeError);
   assert.throws(() => numCheck(1, { places: '2' }), RangeError);
+});
+
+test('RULE-150 Einheit der Aufgabe: 2,5 m ist für eine Aufgabe in cm falsch, 250 und 250 cm sind richtig', () => {
+  const check = numCheck(250, { unit: ' cm' });
+  assert.equal(check('2,5 m'), 'bad');
+  assert.equal(check('250 cm'), 'ok');
+  assert.equal(check('250'), 'ok', 'ohne Einheit gilt die Zahl wie bisher');
+});
+
+test('RULE-150 Einheit wird mit der Schreibweise verglichen: grad ist ° und euro ist €, m² ist nicht m', () => {
+  assert.equal(numCheck(45, { unit: '°' })('45 grad'), 'ok');
+  assert.equal(numCheck(30, { unit: ' €' })('30 euro'), 'ok');
+  assert.equal(numCheck(8, { unit: ' m²' })('8 m'), 'bad');
+  assert.equal(numCheck(8, { unit: ' m²' })('8 m²'), 'ok');
+});
+
+test('RULE-150 ohne Einheit in der Aufgabe wird nichts verglichen, auch wenn die Eingabe eine Einheit hat', () => {
+  assert.equal(numCheck(2.5, { unit: '' })('2,5 m'), 'ok');
+  assert.equal(numCheck(2.5)('2,5 m'), 'ok');
+});
+
+test('RULE-150 unitOfInput liest die Einheit am Ende, Zahlen ohne Einheit ergeben leer', () => {
+  assert.equal(unitOfInput('2,5 m'), 'm');
+  assert.equal(unitOfInput('8 m²'), 'm²');
+  assert.equal(unitOfInput('45 grad'), '°');
+  assert.equal(unitOfInput('2,5'), '');
+  assert.equal(unitOfInput('−6'), '');
 });
