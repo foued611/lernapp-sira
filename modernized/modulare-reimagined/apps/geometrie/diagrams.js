@@ -32,7 +32,7 @@ export function bisectorDiagram(deg = 70) {
     arc(S[0], S[1], 36, 2, h - 2, 'gc'), arc(S[0], S[1], 46, h + 2, deg - 2, 'gc'),
     text(L1[0], L1[1] + 5, `${f1(h)}°`, 'sm'), text(L2[0] - 2, L2[1] + 2, `${f1(h)}°`, 'sm'),
     ...dot(S, 'S', -14, 24), ...dot(U, '', 0, 0), ...dot(V, '', 0, 0), ...dot(W, 'W', 14, -4),
-    text(330, 270, `Winkel ${deg}° geteilt in zweimal ${f1(h)}°`, 'md mono')
+    text(260, 270, `Winkel ${deg}° geteilt in zweimal ${f1(h)}°`, 'md mono')
   ]);
 }
 
@@ -56,7 +56,7 @@ export function anglesDiagram(alpha = 60) {
   const O = [260, 130], d1 = 10, d2 = 10 + alpha, R = 200;
   const sets = [[d1, d2, alpha, 'α'], [d2, d1 + 180, 180 - alpha, 'β'], [d1 + 180, d2 + 180, alpha, 'α'], [d2 + 180, d1 + 360, 180 - alpha, 'β']];
   const marks = sets.flatMap(([a0, a1, val, name], i) => {
-    const m = at(O[0], O[1], 62, (a0 + a1) / 2);
+    const m = at(O[0], O[1], 76, (a0 + a1) / 2);
     return [arc(O[0], O[1], 30 + (i % 2) * 6, a0 + 3, a1 - 3, 'gc'), text(m[0], m[1] + 5, `${name} = ${val}°`, 'sm mono')];
   });
   return diagram(520, 260, `Zwei sich schneidende Geraden: Gegenüberliegende Winkel (Scheitelwinkel) sind je ${alpha} Grad, die Nachbarwinkel (Nebenwinkel) je ${180 - alpha} Grad.`, [
@@ -97,14 +97,14 @@ export function circlesDiagram() {
 
 /** Maßstab: oben die Zeichnung in cm, unten die Wirklichkeit in m. Alle Werte werden berechnet. */
 export function scaleDiagram(d = 4, n = 200) {
-  const real = (d * n) / 100, w = 60 * d, x0 = 70;
+  const real = (d * n) / 100, w = 60 * d, x0 = 110;
   const label = `Maßstab 1 zu ${n}: ${d} Zentimeter in der Zeichnung sind ${f1(real)} Meter in Wirklichkeit`.replace('.', ',');
   return diagram(520, 200, label, [
     text(260, 24, `Maßstab 1 : ${n}`, 'md'),
-    text(52, 74, 'Zeichnung', 'sm mu'), rect(x0 + 40, 56, w, 28, 'box', 6), text(x0 + 40 + w / 2, 76, `${d} cm`, 'md mono'),
+    text(75, 74, 'Zeichnung', 'sm mu'), rect(x0 + 40, 56, w, 28, 'box', 6), text(x0 + 40 + w / 2, 76, `${d} cm`, 'md mono'),
     arrow(x0 + 40 + w / 2, 90, x0 + 40 + w / 2, 128),
     text(x0 + 40 + w / 2 + 70, 114, `mal ${n}`, 'sm mu'),
-    text(52, 164, 'Wirklichkeit', 'sm mu'), rect(x0 + 40, 140, w, 36, 'hi', 6),
+    text(75, 164, 'Wirklichkeit', 'sm mu'), rect(x0 + 40, 140, w, 36, 'hi', 6),
     text(x0 + 40 + w / 2, 164, `${f1(real)} m`.replace('.', ','), 'md mono on-sun')
   ]);
 }
@@ -112,12 +112,12 @@ export function scaleDiagram(d = 4, n = 200) {
 /** Problem lösen: Thaleskreis mit Mittelpunkt M. Das Dreieck AMC ist gleichschenklig, alle Winkel werden berechnet. */
 export function problemDiagram(alpha = 35) {
   const M = [260, 190], r = 140, A = [M[0] - r, M[1]], B = [M[0] + r, M[1]], C = at(M[0], M[1], r, 2 * alpha);
-  return diagram(520, 252, `Thaleskreis mit Mittelpunkt M. Im gleichschenkligen Dreieck AMC sind die Basiswinkel ${alpha} Grad, der Winkel bei M ist ${180 - 2 * alpha} Grad.`, [
+  return diagram(520, 284, `Thaleskreis mit Mittelpunkt M. Im gleichschenkligen Dreieck AMC sind die Basiswinkel ${alpha} Grad, der Winkel bei M ist ${180 - 2 * alpha} Grad.`, [
     path(`M${A[0]} ${A[1]} A${r} ${r} 0 0 1 ${B[0]} ${B[1]}`, 'ln-soft'),
     segment(A, B), segment(A, C), segment(B, C), segment(M, C, 'ln-soft'),
     ...dot(A, 'A', -4, 24), ...dot(B, 'B', 4, 24), ...dot(C, 'C', 4, -12), ...dot(M, 'M', 0, 24),
     text(A[0] + 52, A[1] - 8, `${alpha}°`, 'sm mono'), text(C[0] - 24, C[1] + 34, `${alpha}°`, 'sm mono'),
     text(M[0] - 40, M[1] - 20, `${180 - 2 * alpha}°`, 'sm mono'),
-    text(260, 238, 'MA und MC sind Radien: Dreieck AMC ist gleichschenklig', 'sm mu')
+    text(260, 246, 'MA und MC sind Radien:', 'sm mu'), text(260, 274, 'Dreieck AMC ist gleichschenklig', 'sm mu')
   ]);
 }
