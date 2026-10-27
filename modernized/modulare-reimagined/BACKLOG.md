@@ -40,11 +40,13 @@ Status: `offen`, `in Arbeit`, `erledigt`, `verworfen`.
 | ID | Thema | Beschreibung | Grund | Aufwand | Abhängig von | Status |
 |---|---|---|---|---|---|---|
 | D-1 | Hellmodus prüfen | Startseite, App-Startseite, Übung, Ergebnis im hellen Schema bei 375 px und 1280 px. | Design-Kritik hat nur Dunkelmodus geprüft. | 0,5 d | – | offen |
-| D-2 | Lektions-Diagramme prüfen | Alle Diagramme im Browser bei 375 px auf Lesbarkeit und Überlauf prüfen. | Nicht in der Kritik enthalten. | 0,5 d | – | offen |
+| D-2 | Lektions-Diagramme prüfen | Alle Diagramme im Browser bei 375 px auf Lesbarkeit und Überlauf prüfen. | Nicht in der Kritik enthalten. | 0,5 d | – | erledigt bei 375 px (mathe, geometrie, fr-verben, englisch, decouvertes-2, info-zahlen, deutsch). Offen: Sweep bei 1280 px für englisch, decouvertes-2, info-zahlen, deutsch. |
 | D-3 | Kontrast der Fach-Etiketten | Etiketten in den Kacheln und der Weiter-Karte auf Kontrast messen (WCAG AA). | Kritik: 12 px, gedämpft. Auf 13 px umgestellt. Gemessen: alle über 4,5:1. Offen: `.tile.soon` (opacity .6). | 0,25 d | – | erledigt (Messung), Nachtrag offen |
 | D-4 | Kopfleiste mobil neu bewerten | Entscheiden, ob die nicht-sticky Kopfleiste bleibt oder eine kompakte sticky Leiste kommt. Abweichung von Legacy ist in `PARITAET.md` dokumentiert. | `base.css` (Media ≤ 520 px). | 0,5 d | – | offen |
 | D-5 | Namensfeld und Platzhalter | Klären, ob der Platzhalter `•••` für Kinder verständlich ist. Vorschlag nur nach Rückmeldung von Schülerinnen und Schülern. | Maskierung ist Absicht (SEITE-MASKIERUNG). Kein Code vor Entscheidung. | 0,25 d | – | offen |
 | D-6 | Pixel-Parität nach Design-Änderungen | Theorie-Seiten erneut gegen Legacy messen (1280 px und 375 px), nachdem Kopfleiste und Ziel-Text geändert wurden. | `PARITAET.md`: Abweichung durch mobile Header-Änderung. | 0,5 d | D-4 | offen |
+| D-7 | Kontrast hell: Knopf und Erfolgstext | Hell: `btn-fg` auf `btn-bg` 4,11 zu 1, `ok` auf `card` 4,08 zu 1. Nötig 4,5 zu 1 für normalen Text. Farbwerte in `tokens.css` anpassen. Test hält den Stand fest (`seiten/tests/a11y.test.js`, `KNOWN_LOW`). | Gefunden beim Entfernen der Legacy-Tokens. | 0,25 d | – | offen |
+| D-8 | Touch-Ziel „← Zum Lernpfad“ | `.link.back` misst 33 px hoch, nötig 44 px. | Prüfung im Browser, Stand 2026-10-27. | 0,1 d | – | offen |
 
 ## E. Lernen unterstützen (LLM-Agent)
 
