@@ -4,6 +4,21 @@ Stand: 2026-10-26. Vorgabe der Person: Legacy wird erst aus `main` entfernt, wen
 
 Vergleich im Browser: Legacy über `python3 -m http.server 5174` (Repo-Stand 88e3d74), Neubau über `npm run dev` in `modernized/modulare-reimagined` (Port 5173).
 
+## Stand 2026-10-28 (Abschluss der offenen Punkte)
+
+- Name: aus allen Dateien im Repo entfernt (AGENTS.md, README.md, docs/, scripts/smoke.mjs, analysis/). Bleibt: Repo-Pfad `lernapp-sira` und der GitHub-Benutzername in URLs, weil die Pages-Adresse daran hängt.
+- Parität Dual-Execution (analysis/modulare/dual): Die Skripte zählen jetzt, ob eine Abweichung durch die Vielfalt-Regel erklärt ist. Erklärt heißt: die Legacy-Runde hat selbst eine Dublette, der Neubau zieht dann neu.
+  - Zahlenwerkstatt: 1800 Vergleiche, 267 erklärt durch Vielfalt, 0 unerklärt.
+  - Mathe: 2400 Vergleiche, 157 erklärt durch Vielfalt, 177 unerklärt. Alle 177 sind Median-Fragen (RULE-056, von der Person freigegeben).
+  - Geometrie hat kein Dual-Skript.
+- Die Befunde "fehlt" weiter unten sind überholt. Im Code vorhanden: Sammelalbum (komponenten/album.js), Kopfleiste mit Niveau (seiten/apphome.js), Tagesziel-Ring, Zum Ausdrucken (seiten/apphome.js), Auflösung (seiten/spiel.js, reveal).
+- Mobil 375 px, 44 Theorie-Seiten gegen Legacy: 0,00 bis 0,44 % Pixelabweichung, Mittel 0,05 %, Höhen gleich. Die früheren 33 bis 40 % kamen von den 44-px-Knöpfen. Sie verschoben das Layout um 32 px. Jetzt ist die Trefferfläche ein ::after, das Layout ist unverändert.
+- Desktop 1280 px, 44 Theorie-Seiten: 0,00 bis 0,18 %, Mittel 0,025 %, Höhen gleich.
+- Browser (Chromium, 375 px): Zahlenwerkstatt-Runde bis Ergebnis. IndexedDB enthält danach die gemerkten Aufgaben (13). Sicherung als echte Datei heruntergeladen.
+- Einspielen der Sicherung im Browser nicht geprüft.
+- RULE-056 und RULE-119 sind im Chat entschieden und in RULE_REVIEWS als bestätigt eingetragen.
+- Offen: Legacy-Dateien aus main entfernen (Entscheidung der Person). Geometrie ohne Dual-Skript. Wiederholung nach Fehler am Rundenende (RULE-243) bleibt bewusst.
+
 ## Stand 2026-10-27 (gilt vor den Befunden unten)
 
 - Startseite und App-Startseite: Kopfleiste, Tagesziel-Ring, Sammelalbum, Trophäen und Kacheln sind umgesetzt. Mobil (375 px) ohne Überlauf.

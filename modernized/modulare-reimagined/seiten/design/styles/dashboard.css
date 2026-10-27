@@ -9,7 +9,8 @@
 .shell.dash .cont .dot{width:56px;height:56px;border-radius:16px;border:2px solid var(--ink);background:var(--c);transform:rotate(-4deg)}
 .shell.dash .cont p{margin:2px 0 0;font-size:14px}
 .shell.dash .chips{margin:12px 0 16px}
-.shell.dash .chip{min-height:44px;display:inline-flex;align-items:center}
+.shell.dash .chip{position:relative}
+.shell.dash .chip::after{content:"";position:absolute;inset:-5px -2px}
 .shell.dash .chip[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
 .shell.dash .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
 .shell.dash .tile{display:grid;gap:10px;align-content:start;padding:0 18px 18px;border-top:10px solid var(--c);color:inherit;text-decoration:none}
