@@ -128,7 +128,8 @@ test('SEITE-A11Y Jede Station des Lernpfads ist ein Button mit Text, der Zustand
 test('SEITE-A11Y Die Stationen des Lernpfads sind mindestens 44 px hoch, ohne feste Farben', () => {
   const base = read('design/styles/base.css');
   const rule = /\.node\{[^}]*\}/.exec(base)[0];
-  assert.match(rule, /min-height:\s*(var\(--touch-min,\s*44px\)|44px)/);
+  assert.match(rule, /min-height:\s*var\(--touch-min\)/);
+  assert.match(read('design/styles/tokens.css'), /--touch-min:\s*44px/, 'der Wert steht einmal in den Tokens');
   const mapRules = base.split('\n').filter((line) => /^\.(node|path|station|state)/.test(line)).join('\n');
   assert.equal(/#[0-9a-fA-F]{3,6}\b/.test(mapRules), false, 'Lernpfad-CSS nutzt nur Tokens');
 });

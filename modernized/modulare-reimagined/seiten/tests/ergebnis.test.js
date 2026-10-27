@@ -89,3 +89,12 @@ test('SEITE-WOCHENZIEL Die Ergebnisansicht rechnet mit dem gewählten Tagesziel'
   assert.match(markup, /Tagesziel: noch 30 XP/);
   assert.equal(model({}, { goal: 20, day: { d: DAY, xp: 20 } }).daily.reached, true);
 });
+
+test('SEITE-MISSIONEN Das Ergebnis nennt die erfüllten Missionen mit ihrer XP, ohne Missionen gibt es keinen Satz', () => {
+  assert.equal(model({ missions: [] }).missionLine, null);
+  assert.equal(model({ missions: ['units3'] }).missionLine, 'Wochenmission erfüllt: Übe 3 verschiedene Seiten · +20 XP');
+  assert.equal(
+    model({ missions: ['units3', 'strong90'] }).missionLine,
+    'Wochenmissionen erfüllt: Übe 3 verschiedene Seiten, Schaffe eine Runde mit mindestens 90 % · +40 XP'
+  );
+});

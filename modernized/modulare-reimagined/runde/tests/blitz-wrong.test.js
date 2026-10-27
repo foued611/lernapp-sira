@@ -55,6 +55,8 @@ test('RULE-257: Antworten nach Ablauf der Zeit zählen nicht als Fehler', () => 
   const c = clock();
   const blitz = makeBlitz(c);
   c.advance(45_000);
-  assert.equal(blitz.pick(wrongOption(blitz.current() ? blitz.current().question : sampleChoice('X'))).accepted, false);
+  // Nach Ablauf ist keine Frage mehr offen. Die Antwort ist eine beliebige falsche, sie darf nicht zählen.
+  const anyQuestion = sampleChoice('X');
+  assert.equal(blitz.pick(wrongOption(anyQuestion)).accepted, false);
   assert.equal(blitz.finish().wrong, 0);
 });

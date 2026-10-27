@@ -3,7 +3,7 @@
 // Die Entscheidungen (Empfehlung, Endgegner offen) kommen von außen, damit es keinen Import-Kreis mit rahmen.js gibt.
 import { createElement, useState } from 'react';
 import { DAILY_GOAL_XP, MISSION_REWARD_XP, REFRESH_BONUS_XP, currentStreak, dailyGoal, dailyXP, isRefreshDue, levelOf, levelThreshold, missionProgress } from '../regeln/index.js';
-import { LEVEL_TITLES } from './ergebnis.js';
+import { LEVEL_TITLES, MISSION_TEXT } from './ergebnis.js';
 import { doneUnits, starsOf } from '../komponenten/ui.js';
 import { Mascot } from '../komponenten/mascot.js';
 import { Icon } from '../komponenten/icons.js';
@@ -28,12 +28,7 @@ export function minouOf(xp, day, goal = DAILY_GOAL_XP) {
   return `Noch ${goal - xp} XP bis zum Tagesziel. Das ist ungefähr eine Runde.`;
 }
 
-// Texte der Wochenmissionen. Die IDs kommen aus regeln (MISSIONS), die Reihenfolge ebenfalls.
-const MISSION_TEXT = Object.freeze({
-  units3: { title: 'Übe 3 verschiedene Seiten', unit: (n) => (n === 1 ? 'Seite' : 'Seiten') },
-  refresh1: { title: 'Frische eine Seite auf', unit: (n) => (n === 1 ? 'Auffrischung' : 'Auffrischungen') },
-  strong90: { title: 'Schaffe eine Runde mit mindestens 90 %', unit: (n) => (n === 1 ? 'Runde' : 'Runden') }
-});
+// Texte der Wochenmissionen stehen in ergebnis.js (MISSION_TEXT), weil die Ergebnisansicht sie auch nennt.
 
 // Die Karte "Diese Woche". Der Stand ist Text ("Erledigt" oder "Offen") mit Häkchen, nicht nur eine Farbe.
 function WeekCard({ profile, day }) {
@@ -90,7 +85,8 @@ function Station({ unit, track, state, stars, next, onStudy }) {
       { type: 'button', className: `node${next ? ' next' : ''}`, style: { '--lc': unit.color }, 'aria-current': next ? 'step' : undefined, onClick: () => onStudy(unit) },
       h('span', { className: 'circ' }, unit.ic),
       h('span', null,
-        h('h3', null, unit.title),
+        // Ein span statt h3: Überschriften gehören nicht in einen Knopf. Die Optik kommt aus .node .stitle.
+        h('span', { className: 'stitle' }, unit.title),
         h('small', null, unit.de),
         h(TrackLabel, { track }),
         h('span', { className: `state s-${state}` }, icon ? h(Icon, { name: icon }) : h('span', { className: 'dot', 'aria-hidden': 'true' }), label),
@@ -147,8 +143,9 @@ export function AppHome({ config, app, profile, day, rec, open, notice, storeMes
   const bossHasRounds = Boolean(config.rounds && typeof config.rounds.boss === 'function');
   const cardUnits = units.filter((u) => u.card);
   const medal = ['', 'Bronze', 'Silber', 'Gold'];
-  // Die nächste Station ist die erste ohne Stern. Sie wird nur hervorgehoben, nie gesperrt.
-  const nextUnit = units.find((u) => starsOf(app.stars, u.id) === 0);
+  // Die nächste Station: zuerst eine fällige (Auffrischen geht vor), sonst die erste ohne Stern.
+  // Sie wird nur hervorgehoben, nie gesperrt.
+  const nextUnit = units.find((u) => stationState(app, u, day) === 'fällig') || units.find((u) => starsOf(app.stars, u.id) === 0);
   const nextId = nextUnit ? nextUnit.id : null;
 
   return h(

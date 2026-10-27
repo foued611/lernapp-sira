@@ -4,11 +4,10 @@ import assert from 'node:assert/strict';
 import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { createRng } from '../../helfer/index.js';
-import { dayDiff } from '../../regeln/index.js';
 import { openApp, openProfile, PROFILE_KEY } from '../../speicher/index.js';
 import {
   AppFrame, NO_STORAGE, Play, appDefaults, bossOpen, profileDefaults, resetApp, resetAppState, resetStep,
-  settleLeave, leaveNotice, settleRound, startRound
+  settleLeave, leaveNotice, settleRound, startRound, evaluateRound
 } from '../rahmen.js';
 import { messagesOf } from '../ergebnis.js';
 import { MSG } from '../boot.js';
@@ -26,7 +25,7 @@ async function setup({ logOk = true } = {}) {
   return { handle, config, profileStore, appStore, log };
 }
 
-async function finishLesson(env, { wrong = false, unit = env.config.units[0] } = {}) {
+async function finishLesson(env, { wrong = false, unit = env.config.units[0], day = DAY } = {}) {
   const started = startRound({
     config: env.config, mode: 'lesson', unit, app: env.appStore.state, profile: env.profileStore.state, rng: createRng(5)
   });
@@ -36,7 +35,7 @@ async function finishLesson(env, { wrong = false, unit = env.config.units[0] } =
     appId: env.config.id, mode: 'lesson', unit, roundResult,
     profile: env.profileStore.state, app: env.appStore.state,
     profileStore: env.profileStore, appStore: env.appStore,
-    log: env.log, day: DAY, badges: env.config.badges, unitIds: UNIT_IDS
+    log: env.log, day, badges: env.config.badges, unitIds: UNIT_IDS
   });
 }
 
@@ -52,15 +51,14 @@ test('RULE-195 Rundenende: Auswertung, Speichern und Protokoll laufen in einem A
 
 test('RULE-247 Protokoll: eine Lektionsrunde schreibt gapDays und prevAcc, sonst keine neuen Felder', async () => {
   const env = await setup();
+  // Erste Übung am 24.10., dann am 26.10. (DAY). Der Abstand ist 2 Tage, die Vorwerte kommen aus der ersten Runde.
+  const first = await finishLesson(env, { day: '2026-10-24' });
   const rows = [];
   env.log = (row) => { rows.push(row); return env.handle.logEvent(row); };
-  const unit = env.config.units[0];
-  env.appStore.state.last[unit.id] = '2026-10-24';
-  env.appStore.state.acc[unit.id] = 0.6;
   await finishLesson(env);
   assert.equal(rows.length, 1);
-  assert.equal(rows[0].gapDays, dayDiff('2026-10-24', DAY));
-  assert.equal(rows[0].prevAcc, 0.6);
+  assert.equal(rows[0].gapDays, 2);
+  assert.equal(rows[0].prevAcc, first.summary.accuracy);
   assert.deepEqual(
     Object.keys(rows[0]).sort(),
     ['accuracy', 'app', 'failed', 'gapDays', 'mode', 'prevAcc', 'score', 'stars', 'type', 'unit', 'xp']
@@ -190,6 +188,14 @@ test('RULE-205 Der leere Stand wird gespeichert und kommt beim Neuladen als Stan
   assert.deepEqual(reloaded.state.stars, {});
 });
 
+test('RULE-257 Der Rahmen gibt die falschen Blitz-Antworten an die Trophäe weiter', () => {
+  const badges = [{ id: 'blitz-sauber', n: 'Sauber', d: 'x', rule: { type: 'blitz', min: 1, maxWrong: 0 } }];
+  const round = (wrong) => ({ mode: 'blitz', failed: false, accuracy: 0.5, correct: 5, wrong, almost: 0, bestCombo: 0, score: 5, xp: 0 });
+  const run = (wrong) => evaluateRound({ appId: 'x', mode: 'blitz', roundResult: round(wrong), profile: profileDefaults(), app: appDefaults(), day: DAY, badges, unitIds: UNIT_IDS });
+  assert.deepEqual(run(1).newBadges, [], 'ein Fehler über der Grenze von null');
+  assert.deepEqual(run(0).newBadges.map((b) => b.id), ['blitz-sauber']);
+});
+
 test('RULE-206 Der Endgegner bleibt gesperrt, solange eine Seite keinen Stern hat', () => {
   const app = { stars: { start: 2 } };
   assert.equal(bossOpen({ app, unitIds: UNIT_IDS, profile: profileDefaults() }), false);
@@ -230,7 +236,7 @@ test('RULE-195 Die Ergebnisdaten haben einen festen Aufbau aus Runde und Auswert
   const env = await setup();
   const out = await finishLesson(env);
   assert.deepEqual(Object.keys(out.summary).sort(), [
-    'accuracy', 'almost', 'bestCombo', 'bonus', 'correct', 'failed', 'goalHit', 'levelUp', 'mode', 'newBadges',
+    'accuracy', 'almost', 'bestCombo', 'bonus', 'correct', 'failed', 'goalHit', 'levelUp', 'missions', 'mode', 'newBadges',
     'refresh', 'relearned', 'score', 'stars', 'unitId', 'wrong', 'xp'
   ]);
   assert.equal(out.summary.unitId, 'start');
@@ -277,8 +283,8 @@ test('RULE-258 Jede Seite steht im Lernpfad genau einmal, und nur die Seite mit 
   const boot = await bootFixture({ search: '?app=mathe' });
   const app = boot.state.apps.find((a) => a.entry.id === 'mathe');
   const markup = renderToStaticMarkup(h(AppFrame, { app, profileStore: boot.state.profileStore, day: DAY, storage: boot.state.storage }));
-  assert.equal(markup.split('<h3>Erste Seite</h3>').length - 1, 1, 'Erste Seite genau einmal');
-  assert.equal(markup.split('<h3>Zweite Seite</h3>').length - 1, 1, 'Zweite Seite genau einmal');
+  assert.equal(markup.split('<span class="stitle">Erste Seite</span>').length - 1, 1, 'Erste Seite genau einmal');
+  assert.equal(markup.split('<span class="stitle">Zweite Seite</span>').length - 1, 1, 'Zweite Seite genau einmal');
   assert.equal((markup.match(/class="trk trk-lrs"/g) || []).length, 1, 'das Etikett nur an der Seite mit Strang');
 });
 
