@@ -8,7 +8,7 @@ Anweisungen für Coding-Agenten und Mitwirkende. Lies diese Datei vor jeder Änd
 
 ## Technik
 
-- Framework und Build: React 19 mit Vite (Entscheidung 2026-10-26, siehe `analysis/modulare/INTENT.md`). Der Neubau liegt in `modernized/modulare-reimagined/` (Abschnitt "Neubau" unten). Der bisherige Code unter `core/`, `apps/`, `dashboard.js` bleibt, bis die Umstellung entschieden ist. TypeScript ist weiter nicht vorgesehen. Die Begründung steht in `docs/inhalte.md`.
+- Framework und Build: React 19 mit Vite (Entscheidung 2026-10-26, siehe `analysis/modulare/INTENT.md`). Der Neubau liegt in `modernized/modulare-reimagined/` (Abschnitt "Neubau" unten). Der bisherige Code (`core/`, `apps/`, `dashboard.js`) ist seit 2026-10-28 aus `main` entfernt und im Branch `legacy` erhalten. TypeScript ist weiter nicht vorgesehen. Die Begründung steht in `docs/inhalte.md`.
 - Daten und Logik sind getrennt: Inhalte liegen als JSON in `content/<id>/`, Code in `core/` und `apps/<name>/`. Siehe "Inhalte und Daten".
 - Läuft über GitHub Pages (Branch `main`, Ordner `/`). Ein Push auf `main` veröffentlicht.
 - ES-Module brauchen http(s). Lokal testen mit `npm run serve` und `http://localhost:8000`. Ein Doppelklick auf die HTML-Datei (file://) funktioniert nicht.
@@ -207,14 +207,7 @@ Regeln für Texte und Bilder:
 
 Im Neubau: `apps/_template/` nach `apps/<id>/` kopieren, `content/vorlage/` nach `content/<id>/`, Logik in `apps/index.js` eintragen, `status: 'live'` in `seiten/registry.js`. `apps/tests/smoke.test.js` und `apps/tests/endgegner.test.js` prüfen die App automatisch.
 
-Im bisherigen Code (bis zur Umstellung):
-
-1. `apps/_template/` nach `apps/<name>/` und `content/vorlage/` nach `content/<id>/` kopieren.
-2. In `content/<id>/manifest.json` `id`, `title`, `greeting`, `intro` setzen, in `main.js` dieselbe `id`, in `index.html` den `<title>`.
-3. Seiten und Merkzettel im Manifest, Lektionen in `lessons.json`, Trophäen in `badges.json`, Aufgabendaten in `data.json` anpassen. Fragen-Erzeuger in `builders.js`, Diagramme in `diagrams.js`.
-4. In `registry.js` den Eintrag auf `status: 'live'` setzen, `href` und `units` ergänzen (oder neuen Eintrag anlegen).
-5. `npm test` und `npm run smoke` ausführen. Der Vertragstest prüft die Konfiguration und alle Fragen automatisch.
-6. Lokal mit `npm run serve` ansehen: Theorie, eine Runde, Boss, hell und dunkel, schmales Fenster.
+Der bisherige Code ist aus `main` entfernt (Branch `legacy`). Neue Apps nur im Neubau anlegen.
 
 ## Neue Seite, Trophäe oder Fragetyp
 
@@ -232,7 +225,7 @@ Im bisherigen Code (bis zur Umstellung):
 
 ## Tests
 
-- `npm test` im Neubau (`modernized/modulare-reimagined`): alle Suiten, derzeit 616 Tests. Sie müssen vor jedem Commit grün sein. Im Legacy-Code: Unit- und Vertragstests ohne Abhängigkeiten.
+- `npm test` im Neubau (`modernized/modulare-reimagined`): alle Suiten, derzeit 642 Tests. Sie müssen vor jedem Commit grün sein.
 - `npm run smoke`: spielt in jsdom alle Apps aus `registry.js` durch (benötigt `npm install`). App-spezifische Prüfungen liegen in `apps/<name>/smoke.mjs` und werden automatisch gefunden. Eine neue App braucht keine Änderung am Skript.
 - `tests/db.test.js` prüft den Speicher mit einer simulierten IndexedDB. Der Durchspiel-Test deckt IndexedDB und die Übernahme alter Daten ab.
 - `tests/qtypes.test.js` und `tests/views.test.js` decken Fragetypen und Ansichten ab.

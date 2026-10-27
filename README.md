@@ -29,18 +29,9 @@ npm run build       # erzeugt dist/
 npm run preview     # dist/ lokal ansehen
 ```
 
-## Lokal starten (bisheriger Code)
-```
-npm run serve
-```
-Dann `http://localhost:8000` öffnen. Ein Doppelklick auf die Datei reicht nicht, weil ES-Module einen Webserver brauchen.
+## Frühere Fassung
 
-## Tests (bisheriger Code)
-```
-npm install
-npm test        # Unit- und Vertragstests
-npm run smoke   # App im simulierten Browser durchspielen
-```
+Der bisherige Code (ohne React) ist seit 2026-10-28 nicht mehr in `main`. Er bleibt im Branch `legacy` erhalten.
 
 ## Weiterentwickeln
 Aufbau, App-Vertrag und die Schritte für neue Apps stehen in [AGENTS.md](AGENTS.md). Neue Apps entstehen aus der Vorlage `apps/_template/` und `content/vorlage/`. Inhalte (JSON in `content/`) und Logik (`apps/<name>/logic.js`) sind getrennt, damit die Inhalte später aus einer Datenbank kommen können: [docs/inhalte.md](docs/inhalte.md).
