@@ -340,3 +340,20 @@ test('Wochenmission: In der neuen Woche zahlt dieselbe Mission wieder', () => {
   lesson({ unit: { id: 'a' }, accuracy: 1, profile, app, day: MISSION_DAY });
   assert.equal(profile.xp, 40);
 });
+
+test('Wochenmission: Seiten werden je App gezählt, gleiche Seiten-ID in drei Apps sind drei Seiten', () => {
+  const profile = newProfile();
+  ['a', 'b'].forEach((appId) => lesson({ appId, unit: { id: 'x' }, profile, app: newApp(), day: MISSION_DAY }));
+  assert.equal(profile.xp, 0);
+  assert.deepEqual(profile.week.units, ['a/x', 'b/x']);
+  lesson({ appId: 'c', unit: { id: 'x' }, profile, app: newApp(), day: MISSION_DAY });
+  assert.deepEqual(profile.week.units, ['a/x', 'b/x', 'c/x']);
+  assert.equal(profile.xp, 20);
+  assert.deepEqual(profile.week.done, ['units3']);
+});
+
+test('Wochenmission: Dieselbe Seite derselben App zählt weiter nur einmal', () => {
+  const profile = newProfile();
+  for (let i = 0; i < 3; i += 1) lesson({ unit: { id: 'a' }, profile, app: newApp(), day: MISSION_DAY });
+  assert.deepEqual(profile.week.units, ['mathe/a']);
+});

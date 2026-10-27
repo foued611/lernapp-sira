@@ -39,10 +39,13 @@ function settleLesson(ctx, unitId) {
 // Wochenmissionen verbuchen, nachdem die Runde ihre eigenen XP gezahlt hat. Mehrere Missionen in einer Runde
 // gehen als eine Gutschrift über payBonus, so meldet sich ein Niveau-Aufstieg nur einmal.
 // Eine gescheiterte Runde zählt nicht, wie beim Auffrischen.
-function settleMissions(ctx, unitId) {
+// Das Profil gilt für alle Apps, deshalb heißt eine Seite im Wochenblock "app/seite": gleiche Seiten-IDs
+// in zwei Apps sind zwei Seiten.
+function settleMissions(ctx, appId, unitId) {
   const { result, profile, day } = ctx;
   if (result.failed) return;
-  const { completed } = recordMission(profile, { unit: unitId, refreshed: result.refresh, accuracy: result.accuracy }, day);
+  const unit = unitId ? `${appId}/${unitId}` : null;
+  const { completed } = recordMission(profile, { unit, refreshed: result.refresh, accuracy: result.accuracy }, day);
   if (completed.length) payBonus(ctx, completed.length * MISSION_REWARD_XP);
 }
 
@@ -104,7 +107,7 @@ export function finishRound(input) {
     app.best.boss = true;
   }
 
-  settleMissions(ctx, result.unitId);
+  settleMissions(ctx, appId, result.unitId);
 
   updateStreak(profile, day);
   profile.lastApp = appId;
