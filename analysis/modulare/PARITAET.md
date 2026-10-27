@@ -29,6 +29,20 @@ Alle 44 Theorie-Seiten (fünf Apps), je Legacy und Neubau in 1280 px Breite, vol
 - Offen: Französisch wird im Neubau höher als in Legacy (vermutlich Übungsblock oder Verbtabelle). Der Rest der Abweichung (ca. 25 %) liegt nicht nur am Abstand. Auf Ursache und Bildausschnitt noch nicht untersucht.
 - Die Abweichung ist nicht mehr null: Der Pixelvergleich zeigt weitere Unterschiede (Schatten, Zeilenhöhen, Kopfzeile), die einzeln geprüft werden müssen.
 
+## Abnahme-Stand (2026-10-27, nach b14e84a, 6934974, 5693615)
+
+Gemessen wie oben, Höhen Legacy gegen Neubau in Pixeln, Abweichung in Prozent der Pixel.
+
+- Französisch: alle sechs Seiten gleiche Höhe. Abweichung 0,1 bis 0,2 % (être, avoir, aller, faire) und 1,9 % (Verben auf -er, -ir/-re). Ursachen: Titelkarte nicht in der Konjugationskarte, Abstand Ziel und Karten, Rückmeldung immer sichtbar, Abstand Konjugationskarte, Abstand "So sieht das" und Merkzettel.
+- Deutsch: vier Seiten bei 0,0 bis 0,01 % (Inhaltsangabe, Adverbialsätze, Nebensätze, das oder dass), elf Seiten bei 2,5 bis 4,3 %. Offen: Abweichung in Kopfzeile und Textkanten (gleiche Höhe).
+- Mathe: vier Seiten 0,0 bis 0,01 %, fünf Seiten 2,4 bis 4,2 %. Offen wie Deutsch.
+- Geometrie: vier Seiten 0,0 bis 0,02 %, vier Seiten 2,3 bis 4,2 %. Ursache der großen Werte behoben: Diagrammstile fehlten (`apps/geometrie/app.css` nach `seiten/design` übernommen, `seiten/main.js` lädt sie). Umkreis zeigt jetzt dieselben Farben wie Legacy.
+- Zahlenwerkstatt: Stellenwerte 0,7 %, Binär lesen 0,01 %, Normal → Binär 0,2 %, Binär addieren 0,4 %, Binär ↔ Hex 3,6 %, Hexadezimal 7,8 %. Ursachen behoben: `--color-*`-Token aus `seiten/tokens.css` werden nicht geladen (Rahmen, Ränder, Farben fehlten), Eingabe in einer Zeile wie Legacy, Knopf klein nur auf dieser Seite.
+- Pro Seite gilt: Keine Zeile mit horizontalem Überlauf bei 375 px (Startseite und je eine Theorie je App).
+- Browser-Abnahme (Neubau, Theorie öffnen, Runde starten, eine Antwort geben): alle fünf Apps ohne Fehler. Vorher 404 auf das Merkwörter-PDF, jetzt behoben.
+- Offen, nicht in dieser Runde: Ursachen der 2 bis 4 % in Deutsch, Mathe und Geometrie (Kopfzeile, Schatten), Hexadezimal-Raster, Runde, Ergebnis, Blitz und Sicherung pixelweise. Startseite: Name-Feld erscheint nur im Neubau, weil der Legacy-Ursprung schon einen Namen hat (Datenstand, kein Layout).
+- Nebenbefund, nicht behoben: `seiten/design/styles/dashboard.css` lädt global. Seine Regeln (`.chips`, `.hero`, `.tile`) wirken auf alle Seiten. Legacy lädt sie nur auf der Startseite.
+
 ## Befund Startseite
 
 | Merkmal | Legacy | Neubau |
