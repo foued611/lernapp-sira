@@ -76,3 +76,23 @@ export function recordMission(profile, event, day) {
   week.done.push(...completed);
   return { completed };
 }
+
+/**
+ * Version des Profils. Version 2 schreibt Seiten im Wochenblock als "app/seite" (siehe settleMissions in round.js).
+ * Gespeicherte Stände ohne Versionsfeld gelten als Version 1 (store.js).
+ */
+export const PROFILE_VERSION = 2;
+
+/**
+ * Umstellung von Version 1 auf 2. Ein Wochenblock mit nackten Seiten-IDs stammt aus einer älteren Vorschau und
+ * ist nicht zuzuordnen. Er wird verworfen, die Woche beginnt neu. Der Rest des Profils bleibt unverändert.
+ * Die Umstellung wird an den Speicher übergeben (openProfile), der sie nur bei Versionswechsel aufruft.
+ * @returns {object} das Profil nach der Umstellung
+ */
+export function migrateProfile(profile, fromVersion) {
+  const week = profile.week;
+  const legacy = fromVersion < 2 && week && Array.isArray(week.units)
+    && week.units.some((unit) => typeof unit !== 'string' || !unit.includes('/'));
+  if (legacy) delete profile.week;
+  return profile;
+}
