@@ -32,3 +32,25 @@ export function distinctSlots(count, rng, makeAt, maxTries = 40) {
 
 /** Zieht count Fragen aus den Erzeugern (jeder ist eine Funktion rng => Frage), ohne Dubletten. */
 export const distinctQuestions = (makers, count, rng, maxTries = 40) => distinctSlots(count, rng, () => pick(makers, rng)(rng), maxTries);
+
+/**
+ * Die Aufgabenquelle für eine Runde, die Aufgaben bevorzugt, die noch nicht richtig beantwortet wurden.
+ * generate() liefert eine Runde (Liste von Fragen). known ist die Menge der Schlüssel, die schon richtig waren.
+ * Es werden so lange Runden gezogen, bis genug neue Fragen da sind. Reichen die neuen nicht, kommen die bekannten
+ * dazu (der Wertebereich ist erschöpft). Der Pool hat mindestens size Fragen, createRound zieht daraus.
+ */
+export function freshPool(generate, size, known = new Set(), tries = 30) {
+  const fresh = [];
+  const stale = [];
+  const seen = new Set();
+  for (let t = 0; t < tries && fresh.length < size; t++) {
+    for (const q of generate()) {
+      const key = questionKey(q);
+      if (seen.has(key)) continue;
+      seen.add(key);
+      (known.has(key) ? stale : fresh).push(q);
+    }
+  }
+  if (fresh.length >= size) return fresh;
+  return [...fresh, ...stale.slice(0, size - fresh.length)];
+}

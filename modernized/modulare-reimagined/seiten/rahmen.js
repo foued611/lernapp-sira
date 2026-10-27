@@ -2,7 +2,7 @@
 // in zwei Schritten und die Seite der App. Die Regeln stehen in regeln/, die Aufgaben in runde/.
 // Die Modellfunktionen oben sind rein bzw. async über injizierte Speicher. Die Komponenten unten zeichnen nur.
 import { createElement, useReducer, useState } from 'react';
-import { BLITZ_SECONDS, createRound } from '../runde/index.js';
+import { BLITZ_SECONDS, createRound, freshPool, questionKey } from '../runde/index.js';
 import { createRng } from '../helfer/index.js';
 import { REFRESH_BONUS_XP, awardXP, currentStreak, dailyXP, finishRound, isRefreshDue, updateStreak, weakestUnit } from '../regeln/index.js';
 import { Button, StarRow, starsOf } from '../komponenten/ui.js';
@@ -32,7 +32,23 @@ const BOSS_LOCKED = 'Der Endgegner ist noch gesperrt. Erst braucht jede Seite mi
 // Gleicher Aufbau wie legacy/modulare/core/js/profile.js:14 und 16.
 export const profileDefaults = () => ({ name: '', xp: 0, streak: 0, lastDay: '', lastApp: '', day: { d: '', xp: 0 } });
 // last und acc steuern Auffrischen und gezieltes Training (legacy profile.js:15).
-export const appDefaults = () => ({ xp: 0, stars: {}, badges: {}, best: {}, last: {}, acc: {} });
+// seen: Schlüssel der Aufgaben, die richtig beantwortet wurden. Neue Runden bevorzugen andere (runde/src/vielfalt.js).
+export const appDefaults = () => ({ xp: 0, stars: {}, badges: {}, best: {}, last: {}, acc: {}, seen: {} });
+// Obergrenze je App, damit der Stand klein bleibt. Die ältesten Schlüssel fallen zuerst weg.
+export const SEEN_MAX = 2000;
+const RIGHT = Object.freeze(new Set(['ok', 'almost']));
+
+/** Schlüssel der schon richtig beantworteten Aufgaben als Menge. */
+export const knownOf = (app) => new Set(Object.keys(app.seen || {}));
+
+/** Merkt eine richtig beantwortete Aufgabe und speichert im Hintergrund. Gibt nichts zurück. */
+export function rememberRight(app, question, appStore = null) {
+  if (!question) return;
+  const seen = { ...(app.seen || {}), [questionKey(question)]: true };
+  const keys = Object.keys(seen);
+  app.seen = keys.length > SEEN_MAX ? Object.fromEntries(keys.slice(keys.length - SEEN_MAX).map((k) => [k, true])) : seen;
+  if (appStore) appStore.save();
+}
 
 // Gründe für die Empfehlung, als Text. Der Code kommt aus regeln/ (weakestUnit).
 export const REASON_TEXT = Object.freeze({ refresh: 'Zeit zum Auffrischen', weak: 'Hier ist noch Luft nach oben' });
@@ -69,7 +85,7 @@ function poolFor(config, mode, unit, rng) {
  * Startet eine Runde. Gibt { ok, round, mode, unit } oder { ok: false, message } zurück und wirft nie.
  * Der Endgegner startet nur, wenn er offen ist (RULE-206).
  */
-export function startRound({ config, mode, unit = null, app, profile, rng }) {
+export function startRound({ config, mode, unit = null, app, profile, rng, known = new Set() }) {
   if (!Object.hasOwn(ROUND_SIZE, mode)) return failure('Diese Rundenart gibt es nicht.');
   const unitIds = config.units.map((u) => u.id);
   if (mode === 'boss' && !bossOpen({ app, unitIds, bossUnlocked: config.bossUnlocked, profile })) {
@@ -78,7 +94,7 @@ export function startRound({ config, mode, unit = null, app, profile, rng }) {
   const source = poolFor(config, mode, unit, rng);
   if (!source) return failure(NO_TASKS);
   try {
-    const pool = source();
+    const pool = freshPool(source, ROUND_SIZE[mode], known);
     if (!Array.isArray(pool) || pool.length === 0) return failure(NO_TASKS);
     const round = createRound({ pool, size: Math.min(ROUND_SIZE[mode], pool.length), rng, boss: mode === 'boss' });
     return { ok: true, round, mode, unit };
@@ -293,7 +309,7 @@ export function AppFrame({ app, profileStore, day, storage }) {
   const logRow = (row) => (storage.handle ? storage.handle.logEvent(row) : Promise.resolve({ ok: false, error: NO_STORAGE }));
 
   function begin(mode, unit = null) {
-    const started = startRound({ config, mode, unit, app: appState, profile, rng: createRng(seedNow()) });
+    const started = startRound({ config, mode, unit, app: appState, profile, rng: createRng(seedNow()), known: knownOf(appState) });
     if (!started.ok) {
       setNotice(started.message);
       return;
@@ -309,7 +325,9 @@ export function AppFrame({ app, profileStore, day, storage }) {
   }
 
   function answer(response) {
-    session.round.submit(response);
+    const question = session.round.current()?.question;
+    const step = session.round.submit(response);
+    if (step.accepted && RIGHT.has(step.outcome)) rememberRight(appState, question, appStore);
     bump();
   }
 
@@ -351,7 +369,7 @@ export function AppFrame({ app, profileStore, day, storage }) {
 
   // Blitz hat keine Seite und keine Runde aus rounds (Legacy: shell.js startBlitzRound).
   function beginBlitz() {
-    const started = startBlitz({ config, rng: createRng(seedNow()) });
+    const started = startBlitz({ config, rng: createRng(seedNow()), known: knownOf(appState), onRight: (q) => rememberRight(appState, q, appStore) });
     if (!started.ok) {
       setNotice(started.message);
       return;

@@ -37,15 +37,17 @@ export function blitzRoundResult(result, answered) {
 }
 
 // Die Engine zählt nur Aufgaben. Dieser Umschlag zählt zusätzlich die beantworteten Fragen für die Genauigkeit.
-function blitzRun(engine) {
+function blitzRun(engine, onRight = () => {}) {
   let answered = 0;
   let done = null;
   return {
     current: () => engine.current(),
     timeLeft: () => engine.timeLeft(),
     pick(optionId) {
+      const question = engine.current()?.question;
       const out = engine.pick(optionId);
       if (out.accepted) answered += 1;
+      if (out.accepted && out.outcome === 'ok') onRight(question);
       return out;
     },
     // Das Ergebnis entsteht einmal. Danach kommt dasselbe Objekt zurück.
@@ -69,11 +71,13 @@ function blitzRun(engine) {
 /**
  * Startet einen Blitz-Lauf. Gibt { ok, run } oder { ok: false, message } zurück und wirft nie.
  * now ist die Uhr in Millisekunden, von außen gegeben, damit Tests die Zeit steuern können.
+ * known: schon richtig beantwortete Aufgaben, onRight: wird für jede richtige Antwort aufgerufen.
  */
-export function startBlitz({ config, rng, now = Date.now }) {
+export function startBlitz({ config, rng, now = Date.now, known = new Set(), onRight = () => {} }) {
   if (typeof config.blitz !== 'function') return { ok: false, message: 'Diese App hat keinen Blitz.' };
   try {
-    return { ok: true, run: blitzRun(createBlitz({ nextQuestion: () => config.blitz(rng), now, seconds: BLITZ_SECONDS })) };
+    const engine = createBlitz({ nextQuestion: () => config.blitz(rng), now, seconds: BLITZ_SECONDS, known });
+    return { ok: true, run: blitzRun(engine, onRight) };
   } catch (error) {
     return { ok: false, message: 'Die Aufgaben konnten nicht erzeugt werden.', cause: error };
   }

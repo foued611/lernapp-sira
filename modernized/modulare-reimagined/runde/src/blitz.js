@@ -10,25 +10,34 @@ import { questionKey } from './vielfalt.js';
  * @param {()=>object} o.nextQuestion  liefert eine Auswahlfrage (kind 'choice')
  * @param {()=>number} o.now           Zeit in Millisekunden, injiziert
  * @param {number} [o.seconds]         Dauer, Standard 45 (blitz.js:16)
+ * @param {Set<string>} [o.known]      Schlüssel der schon richtig beantworteten Aufgaben (questionKey)
  */
-export function createBlitz({ nextQuestion, now, seconds = BLITZ_SECONDS }) {
+export function createBlitz({ nextQuestion, now, seconds = BLITZ_SECONDS, known = new Set() }) {
   if (typeof nextQuestion !== 'function') throw new TypeError('nextQuestion ist Pflicht');
   if (typeof now !== 'function') throw new TypeError('now ist Pflicht');
   if (!(seconds > 0)) throw new RangeError(`seconds muss positiv sein: ${seconds}`);
 
-  // Vielfalt: eine Frage, die in diesem Blitz schon kam, wird möglichst nicht wiederholt. Nach 40 Versuchen
-  // (Wertebereich erschöpft) kommt sie trotzdem, damit der Blitz weiterläuft.
+  // Vielfalt: eine Frage, die in diesem Blitz schon kam, wird nicht wiederholt. Bevorzugt kommt auch keine, die
+  // schon richtig beantwortet wurde. Findet sich nach 40 Versuchen nichts Neues, kommt die erste Wiederholung.
   const shown = new Set();
   const nextChoice = () => {
+    let fallback = null;
     let q = null;
     for (let t = 0; t < 40; t++) {
       q = nextQuestion();
       // Der Blitz kennt nur Auswahlfragen (blitz.js:11).
       if (!q || q.kind !== 'choice') throw new TypeError('Der Blitz braucht Auswahlfragen (kind choice)');
-      if (!shown.has(questionKey(q))) break;
+      const key = questionKey(q);
+      if (shown.has(key)) continue;
+      if (!known.has(key)) {
+        shown.add(key);
+        return q;
+      }
+      if (!fallback) fallback = q;
     }
-    shown.add(questionKey(q));
-    return q;
+    const again = fallback || q;
+    shown.add(questionKey(again));
+    return again;
   };
 
   const deadline = now() + seconds * 1000; // blitz.js:18, t0 beim Start
