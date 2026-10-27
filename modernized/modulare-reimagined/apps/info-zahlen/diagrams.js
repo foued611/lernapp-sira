@@ -35,9 +35,9 @@ export function lampDiagram(bits = [0, 0, 0, 0, 1, 0, 1, 1]) {
     parts.push(circle(x, 78, 24, b ? 'hi' : 'off'));
     parts.push(text(x, 85, String(b), `md mono ${b ? 'on-sun' : 'mu'}`));
     parts.push(text(x, 130, String(WEIGHTS[i]), 'md mono'));
-    if (i < 7) parts.push(text(x + 32, 44, '÷2', 'sm mu'));
+    if (i < 7) parts.push(text(x + 32, 49, '÷2', 'sm mu'));
   });
-  parts.push(text(260, 22, 'Nach rechts halbieren, nach links verdoppeln', 'sm mu'));
+  parts.push(text(260, 20, 'Nach rechts halbieren, nach links verdoppeln', 'sm mu'));
   const lit = WEIGHTS.filter((w, i) => bits[i]);
   parts.push(text(260, 168, `${lit.length ? lit.join(' + ') : '0'} = ${lit.reduce((a, b) => a + b, 0)}`, 'lg mono'));
   return diagram(520, 185, `Acht Lampen mit den Stellenwerten 128 bis 1. Leuchtende Lampen ergeben zusammen ${lit.reduce((a, b) => a + b, 0)}`, parts);

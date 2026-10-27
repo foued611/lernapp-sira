@@ -1,6 +1,6 @@
 // Diagramme des Cahier de Verbes (Herkunft: legacy/modulare/apps/franzoesisch-verben/diagrams.js).
 // Die Bausteine liefern React-Elemente (komponenten/svg.js). Farben kommen über die CSS-Klassen aus
-// komponenten/lektion.css, damit sie in hell und dunkel passen. Zahlen und Formen kommen aus dem Modell.
+// seiten/design/styles/lesson.css, damit sie in hell und dunkel passen. Zahlen und Formen kommen aus dem Modell.
 import { diagram, rect, text } from '../../komponenten/svg.js';
 import { V, PRON } from './model.js';
 
@@ -46,8 +46,8 @@ export function endingsDiagram(rows) {
       );
     });
   });
-  const height = rows.length * 124 + 62;
-  parts.push(text(260, height - 30, 'Grau: Diese Endung hörst du nicht,', 'sm mu'), text(260, height - 8, 'du musst sie aber schreiben.', 'sm mu'));
+  const height = rows.length * 124 + 70;
+  parts.push(text(260, height - 38, 'Grau: Diese Endung hörst du nicht,', 'sm mu'), text(260, height - 12, 'du musst sie aber schreiben.', 'sm mu'));
   const label = `Stamm und Endungen: ${rows.map((r) => `${r.inf} hat den Stamm ${r.stem} mit den Endungen ${r.ends.map((e) => e || 'keine').join(', ')}`).join('. ')}`;
   return diagram(520, height, label, parts);
 }
