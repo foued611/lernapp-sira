@@ -1,6 +1,6 @@
 # Abgleich Deutsch-Werkstatt mit dem Schulbuch
 
-Siras Buch: **deutsch.ideen 7, Gymnasium Baden-Württemberg** (Westermann Gruppe, Schöningh, 2017). Grundlage ist das Inhaltsverzeichnis (Foto vom 26.10.2026). Seitenzahlen sind die des Buchs.
+Schulbuch: **deutsch.ideen 7, Gymnasium Baden-Württemberg** (Westermann Gruppe, Schöningh, 2017). Grundlage ist das Inhaltsverzeichnis (Foto vom 26.10.2026). Seitenzahlen sind die des Buchs.
 
 Wichtig: Das Buch führt **Konjunktiv und indirekte Rede** (S. 222 bis 226) schon in Klasse 7. Die Regel „kein Stoff ab Klasse 8“ bezieht sich auf das, was im Buch von Klasse 8 steht. Deshalb ist dieser Stoff jetzt enthalten.
 
@@ -30,7 +30,7 @@ Regel: Die App deckt nur ab, was bekannt und im Buch eindeutig ist. Alles andere
 
 - Miteinander sprechen und argumentieren (10 bis 21), Szenisches Spiel (58 bis 69), Überzeugend präsentieren (176 bis 187): mündlich, passen schlecht zu einem Quiz.
 - Literarisches und gestaltendes Schreiben (22 bis 35): kreatives Schreiben, nicht automatisch prüfbar.
-- Texte und Medien: Kurzgeschichten, Kalendergeschichten, Novelle „Kleider machen Leute“, Jugendbuch „Train Kids“, Balladen, Sachtexte, Literaturverfilmung. Offen: Welche Texte liest Siras Klasse? Erst dann sind Merkmal-Quiz je Gattung sinnvoll.
+- Texte und Medien: Kurzgeschichten, Kalendergeschichten, Novelle „Kleider machen Leute“, Jugendbuch „Train Kids“, Balladen, Sachtexte, Literaturverfilmung. Offen: Welche Texte liest der Klasse? Erst dann sind Merkmal-Quiz je Gattung sinnvoll.
 - Gedichte: Reim, Metrum, klangliche Stilmittel (136 bis 139).
 - Sprachgebrauch: Prädikat und Satzglieder (201 bis 203), Tempusformen (229), Adjektive (231), Pronomen (232), Wortbildung und Fachwörter (246 bis 249), Wort- und Sprachkunde (238 bis 245), Getrennt- und Zusammenschreibung (261 bis 263), Fremdwörter (256), Sprache und Identität (274 bis 282).
 
@@ -38,10 +38,10 @@ Regel: Die App deckt nur ab, was bekannt und im Buch eindeutig ist. Alles andere
 
 - Alle Aufgaben sind eigene Beispiele und keine Aufgaben aus dem Buch.
 - Begriffe stimmen mit dem Buch überein (z. B. „Adverbialsätze“, „Attributsätze“, „Redewiedergabe“), die Reihenfolge der App folgt dem Buch nicht.
-- Vor der Klassenarbeit prüfen, welche Kapitel in Siras Klasse wirklich behandelt wurden.
+- Vor der Klassenarbeit prüfen, welche Kapitel in der Klasse wirklich behandelt wurden.
 
 ## Zu klären
 
-1. Welche Buchkapitel werden in Siras Klasse in welcher Reihenfolge behandelt (Klassenarbeiten)?
+1. Welche Buchkapitel werden in der Klasse in welcher Reihenfolge behandelt (Klassenarbeiten)?
 2. Welche Ganzschrift oder Texte werden gelesen (Nibelungenlied, Kleider machen Leute, Train Kids)?
 3. Gibt es Lehrer-Vorgaben zur Inhaltsangabe (Aufbau, Länge), die vom Buch abweichen?

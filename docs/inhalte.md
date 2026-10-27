@@ -4,7 +4,7 @@ Stand: Entscheidung zur Trennung von Daten und Logik. Die Datenbank selbst ist n
 
 ## Ziel
 
-Inhalte (Seiten, Lektionen, Trophäen, Aufgabendaten) sollen ohne Code-Änderung austauschbar sein, am Ende aus einer Datenbank. Der Lernstand von Sira (XP, Sterne, Protokoll) bleibt bewusst lokal im Browser (IndexedDB).
+Inhalte (Seiten, Lektionen, Trophäen, Aufgabendaten) sollen ohne Code-Änderung austauschbar sein, am Ende aus einer Datenbank. Der Lernstand der Lernenden (XP, Sterne, Protokoll) bleibt bewusst lokal im Browser (IndexedDB).
 
 ## Aufteilung
 

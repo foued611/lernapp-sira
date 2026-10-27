@@ -1,6 +1,6 @@
 # Lernwerkstatt
 
-Kleine Lern-Apps für Sira mit einem Dashboard als Startseite. Jede Seite hat eine Lektion mit Bild, Beispiel und Mini-Check, danach Übung mit Punkten, Sternen, Trophäen, Sammelkarten und Auffrisch-Erinnerung.
+Kleine Lern-Apps für die 7. Klasse mit einem Dashboard als Startseite. Jede Seite hat eine Lektion mit Bild, Beispiel und Mini-Check, danach Übung mit Punkten, Sternen, Trophäen, Sammelkarten und Auffrisch-Erinnerung.
 
 Live: https://foued611.github.io/lernapp-sira/ (wird aus `dist/` des Neubaus per GitHub Actions veröffentlicht, siehe `.github/workflows/pages.yml`)
 

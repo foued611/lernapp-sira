@@ -69,10 +69,10 @@
       "note": ""
     },
     "RULE-056": {
-      "verdict": "discuss",
-      "at": "2026-10-26T15:03:38+01:00",
+      "verdict": "confirmed",
+      "at": "2026-10-28T00:00:00+01:00",
       "title": "Datendiagramm: Median, Mittelwert, Spannweite",
-      "note": ""
+      "note": "Entscheidung im Chat (Phase-5b-Freigabe): bei gerader Anzahl das Mittel der beiden mittleren Werte."
     },
     "RULE-059": {
       "verdict": "confirmed",
@@ -225,10 +225,10 @@
       "note": ""
     },
     "RULE-119": {
-      "verdict": "discuss",
-      "at": "2026-10-26T15:03:38+01:00",
+      "verdict": "confirmed",
+      "at": "2026-10-28T00:00:00+01:00",
       "title": "Antwortprüfung durch Vergleich nach Normalisierung",
-      "note": ""
+      "note": "Entscheidung im Chat (Phase-5b-Freigabe): nur richtig oder falsch, keine Teilpunkte."
     },
     "RULE-124": {
       "verdict": "confirmed",
