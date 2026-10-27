@@ -19,6 +19,16 @@ Vergleich im Browser: Legacy über `python3 -m http.server 5174` (Repo-Stand 88e
 
 Die Befunde unten stammen vom 26.10. und sind teils überholt.
 
+## Pixel-Diff Theorie-Seiten (2026-10-27)
+
+Alle 44 Theorie-Seiten (fünf Apps), je Legacy und Neubau in 1280 px Breite, volle Seite, Animationen aus, Vergleich pixelgenau im Browser. Werkzeug: `pixdiff.cjs` im Scratchpad (nicht im Repo).
+
+- Vorher: Neubau 100 bis 204 px kürzer als Legacy, 25 bis 48 % der Pixel abweichend. Ursache: `.theory-stack` (Abstand der Karten) hatte im Neubau keine CSS-Regel, weil `komponenten/lektion.css` nicht geladen wird.
+- Fix: `seiten/design/styles/lesson.css` bekommt `.theory-stack{display:grid;gap:22px}` (Wert aus `core/js/theory.js`).
+- Nachher: Höhenunterschied −10 bis +162 px (Mittel +15), 21 bis 40 % der Pixel abweichend (Mittel 26 %). Pro App: Mathe, Geometrie, Deutsch etwa −6 px Höhe und 24 bis 26 %; Zahlenwerkstatt +9 px und 25 %; Französisch +134 px und 37 %.
+- Offen: Französisch wird im Neubau höher als in Legacy (vermutlich Übungsblock oder Verbtabelle). Der Rest der Abweichung (ca. 25 %) liegt nicht nur am Abstand. Auf Ursache und Bildausschnitt noch nicht untersucht.
+- Die Abweichung ist nicht mehr null: Der Pixelvergleich zeigt weitere Unterschiede (Schatten, Zeilenhöhen, Kopfzeile), die einzeln geprüft werden müssen.
+
 ## Befund Startseite
 
 | Merkmal | Legacy | Neubau |

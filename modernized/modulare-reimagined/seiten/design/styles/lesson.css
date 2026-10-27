@@ -1,4 +1,6 @@
 /* Lektionsbausteine (core/js/lesson.js) und Diagramme. Farben nur aus den Tokens. */
+/* Abstand zwischen Titel, Ziel und Karten wie in core/js/theory.js (22px). */
+.theory-stack{display:grid;gap:22px}
 .lsn-goal{background:var(--hero-bg);color:var(--hero-fg);border-radius:14px;padding:12px 16px;font-weight:500}
 .lsn-flag{display:inline-block;background:var(--sun);color:var(--sun-fg);border-radius:8px;padding:0 8px;margin-right:6px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
 .lsn h2{margin:0 0 10px;font-size:22px}
