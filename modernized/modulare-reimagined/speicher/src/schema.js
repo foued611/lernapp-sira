@@ -20,13 +20,20 @@ const DAY_TYPES = {
   xp: isInt
 };
 
+const isTextList = (value) => Array.isArray(value) && value.every((item) => typeof item === 'string');
+// Der Wochenblock aus regeln/missions.js. Der Speicher schreibt nur vollständige Blöcke, also prüft er sie vollständig.
+const isWeekBlock = (value) => isPlain(value) && isDate(value.start) && isTextList(value.units) && isTextList(value.done)
+  && isInt(value.refreshes) && isInt(value.strong);
+
 const PROFILE_TYPES = {
   name: isShortText(20),
   xp: isInt,
   streak: isInt,
   lastDay: isOptionalDate,
   lastApp: isShortText(40),
-  day: (value) => isPlain(value) && Object.entries(value).every(([field, item]) => !DAY_TYPES[field] || DAY_TYPES[field](item))
+  day: (value) => isPlain(value) && Object.entries(value).every(([field, item]) => !DAY_TYPES[field] || DAY_TYPES[field](item)),
+  goal: isInt,
+  week: isWeekBlock
 };
 
 const APP_TYPES = {
@@ -35,7 +42,9 @@ const APP_TYPES = {
   badges: mapOf(isFlag),
   best: (value) => isPlain(value) && (value.blitz === undefined || isInt(value.blitz)) && (value.boss === undefined || isFlag(value.boss)),
   last: mapOf(isOptionalDate),
-  acc: mapOf(isUnit)
+  acc: mapOf(isUnit),
+  refreshes: isInt,
+  missed: mapOf(isTextList)
 };
 
 /** Liefert das Schema für einen Schlüssel oder null, wenn der Schlüssel kein bekanntes Dokument ist. */

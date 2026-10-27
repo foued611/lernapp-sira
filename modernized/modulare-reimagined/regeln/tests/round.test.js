@@ -211,6 +211,42 @@ test('gapDays: am selben Tag ist es 0, außerhalb einer Lektionsrunde null', () 
   assert.equal(quick.gapDays, null);
 });
 
+test('gapDays: liegt der letzte Übungstag in der Zukunft (Uhr zurückgestellt), ist es 0 statt einer negativen Zahl', () => {
+  const result = finishRound({
+    appId: 'mathe', mode: 'lesson', unit: { id: 'a' }, accuracy: 0.8, profile: newProfile(),
+    app: newApp({ last: { a: '2026-10-30' } }), day: '2026-10-27'
+  });
+  assert.equal(result.gapDays, 0);
+});
+
+test('Fehler-Abruf: ein fremder Wert in app.missed (Text oder Liste) wird ersetzt, statt die Runde zu werfen', () => {
+  for (const missed of ['abc', ['Lücke']]) {
+    const app = newApp({ missed });
+    finishRound({
+      appId: 'mathe', mode: 'lesson', unit: { id: 'a' }, accuracy: 0.8, missedLabels: ['Lücke'],
+      profile: newProfile(), app, day: '2026-10-27'
+    });
+    assert.deepEqual(app.missed, { a: ['Lücke'] }, `Ausgangswert ${JSON.stringify(missed)}`);
+  }
+});
+
+test('Wochenmissionen: das Ergebnis nennt die erfüllten Missionen, eine gescheiterte Runde nennt keine', () => {
+  const day = '2026-10-27';
+  const ok = finishRound({
+    appId: 'mathe', mode: 'lesson', unit: { id: 'a' }, accuracy: 0.5, profile: newProfile(), app: newApp(), day
+  });
+  assert.deepEqual(ok.missions, []);
+  const profile = newProfile({ week: { start: weekStart(day), units: [], refreshes: 0, strong: 0, done: [] } });
+  const first = finishRound({
+    appId: 'mathe', mode: 'lesson', unit: { id: 'a' }, accuracy: 0.95, profile, app: newApp(), day
+  });
+  assert.deepEqual(first.missions, ['strong90']);
+  const failed = finishRound({
+    appId: 'mathe', mode: 'lesson', unit: { id: 'b' }, accuracy: 0.95, failed: true, profile: newProfile(), app: newApp(), day
+  });
+  assert.deepEqual(failed.missions, []);
+});
+
 test('improved-Trophäe: Anstieg von 60 auf 90 Prozent wird in derselben Runde vergeben', () => {
   const rule = { id: 'besser', rule: { type: 'improved', unit: 'a', by: 0.2 } };
   const app = newApp({ acc: { a: 0.6 }, stars: { a: 1 }, last: { a: '2026-10-24' } });

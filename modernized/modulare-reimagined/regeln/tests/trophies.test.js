@@ -60,11 +60,20 @@ test('RULE-257: blitz ohne maxWrong ignoriert Fehler (bisheriges Verhalten)', ()
   assert.equal(evaluateTrophyRule({ type: 'blitz', min: 10 }, state(), blitz), true);
 });
 
-test('RULE-257: ruleErrors prüft maxWrong als Zahl ab 0', () => {
+test('RULE-257: ruleErrors prüft maxWrong als ganze Zahl ab 0, wie das Schema', () => {
+  const message = ['rule: maxWrong muss eine ganze Zahl ab 0 sein'];
   assert.deepEqual(ruleErrors({ type: 'blitz', min: 10, maxWrong: 0 }, []), []);
   assert.deepEqual(ruleErrors({ type: 'blitz', min: 10, maxWrong: 1 }, []), []);
-  assert.deepEqual(ruleErrors({ type: 'blitz', min: 10, maxWrong: -1 }, []), ['rule: maxWrong muss eine Zahl ab 0 sein']);
-  assert.deepEqual(ruleErrors({ type: 'blitz', min: 10, maxWrong: 'x' }, []), ['rule: maxWrong muss eine Zahl ab 0 sein']);
+  assert.deepEqual(ruleErrors({ type: 'blitz', min: 10, maxWrong: -1 }, []), message);
+  assert.deepEqual(ruleErrors({ type: 'blitz', min: 10, maxWrong: 1.5 }, []), message);
+  assert.deepEqual(ruleErrors({ type: 'blitz', min: 10, maxWrong: 'x' }, []), message);
+});
+
+test('improved: ruleErrors begrenzt by auf höchstens 1, wie das Schema', () => {
+  const rule = (by) => ({ type: 'improved', unit: 'u1', by });
+  assert.deepEqual(ruleErrors(rule(1), ['u1']), []);
+  assert.deepEqual(ruleErrors(rule(1.5), ['u1']), ['rule: by muss über 0 und höchstens 1 sein']);
+  assert.deepEqual(ruleErrors(rule(0), ['u1']), ['rule: by muss über 0 und höchstens 1 sein']);
 });
 
 test('RULE-261: perfectRound verlangt eine fehlerfreie Runde außerhalb des Blitz', () => {

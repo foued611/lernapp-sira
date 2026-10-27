@@ -23,6 +23,23 @@ test('SCHEMA-FELDER: Eine Sicherung mit falschem Feldtyp im Profil wird ganz abg
   h.close();
 });
 
+test('SCHEMA-FELDER: Tagesziel, Wochenblock und Fehler-Abruf haben feste Typen, falsche Werte werden abgelehnt', async () => {
+  const bad = [
+    { [PROFILE_KEY]: { goal: 'viel' } },
+    { [PROFILE_KEY]: { week: { start: '2026-10-26', units: 'mathe/a', done: [], refreshes: 0, strong: 0 } } },
+    { [PROFILE_KEY]: { week: { start: 'Montag', units: [], done: [], refreshes: 0, strong: 0 } } },
+    { 'lernwerkstatt:app:mathe': { missed: { a: 'Lücke füllen' } } },
+    { 'lernwerkstatt:app:mathe': { refreshes: -1 } }
+  ];
+  for (const docs of bad) {
+    const factory = new IDBFactory();
+    const h = await openStore({ indexedDB: factory, localStorage: null });
+    const ergebnis = await h.importAll(blobOf(sicherung(docs)), { confirm: true });
+    assert.equal(ergebnis.ok, false, JSON.stringify(docs));
+    h.close();
+  }
+});
+
 test('SCHEMA-FELDER: Stände mit Sternen außerhalb 0 bis 3 oder Quoten über 1 werden abgelehnt', async () => {
   const factory = new IDBFactory();
   const h = await openStore({ indexedDB: factory, localStorage: null });
