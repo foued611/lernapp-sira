@@ -1,5 +1,5 @@
 /* Nur für das Cahier de Verbes: Konjugationstabelle, Sprachausgabe, Beispielsätze.
-   Farben nur aus den Tokens in seiten/tokens.css (AGENTS.md, Design). */
+   Farben nur aus den Tokens in seiten/design/styles/tokens.css (AGENTS.md, Design). */
 .conj-controls { display: grid; justify-items: start; gap: 10px; margin: 14px 0 8px; }
 /* dashboard.css setzt .chips einen Abstand; in der Konjugation wie legacy ohne. */
 .conj-controls .chips { margin: 0; }

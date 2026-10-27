@@ -27,7 +27,7 @@ export function progressOf(done, total) {
 }
 
 /**
- * Knopf. Die Mindestgröße von 44 px kommt aus der CSS-Klasse .btn (komponenten.css), nicht aus einem
+ * Knopf. Die Mindestgröße von 44 px kommt aus der CSS-Klasse .btn (seiten/design/styles/base.css), nicht aus einem
  * inline style. Standard-Typ ist button, damit ein Knopf in einem Formular nichts absendet.
  */
 export function Button({ variant = 'primary', small = false, className = '', type = 'button', children, ...rest }) {

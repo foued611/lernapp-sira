@@ -7,8 +7,6 @@ import { Button, ProgressBar, StarRow, doneUnits, progressOf, starsOf, DONE_STAR
 
 const h = createElement;
 
-const cssPath = new URL('../komponenten.css', import.meta.url);
-
 test('RULE-075 eine Seite gilt ab 2 von 3 Sternen als erledigt, 1 Stern zählt nicht', () => {
   assert.equal(DONE_STARS, 2);
   assert.equal(doneUnits({ a: 1 }, ['a']), 0);
@@ -66,10 +64,10 @@ test('KOMP-A11Y Knopf: Standardtyp button, Größe kommt aus der Klasse btn, kei
   assert.doesNotMatch(markup, /style=/);
 });
 
-test('KOMP-A11Y Mindestgröße 44 px steht in der Klasse .btn der Komponenten-CSS', () => {
-  const css = readFileSync(cssPath, 'utf8');
-  const rule = css.match(/(?:^|\n)\.btn,[\s\S]*?\{([^}]*)\}/);
+test('KOMP-A11Y Mindestgröße 44 px steht in der Klasse .btn im Stylesheet der Produktion', () => {
+  const css = readFileSync(new URL('../../seiten/design/styles/base.css', import.meta.url), 'utf8');
+  const rule = css.match(/\.btn\{([^}]*)\}/);
   assert.ok(rule, 'Regel für .btn fehlt');
-  assert.match(rule[1], /min-height:\s*44px/);
-  assert.match(rule[1], /min-width:\s*44px/);
+  assert.match(rule[1], /min-height:44px/);
+  assert.match(rule[1], /min-width:44px/);
 });
