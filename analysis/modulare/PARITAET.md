@@ -13,7 +13,9 @@ Vergleich im Browser: Legacy über `python3 -m http.server 5174` (Repo-Stand 88e
 - Französisch-Theorie (être) gegen Legacy gemessen: Titel 46 px Bricolage Grotesque, Selbsttest-Pill 246×35 px, Schrift 15 px, Kartenrand 10 px in Lila. Stimmt überein. Ein Pixel-Diff ist das nicht.
 - Auswertung Informatik gegen Legacy: Titel, Sterne, Untertitel, drei Kennzahlen, Tagesziel-Leiste, Niveau-Aufstieg und Konfetti stimmen im Aufbau überein. Geometrie nutzt dieselbe Ergebnis-Komponente (`seiten/ergebnis.js`).
 - Nicht verglichen: Auswertung Französisch. Die Zuordnungsfrage lässt sich in Legacy per Skript nicht durchspielen (die Paare lösen sich nicht zuverlässig aus). Der Neubau spielt sie.
-- Offen: RULE-150 ist eine Frage an die Person. Im Repo steht der Name aus dem Französisch-Text (`content/fr-verben/lessons.json`, zweimal). AGENTS.md verbietet Namen im Repo. Die Ersetzung ist eine Entscheidung der Person, weil Legacy dieselbe Datei nutzt.
+- Erledigt: Der Name aus dem Französisch-Text (`content/fr-verben/lessons.json`, zweimal) ist durch „Lena“ ersetzt. Die Person hat das entschieden. Legacy liest dieselbe Datei.
+- Offen: Der Name steht noch in `AGENTS.md`, `README.md`, `docs/*.md` und `scripts/smoke.mjs`. Für den Inhalt gilt die Regel jetzt, für diese Dateien noch nicht geprüft.
+- Offen: RULE-150 ist eine Frage an die Person.
 
 Die Befunde unten stammen vom 26.10. und sind teils überholt.
 
