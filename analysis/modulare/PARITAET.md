@@ -6,6 +6,7 @@ Vergleich im Browser: Legacy über `python3 -m http.server 5174` (Repo-Stand 88e
 
 ## Stand 2026-10-28 (Abschluss der offenen Punkte)
 
+- Design-Kritik umgesetzt (bewusste Abweichung von Legacy, nur Handy ≤ 520 px): Die Kopfleiste ist dort nicht mehr sticky und läuft mit. Der Tagesziel-Text trennt Tagesziel (alle Apps) und Seitenstand (diese App). Das Prüfen-Feld erklärt die gesperrte Taste. Sterne und Fach-Etiketten sind lesbarer. Der Platzhalter „Hallo, •••“ bleibt: Die Maskierung des Namens ist Absicht (SEITE-MASKIERUNG).
 - Name: aus allen Dateien im Repo entfernt (AGENTS.md, README.md, docs/, scripts/smoke.mjs, analysis/). Bleibt: Repo-Pfad `lernapp-sira` und der GitHub-Benutzername in URLs, weil die Pages-Adresse daran hängt.
 - Parität Dual-Execution (analysis/modulare/dual): Die Skripte zählen jetzt, ob eine Abweichung durch die Vielfalt-Regel erklärt ist. Erklärt heißt: die Legacy-Runde hat selbst eine Dublette, der Neubau zieht dann neu.
   - Zahlenwerkstatt: 1800 Vergleiche, 267 erklärt durch Vielfalt, 0 unerklärt.

@@ -102,7 +102,9 @@ export function AppHome({ config, app, profile, day, rec, open, notice, storeMes
         h(Ring, { xp: x }),
         h('p', null,
           h('strong', null, `Tagesziel: ${DAILY_GOAL_XP} XP`),
-          `${x >= DAILY_GOAL_XP ? 'Geschafft. Du bist heute fertig.' : 'Eine kurze Runde bringt dich nah ran.'} ${done} von ${units.length} Seiten sind geschafft.`),
+          ` ${x >= DAILY_GOAL_XP ? 'Geschafft. Du bist heute fertig.' : 'Eine kurze Runde bringt dich nah ran.'}`,
+          // Das Tagesziel zählt XP aus allen Apps. Der Seitenstand gilt nur für diese App, deshalb getrennt.
+          h('span', { style: { display: 'block', marginTop: '4px' } }, `In dieser App: ${done} von ${units.length} Seiten geschafft.`)),
         config.rounds && typeof config.rounds.quick === 'function'
           ? h('button', { type: 'button', className: 'btn sun', onClick: () => onStart('quick') }, '2-Minuten-Runde')
           : null
