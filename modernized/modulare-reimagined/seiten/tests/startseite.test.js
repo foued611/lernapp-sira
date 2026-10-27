@@ -142,7 +142,7 @@ test('SEITE-MASKIERUNG Der Name erscheint nie im Klartext auf der Startseite', a
   const markup = renderToStaticMarkup(h(Startseite, { state: boot.state }));
   assert.equal(markup.includes(NAME), false);
   assert.equal(markup.includes('Zo'), false, 'auch kein Teil davon');
-  assert.match(markup, /Hallo, •••!/);
+  assert.match(markup, /Hallo, ••• !/, 'Legacy-Schreibweise mit Leerzeichen vor dem Ausrufezeichen');
 });
 
 test('SEITE-MASKIERUNG Die Begrüßung zeigt nur das Muster, nie den Namen', () => {
@@ -174,9 +174,10 @@ test('SEITE-MASKIERUNG Namen werden getrimmt und auf 20 Zeichen gekürzt, leere 
 });
 
 test('SEITE-MASKIERUNG Die Minou-Zeile hängt nur am Tagesstand, nie am Namen', () => {
-  assert.equal(minouLine(30, DAY), 'Tagesziel geschafft. Alles ab jetzt ist Bonus.');
-  assert.equal(minouLine(10, DAY), 'Noch 20 XP bis zum Tagesziel. Das ist ungefähr eine Runde.');
-  assert.equal(minouLine(0, DAY), minouLine(0, DAY), 'ein fester Tag ergibt immer denselben Spruch');
+  // Wie legacy dashboard.js:25-26: feste Sätze je Tagesstand.
+  assert.equal(minouLine(30), 'Tagesziel geschafft. Alles ab jetzt ist Bonus.');
+  assert.equal(minouLine(10), 'Noch 20 XP bis zum Tagesziel.');
+  assert.equal(minouLine(0), 'Welche App heute? Fünf Minuten reichen schon.');
 });
 
 test('SEITE-SPEICHER-FEHLER Ein blockiertes Profil wird als nicht verfügbar gemeldet und nicht überschrieben', async () => {

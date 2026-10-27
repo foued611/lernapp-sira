@@ -1,60 +1,35 @@
-// Startseite: Begrüßung, Tagesziel, Kacheln aller Apps mit Fortschritt in Prozent, Weiterlernen, Training
-// und Sicherung. startseiteModel ist rein. Die Komponenten zeichnen nur. Seiten ist die Wurzel (Start oder App).
-// Herkunft: legacy/modulare/dashboard.js und core/js/views/home.js (Begrüßung, Ring, Training, Kacheln).
+// Startseite: Begrüßung, Tagesziel, Weiterlernen und Kacheln aller Apps mit Fortschritt. Das Markup folgt
+// legacy/modulare/dashboard.js und index.html (Pixelparität, analysis/modulare/PARITAET.md). startseiteModel ist rein.
+// Die Komponenten zeichnen nur. Seiten ist die Wurzel (Start oder App).
 import { createElement, useReducer, useState } from 'react';
 import { DAILY_GOAL_XP, REFRESH_BONUS_XP, currentStreak, dailyXP } from '../regeln/index.js';
-import { Button, ProgressBar, doneUnits, progressOf, starsOf } from '../komponenten/ui.js';
+import { progressOf, doneUnits, starsOf } from '../komponenten/ui.js';
 import { Mascot } from '../komponenten/mascot.js';
-import { TrackLabel } from '../komponenten/tracks.js';
-import { AppFrame, NO_STORAGE, bossOpen, recommendationOf } from './rahmen.js';
+import { AppFrame, bossOpen, recommendationOf } from './rahmen.js';
+import { NAME_MAX, greetingOf, maskName, saveName } from './name.js';
 import { Sicherung } from './sicherung.js';
-import { LIVE, subjectsOf, unitTrack } from './registry.js';
+import { LIVE, SUBJECT_COLORS, subjectsOf, unitTrack } from './registry.js';
 import { MSG } from './boot.js';
 
 const h = createElement;
 
 export const ALL = 'Alle';
-export const NAME_MAX = 20;
-// Der Name wird nie im Klartext gezeigt. Nur dieses Muster steht im Markup (SEITE-MASKIERUNG).
-export const MASK = '•••';
+export { MASK, NAME_MAX, greetingOf, maskName, nameFrom, saveName } from './name.js';
 
-export const maskName = (name) => (typeof name === 'string' && name.trim() !== '' ? MASK : '');
-export const greetingOf = (name) => (maskName(name) ? `Hallo, ${MASK}!` : 'Hallo!');
-
-/** Name aus dem Eingabefeld: ohne Rand-Leerzeichen, höchstens 20 Zeichen (legacy shell.js:121-122). */
-export const nameFrom = (raw) => (typeof raw === 'string' ? raw.trim().slice(0, NAME_MAX) : '');
-
-/** Speichert den Namen. Leer heißt: nichts tun, wie in der Legacy-App. */
-export async function saveName(profileStore, raw) {
-  const name = nameFrom(raw);
-  if (!name) return { ok: false, skipped: true };
-  if (!profileStore) return { ok: false, error: NO_STORAGE };
-  profileStore.state.name = name;
-  return profileStore.save();
-}
-
-const MINOU_START = Object.freeze([
-  'Nur 2 Minuten, dann bist du schon im Spiel.',
-  'Eine kurze Runde reicht für heute.',
-  'Klein anfangen zählt. Fünf Aufgaben, mehr nicht.'
-]);
-
-// Ein fester Tag ergibt immer denselben Spruch. So bleibt die Anzeige testbar (AGENTS.md: Zufall nur testbar).
-const dayIndex = (day) => [...day].reduce((sum, ch) => sum + ch.charCodeAt(0), 0);
-
-/** Minous Satz zum Tagesstand (legacy dashboard.js:25-26, home.js:11-16). */
-export function minouLine(xp, day) {
+/** Minous Satz zum Tagesstand, wie legacy dashboard.js:25-26. */
+export function minouLine(xp) {
   if (xp >= DAILY_GOAL_XP) return 'Tagesziel geschafft. Alles ab jetzt ist Bonus.';
-  if (xp === 0) return MINOU_START[dayIndex(day) % MINOU_START.length];
-  return `Noch ${DAILY_GOAL_XP - xp} XP bis zum Tagesziel. Das ist ungefähr eine Runde.`;
+  if (xp === 0) return 'Welche App heute? Fünf Minuten reichen schon.';
+  return `Noch ${DAILY_GOAL_XP - xp} XP bis zum Tagesziel.`;
 }
 
 const hrefOf = (id) => `?app=${encodeURIComponent(id)}`;
+const colorOf = (subject) => SUBJECT_COLORS[subject] || '#9B7BFF';
 
 // Kachel ohne Fortschritt: Titel, Fach, Beschreibung und Link. Reicht für den leeren Zustand.
 function linkTile(app) {
   const { entry } = app;
-  const base = { id: entry.id, title: entry.title, subject: entry.subject, desc: entry.desc };
+  const base = { id: entry.id, title: entry.title, subject: entry.subject, desc: entry.desc, color: colorOf(entry.subject) };
   if (entry.status !== LIVE) return { ...base, kind: 'soon' };
   return { ...base, kind: 'link', href: hrefOf(entry.id) };
 }
@@ -146,7 +121,7 @@ export function startseiteModel({ day, storage, profileStore, apps, subject = AL
     subjects,
     greeting: greetingOf(profile.name),
     needsName: !profile.name,
-    minou: minouLine(x, day),
+    minou: minouLine(x),
     goal: { xp: Math.min(x, DAILY_GOAL_XP), goal: DAILY_GOAL_XP, reached: x >= DAILY_GOAL_XP },
     streak: currentStreak(profile, day),
     totalXP: profile.xp,
@@ -158,109 +133,101 @@ export function startseiteModel({ day, storage, profileStore, apps, subject = AL
   };
 }
 
+// Eine Kachel, wie legacy dashboard.js:50-60: Fach, Titel, Beschreibung, Stand und Balken.
 function TileCard({ tile }) {
+  const style = { '--c': tile.color };
   const head = [
     h('span', { key: 'tag', className: 'tag' }, tile.subject),
     h('h3', { key: 'title' }, tile.title),
     h('p', { key: 'desc' }, tile.desc)
   ];
   if (tile.kind === 'soon') {
-    return h('article', { className: 'card tile soon' }, ...head, h('span', { className: 'pill' }, 'Demnächst'));
+    return h('div', { className: 'card tile soon', style }, ...head, h('span', { className: 'pill' }, 'Demnächst'));
   }
   if (tile.kind === 'error') {
-    return h('article', { className: 'card tile error' }, ...head, h('p', { className: 'notice', role: 'status' }, tile.message));
+    return h('div', { className: 'card tile error', style }, ...head, h('p', { className: 'notice', role: 'status' }, tile.message));
   }
-  const open = h('span', { className: 'open' }, 'Öffnen');
-  if (tile.kind === 'link') return h('a', { className: 'card tile', href: tile.href }, ...head, open);
+  if (tile.kind === 'link') return h('a', { className: 'card tile', style, href: tile.href }, ...head);
   if (tile.kind === 'nostore') {
-    return h('a', { className: 'card tile', href: tile.href }, ...head, h('p', { className: 'notice' }, tile.message), open);
+    return h('a', { className: 'card tile', style, href: tile.href }, ...head, h('p', { className: 'notice' }, tile.message));
   }
   return h(
     'a',
-    { className: 'card tile', href: tile.href },
+    { className: 'card tile', style, href: tile.href },
     ...head,
-    h('p', { className: 'lab' }, tile.info),
-    h(ProgressBar, { done: tile.done, total: tile.total, label: `Fortschritt in ${tile.title}` }),
-    tile.boss ? h('p', { className: tile.boss.open ? 'boss open' : 'boss locked' }, tile.boss.text) : null,
-    open
+    h('div', { className: 'lab' }, tile.info),
+    h('div', { className: 'bar', role: 'progressbar', 'aria-label': `Fortschritt in ${tile.title}`, 'aria-valuemin': 0, 'aria-valuemax': 100, 'aria-valuenow': tile.percent },
+      h('i', { style: { width: `${tile.percent}%` } }))
   );
 }
 
+// Das Namensfeld im Legacy-Markup (div.name, input#nm, button.btn.sun). Ein leerer Name bleibt leer (nameFrom).
 function NameForm({ onSave }) {
   const [value, setValue] = useState('');
   return h(
     'form',
     { className: 'name', onSubmit: (event) => { event.preventDefault(); onSave(value); } },
-    h('input', {
-      id: 'nm',
-      type: 'text',
-      value,
-      maxLength: NAME_MAX,
-      autoComplete: 'off',
-      placeholder: 'Wie heißt du?',
-      'aria-label': 'Dein Name',
-      onChange: (event) => setValue(event.target.value)
-    }),
-    h(Button, { type: 'submit', variant: 'sun' }, 'Los')
+    h('input', { id: 'nm', type: 'text', value, maxLength: NAME_MAX, autoComplete: 'off', placeholder: 'Wie heißt du?', 'aria-label': 'Dein Name', onChange: (event) => setValue(event.target.value) }),
+    h('button', { type: 'submit', className: 'btn sun' }, 'Los')
   );
 }
 
-/** Die Startseite. Hält nur die Fachauswahl und den Neuzeichnen-Zähler. Alles andere kommt aus dem Modell. */
+/** Die Startseite. Hält nur die Fachauswahl. Alles andere kommt aus dem Modell. */
 export function Startseite({ state }) {
   const [subject, setSubject] = useState(ALL);
   const [, bump] = useReducer((n) => n + 1, 0);
   const model = startseiteModel({ day: state.day, storage: state.storage, profileStore: state.profileStore, apps: state.apps, subject });
+  const full = model.mode === 'full';
+  const cont = full ? model.continueTile : null;
   async function saveNameAndRedraw(raw) {
     await saveName(state.profileStore, raw);
     bump();
   }
-  const full = model.mode === 'full';
   return h(
     'div',
-    { className: 'seiten' },
+    { className: 'shell dash' },
+    h('div', { className: 'brand' }, 'Lernwerkstatt'),
     h(
       'section',
-      { className: 'card hero' },
-      h('div', { className: 'row1' }, h(Mascot, { mood: 'happy' }), h('div', null, h('h1', null, full ? model.greeting : 'Hallo!'), h('p', { className: 'bubble' }, full ? model.minou : 'Ohne Speicher zeigt diese Seite keinen Fortschritt.'))),
+      { className: 'card hero', id: 'hero' },
+      h('div', { className: 'row1' }, h(Mascot, { mood: 'happy' }), h('div', null,
+        h('h1', null, full ? `${model.greeting.replace(/!$/, '')} !` : 'Hallo!'),
+        h('div', { className: 'bubble', style: { marginTop: '10px' } }, full ? model.minou : 'Ohne Speicher zeigt diese Seite keinen Fortschritt.'))),
       full && model.needsName ? h(NameForm, { onSave: saveNameAndRedraw }) : null,
       full
         ? h(
           'div',
-          { className: 'goal' },
-          h('p', null, h('strong', null, `Tagesziel: ${model.goal.goal} XP. `), model.goal.reached ? 'Geschafft. Du bist heute fertig.' : 'Eine kurze Runde bringt dich nah ran.'),
-          h('p', { className: 'goal-text' }, `${model.goal.xp} von ${model.goal.goal} XP heute`),
-          h('div', { className: 'goal-bar', 'aria-hidden': 'true' }, h('i', { style: { width: `${Math.round((model.goal.xp / model.goal.goal) * 100)}%` } })),
-          h('ul', { className: 'stats' },
-            h('li', null, h('b', null, String(model.streak)), ' Tage in Folge'),
-            h('li', null, h('b', null, String(model.totalXP)), ' XP gesamt'),
-            h('li', null, h('b', null, String(model.trophies)), ' Trophäen'))
+          { className: 'stats', style: { gap: '14px 24px', flexWrap: 'wrap' } },
+          h('div', { className: 'ring', role: 'img', 'aria-label': `Tagesziel ${model.goal.xp} von ${model.goal.goal} XP` },
+            h('svg', { viewBox: '0 0 76 76' },
+              h('circle', { className: 't', cx: 38, cy: 38, r: 32, fill: 'none', strokeWidth: 8 }),
+              h('circle', { className: 'p', cx: 38, cy: 38, r: 32, fill: 'none', strokeWidth: 8, strokeLinecap: 'round', strokeDasharray: (2 * Math.PI * 32).toFixed(1), strokeDashoffset: (2 * Math.PI * 32 * (1 - model.goal.xp / model.goal.goal)).toFixed(1) })),
+            h('b', { style: { display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' } }, String(model.goal.xp), h('small', { style: { display: 'block', lineHeight: 1, fontSize: '11px', fontWeight: 600 } }, `/ ${model.goal.goal}`))),
+          h('div', { className: 'stat' }, h('b', null, String(model.streak)), h('span', null, 'Tage in Folge')),
+          h('div', { className: 'stat' }, h('b', null, String(model.totalXP)), h('span', null, 'XP gesamt')),
+          h('div', { className: 'stat' }, h('b', null, String(model.trophies)), h('span', null, 'Trophäen'))
         )
         : null
     ),
     model.message ? h('p', { className: 'notice', role: 'status' }, model.message) : null,
-    full && model.continueTile
-      ? h('section', { className: 'card cont' }, h('h2', null, `Weiter mit ${model.continueTile.title}`), h('p', { className: 'muted' }, model.continueTile.info), h('a', { className: 'btn sun', href: model.continueTile.href }, 'Weiterlernen'))
-      : null,
-    full && model.training
+    cont
       ? h(
         'section',
-        { className: 'card training' },
-        h('h2', null, 'Gezieltes Training'),
-        h('p', null, `${model.training.reason}: `, h('b', null, model.training.unitTitle), ` in ${model.training.appTitle}.`,
-          model.training.refresh ? ` Auffrischen bringt ${REFRESH_BONUS_XP} Bonus-XP.` : ''),
-        h(TrackLabel, { track: model.training.track }),
-        h('a', { className: 'btn', href: model.training.href }, 'Zur App')
+        { className: 'card cont', style: { '--c': cont.color } },
+        h('span', { className: 'dot' }),
+        h('div', null, h('h3', null, `Weiter mit ${cont.title}`), h('p', { className: 'muted' }, cont.info)),
+        h('a', { className: 'btn sun', href: cont.href }, 'Weiterlernen')
       )
       : null,
     h(
-      'nav',
-      { className: 'chips', 'aria-label': 'Fach wählen' },
-      ...model.subjects.map((s) => h('button', { key: s, type: 'button', className: 'chip', 'aria-pressed': s === subject, onClick: () => setSubject(s) }, s))
-    ),
-    model.tiles.length === 0
-      ? h('p', { className: 'muted' }, 'Für dieses Fach gibt es keine App.')
-      : h('div', { className: 'tiles' }, ...model.tiles.map((tile) => h(TileCard, { key: tile.id, tile }))),
-    h(Sicherung, { handle: state.storage.handle, day: state.day, includeName: true })
+      'section',
+      null,
+      h('h2', null, 'Alle Lern-Apps'),
+      h('div', { className: 'chips', role: 'group', 'aria-label': 'Nach Fach filtern' },
+        ...model.subjects.map((s) => h('button', { key: s, type: 'button', className: 'chip', 'data-s': s, 'aria-pressed': s === subject, onClick: () => setSubject(s) }, s))),
+      h('div', { className: 'grid' }, ...model.tiles.map((tile) => h(TileCard, { key: tile.id, tile }))),
+      model.tiles.length === 0 ? h('div', { className: 'card empty', style: { display: 'block' } }, 'In diesem Fach gibt es noch keine App.') : null
+    )
   );
 }
 

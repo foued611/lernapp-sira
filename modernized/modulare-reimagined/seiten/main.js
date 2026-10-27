@@ -6,10 +6,9 @@ import { bootSeiten } from './boot.js';
 import { logicFor } from '../apps/index.js';
 import { Seiten } from './startseite.js';
 import { setBrowserPorts } from './sicherung.js';
-import '../komponenten/komponenten.css';
-import '../komponenten/lektion.css';
-import './tokens.css';
-import './seiten.css';
+// Design wie in Legacy (legacy/modulare/core/styles). Eine Quelle für alle Ansichten, siehe seiten/design/README.md.
+import './design/styles/app.css';
+import './design/styles/dashboard.css';
 // Optik der Apps, die eigene Spielzeuge haben. Die Selektoren sind je App eindeutig.
 import '../apps/fr-verben/app.css';
 import '../apps/info-zahlen/app.css';

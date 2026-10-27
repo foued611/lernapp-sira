@@ -6,6 +6,16 @@ import { trackOf } from '../komponenten/tracks.js';
 export const LIVE = 'live';
 export const SOON = 'soon';
 
+// Farbe je Fach für Kacheln und Weiter-Karte. Werte wie in legacy/modulare/registry.js:9-16.
+export const SUBJECT_COLORS = Object.freeze({
+  Französisch: '#9B7BFF',
+  Mathematik: '#4CC3F5',
+  Deutsch: '#FF6B88',
+  Englisch: '#3DD6B0',
+  Informatik: '#FF9F43',
+  Physik: '#8BD450'
+});
+
 // Eine Kachel öffnet die App über ?app=<id> (siehe startseite.js). Die alten Pfade apps/<name>/index.html
 // gibt es in diesem Neubau nicht mehr.
 export const APPS = Object.freeze([

@@ -42,11 +42,18 @@ export async function buildExport(handle, { includeName = true, day }) {
   }
 }
 
-/** Ein Satz über den Plan einer Einspielung. Die Zahlen stammen vom Speicher (planImport). */
+const count = (n, one, many) => `${n} ${n === 1 ? one : many}`;
+
+/** Ein Satz über den Plan einer Einspielung. Die Zahlen stammen vom Speicher (planImport). Einzahl und Mehrzahl stimmen. */
 export function planSentence(plan) {
   const replaced = plan.docs.filter((doc) => doc.status === 'replaced').length;
-  return `Die Sicherung enthält ${plan.docs.length} Speicherstände, ${replaced} davon ersetzen vorhandene. `
-    + `${plan.logNew} Ereignisse sind neu, ${plan.logDuplicates} gibt es schon.`;
+  const stands = `Die Sicherung enthält ${count(plan.docs.length, 'Speicherstand', 'Speicherstände')}.`;
+  let replacing = `${replaced} vorhandene Speicherstände werden ersetzt.`;
+  if (replaced === 0) replacing = 'Kein vorhandener Speicherstand wird ersetzt.';
+  if (replaced === 1) replacing = 'Ein vorhandener Speicherstand wird ersetzt.';
+  const events = `${count(plan.logNew, 'Ereignis ist neu', 'Ereignisse sind neu')}, `
+    + `${plan.logDuplicates} ${plan.logDuplicates === 1 ? 'ist' : 'sind'} schon vorhanden.`;
+  return [stands, replacing, events].join(' ');
 }
 
 // Die Browser-Aufrufe (Datei speichern, Seite neu laden) kommen von main.js über setBrowserPorts.
@@ -98,26 +105,27 @@ export function Sicherung({ handle, day, includeName = true }) {
     ports.reloadPage();
   }
 
+  // Die Sicherung als Zeile unter der Seite, wie legacy views/home.js (Links in der Fußzeile).
   return h(
-    'section',
+    'div',
     { className: 'sicherung', 'aria-label': 'Sicherung' },
-    h('h2', null, 'Sicherung'),
     h(
-      'div',
-      { className: 'row' },
-      h(Button, { variant: 'ghost', disabled: !handle, onClick: download, 'aria-describedby': 'export-hint' }, 'Fortschritt sichern (Datei)'),
-      // Der Hinweis steht neben dem Knopf und ist Text, nicht nur Farbe (SEC-007, offen).
-      h('p', { id: 'export-hint', className: 'hint' }, includeName ? NAME_IN_FILE : NO_NAME_IN_FILE)
+      'p',
+      { className: 'muted', style: { fontSize: '13px' } },
+      h('button', { type: 'button', className: 'link', disabled: !handle, onClick: download, 'aria-describedby': 'export-hint' }, 'Fortschritt sichern (Datei)'),
+      ' · ',
+      h(
+        'label',
+        { className: 'link', style: { cursor: 'pointer' } },
+        'Sicherung einspielen',
+        h('input', { type: 'file', accept: 'application/json,.json', hidden: true, disabled: !handle, onChange: choose })
+      ),
+      note ? h('span', { role: 'status' }, ` ${note}`) : null
     ),
-    h(
-      'label',
-      { className: 'file-pick' },
-      'Sicherung einspielen ',
-      h('input', { type: 'file', accept: 'application/json,.json', disabled: !handle, onChange: choose })
-    ),
+    // Der Hinweis steht als Text neben dem Knopf (SEC-007, offen), nicht nur als Farbe.
+    h('p', { id: 'export-hint', className: 'muted', style: { fontSize: '13px' } }, includeName ? NAME_IN_FILE : NO_NAME_IN_FILE),
     chosen
       ? h('div', { className: 'confirm' }, h('p', null, planSentence(chosen.plan)), h(Button, { onClick: restore }, 'Einspielen'))
-      : null,
-    note ? h('p', { className: 'notice', role: 'status' }, note) : null
+      : null
   );
 }

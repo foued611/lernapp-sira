@@ -59,8 +59,14 @@ test('RULE-256 Der Plan nennt, wie viele Stände ersetzt und wie viele Ereigniss
   const sentence = planSentence({
     docs: [{ key: 'a', status: 'new' }, { key: 'b', status: 'replaced' }], logNew: 2, logDuplicates: 1
   });
-  assert.match(sentence, /2 Speicherstände, 1 davon ersetzen vorhandene/);
-  assert.match(sentence, /2 Ereignisse sind neu, 1 gibt es schon/);
+  assert.match(sentence, /Die Sicherung enthält 2 Speicherstände\./);
+  assert.match(sentence, /Ein vorhandener Speicherstand wird ersetzt\./);
+  assert.match(sentence, /2 Ereignisse sind neu, 1 ist schon vorhanden\./);
+});
+
+test('RULE-256 Einzahl im Plan: ein Stand, kein Ereignis neu, kein Stand ersetzt', () => {
+  const sentence = planSentence({ docs: [{ key: 'a', status: 'new' }], logNew: 1, logDuplicates: 0 });
+  assert.equal(sentence, 'Die Sicherung enthält 1 Speicherstand. Kein vorhandener Speicherstand wird ersetzt. 1 Ereignis ist neu, 0 sind schon vorhanden.');
 });
 
 test('SEITE-MASKIERUNG SEC-007 offen: der Export enthält standardmäßig den Namen, der Hinweis steht daneben', async () => {

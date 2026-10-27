@@ -10,6 +10,7 @@ import {
   settleLeave, leaveNotice, settleRound, startRound
 } from '../rahmen.js';
 import { messagesOf } from '../ergebnis.js';
+import { MSG } from '../boot.js';
 import { bootFixture, configOf, DAY, memoryHandle, NAME, playAll, UNIT_IDS } from './helpers.js';
 
 const h = createElement;
@@ -194,7 +195,7 @@ test('RULE-206 Die gesperrte Seite nennt die Sperre als Text, nicht nur als Farb
   const app = boot.state.apps.find((a) => a.entry.id === 'mathe');
   const markup = renderToStaticMarkup(h(AppFrame, { app, profileStore: boot.state.profileStore, day: DAY, storage: boot.state.storage }));
   assert.match(markup, /Noch gesperrt/);
-  assert.match(markup, /Jede Seite braucht mindestens einen Stern/);
+  assert.match(markup, /alle Seiten mindestens einen Stern haben/, 'die Sperre steht als Text, Wortlaut wie Legacy home.js');
   assert.match(markup, /disabled=""/, 'der Knopf ist gesperrt');
 });
 
@@ -219,6 +220,15 @@ test('RULE-195 Die App-Seite ohne Speicher zeigt den Lernpfad, Fortschritt wird 
   assert.match(markup, /Ohne Speicher/);
 });
 
+test('RULE-202 Im Arbeitsspeicher steht die Speicher-Meldung auf der App-Seite, der Satz "gespeichert" fehlt', async () => {
+  const boot = await bootFixture({ search: '?app=mathe' });
+  assert.equal(boot.state.storage.status, 'memory', 'ohne IndexedDB und localStorage läuft der Stand im Arbeitsspeicher');
+  const app = boot.state.apps.find((a) => a.entry.id === 'mathe');
+  const markup = renderToStaticMarkup(h(AppFrame, { app, profileStore: boot.state.profileStore, day: DAY, storage: boot.state.storage }));
+  assert.ok(markup.includes(MSG.memory), 'die Meldung steht auf der Seite');
+  assert.doesNotMatch(markup, /wird in diesem Browser gespeichert/, 'der Satz über das Speichern gilt nur mit echtem Speicher');
+});
+
 test('RULE-195 Die Spielansicht zeigt das Urteil als Text und den Weiter-Knopf erst nach der Antwort', async () => {
   const config = configOf();
   const started = startRound({
@@ -226,8 +236,8 @@ test('RULE-195 Die Spielansicht zeigt das Urteil als Text und den Weiter-Knopf e
   });
   const props = { session: started, onAnswer() {}, onNext() {}, onLeave() {} };
   const before = renderToStaticMarkup(h(Play, props));
-  assert.match(before, /Frage 1 von 8/);
-  assert.match(before, /Herzen: 5 von 5/);
+  assert.match(before, /class="pbar"/, 'Fortschrittsbalken wie Legacy quiz.js');
+  assert.match(before, /aria-label="5 Herzen"/, 'Herzen als Symbole mit Text für Screenreader');
   assert.equal(before.includes('Weiter'), false, 'vor der Antwort kein Weiter');
   started.round.submit({ pick: started.round.current().question.answer });
   const after = renderToStaticMarkup(h(Play, props));

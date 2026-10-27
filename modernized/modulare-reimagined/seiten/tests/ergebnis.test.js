@@ -68,9 +68,11 @@ test('RULE-195 Speicherfehler kommen als Meldungen zurück, gelungene Speicherun
 test('SEITE-A11Y Die Ergebnisaktionen sind Knöpfe mit Text und einem Typ', () => {
   const markup = renderToStaticMarkup(h(Ergebnis, { model: model({}), onAction: () => {} }));
   const buttons = markup.match(/<button[^>]*>[^<]*<\/button>/g) || [];
-  assert.equal(buttons.length, 2);
+  // Nach einer Lektionsrunde gibt es wie in Legacy result.js auch den Theorie-Knopf.
+  assert.equal(buttons.length, 3);
   for (const tag of buttons) assert.match(tag, /type="button"/);
   assert.match(markup, />Nochmal</);
+  assert.match(markup, />Theorie</);
   assert.match(markup, />Zum Lernpfad</);
 });
 

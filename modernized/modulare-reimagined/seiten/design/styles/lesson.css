@@ -1,0 +1,53 @@
+/* Lektionsbausteine (core/js/lesson.js) und Diagramme. Farben nur aus den Tokens. */
+.lsn-goal{background:var(--hero-bg);color:var(--hero-fg);border-radius:14px;padding:12px 16px;font-weight:500}
+.lsn-flag{display:inline-block;background:var(--sun);color:var(--sun-fg);border-radius:8px;padding:0 8px;margin-right:6px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.lsn h2{margin:0 0 10px;font-size:22px}
+.lsn-body p{margin:0 0 8px}
+.lsn-body p:last-child{margin:0}
+.lsn-who{display:grid;grid-template-columns:72px 1fr;gap:14px;align-items:start}
+.lsn-who svg{width:72px;height:auto}
+.lsn-tldr ul{margin:0;padding-left:20px;display:grid;gap:6px}
+.lsn-analogy{background:var(--note);border-color:var(--ink)}
+.lsn-fig{margin:0;display:grid;gap:10px;justify-items:center}
+.lsn-fig svg{width:100%;max-width:520px;height:auto}
+.lsn-fig figcaption{color:var(--muted);font-size:14px;text-align:center;max-width:52ch}
+.lsn-list{list-style:none;margin:0 0 14px;padding:0;display:grid;gap:10px}
+.lsn-list li{display:grid;grid-template-columns:32px 1fr;gap:12px;align-items:start}
+.lsn-list .n{width:32px;height:32px;border-radius:50%;background:var(--btn-bg);color:var(--btn-fg);display:grid;place-items:center;font-weight:700}
+.lsn-list li:not([hidden]).later{animation:lsnIn .35s ease-out}
+@keyframes lsnIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.lsn-two{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.lsn-pit{background:var(--pen-bg)}
+.lsn-mark{margin:0;font-size:19px;font-weight:600;line-height:1.4;background:linear-gradient(transparent 55%,var(--marker) 55%);display:inline}
+.lsn-q{margin:0 0 12px;font-size:18px;font-weight:500}
+.lsn-opts{display:grid;gap:10px}
+.lsn-fb{margin-top:12px;border-radius:12px;padding:10px 14px;font-weight:500}
+.lsn-fb.ok{background:var(--ok-bg);color:var(--ok)}
+.lsn-fb.bad{background:var(--pen-bg);color:var(--pen)}
+@media (prefers-reduced-motion:reduce){.lsn-list li:not([hidden]).later{animation:none}}
+
+/* Diagramme (SVG) */
+.dg .box{fill:var(--card);stroke:var(--ink);stroke-width:2}
+.dg .box-soft{fill:var(--paper);stroke:var(--line);stroke-width:2}
+.dg .hi{fill:var(--sun);stroke:var(--ink);stroke-width:2}
+.dg .acc{fill:var(--btn-bg);stroke:var(--ink);stroke-width:2}
+.dg .ok{fill:var(--ok-bg);stroke:var(--ok);stroke-width:2}
+.dg .off{fill:var(--grid-weak);stroke:var(--ink);stroke-width:2}
+.dg text{fill:var(--text);font-family:var(--f-body);text-anchor:middle}
+.dg .mono{font-family:ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;font-weight:700}
+.dg .sm{font-size:14px}
+.dg .md{font-size:18px}
+.dg .lg{font-size:26px;font-weight:700}
+.dg .mu{fill:var(--muted)}
+.dg .on-acc{fill:var(--btn-fg)}
+.dg .on-sun{fill:var(--sun-fg)}
+.dg .ln{stroke:var(--ink);stroke-width:2;fill:none}
+.dg .ln-soft{stroke:var(--muted);stroke-width:1.5;fill:none;stroke-dasharray:4 4}
+.dg .ar{stroke:var(--ink);stroke-width:2;fill:none;marker-end:url(#arw)}
+.dg .arw-head{fill:var(--ink)}
+.lsn-list li[hidden]{display:none}
+
+/* Gemeinsame Helfer: Schreibmaschinenschrift für Zahlen und Code, Spickzettel-Zeile */
+.mono{font-family:ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;font-variant-numeric:tabular-nums;font-weight:600}
+.cheat{display:flex;flex-wrap:wrap;gap:6px;font:500 14px ui-monospace,Menlo,Consolas,monospace}
+.cheat span{background:var(--paper);border:1.5px solid var(--line);border-radius:6px;padding:1px 8px}

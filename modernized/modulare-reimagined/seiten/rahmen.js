@@ -10,6 +10,10 @@ import { TrackLabel } from '../komponenten/tracks.js';
 import { richText } from '../komponenten/rich.js';
 import { TheoryPage } from '../komponenten/theory.js';
 import { BlitzPlay, startBlitz } from './blitz.js';
+import { NO_STORAGE } from './name.js';
+import { AppHeader, AppHome } from './apphome.js';
+import { Play } from './spiel.js';
+import { saveName } from './name.js';
 import { Ergebnis, messagesOf, resultModel, wordsFor } from './ergebnis.js';
 import { Sicherung } from './sicherung.js';
 import { unitTrack } from './registry.js';
@@ -19,7 +23,7 @@ const h = createElement;
 /** Aufgaben je Runde (Spec RULE-229): Lektion 8, Endgegner 12, Schnellrunde 5. Blitz ist nicht enthalten. */
 export const ROUND_SIZE = Object.freeze({ lesson: 8, quick: 5, boss: 12 });
 
-export const NO_STORAGE = 'Ohne Speicher wird nichts gespeichert. Dieser Stand gilt nur für diesen Versuch.';
+export { NO_STORAGE } from './name.js';
 const LEFT_SAVE_FAILED = 'Die XP konnten nicht gespeichert werden.';
 export const RESET_DONE = 'Der Fortschritt dieser App ist zurückgesetzt. Name und Gesamt-XP bleiben.';
 const NO_TASKS = 'Für diese Runde gibt es noch keine Aufgaben.';
@@ -245,138 +249,7 @@ export function recommendationOf(app, units, day) {
 // Eine Zufallsfolge je Runde aus der Uhr. Tests geben ihre eigene rng-Funktion direkt mit.
 const seedNow = () => Math.floor(Date.now()) % 4294967296;
 
-const FEEDBACK = Object.freeze({ ok: 'Richtig!', almost: 'Fast richtig.', bad: 'Leider nicht.' });
-
-function blankOut(text) {
-  return String(text || '').split('{{blank}}').join('____');
-}
-
-function TypedAnswer({ disabled, onAnswer }) {
-  const [text, setText] = useState('');
-  return h(
-    'form',
-    {
-      className: 'typed',
-      onSubmit: (event) => {
-        event.preventDefault();
-        onAnswer({ text });
-        setText('');
-      }
-    },
-    h(
-      'label',
-      null,
-      'Deine Antwort ',
-      h('input', { type: 'text', value: text, disabled, autoComplete: 'off', onChange: (event) => setText(event.target.value) })
-    ),
-    h(Button, { type: 'submit', disabled }, 'Prüfen')
-  );
-}
-
-// Zuordnung: erst ein linker, dann ein rechter Eintrag. Die Runde prüft das Paar (runde/src/round.js). Hier nur die
-// Rückmeldung für ein falsches Paar. Die Prüfung der Zuordnung selbst bleibt im Rundenmotor.
-function MatchAnswer({ question, matched, disabled, onAnswer }) {
-  const [left, setLeft] = useState(null);
-  const [note, setNote] = useState(null);
-  const doneLeft = matched ? matched.left : [];
-  const doneRight = matched ? matched.right : [];
-  function pairWith(right) {
-    if (left === null) {
-      setNote('Wähle zuerst links einen Eintrag.');
-      return;
-    }
-    const correct = question.leftValues[left] === question.right[right].value;
-    setNote(correct ? null : 'Nicht ganz. Probier eine andere Zuordnung.');
-    onAnswer({ left, right });
-    setLeft(null);
-  }
-  return h(
-    'div',
-    null,
-    h(
-      'div',
-      { className: 'match', role: 'group', 'aria-label': 'Zuordnung' },
-      h('div', { className: 'match-col' }, question.left.map((text, i) => h(
-        'button',
-        {
-          key: i, type: 'button', className: left === i ? 'opt sel' : 'opt', disabled: disabled || doneLeft.includes(i),
-          'aria-pressed': left === i, onClick: () => { setLeft(i); setNote(null); }
-        },
-        richText(text)
-      ))),
-      h('div', { className: 'match-col' }, question.right.map((option, i) => h(
-        'button',
-        {
-          key: i, type: 'button', className: 'opt', disabled: disabled || doneRight.includes(i),
-          onClick: () => pairWith(i)
-        },
-        richText(option.html)
-      )))
-    ),
-    note ? h('p', { className: 'hint', role: 'status' }, note) : null
-  );
-}
-
-// Die Antwortfläche je Fragetyp.
-function answerArea(question, answered, onAnswer, matched) {
-  if (question.kind === 'choice') {
-    return h(
-      'div',
-      { className: 'opts', role: 'group', 'aria-label': 'Antwortmöglichkeiten' },
-      question.options.map((option) => h(
-        'button',
-        { key: option.id, type: 'button', className: 'opt', disabled: answered, onClick: () => onAnswer({ pick: option.id }) },
-        richText(option.html)
-      ))
-    );
-  }
-  if (question.kind === 'type') return h(TypedAnswer, { disabled: answered, onAnswer });
-  return h(MatchAnswer, { question, matched, disabled: answered, onAnswer });
-}
-
-/** Die Spielansicht einer laufenden Runde. Das Urteil steht als Text, nicht nur als Farbe. */
-export function Play({ session, onAnswer, onNext, onLeave, onPeek }) {
-  // Welche Frage gerade den Spickzettel offen hat. Das Öffnen zahlt XP (einmal je Runde), das Schließen nicht.
-  const [shownFor, setShownFor] = useState(null);
-  const cur = session.round.current();
-  if (!cur) return null;
-  const answered = cur.status === 'feedback';
-  const help = cur.question.help;
-  const helpShown = shownFor === cur.index;
-  function toggleHelp() {
-    if (helpShown) {
-      setShownFor(null);
-      return;
-    }
-    onPeek();
-    setShownFor(cur.index);
-  }
-  return h(
-    'section',
-    { className: 'card play', 'aria-live': 'polite' },
-    h('p', { className: 'play-meta' }, `Frage ${cur.index + 1} von ${cur.total}${cur.retry ? ' · zweiter Versuch' : ''}`),
-    h('p', { className: 'play-meta' }, `Herzen: ${cur.hearts} von ${cur.maxHearts} · Serie: ${cur.combo}`),
-    cur.question.chip ? h(TrackLabel, { track: cur.question.chip }) : null,
-    cur.question.sub ? h('p', { className: 'sub' }, cur.question.sub) : null,
-    h('div', { className: 'prompt' }, richText(blankOut(cur.question.prompt || cur.question.label))),
-    answerArea(cur.question, answered, onAnswer, cur.matched),
-    help && !answered
-      ? h(Button, { variant: 'ghost', 'aria-expanded': helpShown, onClick: toggleHelp },
-        helpShown ? 'Spickzettel schließen' : cur.peeked ? 'Spickzettel öffnen' : 'Spickzettel öffnen (−3 XP)')
-      : null,
-    help && helpShown ? h('div', { className: 'cheat-sheet' }, richText(help)) : null,
-    answered
-      ? h(
-        'div',
-        { className: 'feedback', role: 'status' },
-        h('p', { className: 'verdict' }, FEEDBACK[cur.outcome] || ''),
-        cur.question.why ? h('div', null, richText(cur.question.why)) : null,
-        h(Button, { onClick: onNext }, 'Weiter')
-      )
-      : null,
-    h(Button, { variant: 'ghost', onClick: onLeave }, 'Runde beenden (XP bleiben, die Runde zählt nicht)')
-  );
-}
+export { Play } from './spiel.js';
 
 // Die Theorie einer Seite mit Rückweg. Der Übungsknopf startet die Lektionsrunde dieser Seite.
 // Eine App kann ihre Theorie selbst zeichnen (config.Theory, z. B. mit Spielzeugen). Sonst gilt die Standardseite.
@@ -390,92 +263,8 @@ export function TheoryScreen({ config, unit, onBack, onStart }) {
       tracks: config.tracks,
       onStart: () => onStart()
     });
-  return h('div', { className: 'seiten' }, h(Button, { variant: 'ghost', onClick: onBack }, 'Zurück zur Übersicht'), page);
-}
-
-// Die Startansicht einer App: Seiten, Training, Rundenarten, Zurücksetzen und Sicherung.
-function AppHome({ app, config, appState, profile, day, storage, notice, storeMessage, resetPhase, onStudy, onStart, onReset }) {
-  const unitIds = config.units.map((u) => u.id);
-  const open = config.rounds && typeof config.rounds.boss === 'function'
-    ? bossOpen({ app: appState, unitIds, bossUnlocked: config.bossUnlocked, profile })
-    : null;
-  const rec = recommendationOf(appState, config.units, day);
-  return h(
-    'div',
-    { className: 'seiten' },
-    h(
-      'header',
-      { className: 'card app-head' },
-      h('a', { className: 'link', href: './' }, 'Alle Apps'),
-      h('h1', null, config.title),
-      h('p', { className: 'muted' }, `${dailyXP(profile, day)} XP heute · ${profile.xp} XP gesamt · ${currentStreak(profile, day)} Tage in Folge`)
-    ),
-    storeMessage ? h('p', { className: 'notice', role: 'status' }, storeMessage) : null,
-    notice ? h('p', { className: 'notice', role: 'status' }, notice) : null,
-    rec
-      ? h(
-        'section',
-        { className: 'card training' },
-        h('h2', null, 'Gezieltes Training'),
-        h('p', null, `${rec.reason}: `, h('b', null, rec.unit.title), '.', rec.code === 'refresh' ? ` Auffrischen bringt ${REFRESH_BONUS_XP} Bonus-XP.` : ''),
-        h(TrackLabel, { track: unitTrack(config.tracks, rec.unit) }),
-        h(Button, { onClick: () => onStudy(rec.unit) }, 'Jetzt trainieren')
-      )
-      : null,
-    h(
-      'section',
-      null,
-      h('h2', null, 'Dein Lernpfad'),
-      h(
-        'ol',
-        { className: 'units' },
-        config.units.map((u) => {
-          const stars = starsOf(appState.stars, u.id);
-          return h(
-            'li',
-            { key: u.id, className: 'unit-row' },
-            h('div', null, h('h3', null, u.title), h('p', { className: 'muted' }, u.de), h(TrackLabel, { track: unitTrack(config.tracks, u) }),
-              isRefreshDue(appState, u.id, day) ? h('p', { className: 'due' }, 'Zeit zum Auffrischen') : null),
-            h(StarRow, { stars }),
-            h(Button, { 'aria-label': `${u.title} üben`, onClick: () => onStudy(u) }, 'Üben')
-          );
-        })
-      )
-    ),
-    h(
-      'section',
-      { className: 'modes' },
-      config.rounds && typeof config.rounds.quick === 'function'
-        ? h(Button, { onClick: () => onStart('quick') }, 'Schnellrunde (5 Aufgaben)')
-        : null,
-      open === null ? null : h('div', { className: 'boss' },
-        h('p', null, open ? 'Der Endgegner ist offen. 12 gemischte Aufgaben, nur 3 Herzen.' : 'Endgegner gesperrt: Jede Seite braucht mindestens einen Stern.'),
-        h(Button, { disabled: !open, onClick: () => onStart('boss') }, open ? 'Endgegner starten' : 'Noch gesperrt'))
-    ),
-    typeof config.blitz === 'function'
-      ? h(
-        'section',
-        { className: 'card blitz-card' },
-        h('h2', null, 'Blitz'),
-        h('p', null, `${BLITZ_SECONDS} Sekunden Tempo. Wie viele schaffst du? Bestwert: `, h('b', null, appState.best.blitz || 0)),
-        h(Button, { onClick: () => onStart('blitz') }, 'Blitz starten')
-      )
-      : null,
-    h(
-      'section',
-      { className: 'reset' },
-      resetPhase === 'ask'
-        ? h(
-          'div',
-          { className: 'confirm' },
-          h('p', null, 'Wirklich alles löschen? Die Sterne, Trophäen und Bestwerte dieser App gehen verloren. Name und Gesamt-XP bleiben.'),
-          h(Button, { variant: 'ghost', onClick: () => onReset('confirm') }, 'Ja, Fortschritt dieser App löschen'),
-          h(Button, { variant: 'ghost', onClick: () => onReset('cancel') }, 'Abbrechen')
-        )
-        : h(Button, { variant: 'ghost', onClick: () => onReset('start') }, 'Fortschritt dieser App zurücksetzen')
-    ),
-    h(Sicherung, { handle: storage.handle, day, includeName: true })
-  );
+  // Wie legacy shell.js:renderTheory: ein Textlink "← Zum Lernpfad" über der Seite.
+  return h('div', { className: 'seiten' }, h('button', { type: 'button', className: 'link back', onClick: onBack }, '← Zum Lernpfad'), page);
 }
 
 /**
@@ -498,7 +287,9 @@ export function AppFrame({ app, profileStore, day, storage }) {
   const [theoryUnit, setTheoryUnit] = useState(null);
   const [blitz, setBlitz] = useState(null);
   const [, bump] = useReducer((n) => n + 1, 0);
-  const storeMessage = app.storeMessage || null;
+  // Ohne echten Speicher sagt die Seite das. Die Meldung der App gibt es nur bei blockiertem Speicher.
+  const storeMessage = app.storeMessage || (storage.status === 'memory' ? storage.message : null);
+  const persistent = storage.status === 'ok';
   const logRow = (row) => (storage.handle ? storage.handle.logEvent(row) : Promise.resolve({ ok: false, error: NO_STORAGE }));
 
   function begin(mode, unit = null) {
@@ -626,34 +417,51 @@ export function AppFrame({ app, profileStore, day, storage }) {
     bump();
   }
 
+  // Kopfleiste und Hauptbereich wie legacy/modulare/index.html der App (header.top, main#app).
+  const frame = (content, unit = null) => h(
+    'div',
+    { className: 'shell' },
+    h(AppHeader, { config, profile, words, onHome: home, day }),
+    h('main', { id: 'app', style: unit ? { '--lc': unit.color } : undefined }, content)
+  );
+
   if (screen === 'play' && session) {
-    return h(Play, { session, onAnswer: answer, onNext: advance, onLeave: leave, onPeek: peek });
+    return frame(h(Play, { session, praise: words.praise, inputChars: config.inputChars || [], onAnswer: answer, onNext: advance, onLeave: leave, onPeek: peek }), session.unit);
   }
   if (screen === 'blitz' && blitz) {
-    return h(BlitzPlay, { run: blitz, onFinish: finishBlitz, onLeave: leaveBlitz });
+    return frame(h(BlitzPlay, { run: blitz, onFinish: finishBlitz, onLeave: leaveBlitz }));
   }
   if (screen === 'theory' && theoryUnit) {
-    return h(TheoryScreen, { config, unit: theoryUnit, onBack: home, onStart: () => begin('lesson', theoryUnit) });
+    return frame(h(TheoryScreen, { config, unit: theoryUnit, onBack: home, onStart: () => begin('lesson', theoryUnit) }), theoryUnit);
   }
   if (screen === 'saving') {
-    return h('section', { className: 'card' }, h('p', null, 'Ergebnis wird gespeichert …'));
+    return frame(h('section', { className: 'card' }, h('p', null, 'Ergebnis wird gespeichert …')));
   }
   if (screen === 'result' && settled) {
     const onAction = (id) => {
-      if (id !== 'again') home();
+      if (id === 'home') home();
+      else if (id === 'theory') study(config.units.find((u) => u.id === settled.summary.unitId));
       else if (settled.summary.mode === 'blitz') beginBlitz();
       else begin(settled.summary.mode, settled.summary.unitId ? config.units.find((u) => u.id === settled.summary.unitId) : null);
     };
-    return h(Ergebnis, {
+    return frame(h(Ergebnis, {
       model: resultModel(settled.summary, { profile, day, words }),
       messages: messagesOf(settled),
       onAction
-    });
+    }));
   }
-  return h(AppHome, {
-    app, config, appState, profile, day, storage, notice, storeMessage, resetPhase,
+  const rec = recommendationOf(appState, config.units, day);
+  const open = bossOpen({ app: appState, unitIds, bossUnlocked: config.bossUnlocked, profile });
+  async function saveNameAndRedraw(raw) {
+    await saveName(profileStore, raw);
+    bump();
+  }
+  return frame(h(AppHome, {
+    config, app: appState, profile, day, rec, open, notice, storeMessage, persistent, resetPhase, profileStore,
     onStudy: study,
     onStart: (mode, unit) => (mode === 'blitz' ? beginBlitz() : begin(mode, unit || null)),
-    onReset: reset
-  });
+    onReset: reset,
+    onName: saveNameAndRedraw,
+    footer: h(Sicherung, { handle: storage.handle, day, includeName: true })
+  }));
 }

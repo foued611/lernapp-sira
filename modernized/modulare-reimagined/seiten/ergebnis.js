@@ -3,7 +3,8 @@
 import { createElement } from 'react';
 import { BOSS_BONUS_XP, DAILY_GOAL_XP, REFRESH_BONUS_XP, comboMultiplier, dailyXP } from '../regeln/index.js';
 import { BLITZ_SECONDS } from '../runde/index.js';
-import { Button, StarRow } from '../komponenten/ui.js';
+import { Button } from '../komponenten/ui.js';
+import { Icon } from '../komponenten/icons.js';
 import { Mascot } from '../komponenten/mascot.js';
 import { Confetti } from '../komponenten/confetti.js';
 
@@ -77,7 +78,12 @@ export function resultModel(summary, { profile, day, words }) {
     daily: { xp: x, goal: DAILY_GOAL_XP, reached: x >= DAILY_GOAL_XP },
     levelLine: level,
     badges: summary.newBadges.map((badge) => ({ id: badge.id, n: badge.n, d: badge.d })),
-    actions: [{ id: 'again', label: againLabel(summary.mode) }, { id: 'home', label: 'Zum Lernpfad' }],
+    // Legacy result.js: Theorie nur nach einer Lektionsrunde, dann der Weg zurück.
+    actions: [
+      { id: 'again', label: againLabel(summary.mode) },
+      ...(summary.mode === 'lesson' && summary.unitId ? [{ id: 'theory', label: 'Theorie' }] : []),
+      { id: 'home', label: 'Zum Lernpfad' }
+    ],
     celebrate: Boolean(summary.goalHit || (!summary.failed && (blitz ? blitzWell : (summary.mode === 'boss' || summary.stars >= 2))))
   };
 }
@@ -85,30 +91,36 @@ export function resultModel(summary, { profile, day, words }) {
 /** Meldungen zur Speicherung, als Texte. Leer, wenn alles gut ging. */
 export const messagesOf = ({ saved, logged }) => [saved.ok ? null : saved.error, logged.ok ? null : logged.error].filter(Boolean);
 
-/** Die Ergebnis-Karte. Sterne stehen als Text dabei, nicht nur als Symbol (RULE-075, AGENTS.md). */
+/**
+ * Die Ergebnis-Karte. Markup und Texte folgen legacy/modulare/core/js/views/result.js (Pixelparität).
+ * Sterne stehen als Text dabei, nicht nur als Symbol (RULE-075, AGENTS.md). Blitz hat keine Sterne.
+ */
 export function Ergebnis({ model, messages = [], onAction }) {
   return h(
     'section',
     { className: 'card res' },
     h(Mascot, { mood: model.mood }),
     h('h1', null, model.title),
-    model.stars === null ? null : h(StarRow, { stars: model.stars }),
-    h('p', { className: 'sub' }, model.subtitle),
+    model.stars === null
+      ? null
+      : h(
+        'div',
+        { className: 'rstars', 'aria-label': `${model.stars} von 3 Sternen` },
+        [1, 2, 3].map((i) => h('span', { key: i, className: i <= model.stars ? 'on' : '' }, h(Icon, { name: 'star' })))
+      ),
+    h('p', { style: { margin: 0, maxWidth: '46ch' } }, model.subtitle),
+    h('div', { className: 'facts' }, ...model.facts.map((fact) => h('div', { key: fact.label, className: 'fact' }, h('b', null, String(fact.value)), h('span', null, fact.label)))),
     h(
       'div',
-      { className: 'facts' },
-      ...model.facts.map((fact) => h('div', { key: fact.label, className: 'fact' }, h('b', null, String(fact.value)), h('span', null, fact.label)))
-    ),
-    h(
-      'p',
       { className: 'gline' },
-      h('b', null, model.daily.reached ? 'Tagesziel geschafft!' : `Tagesziel: noch ${DAILY_GOAL_XP - model.daily.xp} XP`)
+      h('b', null, model.daily.reached ? 'Tagesziel geschafft!' : `Tagesziel: noch ${DAILY_GOAL_XP - model.daily.xp} XP`),
+      h('div', { className: 'bar' }, h('i', { style: { width: `${Math.min(100, (model.daily.xp / DAILY_GOAL_XP) * 100)}%` } }))
     ),
     model.levelLine ? h('p', { className: 'lvup' }, model.levelLine) : null,
     model.badges.length
-      ? h('div', { className: 'badges' }, h('p', { className: 'kicker' }, 'Neue Trophäen'), ...model.badges.map((b) => h('div', { key: b.id, className: 'badge got' }, h('b', null, b.n), h('span', null, b.d))))
+      ? h('div', null, h('p', { className: 'kicker' }, 'Neue Trophäen'), h('div', { className: 'badges', style: { justifyContent: 'center' } }, ...model.badges.map((b) => h('div', { key: b.id, className: 'badge got' }, h('b', null, b.n), h('span', null, b.d)))))
       : null,
-    h('div', { className: 'acts' }, ...model.actions.map((a) => h(Button, { key: a.id, variant: a.id === 'home' ? 'ghost' : 'primary', onClick: () => onAction(a.id) }, a.label))),
+    h('div', { className: 'acts' }, ...model.actions.map((a) => h(Button, { key: a.id, variant: a.id === 'again' ? 'primary' : 'ghost', onClick: () => onAction(a.id) }, a.label))),
     ...messages.map((text) => h('p', { key: text, className: 'notice', role: 'status' }, text)),
     model.celebrate ? h(Confetti, { seed: 7, count: 40, reduced: false }) : null
   );

@@ -3,9 +3,10 @@
 // damit Auswertung und Speicher denselben Weg nehmen wie bei einer Runde (settleRound in rahmen.js).
 import { createElement, useEffect, useReducer, useRef, useState } from 'react';
 import { BLITZ_SECONDS, createBlitz } from '../runde/index.js';
-import { Button } from '../komponenten/ui.js';
 import { richText } from '../komponenten/rich.js';
 import { TrackLabel } from '../komponenten/tracks.js';
+import { Icon } from '../komponenten/icons.js';
+import { comboMultiplier } from '../regeln/index.js';
 
 const h = createElement;
 
@@ -81,13 +82,13 @@ export function startBlitz({ config, rng, now = Date.now }) {
  */
 export function BlitzPlay({ run, onFinish, onLeave }) {
   const [, bump] = useReducer((n) => n + 1, 0);
-  const [left, setLeft] = useState(BLITZ_SECONDS);
+  const [msLeft, setMsLeft] = useState(BLITZ_SECONDS * 1000);
   // feedback: die eben beantwortete Frage mit der Wahl, bis die Rückmeldung abläuft.
   const [feedback, setFeedback] = useState(null);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setLeft(Math.ceil(run.timeLeft() / 1000));
+      setMsLeft(run.timeLeft());
       const result = run.finish();
       if (result) {
         clearInterval(timer);
@@ -138,23 +139,41 @@ export function BlitzPlay({ run, onFinish, onLeave }) {
     return 'opt';
   };
 
+  // Die Anzeige folgt legacy blitz.js:render: Zeitbalken, Combo oder Richtig-Zähler, Karte mit Auswahl.
+  const seconds = Math.ceil(msLeft / 1000);
+  const pct = (msLeft / (BLITZ_SECONDS * 1000)) * 100;
+  const combo = cur.combo >= 3 ? `Combo ×${comboMultiplier(cur.combo)} · ${cur.combo} in Folge` : `Richtig: ${cur.score}`;
   return h(
-    'section',
-    { className: 'card play' },
-    h('p', { className: 'play-meta' }, `Zeit: ${left} s · Richtig: ${cur.score} · Serie: ${cur.combo}`),
-    shown.chip ? h(TrackLabel, { track: shown.chip }) : null,
-    shown.sub ? h('p', { className: 'sub' }, shown.sub) : null,
-    h('div', { className: 'prompt' }, richText(blankOut(shown.prompt || shown.label))),
+    'div',
+    null,
     h(
       'div',
-      { className: 'opts', role: 'group', 'aria-label': 'Antwortmöglichkeiten' },
-      shown.options.map((option) => h(
-        'button',
-        { key: option.id, type: 'button', className: stateOf(option), disabled: Boolean(feedback), onClick: () => pick(option) },
-        richText(option.html)
-      ))
+      { className: 'playbar' },
+      h('button', { type: 'button', className: 'x', 'aria-label': 'Abbrechen', onClick: onLeave }, h(Icon, { name: 'close' })),
+      h('div', { className: 'timer', style: { flex: 1 } }, h('i', { style: { width: `${pct}%` } })),
+      h('span', { className: 'score' }, `${seconds} s`)
     ),
-    h('p', { className: 'verdict', role: 'status' }, feedback ? VERDICT[feedback.outcome] : ''),
-    h(Button, { variant: 'ghost', onClick: onLeave }, 'Blitz beenden (XP bleiben, die Runde zählt nicht)')
+    // Die Karte hat einen negativen Rand nach oben (Legacy). Im Blitz steht hier immer Text, daher Abstand darunter.
+    h('div', { className: 'combo', style: { marginBottom: '10px' } }, combo),
+    h(
+      'section',
+      { className: 'card qcard' },
+      h('p', { className: 'qlabel' }, shown.label),
+      shown.chip ? h(TrackLabel, { track: shown.chip }) : null,
+      h('p', { className: 'sentence' }, richText(blankOut(shown.prompt || ''))),
+      shown.sub ? h('p', { className: 'tr' }, shown.sub) : null,
+      h(
+        'div',
+        { className: 'opts' },
+        shown.options.map((option, i) => h(
+          'button',
+          { key: option.id, type: 'button', className: stateOf(option), disabled: Boolean(feedback), onClick: () => pick(option) },
+          h('kbd', null, String(i + 1)),
+          richText(option.html)
+        ))
+      ),
+      // Das Urteil bleibt für Screenreader als Text. Sichtbar ist nur die Farbe, wie in Legacy.
+      h('p', { role: 'status', style: { position: 'absolute', width: 1, height: 1, overflow: 'hidden', clip: 'rect(0 0 0 0)' } }, feedback ? VERDICT[feedback.outcome] : '')
+    )
   );
 }
