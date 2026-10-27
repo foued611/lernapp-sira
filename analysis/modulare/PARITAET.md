@@ -20,7 +20,9 @@ Vergleich im Browser: Legacy über `python3 -m http.server 5174` (Repo-Stand 88e
 - Einspielen der Sicherung im Browser geprüft (Live, 2026-10-28): leeres Profil, Plan "2 Speicherstände" angezeigt, nach dem Einspielen XP 65 und 13 gemerkte Aufgaben wieder da.
 - RULE-056 und RULE-119 sind im Chat entschieden und in RULE_REVIEWS als bestätigt eingetragen.
 - Legacy-Code aus main entfernt (2026-10-28, Freigabe über /goal). Erhalten im Branch `legacy` (88e3d74). `content/` bleibt, der Neubau nutzt es.
-- Offen: Die Prüfung "vor der ersten Dublette gleich" steht nur im Geometrie-Skript. Zahlenwerk und Mathe prüfen nur, ob die Legacy-Runde eine Dublette hat. Wiederholung nach Fehler am Rundenende (RULE-243) bleibt bewusst.
+- Dual-Prüfung vereinheitlicht (2026-10-27): Zahlenwerk, Mathe und Geometrie prüfen alle dieselbe Erklärung. Erklärt ist eine Abweichung nur, wenn die Legacy-Runde eine Dublette hat und alle Fragen davor gleich sind. Ergebnis neu: Zahlenwerk 1800 Vergleiche, 267 erklärt, 0 unerklärt. Mathe 2400 Vergleiche, 157 erklärt, 177 unerklärt. Die 177 sind wie zuvor alle Median-Fragen (RULE-056, bestätigt).
+- Kontrast Fach-Etiketten (13 px, Schriftgewicht 600): gedämpfte Schrift auf Karte 6,15:1 hell und 7,01:1 dunkel. Auf Hintergrund 5,48:1 hell und 7,95:1 dunkel. Alle über 4,5:1 (WCAG AA). Offen: Kacheln mit `.tile.soon` haben `opacity: .6` und damit weniger Kontrast.
+- Offen: Wiederholung nach Fehler am Rundenende (RULE-243) bleibt bewusst.
 
 ## Stand 2026-10-27 (gilt vor den Befunden unten)
 
