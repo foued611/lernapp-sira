@@ -1,6 +1,5 @@
-// Wählt beim Öffnen den Zweig: IndexedDB, dann localStorage, zuletzt Arbeitsspeicher (RULE-186, db.js:100-112).
-// Kein globaler Singleton wie in der Legacy-App. Jeder Aufruf bekommt seinen Speicher, damit Tests und Fixtures
-// eigene Speicher injizieren können.
+// Wählt beim Öffnen den Zweig: IndexedDB, dann localStorage, zuletzt Arbeitsspeicher (RULE-186).
+// Kein globaler Singleton. Jeder Aufruf bekommt seinen Speicher, damit Tests eigene Speicher injizieren können.
 import { PROBE_KEY } from './constants.js';
 import { createIdbBackend, openDatabase } from './backend-idb.js';
 import { createStorageBackend } from './backend-storage.js';
@@ -36,7 +35,7 @@ export async function openStore(options = {}) {
 
 async function chooseBackend({ indexedDB, localStorage, now }) {
   if (indexedDB) {
-    const idb = await tryIndexedDB(indexedDB, localStorage, now);
+    const idb = await tryIndexedDB(indexedDB, now);
     if (idb) return idb;
   }
   if (localStorage && storageWorks(localStorage)) return createStorageBackend('localstorage', localStorage);
@@ -44,12 +43,12 @@ async function chooseBackend({ indexedDB, localStorage, now }) {
 }
 
 // Eine IndexedDB, die sich öffnen lässt, aber nicht beschreibbar ist, gilt als nicht nutzbar.
-async function tryIndexedDB(factory, legacyStorage, now) {
+async function tryIndexedDB(factory, now) {
   let db = null;
   try {
     db = await openDatabase(factory);
-    const backend = createIdbBackend({ db, now, legacyStorage });
-    await backend.probe(); // schlägt fehl, wenn der Browser IndexedDB sperrt (db.js:105)
+    const backend = createIdbBackend({ db, now });
+    await backend.probe(); // schlägt fehl, wenn der Browser IndexedDB sperrt
     return backend;
   } catch (error) {
     if (db) db.close();

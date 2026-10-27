@@ -64,7 +64,7 @@ test('SCHEMA-FELDER: Ein gespeicherter Stand mit falschem Feldtyp wird gesichert
   second.close();
 });
 
-test('SCHEMA-FELDER: Ein gültiges Profil mit Werten wie in der Legacy-Fixture passiert die Prüfung', async () => {
+test('SCHEMA-FELDER: Ein gültiges Profil mit typischen Werten passiert die Prüfung', async () => {
   const factory = new IDBFactory();
   const h = await openStore({ indexedDB: factory, localStorage: null });
   const doc = { name: 'Testkind', xp: 120, streak: 3, lastDay: '2026-10-25', lastApp: 'mathe', day: { d: '2026-10-25', xp: 40 } };
