@@ -15,7 +15,7 @@ button{font:inherit;color:inherit}
 :focus-visible{outline:3px solid var(--ink);outline-offset:2px}
 svg.ic{width:1em;height:1em;fill:currentColor;display:block}
 header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px 16px;padding:8px 14px;background:var(--card);border:2px solid var(--ink);border-top:0;border-radius:0 0 14px 14px;box-shadow:0 4px 0 var(--shadow)}
-.brand{background:none;border:0;cursor:pointer;font-family:var(--f-head);font-weight:800;font-size:21px;letter-spacing:-.02em;color:var(--ink);padding:4px 0;display:flex;align-items:center;gap:8px;position:relative}
+.brand{min-height:44px;background:none;border:0;cursor:pointer;font-family:var(--f-head);font-weight:800;font-size:21px;letter-spacing:-.02em;color:var(--ink);padding:4px 0;display:flex;align-items:center;gap:8px;position:relative}
 .brand::before{content:"";width:14px;height:14px;border-radius:50%;background:var(--btn-bg);box-shadow:8px 4px 0 -2px var(--sun)}
 /* Trefferfläche auf 44 px, ohne das Layout zu verschieben (Legacy-Maß bleibt). */
 .brand::after{content:"";position:absolute;inset:-2px -6px}
@@ -43,7 +43,7 @@ a.btn{display:inline-block;text-align:center;text-decoration:none}
 .btn.ghost{background:var(--card);color:var(--ink);box-shadow:0 5px 0 var(--shadow)}
 .btn.sun{background:var(--sun);color:var(--sun-fg);box-shadow:0 5px 0 var(--sun-shadow);border-color:var(--sun-fg)}
 .btn:disabled{opacity:.4;cursor:not-allowed}
-.link{background:none;border:0;padding:6px 0;cursor:pointer;color:var(--ink);text-decoration:underline;text-underline-offset:3px;font-size:14px;position:relative}
+.link{display:inline-flex;align-items:center;min-height:44px;background:none;border:0;padding:6px 0;cursor:pointer;color:var(--ink);text-decoration:underline;text-underline-offset:3px;font-size:14px;position:relative}
 .link::after{content:"";position:absolute;inset:-6px -4px}
 .hero{background:var(--hero-bg);color:var(--hero-fg);border-color:var(--ink);display:grid;gap:16px;overflow:hidden;position:relative}
 .hero h1{color:var(--hero-fg)}
@@ -85,7 +85,7 @@ a.btn{display:inline-block;text-align:center;text-decoration:none}
 .badge span{font-size:13px;color:var(--muted)}
 .back{justify-self:start}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{cursor:pointer;border:2px solid var(--ink);background:var(--card);color:var(--ink);border-radius:20px;padding:4px 14px;font-weight:500;font-size:15px}
+.chip{min-height:44px;cursor:pointer;border:2px solid var(--ink);background:var(--card);color:var(--ink);border-radius:20px;padding:4px 14px;font-weight:500;font-size:15px}
 .chip.on{background:var(--ink);color:var(--paper)}
 .res{text-align:center;display:grid;gap:14px;justify-items:center}
 .res .mas{width:110px}
@@ -112,7 +112,7 @@ a.btn{display:inline-block;text-align:center;text-decoration:none}
 .hero .mas{width:92px}
 @media (max-width:520px){.node{grid-template-columns:52px 1fr}.node .circ{width:52px;height:52px;font-size:19px}.node .stars{grid-column:2}.path::before{left:42px}.hero .row1{grid-template-columns:70px 1fr}.hero .mas{width:70px}.goalbox .btn{margin-left:0;width:100%}header.top{position:static}}
 
-.alla{font-size:13px;font-weight:600;color:var(--ink);text-decoration:none;border:2px solid var(--line);border-radius:20px;padding:2px 12px;position:relative}
+.alla{display:inline-flex;align-items:center;min-height:44px;font-size:13px;font-weight:600;color:var(--ink);text-decoration:none;border:2px solid var(--line);border-radius:20px;padding:2px 12px;position:relative}
 .alla::after{content:"";position:absolute;inset:-8px -4px}
 
 /* Theorie-Seiten (für alle Apps): Kopfkarte und Merkzettel */
