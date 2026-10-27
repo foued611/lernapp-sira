@@ -20,7 +20,7 @@ export function Theory({ unit, config, onStart }) {
   const track = trackOf(config.tracks, unit);
   return h(
     'div',
-    { className: 'theory-stack' },
+    { className: 'theory-stack zw-theory' },
     h(
       'section',
       { className: 'card tcard' },

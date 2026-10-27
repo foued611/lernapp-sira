@@ -154,8 +154,9 @@ export function Lesson({ lesson, unitId, diagrams, toy, onProblem }) {
             );
           })
         ),
-        // Die Rückmeldung ist immer da, damit Screenreader die Änderung als Statusmeldung vorlesen.
-        h('div', { className: feedback ? `lsn-fb ${feedback.right ? 'ok' : 'bad'}` : 'lsn-fb', role: 'status' }, feedback ? feedback.text : '')
+        // Die Rückmeldung ist immer im Baum, damit Screenreader die Änderung als Statusmeldung vorlesen.
+        // Ohne Antwort ist sie ausgeblendet (wie legacy lesson.js), sonst bleibt ein leerer Abstand unter den Antworten.
+        h('div', { className: feedback ? `lsn-fb ${feedback.right ? 'ok' : 'bad'}` : 'lsn-fb', role: 'status', hidden: !feedback }, feedback ? feedback.text : '')
       )
     : null;
 

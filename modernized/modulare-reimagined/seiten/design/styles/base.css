@@ -24,6 +24,8 @@ header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;display:fl
 .streak{display:flex;align-items:center;gap:3px;font-weight:600;color:var(--flame);font-size:19px}
 .streak b{font-size:15px;color:var(--text)}
 main{padding-top:22px;display:grid;gap:26px}
+/* Zurück-Link und Seite, wie legacy main (Abstand 26 px). */
+.seiten{display:grid;gap:26px}
 h1,h2,h3{margin:0;font-family:var(--f-head);color:var(--ink);font-weight:800;line-height:1.08;letter-spacing:-.02em;text-wrap:balance}
 h1{font-size:clamp(30px,7vw,46px)}
 h2{font-size:26px}
@@ -110,7 +112,7 @@ a.btn{display:inline-block;text-align:center;text-decoration:none}
 .tcard{border-top:10px solid var(--lc)}
 .thead{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px}
 .thead .de{font-size:17px;color:var(--muted)}
-.notes{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.notes{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:12px}
 .note{background:var(--note);padding:12px 14px;box-shadow:3px 4px 0 var(--shadow);font-size:14px;transform:rotate(-.5deg);border-radius:4px}
 .note:nth-child(even){transform:rotate(.6deg)}
 .note b{display:block;font-family:var(--f-head);font-weight:800;font-size:17px;line-height:1.15;color:var(--ink);margin-bottom:2px}

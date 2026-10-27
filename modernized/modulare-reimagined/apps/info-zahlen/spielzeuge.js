@@ -1,7 +1,7 @@
 // Spielzeuge der Theorieseiten (Herkunft: legacy/modulare/apps/informatik/theory.js). Jedes Spielzeug ist eine
 // React-Komponente mit eigenem Zustand, ohne innerHTML. Ergebnisse stehen als Text da, nicht nur als Farbe (KOMP-A11Y).
 // Die Ansichten rechnen über reine Funktionen (lampSum, hexView, adderView, decToBinRows), damit Tests sie prüfen können.
-import { createElement, useId, useState } from 'react';
+import { createElement, Fragment, useId, useState } from 'react';
 import { WEIGHTS, HEX, toBin, toHex, placeDigits, placeSum, decToBinSteps } from './numbers.js';
 import { Button } from '../../komponenten/ui.js';
 
@@ -70,18 +70,23 @@ function Toy({ label, accent, children }) {
   );
 }
 
-/** Eingabefeld für eine Zahl in einem Bereich. Der Name steht als Beschriftung davor. */
-function NumberField({ label, min, max, value, onChange }) {
+/** Beschriftung und Eingabefeld für eine Zahl in einem Bereich. Der Name steht davor. Die Zeile bauen die Aufrufer. */
+function NumberInput({ label, min, max, value, onChange }) {
   const id = useId();
   return h(
-    'div',
-    { className: 'zw-row' },
+    Fragment,
+    null,
     h('label', { htmlFor: id }, label),
     h('input', {
       id, className: 'zw-num', type: 'number', inputMode: 'numeric', min, max, value,
       onChange: (e) => onChange(e.target.value)
     })
   );
+}
+
+/** Eine Zeile mit einem Eingabefeld, wie legacy `.row`. */
+function NumberField(props) {
+  return h('div', { className: 'zw-row' }, h(NumberInput, props));
 }
 
 /** Lampenreihe. Jede Lampe ist ein Schalter mit aria-pressed, der Stellenwert steht im Namen. */
@@ -172,8 +177,12 @@ export function AddToy({ accent }) {
   return h(
     Toy,
     { label: 'Rechne selbst nach', accent },
-    h(NumberField, { label: 'Erste Zahl', min: 0, max: 127, value: ra, onChange: setRa }),
-    h(NumberField, { label: 'Zweite Zahl', min: 0, max: 127, value: rb, onChange: setRb }),
+    h(
+      'div',
+      { className: 'zw-row' },
+      h(NumberInput, { label: 'Erste Zahl', min: 0, max: 127, value: ra, onChange: setRa }),
+      h(NumberInput, { label: 'Zweite Zahl', min: 0, max: 127, value: rb, onChange: setRb })
+    ),
     h(
       'div',
       { className: 'zw-sum zw-mono', 'aria-live': 'polite' },

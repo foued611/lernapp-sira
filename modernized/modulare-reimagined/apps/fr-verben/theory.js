@@ -48,8 +48,8 @@ function formCell(verb, i) {
   return h(Fragment, null, h('span', { className: 'stem' }, verb.stem), h('span', { className: 'end' }, ending ? ending : '∅'));
 }
 
-/** Konjugationstabelle mit Verbwechsel, Selbsttest und Vorlesen je Zeile. */
-function Conjugation({ unit }) {
+/** Konjugationstabelle mit Verbwechsel, Selbsttest und Vorlesen je Zeile. Titel gehört zur selben Karte (wie Legacy). */
+function Conjugation({ unit, head }) {
   const verbs = unit.verbs.map((key) => V[key]);
   const [state, dispatch] = useReducer(practiceReducer, verbs, initialPractice);
   const verb = verbs.find((v) => v.key === state.verbKey) || verbs[0];
@@ -101,7 +101,8 @@ function Conjugation({ unit }) {
 
   return h(
     'section',
-    { className: 'card conj-card' },
+    { className: 'card tcard conj-card' },
+    head,
     h('div', { className: 'conj-controls' }, chips, selfTest),
     h('table', { className: 'conj', 'aria-label': `Formen von ${verb.inf}` }, h('tbody', null, ...rows)),
     verb.irr ? null : h('p', { className: 'muted conj-note' }, 'Gelb markiert ist die Endung. Der Stamm bleibt gleich.')
@@ -115,7 +116,7 @@ function Examples({ unit }) {
   return h(
     'section',
     { className: 'card' },
-    h('h3', null, 'So sieht das im Satz aus'),
+    h('h3', { className: 'ex-title' }, 'So sieht das im Satz aus'),
     h(
       'ul',
       { className: 'ex' },
@@ -146,21 +147,16 @@ export function Theory({ unit, config, onStart }) {
   const verb = V[unit.verbs[0]];
   const track = trackOf(config.tracks, unit);
   const head = h(
-    'section',
-    { className: 'card tcard' },
-    h(
-      'div',
-      { className: 'thead' },
-      h('h1', null, unit.irr ? verb.inf : unit.title),
-      h('span', { className: 'de' }, unit.irr ? `${verb.de} · unregelmäßig` : unit.de),
-      h(TrackLabel, { track })
-    )
+    'div',
+    { className: 'thead' },
+    h('h1', null, unit.irr ? verb.inf : unit.title),
+    h('span', { className: 'de' }, unit.irr ? `${verb.de} · unregelmäßig` : unit.de),
+    h(TrackLabel, { track })
   );
   return h(
     'div',
     { className: 'theory-stack' },
-    head,
-    h(Conjugation, { unit }),
+    h(Conjugation, { unit, head }),
     h(Lesson, { lesson: (config.lessons || {})[unit.id], unitId: unit.id }),
     h(Examples, { unit }),
     h(Notes, { notes: (config.notes || {})[unit.id] }),

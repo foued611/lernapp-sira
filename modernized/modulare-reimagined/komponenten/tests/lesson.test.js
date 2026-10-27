@@ -94,7 +94,8 @@ test('RULE-136 vollständige Lektion zeigt alle Teile in fester Reihenfolge', ()
 
 test('KOMP-A11Y Schritte: nur der erste ist sichtbar, der Knopf zeigt den nächsten', () => {
   const markup = draw({ lesson: full, unitId: 'x', diagrams });
-  assert.equal(markup.split('hidden=""').length - 1, 2, 'zwei spätere Schritte sind versteckt');
+  // Zwei spätere Schritte und die leere Rückmeldung der Mini-Check-Frage (legacy: hidden) sind ausgeblendet.
+  assert.equal(markup.split('hidden=""').length - 1, 3, 'zwei Schritte und die leere Rückmeldung sind versteckt');
   assert.match(markup, /<button type="button" class="btn ghost small">Nächster Schritt<\/button>/);
 });
 
