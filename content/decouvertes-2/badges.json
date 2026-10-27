@@ -1,0 +1,9 @@
+[
+  { "id": "first", "n": "Premier pas", "d": "Die erste Seite geübt", "rule": { "type": "anyUnit" } },
+  { "id": "perfect", "n": "Sans faute", "d": "Eine Runde ohne Fehler", "rule": { "type": "perfectRound" } },
+  { "id": "combo", "n": "En forme", "d": "Fünf richtige Antworten hintereinander", "rule": { "type": "combo", "min": 5 } },
+  { "id": "streak", "n": "Persévérant", "d": "Drei Tage in Folge geübt", "rule": { "type": "streak", "days": 3 } },
+  { "id": "boss", "n": "Le Grand Défi", "d": "Den Endgegner besiegt", "rule": { "type": "boss" } },
+  { "id": "unit1", "n": "Unité 1 geschafft", "d": "Alle Seiten der Unité 1 mit mindestens einem Stern", "rule": { "type": "units", "ids": ["connaitre-savoir", "quel", "relativ-pronomen", "demonstrativ"] } },
+  { "id": "alle", "n": "Grammairien", "d": "Alle Seiten mit mindestens einem Stern", "rule": { "type": "units", "ids": ["connaitre-savoir", "quel", "relativ-pronomen", "demonstrativ", "pc-avoir", "voir", "vouloir-pouvoir", "venir", "pc-etre", "teilungsartikel", "acheter-payer-boire", "objekt-direkt", "objekt-person", "indirekte-rede", "sortir", "beau-nouveau-vieux", "devoir-recevoir", "choisir", "lui-leur", "tout"] } }
+]
