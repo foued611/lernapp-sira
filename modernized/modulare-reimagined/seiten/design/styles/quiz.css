@@ -1,6 +1,6 @@
 /* Quiz-Oberfläche: Fortschritt, Fragen, Antworten, Feedback, Blitz. */
 .playbar{display:flex;align-items:center;gap:12px}
-.x{width:42px;height:42px;border:2px solid var(--ink);border-radius:12px;background:var(--card);color:var(--ink);font-size:22px;cursor:pointer;display:grid;place-items:center;flex:none}
+.x{width:44px;height:44px;border:2px solid var(--ink);border-radius:12px;background:var(--card);color:var(--ink);font-size:22px;cursor:pointer;display:grid;place-items:center;flex:none}
 .pbar{flex:1;height:16px;border:2px solid var(--ink);border-radius:10px;overflow:hidden;background:var(--card)}
 .pbar i{display:block;height:100%;background:var(--lc,var(--btn-bg));transition:width .3s}
 .hearts{display:flex;gap:2px;font-size:22px}

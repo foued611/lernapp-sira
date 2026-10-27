@@ -48,9 +48,6 @@ const PAIRS = [
   ['ok', 'card', 4.5]
 ];
 
-// Bekannte Unterschreitungen im hellen Schema. Die Test prüft nur, dass sie nicht schlechter werden (BACKLOG D-7).
-const KNOWN_LOW = { hell: { 'btn-fg/btn-bg': 4.11, 'ok/card': 4.08 } };
-
 test('SEITE-A11Y Alle Farben, die die Stylesheets benutzen, sind in den Tokens definiert', () => {
   const used = new Set([...styles.matchAll(/var\(--([a-z-]+)\)/g)].map((m) => m[1]));
   for (const name of used) {
@@ -69,11 +66,6 @@ test('SEITE-A11Y Die Textfarben haben in hell und dunkel genug Kontrast (4,5 zu 
     const values = valuesOf(block);
     for (const [fg, bg, min] of PAIRS) {
       const ratio = contrast(values[fg], values[bg]);
-      const known = KNOWN_LOW[label]?.[`${fg}/${bg}`];
-      if (known !== undefined) {
-        assert.ok(ratio >= known - 0.005, `${label}: ${fg} auf ${bg} ist schlechter als ${known.toFixed(2)} zu 1`);
-        continue;
-      }
       assert.ok(ratio >= min, `${label}: ${fg} auf ${bg} hat ${ratio.toFixed(2)} zu 1, nötig ${min}`);
     }
   }
@@ -91,6 +83,13 @@ test('SEITE-A11Y Im Hero nutzt der Fokus die Vordergrundfarbe, weil --ink dort d
 test('SEITE-A11Y Bewegung lässt sich abschalten, wenn das System es verlangt', () => {
   assert.match(styles, /@media \(prefers-reduced-motion:\s*reduce\)/);
   assert.match(styles, /\.confetti\s*\{\s*display:\s*none/);
+});
+
+test('SEITE-A11Y Knöpfe und Links sind mindestens 44 px hoch', () => {
+  const base = read('design/styles/base.css');
+  assert.match(base, /\.btn\{min-height:44px/);
+  assert.match(base, /\.link\{display:inline-flex;align-items:center;min-height:44px/);
+  assert.match(base, /\.chip\{min-height:44px/);
 });
 
 test('SEITE-A11Y Die Stylesheets enthalten keine festen Farbwerte, nur Tokens', () => {
