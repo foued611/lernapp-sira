@@ -374,3 +374,39 @@ test('Wochenmission: Dieselbe Seite derselben App zählt weiter nur einmal', () 
   for (let i = 0; i < 3; i += 1) lesson({ unit: { id: 'a' }, profile, app: newApp(), day: MISSION_DAY });
   assert.deepEqual(profile.week.units, ['mathe/a']);
 });
+
+test('Fehler-Abruf: finishRound speichert missedLabels in app.missed[unitId]', () => {
+  const app = newApp();
+  lesson({ unit: { id: 'a' }, missedLabels: ['Lücke füllen'], profile: newProfile(), app, day: MISSION_DAY });
+  assert.deepEqual(app.missed, { a: ['Lücke füllen'] });
+});
+
+test('Fehler-Abruf: Die nächste Lektionsrunde ersetzt die Liste, sie sammelt nicht', () => {
+  const app = newApp();
+  const profile = newProfile();
+  lesson({ unit: { id: 'a' }, missedLabels: ['Lücke füllen'], profile, app, day: MISSION_DAY });
+  lesson({ unit: { id: 'a' }, missedLabels: ['Wähle die richtige Antwort'], profile, app, day: MISSION_DAY });
+  assert.deepEqual(app.missed.a, ['Wähle die richtige Antwort']);
+  lesson({ unit: { id: 'a' }, missedLabels: [], profile, app, day: MISSION_DAY });
+  assert.deepEqual(app.missed.a, []);
+});
+
+test('Fehler-Abruf: Ohne missedLabels in der Eingabe wird die Liste der Seite leer, andere Seiten bleiben', () => {
+  const app = newApp({ missed: { a: ['X'], b: ['Y'] } });
+  lesson({ unit: { id: 'a' }, profile: newProfile(), app, day: MISSION_DAY });
+  assert.deepEqual(app.missed, { a: [], b: ['Y'] });
+});
+
+test('Fehler-Abruf: Auch eine gescheiterte Lektionsrunde speichert die Liste', () => {
+  const app = newApp();
+  lesson({ unit: { id: 'a' }, failed: true, missedLabels: ['Lücke füllen'], profile: newProfile(), app, day: MISSION_DAY });
+  assert.deepEqual(app.missed.a, ['Lücke füllen']);
+});
+
+test('Fehler-Abruf: Boss, Schnellrunde und Blitz lassen app.missed unberührt', () => {
+  ['boss', 'quick', 'blitz'].forEach((mode) => {
+    const app = newApp({ missed: { a: ['X'] } });
+    finishRound({ appId: 'mathe', mode, accuracy: 0.5, missedLabels: ['Y'], profile: newProfile(), app, day: MISSION_DAY });
+    assert.deepEqual(app.missed, { a: ['X'] }, mode);
+  });
+});

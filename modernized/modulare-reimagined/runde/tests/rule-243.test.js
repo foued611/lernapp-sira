@@ -2,7 +2,7 @@
 // Dazu gehört RULE-067 (zählt nicht für Genauigkeit, kostet kein Herz), das hier mit geprüft wird.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { createRound } from '../index.js';
+import { createRound, typedQuestion } from '../index.js';
 import { sampleChoice, sampleMatch, wrongResponse, correctResponse, rngFor, zeroRng } from './helpers.js';
 
 test('RULE-243: falsche Frage kommt am Ende der Runde einmal wieder', () => {
@@ -149,4 +149,57 @@ test('RULE-243: ohne Wiederholung ist retryRight 0', () => {
   round.submit(correctResponse(round.current().question));
   round.next();
   assert.equal(round.result().retryRight, 0);
+});
+
+// Fehler-Abruf (Spec 5.2): missedLabels sind die Labels der Fragen, deren ERSTER Versuch falsch war.
+test('ABRUF: missedLabels nennt das Label einer im ersten Versuch falschen Frage', () => {
+  const round = createRound({ pool: [sampleChoice('Lücke füllen')], size: 1, rng: rngFor() });
+  round.submit(wrongResponse(round.current().question));
+  round.next();
+  round.submit(correctResponse(round.current().question));
+  round.next();
+  assert.deepEqual(round.result().missedLabels, ['Lücke füllen']);
+});
+
+test('ABRUF: Eine richtig wiederholte Frage nimmt ihr Label nicht zusätzlich auf, richtige Fragen nie', () => {
+  const pool = ['A', 'B', 'C'].map((l) => sampleChoice(l));
+  const round = createRound({ pool, size: 3, rng: rngFor(3) });
+  const first = round.current().question.label;
+  round.submit(wrongResponse(round.current().question));
+  round.next();
+  while (round.status() !== 'done') {
+    round.submit(correctResponse(round.current().question));
+    round.next();
+  }
+  assert.deepEqual(round.result().missedLabels, [first]);
+});
+
+test('ABRUF: Eine falsche Wiederholung ändert missedLabels nicht, jedes Label steht nur einmal', () => {
+  const pool = [sampleChoice('A'), sampleChoice('A'), sampleChoice('B')];
+  const round = createRound({ pool, size: 3, rng: rngFor(1) });
+  const seen = [];
+  while (round.status() !== 'done') {
+    const q = round.current().question;
+    if (!q.retry) seen.push(q.label);
+    // Alles falsch: Erstversuche und Wiederholungen.
+    round.submit(wrongResponse(q));
+    round.next();
+  }
+  const expected = [...new Set(seen)];
+  assert.deepEqual(round.result().missedLabels, expected, 'erstes Vorkommen, ohne Dubletten');
+});
+
+test('ABRUF: Ein knapp richtiger Erstversuch (almost) zählt nicht als Fehler', () => {
+  const q = typedQuestion({ label: 'Verbform', prompt: 'Schreibe chanté', answer: 'chanté', check: (t) => (t === 'chanté' ? 'ok' : 'almost') });
+  const round = createRound({ pool: [q], size: 1, rng: rngFor() });
+  round.submit({ text: 'irgendwas' });
+  round.next();
+  assert.deepEqual(round.result().missedLabels, []);
+});
+
+test('ABRUF: Eine nur richtige Runde hat leere missedLabels', () => {
+  const round = createRound({ pool: [sampleChoice('X')], size: 1, rng: rngFor() });
+  round.submit(correctResponse(round.current().question));
+  round.next();
+  assert.deepEqual(round.result().missedLabels, []);
 });

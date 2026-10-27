@@ -61,7 +61,7 @@ export function createRound({ pool, size, rng, boss = false }) {
 
   // Wertet eine beantwortete Frage aus. Gibt genau ein XP-Ereignis zurück (RULE-193).
   function settle(q, outcome, heartPaid) {
-    s.attempts.push({ outcome, retry: q.retry });
+    s.attempts.push({ outcome, retry: q.retry, label: q.label });
     let amount = 0;
     let multiplier = 1;
 
@@ -157,7 +157,10 @@ export function createRound({ pool, size, rng, boss = false }) {
       correct: s.correct, almost: s.almost, wrong: s.wrong,
       bestCombo: s.bestCombo, xp: s.xp, relearned: s.relearned,
       // Nur richtige Wiederholungen (outcome ok), knappe zählen nicht. Für die Trophäe retryRecovered.
-      retryRight: s.attempts.filter((a) => a.retry && a.outcome === 'ok').length
+      retryRight: s.attempts.filter((a) => a.retry && a.outcome === 'ok').length,
+      // Fehlerkategorien für den Abruf in der nächsten Runde (Spec 5.2): Labels der Fragen, deren erster Versuch
+      // falsch war. Wiederholungen und knappe Antworten zählen nicht. Erstes Vorkommen, ohne Dubletten.
+      missedLabels: [...new Set(s.attempts.filter((a) => !a.retry && a.outcome === 'bad').map((a) => a.label))]
     };
     return { done: true, result: s.result };
   }

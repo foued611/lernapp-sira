@@ -20,7 +20,7 @@ function payBonus(ctx, amount) {
 }
 
 // Übungstag, Genauigkeit und Sterne einer Lektionsrunde speichern.
-function settleLesson(ctx, unitId) {
+function settleLesson(ctx, unitId, missedLabels) {
   const { result, app, day } = ctx;
   // Auffrischen wird vor dem Speichern des Übungstags geprüft. Danach wäre die Seite nicht mehr fällig.
   // Eine gescheiterte Runde bekommt keinen Bonus (rounds.js:19).
@@ -31,6 +31,9 @@ function settleLesson(ctx, unitId) {
   }
   app.last[unitId] = day;
   app.acc[unitId] = result.accuracy;
+  // Fehlerkategorien für den Abruf (Spec 5.2). Ersetzt den alten Stand, sammelt nicht. Auch eine gescheiterte Runde speichert.
+  app.missed = app.missed || {};
+  app.missed[unitId] = Array.isArray(missedLabels) ? [...missedLabels] : [];
   // Sterne gehen nur nach oben. Ein schwächerer Versuch nimmt keinen Stern weg (rounds.js:28).
   // Ohne Stern bleibt der Eintrag leer (RULE-189).
   if (result.stars > ((app.stars && app.stars[unitId]) || 0)) app.stars[unitId] = result.stars;
@@ -62,6 +65,7 @@ function settleMissions(ctx, appId, unitId) {
  * @param {number} [input.almost]
  * @param {number} [input.bestCombo]
  * @param {number} [input.retryRight]   richtige Wiederholungen der Runde (zweiter Versuch), kommt aus dem Rundenergebnis
+ * @param {string[]} [input.missedLabels] Labels der im ersten Versuch falschen Fragen (Rundenergebnis), nur Lektionsrunden
  * @param {number} [input.score]        Punkte, nur für den Blitz-Bestwert
  * @param {number|null} [input.levelUp] Niveau-Aufstieg, den schon die Runde selbst ausgelöst hat
  * @param {boolean} [input.goalHit]     Tagesziel, das schon die Runde selbst erreicht hat
@@ -73,7 +77,7 @@ function settleMissions(ctx, appId, unitId) {
  */
 export function finishRound(input) {
   const {
-    appId, mode, unit, failed = false, accuracy, wrong = 0, almost = 0, bestCombo = 0, score = 0, retryRight = 0,
+    appId, mode, unit, failed = false, accuracy, wrong = 0, almost = 0, bestCombo = 0, score = 0, retryRight = 0, missedLabels = [],
     levelUp = null, goalHit = false, badges = [], unitIds = [], profile, app, day
   } = input;
   assertDay(day);
@@ -101,7 +105,7 @@ export function finishRound(input) {
   app.best = app.best || {};
   app.badges = app.badges || {};
 
-  if (mode === 'lesson') settleLesson(ctx, unit.id);
+  if (mode === 'lesson') settleLesson(ctx, unit.id, missedLabels);
   if (mode === 'blitz' && score > (app.best.blitz || 0)) app.best.blitz = score;
   // Der Endgegner zahlt nur bei einem Sieg (RULE-071).
   if (mode === 'boss' && !failed) {

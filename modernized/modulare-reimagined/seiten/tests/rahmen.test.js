@@ -428,3 +428,103 @@ test('RULE-208 Der Hinweis nennt die Serie, wenn eine Antwort da war', () => {
   assert.match(leaveNotice({ earned: 0, answered: 1, saved: { ok: true } }), /Der Übungstag zählt für die Serie\./);
   assert.equal(leaveNotice({ earned: 0, answered: 0, saved: { ok: true } }), 'Runde nicht gewertet. Es gab noch keine Antwort.');
 });
+
+// Fehler-Abruf (Spec 5.2). Die Testseite hat zehn Fragen mit den Labels start-1 bis start-10, eine Lektion zieht acht.
+const labelsPlayed = (round) => {
+  const labels = [];
+  for (let guard = 0; guard < 50 && round.current(); guard += 1) {
+    const q = round.current().question;
+    if (!q.retry) labels.push(q.label);
+    round.submit({ pick: q.answer });
+    round.next();
+  }
+  return labels;
+};
+
+test('SEITE-ABRUF Eine Lektionsrunde nimmt eine Frage aus app.missed garantiert in die Runde', async () => {
+  const env = await setup();
+  const unit = env.config.units[0];
+  env.appStore.state.missed = { [unit.id]: ['start-9'] };
+  let withoutMissed = 0;
+  for (let seed = 1; seed <= 25; seed += 1) {
+    const started = startRound({
+      config: env.config, mode: 'lesson', unit, app: env.appStore.state, profile: env.profileStore.state, rng: createRng(seed)
+    });
+    assert.equal(started.ok, true);
+    assert.equal(started.round.current().total, 8);
+    assert.ok(labelsPlayed(started.round).includes('start-9'), `Seed ${seed}: start-9 fehlt`);
+    const plain = startRound({
+      config: env.config, mode: 'lesson', unit, app: { ...env.appStore.state, missed: {} }, profile: env.profileStore.state, rng: createRng(seed)
+    });
+    if (!labelsPlayed(plain.round).includes('start-9')) withoutMissed += 1;
+  }
+  assert.ok(withoutMissed > 0, 'ohne Abruf fällt start-9 bei manchen Seeds heraus');
+});
+
+test('SEITE-ABRUF Ohne app.missed oder mit kaputtem Eintrag startet die Runde wie bisher', async () => {
+  const env = await setup();
+  const unit = env.config.units[0];
+  const labelsFor = (missed) => {
+    const app = { ...env.appStore.state, missed };
+    const started = startRound({ config: env.config, mode: 'lesson', unit, app, profile: env.profileStore.state, rng: createRng(8) });
+    assert.equal(started.ok, true);
+    return labelsPlayed(started.round);
+  };
+  const base = labelsFor(undefined);
+  assert.deepEqual(labelsFor({}), base);
+  assert.deepEqual(labelsFor({ [unit.id]: 'start-9' }), base, 'keine Liste');
+  assert.deepEqual(labelsFor({ [unit.id]: [3, null] }), base, 'keine Labels');
+  assert.deepEqual(labelsFor(null), base);
+});
+
+test('SEITE-ABRUF Die Liste einer anderen Seite wirkt nicht', async () => {
+  const env = await setup();
+  const unit = env.config.units[1];
+  env.appStore.state.missed = { start: ['start-9'] };
+  const base = startRound({ config: env.config, mode: 'lesson', unit, app: { ...env.appStore.state, missed: {} }, profile: env.profileStore.state, rng: createRng(8) });
+  const other = startRound({ config: env.config, mode: 'lesson', unit, app: env.appStore.state, profile: env.profileStore.state, rng: createRng(8) });
+  assert.deepEqual(labelsPlayed(other.round), labelsPlayed(base.round));
+});
+
+test('SEITE-ABRUF Schnellrunde und Endgegner ignorieren app.missed', async () => {
+  const env = await setup();
+  env.appStore.state.missed = { start: ['quick-6'] };
+  env.config.units.forEach((u) => { env.appStore.state.stars[u.id] = 1; });
+  ['quick', 'boss'].forEach((mode) => {
+    const plain = startRound({ config: env.config, mode, app: { ...env.appStore.state, missed: {} }, profile: env.profileStore.state, rng: createRng(6) });
+    const withMissedList = startRound({ config: env.config, mode, app: env.appStore.state, profile: env.profileStore.state, rng: createRng(6) });
+    assert.deepEqual(labelsPlayed(withMissedList.round), labelsPlayed(plain.round), mode);
+  });
+});
+
+test('SEITE-ABRUF settleRound speichert die Fehlerkategorien der Runde und ersetzt sie in der nächsten', async () => {
+  const env = await setup();
+  const unit = env.config.units[0];
+  const out = await finishLesson(env, { wrong: true });
+  assert.equal(out.saved.ok, true);
+  const missed = env.appStore.state.missed[unit.id];
+  assert.equal(missed.length, 5, 'fünf Herzen, fünf Fehler im ersten Versuch');
+  assert.ok(missed.every((l) => /^start-\d+$/.test(l)));
+  const reopened = await openApp(env.handle, env.config.id, appDefaults());
+  assert.deepEqual(reopened.state.missed[unit.id], missed, 'gespeichert, auch bei gescheiterter Runde');
+  await finishLesson(env);
+  assert.deepEqual(env.appStore.state.missed[unit.id], [], 'ersetzt, nicht gesammelt');
+});
+
+test('SEITE-ABRUF Das Protokoll bekommt keine neuen Felder', async () => {
+  const env = await setup();
+  const rows = [];
+  env.log = (row) => { rows.push(row); return env.handle.logEvent(row); };
+  await finishLesson(env, { wrong: true });
+  assert.deepEqual(
+    Object.keys(rows[0]).sort(),
+    ['accuracy', 'app', 'failed', 'gapDays', 'mode', 'prevAcc', 'score', 'stars', 'type', 'unit', 'xp']
+  );
+});
+
+test('SEITE-ABRUF Zurücksetzen leert die Fehlerliste der App', () => {
+  const app = appDefaults();
+  app.missed = { start: ['start-1'] };
+  resetAppState(app);
+  assert.deepEqual(app.missed, {});
+});
