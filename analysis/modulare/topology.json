@@ -748,7 +748,7 @@
             "language": "javascript",
             "loc": 75,
             "file": "tests/helpers.js",
-            "description": "Diese Datei ist ein gemeinsamer Prüfbaustein für die Tests und für Sira unsichtbar. Sie übersetzt die Vorgaben aus AGENTS.md in ausführbare Prüfungen: Fragen, Lektionen und App-Konfigurationen werden gegen den App-Vertrag geprüft. Dafür ruft sie validateQuestion aus core/js/qtypes.js auf, createStaticSource aus core/js/content.js und buildConfig aus core/js/appconfig.js. Mehrere Test- und Prüfdateien, etwa tests/content.test.js und scripts/smoke.mjs, importieren sie, unter den Nutzern taucht keine App-Datei auf. Die Funktion loadAppConfig liest Inhalte aus dem Repo, statt sie per fetch zu laden."
+            "description": "Diese Datei ist ein gemeinsamer Prüfbaustein für die Tests und für die Lernenden unsichtbar. Sie übersetzt die Vorgaben aus AGENTS.md in ausführbare Prüfungen: Fragen, Lektionen und App-Konfigurationen werden gegen den App-Vertrag geprüft. Dafür ruft sie validateQuestion aus core/js/qtypes.js auf, createStaticSource aus core/js/content.js und buildConfig aus core/js/appconfig.js. Mehrere Test- und Prüfdateien, etwa tests/content.test.js und scripts/smoke.mjs, importieren sie, unter den Nutzern taucht keine App-Datei auf. Die Funktion loadAppConfig liest Inhalte aus dem Repo, statt sie per fetch zu laden."
           },
           {
             "id": "tests/informatik.test.js",

@@ -56,21 +56,33 @@ const gleich = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 const abweichungen = [];
 let vergleiche = 0;
 
-function vergleiche1(art, seed, a, b, extra = {}) {
+
+// Vielfalt (runde/src/vielfalt.js): Legacy zieht Aufgaben ohne Rücksicht auf Dubletten. Der Neubau zieht eine Aufgabe
+// neu, wenn sie in der Runde schon vorkommt. Ab der ersten Dublette laufen beide Zufallsfolgen auseinander. Eine
+// Abweichung gilt deshalb nur dann als erklärt, wenn die Legacy-Runde selbst eine Dublette hat. Alles andere bleibt
+// eine echte Abweichung.
+const schluessel = (q) => JSON.stringify([q.kind, q.label, String(q.prompt ?? '').replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim(), q.answer ?? null, q.leftValues ?? null]);
+const hatDublette = (fragen) => new Set(fragen.map(schluessel)).size < fragen.length;
+let erklaertDurchVielfalt = 0;
+
+function vergleiche1(art, seed, a, b, extra = {}, legacyFragen = null) {
   vergleiche++;
-  if (!gleich(a, b)) abweichungen.push({ seed, art, ...extra, legacy: a, neu: b });
+  if (gleich(a, b)) return;
+  if (legacyFragen && hatDublette(legacyFragen)) erklaertDurchVielfalt++;
+  else abweichungen.push({ seed, art, ...extra, legacy: a, neu: b });
 }
 
 for (let seed = 1; seed <= SEEDS; seed++) {
   for (const unit of units) {
-    const a = mitSeed(seed, () => legacy.lessonRound(unit)).map(kanonisch);
+    const altRunde = mitSeed(seed, () => legacy.lessonRound(unit));
+    const a = altRunde.map(kanonisch);
     const b = neu.lessonRound(unit, createRng(seed)).map(kanonisch);
-    vergleiche1('lesson', seed, a, b, { unit: unit.id });
+    vergleiche1('lesson', seed, a, b, { unit: unit.id }, altRunde);
   }
   const quick = [mitSeed(seed, () => legacy.quickRound()), neu.quickRound(createRng(seed))];
-  vergleiche1('quick', seed, quick[0].map(kanonisch), quick[1].map(kanonisch));
+  vergleiche1('quick', seed, quick[0].map(kanonisch), quick[1].map(kanonisch), {}, quick[0]);
   const boss = [mitSeed(seed, () => legacy.bossRound()), neu.bossRound(createRng(seed))];
-  vergleiche1('boss', seed, boss[0].map(kanonisch), boss[1].map(kanonisch));
+  vergleiche1('boss', seed, boss[0].map(kanonisch), boss[1].map(kanonisch), {}, boss[0]);
   vergleiche1('blitz', seed, kanonisch(mitSeed(seed, () => legacy.blitzQuestion())), kanonisch(neu.blitzQuestion(createRng(seed))));
 }
 
@@ -78,7 +90,18 @@ const ergebnis = {
   seeds: SEEDS,
   vergleiche,
   abweichungen: abweichungen.length,
+  erklaertDurchVielfalt,
   abweichungenNachArt: abweichungen.reduce((m, a) => ((m[a.unit ?? a.art] = (m[a.unit ?? a.art] || 0) + 1), m), {}),
+  // Je Abweichung die erste verschiedene Frage: Etikett und Anzeige. Damit ist sichtbar, ob es die Regel RULE-056 ist.
+  nachFrage: abweichungen.reduce((m, a) => {
+    const alt = Array.isArray(a.legacy) ? a.legacy : [a.legacy];
+    const neu = Array.isArray(a.neu) ? a.neu : [a.neu];
+    const i = alt.findIndex((q, k) => JSON.stringify(q) !== JSON.stringify(neu[k]));
+    const frage = i >= 0 ? alt[i] : alt[0];
+    const schluessel = frage && frage.prompt ? String(frage.prompt).replace(/<[^>]*>/g, '').slice(0, 60) : String(frage && frage.label);
+    m[schluessel] = (m[schluessel] || 0) + 1;
+    return m;
+  }, {}),
   beispiele: abweichungen.slice(0, 2).map(({ legacy, neu, ...rest }) => rest)
 };
 console.log(JSON.stringify(ergebnis, null, 2));

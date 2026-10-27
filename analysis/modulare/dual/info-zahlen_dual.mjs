@@ -69,9 +69,20 @@ const lockerUnterschiede = [];
 let vergleiche = 0;
 let lockerPruefungen = 0;
 
-function vergleiche1(art, seed, a, b, extra = {}) {
+
+// Vielfalt (runde/src/vielfalt.js): Legacy zieht Aufgaben ohne Rücksicht auf Dubletten. Der Neubau zieht eine Aufgabe
+// neu, wenn sie in der Runde schon vorkommt. Ab der ersten Dublette laufen beide Zufallsfolgen auseinander. Eine
+// Abweichung gilt deshalb nur dann als erklärt, wenn die Legacy-Runde selbst eine Dublette hat. Alles andere bleibt
+// eine echte Abweichung.
+const schluessel = (q) => JSON.stringify([q.kind, q.label, String(q.prompt ?? '').replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim(), q.answer ?? null, q.leftValues ?? null]);
+const hatDublette = (fragen) => new Set(fragen.map(schluessel)).size < fragen.length;
+let erklaertDurchVielfalt = 0;
+
+function vergleiche1(art, seed, a, b, extra = {}, legacyFragen = null) {
   vergleiche++;
-  if (!gleich(a, b)) abweichungen.push({ seed, art, ...extra, legacy: a, neu: b });
+  if (gleich(a, b)) return;
+  if (legacyFragen && hatDublette(legacyFragen)) erklaertDurchVielfalt++;
+  else abweichungen.push({ seed, art, ...extra, legacy: a, neu: b });
 }
 
 function locker(seed, art, altFrage, neuFrage) {
@@ -88,17 +99,17 @@ for (let seed = 1; seed <= SEEDS; seed++) {
   for (const unit of units) {
     const alt = mitSeed(seed, () => legacy.lessonRound(unit));
     const neue = neu.lessonRound(unit, createRng(seed));
-    vergleiche1('lesson', seed, alt.map(kanonisch), neue.map(kanonisch), { unit: unit.id });
+    vergleiche1('lesson', seed, alt.map(kanonisch), neue.map(kanonisch), { unit: unit.id }, alt);
     alt.forEach((q, i) => locker(seed, `lesson:${unit.id}`, q, neue[i]));
   }
   const schnellAlt = mitSeed(seed, () => legacy.quickRound());
   const schnellNeu = neu.quickRound(createRng(seed));
-  vergleiche1('quick', seed, schnellAlt.map(kanonisch), schnellNeu.map(kanonisch));
+  vergleiche1('quick', seed, schnellAlt.map(kanonisch), schnellNeu.map(kanonisch), {}, schnellAlt);
   schnellAlt.forEach((q, i) => locker(seed, 'quick', q, schnellNeu[i]));
 
   const bossAlt = mitSeed(seed, () => legacy.bossRound());
   const bossNeu = neu.bossRound(createRng(seed));
-  vergleiche1('boss', seed, bossAlt.map(kanonisch), bossNeu.map(kanonisch));
+  vergleiche1('boss', seed, bossAlt.map(kanonisch), bossNeu.map(kanonisch), {}, bossAlt);
   bossAlt.forEach((q, i) => locker(seed, 'boss', q, bossNeu[i]));
 
   const blitzAlt = mitSeed(seed, () => legacy.blitzQuestion());
@@ -124,6 +135,7 @@ const ergebnis = {
   seeds: SEEDS,
   vergleiche,
   abweichungen: abweichungen.length,
+  erklaertDurchVielfalt,
   abweichungenNachArt: arten,
   beispiele: abweichungen.slice(0, 5),
   lockerPruefungen,

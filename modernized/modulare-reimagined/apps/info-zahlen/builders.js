@@ -6,7 +6,7 @@
 //   - Schreibmaschinenschrift (span.mono) wird zu <b>, weil richText nur b, strong, i, em, p, ul, ol, li, br kennt.
 //   - help (Spickzettel) ist Text. Die Oberfläche zeigt ihn über den Spickzettel-Knopf.
 //   - Eingaben werden nach normInput() verglichen wie in Legacy (Leerzeichen, 0x und führende Nullen werden entfernt).
-import { choiceQuestion, typedQuestion, matchQuestion, esc, distinctQuestions } from '../../runde/index.js';
+import { choiceQuestion, typedQuestion, matchQuestion, esc, distinctQuestions, distinctSlots } from '../../runde/index.js';
 import { pick, shuffle, rnd } from '../../helfer/index.js';
 import {
   HEX, WEIGHTS, toBin, toHex, placeDigits, placeSum, onesWeights, distractors,
@@ -284,9 +284,19 @@ const POOLS = {
 /** Erzeuger einer Seite (für Tests und die Dual-Prüfung). */
 export const makersFor = (unitId) => POOLS[unitId] || [];
 
-/** Eine Lektionsrunde: 8 verschiedene Fragen (keine Aufgabe kommt zweimal vor, siehe runde/src/vielfalt.js). */
+/**
+ * Eine Lektionsrunde: 8 verschiedene Fragen (keine Aufgabe kommt zweimal vor, siehe runde/src/vielfalt.js).
+ * Gleicher Erzeuger nicht zweimal hintereinander, wie in Legacy. Die Zufallsfolge stimmt bis zur ersten Dublette.
+ */
 export function lessonRound(unit, rng) {
-  return distinctQuestions(POOLS[unit.id], 8, rng);
+  const pool = POOLS[unit.id];
+  let last = null;
+  return distinctSlots(8, rng, (_, r) => {
+    let make;
+    do { make = pick(pool, r); } while (pool.length > 1 && make === last);
+    last = make;
+    return make(r);
+  });
 }
 
 const allMakers = () => UNITS.flatMap((u) => POOLS[u.id]);

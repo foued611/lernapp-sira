@@ -1,6 +1,6 @@
 # Regel-Prüfungen — modulare
 
-Stand 2026-10-26T16:14:36+01:00. 103 Regeln geprüft: 93 Richtig, 3 Unsicher, 7 Falsch.
+Stand 2026-10-28. 103 Regeln geprüft: 95 Richtig, 1 Unsicher, 7 Falsch. RULE-056 und RULE-119 sind im Chat entschieden (Phase-5b-Freigabe).
 Die Person hat 103 Regeln im Pop-up geprüft. Einige Regeln hat die Person nach Rückfrage entschieden (RULE-112, 128, 125, 126, 135, 187, 075, 202). Die Notiz in der Zeile nennt das Zielverhalten. Regeln mit „Falsch“ oder „Unsicher“ gelten nicht als geklärt. `brief` führt sie als offene Fragen.
 
 | Regel | Urteil | Wann | Titel | Notiz |
@@ -16,7 +16,7 @@ Die Person hat 103 Regeln im Pop-up geprüft. Einige Regeln hat die Person nach 
 | RULE-039 | Richtig | 2026-10-26T14:56 | Statistik-Kennzahlen: Mittelwert, Median, Spannweite, Modus |  |
 | RULE-047 | Richtig | 2026-10-26T14:56 | Tilgungsplan: Rate, Restschuld, Zins auf Restschuld, Laufzei |  |
 | RULE-052 | Richtig | 2026-10-26T14:56 | Lineare Gleichung nach x lösen |  |
-| RULE-056 | Unsicher | 2026-10-26T15:03 | Datendiagramm: Median, Mittelwert, Spannweite |  |
+| RULE-056 | Richtig | 2026-10-26T15:03 | Datendiagramm: Median, Mittelwert, Spannweite | Entscheidung im Chat (Phase-5b-Freigabe): bei gerader Anzahl das Mittel der beiden mittleren Werte. |
 | RULE-059 | Richtig | 2026-10-26T14:56 | Ausweichzahlen für Multiple-Choice nahe der richtigen Zahl |  |
 | RULE-061 | Richtig | 2026-10-26T14:56 | Level-Schwelle aus gesammelten XP |  |
 | RULE-062 | Richtig | 2026-10-26T14:56 | XP-Gutschrift: Profil, App, Tagesziel und Level-Aufstieg |  |
@@ -42,7 +42,7 @@ Die Person hat 103 Regeln im Pop-up geprüft. Einige Regeln hat die Person nach 
 | RULE-115 | Richtig | 2026-10-26T14:58 | Distraktor-Generator: mindestens drei verschiedene falsche A |  |
 | RULE-117 | Richtig | 2026-10-26T14:58 | Kongruenzsatz- und Eindeutigkeits-Zuordnungen aus Datentabel |  |
 | RULE-118 | Richtig | 2026-10-26T14:58 | Typed answer is correct only after normalization |  |
-| RULE-119 | Unsicher | 2026-10-26T15:03 | Antwortprüfung durch Vergleich nach Normalisierung |  |
+| RULE-119 | Richtig | 2026-10-26T15:03 | Antwortprüfung durch Vergleich nach Normalisierung | Entscheidung im Chat (Phase-5b-Freigabe): nur richtig oder falsch, keine Teilpunkte. |
 | RULE-124 | Richtig | 2026-10-26T14:58 | Abbildung einer Lektion aufloesen |  |
 | RULE-125 | Richtig | 2026-10-26T15:46 | HTTP-Quelle holt und prüft das Paket | Entscheidung nach Empfehlung, von der Person bestätigt: Adressaufbau …/apps/<id>/content bleibt. |
 | RULE-126 | Falsch | 2026-10-26T15:46 | Restore only from a valid Lernwerkstatt file, then reload | Entscheidung nach Empfehlung, von der Person bestätigt: Einspielen führt das Protokoll zusammen statt es zu ersetzen, und fragt vor dem Überschreiben nach. |

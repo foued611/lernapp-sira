@@ -108,10 +108,10 @@ for(const app of live){
       click(w,$(w,'.opt'));await new Promise(r=>setTimeout(r,400));click(w,$(w,'[data-act="exit"]'));
       results.push([tag+'Blitz Exit -> Home',!!$(w,'.hero')]);
     }
-    const nm=$(w,'#nm');nm.value='Sira';click(w,$(w,'[data-act="savename"]'));
-    results.push([tag+'Name wird angezeigt',$(w,'.hero h1').textContent.includes('Sira')]);
+    const nm=$(w,'#nm');nm.value='Testname';click(w,$(w,'[data-act="savename"]'));
+    results.push([tag+'Name wird angezeigt',$(w,'.hero h1').textContent.includes('Testname')]);
     const prof=JSON.parse(w.localStorage.getItem('lernwerkstatt:profile')),appS=JSON.parse(w.localStorage.getItem(key));
-    results.push([tag+'Profil und App gespeichert',prof.name==='Sira'&&prof.xp>0&&typeof appS.xp==='number'&&typeof appS.stars==='object']);
+    results.push([tag+'Profil und App gespeichert',prof.name==='Testname'&&prof.xp>0&&typeof appS.xp==='number'&&typeof appS.stars==='object']);
     results.push([tag+'Fehler: '+errors.length,errors.length===0]);
     if(errors.length)console.log(errors.slice(0,5));
   }
@@ -173,13 +173,13 @@ for(const app of live){
   const day=(d=>d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'))(new Date());
   const ids=config.units.map(u=>u.id);
   const {w,errors}=await boot('index.html',dashCode,{
-    'lernwerkstatt:profile':JSON.stringify({name:'Sira',xp:120,streak:2,lastDay:day,lastApp:app.id,day:{d:day,xp:20}}),
+    'lernwerkstatt:profile':JSON.stringify({name:'Testname',xp:120,streak:2,lastDay:day,lastApp:app.id,day:{d:day,xp:20}}),
     ['lernwerkstatt:app:'+app.id]:JSON.stringify({xp:120,stars:{[ids[0]]:3,[ids[1]]:1},badges:{},best:{}})});
   results.push(['Dashboard: eine Kachel je App',$$(w,'.tile').length===APPS.length]);
   results.push(['Dashboard: Live-Apps verlinkt',$$(w,'a.tile').length===live.length&&live.every(a=>$$(w,'a.tile').some(t=>t.getAttribute('href')===a.href))]);
   results.push(['Dashboard: Fortschritt der ersten App',$$(w,'a.tile').find(t=>t.getAttribute('href')===app.href).querySelector('.lab').textContent.includes('2 von '+ids.length)]);
   results.push(['Dashboard: Weiter-Karte',!$(w,'#cont-sec').hidden]);
-  results.push(['Dashboard: Name',$(w,'#hero h1').textContent.includes('Sira')]);
+  results.push(['Dashboard: Name',$(w,'#hero h1').textContent.includes('Testname')]);
   const subject=[...new Set(APPS.map(a=>a.subject))].find(s=>APPS.filter(a=>a.subject===s).length===1);
   click(w,$$(w,'.chip').find(c=>c.dataset.s===subject));
   results.push(['Dashboard: Filter '+subject,$$(w,'.tile').length===1]);

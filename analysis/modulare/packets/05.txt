@@ -122,10 +122,10 @@ Quelltext (erste 150 Zeilen, Zugangsdaten maskiert):
  108        click(w,$(w,'.opt'));await new Promise(r=>setTimeout(r,400));click(w,$(w,'[data-act="exit"]'));
  109        results.push([tag+'Blitz Exit -> Home',!!$(w,'.hero')]);
  110      }
- 111      const nm=$(w,'#nm');nm.value='Sira';click(w,$(w,'[data-act="savename"]'));
- 112      results.push([tag+'Name wird angezeigt',$(w,'.hero h1').textContent.includes('Sira')]);
+ 111      const nm=$(w,'#nm');nm.value='Testname';click(w,$(w,'[data-act="savename"]'));
+ 112      results.push([tag+'Name wird angezeigt',$(w,'.hero h1').textContent.includes('Testname')]);
  113      const prof=JSON.parse(w.localStorage.getItem('lernwerkstatt:profile')),appS=JSON.parse(w.localStorage.getItem(key));
- 114      results.push([tag+'Profil und App gespeichert',prof.name==='Sira'&&prof.xp>0&&typeof appS.xp==='number'&&typeof appS.stars==='object']);
+ 114      results.push([tag+'Profil und App gespeichert',prof.name==='Testname'&&prof.xp>0&&typeof appS.xp==='number'&&typeof appS.stars==='object']);
  115      results.push([tag+'Fehler: '+errors.length,errors.length===0]);
  116      if(errors.length)console.log(errors.slice(0,5));
  117    }

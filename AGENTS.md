@@ -4,7 +4,7 @@ Anweisungen für Coding-Agenten und Mitwirkende. Lies diese Datei vor jeder Änd
 
 ## Zweck
 
-"Lernwerkstatt" ist eine Sammlung kleiner Lern-Apps für Sira (7. Klasse, Gymnasium Baden-Württemberg). Ein Dashboard (`index.html`) verlinkt alle Apps. Die Apps sollen motivieren: Theorie, direkt danach Übung, dazu Punkte, Sterne und Trophäen. Das Projekt wächst mit jeder neuen App, deshalb zählt Wartbarkeit mehr als Tempo.
+"Lernwerkstatt" ist eine Sammlung kleiner Lern-Apps für die 7. Klasse, Gymnasium Baden-Württemberg). Ein Dashboard (`index.html`) verlinkt alle Apps. Die Apps sollen motivieren: Theorie, direkt danach Übung, dazu Punkte, Sterne und Trophäen. Das Projekt wächst mit jeder neuen App, deshalb zählt Wartbarkeit mehr als Tempo.
 
 ## Technik
 
@@ -197,7 +197,7 @@ Regeln für Texte und Bilder:
 ## Lehrplan
 
 - Inhalt entspricht dem Gymnasium Baden-Württemberg, Klasse 7. Kein Stoff ab Klasse 8.
-- Orientierung an den Lehrwerken: Lambacher Schweizer 7 (Mathe), deutsch.ideen 7 Baden-Württemberg (Deutsch, Siras Buch; Abgleich in `docs/lehrplan-deutsch.md`), Green Line 3 / Access 3 (Englisch), Découvertes 2 (Französisch).
+- Orientierung an den Lehrwerken: Lambacher Schweizer 7 (Mathe), deutsch.ideen 7 Baden-Württemberg (Deutsch, Schulbuch; Abgleich in `docs/lehrplan-deutsch.md`), Green Line 3 / Access 3 (Englisch), Découvertes 2 (Französisch).
 - Der Abgleich der Mathe-App mit dem Bildungsplan steht in `docs/lehrplan-mathe.md`. Dort ist auch vermerkt, was nicht amtlich geprüft ist. Neue Themen dort eintragen.
 - Korrekte Fachbegriffe verwenden und kurz erklären.
 - Jede Frage hat eine Erklärung (`why`), die den Denkfehler benennt. Keine Fragen, deren Antwort ohne Vorwissen zu erraten ist.
@@ -254,7 +254,7 @@ Kurze, deutsche Betreffzeile im Präsens oder Perfekt ("Mathe-App ergänzt", "Bo
 - Eingaben vergleichen über `norm()` und `stripAccents()`, nicht mit eigenem Vergleich.
 - Zufall (`shuffle`, `pick`) nie so nutzen, dass die richtige Antwort immer an derselben Stelle steht.
 - Sonderzeichen in Texten (Anführungszeichen, `<`, `&`) über `esc()` ausgeben.
-- Nichts mit Namen oder personenbezogenen Daten ins Repo. Der Name von Sira liegt nur im lokalen Browserspeicher.
+- Nichts mit Namen oder personenbezogenen Daten ins Repo. Namen von Lernenden liegen nur im lokalen Browserspeicher.
 
 ## Checkliste vor dem Commit
 

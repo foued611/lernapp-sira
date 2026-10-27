@@ -39,4 +39,4 @@ Auf der Startseite der Deutsch-Werkstatt steht unter „Zum Ausdrucken“ die PD
 
 ## Merkwörter
 
-Die Merkwörter werden auf Papier geübt: Sira schreibt sie in ihr Merkwörterheft und hakt die Sets in der PDF ab. Die App enthält dafür bewusst kein Karteikarten- oder Wörtertraining. Die Seiten zu Rechtschreibung und Lesen ergänzen das Heft mit Regeln und Übungen am Bildschirm.
+Die Merkwörter werden auf Papier geübt: in ein Merkwörterheft schreiben, die Sets in der PDF abhaken. Die App enthält dafür bewusst kein Karteikarten- oder Wörtertraining. Die Seiten zu Rechtschreibung und Lesen ergänzen das Heft mit Regeln und Übungen am Bildschirm.
