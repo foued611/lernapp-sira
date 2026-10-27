@@ -15,9 +15,10 @@ Vergleich im Browser: Legacy über `python3 -m http.server 5174` (Repo-Stand 88e
 - Mobil 375 px, 44 Theorie-Seiten gegen Legacy: 0,00 bis 0,44 % Pixelabweichung, Mittel 0,05 %, Höhen gleich. Die früheren 33 bis 40 % kamen von den 44-px-Knöpfen. Sie verschoben das Layout um 32 px. Jetzt ist die Trefferfläche ein ::after, das Layout ist unverändert.
 - Desktop 1280 px, 44 Theorie-Seiten: 0,00 bis 0,18 %, Mittel 0,025 %, Höhen gleich.
 - Browser (Chromium, 375 px): Zahlenwerkstatt-Runde bis Ergebnis. IndexedDB enthält danach die gemerkten Aufgaben (13). Sicherung als echte Datei heruntergeladen.
-- Einspielen der Sicherung im Browser nicht geprüft.
+- Einspielen der Sicherung im Browser geprüft (Live, 2026-10-28): leeres Profil, Plan "2 Speicherstände" angezeigt, nach dem Einspielen XP 65 und 13 gemerkte Aufgaben wieder da.
 - RULE-056 und RULE-119 sind im Chat entschieden und in RULE_REVIEWS als bestätigt eingetragen.
-- Offen: Legacy-Dateien aus main entfernen (Entscheidung der Person). Geometrie ohne Dual-Skript. Wiederholung nach Fehler am Rundenende (RULE-243) bleibt bewusst.
+- Legacy-Code aus main entfernt (2026-10-28, Freigabe über /goal). Erhalten im Branch `legacy` (88e3d74). `content/` bleibt, der Neubau nutzt es.
+- Offen: Geometrie ohne Dual-Skript. Wiederholung nach Fehler am Rundenende (RULE-243) bleibt bewusst.
 
 ## Stand 2026-10-27 (gilt vor den Befunden unten)
 
