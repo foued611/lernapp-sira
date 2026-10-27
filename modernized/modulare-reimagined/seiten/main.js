@@ -12,6 +12,7 @@ import './design/styles/dashboard.css';
 // Optik der Apps, die eigene Spielzeuge haben. Die Selektoren sind je App eindeutig.
 import '../apps/fr-verben/app.css';
 import '../apps/info-zahlen/app.css';
+import '../apps/geometrie/app.css';
 
 const h = createElement;
 

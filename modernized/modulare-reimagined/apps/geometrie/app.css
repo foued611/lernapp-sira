@@ -1,0 +1,5 @@
+/* Nur für diese App. Zusätzliche Diagramm-Klassen für Konstruktionen, Farben aus den Tokens (wie legacy apps/geometrie/app.css). */
+.dg .gp{fill:var(--ink);stroke:none}
+.dg .gl{stroke:var(--btn-bg);stroke-width:3.5;fill:none}
+.dg .ga{fill:var(--sun);opacity:.55;stroke:none}
+.dg .gc{stroke:var(--btn-bg);stroke-width:2.5;fill:none}
