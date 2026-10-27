@@ -44,6 +44,7 @@ export const APPS = [
     status: 'live'
   },
   { id: 'englisch', subject: 'Englisch', title: 'Englisch-App', desc: 'Wortschatz und Grammatik.', status: 'soon' },
+  { id: 'decouvertes-2', subject: 'Französisch', title: 'Découvertes-Werkstatt', desc: 'Grammatik nach Découvertes 2. Nur im Neubau.', status: 'soon' },
   {
     id: 'info-zahlen',
     subject: 'Informatik',
