@@ -8,7 +8,7 @@ Anweisungen für Coding-Agenten und Mitwirkende. Lies diese Datei vor jeder Änd
 
 ## Technik
 
-- Framework und Build: React 19 mit Vite (Entscheidung 2026-10-26, siehe `analysis/modulare/INTENT.md`). Der Neubau liegt in `modernized/modulare-reimagined/`, seine Regeln in `modernized/modulare-reimagined/CLAUDE.md`. Der bisherige Code (`core/`, `apps/`, `dashboard.js`) ist seit 2026-10-27 aus `main` entfernt und im Branch `legacy` erhalten. TypeScript ist weiter nicht vorgesehen. Die Begründung steht in `docs/inhalte.md`.
+- Framework und Build: React 19 mit Vite (Entscheidung 2026-10-26, siehe `analysis/modulare/INTENT.md`). Der Neubau liegt in `modernized/modulare-reimagined/`, seine Regeln in `modernized/modulare-reimagined/CLAUDE.md`. Der bisherige Code (`core/`, `apps/`, `dashboard.js`) ist seit 2026-10-28 aus `main` entfernt und im Branch `legacy` erhalten. TypeScript ist weiter nicht vorgesehen. Die Begründung steht in `docs/inhalte.md`.
 - Daten und Logik sind getrennt: Inhalte liegen als JSON in `content/<id>/`, Code in `core/` und `apps/<name>/`. Siehe "Inhalte und Daten".
 - Läuft über GitHub Pages (Branch `main`, Ordner `/`). Ein Push auf `main` veröffentlicht.
 - ES-Module brauchen http(s). Lokal testen mit `npm run serve` und `http://localhost:8000`. Ein Doppelklick auf die HTML-Datei (file://) funktioniert nicht.
