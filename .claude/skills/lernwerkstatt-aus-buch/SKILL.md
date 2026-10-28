@@ -95,6 +95,8 @@ Im Browser prüfen, wenn Playwright verfügbar ist:
 - Ein Commit je Schritt (Inhalte, App-Code, Registry und Doku), Betreff auf Deutsch, Präsens oder Perfekt.
 - Auf den Branch der Session pushen. Wenn `main` inzwischen neue Commits hat, zuerst `main` hineinmergen, testen, dann pushen. Nie umschreiben.
 - Auf `main` pushen nur auf ausdrückliche Bitte. Das veröffentlicht sofort auf GitHub Pages.
+- Abschluss eines Laufs, in dieser Reihenfolge: (1) Browser-Test nach Schritt 6, (2) alle Befunde beheben, Tests und Build erneut grün, (3) Commits auf den Session-Branch pushen, (4) auf `main` veröffentlichen, aber nur, wenn der Nutzer im Lauf „veröffentlichen“ oder „pushen“ für `main` gesagt hat. Ohne diese Bitte bleibt es beim Branch und der Nutzer wird gefragt.
+- Veröffentlichen heißt: Branch mit `main` zusammenführen (Fast-Forward oder Merge, nie umschreiben), Tests und Build erneut laufen lassen, dann `git push origin HEAD:main`. Danach prüfen, dass `origin/main` auf dem neuen Commit steht.
 - In der Abschlussnachricht: Seitenliste, Fach (bestehend oder neu), was nicht übernommen wurde (Wortschatz, Hörtexte), Testergebnisse, und ein Hinweis, dass eine Lehrkraft die Aufgaben gegenlesen sollte.
 
 ## Häufige Fehler
