@@ -1,22 +1,25 @@
-// Cahier de Verbes: Aufgaben aus content/fr-verben. Prüft RULE-165 (jede Aufgabe akzeptiert ihre Antwort),
+// Cahier de Verbes (jetzt in der Französisch-Werkstatt): Aufgaben aus content/decouvertes-2. Prüft RULE-165 (jede Aufgabe akzeptiert ihre Antwort),
 // RULE-223 (Auswahl mit höchstens drei Ablenkern), RULE-229 (Rundengrößen), die Konjugation, die Eingabeprüfung,
 // die Diagramme, die Theorie und die Anbindung an den Rahmen. Herkunft der Fälle: legacy/modulare/tests/french.test.js.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
-import { createRng } from '../../../helfer/index.js';
-import { buildConfig } from '../../../inhalte/index.js';
-import { appDefaults, profileDefaults, startRound } from '../../../seiten/rahmen.js';
-import { paketVon } from '../../tests/laden.js';
+import { createRng } from '../../../../helfer/index.js';
+import { buildConfig } from '../../../../inhalte/index.js';
+import { appDefaults, profileDefaults, startRound } from '../../../../seiten/rahmen.js';
+import { paketVon } from '../../../tests/laden.js';
 import { init, V, UNITS, SP, RAW } from '../model.js';
-import { lessonRound, bossRound, quickRound, blitzQuestion, checkForm, hint, distract } from '../builders.js';
+import { lessonRound, checkForm, hint, distract } from '../builders.js';
+import { init as initItems, bossRound, quickRound, blitzQuestion } from '../../builders.js';
 import { personDiagram, endingsDiagram } from '../diagrams.js';
-import { Theory, speak } from '../theory.js';
-import logic from '../logic.js';
+import { Theory } from '../../theory.js';
+import { speak } from '../../sprache.js';
+import logic from '../../logic.js';
 
-const paket = paketVon('fr-verben');
+const paket = paketVon('decouvertes-2');
 init(paket);
+initItems(paket);
 
 const alleFragen = (runden) => runden.flat();
 

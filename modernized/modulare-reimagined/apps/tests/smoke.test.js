@@ -42,6 +42,6 @@ for (const entry of live) {
   });
 }
 
-test('SMOKE: die Liste der Live-Apps hat mindestens fünf Einträge (deutsch, geometrie, mathe, info-zahlen, fr-verben)', () => {
+test('SMOKE: die Liste der Live-Apps hat mindestens fünf Einträge (deutsch, geometrie, mathe, info-zahlen, decouvertes-2)', () => {
   assert.ok(live.length >= 5, `nur ${live.length} Live-Apps`);
 });

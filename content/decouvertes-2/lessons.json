@@ -1,202 +1,2172 @@
 {
   "connaitre-savoir": {
     "goal": "Du kannst sagen, ob du Personen oder Orte kennst (connaître) und ob du etwas weißt oder kannst (savoir).",
-    "tldr": ["connaître heißt kennen: Personen, Orte, Bücher. savoir heißt wissen oder können, zusammen mit einem Infinitiv.", "Beide Verben sind unregelmäßig. Lerne die Formen auswendig."],
-    "analogy": { "title": "Stell dir vor: Adressbuch oder Fahrplan?", "html": "<p>Eine Person kennst du wie einen Eintrag im Adressbuch: <b>Je connais Lina.</b> Ein Fakt weißt du wie eine Zeile im Fahrplan: <b>Je sais où elle habite.</b></p>" },
-    "figure": { "diagram": { "name": "tableDiagram", "args": [["Verb", "Bedeutung", "Beispiel"], [["connaître", "kennen", "Je connais Paris."], ["savoir", "wissen, können", "Je sais nager."]], [1.2, 1.2, 2], "Tabelle: connaître und savoir mit Bedeutung und Beispiel"] }, "caption": "connaître für Personen und Orte, savoir für Wissen und Fähigkeiten." },
-    "steps": { "title": "So konjugierst du", "items": ["connaître: je connais, tu connais, il connaît, nous connaissons, vous connaissez, ils connaissent.", "savoir: je sais, tu sais, il sait, nous savons, vous savez, ils savent.", "Steht ein Infinitiv danach, ist es savoir: Il sait nager.", "Steht eine Person oder ein Ort danach, ist es connaître: Il connaît Berlin."] },
-    "pitfall": { "html": "<p>Nicht <b>Je sais Paul</b> sagen. Bei Personen heißt es <b>Je connais Paul</b>.</p>" },
+    "tldr": [
+      "connaître heißt kennen: Personen, Orte, Bücher. savoir heißt wissen oder können, zusammen mit einem Infinitiv.",
+      "Beide Verben sind unregelmäßig. Lerne die Formen auswendig."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: Adressbuch oder Fahrplan?",
+      "html": "<p>Eine Person kennst du wie einen Eintrag im Adressbuch: <b>Je connais Lina.</b> Ein Fakt weißt du wie eine Zeile im Fahrplan: <b>Je sais où elle habite.</b></p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Verb",
+            "Bedeutung",
+            "Beispiel"
+          ],
+          [
+            [
+              "connaître",
+              "kennen",
+              "Je connais Paris."
+            ],
+            [
+              "savoir",
+              "wissen, können",
+              "Je sais nager."
+            ]
+          ],
+          [
+            1.2,
+            1.2,
+            2
+          ],
+          "Tabelle: connaître und savoir mit Bedeutung und Beispiel"
+        ]
+      },
+      "caption": "connaître für Personen und Orte, savoir für Wissen und Fähigkeiten."
+    },
+    "steps": {
+      "title": "So konjugierst du",
+      "items": [
+        "connaître: je connais, tu connais, il connaît, nous connaissons, vous connaissez, ils connaissent.",
+        "savoir: je sais, tu sais, il sait, nous savons, vous savez, ils savent.",
+        "Steht ein Infinitiv danach, ist es savoir: Il sait nager.",
+        "Steht eine Person oder ein Ort danach, ist es connaître: Il connaît Berlin."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Nicht <b>Je sais Paul</b> sagen. Bei Personen heißt es <b>Je connais Paul</b>.</p>"
+    },
     "rule": "connaître = kennen (Personen, Orte). savoir = wissen oder können, mit Infinitiv.",
-    "check": { "q": "Ich kann schwimmen: Je ___ nager.", "options": [{ "id": "sais", "html": "sais" }, { "id": "connais", "html": "connais" }, { "id": "connaît", "html": "connaît" }], "answer": "sais", "why": "Mit einem Infinitiv (nager) steht savoir: je sais." }
+    "check": {
+      "q": "Ich kann schwimmen: Je ___ nager.",
+      "options": [
+        {
+          "id": "sais",
+          "html": "sais"
+        },
+        {
+          "id": "connais",
+          "html": "connais"
+        },
+        {
+          "id": "connaît",
+          "html": "connaît"
+        }
+      ],
+      "answer": "sais",
+      "why": "Mit einem Infinitiv (nager) steht savoir: je sais."
+    }
   },
   "quel": {
     "goal": "Du kannst nach Dingen und Personen fragen und dabei quel in der richtigen Form benutzen.",
-    "tldr": ["quel heißt welcher. Es steht vor dem Nomen und stimmt mit ihm überein.", "Formen: quel, quelle, quels, quelles."],
-    "analogy": { "title": "Stell dir vor: die Speisekarte", "html": "<p>Du fragst: <b>Quel plat ?</b> Welches Gericht? Die Frage bezieht sich auf ein Nomen, deshalb passt sich quel dem Nomen an.</p>" },
-    "figure": { "diagram": { "name": "tableDiagram", "args": [["Nomen", "Form", "Beispiel"], [["le train (m. Sg.)", "quel", "Quel train ?"], ["la rue (f. Sg.)", "quelle", "Quelle rue ?"], ["les livres (m. Pl.)", "quels", "Quels livres ?"], ["les villes (f. Pl.)", "quelles", "Quelles villes ?"]], [1.6, 1, 1.6], "Tabelle: quel in vier Formen mit Beispiel"] }, "caption": "quel richtet sich nach dem Nomen, das danach kommt." },
-    "steps": { "title": "So wählst du die Form", "items": ["Vor dem Nomen steht quel, das in Geschlecht und Zahl zum Nomen passt.", "le wird zu quel, la zu quelle, Plural männlich zu quels, Plural weiblich zu quelles.", "Die Frage Quelle heure est-il ? heißt: Wie spät ist es?", "Auch im Satz: Je ne sais pas quel train prendre."] },
-    "pitfall": { "html": "<p>Vor dem Nomen steht die Form, die zum Nomen passt: <b>quelle rue</b>, nicht <b>quel rue</b>.</p>" },
+    "tldr": [
+      "quel heißt welcher. Es steht vor dem Nomen und stimmt mit ihm überein.",
+      "Formen: quel, quelle, quels, quelles."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: die Speisekarte",
+      "html": "<p>Du fragst: <b>Quel plat ?</b> Welches Gericht? Die Frage bezieht sich auf ein Nomen, deshalb passt sich quel dem Nomen an.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Nomen",
+            "Form",
+            "Beispiel"
+          ],
+          [
+            [
+              "le train (m. Sg.)",
+              "quel",
+              "Quel train ?"
+            ],
+            [
+              "la rue (f. Sg.)",
+              "quelle",
+              "Quelle rue ?"
+            ],
+            [
+              "les livres (m. Pl.)",
+              "quels",
+              "Quels livres ?"
+            ],
+            [
+              "les villes (f. Pl.)",
+              "quelles",
+              "Quelles villes ?"
+            ]
+          ],
+          [
+            1.6,
+            1,
+            1.6
+          ],
+          "Tabelle: quel in vier Formen mit Beispiel"
+        ]
+      },
+      "caption": "quel richtet sich nach dem Nomen, das danach kommt."
+    },
+    "steps": {
+      "title": "So wählst du die Form",
+      "items": [
+        "Vor dem Nomen steht quel, das in Geschlecht und Zahl zum Nomen passt.",
+        "le wird zu quel, la zu quelle, Plural männlich zu quels, Plural weiblich zu quelles.",
+        "Die Frage Quelle heure est-il ? heißt: Wie spät ist es?",
+        "Auch im Satz: Je ne sais pas quel train prendre."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Vor dem Nomen steht die Form, die zum Nomen passt: <b>quelle rue</b>, nicht <b>quel rue</b>.</p>"
+    },
     "rule": "quel stimmt mit dem Nomen überein: quel, quelle, quels, quelles.",
-    "check": { "q": "___ heure est-il ?", "options": [{ "id": "Quelle", "html": "Quelle" }, { "id": "Quel", "html": "Quel" }, { "id": "Quels", "html": "Quels" }], "answer": "Quelle", "why": "heure ist weiblich und Singular, deshalb quelle." }
+    "check": {
+      "q": "___ heure est-il ?",
+      "options": [
+        {
+          "id": "Quelle",
+          "html": "Quelle"
+        },
+        {
+          "id": "Quel",
+          "html": "Quel"
+        },
+        {
+          "id": "Quels",
+          "html": "Quels"
+        }
+      ],
+      "answer": "Quelle",
+      "why": "heure ist weiblich und Singular, deshalb quelle."
+    }
   },
   "relativ-pronomen": {
     "goal": "Du kannst mit qui, que und où Personen, Dinge und Orte genauer beschreiben.",
-    "tldr": ["qui steht, wenn danach ein Verb folgt: der Mann, der hier wohnt.", "que steht, wenn danach ein Subjekt folgt. où steht für Orte und Zeiten."],
-    "analogy": { "title": "Stell dir vor: der Steckbrief", "html": "<p>Du beschreibst jemanden mit einem zweiten Satz: <b>L'ami qui habite à Lyon</b> ist der Freund, der in Lyon wohnt.</p>" },
-    "figure": { "diagram": { "name": "flowDiagram", "args": [["L'ami|(Person)", "qui habite à Lyon|(Relativsatz)", "est sympa|(Hauptsatz)"], "Ablauf: Der Freund, der in Lyon wohnt, ist nett"] }, "caption": "Der Relativsatz steht direkt nach dem Wort, das er erklärt." },
-    "steps": { "title": "So wählst du das Wort", "items": ["qui + Verb: L'ami qui habite à Lyon. qui ist Subjekt.", "que + Subjekt + Verb: Le livre que je lis. que ist Objekt.", "où für Orte und Zeiten: La ville où j'habite.", "Probe: Folgt direkt ein Verb? Dann qui. Folgt ein Subjekt? Dann que."] },
-    "pitfall": { "html": "<p>Nach <b>que</b> steht ein Subjekt: <b>le livre que je lis</b>. Nicht <b>le livre que lit</b>.</p>" },
+    "tldr": [
+      "qui steht, wenn danach ein Verb folgt: der Mann, der hier wohnt.",
+      "que steht, wenn danach ein Subjekt folgt. où steht für Orte und Zeiten."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: der Steckbrief",
+      "html": "<p>Du beschreibst jemanden mit einem zweiten Satz: <b>L'ami qui habite à Lyon</b> ist der Freund, der in Lyon wohnt.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "flowDiagram",
+        "args": [
+          [
+            "L'ami|(Person)",
+            "qui habite à Lyon|(Relativsatz)",
+            "est sympa|(Hauptsatz)"
+          ],
+          "Ablauf: Der Freund, der in Lyon wohnt, ist nett"
+        ]
+      },
+      "caption": "Der Relativsatz steht direkt nach dem Wort, das er erklärt."
+    },
+    "steps": {
+      "title": "So wählst du das Wort",
+      "items": [
+        "qui + Verb: L'ami qui habite à Lyon. qui ist Subjekt.",
+        "que + Subjekt + Verb: Le livre que je lis. que ist Objekt.",
+        "où für Orte und Zeiten: La ville où j'habite.",
+        "Probe: Folgt direkt ein Verb? Dann qui. Folgt ein Subjekt? Dann que."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Nach <b>que</b> steht ein Subjekt: <b>le livre que je lis</b>. Nicht <b>le livre que lit</b>.</p>"
+    },
     "rule": "qui = Subjekt (danach Verb), que = Objekt (danach Subjekt), où = Ort oder Zeit.",
-    "check": { "q": "La fille ___ chante est ma cousine.", "options": [{ "id": "qui", "html": "qui" }, { "id": "que", "html": "que" }, { "id": "où", "html": "où" }], "answer": "qui", "why": "Danach folgt das Verb chante. Vor einem Verb steht qui." }
+    "check": {
+      "q": "La fille ___ chante est ma cousine.",
+      "options": [
+        {
+          "id": "qui",
+          "html": "qui"
+        },
+        {
+          "id": "que",
+          "html": "que"
+        },
+        {
+          "id": "où",
+          "html": "où"
+        }
+      ],
+      "answer": "qui",
+      "why": "Danach folgt das Verb chante. Vor einem Verb steht qui."
+    }
   },
   "demonstrativ": {
     "goal": "Du kannst mit ce, cet, cette und ces auf Personen und Dinge zeigen.",
-    "tldr": ["Die Form richtet sich nach dem Nomen: ce (m.), cet (m. vor Vokal), cette (f.), ces (Plural).", "cet steht vor einem Vokal oder stummen h: cet homme, cet hôtel."],
-    "analogy": { "title": "Stell dir vor: der Zeigefinger", "html": "<p>Du zeigst auf etwas und sagst <b>ce livre</b>: dieses Buch. Das Wort vor dem Nomen zeigt, worum es geht.</p>" },
-    "figure": { "diagram": { "name": "tableDiagram", "args": [["Nomen", "Form", "Beispiel"], [["le garçon", "ce", "ce garçon"], ["l'homme", "cet", "cet homme"], ["la fille", "cette", "cette fille"], ["les enfants", "ces", "ces enfants"]], [1.4, 1, 1.6], "Tabelle: ce, cet, cette, ces mit Beispielen"] }, "caption": "Der Begleiter richtet sich nach Geschlecht und Zahl des Nomens." },
-    "steps": { "title": "So wählst du die Form", "items": ["Männlich vor Konsonant: ce, zum Beispiel ce livre.", "Männlich vor Vokal oder stummem h: cet, zum Beispiel cet ami.", "Weiblich: cette, zum Beispiel cette maison.", "Plural: ces, zum Beispiel ces voitures."] },
-    "pitfall": { "html": "<p>Vor einem Vokal nie <b>ce ami</b>, sondern <b>cet ami</b>.</p>" },
+    "tldr": [
+      "Die Form richtet sich nach dem Nomen: ce (m.), cet (m. vor Vokal), cette (f.), ces (Plural).",
+      "cet steht vor einem Vokal oder stummen h: cet homme, cet hôtel."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: der Zeigefinger",
+      "html": "<p>Du zeigst auf etwas und sagst <b>ce livre</b>: dieses Buch. Das Wort vor dem Nomen zeigt, worum es geht.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Nomen",
+            "Form",
+            "Beispiel"
+          ],
+          [
+            [
+              "le garçon",
+              "ce",
+              "ce garçon"
+            ],
+            [
+              "l'homme",
+              "cet",
+              "cet homme"
+            ],
+            [
+              "la fille",
+              "cette",
+              "cette fille"
+            ],
+            [
+              "les enfants",
+              "ces",
+              "ces enfants"
+            ]
+          ],
+          [
+            1.4,
+            1,
+            1.6
+          ],
+          "Tabelle: ce, cet, cette, ces mit Beispielen"
+        ]
+      },
+      "caption": "Der Begleiter richtet sich nach Geschlecht und Zahl des Nomens."
+    },
+    "steps": {
+      "title": "So wählst du die Form",
+      "items": [
+        "Männlich vor Konsonant: ce, zum Beispiel ce livre.",
+        "Männlich vor Vokal oder stummem h: cet, zum Beispiel cet ami.",
+        "Weiblich: cette, zum Beispiel cette maison.",
+        "Plural: ces, zum Beispiel ces voitures."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Vor einem Vokal nie <b>ce ami</b>, sondern <b>cet ami</b>.</p>"
+    },
     "rule": "ce (m.), cet (m. vor Vokal), cette (f.), ces (Plural).",
-    "check": { "q": "___ homme est gentil.", "options": [{ "id": "ce", "html": "ce" }, { "id": "cet", "html": "cet" }, { "id": "cette", "html": "cette" }], "answer": "cet", "why": "homme beginnt mit stummem h, deshalb cet." }
+    "check": {
+      "q": "___ homme est gentil.",
+      "options": [
+        {
+          "id": "ce",
+          "html": "ce"
+        },
+        {
+          "id": "cet",
+          "html": "cet"
+        },
+        {
+          "id": "cette",
+          "html": "cette"
+        }
+      ],
+      "answer": "cet",
+      "why": "homme beginnt mit stummem h, deshalb cet."
+    }
   },
   "pc-avoir": {
     "goal": "Du kannst vergangene Erlebnisse mit dem passé composé mit avoir erzählen, auch mit unregelmäßigen Partizipien.",
-    "tldr": ["Das passé composé bildest du mit avoir im Präsens und dem Partizip II: j'ai mangé.", "Regelmäßig: -er wird -é, -ir wird -i, -re wird -u. Unregelmäßige Partizipien lernst du auswendig."],
-    "analogy": { "title": "Stell dir vor: das Fotoalbum", "html": "<p>Das passé composé ist ein Foto aus der Vergangenheit. Es ist abgeschlossen: <b>J'ai visité Paris</b> heißt: Ich habe Paris besucht, das ist vorbei.</p>" },
-    "figure": { "diagram": { "name": "tableDiagram", "args": [["Verb", "Partizip II", "Beispiel"], [["parler", "parlé", "J'ai parlé."], ["finir", "fini", "Tu as fini."], ["faire", "fait", "Il a fait ses devoirs."], ["prendre", "pris", "Nous avons pris le train."]], [1.2, 1, 2], "Tabelle: Partizip II regelmäßig und unregelmäßig"] }, "caption": "Regelmäßige Partizipien enden auf -é, -i oder -u. Die unregelmäßigen musst du lernen." },
-    "steps": { "title": "So bildest du den Satz", "items": ["avoir im Präsens: j'ai, tu as, il a, nous avons, vous avez, ils ont.", "Partizip II dahinter: j'ai mangé, tu as fini.", "Verneinung um avoir: Je n'ai pas mangé.", "Zeitangaben: hier, la semaine dernière, hier soir."] },
-    "pitfall": { "html": "<p>Nicht die Grundform benutzen: <b>J'ai manger</b> ist falsch. Richtig ist <b>J'ai mangé</b>.</p>" },
+    "tldr": [
+      "Das passé composé bildest du mit avoir im Präsens und dem Partizip II: j'ai mangé.",
+      "Regelmäßig: -er wird -é, -ir wird -i, -re wird -u. Unregelmäßige Partizipien lernst du auswendig."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: das Fotoalbum",
+      "html": "<p>Das passé composé ist ein Foto aus der Vergangenheit. Es ist abgeschlossen: <b>J'ai visité Paris</b> heißt: Ich habe Paris besucht, das ist vorbei.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Verb",
+            "Partizip II",
+            "Beispiel"
+          ],
+          [
+            [
+              "parler",
+              "parlé",
+              "J'ai parlé."
+            ],
+            [
+              "finir",
+              "fini",
+              "Tu as fini."
+            ],
+            [
+              "faire",
+              "fait",
+              "Il a fait ses devoirs."
+            ],
+            [
+              "prendre",
+              "pris",
+              "Nous avons pris le train."
+            ]
+          ],
+          [
+            1.2,
+            1,
+            2
+          ],
+          "Tabelle: Partizip II regelmäßig und unregelmäßig"
+        ]
+      },
+      "caption": "Regelmäßige Partizipien enden auf -é, -i oder -u. Die unregelmäßigen musst du lernen."
+    },
+    "steps": {
+      "title": "So bildest du den Satz",
+      "items": [
+        "avoir im Präsens: j'ai, tu as, il a, nous avons, vous avez, ils ont.",
+        "Partizip II dahinter: j'ai mangé, tu as fini.",
+        "Verneinung um avoir: Je n'ai pas mangé.",
+        "Zeitangaben: hier, la semaine dernière, hier soir."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Nicht die Grundform benutzen: <b>J'ai manger</b> ist falsch. Richtig ist <b>J'ai mangé</b>.</p>"
+    },
     "rule": "avoir im Präsens + Partizip II. Regelmäßig: -é, -i, -u. Unregelmäßig: auswendig lernen.",
-    "check": { "q": "Hier, j'___ fait mes devoirs.", "options": [{ "id": "ai fait", "html": "ai fait" }, { "id": "suis fait", "html": "suis fait" }, { "id": "ai faire", "html": "ai faire" }], "answer": "ai fait", "why": "faire wird mit avoir gebildet, das Partizip ist fait." }
+    "check": {
+      "q": "Hier, j'___ fait mes devoirs.",
+      "options": [
+        {
+          "id": "ai fait",
+          "html": "ai fait"
+        },
+        {
+          "id": "suis fait",
+          "html": "suis fait"
+        },
+        {
+          "id": "ai faire",
+          "html": "ai faire"
+        }
+      ],
+      "answer": "ai fait",
+      "why": "faire wird mit avoir gebildet, das Partizip ist fait."
+    }
   },
   "voir": {
     "goal": "Du kannst das Verb voir (sehen) konjugieren und im passé composé benutzen.",
-    "tldr": ["voir heißt sehen und ist unregelmäßig: je vois, nous voyons, ils voient.", "Im passé composé heißt das Partizip vu: J'ai vu ce film."],
-    "analogy": { "title": "Stell dir vor: die Brille", "html": "<p>voir ist wie eine Brille: Sie zeigt, was da ist. Was du gestern gesehen hast, steht im passé composé: <b>J'ai vu ce film.</b></p>" },
-    "figure": { "diagram": { "name": "tableDiagram", "args": [["Person", "Präsens", "Passé composé"], [["je", "vois", "j'ai vu"], ["nous", "voyons", "nous avons vu"], ["ils", "voient", "ils ont vu"]], [1, 1, 1.6], "Tabelle: voir im Präsens und im passé composé"] }, "caption": "Im Singular heißt der Stamm voi-, bei nous und vous voy-." },
-    "steps": { "title": "So konjugierst du", "items": ["Singular: je vois, tu vois, il/elle voit.", "Plural: nous voyons, vous voyez, ils/elles voient.", "Passé composé: avoir + vu, zum Beispiel J'ai vu ton frère.", "Mit dem Infinitiv: Je veux voir Paris."] },
-    "pitfall": { "html": "<p>Im Plural steht immer -oy-: <b>nous voyons</b>, nicht <b>nous vois</b>.</p>" },
+    "tldr": [
+      "voir heißt sehen und ist unregelmäßig: je vois, nous voyons, ils voient.",
+      "Im passé composé heißt das Partizip vu: J'ai vu ce film."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: die Brille",
+      "html": "<p>voir ist wie eine Brille: Sie zeigt, was da ist. Was du gestern gesehen hast, steht im passé composé: <b>J'ai vu ce film.</b></p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Person",
+            "Präsens",
+            "Passé composé"
+          ],
+          [
+            [
+              "je",
+              "vois",
+              "j'ai vu"
+            ],
+            [
+              "nous",
+              "voyons",
+              "nous avons vu"
+            ],
+            [
+              "ils",
+              "voient",
+              "ils ont vu"
+            ]
+          ],
+          [
+            1,
+            1,
+            1.6
+          ],
+          "Tabelle: voir im Präsens und im passé composé"
+        ]
+      },
+      "caption": "Im Singular heißt der Stamm voi-, bei nous und vous voy-."
+    },
+    "steps": {
+      "title": "So konjugierst du",
+      "items": [
+        "Singular: je vois, tu vois, il/elle voit.",
+        "Plural: nous voyons, vous voyez, ils/elles voient.",
+        "Passé composé: avoir + vu, zum Beispiel J'ai vu ton frère.",
+        "Mit dem Infinitiv: Je veux voir Paris."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Im Plural steht immer -oy-: <b>nous voyons</b>, nicht <b>nous vois</b>.</p>"
+    },
     "rule": "voir: je vois, nous voyons, ils voient. Partizip: vu.",
-    "check": { "q": "Wie sagt man: Wir sehen den Film?", "options": [{ "id": "Nous voyons le film.", "html": "Nous voyons le film." }, { "id": "Nous voient le film.", "html": "Nous voient le film." }, { "id": "Nous voyez le film.", "html": "Nous voyez le film." }], "answer": "Nous voyons le film.", "why": "Mit nous endet das Verb auf -ons: voyons." }
+    "check": {
+      "q": "Wie sagt man: Wir sehen den Film?",
+      "options": [
+        {
+          "id": "Nous voyons le film.",
+          "html": "Nous voyons le film."
+        },
+        {
+          "id": "Nous voient le film.",
+          "html": "Nous voient le film."
+        },
+        {
+          "id": "Nous voyez le film.",
+          "html": "Nous voyez le film."
+        }
+      ],
+      "answer": "Nous voyons le film.",
+      "why": "Mit nous endet das Verb auf -ons: voyons."
+    }
   },
   "vouloir-pouvoir": {
     "goal": "Du kannst sagen, was du willst und kannst, und höflich bitten, mit vouloir und pouvoir.",
-    "tldr": ["vouloir heißt wollen, pouvoir heißt können. Danach steht meist ein Infinitiv: Je veux partir.", "Höflich: Je voudrais … (ich möchte). Pouvez-vous … ? (Können Sie …?)"],
-    "analogy": { "title": "Stell dir vor: der Wunschzettel", "html": "<p>Mit <b>je veux</b> sagst du, was du möchtest. Mit <b>je peux</b> sagst du, was möglich ist. Beides steht fast immer mit einem Verb im Infinitiv.</p>" },
-    "figure": { "diagram": { "name": "tableDiagram", "args": [["Person", "vouloir", "pouvoir"], [["je", "veux", "peux"], ["nous", "voulons", "pouvons"], ["ils", "veulent", "peuvent"]], [1, 1, 1], "Tabelle: vouloir und pouvoir im Präsens"] }, "caption": "Im Singular ist der Stamm kurz, im Plural lang." },
-    "steps": { "title": "So konjugierst du", "items": ["vouloir: je veux, tu veux, il veut, nous voulons, vous voulez, ils veulent.", "pouvoir: je peux, tu peux, il peut, nous pouvons, vous pouvez, ils peuvent.", "Danach steht ein Infinitiv: Tu peux venir ?", "Passé composé: j'ai voulu, j'ai pu."] },
-    "pitfall": { "html": "<p>Nicht <b>nous veux</b>. Im Plural steht <b>nous voulons</b> oder <b>nous pouvons</b>.</p>" },
+    "tldr": [
+      "vouloir heißt wollen, pouvoir heißt können. Danach steht meist ein Infinitiv: Je veux partir.",
+      "Höflich: Je voudrais … (ich möchte). Pouvez-vous … ? (Können Sie …?)"
+    ],
+    "analogy": {
+      "title": "Stell dir vor: der Wunschzettel",
+      "html": "<p>Mit <b>je veux</b> sagst du, was du möchtest. Mit <b>je peux</b> sagst du, was möglich ist. Beides steht fast immer mit einem Verb im Infinitiv.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Person",
+            "vouloir",
+            "pouvoir"
+          ],
+          [
+            [
+              "je",
+              "veux",
+              "peux"
+            ],
+            [
+              "nous",
+              "voulons",
+              "pouvons"
+            ],
+            [
+              "ils",
+              "veulent",
+              "peuvent"
+            ]
+          ],
+          [
+            1,
+            1,
+            1
+          ],
+          "Tabelle: vouloir und pouvoir im Präsens"
+        ]
+      },
+      "caption": "Im Singular ist der Stamm kurz, im Plural lang."
+    },
+    "steps": {
+      "title": "So konjugierst du",
+      "items": [
+        "vouloir: je veux, tu veux, il veut, nous voulons, vous voulez, ils veulent.",
+        "pouvoir: je peux, tu peux, il peut, nous pouvons, vous pouvez, ils peuvent.",
+        "Danach steht ein Infinitiv: Tu peux venir ?",
+        "Passé composé: j'ai voulu, j'ai pu."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Nicht <b>nous veux</b>. Im Plural steht <b>nous voulons</b> oder <b>nous pouvons</b>.</p>"
+    },
     "rule": "vouloir = wollen, pouvoir = können. Danach der Infinitiv. Partizipien: voulu, pu.",
-    "check": { "q": "Wie sagt man: Ich kann kommen?", "options": [{ "id": "Je peux venir.", "html": "Je peux venir." }, { "id": "Je veux venir.", "html": "Je veux venir." }, { "id": "Je pouvons venir.", "html": "Je pouvons venir." }], "answer": "Je peux venir.", "why": "pouvoir heißt können. Mit je steht peux." }
+    "check": {
+      "q": "Wie sagt man: Ich kann kommen?",
+      "options": [
+        {
+          "id": "Je peux venir.",
+          "html": "Je peux venir."
+        },
+        {
+          "id": "Je veux venir.",
+          "html": "Je veux venir."
+        },
+        {
+          "id": "Je pouvons venir.",
+          "html": "Je pouvons venir."
+        }
+      ],
+      "answer": "Je peux venir.",
+      "why": "pouvoir heißt können. Mit je steht peux."
+    }
   },
   "venir": {
     "goal": "Du kannst das Verb venir (kommen) konjugieren und mit venir de sagen, was gerade eben passiert ist.",
-    "tldr": ["venir heißt kommen: je viens, nous venons, ils viennent.", "venir de + Infinitiv heißt: etwas ist gerade eben passiert. Je viens de manger."],
-    "analogy": { "title": "Stell dir vor: die Einladung", "html": "<p>Du sagst <b>Je viens chez toi</b>: Ich komme zu dir. Mit venir de sagst du, dass etwas gerade eben geschehen ist.</p>" },
-    "figure": { "diagram": { "name": "tableDiagram", "args": [["Person", "Präsens", "Bedeutung"], [["je", "viens", "ich komme"], ["nous", "venons", "wir kommen"], ["ils", "viennent", "sie kommen"]], [1, 1, 1.6], "Tabelle: venir im Präsens"] }, "caption": "Im Plural steht -ienn-: ils viennent. Im Singular heißt es viens." },
-    "steps": { "title": "So benutzt du venir", "items": ["Singular: je viens, tu viens, il/elle vient.", "Plural: nous venons, vous venez, ils/elles viennent.", "venir de + Infinitiv: Je viens de finir.", "Passé composé mit être: je suis venu(e)."] },
-    "pitfall": { "html": "<p>Für gerade eben braucht man <b>venir de</b>: <b>Je viens de manger</b>. Nicht <b>Je viens manger</b>.</p>" },
+    "tldr": [
+      "venir heißt kommen: je viens, nous venons, ils viennent.",
+      "venir de + Infinitiv heißt: etwas ist gerade eben passiert. Je viens de manger."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: die Einladung",
+      "html": "<p>Du sagst <b>Je viens chez toi</b>: Ich komme zu dir. Mit venir de sagst du, dass etwas gerade eben geschehen ist.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Person",
+            "Präsens",
+            "Bedeutung"
+          ],
+          [
+            [
+              "je",
+              "viens",
+              "ich komme"
+            ],
+            [
+              "nous",
+              "venons",
+              "wir kommen"
+            ],
+            [
+              "ils",
+              "viennent",
+              "sie kommen"
+            ]
+          ],
+          [
+            1,
+            1,
+            1.6
+          ],
+          "Tabelle: venir im Präsens"
+        ]
+      },
+      "caption": "Im Plural steht -ienn-: ils viennent. Im Singular heißt es viens."
+    },
+    "steps": {
+      "title": "So benutzt du venir",
+      "items": [
+        "Singular: je viens, tu viens, il/elle vient.",
+        "Plural: nous venons, vous venez, ils/elles viennent.",
+        "venir de + Infinitiv: Je viens de finir.",
+        "Passé composé mit être: je suis venu(e)."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Für gerade eben braucht man <b>venir de</b>: <b>Je viens de manger</b>. Nicht <b>Je viens manger</b>.</p>"
+    },
     "rule": "venir = kommen. venir de + Infinitiv = gerade eben.",
-    "check": { "q": "Wie sagt man: Ich habe gerade gegessen?", "options": [{ "id": "Je viens de manger.", "html": "Je viens de manger." }, { "id": "Je viens manger.", "html": "Je viens manger." }, { "id": "Je suis venu manger.", "html": "Je suis venu manger." }], "answer": "Je viens de manger.", "why": "venir de + Infinitiv zeigt, dass etwas gerade eben passiert ist." }
+    "check": {
+      "q": "Wie sagt man: Ich habe gerade gegessen?",
+      "options": [
+        {
+          "id": "Je viens de manger.",
+          "html": "Je viens de manger."
+        },
+        {
+          "id": "Je viens manger.",
+          "html": "Je viens manger."
+        },
+        {
+          "id": "Je suis venu manger.",
+          "html": "Je suis venu manger."
+        }
+      ],
+      "answer": "Je viens de manger.",
+      "why": "venir de + Infinitiv zeigt, dass etwas gerade eben passiert ist."
+    }
   },
   "pc-etre": {
     "goal": "Du kannst das passé composé mit être bilden, bei Bewegungen und Zuständen, und das Partizip richtig anpassen.",
-    "tldr": ["Bei Bewegung und Zustand steht être statt avoir: je suis allé(e), elle est partie.", "Das Partizip stimmt mit dem Subjekt überein: Elle est allée. Ils sont partis."],
-    "analogy": { "title": "Stell dir vor: der Umzug", "html": "<p>Wer geht, kommt oder bleibt, bewegt sich. Dafür nimmt man être. Das Partizip passt sich dem Subjekt an: Bei einer Frau kommt ein -e dazu.</p>" },
-    "figure": { "diagram": { "name": "flowDiagram", "args": [["Elle|(Subjekt)", "est allée|(être + -e)", "à Paris|(Ziel)"], "Ablauf: Sie ist nach Paris gegangen"] }, "caption": "Bei être stimmt das Partizip mit dem Subjekt überein." },
-    "steps": { "title": "So bildest du den Satz", "items": ["Bewegungsverben: aller, venir, arriver, partir, entrer, sortir, rester, monter, descendre, naître.", "être im Präsens: je suis, tu es, il est, nous sommes, vous êtes, ils sont.", "Übereinstimmung: weiblich -e, Plural -s: elle est partie, ils sont partis.", "Verneinung: Je ne suis pas allé."] },
-    "pitfall": { "html": "<p>Nicht <b>j'ai allé</b>. Bei aller heißt es <b>je suis allé</b> oder bei einer Frau <b>je suis allée</b>.</p>" },
+    "tldr": [
+      "Bei Bewegung und Zustand steht être statt avoir: je suis allé(e), elle est partie.",
+      "Das Partizip stimmt mit dem Subjekt überein: Elle est allée. Ils sont partis."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: der Umzug",
+      "html": "<p>Wer geht, kommt oder bleibt, bewegt sich. Dafür nimmt man être. Das Partizip passt sich dem Subjekt an: Bei einer Frau kommt ein -e dazu.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "flowDiagram",
+        "args": [
+          [
+            "Elle|(Subjekt)",
+            "est allée|(être + -e)",
+            "à Paris|(Ziel)"
+          ],
+          "Ablauf: Sie ist nach Paris gegangen"
+        ]
+      },
+      "caption": "Bei être stimmt das Partizip mit dem Subjekt überein."
+    },
+    "steps": {
+      "title": "So bildest du den Satz",
+      "items": [
+        "Bewegungsverben: aller, venir, arriver, partir, entrer, sortir, rester, monter, descendre, naître.",
+        "être im Präsens: je suis, tu es, il est, nous sommes, vous êtes, ils sont.",
+        "Übereinstimmung: weiblich -e, Plural -s: elle est partie, ils sont partis.",
+        "Verneinung: Je ne suis pas allé."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Nicht <b>j'ai allé</b>. Bei aller heißt es <b>je suis allé</b> oder bei einer Frau <b>je suis allée</b>.</p>"
+    },
     "rule": "Bewegung oder Zustand: être statt avoir. Das Partizip stimmt mit dem Subjekt überein.",
-    "check": { "q": "Sie ist nach Hause gegangen (eine Frau):", "options": [{ "id": "Elle est allée à la maison.", "html": "Elle est allée à la maison." }, { "id": "Elle a allé à la maison.", "html": "Elle a allé à la maison." }, { "id": "Elle est allé à la maison.", "html": "Elle est allé à la maison." }], "answer": "Elle est allée à la maison.", "why": "aller braucht être. Weil elle weiblich ist, steht allée mit -e." }
+    "check": {
+      "q": "Sie ist nach Hause gegangen (eine Frau):",
+      "options": [
+        {
+          "id": "Elle est allée à la maison.",
+          "html": "Elle est allée à la maison."
+        },
+        {
+          "id": "Elle a allé à la maison.",
+          "html": "Elle a allé à la maison."
+        },
+        {
+          "id": "Elle est allé à la maison.",
+          "html": "Elle est allé à la maison."
+        }
+      ],
+      "answer": "Elle est allée à la maison.",
+      "why": "aller braucht être. Weil elle weiblich ist, steht allée mit -e."
+    }
   },
   "teilungsartikel": {
     "goal": "Du kannst sagen, wie viel du von etwas nimmst, mit dem Teilungsartikel und mit Mengenangaben.",
-    "tldr": ["Teilungsartikel: du (m.), de la (f.), de l' (vor Vokal), des (Plural). Er steht für einen Teil.", "Nach einer Mengenangabe und nach der Verneinung steht nur de: un kilo de pommes, pas de pain."],
-    "analogy": { "title": "Stell dir vor: der Einkaufswagen", "html": "<p>Du kaufst nicht die Milch, sondern etwas Milch: <b>du lait</b>. Bei einer Menge steht danach nur <b>de</b>: <b>un litre de lait</b>.</p>" },
-    "figure": { "diagram": { "name": "tableDiagram", "args": [["Nomen", "Artikel", "Beispiel"], [["le pain (m.)", "du", "Je mange du pain."], ["la confiture (f.)", "de la", "Il veut de la confiture."], ["l'eau (Vokal)", "de l'", "Tu bois de l'eau."], ["les pommes (Pl.)", "des", "Nous achetons des pommes."]], [1.4, 1.2, 2], "Tabelle: Teilungsartikel nach Geschlecht und Zahl"] }, "caption": "Der Teilungsartikel meint einen Teil von etwas, nicht das Ganze." },
-    "steps": { "title": "So wählst du den Artikel", "items": ["Männlich: du, zum Beispiel du pain.", "Weiblich: de la, zum Beispiel de la confiture.", "Vor Vokal oder stummem h: de l', zum Beispiel de l'eau.", "Mengen: un kilo de, un litre de, beaucoup de, trop de. Danach nur de."] },
-    "pitfall": { "html": "<p>Nach Verneinung und Mengen steht nur <b>de</b>: <b>Je ne mange pas de pain</b>, <b>beaucoup de pain</b>.</p>" },
+    "tldr": [
+      "Teilungsartikel: du (m.), de la (f.), de l' (vor Vokal), des (Plural). Er steht für einen Teil.",
+      "Nach einer Mengenangabe und nach der Verneinung steht nur de: un kilo de pommes, pas de pain."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: der Einkaufswagen",
+      "html": "<p>Du kaufst nicht die Milch, sondern etwas Milch: <b>du lait</b>. Bei einer Menge steht danach nur <b>de</b>: <b>un litre de lait</b>.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Nomen",
+            "Artikel",
+            "Beispiel"
+          ],
+          [
+            [
+              "le pain (m.)",
+              "du",
+              "Je mange du pain."
+            ],
+            [
+              "la confiture (f.)",
+              "de la",
+              "Il veut de la confiture."
+            ],
+            [
+              "l'eau (Vokal)",
+              "de l'",
+              "Tu bois de l'eau."
+            ],
+            [
+              "les pommes (Pl.)",
+              "des",
+              "Nous achetons des pommes."
+            ]
+          ],
+          [
+            1.4,
+            1.2,
+            2
+          ],
+          "Tabelle: Teilungsartikel nach Geschlecht und Zahl"
+        ]
+      },
+      "caption": "Der Teilungsartikel meint einen Teil von etwas, nicht das Ganze."
+    },
+    "steps": {
+      "title": "So wählst du den Artikel",
+      "items": [
+        "Männlich: du, zum Beispiel du pain.",
+        "Weiblich: de la, zum Beispiel de la confiture.",
+        "Vor Vokal oder stummem h: de l', zum Beispiel de l'eau.",
+        "Mengen: un kilo de, un litre de, beaucoup de, trop de. Danach nur de."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Nach Verneinung und Mengen steht nur <b>de</b>: <b>Je ne mange pas de pain</b>, <b>beaucoup de pain</b>.</p>"
+    },
     "rule": "du, de la, de l', des für einen Teil. Nach Mengen und bei Verneinung nur de.",
-    "check": { "q": "Je veux ___ eau.", "options": [{ "id": "de l'", "html": "de l'" }, { "id": "du", "html": "du" }, { "id": "de la", "html": "de la" }], "answer": "de l'", "why": "eau ist weiblich und beginnt mit Vokal, deshalb de l'." }
+    "check": {
+      "q": "Je veux ___ eau.",
+      "options": [
+        {
+          "id": "de l'",
+          "html": "de l'"
+        },
+        {
+          "id": "du",
+          "html": "du"
+        },
+        {
+          "id": "de la",
+          "html": "de la"
+        }
+      ],
+      "answer": "de l'",
+      "why": "eau ist weiblich und beginnt mit Vokal, deshalb de l'."
+    }
   },
   "acheter-payer-boire": {
     "goal": "Du kannst die Verben acheter, payer und boire richtig konjugieren, auch mit dem Lautwechsel.",
-    "tldr": ["acheter ändert den Stamm: j'achète, aber nous achetons.", "boire ist unregelmäßig: je bois, nous buvons, ils boivent. Partizip: bu."],
-    "analogy": { "title": "Stell dir vor: die Akzent-Taste", "html": "<p>Bei acheter steht im Singular ein è: <b>j'achète</b>. Bei nous bleibt das e ohne Akzent: <b>nous achetons</b>.</p>" },
-    "figure": { "diagram": { "name": "tableDiagram", "args": [["Person", "acheter", "boire"], [["je", "achète", "bois"], ["nous", "achetons", "buvons"], ["ils", "achètent", "boivent"]], [1, 1, 1], "Tabelle: acheter und boire im Präsens"] }, "caption": "Bei acheter wechselt der Akzent je nach Person." },
-    "steps": { "title": "So konjugierst du", "items": ["acheter: j'achète, tu achètes, il achète, nous achetons, vous achetez, ils achètent.", "payer: nous payons, ils paient.", "boire: je bois, tu bois, il boit, nous buvons, vous buvez, ils boivent.", "Partizip: acheté, payé, bu. Zum Beispiel: j'ai bu."] },
-    "pitfall": { "html": "<p>Nicht <b>nous achètons</b>. Im Plural steht <b>nous achetons</b> ohne Akzent.</p>" },
+    "tldr": [
+      "acheter ändert den Stamm: j'achète, aber nous achetons.",
+      "boire ist unregelmäßig: je bois, nous buvons, ils boivent. Partizip: bu."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: die Akzent-Taste",
+      "html": "<p>Bei acheter steht im Singular ein è: <b>j'achète</b>. Bei nous bleibt das e ohne Akzent: <b>nous achetons</b>.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Person",
+            "acheter",
+            "boire"
+          ],
+          [
+            [
+              "je",
+              "achète",
+              "bois"
+            ],
+            [
+              "nous",
+              "achetons",
+              "buvons"
+            ],
+            [
+              "ils",
+              "achètent",
+              "boivent"
+            ]
+          ],
+          [
+            1,
+            1,
+            1
+          ],
+          "Tabelle: acheter und boire im Präsens"
+        ]
+      },
+      "caption": "Bei acheter wechselt der Akzent je nach Person."
+    },
+    "steps": {
+      "title": "So konjugierst du",
+      "items": [
+        "acheter: j'achète, tu achètes, il achète, nous achetons, vous achetez, ils achètent.",
+        "payer: nous payons, ils paient.",
+        "boire: je bois, tu bois, il boit, nous buvons, vous buvez, ils boivent.",
+        "Partizip: acheté, payé, bu. Zum Beispiel: j'ai bu."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Nicht <b>nous achètons</b>. Im Plural steht <b>nous achetons</b> ohne Akzent.</p>"
+    },
     "rule": "acheter: è im Singular und bei ils. boire: Partizip bu.",
-    "check": { "q": "Nous ___ du pain.", "options": [{ "id": "achetons", "html": "achetons" }, { "id": "achètons", "html": "achètons" }, { "id": "achetont", "html": "achetont" }], "answer": "achetons", "why": "Bei nous bleibt der Stamm ohne Akzent: achetons." }
+    "check": {
+      "q": "Nous ___ du pain.",
+      "options": [
+        {
+          "id": "achetons",
+          "html": "achetons"
+        },
+        {
+          "id": "achètons",
+          "html": "achètons"
+        },
+        {
+          "id": "achetont",
+          "html": "achetont"
+        }
+      ],
+      "answer": "achetons",
+      "why": "Bei nous bleibt der Stamm ohne Akzent: achetons."
+    }
   },
   "objekt-direkt": {
     "goal": "Du kannst ein Nomen durch le, la, l' oder les ersetzen und das Pronomen richtig vor das Verb stellen.",
-    "tldr": ["Direkte Objektpronomen ersetzen ein Nomen: le (m.), la (f.), l' (vor Vokal), les (Plural).", "Sie stehen vor dem konjugierten Verb: Je le vois. Im passé composé vor avoir: Je l'ai vu."],
-    "analogy": { "title": "Stell dir vor: die Abkürzung", "html": "<p>Statt <b>Je vois le film</b> sagst du <b>Je le vois</b>. Das Pronomen steht kurz vor dem Verb und vertritt das Nomen.</p>" },
-    "figure": { "diagram": { "name": "flowDiagram", "args": [["Je vois le film|(Nomen)", "Je le vois|(Pronomen vor dem Verb)"], "Ablauf: Das Nomen wird durch das Pronomen ersetzt"] }, "caption": "Das Pronomen ersetzt ein Nomen, das direkt vom Verb abhängt." },
-    "steps": { "title": "So ersetzt du das Nomen", "items": ["Ersetze das Nomen durch le (m.), la (f.), l' (Vokal) oder les (Plural).", "Stelle das Pronomen vor das konjugierte Verb: Je la connais.", "Im passé composé steht es vor avoir: Il les a vus.", "Verneinung um das Pronomen: Je ne le vois pas."] },
-    "pitfall": { "html": "<p>Das Pronomen steht nie hinter dem Verb: <b>Je vois le</b> ist falsch. Richtig: <b>Je le vois</b>.</p>" },
+    "tldr": [
+      "Direkte Objektpronomen ersetzen ein Nomen: le (m.), la (f.), l' (vor Vokal), les (Plural).",
+      "Sie stehen vor dem konjugierten Verb: Je le vois. Im passé composé vor avoir: Je l'ai vu."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: die Abkürzung",
+      "html": "<p>Statt <b>Je vois le film</b> sagst du <b>Je le vois</b>. Das Pronomen steht kurz vor dem Verb und vertritt das Nomen.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "flowDiagram",
+        "args": [
+          [
+            "Je vois le film|(Nomen)",
+            "Je le vois|(Pronomen vor dem Verb)"
+          ],
+          "Ablauf: Das Nomen wird durch das Pronomen ersetzt"
+        ]
+      },
+      "caption": "Das Pronomen ersetzt ein Nomen, das direkt vom Verb abhängt."
+    },
+    "steps": {
+      "title": "So ersetzt du das Nomen",
+      "items": [
+        "Ersetze das Nomen durch le (m.), la (f.), l' (Vokal) oder les (Plural).",
+        "Stelle das Pronomen vor das konjugierte Verb: Je la connais.",
+        "Im passé composé steht es vor avoir: Il les a vus.",
+        "Verneinung um das Pronomen: Je ne le vois pas."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Das Pronomen steht nie hinter dem Verb: <b>Je vois le</b> ist falsch. Richtig: <b>Je le vois</b>.</p>"
+    },
     "rule": "le, la, l', les ersetzen ein Nomen und stehen vor dem Verb.",
-    "check": { "q": "Je mange la pizza. Ersetze: Je ___ mange.", "options": [{ "id": "la", "html": "la" }, { "id": "le", "html": "le" }, { "id": "les", "html": "les" }], "answer": "la", "why": "pizza ist weiblich, also la. Das Pronomen steht vor dem Verb mange." }
+    "check": {
+      "q": "Je mange la pizza. Ersetze: Je ___ mange.",
+      "options": [
+        {
+          "id": "la",
+          "html": "la"
+        },
+        {
+          "id": "le",
+          "html": "le"
+        },
+        {
+          "id": "les",
+          "html": "les"
+        }
+      ],
+      "answer": "la",
+      "why": "pizza ist weiblich, also la. Das Pronomen steht vor dem Verb mange."
+    }
   },
   "objekt-person": {
     "goal": "Du kannst Personen als Objekt benutzen, mit me, te, nous und vous, richtig vor dem Verb.",
-    "tldr": ["me = mich, te = dich, nous = uns, vous = euch oder Sie.", "Sie stehen vor dem konjugierten Verb: Il me voit. Elle vous aime."],
-    "analogy": { "title": "Stell dir vor: das Foto", "html": "<p>Du sagst <b>Il me regarde</b>: Er schaut mich an. Das Pronomen steht für die Person, die angeschaut wird.</p>" },
-    "figure": { "diagram": { "name": "tableDiagram", "args": [["Pronomen", "Bedeutung", "Beispiel"], [["me", "mich", "Il me voit."], ["te", "dich", "Je te parle."], ["nous", "uns", "Elle nous invite."], ["vous", "euch oder Sie", "Je vous aime."]], [1, 1.4, 2], "Tabelle: Personen als Objekt"] }, "caption": "Die Pronomen stehen vor dem konjugierten Verb." },
-    "steps": { "title": "So benutzt du sie", "items": ["me und te für eine Person: Il me voit. Je te parle.", "nous und vous für mehrere oder für Sie: Elle nous invite.", "Verneinung um das Pronomen: Il ne me voit pas.", "Passé composé: Il m'a vu. Vor avoir wird me zu m'."] },
-    "pitfall": { "html": "<p>Nicht <b>Il voit me</b>. Das Pronomen steht vor dem Verb: <b>Il me voit</b>.</p>" },
+    "tldr": [
+      "me = mich, te = dich, nous = uns, vous = euch oder Sie.",
+      "Sie stehen vor dem konjugierten Verb: Il me voit. Elle vous aime."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: das Foto",
+      "html": "<p>Du sagst <b>Il me regarde</b>: Er schaut mich an. Das Pronomen steht für die Person, die angeschaut wird.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Pronomen",
+            "Bedeutung",
+            "Beispiel"
+          ],
+          [
+            [
+              "me",
+              "mich",
+              "Il me voit."
+            ],
+            [
+              "te",
+              "dich",
+              "Je te parle."
+            ],
+            [
+              "nous",
+              "uns",
+              "Elle nous invite."
+            ],
+            [
+              "vous",
+              "euch oder Sie",
+              "Je vous aime."
+            ]
+          ],
+          [
+            1,
+            1.4,
+            2
+          ],
+          "Tabelle: Personen als Objekt"
+        ]
+      },
+      "caption": "Die Pronomen stehen vor dem konjugierten Verb."
+    },
+    "steps": {
+      "title": "So benutzt du sie",
+      "items": [
+        "me und te für eine Person: Il me voit. Je te parle.",
+        "nous und vous für mehrere oder für Sie: Elle nous invite.",
+        "Verneinung um das Pronomen: Il ne me voit pas.",
+        "Passé composé: Il m'a vu. Vor avoir wird me zu m'."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Nicht <b>Il voit me</b>. Das Pronomen steht vor dem Verb: <b>Il me voit</b>.</p>"
+    },
     "rule": "me, te, nous, vous stehen als Objekt vor dem Verb.",
-    "check": { "q": "Er sieht dich.", "options": [{ "id": "Il te voit.", "html": "Il te voit." }, { "id": "Il voit te.", "html": "Il voit te." }, { "id": "Il tu voit.", "html": "Il tu voit." }], "answer": "Il te voit.", "why": "te heißt dich und steht vor dem Verb voit." }
+    "check": {
+      "q": "Er sieht dich.",
+      "options": [
+        {
+          "id": "Il te voit.",
+          "html": "Il te voit."
+        },
+        {
+          "id": "Il voit te.",
+          "html": "Il voit te."
+        },
+        {
+          "id": "Il tu voit.",
+          "html": "Il tu voit."
+        }
+      ],
+      "answer": "Il te voit.",
+      "why": "te heißt dich und steht vor dem Verb voit."
+    }
   },
   "indirekte-rede": {
     "goal": "Du kannst berichten, was jemand gesagt oder gefragt hat, mit que und si.",
-    "tldr": ["Aussagen: Il dit que … Das que bleibt.", "Ja-Nein-Fragen: Il demande si … (ob). Fragewörter bleiben: Il demande où tu habites."],
-    "analogy": { "title": "Stille Post", "html": "<p>Du gibst weiter, was jemand gesagt hat: <b>Il dit qu'il est malade</b>. Du sprichst nicht seine Worte nach, sondern berichtest aus deiner Sicht.</p>" },
-    "figure": { "diagram": { "name": "flowDiagram", "args": [["Direkt|« Je suis malade »", "Indirekt|Il dit qu'il est malade"], "Ablauf: Direkte und indirekte Rede"] }, "caption": "Bei der indirekten Rede steht que, und das Pronomen wird angepasst." },
-    "steps": { "title": "So berichtest du", "items": ["Aussage: Il dit que + Satz: Il dit qu'il est fatigué.", "Pronomen anpassen: Je wird zu il oder elle.", "Ja-Nein-Frage: Il demande si tu viens.", "Fragewort bleibt: Il demande où tu habites."] },
-    "pitfall": { "html": "<p>Nach <b>si</b> keine Umstellung: <b>Il demande si tu viens</b>, nicht <b>si viens-tu</b>.</p>" },
+    "tldr": [
+      "Aussagen: Il dit que … Das que bleibt.",
+      "Ja-Nein-Fragen: Il demande si … (ob). Fragewörter bleiben: Il demande où tu habites."
+    ],
+    "analogy": {
+      "title": "Stille Post",
+      "html": "<p>Du gibst weiter, was jemand gesagt hat: <b>Il dit qu'il est malade</b>. Du sprichst nicht seine Worte nach, sondern berichtest aus deiner Sicht.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "flowDiagram",
+        "args": [
+          [
+            "Direkt|« Je suis malade »",
+            "Indirekt|Il dit qu'il est malade"
+          ],
+          "Ablauf: Direkte und indirekte Rede"
+        ]
+      },
+      "caption": "Bei der indirekten Rede steht que, und das Pronomen wird angepasst."
+    },
+    "steps": {
+      "title": "So berichtest du",
+      "items": [
+        "Aussage: Il dit que + Satz: Il dit qu'il est fatigué.",
+        "Pronomen anpassen: Je wird zu il oder elle.",
+        "Ja-Nein-Frage: Il demande si tu viens.",
+        "Fragewort bleibt: Il demande où tu habites."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Nach <b>si</b> keine Umstellung: <b>Il demande si tu viens</b>, nicht <b>si viens-tu</b>.</p>"
+    },
     "rule": "dire que für Aussagen, demander si für Ja-Nein-Fragen. Fragewörter bleiben.",
-    "check": { "q": "Er fragt, ob du kommst.", "options": [{ "id": "Il demande si tu viens.", "html": "Il demande si tu viens." }, { "id": "Il demande que tu viens.", "html": "Il demande que tu viens." }, { "id": "Il demande viens-tu.", "html": "Il demande viens-tu." }], "answer": "Il demande si tu viens.", "why": "Bei Ja-Nein-Fragen steht si (ob)." }
+    "check": {
+      "q": "Er fragt, ob du kommst.",
+      "options": [
+        {
+          "id": "Il demande si tu viens.",
+          "html": "Il demande si tu viens."
+        },
+        {
+          "id": "Il demande que tu viens.",
+          "html": "Il demande que tu viens."
+        },
+        {
+          "id": "Il demande viens-tu.",
+          "html": "Il demande viens-tu."
+        }
+      ],
+      "answer": "Il demande si tu viens.",
+      "why": "Bei Ja-Nein-Fragen steht si (ob)."
+    }
   },
   "sortir": {
     "goal": "Du kannst das Verb sortir (ausgehen, herausgehen) konjugieren und im passé composé mit être bilden.",
-    "tldr": ["sortir hat im Präsens überall den Stamm sort-: je sors, nous sortons, ils sortent.", "Im passé composé steht être: je suis sorti(e)."],
-    "analogy": { "title": "Stell dir vor: die Tür", "html": "<p>Du gehst durch die Tür nach draußen: <b>Je sors.</b> Die Bewegung nach draußen verlangt être im passé composé.</p>" },
-    "figure": { "diagram": { "name": "tableDiagram", "args": [["Person", "Präsens", "Passé composé"], [["je", "sors", "je suis sorti(e)"], ["nous", "sortons", "nous sommes sortis"], ["ils", "sortent", "ils sont sortis"]], [1, 1, 1.8], "Tabelle: sortir im Präsens und passé composé"] }, "caption": "Im Präsens ist der Stamm sort- überall gleich." },
-    "steps": { "title": "So konjugierst du", "items": ["Präsens: je sors, tu sors, il sort, nous sortons, vous sortez, ils sortent.", "Bewegung nach draußen oder weg: sortir, partir, venir mit être.", "Partizip mit Übereinstimmung: sorti, sortie, sortis, sorties.", "Frage: Tu sors ce soir ?"] },
-    "pitfall": { "html": "<p>Nicht <b>je suis sortir</b>. Im passé composé steht être und das Partizip sorti.</p>" },
+    "tldr": [
+      "sortir hat im Präsens überall den Stamm sort-: je sors, nous sortons, ils sortent.",
+      "Im passé composé steht être: je suis sorti(e)."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: die Tür",
+      "html": "<p>Du gehst durch die Tür nach draußen: <b>Je sors.</b> Die Bewegung nach draußen verlangt être im passé composé.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Person",
+            "Präsens",
+            "Passé composé"
+          ],
+          [
+            [
+              "je",
+              "sors",
+              "je suis sorti(e)"
+            ],
+            [
+              "nous",
+              "sortons",
+              "nous sommes sortis"
+            ],
+            [
+              "ils",
+              "sortent",
+              "ils sont sortis"
+            ]
+          ],
+          [
+            1,
+            1,
+            1.8
+          ],
+          "Tabelle: sortir im Präsens und passé composé"
+        ]
+      },
+      "caption": "Im Präsens ist der Stamm sort- überall gleich."
+    },
+    "steps": {
+      "title": "So konjugierst du",
+      "items": [
+        "Präsens: je sors, tu sors, il sort, nous sortons, vous sortez, ils sortent.",
+        "Bewegung nach draußen oder weg: sortir, partir, venir mit être.",
+        "Partizip mit Übereinstimmung: sorti, sortie, sortis, sorties.",
+        "Frage: Tu sors ce soir ?"
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Nicht <b>je suis sortir</b>. Im passé composé steht être und das Partizip sorti.</p>"
+    },
     "rule": "sortir = ausgehen. Präsens: sort-. passé composé mit être, Partizip stimmt mit dem Subjekt überein.",
-    "check": { "q": "Sie ist gestern ausgegangen (eine Frau).", "options": [{ "id": "Elle est sortie hier.", "html": "Elle est sortie hier." }, { "id": "Elle a sorti hier.", "html": "Elle a sorti hier." }, { "id": "Elle est sorti hier.", "html": "Elle est sorti hier." }], "answer": "Elle est sortie hier.", "why": "Bewegung nach draußen: être. Weil elle weiblich ist, steht sortie mit -e." }
+    "check": {
+      "q": "Sie ist gestern ausgegangen (eine Frau).",
+      "options": [
+        {
+          "id": "Elle est sortie hier.",
+          "html": "Elle est sortie hier."
+        },
+        {
+          "id": "Elle a sorti hier.",
+          "html": "Elle a sorti hier."
+        },
+        {
+          "id": "Elle est sorti hier.",
+          "html": "Elle est sorti hier."
+        }
+      ],
+      "answer": "Elle est sortie hier.",
+      "why": "Bewegung nach draußen: être. Weil elle weiblich ist, steht sortie mit -e."
+    }
   },
   "beau-nouveau-vieux": {
     "goal": "Du kannst beau, nouveau und vieux richtig vor dem Nomen benutzen, in männlicher und weiblicher Form.",
-    "tldr": ["beau, nouveau, vieux stehen meist vor dem Nomen: un beau livre.", "Weiblich: belle, nouvelle, vieille. Männlich vor Vokal: bel, nouvel, vieil."],
-    "analogy": { "title": "Stell dir vor: die Auslage", "html": "<p>Das Adjektiv steht vor dem Nomen, wie in der Schaufensterauslage: <b>un beau tableau</b>. Vor einem Vokal wird die männliche Form zur Sonderform.</p>" },
-    "figure": { "diagram": { "name": "tableDiagram", "args": [["Form", "Beispiel", "Vor Vokal"], [["m. Sg.", "un beau livre", "un bel ami"], ["f. Sg.", "une belle maison", "une belle idée"], ["Pl.", "de beaux livres", "de beaux amis"]], [1, 1.6, 1.6], "Tabelle: beau in Formen mit Beispielen"] }, "caption": "Vor einem männlichen Nomen mit Vokal gibt es die Sonderform bel, nouvel, vieil." },
-    "steps": { "title": "So wählst du die Form", "items": ["Männlich vor Konsonant: beau, nouveau, vieux.", "Weiblich: belle, nouvelle, vieille.", "Männlich vor Vokal oder stummem h: bel, nouvel, vieil.", "Plural: beaux, nouveaux, vieux, auch vor Vokal."] },
-    "pitfall": { "html": "<p>Nicht <b>un beau ami</b>. Vor einem Vokal heißt es <b>un bel ami</b>.</p>" },
+    "tldr": [
+      "beau, nouveau, vieux stehen meist vor dem Nomen: un beau livre.",
+      "Weiblich: belle, nouvelle, vieille. Männlich vor Vokal: bel, nouvel, vieil."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: die Auslage",
+      "html": "<p>Das Adjektiv steht vor dem Nomen, wie in der Schaufensterauslage: <b>un beau tableau</b>. Vor einem Vokal wird die männliche Form zur Sonderform.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Form",
+            "Beispiel",
+            "Vor Vokal"
+          ],
+          [
+            [
+              "m. Sg.",
+              "un beau livre",
+              "un bel ami"
+            ],
+            [
+              "f. Sg.",
+              "une belle maison",
+              "une belle idée"
+            ],
+            [
+              "Pl.",
+              "de beaux livres",
+              "de beaux amis"
+            ]
+          ],
+          [
+            1,
+            1.6,
+            1.6
+          ],
+          "Tabelle: beau in Formen mit Beispielen"
+        ]
+      },
+      "caption": "Vor einem männlichen Nomen mit Vokal gibt es die Sonderform bel, nouvel, vieil."
+    },
+    "steps": {
+      "title": "So wählst du die Form",
+      "items": [
+        "Männlich vor Konsonant: beau, nouveau, vieux.",
+        "Weiblich: belle, nouvelle, vieille.",
+        "Männlich vor Vokal oder stummem h: bel, nouvel, vieil.",
+        "Plural: beaux, nouveaux, vieux, auch vor Vokal."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Nicht <b>un beau ami</b>. Vor einem Vokal heißt es <b>un bel ami</b>.</p>"
+    },
     "rule": "beau/belle, nouveau/nouvelle, vieux/vieille. Vor männlichem Vokal: bel, nouvel, vieil.",
-    "check": { "q": "un ___ hôtel", "options": [{ "id": "nouvel", "html": "nouvel" }, { "id": "nouveau", "html": "nouveau" }, { "id": "nouvelle", "html": "nouvelle" }], "answer": "nouvel", "why": "hôtel beginnt mit einem Vokal. Männlich davor: nouvel." }
+    "check": {
+      "q": "un ___ hôtel",
+      "options": [
+        {
+          "id": "nouvel",
+          "html": "nouvel"
+        },
+        {
+          "id": "nouveau",
+          "html": "nouveau"
+        },
+        {
+          "id": "nouvelle",
+          "html": "nouvelle"
+        }
+      ],
+      "answer": "nouvel",
+      "why": "hôtel beginnt mit einem Vokal. Männlich davor: nouvel."
+    }
   },
   "devoir-recevoir": {
     "goal": "Du kannst devoir (müssen) und recevoir (bekommen) konjugieren und richtig benutzen.",
-    "tldr": ["devoir + Infinitiv heißt müssen: Je dois partir. Im passé composé: j'ai dû.", "recevoir heißt bekommen: je reçois. Partizip: reçu."],
-    "analogy": { "title": "Stell dir vor: das Paket", "html": "<p>Du bekommst ein Paket: <b>Je reçois un colis.</b> Du musst es abholen: <b>Je dois aller à la poste.</b> Zwei Verben, zwei Bedeutungen.</p>" },
-    "figure": { "diagram": { "name": "tableDiagram", "args": [["Person", "devoir", "recevoir"], [["je", "dois", "reçois"], ["nous", "devons", "recevons"], ["ils", "doivent", "reçoivent"]], [1, 1, 1], "Tabelle: devoir und recevoir im Präsens"] }, "caption": "devoir heißt müssen oder schulden. recevoir heißt bekommen." },
-    "steps": { "title": "So konjugierst du", "items": ["devoir: je dois, tu dois, il doit, nous devons, vous devez, ils doivent.", "recevoir: je reçois, tu reçois, il reçoit, nous recevons, vous recevez, ils reçoivent.", "devoir + Infinitiv: Il doit travailler. Im passé composé: il a dû.", "recevoir im passé composé: j'ai reçu un cadeau."] },
-    "pitfall": { "html": "<p>Der Stamm ändert sich: je <b>dois</b>, aber nous <b>devons</b>. Nicht <b>nous doivons</b>.</p>" },
+    "tldr": [
+      "devoir + Infinitiv heißt müssen: Je dois partir. Im passé composé: j'ai dû.",
+      "recevoir heißt bekommen: je reçois. Partizip: reçu."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: das Paket",
+      "html": "<p>Du bekommst ein Paket: <b>Je reçois un colis.</b> Du musst es abholen: <b>Je dois aller à la poste.</b> Zwei Verben, zwei Bedeutungen.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Person",
+            "devoir",
+            "recevoir"
+          ],
+          [
+            [
+              "je",
+              "dois",
+              "reçois"
+            ],
+            [
+              "nous",
+              "devons",
+              "recevons"
+            ],
+            [
+              "ils",
+              "doivent",
+              "reçoivent"
+            ]
+          ],
+          [
+            1,
+            1,
+            1
+          ],
+          "Tabelle: devoir und recevoir im Präsens"
+        ]
+      },
+      "caption": "devoir heißt müssen oder schulden. recevoir heißt bekommen."
+    },
+    "steps": {
+      "title": "So konjugierst du",
+      "items": [
+        "devoir: je dois, tu dois, il doit, nous devons, vous devez, ils doivent.",
+        "recevoir: je reçois, tu reçois, il reçoit, nous recevons, vous recevez, ils reçoivent.",
+        "devoir + Infinitiv: Il doit travailler. Im passé composé: il a dû.",
+        "recevoir im passé composé: j'ai reçu un cadeau."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Der Stamm ändert sich: je <b>dois</b>, aber nous <b>devons</b>. Nicht <b>nous doivons</b>.</p>"
+    },
     "rule": "devoir = müssen oder schulden. recevoir = bekommen. Partizipien: dû, reçu.",
-    "check": { "q": "Wie sagt man: Ich muss gehen?", "options": [{ "id": "Je dois partir.", "html": "Je dois partir." }, { "id": "Je reçois partir.", "html": "Je reçois partir." }, { "id": "Je dois partis.", "html": "Je dois partis." }], "answer": "Je dois partir.", "why": "devoir + Infinitiv heißt müssen." }
+    "check": {
+      "q": "Wie sagt man: Ich muss gehen?",
+      "options": [
+        {
+          "id": "Je dois partir.",
+          "html": "Je dois partir."
+        },
+        {
+          "id": "Je reçois partir.",
+          "html": "Je reçois partir."
+        },
+        {
+          "id": "Je dois partis.",
+          "html": "Je dois partis."
+        }
+      ],
+      "answer": "Je dois partir.",
+      "why": "devoir + Infinitiv heißt müssen."
+    }
   },
   "choisir": {
     "goal": "Du kannst Verben auf -ir wie choisir konjugieren, mit dem Einschub -iss- im Plural.",
-    "tldr": ["Viele Verben auf -ir (finir, choisir, réussir) bekommen im Plural -iss-: nous choisissons.", "Das Partizip endet auf -i: choisi, fini."],
-    "analogy": { "title": "Stell dir vor: das Menü", "html": "<p>Im Restaurant wählst du etwas aus. Bei mehreren Personen kommt -iss- dazu: <b>nous choisissons</b>, wir wählen.</p>" },
-    "figure": { "diagram": { "name": "tableDiagram", "args": [["Person", "choisir", "Partizip"], [["je", "choisis", "choisi"], ["nous", "choisissons", "choisi"], ["ils", "choisissent", "choisi"]], [1, 1.4, 1], "Tabelle: choisir im Präsens und Partizip"] }, "caption": "Im Singular fällt -iss- weg, im Plural bleibt es: choisis, choisissons." },
-    "steps": { "title": "So konjugierst du", "items": ["Singular: je choisis, tu choisis, il choisit.", "Plural: nous choisissons, vous choisissez, ils choisissent.", "Weitere Verben: finir, réussir, réfléchir.", "Passé composé: j'ai choisi, nous avons fini."] },
-    "pitfall": { "html": "<p>Nicht <b>nous choisons</b>. Im Plural steht <b>-iss-</b>: <b>nous choisissons</b>.</p>" },
+    "tldr": [
+      "Viele Verben auf -ir (finir, choisir, réussir) bekommen im Plural -iss-: nous choisissons.",
+      "Das Partizip endet auf -i: choisi, fini."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: das Menü",
+      "html": "<p>Im Restaurant wählst du etwas aus. Bei mehreren Personen kommt -iss- dazu: <b>nous choisissons</b>, wir wählen.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Person",
+            "choisir",
+            "Partizip"
+          ],
+          [
+            [
+              "je",
+              "choisis",
+              "choisi"
+            ],
+            [
+              "nous",
+              "choisissons",
+              "choisi"
+            ],
+            [
+              "ils",
+              "choisissent",
+              "choisi"
+            ]
+          ],
+          [
+            1,
+            1.4,
+            1
+          ],
+          "Tabelle: choisir im Präsens und Partizip"
+        ]
+      },
+      "caption": "Im Singular fällt -iss- weg, im Plural bleibt es: choisis, choisissons."
+    },
+    "steps": {
+      "title": "So konjugierst du",
+      "items": [
+        "Singular: je choisis, tu choisis, il choisit.",
+        "Plural: nous choisissons, vous choisissez, ils choisissent.",
+        "Weitere Verben: finir, réussir, réfléchir.",
+        "Passé composé: j'ai choisi, nous avons fini."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Nicht <b>nous choisons</b>. Im Plural steht <b>-iss-</b>: <b>nous choisissons</b>.</p>"
+    },
     "rule": "Verben auf -ir: Plural mit -iss-. Partizip auf -i.",
-    "check": { "q": "Wir wählen ein Buch.", "options": [{ "id": "Nous choisissons un livre.", "html": "Nous choisissons un livre." }, { "id": "Nous choisons un livre.", "html": "Nous choisons un livre." }, { "id": "Nous choisis un livre.", "html": "Nous choisis un livre." }], "answer": "Nous choisissons un livre.", "why": "Im Plural steht -iss-." }
+    "check": {
+      "q": "Wir wählen ein Buch.",
+      "options": [
+        {
+          "id": "Nous choisissons un livre.",
+          "html": "Nous choisissons un livre."
+        },
+        {
+          "id": "Nous choisons un livre.",
+          "html": "Nous choisons un livre."
+        },
+        {
+          "id": "Nous choisis un livre.",
+          "html": "Nous choisis un livre."
+        }
+      ],
+      "answer": "Nous choisissons un livre.",
+      "why": "Im Plural steht -iss-."
+    }
   },
   "lui-leur": {
     "goal": "Du kannst mit lui und leur sagen, wem du etwas sagst, gibst oder schreibst.",
-    "tldr": ["lui steht für eine Person mit à: Je lui parle (ihm oder ihr).", "leur steht für mehrere Personen mit à: Je leur parle (ihnen)."],
-    "analogy": { "title": "Stell dir vor: der Briefumschlag", "html": "<p>Du schreibst einem Freund: <b>Je lui écris.</b> Das Wort lui steht für die Person, an die du schreibst.</p>" },
-    "figure": { "diagram": { "name": "flowDiagram", "args": [["Je parle à Paul|(à + Person)", "Je lui parle|(lui vor dem Verb)"], "Ablauf: Die Person mit à wird durch lui ersetzt"] }, "caption": "lui und leur ersetzen eine Person mit à." },
-    "steps": { "title": "So ersetzt du", "items": ["Eine Person mit à: Je parle à Léa wird zu Je lui parle.", "Mehrere Personen: Je téléphone à mes parents wird zu Je leur téléphone.", "Das Pronomen steht vor dem Verb: Je lui donne un livre.", "Passé composé: Je lui ai parlé."] },
-    "pitfall": { "html": "<p>Nicht <b>Je parle lui</b>. Das Pronomen steht vor dem Verb: <b>Je lui parle</b>.</p>" },
+    "tldr": [
+      "lui steht für eine Person mit à: Je lui parle (ihm oder ihr).",
+      "leur steht für mehrere Personen mit à: Je leur parle (ihnen)."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: der Briefumschlag",
+      "html": "<p>Du schreibst einem Freund: <b>Je lui écris.</b> Das Wort lui steht für die Person, an die du schreibst.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "flowDiagram",
+        "args": [
+          [
+            "Je parle à Paul|(à + Person)",
+            "Je lui parle|(lui vor dem Verb)"
+          ],
+          "Ablauf: Die Person mit à wird durch lui ersetzt"
+        ]
+      },
+      "caption": "lui und leur ersetzen eine Person mit à."
+    },
+    "steps": {
+      "title": "So ersetzt du",
+      "items": [
+        "Eine Person mit à: Je parle à Léa wird zu Je lui parle.",
+        "Mehrere Personen: Je téléphone à mes parents wird zu Je leur téléphone.",
+        "Das Pronomen steht vor dem Verb: Je lui donne un livre.",
+        "Passé composé: Je lui ai parlé."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Nicht <b>Je parle lui</b>. Das Pronomen steht vor dem Verb: <b>Je lui parle</b>.</p>"
+    },
     "rule": "lui = einer Person (à + Person), leur = mehreren Personen (à + Personen).",
-    "check": { "q": "Ich schreibe ihr (Léa).", "options": [{ "id": "Je lui écris.", "html": "Je lui écris." }, { "id": "Je leur écris.", "html": "Je leur écris." }, { "id": "Je écris lui.", "html": "Je écris lui." }], "answer": "Je lui écris.", "why": "lui steht für eine Person: Léa." }
+    "check": {
+      "q": "Ich schreibe ihr (Léa).",
+      "options": [
+        {
+          "id": "Je lui écris.",
+          "html": "Je lui écris."
+        },
+        {
+          "id": "Je leur écris.",
+          "html": "Je leur écris."
+        },
+        {
+          "id": "Je écris lui.",
+          "html": "Je écris lui."
+        }
+      ],
+      "answer": "Je lui écris.",
+      "why": "lui steht für eine Person: Léa."
+    }
   },
   "tout": {
     "goal": "Du kannst tout in allen Formen richtig benutzen: tout, toute, tous, toutes.",
-    "tldr": ["tout heißt alles oder ganz. Es stimmt mit dem Nomen überein: tout, toute, tous, toutes.", "tout le temps (immer), toute la journée (den ganzen Tag), tous les jours (jeden Tag)."],
-    "analogy": { "title": "Stell dir vor: der Stundenplan", "html": "<p>Du sagst <b>toute la semaine</b>: die ganze Woche. Das Wort tout passt sich dem Nomen an, wie ein Schlüssel an sein Schloss.</p>" },
-    "figure": { "diagram": { "name": "tableDiagram", "args": [["Form", "Beispiel", "Bedeutung"], [["tout (m. Sg.)", "tout le temps", "die ganze Zeit"], ["toute (f. Sg.)", "toute la journée", "den ganzen Tag"], ["tous (m. Pl.)", "tous les jours", "jeden Tag"], ["toutes (f. Pl.)", "toutes les filles", "alle Mädchen"]], [1.2, 1.8, 1.4], "Tabelle: tout in vier Formen"] }, "caption": "tout steht vor dem Begleiter und stimmt mit dem Nomen überein." },
-    "steps": { "title": "So benutzt du tout", "items": ["tout + le, la, les: tout le temps, toute la classe, tous les jours.", "Allein heißt tout alles: C'est tout.", "Als Pronomen: Tout est prêt.", "Mit ce: tout ce que je sais: alles, was ich weiß."] },
-    "pitfall": { "html": "<p>Nicht <b>tout la semaine</b>. Mit weiblichem Nomen: <b>toute la semaine</b>.</p>" },
+    "tldr": [
+      "tout heißt alles oder ganz. Es stimmt mit dem Nomen überein: tout, toute, tous, toutes.",
+      "tout le temps (immer), toute la journée (den ganzen Tag), tous les jours (jeden Tag)."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: der Stundenplan",
+      "html": "<p>Du sagst <b>toute la semaine</b>: die ganze Woche. Das Wort tout passt sich dem Nomen an, wie ein Schlüssel an sein Schloss.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Form",
+            "Beispiel",
+            "Bedeutung"
+          ],
+          [
+            [
+              "tout (m. Sg.)",
+              "tout le temps",
+              "die ganze Zeit"
+            ],
+            [
+              "toute (f. Sg.)",
+              "toute la journée",
+              "den ganzen Tag"
+            ],
+            [
+              "tous (m. Pl.)",
+              "tous les jours",
+              "jeden Tag"
+            ],
+            [
+              "toutes (f. Pl.)",
+              "toutes les filles",
+              "alle Mädchen"
+            ]
+          ],
+          [
+            1.2,
+            1.8,
+            1.4
+          ],
+          "Tabelle: tout in vier Formen"
+        ]
+      },
+      "caption": "tout steht vor dem Begleiter und stimmt mit dem Nomen überein."
+    },
+    "steps": {
+      "title": "So benutzt du tout",
+      "items": [
+        "tout + le, la, les: tout le temps, toute la classe, tous les jours.",
+        "Allein heißt tout alles: C'est tout.",
+        "Als Pronomen: Tout est prêt.",
+        "Mit ce: tout ce que je sais: alles, was ich weiß."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Nicht <b>tout la semaine</b>. Mit weiblichem Nomen: <b>toute la semaine</b>.</p>"
+    },
     "rule": "tout, toute, tous, toutes: stimmt mit dem Nomen überein.",
-    "check": { "q": "___ la journée.", "options": [{ "id": "toute", "html": "toute" }, { "id": "tout", "html": "tout" }, { "id": "tous", "html": "tous" }], "answer": "toute", "why": "journée ist weiblich und Singular: toute." }
+    "check": {
+      "q": "___ la journée.",
+      "options": [
+        {
+          "id": "toute",
+          "html": "toute"
+        },
+        {
+          "id": "tout",
+          "html": "tout"
+        },
+        {
+          "id": "tous",
+          "html": "tous"
+        }
+      ],
+      "answer": "toute",
+      "why": "journée ist weiblich und Singular: toute."
+    }
+  },
+  "etre": {
+    "goal": "Du kannst être im Présent in allen sechs Personen konjugieren und in Sätzen benutzen.",
+    "tldr": [
+      "<b>être</b> heißt „sein“ und ist das wichtigste Verb im Französischen.",
+      "Es ist unregelmäßig: je suis, tu es, il est, nous sommes, vous êtes, ils sont.",
+      "Du brauchst es für Name, Herkunft und Eigenschaften: Je suis Lena. Elle est contente."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: dein Ausweis",
+      "html": "<p>être sagt, <b>wer</b> oder <b>wie</b> jemand ist. Es steht quasi auf dem Ausweis: der Name (Je suis Lena), der Wohnort (Je suis de Stuttgart), eine Eigenschaft (Il est grand).</p><p>Immer wenn du im Deutschen „bin, bist, ist, sind“ sagst, nimmst du auf Französisch être.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "personDiagram",
+        "args": [
+          "etre"
+        ]
+      },
+      "caption": "Alle sechs Formen von être. Ein Bild einprägen hilft: Die Einzahl beginnt mit s oder e, die Mehrzahl mit s und ê."
+    },
+    "steps": {
+      "title": "So baust du „Wir sind in der Schule“, Schritt für Schritt",
+      "items": [
+        "Wer ist gemeint? „Wir“ heißt <b>nous</b>.",
+        "Suche die Form in der Tabelle: nous <b>sommes</b>.",
+        "Ergänze den Rest des Satzes: à l'école (in der Schule).",
+        "Fertig: <b>Nous sommes à l'école.</b>"
+      ]
+    },
+    "pitfall": {
+      "html": "<p><b>tu es</b> und <b>il est</b> klingen gleich. Den Unterschied siehst du nur beim Schreiben: es und est.</p><p>Und vergiss das Dach auf dem e in <b>vous êtes</b>.</p>"
+    },
+    "rule": "je suis · tu es · il est · nous sommes · vous êtes · ils sont",
+    "check": {
+      "q": "Wie heißt „ihr seid“ auf Französisch?",
+      "options": [
+        {
+          "id": "vous êtes",
+          "html": "vous êtes"
+        },
+        {
+          "id": "vous sommes",
+          "html": "vous sommes"
+        },
+        {
+          "id": "vous est",
+          "html": "vous est"
+        },
+        {
+          "id": "vous avez",
+          "html": "vous avez"
+        }
+      ],
+      "answer": "vous êtes",
+      "why": "Zu vous gehört êtes. Die Form sommes gehört zu nous und avez ist von avoir."
+    }
+  },
+  "avoir": {
+    "goal": "Du kannst avoir im Présent konjugieren und damit dein Alter sagen.",
+    "tldr": [
+      "<b>avoir</b> heißt „haben“.",
+      "Die Formen: j'ai, tu as, il a, nous avons, vous avez, ils ont.",
+      "Das Alter sagt man mit avoir: J'ai treize ans. Wörtlich: „Ich habe dreizehn Jahre.“"
+    ],
+    "analogy": {
+      "title": "Stell dir vor: dein Rucksack",
+      "html": "<p>avoir sagt, was du <b>hast</b>: J'ai un frère. Tu as un chien.</p><p>Im Französischen „hat“ man aber auch Dinge, die wir anders sagen: J'ai faim (ich habe Hunger) und J'ai treize ans (ich habe dreizehn Jahre).</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "personDiagram",
+        "args": [
+          "avoir",
+          [
+            0
+          ]
+        ]
+      },
+      "caption": "Alle Formen von avoir. Vor einem Vokal wird je zu j': j'ai."
+    },
+    "steps": {
+      "title": "So sagst du dein Alter, Schritt für Schritt",
+      "items": [
+        "Jemand fragt: <b>Quel âge as-tu ?</b> (Wie alt bist du?)",
+        "Im Französischen „hast“ du Jahre. Du brauchst also <b>avoir</b>, nicht être.",
+        "Die Form für „ich“ ist <b>j'ai</b>. Je und ai verschmelzen zu j'ai.",
+        "Fertig: <b>J'ai treize ans.</b>"
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Sag nie „Je suis treize ans“. Das Alter geht <b>immer</b> mit avoir.</p><p>Vor einem Vokal wird je zu j': <b>j'ai</b>, aber je vais und je fais.</p>"
+    },
+    "rule": "j'ai · tu as · il a · nous avons · vous avez · ils ont",
+    "check": {
+      "q": "Wie sagst du „Ich bin 12 Jahre alt“?",
+      "options": [
+        {
+          "id": "J'ai douze ans.",
+          "html": "J'ai douze ans."
+        },
+        {
+          "id": "Je suis douze ans.",
+          "html": "Je suis douze ans."
+        },
+        {
+          "id": "Je ai douze ans.",
+          "html": "Je ai douze ans."
+        },
+        {
+          "id": "Je vais douze ans.",
+          "html": "Je vais douze ans."
+        }
+      ],
+      "answer": "J'ai douze ans.",
+      "why": "Das Alter wird mit avoir gebildet: j'ai. Je + ai wird zu j'ai."
+    }
+  },
+  "aller": {
+    "goal": "Du kannst aller im Présent konjugieren und damit sagen, wohin du gehst.",
+    "tldr": [
+      "<b>aller</b> heißt „gehen“ und ist unregelmäßig.",
+      "Die Formen: je vais, tu vas, il va, nous allons, vous allez, ils vont.",
+      "Nur bei nous und vous erkennst du das Wort aller wieder: allons, allez."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: dein Schulweg",
+      "html": "<p>aller sagt, <b>wohin</b> die Reise geht: Je vais à l'école. Nous allons au cinéma.</p><p>Nach aller steht fast immer ein Ort mit <b>à</b>. Aus à + le wird <b>au</b>: au cinéma.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "personDiagram",
+        "args": [
+          "aller",
+          [
+            3,
+            4
+          ]
+        ]
+      },
+      "caption": "Gelb: nous allons und vous allez sehen aus wie der Infinitiv. Die anderen vier Formen sind ganz anders."
+    },
+    "steps": {
+      "title": "So sagst du „Wir gehen ins Kino“, Schritt für Schritt",
+      "items": [
+        "Wer geht? „Wir“ heißt <b>nous</b>.",
+        "Form von aller für nous: <b>allons</b>.",
+        "Wohin? Ins Kino: <b>au cinéma</b> (à + le = au).",
+        "Fertig: <b>Nous allons au cinéma.</b>"
+      ]
+    },
+    "pitfall": {
+      "html": "<p><b>vais, vas, va</b> sehen ähnlich aus. Merke dir: je vais (mit i), tu vas, il va.</p><p>Die Mehrzahl heißt <b>ils vont</b>, nicht „ils allent“.</p>"
+    },
+    "rule": "je vais · tu vas · il va · nous allons · vous allez · ils vont",
+    "check": {
+      "q": "Wie heißt „sie (Mehrzahl) gehen“?",
+      "options": [
+        {
+          "id": "ils vont",
+          "html": "ils vont"
+        },
+        {
+          "id": "ils allent",
+          "html": "ils allent"
+        },
+        {
+          "id": "ils vais",
+          "html": "ils vais"
+        },
+        {
+          "id": "ils allons",
+          "html": "ils allons"
+        }
+      ],
+      "answer": "ils vont",
+      "why": "Bei ils heißt die Form vont. Eine Form „allent“ gibt es nicht."
+    }
+  },
+  "faire": {
+    "goal": "Du kannst faire im Présent konjugieren und weißt, wofür man es benutzt.",
+    "tldr": [
+      "<b>faire</b> heißt „machen“ oder „tun“.",
+      "Die Formen: je fais, tu fais, il fait, nous faisons, vous faites, ils font.",
+      "Es steckt in vielen festen Ausdrücken: faire du sport, faire les devoirs, faire du vélo."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: dein Nachmittag",
+      "html": "<p>Fragt dich jemand „Was machst du heute?“, antwortest du mit faire: Je fais mes devoirs. Je fais du sport.</p><p>faire ist der <b>Alleskönner</b> unter den Verben, genau wie „machen“ im Deutschen.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "personDiagram",
+        "args": [
+          "faire",
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      "caption": "Gelb: je fais und tu fais sehen gleich aus. Nur das Pronomen verrät, wer gemeint ist."
+    },
+    "steps": {
+      "title": "So sagst du „Ich mache meine Hausaufgaben“, Schritt für Schritt",
+      "items": [
+        "Wer macht etwas? „Ich“ heißt <b>je</b>.",
+        "Form von faire für je: <b>fais</b>.",
+        "Was? Hausaufgaben heißt <b>les devoirs</b>, „meine“ heißt <b>mes</b>.",
+        "Fertig: <b>Je fais mes devoirs.</b>"
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Bei „ihr“ heißt es <b>vous faites</b> und nicht „vous faisez“. Das ist eine der drei Ausnahmen mit -tes (auch vous êtes, vous dites).</p>"
+    },
+    "rule": "je fais · tu fais · il fait · nous faisons · vous faites · ils font",
+    "check": {
+      "q": "Wie heißt „ihr macht“?",
+      "options": [
+        {
+          "id": "vous faites",
+          "html": "vous faites"
+        },
+        {
+          "id": "vous faisez",
+          "html": "vous faisez"
+        },
+        {
+          "id": "vous faisons",
+          "html": "vous faisons"
+        },
+        {
+          "id": "vous font",
+          "html": "vous font"
+        }
+      ],
+      "answer": "vous faites",
+      "why": "Zu vous gehört bei faire die Form faites. Faisons gehört zu nous."
+    }
+  },
+  "er": {
+    "goal": "Du kannst jedes regelmäßige Verb auf -er im Présent richtig konjugieren.",
+    "tldr": [
+      "Nimm den Infinitiv und streiche -er: parler wird zu <b>parl-</b>. Das ist der Stamm.",
+      "Hänge die Endungen an: <b>-e, -es, -e, -ons, -ez, -ent</b>.",
+      "Fast alle französischen Verben gehören zu dieser Gruppe. Mit einem Muster kannst du also hunderte Verben."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: Bausteine",
+      "html": "<p>Ein Verb besteht aus zwei Teilen: einem <b>festen Stamm</b> (parl-) und einem <b>Endstück</b>, das zur Person passt.</p><p>Wie bei Lego: Der Stamm bleibt liegen, du steckst nur das passende Stück an.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "endingsDiagram",
+        "args": [
+          [
+            {
+              "inf": "parler (sprechen)",
+              "stem": "parl",
+              "ends": [
+                "e",
+                "es",
+                "e",
+                "ons",
+                "ez",
+                "ent"
+              ],
+              "silent": [
+                0,
+                1,
+                2,
+                5
+              ]
+            }
+          ]
+        ]
+      },
+      "caption": "Der Stamm parl- bleibt immer gleich. Nur bei nous und vous hörst du die Endung."
+    },
+    "steps": {
+      "title": "So konjugierst du „wir singen“, Schritt für Schritt",
+      "items": [
+        "Verb: <b>chanter</b> (singen). Streiche -er: Der Stamm ist <b>chant-</b>.",
+        "Person: „wir“ heißt <b>nous</b>. Die Endung bei nous ist <b>-ons</b>.",
+        "Hänge an: chant + ons = <b>chantons</b>.",
+        "Fertig: <b>Nous chantons une chanson.</b>"
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Bei je, tu, il und ils hörst du die Endung nicht: <b>je parle, tu parles, ils parlent</b> klingen gleich. Du musst sie trotzdem schreiben: -e, -es, -ent.</p><p>Vor einem Vokal wird je zu j': j'aime, j'habite.</p>"
+    },
+    "rule": "Stamm + e · es · e · ons · ez · ent",
+    "check": {
+      "q": "Wie heißt „ihr spielt“ (jouer)?",
+      "options": [
+        {
+          "id": "vous jouez",
+          "html": "vous jouez"
+        },
+        {
+          "id": "vous jouons",
+          "html": "vous jouons"
+        },
+        {
+          "id": "vous jouent",
+          "html": "vous jouent"
+        },
+        {
+          "id": "vous joues",
+          "html": "vous joues"
+        }
+      ],
+      "answer": "vous jouez",
+      "why": "Stamm jou- plus die Endung für vous: -ez. Das ergibt jouez."
+    }
+  },
+  "irre": {
+    "goal": "Du kannst regelmäßige Verben auf -ir (finir) und -re (attendre) im Présent konjugieren.",
+    "tldr": [
+      "<b>-ir-Verben</b> wie finir: Stamm fin- plus is, is, it, issons, issez, issent.",
+      "<b>-re-Verben</b> wie attendre: Stamm attend- plus s, s, (nichts), ons, ez, ent.",
+      "Bei -re ähneln die Endungen denen der -er-Verben. Bei -ir kommt im Plural ein -iss- dazu."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: zwei weitere Bausätze",
+      "html": "<p>Neben dem großen -er-Bausatz gibt es noch zwei kleinere.</p><p>Beim <b>-ir-Bausatz</b> steckt im Plural ein extra „-iss-“ (nous finissons). Beim <b>-re-Bausatz</b> bleibt bei il/elle die Endung leer (il attend).</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "endingsDiagram",
+        "args": [
+          [
+            {
+              "inf": "finir (beenden)",
+              "stem": "fin",
+              "ends": [
+                "is",
+                "is",
+                "it",
+                "issons",
+                "issez",
+                "issent"
+              ],
+              "silent": [
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "inf": "attendre (warten)",
+              "stem": "attend",
+              "ends": [
+                "s",
+                "s",
+                "",
+                "ons",
+                "ez",
+                "ent"
+              ],
+              "silent": [
+                0,
+                1,
+                2,
+                5
+              ]
+            }
+          ]
+        ]
+      },
+      "caption": "Oben die -ir-Endungen, unten die -re-Endungen. Das Zeichen – heißt: keine Endung."
+    },
+    "steps": {
+      "title": "So konjugierst du „sie warten“, Schritt für Schritt",
+      "items": [
+        "Verb: <b>attendre</b> (warten). Streiche -re: Der Stamm ist <b>attend-</b>.",
+        "Person: „sie“ (Mehrzahl) heißt <b>ils</b>. Die Endung ist <b>-ent</b>.",
+        "Hänge an: attend + ent = <b>attendent</b>.",
+        "Fertig: <b>Ils attendent le bus.</b>"
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Bei il/elle/on: finir → <b>il finit</b> (mit -t), attendre → <b>il attend</b> (ohne Endung, das d bleibt vom Stamm).</p><p>Im Plural der -ir-Verben nicht das -iss- vergessen: <b>nous finissons</b>.</p>"
+    },
+    "rule": "-ir: is · is · it · issons · issez · issent. -re: s · s · – · ons · ez · ent",
+    "check": {
+      "q": "Wie heißt „wir beenden“ (finir)?",
+      "options": [
+        {
+          "id": "nous finissons",
+          "html": "nous finissons"
+        },
+        {
+          "id": "nous finons",
+          "html": "nous finons"
+        },
+        {
+          "id": "nous finisons",
+          "html": "nous finisons"
+        },
+        {
+          "id": "nous finit",
+          "html": "nous finit"
+        }
+      ],
+      "answer": "nous finissons",
+      "why": "Im Plural bekommen -ir-Verben ein -iss-: Stamm fin + iss + ons = finissons."
+    }
+  },
+  "zahlen-grund": {
+    "goal": "Du kannst die Zahlen von 0 bis 16 auf Französisch sagen, hören und schreiben.",
+    "tldr": [
+      "Von 0 bis 16 hat jede Zahl ein eigenes Wort. Das musst du einmal lernen.",
+      "Danach baust du alle größeren Zahlen aus diesen Bausteinen.",
+      "Sprich jede Zahl laut nach, bevor du sie schreibst."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: die Grundausstattung",
+      "html": "<p>Wie ein Federmäppchen mit Stift, Lineal und Radiergummi: Diese Wörter sind dein Werkzeug. Mit ihnen baust du später alles andere.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Zahl",
+            "Wort"
+          ],
+          [
+            [
+              "0",
+              "zéro"
+            ],
+            [
+              "5",
+              "cinq"
+            ],
+            [
+              "10",
+              "dix"
+            ],
+            [
+              "16",
+              "seize"
+            ]
+          ],
+          [
+            1,
+            1
+          ],
+          "Tabelle: vier Beispielzahlen"
+        ]
+      },
+      "caption": "Vier Beispiele aus den Bausteinen 0 bis 16."
+    },
+    "steps": {
+      "title": "Lernen in drei Schritten",
+      "items": [
+        "Hören: Tippe auf den Lautsprecher und sprich nach.",
+        "Lesen: Sieh dir Ziffer und Wort nebeneinander an.",
+        "Schreiben: Erst danach tippst du das Wort in der Übung."
+      ]
+    },
+    "pitfall": {
+      "html": "<p><b>un</b> ist die Zahl 1. Vor einem weiblichen Nomen heißt es <b>une</b>: une pomme.</p>"
+    },
+    "rule": "0 bis 16 sind eigene Wörter. Ab 17 baust du aus Bausteinen.",
+    "check": {
+      "q": "Wie heißt 5 auf Französisch?",
+      "options": [
+        {
+          "id": "cinq",
+          "html": "cinq"
+        },
+        {
+          "id": "sept",
+          "html": "sept"
+        },
+        {
+          "id": "neuf",
+          "html": "neuf"
+        }
+      ],
+      "answer": "cinq",
+      "why": "5 ist cinq. Sieben ist sept, neun ist neuf."
+    }
+  },
+  "zahlen-zehner": {
+    "goal": "Du kannst die Zahlen von 17 bis 69 bilden und Zehner und Einer richtig zusammensetzen.",
+    "tldr": [
+      "Ab 17 baust du die Zahl aus dix (10) und dem Einer: dix-sept.",
+      "Die Zehner heißen vingt, trente, quarante, cinquante, soixante.",
+      "Nur bei 1 steht et dazwischen: vingt et un, aber vingt-deux."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: der Eierkarton",
+      "html": "<p>Ein Eierkarton hat zehn Eier. Dazu kommen sieben: zusammen siebzehn. Genauso: dix plus sept ist dix-sept.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "flowDiagram",
+        "args": [
+          [
+            "dix|(10)",
+            "dix + sept|(10 + 7)",
+            "dix-sept|(17)"
+          ],
+          "Ablauf: 17 aus dix und sept"
+        ]
+      },
+      "caption": "So entsteht 17: erst der Zehner, dann der Einer, mit Bindestrich."
+    },
+    "steps": {
+      "title": "Drei Beispiele, Schritt für Schritt",
+      "items": [
+        "34 = trente + quatre = trente-quatre.",
+        "21 = vingt + et + un = vingt et un.",
+        "22 = vingt + deux = vingt-deux."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Das <b>et</b> steht nur bei 1: vingt et un. Bei 22 gibt es kein et: vingt-deux.</p>"
+    },
+    "rule": "17 bis 19: dix plus Einer. Ab 20: Zehner plus Einer, mit et bei 1.",
+    "check": {
+      "q": "Wie heißt 31?",
+      "options": [
+        {
+          "id": "trente et un",
+          "html": "trente et un"
+        },
+        {
+          "id": "trente-un",
+          "html": "trente-un"
+        },
+        {
+          "id": "trente-onze",
+          "html": "trente-onze"
+        }
+      ],
+      "answer": "trente et un",
+      "why": "31 = trente et un, wie 21 mit vingt et un."
+    }
+  },
+  "zahlen-zwanziger": {
+    "goal": "Du kannst die Zahlen von 70 bis 99 bilden und erklären, warum sie so klingen.",
+    "tldr": [
+      "Ab 70 zählt man in Zwanzigern: 80 = 4 × 20, 90 = 4 × 20 + 10.",
+      "70 heißt soixante-dix, 80 quatre-vingts, 90 quatre-vingt-dix.",
+      "Das s bei quatre-vingts fällt weg, wenn eine Zahl folgt: quatre-vingt-un."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: Packen von Zwanzigern",
+      "html": "<p>Stifte werden in Packen zu zwanzig verkauft. Vier volle Packen sind 80 Stifte. Das heißt auf Französisch quatre-vingts: vier Zwanziger.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "flowDiagram",
+        "args": [
+          [
+            "quatre × vingt|(4 × 20)",
+            "quatre-vingts|(80)",
+            "quatre-vingt-dix|(80 + 10 = 90)"
+          ],
+          "Ablauf: 80 und 90 aus Zwanzigern gebaut"
+        ]
+      },
+      "caption": "Erst die Zwanziger, dann der Rest."
+    },
+    "steps": {
+      "title": "So bildest du 90",
+      "items": [
+        "4 × 20 sind quatre-vingts.",
+        "Plus 10 heißt dix.",
+        "Zusammen: quatre-vingt-dix. Das s ist weg, weil dix folgt."
+      ]
+    },
+    "pitfall": {
+      "html": "<p><b>quatre-vingts</b> hat ein s nur dann, wenn nichts danach kommt. 81 ist <b>quatre-vingt-un</b>, ohne s.</p>"
+    },
+    "rule": "70 bis 79: soixante und dann 10 bis 19. 80 bis 99: quatre-vingts plus Rest.",
+    "check": {
+      "q": "Wie schreibt man 80?",
+      "options": [
+        {
+          "id": "quatre-vingts",
+          "html": "quatre-vingts"
+        },
+        {
+          "id": "quatre-vingt",
+          "html": "quatre-vingt"
+        },
+        {
+          "id": "vingt-quatre",
+          "html": "vingt-quatre"
+        }
+      ],
+      "answer": "quatre-vingts",
+      "why": "80 = 4 × 20. Weil nichts danach kommt, bekommt vingt ein s."
+    }
+  },
+  "zahlen-gross": {
+    "goal": "Du kannst Hunderter und Tausender bilden und weißt, wann das s wegfällt.",
+    "tldr": [
+      "Hundert heißt cent. Bei Vielfachen steht ein s: deux cents.",
+      "Folgt eine weitere Zahl, fällt das s weg: deux cent un.",
+      "Mille (1000) bleibt immer gleich: deux mille. Eine Million ist un million."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: der Kassenzettel",
+      "html": "<p>Auf dem Zettel steht eine runde Summe: deux cents. Steht noch etwas dahinter, verschwindet das s: deux cent un.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Zahl",
+            "Wort"
+          ],
+          [
+            [
+              "100",
+              "cent"
+            ],
+            [
+              "200",
+              "deux cents"
+            ],
+            [
+              "201",
+              "deux cent un"
+            ],
+            [
+              "2000",
+              "deux mille"
+            ]
+          ],
+          [
+            1,
+            1
+          ],
+          "Tabelle: Hunderter und Tausender"
+        ]
+      },
+      "caption": "Das s steht nur am Ende einer Zahl."
+    },
+    "steps": {
+      "title": "Schritt für Schritt",
+      "items": [
+        "300 = trois cents: das s bleibt.",
+        "350 = trois cent cinquante: kein s, weil cinquante folgt.",
+        "2000 = deux mille: mille hat nie ein s."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Es heißt <b>deux cent un</b>, nicht <b>deux cents un</b>. Das s steht nur, wenn die Zahl endet.</p>"
+    },
+    "rule": "cent und Vielfache: s am Ende, wenn nichts folgt. mille: nie ein s.",
+    "check": {
+      "q": "Wie heißt 300?",
+      "options": [
+        {
+          "id": "trois cents",
+          "html": "trois cents"
+        },
+        {
+          "id": "trois cent",
+          "html": "trois cent"
+        },
+        {
+          "id": "trois centes",
+          "html": "trois centes"
+        }
+      ],
+      "answer": "trois cents",
+      "why": "300 endet auf cent: das s bleibt, also trois cents."
+    }
   }
 }

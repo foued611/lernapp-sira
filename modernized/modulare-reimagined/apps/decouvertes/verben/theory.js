@@ -1,45 +1,18 @@
 // Theorieseite des Cahier de Verbes (Herkunft: legacy/modulare/apps/franzoesisch-verben/theory.js).
-// Eigene Komponente (config.Theory), weil die Standardseite keine Sprachausgabe hat. Die Zustände der Tabelle
-// (Verbwechsel, Selbsttest) kommen aus komponenten/theory.js, Lektion, Beispiele und Merkzettel ebenso.
-// Die Sprachausgabe läuft nur im Klick und prüft vorher, ob der Browser sie kann (try/catch).
+// Verbseiten des Cahier de Verbes (Konjugationstabelle mit Selbsttest). Die Weiche in theory.js wählt sie für Seiten mit verbs.
+// Die Zustände der Tabelle (Verbwechsel, Selbsttest) kommen aus komponenten/theory.js, Lektion, Beispiele und Merkzettel ebenso.
 import { createElement, Fragment, useReducer } from 'react';
-import { Lesson } from '../../komponenten/lesson.js';
-import { Notes, initialPractice, practiceReducer, thirdCell } from '../../komponenten/theory.js';
-import { TrackLabel, trackOf } from '../../komponenten/tracks.js';
-import { Icon } from '../../komponenten/icons.js';
-import { Button } from '../../komponenten/ui.js';
+import { Lesson } from '../../../komponenten/lesson.js';
+import { Notes, initialPractice, practiceReducer, thirdCell } from '../../../komponenten/theory.js';
+import { TrackLabel, trackOf } from '../../../komponenten/tracks.js';
+import { Button } from '../../../komponenten/ui.js';
+import { SpeakButton } from '../sprache.js';
+import * as diagrams from './diagrams.js';
 import { V, SP } from './model.js';
 import { elides, lab } from './builders.js';
 
 const h = createElement;
 const PERSONS = [0, 1, 2, 3, 4, 5];
-
-/** Sprachausgabe ist optional. Ohne Browser-Unterstützung fehlt nur der Knopf. */
-export const canSpeak = () =>
-  typeof window !== 'undefined' && 'speechSynthesis' in window && typeof window.SpeechSynthesisUtterance === 'function';
-
-/** Liest einen französischen Text vor. Fehler bleiben folgenlos, die Seite funktioniert ohne Sprachausgabe. */
-export function speak(text) {
-  try {
-    if (!canSpeak()) return;
-    const utterance = new window.SpeechSynthesisUtterance(text);
-    utterance.lang = 'fr-FR';
-    utterance.rate = 0.85;
-    window.speechSynthesis.cancel();
-    window.speechSynthesis.speak(utterance);
-  } catch (error) {
-    /* Sprachausgabe nicht verfügbar: nichts tun. */
-  }
-}
-
-function SpeakButton({ text }) {
-  if (!canSpeak()) return null;
-  return h(
-    'button',
-    { type: 'button', className: 'say', 'aria-label': 'Vorlesen', onClick: () => speak(text) },
-    h(Icon, { name: 'say' })
-  );
-}
 
 /** Formzelle: bei unregelmäßigen Verben das ganze Wort, bei regelmäßigen Stamm plus Endung. */
 function formCell(verb, i) {
@@ -157,7 +130,7 @@ export function Theory({ unit, config, onStart }) {
     'div',
     { className: 'theory-stack' },
     h(Conjugation, { unit, head }),
-    h(Lesson, { lesson: (config.lessons || {})[unit.id], unitId: unit.id }),
+    h(Lesson, { lesson: (config.lessons || {})[unit.id], unitId: unit.id, diagrams }),
     h(Examples, { unit }),
     h(Notes, { notes: (config.notes || {})[unit.id] }),
     h('div', null, h(Button, { onClick: () => { if (typeof onStart === 'function') onStart(); } }, 'Übung starten · 8 Aufgaben'))

@@ -1,10 +1,10 @@
-// Aus dem Lernstoff (content/fr-verben/, über model.js) werden Fragen im Fragenformat von runde/index.js.
+// Aus dem Lernstoff (content/decouvertes-2/, über model.js) werden Fragen im Fragenformat von runde/index.js.
 // Herkunft: legacy/modulare/apps/franzoesisch-verben/builders.js. Die Reihenfolge der Zufallsaufrufe ist dieselbe
 // wie dort, damit gleicher Seed in Legacy und Neubau dieselben Fragen ergibt (analysis/modulare/dual/fr-verben_dual.mjs).
 // Zufall kommt nur als rng herein (AGENTS.md). rng steht immer als letzter Parameter.
-import { choiceQuestion, typedQuestion, matchQuestion, option, esc, normalise, compareTyped } from '../../runde/index.js';
-import { pick, shuffle } from '../../helfer/index.js';
-import { V, UNITS, SP, TRAP, HINT, PRON, PQV } from './model.js';
+import { choiceQuestion, typedQuestion, matchQuestion, option, esc, normalise, compareTyped } from '../../../runde/index.js';
+import { pick, shuffle } from '../../../helfer/index.js';
+import { V, SP, TRAP, HINT, PRON, PQV } from './model.js';
 
 const PERSONS = [0, 1, 2, 3, 4, 5];
 const CHIP_ID = 'verb';
@@ -138,8 +138,6 @@ function build(type, unit, next, rng) {
 
 const LESSON_IRREGULAR = ['choice', 'choice', 'form', 'match', 'type', 'sent', 'choice', 'type'];
 const LESSON_REGULAR = ['choice', 'end', 'form', 'match', 'type', 'sent', 'end', 'type'];
-const BOSS = ['choice', 'type', 'sent', 'form', 'choice', 'end', 'match', 'type', 'sent', 'choice', 'form', 'type'];
-const QUICK = ['choice', 'sent', 'choice', 'end', 'type'];
 
 /** 8 Fragen einer Seite. */
 export function lessonRound(unit, rng) {
@@ -147,20 +145,14 @@ export function lessonRound(unit, rng) {
   return (unit.irr ? LESSON_IRREGULAR : LESSON_REGULAR).map((t) => build(t, unit, next, rng));
 }
 
-function mixedRound(types, rng) {
-  const next = sentencePicker(rng);
-  return types.map((t) => {
-    const unit = t === 'end' ? pick(UNITS.filter((u) => !u.irr), rng) : pick(UNITS, rng);
-    return build(t, unit, next, rng);
-  });
+/** Eine Frage aus einer Verbseite, zufällige Art (Auswahl, Endung, Eingabe, Satz). Für Schnellrunde, Endgegner und Blitz. */
+export function verbQuestion(unit, rng) {
+  const types = unit.irr ? ['choice', 'form', 'sent', 'type'] : ['choice', 'end', 'sent', 'type'];
+  return build(pick(types, rng), unit, sentencePicker(rng), rng);
 }
 
-export const bossRound = (rng) => mixedRound(BOSS, rng);
-export const quickRound = (rng) => mixedRound(QUICK, rng);
-
-/** Eine Frage für den Blitz-Modus (immer Auswahl). */
-export function blitzQuestion(rng) {
-  const unit = pick(UNITS, rng);
+/** Blitz-Frage einer Verbseite. Blitz hat keine Eingabe: immer Auswahl, manchmal eine Endung. */
+export function verbBlitz(unit, rng) {
   if (!unit.irr && rng() < 0.25) {
     const v = V[pick(unit.verbs, rng)];
     return endingQ(v, randomPerson(v, true, rng), rng);
