@@ -63,13 +63,31 @@ let vergleiche = 0;
 // eine echte Abweichung.
 const schluessel = (q) => JSON.stringify([q.kind, q.label, String(q.prompt ?? '').replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim(), q.answer ?? null, q.leftValues ?? null]);
 const hatDublette = (fragen) => new Set(fragen.map(schluessel)).size < fragen.length;
+// Index der ersten Dublette. Bis dahin müssen beide Runden gleich sein, denn der Neubau zieht erst an dieser Stelle neu.
+const ersteDublette = (fragen) => {
+  const gesehen = new Set();
+  return fragen.findIndex((q) => {
+    const k = schluessel(q);
+    if (gesehen.has(k)) return true;
+    gesehen.add(k);
+    return false;
+  });
+};
 let erklaertDurchVielfalt = 0;
 
+// Eine Abweichung ist erklärt, wenn die Legacy-Runde eine Dublette hat UND alle Fragen davor gleich sind.
+// Nur so bleibt die Prüfung vor der Dublette scharf: Gleich ist dort Pflicht.
 function vergleiche1(art, seed, a, b, extra = {}, legacyFragen = null) {
   vergleiche++;
   if (gleich(a, b)) return;
-  if (legacyFragen && hatDublette(legacyFragen)) erklaertDurchVielfalt++;
-  else abweichungen.push({ seed, art, ...extra, legacy: a, neu: b });
+  if (legacyFragen && hatDublette(legacyFragen)) {
+    const k = ersteDublette(legacyFragen);
+    if (gleich(a.slice(0, k), b.slice(0, k))) {
+      erklaertDurchVielfalt++;
+      return;
+    }
+  }
+  abweichungen.push({ seed, art, ...extra, legacy: a, neu: b });
 }
 
 for (let seed = 1; seed <= SEEDS; seed++) {

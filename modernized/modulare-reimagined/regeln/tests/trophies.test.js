@@ -46,6 +46,36 @@ test('RULE-257: combo verlangt die Mindest-Combo, blitz die Mindestpunkte im Bli
   assert.equal(evaluateTrophyRule({ type: 'blitz', min: 10 }, state(), { ...blitz, mode: 'lesson' }), false);
 });
 
+test('RULE-257: blitz mit maxWrong verlangt die Treffer UND höchstens so viele Fehler', () => {
+  const rule = { type: 'blitz', min: 10, maxWrong: 1 };
+  const blitz = { ...lesson, mode: 'blitz', score: 10 };
+  assert.equal(evaluateTrophyRule(rule, state(), { ...blitz, wrong: 0 }), true);
+  assert.equal(evaluateTrophyRule(rule, state(), { ...blitz, wrong: 1 }), true);
+  assert.equal(evaluateTrophyRule(rule, state(), { ...blitz, wrong: 2 }), false);
+  assert.equal(evaluateTrophyRule(rule, state(), { ...blitz, score: 9, wrong: 0 }), false);
+});
+
+test('RULE-257: blitz ohne maxWrong ignoriert Fehler (bisheriges Verhalten)', () => {
+  const blitz = { ...lesson, mode: 'blitz', score: 10, wrong: 30 };
+  assert.equal(evaluateTrophyRule({ type: 'blitz', min: 10 }, state(), blitz), true);
+});
+
+test('RULE-257: ruleErrors prüft maxWrong als ganze Zahl ab 0, wie das Schema', () => {
+  const message = ['rule: maxWrong muss eine ganze Zahl ab 0 sein'];
+  assert.deepEqual(ruleErrors({ type: 'blitz', min: 10, maxWrong: 0 }, []), []);
+  assert.deepEqual(ruleErrors({ type: 'blitz', min: 10, maxWrong: 1 }, []), []);
+  assert.deepEqual(ruleErrors({ type: 'blitz', min: 10, maxWrong: -1 }, []), message);
+  assert.deepEqual(ruleErrors({ type: 'blitz', min: 10, maxWrong: 1.5 }, []), message);
+  assert.deepEqual(ruleErrors({ type: 'blitz', min: 10, maxWrong: 'x' }, []), message);
+});
+
+test('improved: ruleErrors begrenzt by auf höchstens 1, wie das Schema', () => {
+  const rule = (by) => ({ type: 'improved', unit: 'u1', by });
+  assert.deepEqual(ruleErrors(rule(1), ['u1']), []);
+  assert.deepEqual(ruleErrors(rule(1.5), ['u1']), ['rule: by muss über 0 und höchstens 1 sein']);
+  assert.deepEqual(ruleErrors(rule(0), ['u1']), ['rule: by muss über 0 und höchstens 1 sein']);
+});
+
 test('RULE-261: perfectRound verlangt eine fehlerfreie Runde außerhalb des Blitz', () => {
   const perfect = { type: 'perfectRound' };
   assert.equal(evaluateTrophyRule(perfect, state(), lesson), true);
@@ -75,4 +105,55 @@ test('RULE-246: all verlangt alle Teilregeln, any mindestens eine', () => {
   const either = { type: 'any', rules: [{ type: 'boss' }, { type: 'streak', days: 5 }] };
   assert.equal(evaluateTrophyRule(either, state({}, 1), lesson), false);
   assert.equal(evaluateTrophyRule(either, state({}, 5), lesson), true);
+});
+
+test('improved wahr bei Anstieg um mindestens by', () => {
+  const s = { profile: {}, app: { acc: { a: 0.9 } }, streak: 0 };
+  assert.equal(evaluateTrophyRule({ type: 'improved', unit: 'a', by: 0.2 }, s, { prevAcc: 0.6 }), true);
+});
+
+test('improved feuert nicht ohne vorherigen Wert', () => {
+  const s = { profile: {}, app: { acc: { a: 0.9 } }, streak: 0 };
+  assert.equal(evaluateTrophyRule({ type: 'improved', unit: 'a', by: 0.2 }, s, { prevAcc: null }), false);
+});
+
+test('improved feuert nicht bei zu kleinem Anstieg', () => {
+  const s = { profile: {}, app: { acc: { a: 0.7 } }, streak: 0 };
+  assert.equal(evaluateTrophyRule({ type: 'improved', unit: 'a', by: 0.2 }, s, { prevAcc: 0.6 }), false);
+});
+
+test('improved verträgt Rundungsfehler an der Grenze (0.7 - 0.5)', () => {
+  const s = { profile: {}, app: { acc: { a: 0.7 } }, streak: 0 };
+  assert.equal(evaluateTrophyRule({ type: 'improved', unit: 'a', by: 0.2 }, s, { prevAcc: 0.5 }), true);
+});
+
+test('improved gilt nur für die Seite der Runde', () => {
+  const s = { profile: {}, app: { acc: { a: 0.9, b: 0.3 } }, streak: 0 };
+  const rule = { type: 'improved', unit: 'a', by: 0.2 };
+  assert.equal(evaluateTrophyRule(rule, s, { unitId: 'b', prevAcc: 0.6 }), false);
+  assert.equal(evaluateTrophyRule(rule, s, { unitId: 'a', prevAcc: 0.6 }), true);
+});
+
+test('retryRecovered zählt richtige Wiederholungen', () => {
+  const s = { profile: {}, app: {}, streak: 0 };
+  assert.equal(evaluateTrophyRule({ type: 'retryRecovered', min: 2 }, s, { retryRight: 2 }), true);
+  assert.equal(evaluateTrophyRule({ type: 'retryRecovered', min: 2 }, s, { retryRight: 1 }), false);
+  assert.equal(evaluateTrophyRule({ type: 'retryRecovered', min: 2 }, s, {}), false);
+});
+
+test('refresh zählt app.refreshes', () => {
+  assert.equal(evaluateTrophyRule({ type: 'refresh', count: 1 }, { profile: {}, app: { refreshes: 1 }, streak: 0 }, {}), true);
+  assert.equal(evaluateTrophyRule({ type: 'refresh', count: 2 }, { profile: {}, app: { refreshes: 1 }, streak: 0 }, {}), false);
+  assert.equal(evaluateTrophyRule({ type: 'refresh', count: 1 }, { profile: {}, app: {}, streak: 0 }, {}), false);
+});
+
+test('ruleErrors prüft die Pflichtfelder der neuen Typen', () => {
+  const ids = ['a'];
+  assert.deepEqual(ruleErrors({ type: 'improved', unit: 'a', by: 0.2 }, ids), []);
+  assert.equal(ruleErrors({ type: 'improved', unit: 'x', by: 0.2 }, ids).length, 1);
+  assert.equal(ruleErrors({ type: 'improved', unit: 'a' }, ids).length, 1);
+  assert.deepEqual(ruleErrors({ type: 'retryRecovered', min: 2 }, ids), []);
+  assert.equal(ruleErrors({ type: 'retryRecovered' }, ids).length, 1);
+  assert.deepEqual(ruleErrors({ type: 'refresh', count: 1 }, ids), []);
+  assert.equal(ruleErrors({ type: 'refresh' }, ids).length, 1);
 });

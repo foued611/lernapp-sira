@@ -1,0 +1,86 @@
+/* Bausteine aus komponenten/ und seiten/: Hinweis, Fortschritt, Sterne, Konfetti und das Aufdecken im Verb-Raster.
+   Die Klassen werden in den Komponenten benutzt, deshalb liegen sie in der Datei, die jede App lädt (app.css).
+   Farben nur über die Tokens aus tokens.css, damit sie in hell und dunkel passen. */
+
+.notice {
+  margin: 0;
+  padding: 12px;
+  color: var(--text);
+  background: var(--note);
+  border: 2px solid var(--ink);
+  border-radius: 12px;
+}
+
+.notice-card h1 {
+  margin-top: 0;
+}
+
+.progress-track {
+  height: 14px;
+  overflow: hidden;
+  background: var(--card);
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--ok);
+}
+
+.stars-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.confetti {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.confetti .cf {
+  position: absolute;
+  top: -12px;
+  width: 10px;
+  height: 14px;
+  border-radius: 2px;
+  animation-name: cf-fall;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes cf-fall {
+  to {
+    transform: translateY(105vh) rotate(540deg);
+  }
+}
+
+/* Verdeckte Form im Verb-Raster: ein Knopf mit mindestens 44 px Berührungsfläche. */
+.fm-reveal {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 6px 10px;
+  font: inherit;
+  font-size: 14px;
+  color: var(--muted);
+  background: var(--card);
+  border: 2px dashed var(--line);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.fm-reveal:hover {
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+/* Konfetti entfällt bei reduzierter Bewegung. Die Ebene bleibt leer, die Meldung steht im Text. */
+@media (prefers-reduced-motion: reduce) {
+  .confetti {
+    display: none;
+  }
+}

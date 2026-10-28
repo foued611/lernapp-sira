@@ -19,11 +19,10 @@ export const SUBJECT_COLORS = Object.freeze({
 // Eine Kachel öffnet die App über ?app=<id> (siehe startseite.js). Die alten Pfade apps/<name>/index.html
 // gibt es in diesem Neubau nicht mehr.
 export const APPS = Object.freeze([
-  { id: 'fr-verben', subject: 'Französisch', title: 'Cahier de Verbes', desc: 'être, avoir, aller, faire und die regelmäßigen Verben im Présent. Erst Theorie, dann sofort üben.', status: LIVE },
   { id: 'mathe', subject: 'Mathematik', title: 'Mathe-Werkstatt', desc: 'Vorzeichen, Terme, Gleichungen, Prozente, Zinsen, Dreisatz, Daten und Zufall. Mit Waage, Zahlenstrahl und Kacheln erklärt.', status: LIVE },
   { id: 'geometrie', subject: 'Mathematik', title: 'Geometrie-Werkstatt', desc: 'Mittelsenkrechte, Winkelhalbierende, Dreiecke konstruieren, Winkel, Thales, Umkreis und Inkreis.', status: LIVE },
   { id: 'englisch', subject: 'Englisch', title: 'Englisch-Werkstatt', desc: 'Simple Past, Present Perfect, Konditionalsätze, Relativsätze, Passiv und indirekte Rede. Nach den Units von Access 3.', status: LIVE },
-  { id: 'decouvertes-2', subject: 'Französisch', title: 'Découvertes-Werkstatt', desc: 'Passé composé, connaître und savoir, Relativpronomen, Pronomen, vouloir, pouvoir, devoir und Verben auf -ir. Nach den Units von Découvertes 2.', status: LIVE },
+  { id: 'decouvertes-2', subject: 'Französisch', title: 'Französisch-Werkstatt', desc: 'Découvertes 2: Passé composé, Pronomen, vouloir, pouvoir und Verben auf -ir. Dazu das Cahier de Verbes (être, avoir, aller, faire, Présent) und die Zahlen auf Französisch.', status: LIVE },
   { id: 'info-zahlen', subject: 'Informatik', title: 'Zahlenwerkstatt', desc: 'Binär und Hexadezimal: Lampen schalten, umrechnen und addieren wie ein Computer.', status: LIVE },
   { id: 'deutsch', subject: 'Deutsch', title: 'Deutsch-Werkstatt', desc: 'Inhaltsangabe, Adverbialsätze, Kommas, das und dass, Passiv, sprachliche Bilder, Rechtschreibung und Lesen.', status: LIVE },
   { id: 'physik', subject: 'Physik', title: 'Physik-App', desc: 'Experimente, Messen und Kräfte.', status: SOON }
@@ -55,8 +54,6 @@ export function validateRegistry(entries) {
   });
   return errors;
 }
-
-export const liveApps = (entries) => entries.filter((entry) => entry.status === LIVE);
 
 /** Fächer in der Reihenfolge der Liste, ohne Dopplungen. Für die Auswahl auf der Startseite. */
 export const subjectsOf = (entries) => [...new Set(entries.map((entry) => entry.subject))];

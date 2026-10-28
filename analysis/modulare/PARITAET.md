@@ -6,18 +6,23 @@ Vergleich im Browser: Legacy über `python3 -m http.server 5174` (Repo-Stand 88e
 
 ## Stand 2026-10-28 (Abschluss der offenen Punkte)
 
+- Design-Kritik umgesetzt (bewusste Abweichung von Legacy, nur Handy ≤ 520 px): Die Kopfleiste ist dort nicht mehr sticky und läuft mit. Der Tagesziel-Text trennt Tagesziel (alle Apps) und Seitenstand (diese App). Das Prüfen-Feld erklärt die gesperrte Taste. Sterne und Fach-Etiketten sind lesbarer. Der Platzhalter „Hallo, •••“ bleibt: Die Maskierung des Namens ist Absicht (SEITE-MASKIERUNG).
 - Name: aus allen Dateien im Repo entfernt (AGENTS.md, README.md, docs/, scripts/smoke.mjs, analysis/). Bleibt: Repo-Pfad `lernapp-sira` und der GitHub-Benutzername in URLs, weil die Pages-Adresse daran hängt.
 - Parität Dual-Execution (analysis/modulare/dual): Die Skripte zählen jetzt, ob eine Abweichung durch die Vielfalt-Regel erklärt ist. Erklärt heißt: die Legacy-Runde hat selbst eine Dublette, der Neubau zieht dann neu.
   - Zahlenwerkstatt: 1800 Vergleiche, 267 erklärt durch Vielfalt, 0 unerklärt.
   - Mathe: 2400 Vergleiche, 157 erklärt durch Vielfalt, 177 unerklärt. Alle 177 sind Median-Fragen (RULE-056, von der Person freigegeben).
-  - Geometrie hat kein Dual-Skript.
+  - Geometrie: 2200 Vergleiche (200 Seeds, Lektion je Seite, Schnellrunde, Endgegner, Blitz), 983 erklärt durch Vielfalt, 0 unerklärt. Skript: `analysis/modulare/dual/geometrie_dual.mjs`. Erklärt heißt hier strenger als bei Zahlenwerk und Mathe: Vor der ersten Dublette der Legacy-Runde müssen alle Fragen gleich sein. Erst ab dort darf der Neubau abweichen. Gegenprobe: mit verschobenem Seed meldet das Skript 20 von 20 Abweichungen.
+  - Geometrie prüft die Einheit bei Eingabefragen. 4180 Eingaben mit falscher Einheit ("3 m" bei cm, "3°" bei cm) sind im Neubau 'bad', in Legacy 'ok'. Das ist die gewollte Einheitenprüfung (RULE-150), keine Rechenabweichung. Sie stehen separat im Ergebnis.
 - Die Befunde "fehlt" weiter unten sind überholt. Im Code vorhanden: Sammelalbum (komponenten/album.js), Kopfleiste mit Niveau (seiten/apphome.js), Tagesziel-Ring, Zum Ausdrucken (seiten/apphome.js), Auflösung (seiten/spiel.js, reveal).
 - Mobil 375 px, 44 Theorie-Seiten gegen Legacy: 0,00 bis 0,44 % Pixelabweichung, Mittel 0,05 %, Höhen gleich. Die früheren 33 bis 40 % kamen von den 44-px-Knöpfen. Sie verschoben das Layout um 32 px. Jetzt ist die Trefferfläche ein ::after, das Layout ist unverändert.
 - Desktop 1280 px, 44 Theorie-Seiten: 0,00 bis 0,18 %, Mittel 0,025 %, Höhen gleich.
 - Browser (Chromium, 375 px): Zahlenwerkstatt-Runde bis Ergebnis. IndexedDB enthält danach die gemerkten Aufgaben (13). Sicherung als echte Datei heruntergeladen.
-- Einspielen der Sicherung im Browser nicht geprüft.
+- Einspielen der Sicherung im Browser geprüft (Live, 2026-10-28): leeres Profil, Plan "2 Speicherstände" angezeigt, nach dem Einspielen XP 65 und 13 gemerkte Aufgaben wieder da.
 - RULE-056 und RULE-119 sind im Chat entschieden und in RULE_REVIEWS als bestätigt eingetragen.
-- Offen: Legacy-Dateien aus main entfernen (Entscheidung der Person). Geometrie ohne Dual-Skript. Wiederholung nach Fehler am Rundenende (RULE-243) bleibt bewusst.
+- Legacy-Code aus main entfernt (2026-10-28, Freigabe über /goal). Erhalten im Branch `legacy` (88e3d74). `content/` bleibt, der Neubau nutzt es.
+- Dual-Prüfung vereinheitlicht (2026-10-27): Zahlenwerk, Mathe und Geometrie prüfen alle dieselbe Erklärung. Erklärt ist eine Abweichung nur, wenn die Legacy-Runde eine Dublette hat und alle Fragen davor gleich sind. Ergebnis neu: Zahlenwerk 1800 Vergleiche, 267 erklärt, 0 unerklärt. Mathe 2400 Vergleiche, 157 erklärt, 177 unerklärt. Die 177 sind wie zuvor alle Median-Fragen (RULE-056, bestätigt).
+- Kontrast Fach-Etiketten (13 px, Schriftgewicht 600): gedämpfte Schrift auf Karte 6,15:1 hell und 7,01:1 dunkel. Auf Hintergrund 5,48:1 hell und 7,95:1 dunkel. Alle über 4,5:1 (WCAG AA). Offen: Kacheln mit `.tile.soon` haben `opacity: .6` und damit weniger Kontrast.
+- Offen: Wiederholung nach Fehler am Rundenende (RULE-243) bleibt bewusst.
 
 ## Stand 2026-10-27 (gilt vor den Befunden unten)
 

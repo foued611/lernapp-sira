@@ -7,7 +7,7 @@ import { createRng } from '../../helfer/index.js';
 import { openApp, openProfile, PROFILE_KEY } from '../../speicher/index.js';
 import {
   AppFrame, NO_STORAGE, Play, appDefaults, bossOpen, profileDefaults, resetApp, resetAppState, resetStep,
-  settleLeave, leaveNotice, settleRound, startRound
+  settleLeave, leaveNotice, settleRound, startRound, evaluateRound
 } from '../rahmen.js';
 import { messagesOf } from '../ergebnis.js';
 import { MSG } from '../boot.js';
@@ -25,7 +25,7 @@ async function setup({ logOk = true } = {}) {
   return { handle, config, profileStore, appStore, log };
 }
 
-async function finishLesson(env, { wrong = false, unit = env.config.units[0] } = {}) {
+async function finishLesson(env, { wrong = false, unit = env.config.units[0], day = DAY } = {}) {
   const started = startRound({
     config: env.config, mode: 'lesson', unit, app: env.appStore.state, profile: env.profileStore.state, rng: createRng(5)
   });
@@ -35,7 +35,7 @@ async function finishLesson(env, { wrong = false, unit = env.config.units[0] } =
     appId: env.config.id, mode: 'lesson', unit, roundResult,
     profile: env.profileStore.state, app: env.appStore.state,
     profileStore: env.profileStore, appStore: env.appStore,
-    log: env.log, day: DAY, badges: env.config.badges, unitIds: UNIT_IDS
+    log: env.log, day, badges: env.config.badges, unitIds: UNIT_IDS
   });
 }
 
@@ -47,6 +47,31 @@ test('RULE-195 Rundenende: Auswertung, Speichern und Protokoll laufen in einem A
   assert.equal(out.summary.stars, 3, 'alle richtig ergibt drei Sterne');
   assert.equal(out.summary.accuracy, 1);
   assert.equal(env.appStore.state.stars.start, 3);
+});
+
+test('RULE-247 Protokoll: eine Lektionsrunde schreibt gapDays und prevAcc, sonst keine neuen Felder', async () => {
+  const env = await setup();
+  // Erste Übung am 24.10., dann am 26.10. (DAY). Der Abstand ist 2 Tage, die Vorwerte kommen aus der ersten Runde.
+  const first = await finishLesson(env, { day: '2026-10-24' });
+  const rows = [];
+  env.log = (row) => { rows.push(row); return env.handle.logEvent(row); };
+  await finishLesson(env);
+  assert.equal(rows.length, 1);
+  assert.equal(rows[0].gapDays, 2);
+  assert.equal(rows[0].prevAcc, first.summary.accuracy);
+  assert.deepEqual(
+    Object.keys(rows[0]).sort(),
+    ['accuracy', 'app', 'failed', 'gapDays', 'mode', 'prevAcc', 'score', 'stars', 'type', 'unit', 'xp']
+  );
+});
+
+test('RULE-247 Protokoll: bei der ersten Übung sind gapDays und prevAcc null', async () => {
+  const env = await setup();
+  const rows = [];
+  env.log = (row) => { rows.push(row); return env.handle.logEvent(row); };
+  await finishLesson(env);
+  assert.equal(rows[0].gapDays, null);
+  assert.equal(rows[0].prevAcc, null);
 });
 
 test('RULE-195 Schlägt das Protokoll fehl, bleibt das Ergebnis und die Meldung steht dabei', async () => {
@@ -163,6 +188,14 @@ test('RULE-205 Der leere Stand wird gespeichert und kommt beim Neuladen als Stan
   assert.deepEqual(reloaded.state.stars, {});
 });
 
+test('RULE-257 Der Rahmen gibt die falschen Blitz-Antworten an die Trophäe weiter', () => {
+  const badges = [{ id: 'blitz-sauber', n: 'Sauber', d: 'x', rule: { type: 'blitz', min: 1, maxWrong: 0 } }];
+  const round = (wrong) => ({ mode: 'blitz', failed: false, accuracy: 0.5, correct: 5, wrong, almost: 0, bestCombo: 0, score: 5, xp: 0 });
+  const run = (wrong) => evaluateRound({ appId: 'x', mode: 'blitz', roundResult: round(wrong), profile: profileDefaults(), app: appDefaults(), day: DAY, badges, unitIds: UNIT_IDS });
+  assert.deepEqual(run(1).newBadges, [], 'ein Fehler über der Grenze von null');
+  assert.deepEqual(run(0).newBadges.map((b) => b.id), ['blitz-sauber']);
+});
+
 test('RULE-206 Der Endgegner bleibt gesperrt, solange eine Seite keinen Stern hat', () => {
   const app = { stars: { start: 2 } };
   assert.equal(bossOpen({ app, unitIds: UNIT_IDS, profile: profileDefaults() }), false);
@@ -203,7 +236,7 @@ test('RULE-195 Die Ergebnisdaten haben einen festen Aufbau aus Runde und Auswert
   const env = await setup();
   const out = await finishLesson(env);
   assert.deepEqual(Object.keys(out.summary).sort(), [
-    'accuracy', 'almost', 'bestCombo', 'bonus', 'correct', 'failed', 'goalHit', 'levelUp', 'mode', 'newBadges',
+    'accuracy', 'almost', 'bestCombo', 'bonus', 'correct', 'failed', 'goalHit', 'levelUp', 'missions', 'mode', 'newBadges',
     'refresh', 'relearned', 'score', 'stars', 'unitId', 'wrong', 'xp'
   ]);
   assert.equal(out.summary.unitId, 'start');
@@ -250,8 +283,8 @@ test('RULE-258 Jede Seite steht im Lernpfad genau einmal, und nur die Seite mit 
   const boot = await bootFixture({ search: '?app=mathe' });
   const app = boot.state.apps.find((a) => a.entry.id === 'mathe');
   const markup = renderToStaticMarkup(h(AppFrame, { app, profileStore: boot.state.profileStore, day: DAY, storage: boot.state.storage }));
-  assert.equal(markup.split('<h3>Erste Seite</h3>').length - 1, 1, 'Erste Seite genau einmal');
-  assert.equal(markup.split('<h3>Zweite Seite</h3>').length - 1, 1, 'Zweite Seite genau einmal');
+  assert.equal(markup.split('<span class="stitle">Erste Seite</span>').length - 1, 1, 'Erste Seite genau einmal');
+  assert.equal(markup.split('<span class="stitle">Zweite Seite</span>').length - 1, 1, 'Zweite Seite genau einmal');
   assert.equal((markup.match(/class="trk trk-lrs"/g) || []).length, 1, 'das Etikett nur an der Seite mit Strang');
 });
 
@@ -400,4 +433,104 @@ test('RULE-208 Am selben Tag zählt die Serie nur einmal', async () => {
 test('RULE-208 Der Hinweis nennt die Serie, wenn eine Antwort da war', () => {
   assert.match(leaveNotice({ earned: 0, answered: 1, saved: { ok: true } }), /Der Übungstag zählt für die Serie\./);
   assert.equal(leaveNotice({ earned: 0, answered: 0, saved: { ok: true } }), 'Runde nicht gewertet. Es gab noch keine Antwort.');
+});
+
+// Fehler-Abruf (Spec 5.2). Die Testseite hat zehn Fragen mit den Labels start-1 bis start-10, eine Lektion zieht acht.
+const labelsPlayed = (round) => {
+  const labels = [];
+  for (let guard = 0; guard < 50 && round.current(); guard += 1) {
+    const q = round.current().question;
+    if (!q.retry) labels.push(q.label);
+    round.submit({ pick: q.answer });
+    round.next();
+  }
+  return labels;
+};
+
+test('SEITE-ABRUF Eine Lektionsrunde nimmt eine Frage aus app.missed garantiert in die Runde', async () => {
+  const env = await setup();
+  const unit = env.config.units[0];
+  env.appStore.state.missed = { [unit.id]: ['start-9'] };
+  let withoutMissed = 0;
+  for (let seed = 1; seed <= 25; seed += 1) {
+    const started = startRound({
+      config: env.config, mode: 'lesson', unit, app: env.appStore.state, profile: env.profileStore.state, rng: createRng(seed)
+    });
+    assert.equal(started.ok, true);
+    assert.equal(started.round.current().total, 8);
+    assert.ok(labelsPlayed(started.round).includes('start-9'), `Seed ${seed}: start-9 fehlt`);
+    const plain = startRound({
+      config: env.config, mode: 'lesson', unit, app: { ...env.appStore.state, missed: {} }, profile: env.profileStore.state, rng: createRng(seed)
+    });
+    if (!labelsPlayed(plain.round).includes('start-9')) withoutMissed += 1;
+  }
+  assert.ok(withoutMissed > 0, 'ohne Abruf fällt start-9 bei manchen Seeds heraus');
+});
+
+test('SEITE-ABRUF Ohne app.missed oder mit kaputtem Eintrag startet die Runde wie bisher', async () => {
+  const env = await setup();
+  const unit = env.config.units[0];
+  const labelsFor = (missed) => {
+    const app = { ...env.appStore.state, missed };
+    const started = startRound({ config: env.config, mode: 'lesson', unit, app, profile: env.profileStore.state, rng: createRng(8) });
+    assert.equal(started.ok, true);
+    return labelsPlayed(started.round);
+  };
+  const base = labelsFor(undefined);
+  assert.deepEqual(labelsFor({}), base);
+  assert.deepEqual(labelsFor({ [unit.id]: 'start-9' }), base, 'keine Liste');
+  assert.deepEqual(labelsFor({ [unit.id]: [3, null] }), base, 'keine Labels');
+  assert.deepEqual(labelsFor(null), base);
+});
+
+test('SEITE-ABRUF Die Liste einer anderen Seite wirkt nicht', async () => {
+  const env = await setup();
+  const unit = env.config.units[1];
+  env.appStore.state.missed = { start: ['start-9'] };
+  const base = startRound({ config: env.config, mode: 'lesson', unit, app: { ...env.appStore.state, missed: {} }, profile: env.profileStore.state, rng: createRng(8) });
+  const other = startRound({ config: env.config, mode: 'lesson', unit, app: env.appStore.state, profile: env.profileStore.state, rng: createRng(8) });
+  assert.deepEqual(labelsPlayed(other.round), labelsPlayed(base.round));
+});
+
+test('SEITE-ABRUF Schnellrunde und Endgegner ignorieren app.missed', async () => {
+  const env = await setup();
+  env.appStore.state.missed = { start: ['quick-6'] };
+  env.config.units.forEach((u) => { env.appStore.state.stars[u.id] = 1; });
+  ['quick', 'boss'].forEach((mode) => {
+    const plain = startRound({ config: env.config, mode, app: { ...env.appStore.state, missed: {} }, profile: env.profileStore.state, rng: createRng(6) });
+    const withMissedList = startRound({ config: env.config, mode, app: env.appStore.state, profile: env.profileStore.state, rng: createRng(6) });
+    assert.deepEqual(labelsPlayed(withMissedList.round), labelsPlayed(plain.round), mode);
+  });
+});
+
+test('SEITE-ABRUF settleRound speichert die Fehlerkategorien der Runde und ersetzt sie in der nächsten', async () => {
+  const env = await setup();
+  const unit = env.config.units[0];
+  const out = await finishLesson(env, { wrong: true });
+  assert.equal(out.saved.ok, true);
+  const missed = env.appStore.state.missed[unit.id];
+  assert.equal(missed.length, 5, 'fünf Herzen, fünf Fehler im ersten Versuch');
+  assert.ok(missed.every((l) => /^start-\d+$/.test(l)));
+  const reopened = await openApp(env.handle, env.config.id, appDefaults());
+  assert.deepEqual(reopened.state.missed[unit.id], missed, 'gespeichert, auch bei gescheiterter Runde');
+  await finishLesson(env);
+  assert.deepEqual(env.appStore.state.missed[unit.id], [], 'ersetzt, nicht gesammelt');
+});
+
+test('SEITE-ABRUF Das Protokoll bekommt keine neuen Felder', async () => {
+  const env = await setup();
+  const rows = [];
+  env.log = (row) => { rows.push(row); return env.handle.logEvent(row); };
+  await finishLesson(env, { wrong: true });
+  assert.deepEqual(
+    Object.keys(rows[0]).sort(),
+    ['accuracy', 'app', 'failed', 'gapDays', 'mode', 'prevAcc', 'score', 'stars', 'type', 'unit', 'xp']
+  );
+});
+
+test('SEITE-ABRUF Zurücksetzen leert die Fehlerliste der App', () => {
+  const app = appDefaults();
+  app.missed = { start: ['start-1'] };
+  resetAppState(app);
+  assert.deepEqual(app.missed, {});
 });

@@ -3,9 +3,10 @@
 // Herkunft: legacy/modulare/core/js/boot.js und dashboard.js:9-16 (dort ohne Fehlerbehandlung).
 import { assertAppId, buildConfig, createStaticSource } from '../inhalte/index.js';
 import { openApp, openProfile, openStore } from '../speicher/index.js';
-import { evaluateTrophyRule } from '../regeln/index.js';
+import { PROFILE_VERSION, evaluateTrophyRule, migrateProfile } from '../regeln/index.js';
 import { appDefaults, dayOf, profileDefaults } from './rahmen.js';
 import { APPS, LIVE, validateRegistry } from './registry.js';
+import { UEBERNAHMEN, hasProgress, mergeAppState } from './uebernahme.js';
 
 // Meldungen für die Anzeige. Keine Namen, keine Kennungen aus dem Speicher.
 export const MSG = Object.freeze({
@@ -42,7 +43,7 @@ async function openSession(openStorage) {
   if (!handle) return { storage: unavailable(null, MSG.unavailable), profileStore: null };
   const memory = handle.backend === 'memory';
   try {
-    const profileStore = await openProfile(handle, profileDefaults());
+    const profileStore = await openProfile(handle, profileDefaults(), { version: PROFILE_VERSION, migrate: migrateProfile });
     if (profileStore.blocked) return { storage: unavailable(handle, profileStore.blocked.message), profileStore: null };
     return {
       storage: { handle, backend: handle.backend, status: memory ? 'memory' : 'ok', message: memory ? MSG.memory : null },
@@ -66,6 +67,21 @@ async function loadEntry(entry, options) {
   }
 }
 
+// Zieht den Stand früherer Apps in diese App um, einmal je Quelle (siehe uebernahme.js). Fehler lassen den Stand unberührt.
+async function uebernehmenInto(handle, appStore, appId) {
+  for (const { from, into, badgeRenames } of UEBERNAHMEN.filter((u) => u.into === appId)) {
+    if (appStore.state.merged && appStore.state.merged[from]) continue;
+    try {
+      const old = await openApp(handle, from, appDefaults());
+      if (old.blocked || !hasProgress(old.state)) continue;
+      appStore.state = mergeAppState(appStore.state, old.state, { badgeRenames, fromId: from });
+      await appStore.save();
+    } catch (error) {
+      // Ohne Übernahme läuft die App weiter, der alte Stand bleibt in der alten Zeile erhalten.
+    }
+  }
+}
+
 // Öffnet den Stand einer App. Blockiert oder nicht erreichbar heißt: diese App zeigt keinen Fortschritt.
 async function attachAppStore(app, handle) {
   if (app.entry.status !== LIVE || app.error) return app;
@@ -73,6 +89,7 @@ async function attachAppStore(app, handle) {
   try {
     const appStore = await openApp(handle, app.entry.id, appDefaults());
     if (appStore.blocked) return { ...app, storeMessage: appStore.blocked.message };
+    await uebernehmenInto(handle, appStore, app.entry.id);
     return { ...app, appStore };
   } catch (error) {
     return { ...app, storeMessage: MSG.unavailable };

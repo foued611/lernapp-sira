@@ -1,7 +1,7 @@
 // Ergebnis einer Runde: Titel, Sterne, Zahlen, Tagesziel, Stufe, neue Trophäen und die Wege weiter.
 // Herkunft: legacy/modulare/core/js/views/result.js. Abweichungen stehen an der Stelle.
 import { createElement } from 'react';
-import { BOSS_BONUS_XP, DAILY_GOAL_XP, REFRESH_BONUS_XP, comboMultiplier, dailyXP } from '../regeln/index.js';
+import { BOSS_BONUS_XP, MISSION_REWARD_XP, REFRESH_BONUS_XP, comboMultiplier, dailyGoal, dailyXP } from '../regeln/index.js';
 import { BLITZ_SECONDS } from '../runde/index.js';
 import { Button } from '../komponenten/ui.js';
 import { Icon } from '../komponenten/icons.js';
@@ -12,6 +12,13 @@ const h = createElement;
 
 // Namen der Stufen. Eine App kann eigene setzen (config.words.levelTitles). Legacy: profile.js:9.
 export const LEVEL_TITLES = Object.freeze(['Neuling', 'Entdecker', 'Könner', 'Profi', 'Meister', 'Expert', 'Legende']);
+
+// Texte der Wochenmissionen. Die IDs kommen aus regeln (MISSIONS), die Reihenfolge ebenfalls.
+export const MISSION_TEXT = Object.freeze({
+  units3: { title: 'Übe 3 verschiedene Seiten', unit: (n) => (n === 1 ? 'Seite' : 'Seiten') },
+  refresh1: { title: 'Frische eine Seite auf', unit: (n) => (n === 1 ? 'Auffrischung' : 'Auffrischungen') },
+  strong90: { title: 'Schaffe eine Runde mit mindestens 90 %', unit: (n) => (n === 1 ? 'Runde' : 'Runden') }
+});
 
 // Standard-Wörter der Legacy-Shell (shell.js:24-30). Eine App überschreibt sie über config.words.
 export const DEFAULT_WORDS = Object.freeze({
@@ -49,6 +56,7 @@ function subtitleFor(summary) {
  */
 export function resultModel(summary, { profile, day, words }) {
   const x = dailyXP(profile, day);
+  const goal = dailyGoal(profile);
   const titles = words.levelTitles || LEVEL_TITLES;
   const level = summary.levelUp
     ? `Niveau ${summary.levelUp} erreicht · ${titles[Math.min(summary.levelUp - 1, titles.length - 1)]}`
@@ -59,6 +67,11 @@ export function resultModel(summary, { profile, day, words }) {
   let title = words.resultTitles[Math.max(0, summary.stars - 1)];
   if (summary.failed) title = 'Knapp daneben';
   else if (blitz) title = blitzWell ? words.blitzTitle : 'Zeit um';
+  // Die XP der Missionen stehen im Gesamtbetrag. Dieser Satz sagt, woher ein Teil davon kommt.
+  const missions = summary.missions || [];
+  const missionLine = missions.length
+    ? `${missions.length === 1 ? 'Wochenmission' : 'Wochenmissionen'} erfüllt: ${missions.map((id) => MISSION_TEXT[id].title).join(', ')} · +${missions.length * MISSION_REWARD_XP} XP`
+    : null;
   return {
     title,
     subtitle: subtitleFor(summary),
@@ -75,8 +88,9 @@ export function resultModel(summary, { profile, day, words }) {
         { value: summary.xp + summary.bonus, label: 'XP' },
         { value: summary.bestCombo, label: 'längste Serie' }
       ],
-    daily: { xp: x, goal: DAILY_GOAL_XP, reached: x >= DAILY_GOAL_XP },
+    daily: { xp: x, goal, reached: x >= goal },
     levelLine: level,
+    missionLine,
     badges: summary.newBadges.map((badge) => ({ id: badge.id, n: badge.n, d: badge.d })),
     // Legacy result.js: Theorie nur nach einer Lektionsrunde, dann der Weg zurück.
     actions: [
@@ -113,10 +127,11 @@ export function Ergebnis({ model, messages = [], onAction }) {
     h(
       'div',
       { className: 'gline' },
-      h('b', null, model.daily.reached ? 'Tagesziel geschafft!' : `Tagesziel: noch ${DAILY_GOAL_XP - model.daily.xp} XP`),
-      h('div', { className: 'bar' }, h('i', { style: { width: `${Math.min(100, (model.daily.xp / DAILY_GOAL_XP) * 100)}%` } }))
+      h('b', null, model.daily.reached ? 'Tagesziel geschafft!' : `Tagesziel: noch ${model.daily.goal - model.daily.xp} XP`),
+      h('div', { className: 'bar' }, h('i', { style: { width: `${Math.min(100, (model.daily.xp / model.daily.goal) * 100)}%` } }))
     ),
     model.levelLine ? h('p', { className: 'lvup' }, model.levelLine) : null,
+    model.missionLine ? h('p', { className: 'lvup' }, model.missionLine) : null,
     model.badges.length
       ? h('div', null, h('p', { className: 'kicker' }, 'Neue Trophäen'), h('div', { className: 'badges', style: { justifyContent: 'center' } }, ...model.badges.map((b) => h('div', { key: b.id, className: 'badge got' }, h('b', null, b.n), h('span', null, b.d)))))
       : null,

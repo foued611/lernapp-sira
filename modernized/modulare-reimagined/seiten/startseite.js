@@ -2,11 +2,11 @@
 // legacy/modulare/dashboard.js und index.html (Pixelparität, analysis/modulare/PARITAET.md). startseiteModel ist rein.
 // Die Komponenten zeichnen nur. Seiten ist die Wurzel (Start oder App).
 import { createElement, useReducer, useState } from 'react';
-import { DAILY_GOAL_XP, REFRESH_BONUS_XP, currentStreak, dailyXP } from '../regeln/index.js';
+import { DAILY_GOAL_XP, GOAL_CHOICES, REFRESH_BONUS_XP, currentStreak, dailyGoal, dailyXP, setDailyGoal } from '../regeln/index.js';
 import { progressOf, doneUnits, starsOf } from '../komponenten/ui.js';
 import { Mascot } from '../komponenten/mascot.js';
 import { AppFrame, bossOpen, recommendationOf } from './rahmen.js';
-import { NAME_MAX, greetingOf, maskName, saveName } from './name.js';
+import { NAME_MAX, NO_STORAGE, greetingOf, maskName, saveName } from './name.js';
 import { Sicherung } from './sicherung.js';
 import { LIVE, SUBJECT_COLORS, subjectsOf, unitTrack } from './registry.js';
 import { MSG } from './boot.js';
@@ -17,10 +17,10 @@ export const ALL = 'Alle';
 export { MASK, NAME_MAX, greetingOf, maskName, nameFrom, saveName } from './name.js';
 
 /** Minous Satz zum Tagesstand, wie legacy dashboard.js:25-26. */
-export function minouLine(xp) {
-  if (xp >= DAILY_GOAL_XP) return 'Tagesziel geschafft. Alles ab jetzt ist Bonus.';
+export function minouLine(xp, goal = DAILY_GOAL_XP) {
+  if (xp >= goal) return 'Tagesziel geschafft. Alles ab jetzt ist Bonus.';
   if (xp === 0) return 'Welche App heute? Fünf Minuten reichen schon.';
-  return `Noch ${DAILY_GOAL_XP - xp} XP bis zum Tagesziel.`;
+  return `Noch ${goal - xp} XP bis zum Tagesziel.`;
 }
 
 const hrefOf = (id) => `?app=${encodeURIComponent(id)}`;
@@ -113,6 +113,7 @@ export function startseiteModel({ day, storage, profileStore, apps, subject = AL
   const profile = profileStore.state;
   const allTiles = apps.map((app) => tileOf(app, profile));
   const x = dailyXP(profile, day);
+  const goal = dailyGoal(profile);
   const lastApp = profile.lastApp;
   return {
     mode: 'full',
@@ -121,8 +122,8 @@ export function startseiteModel({ day, storage, profileStore, apps, subject = AL
     subjects,
     greeting: greetingOf(profile.name),
     needsName: !profile.name,
-    minou: minouLine(x),
-    goal: { xp: Math.min(x, DAILY_GOAL_XP), goal: DAILY_GOAL_XP, reached: x >= DAILY_GOAL_XP },
+    minou: minouLine(x, goal),
+    goal: { xp: Math.min(x, goal), goal, reached: x >= goal },
     streak: currentStreak(profile, day),
     totalXP: profile.xp,
     trophies: apps.reduce((sum, app) => sum + (app.appStore ? Object.keys(app.appStore.state.badges || {}).length : 0), 0),
@@ -172,15 +173,43 @@ function NameForm({ onSave }) {
   );
 }
 
-/** Die Startseite. Hält nur die Fachauswahl. Alles andere kommt aus dem Modell. */
+/** Speichert das gewählte Tagesziel. Ein Wert außerhalb von GOAL_CHOICES wirft (RangeError). */
+export async function saveGoal(profileStore, value) {
+  if (!profileStore) return { ok: false, error: NO_STORAGE };
+  setDailyGoal(profileStore.state, value);
+  return profileStore.save();
+}
+
+/** Die Wahl des Tagesziels: eine Schaltfläche je Wert, die gewählte ist gedrückt und trägt den Wert als Text. */
+export function GoalChoice({ goal, onChoose }) {
+  return h(
+    'div',
+    { className: 'goalpick' },
+    // Der Text steht sichtbar über den Schaltflächen. aria-label allein reicht Sehenden nicht.
+    h('p', { className: 'muted', style: { margin: '0 0 8px', fontSize: '14px' } }, 'Tagesziel wählen'),
+    h(
+      'div',
+      { className: 'chips', role: 'group', 'aria-label': 'Tagesziel wählen' },
+      ...GOAL_CHOICES.map((value) => h('button', { key: value, type: 'button', className: 'chip', 'data-goal': value, 'aria-pressed': value === goal, onClick: () => onChoose(value) }, `${value} XP`))
+    )
+  );
+}
+
+/** Die Startseite. Hält nur die Fachauswahl und eine Meldung zum Tagesziel. Alles andere kommt aus dem Modell. */
 export function Startseite({ state }) {
   const [subject, setSubject] = useState(ALL);
+  const [goalNote, setGoalNote] = useState(null);
   const [, bump] = useReducer((n) => n + 1, 0);
   const model = startseiteModel({ day: state.day, storage: state.storage, profileStore: state.profileStore, apps: state.apps, subject });
   const full = model.mode === 'full';
   const cont = full ? model.continueTile : null;
   async function saveNameAndRedraw(raw) {
     await saveName(state.profileStore, raw);
+    bump();
+  }
+  async function chooseGoal(value) {
+    const saved = await saveGoal(state.profileStore, value);
+    setGoalNote(saved.ok ? null : saved.error || 'Das Tagesziel konnte nicht gespeichert werden.');
     bump();
   }
   return h(
@@ -207,7 +236,9 @@ export function Startseite({ state }) {
           h('div', { className: 'stat' }, h('b', null, String(model.totalXP)), h('span', null, 'XP gesamt')),
           h('div', { className: 'stat' }, h('b', null, String(model.trophies)), h('span', null, 'Trophäen'))
         )
-        : null
+        : null,
+      full ? h(GoalChoice, { goal: model.goal.goal, onChoose: chooseGoal }) : null,
+      full && goalNote ? h('p', { className: 'notice', role: 'status' }, goalNote) : null
     ),
     model.message ? h('p', { className: 'notice', role: 'status' }, model.message) : null,
     cont

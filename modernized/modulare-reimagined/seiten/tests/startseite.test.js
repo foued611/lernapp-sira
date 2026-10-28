@@ -6,7 +6,7 @@ import { renderToStaticMarkup } from 'react-dom/server';
 import { TrackLabel } from '../../komponenten/tracks.js';
 import { ProgressBar } from '../../komponenten/ui.js';
 import { profileDefaults } from '../rahmen.js';
-import { greetingOf, maskName, minouLine, nameFrom, saveName, Seiten, startseiteModel, Startseite, MASK } from '../startseite.js';
+import { greetingOf, maskName, minouLine, nameFrom, saveName, saveGoal, GoalChoice, Seiten, startseiteModel, Startseite, MASK } from '../startseite.js';
 import { MSG } from '../boot.js';
 import { bootFixture, DAY, memoryHandle, NAME } from './helpers.js';
 
@@ -221,8 +221,8 @@ test('SEITE-A11Y Das Startseiten-Markup enthält keine Inline-Handler und jeder 
 
 test('SEITE-A11Y Die Mindestgröße der Knöpfe und Kacheln steht im Stylesheet, nicht im Markup', async () => {
   const { readFileSync } = await import('node:fs');
-  const css = readFileSync(new URL('../seiten.css', import.meta.url), 'utf8');
-  assert.match(css, /min-height: var\(--touch-min\)/);
+  const css = readFileSync(new URL('../design/styles/base.css', import.meta.url), 'utf8');
+  assert.match(css, /min-height:var\(--touch-min/);
   assert.equal(/style="[^"]*min-height/.test(renderToStaticMarkup(h(Startseite, { state: (await bootFixture()).state }))), false);
 });
 
@@ -233,4 +233,53 @@ test('SEITE-MASKIERUNG Der Fortschritt eines leeren Profils zeigt Nullen, nie ei
   assert.equal(model.trophies, 0);
   assert.equal(tileOf(model, 'mathe').info, 'Noch nicht gestartet');
   assert.equal(tileOf(model, 'mathe').percent, 0);
+});
+
+test('SEITE-WOCHENZIEL Das Modell nutzt das gewählte Tagesziel statt 30', async () => {
+  const env = await full((_app, profile) => { profile.goal = 50; profile.day = { d: DAY, xp: 20 }; });
+  const model = env.model();
+  assert.equal(model.goal.goal, 50);
+  assert.equal(model.goal.reached, false);
+  assert.equal(model.minou, 'Noch 30 XP bis zum Tagesziel.');
+});
+
+test('SEITE-WOCHENZIEL Ohne Wahl bleibt es bei 30 XP', async () => {
+  const env = await full();
+  assert.equal(env.model().goal.goal, 30);
+});
+
+test('SEITE-WOCHENZIEL Die Auswahl zeigt drei Schaltflächen mit aria-pressed, das gewählte Ziel ist gedrückt', () => {
+  const markup = renderToStaticMarkup(h(GoalChoice, { goal: 50, onChoose: () => {} }));
+  const buttons = markup.match(/<button[^>]*>/g);
+  assert.equal(buttons.length, 3);
+  assert.match(markup, /aria-pressed="false"[^>]*>20 XP/);
+  assert.match(markup, /aria-pressed="false"[^>]*>30 XP/);
+  assert.match(markup, /aria-pressed="true"[^>]*>50 XP/);
+});
+
+test('SEITE-WOCHENZIEL saveGoal speichert einen erlaubten Wert im Profil', async () => {
+  const handle = await memoryHandle();
+  const { openProfile } = await import('../../speicher/index.js');
+  const store = await openProfile(handle, profileDefaults());
+  const saved = await saveGoal(store, 20);
+  assert.equal(saved.ok, true);
+  assert.equal(store.state.goal, 20);
+});
+
+test('SEITE-WOCHENZIEL saveGoal ohne Speicher meldet einen Fehler, ein unbekannter Wert wirft', async () => {
+  assert.equal((await saveGoal(null, 20)).ok, false);
+  const handle = await memoryHandle();
+  const { openProfile } = await import('../../speicher/index.js');
+  const store = await openProfile(handle, profileDefaults());
+  await assert.rejects(() => saveGoal(store, 42), RangeError);
+});
+
+test('SEITE-WOCHENZIEL minouLine rechnet mit dem übergebenen Ziel', () => {
+  assert.equal(minouLine(20, 20), 'Tagesziel geschafft. Alles ab jetzt ist Bonus.');
+  assert.equal(minouLine(10, 50), 'Noch 40 XP bis zum Tagesziel.');
+});
+
+test('SEITE-WOCHENZIEL Die Auswahl hat einen sichtbaren Text, nicht nur ein aria-label', () => {
+  const markup = renderToStaticMarkup(h(GoalChoice, { goal: 30, onChoose: () => {} }));
+  assert.match(markup, /<p[^>]*>Tagesziel wählen<\/p>/);
 });

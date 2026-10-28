@@ -260,7 +260,10 @@ function PlayBody({ session, praise, inputChars = [], onAnswer, onNext, onLeave,
   } else if (kind === 'match') {
     foot = h('p', { className: 'muted', style: { margin: 0, fontSize: '14px' } }, 'Tippe links ein Element, dann rechts das passende.');
   } else {
-    foot = h('div', { className: 'row' }, h('button', { type: 'button', className: 'btn', id: 'chk', disabled: !canCheck, onClick: check }, 'Prüfen'));
+    // Der Hinweis erklärt die gesperrte Taste. Ohne ihn wirkt sie kaputt (Design-Kritik).
+    foot = h('div', { className: 'row' },
+      h('button', { type: 'button', className: 'btn', id: 'chk', disabled: !canCheck, onClick: check }, 'Prüfen'),
+      canCheck ? null : h('span', { className: 'muted', style: { fontSize: '14px' } }, 'Erst antworten, dann prüfen.'));
   }
 
   return h(

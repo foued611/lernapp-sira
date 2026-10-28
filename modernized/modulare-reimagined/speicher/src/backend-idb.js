@@ -1,10 +1,9 @@
-// Zweig IndexedDB. Gleiche Datenbank, gleiches Schema und gleiche Dokumentform wie die Legacy-App
-// (db.js:6-24, 39-51). Jede Schreibung läuft in genau einer readwrite-Transaktion (SCHULD-2, db.js:68-71).
-// Erst nach dem Commit gilt sie als bestätigt.
+// Zweig IndexedDB. Datenbank und Dokumentform wie im localStorage-Zweig. Jede Schreibung läuft in genau einer
+// readwrite-Transaktion (SCHULD-2). Erst nach dem Commit gilt sie als bestätigt.
 import { DB_NAME, DB_VERSION } from './constants.js';
-import { newLogRows, readRaw, splitDocs, withoutId } from './records.js';
+import { newLogRows, splitDocs, withoutId } from './records.js';
 
-const IDB_PROBE = '__probe'; // Legacy-Probe (db.js:105)
+const IDB_PROBE = '__probe'; // Schlüssel der Probe beim Öffnen
 
 const wrap = (request) => new Promise((resolve, reject) => {
   request.onsuccess = () => resolve(request.result);
@@ -70,11 +69,8 @@ async function inTransaction(db, names, mode, body) {
   }
 }
 
-/**
- * IndexedDB-Zweig. readLegacy liest den Altstand aus localStorage, ohne ihn zu löschen (db.js:53-61).
- * Gelöscht wird er erst über removeLegacy, nachdem das Schreiben in IndexedDB bestätigt ist (RULE-187).
- */
-export function createIdbBackend({ db, now, legacyStorage }) {
+/** IndexedDB-Zweig: Dokumente, Protokoll und Sicherung in einer Datenbank. */
+export function createIdbBackend({ db, now }) {
   const readDoc = (key) => inTransaction(db, ['docs'], 'readonly', async ({ docs }) => {
     const row = await wrap(docs.get(key));
     return row === undefined ? { status: 'absent' } : { status: 'ok', value: row.value };
@@ -82,19 +78,6 @@ export function createIdbBackend({ db, now, legacyStorage }) {
 
   const writeDoc = (key, value) => inTransaction(db, ['docs'], 'readwrite', ({ docs }) =>
     wrap(docs.put({ key, value, updatedAt: now() })));
-
-  const readLegacy = async (key) => {
-    if (!legacyStorage) return { status: 'absent' };
-    try {
-      return readRaw(legacyStorage, key);
-    } catch (error) {
-      return { status: 'absent' }; // Ein Lesefehler am Altstand darf nichts löschen, also gilt er als nicht vorhanden.
-    }
-  };
-
-  const removeLegacy = async (key) => {
-    if (legacyStorage) legacyStorage.removeItem(key);
-  };
 
   const listDocs = () => inTransaction(db, ['docs'], 'readonly', async ({ docs }) => {
     const rows = await wrap(docs.getAll());
@@ -122,8 +105,6 @@ export function createIdbBackend({ db, now, legacyStorage }) {
     name: 'indexeddb',
     readDoc,
     writeDoc,
-    readLegacy,
-    removeLegacy,
     listDocs,
     listLog,
     appendLog,

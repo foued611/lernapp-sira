@@ -59,6 +59,20 @@ test('RULE-194: Eine Seite ist nach 3 Tagen fällig, nach 2 Tagen noch nicht', (
   assert.equal(isRefreshDue(app, 'u1', '2026-10-10'), true);
 });
 
+test('RULE-194: Bei 100 % gilt die Frist von 7 Tagen, bei 0 % die von 3', () => {
+  const app = (acc) => ({ stars: { u1: 3 }, last: { u1: '2026-10-01' }, acc: { u1: acc } });
+  assert.equal(isRefreshDue(app(1), 'u1', '2026-10-07'), false);
+  assert.equal(isRefreshDue(app(1), 'u1', '2026-10-08'), true);
+  assert.equal(isRefreshDue(app(0), 'u1', '2026-10-04'), true);
+  assert.equal(isRefreshDue(app(0), 'u1', '2026-10-03'), false);
+});
+
+test('RULE-194: Eine nicht-numerische Genauigkeit gilt nicht als stark, es bleibt bei 3 Tagen', () => {
+  const app = { stars: { u1: 2 }, last: { u1: '2026-10-01' }, acc: { u1: '0.95' } };
+  assert.equal(isRefreshDue(app, 'u1', '2026-10-04'), true);
+  assert.equal(isRefreshDue(app, 'u1', '2026-10-03'), false);
+});
+
 test('RULE-194: Eine Seite ohne Sterne ist nie fällig', () => {
   const app = { stars: {}, last: { u1: '2026-10-01' } };
   assert.equal(isRefreshDue(app, 'u1', '2026-10-20'), false);
@@ -106,4 +120,20 @@ test('RULE-242: Seiten mit drei Sternen oder ohne gespeicherte Quote werden nich
 test('RULE-242: Ohne fällige oder schwache Seite gibt es keine Empfehlung', () => {
   const app = { stars: { u1: 3 }, last: { u1: '2026-10-09' }, acc: { u1: 0.95 } };
   assert.equal(weakestUnit(app, units, '2026-10-10'), null);
+});
+
+test('Auffrischen: ab 90 % erst nach 7 Tagen fällig', () => {
+  const app = { stars: { a: 2 }, last: { a: '2026-10-20' }, acc: { a: 0.9 } };
+  assert.equal(isRefreshDue(app, 'a', '2026-10-26'), false); // 6 Tage
+  assert.equal(isRefreshDue(app, 'a', '2026-10-27'), true); // 7 Tage
+});
+
+test('Auffrischen: knapp unter 90 % bleibt bei 3 Tagen', () => {
+  const app = { stars: { a: 2 }, last: { a: '2026-10-24' }, acc: { a: 0.89 } };
+  assert.equal(isRefreshDue(app, 'a', '2026-10-27'), true);
+});
+
+test('Auffrischen: ohne Genauigkeit gilt weiter 3 Tage', () => {
+  const app = { stars: { a: 1 }, last: { a: '2026-10-24' } };
+  assert.equal(isRefreshDue(app, 'a', '2026-10-27'), true);
 });

@@ -1,12 +1,16 @@
 /* Design-Tokens: Farben, Schriften, Hell/Dunkel. Farbwerte nur hier ändern. */
 :root{
+  /* Mindestgröße für Knöpfe und Kacheln (AGENTS.md: Touch-Ziele mindestens 44 px). */
+  --touch-min:44px;
   --paper:#F3F0FF; --card:#FFFFFF; --ink:#2A1A63; --text:#1D1740; --muted:#625C8A;
   --grid-strong:#DCD5F7; --grid-weak:#EAE5FB; --line:#D3CAF2; --shadow:rgba(42,26,99,.18);
-  --pen:#D92B4B; --pen-bg:#FFE8EC; --ok:#0F8F66; --ok-bg:#DAF6EA;
+  --pen:#D92B4B; --pen-bg:#FFE8EC; --ok:#0B7A57; --ok-bg:#DAF6EA;
   --marker:#FFE066; --note:#FFF2A8; --star:#FFB100; --flame:#F2590F;
   --hero-bg:#2A1A63; --hero-fg:#FFFFFF; --hero-soft:#CFC6FF;
-  --btn-bg:#E8365A; --btn-fg:#FFFFFF; --btn-shadow:#9E1B38;
+  --btn-bg:#D42A4D; --btn-fg:#FFFFFF; --btn-shadow:#8A1A33;
   --sun:#FFC933; --sun-fg:#2A1A63;
+  --sun-shadow:#B8860B; --on-accent:#1B1240; --gold-fg:#3B2A00; --ring-track:rgba(255,255,255,.2);
+  --medal-bronze:#E7B58B; --medal-bronze-fg:#3A210E; --medal-silver:#DDE3EA; --medal-silver-fg:#1F2A37;
   --f-head:'Bricolage Grotesque','Avenir Next','Trebuchet MS',system-ui,sans-serif;
   --f-body:'Lexend',system-ui,-apple-system,'Segoe UI',sans-serif;
   --f-pen:'Caveat','Segoe Print','Bradley Hand',cursive;

@@ -1,11 +1,11 @@
-// Zweig localStorage und Arbeitsspeicher. Dieselbe Dokumentform wie im Legacy-Code (db.js:86-94),
+// Zweig localStorage und Arbeitsspeicher. Dieselbe Dokumentform wie im IndexedDB-Zweig,
 // damit ein Wechsel des Zweigs die gespeicherten Daten nicht verändert.
 import { LOG_KEY, PREFIX } from './constants.js';
 import { newLogRows, readRaw, splitDocs, withIds, withoutId } from './records.js';
 
 /**
  * Jede Schreibung ist ein einzelner setItem-Aufruf oder wird bei einem Fehler zurückgerollt.
- * Ein Fehler wird weitergereicht, damit der Aufrufer ihn meldet. Legacy verschluckte ihn (store.js:51).
+ * Ein Fehler wird weitergereicht, damit der Aufrufer ihn meldet.
  */
 export function createStorageBackend(name, storage) {
   // Ein unlesbares Protokoll wirft. So wird es nicht durch ein neues Protokoll überschrieben (SCHULD-2).
@@ -43,11 +43,6 @@ export function createStorageBackend(name, storage) {
     async writeDoc(key, value) {
       storage.setItem(key, JSON.stringify(value));
     },
-    // Dieser Zweig hat keinen Altstand: er ist selbst der Speicher.
-    async readLegacy() {
-      return { status: 'absent' };
-    },
-    async removeLegacy() {},
     listDocs,
     async listLog() {
       return readLog();

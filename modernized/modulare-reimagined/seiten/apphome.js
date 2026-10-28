@@ -2,8 +2,8 @@
 // Zurücksetzen. Das Markup folgt legacy/modulare/core/js/views/home.js (Pixelparität, analysis/modulare/PARITAET.md).
 // Die Entscheidungen (Empfehlung, Endgegner offen) kommen von außen, damit es keinen Import-Kreis mit rahmen.js gibt.
 import { createElement, useState } from 'react';
-import { DAILY_GOAL_XP, REFRESH_BONUS_XP, currentStreak, dailyXP, isRefreshDue, levelOf, levelThreshold } from '../regeln/index.js';
-import { LEVEL_TITLES } from './ergebnis.js';
+import { DAILY_GOAL_XP, MISSION_REWARD_XP, REFRESH_BONUS_XP, currentStreak, dailyGoal, dailyXP, isRefreshDue, levelOf, levelThreshold, missionProgress } from '../regeln/index.js';
+import { LEVEL_TITLES, MISSION_TEXT } from './ergebnis.js';
 import { doneUnits, starsOf } from '../komponenten/ui.js';
 import { Mascot } from '../komponenten/mascot.js';
 import { Icon } from '../komponenten/icons.js';
@@ -22,10 +22,31 @@ const START_LINES = Object.freeze([
 ]);
 const dayIndex = (day) => [...String(day)].reduce((sum, ch) => sum + ch.charCodeAt(0), 0);
 
-export function minouOf(xp, day) {
-  if (xp >= DAILY_GOAL_XP) return 'Tagesziel geschafft. Alles ab jetzt ist Bonus.';
+export function minouOf(xp, day, goal = DAILY_GOAL_XP) {
+  if (xp >= goal) return 'Tagesziel geschafft. Alles ab jetzt ist Bonus.';
   if (xp === 0) return START_LINES[dayIndex(day) % START_LINES.length];
-  return `Noch ${DAILY_GOAL_XP - xp} XP bis zum Tagesziel. Das ist ungefähr eine Runde.`;
+  return `Noch ${goal - xp} XP bis zum Tagesziel. Das ist ungefähr eine Runde.`;
+}
+
+// Texte der Wochenmissionen stehen in ergebnis.js (MISSION_TEXT), weil die Ergebnisansicht sie auch nennt.
+
+// Die Karte "Diese Woche". Der Stand ist Text ("Erledigt" oder "Offen") mit Häkchen, nicht nur eine Farbe.
+function WeekCard({ profile, day }) {
+  return h(
+    'section',
+    { className: 'card week', 'aria-labelledby': 'week-h' },
+    h('h2', { id: 'week-h' }, 'Diese Woche'),
+    h('p', { className: 'muted', style: { margin: '4px 0 12px', fontSize: '14px' } }, `Drei Missionen. Jede bringt einmal pro Woche ${MISSION_REWARD_XP} XP. Am Montag geht es von vorn los.`),
+    h('ul', { className: 'missions' }, ...missionProgress(profile, day).map(({ id, need, count, done }) => {
+      const text = MISSION_TEXT[id];
+      return h(
+        'li',
+        { key: id, className: `mission${done ? ' done' : ''}` },
+        h('span', { className: 'mark' }, done ? h(Icon, { name: 'check' }) : null, done ? 'Erledigt' : 'Offen'),
+        h('span', { className: 'mtext' }, h('b', null, text.title), h('small', null, `${count} von ${need} ${text.unit(need)}`))
+      );
+    }))
+  );
 }
 
 // Die Sterne einer Seite, wie legacy home.js:8-9: sichtbar als Symbole, dazu der Text für Screenreader.
@@ -37,17 +58,55 @@ function Stars({ n }) {
   );
 }
 
+// Zustand einer Station. "fällig" hat Vorrang, weil das Auffrischen die nächste sinnvolle Handlung ist.
+export function stationState(app, unit, day) {
+  const n = starsOf(app.stars, unit.id);
+  if (n <= 0) return 'offen';
+  if (isRefreshDue(app, unit.id, day)) return 'fällig';
+  return n >= 3 ? 'gemeistert' : 'geübt';
+}
+
+// Text und Symbol je Zustand. Das Symbol ist dekorativ (Icon ist aria-hidden), der Text trägt die Bedeutung.
+const STATION_TEXT = Object.freeze({
+  offen: { label: 'Offen', icon: null },
+  geübt: { label: 'Geübt', icon: 'star' },
+  gemeistert: { label: 'Gemeistert', icon: 'check' },
+  fällig: { label: 'Zeit zum Auffrischen', icon: 'flame' }
+});
+
+// Eine Station der Lernpfad-Karte: ein Knopf mit Titel, Zustand als Wort und Symbol und den Sternen.
+function Station({ unit, track, state, stars, next, onStudy }) {
+  const { label, icon } = STATION_TEXT[state];
+  return h(
+    'li',
+    { className: 'station' },
+    h(
+      'button',
+      { type: 'button', className: `node${next ? ' next' : ''}`, style: { '--lc': unit.color }, 'aria-current': next ? 'step' : undefined, onClick: () => onStudy(unit) },
+      h('span', { className: 'circ' }, unit.ic),
+      h('span', null,
+        // Ein span statt h3: Überschriften gehören nicht in einen Knopf. Die Optik kommt aus .node .stitle.
+        h('span', { className: 'stitle' }, unit.title),
+        h('small', null, unit.de),
+        h(TrackLabel, { track }),
+        h('span', { className: `state s-${state}` }, icon ? h(Icon, { name: icon }) : h('span', { className: 'dot', 'aria-hidden': 'true' }), label),
+        next ? h('span', { className: 'nexttag' }, 'Als Nächstes') : null),
+      h(Stars, { n: stars })
+    )
+  );
+}
+
 // Der Ring mit dem Tagesstand. Gleiche Maße wie in Legacy (viewBox 76, Radius 32).
-function Ring({ xp }) {
+function Ring({ xp, goal }) {
   const C = 2 * Math.PI * 32;
-  const ratio = Math.min(1, xp / DAILY_GOAL_XP);
+  const ratio = Math.min(1, xp / goal);
   return h(
     'div',
-    { className: 'ring', role: 'img', 'aria-label': `Tagesziel ${Math.min(xp, DAILY_GOAL_XP)} von ${DAILY_GOAL_XP} XP` },
+    { className: 'ring', role: 'img', 'aria-label': `Tagesziel ${Math.min(xp, goal)} von ${goal} XP` },
     h('svg', { viewBox: '0 0 76 76' },
       h('circle', { className: 't', cx: 38, cy: 38, r: 32, fill: 'none', strokeWidth: 8 }),
       h('circle', { className: 'p', cx: 38, cy: 38, r: 32, fill: 'none', strokeWidth: 8, strokeLinecap: 'round', strokeDasharray: C.toFixed(1), strokeDashoffset: (C * (1 - ratio)).toFixed(1) })),
-    h('b', { style: { display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' } }, String(Math.min(xp, DAILY_GOAL_XP)), h('small', { style: { display: 'block', lineHeight: 1, fontSize: '11px', fontWeight: 600 } }, `/ ${DAILY_GOAL_XP}`))
+    h('b', { style: { display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' } }, String(Math.min(xp, goal)), h('small', { style: { display: 'block', lineHeight: 1, fontSize: '11px', fontWeight: 600 } }, `/ ${goal}`))
   );
 }
 
@@ -78,11 +137,16 @@ export function AppHome({ config, app, profile, day, rec, open, notice, storeMes
   const units = config.units;
   const done = doneUnits(app.stars, units.map((u) => u.id));
   const x = dailyXP(profile, day);
+  const goal = dailyGoal(profile);
   const masked = maskName(profile.name);
   const greeting = `${config.greeting || 'Hallo'}${masked ? `, ${masked}` : ''} !`;
   const bossHasRounds = Boolean(config.rounds && typeof config.rounds.boss === 'function');
   const cardUnits = units.filter((u) => u.card);
   const medal = ['', 'Bronze', 'Silber', 'Gold'];
+  // Die nächste Station: zuerst eine fällige (Auffrischen geht vor), sonst die erste ohne Stern.
+  // Sie wird nur hervorgehoben, nie gesperrt.
+  const nextUnit = units.find((u) => stationState(app, u, day) === 'fällig') || units.find((u) => starsOf(app.stars, u.id) === 0);
+  const nextId = nextUnit ? nextUnit.id : null;
 
   return h(
     'div',
@@ -94,39 +158,32 @@ export function AppHome({ config, app, profile, day, rec, open, notice, storeMes
       { className: 'card hero' },
       h('div', { className: 'row1' }, h(Mascot, { mood: 'happy' }), h('div', null,
         h('h1', null, greeting),
-        h('div', { className: 'bubble', style: { marginTop: '10px' } }, minouOf(x, day)))),
+        h('div', { className: 'bubble', style: { marginTop: '10px' } }, minouOf(x, day, goal)))),
       !profile.name && profileStore ? h(NameForm, { onSave: onName }) : null,
       h(
         'div',
         { className: 'goalbox' },
-        h(Ring, { xp: x }),
+        h(Ring, { xp: x, goal }),
         h('p', null,
-          h('strong', null, `Tagesziel: ${DAILY_GOAL_XP} XP`),
-          `${x >= DAILY_GOAL_XP ? 'Geschafft. Du bist heute fertig.' : 'Eine kurze Runde bringt dich nah ran.'} ${done} von ${units.length} Seiten sind geschafft.`),
+          h('strong', null, `Tagesziel: ${goal} XP`),
+          ` ${x >= goal ? 'Geschafft. Du bist heute fertig.' : 'Eine kurze Runde bringt dich nah ran.'}`,
+          // Das Tagesziel zählt XP aus allen Apps. Der Seitenstand gilt nur für diese App, deshalb getrennt.
+          h('span', { style: { display: 'block', marginTop: '4px' } }, `In dieser App: ${done} von ${units.length} Seiten geschafft.`)),
         config.rounds && typeof config.rounds.quick === 'function'
           ? h('button', { type: 'button', className: 'btn sun', onClick: () => onStart('quick') }, '2-Minuten-Runde')
           : null
       )
     ),
+    h(WeekCard, { profile, day }),
     h(
       'section',
       null,
       h('h2', null, 'Dein Lernpfad'),
       h('p', { className: 'muted', style: { margin: '4px 0 14px', fontSize: '14px' } }, config.intro || 'Starte irgendwo. Die Reihenfolge ist nur ein Vorschlag.'),
       h(
-        'div',
+        'ol',
         { className: 'path' },
-        ...units.map((u) => h(
-          'button',
-          { key: u.id, type: 'button', className: 'node', style: { '--lc': u.color }, onClick: () => onStudy(u) },
-          h('span', { className: 'circ' }, u.ic),
-          h('span', null,
-            h('h3', null, u.title),
-            h('small', null, u.de),
-            h(TrackLabel, { track: unitTrack(config.tracks, u) }),
-            isRefreshDue(app, u.id, day) ? h('span', { className: 'due' }, 'Zeit zum Auffrischen') : null),
-          h(Stars, { n: starsOf(app.stars, u.id) })
-        ))
+        ...units.map((u) => h(Station, { key: u.id, unit: u, track: unitTrack(config.tracks, u), state: stationState(app, u, day), stars: starsOf(app.stars, u.id), next: u.id === nextId, onStudy }))
       )
     ),
     h(

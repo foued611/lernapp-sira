@@ -1,9 +1,8 @@
-// Feste Namen aus dem Legacy-Code. Sie stehen in gespeicherten Daten und werden nie umbenannt.
-// Quelle: legacy/modulare/core/js/db.js:6-10 und profile.js:6-7.
+// Feste Namen. Sie stehen in gespeicherten Daten und werden nie umbenannt.
 
 export const DB_NAME = 'lernwerkstatt';
 
-// Bewusst 1: Legacy und Neubau teilen dieselbe Datenbank (Koexistenz). Erhöhen nur mit Migrationsplan.
+// Erhöhen nur mit Migrationsplan.
 export const DB_VERSION = 1;
 
 export const PREFIX = 'lernwerkstatt:';
@@ -23,5 +22,5 @@ export const BACKUP_FORMAT = 1;
 // Obergrenze für eine Sicherungsdatei beim Einspielen. Die Prüfung läuft vor dem Lesen der Datei.
 export const MAX_IMPORT_BYTES = 20 * 1024 * 1024;
 
-// Standardanzahl bei listEvents (db.js:63).
+// Standardanzahl bei listEvents.
 export const DEFAULT_EVENT_LIMIT = 200;

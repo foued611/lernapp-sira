@@ -19,7 +19,18 @@ export function ruleErrors(rule, unitIds, path = 'rule') {
     if (!Array.isArray(rule.ids) || !rule.ids.length) return [`${path}: ids fehlt`];
     return unitRefErrors(rule.ids, unitIds, path);
   }
-  if (rule.type === 'combo' || rule.type === 'blitz') return isPositiveInt(rule.min, 1) ? [] : [`${path}: min fehlt`];
+  if (rule.type === 'combo') return isPositiveInt(rule.min, 1) ? [] : [`${path}: min fehlt`];
+  if (rule.type === 'blitz') {
+    const minErrors = isPositiveInt(rule.min, 1) ? [] : [`${path}: min fehlt`];
+    const wrongErrors = rule.maxWrong === undefined || isPositiveInt(rule.maxWrong, 0) ? [] : [`${path}: maxWrong muss eine ganze Zahl ab 0 sein`];
+    return [...minErrors, ...wrongErrors];
+  }
+  if (rule.type === 'improved') {
+    const byOk = typeof rule.by === 'number' && rule.by > 0 && rule.by <= 1;
+    return [...unitRefErrors([rule.unit], unitIds, path), ...(byOk ? [] : [`${path}: by muss zwischen 0 und 1 liegen`])];
+  }
+  if (rule.type === 'retryRecovered') return isPositiveInt(rule.min, 1) ? [] : [`${path}: min fehlt`];
+  if (rule.type === 'refresh') return isPositiveInt(rule.count, 1) ? [] : [`${path}: count fehlt`];
   if (rule.type === 'streak') return isPositiveInt(rule.days, 2) ? [] : [`${path}: days fehlt`];
   if (COMBINE_TYPES.has(rule.type)) {
     if (!Array.isArray(rule.rules) || !rule.rules.length) return [`${path}: rules fehlt`];

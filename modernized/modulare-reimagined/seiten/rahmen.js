@@ -2,7 +2,7 @@
 // in zwei Schritten und die Seite der App. Die Regeln stehen in regeln/, die Aufgaben in runde/.
 // Die Modellfunktionen oben sind rein bzw. async über injizierte Speicher. Die Komponenten unten zeichnen nur.
 import { createElement, useReducer, useState } from 'react';
-import { BLITZ_SECONDS, createRound, freshPool, questionKey } from '../runde/index.js';
+import { BLITZ_SECONDS, createRound, freshPool, questionKey, withMissed } from '../runde/index.js';
 import { createRng } from '../helfer/index.js';
 import { REFRESH_BONUS_XP, awardXP, currentStreak, dailyXP, finishRound, isRefreshDue, updateStreak, weakestUnit } from '../regeln/index.js';
 import { Button, StarRow, starsOf } from '../komponenten/ui.js';
@@ -33,7 +33,10 @@ const BOSS_LOCKED = 'Der Endgegner ist noch gesperrt. Erst braucht jede Seite mi
 export const profileDefaults = () => ({ name: '', xp: 0, streak: 0, lastDay: '', lastApp: '', day: { d: '', xp: 0 } });
 // last und acc steuern Auffrischen und gezieltes Training (legacy profile.js:15).
 // seen: Schlüssel der Aufgaben, die richtig beantwortet wurden. Neue Runden bevorzugen andere (runde/src/vielfalt.js).
-export const appDefaults = () => ({ xp: 0, stars: {}, badges: {}, best: {}, last: {}, acc: {}, seen: {} });
+// missed: je Seite die Labels der Fragen, die in der letzten Lektionsrunde im ersten Versuch falsch waren (Fehler-Abruf).
+// refreshes: Zahl der bezahlten Auffrischungen (Trophäe refresh, Wochenmission refresh1 zählt separat).
+// merged: Quellen, deren Stand schon in diese App übernommen wurde (seiten/uebernahme.js).
+export const appDefaults = () => ({ xp: 0, stars: {}, badges: {}, best: {}, last: {}, acc: {}, seen: {}, missed: {}, refreshes: 0, merged: {} });
 // Obergrenze je App, damit der Stand klein bleibt. Die ältesten Schlüssel fallen zuerst weg.
 export const SEEN_MAX = 2000;
 const RIGHT = Object.freeze(new Set(['ok', 'almost']));
@@ -81,6 +84,12 @@ function poolFor(config, mode, unit, rng) {
   return null;
 }
 
+// Fehlerkategorien der Seite aus dem Speicher. Fehlt der Eintrag oder ist er kaputt, gilt [].
+const missedOf = (app, unit) => {
+  const list = app && app.missed && unit ? app.missed[unit.id] : null;
+  return Array.isArray(list) ? list.filter((l) => typeof l === 'string') : [];
+};
+
 /**
  * Startet eine Runde. Gibt { ok, round, mode, unit } oder { ok: false, message } zurück und wirft nie.
  * Der Endgegner startet nur, wenn er offen ist (RULE-206).
@@ -94,9 +103,13 @@ export function startRound({ config, mode, unit = null, app, profile, rng, known
   const source = poolFor(config, mode, unit, rng);
   if (!source) return failure(NO_TASKS);
   try {
-    const pool = freshPool(source, ROUND_SIZE[mode], known);
-    if (!Array.isArray(pool) || pool.length === 0) return failure(NO_TASKS);
-    const round = createRound({ pool, size: Math.min(ROUND_SIZE[mode], pool.length), rng, boss: mode === 'boss' });
+    const size = ROUND_SIZE[mode];
+    const fresh = freshPool(source, size, known);
+    if (!Array.isArray(fresh) || fresh.length === 0) return failure(NO_TASKS);
+    // Nur Lektionsrunden holen Fehlerkategorien der letzten Runde zurück (Spec 5.2). Ohne Liste bleibt alles wie bisher.
+    const missed = mode === 'lesson' ? missedOf(app, unit) : [];
+    const pool = missed.length ? withMissed(fresh, missed, Math.min(size, fresh.length), rng) : fresh;
+    const round = createRound({ pool, size: Math.min(size, pool.length), rng, boss: mode === 'boss' });
     return { ok: true, round, mode, unit };
   } catch (error) {
     return failure('Die Aufgaben konnten nicht erzeugt werden.', error);
@@ -117,6 +130,8 @@ export function evaluateRound({ appId, mode, unit, roundResult, profile, app, da
     wrong: roundResult.wrong,
     almost: roundResult.almost,
     bestCombo: roundResult.bestCombo,
+    retryRight: roundResult.retryRight || 0,
+    missedLabels: roundResult.missedLabels || [],
     score: roundResult.score || 0,
     levelUp,
     goalHit,
@@ -147,7 +162,8 @@ export function summaryOf({ mode, unit, roundResult, result }) {
     refresh: result.refresh,
     levelUp: result.levelUp,
     goalHit: result.goalHit,
-    newBadges: result.newBadges
+    newBadges: result.newBadges,
+    missions: result.missions || []
   };
 }
 
@@ -181,7 +197,10 @@ export async function settleRound({ appId, mode, unit, roundResult, profile, app
     stars: result.stars,
     failed: roundResult.failed,
     score: roundResult.score || 0,
-    xp: roundResult.xp
+    xp: roundResult.xp,
+    // Messung für spätere Auswertung: Abstand zur letzten Übung der Seite und Genauigkeit davor. Keine Person.
+    gapDays: result.gapDays,
+    prevAcc: result.prevAcc
   });
   return { result, saved, logged, summary: summaryOf({ mode, unit, roundResult, result }) };
 }
