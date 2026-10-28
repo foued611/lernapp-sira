@@ -82,7 +82,7 @@ Neues Profilfeld `goal` mit Werten 20, 30 oder 50 XP. Standard 30, der bisherige
 
 ### 5.6 Messung im Protokoll
 
-`finishRound` ergänzt das Ergebnis um `gapDays` (Tage seit der letzten Übung derselben Seite, leer bei der ersten Übung) und `prevAcc`. `logRow` schreibt beides mit. Kein Name, keine Person.
+`finishRound` ergänzt das Ergebnis um `gapDays` (Tage seit der letzten Übung derselben Seite, `null` bei der ersten Übung, 0 bei einem Tag in der Zukunft) und `prevAcc`. `settleRound` baut die Protokollzeile daraus, `logRow` schreibt sie. Kein Name, keine Person.
 
 Die Auswertung ist nicht Teil dieser Spec. Die Felder ermöglichen sie.
 

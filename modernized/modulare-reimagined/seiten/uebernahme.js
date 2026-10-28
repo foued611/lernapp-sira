@@ -38,10 +38,10 @@ export function hasProgress(state) {
 
 /**
  * Führt den Stand der alten App in den Stand der neuen. Gibt einen neuen Stand zurück, die Eingaben bleiben unverändert.
- * XP werden addiert, Sterne, Bestwerte und Trophäen übernommen (der höhere Wert gewinnt, Trophäen werden umbenannt).
+ * XP und Auffrischungen werden addiert, Sterne, Bestwerte und Trophäen übernommen (der höhere Wert gewinnt, Trophäen werden umbenannt).
  */
 export function mergeAppState(target, source, { badgeRenames = {}, fromId } = {}) {
-  const out = { ...target, xp: (target.xp || 0) + (source.xp || 0) };
+  const out = { ...target, xp: (target.xp || 0) + (source.xp || 0), refreshes: (target.refreshes || 0) + (source.refreshes || 0) };
   for (const field of FIELDS_OF_MAPS) {
     out[field] = mergeMap(target[field] || {}, source[field] || {}, field === 'badges' ? badgeRenames : {});
   }

@@ -5,12 +5,13 @@ import assert from 'node:assert/strict';
 import { appDefaults } from '../rahmen.js';
 import { hasProgress, mergeAppState, UEBERNAHMEN } from '../uebernahme.js';
 
-const old = { ...appDefaults(), xp: 40, stars: { etre: 2, avoir: 1 }, best: { etre: 0.8 }, badges: { first: true, 'besser-geworden': true } };
+const old = { ...appDefaults(), refreshes: 2, xp: 40, stars: { etre: 2, avoir: 1 }, best: { etre: 0.8 }, badges: { first: true, 'besser-geworden': true } };
 const neu = { ...appDefaults(), xp: 10, stars: { etre: 1, quel: 3 }, best: { etre: 0.5 }, badges: { first: true } };
 
 test('RULE-256 Übernahme: XP werden addiert, Sterne und Bestwerte nehmen den höheren Wert', () => {
   const merged = mergeAppState(neu, old, { fromId: 'fr-verben' });
   assert.equal(merged.xp, 50);
+  assert.equal(merged.refreshes, 2);
   assert.deepEqual(merged.stars, { etre: 2, quel: 3, avoir: 1 });
   assert.equal(merged.best.etre, 0.8);
 });

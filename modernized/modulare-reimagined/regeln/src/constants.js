@@ -17,8 +17,11 @@ export const DUE_DAYS = 3;
  */
 export const DUE_DAYS_STRONG = 7;
 
-/** Ab dieser letzten Genauigkeit gilt die längere Frist DUE_DAYS_STRONG (gleiche Schwelle wie 3 Sterne). */
-export const REFRESH_STRONG_ACCURACY = 0.9;
+/** Untergrenzen der Trefferquote für 3 bzw. 2 Sterne (profile.js:76). */
+export const STAR_THRESHOLDS = Object.freeze({ three: 0.9, two: 0.7 });
+
+/** Ab dieser letzten Genauigkeit gilt die längere Frist DUE_DAYS_STRONG. Gekoppelt an die 3-Sterne-Schwelle. */
+export const REFRESH_STRONG_ACCURACY = STAR_THRESHOLDS.three;
 
 /**
  * Höchstens so viele Kalendertage dürfen zwischen zwei Übungstagen liegen, damit die Serie
@@ -37,9 +40,6 @@ export const REFRESH_BONUS_XP = 10;
 
 /** Bonus für einen gewonnenen Endgegner (rounds.js:34). */
 export const BOSS_BONUS_XP = 50;
-
-/** Untergrenzen der Trefferquote für 3 bzw. 2 Sterne (profile.js:76). */
-export const STAR_THRESHOLDS = Object.freeze({ three: 0.9, two: 0.7 });
 
 /** Eine knapp richtige Antwort zählt halb bei der Trefferquote (quiz.js:149). */
 export const ALMOST_WEIGHT = 0.5;

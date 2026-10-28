@@ -127,7 +127,7 @@ test('SEITE-PFAD Die Stationen stehen in der Reihenfolge des Manifests, je Seite
     { id: 'b', title: 'Zweites', de: 'x', color: '#4CC3F5' }
   ];
   const path = pathOf(renderApp(appWith(), { units }));
-  const order = [...path.matchAll(/<h3>([^<]+)<\/h3>/g)].map((m) => m[1]);
+  const order = [...path.matchAll(/<span class="stitle">([^<]+)<\/span>/g)].map((m) => m[1]);
   assert.deepEqual(order, ['Drittes', 'Erstes', 'Zweites']);
 });
 
@@ -165,6 +165,14 @@ test('SEITE-PFAD Ohne Sterne ist die erste Station die nächste, jede Station bl
 test('SEITE-PFAD Sind alle Seiten geübt, gibt es keine "Als Nächstes"-Markierung', () => {
   const app = appWith({ stars: { start: 1, weiter: 3 }, last: { start: FRESH, weiter: FRESH } });
   assert.doesNotMatch(pathOf(renderApp(app)), /Als Nächstes/);
+});
+
+test('SEITE-PFAD Eine fällige Station ist vor der ersten Station ohne Stern die nächste', () => {
+  const app = appWith({ stars: { weiter: 1 }, last: { weiter: OLD } });
+  const [first, second] = stationsOf(pathOf(renderApp(app)));
+  assert.doesNotMatch(first, /Als Nächstes/, 'die Seite ohne Stern steht nicht vorn');
+  assert.match(second, /Als Nächstes/);
+  assert.match(second, /Zeit zum Auffrischen/);
 });
 
 test('SEITE-PFAD Der Endgegner bleibt gesperrt, solange er nicht offen ist, und öffnet mit open', () => {

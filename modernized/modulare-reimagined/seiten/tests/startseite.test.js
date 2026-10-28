@@ -278,3 +278,8 @@ test('SEITE-WOCHENZIEL minouLine rechnet mit dem übergebenen Ziel', () => {
   assert.equal(minouLine(20, 20), 'Tagesziel geschafft. Alles ab jetzt ist Bonus.');
   assert.equal(minouLine(10, 50), 'Noch 40 XP bis zum Tagesziel.');
 });
+
+test('SEITE-WOCHENZIEL Die Auswahl hat einen sichtbaren Text, nicht nur ein aria-label', () => {
+  const markup = renderToStaticMarkup(h(GoalChoice, { goal: 30, onChoose: () => {} }));
+  assert.match(markup, /<p[^>]*>Tagesziel wählen<\/p>/);
+});
