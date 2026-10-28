@@ -70,7 +70,7 @@ a.btn{display:inline-block;text-align:center;text-decoration:none}
 .node{position:relative;display:grid;grid-template-columns:60px 1fr auto;align-items:center;gap:14px;width:100%;text-align:left;cursor:pointer;background:var(--card);border:2px solid var(--ink);border-radius:14px;box-shadow:4px 5px 0 var(--shadow);padding:12px 16px;min-height:var(--touch-min);transition:transform .1s}
 .node:hover{transform:translate(-1px,-2px)}
 .node .circ{width:60px;height:60px;border-radius:18px;border:2px solid var(--ink);background:var(--lc);color:var(--on-accent);display:grid;place-items:center;font-family:var(--f-head);font-weight:800;font-size:22px;line-height:1;transform:rotate(-4deg)}
-.node .stitle{display:block;margin:0;font-family:var(--f-head);color:var(--ink);font-weight:800;font-size:22px;line-height:1.08;letter-spacing:-.02em}
+.node .stitle{display:block;margin:0;font-family:var(--f-head);color:var(--ink);font-weight:800;font-size:22px;line-height:1.08;letter-spacing:-.02em;overflow-wrap:anywhere}
 .node small{display:block;color:var(--muted);font-size:13px}
 .node .go{font-size:13px;font-weight:600;color:var(--ink)}
 .stars{display:flex;gap:2px;font-size:24px;color:var(--muted)}
@@ -118,6 +118,7 @@ a.btn{display:inline-block;text-align:center;text-decoration:none}
 /* Theorie-Seiten (für alle Apps): Kopfkarte und Merkzettel */
 .tcard{border-top:10px solid var(--lc)}
 .thead{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px}
+.thead h1{overflow-wrap:anywhere}
 .thead .de{font-size:17px;color:var(--muted)}
 .notes{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:12px}
 .note{background:var(--note);padding:12px 14px;box-shadow:3px 4px 0 var(--shadow);font-size:14px;transform:rotate(-.5deg);border-radius:4px}

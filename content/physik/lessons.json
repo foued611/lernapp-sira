@@ -133,7 +133,7 @@
     "goal": "Du kannst das Wechselwirkungsprinzip anwenden und Kraftpaare in Alltagssituationen erkennen.",
     "tldr": ["Kräfte treten immer paarweise auf: gleich groß, entgegengesetzt, auf verschiedene Körper.", "Wenn du einen Körper drückst, drückt er mit gleich großer Kraft zurück."],
     "analogy": { "title": "Stell dir vor: das Boot am Steg", "html": "<p>Du drückst dich vom Steg ab. Der Steg drückt dich mit gleicher Kraft zurück, das Boot fährt weg. Beide Kräfte wirken, sie heben sich nicht auf, weil sie auf verschiedene Körper wirken.</p>" },
-    "figure": { "diagram": { "name": "swapDiagram", "args": [["Du drückst", "den Steg"], ["Der Steg drückt", "dich zurück"], [0, 1], ["Kraft 1", "Kraft 2"]] }, "caption": "Die beiden Kräfte sind gleich groß und entgegengesetzt, und sie wirken auf verschiedene Körper." },
+    "figure": { "diagram": { "name": "swapDiagram", "args": [["Du", "drückst den Steg"], ["Der Steg", "drückt dich zurück"], [0, 1], ["Kraft 1", "Kraft 2"]] }, "caption": "Die beiden Kräfte sind gleich groß und entgegengesetzt, und sie wirken auf verschiedene Körper." },
     "steps": { "title": "So findest du das Kraftpaar", "items": ["Finde den Körper, der die Kraft ausübt.", "Finde den Körper, auf den die Kraft wirkt.", "Die Gegenkraft wirkt auf den ersten Körper, ist gleich groß und entgegengesetzt."] },
     "pitfall": { "html": "<p>Die beiden Kräfte heben sich nicht auf, weil sie auf verschiedene Körper wirken. Sonst könnte sich kein Boot bewegen.</p>" },
     "rule": "Actio gleich Reactio: gleich groß, entgegengesetzt, auf verschiedene Körper.",
