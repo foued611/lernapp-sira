@@ -1,10 +1,10 @@
 // Laufzeit-Modell des Cahier de Verbes. Hier steht KEIN Lernstoff: Verben, Sätze und Hinweise kommen aus
-// content/fr-verben/ (manifest.json, data.json) und werden von init() eingetragen.
+// content/decouvertes-2/ (manifest.json, data.json) und werden von init() eingetragen.
 // Herkunft: legacy/modulare/apps/franzoesisch-verben/model.js. Die Objekte bleiben dieselben, damit Erzeuger,
 // Diagramme und Theorie sie einfach importieren können. Dieses Modul enthält keinen Zufall.
 //
 // V     alle Verben, ergänzt um key, inf, irr und (bei regelmäßigen) ends und forms
-// UNITS Seiten des Lernpfads (aus dem Manifest)
+// UNITS Seiten mit Verben (aus dem Manifest, die übrigen Seiten der App haben kein Verbmodell)
 // SP    Beispielsätze je Seite mit aufgelöstem Verb
 export const ER = [], IR = [], RE = [];
 export const GE = { er: ER, ir: IR, re: RE };
@@ -26,7 +26,7 @@ const replace = (target, source) => {
 export function init({ data, manifest }) {
   replace(ER, data.endings.er); replace(IR, data.endings.ir); replace(RE, data.endings.re);
   replace(PRON, data.pron); replace(PQV, data.pqv);
-  replace(UNITS, manifest.units);
+  replace(UNITS, manifest.units.filter((unit) => unit.verbs));
   replace(RAW, data.sentences); replace(TRAP, data.traps); replace(HINT, data.hints);
   replace(V, JSON.parse(JSON.stringify(data.verbs)));
   Object.entries(V).forEach(([key, v]) => {

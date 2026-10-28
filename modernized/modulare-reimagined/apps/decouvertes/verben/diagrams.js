@@ -1,7 +1,7 @@
 // Diagramme des Cahier de Verbes (Herkunft: legacy/modulare/apps/franzoesisch-verben/diagrams.js).
 // Die Bausteine liefern React-Elemente (komponenten/svg.js). Farben kommen über die CSS-Klassen aus
 // seiten/design/styles/lesson.css, damit sie in hell und dunkel passen. Zahlen und Formen kommen aus dem Modell.
-import { diagram, rect, text } from '../../komponenten/svg.js';
+import { diagram, rect, text } from '../../../komponenten/svg.js';
 import { V, PRON } from './model.js';
 
 const VOWEL = /^[aeiouhéèêàâîôû]/i;

@@ -1,5 +1,6 @@
 // Macht aus den Aufgaben in content/decouvertes-2/data.json Fragen im Quiz-Format (siehe runde/src/questions.js).
-// Eigene App (Neubau)/builders.js. Zufall kommt immer als rng herein (AGENTS.md), ohne rng gibt es keine Aufgabe.
+// Seiten mit verbs (Cahier de Verbes) kommen aus verben/builders.js, alle anderen aus data.items.
+// Zufall kommt immer als rng herein (AGENTS.md), ohne rng gibt es keine Aufgabe.
 //
 // Eine Aufgabe: { q, s?, kind?, a, wrong[], why, label?, accept? }
 //   q       Frage oder Anweisung (reiner Text)
@@ -9,6 +10,7 @@
 //   accept  optional: weitere richtige Eingaben beim Eintippen
 import { choiceQuestion, typedQuestion, option, esc, normalise } from '../../runde/index.js';
 import { pick, shuffle } from '../../helfer/index.js';
+import { lessonRound as verbLessonRound, verbQuestion, verbBlitz } from './verben/builders.js';
 
 let UNITS = [];
 let ITEMS = {};
@@ -56,15 +58,26 @@ const pickItems = (unitId, count, rng) => {
   return Array.from({ length: count }, (_, i) => pool[i % pool.length]);
 };
 
-/** 8 Fragen einer Seite, jede dritte Lücke zum Eintippen. */
+/** 8 Fragen einer Seite, jede dritte Lücke zum Eintippen. Verbseiten haben ihre eigene Runde. */
 export function lessonRound(unit, rng) {
+  if (unit.verbs) return verbLessonRound(unit, rng);
   return pickItems(unit.id, 8, rng).map((item, i) => (i % 3 === 2 && isGap(item) ? typed(item) : choice(item, rng)));
 }
 
-const anyItem = (rng) => pick(ITEMS[pick(UNITS, rng).id], rng);
-export const quickRound = (rng) => Array.from({ length: 5 }, () => choice(anyItem(rng), rng));
-export const blitzQuestion = (rng) => choice(anyItem(rng), rng);
+// Eine Frage aus einer beliebigen Seite. Verbseiten liefern eine Verbfrage, die anderen eine Aufgabe aus data.items.
+const questionIn = (unit, rng) => (unit.verbs ? verbQuestion(unit, rng) : choice(pick(ITEMS[unit.id], rng), rng));
+
+export const quickRound = (rng) => Array.from({ length: 5 }, () => questionIn(pick(UNITS, rng), rng));
+// Blitz gibt immer Auswahl aus (Blitz hat keine Eingabe).
+export const blitzQuestion = (rng) => {
+  const unit = pick(UNITS, rng);
+  return unit.verbs ? verbBlitz(unit, rng) : choice(pick(ITEMS[unit.id], rng), rng);
+};
+
+// 12 Fragen, gleichmäßig über alle Seiten verteilt (sonst kämen die hinteren Seiten nie dran).
 export const bossRound = (rng) => Array.from({ length: 12 }, (_, i) => {
-  const item = pick(ITEMS[UNITS[i % UNITS.length].id], rng);
+  const unit = UNITS[Math.floor((i * UNITS.length) / 12)];
+  if (unit.verbs) return verbQuestion(unit, rng);
+  const item = pick(ITEMS[unit.id], rng);
   return i % 4 === 3 && isGap(item) ? typed(item) : choice(item, rng);
 });

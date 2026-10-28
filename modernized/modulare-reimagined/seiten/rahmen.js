@@ -35,7 +35,8 @@ export const profileDefaults = () => ({ name: '', xp: 0, streak: 0, lastDay: '',
 // seen: Schlüssel der Aufgaben, die richtig beantwortet wurden. Neue Runden bevorzugen andere (runde/src/vielfalt.js).
 // missed: je Seite die Labels der Fragen, die in der letzten Lektionsrunde im ersten Versuch falsch waren (Fehler-Abruf).
 // refreshes: Zahl der bezahlten Auffrischungen (Trophäe refresh, Wochenmission refresh1 zählt separat).
-export const appDefaults = () => ({ xp: 0, stars: {}, badges: {}, best: {}, last: {}, acc: {}, seen: {}, missed: {}, refreshes: 0 });
+// merged: Quellen, deren Stand schon in diese App übernommen wurde (seiten/uebernahme.js).
+export const appDefaults = () => ({ xp: 0, stars: {}, badges: {}, best: {}, last: {}, acc: {}, seen: {}, missed: {}, refreshes: 0, merged: {} });
 // Obergrenze je App, damit der Stand klein bleibt. Die ältesten Schlüssel fallen zuerst weg.
 export const SEEN_MAX = 2000;
 const RIGHT = Object.freeze(new Set(['ok', 'almost']));
