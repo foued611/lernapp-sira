@@ -1,0 +1,10 @@
+[
+  { "id": "first", "n": "Erster Versuch", "d": "Die erste Seite geübt", "rule": { "type": "anyUnit" } },
+  { "id": "perfect", "n": "Fehlerfrei", "d": "Eine Runde ohne Fehler", "rule": { "type": "perfectRound" } },
+  { "id": "combo", "n": "Im Lauf", "d": "Fünf richtige Antworten hintereinander", "rule": { "type": "combo", "min": 5 } },
+  { "id": "streak", "n": "Dranbleiben", "d": "Drei Tage in Folge geübt", "rule": { "type": "streak", "days": 3 } },
+  { "id": "boss", "n": "Experiment-Check", "d": "Den Endgegner besiegt", "rule": { "type": "boss" } },
+  { "id": "akustik", "n": "Akustik geschafft", "d": "Alle Akustik-Seiten mit mindestens einem Stern", "rule": { "type": "units", "ids": ["schall-entsteht", "schall-ausbreitung", "tonhoehe", "hoerbereich"] } },
+  { "id": "optik", "n": "Optik geschafft", "d": "Alle Optik-Seiten mit mindestens einem Stern", "rule": { "type": "units", "ids": ["lichtausbreitung", "schatten", "reflexion", "brechung", "farben", "lochkamera"] } },
+  { "id": "mechanik", "n": "Mechanik geschafft", "d": "Alle Mechanik-Seiten mit mindestens einem Stern", "rule": { "type": "units", "ids": ["geschwindigkeit", "st-diagramm", "kraft-bewegung", "wechselwirkung", "gewichtskraft", "federkraft"] } }
+]

@@ -1,0 +1,162 @@
+{
+  "schall-entsteht": {
+    "goal": "Du kannst erklären, wodurch Schall entsteht, und die Frequenz in Hertz angeben.",
+    "tldr": ["Schall entsteht, wenn ein Körper schwingt.", "Die Frequenz gibt an, wie oft pro Sekunde geschwungen wird. Einheit: Hertz (Hz)."],
+    "analogy": { "title": "Stell dir vor: die Gitarrensaite", "html": "<p>Zupfst du eine Saite, bewegt sie sich schnell hin und her. Diese Schwingung gibt die Luft weiter, bis sie an dein Ohr kommt.</p>" },
+    "figure": { "diagram": { "name": "flowDiagram", "args": [["Saite schwingt|(Quelle)", "Luft schwingt mit|(Medium)", "Ohr hört|(Empfänger)"], "Ablauf: Eine schwingende Saite erzeugt Schall, der bis ans Ohr kommt"] }, "caption": "Die Schwingung wird von Teilchen zu Teilchen weitergegeben." },
+    "steps": { "title": "So denkst du über Schall", "items": ["Finde die Quelle: Was bewegt sich schnell hin und her?", "Zähle die Schwingungen pro Sekunde. Das ist die Frequenz in Hz.", "Ohne Schwingung kein Schall: Ein ruhender Körper klingt nicht."] },
+    "pitfall": { "html": "<p>Schall ist nicht der Gegenstand selbst. Gemeint ist die Schwingung, die sich durch die Luft ausbreitet.</p>" },
+    "rule": "Schall entsteht durch Schwingungen. Die Frequenz in Hz ist die Schwingungen pro Sekunde.",
+    "check": { "q": "Was erzeugt Schall?", "options": [{ "id": "Schwingung", "html": "Eine Schwingung" }, { "id": "Ruhe", "html": "Ein ruhender Körper" }, { "id": "Licht", "html": "Ein Lichtstrahl" }], "answer": "Schwingung", "why": "Schall ist eine Schwingung, die sich in einem Stoff ausbreitet. Ohne Schwingung gibt es keinen Schall." }
+  },
+  "schall-ausbreitung": {
+    "goal": "Du kannst sagen, wodurch Schall getragen wird und wie schnell er ungefähr in Luft ist.",
+    "tldr": ["Schall braucht ein Medium: Luft, Wasser oder einen festen Stoff.", "In Luft ist Schall etwa 340 m/s schnell. Licht ist viel schneller."],
+    "analogy": { "title": "Stell dir vor: die Welle im Stadion", "html": "<p>Die Zuschauer stehen nacheinander auf. Die Welle läuft um das Stadion, aber die Menschen bleiben an ihrem Platz. So breitet sich Schall aus: Energie wandert weiter, die Teilchen schwingen nur.</p>" },
+    "figure": { "diagram": { "name": "tableDiagram", "args": [["Stoff", "Schall", "Im Vakuum"], [["Luft", "langsamer", "kein Schall"], ["Wasser", "schneller als Luft", "kein Schall"], ["Stahl", "am schnellsten", "kein Schall"]], [1, 1.4, 1.2], "Tabelle: Schall in verschiedenen Stoffen"] }, "caption": "In festen Stoffen ist Schall meist schneller als in Gasen." },
+    "steps": { "title": "So rechnest du mit Schall", "items": ["Prüfe das Medium: Ist ein Stoff zwischen Quelle und Ohr?", "Strecke durch Zeit: v = s / t. In Luft gilt etwa v = 340 m/s.", "Donner nach dem Blitz: Die Zeit zwischen Blitz und Donner zeigt die Entfernung."] },
+    "pitfall": { "html": "<p>Im Vakuum gibt es keinen Schall. Deshalb hört man im Weltraum niemanden schreien.</p>" },
+    "rule": "Schall braucht Stoffe. In Luft etwa 340 m/s, und Licht ist viel schneller.",
+    "check": { "q": "Warum hört man im Vakuum keinen Schall?", "options": [{ "id": "kein Medium", "html": "Es gibt kein Medium, das die Schwingung trägt" }, { "id": "zu hell", "html": "Das Vakuum ist zu hell" }, { "id": "zu kalt", "html": "Das Vakuum ist zu kalt" }], "answer": "kein Medium", "why": "Schall ist eine Schwingung von Teilchen. Im Vakuum gibt es keine Teilchen, die schwingen können." }
+  },
+  "tonhoehe": {
+    "goal": "Du kannst Tonhöhe und Lautstärke unterscheiden und sagen, wovon sie abhängen.",
+    "tldr": ["Die Tonhöhe hängt von der Frequenz ab: hoch heißt viele Schwingungen pro Sekunde.", "Die Lautstärke hängt von der Amplitude ab, also wie weit der Körper ausschlägt."],
+    "analogy": { "title": "Stell dir vor: die Schaukel", "html": "<p>Schaukelst du schnell, ist die Bewegung oft hin und her. Schaukelst du weit, ist der Ausschlag groß. Schnell ist hohe Tonhöhe, weit ist Lautstärke.</p>" },
+    "figure": { "diagram": { "name": "tableDiagram", "args": [["Größe", "bestimmt", "Beispiel"], [["Frequenz", "Tonhöhe", "880 Hz klingt höher als 220 Hz"], ["Amplitude", "Lautstärke", "eine stärker angeschlagene Saite ist lauter"]], [1, 1, 2], "Tabelle: Frequenz und Amplitude"] }, "caption": "Tonhöhe und Lautstärke sind zwei verschiedene Eigenschaften eines Tons." },
+    "steps": { "title": "So unterscheidest du", "items": ["Hörst du einen hohen oder tiefen Ton? Das ist die Frequenz.", "Hörst du einen lauten oder leisen Ton? Das ist die Amplitude.", "Kürzere oder dünnere Saiten schwingen schneller und klingen höher."] },
+    "pitfall": { "html": "<p>Laut heißt nicht hoch. Ein lauter Ton kann tief sein und ein leiser Ton hoch.</p>" },
+    "rule": "Tonhöhe = Frequenz. Lautstärke = Amplitude.",
+    "check": { "q": "Was bestimmt die Tonhöhe?", "options": [{ "id": "Frequenz", "html": "Die Frequenz" }, { "id": "Amplitude", "html": "Die Amplitude" }, { "id": "Masse", "html": "Die Masse der Luft" }], "answer": "Frequenz", "why": "Viele Schwingungen pro Sekunde ergeben einen hohen Ton. Die Amplitude bestimmt die Lautstärke." }
+  },
+  "hoerbereich": {
+    "goal": "Du kannst den Hörbereich des Menschen beschreiben und sagen, wie das Ohr Schall weitergibt.",
+    "tldr": ["Der Mensch hört ungefähr von 20 Hz bis 20 000 Hz.", "Das Trommelfell nimmt die Schwingung auf und gibt sie über die Gehörknöchelchen ans Innenohr weiter."],
+    "analogy": { "title": "Stell dir vor: das Mikrofon im Ohr", "html": "<p>Das Trommelfell ist wie eine Membran im Lautsprecher, nur umgekehrt: Es fängt Schwingungen ein und leitet sie weiter.</p>" },
+    "figure": { "diagram": { "name": "flowDiagram", "args": [["Trommelfell|(nimmt auf)", "Gehörknöchelchen|(verstärken)", "Innenohr|(Nerven)"], "Ablauf: Der Weg des Schalls im Ohr"] }, "caption": "Die Schwingung läuft vom äußeren zum inneren Ohr." },
+    "steps": { "title": "So ordnest du den Hörbereich", "items": ["Unter 20 Hz: Infraschall, den Menschen nicht hören.", "20 Hz bis 20 000 Hz: hörbarer Schall.", "Über 20 000 Hz: Ultraschall, zum Beispiel bei Fledermäusen."] },
+    "pitfall": { "html": "<p>Nicht jeder Schall ist hörbar. Ein Hund hört manchmal Töne, die du nicht hörst, weil sie zu hoch sind.</p>" },
+    "rule": "Hörbereich 20 Hz bis 20 000 Hz. Darunter Infraschall, darüber Ultraschall.",
+    "check": { "q": "Wie heißt Schall über 20 000 Hz?", "options": [{ "id": "Ultraschall", "html": "Ultraschall" }, { "id": "Infraschall", "html": "Infraschall" }, { "id": "Echo", "html": "Echo" }], "answer": "Ultraschall", "why": "Ultraschall liegt oberhalb des menschlichen Hörbereichs. Infraschall liegt darunter." }
+  },
+  "lichtausbreitung": {
+    "goal": "Du kannst beschreiben, wie sich Licht ausbreitet und was eine Lichtquelle ist.",
+    "tldr": ["Licht breitet sich geradlinig aus, in einem gleichmäßigen Stoff.", "Eine Lichtquelle sendet selbst Licht aus. Der Mond wird nur angestrahlt."],
+    "analogy": { "title": "Stell dir vor: die Taschenlampe im Nebel", "html": "<p>Im Nebel siehst du den Lichtkegel: Die Lichtstrahlen laufen gerade vom Licht weg. Wo kein Strahl hinkommt, ist es dunkel.</p>" },
+    "figure": { "diagram": { "name": "flowDiagram", "args": [["Lichtquelle|(sendet aus)", "Lichtstrahl|(gerade Linie)", "Auge|(sieht es)"], "Ablauf: Licht geht geradlinig von der Quelle zum Auge"] }, "caption": "Lichtstrahlen sind gerade Linien mit einem Pfeil in Ausbreitungsrichtung." },
+    "steps": { "title": "So zeichnest du Licht", "items": ["Finde die Lichtquelle: Sendet der Körper selbst Licht aus?", "Zeichne den Strahl als gerade Linie mit Pfeil.", "Sieh das Auge: Nur Licht, das ins Auge kommt, siehst du."] },
+    "pitfall": { "html": "<p>Der Mond leuchtet nicht selbst. Er reflektiert das Licht der Sonne.</p>" },
+    "rule": "Licht breitet sich geradlinig aus. Eine Lichtquelle sendet selbst Licht aus.",
+    "check": { "q": "Welcher Körper ist eine Lichtquelle?", "options": [{ "id": "Kerze", "html": "Eine Kerze" }, { "id": "Mond", "html": "Der Mond" }, { "id": "Spiegel", "html": "Ein Spiegel" }], "answer": "Kerze", "why": "Eine Kerze sendet selbst Licht aus. Mond und Spiegel reflektieren nur Licht." }
+  },
+  "schatten": {
+    "goal": "Du kannst Schatten erklären, Kern- und Halbschatten unterscheiden und Finsternisse einordnen.",
+    "tldr": ["Ein Schatten entsteht, wenn ein undurchsichtiger Körper das Licht verdeckt.", "Der dunkelste Teil heißt Kernschatten, der Übergang Halbschatten."],
+    "analogy": { "title": "Stell dir vor: die Hand vor der Lampe", "html": "<p>Hältst du die Hand vor eine Taschenlampe, ist die Wand dahinter dunkel. Bei einer großen Lampe wird der Rand heller, das ist der Halbschatten.</p>" },
+    "figure": { "diagram": { "name": "tableDiagram", "args": [["Finsternis", "Wer wirft den Schatten?", "Wo?"], [["Mondfinsternis", "Die Erde", "Der Mond liegt im Erdschatten"], ["Sonnenfinsternis", "Der Mond", "Ein Teil der Erde liegt im Mondschatten"]], [1.2, 1.4, 2], "Tabelle: Mond- und Sonnenfinsternis"] }, "caption": "Bei einer Mondfinsternis steht die Erde zwischen Sonne und Mond." },
+    "steps": { "title": "So erklärst du einen Schatten", "items": ["Lichtquelle und verdeckender Körper finden.", "Dunkler Kern: Kernschatten. Heller Rand: Halbschatten.", "Bei einer Finsternis: Wer steht zwischen Sonne und dem Schatten?"] },
+    "pitfall": { "html": "<p>Bei einer Mondfinsternis wirft die Erde den Schatten, nicht der Mond. Bei einer Sonnenfinsternis ist es umgekehrt.</p>" },
+    "rule": "Schatten entsteht durch Verdecken. Kernschatten dunkel, Halbschatten Übergang.",
+    "check": { "q": "Wer wirft bei einer Mondfinsternis den Schatten?", "options": [{ "id": "Erde", "html": "Die Erde" }, { "id": "Mond", "html": "Der Mond" }, { "id": "Sonne", "html": "Die Sonne" }], "answer": "Erde", "why": "Bei einer Mondfinsternis steht die Erde zwischen Sonne und Mond und wirft ihren Schatten auf den Mond." }
+  },
+  "reflexion": {
+    "goal": "Du kannst das Reflexionsgesetz anwenden und Spiegelbilder erklären.",
+    "tldr": ["Einfallswinkel und Reflexionswinkel sind gleich groß, gemessen zum Lot.", "Ein Spiegelbild liegt genauso weit hinter dem Spiegel wie der Gegenstand davor und ist seitenverkehrt."],
+    "analogy": { "title": "Stell dir vor: der Ball an der Bande", "html": "<p>Ein Ball prallt unter einem Winkel von der Bande ab. Der Winkel, mit dem er auftrifft, ist gleich dem Winkel, mit dem er wegfliegt.</p>" },
+    "figure": { "diagram": { "name": "swapDiagram", "args": [["Einfall", "30°", "zum Lot"], ["Reflexion", "30°", "zum Lot"], [0, 1, 2], ["Einfallend", "Reflektiert"]] }, "caption": "Einfallswinkel und Reflexionswinkel sind gleich groß." },
+    "steps": { "title": "So wendest du das Gesetz an", "items": ["Zeichne das Lot senkrecht zum Spiegel.", "Miss den Einfallswinkel zum Lot.", "Der Reflexionswinkel ist gleich groß, auf der anderen Seite."] },
+    "pitfall": { "html": "<p>Gemessen wird immer zum Lot, nicht zur Spiegelfläche. Sonst ist der Winkel falsch.</p>" },
+    "rule": "Einfallswinkel = Reflexionswinkel, gemessen zum Lot.",
+    "check": { "q": "Ein Strahl fällt unter 30° zum Lot ein. Unter welchem Winkel wird er reflektiert?", "options": [{ "id": "30", "html": "30°" }, { "id": "60", "html": "60°" }, { "id": "90", "html": "90°" }], "answer": "30", "why": "Der Reflexionswinkel ist gleich dem Einfallswinkel, beide gemessen zum Lot." }
+  },
+  "brechung": {
+    "goal": "Du kannst erklären, warum Licht beim Übergang zwischen Stoffen gebrochen wird.",
+    "tldr": ["Im Wasser ist Licht langsamer als in Luft.", "Beim Übergang in einen dichteren Stoff wird der Strahl zum Lot hin gebrochen."],
+    "analogy": { "title": "Stell dir vor: der Rollstuhl auf dem Rasen", "html": "<p>Fährt ein Rad schräg vom Asphalt in den Sand, wird es langsamer und lenkt ab. Ähnlich ändert das Licht im Wasser seine Richtung.</p>" },
+    "figure": { "diagram": { "name": "flowDiagram", "args": [["Luft|(schneller)", "Wasser|(langsamer, Strahl zum Lot)"], "Ablauf: Licht wird beim Übergang in Wasser gebrochen"] }, "caption": "Der Strahl wird zum Lot hin gebrochen, wenn er in den dichteren Stoff übergeht." },
+    "steps": { "title": "So erklärst du Brechung", "items": ["Welcher Stoff ist dichter? Dort ist Licht langsamer.", "Der Strahl wird zum Lot hin gebrochen.", "Beim Senkrechten Einfall wird nichts gebrochen."] },
+    "pitfall": { "html": "<p>Ein Strohhalm im Glas sieht geknickt aus, weil das Licht an der Wasseroberfläche gebrochen wird. Der Strohhalm selbst ist gerade.</p>" },
+    "rule": "Beim Übergang in einen dichteren Stoff wird der Strahl zum Lot hin gebrochen.",
+    "check": { "q": "Wohin wird ein Lichtstrahl beim Übergang Luft → Wasser gebrochen?", "options": [{ "id": "zum Lot", "html": "Zum Lot hin" }, { "id": "vom Lot weg", "html": "Vom Lot weg" }, { "id": "nicht", "html": "Gar nicht" }], "answer": "zum Lot", "why": "Im Wasser ist Licht langsamer. Deshalb wird der Strahl zum Lot hin gebrochen." }
+  },
+  "farben": {
+    "goal": "Du kannst erklären, wie der Regenbogen entsteht und warum Farben in einer festen Reihenfolge erscheinen.",
+    "tldr": ["Weißes Licht besteht aus allen Farben. Tropfen und Prismen zerlegen es.", "Rot wird am schwächsten, Violett am stärksten gebrochen. Deshalb liegt Rot außen."],
+    "analogy": { "title": "Stell dir vor: die Sortierung am Band", "html": "<p>Ein Kasten mit gemischten Murmeln wird über eine schräge Rampe gerollt. Die schweren rollen anders als die leichten und trennen sich. So trennt das Wasser die Farben.</p>" },
+    "figure": { "diagram": { "name": "flowDiagram", "args": [["weißes Licht|(Gemisch)", "Tropfen oder Prisma|(brechen)", "Spektrum|(Rot bis Violett)"], "Ablauf: Weißes Licht wird zu einem Spektrum zerlegt"] }, "caption": "Die Farben werden unterschiedlich stark gebrochen und trennen sich." },
+    "steps": { "title": "So entsteht der Regenbogen", "items": ["Das Sonnenlicht trifft auf Regentropfen.", "Jede Farbe wird unterschiedlich stark gebrochen.", "Von außen nach innen: Rot, Orange, Gelb, Grün, Blau, Violett."] },
+    "pitfall": { "html": "<p>Die Farben entstehen nicht im Regen selbst. Das weiße Licht wird zerlegt. Ein Körper hat Farbe, weil er bestimmte Farben reflektiert.</p>" },
+    "rule": "Weißes Licht besteht aus Farben. Brechung zerlegt es. Rot liegt im Regenbogen außen.",
+    "check": { "q": "Welche Farbe liegt im Regenbogen außen?", "options": [{ "id": "Rot", "html": "Rot" }, { "id": "Violett", "html": "Violett" }, { "id": "Grün", "html": "Grün" }], "answer": "Rot", "why": "Rot wird am schwächsten gebrochen und liegt deshalb außen im Regenbogen." }
+  },
+  "lochkamera": {
+    "goal": "Du kannst die Lochkamera erklären und sagen, wie Lochgröße und Abstand das Bild verändern.",
+    "tldr": ["Das Licht fällt geradlinig durch das Loch und erzeugt ein umgekehrtes, seitenverkehrtes Bild.", "Ein kleines Loch macht das Bild schärfer, aber dunkler."],
+    "analogy": { "title": "Stell dir vor: das Auge", "html": "<p>Die Lochkamera funktioniert wie das Auge. Die Pupille lässt das Licht hinein, die Netzhaut zeigt das Bild, das auf dem Kopf steht. Das Gehirn dreht es um.</p>" },
+    "figure": { "diagram": { "name": "flowDiagram", "args": [["Gegenstand oben|(Lichtstrahlen)", "Loch|(Strahlen kreuzen sich)", "Bild unten|(auf dem Kopf)"], "Ablauf: Die Lichtstrahlen kreuzen sich am Loch"] }, "caption": "Die Strahlen kreuzen sich am Loch. Deshalb steht das Bild auf dem Kopf." },
+    "steps": { "title": "So erklärst du das Bild", "items": ["Zeichne Strahlen vom oberen und vom unteren Punkt des Gegenstands.", "Sie laufen gerade durch das Loch und kreuzen sich.", "Das Bild steht auf dem Kopf und ist seitenverkehrt."] },
+    "pitfall": { "html": "<p>Das Bild entsteht nicht im Loch, sondern auf der gegenüberliegenden Rückwand.</p>" },
+    "rule": "Lochkamera: umgekehrtes Bild. Kleines Loch: schärfer und dunkler.",
+    "check": { "q": "Wie steht das Bild in einer Lochkamera?", "options": [{ "id": "kopf", "html": "Auf dem Kopf" }, { "id": "normal", "html": "Aufrecht" }, { "id": "groesser", "html": "Viel größer als der Gegenstand" }], "answer": "kopf", "why": "Die Lichtstrahlen kreuzen sich am Loch. Deshalb entsteht ein umgekehrtes Bild." }
+  },
+  "geschwindigkeit": {
+    "goal": "Du kannst die Geschwindigkeit aus Weg und Zeit berechnen und in andere Einheiten umrechnen.",
+    "tldr": ["Geschwindigkeit ist Weg durch Zeit: v = s / t.", "Umrechnen: 1 m/s = 3,6 km/h. Also 36 km/h = 10 m/s."],
+    "analogy": { "title": "Stell dir vor: die Radtour", "html": "<p>Du fährst 300 m in 30 Sekunden. Dein Tacho würde dir sagen, wie schnell du bist: 10 Meter jede Sekunde.</p>" },
+    "figure": { "diagram": { "name": "tableDiagram", "args": [["Größe", "Formel", "Einheit"], [["Weg", "s", "m"], ["Zeit", "t", "s"], ["Geschwindigkeit", "v = s / t", "m/s"]], [1, 1.2, 1], "Tabelle: Weg, Zeit und Geschwindigkeit"] }, "caption": "Mit Weg und Zeit berechnest du die Geschwindigkeit." },
+    "steps": { "title": "So rechnest du", "items": ["Schreibe auf, was gegeben ist: s und t.", "Rechne v = s / t, zum Beispiel 300 m / 30 s = 10 m/s.", "Für km/h: m/s mal 3,6."] },
+    "pitfall": { "html": "<p>Nicht durch den Weg teilen, sondern Weg durch Zeit: v = s / t. Achte auf die Einheiten.</p>" },
+    "rule": "v = s / t. 1 m/s = 3,6 km/h.",
+    "check": { "q": "Ein Körper legt in 5 s einen Weg von 50 m zurück. Wie schnell ist er?", "options": [{ "id": "10", "html": "10 m/s" }, { "id": "5", "html": "5 m/s" }, { "id": "250", "html": "250 m/s" }], "answer": "10", "why": "v = s / t = 50 m / 5 s = 10 m/s." }
+  },
+  "st-diagramm": {
+    "goal": "Du kannst aus einem s-t-Diagramm Geschwindigkeit, Stillstand und Richtung ablesen.",
+    "tldr": ["Auf der waagerechten Achse steht die Zeit t, auf der senkrechten der Weg s.", "Die Steigung der Linie ist die Geschwindigkeit. Waagerecht heißt Stillstand."],
+    "analogy": { "title": "Stell dir vor: der Steilhang", "html": "<p>Eine steile Straße bedeutet viel Höhenunterschied in kurzer Strecke. Im s-t-Diagramm bedeutet eine steile Linie viel Weg in kurzer Zeit: schnell.</p>" },
+    "figure": { "diagram": { "name": "tableDiagram", "args": [["Linie", "Bedeutung"], [["waagerecht", "Stillstand"], ["steigend, gerade", "gleichförmige Bewegung"], ["fallend", "Rückwärtsbewegung"]], [1, 2], "Tabelle: Linien im s-t-Diagramm"] }, "caption": "Die Steigung zeigt die Geschwindigkeit an." },
+    "steps": { "title": "So liest du ab", "items": ["Zwei Punkte auf der Linie wählen.", "Steigung = Weg-Differenz durch Zeit-Differenz, also v.", "Waagerecht: Stillstand. Fällt die Linie: rückwärts."] },
+    "pitfall": { "html": "<p>Eine höhere Linie ist nicht schneller. Entscheidend ist die Steigung, also wie steil die Linie ist.</p>" },
+    "rule": "Steigung im s-t-Diagramm = Geschwindigkeit. Waagerecht = Stillstand.",
+    "check": { "q": "Was zeigt eine waagerechte Linie im s-t-Diagramm?", "options": [{ "id": "Stillstand", "html": "Stillstand" }, { "id": "gleichförmig", "html": "Gleichförmige Bewegung" }, { "id": "rückwärts", "html": "Rückwärtsbewegung" }], "answer": "Stillstand", "why": "Der Weg ändert sich nicht, also steht der Körper still. Das ist eine Steigung von null." }
+  },
+  "kraft-bewegung": {
+    "goal": "Du kannst beschreiben, wie Kräfte Geschwindigkeit, Richtung und Form eines Körpers ändern.",
+    "tldr": ["Eine Kraft kann beschleunigen, bremsen, die Richtung ändern oder verformen.", "Ohne Kraft bleibt ein Körper in Ruhe oder bewegt sich gleichförmig weiter."],
+    "analogy": { "title": "Stell dir vor: der Fußball", "html": "<p>Ein ruhender Ball bewegt sich erst, wenn du ihn trittst. Der Tritt beschleunigt ihn. Trifft er die Wand, ändert er die Richtung.</p>" },
+    "figure": { "diagram": { "name": "tableDiagram", "args": [["Wirkung", "Beispiel"], [["beschleunigen", "Ein Auto fährt los"], ["bremsen", "Ein Ball wird vom Gras gestoppt"], ["Richtung ändern", "Ein Ball prallt von der Wand ab"], ["verformen", "Ein Knetklumpen wird flach gedrückt"]], [1, 2], "Tabelle: Wirkungen einer Kraft"] }, "caption": "Eine Kraft kann mehrere Wirkungen gleichzeitig haben." },
+    "steps": { "title": "So bestimmst du die Wirkung", "items": ["Zeige die Kraft: In welche Richtung wirkt sie?", "Wirkt sie in Bewegungsrichtung: beschleunigen. Entgegen: bremsen.", "Wirkt sie seitlich: die Richtung ändert sich."] },
+    "pitfall": { "html": "<p>Eine Kraft verändert nicht die Masse des Körpers. Sie verändert Bewegung oder Form.</p>" },
+    "rule": "Kräfte ändern Geschwindigkeit, Richtung oder Form. Ohne Kraft keine Änderung.",
+    "check": { "q": "Welche Wirkung hat eine Kraft nicht?", "options": [{ "id": "masse", "html": "Sie verändert die Masse" }, { "id": "tempo", "html": "Sie verändert die Geschwindigkeit" }, { "id": "richtung", "html": "Sie verändert die Richtung" }], "answer": "masse", "why": "Die Masse eines Körpers bleibt durch eine Kraft gleich. Kräfte verändern Bewegung oder Form." }
+  },
+  "wechselwirkung": {
+    "goal": "Du kannst das Wechselwirkungsprinzip anwenden und Kraftpaare in Alltagssituationen erkennen.",
+    "tldr": ["Kräfte treten immer paarweise auf: gleich groß, entgegengesetzt, auf verschiedene Körper.", "Wenn du einen Körper drückst, drückt er mit gleich großer Kraft zurück."],
+    "analogy": { "title": "Stell dir vor: das Boot am Steg", "html": "<p>Du drückst dich vom Steg ab. Der Steg drückt dich mit gleicher Kraft zurück, das Boot fährt weg. Beide Kräfte wirken, sie heben sich nicht auf, weil sie auf verschiedene Körper wirken.</p>" },
+    "figure": { "diagram": { "name": "swapDiagram", "args": [["Du drückst", "den Steg"], ["Der Steg drückt", "dich zurück"], [0, 1], ["Kraft 1", "Kraft 2"]] }, "caption": "Die beiden Kräfte sind gleich groß und entgegengesetzt, und sie wirken auf verschiedene Körper." },
+    "steps": { "title": "So findest du das Kraftpaar", "items": ["Finde den Körper, der die Kraft ausübt.", "Finde den Körper, auf den die Kraft wirkt.", "Die Gegenkraft wirkt auf den ersten Körper, ist gleich groß und entgegengesetzt."] },
+    "pitfall": { "html": "<p>Die beiden Kräfte heben sich nicht auf, weil sie auf verschiedene Körper wirken. Sonst könnte sich kein Boot bewegen.</p>" },
+    "rule": "Actio gleich Reactio: gleich groß, entgegengesetzt, auf verschiedene Körper.",
+    "check": { "q": "Wie groß ist die Gegenkraft zu einer Kraft von 10 N?", "options": [{ "id": "10", "html": "10 N" }, { "id": "0", "html": "0 N" }, { "id": "5", "html": "5 N" }], "answer": "10", "why": "Die Gegenkraft ist gleich groß und entgegengesetzt zur Ausgangskraft." }
+  },
+  "gewichtskraft": {
+    "goal": "Du kannst die Gewichtskraft aus der Masse berechnen und Masse und Gewichtskraft unterscheiden.",
+    "tldr": ["Die Gewichtskraft berechnet man mit F = m · g. Einheit Newton (N).", "Die Masse ist überall gleich. Die Gewichtskraft ändert sich mit dem Ort, zum Beispiel auf dem Mond."],
+    "analogy": { "title": "Stell dir vor: der Koffer auf dem Mond", "html": "<p>Auf dem Mond ist der Koffer leichter zu heben, aber er hat immer noch dieselbe Menge Inhalt. Das Gewicht ändert sich, die Masse nicht.</p>" },
+    "figure": { "diagram": { "name": "tableDiagram", "args": [["Größe", "Einheit", "Ort"], [["Masse m", "kg", "überall gleich"], ["Gewichtskraft F", "N", "ändert sich mit dem Ort"]], [1, 1, 2], "Tabelle: Masse und Gewichtskraft"] }, "caption": "Die Masse wird in kg gemessen, die Gewichtskraft in Newton." },
+    "steps": { "title": "So berechnest du die Gewichtskraft", "items": ["Masse in kg ablesen, zum Beispiel 2 kg.", "Mit g ≈ 10 N/kg rechnen: F = m · g.", "2 kg · 10 N/kg = 20 N."] },
+    "pitfall": { "html": "<p>Kilogramm ist die Masse, nicht die Kraft. Die Gewichtskraft wird in Newton angegeben.</p>" },
+    "rule": "F = m · g mit g ≈ 10 N/kg. Masse in kg, Kraft in N.",
+    "check": { "q": "Ein Körper hat 5 kg Masse. Wie groß ist seine Gewichtskraft (g ≈ 10 N/kg)?", "options": [{ "id": "50", "html": "50 N" }, { "id": "5", "html": "5 N" }, { "id": "500", "html": "500 N" }], "answer": "50", "why": "F = m · g = 5 kg · 10 N/kg = 50 N." }
+  },
+  "federkraft": {
+    "goal": "Du kannst die Dehnung einer Feder beschreiben und mit der Proportionalität berechnen.",
+    "tldr": ["Bei einer Feder ist die Dehnung proportional zur Kraft: doppelte Kraft, doppelte Dehnung.", "Nach dem Entlasten kehrt eine elastische Feder in ihre Ausgangslage zurück."],
+    "analogy": { "title": "Stell dir vor: das Gummiband", "html": "<p>Ziehst du ein Gummiband doppelt so stark, wird es doppelt so lang. Ist die Kraft wieder weg, schnurrt es zurück. So verhält sich eine elastische Feder.</p>" },
+    "figure": { "diagram": { "name": "tableDiagram", "args": [["Kraft F", "Dehnung s"], [["2 N", "4 cm"], ["4 N", "8 cm"], ["6 N", "12 cm"]], [1, 1], "Tabelle: Kraft und Dehnung einer Feder"] }, "caption": "Die Werte wachsen gleichmäßig: Die Feder ist proportional." },
+    "steps": { "title": "So rechnest du mit Proportionalität", "items": ["Verhältnis bilden: Dehnung durch Kraft, zum Beispiel 4 cm / 2 N.", "Dieses Verhältnis bleibt gleich, solange die Feder elastisch ist.", "Neue Dehnung = Verhältnis mal neue Kraft."] },
+    "pitfall": { "html": "<p>Proportional heißt nicht, dass die Feder doppelt so lang wird, nur weil sich die Kraft verdoppelt, sondern die Dehnung. Nur innerhalb des elastischen Bereichs.</p>" },
+    "rule": "Dehnung ist proportional zur Kraft, solange die Feder elastisch bleibt.",
+    "check": { "q": "Eine Feder dehnt sich bei 2 N um 4 cm. Wie weit bei 4 N?", "options": [{ "id": "8", "html": "8 cm" }, { "id": "4", "html": "4 cm" }, { "id": "16", "html": "16 cm" }], "answer": "8", "why": "Die Dehnung ist proportional zur Kraft. Doppelte Kraft ergibt doppelte Dehnung: 8 cm." }
+  }
+}

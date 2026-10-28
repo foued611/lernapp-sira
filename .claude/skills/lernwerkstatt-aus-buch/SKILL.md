@@ -89,6 +89,8 @@ Sieh dir die Lektion nicht im Browser an, wenn du es nicht kannst. Sag das dann 
 
 ## Häufige Fehler
 
+- Vorlage ist `apps/englisch/` (schlichter Aufbau). `apps/decouvertes/` hat sich durch Zusammenführungen verändert und importiert Verbmodelle, die eine neue App nicht hat.
+- Der Groß-/Kleinschreibungstest darf nicht `toUpperCase()` nutzen. Aus „ß“ wird „SS“ und die Aufgabe scheint falsch. Wechselnde Schreibweise nutzen, wie in `apps/physik/tests/physik.test.js`.
 - HTML-Felder (`html`, `tldr`, `steps`, `pitfall`, `analogy.html`) erlauben nur `<p>` und `<b>`. Kursiv `<i>` wird abgelehnt. Für Fremdsprache nimm Anführungszeichen „…“.
 - `check.why` wird als reiner Text angezeigt. Dort kein Markup.
 - Lücken: genau ein `___` im Satz. Alle anderen Aufgaben: mindestens drei falsche Antworten.

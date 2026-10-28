@@ -14,7 +14,7 @@ Live: https://foued611.github.io/lernapp-sira/ (wird aus `dist/` des Neubaus per
 | Deutsch-Werkstatt | Deutsch | `apps/deutsch/` | fertig (6 Seiten) |
 | Englisch-Werkstatt | Englisch | nur Neubau: `modernized/modulare-reimagined/apps/englisch/` | fertig (16 Seiten, Units 1 bis 5 aus English G Access 3) |
 | Découvertes-Werkstatt | Französisch | nur Neubau: `modernized/modulare-reimagined/apps/decouvertes/` | fertig (20 Seiten, Grammatik der Unités 1 bis 7 aus Découvertes 2) |
-| Physik | | | geplant |
+| Physik-Werkstatt | Physik | `modernized/modulare-reimagined/apps/physik/` | fertig (16 Seiten: Akustik, Optik, Mechanik nach BP Klasse 7/8) |
 
 ## Neubau (React und Vite)
 
