@@ -1,0 +1,2344 @@
+{
+  "items": {
+    "klima-anzeichen": [
+      {
+        "q": "Klima",
+        "kind": "gap",
+        "s": "Das Klima ist der Durchschnitt des Wetters über mindestens ___ Jahre.",
+        "a": "30",
+        "wrong": [
+          "3",
+          "10",
+          "300"
+        ],
+        "why": "Die Weltorganisation für Meteorologie nutzt 30 Jahre als Mindestzeitraum, damit Zufälle des Wetters sich ausgleichen."
+      },
+      {
+        "q": "Meeresspiegel",
+        "kind": "gap",
+        "s": "Wenn Eis an Land schmilzt, ___ der Meeresspiegel.",
+        "a": "steigt",
+        "wrong": [
+          "sinkt",
+          "bleibt gleich",
+          "gefriert"
+        ],
+        "why": "Das Schmelzwasser fließt ins Meer und füllt es auf."
+      },
+      {
+        "q": "Klima",
+        "a": "Das typische Wetter einer Region über viele Jahre",
+        "wrong": [
+          "Das Wetter am heutigen Morgen",
+          "Der Regen von gestern Abend",
+          "Die Temperatur im Klassenzimmer"
+        ],
+        "why": "Klima ist eine langfristige Größe. Ein einzelner Tag ist Wetter."
+      },
+      {
+        "q": "Anzeichen",
+        "a": "Gletscher gehen weltweit zurück",
+        "wrong": [
+          "Ein kalter Wintertag in Deutschland",
+          "Ein Gewitter im Sommer",
+          "Der Mond nimmt ab"
+        ],
+        "why": "Der Rückgang der Gletscher ist über Jahrzehnte gemessen und passt zum Anstieg der Temperatur."
+      },
+      {
+        "q": "Temperatur",
+        "kind": "gap",
+        "s": "Seit der vorindustriellen Zeit ist die weltweite Durchschnittstemperatur um etwa ___ Grad Celsius gestiegen.",
+        "a": "1",
+        "wrong": [
+          "10",
+          "0",
+          "5"
+        ],
+        "why": "Die Messwerte zeigen etwas mehr als ein Grad. Das klingt wenig, verändert aber Eis, Meere und Wetter stark."
+      },
+      {
+        "q": "Meeresspiegel",
+        "a": "Schmelzwasser fließt ins Meer, und wärmeres Wasser dehnt sich aus",
+        "wrong": [
+          "Mehr Regen füllt die Schiffe",
+          "Der Mond kommt der Erde näher",
+          "Die Flüsse fließen rückwärts"
+        ],
+        "why": "Zwei Ursachen heben den Meeresspiegel: zusätzliches Wasser von Land und die Ausdehnung des wärmeren Meerwassers."
+      },
+      {
+        "q": "Meereis",
+        "kind": "gap",
+        "s": "Das Eis auf dem Nordpolarmeer wird im Sommer ___ .",
+        "a": "kleiner",
+        "wrong": [
+          "größer",
+          "dicker",
+          "schwerer"
+        ],
+        "why": "Satellitenbilder zeigen, dass die Eisfläche im Sommer seit Jahrzehnten abnimmt."
+      },
+      {
+        "q": "Wetter und Klima",
+        "a": "Wetter ist kurzfristig, Klima ist ein Mittelwert über lange Zeit",
+        "wrong": [
+          "Im Winter gibt es kein Klima",
+          "Klima gilt nur für den Sommer",
+          "Thermometer messen im Winter falsch"
+        ],
+        "why": "Ein kalter Tag sagt nichts über den langfristigen Trend. Dafür braucht man Messreihen."
+      },
+      {
+        "q": "Folgen",
+        "a": "Häufigere Hitzewellen und Starkregen",
+        "wrong": [
+          "Weniger Sonnenstunden überall",
+          "Kürzere Tage",
+          "Mehr Vulkanausbrüche"
+        ],
+        "why": "Wärmere Luft nimmt mehr Wasser auf und gibt mehr Wärme ab. Dadurch nehmen Extremwetter zu."
+      },
+      {
+        "q": "Klimawandel",
+        "kind": "gap",
+        "s": "Das Wort Klimawandel beschreibt eine ___ Veränderung des Klimas.",
+        "a": "langfristige",
+        "wrong": [
+          "tägliche",
+          "plötzliche",
+          "zufällige"
+        ],
+        "why": "Es geht um Veränderungen über Jahrzehnte, nicht um Schwankungen von Tag zu Tag."
+      }
+    ],
+    "treibhauseffekt": [
+      {
+        "q": "Natürlicher Effekt",
+        "kind": "gap",
+        "s": "Ohne den natürlichen Treibhauseffekt wäre es auf der Erde im Mittel etwa minus ___ Grad kalt.",
+        "a": "18",
+        "wrong": [
+          "5",
+          "50",
+          "100"
+        ],
+        "why": "Mit den Gasen sind es im Mittel etwa 15 Grad. Ohne sie läge der Wert bei etwa minus 18 Grad."
+      },
+      {
+        "q": "Mitteltemperatur",
+        "kind": "gap",
+        "s": "Die Erde hat im Mittel etwa ___ Grad Celsius.",
+        "a": "15",
+        "wrong": [
+          "30",
+          "0",
+          "50"
+        ],
+        "why": "Das ist der Wert mit natürlichem Treibhauseffekt. Das macht das Leben möglich."
+      },
+      {
+        "q": "Treibhausgas",
+        "a": "Kohlenstoffdioxid",
+        "wrong": [
+          "Sauerstoff",
+          "Stickstoff",
+          "Argon"
+        ],
+        "why": "Kohlenstoffdioxid, Methan und Wasserdampf halten Wärme zurück. Sauerstoff, Stickstoff und Argon tun das kaum."
+      },
+      {
+        "q": "Wärmestrahlung",
+        "a": "Treibhausgase halten einen Teil davon in der Atmosphäre zurück",
+        "wrong": [
+          "Sie geht ungehindert ins Weltall",
+          "Sie wird von der Sonne verschluckt",
+          "Sie verwandelt sich in Licht"
+        ],
+        "why": "Genau das nennt man Treibhauseffekt."
+      },
+      {
+        "q": "Natürlicher Effekt",
+        "kind": "gap",
+        "s": "Der ___ Treibhauseffekt macht die Erde bewohnbar.",
+        "a": "natürliche",
+        "wrong": [
+          "ausgefallene",
+          "verbotene",
+          "überflüssige"
+        ],
+        "why": "Ohne ihn wäre die Erde im Mittel eine Eiswüste."
+      },
+      {
+        "q": "Zusätzlicher Effekt",
+        "a": "Mehr Treibhausgase durch menschliche Tätigkeiten",
+        "wrong": [
+          "Ein Nachlassen der Sonnenstrahlung",
+          "Das Abkühlen des Erdkerns",
+          "Kürzere Tage im Sommer"
+        ],
+        "why": "Verbrennen von Kohle, Öl und Gas sowie Landwirtschaft setzen zusätzliche Treibhausgase frei."
+      },
+      {
+        "q": "Name",
+        "a": "Die Atmosphäre lässt wie das Glas eines Gewächshauses Sonnenlicht durch und hält Wärme zurück",
+        "wrong": [
+          "Es tritt nur in Gewächshäusern auf",
+          "Pflanzen erzeugen dabei Wärme",
+          "Treibhausgase sind grün"
+        ],
+        "why": "Der Vergleich mit einem Gewächshaus erklärt den Namen."
+      },
+      {
+        "q": "Methan",
+        "kind": "gap",
+        "s": "Methan entsteht zum Beispiel bei der Haltung von ___ .",
+        "a": "Rindern",
+        "wrong": [
+          "Fischen",
+          "Bienen",
+          "Wellensittichen"
+        ],
+        "why": "Rinder erzeugen bei der Verdauung Methan. Auch Reisfelder und Mülldeponien geben es ab."
+      },
+      {
+        "q": "Reihenfolge",
+        "a": "Sonnenstrahlung kommt an, die Erde erwärmt sich, ein Teil der Wärme wird zurückgehalten",
+        "wrong": [
+          "Die Erde strahlt, dann wärmt die Sonne sie, dann kommen Treibhausgase",
+          "Treibhausgase erzeugen Sonnenlicht, die Erde kühlt ab",
+          "Die Wärme verschwindet, dann kommt das Sonnenlicht"
+        ],
+        "why": "Die Reihenfolge ist: Einstrahlung, Erwärmung, Abstrahlung, teilweises Zurückhalten."
+      },
+      {
+        "q": "Atmosphäre",
+        "kind": "gap",
+        "s": "Treibhausgase halten Wärmestrahlung in der ___ zurück.",
+        "a": "Atmosphäre",
+        "wrong": [
+          "Lithosphäre",
+          "Hydrosphäre",
+          "Biosphäre"
+        ],
+        "why": "Die Atmosphäre ist die Lufthülle der Erde. Dort befinden sich die Gase."
+      }
+    ],
+    "kohlendioxid": [
+      {
+        "q": "Photosynthese",
+        "kind": "gap",
+        "s": "Pflanzen nehmen bei der ___ Kohlenstoffdioxid auf.",
+        "a": "Photosynthese",
+        "wrong": [
+          "Verdunstung",
+          "Verbrennung",
+          "Erosion"
+        ],
+        "why": "Mit Licht machen Pflanzen aus CO2 und Wasser Zucker und geben Sauerstoff ab."
+      },
+      {
+        "q": "Verbrennung",
+        "kind": "gap",
+        "s": "Beim Verbrennen von Kohle, Erdöl und Erdgas entsteht vor allem ___ .",
+        "a": "Kohlenstoffdioxid",
+        "wrong": [
+          "Sauerstoff",
+          "Stickstoff",
+          "Helium"
+        ],
+        "why": "Fossile Stoffe bestehen aus Kohlenstoff. Beim Verbrennen verbindet er sich mit Sauerstoff zu CO2."
+      },
+      {
+        "q": "Fossile Energie",
+        "a": "Erdöl",
+        "wrong": [
+          "Sonnenlicht",
+          "Windkraft",
+          "Wasserkraft"
+        ],
+        "why": "Kohle, Erdöl und Erdgas sind fossile Energieträger. Wind, Sonne und Wasser sind erneuerbar."
+      },
+      {
+        "q": "Lebensnotwendig",
+        "a": "Pflanzen brauchen es für die Photosynthese",
+        "wrong": [
+          "Es ist der Hauptbestandteil der Luft",
+          "Es macht das Meerwasser salzig",
+          "Es erzeugt Wind"
+        ],
+        "why": "Der Anteil in der Luft ist sehr klein, trotzdem hängt alles Pflanzenwachstum daran."
+      },
+      {
+        "q": "Rodung",
+        "a": "Es gibt weniger Pflanzen, die CO2 aufnehmen, und beim Verbrennen oder Verrotten wird CO2 frei",
+        "wrong": [
+          "Wälder erzeugen nur Sauerstoff, Rodung ändert nichts",
+          "Ohne Wald regnet es mehr, das bindet CO2",
+          "Bäume geben bei der Rodung Wasserstoff ab"
+        ],
+        "why": "Wald ist Speicher und Senke. Wird er gerodet und verbrannt, wird der gespeicherte Kohlenstoff frei."
+      },
+      {
+        "q": "Senken",
+        "kind": "gap",
+        "s": "Wälder und Meere, die mehr CO2 aufnehmen, als sie abgeben, nennt man CO2-___ .",
+        "a": "Senken",
+        "wrong": [
+          "Quellen",
+          "Gipfel",
+          "Brunnen"
+        ],
+        "why": "Eine Senke nimmt auf. Eine Quelle gibt ab."
+      },
+      {
+        "q": "Anteil",
+        "a": "etwa 0,04 Prozent",
+        "wrong": [
+          "etwa 21 Prozent",
+          "etwa 78 Prozent",
+          "etwa 4 Prozent"
+        ],
+        "why": "Der Anteil ist klein, wirkt aber stark. Sauerstoff hat 21 Prozent, Stickstoff 78 Prozent."
+      },
+      {
+        "q": "Entwicklung",
+        "kind": "gap",
+        "s": "Der CO2-Gehalt der Luft ist seit der Industrialisierung ___ .",
+        "a": "gestiegen",
+        "wrong": [
+          "gesunken",
+          "gleich geblieben",
+          "verschwunden"
+        ],
+        "why": "Die Messungen zeigen einen deutlichen Anstieg seit dem 19. Jahrhundert."
+      },
+      {
+        "q": "Maßnahme",
+        "a": "Weniger Auto fahren, mehr Bus und Bahn nutzen",
+        "wrong": [
+          "Mehr Heizöl verbrennen",
+          "Mehr Wälder roden",
+          "Mehr Kurzstreckenflüge buchen"
+        ],
+        "why": "Jede Maßnahme, die fossile Brennstoffe spart, senkt den CO2-Ausstoß."
+      },
+      {
+        "q": "Missverständnis",
+        "a": "Zu viel davon verstärkt den Treibhauseffekt",
+        "wrong": [
+          "Es macht die Luft sofort giftig",
+          "Es zerstört die Ozonschicht",
+          "Es lässt die Sonne verschwinden"
+        ],
+        "why": "Das Ozonloch hat andere Ursachen. CO2 wirkt über den Treibhauseffekt."
+      }
+    ],
+    "klimafolgen": [
+      {
+        "q": "Meereis",
+        "kind": "gap",
+        "s": "Eis, das auf dem Meer schwimmt, heißt ___ .",
+        "a": "Meereis",
+        "wrong": [
+          "Gletschereis",
+          "Inlandeis",
+          "Hagel"
+        ],
+        "why": "Meereis entsteht aus gefrorenem Meerwasser. Gletscher und Inlandeis liegen an Land."
+      },
+      {
+        "q": "Meeresspiegel",
+        "a": "Eis auf dem Land, zum Beispiel der Eisschild auf Grönland",
+        "wrong": [
+          "Meereis, das schon im Wasser schwimmt",
+          "Wolken über dem Meer",
+          "Schnee auf dem Meer in Küstennähe"
+        ],
+        "why": "Eis von Land fügt dem Meer zusätzliches Wasser hinzu."
+      },
+      {
+        "q": "Permafrost",
+        "kind": "gap",
+        "s": "Dauerhaft gefrorener Boden heißt ___ .",
+        "a": "Permafrost",
+        "wrong": [
+          "Tundra",
+          "Packeis",
+          "Schneefall"
+        ],
+        "why": "Permafrost taut in den Sommern tiefer auf, wenn es wärmer wird."
+      },
+      {
+        "q": "Permafrost",
+        "a": "Der Boden wird weich, Häuser und Straßen sacken ab, und Methan wird frei",
+        "wrong": [
+          "Der Boden wird fester",
+          "Es entstehen sofort Gletscher",
+          "Es wird zur Wüste"
+        ],
+        "why": "Im Boden steckt viel Kohlenstoff. Taut er auf, entstehen Schäden und zusätzliche Treibhausgase."
+      },
+      {
+        "q": "Rückstrahlung",
+        "a": "Dunkles Wasser nimmt mehr Sonnenwärme auf als helles Eis",
+        "wrong": [
+          "Eis erzeugt selbst Wärme",
+          "Wasser spiegelt Sonnenlicht stärker als Eis",
+          "Das Eis nimmt weniger Platz ein"
+        ],
+        "why": "Helle Flächen reflektieren Sonnenlicht. Wo Eis fehlt, wird mehr Wärme aufgenommen."
+      },
+      {
+        "q": "Eisbär",
+        "a": "Sie jagen Robben vom Meereis aus, und dieses Eis wird weniger",
+        "wrong": [
+          "Sie brauchen warmes Wasser zum Schlafen",
+          "Sie fressen nur Pflanzen der Tundra",
+          "Sie können im Schnee nicht laufen"
+        ],
+        "why": "Ohne Meereis fehlt den Eisbären der Jagdplatz."
+      },
+      {
+        "q": "Australien",
+        "a": "Längere Dürren und häufigere Buschbrände",
+        "wrong": [
+          "Dauerfrost im Landesinneren",
+          "Monsunregen das ganze Jahr überall",
+          "Ein sinkender Meeresspiegel"
+        ],
+        "why": "Hitze und Trockenheit nehmen in großen Teilen Australiens zu."
+      },
+      {
+        "q": "Buschbrände",
+        "kind": "gap",
+        "s": "In Australien nennt man große Brände in der Vegetation ___ .",
+        "a": "Buschbrände",
+        "wrong": [
+          "Gewitter",
+          "Sandstürme",
+          "Springfluten"
+        ],
+        "why": "Der Busch ist die trockene Strauch- und Waldlandschaft. Dürre erhöht die Brandgefahr."
+      },
+      {
+        "q": "Korallenbleiche",
+        "a": "Zu warmes Wasser lässt Korallen ihre Algen abstoßen, sie bleichen aus",
+        "wrong": [
+          "Salzmangel im Meer",
+          "Chlor aus den Häfen",
+          "Die Sonne bleicht den Sand"
+        ],
+        "why": "Ohne ihre Algen verlieren Korallen Farbe und Nahrung und können absterben."
+      },
+      {
+        "q": "Grönland",
+        "kind": "gap",
+        "s": "Der größte Eisschild der Nordhalbkugel liegt auf ___ .",
+        "a": "Grönland",
+        "wrong": [
+          "Island",
+          "Spitzbergen",
+          "Alaska"
+        ],
+        "why": "Schmilzt der Eisschild von Grönland ab, steigt der Meeresspiegel stark."
+      }
+    ],
+    "klimaschutz": [
+      {
+        "q": "Energie",
+        "kind": "gap",
+        "s": "Windkraft, Sonnenenergie und Wasserkraft gehören zu den ___ Energien.",
+        "a": "erneuerbaren",
+        "wrong": [
+          "fossilen",
+          "endlichen",
+          "atomaren"
+        ],
+        "why": "Sie werden von der Natur ständig neu bereitgestellt."
+      },
+      {
+        "q": "Begriff",
+        "a": "Maßnahmen, die den Ausstoß von Treibhausgasen verringern",
+        "wrong": [
+          "Maßnahmen, die nur Folgen wie Hochwasser mildern",
+          "Wetterberichte für Landwirte",
+          "Das Messen der Temperatur"
+        ],
+        "why": "Klimaschutz setzt an der Ursache an."
+      },
+      {
+        "q": "Anpassung",
+        "a": "Höhere Deiche gegen Sturmfluten bauen",
+        "wrong": [
+          "Solaranlagen aufs Dach setzen",
+          "Kohlekraftwerke abschalten",
+          "Weniger Auto fahren"
+        ],
+        "why": "Deiche schützen vor Folgen, senken aber keine Emissionen."
+      },
+      {
+        "q": "Paris",
+        "kind": "gap",
+        "s": "Im Pariser Klimaabkommen wollen die Staaten die Erwärmung deutlich unter ___ Grad halten.",
+        "a": "2",
+        "wrong": [
+          "5",
+          "10",
+          "0,1"
+        ],
+        "why": "Das Ziel ist, deutlich unter 2 Grad zu bleiben und möglichst bei 1,5 Grad."
+      },
+      {
+        "q": "Fossil",
+        "a": "Erdgas",
+        "wrong": [
+          "Windkraft",
+          "Sonnenenergie",
+          "Wasserkraft"
+        ],
+        "why": "Erdgas ist fossil und begrenzt. Die anderen drei sind erneuerbar."
+      },
+      {
+        "q": "Solar",
+        "kind": "gap",
+        "s": "Eine Solaranlage wandelt ___ in Strom um.",
+        "a": "Sonnenlicht",
+        "wrong": [
+          "Erdöl",
+          "Kohle",
+          "Wasserdampf"
+        ],
+        "why": "Photovoltaik nutzt Licht direkt und stößt beim Betrieb kein CO2 aus."
+      },
+      {
+        "q": "Alltag",
+        "a": "Kurze Strecken mit dem Fahrrad fahren und Energie sparen",
+        "wrong": [
+          "Immer das Licht brennen lassen",
+          "Heizen bei offenem Fenster",
+          "Möglichst oft fliegen"
+        ],
+        "why": "Jeder gesparte Liter Treibstoff oder jede gesparte Kilowattstunde senkt den Ausstoß."
+      },
+      {
+        "q": "Wald",
+        "a": "Bäume speichern Kohlenstoff, den sie aus der Luft aufnehmen",
+        "wrong": [
+          "Bäume erzeugen Treibhausgase",
+          "Bäume heizen die Luft auf",
+          "Bäume nehmen nur Sauerstoff auf"
+        ],
+        "why": "Wälder wirken als Senke. Deshalb ist Waldschutz Klimaschutz."
+      },
+      {
+        "q": "Konferenz",
+        "kind": "gap",
+        "s": "Weil Klimaschutz nur weltweit gelingt, treffen sich die Staaten zu ___ .",
+        "a": "Klimakonferenzen",
+        "wrong": [
+          "Sportfesten",
+          "Wahlen",
+          "Modenschauen"
+        ],
+        "why": "Treibhausgase kennen keine Grenzen. Deshalb handeln Staaten gemeinsam."
+      },
+      {
+        "q": "Dämmung",
+        "kind": "gap",
+        "s": "Wer ein Haus gut dämmt, braucht weniger ___ .",
+        "a": "Heizenergie",
+        "wrong": [
+          "Regenwasser",
+          "Sonnenlicht",
+          "Wohnraum"
+        ],
+        "why": "Weniger Heizen heißt weniger Verbrennen und damit weniger CO2."
+      }
+    ],
+    "polargebiete": [
+      {
+        "q": "Arktis",
+        "kind": "gap",
+        "s": "Die ___ liegt um den Nordpol.",
+        "a": "Arktis",
+        "wrong": [
+          "Antarktis",
+          "Tundra",
+          "Sahara"
+        ],
+        "why": "Arktis kommt vom griechischen Wort für Bär, wie das Sternbild im Norden."
+      },
+      {
+        "q": "Antarktis",
+        "kind": "gap",
+        "s": "Die ___ ist ein Kontinent am Südpol.",
+        "a": "Antarktis",
+        "wrong": [
+          "Arktis",
+          "Grönland",
+          "Island"
+        ],
+        "why": "Unter dem Eis der Antarktis liegt Land. Unter dem Eis der Arktis liegt Meer."
+      },
+      {
+        "q": "Eisbär",
+        "a": "In der Arktis",
+        "wrong": [
+          "In der Antarktis",
+          "In der Sahara",
+          "In Südamerika"
+        ],
+        "why": "Eisbären leben nur auf der Nordhalbkugel."
+      },
+      {
+        "q": "Pinguin",
+        "a": "Auf der Südhalbkugel, zum Beispiel an der Küste der Antarktis",
+        "wrong": [
+          "In der Arktis",
+          "Am Nordpol",
+          "In Alaska"
+        ],
+        "why": "Pinguine kommen nur auf der Südhalbkugel vor."
+      },
+      {
+        "q": "Polarkreis",
+        "kind": "gap",
+        "s": "Der Polarkreis liegt bei etwa ___ Grad Breite.",
+        "a": "66,5",
+        "wrong": [
+          "23,5",
+          "90",
+          "45"
+        ],
+        "why": "Von 66,5 Grad bis zum Pol erstreckt sich das Polargebiet im engeren Sinn."
+      },
+      {
+        "q": "Untergrund",
+        "a": "Die Arktis ist Meer mit Eis, die Antarktis ist Land mit Eis",
+        "wrong": [
+          "Beide sind Kontinente",
+          "Beide sind Meere",
+          "Die Arktis ist Land, die Antarktis ist Meer"
+        ],
+        "why": "Das ist der wichtigste Unterschied und erklärt vieles andere, zum Beispiel das Klima."
+      },
+      {
+        "q": "Menschen",
+        "a": "In der Antarktis gibt es nur Forschungsstationen, keine dauerhafte Bevölkerung",
+        "wrong": [
+          "In der Antarktis leben Millionen Menschen",
+          "Beide Polargebiete sind dicht besiedelt",
+          "In der Arktis lebt kein einziger Mensch"
+        ],
+        "why": "In der Arktis leben Völker wie die Inuit. Die Antarktis hat nur Forschende, die wechseln."
+      },
+      {
+        "q": "Nordpol",
+        "kind": "gap",
+        "s": "Der Nordpol liegt auf dem Meer. Dort gibt es kein ___ .",
+        "a": "Festland",
+        "wrong": [
+          "Wasser",
+          "Eis",
+          "Wetter"
+        ],
+        "why": "Am Nordpol schwimmt Meereis auf dem Nordpolarmeer."
+      },
+      {
+        "q": "Eis",
+        "a": "Der Eisschild der Antarktis speichert den größten Teil des Süßwassers der Erde",
+        "wrong": [
+          "Er speichert nur Salzwasser",
+          "Er enthält kein Wasser",
+          "Er ist dünner als eine Eisdecke in Deutschland"
+        ],
+        "why": "Das Eis der Antarktis ist mehrere Kilometer dick und enthält viel Süßwasser."
+      },
+      {
+        "q": "Südpol",
+        "kind": "gap",
+        "s": "Der Südpol liegt auf dem Kontinent ___ .",
+        "a": "Antarktis",
+        "wrong": [
+          "Arktis",
+          "Australien",
+          "Südamerika"
+        ],
+        "why": "Der geografische Südpol liegt auf der Antarktis, mitten im Eisschild."
+      }
+    ],
+    "polartag-nacht": [
+      {
+        "q": "Neigung",
+        "kind": "gap",
+        "s": "Die Erdachse ist um etwa ___ Grad geneigt.",
+        "a": "23,5",
+        "wrong": [
+          "66,5",
+          "90",
+          "10"
+        ],
+        "why": "Diese Neigung ist die Ursache der Jahreszeiten und der Polartage."
+      },
+      {
+        "q": "Polartag",
+        "a": "Die Sonne geht tagelang nicht unter",
+        "wrong": [
+          "Es ist den ganzen Tag dunkel",
+          "Die Sonne geht zweimal am Tag auf",
+          "Es regnet ununterbrochen"
+        ],
+        "why": "Im Sommer bleibt die Sonne hinter dem Polarkreis über dem Horizont."
+      },
+      {
+        "q": "Polarnacht",
+        "kind": "gap",
+        "s": "Im Winter bleibt die Sonne hinter dem Polarkreis tagelang ___ dem Horizont.",
+        "a": "unter",
+        "wrong": [
+          "über",
+          "hinter",
+          "auf"
+        ],
+        "why": "Das nennt man Polarnacht. Es ist dann sehr kalt und meist dunkel."
+      },
+      {
+        "q": "Ursache",
+        "a": "Die Erdachse ist geneigt",
+        "wrong": [
+          "Die Sonne wird schwächer",
+          "Der Mond verdeckt die Sonne",
+          "Der Pol ist weiter von der Sonne entfernt"
+        ],
+        "why": "Nicht der Abstand zur Sonne, sondern die Neigung der Achse ist verantwortlich."
+      },
+      {
+        "q": "Mitternachtssonne",
+        "kind": "gap",
+        "s": "Die Sonne, die um Mitternacht noch scheint, heißt ___ .",
+        "a": "Mitternachtssonne",
+        "wrong": [
+          "Morgenröte",
+          "Abendrot",
+          "Sonnenfinsternis"
+        ],
+        "why": "Sie ist ein Zeichen für den Polartag."
+      },
+      {
+        "q": "Dauer",
+        "a": "Am Pol dauert der Polartag etwa ein halbes Jahr",
+        "wrong": [
+          "Am Pol dauert der Polartag nur einen Tag",
+          "Am Pol gibt es keinen Polartag",
+          "Er dauert zwei Wochen"
+        ],
+        "why": "Je näher am Pol, desto länger sind Polartag und Polarnacht."
+      },
+      {
+        "q": "Polarkreis",
+        "a": "Am Polarkreis gibt es im Jahr mindestens einen Tag mit Mitternachtssonne und einen mit Polarnacht",
+        "wrong": [
+          "Dort geht die Sonne täglich zwölf Stunden",
+          "Dort gibt es keine Sonne",
+          "Dort ist immer Sommer"
+        ],
+        "why": "Genau am Polarkreis ist es jeweils nur ein Tag. Weiter nördlich werden es mehr."
+      },
+      {
+        "q": "Südhalbkugel",
+        "kind": "gap",
+        "s": "Wenn auf der Nordhalbkugel Sommer ist, ist auf der Südhalbkugel ___ .",
+        "a": "Winter",
+        "wrong": [
+          "Sommer",
+          "Frühling",
+          "Herbst"
+        ],
+        "why": "Die Hälften der Erde sind der Sonne abwechselnd zugewandt."
+      },
+      {
+        "q": "Jahreszeit",
+        "a": "Die Neigung der Erdachse",
+        "wrong": [
+          "Die Entfernung zur Sonne",
+          "Die Mondphasen",
+          "Die Windrichtung"
+        ],
+        "why": "Im Januar ist die Erde der Sonne sogar am nächsten, trotzdem ist bei uns Winter."
+      },
+      {
+        "q": "Breitenkreis",
+        "kind": "gap",
+        "s": "Die Linie bei 66,5 Grad Nord heißt nördlicher ___ .",
+        "a": "Polarkreis",
+        "wrong": [
+          "Wendekreis",
+          "Äquator",
+          "Meridian"
+        ],
+        "why": "Der Wendekreis liegt bei 23,5 Grad, der Polarkreis bei 66,5 Grad."
+      }
+    ],
+    "tundra": [
+      {
+        "q": "Tundra",
+        "kind": "gap",
+        "s": "Die ___ ist eine baumlose Landschaft in kalten Gebieten.",
+        "a": "Tundra",
+        "wrong": [
+          "Savanne",
+          "Wüste",
+          "Steppe"
+        ],
+        "why": "Dort ist es für Bäume zu kalt, deshalb wachsen nur niedrige Pflanzen."
+      },
+      {
+        "q": "Permafrost",
+        "kind": "gap",
+        "s": "In der Tundra ist der Boden dauerhaft gefroren. Man nennt das ___ .",
+        "a": "Permafrost",
+        "wrong": [
+          "Tundrafrost",
+          "Tauwetter",
+          "Eisbruch"
+        ],
+        "why": "Nur im Sommer taut die oberste Schicht auf."
+      },
+      {
+        "q": "Pflanzen",
+        "a": "Moose, Flechten, Gräser und Zwergsträucher",
+        "wrong": [
+          "Palmen und Bananen",
+          "Eichen und Buchen",
+          "Kakteen"
+        ],
+        "why": "Nur niedrige, genügsame Pflanzen kommen mit den Bedingungen zurecht."
+      },
+      {
+        "q": "Ursache",
+        "a": "Der Sommer ist zu kurz, und der Boden ist gefroren",
+        "wrong": [
+          "Es regnet zu viel",
+          "Der Boden ist zu fruchtbar",
+          "Es fehlt Licht im ganzen Jahr"
+        ],
+        "why": "Bäume brauchen längere Wärme und tiefe Wurzeln."
+      },
+      {
+        "q": "Baumgrenze",
+        "kind": "gap",
+        "s": "Die Linie, ab der keine Bäume mehr wachsen, heißt ___ .",
+        "a": "Baumgrenze",
+        "wrong": [
+          "Schneegrenze",
+          "Küstenlinie",
+          "Landesgrenze"
+        ],
+        "why": "Jenseits der Baumgrenze beginnt die Tundra."
+      },
+      {
+        "q": "Tiere",
+        "a": "Rentier und Polarfuchs",
+        "wrong": [
+          "Elefant und Giraffe",
+          "Krokodil und Papagei",
+          "Kamel und Skorpion"
+        ],
+        "why": "Rentiere ziehen im Sommer in die Tundra, Polarfüchse haben dichtes Fell."
+      },
+      {
+        "q": "Sommer",
+        "a": "Die oberste Bodenschicht taut kurz auf, darunter bleibt der Boden gefroren",
+        "wrong": [
+          "Der ganze Boden taut tief auf",
+          "Es bleibt das ganze Jahr Schnee",
+          "Die Sonne scheint 24 Stunden jeden Tag"
+        ],
+        "why": "Darum bilden sich im Sommer viele Seen und Sümpfe, denn das Wasser kann nicht versickern."
+      },
+      {
+        "q": "Boden",
+        "kind": "gap",
+        "s": "Im Sommer kann das Schmelzwasser in der Tundra nicht versickern, weil der Boden darunter ___ ist.",
+        "a": "gefroren",
+        "wrong": [
+          "trocken",
+          "heiß",
+          "sandig"
+        ],
+        "why": "Wasser staut sich auf dem gefrorenen Boden und bildet Sümpfe."
+      },
+      {
+        "q": "Klima",
+        "a": "Lange kalte Winter, kurze kühle Sommer",
+        "wrong": [
+          "Heiße Sommer und milde Winter",
+          "Ganzjährig tropisch",
+          "Regenzeit und Trockenzeit"
+        ],
+        "why": "Das ist das typische Klima der Tundra."
+      },
+      {
+        "q": "Flechten",
+        "kind": "gap",
+        "s": "Flechten und ___ wachsen in der Tundra am Boden.",
+        "a": "Moose",
+        "wrong": [
+          "Eichen",
+          "Bananen",
+          "Kakteen"
+        ],
+        "why": "Moose und Flechten sind sehr genügsam und wachsen langsam."
+      }
+    ],
+    "polar-nutzung": [
+      {
+        "q": "Antarktisvertrag",
+        "kind": "gap",
+        "s": "Der ___ von 1959 erlaubt in der Antarktis nur friedliche Nutzung.",
+        "a": "Antarktisvertrag",
+        "wrong": [
+          "Handelsvertrag",
+          "Friedensvertrag von Paris",
+          "Seevertrag"
+        ],
+        "why": "Mehrere Staaten haben ihn unterzeichnet, damit die Antarktis für Forschung und Frieden bleibt."
+      },
+      {
+        "q": "Antarktis",
+        "a": "Sie gehört keinem Staat, Nutzung ist durch den Vertrag geregelt",
+        "wrong": [
+          "Sie gehört den USA",
+          "Sie gehört Deutschland",
+          "Sie gehört den Eisbären"
+        ],
+        "why": "Alle Gebietsansprüche ruhen. Forschung steht im Vordergrund."
+      },
+      {
+        "q": "Arktis",
+        "a": "Mehrere Staaten grenzen an das Nordpolarmeer",
+        "wrong": [
+          "Kein Staat grenzt dort an",
+          "Nur Russland hat Zugang",
+          "Das Gebiet gehört dem Nordpol"
+        ],
+        "why": "Anrainer sind zum Beispiel Kanada, USA, Russland, Norwegen und Dänemark mit Grönland."
+      },
+      {
+        "q": "Fairbanks",
+        "kind": "gap",
+        "s": "Fairbanks liegt im US-Bundesstaat ___ .",
+        "a": "Alaska",
+        "wrong": [
+          "Florida",
+          "Texas",
+          "Hawaii"
+        ],
+        "why": "Fairbanks liegt im Landesinneren von Alaska nahe dem Polarkreis."
+      },
+      {
+        "q": "Bauweise",
+        "a": "Häuser stehen oft auf Pfählen, damit die Wärme den Permafrost nicht auftaut",
+        "wrong": [
+          "Weil dort Hochwasser ist",
+          "Weil man Platz für Schiffe braucht",
+          "Weil es dort keine Fundamente gibt"
+        ],
+        "why": "Taut der Boden unter einem Haus, sackt es ab."
+      },
+      {
+        "q": "Rohstoffe",
+        "a": "Erdöl und Erdgas",
+        "wrong": [
+          "Bananen",
+          "Kakao",
+          "Baumwolle"
+        ],
+        "why": "Die Arktis hat große Vorkommen an Energierohstoffen. Das weckt Begehrlichkeiten."
+      },
+      {
+        "q": "Gefahr",
+        "a": "Ein Ölunfall würde die langsam regenerierende Natur lange schädigen",
+        "wrong": [
+          "Öl hilft dem Eis zu wachsen",
+          "Öl erwärmt das Meer angenehm",
+          "Im Eis ist ein Unfall ungefährlich"
+        ],
+        "why": "Kälte baut Öl nur sehr langsam ab. Die Schäden bleiben lange."
+      },
+      {
+        "q": "Tourismus",
+        "kind": "gap",
+        "s": "Auch der ___ belastet die Polargebiete, zum Beispiel durch Schiffe und Müll.",
+        "a": "Tourismus",
+        "wrong": [
+          "Bergbau",
+          "Ackerbau",
+          "Handel"
+        ],
+        "why": "Mehr Besuchende bedeuten mehr Störung für die Tiere."
+      },
+      {
+        "q": "Seeweg",
+        "a": "Wenn das Meereis schwindet, werden kürzere Schiffsrouten möglich",
+        "wrong": [
+          "Schiffe fahren dann langsamer",
+          "Die Routen werden unmöglich",
+          "Es gibt keine Schiffe mehr"
+        ],
+        "why": "Kürzere Wege sparen Zeit, erhöhen aber das Risiko im Eis."
+      },
+      {
+        "q": "Forschung",
+        "kind": "gap",
+        "s": "Die Stationen in der Antarktis dienen vor allem der ___ .",
+        "a": "Forschung",
+        "wrong": [
+          "Landwirtschaft",
+          "Fischerei",
+          "Industrie"
+        ],
+        "why": "Forschende untersuchen dort Eis, Klima und Tiere. Sie leben nur zeitweise dort."
+      }
+    ],
+    "weltbevoelkerung": [
+      {
+        "q": "Zahl",
+        "kind": "gap",
+        "s": "Im Jahr 2022 erreichte die Weltbevölkerung etwa ___ Milliarden Menschen.",
+        "a": "8",
+        "wrong": [
+          "4",
+          "6",
+          "10"
+        ],
+        "why": "Die Vereinten Nationen gaben im November 2022 bekannt, dass die Zahl von 8 Milliarden erreicht ist."
+      },
+      {
+        "q": "Natürliches Wachstum",
+        "kind": "gap",
+        "s": "Natürliches Wachstum ist die Geburtenrate ___ die Sterberate.",
+        "a": "minus",
+        "wrong": [
+          "plus",
+          "mal",
+          "geteilt durch"
+        ],
+        "why": "Wachstum ist der Überschuss der Geburten über die Sterbefälle."
+      },
+      {
+        "q": "Wachstum",
+        "a": "Afrika südlich der Sahara",
+        "wrong": [
+          "Westeuropa",
+          "Japan",
+          "Osteuropa"
+        ],
+        "why": "Dort sind die Geburtenraten besonders hoch. In Europa und Japan wächst die Bevölkerung kaum oder schrumpft."
+      },
+      {
+        "q": "Dünn besiedelt",
+        "a": "Wüsten, Polargebiete und hohe Gebirge",
+        "wrong": [
+          "Flusstäler in Indien",
+          "Küstenebenen in Ostasien",
+          "Das Rheintal"
+        ],
+        "why": "Dort ist das Leben schwer: wenig Wasser, Kälte oder wenig Boden."
+      },
+      {
+        "q": "Dicht besiedelt",
+        "kind": "gap",
+        "s": "Zu den am dichtesten besiedelten Regionen der Erde gehört ___ Asien.",
+        "a": "Süd",
+        "wrong": [
+          "Zentral",
+          "Nord",
+          "West"
+        ],
+        "why": "In Süd- und Ostasien leben besonders viele Menschen auf engem Raum."
+      },
+      {
+        "q": "Ursache",
+        "a": "Die Kindersterblichkeit sinkt durch bessere Medizin, die Geburtenrate bleibt hoch",
+        "wrong": [
+          "Es gibt weniger Medizin",
+          "Es sterben mehr Kinder",
+          "Die Menschen werden kürzer alt"
+        ],
+        "why": "Wenn weniger Kinder sterben, aber noch viele geboren werden, wächst die Bevölkerung schnell."
+      },
+      {
+        "q": "Einzelfall",
+        "a": "Es gibt Länder mit schrumpfender Bevölkerung, zum Beispiel Japan",
+        "wrong": [
+          "Alle Länder wachsen gleich schnell",
+          "Die Bevölkerung wächst überall nur durch Zuwanderung",
+          "Kein Land schrumpft"
+        ],
+        "why": "Das Wachstum ist ungleich verteilt. Industrieländer haben oft niedrige Geburtenraten."
+      },
+      {
+        "q": "Geburtenrate",
+        "kind": "gap",
+        "s": "Die Zahl der Geburten je 1000 Einwohner und Jahr heißt ___ .",
+        "a": "Geburtenrate",
+        "wrong": [
+          "Sterberate",
+          "Wachstumsrate",
+          "Bevölkerungsdichte"
+        ],
+        "why": "Die Rate setzt Geburten ins Verhältnis zur Zahl der Einwohner."
+      },
+      {
+        "q": "Altersvorsorge",
+        "a": "Viele Familien bekommen viele Kinder, damit diese sie im Alter versorgen",
+        "wrong": [
+          "Weil es dort keine Schulen gibt",
+          "Weil Kinder nichts kosten",
+          "Weil Gesetze viele Kinder fordern"
+        ],
+        "why": "Wo es keine Rente gibt, sorgen die Kinder für die Eltern. Das erhöht die Kinderzahl."
+      },
+      {
+        "q": "Bevölkerungsdichte",
+        "kind": "gap",
+        "s": "Die Bevölkerungsdichte misst die Einwohner je ___ .",
+        "a": "Quadratkilometer",
+        "wrong": [
+          "Kilometer",
+          "Haus",
+          "Stadt"
+        ],
+        "why": "Dichte ist Einwohnerzahl geteilt durch Fläche."
+      }
+    ],
+    "indien-china": [
+      {
+        "q": "Indien",
+        "kind": "gap",
+        "s": "Indien hat seit 2023 die ___ Bevölkerung der Welt.",
+        "a": "größte",
+        "wrong": [
+          "kleinste",
+          "zweitkleinste",
+          "mittlere"
+        ],
+        "why": "Nach Schätzung der Vereinten Nationen überholte Indien China."
+      },
+      {
+        "q": "Ein-Kind-Politik",
+        "kind": "gap",
+        "s": "Die Ein-Kind-Politik in China begann im Jahr ___ .",
+        "a": "1979",
+        "wrong": [
+          "1949",
+          "1999",
+          "2015"
+        ],
+        "why": "Sie sollte das Bevölkerungswachstum bremsen. 2015 wurde sie beendet."
+      },
+      {
+        "q": "Ende",
+        "a": "2015",
+        "wrong": [
+          "1979",
+          "1989",
+          "2025"
+        ],
+        "why": "Seit 2016 sind zwei Kinder erlaubt, seit 2021 drei."
+      },
+      {
+        "q": "Ziel",
+        "a": "Das Bevölkerungswachstum bremsen",
+        "wrong": [
+          "Mehr Kinder fördern",
+          "Die Zuwanderung erhöhen",
+          "Die Wirtschaft stoppen"
+        ],
+        "why": "China fürchtete, die Versorgung der vielen Menschen nicht zu schaffen."
+      },
+      {
+        "q": "Folge",
+        "a": "Es gibt mehr Jungen als Mädchen",
+        "wrong": [
+          "Es gibt mehr Mädchen als Jungen",
+          "Beide Geschlechter sind gleich",
+          "Es gibt nur noch Jungen"
+        ],
+        "why": "Viele Familien bevorzugten Söhne. Dadurch entstand ein Männerüberschuss."
+      },
+      {
+        "q": "Überalterung",
+        "kind": "gap",
+        "s": "Weil weniger Kinder geboren wurden, wird die Gesellschaft in China immer ___ .",
+        "a": "älter",
+        "wrong": [
+          "jünger",
+          "kleiner",
+          "schneller"
+        ],
+        "why": "Der Anteil alter Menschen steigt, die Zahl der Erwerbstätigen sinkt."
+      },
+      {
+        "q": "Indien",
+        "a": "Familien haben viele Kinder, weil sie sich im Alter auf sie verlassen",
+        "wrong": [
+          "Weil Indien eine Ein-Kind-Politik hat",
+          "Weil es dort keine Kinder gibt",
+          "Weil Kinder verboten sind"
+        ],
+        "why": "Ohne ausreichende Rente sind Kinder die Absicherung im Alter."
+      },
+      {
+        "q": "Vergleich",
+        "a": "Indien wächst weiter, in China ist das Wachstum fast zum Stillstand gekommen",
+        "wrong": [
+          "Beide wachsen stark",
+          "Beide schrumpfen schnell",
+          "Indien schrumpft, China wächst"
+        ],
+        "why": "Die Ein-Kind-Politik hat China gebremst. Indien setzte keine Zwangsregel ein."
+      },
+      {
+        "q": "Familienplanung",
+        "kind": "gap",
+        "s": "Maßnahmen, mit denen Eltern die Zahl der Kinder planen, heißen ___ .",
+        "a": "Familienplanung",
+        "wrong": [
+          "Kinderzahl-Regel",
+          "Steuer",
+          "Kinderpflicht"
+        ],
+        "why": "Zur Familienplanung gehören Aufklärung und Verhütung."
+      },
+      {
+        "q": "Wirtschaft",
+        "a": "Es fehlen junge Arbeitskräfte, die später Renten mitfinanzieren",
+        "wrong": [
+          "Es gibt zu viele Arbeitsplätze",
+          "Es gibt keine Arbeitslosen",
+          "Die Löhne sinken automatisch"
+        ],
+        "why": "Wenn weniger Junge nachrücken, trägt eine kleine Gruppe die Last."
+      }
+    ],
+    "alterspyramide": [
+      {
+        "q": "Lesen",
+        "a": "Links die Männer, rechts die Frauen",
+        "wrong": [
+          "Links die Frauen, rechts die Männer",
+          "Links die Alten, rechts die Jungen",
+          "Oben die Männer, unten die Frauen"
+        ],
+        "why": "So werden Alterspyramiden üblicherweise gezeichnet."
+      },
+      {
+        "q": "Basis",
+        "kind": "gap",
+        "s": "Die Basis einer Alterspyramide zeigt die ___ Altersgruppe.",
+        "a": "jüngste",
+        "wrong": [
+          "älteste",
+          "mittlere",
+          "größte"
+        ],
+        "why": "Ganz unten stehen die Neugeborenen und Kinder."
+      },
+      {
+        "q": "Junge Welt",
+        "a": "Breite Basis, spitze Spitze",
+        "wrong": [
+          "Schmale Basis, breiter Bauch",
+          "Alle Ebenen sind gleich breit",
+          "Oben am breitesten"
+        ],
+        "why": "Viele Kinder und wenige Alte ergeben die Pyramidenform."
+      },
+      {
+        "q": "Alte Welt",
+        "a": "Schmale Basis und ein breiter Bauch",
+        "wrong": [
+          "Breite Basis",
+          "Eine Spitze oben",
+          "Gleiche Breite in allen Altersgruppen"
+        ],
+        "why": "Wenige Kinder und viele Ältere ergeben die Urnenform."
+      },
+      {
+        "q": "Urnenform",
+        "kind": "gap",
+        "s": "Eine alte Gesellschaft hat oft die Form einer ___ .",
+        "a": "Urne",
+        "wrong": [
+          "Pyramide",
+          "Glocke",
+          "Pfeilspitze"
+        ],
+        "why": "Die Urnenform ist typisch für Länder mit niedriger Geburtenrate."
+      },
+      {
+        "q": "Land",
+        "a": "Niger, ein Land mit vielen Kindern",
+        "wrong": [
+          "Japan",
+          "Deutschland",
+          "Italien"
+        ],
+        "why": "In Niger werden besonders viele Kinder geboren. Das Durchschnittsalter ist sehr niedrig."
+      },
+      {
+        "q": "Land",
+        "a": "Japan, ein Land mit vielen alten Menschen",
+        "wrong": [
+          "Niger",
+          "Mali",
+          "Tschad"
+        ],
+        "why": "Japan hat eine niedrige Geburtenrate und eine hohe Lebenserwartung."
+      },
+      {
+        "q": "Junge Welt",
+        "kind": "gap",
+        "s": "In Ländern mit vielen Kindern spricht man von einer ___ Welt.",
+        "a": "jungen",
+        "wrong": [
+          "alten",
+          "leeren",
+          "stillen"
+        ],
+        "why": "Entwicklungsländer haben oft junge Bevölkerungen."
+      },
+      {
+        "q": "Folge",
+        "a": "Es gibt weniger Menschen im Arbeitsalter, die Rente und Pflege tragen",
+        "wrong": [
+          "Es gibt mehr Schulen als nötig",
+          "Es gibt zu wenige Rentner",
+          "Alles bleibt gleich"
+        ],
+        "why": "Eine alternde Gesellschaft braucht mehr Rente und Pflege."
+      },
+      {
+        "q": "Altersgruppe",
+        "kind": "gap",
+        "s": "In der Alterspyramide steht jede Ebene für eine ___ .",
+        "a": "Altersgruppe",
+        "wrong": [
+          "Stadt",
+          "Berufsgruppe",
+          "Staatsform"
+        ],
+        "why": "Meist fasst man fünf Jahrgänge zu einer Ebene zusammen."
+      }
+    ],
+    "migration": [
+      {
+        "q": "Migration",
+        "kind": "gap",
+        "s": "Wenn Menschen ihren Wohnort für längere Zeit verlassen, nennt man das ___ .",
+        "a": "Migration",
+        "wrong": [
+          "Tourismus",
+          "Pendeln",
+          "Urlaub"
+        ],
+        "why": "Migration ist eine dauerhafte oder längere Wanderung."
+      },
+      {
+        "q": "Push",
+        "a": "Krieg im Herkunftsland",
+        "wrong": [
+          "Gute Schulen im Zielland",
+          "Hohe Löhne im Zielland",
+          "Ein sicherer Arbeitsplatz im Zielland"
+        ],
+        "why": "Ein Push-Faktor wirkt am Ort, den man verlässt."
+      },
+      {
+        "q": "Pull",
+        "a": "Arbeitsplätze und höherer Verdienst im Zielland",
+        "wrong": [
+          "Dürre im Herkunftsland",
+          "Hunger im Herkunftsland",
+          "Verfolgung im Herkunftsland"
+        ],
+        "why": "Ein Pull-Faktor wirkt am Zielort und zieht an."
+      },
+      {
+        "q": "Flucht",
+        "kind": "gap",
+        "s": "Wer wegen Krieg oder Verfolgung seine Heimat verlassen muss, ist auf ___ .",
+        "a": "Flucht",
+        "wrong": [
+          "Urlaub",
+          "Reise",
+          "Messe"
+        ],
+        "why": "Flucht geschieht unfreiwillig, im Unterschied zur Arbeitsmigration."
+      },
+      {
+        "q": "Binnenwanderung",
+        "a": "Umzug innerhalb eines Landes, zum Beispiel vom Dorf in die Stadt",
+        "wrong": [
+          "Umzug in ein anderes Land",
+          "Eine Urlaubsreise",
+          "Ein Schulausflug"
+        ],
+        "why": "Das heißt Binnenwanderung oder Binnenmigration."
+      },
+      {
+        "q": "Landflucht",
+        "kind": "gap",
+        "s": "Die Wanderung vom Land in die Stadt heißt ___ .",
+        "a": "Landflucht",
+        "wrong": [
+          "Stadtflucht",
+          "Pendeln",
+          "Auswanderung"
+        ],
+        "why": "Viele Menschen suchen in der Stadt Arbeit und Bildung."
+      },
+      {
+        "q": "Gründe",
+        "a": "Meist wirken Push- und Pull-Faktoren zusammen",
+        "wrong": [
+          "Nur Push-Faktoren",
+          "Nur Pull-Faktoren",
+          "Es gibt keine Gründe"
+        ],
+        "why": "Man verlässt etwas und strebt zu etwas."
+      },
+      {
+        "q": "Beispiel",
+        "a": "Eine Familie verlässt ein Dürregebiet und zieht in die Stadt, weil es dort Arbeit gibt",
+        "wrong": [
+          "Jemand fährt zum Wandern ins Gebirge",
+          "Ein Schüler fährt mit der Klasse zum Museum",
+          "Ein Tourist besucht Rom"
+        ],
+        "why": "Dürre ist Push, Arbeit in der Stadt ist Pull."
+      },
+      {
+        "q": "Auswanderung",
+        "kind": "gap",
+        "s": "Wer sein Heimatland verlässt, um dauerhaft in einem anderen zu leben, ist ein ___ .",
+        "a": "Auswanderer",
+        "wrong": [
+          "Tourist",
+          "Pendler",
+          "Händler"
+        ],
+        "why": "Auswanderer verlassen ihr Land. Aus Sicht des Ziellandes sind sie Einwanderer."
+      },
+      {
+        "q": "Folgen",
+        "a": "Das Zielland braucht mehr Wohnungen, Schulen und Arbeitsplätze",
+        "wrong": [
+          "Das Zielland braucht weniger Straßen",
+          "Es ändert sich nichts",
+          "Das Herkunftsland wächst dadurch schneller"
+        ],
+        "why": "Zuwanderung verändert Städte. Das ist eine Chance und eine Aufgabe."
+      }
+    ],
+    "megastaedte": [
+      {
+        "q": "Megastadt",
+        "kind": "gap",
+        "s": "Eine Stadt mit mehr als ___ Millionen Einwohnern heißt Megastadt.",
+        "a": "10",
+        "wrong": [
+          "1",
+          "5",
+          "100"
+        ],
+        "why": "Die Vereinten Nationen verwenden diese Grenze."
+      },
+      {
+        "q": "Verstädterung",
+        "kind": "gap",
+        "s": "Seit dem Jahr ___ lebt mehr als die Hälfte der Menschen in Städten.",
+        "a": "2007",
+        "wrong": [
+          "1900",
+          "1950",
+          "2030"
+        ],
+        "why": "Nach Schätzungen der UN wurde die Grenze in diesem Jahr überschritten."
+      },
+      {
+        "q": "Global City",
+        "a": "New York",
+        "wrong": [
+          "Dorf in den Alpen",
+          "Kleinstadt in Norddeutschland",
+          "Ein Bauernhof in Brandenburg"
+        ],
+        "why": "In einer Global City sitzen Banken, Konzerne und internationale Organisationen."
+      },
+      {
+        "q": "Verstädterung",
+        "a": "Der Anteil der Menschen, die in Städten leben, nimmt zu",
+        "wrong": [
+          "Es ziehen mehr Menschen aufs Land",
+          "Städte werden kleiner",
+          "Es gibt keine Städte mehr"
+        ],
+        "why": "Das ist die Bedeutung des Begriffs."
+      },
+      {
+        "q": "Ursache",
+        "a": "Landflucht und natürliches Wachstum der Stadtbevölkerung",
+        "wrong": [
+          "Weniger Geburten",
+          "Mehr Landwirtschaft",
+          "Mehr Dörfer"
+        ],
+        "why": "Menschen ziehen für Arbeit in die Stadt, und dort werden auch Kinder geboren."
+      },
+      {
+        "q": "Landflucht",
+        "kind": "gap",
+        "s": "Die Menschen ziehen auf der Suche nach Arbeit vom Land in die ___ .",
+        "a": "Stadt",
+        "wrong": [
+          "Wüste",
+          "Antarktis",
+          "Tundra"
+        ],
+        "why": "Das nennt man Landflucht."
+      },
+      {
+        "q": "Megastädte",
+        "a": "Tokio, Delhi und Lagos",
+        "wrong": [
+          "Bonn, Trier und Kiel",
+          "Hallstatt, Lindau und Bern",
+          "Venedig, Florenz und Pisa"
+        ],
+        "why": "Tokio, Delhi und Lagos sind sehr groß. Die anderen Beispiele nicht."
+      },
+      {
+        "q": "Merkmal",
+        "a": "Wo viele Banken, Konzernzentralen und internationale Organisationen sitzen",
+        "wrong": [
+          "Wo die meisten Menschen wohnen",
+          "Wo es die meisten Parks gibt",
+          "Wo das Wetter am besten ist"
+        ],
+        "why": "Eine Global City ist wegen ihrer wirtschaftlichen Bedeutung wichtig, nicht wegen ihrer Größe."
+      },
+      {
+        "q": "Kontinent",
+        "kind": "gap",
+        "s": "Besonders schnell wachsen Megastädte in Asien und ___ .",
+        "a": "Afrika",
+        "wrong": [
+          "Europa",
+          "Australien",
+          "Antarktis"
+        ],
+        "why": "Dort ist das Bevölkerungswachstum hoch und die Landflucht groß."
+      },
+      {
+        "q": "Chancen",
+        "a": "Städte bieten Arbeit, Bildung und Gesundheitsversorgung",
+        "wrong": [
+          "Städte bieten nur Probleme",
+          "Städte bieten nur Ruhe",
+          "Städte haben keine Schulen"
+        ],
+        "why": "Das sind die Pull-Faktoren, die Menschen anziehen."
+      }
+    ],
+    "megaprobleme": [
+      {
+        "q": "Slum",
+        "kind": "gap",
+        "s": "Ein Stadtviertel mit einfachen Hütten und ohne ausreichende Versorgung heißt ___ .",
+        "a": "Slum",
+        "wrong": [
+          "Villenviertel",
+          "Altstadt",
+          "Messegelände"
+        ],
+        "why": "Slums haben oft kein Wasser, keinen Strom und keine Kanalisation."
+      },
+      {
+        "q": "Lagos",
+        "a": "Lagos liegt in Nigeria, ist die größte Stadt des Landes und liegt an der Küste Westafrikas",
+        "wrong": [
+          "Lagos liegt in Indien",
+          "Lagos ist die Hauptstadt Nigerias",
+          "Lagos liegt in der Sahara"
+        ],
+        "why": "Die Hauptstadt Nigerias ist Abuja. Lagos ist die größte Stadt und ein Magnet für Zuzug."
+      },
+      {
+        "q": "Mumbai",
+        "a": "Mumbai liegt an der Westküste Indiens und hat Hochhäuser und große Slums",
+        "wrong": [
+          "Mumbai liegt in China",
+          "Mumbai ist die Hauptstadt Indiens",
+          "Mumbai liegt in den Alpen"
+        ],
+        "why": "Die Hauptstadt Indiens ist Neu-Delhi. Mumbai ist die Finanz- und Filmstadt."
+      },
+      {
+        "q": "Dharavi",
+        "kind": "gap",
+        "s": "Einer der größten Slums Asiens liegt in ___ .",
+        "a": "Mumbai",
+        "wrong": [
+          "Berlin",
+          "Tokio",
+          "Paris"
+        ],
+        "why": "Dharavi liegt mitten in Mumbai, direkt neben modernen Vierteln."
+      },
+      {
+        "q": "Zwei Gesichter",
+        "a": "Reiche Viertel mit Hochhäusern und Slums liegen dicht nebeneinander",
+        "wrong": [
+          "Die ganze Stadt ist gleich arm",
+          "Die ganze Stadt ist gleich reich",
+          "Es gibt keine Unterschiede"
+        ],
+        "why": "Das meint die Überschrift: Gegensätze zwischen Arm und Reich."
+      },
+      {
+        "q": "Verkehr",
+        "a": "Mehr öffentliche Verkehrsmittel wie Busse und Bahnen",
+        "wrong": [
+          "Mehr Autos pro Straße",
+          "Weniger Haltestellen",
+          "Alle Straßen sperren"
+        ],
+        "why": "Nahverkehr kann Staus und Abgase verringern."
+      },
+      {
+        "q": "Müll",
+        "kind": "gap",
+        "s": "Wo es keine Müllabfuhr gibt, sammeln sich Abfälle und ___ breiten sich aus.",
+        "a": "Krankheiten",
+        "wrong": [
+          "Wälder",
+          "Gletscher",
+          "Dünen"
+        ],
+        "why": "Schmutz und verunreinigtes Wasser machen krank."
+      },
+      {
+        "q": "Informell",
+        "a": "Arbeit ohne festen Vertrag, zum Beispiel Straßenhandel oder Müllsammeln",
+        "wrong": [
+          "Arbeit in einer Bank",
+          "Arbeit mit Tarifvertrag",
+          "Arbeit im Parlament"
+        ],
+        "why": "Viele Menschen finden keine feste Stelle und verdienen so ihr Geld."
+      },
+      {
+        "q": "Straßenkinder",
+        "a": "Sie arbeiten, betteln oder sammeln Müll, um zu überleben",
+        "wrong": [
+          "Sie gehen alle zur Schule",
+          "Sie leben in großen Villen",
+          "Sie reisen durch die Welt"
+        ],
+        "why": "Kinder, die auf der Straße leben, haben oft keinen Zugang zu Schule und Gesundheit."
+      },
+      {
+        "q": "Lösung",
+        "kind": "gap",
+        "s": "Um Slums zu verbessern, braucht es Wasserleitungen, Strom und ___ .",
+        "a": "Wohnungen",
+        "wrong": [
+          "Wüsten",
+          "Gletscher",
+          "Vulkane"
+        ],
+        "why": "Bessere Grundversorgung macht die Viertel sicherer und gesünder."
+      }
+    ],
+    "entwicklungsstand": [
+      {
+        "q": "BIP",
+        "kind": "gap",
+        "s": "Das ___ je Einwohner misst das durchschnittliche Einkommen eines Landes.",
+        "a": "Bruttoinlandsprodukt",
+        "wrong": [
+          "Bevölkerungsprodukt",
+          "Nettoeinkommen",
+          "Handelsvolumen"
+        ],
+        "why": "Das Bruttoinlandsprodukt (BIP) ist der Wert aller Waren und Dienstleistungen eines Jahres.",
+        "accept": [
+          "BIP"
+        ]
+      },
+      {
+        "q": "Indikator",
+        "a": "Lebenserwartung",
+        "wrong": [
+          "Wetter",
+          "Anzahl der Seen",
+          "Flaggenfarben"
+        ],
+        "why": "Lebenserwartung ist ein Maß für Gesundheit und Lebensbedingungen."
+      },
+      {
+        "q": "Kindersterblichkeit",
+        "kind": "gap",
+        "s": "In Entwicklungsländern ist die Kindersterblichkeit meist ___ als in Industrieländern.",
+        "a": "höher",
+        "wrong": [
+          "niedriger",
+          "gleich",
+          "unmessbar"
+        ],
+        "why": "Es fehlt oft an Impfungen, sauberem Wasser und medizinischer Versorgung."
+      },
+      {
+        "q": "Bangladesch",
+        "a": "Entwicklungsland",
+        "wrong": [
+          "Industrieland",
+          "Schwellenland",
+          "Wüstenstaat"
+        ],
+        "why": "Bangladesch hat ein niedriges Einkommen und viele Menschen in Armut."
+      },
+      {
+        "q": "Malaysia",
+        "a": "Schwellenland",
+        "wrong": [
+          "Industrieland",
+          "Entwicklungsland",
+          "Inselgruppe ohne Wirtschaft"
+        ],
+        "why": "Malaysia hat sich durch Exporte stark entwickelt, ist aber noch nicht auf dem Stand der Industrieländer."
+      },
+      {
+        "q": "Alphabetisierung",
+        "kind": "gap",
+        "s": "Der Anteil der Menschen, die lesen und schreiben können, heißt ___ .",
+        "a": "Alphabetisierungsrate",
+        "wrong": [
+          "Wachstumsrate",
+          "Kindersterblichkeit",
+          "Inflationsrate"
+        ],
+        "why": "Bildung ist ein wichtiger Teil der Entwicklung.",
+        "accept": [
+          "Alphabetisierung"
+        ]
+      },
+      {
+        "q": "Schwellenland",
+        "a": "Ein Land mit schnellem Wirtschaftswachstum auf dem Weg zum Industrieland",
+        "wrong": [
+          "Ein Land ohne Wirtschaft",
+          "Ein Land mit nur Landwirtschaft",
+          "Ein Land ohne Einwohner"
+        ],
+        "why": "Beispiele sind Malaysia, Brasilien und China."
+      },
+      {
+        "q": "Aussagekraft",
+        "a": "Nur mehrere Indikatoren zusammen zeigen den Entwicklungsstand",
+        "wrong": [
+          "Ein einziger Wert reicht immer",
+          "Es gibt keine Indikatoren",
+          "Nur die Fläche zählt"
+        ],
+        "why": "Ein Indikator allein kann täuschen."
+      },
+      {
+        "q": "Industrieland",
+        "kind": "gap",
+        "s": "Ein Land mit hohem Einkommen und gut ausgebauter Wirtschaft ist ein ___ .",
+        "a": "Industrieland",
+        "wrong": [
+          "Entwicklungsland",
+          "Schwellenland",
+          "Rohstoffland"
+        ],
+        "why": "Deutschland, Japan und die USA gehören dazu."
+      },
+      {
+        "q": "Ungleichheit",
+        "a": "Im Durchschnitt kann ein Land reich sein, obwohl viele Menschen arm sind",
+        "wrong": [
+          "Wenn der Durchschnitt hoch ist, ist niemand arm",
+          "Der Durchschnitt zeigt alle Menschen genau",
+          "Einkommen sind überall gleich"
+        ],
+        "why": "Durchschnittswerte verstecken Unterschiede zwischen Reich und Arm."
+      }
+    ],
+    "welternaehrung": [
+      {
+        "q": "Unterernährung",
+        "kind": "gap",
+        "s": "Wer dauerhaft zu wenig Nahrung bekommt, ist ___ .",
+        "a": "unterernährt",
+        "wrong": [
+          "überernährt",
+          "ausgeruht",
+          "durstig"
+        ],
+        "why": "Der Körper erhält nicht genug Energie."
+      },
+      {
+        "q": "Mangelernährung",
+        "kind": "gap",
+        "s": "Fehlen wichtige Vitamine und Mineralstoffe, spricht man von ___ .",
+        "a": "Mangelernährung",
+        "wrong": [
+          "Überernährung",
+          "Unterernährung",
+          "Fastenzeit"
+        ],
+        "why": "Mangelernährung schwächt vor allem Kinder."
+      },
+      {
+        "q": "Ursache",
+        "a": "Armut, Kriege und Dürren",
+        "wrong": [
+          "Zu viele Seen",
+          "Zu viele Schulen",
+          "Zu viele Gewitter"
+        ],
+        "why": "Wer arm ist, kann Nahrung nicht kaufen. Kriege und Dürren zerstören Ernten."
+      },
+      {
+        "q": "Verteilung",
+        "a": "Es werden weltweit genug Lebensmittel erzeugt, aber sie sind ungleich verteilt",
+        "wrong": [
+          "Es wird weltweit viel zu wenig erzeugt",
+          "Hunger gibt es nur in Europa",
+          "Hunger entsteht durch zu viele Äcker"
+        ],
+        "why": "Das Problem liegt oft bei Armut, Verteilung und Transport."
+      },
+      {
+        "q": "Teufelskreis",
+        "a": "Armut führt zu Hunger, Hunger führt zu Krankheit, Krankheit führt zu Armut",
+        "wrong": [
+          "Hunger führt zu Reichtum",
+          "Krankheit führt zu Bildung",
+          "Armut führt zu Überfluss"
+        ],
+        "why": "Die Faktoren verstärken sich gegenseitig."
+      },
+      {
+        "q": "Verschwendung",
+        "kind": "gap",
+        "s": "In reichen Ländern wird viel Essen ___ .",
+        "a": "weggeworfen",
+        "wrong": [
+          "gespart",
+          "verschenkt",
+          "angebaut"
+        ],
+        "why": "Ein großer Teil der Lebensmittel landet im Müll."
+      },
+      {
+        "q": "Folge",
+        "a": "Hunger schwächt das Immunsystem, Menschen werden schneller krank",
+        "wrong": [
+          "Hunger macht gesund",
+          "Hunger stärkt das Abwehrsystem",
+          "Hunger hat keine Folgen"
+        ],
+        "why": "Gerade Kinder sind gefährdet."
+      },
+      {
+        "q": "Lösung",
+        "a": "Bessere Bildung, Zugang zu Wasser und faire Preise für Bauern",
+        "wrong": [
+          "Mehr Lebensmittel wegwerfen",
+          "Alle Äcker versiegeln",
+          "Mehr Waffen verkaufen"
+        ],
+        "why": "Hilfe zur Selbsthilfe wirkt langfristig besser als einmalige Lieferungen."
+      },
+      {
+        "q": "Dürre",
+        "kind": "gap",
+        "s": "Wenn lange Zeit kein Regen fällt, vertrocknen die Felder. Das nennt man ___ .",
+        "a": "Dürre",
+        "wrong": [
+          "Überschwemmung",
+          "Sturmflut",
+          "Lawine"
+        ],
+        "why": "Bei Dürre fallen Ernten aus."
+      },
+      {
+        "q": "Überfluss",
+        "a": "In Industrieländern sind Übergewicht und Lebensmittelverschwendung ein Problem",
+        "wrong": [
+          "Es gibt dort keine Lebensmittel",
+          "Alle Menschen hungern dort",
+          "Es gibt keine Supermärkte"
+        ],
+        "why": "Hunger und Überfluss gibt es nebeneinander auf der Welt."
+      }
+    ],
+    "entwicklungszusammenarbeit": [
+      {
+        "q": "Begriff",
+        "kind": "gap",
+        "s": "Hilfe, die Menschen befähigt, sich selbst zu helfen, heißt Hilfe zur ___ .",
+        "a": "Selbsthilfe",
+        "wrong": [
+          "Fremdhilfe",
+          "Nothilfe",
+          "Schnellhilfe"
+        ],
+        "why": "Sie macht Menschen unabhängig von äußerer Hilfe."
+      },
+      {
+        "q": "Nothilfe",
+        "a": "Wasser und Zelte nach einem Erdbeben",
+        "wrong": [
+          "Der Bau einer Schule",
+          "Ein Ausbildungsprogramm",
+          "Ein Brunnen in einem Dorf"
+        ],
+        "why": "Nothilfe wirkt sofort. Schulen und Brunnen wirken langfristig."
+      },
+      {
+        "q": "Organisation",
+        "a": "UNICEF",
+        "wrong": [
+          "Die Formel 1",
+          "Die Bundesliga",
+          "Das Oktoberfest"
+        ],
+        "why": "UNICEF ist ein Kinderhilfswerk der Vereinten Nationen."
+      },
+      {
+        "q": "Brunnen",
+        "kind": "gap",
+        "s": "Ein Brunnen verbessert dauerhaft die Versorgung mit sauberem ___ .",
+        "a": "Wasser",
+        "wrong": [
+          "Sand",
+          "Öl",
+          "Gold"
+        ],
+        "why": "Sauberes Wasser beugt Krankheiten vor."
+      },
+      {
+        "q": "Bildung",
+        "a": "Bildung hilft langfristig, weil Menschen Arbeit finden und gesünder leben",
+        "wrong": [
+          "Bildung bringt nichts",
+          "Bildung macht nur arm",
+          "Bildung gibt es nur in Städten"
+        ],
+        "why": "Bildung ist ein Schlüssel der Entwicklung."
+      },
+      {
+        "q": "Gefahr",
+        "a": "Kostenlose Lebensmittel können lokale Bauern verdrängen",
+        "wrong": [
+          "Sie helfen immer allen",
+          "Sie machen Bauern reicher",
+          "Sie haben keine Wirkung"
+        ],
+        "why": "Wenn Waren verschenkt werden, kann niemand sie verkaufen."
+      },
+      {
+        "q": "Ziele",
+        "kind": "gap",
+        "s": "Die Vereinten Nationen haben 17 Ziele für ___ Entwicklung beschlossen.",
+        "a": "nachhaltige",
+        "wrong": [
+          "schnelle",
+          "teure",
+          "geheime"
+        ],
+        "why": "Die Agenda 2030 enthält diese Nachhaltigen Entwicklungsziele."
+      },
+      {
+        "q": "Beteiligung",
+        "a": "Die Menschen vor Ort entscheiden und arbeiten mit",
+        "wrong": [
+          "Nur Fremde entscheiden",
+          "Niemand entscheidet",
+          "Das Projekt bleibt geheim"
+        ],
+        "why": "Projekte gelingen eher, wenn die Betroffenen mitbestimmen."
+      },
+      {
+        "q": "Kleinkredite",
+        "kind": "gap",
+        "s": "Kleine Kredite für Menschen ohne Bankkonto heißen ___ .",
+        "a": "Mikrokredite",
+        "wrong": [
+          "Großkredite",
+          "Spenden",
+          "Steuern"
+        ],
+        "why": "Mit einem Mikrokredit kann man zum Beispiel einen kleinen Laden aufbauen."
+      },
+      {
+        "q": "Zusammenarbeit",
+        "a": "Entwicklungszusammenarbeit setzt auf Partnerschaft statt Almosen",
+        "wrong": [
+          "Sie setzt auf Befehle",
+          "Sie setzt auf Geheimhaltung",
+          "Sie setzt auf Verbote"
+        ],
+        "why": "Darum spricht man heute von Zusammenarbeit und nicht mehr nur von Hilfe."
+      }
+    ],
+    "weltwirtschaft": [
+      {
+        "q": "Globalisierung",
+        "kind": "gap",
+        "s": "Die weltweite Verflechtung von Wirtschaft und Handel nennt man ___ .",
+        "a": "Globalisierung",
+        "wrong": [
+          "Regionalisierung",
+          "Industrialisierung",
+          "Verstädterung"
+        ],
+        "why": "Globus bedeutet Erdkugel. Es geht um die ganze Welt."
+      },
+      {
+        "q": "Transport",
+        "a": "Container",
+        "wrong": [
+          "Eselskarren",
+          "Segelkanus",
+          "Heißluftballons"
+        ],
+        "why": "Standardisierte Container sind für Schiffe, Züge und Lkw gleich. Das macht den Transport billig."
+      },
+      {
+        "q": "Seehandel",
+        "kind": "gap",
+        "s": "Der größte Teil des Welthandels wird per ___ transportiert.",
+        "a": "Schiff",
+        "wrong": [
+          "Flugzeug",
+          "Fahrrad",
+          "Rohrpost"
+        ],
+        "why": "Schiffe transportieren viel zu sehr niedrigen Kosten."
+      },
+      {
+        "q": "Seeweg",
+        "a": "Der Suezkanal verbindet das Mittelmeer mit dem Roten Meer",
+        "wrong": [
+          "Der Suezkanal verbindet Atlantik und Pazifik",
+          "Der Suezkanal liegt in Südamerika",
+          "Der Suezkanal ist ein Gebirge"
+        ],
+        "why": "Er verkürzt den Weg zwischen Europa und Asien."
+      },
+      {
+        "q": "Seeweg",
+        "a": "Der Panamakanal verbindet den Atlantik mit dem Pazifik",
+        "wrong": [
+          "Der Panamakanal verbindet das Mittelmeer mit dem Roten Meer",
+          "Der Panamakanal liegt in Afrika",
+          "Der Panamakanal ist ein See in den Alpen"
+        ],
+        "why": "Er liegt in Mittelamerika und spart den Weg um Südamerika."
+      },
+      {
+        "q": "Hafen",
+        "kind": "gap",
+        "s": "Der größte Hafen Europas ist ___ .",
+        "a": "Rotterdam",
+        "wrong": [
+          "Hamburg",
+          "Stockholm",
+          "Lissabon"
+        ],
+        "why": "Rotterdam in den Niederlanden ist der größte Seehafen Europas."
+      },
+      {
+        "q": "Handelspartner",
+        "a": "Ostasien, Europa und Nordamerika",
+        "wrong": [
+          "Antarktis, Arktis und Sahara",
+          "Nur Südamerika",
+          "Nur Afrika"
+        ],
+        "why": "Dort liegen die großen Wirtschaftsräume und viele Verbraucher."
+      },
+      {
+        "q": "Vorteil",
+        "a": "Waren können günstig an vielen Orten gekauft werden",
+        "wrong": [
+          "Alle Waren werden teurer",
+          "Es gibt weniger Auswahl",
+          "Niemand kann etwas verkaufen"
+        ],
+        "why": "Die Arbeitsteilung macht manche Waren billiger."
+      },
+      {
+        "q": "Nachteil",
+        "a": "Lange Lieferketten sind anfällig, und Arbeitsplätze verlagern sich ins Ausland",
+        "wrong": [
+          "Es gibt keine Nachteile",
+          "Alle Fabriken bleiben im Land",
+          "Die Löhne steigen überall gleich"
+        ],
+        "why": "Probleme in einem Land können weltweit Folgen haben."
+      },
+      {
+        "q": "Rohstoff",
+        "kind": "gap",
+        "s": "Erdöl, Eisenerz und Baumwolle sind ___ .",
+        "a": "Rohstoffe",
+        "wrong": [
+          "Fertigwaren",
+          "Dienstleistungen",
+          "Handwerker"
+        ],
+        "why": "Rohstoffe werden vor der Weiterverarbeitung gehandelt."
+      },
+      {
+        "q": "Arbeitsteilung",
+        "a": "Jedes Land tut, was es am besten kann, und man tauscht die Ergebnisse",
+        "wrong": [
+          "Jedes Land macht alles selbst",
+          "Nur ein Land produziert",
+          "Es wird nichts getauscht"
+        ],
+        "why": "Das nennt man internationale Arbeitsteilung."
+      }
+    ],
+    "banane": [
+      {
+        "q": "Klima",
+        "kind": "gap",
+        "s": "Bananen wachsen in den ___ .",
+        "a": "Tropen",
+        "wrong": [
+          "Polarzonen",
+          "Wüsten",
+          "Alpen"
+        ],
+        "why": "Bananen brauchen Wärme und viel Regen das ganze Jahr."
+      },
+      {
+        "q": "Anbauland",
+        "a": "Ecuador",
+        "wrong": [
+          "Island",
+          "Schweden",
+          "Mongolei"
+        ],
+        "why": "Ecuador ist einer der größten Bananenexporteure."
+      },
+      {
+        "q": "Plantage",
+        "kind": "gap",
+        "s": "Ein großer landwirtschaftlicher Betrieb für eine einzige Pflanzenart heißt ___ .",
+        "a": "Plantage",
+        "wrong": [
+          "Garten",
+          "Wiese",
+          "Bauernhof"
+        ],
+        "why": "Plantagen bauen meist nur eine Pflanze an. Das nennt man Monokultur."
+      },
+      {
+        "q": "Ernte",
+        "a": "Bananen werden grün geerntet",
+        "wrong": [
+          "Bananen werden gelb geerntet",
+          "Bananen werden braun geerntet",
+          "Bananen werden blau geerntet"
+        ],
+        "why": "Grüne Früchte vertragen die lange Reise besser."
+      },
+      {
+        "q": "Transport",
+        "kind": "gap",
+        "s": "Bananen reisen in ___ nach Europa.",
+        "a": "Kühlschiffen",
+        "wrong": [
+          "Segelbooten",
+          "Flugdrachen",
+          "Zügen aus Holz"
+        ],
+        "why": "Die Kühlung verhindert, dass die Früchte unterwegs reifen."
+      },
+      {
+        "q": "Reifung",
+        "a": "In Reifekammern, in denen man die Früchte mit einem Gas zum Reifen bringt",
+        "wrong": [
+          "Auf der Fensterbank im Hafen",
+          "In einem Tiefkühlraum",
+          "Auf dem Schiffsdeck in der Sonne"
+        ],
+        "why": "Dort werden die grünen Früchte kontrolliert gelb."
+      },
+      {
+        "q": "Preis",
+        "a": "Der Händler und der Supermarkt erhalten einen größeren Anteil als die Arbeiter auf der Plantage",
+        "wrong": [
+          "Die Arbeiter erhalten den größten Anteil",
+          "Alle erhalten gleich viel",
+          "Der Anteil der Arbeiter ist größer als der des Supermarkts"
+        ],
+        "why": "Die Arbeiter auf der Plantage bekommen oft nur einen kleinen Teil des Preises."
+      },
+      {
+        "q": "Problem",
+        "a": "Monokultur und viele Spritzmittel belasten Böden und Menschen",
+        "wrong": [
+          "Bananen verbessern immer den Boden",
+          "Plantagen sind immer umweltfreundlich",
+          "Es gibt keinerlei Probleme"
+        ],
+        "why": "Bei großen Plantagen kommen Pflanzenschutzmittel zum Einsatz, die Boden, Wasser und Arbeiter belasten können."
+      },
+      {
+        "q": "Pflanze",
+        "kind": "gap",
+        "s": "Die Banane wächst an einer ___ .",
+        "a": "Staude",
+        "wrong": [
+          "Eiche",
+          "Palme",
+          "Tanne"
+        ],
+        "why": "Die Bananenpflanze ist eine große Staude, kein Baum."
+      },
+      {
+        "q": "Lieferkette",
+        "a": "Plantage, Hafen, Kühlschiff, Reiferei, Supermarkt",
+        "wrong": [
+          "Supermarkt, Reiferei, Hafen, Plantage",
+          "Hafen, Plantage, Supermarkt, Reiferei",
+          "Reiferei, Plantage, Schiff, Supermarkt"
+        ],
+        "why": "So ist die Reihenfolge der Kette."
+      }
+    ],
+    "fairer-handel": [
+      {
+        "q": "Fairtrade",
+        "kind": "gap",
+        "s": "Der ___ Handel garantiert den Erzeugern einen Mindestpreis.",
+        "a": "faire",
+        "wrong": [
+          "schwarze",
+          "freie",
+          "große"
+        ],
+        "why": "Im fairen Handel gelten Regeln für Preise und Arbeitsbedingungen."
+      },
+      {
+        "q": "Mindestpreis",
+        "a": "Er schützt die Erzeuger vor sehr niedrigen Preisen",
+        "wrong": [
+          "Er senkt alle Preise im Supermarkt",
+          "Er verbietet den Handel",
+          "Er gilt nur für Händler"
+        ],
+        "why": "Ohne Mindestpreis können Erzeuger bei Preisverfall kaum überleben."
+      },
+      {
+        "q": "Prämie",
+        "a": "Die Prämie wird für Gemeinschaftsprojekte wie Schulen und Gesundheit genutzt",
+        "wrong": [
+          "Sie wird an Händler gezahlt",
+          "Sie wird als Steuer erhoben",
+          "Sie wird gar nicht ausgegeben"
+        ],
+        "why": "Die Erzeuger entscheiden gemeinsam, wofür das Geld verwendet wird."
+      },
+      {
+        "q": "Kinderarbeit",
+        "kind": "gap",
+        "s": "Im fairen Handel ist ___ verboten.",
+        "a": "Kinderarbeit",
+        "wrong": [
+          "Landwirtschaft",
+          "Transport",
+          "Handel"
+        ],
+        "why": "Kinder sollen zur Schule gehen statt zu arbeiten."
+      },
+      {
+        "q": "Siegel",
+        "a": "Es zeigt, dass Produkte nach Regeln des fairen Handels hergestellt wurden",
+        "wrong": [
+          "Es zeigt, dass das Produkt billig ist",
+          "Es zeigt, dass das Produkt aus Deutschland kommt",
+          "Es zeigt nur die Farbe der Verpackung"
+        ],
+        "why": "Das Siegel hilft beim Einkauf. Das Prüfverfahren steht dahinter."
+      },
+      {
+        "q": "Grenzen",
+        "a": "Fairer Handel macht nur einen kleinen Teil des Handels aus",
+        "wrong": [
+          "Fairer Handel löst alle Probleme",
+          "Fairer Handel ersetzt den gesamten Handel",
+          "Fairer Handel kostet nichts"
+        ],
+        "why": "Er ist ein wichtiger Anfang, ersetzt aber keine faire Weltwirtschaft."
+      },
+      {
+        "q": "Preis",
+        "kind": "gap",
+        "s": "Fair gehandelte Produkte sind oft etwas ___ als normale.",
+        "a": "teurer",
+        "wrong": [
+          "billiger",
+          "gleichgroß",
+          "grüner"
+        ],
+        "why": "Der höhere Preis bezahlt bessere Löhne und Arbeitsbedingungen."
+      },
+      {
+        "q": "Entscheidung",
+        "a": "Man kann beim Einkauf auf das Siegel achten und so Erzeuger unterstützen",
+        "wrong": [
+          "Man kann nichts tun",
+          "Man muss alles selbst anbauen",
+          "Man darf nur im Ausland einkaufen"
+        ],
+        "why": "Verbraucher haben mit ihrer Kaufentscheidung Einfluss."
+      },
+      {
+        "q": "Erzeuger",
+        "kind": "gap",
+        "s": "Bauern und Arbeiter, die Waren anbauen, heißen auch ___ .",
+        "a": "Erzeuger",
+        "wrong": [
+          "Händler",
+          "Käufer",
+          "Kunden"
+        ],
+        "why": "Erzeuger stehen am Anfang der Lieferkette."
+      },
+      {
+        "q": "Welthandel",
+        "a": "Rohstoffe werden billig verkauft, Fertigwaren teuer",
+        "wrong": [
+          "Rohstoffe sind immer teurer",
+          "Alle Waren kosten gleich viel",
+          "Fertigwaren sind immer billig"
+        ],
+        "why": "Länder, die nur Rohstoffe verkaufen, verdienen oft wenig. Verarbeitung bringt mehr Gewinn."
+      }
+    ]
+  }
+}

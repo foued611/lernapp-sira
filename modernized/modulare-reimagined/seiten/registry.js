@@ -13,7 +13,8 @@ export const SUBJECT_COLORS = Object.freeze({
   Deutsch: '#FF6B88',
   Englisch: '#3DD6B0',
   Informatik: '#FF9F43',
-  Physik: '#8BD450'
+  Physik: '#8BD450',
+  Geographie: '#E0A82E'
 });
 
 // Eine Kachel öffnet die App über ?app=<id> (siehe startseite.js). Die alten Pfade apps/<name>/index.html
@@ -25,7 +26,8 @@ export const APPS = Object.freeze([
   { id: 'decouvertes-2', subject: 'Französisch', title: 'Französisch-Werkstatt', desc: 'Découvertes 2: Passé composé, Pronomen, vouloir, pouvoir und Verben auf -ir. Dazu das Cahier de Verbes (être, avoir, aller, faire, Présent) und die Zahlen auf Französisch.', status: LIVE },
   { id: 'info-zahlen', subject: 'Informatik', title: 'Zahlenwerkstatt', desc: 'Binär und Hexadezimal: Lampen schalten, umrechnen und addieren wie ein Computer.', status: LIVE },
   { id: 'deutsch', subject: 'Deutsch', title: 'Deutsch-Werkstatt', desc: 'Inhaltsangabe, Adverbialsätze, Kommas, das und dass, Passiv, sprachliche Bilder, Rechtschreibung und Lesen.', status: LIVE },
-  { id: 'physik', subject: 'Physik', title: 'Physik-Werkstatt', desc: 'Schall, Licht und Mechanik nach dem Bildungsplan Klasse 7/8: Schwingungen, Frequenz, Spiegel, Brechung, Geschwindigkeit und Kräfte.', status: LIVE }
+  { id: 'physik', subject: 'Physik', title: 'Physik-Werkstatt', desc: 'Schall, Licht und Mechanik nach dem Bildungsplan Klasse 7/8: Schwingungen, Frequenz, Spiegel, Brechung, Geschwindigkeit und Kräfte.', status: LIVE },
+  { id: 'geographie', subject: 'Geographie', title: 'Geographie-Werkstatt', desc: 'Klimawandel, Polarzone, Bevölkerungsentwicklung, Entwicklungsstand und Welthandel. Nach den Kapiteln 4 bis 8 von Unsere Erde.', status: LIVE }
 ]);
 
 const isText = (value) => typeof value === 'string' && value.trim() !== '';

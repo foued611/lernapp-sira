@@ -1,0 +1,1445 @@
+{
+  "klima-anzeichen": {
+    "goal": "Du kannst Wetter und Klima unterscheiden und Anzeichen des Klimawandels nennen.",
+    "tldr": [
+      "Wetter gilt für einen Ort und einen Tag. Klima ist der Durchschnitt über mindestens 30 Jahre.",
+      "Seit der vorindustriellen Zeit ist die weltweite Durchschnittstemperatur um etwa ein Grad gestiegen. Gletscher und Meereis schrumpfen, der Meeresspiegel steigt."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: dein Zeugnis",
+      "html": "<p>Eine einzelne Note sagt wenig. Der Durchschnitt über das Schuljahr zeigt, wie du wirklich stehst. So ist es auch beim Klima: Ein kalter Wintertag ist eine Note, das Klima ist der Durchschnitt.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Anzeichen",
+            "Was messen Forschende?"
+          ],
+          [
+            [
+              "Temperatur",
+              "Der weltweite Mittelwert steigt"
+            ],
+            [
+              "Gletscher",
+              "Sie werden kürzer und dünner"
+            ],
+            [
+              "Meereis",
+              "Im Sommer bleibt weniger Eis übrig"
+            ],
+            [
+              "Meeresspiegel",
+              "Er steigt Jahr für Jahr"
+            ]
+          ],
+          [
+            1,
+            1.8
+          ],
+          "Tabelle: Anzeichen des Klimawandels und was gemessen wird"
+        ]
+      },
+      "caption": "Vier Anzeichen, an denen Forschende den Klimawandel messen."
+    },
+    "steps": {
+      "title": "So prüfst du eine Aussage",
+      "items": [
+        "Frage: Geht es um einen Tag oder um einen Durchschnitt über viele Jahre?",
+        "Nur ein langer Zeitraum sagt etwas über das Klima.",
+        "Suche Messreihen: Temperatur, Gletscherlänge, Meeresspiegel."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Ein kalter Winter widerlegt den Klimawandel nicht. Das ist Wetter. Das Klima ist der Mittelwert über Jahrzehnte.</p>"
+    },
+    "rule": "Wetter ist kurz, Klima ist lang. Klimawandel erkennt man an Messreihen über viele Jahre.",
+    "check": {
+      "q": "Was beschreibt das Klima?",
+      "options": [
+        {
+          "id": "a",
+          "html": "Das typische Wetter einer Region über viele Jahre"
+        },
+        {
+          "id": "b",
+          "html": "Das Wetter von heute Morgen"
+        },
+        {
+          "id": "c",
+          "html": "Die Temperatur im Klassenzimmer"
+        }
+      ],
+      "answer": "a",
+      "why": "Klima ist ein Durchschnitt über mindestens 30 Jahre. Das heutige Wetter ist nur ein einzelner Tag."
+    }
+  },
+  "treibhauseffekt": {
+    "goal": "Du kannst erklären, wie der Treibhauseffekt funktioniert und was an ihm natürlich und was menschengemacht ist.",
+    "tldr": [
+      "Die Sonne wärmt die Erde. Die Erde strahlt Wärme ab, und Treibhausgase halten einen Teil davon zurück.",
+      "Dieser natürliche Treibhauseffekt macht die Erde bewohnbar. Mehr Treibhausgase verstärken ihn und erwärmen die Erde zusätzlich."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: eine Wolldecke",
+      "html": "<p>Ohne Decke frierst du nachts. Mit einer Decke bleibt deine Körperwärme bei dir. Die Treibhausgase wirken wie eine Decke für die Erde. Eine zweite, dickere Decke macht es zu warm.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "flowDiagram",
+        "args": [
+          [
+            "Sonne|(strahlt ein)",
+            "Erde|(erwärmt sich)",
+            "Gase|(halten Wärme)",
+            "Erde|(bleibt warm)"
+          ],
+          "Ablauf: Sonnenstrahlung erwärmt die Erde, Treibhausgase halten einen Teil der Wärme zurück"
+        ]
+      },
+      "caption": "So kommt es zum Treibhauseffekt: Die Atmosphäre lässt Sonnenstrahlen durch und hält Wärme zurück."
+    },
+    "steps": {
+      "title": "So erklärst du den Treibhauseffekt",
+      "items": [
+        "Beginne bei der Sonne: Sie erwärmt den Boden.",
+        "Der Boden gibt Wärmestrahlung ab.",
+        "Treibhausgase wie Kohlenstoffdioxid und Methan halten einen Teil davon zurück."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Der Treibhauseffekt ist nicht an sich schlecht. Ohne ihn wäre die Erde eine Eiswüste. Das Problem ist die Verstärkung durch zusätzliche Treibhausgase.</p>"
+    },
+    "rule": "Natürlicher Treibhauseffekt: etwa 15 statt minus 18 Grad. Zusätzlicher Treibhauseffekt: Folge menschlicher Emissionen.",
+    "check": {
+      "q": "Was gehört zum natürlichen Treibhauseffekt?",
+      "options": [
+        {
+          "id": "a",
+          "html": "Treibhausgase halten Wärme in der Atmosphäre zurück"
+        },
+        {
+          "id": "b",
+          "html": "Die Sonne wird wärmer"
+        },
+        {
+          "id": "c",
+          "html": "Die Erde strahlt keine Wärme ab"
+        }
+      ],
+      "answer": "a",
+      "why": "Treibhausgase wie Wasserdampf und Kohlenstoffdioxid halten schon immer einen Teil der Wärme zurück. Sonst wäre es viel kälter."
+    }
+  },
+  "kohlendioxid": {
+    "goal": "Du kannst erklären, woher zusätzliches Kohlenstoffdioxid kommt und warum es dem Klima schadet.",
+    "tldr": [
+      "CO2 ist ein natürlicher Bestandteil der Luft und für Pflanzen lebensnotwendig.",
+      "Durch das Verbrennen fossiler Energieträger und das Roden von Wäldern steigt der CO2-Gehalt. Das verstärkt den Treibhauseffekt."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: eine Badewanne",
+      "html": "<p>Der Hahn läuft, der Abfluss nimmt Wasser weg. Solange beides ausgeglichen ist, bleibt der Pegel gleich. Wenn zusätzlich viel Wasser nachläuft, steigt der Pegel. Genauso steigt der CO2-Gehalt, wenn Quellen mehr abgeben, als Senken aufnehmen.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "flowDiagram",
+        "args": [
+          [
+            "Kohle, Öl, Gas verbrennen|(Quelle)",
+            "CO2 in der Luft|(steigt)",
+            "Treibhauseffekt|(wird stärker)",
+            "Erde erwärmt sich|(zusätzlich)"
+          ],
+          "Ablauf: Verbrennen fossiler Energie erhöht den CO2-Gehalt und verstärkt den Treibhauseffekt"
+        ]
+      },
+      "caption": "Der Weg vom Verbrennen fossiler Brennstoffe bis zur zusätzlichen Erwärmung."
+    },
+    "steps": {
+      "title": "So ordnest du eine Ursache ein",
+      "items": [
+        "Frage: Setzt das CO2 frei (Quelle) oder nimmt es auf (Senke)?",
+        "Fossile Energie ist eine Quelle.",
+        "Wälder und Meere sind Senken, solange sie nicht zerstört werden."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Kohlenstoffdioxid macht die Luft nicht sofort giftig. Es verstärkt den Treibhauseffekt, weil es sich über viele Jahrzehnte in der Luft hält.</p>"
+    },
+    "rule": "Quellen: fossile Brennstoffe und Rodung. Senken: Wälder und Meere. Mehr Quellen als Senken heißt: CO2 steigt.",
+    "check": {
+      "q": "Warum ist zusätzliches CO2 ein Problem?",
+      "options": [
+        {
+          "id": "a",
+          "html": "Es verstärkt den Treibhauseffekt"
+        },
+        {
+          "id": "b",
+          "html": "Es macht die Luft sofort giftig"
+        },
+        {
+          "id": "c",
+          "html": "Es löscht die Sonne aus"
+        }
+      ],
+      "answer": "a",
+      "why": "Der Anteil in der Luft ist klein, doch mehr CO2 hält mehr Wärme zurück."
+    }
+  },
+  "klimafolgen": {
+    "goal": "Du kannst Folgen des Klimawandels in den Polargebieten und in Australien erklären.",
+    "tldr": [
+      "An den Polen schmilzt Eis. Landeis erhöht den Meeresspiegel, Meereis schwimmt schon im Wasser.",
+      "In Australien werden Dürren und Buschbrände häufiger. Das Great Barrier Reef leidet unter zu warmem Wasser."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Eiswürfel im Glas",
+      "html": "<p>Schmilzt ein schwimmender Eiswürfel, bleibt der Wasserstand fast gleich. Legst du dagegen Eis vom Rand ins Glas und es schmilzt, steigt der Pegel. So unterscheiden sich Meereis und Landeis.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Ort",
+            "Folge",
+            "Warum wichtig?"
+          ],
+          [
+            [
+              "Arktis",
+              "Meereis schrumpft",
+              "Lebensraum von Eisbär und Robbe"
+            ],
+            [
+              "Grönland",
+              "Eisschild schmilzt",
+              "Meeresspiegel steigt"
+            ],
+            [
+              "Permafrost",
+              "Boden taut auf",
+              "Häuser sacken ab, Methan wird frei"
+            ],
+            [
+              "Australien",
+              "Dürre und Buschbrände",
+              "Wasser und Ernten fehlen"
+            ]
+          ],
+          [
+            1,
+            1.2,
+            1.8
+          ],
+          "Tabelle: Folgen des Klimawandels an Polen und in Australien"
+        ]
+      },
+      "caption": "Vier Orte und die jeweilige Folge."
+    },
+    "steps": {
+      "title": "So beschreibst du eine Folge",
+      "items": [
+        "Nenne den Ort und die Veränderung.",
+        "Erkläre die Ursache: Es wird wärmer.",
+        "Nenne, wer oder was betroffen ist."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Schmelzendes Meereis hebt den Meeresspiegel kaum. Gefährlich sind vor allem Eis auf dem Land und die Wärmeausdehnung des Wassers.</p>"
+    },
+    "rule": "Landeis schmilzt: Meeresspiegel steigt. Meereis schrumpft: Lebensraum und Rückstrahlung gehen verloren. Australien: Dürre und Brände.",
+    "check": {
+      "q": "Welches Eis erhöht beim Schmelzen den Meeresspiegel?",
+      "options": [
+        {
+          "id": "a",
+          "html": "Der Eisschild auf Grönland"
+        },
+        {
+          "id": "b",
+          "html": "Meereis, das im Wasser schwimmt"
+        },
+        {
+          "id": "c",
+          "html": "Wolken über dem Meer"
+        }
+      ],
+      "answer": "a",
+      "why": "Landeis kommt zusätzlich ins Meer. Meereis schwimmt schon und verdrängt bereits Wasser."
+    }
+  },
+  "klimaschutz": {
+    "goal": "Du kannst Klimaschutz und Klimaanpassung unterscheiden und Beispiele nennen.",
+    "tldr": [
+      "Klimaschutz bekämpft die Ursache: weniger Treibhausgase. Klimaanpassung mildert die Folgen.",
+      "Erneuerbare Energien, Energiesparen und Aufforstung helfen dem Klimaschutz. Die Staaten haben sich im Pariser Abkommen auf Ziele geeinigt."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Wasserrohrbruch",
+      "html": "<p>Du kannst das Rohr reparieren, das ist Klimaschutz. Du kannst Eimer aufstellen und den Boden trocken wischen, das ist Anpassung. Am besten tust du beides.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Bereich",
+            "Beispiele"
+          ],
+          [
+            [
+              "Klimaschutz",
+              "Windräder, Solaranlagen, Bahn statt Flug, Wald schützen"
+            ],
+            [
+              "Anpassung",
+              "Deiche erhöhen, Hitzeschutz, Regenwasser speichern"
+            ]
+          ],
+          [
+            1,
+            2.4
+          ],
+          "Tabelle: Beispiele für Klimaschutz und Klimaanpassung"
+        ]
+      },
+      "caption": "Schutz verringert die Ursache, Anpassung die Folgen."
+    },
+    "steps": {
+      "title": "So ordnest du eine Maßnahme ein",
+      "items": [
+        "Frage: Spart die Maßnahme Treibhausgase?",
+        "Wenn ja, ist es Klimaschutz.",
+        "Wenn sie nur Schäden mildert, ist es Anpassung."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Anpassung ersetzt keinen Klimaschutz. Deiche können Folgen mildern, ändern aber nichts an der Erwärmung.</p>"
+    },
+    "rule": "Klimaschutz: Ursachen senken. Anpassung: Folgen mildern. Beides ist nötig.",
+    "check": {
+      "q": "Welche Maßnahme ist Klimaschutz?",
+      "options": [
+        {
+          "id": "a",
+          "html": "Solaranlagen auf Dächern bauen"
+        },
+        {
+          "id": "b",
+          "html": "Einen Deich erhöhen"
+        },
+        {
+          "id": "c",
+          "html": "Sonnenschirme aufstellen"
+        }
+      ],
+      "answer": "a",
+      "why": "Solaranlagen ersetzen fossile Energie und senken den Ausstoß. Deiche und Sonnenschirme helfen nur gegen Folgen."
+    }
+  },
+  "polargebiete": {
+    "goal": "Du kannst Arktis und Antarktis unterscheiden und die Polarkreise einordnen.",
+    "tldr": [
+      "Die Arktis liegt um den Nordpol und besteht vor allem aus Meer mit Eis. Die Antarktis liegt um den Südpol und ist ein Kontinent.",
+      "Die Polarkreise liegen bei etwa 66,5 Grad nördlicher und südlicher Breite."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: Teller und Eisblock",
+      "html": "<p>Die Arktis gleicht einer Eisdecke auf einem Teller mit Wasser. Die Antarktis gleicht einem festen Eisblock auf einem Stein. Darunter liegt Land.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "",
+            "Arktis",
+            "Antarktis"
+          ],
+          [
+            [
+              "Lage",
+              "Um den Nordpol",
+              "Um den Südpol"
+            ],
+            [
+              "Untergrund",
+              "Meer mit Eis",
+              "Kontinent unter Eis"
+            ],
+            [
+              "Tiere",
+              "Eisbär, Robbe",
+              "Pinguin, Robbe"
+            ],
+            [
+              "Menschen",
+              "Wenige leben dort",
+              "Nur Forschende"
+            ]
+          ],
+          [
+            0.8,
+            1.4,
+            1.4
+          ],
+          "Tabelle: Vergleich von Arktis und Antarktis"
+        ]
+      },
+      "caption": "Zwei Polargebiete mit ganz unterschiedlichem Untergrund."
+    },
+    "steps": {
+      "title": "So unterscheidest du die Pole",
+      "items": [
+        "Prüfe: Liegt unter dem Eis Meer oder Land?",
+        "Meer heißt Arktis, Land heißt Antarktis.",
+        "Merke: Eisbären leben nur in der Arktis, Pinguine nur auf der Südhalbkugel."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Eisbären und Pinguine begegnen sich in der Natur nie. Die einen leben im Norden, die anderen im Süden.</p>"
+    },
+    "rule": "Arktis = Meer mit Eis am Nordpol. Antarktis = Kontinent mit Eis am Südpol.",
+    "check": {
+      "q": "Welches Polargebiet ist ein Kontinent?",
+      "options": [
+        {
+          "id": "a",
+          "html": "Die Antarktis"
+        },
+        {
+          "id": "b",
+          "html": "Die Arktis"
+        },
+        {
+          "id": "c",
+          "html": "Grönland-Meer"
+        }
+      ],
+      "answer": "a",
+      "why": "Die Antarktis ist Land unter einem dicken Eisschild. Die Arktis ist ein Meer."
+    }
+  },
+  "polartag-nacht": {
+    "goal": "Du kannst erklären, warum es Polartag und Polarnacht gibt.",
+    "tldr": [
+      "Die Erdachse ist um etwa 23,5 Grad geneigt. Deshalb bekommen die Pole im Sommer fast ununterbrochen Licht und im Winter keines.",
+      "Am Polarkreis gibt es mindestens einen Tag Polartag und einen Tag Polarnacht. Am Pol dauern sie etwa ein halbes Jahr."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: eine Taschenlampe und ein Ball",
+      "html": "<p>Hältst du den Ball geneigt, trifft das Licht im Sommer den Nordpol. Der Ball dreht sich, doch der Pol bleibt im Licht. Ein halbes Jahr später ist es umgekehrt.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "flowDiagram",
+        "args": [
+          [
+            "Erdachse ist geneigt|(23,5 Grad)",
+            "Erde umkreist die Sonne|(ein Jahr)",
+            "Nordpol zur Sonne|(Sommer: Polartag)",
+            "Nordpol weg von der Sonne|(Winter: Polarnacht)"
+          ],
+          "Ablauf: Wegen der Neigung der Erdachse gibt es Polartag und Polarnacht"
+        ]
+      },
+      "caption": "Die Neigung der Erdachse ist die Ursache."
+    },
+    "steps": {
+      "title": "So erklärst du Polartag und Polarnacht",
+      "items": [
+        "Beginne mit der Neigung der Erdachse.",
+        "Sage, ob der Pol der Sonne zu- oder abgewandt ist.",
+        "Folge: Sommer Tageslicht ohne Pause, Winter Dunkelheit."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Die Jahreszeiten entstehen nicht durch den Abstand zur Sonne, sondern durch die Neigung der Erdachse.</p>"
+    },
+    "rule": "Neigung der Erdachse ≈ 23,5°. Polarkreis ≈ 66,5°. Dort gibt es Polartag und Polarnacht.",
+    "check": {
+      "q": "Warum gibt es Polartag und Polarnacht?",
+      "options": [
+        {
+          "id": "a",
+          "html": "Die Erdachse ist geneigt"
+        },
+        {
+          "id": "b",
+          "html": "Die Sonne wandert am Pol auf und ab"
+        },
+        {
+          "id": "c",
+          "html": "Die Erde wird im Sommer größer"
+        }
+      ],
+      "answer": "a",
+      "why": "Durch die Neigung bleibt der Pol im Sommer im Licht und im Winter im Schatten."
+    }
+  },
+  "tundra": {
+    "goal": "Du kannst die Tundra beschreiben und erklären, warum dort keine Bäume wachsen.",
+    "tldr": [
+      "Die Tundra ist eine baumlose Landschaft in der Polarzone. Der Boden ist tief gefroren.",
+      "Moose, Flechten, Gräser und kleine Sträucher überstehen die Kälte. Bäume scheitern am kurzen, kühlen Sommer und am gefrorenen Boden."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Gefrierfach",
+      "html": "<p>Du kannst darin keine Blumen pflanzen. Selbst wenn die Oberfläche kurz antaut, fehlt tiefer der Platz für Wurzeln. In der Tundra ist der Boden ähnlich.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "flowDiagram",
+        "args": [
+          [
+            "Sehr kalt|(Winter lang)",
+            "Kurzer Sommer|(Boden taut oben auf)",
+            "Permafrost darunter|(Wurzeln finden keinen Halt)",
+            "Keine Bäume|(Tundra)"
+          ],
+          "Ablauf: Kälte, kurzer Sommer und Permafrost führen zur baumlosen Tundra"
+        ]
+      },
+      "caption": "Warum in der Tundra keine Bäume wachsen."
+    },
+    "steps": {
+      "title": "So erklärst du die Tundra",
+      "items": [
+        "Nenne das Klima: lange Winter, kurzer, kühler Sommer.",
+        "Nenne den Boden: Permafrost.",
+        "Nenne die Pflanzen: niedrig, Moose und Flechten."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Die Tundra ist keine Wüste und keine Steppe. Es fällt zwar wenig Niederschlag, aber es verdunstet auch wenig. Darum ist der Boden im Sommer oft nass.</p>"
+    },
+    "rule": "Tundra: Permafrost, niedrige Pflanzen, keine Bäume. Die Baumgrenze trennt Wald und Tundra.",
+    "check": {
+      "q": "Warum gibt es in der Tundra keine Bäume?",
+      "options": [
+        {
+          "id": "a",
+          "html": "Es ist zu kalt, der Sommer ist zu kurz und der Boden ist gefroren"
+        },
+        {
+          "id": "b",
+          "html": "Dort ist es zu heiß"
+        },
+        {
+          "id": "c",
+          "html": "Der Boden ist aus Sand"
+        }
+      ],
+      "answer": "a",
+      "why": "Bäume brauchen längere Wärme und tiefe Wurzeln. Beides fehlt in der Tundra."
+    }
+  },
+  "polar-nutzung": {
+    "goal": "Du kannst erklären, wem die Polargebiete gehören und welche Chancen und Gefahren ihre Nutzung hat.",
+    "tldr": [
+      "Die Antarktis gehört keinem Staat. Der Antarktisvertrag erlaubt nur friedliche Nutzung und Forschung.",
+      "In der Arktis grenzen mehrere Staaten an. Rohstoffe, Seewege und Fischerei bieten Chancen, bedrohen aber die empfindliche Natur."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein gemeinsamer Garten",
+      "html": "<p>Wenn alle Nachbarn dort Müll lagern oder Bäume fällen dürften, wäre er bald zerstört. Darum braucht es klare Regeln für alle. Der Antarktisvertrag ist so eine Regel.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Nutzung",
+            "Chance",
+            "Gefahr"
+          ],
+          [
+            [
+              "Erdöl und Erdgas",
+              "Energie und Einnahmen",
+              "Ölunfälle, Klimawandel"
+            ],
+            [
+              "Fischerei",
+              "Nahrung",
+              "Überfischung"
+            ],
+            [
+              "Tourismus",
+              "Einnahmen, Aufmerksamkeit",
+              "Störung der Tiere, Müll"
+            ],
+            [
+              "Seewege",
+              "Kürzere Schiffsrouten",
+              "Unfälle im Eis"
+            ]
+          ],
+          [
+            1,
+            1,
+            1.4
+          ],
+          "Tabelle: Chancen und Gefahren der Nutzung der Polargebiete"
+        ]
+      },
+      "caption": "Jede Nutzung hat zwei Seiten."
+    },
+    "steps": {
+      "title": "So wägst du ab",
+      "items": [
+        "Nenne die Chance der Nutzung.",
+        "Nenne das Risiko für Natur und Menschen.",
+        "Nenne eine Regel, die beides ausgleichen kann."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Nur weil in der Arktis Rohstoffe liegen, gehört sie nicht jedem. Rechte sind durch Seerecht und Küstenstaaten geregelt.</p>"
+    },
+    "rule": "Antarktis: Frieden und Forschung per Vertrag. Arktis: mehrere Staaten, Nutzung mit Chancen und Gefahren.",
+    "check": {
+      "q": "Was regelt der Antarktisvertrag?",
+      "options": [
+        {
+          "id": "a",
+          "html": "Friedliche Nutzung und Forschung, keine Gebietsansprüche"
+        },
+        {
+          "id": "b",
+          "html": "Er erlaubt Bergbau für alle"
+        },
+        {
+          "id": "c",
+          "html": "Er gibt die Antarktis einem Staat"
+        }
+      ],
+      "answer": "a",
+      "why": "Seit 1959 sichert er die friedliche Nutzung und Forschung. Ein späteres Zusatzprotokoll verbietet auch den Abbau von Bodenschätzen."
+    }
+  },
+  "weltbevoelkerung": {
+    "goal": "Du kannst erklären, warum die Weltbevölkerung wächst und warum das Wachstum ungleich ist.",
+    "tldr": [
+      "Die Weltbevölkerung hat 2022 die Zahl von 8 Milliarden Menschen erreicht. Sie wächst jedes Jahr um etwa 70 bis 80 Millionen.",
+      "Das Wachstum ist am größten in Afrika südlich der Sahara und in Teilen Südasiens. In Europa wächst die Bevölkerung kaum oder sinkt."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: eine Badewanne",
+      "html": "<p>Zufluss sind die Geburten, Abfluss sind die Sterbefälle. Läuft mehr hinein als hinaus, steigt der Wasserstand. So wächst die Bevölkerung.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "flowDiagram",
+        "args": [
+          [
+            "Geburtenrate|(Geburten je 1000)",
+            "minus Sterberate|(Todesfälle je 1000)",
+            "= natürliches Wachstum|(pro Jahr)"
+          ],
+          "Rechnung: Geburtenrate minus Sterberate ergibt das natürliche Bevölkerungswachstum"
+        ]
+      },
+      "caption": "Natürliches Wachstum ist die Differenz aus Geburten und Sterbefällen."
+    },
+    "steps": {
+      "title": "So erklärst du das Wachstum",
+      "items": [
+        "Vergleiche Geburtenrate und Sterberate.",
+        "Ist die Geburtenrate höher, wächst die Bevölkerung.",
+        "Nenne Gründe: weniger Kindersterblichkeit durch bessere Medizin, viele Kinder als Altersvorsorge."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Wachstum bedeutet nicht, dass alle Länder wachsen. Manche Länder wie Japan oder Italien schrumpfen.</p>"
+    },
+    "rule": "Natürliches Wachstum = Geburtenrate − Sterberate. Die Verteilung ist ungleich.",
+    "check": {
+      "q": "Wann wächst eine Bevölkerung?",
+      "options": [
+        {
+          "id": "a",
+          "html": "Wenn die Geburtenrate höher ist als die Sterberate"
+        },
+        {
+          "id": "b",
+          "html": "Wenn mehr Menschen sterben als geboren werden"
+        },
+        {
+          "id": "c",
+          "html": "Wenn es keine Geburten gibt"
+        }
+      ],
+      "answer": "a",
+      "why": "Das natürliche Wachstum ist Geburten minus Sterbefälle. Ein Überschuss an Geburten lässt die Bevölkerung wachsen."
+    }
+  },
+  "indien-china": {
+    "goal": "Du kannst das Bevölkerungswachstum in Indien erklären und die Folgen der Ein-Kind-Politik in China nennen.",
+    "tldr": [
+      "Indien ist heute das bevölkerungsreichste Land der Erde. Viele junge Menschen, Armut und fehlende Altersvorsorge halten die Geburtenrate hoch.",
+      "China begrenzte ab 1979 die Kinderzahl. Das bremste das Wachstum, führte aber zu zu wenigen jungen Menschen und zu mehr Jungen als Mädchen."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: eine Regel in der Klasse",
+      "html": "<p>Wenn nur eine Person Taschengeld bekommen darf, entsteht Druck. Genauso wirkte die Regel für Familien in China: Viele wünschten sich einen Sohn.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Land",
+            "Politik",
+            "Folge"
+          ],
+          [
+            [
+              "Indien",
+              "Familienplanung, keine Zwangsregel",
+              "Bevölkerung wächst weiter"
+            ],
+            [
+              "China",
+              "Ein-Kind-Politik 1979 bis 2015",
+              "Überalterung, Männerüberschuss"
+            ]
+          ],
+          [
+            0.8,
+            1.6,
+            1.6
+          ],
+          "Tabelle: Bevölkerungspolitik in Indien und China im Vergleich"
+        ]
+      },
+      "caption": "Zwei Länder, zwei Strategien, unterschiedliche Folgen."
+    },
+    "steps": {
+      "title": "So bewertest du die Ein-Kind-Politik",
+      "items": [
+        "Nenne das Ziel: Bevölkerungswachstum bremsen.",
+        "Nenne Folgen: weniger junge Menschen, mehr ältere.",
+        "Nenne ein Problem: Familien bevorzugten Söhne."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Die Ein-Kind-Politik gibt es seit 2016 nicht mehr. China erlaubt inzwischen zwei, später drei Kinder, doch die Geburtenrate bleibt niedrig.</p>"
+    },
+    "rule": "Indien: stark wachsend. China: Wachstum gebremst, aber Überalterung.",
+    "check": {
+      "q": "Was war eine Folge der Ein-Kind-Politik?",
+      "options": [
+        {
+          "id": "a",
+          "html": "Eine alternde Gesellschaft mit weniger jungen Menschen"
+        },
+        {
+          "id": "b",
+          "html": "Mehr Kinder pro Familie"
+        },
+        {
+          "id": "c",
+          "html": "Ein Überschuss an Mädchen"
+        }
+      ],
+      "answer": "a",
+      "why": "Weniger Geburten bedeuten weniger junge Menschen. Weil Söhne bevorzugt wurden, gibt es mehr Männer als Frauen."
+    }
+  },
+  "alterspyramide": {
+    "goal": "Du kannst eine Alterspyramide lesen und erkennen, ob ein Land jung oder alt ist.",
+    "tldr": [
+      "Eine Alterspyramide zeigt Männer links und Frauen rechts, nach Altersgruppen übereinander.",
+      "Eine breite Basis bedeutet viele Kinder, also eine junge Bevölkerung. Ein schmaler Fuß und ein breiter Bauch bedeuten eine alte Bevölkerung."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Baum im Querschnitt",
+      "html": "<p>Wie Jahresringe zeigt die Pyramide, wie viele Menschen in welchem Alter leben. Jede Ebene ist ein Jahrgang.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Form",
+            "Aussehen",
+            "Typisch für"
+          ],
+          [
+            [
+              "Pyramide",
+              "Breite Basis, spitzes Ende",
+              "Junge Welt, z. B. Niger"
+            ],
+            [
+              "Glocke",
+              "Gleichmäßig breit, dann schmaler",
+              "Stabile Bevölkerung"
+            ],
+            [
+              "Urne",
+              "Schmale Basis, breiter Bauch",
+              "Alte Welt, z. B. Japan, Deutschland"
+            ]
+          ],
+          [
+            1,
+            1.6,
+            1.6
+          ],
+          "Tabelle: Formen der Alterspyramide"
+        ]
+      },
+      "caption": "Drei typische Formen von Bevölkerungsdiagrammen."
+    },
+    "steps": {
+      "title": "So wertest du eine Alterspyramide aus",
+      "items": [
+        "Schau zuerst auf die Basis: breit oder schmal?",
+        "Schau auf die Mitte: Wo ist der breiteste Teil?",
+        "Schließe: junge oder alte Bevölkerung?"
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Eine schmale Basis ist nicht dasselbe wie eine kleine Bevölkerung. Sie zeigt nur, dass wenig Kinder geboren werden.</p>"
+    },
+    "rule": "Breite Basis = viele Kinder = junge Welt. Schmale Basis = wenige Kinder = alte Welt.",
+    "check": {
+      "q": "Was zeigt eine breite Basis?",
+      "options": [
+        {
+          "id": "a",
+          "html": "Viele Kinder und eine junge Bevölkerung"
+        },
+        {
+          "id": "b",
+          "html": "Viele alte Menschen"
+        },
+        {
+          "id": "c",
+          "html": "Eine kleine Bevölkerung"
+        }
+      ],
+      "answer": "a",
+      "why": "Die unterste Ebene steht für die Jüngsten. Ist sie breit, werden viele Kinder geboren."
+    }
+  },
+  "migration": {
+    "goal": "Du kannst Migration erklären und Push- und Pull-Faktoren unterscheiden.",
+    "tldr": [
+      "Migration heißt, dass Menschen ihren Wohnort für längere Zeit verlassen. Das kann innerhalb eines Landes oder über Grenzen sein.",
+      "Push-Faktoren drängen Menschen weg, Pull-Faktoren ziehen sie an. Meist wirken beide zusammen."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Magnet und ein Besen",
+      "html": "<p>Der Besen schiebt dich weg, das ist Push. Der Magnet zieht dich an, das ist Pull. Bei einer Wanderung wirken oft beide.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Push (Wegdrängen)",
+            "Pull (Anziehen)"
+          ],
+          [
+            [
+              "Krieg, Verfolgung",
+              "Frieden und Sicherheit"
+            ],
+            [
+              "Armut, Arbeitslosigkeit",
+              "Arbeit und Verdienst"
+            ],
+            [
+              "Dürre, Hunger",
+              "Schulen und Krankenhäuser"
+            ]
+          ],
+          [
+            1.3,
+            1.3
+          ],
+          "Tabelle: Push- und Pull-Faktoren der Migration"
+        ]
+      },
+      "caption": "Wer wandert, wägt Push und Pull ab."
+    },
+    "steps": {
+      "title": "So ordnest du einen Grund ein",
+      "items": [
+        "Frage: Kommt der Grund vom Herkunftsort oder vom Zielort?",
+        "Herkunftsort bedeutet Push.",
+        "Zielort bedeutet Pull."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Migration ist nicht immer Flucht. Flucht ist Zwang, etwa durch Krieg. Arbeitsmigration folgt dem Wunsch nach Verdienst.</p>"
+    },
+    "rule": "Push = vom Herkunftsort weg. Pull = zum Zielort hin. Migration ist ein weltweites Phänomen.",
+    "check": {
+      "q": "Was ist ein Push-Faktor?",
+      "options": [
+        {
+          "id": "a",
+          "html": "Krieg im Herkunftsland"
+        },
+        {
+          "id": "b",
+          "html": "Gute Schulen im Zielland"
+        },
+        {
+          "id": "c",
+          "html": "Hohe Löhne im Zielland"
+        }
+      ],
+      "answer": "a",
+      "why": "Push-Faktoren wirken am Herkunftsort und drängen zum Weggehen. Schulen und Löhne im Zielland sind Pull-Faktoren."
+    }
+  },
+  "megastaedte": {
+    "goal": "Du kannst Verstädterung erklären sowie Megastädte und Global Cities unterscheiden.",
+    "tldr": [
+      "Verstädterung bedeutet, dass der Anteil der Stadtbevölkerung wächst. Seit 2007 lebt weltweit mehr als die Hälfte der Menschen in Städten.",
+      "Megastädte haben mehr als 10 Millionen Einwohner. Global Cities haben weltweite wirtschaftliche Bedeutung, auch wenn sie kleiner sind."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Bienenstock",
+      "html": "<p>Immer mehr Bienen ziehen in denselben Stock. Zuerst ist er ein Zentrum. Irgendwann wird es eng. So wachsen Städte, in die viele Menschen ziehen.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Begriff",
+            "Merkmal",
+            "Beispiel"
+          ],
+          [
+            [
+              "Verstädterung",
+              "Anteil der Stadtbewohner steigt",
+              "Weltweit seit 2007 über 50 Prozent"
+            ],
+            [
+              "Megastadt",
+              "Mehr als 10 Mio. Einwohner",
+              "Tokio, Delhi, Lagos"
+            ],
+            [
+              "Global City",
+              "Weltweit wichtige Wirtschaft",
+              "New York, London, Tokio"
+            ]
+          ],
+          [
+            1,
+            1.6,
+            1.6
+          ],
+          "Tabelle: Verstädterung, Megastadt und Global City"
+        ]
+      },
+      "caption": "Drei Begriffe, die man gut auseinanderhält."
+    },
+    "steps": {
+      "title": "So unterscheidest du die Begriffe",
+      "items": [
+        "Zähle die Einwohner: mehr als 10 Millionen? Dann Megastadt.",
+        "Frage nach der Bedeutung: Sitz von Banken und Konzernen? Dann Global City.",
+        "Wächst der Anteil der Stadtbevölkerung? Dann Verstädterung."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Eine Megastadt ist nicht automatisch eine Global City. Entscheidend sind wirtschaftlicher Einfluss und weltweite Vernetzung, nicht nur die Größe.</p>"
+    },
+    "rule": "Megastadt: größer als 10 Mio. Global City: wirtschaftlich wichtig, z. B. New York.",
+    "check": {
+      "q": "Was ist eine Megastadt?",
+      "options": [
+        {
+          "id": "a",
+          "html": "Eine Stadt mit mehr als 10 Millionen Einwohnern"
+        },
+        {
+          "id": "b",
+          "html": "Eine Stadt mit mehr als 100 000 Einwohnern"
+        },
+        {
+          "id": "c",
+          "html": "Die Hauptstadt eines Landes"
+        }
+      ],
+      "answer": "a",
+      "why": "Die Vereinten Nationen nutzen die Grenze von 10 Millionen Einwohnern."
+    }
+  },
+  "megaprobleme": {
+    "goal": "Du kannst Probleme von Megastädten nennen und an Lagos und Mumbai erklären.",
+    "tldr": [
+      "Wenn Städte schneller wachsen als Wohnungen, Straßen und Wasserleitungen, entstehen Slums. Dort fehlen Wasser, Strom und sichere Häuser.",
+      "Lagos in Nigeria zieht viele Menschen an. Mumbai in Indien zeigt zwei Gesichter: reiche Viertel mit Wolkenkratzern und Slums wie Dharavi."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: eine Schulbank für alle",
+      "html": "<p>Wenn plötzlich doppelt so viele Kinder in die Klasse kommen, reichen Stühle, Bücher und Platz nicht mehr. Die Stadt wächst schneller als ihre Einrichtungen.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "flowDiagram",
+        "args": [
+          [
+            "Landflucht|(viele ziehen zu)",
+            "Wohnraum fehlt|(Slums entstehen)",
+            "Verkehr, Müll, Wasser|(Probleme)",
+            "Informelle Arbeit|(Überleben auf der Straße)"
+          ],
+          "Ablauf: Landflucht führt zu Slums und Problemen, viele überleben mit Arbeit auf der Straße"
+        ]
+      },
+      "caption": "Schnelles Wachstum erzeugt viele Probleme zugleich."
+    },
+    "steps": {
+      "title": "So beschreibst du ein Megaproblem",
+      "items": [
+        "Nenne das Problem, zum Beispiel Slums.",
+        "Nenne die Ursache: schnelles Wachstum durch Zuzug.",
+        "Nenne eine Lösung: Wohnungsbau, Wasserleitungen, Nahverkehr."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Slums sind nicht nur Orte der Not. Dort entstehen auch Arbeit, Handel und Gemeinschaft. Sie sind jedoch oft gefährlich und ohne Grundversorgung.</p>"
+    },
+    "rule": "Megastädte wachsen schneller als ihre Infrastruktur. Slums und informelle Arbeit sind die Folge.",
+    "check": {
+      "q": "Warum entstehen Slums?",
+      "options": [
+        {
+          "id": "a",
+          "html": "Es ziehen mehr Menschen zu, als Wohnungen vorhanden sind"
+        },
+        {
+          "id": "b",
+          "html": "Weil niemand mehr in die Stadt will"
+        },
+        {
+          "id": "c",
+          "html": "Weil es zu viele Parks gibt"
+        }
+      ],
+      "answer": "a",
+      "why": "Zuzug und Armut führen dazu, dass Menschen selbst Hütten bauen, wo sie Platz finden."
+    }
+  },
+  "entwicklungsstand": {
+    "goal": "Du kannst Merkmale des Entwicklungsstandes nennen und Länder einordnen.",
+    "tldr": [
+      "Der Entwicklungsstand eines Landes wird mit Indikatoren gemessen, zum Beispiel Einkommen, Lebenserwartung, Kindersterblichkeit und Bildung.",
+      "Man unterscheidet Industrieländer, Schwellenländer und Entwicklungsländer. Bangladesch gilt als Entwicklungsland, Malaysia als Schwellenland."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Zeugnis",
+      "html": "<p>Eine Note allein sagt wenig. Erst viele Fächer zusammen zeigen das Bild. Genauso wirkt ein Indikator allein nicht, mehrere zusammen geben ein Gesamtbild.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Indikator",
+            "Was er misst",
+            "Entwicklungsland oft"
+          ],
+          [
+            [
+              "BIP je Einwohner",
+              "Einkommen",
+              "niedrig"
+            ],
+            [
+              "Lebenserwartung",
+              "Gesundheit",
+              "niedriger"
+            ],
+            [
+              "Kindersterblichkeit",
+              "Gesundheitsversorgung",
+              "höher"
+            ],
+            [
+              "Alphabetisierung",
+              "Bildung",
+              "niedriger"
+            ]
+          ],
+          [
+            1.2,
+            1.2,
+            1.4
+          ],
+          "Tabelle: Indikatoren des Entwicklungsstandes"
+        ]
+      },
+      "caption": "Vier Indikatoren und was sie über ein Land verraten."
+    },
+    "steps": {
+      "title": "So ordnest du ein Land ein",
+      "items": [
+        "Sammle mehrere Indikatoren.",
+        "Vergleiche sie mit anderen Ländern.",
+        "Entscheide: Industrie-, Schwellen- oder Entwicklungsland?"
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Ein hoher Durchschnittswert bedeutet nicht, dass es allen gut geht. Ungleichheit innerhalb eines Landes ist groß.</p>"
+    },
+    "rule": "Entwicklungsstand = Einkommen, Gesundheit, Bildung. Gruppen: Industrieland, Schwellenland, Entwicklungsland.",
+    "check": {
+      "q": "Welcher Wert ist ein Indikator für Entwicklung?",
+      "options": [
+        {
+          "id": "a",
+          "html": "Die Lebenserwartung"
+        },
+        {
+          "id": "b",
+          "html": "Die Zahl der Berge"
+        },
+        {
+          "id": "c",
+          "html": "Die Größe der Fläche"
+        }
+      ],
+      "answer": "a",
+      "why": "Lebenserwartung zeigt Gesundheit und Lebensbedingungen. Fläche und Berge sagen darüber nichts."
+    }
+  },
+  "welternaehrung": {
+    "goal": "Du kannst Ursachen und Folgen von Hunger erklären.",
+    "tldr": [
+      "Unterernährung bedeutet zu wenig Nahrung, Mangelernährung zu wenig Vitamine und andere Nährstoffe.",
+      "Ursachen sind Armut, Kriege, Dürren und eine schlechte Verteilung. Hunger macht krank, und Krankheit macht arm. So entsteht ein Teufelskreis."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Teufelskreis auf dem Karussell",
+      "html": "<p>Wer wenig isst, wird schwach und kann nicht gut arbeiten. Wer nicht arbeiten kann, verdient nichts und kauft kein Essen. Das Karussell dreht sich weiter.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "flowDiagram",
+        "args": [
+          [
+            "Armut|(kein Geld für Essen)",
+            "Hunger|(Schwäche)",
+            "Krankheit|(Abwehr geschwächt)",
+            "Weniger Arbeit|(noch weniger Geld)"
+          ],
+          "Ablauf: Armut führt zu Hunger, Hunger zu Krankheit und Krankheit wieder zu Armut"
+        ]
+      },
+      "caption": "Der Teufelskreis von Armut, Hunger und Krankheit."
+    },
+    "steps": {
+      "title": "So erklärst du den Teufelskreis",
+      "items": [
+        "Beginne bei der Armut.",
+        "Zeige, wie Hunger krank macht.",
+        "Zeige, wie Krankheit wieder arm macht."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Hunger entsteht nicht, weil zu wenig Nahrung erzeugt wird. Oft fehlt Geld, oder Lebensmittel erreichen die Menschen nicht.</p>"
+    },
+    "rule": "Unterernährung = zu wenig Kalorien. Mangelernährung = zu wenig Nährstoffe. Teufelskreis: Armut, Hunger, Krankheit.",
+    "check": {
+      "q": "Was bedeutet Mangelernährung?",
+      "options": [
+        {
+          "id": "a",
+          "html": "Zu wenig Vitamine und Mineralstoffe"
+        },
+        {
+          "id": "b",
+          "html": "Zu viel Fett"
+        },
+        {
+          "id": "c",
+          "html": "Zu viel Zucker"
+        }
+      ],
+      "answer": "a",
+      "why": "Auch wer satt wird, kann mangelernährt sein, wenn wichtige Nährstoffe fehlen."
+    }
+  },
+  "entwicklungszusammenarbeit": {
+    "goal": "Du kannst erklären, was Entwicklungszusammenarbeit ist und warum Hilfe zur Selbsthilfe wichtig ist.",
+    "tldr": [
+      "Entwicklungszusammenarbeit unterstützt Länder beim Aufbau von Bildung, Gesundheit und Wirtschaft.",
+      "Nothilfe hilft sofort bei Katastrophen. Hilfe zur Selbsthilfe wirkt dauerhaft, weil Menschen eigene Fähigkeiten aufbauen."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: Fisch und Angel",
+      "html": "<p>Ein Fisch macht einen Tag satt. Eine Angel macht ein Leben lang satt. Gute Entwicklungszusammenarbeit gibt Angeln, nicht nur Fische.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Hilfeart",
+            "Ziel",
+            "Beispiel"
+          ],
+          [
+            [
+              "Nothilfe",
+              "Sofort Leben retten",
+              "Wasser und Zelte nach einem Erdbeben"
+            ],
+            [
+              "Hilfe zur Selbsthilfe",
+              "Dauerhaft verbessern",
+              "Brunnen bauen, Schulen, Ausbildung"
+            ]
+          ],
+          [
+            1.2,
+            1.4,
+            1.8
+          ],
+          "Tabelle: Nothilfe und Hilfe zur Selbsthilfe"
+        ]
+      },
+      "caption": "Zwei Arten der Hilfe, die sich ergänzen."
+    },
+    "steps": {
+      "title": "So prüfst du ein Projekt",
+      "items": [
+        "Fragen: Hilft es sofort oder dauerhaft?",
+        "Fragen: Werden die Menschen vor Ort einbezogen?",
+        "Fragen: Bleibt etwas, wenn die Helfer gehen?"
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Hilfe kann auch schaden, wenn sie lokale Bauern mit kostenlosen Lieferungen verdrängt. Darum ist die Mitarbeit vor Ort wichtig.</p>"
+    },
+    "rule": "Nothilfe rettet kurzfristig, Hilfe zur Selbsthilfe wirkt langfristig. Ziel: Menschen stärken.",
+    "check": {
+      "q": "Was ist Hilfe zur Selbsthilfe?",
+      "options": [
+        {
+          "id": "a",
+          "html": "Menschen werden befähigt, ihre Lage selbst zu verbessern"
+        },
+        {
+          "id": "b",
+          "html": "Man schickt immer wieder Lebensmittel"
+        },
+        {
+          "id": "c",
+          "html": "Man baut Mauern"
+        }
+      ],
+      "answer": "a",
+      "why": "Beispiele sind Brunnen, Schulen und Ausbildung, die dauerhaft nutzen."
+    }
+  },
+  "weltwirtschaft": {
+    "goal": "Du kannst erklären, was Globalisierung ist und wie der Welthandel abläuft.",
+    "tldr": [
+      "Globalisierung bedeutet, dass Länder wirtschaftlich eng miteinander verbunden sind. Waren werden dort hergestellt, wo es günstig ist, und überall verkauft.",
+      "Container und große Frachtschiffe machen den Transport billig. Die wichtigsten Handelspartner sind Ostasien, Europa und Nordamerika."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein T-Shirt",
+      "html": "<p>Die Baumwolle wächst in einem Land, der Stoff wird in einem anderen gewebt, genäht wird in einem dritten, verkauft wird bei uns. Ein T-Shirt hat eine Weltreise hinter sich.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "flowDiagram",
+        "args": [
+          [
+            "Rohstoff|(z. B. Baumwolle)",
+            "Herstellung|(Fabrik in Asien)",
+            "Container-Schiff|(Seeweg)",
+            "Verkauf|(Geschäft bei uns)"
+          ],
+          "Ablauf: Rohstoff, Herstellung, Transport per Containerschiff und Verkauf"
+        ]
+      },
+      "caption": "Ein Produkt kann mehrere Länder durchlaufen."
+    },
+    "steps": {
+      "title": "So beschreibst du eine Handelskette",
+      "items": [
+        "Nenne den Rohstoff und das Herkunftsland.",
+        "Nenne den Ort der Herstellung.",
+        "Nenne den Transportweg und den Verkaufsort."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Globalisierung ist nicht nur Handel mit Waren. Auch Geld, Daten und Menschen reisen um die Welt.</p>"
+    },
+    "rule": "Globalisierung = weltweite Verflechtung. Containerschiffe sind das Rückgrat des Welthandels.",
+    "check": {
+      "q": "Was bedeutet Globalisierung?",
+      "options": [
+        {
+          "id": "a",
+          "html": "Die weltweite Verflechtung von Wirtschaft und Handel"
+        },
+        {
+          "id": "b",
+          "html": "Der Handel innerhalb eines Dorfes"
+        },
+        {
+          "id": "c",
+          "html": "Der Anbau nur im eigenen Land"
+        }
+      ],
+      "answer": "a",
+      "why": "Länder sind durch Handel, Geld und Kommunikation eng verbunden."
+    }
+  },
+  "banane": {
+    "goal": "Du kannst den Weg der Banane von der Plantage in den Supermarkt beschreiben.",
+    "tldr": [
+      "Bananen wachsen in den Tropen auf großen Plantagen. Sie brauchen Wärme und viel Regen.",
+      "Sie werden grün geerntet, in Kühlschiffen transportiert und in Reifekammern gelb gemacht. Vom Verkaufspreis erhalten die Arbeiter nur einen kleinen Anteil."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Staffellauf",
+      "html": "<p>Der Stab wird von Läufer zu Läufer gereicht: Ernte, Verpackung, Schiff, Reiferei, Supermarkt. Jeder verdient etwas. Der Erste am Anfang bekommt oft am wenigsten.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "flowDiagram",
+        "args": [
+          [
+            "Plantage|(Ernte grün)",
+            "Kühlschiff|(Seeweg)",
+            "Reiferei|(gelb machen)",
+            "Supermarkt|(Verkauf)"
+          ],
+          "Weg der Banane von der Plantage über Kühlschiff und Reiferei in den Supermarkt"
+        ]
+      },
+      "caption": "Die Wertschöpfungskette der Banane."
+    },
+    "steps": {
+      "title": "So beschreibst du die Kette",
+      "items": [
+        "Nenne Anbauland und Klima.",
+        "Nenne Transport und Kühlung.",
+        "Nenne die Reifung und den Verkauf."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Bananen wachsen nicht an Bäumen, sondern an riesigen Stauden. Sie sind eine Beere und gehören zu den größten Kräutern der Welt.</p>"
+    },
+    "rule": "Banane: tropisch, Plantage, Kühlschiff, Reiferei, Supermarkt.",
+    "check": {
+      "q": "Warum werden Bananen grün geerntet?",
+      "options": [
+        {
+          "id": "a",
+          "html": "Sie reifen auf dem Transport nach und kommen unversehrt an"
+        },
+        {
+          "id": "b",
+          "html": "Grüne Bananen schmecken am besten"
+        },
+        {
+          "id": "c",
+          "html": "Sie sind sonst zu klein"
+        }
+      ],
+      "answer": "a",
+      "why": "Reif geerntete Bananen würden auf der langen Reise matschig. Daher reifen sie erst in Reifekammern."
+    }
+  },
+  "fairer-handel": {
+    "goal": "Du kannst erklären, was fairer Handel ist und welche Möglichkeiten und Grenzen er hat.",
+    "tldr": [
+      "Beim fairen Handel erhalten Erzeuger einen Mindestpreis und eine Prämie. Kinderarbeit ist verboten.",
+      "Das Fairtrade-Siegel zeigt, dass diese Regeln eingehalten werden. Weltweit gibt es aber noch viele Ungleichheiten im Handel."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Schulbasar",
+      "html": "<p>Wenn die Bäckerin nur die Hälfte ihrer Kosten zurückbekommt, backt sie bald nicht mehr. Ein fairer Preis sichert, dass sie weitermachen kann.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Merkmal",
+            "Normaler Handel",
+            "Fairer Handel"
+          ],
+          [
+            [
+              "Preis",
+              "Schwankt stark",
+              "Mindestpreis"
+            ],
+            [
+              "Prämie",
+              "Keine",
+              "Für Schulen, Gesundheit"
+            ],
+            [
+              "Kinderarbeit",
+              "Kann vorkommen",
+              "Verboten"
+            ]
+          ],
+          [
+            1,
+            1.2,
+            1.4
+          ],
+          "Tabelle: Normaler Handel und fairer Handel im Vergleich"
+        ]
+      },
+      "caption": "Fairer Handel sichert Erzeugern ein verlässliches Einkommen."
+    },
+    "steps": {
+      "title": "So bewertest du fairen Handel",
+      "items": [
+        "Nenne Vorteile für die Erzeuger.",
+        "Nenne Grenzen: höherer Preis, kleiner Marktanteil.",
+        "Entscheide, was du kaufen würdest und warum."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Ein Siegel löst nicht alle Probleme. Der faire Anteil an den Verkäufen ist klein, und Kontrollen sind aufwendig.</p>"
+    },
+    "rule": "Fairer Handel = Mindestpreis + Prämie + soziale Standards. Er ist ein Beitrag, keine komplette Lösung.",
+    "check": {
+      "q": "Was gehört zum fairen Handel?",
+      "options": [
+        {
+          "id": "a",
+          "html": "Ein Mindestpreis für die Erzeuger"
+        },
+        {
+          "id": "b",
+          "html": "Möglichst niedrige Löhne"
+        },
+        {
+          "id": "c",
+          "html": "Kinderarbeit auf Plantagen"
+        }
+      ],
+      "answer": "a",
+      "why": "Der Mindestpreis schützt Erzeuger vor starken Preisschwankungen."
+    }
+  }
+}

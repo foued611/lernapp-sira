@@ -1,0 +1,453 @@
+{
+  "schema": 1,
+  "id": "geographie",
+  "title": "Geographie-Werkstatt",
+  "greeting": "Hallo",
+  "intro": "Die Seiten folgen den Kapiteln 4 bis 8 aus Unsere Erde: Klimawandel, Polarzone, Bevölkerungsentwicklung, Entwicklungsstand und Welthandel. Erst die Lektion, dann die Übung. Du kannst auch springen.",
+  "bossTitle": "Der Weltatlas-Check",
+  "units": [
+    {
+      "id": "klima-anzeichen",
+      "color": "#E8684A",
+      "ic": "K1",
+      "title": "Anzeichen des Klimawandels",
+      "de": "Von Eis zu heiß · Kapitel 4",
+      "card": {
+        "name": "Wetter ist nicht Klima",
+        "fact": "Das Klima ist das Wetter über viele Jahre gemittelt. Der Klimawandel zeigt sich an Messreihen, nicht an einem einzelnen Tag."
+      }
+    },
+    {
+      "id": "treibhauseffekt",
+      "color": "#E8684A",
+      "ic": "K2",
+      "title": "Der Treibhauseffekt",
+      "de": "Wärme, die bleibt · Kapitel 4",
+      "card": {
+        "name": "Die Decke um die Erde",
+        "fact": "Treibhausgase halten einen Teil der Wärme zurück. Das macht die Erde bewohnbar. Mehr davon heizt sie zusätzlich auf."
+      }
+    },
+    {
+      "id": "kohlendioxid",
+      "color": "#E8684A",
+      "ic": "K3",
+      "title": "Kohlenstoffdioxid",
+      "de": "Lebensnotwendig, aber gefährlich · Kapitel 4",
+      "card": {
+        "name": "Zu viel des Guten",
+        "fact": "Pflanzen brauchen CO2. Doch Kohle, Öl, Gas und Rodung geben zu viel davon frei und verstärken den Treibhauseffekt."
+      }
+    },
+    {
+      "id": "klimafolgen",
+      "color": "#E8684A",
+      "ic": "K4",
+      "title": "Folgen: Pole und Australien",
+      "de": "Tauwetter und Trockenheit · Kapitel 4",
+      "card": {
+        "name": "Warm bedeutet mehr Schmelze",
+        "fact": "An den Polen schmilzt Eis, in Australien wird es trockener. Beides zeigt, wie der Klimawandel Regionen unterschiedlich trifft."
+      }
+    },
+    {
+      "id": "klimaschutz",
+      "color": "#E8684A",
+      "ic": "K5",
+      "title": "Klimaschutz",
+      "de": "Gemeinsam handeln · Kapitel 4",
+      "card": {
+        "name": "Zwei Grad sind die Grenze",
+        "fact": "Im Pariser Abkommen wollen die Staaten die Erwärmung deutlich unter 2 Grad halten. Klimaschutz senkt den Ausstoß, Anpassung mildert die Folgen."
+      }
+    },
+    {
+      "id": "polargebiete",
+      "color": "#4CC3F5",
+      "ic": "P1",
+      "title": "Arktis und Antarktis",
+      "de": "Bedeckt vom Eis · Kapitel 5",
+      "card": {
+        "name": "Zwei Pole, zwei Welten",
+        "fact": "Die Arktis ist ein vereistes Meer um den Nordpol. Die Antarktis ist ein Kontinent aus Eis um den Südpol."
+      }
+    },
+    {
+      "id": "polartag-nacht",
+      "color": "#4CC3F5",
+      "ic": "P2",
+      "title": "Polartag und Polarnacht",
+      "de": "Wenn die Sonne bleibt · Kapitel 5",
+      "card": {
+        "name": "Die Neigung macht den Unterschied",
+        "fact": "Weil die Erdachse geneigt ist, bleibt die Sonne am Pol im Sommer Monate oben und im Winter Monate unter dem Horizont."
+      }
+    },
+    {
+      "id": "tundra",
+      "color": "#4CC3F5",
+      "ic": "P3",
+      "title": "Die Tundra",
+      "de": "Baumlose Landschaft · Kapitel 5",
+      "card": {
+        "name": "Zu kalt für Bäume",
+        "fact": "In der Tundra taut der Boden im Sommer nur oberflächlich auf. Darunter bleibt er gefroren. Bäume finden keinen Halt."
+      }
+    },
+    {
+      "id": "polar-nutzung",
+      "color": "#4CC3F5",
+      "ic": "P4",
+      "title": "Leben und Nutzung im Polargebiet",
+      "de": "Fairbanks, Rechte, Chancen · Kapitel 5",
+      "card": {
+        "name": "Wer darf was?",
+        "fact": "Die Antarktis dient laut Vertrag Frieden und Forschung. In der Arktis wollen Staaten Rohstoffe und Seewege nutzen, was Chancen und Gefahren birgt."
+      }
+    },
+    {
+      "id": "weltbevoelkerung",
+      "color": "#9B7BFF",
+      "ic": "B1",
+      "title": "Die Weltbevölkerung wächst",
+      "de": "Wachstum, aber ungleich · Kapitel 6",
+      "card": {
+        "name": "Acht Milliarden Menschen",
+        "fact": "Die Menschheit ist stark gewachsen. Doch das Wachstum verteilt sich ungleich: Es ist dort am stärksten, wo die Geburtenrate hoch bleibt."
+      }
+    },
+    {
+      "id": "indien-china",
+      "color": "#9B7BFF",
+      "ic": "B2",
+      "title": "Indien und China",
+      "de": "Wachstum und Ein-Kind-Politik · Kapitel 6",
+      "card": {
+        "name": "Zwei Riesen, zwei Wege",
+        "fact": "Indien wächst weiter stark. China wollte das Wachstum mit der Ein-Kind-Politik bremsen und hat nun mit einer alternden Gesellschaft zu tun."
+      }
+    },
+    {
+      "id": "alterspyramide",
+      "color": "#9B7BFF",
+      "ic": "B3",
+      "title": "Alte und junge Welt",
+      "de": "Bevölkerungsdiagramme lesen · Kapitel 6",
+      "card": {
+        "name": "Die Form verrät viel",
+        "fact": "Die Form einer Alterspyramide zeigt, ob ein Land jung oder alt ist. Eine breite Basis heißt viele Kinder, ein schmaler Fuß heißt wenige."
+      }
+    },
+    {
+      "id": "migration",
+      "color": "#9B7BFF",
+      "ic": "B4",
+      "title": "Migration",
+      "de": "Ein weltweites Phänomen · Kapitel 6",
+      "card": {
+        "name": "Weggehen und Ankommen",
+        "fact": "Menschen verlassen Orte, weil etwas sie wegdrängt (Push) und anderes sie anzieht (Pull)."
+      }
+    },
+    {
+      "id": "megastaedte",
+      "color": "#9B7BFF",
+      "ic": "B5",
+      "title": "Verstädterung und Megastädte",
+      "de": "Global Cities · Kapitel 6",
+      "card": {
+        "name": "Die Welt wird städtisch",
+        "fact": "Seit 2007 leben mehr Menschen in Städten als auf dem Land. Immer mehr Städte haben über zehn Millionen Einwohner."
+      }
+    },
+    {
+      "id": "megaprobleme",
+      "color": "#9B7BFF",
+      "ic": "B6",
+      "title": "Megaprobleme: Lagos und Mumbai",
+      "de": "Zwei Gesichter einer Stadt · Kapitel 6",
+      "card": {
+        "name": "Glanz und Elend",
+        "fact": "Megastädte sind Chancenorte und Problemorte. Neben Hochhäusern entstehen Slums. Viele Menschen überleben durch Arbeit auf der Straße."
+      }
+    },
+    {
+      "id": "entwicklungsstand",
+      "color": "#3DD6B0",
+      "ic": "E1",
+      "title": "Entwicklungsstand messen",
+      "de": "Unsere Welt, eine Welt? · Kapitel 7",
+      "card": {
+        "name": "Mehr als ein Zahlenwert",
+        "fact": "Ob ein Land entwickelt ist, zeigt sich an mehreren Merkmalen: Einkommen, Gesundheit und Bildung."
+      }
+    },
+    {
+      "id": "welternaehrung",
+      "color": "#3DD6B0",
+      "ic": "E2",
+      "title": "Hunger und Überfluss",
+      "de": "Welternährung · Kapitel 7",
+      "card": {
+        "name": "Genug für alle, aber nicht bei allen",
+        "fact": "Weltweit werden genug Lebensmittel erzeugt. Trotzdem hungern Menschen, weil Armut und Verteilung versagen."
+      }
+    },
+    {
+      "id": "entwicklungszusammenarbeit",
+      "color": "#3DD6B0",
+      "ic": "E3",
+      "title": "Entwicklungszusammenarbeit",
+      "de": "Hilfe zur Selbsthilfe · Kapitel 7",
+      "card": {
+        "name": "Angeln statt Fische verschenken",
+        "fact": "Gute Hilfe stärkt Menschen, damit sie sich selbst helfen können."
+      }
+    },
+    {
+      "id": "weltwirtschaft",
+      "color": "#E0A82E",
+      "ic": "W1",
+      "title": "Weltwirtschaft und Welthandel",
+      "de": "Weltweit verflochten · Kapitel 8",
+      "card": {
+        "name": "Alles hängt zusammen",
+        "fact": "Waren, Geld und Informationen reisen um die Welt. Container machen den Transport schnell und billig."
+      }
+    },
+    {
+      "id": "banane",
+      "color": "#E0A82E",
+      "ic": "W2",
+      "title": "Die Banane",
+      "de": "Von der Plantage in den Supermarkt · Kapitel 8",
+      "card": {
+        "name": "Eine Frucht mit langer Reise",
+        "fact": "Bananen wachsen in den Tropen auf Plantagen und reisen gekühlt nach Europa. Sie werden grün geerntet und erst hier gelb gemacht."
+      }
+    },
+    {
+      "id": "fairer-handel",
+      "color": "#E0A82E",
+      "ic": "W3",
+      "title": "Fairer Handel",
+      "de": "Gerechter Welthandel? · Kapitel 8",
+      "card": {
+        "name": "Mehr für die, die anbauen",
+        "fact": "Fairer Handel zahlt Mindestpreise und Prämien. So bleibt mehr Geld bei den Erzeugern."
+      }
+    }
+  ],
+  "notes": {
+    "klima-anzeichen": [
+      [
+        "Wetter und Klima",
+        "Wetter ist der Zustand der Luft an einem Ort und Tag. Klima ist der typische Wetterablauf über mindestens 30 Jahre."
+      ],
+      [
+        "Anzeichen",
+        "Höhere Durchschnittstemperaturen, schmelzende Gletscher, weniger Meereis, steigender Meeresspiegel und mehr Extremwetter."
+      ]
+    ],
+    "treibhauseffekt": [
+      [
+        "Natürlich",
+        "Ohne Treibhauseffekt wäre es im Mittel etwa minus 18 Grad kalt. Mit ihm sind es etwa 15 Grad."
+      ],
+      [
+        "Zusätzlich",
+        "Menschen setzen mehr Treibhausgase frei, vor allem Kohlenstoffdioxid und Methan. Das verstärkt den Effekt."
+      ]
+    ],
+    "kohlendioxid": [
+      [
+        "Quellen",
+        "Verbrennen von Kohle, Erdöl und Erdgas sowie das Roden von Wäldern setzen CO2 frei."
+      ],
+      [
+        "Senken",
+        "Wälder und Ozeane nehmen CO2 auf. Sie heißen CO2-Senken."
+      ]
+    ],
+    "klimafolgen": [
+      [
+        "Pole",
+        "Meereis schrumpft, Landeis schmilzt, Permafrost taut. Dadurch steigt der Meeresspiegel und Lebensräume gehen verloren."
+      ],
+      [
+        "Australien",
+        "Längere Dürren, mehr Buschbrände, Wasserknappheit und gebleichte Korallen am Great Barrier Reef."
+      ]
+    ],
+    "klimaschutz": [
+      [
+        "Klimaschutz",
+        "Er verringert den Ausstoß von Treibhausgasen, zum Beispiel durch Wind, Sonne und Energiesparen."
+      ],
+      [
+        "Anpassung",
+        "Sie mildert Folgen, die schon da sind, zum Beispiel durch höhere Deiche oder Schatten in Städten."
+      ]
+    ],
+    "polargebiete": [
+      [
+        "Arktis",
+        "Meer mit Eis, umgeben von Land (Nordamerika, Europa, Asien). Dort lebt der Eisbär."
+      ],
+      [
+        "Antarktis",
+        "Kontinent mit einem dicken Eisschild. Dort lebt der Pinguin."
+      ]
+    ],
+    "polartag-nacht": [
+      [
+        "Polartag",
+        "Im Sommer geht die Sonne hinter dem Polarkreis tagelang nicht unter. Das heißt auch Mitternachtssonne."
+      ],
+      [
+        "Polarnacht",
+        "Im Winter bleibt die Sonne hinter dem Polarkreis tagelang unter dem Horizont."
+      ]
+    ],
+    "tundra": [
+      [
+        "Boden",
+        "Dauerhaft gefroren (Permafrost). Im kurzen Sommer taut nur die oberste Schicht."
+      ],
+      [
+        "Pflanzen",
+        "Moose, Flechten, Gräser und Zwergsträucher. Keine Bäume, weil der Sommer zu kurz und kühl ist."
+      ]
+    ],
+    "polar-nutzung": [
+      [
+        "Leben",
+        "Fairbanks in Alaska liegt in der Nähe des Polarkreises. Häuser sind gedämmt und stehen oft auf Pfählen, damit der Permafrost nicht taut."
+      ],
+      [
+        "Recht",
+        "Der Antarktisvertrag von 1959 sichert friedliche Nutzung und Forschung. Die Arktis grenzt an mehrere Staaten."
+      ]
+    ],
+    "weltbevoelkerung": [
+      [
+        "Natürliches Wachstum",
+        "Geburten minus Sterbefälle. Ist die Geburtenrate höher als die Sterberate, wächst die Bevölkerung."
+      ],
+      [
+        "Verteilung",
+        "Dicht besiedelt sind Süd- und Ostasien und Europa. Dünn besiedelt sind Wüsten, Polargebiete, hohe Gebirge und Regenwälder."
+      ]
+    ],
+    "indien-china": [
+      [
+        "Indien",
+        "2023 wurde Indien nach Schätzung der UN das bevölkerungsreichste Land. Armut, Tradition und Altersvorsorge halten die Kinderzahl hoch."
+      ],
+      [
+        "China",
+        "Die Ein-Kind-Politik von 1979 bis 2015 bremste das Wachstum, führte aber zu Überalterung und einem Männerüberschuss."
+      ]
+    ],
+    "alterspyramide": [
+      [
+        "Lesen",
+        "Links Männer, rechts Frauen. Von unten nach oben steigt das Alter. Die Breite zeigt die Zahl der Menschen."
+      ],
+      [
+        "Formen",
+        "Pyramide: viele Kinder, junge Bevölkerung. Urne: wenige Kinder, viele Alte."
+      ]
+    ],
+    "migration": [
+      [
+        "Push-Faktoren",
+        "Armut, Krieg, Hunger, Dürre, Arbeitslosigkeit, Verfolgung."
+      ],
+      [
+        "Pull-Faktoren",
+        "Arbeit, Sicherheit, Bildung, Gesundheitsversorgung, Familie."
+      ]
+    ],
+    "megastaedte": [
+      [
+        "Verstädterung",
+        "Der Anteil der Stadtbewohner steigt, vor allem durch Landflucht und Geburtenüberschuss."
+      ],
+      [
+        "Megastadt",
+        "Eine Stadt mit mehr als 10 Millionen Einwohnern."
+      ]
+    ],
+    "megaprobleme": [
+      [
+        "Probleme",
+        "Slums, Verkehr, Müll, schmutzige Luft, fehlendes Wasser und fehlende Wohnungen."
+      ],
+      [
+        "Beispiele",
+        "Lagos (Nigeria) wächst schnell. Mumbai (Indien) hat Wolkenkratzer und den Slum Dharavi."
+      ]
+    ],
+    "entwicklungsstand": [
+      [
+        "Indikatoren",
+        "Bruttoinlandsprodukt je Einwohner, Lebenserwartung, Kindersterblichkeit, Alphabetisierung."
+      ],
+      [
+        "Gruppen",
+        "Industrieland, Schwellenland, Entwicklungsland. Die Grenzen sind fließend."
+      ]
+    ],
+    "welternaehrung": [
+      [
+        "Hunger",
+        "Unterernährung: zu wenig Energie. Mangelernährung: zu wenig Vitamine und Mineralstoffe."
+      ],
+      [
+        "Überfluss",
+        "In reichen Ländern wird viel Essen weggeworfen. Übergewicht ist ein wachsendes Problem."
+      ]
+    ],
+    "entwicklungszusammenarbeit": [
+      [
+        "Formen",
+        "Staatliche Hilfe, Organisationen wie UNICEF oder Welthungerhilfe, Nothilfe nach Katastrophen."
+      ],
+      [
+        "Ziel",
+        "Hilfe zur Selbsthilfe: Brunnen, Schulen, Ausbildung, faire Preise."
+      ]
+    ],
+    "weltwirtschaft": [
+      [
+        "Globalisierung",
+        "Die weltweite Verflechtung von Wirtschaft, Handel und Kommunikation."
+      ],
+      [
+        "Handelswege",
+        "Wichtige Seewege führen über den Nordatlantik, durch den Suezkanal und den Panamakanal."
+      ]
+    ],
+    "banane": [
+      [
+        "Anbau",
+        "Tropisches Klima mit Wärme und viel Regen, zum Beispiel in Ecuador, Kolumbien und Costa Rica."
+      ],
+      [
+        "Transport",
+        "Grün geerntet, im Kühlschiff transportiert, in Reifekammern gelb gemacht."
+      ]
+    ],
+    "fairer-handel": [
+      [
+        "Fairtrade",
+        "Mindestpreis, Prämie für Gemeinschaftsprojekte, Verbot von Kinderarbeit, soziale Standards."
+      ],
+      [
+        "Grenzen",
+        "Fairer Handel hilft, löst aber nicht alle Probleme des Welthandels."
+      ]
+    ]
+  }
+}
