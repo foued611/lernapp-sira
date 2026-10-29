@@ -7,8 +7,9 @@ import geometrie from './geometrie/logic.js';
 import englisch from './englisch/logic.js';
 import decouvertes from './decouvertes/logic.js';
 import physik from './physik/logic.js';
+import geographie from './geographie/logic.js';
 
-const LOGIC = { deutsch, geometrie, mathe, englisch, 'decouvertes-2': decouvertes, 'info-zahlen': infoZahlen, physik };
+const LOGIC = { deutsch, geometrie, mathe, englisch, 'decouvertes-2': decouvertes, 'info-zahlen': infoZahlen, physik, geographie };
 
 /** Logik der App mit der Kennung id, sonst ein leeres Objekt. */
 export const logicFor = (id) => (Object.hasOwn(LOGIC, id) ? LOGIC[id] : {});

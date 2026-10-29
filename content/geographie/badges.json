@@ -1,0 +1,115 @@
+[
+  {
+    "id": "first",
+    "n": "Erste Station",
+    "d": "Die erste Seite geübt",
+    "rule": {
+      "type": "anyUnit"
+    }
+  },
+  {
+    "id": "perfect",
+    "n": "Fehlerfrei",
+    "d": "Eine Runde ohne Fehler",
+    "rule": {
+      "type": "perfectRound"
+    }
+  },
+  {
+    "id": "combo",
+    "n": "Im Lauf",
+    "d": "Fünf richtige Antworten hintereinander",
+    "rule": {
+      "type": "combo",
+      "min": 5
+    }
+  },
+  {
+    "id": "streak",
+    "n": "Dranbleiben",
+    "d": "Drei Tage in Folge geübt",
+    "rule": {
+      "type": "streak",
+      "days": 3
+    }
+  },
+  {
+    "id": "boss",
+    "n": "Weltatlas-Check",
+    "d": "Den Endgegner besiegt",
+    "rule": {
+      "type": "boss"
+    }
+  },
+  {
+    "id": "klima",
+    "n": "Klima-Experte",
+    "d": "Alle Seiten zum Klimawandel mit mindestens einem Stern",
+    "rule": {
+      "type": "units",
+      "ids": [
+        "klima-anzeichen",
+        "treibhauseffekt",
+        "kohlendioxid",
+        "klimafolgen",
+        "klimaschutz"
+      ]
+    }
+  },
+  {
+    "id": "polar",
+    "n": "Polarexperte",
+    "d": "Alle Seiten zur Polarzone mit mindestens einem Stern",
+    "rule": {
+      "type": "units",
+      "ids": [
+        "polargebiete",
+        "polartag-nacht",
+        "tundra",
+        "polar-nutzung"
+      ]
+    }
+  },
+  {
+    "id": "bevoelkerung",
+    "n": "Bevölkerungs-Profi",
+    "d": "Alle Seiten zur Bevölkerungsentwicklung mit mindestens einem Stern",
+    "rule": {
+      "type": "units",
+      "ids": [
+        "weltbevoelkerung",
+        "indien-china",
+        "alterspyramide",
+        "migration",
+        "megastaedte",
+        "megaprobleme"
+      ]
+    }
+  },
+  {
+    "id": "entwicklung",
+    "n": "Weltbürger",
+    "d": "Alle Seiten zum Entwicklungsstand mit mindestens einem Stern",
+    "rule": {
+      "type": "units",
+      "ids": [
+        "entwicklungsstand",
+        "welternaehrung",
+        "entwicklungszusammenarbeit"
+      ]
+    }
+  },
+  {
+    "id": "wirtschaft",
+    "n": "Welthandels-Profi",
+    "d": "Alle Seiten zum Wirtschaftlichen Handeln mit mindestens einem Stern",
+    "rule": {
+      "type": "units",
+      "ids": [
+        "weltwirtschaft",
+        "banane",
+        "fairer-handel"
+      ]
+    }
+  }
+]
