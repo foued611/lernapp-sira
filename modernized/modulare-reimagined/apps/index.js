@@ -9,8 +9,9 @@ import decouvertes from './decouvertes/logic.js';
 import physik from './physik/logic.js';
 import geographie from './geographie/logic.js';
 import biologie from './biologie/logic.js';
+import musik from './musik/logic.js';
 
-const LOGIC = { deutsch, geometrie, mathe, englisch, 'decouvertes-2': decouvertes, 'info-zahlen': infoZahlen, physik, geographie, biologie };
+const LOGIC = { deutsch, geometrie, mathe, englisch, 'decouvertes-2': decouvertes, 'info-zahlen': infoZahlen, physik, geographie, biologie, musik };
 
 /** Logik der App mit der Kennung id, sonst ein leeres Objekt. */
 export const logicFor = (id) => (Object.hasOwn(LOGIC, id) ? LOGIC[id] : {});

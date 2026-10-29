@@ -15,7 +15,8 @@ export const SUBJECT_COLORS = Object.freeze({
   Informatik: '#FF9F43',
   Physik: '#8BD450',
   Geographie: '#E0A82E',
-  Biologie: '#2E9E5B'
+  Biologie: '#2E9E5B',
+  Musik: '#C97B3A'
 });
 
 // Eine Kachel öffnet die App über ?app=<id> (siehe startseite.js). Die alten Pfade apps/<name>/index.html
@@ -29,7 +30,8 @@ export const APPS = Object.freeze([
   { id: 'deutsch', subject: 'Deutsch', title: 'Deutsch-Werkstatt', desc: 'Inhaltsangabe, Adverbialsätze, Kommas, das und dass, Passiv, sprachliche Bilder, Rechtschreibung und Lesen.', status: LIVE },
   { id: 'physik', subject: 'Physik', title: 'Physik-Werkstatt', desc: 'Schall, Licht und Mechanik nach dem Bildungsplan Klasse 7/8: Schwingungen, Frequenz, Spiegel, Brechung, Geschwindigkeit und Kräfte.', status: LIVE },
   { id: 'geographie', subject: 'Geographie', title: 'Geographie-Werkstatt', desc: 'Erdoberfläche, Klima und Vegetation, Tropen, Klimawandel, Polarzone, Bevölkerung, Entwicklungsstand und Welthandel. Nach den Kapiteln 1 bis 8 von Unsere Erde.', status: LIVE },
-  { id: 'biologie', subject: 'Biologie', title: 'Biologie-Werkstatt', desc: 'Zelle, Fotosynthese, Zellatmung, Ernährung und Verdauung, Lunge, Blut und Kreislauf, Fortpflanzung. Nach den Kapiteln 1 bis 3 von Biosphäre 7/8.', status: LIVE }
+  { id: 'biologie', subject: 'Biologie', title: 'Biologie-Werkstatt', desc: 'Zelle, Fotosynthese, Zellatmung, Ernährung und Verdauung, Lunge, Blut und Kreislauf, Fortpflanzung. Nach den Kapiteln 1 bis 3 von Biosphäre 7/8.', status: LIVE },
+  { id: 'musik', subject: 'Musik', title: 'Musik-Werkstatt', desc: 'Takt, Dur und Moll, Akkorde, Stimme, Instrumente, Barock und Klassik, Blues und Jazz, Pop, Oper und Musical, Urheberrecht. Nach den Kapiteln von MusiX 2.', status: LIVE }
 ]);
 
 const isText = (value) => typeof value === 'string' && value.trim() !== '';
