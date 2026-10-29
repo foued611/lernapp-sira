@@ -1,0 +1,1496 @@
+{
+  "items": {
+    "pflanzen-tierzelle": [
+      {
+        "q": "Steuerzentrale",
+        "kind": "gap",
+        "s": "Der ___ steuert die Vorgänge in der Zelle.",
+        "a": "Zellkern",
+        "wrong": [
+          "Chloroplast",
+          "Zellwand",
+          "Zellsaft"
+        ],
+        "why": "Im Zellkern liegen die Erbinformationen. Er steuert die Zelle."
+      },
+      {
+        "q": "Pflanzen-Stabilität",
+        "kind": "gap",
+        "s": "Die ___ gibt der Pflanzenzelle Festigkeit.",
+        "a": "Zellwand",
+        "wrong": [
+          "Zellmembran",
+          "Vakuole",
+          "Mitochondrie"
+        ],
+        "why": "Die Zellwand umgibt die Pflanzenzelle. Tierzellen haben keine."
+      },
+      {
+        "q": "Fotosynthese-Ort",
+        "kind": "gap",
+        "s": "In den ___ läuft die Fotosynthese ab.",
+        "a": "Chloroplasten",
+        "wrong": [
+          "Mitochondrien",
+          "Vakuolen",
+          "Zellkernen"
+        ],
+        "why": "Chloroplasten enthalten Chlorophyll und stellen Traubenzucker her."
+      },
+      {
+        "q": "Energie",
+        "kind": "gap",
+        "s": "In den ___ wird Energie aus Traubenzucker bereitgestellt.",
+        "a": "Mitochondrien",
+        "wrong": [
+          "Chloroplasten",
+          "Zellwänden",
+          "Vakuolen"
+        ],
+        "why": "Mitochondrien sind die Orte der Zellatmung."
+      },
+      {
+        "q": "Grenze der Zelle",
+        "kind": "gap",
+        "s": "Die ___ regelt, was in die Zelle hinein und aus ihr heraus darf.",
+        "a": "Zellmembran",
+        "wrong": [
+          "Zellwand",
+          "Vakuole",
+          "Zellplasma"
+        ],
+        "why": "Die Zellmembran ist die Grenzschicht der Zelle und wirkt wie ein Filter."
+      },
+      {
+        "q": "Zellsaft",
+        "kind": "gap",
+        "s": "In der großen ___ der Pflanzenzelle ist Zellsaft mit Wasser gespeichert.",
+        "a": "Vakuole",
+        "wrong": [
+          "Zellwand",
+          "Membran",
+          "Mitochondrie"
+        ],
+        "why": "Die Vakuole speichert Wasser und gelöste Stoffe und stabilisiert die Zelle."
+      },
+      {
+        "q": "Welcher Bestandteil kommt nur in Pflanzenzellen vor?",
+        "a": "Chloroplasten",
+        "wrong": [
+          "Zellkern",
+          "Zellmembran",
+          "Zellplasma"
+        ],
+        "why": "Chloroplasten gibt es nur in Pflanzenzellen. Zellkern, Membran und Plasma haben beide."
+      },
+      {
+        "q": "Welcher Bestandteil fehlt der Tierzelle?",
+        "a": "Zellwand",
+        "wrong": [
+          "Zellkern",
+          "Zellmembran",
+          "Mitochondrien"
+        ],
+        "why": "Tierzellen haben keine Zellwand. Alle anderen Bestandteile besitzen sie."
+      },
+      {
+        "q": "Wie heißt der grüne Farbstoff in den Chloroplasten?",
+        "a": "Chlorophyll",
+        "wrong": [
+          "Hämoglobin",
+          "Zellsaft",
+          "Stärke"
+        ],
+        "why": "Chlorophyll fängt Licht für die Fotosynthese ein."
+      },
+      {
+        "q": "Welche Aussage über die Zellwand stimmt?",
+        "a": "Sie umgibt Pflanzenzellen und stabilisiert sie.",
+        "wrong": [
+          "Sie steuert den Stoffaustausch genauer als die Membran.",
+          "Sie kommt in allen Zellen vor.",
+          "Sie enthält die Erbinformation."
+        ],
+        "why": "Die Zellwand gibt Halt. Den Stoffaustausch regelt die Zellmembran."
+      },
+      {
+        "q": "Eine Zelle hat Zellwand und Chloroplasten. Was für eine Zelle ist es?",
+        "a": "Pflanzenzelle",
+        "wrong": [
+          "Tierzelle",
+          "Muskelzelle des Menschen",
+          "Zelle aus der Mundschleimhaut"
+        ],
+        "why": "Zellwand und Chloroplasten gibt es nur bei Pflanzen."
+      }
+    ],
+    "mikroskop": [
+      {
+        "q": "Okular",
+        "kind": "gap",
+        "s": "Durch das ___ schaust du ins Mikroskop.",
+        "a": "Okular",
+        "wrong": [
+          "Objektiv",
+          "Stativ",
+          "Deckglas"
+        ],
+        "why": "Das Okular liegt oben am Tubus, an ihm sitzt dein Auge."
+      },
+      {
+        "q": "Objektiv",
+        "kind": "gap",
+        "s": "Das ___ sitzt am Revolver direkt über dem Präparat.",
+        "a": "Objektiv",
+        "wrong": [
+          "Okular",
+          "Tisch",
+          "Spiegel"
+        ],
+        "why": "Objektive sitzen am Objektivrevolver. Sie machen das erste vergrößerte Bild."
+      },
+      {
+        "q": "Rechnung",
+        "kind": "gap",
+        "s": "Gesamtvergrößerung gleich Okular ___ Objektiv.",
+        "a": "mal",
+        "wrong": [
+          "plus",
+          "minus",
+          "geteilt durch"
+        ],
+        "why": "Die beiden Vergrößerungen werden multipliziert."
+      },
+      {
+        "q": "Scharf stellen",
+        "kind": "gap",
+        "s": "Bei starker Vergrößerung stellt man nur mit dem ___ scharf.",
+        "a": "Feintrieb",
+        "wrong": [
+          "Grobtrieb",
+          "Spiegel",
+          "Revolver"
+        ],
+        "why": "Der Grobtrieb könnte das Objektiv auf das Präparat drücken."
+      },
+      {
+        "q": "Beginn",
+        "kind": "gap",
+        "s": "Man beginnt immer mit dem ___ Objektiv.",
+        "a": "kleinsten",
+        "wrong": [
+          "größten",
+          "stärksten",
+          "schwersten"
+        ],
+        "why": "Mit kleiner Vergrößerung findet man das Präparat am leichtesten."
+      },
+      {
+        "q": "Deckglas",
+        "kind": "gap",
+        "s": "Das Präparat wird mit einem ___ abgedeckt.",
+        "a": "Deckglas",
+        "wrong": [
+          "Okular",
+          "Spiegel",
+          "Revolver"
+        ],
+        "why": "Das Deckglas schützt das Objektiv und macht das Präparat flach."
+      },
+      {
+        "q": "Okular 10-fach, Objektiv 10-fach. Gesamtvergrößerung?",
+        "a": "100-fach",
+        "wrong": [
+          "20-fach",
+          "10-fach",
+          "1000-fach"
+        ],
+        "why": "10 mal 10 ergibt 100."
+      },
+      {
+        "q": "Okular 10-fach, Objektiv 40-fach. Gesamtvergrößerung?",
+        "a": "400-fach",
+        "wrong": [
+          "50-fach",
+          "4-fach",
+          "4000-fach"
+        ],
+        "why": "10 mal 40 ergibt 400."
+      },
+      {
+        "q": "Welche Eigenschaft braucht ein gutes Präparat?",
+        "a": "Es ist dünn und durchsichtig.",
+        "wrong": [
+          "Es ist möglichst dick.",
+          "Es ist undurchsichtig.",
+          "Es ist trocken."
+        ],
+        "why": "Licht muss durch das Präparat hindurchgehen."
+      },
+      {
+        "q": "Wie zeichnet man ein mikroskopisches Bild?",
+        "a": "Mit spitzem Bleistift, ohne Schraffur, mit Beschriftungslinien",
+        "wrong": [
+          "Mit Filzstift und viel Farbe",
+          "Als grobe Skizze ohne Beschriftung",
+          "Nur einen kleinen Teil ohne Linien"
+        ],
+        "why": "Eine genaue, saubere Zeichnung zeigt klare Umrisse und Beschriftung."
+      }
+    ],
+    "zelle-organismus": [
+      {
+        "q": "Gewebe",
+        "kind": "gap",
+        "s": "Viele gleiche Zellen mit derselben Aufgabe bilden ein ___ .",
+        "a": "Gewebe",
+        "wrong": [
+          "Organ",
+          "Organsystem",
+          "Organismus"
+        ],
+        "why": "Gleichartige Zellen bilden ein Gewebe."
+      },
+      {
+        "q": "Organ",
+        "kind": "gap",
+        "s": "Mehrere Gewebe bilden zusammen ein ___ .",
+        "a": "Organ",
+        "wrong": [
+          "Gewebe",
+          "Zelle",
+          "Zellkern"
+        ],
+        "why": "Ein Organ besteht aus mehreren Geweben und hat eine Aufgabe."
+      },
+      {
+        "q": "Organsystem",
+        "kind": "gap",
+        "s": "Das Herz und die Gefäße gehören zum ___ .",
+        "a": "Organsystem",
+        "wrong": [
+          "Gewebe",
+          "Zellplasma",
+          "Zellkern"
+        ],
+        "why": "Zusammengehörende Organe bilden ein Organsystem."
+      },
+      {
+        "q": "Zellvermehrung",
+        "kind": "gap",
+        "s": "Lebewesen wachsen durch Zell___ .",
+        "a": "teilung",
+        "wrong": [
+          "streckung",
+          "wand",
+          "kern"
+        ],
+        "why": "Bei der Zellteilung entstehen aus einer Zelle zwei."
+      },
+      {
+        "q": "Pflanzenwachstum",
+        "kind": "gap",
+        "s": "Pflanzenzellen wachsen außerdem durch Zell___ .",
+        "a": "streckung",
+        "wrong": [
+          "teilung",
+          "atmung",
+          "wand"
+        ],
+        "why": "Die Zelle nimmt Wasser auf und dehnt sich aus. Das macht Pflanzen schnell größer."
+      },
+      {
+        "q": "Einzeller",
+        "kind": "gap",
+        "s": "Ein Lebewesen aus nur einer Zelle heißt ___ .",
+        "a": "Einzeller",
+        "wrong": [
+          "Gewebe",
+          "Organ",
+          "Mehrzeller"
+        ],
+        "why": "Beim Einzeller übernimmt die eine Zelle alle Aufgaben."
+      },
+      {
+        "q": "Welches Beispiel ist ein Gewebe?",
+        "a": "Muskelgewebe",
+        "wrong": [
+          "Herz",
+          "Lunge",
+          "Mensch"
+        ],
+        "why": "Muskelgewebe besteht aus vielen gleichen Muskelzellen."
+      },
+      {
+        "q": "Welches Beispiel ist ein Organ?",
+        "a": "Magen",
+        "wrong": [
+          "Muskelzelle",
+          "Nervenzelle",
+          "Zellkern"
+        ],
+        "why": "Der Magen besteht aus mehreren Geweben."
+      },
+      {
+        "q": "Welche Stufe kommt direkt nach dem Organ?",
+        "a": "Organsystem",
+        "wrong": [
+          "Gewebe",
+          "Zelle",
+          "Zellkern"
+        ],
+        "why": "Organe bilden gemeinsam ein Organsystem."
+      },
+      {
+        "q": "Warum haben Nerven- und Muskelzellen verschiedene Formen?",
+        "a": "Sie haben verschiedene Aufgaben.",
+        "wrong": [
+          "Sie haben verschiedene Erbinformationen.",
+          "Sie sind verschieden alt.",
+          "Sie stammen aus verschiedenen Organen."
+        ],
+        "why": "Zellen spezialisieren sich: Die Form passt zur Aufgabe."
+      }
+    ],
+    "fotosynthese": [
+      {
+        "q": "Ausgangsstoff",
+        "kind": "gap",
+        "s": "Pflanzen nehmen aus der Luft ___ auf.",
+        "a": "Kohlenstoffdioxid",
+        "wrong": [
+          "Sauerstoff",
+          "Stickstoff",
+          "Traubenzucker"
+        ],
+        "why": "Kohlenstoffdioxid ist neben Wasser der Ausgangsstoff der Fotosynthese."
+      },
+      {
+        "q": "Produkt",
+        "kind": "gap",
+        "s": "Bei der Fotosynthese entsteht ___ .",
+        "a": "Traubenzucker",
+        "wrong": [
+          "Wasser",
+          "Kohlenstoffdioxid",
+          "Fett"
+        ],
+        "why": "Traubenzucker ist das energiereiche Produkt."
+      },
+      {
+        "q": "Nebenprodukt",
+        "kind": "gap",
+        "s": "Außerdem wird ___ abgegeben.",
+        "a": "Sauerstoff",
+        "wrong": [
+          "Kohlenstoffdioxid",
+          "Stärke",
+          "Salz"
+        ],
+        "why": "Sauerstoff entsteht als Nebenprodukt und gelangt in die Luft."
+      },
+      {
+        "q": "Energiequelle",
+        "kind": "gap",
+        "s": "Die Energie für die Fotosynthese liefert das ___ .",
+        "a": "Licht",
+        "wrong": [
+          "Wasser",
+          "Chlorophyll",
+          "Salz"
+        ],
+        "why": "Ohne Licht kann die Fotosynthese nicht ablaufen."
+      },
+      {
+        "q": "Ort",
+        "kind": "gap",
+        "s": "Die Fotosynthese läuft in den ___ ab.",
+        "a": "Chloroplasten",
+        "wrong": [
+          "Mitochondrien",
+          "Zellwänden",
+          "Vakuolen"
+        ],
+        "why": "Chloroplasten enthalten Chlorophyll."
+      },
+      {
+        "q": "Speicherstoff",
+        "kind": "gap",
+        "s": "Traubenzucker wird in Pflanzen oft als ___ gespeichert.",
+        "a": "Stärke",
+        "wrong": [
+          "Fett",
+          "Salz",
+          "Wasser"
+        ],
+        "why": "Stärke besteht aus vielen verbundenen Traubenzucker-Teilchen."
+      },
+      {
+        "q": "Womit weist man Stärke nach?",
+        "a": "Iod-Kaliumiodid-Lösung",
+        "wrong": [
+          "Kalkwasser",
+          "Wasser",
+          "Glut"
+        ],
+        "why": "Mit Iod färbt sich Stärke blauviolett."
+      },
+      {
+        "q": "Wo nimmt das Blatt Kohlenstoffdioxid auf?",
+        "a": "Durch die Spaltöffnungen",
+        "wrong": [
+          "Durch die Wurzeln",
+          "Durch die Blüten",
+          "Durch die Zellwand"
+        ],
+        "why": "Spaltöffnungen sind kleine Öffnungen vor allem auf der Blattunterseite."
+      },
+      {
+        "q": "Woher bekommt die Pflanze das Wasser für die Fotosynthese?",
+        "a": "Über die Wurzeln",
+        "wrong": [
+          "Aus der Luft",
+          "Aus dem Traubenzucker",
+          "Aus den Spaltöffnungen"
+        ],
+        "why": "Die Wurzeln nehmen Wasser auf. Leitbündel transportieren es zu den Blättern."
+      },
+      {
+        "q": "Welche Wortgleichung stimmt?",
+        "a": "Kohlenstoffdioxid und Wasser ergeben mit Licht Traubenzucker und Sauerstoff",
+        "wrong": [
+          "Traubenzucker und Sauerstoff ergeben Wasser und Kohlenstoffdioxid",
+          "Sauerstoff und Wasser ergeben mit Licht Stärke",
+          "Wasser ergibt Sauerstoff"
+        ],
+        "why": "Die Fotosynthese baut Traubenzucker auf. Die zweite Gleichung gehört zur Zellatmung."
+      }
+    ],
+    "zellatmung": [
+      {
+        "q": "Ausgangsstoff",
+        "kind": "gap",
+        "s": "Bei der Zellatmung wird ___ abgebaut.",
+        "a": "Traubenzucker",
+        "wrong": [
+          "Kohlenstoffdioxid",
+          "Wasser",
+          "Licht"
+        ],
+        "why": "Traubenzucker wird mit Sauerstoff abgebaut."
+      },
+      {
+        "q": "Gas",
+        "kind": "gap",
+        "s": "Dazu wird ___ gebraucht.",
+        "a": "Sauerstoff",
+        "wrong": [
+          "Kohlenstoffdioxid",
+          "Stickstoff",
+          "Wasserstoff"
+        ],
+        "why": "Ohne Sauerstoff kommt die Zellatmung nicht in Gang."
+      },
+      {
+        "q": "Abfallprodukt",
+        "kind": "gap",
+        "s": "Bei der Zellatmung entsteht das Gas ___ .",
+        "a": "Kohlenstoffdioxid",
+        "wrong": [
+          "Sauerstoff",
+          "Traubenzucker",
+          "Stärke"
+        ],
+        "why": "Kohlenstoffdioxid wird mit der Ausatemluft abgegeben."
+      },
+      {
+        "q": "Ort",
+        "kind": "gap",
+        "s": "Die Zellatmung läuft in den ___ ab.",
+        "a": "Mitochondrien",
+        "wrong": [
+          "Chloroplasten",
+          "Zellwänden",
+          "Zellkernen"
+        ],
+        "why": "Mitochondrien sind die Kraftwerke der Zelle."
+      },
+      {
+        "q": "Wer atmet?",
+        "kind": "gap",
+        "s": "Zellatmung betreiben ___ lebenden Zellen.",
+        "a": "alle",
+        "wrong": [
+          "nur grüne",
+          "keine",
+          "nur tierische"
+        ],
+        "why": "Pflanzen, Tiere und Menschen brauchen Energie und betreiben deshalb Zellatmung."
+      },
+      {
+        "q": "Energie",
+        "kind": "gap",
+        "s": "Bei der Zellatmung wird ___ nutzbar gemacht.",
+        "a": "Energie",
+        "wrong": [
+          "Sauerstoff",
+          "Wasser",
+          "Licht"
+        ],
+        "why": "Die Energie steckt im Traubenzucker und wird für Bewegung, Wärme und Wachstum genutzt."
+      },
+      {
+        "q": "Was unterscheidet Zellatmung von Fotosynthese?",
+        "a": "Die Stoffe der einen sind die Produkte der anderen.",
+        "wrong": [
+          "Beide benötigen Licht.",
+          "Beide stellen Traubenzucker her.",
+          "Beide laufen nur in Pflanzen ab."
+        ],
+        "why": "Die Zellatmung ist im Prinzip die Umkehrung der Fotosynthese."
+      },
+      {
+        "q": "Wann findet Zellatmung bei Pflanzen statt?",
+        "a": "Tag und Nacht",
+        "wrong": [
+          "Nur nachts",
+          "Nur bei Licht",
+          "Nur im Winter"
+        ],
+        "why": "Zellatmung braucht kein Licht und läuft immer."
+      },
+      {
+        "q": "Welche Wortgleichung gehört zur Zellatmung?",
+        "a": "Traubenzucker plus Sauerstoff ergibt Kohlenstoffdioxid plus Wasser",
+        "wrong": [
+          "Kohlenstoffdioxid plus Wasser ergibt Traubenzucker plus Sauerstoff",
+          "Wasser ergibt Traubenzucker",
+          "Sauerstoff plus Wasser ergibt Energie"
+        ],
+        "why": "Bei der Zellatmung wird Traubenzucker abgebaut."
+      },
+      {
+        "q": "Welche Aussage ist falsch?",
+        "a": "Pflanzen haben keine Zellatmung.",
+        "wrong": [
+          "Menschen haben Zellatmung.",
+          "Zellatmung läuft in Mitochondrien.",
+          "Zellatmung macht Energie nutzbar."
+        ],
+        "why": "Auch Pflanzen betreiben Zellatmung, denn jede lebende Zelle braucht Energie."
+      }
+    ],
+    "naehrstoffe": [
+      {
+        "q": "Energie",
+        "kind": "gap",
+        "s": "Kohlenhydrate liefern vor allem ___ .",
+        "a": "Energie",
+        "wrong": [
+          "Baustoffe",
+          "Vitamine",
+          "Wasser"
+        ],
+        "why": "Kohlenhydrate wie Stärke und Zucker sind schnelle Energielieferanten."
+      },
+      {
+        "q": "Baustoff",
+        "kind": "gap",
+        "s": "Proteine dienen vor allem als ___ des Körpers.",
+        "a": "Baustoff",
+        "wrong": [
+          "Brennstoff",
+          "Wasserspeicher",
+          "Duftstoff"
+        ],
+        "why": "Proteine bilden Muskeln, Haut und viele andere Körperbestandteile."
+      },
+      {
+        "q": "Speicher",
+        "kind": "gap",
+        "s": "Fette sind ein ___ für Energie.",
+        "a": "Speicher",
+        "wrong": [
+          "Baustein",
+          "Nachweis",
+          "Duftstoff"
+        ],
+        "why": "Fett enthält viel Energie auf kleinem Raum."
+      },
+      {
+        "q": "Nachweis Stärke",
+        "kind": "gap",
+        "s": "Mit Iod-Kaliumiodid färbt sich Stärke ___ .",
+        "a": "blauviolett",
+        "wrong": [
+          "gelb",
+          "rot",
+          "farblos"
+        ],
+        "why": "Blauviolett ist der Nachweis für Stärke."
+      },
+      {
+        "q": "Nachweis Fett",
+        "kind": "gap",
+        "s": "Fett macht auf Papier einen ___ .",
+        "a": "Fettfleck",
+        "wrong": [
+          "Rußfleck",
+          "Farbfleck",
+          "Wasserfleck"
+        ],
+        "why": "Der Fettfleck bleibt auch nach dem Trocknen durchscheinend."
+      },
+      {
+        "q": "Wirkstoffe",
+        "kind": "gap",
+        "s": "Vitamine und Mineralstoffe liefern ___ Energie.",
+        "a": "keine",
+        "wrong": [
+          "viel",
+          "die meiste",
+          "doppelt so viel"
+        ],
+        "why": "Sie werden in kleinen Mengen gebraucht, haben aber wichtige Aufgaben."
+      },
+      {
+        "q": "Welcher Nährstoff hat pro Gramm am meisten Energie?",
+        "a": "Fett",
+        "wrong": [
+          "Kohlenhydrate",
+          "Wasser",
+          "Mineralstoffe"
+        ],
+        "why": "Fett enthält etwa doppelt so viel Energie wie Kohlenhydrate."
+      },
+      {
+        "q": "Welches Lebensmittel enthält viel Stärke?",
+        "a": "Kartoffeln",
+        "wrong": [
+          "Olivenöl",
+          "Mineralwasser",
+          "Salz"
+        ],
+        "why": "Kartoffeln, Nudeln und Brot sind stärkehaltig."
+      },
+      {
+        "q": "Wozu sind Ballaststoffe nützlich?",
+        "a": "Sie fördern die Verdauung.",
+        "wrong": [
+          "Sie liefern viel Energie.",
+          "Sie bauen Muskeln auf.",
+          "Sie färben Stärke blau."
+        ],
+        "why": "Ballaststoffe in Vollkorn und Gemüse regen die Darmtätigkeit an."
+      },
+      {
+        "q": "Welches Lebensmittel liefert besonders viele Proteine?",
+        "a": "Linsen",
+        "wrong": [
+          "Butter",
+          "Zucker",
+          "Mineralwasser"
+        ],
+        "why": "Hülsenfrüchte, Fleisch, Fisch und Milchprodukte enthalten viel Eiweiß."
+      }
+    ],
+    "verdauung": [
+      {
+        "q": "Enzym Stärke",
+        "kind": "gap",
+        "s": "Das Enzym ___ zerlegt Stärke.",
+        "a": "Amylase",
+        "wrong": [
+          "Lipase",
+          "Protease",
+          "Galle"
+        ],
+        "why": "Amylase ist im Speichel und im Bauchspeichel."
+      },
+      {
+        "q": "Enzym Fett",
+        "kind": "gap",
+        "s": "Das Enzym ___ zerlegt Fette.",
+        "a": "Lipase",
+        "wrong": [
+          "Amylase",
+          "Protease",
+          "Pepsin"
+        ],
+        "why": "Lipase spaltet Fette in ihre Bausteine."
+      },
+      {
+        "q": "Enzym Eiweiß",
+        "kind": "gap",
+        "s": "Das Enzym ___ zerlegt Proteine.",
+        "a": "Protease",
+        "wrong": [
+          "Amylase",
+          "Lipase",
+          "Galle"
+        ],
+        "why": "Proteasen wie Pepsin im Magen spalten Proteine."
+      },
+      {
+        "q": "Ort der Aufnahme",
+        "kind": "gap",
+        "s": "Die Nährstoffe gelangen im ___ ins Blut.",
+        "a": "Dünndarm",
+        "wrong": [
+          "Dickdarm",
+          "Magen",
+          "Mund"
+        ],
+        "why": "Der Dünndarm ist lang und hat viele Falten, so wird die Aufnahme effektiv."
+      },
+      {
+        "q": "Oberfläche",
+        "kind": "gap",
+        "s": "Darmzotten ___ die Oberfläche des Dünndarms.",
+        "a": "vergrößern",
+        "wrong": [
+          "verkleinern",
+          "verstopfen",
+          "färben"
+        ],
+        "why": "Mehr Oberfläche heißt mehr Kontakt zu den Nährstoffen."
+      },
+      {
+        "q": "Prinzip",
+        "kind": "gap",
+        "s": "Das ___-Schloss-Prinzip erklärt, warum ein Enzym nur zu einem Stoff passt.",
+        "a": "Schlüssel",
+        "wrong": [
+          "Tür",
+          "Haken",
+          "Riegel"
+        ],
+        "why": "Ein Enzym passt in Form und Funktion nur zu einem bestimmten Stoff."
+      },
+      {
+        "q": "Welche Reihenfolge stimmt für den Weg der Nahrung?",
+        "a": "Mund, Speiseröhre, Magen, Dünndarm, Dickdarm",
+        "wrong": [
+          "Mund, Magen, Speiseröhre, Dickdarm, Dünndarm",
+          "Speiseröhre, Mund, Magen, Dünndarm, Dickdarm",
+          "Mund, Dünndarm, Magen, Speiseröhre, Dickdarm"
+        ],
+        "why": "Die Speiseröhre verbindet Mund und Magen."
+      },
+      {
+        "q": "Welche Aufgabe hat der Dickdarm?",
+        "a": "Er entzieht dem Nahrungsbrei Wasser.",
+        "wrong": [
+          "Er nimmt Fette auf.",
+          "Er zerlegt Stärke.",
+          "Er produziert Galle."
+        ],
+        "why": "Im Dickdarm wird Wasser zurückgewonnen und Kot eingedickt."
+      },
+      {
+        "q": "Was ist typisch für den Magensaft?",
+        "a": "Er enthält Salzsäure und tötet viele Bakterien ab.",
+        "wrong": [
+          "Er zerlegt nur Stärke.",
+          "Er enthält keine Enzyme.",
+          "Er ist basisch."
+        ],
+        "why": "Salzsäure schafft das Milieu für das Enzym Pepsin."
+      },
+      {
+        "q": "Warum zerlegt Amylase kein Eiweiß?",
+        "a": "Sie passt nur zu Stärke.",
+        "wrong": [
+          "Sie ist zu klein.",
+          "Sie ist im Magen inaktiv.",
+          "Sie wird verbraucht."
+        ],
+        "why": "Enzyme sind stoffspezifisch: Schlüssel-Schloss-Prinzip."
+      }
+    ],
+    "gesunde-ernaehrung": [
+      {
+        "q": "Obst und Gemüse",
+        "kind": "gap",
+        "s": "Am meisten sollte man ___ und Gemüse essen.",
+        "a": "Obst",
+        "wrong": [
+          "Süßes",
+          "Chips",
+          "Wurst"
+        ],
+        "why": "Obst und Gemüse liefern Vitamine, Mineralstoffe und Ballaststoffe."
+      },
+      {
+        "q": "Getränk",
+        "kind": "gap",
+        "s": "Zum Trinken ist ___ am besten.",
+        "a": "Wasser",
+        "wrong": [
+          "Limonade",
+          "Cola",
+          "Saft pur"
+        ],
+        "why": "Wasser enthält keinen Zucker."
+      },
+      {
+        "q": "Zucker",
+        "kind": "gap",
+        "s": "Zucker und Fett sollte man ___ essen.",
+        "a": "sparsam",
+        "wrong": [
+          "reichlich",
+          "ständig",
+          "ohne Maß"
+        ],
+        "why": "Zu viel Zucker und Fett belastet den Körper."
+      },
+      {
+        "q": "Vollkorn",
+        "kind": "gap",
+        "s": "Vollkornbrot enthält viele ___ .",
+        "a": "Ballaststoffe",
+        "wrong": [
+          "Fette",
+          "Farbstoffe",
+          "Süßstoffe"
+        ],
+        "why": "Ballaststoffe sättigen und fördern die Verdauung."
+      },
+      {
+        "q": "Mehr Bewegung",
+        "kind": "gap",
+        "s": "Wer sich viel bewegt, braucht ___ Energie.",
+        "a": "mehr",
+        "wrong": [
+          "weniger",
+          "keine",
+          "gleich viel"
+        ],
+        "why": "Muskeln verbrauchen bei Bewegung mehr Energie."
+      },
+      {
+        "q": "Überschuss",
+        "kind": "gap",
+        "s": "Überschüssige Energie wird im Körper als ___ gespeichert.",
+        "a": "Fett",
+        "wrong": [
+          "Wasser",
+          "Eiweiß",
+          "Vitamin"
+        ],
+        "why": "Fett ist der Energiespeicher des Körpers."
+      },
+      {
+        "q": "Welche Mahlzeit ist am ausgewogensten?",
+        "a": "Vollkornnudeln mit Gemüsesoße und Salat",
+        "wrong": [
+          "Nur Pommes mit Ketchup",
+          "Nur eine Tafel Schokolade",
+          "Nur Weißbrot mit Zucker"
+        ],
+        "why": "Sie enthält Kohlenhydrate, Vitamine und Ballaststoffe."
+      },
+      {
+        "q": "Warum sind Obst und Gemüse wichtig?",
+        "a": "Sie liefern Vitamine, Mineralstoffe und Ballaststoffe.",
+        "wrong": [
+          "Sie enthalten viel Fett.",
+          "Sie liefern die meiste Energie.",
+          "Sie enthalten keinen Zucker."
+        ],
+        "why": "Sie versorgen den Körper mit wichtigen Wirkstoffen."
+      },
+      {
+        "q": "Was kann dauerhaft zu viel Zucker und Fett bewirken?",
+        "a": "Übergewicht und Folgeerkrankungen",
+        "wrong": [
+          "Mehr Vitamine",
+          "Stärkere Knochen",
+          "Bessere Zähne"
+        ],
+        "why": "Dauerhaft zu viel Energie wird als Fett gespeichert."
+      },
+      {
+        "q": "Wie sollte man trinken?",
+        "a": "Regelmäßig über den Tag verteilt, vor allem Wasser",
+        "wrong": [
+          "Nur wenn man Durst hat",
+          "Nur zum Essen",
+          "Nur nach dem Sport"
+        ],
+        "why": "Auch ohne Durst sollte man regelmäßig trinken."
+      }
+    ],
+    "lunge": [
+      {
+        "q": "Atemweg",
+        "kind": "gap",
+        "s": "Die Luft strömt durch die Luftröhre in die ___ .",
+        "a": "Bronchien",
+        "wrong": [
+          "Speiseröhre",
+          "Nase",
+          "Magen"
+        ],
+        "why": "Die Luftröhre teilt sich in zwei Bronchien."
+      },
+      {
+        "q": "Lungenbläschen",
+        "kind": "gap",
+        "s": "In den ___ findet der Gasaustausch statt.",
+        "a": "Lungenbläschen",
+        "wrong": [
+          "Bronchien",
+          "Nasenhöhle",
+          "Rippen"
+        ],
+        "why": "Lungenbläschen sind von feinen Blutgefäßen umgeben."
+      },
+      {
+        "q": "Zwerchfell",
+        "kind": "gap",
+        "s": "Beim Einatmen ___ das Zwerchfell ab.",
+        "a": "flacht",
+        "wrong": [
+          "wölbt",
+          "löst",
+          "dehnt"
+        ],
+        "why": "Das Zwerchfell flacht ab und der Brustraum wird größer."
+      },
+      {
+        "q": "Brustraum",
+        "kind": "gap",
+        "s": "Beim Einatmen wird der Brustraum ___ .",
+        "a": "größer",
+        "wrong": [
+          "kleiner",
+          "dünner",
+          "härter"
+        ],
+        "why": "Die Rippen heben sich und das Zwerchfell senkt sich."
+      },
+      {
+        "q": "Gas im Blut",
+        "kind": "gap",
+        "s": "Aus den Lungenbläschen geht ___ ins Blut.",
+        "a": "Sauerstoff",
+        "wrong": [
+          "Kohlenstoffdioxid",
+          "Stickstoff",
+          "Wasserstoff"
+        ],
+        "why": "Sauerstoff wird an die roten Blutzellen gebunden."
+      },
+      {
+        "q": "Gas aus dem Blut",
+        "kind": "gap",
+        "s": "Das Blut gibt in der Lunge ___ ab.",
+        "a": "Kohlenstoffdioxid",
+        "wrong": [
+          "Sauerstoff",
+          "Stickstoff",
+          "Traubenzucker"
+        ],
+        "why": "Kohlenstoffdioxid wird mit der Ausatemluft abgegeben."
+      },
+      {
+        "q": "Warum haben Lungen so viele Bläschen?",
+        "a": "Sie vergrößern die Oberfläche für den Gasaustausch.",
+        "wrong": [
+          "Sie speichern Nahrung.",
+          "Sie wärmen die Luft.",
+          "Sie schützen vor Staub."
+        ],
+        "why": "Mehr Oberfläche heißt schnellerer Austausch."
+      },
+      {
+        "q": "Was bewirken die Flimmerhärchen in den Atemwegen?",
+        "a": "Sie transportieren Schleim mit Staub nach oben.",
+        "wrong": [
+          "Sie nehmen Sauerstoff auf.",
+          "Sie pumpen Luft.",
+          "Sie bilden Blut."
+        ],
+        "why": "Rauchen schädigt die Flimmerhärchen."
+      },
+      {
+        "q": "Welcher Stoff ist in der Ausatemluft stärker vertreten als in der Einatemluft?",
+        "a": "Kohlenstoffdioxid",
+        "wrong": [
+          "Sauerstoff",
+          "Stickstoff",
+          "Wasserstoff"
+        ],
+        "why": "Ausatemluft enthält mehr Kohlenstoffdioxid und weniger Sauerstoff."
+      },
+      {
+        "q": "Womit weist man Kohlenstoffdioxid nach?",
+        "a": "Kalkwasser, es wird trüb",
+        "wrong": [
+          "Iod-Lösung, sie wird blau",
+          "Glimmspan, er glüht",
+          "Wasser, es wird warm"
+        ],
+        "why": "Kalkwasser reagiert mit Kohlenstoffdioxid zu einem weißen Niederschlag."
+      }
+    ],
+    "blut": [
+      {
+        "q": "Plasma",
+        "kind": "gap",
+        "s": "Der flüssige Teil des Blutes heißt ___ .",
+        "a": "Blutplasma",
+        "wrong": [
+          "Blutplättchen",
+          "Hämoglobin",
+          "Zellsaft"
+        ],
+        "why": "Das Plasma macht etwas mehr als die Hälfte des Blutes aus."
+      },
+      {
+        "q": "Sauerstoff",
+        "kind": "gap",
+        "s": "Den Sauerstoff transportieren die ___ Blutzellen.",
+        "a": "roten",
+        "wrong": [
+          "weißen",
+          "gelben",
+          "grünen"
+        ],
+        "why": "Rote Blutzellen enthalten Hämoglobin."
+      },
+      {
+        "q": "Farbstoff",
+        "kind": "gap",
+        "s": "Der rote Farbstoff in den roten Blutzellen heißt ___ .",
+        "a": "Hämoglobin",
+        "wrong": [
+          "Chlorophyll",
+          "Plasma",
+          "Insulin"
+        ],
+        "why": "Hämoglobin bindet Sauerstoff."
+      },
+      {
+        "q": "Abwehr",
+        "kind": "gap",
+        "s": "Die ___ Blutzellen wehren Krankheitserreger ab.",
+        "a": "weißen",
+        "wrong": [
+          "roten",
+          "grünen",
+          "gelben"
+        ],
+        "why": "Weiße Blutzellen erkennen und zerstören Erreger."
+      },
+      {
+        "q": "Wundverschluss",
+        "kind": "gap",
+        "s": "Die ___ sorgen dafür, dass das Blut gerinnt.",
+        "a": "Blutplättchen",
+        "wrong": [
+          "roten Blutzellen",
+          "weißen Blutzellen",
+          "Gefäße"
+        ],
+        "why": "Sie verklumpen und verschließen kleine Wunden."
+      },
+      {
+        "q": "Wärme",
+        "kind": "gap",
+        "s": "Das Blut verteilt auch die ___ im Körper.",
+        "a": "Wärme",
+        "wrong": [
+          "Kälte",
+          "Nahrung",
+          "Luft"
+        ],
+        "why": "Das Blut transportiert Wärme von Organen zu kälteren Körperteilen."
+      },
+      {
+        "q": "Wo transportiert das Blut Nährstoffe?",
+        "a": "Im Blutplasma",
+        "wrong": [
+          "Nur in den roten Blutzellen",
+          "In den Blutplättchen",
+          "Nur in den weißen Zellen"
+        ],
+        "why": "Gelöste Nährstoffe sind im Plasma."
+      },
+      {
+        "q": "Was passiert, wenn die Blutplättchen fehlen?",
+        "a": "Wunden bluten länger",
+        "wrong": [
+          "Man bekommt Fieber",
+          "Man kann nicht atmen",
+          "Das Herz schlägt langsamer"
+        ],
+        "why": "Ohne Blutplättchen wird die Wunde nicht schnell verschlossen."
+      },
+      {
+        "q": "Welche Zellen gehören nicht zum Blut?",
+        "a": "Muskelzellen",
+        "wrong": [
+          "Rote Blutzellen",
+          "Weiße Blutzellen",
+          "Blutplättchen"
+        ],
+        "why": "Muskelzellen bilden Muskelgewebe, nicht Blut."
+      },
+      {
+        "q": "Warum färbt Hämoglobin das Blut rot?",
+        "a": "Es enthält Eisen und bindet Sauerstoff.",
+        "wrong": [
+          "Es enthält Chlorophyll.",
+          "Es verbrennt Zucker.",
+          "Es bildet Antikörper."
+        ],
+        "why": "Das Eisen im Hämoglobin gibt die rote Farbe."
+      }
+    ],
+    "herz-kreislauf": [
+      {
+        "q": "Arterien",
+        "kind": "gap",
+        "s": "___ führen das Blut vom Herzen weg.",
+        "a": "Arterien",
+        "wrong": [
+          "Venen",
+          "Kapillaren",
+          "Klappen"
+        ],
+        "why": "Arterien führen das Blut mit hohem Druck weg vom Herzen."
+      },
+      {
+        "q": "Venen",
+        "kind": "gap",
+        "s": "___ führen das Blut zum Herzen hin.",
+        "a": "Venen",
+        "wrong": [
+          "Arterien",
+          "Kapillaren",
+          "Bronchien"
+        ],
+        "why": "Venen haben Klappen, die das Zurückfließen verhindern."
+      },
+      {
+        "q": "Kapillaren",
+        "kind": "gap",
+        "s": "In den ___ werden Stoffe zwischen Blut und Gewebe ausgetauscht.",
+        "a": "Kapillaren",
+        "wrong": [
+          "Arterien",
+          "Venen",
+          "Klappen"
+        ],
+        "why": "Kapillaren sind dünn und haben sehr dünne Wände."
+      },
+      {
+        "q": "Herzkammer",
+        "kind": "gap",
+        "s": "Die linke ___ pumpt das Blut in den Körper.",
+        "a": "Kammer",
+        "wrong": [
+          "Vorhof",
+          "Klappe",
+          "Arterie"
+        ],
+        "why": "Die Kammer hat einen kräftigen Muskel."
+      },
+      {
+        "q": "Klappen",
+        "kind": "gap",
+        "s": "Herzklappen sorgen dafür, dass das Blut nur in eine ___ fließt.",
+        "a": "Richtung",
+        "wrong": [
+          "Farbe",
+          "Menge",
+          "Zeit"
+        ],
+        "why": "Klappen wirken wie Ventile."
+      },
+      {
+        "q": "Puls",
+        "kind": "gap",
+        "s": "Bei körperlicher Belastung ___ der Puls.",
+        "a": "steigt",
+        "wrong": [
+          "sinkt",
+          "bleibt gleich",
+          "verschwindet"
+        ],
+        "why": "Muskeln brauchen mehr Sauerstoff, das Herz schlägt schneller."
+      },
+      {
+        "q": "Was geschieht im Lungenkreislauf?",
+        "a": "Das Blut nimmt Sauerstoff auf und gibt Kohlenstoffdioxid ab.",
+        "wrong": [
+          "Das Blut wird gefiltert.",
+          "Das Blut gibt Nährstoffe an die Muskeln.",
+          "Das Blut wird gerinnbar."
+        ],
+        "why": "Der Lungenkreislauf verläuft Herz, Lunge, Herz."
+      },
+      {
+        "q": "Was geschieht im Körperkreislauf?",
+        "a": "Das Blut versorgt die Organe mit Sauerstoff und Nährstoffen.",
+        "wrong": [
+          "Das Blut nimmt in der Lunge Sauerstoff auf.",
+          "Das Blut wird vom Herz abgekühlt.",
+          "Das Blut gerinnt."
+        ],
+        "why": "Der Körperkreislauf verläuft Herz, Körper, Herz."
+      },
+      {
+        "q": "In welche Herzhälfte fließt sauerstoffreiches Blut aus der Lunge?",
+        "a": "In die linke",
+        "wrong": [
+          "In die rechte",
+          "In beide gleichzeitig",
+          "In keine"
+        ],
+        "why": "Die linke Hälfte pumpt sauerstoffreiches Blut in den Körper."
+      },
+      {
+        "q": "Was bewirkt regelmäßiges Ausdauertraining auf den Ruhepuls?",
+        "a": "Er wird niedriger.",
+        "wrong": [
+          "Er wird höher.",
+          "Er verschwindet.",
+          "Er bleibt gleich hoch."
+        ],
+        "why": "Ein trainiertes Herz pumpt bei jedem Schlag mehr Blut."
+      }
+    ],
+    "befruchtung-geburt": [
+      {
+        "q": "Eizelle",
+        "kind": "gap",
+        "s": "Die Eizelle entsteht im ___ .",
+        "a": "Eierstock",
+        "wrong": [
+          "Hoden",
+          "Eileiter",
+          "Gebärmutter"
+        ],
+        "why": "Die Eierstöcke bilden die Eizellen."
+      },
+      {
+        "q": "Spermien",
+        "kind": "gap",
+        "s": "Die Spermienzellen werden im ___ gebildet.",
+        "a": "Hoden",
+        "wrong": [
+          "Eierstock",
+          "Eileiter",
+          "Gebärmutter"
+        ],
+        "why": "Hoden produzieren Spermienzellen."
+      },
+      {
+        "q": "Befruchtung",
+        "kind": "gap",
+        "s": "Bei der Befruchtung verschmelzen die ___ von Eizelle und Spermienzelle.",
+        "a": "Zellkerne",
+        "wrong": [
+          "Zellwände",
+          "Vakuolen",
+          "Chloroplasten"
+        ],
+        "why": "Dabei werden die Erbinformationen beider Eltern kombiniert."
+      },
+      {
+        "q": "Ort",
+        "kind": "gap",
+        "s": "Die Befruchtung findet im ___ statt.",
+        "a": "Eileiter",
+        "wrong": [
+          "Eierstock",
+          "Magen",
+          "Darm"
+        ],
+        "why": "Im Eileiter treffen Eizelle und Spermien aufeinander."
+      },
+      {
+        "q": "Wachstum",
+        "kind": "gap",
+        "s": "Der Embryo wächst in der ___ .",
+        "a": "Gebärmutter",
+        "wrong": [
+          "Lunge",
+          "Leber",
+          "Blase"
+        ],
+        "why": "Die Gebärmutter ist ein Muskel, der mit dem Kind wächst."
+      },
+      {
+        "q": "Versorgung",
+        "kind": "gap",
+        "s": "Über die ___ wird das Kind mit Sauerstoff und Nährstoffen versorgt.",
+        "a": "Plazenta",
+        "wrong": [
+          "Fruchtblase",
+          "Haut",
+          "Lunge"
+        ],
+        "why": "Die Plazenta ist der Mutterkuchen und verbindet die Blutkreisläufe nur über Stoffaustausch."
+      },
+      {
+        "q": "Welche Aufgabe hat die Nabelschnur?",
+        "a": "Sie verbindet das Kind mit der Plazenta.",
+        "wrong": [
+          "Sie schützt vor Stößen.",
+          "Sie produziert Hormone.",
+          "Sie ist ein Muskel."
+        ],
+        "why": "Durch die Nabelschnur laufen Blutgefäße von und zum Kind."
+      },
+      {
+        "q": "Wofür ist das Fruchtwasser wichtig?",
+        "a": "Es polstert und schützt das Kind.",
+        "wrong": [
+          "Es ernährt das Kind.",
+          "Es transportiert Sauerstoff.",
+          "Es steuert die Geburt."
+        ],
+        "why": "Das Fruchtwasser ist wie ein Stoßdämpfer."
+      },
+      {
+        "q": "Wie lange dauert eine Schwangerschaft etwa?",
+        "a": "Etwa 40 Wochen",
+        "wrong": [
+          "Etwa 40 Tage",
+          "Etwa 12 Wochen",
+          "Etwa 2 Jahre"
+        ],
+        "why": "Rund neun Monate bis zur Geburt."
+      },
+      {
+        "q": "Was schadet dem Kind in der Schwangerschaft?",
+        "a": "Alkohol, Rauchen und Drogen der Mutter",
+        "wrong": [
+          "Gesundes Essen",
+          "Spaziergänge",
+          "Frische Luft"
+        ],
+        "why": "Diese Stoffe gelangen über die Plazenta zum Kind."
+      }
+    ],
+    "verhuetung": [
+      {
+        "q": "Zweck",
+        "kind": "gap",
+        "s": "Verhütung soll eine ___ verhindern.",
+        "a": "Schwangerschaft",
+        "wrong": [
+          "Erkältung",
+          "Verdauung",
+          "Atmung"
+        ],
+        "why": "Verhütungsmittel verhindern die Befruchtung oder Einnistung."
+      },
+      {
+        "q": "Kondom",
+        "kind": "gap",
+        "s": "Das ___ schützt auch vor vielen Infektionen.",
+        "a": "Kondom",
+        "wrong": [
+          "Medikament",
+          "Vitamin",
+          "Pflaster"
+        ],
+        "why": "Das Kondom ist als Barriere wirksam."
+      },
+      {
+        "q": "Pille",
+        "kind": "gap",
+        "s": "Die ___ wirkt hormonell.",
+        "a": "Pille",
+        "wrong": [
+          "Barriere",
+          "Maske",
+          "Brille"
+        ],
+        "why": "Sie unterdrückt den Eisprung und braucht ein Rezept."
+      },
+      {
+        "q": "Eisprung",
+        "kind": "gap",
+        "s": "Hormone können den ___ verhindern.",
+        "a": "Eisprung",
+        "wrong": [
+          "Hustenreiz",
+          "Schluckreflex",
+          "Herzschlag"
+        ],
+        "why": "Ohne Eisprung gibt es keine befruchtbare Eizelle."
+      },
+      {
+        "q": "Rezept",
+        "kind": "gap",
+        "s": "Die Pille gibt es nur mit ärztlichem ___ .",
+        "a": "Rezept",
+        "wrong": [
+          "Verbot",
+          "Rabatt",
+          "Etikett"
+        ],
+        "why": "Eine Ärztin oder ein Arzt berät dabei."
+      },
+      {
+        "q": "Beratung",
+        "kind": "gap",
+        "s": "Fragen beantworten ___ Beratungsstellen.",
+        "a": "vertrauliche",
+        "wrong": [
+          "laute",
+          "geheime",
+          "teure"
+        ],
+        "why": "Beratung ist kostenlos und vertraulich."
+      },
+      {
+        "q": "Welches Mittel verhütet und schützt vor Infektionen?",
+        "a": "Kondom",
+        "wrong": [
+          "Pille",
+          "Vitamintabletten",
+          "Keines"
+        ],
+        "why": "Das Kondom ist eine Barriere für Samenzellen und Erreger."
+      },
+      {
+        "q": "Wer entscheidet über deinen Körper?",
+        "a": "Du selbst",
+        "wrong": [
+          "Der Freund oder die Freundin",
+          "Die Klasse",
+          "Der Zufall"
+        ],
+        "why": "Niemand darf dich zu etwas drängen. Ein Nein zählt."
+      },
+      {
+        "q": "Wo findest du verlässliche Informationen?",
+        "a": "Bei Ärzten und Beratungsstellen",
+        "wrong": [
+          "Auf zufälligen Videos",
+          "In Gerüchten",
+          "In Werbung"
+        ],
+        "why": "Fachleute geben gesicherte Auskünfte."
+      },
+      {
+        "q": "Schützt die Pille vor Infektionen?",
+        "a": "Nein, dafür braucht man ein Kondom",
+        "wrong": [
+          "Ja, immer",
+          "Nur bei Frauen",
+          "Nur im Winter"
+        ],
+        "why": "Die Pille wirkt nur auf den Zyklus."
+      }
+    ]
+  }
+}

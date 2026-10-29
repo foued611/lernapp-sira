@@ -1,0 +1,107 @@
+[
+  {
+    "id": "first",
+    "n": "Erster Versuch",
+    "d": "Die erste Seite geübt",
+    "rule": {
+      "type": "anyUnit"
+    }
+  },
+  {
+    "id": "perfect",
+    "n": "Fehlerfrei",
+    "d": "Eine Runde ohne Fehler",
+    "rule": {
+      "type": "perfectRound"
+    }
+  },
+  {
+    "id": "combo",
+    "n": "Im Lauf",
+    "d": "Fünf richtige Antworten hintereinander",
+    "rule": {
+      "type": "combo",
+      "min": 5
+    }
+  },
+  {
+    "id": "streak",
+    "n": "Dranbleiben",
+    "d": "Drei Tage in Folge geübt",
+    "rule": {
+      "type": "streak",
+      "days": 3
+    }
+  },
+  {
+    "id": "boss",
+    "n": "Biologie-Check",
+    "d": "Den Endgegner besiegt",
+    "rule": {
+      "type": "boss"
+    }
+  },
+  {
+    "id": "zelle",
+    "n": "Zelle geschafft",
+    "d": "Alle Zell-Seiten mit mindestens einem Stern",
+    "rule": {
+      "type": "units",
+      "ids": [
+        "pflanzen-tierzelle",
+        "mikroskop",
+        "zelle-organismus"
+      ]
+    }
+  },
+  {
+    "id": "stoffwechsel",
+    "n": "Stoffwechsel geschafft",
+    "d": "Fotosynthese und Zellatmung mit mindestens einem Stern",
+    "rule": {
+      "type": "units",
+      "ids": [
+        "fotosynthese",
+        "zellatmung"
+      ]
+    }
+  },
+  {
+    "id": "ernaehrung",
+    "n": "Ernährung geschafft",
+    "d": "Alle Ernährungs-Seiten mit mindestens einem Stern",
+    "rule": {
+      "type": "units",
+      "ids": [
+        "naehrstoffe",
+        "verdauung",
+        "gesunde-ernaehrung"
+      ]
+    }
+  },
+  {
+    "id": "kreislauf",
+    "n": "Atmung und Kreislauf geschafft",
+    "d": "Lunge, Blut und Herz mit mindestens einem Stern",
+    "rule": {
+      "type": "units",
+      "ids": [
+        "lunge",
+        "blut",
+        "herz-kreislauf"
+      ]
+    }
+  },
+  {
+    "id": "fortpflanzung",
+    "n": "Fortpflanzung geschafft",
+    "d": "Beide Fortpflanzungs-Seiten mit mindestens einem Stern",
+    "rule": {
+      "type": "units",
+      "ids": [
+        "befruchtung-geburt",
+        "verhuetung"
+      ]
+    }
+  }
+]
