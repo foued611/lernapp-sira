@@ -1,5 +1,2526 @@
 {
   "items": {
+    "exogene-kraefte": [
+      {
+        "q": "Endogen",
+        "kind": "gap",
+        "s": "Kräfte aus dem Erdinneren heißen ___ Kräfte.",
+        "a": "endogene",
+        "wrong": [
+          "exogene",
+          "exotische",
+          "elektrische"
+        ],
+        "why": "Endo bedeutet innen. Dazu gehören Vulkanismus und Erdbeben."
+      },
+      {
+        "q": "Exogen",
+        "kind": "gap",
+        "s": "Kräfte von außen, zum Beispiel Wasser, Eis und Wind, heißen ___ Kräfte.",
+        "a": "exogene",
+        "wrong": [
+          "endogene",
+          "atomare",
+          "innere"
+        ],
+        "why": "Exo bedeutet außen. Sie formen die Oberfläche."
+      },
+      {
+        "q": "Endogen",
+        "a": "Vulkanausbruch und Erdbeben",
+        "wrong": [
+          "Regen und Frost",
+          "Fluss und Gletscher",
+          "Wind und Sandsturm"
+        ],
+        "why": "Vulkane und Erdbeben entstehen durch Vorgänge im Erdinneren."
+      },
+      {
+        "q": "Frostsprengung",
+        "a": "Wasser gefriert in Spalten, dehnt sich aus und sprengt das Gestein",
+        "wrong": [
+          "Gestein schmilzt in der Hitze",
+          "Wind bläst Staub aus dem Gestein",
+          "Das Gestein wird vom Mond angezogen"
+        ],
+        "why": "Eis braucht mehr Platz als Wasser. Das lässt Risse größer werden."
+      },
+      {
+        "q": "Verwitterung",
+        "kind": "gap",
+        "s": "Das Zerfallen von Gestein an Ort und Stelle heißt ___ .",
+        "a": "Verwitterung",
+        "wrong": [
+          "Erosion",
+          "Ablagerung",
+          "Faltung"
+        ],
+        "why": "Bei der Verwitterung wird das Material noch nicht weggetragen."
+      },
+      {
+        "q": "Erosion",
+        "kind": "gap",
+        "s": "Das Abtragen und Wegtransportieren von Gesteinsmaterial heißt ___ .",
+        "a": "Erosion",
+        "wrong": [
+          "Verwitterung",
+          "Faltung",
+          "Verdunstung"
+        ],
+        "why": "Wasser, Eis und Wind tragen Material ab und bringen es woanders hin.",
+        "accept": [
+          "Abtragung"
+        ]
+      },
+      {
+        "q": "Reihenfolge",
+        "a": "Verwitterung, Abtragung, Transport, Ablagerung",
+        "wrong": [
+          "Ablagerung, Transport, Abtragung, Verwitterung",
+          "Transport, Verwitterung, Ablagerung, Abtragung",
+          "Abtragung, Ablagerung, Verwitterung, Transport"
+        ],
+        "why": "Erst zerfällt das Gestein, dann wird es abgetragen, transportiert und abgelagert."
+      },
+      {
+        "q": "Gebirge",
+        "a": "Exogene Kräfte tragen sie langsam ab",
+        "wrong": [
+          "Sie sinken in den Erdkern",
+          "Die Erde schrumpft",
+          "Sie schmelzen im Sommer"
+        ],
+        "why": "Gebirge werden über Millionen Jahre niedriger, wenn keine endogene Hebung sie aufbaut."
+      },
+      {
+        "q": "Ablagerung",
+        "a": "Ein Fluss lässt Sand und Kies an der Mündung liegen",
+        "wrong": [
+          "Ein Vulkan wirft Lava aus",
+          "Ein Gletscher entsteht aus Schnee",
+          "Ein Erdbeben hebt das Land"
+        ],
+        "why": "Wenn die Kraft des Transports nachlässt, bleibt das Material liegen."
+      },
+      {
+        "q": "Sediment",
+        "kind": "gap",
+        "s": "Vom Wasser oder Wind abgelagertes Material heißt ___ .",
+        "a": "Sediment",
+        "wrong": [
+          "Magma",
+          "Lava",
+          "Basalt"
+        ],
+        "why": "Sedimente sind das Ausgangsmaterial für Sandstein und andere Gesteine."
+      }
+    ],
+    "eis-formt": [
+      {
+        "q": "Fjord",
+        "kind": "gap",
+        "s": "Ein Fjord ist ein vom Meer überflutetes ___ .",
+        "a": "Trogtal",
+        "wrong": [
+          "Vulkankrater",
+          "Delta",
+          "Dünental"
+        ],
+        "why": "Ein Trogtal ist ein vom Gletscher geformtes U-förmiges Tal."
+      },
+      {
+        "q": "Talform",
+        "a": "U-förmig",
+        "wrong": [
+          "V-förmig",
+          "Z-förmig",
+          "Spiralförmig"
+        ],
+        "why": "Gletscher schürfen breite, steile Täler mit rundem Boden."
+      },
+      {
+        "q": "Fjorde",
+        "a": "Norwegen",
+        "wrong": [
+          "Ägypten",
+          "Brasilien",
+          "Mongolei"
+        ],
+        "why": "Fjorde gibt es auch in Chile und Neuseeland, bekannt sind die norwegischen."
+      },
+      {
+        "q": "Schären",
+        "kind": "gap",
+        "s": "Schären sind vom Eis rundgeschliffene ___ an der Küste.",
+        "a": "Felsinseln",
+        "wrong": [
+          "Sanddünen",
+          "Vulkane",
+          "Korallenriffe"
+        ],
+        "why": "Sie reihen sich wie Perlen vor der Küste Schwedens und Finnlands."
+      },
+      {
+        "q": "Fjell",
+        "kind": "gap",
+        "s": "Das vom Eis rundgeschliffene Hochland Skandinaviens heißt ___ .",
+        "a": "Fjell",
+        "wrong": [
+          "Fjord",
+          "Düne",
+          "Delta"
+        ],
+        "why": "Fjell bedeutet im Norwegischen Berg oder Hochfläche."
+      },
+      {
+        "q": "Eiszeit",
+        "a": "Inlandeis bedeckte das Land und schliff es ab",
+        "wrong": [
+          "Wind blies es weg",
+          "Vulkane haben es geformt",
+          "Das Land sank ins Meer"
+        ],
+        "why": "Dicke Eisschilde formten große Teile Nordeuropas."
+      },
+      {
+        "q": "Arbeitsweise",
+        "a": "Sie schürfen mit mitgeführtem Gesteinsschutt den Untergrund aus",
+        "wrong": [
+          "Sie lösen Gestein chemisch auf",
+          "Sie blasen Sand weg",
+          "Sie lassen Berge wachsen"
+        ],
+        "why": "Der Schutt im Eis wirkt wie Schleifpapier."
+      },
+      {
+        "q": "Moräne",
+        "kind": "gap",
+        "s": "Von Gletschern abgelagerter Gesteinsschutt heißt ___ .",
+        "a": "Moräne",
+        "wrong": [
+          "Düne",
+          "Delta",
+          "Terrasse"
+        ],
+        "why": "Moränen liegen am Rand und am Ende von Gletschern."
+      },
+      {
+        "q": "Kaltzeit",
+        "a": "Ein Zeitabschnitt, in dem große Teile der Erde von Eis bedeckt sind",
+        "wrong": [
+          "Ein sehr kalter Tag im Winter",
+          "Eine kalte Jahreszeit",
+          "Ein Gewitter"
+        ],
+        "why": "Kaltzeiten dauern Zehntausende Jahre."
+      },
+      {
+        "q": "Begriff",
+        "a": "Fjord",
+        "wrong": [
+          "Delta",
+          "Düne",
+          "Oase"
+        ],
+        "why": "Fjord verbindet Meer und Gletscher. Delta gehört zum Fluss, Düne zum Wind."
+      }
+    ],
+    "fluesse": [
+      {
+        "q": "Oberlauf",
+        "kind": "gap",
+        "s": "Im Oberlauf gräbt sich der Fluss durch ___ in die Tiefe.",
+        "a": "Tiefenerosion",
+        "wrong": [
+          "Seitenerosion",
+          "Ablagerung",
+          "Verdunstung"
+        ],
+        "why": "Das starke Gefälle gibt dem Wasser viel Kraft nach unten."
+      },
+      {
+        "q": "Talform",
+        "a": "V-förmiges Kerbtal",
+        "wrong": [
+          "U-förmiges Trogtal",
+          "Flaches Delta",
+          "Düne"
+        ],
+        "why": "Der Fluss schneidet sich ein wie ein Messer."
+      },
+      {
+        "q": "Mäander",
+        "kind": "gap",
+        "s": "Die Flussschlingen im Mittellauf heißen ___ .",
+        "a": "Mäander",
+        "wrong": [
+          "Delta",
+          "Moränen",
+          "Dünen"
+        ],
+        "why": "Der Fluss pendelt hin und her, weil er seitlich erodiert."
+      },
+      {
+        "q": "Prallhang",
+        "a": "Der Außenbogen einer Flusskurve, an dem abgetragen wird",
+        "wrong": [
+          "Der Innenbogen, an dem abgelagert wird",
+          "Der Berg über der Quelle",
+          "Die Mündung"
+        ],
+        "why": "Außen fließt das Wasser schneller und trägt ab."
+      },
+      {
+        "q": "Gleithang",
+        "a": "Der Innenbogen, an dem Sand und Kies abgelagert werden",
+        "wrong": [
+          "Der Außenbogen, an dem abgetragen wird",
+          "Die Quelle",
+          "Das Meer"
+        ],
+        "why": "Innen ist das Wasser langsam, und die Last bleibt liegen."
+      },
+      {
+        "q": "Delta",
+        "kind": "gap",
+        "s": "Ein Fluss, der sich an der Mündung verzweigt und Sand ablagert, bildet ein ___ .",
+        "a": "Delta",
+        "wrong": [
+          "Fjord",
+          "Kerbtal",
+          "Mäander"
+        ],
+        "why": "Der Nil und der Mississippi haben große Deltas."
+      },
+      {
+        "q": "Unterlauf",
+        "a": "Das Gefälle ist gering, und der Fluss lagert viel Material ab",
+        "wrong": [
+          "Der Fluss ist steil und eng",
+          "Der Fluss entspringt dort",
+          "Es gibt dort kein Wasser"
+        ],
+        "why": "Nahe der Mündung fließt das Wasser langsam."
+      },
+      {
+        "q": "Quelle",
+        "kind": "gap",
+        "s": "Der Ursprung eines Flusses heißt ___ .",
+        "a": "Quelle",
+        "wrong": [
+          "Mündung",
+          "Delta",
+          "Aue"
+        ],
+        "why": "Dort tritt das Wasser aus dem Boden oder aus dem Gletscher."
+      },
+      {
+        "q": "Aue",
+        "a": "Das flache Land neben dem Fluss, das bei Hochwasser überschwemmt wird",
+        "wrong": [
+          "Die Spitze eines Berges",
+          "Der Rand eines Gletschers",
+          "Ein Strand"
+        ],
+        "why": "Dort lagert der Fluss bei Hochwasser feinen Schlamm ab."
+      },
+      {
+        "q": "Kräfte",
+        "a": "Im Oberlauf wirkt die Kraft nach unten, im Unterlauf wird abgelagert",
+        "wrong": [
+          "Im Oberlauf wird nur abgelagert",
+          "Überall wirkt nur Ablagerung",
+          "Im Unterlauf wird tief eingeschnitten"
+        ],
+        "why": "Die Kraft des Wassers sinkt mit dem Gefälle."
+      }
+    ],
+    "wind-erosion": [
+      {
+        "q": "Deflation",
+        "kind": "gap",
+        "s": "Das Ausblasen von lockerem Material durch den Wind heißt ___ .",
+        "a": "Deflation",
+        "wrong": [
+          "Korrasion",
+          "Akkumulation",
+          "Erosion durch Eis"
+        ],
+        "why": "Deflation wirkt vor allem auf feinen Sand und Staub."
+      },
+      {
+        "q": "Korrasion",
+        "kind": "gap",
+        "s": "Das Abschleifen von Fels durch Sand, der vom Wind getragen wird, heißt ___ .",
+        "a": "Korrasion",
+        "wrong": [
+          "Deflation",
+          "Verwitterung durch Frost",
+          "Ablagerung"
+        ],
+        "why": "Der Sand wirkt wie Schleifpapier."
+      },
+      {
+        "q": "Düne",
+        "a": "Ein Sandhügel, den der Wind aufgeschüttet hat",
+        "wrong": [
+          "Ein vom Gletscher geformtes Tal",
+          "Eine Flussschlinge",
+          "Ein Vulkan"
+        ],
+        "why": "Dünen wandern langsam mit dem Wind."
+      },
+      {
+        "q": "Dünenform",
+        "a": "Die Windseite ist flach, die windabgewandte Seite steil",
+        "wrong": [
+          "Beide Seiten sind gleich steil",
+          "Die Windseite ist steil",
+          "Dünen haben keine Seiten"
+        ],
+        "why": "Der Wind schiebt Sand die flache Seite hinauf, und er rutscht auf der steilen Seite ab. So wandert die Düne."
+      },
+      {
+        "q": "Pilzfelsen",
+        "a": "Der Sand schleift den Fuß stärker als den Kopf",
+        "wrong": [
+          "Die Sonne schmilzt den Fuß",
+          "Der Regen höhlt den Kopf aus",
+          "Der Fels wächst nach oben"
+        ],
+        "why": "Sand fliegt vor allem in Bodennähe."
+      },
+      {
+        "q": "Löss",
+        "kind": "gap",
+        "s": "Sehr feiner Staub, den der Wind ablagert und der fruchtbaren Boden bildet, heißt ___ .",
+        "a": "Löss",
+        "wrong": [
+          "Kies",
+          "Granit",
+          "Schotter"
+        ],
+        "why": "Lössböden sind sehr fruchtbar, zum Beispiel in der Börde."
+      },
+      {
+        "q": "Wo",
+        "a": "In trockenen Gebieten mit wenig Pflanzen",
+        "wrong": [
+          "Im dichten Regenwald",
+          "Unter dem Meer",
+          "In einer Moorlandschaft"
+        ],
+        "why": "Ohne Pflanzen bietet der Boden dem Wind eine freie Angriffsfläche."
+      },
+      {
+        "q": "Wanderdüne",
+        "kind": "gap",
+        "s": "Eine Düne, die durch den Wind langsam weiterzieht, heißt ___ .",
+        "a": "Wanderdüne",
+        "wrong": [
+          "Meeresdüne",
+          "Gletscherdüne",
+          "Felsdüne"
+        ],
+        "why": "Wanderdünen können Dörfer und Straßen bedrohen."
+      },
+      {
+        "q": "Schutz",
+        "a": "Man pflanzt Büsche und Bäume als Windschutz",
+        "wrong": [
+          "Man baut mehr Straßen",
+          "Man rodet alle Pflanzen",
+          "Man lässt alles brach liegen"
+        ],
+        "why": "Pflanzen halten den Boden fest und bremsen den Wind."
+      },
+      {
+        "q": "Material",
+        "a": "Sand und Staub",
+        "wrong": [
+          "Eis und Schnee",
+          "Lava und Asche",
+          "Wasser und Schlamm"
+        ],
+        "why": "Der Wind kann nur feines, trockenes Material bewegen."
+      }
+    ],
+    "wuestenarten": [
+      {
+        "q": "Erg",
+        "kind": "gap",
+        "s": "Eine Wüste aus Sanddünen heißt ___ .",
+        "a": "Erg",
+        "wrong": [
+          "Hamada",
+          "Serir",
+          "Wadi"
+        ],
+        "why": "Erg ist das arabische Wort für Dünenfeld."
+      },
+      {
+        "q": "Hamada",
+        "kind": "gap",
+        "s": "Eine Wüste aus Felsplateaus heißt ___ .",
+        "a": "Hamada",
+        "wrong": [
+          "Erg",
+          "Serir",
+          "Oase"
+        ],
+        "why": "Hamada ist eine Steinwüste."
+      },
+      {
+        "q": "Serir",
+        "kind": "gap",
+        "s": "Eine Wüste aus Kies und Geröll heißt ___ .",
+        "a": "Serir",
+        "wrong": [
+          "Erg",
+          "Hamada",
+          "Wadi"
+        ],
+        "why": "Serir bezeichnet eine Kieswüste."
+      },
+      {
+        "q": "Trockenheit",
+        "a": "Es fällt sehr wenig Niederschlag",
+        "wrong": [
+          "Es ist immer über 40 Grad heiß",
+          "Es gibt keinen Boden",
+          "Es gibt keine Nacht"
+        ],
+        "why": "Das ist das Hauptmerkmal. Die Temperatur kann hoch oder niedrig sein."
+      },
+      {
+        "q": "Kältewüste",
+        "a": "Die Gobi",
+        "wrong": [
+          "Die Sahara",
+          "Das Amazonasbecken",
+          "Der Kongo"
+        ],
+        "why": "In der Gobi ist es im Winter sehr kalt, und es fällt wenig Niederschlag."
+      },
+      {
+        "q": "Häufigkeit",
+        "a": "Nur ein kleiner Teil der Sahara besteht aus Sanddünen",
+        "wrong": [
+          "Die ganze Sahara ist Sand",
+          "Die Sahara hat keine Berge",
+          "Die Sahara ist ein Meer"
+        ],
+        "why": "Viel größer sind die Flächen aus Fels und Kies."
+      },
+      {
+        "q": "Oase",
+        "kind": "gap",
+        "s": "Eine Stelle in der Wüste mit Wasser und Pflanzen heißt ___ .",
+        "a": "Oase",
+        "wrong": [
+          "Düne",
+          "Erg",
+          "Hamada"
+        ],
+        "why": "In einer Oase tritt Grundwasser an die Oberfläche."
+      },
+      {
+        "q": "Wadi",
+        "kind": "gap",
+        "s": "Ein trockenes Flussbett in der Wüste, das nur nach Starkregen Wasser führt, heißt ___ .",
+        "a": "Wadi",
+        "wrong": [
+          "Oase",
+          "Düne",
+          "Fjord"
+        ],
+        "why": "Nach seltenen Regenfällen kann dort plötzlich ein reißender Fluss entstehen."
+      },
+      {
+        "q": "Salzwüste",
+        "a": "Wasser verdunstet und lässt Salz zurück",
+        "wrong": [
+          "Das Meer ist zugefroren",
+          "Der Wind bläst Salz heran",
+          "Vulkane spucken Salz"
+        ],
+        "why": "In Becken ohne Abfluss bleibt beim Verdunsten Salz zurück."
+      },
+      {
+        "q": "Antarktis",
+        "a": "Sie ist eine Wüste, weil dort sehr wenig Niederschlag fällt",
+        "wrong": [
+          "Sie ist keine Wüste, weil sie kalt ist",
+          "Sie ist eine Sandwüste",
+          "Sie ist ein Regenwald"
+        ],
+        "why": "Nicht die Hitze, sondern die Trockenheit macht eine Wüste aus."
+      }
+    ],
+    "temperaturzonen": [
+      {
+        "q": "Wendekreis",
+        "kind": "gap",
+        "s": "Die Wendekreise liegen bei ___ Grad Nord und Süd.",
+        "a": "23,5",
+        "wrong": [
+          "66,5",
+          "45",
+          "90"
+        ],
+        "why": "Der Wert entspricht der Neigung der Erdachse."
+      },
+      {
+        "q": "Polarkreis",
+        "kind": "gap",
+        "s": "Die Polarkreise liegen bei ___ Grad Nord und Süd.",
+        "a": "66,5",
+        "wrong": [
+          "23,5",
+          "40",
+          "10"
+        ],
+        "why": "Von dort bis zu den Polen reicht die Polarzone."
+      },
+      {
+        "q": "Tropen",
+        "a": "Zwischen dem nördlichen und dem südlichen Wendekreis",
+        "wrong": [
+          "Zwischen den Polarkreisen und den Polen",
+          "Zwischen 45 und 66,5 Grad",
+          "Nur am Nordpol"
+        ],
+        "why": "Dort steht die Sonne mittags zeitweise im Zenit."
+      },
+      {
+        "q": "Zone",
+        "a": "Gemäßigte Zone",
+        "wrong": [
+          "Tropen",
+          "Polarzone",
+          "Subtropen"
+        ],
+        "why": "Deutschland liegt zwischen den Wendekreisen und Polarkreisen, in der gemäßigten Zone."
+      },
+      {
+        "q": "Einstrahlung",
+        "a": "Steile Strahlen erwärmen mehr",
+        "wrong": [
+          "Flache Strahlen erwärmen mehr",
+          "Der Winkel spielt keine Rolle",
+          "Die Entfernung zur Sonne ändert sich stark"
+        ],
+        "why": "Steile Strahlen treffen eine kleinere Fläche und geben dort mehr Wärme ab."
+      },
+      {
+        "q": "Jahreszeiten",
+        "kind": "gap",
+        "s": "Die Jahreszeiten entstehen, weil die Erdachse ___ ist.",
+        "a": "geneigt",
+        "wrong": [
+          "gerade",
+          "kürzer",
+          "größer"
+        ],
+        "why": "Die Neigung sorgt dafür, dass sich der Sonnenstand im Lauf des Jahres ändert."
+      },
+      {
+        "q": "Polarzone",
+        "a": "Kalt, mit Polartag und Polarnacht",
+        "wrong": [
+          "Ganzjährig heiß",
+          "Vier gleiche Jahreszeiten",
+          "Regenzeit und Trockenzeit"
+        ],
+        "why": "Die Sonne steht dort immer flach."
+      },
+      {
+        "q": "Subtropen",
+        "a": "Heiße Sommer und milde Winter",
+        "wrong": [
+          "Ganzjährig sehr kalt",
+          "Ständig Regen",
+          "Vier kalte Jahreszeiten"
+        ],
+        "why": "Die Zone liegt zwischen den Tropen und der gemäßigten Zone."
+      },
+      {
+        "q": "Zenit",
+        "kind": "gap",
+        "s": "Steht die Sonne senkrecht über uns, steht sie im ___ .",
+        "a": "Zenit",
+        "wrong": [
+          "Horizont",
+          "Meridian",
+          "Pol"
+        ],
+        "why": "Das passiert nur zwischen den Wendekreisen."
+      },
+      {
+        "q": "Merksatz",
+        "a": "Je näher am Äquator, desto wärmer im Jahresmittel",
+        "wrong": [
+          "Je näher am Pol, desto wärmer",
+          "Die Breite spielt keine Rolle",
+          "Je näher am Meer, desto kälter immer"
+        ],
+        "why": "Die Sonne steht dort im Jahr am höchsten."
+      }
+    ],
+    "luftdruck-wind": [
+      {
+        "q": "Luftdruck",
+        "kind": "gap",
+        "s": "Der Luftdruck wird in ___ gemessen.",
+        "a": "Hektopascal",
+        "wrong": [
+          "Kilometern",
+          "Grad Celsius",
+          "Litern"
+        ],
+        "why": "Die Einheit hPa; der Normwert liegt bei etwa 1013 hPa."
+      },
+      {
+        "q": "Messgerät",
+        "a": "Barometer",
+        "wrong": [
+          "Thermometer",
+          "Hygrometer",
+          "Anemometer"
+        ],
+        "why": "Das Barometer misst den Luftdruck."
+      },
+      {
+        "q": "Warme Luft",
+        "kind": "gap",
+        "s": "Warme Luft steigt auf, am Boden entsteht ein ___ .",
+        "a": "Tief",
+        "wrong": [
+          "Hoch",
+          "Gebirge",
+          "Wasserfall"
+        ],
+        "why": "Aufsteigende Luft verringert den Druck am Boden."
+      },
+      {
+        "q": "Kalte Luft",
+        "kind": "gap",
+        "s": "Kalte Luft sinkt ab, am Boden entsteht ein ___ .",
+        "a": "Hoch",
+        "wrong": [
+          "Tief",
+          "Fluss",
+          "Delta"
+        ],
+        "why": "Absinkende Luft erhöht den Druck am Boden."
+      },
+      {
+        "q": "Wind",
+        "a": "Er entsteht durch einen Druckunterschied",
+        "wrong": [
+          "Er entsteht durch den Mond",
+          "Er entsteht durch Wolken",
+          "Er entsteht ohne Ursache"
+        ],
+        "why": "Luft strömt immer vom höheren zum niedrigeren Druck."
+      },
+      {
+        "q": "Richtung",
+        "a": "Ein Westwind kommt aus Westen und weht nach Osten",
+        "wrong": [
+          "Ein Westwind weht nach Westen",
+          "Ein Westwind kommt aus Norden",
+          "Ein Westwind weht nur nachts"
+        ],
+        "why": "Windrichtungen benennt man nach ihrer Herkunft."
+      },
+      {
+        "q": "Stärke",
+        "a": "Je größer der Druckunterschied, desto stärker der Wind",
+        "wrong": [
+          "Je kleiner der Druckunterschied, desto stärker der Wind",
+          "Die Stärke hat damit nichts zu tun",
+          "Nur die Temperatur bestimmt die Stärke"
+        ],
+        "why": "Bei großen Druckunterschieden strömt die Luft schneller."
+      },
+      {
+        "q": "Normwert",
+        "kind": "gap",
+        "s": "Der normale Luftdruck auf Meereshöhe beträgt etwa ___ hPa.",
+        "a": "1013",
+        "wrong": [
+          "500",
+          "100",
+          "2000"
+        ],
+        "why": "Der Wert gilt als Durchschnitt auf Meereshöhe."
+      },
+      {
+        "q": "Höhe",
+        "a": "Mit der Höhe nimmt der Luftdruck ab",
+        "wrong": [
+          "Mit der Höhe nimmt der Luftdruck zu",
+          "Der Luftdruck bleibt gleich",
+          "Er ist im Gebirge am höchsten"
+        ],
+        "why": "Oben liegt weniger Luft über uns."
+      },
+      {
+        "q": "Küste",
+        "a": "Am Tag weht der Wind vom kühleren Meer zum wärmeren Land",
+        "wrong": [
+          "Am Tag weht er vom Land zum Meer",
+          "Es weht nie Wind an der Küste",
+          "Er weht nur nachts"
+        ],
+        "why": "Das Land erwärmt sich schneller. Dort steigt Luft auf, und vom Meer strömt kühlere nach."
+      }
+    ],
+    "zirkulation": [
+      {
+        "q": "Passat",
+        "kind": "gap",
+        "s": "Die beständigen Winde der Tropen heißen ___ .",
+        "a": "Passate",
+        "wrong": [
+          "Monsune",
+          "Föhne",
+          "Stürme"
+        ],
+        "why": "Sie wehen das ganze Jahr in dieselbe Richtung."
+      },
+      {
+        "q": "Richtung",
+        "a": "Aus Nordost",
+        "wrong": [
+          "Aus Südwest",
+          "Aus Westen",
+          "Aus Norden"
+        ],
+        "why": "Auf der Nordhalbkugel lenkt die Erddrehung nach rechts ab."
+      },
+      {
+        "q": "Richtung Süd",
+        "a": "Aus Südost",
+        "wrong": [
+          "Aus Nordwest",
+          "Aus Westen",
+          "Aus Norden"
+        ],
+        "why": "Auf der Südhalbkugel lenkt die Erddrehung nach links ab."
+      },
+      {
+        "q": "Ziel",
+        "kind": "gap",
+        "s": "Die Passate wehen zum ___ hin.",
+        "a": "Äquator",
+        "wrong": [
+          "Pol",
+          "Meer",
+          "Gebirge"
+        ],
+        "why": "Sie schließen den Kreislauf der aufsteigenden Luft."
+      },
+      {
+        "q": "Aufstieg",
+        "a": "Am Äquator steigt warme Luft auf",
+        "wrong": [
+          "Am Äquator sinkt kalte Luft ab",
+          "Am Äquator herrscht Windstille ohne Aufstieg",
+          "Am Pol steigt warme Luft auf"
+        ],
+        "why": "Die starke Erwärmung lässt die Luft aufsteigen."
+      },
+      {
+        "q": "Westwinde",
+        "kind": "gap",
+        "s": "In der gemäßigten Zone herrschen meist ___ .",
+        "a": "Westwinde",
+        "wrong": [
+          "Ostwinde",
+          "Passate",
+          "Föhn"
+        ],
+        "why": "Sie bringen feuchte Luft vom Atlantik nach Europa."
+      },
+      {
+        "q": "Seefahrt",
+        "a": "Kolumbus nutzte den Passat für die Fahrt nach Westen über den Atlantik",
+        "wrong": [
+          "Kolumbus fuhr gegen den Wind",
+          "Kolumbus nutzte keinen Wind",
+          "Der Passat weht nur auf Seen"
+        ],
+        "why": "Der Passat weht beständig und trug Segelschiffe von Europa nach Amerika."
+      },
+      {
+        "q": "Ablenkung",
+        "a": "Die Erddrehung",
+        "wrong": [
+          "Der Mond",
+          "Die Gezeiten",
+          "Das Magnetfeld allein"
+        ],
+        "why": "Dies ist der Grund für Rechts- und Linksablenkung der Winde."
+      },
+      {
+        "q": "Subtropen",
+        "kind": "gap",
+        "s": "In den Subtropen sinkt die Luft ab, und es entstehen oft ___ .",
+        "a": "Wüsten",
+        "wrong": [
+          "Regenwälder",
+          "Gletscher",
+          "Moore"
+        ],
+        "why": "Absinkende Luft bringt wenig Regen. Dort liegen viele Wüsten, etwa die Sahara."
+      },
+      {
+        "q": "Polar",
+        "a": "Kalte, trockene Luft strömt vom Pol weg",
+        "wrong": [
+          "Warme Luft strömt zum Pol",
+          "Es gibt dort keinen Wind",
+          "Es weht dort nur Passat"
+        ],
+        "why": "Polare Ostwinde bringen Kaltluft in mittlere Breiten."
+      }
+    ],
+    "waermetransport": [
+      {
+        "q": "Strömung",
+        "kind": "gap",
+        "s": "Der warme ___ bringt Wärme von der Karibik nach Nordwesteuropa.",
+        "a": "Golfstrom",
+        "wrong": [
+          "Humboldtstrom",
+          "Rhein",
+          "Passat"
+        ],
+        "why": "Er beginnt im Golf von Mexiko und geht später in den Nordatlantikstrom über."
+      },
+      {
+        "q": "Humboldtstrom",
+        "a": "Kalte Strömung an der Westküste Südamerikas",
+        "wrong": [
+          "Warme Strömung in der Karibik",
+          "Ein Fluss in Afrika",
+          "Ein Wind in Asien"
+        ],
+        "why": "Er bringt kaltes Wasser aus Süden."
+      },
+      {
+        "q": "Antrieb",
+        "a": "Der Wind",
+        "wrong": [
+          "Der Mond allein",
+          "Die Fische",
+          "Die Gezeiten allein"
+        ],
+        "why": "Winde wie die Passate und Westwinde treiben große Strömungen an."
+      },
+      {
+        "q": "Norwegen",
+        "a": "Norwegische Häfen frieren im Winter kaum zu",
+        "wrong": [
+          "Norwegische Häfen sind immer vereist",
+          "Norwegen hat keine Küste",
+          "Norwegen liegt in den Tropen"
+        ],
+        "why": "Der Nordatlantikstrom bringt warmes Wasser."
+      },
+      {
+        "q": "Warm",
+        "kind": "gap",
+        "s": "Eine ___ Strömung macht das Klima an der Küste milder.",
+        "a": "warme",
+        "wrong": [
+          "kalte",
+          "trockene",
+          "schnelle"
+        ],
+        "why": "Sie gibt Wärme an die Luft ab."
+      },
+      {
+        "q": "Kalt",
+        "kind": "gap",
+        "s": "Eine ___ Strömung kühlt die Luft und lässt wenig Regen entstehen.",
+        "a": "kalte",
+        "wrong": [
+          "warme",
+          "feuchte",
+          "salzige"
+        ],
+        "why": "Kühle Luft über kaltem Wasser nimmt wenig Wasserdampf auf."
+      },
+      {
+        "q": "Atacama",
+        "a": "Der Humboldtstrom macht die Küste sehr trocken",
+        "wrong": [
+          "Der Humboldtstrom macht die Küste regnerisch",
+          "Der Golfstrom macht sie trocken",
+          "Strömungen haben keinen Einfluss"
+        ],
+        "why": "Über kaltem Wasser bilden sich kaum Regenwolken. Das erklärt die trockene Atacama-Wüste."
+      },
+      {
+        "q": "Wärmeverteilung",
+        "a": "Strömungen bringen Wärme von den Tropen in höhere Breiten",
+        "wrong": [
+          "Sie bringen Wärme zu den Polen und zurück ohne Wirkung",
+          "Sie kühlen alle Küsten",
+          "Sie erwärmen nur Seen"
+        ],
+        "why": "Dieser Wärmetransport gleicht Temperaturunterschiede aus."
+      },
+      {
+        "q": "Karibik",
+        "kind": "gap",
+        "s": "Der Golfstrom beginnt in der Nähe der ___ .",
+        "a": "Karibik",
+        "wrong": [
+          "Antarktis",
+          "Arktis",
+          "Sahara"
+        ],
+        "why": "Das warme Wasser dort speist den Strom."
+      },
+      {
+        "q": "Vergleich",
+        "a": "Bergen in Norwegen und Südgrönland liegen etwa gleich weit nördlich, doch Bergen ist deutlich milder",
+        "wrong": [
+          "Beide sind gleich warm",
+          "Südgrönland ist wärmer",
+          "Es gibt keinen Unterschied"
+        ],
+        "why": "Der Nordatlantikstrom und die Westwinde machen die Küste Norwegens viel milder als Südgrönland."
+      }
+    ],
+    "klimadiagramm": [
+      {
+        "q": "Kurve",
+        "a": "Die Temperatur",
+        "wrong": [
+          "Der Niederschlag",
+          "Der Luftdruck",
+          "Die Windstärke"
+        ],
+        "why": "Die Temperaturkurve ist meist rot gezeichnet."
+      },
+      {
+        "q": "Säulen",
+        "a": "Der Niederschlag",
+        "wrong": [
+          "Die Temperatur",
+          "Die Sonnenscheindauer",
+          "Der Wind"
+        ],
+        "why": "Die Säulen zeigen die Millimeter Regen pro Monat."
+      },
+      {
+        "q": "Maßeinheit",
+        "kind": "gap",
+        "s": "Der Niederschlag wird in ___ gemessen.",
+        "a": "Millimetern",
+        "wrong": [
+          "Grad",
+          "Hektopascal",
+          "Metern pro Sekunde"
+        ],
+        "why": "Ein Millimeter entspricht einem Liter Wasser pro Quadratmeter."
+      },
+      {
+        "q": "Verhältnis",
+        "kind": "gap",
+        "s": "Im Klimadiagramm entsprechen 10 Grad Celsius ___ Millimetern Niederschlag.",
+        "a": "20",
+        "wrong": [
+          "10",
+          "5",
+          "100"
+        ],
+        "why": "Das Verhältnis 1 zu 2 ist weltweit festgelegt."
+      },
+      {
+        "q": "Humid",
+        "a": "Die Säulen ragen über die Temperaturkurve",
+        "wrong": [
+          "Die Kurve liegt über den Säulen",
+          "Es gibt keine Säulen",
+          "Die Kurve ist gerade"
+        ],
+        "why": "Dann ist es feucht (humid)."
+      },
+      {
+        "q": "Arid",
+        "a": "Die Temperaturkurve liegt über den Säulen",
+        "wrong": [
+          "Die Säulen ragen über die Kurve",
+          "Es regnet ständig",
+          "Es herrscht immer Frost"
+        ],
+        "why": "Dann ist es trocken (arid)."
+      },
+      {
+        "q": "Jahresmittel",
+        "kind": "gap",
+        "s": "Die Durchschnittstemperatur eines ganzen Jahres heißt ___ .",
+        "a": "Jahresmitteltemperatur",
+        "wrong": [
+          "Monatssumme",
+          "Jahresniederschlag",
+          "Höhenwert"
+        ],
+        "why": "Sie steht in der Kopfzeile des Diagramms."
+      },
+      {
+        "q": "Jahressumme",
+        "kind": "gap",
+        "s": "Die Summe des Niederschlags eines Jahres heißt ___ .",
+        "a": "Jahresniederschlag",
+        "wrong": [
+          "Jahresmitteltemperatur",
+          "Wasserstand",
+          "Luftfeuchte"
+        ],
+        "why": "Auch sie steht in der Kopfzeile."
+      },
+      {
+        "q": "Kopfzeile",
+        "a": "Station, Höhe über dem Meer, Jahresmitteltemperatur und Jahresniederschlag",
+        "wrong": [
+          "Das Alter der Messstation",
+          "Die Namen der Messer",
+          "Die Hauptstadt des Landes"
+        ],
+        "why": "Diese Angaben gehören zu jedem Klimadiagramm."
+      },
+      {
+        "q": "Fehler",
+        "a": "Die Säulen werden an der rechten Achse abgelesen",
+        "wrong": [
+          "Die Säulen werden an der linken Achse abgelesen",
+          "Die Kurve wird an der rechten Achse abgelesen",
+          "Beide Achsen haben die gleiche Skala"
+        ],
+        "why": "Beachte: Links Temperatur, rechts Niederschlag."
+      }
+    ],
+    "wirbelstuerme": [
+      {
+        "q": "Hurrikan",
+        "kind": "gap",
+        "s": "Ein tropischer Wirbelsturm im Atlantik heißt ___ .",
+        "a": "Hurrikan",
+        "wrong": [
+          "Taifun",
+          "Tornado",
+          "Blizzard"
+        ],
+        "why": "Im Westpazifik heißt derselbe Sturmtyp Taifun."
+      },
+      {
+        "q": "Taifun",
+        "kind": "gap",
+        "s": "Ein tropischer Wirbelsturm im Westpazifik heißt ___ .",
+        "a": "Taifun",
+        "wrong": [
+          "Hurrikan",
+          "Tornado",
+          "Monsun"
+        ],
+        "why": "Hurrikan, Taifun und Zyklon sind regionale Namen."
+      },
+      {
+        "q": "Entstehung",
+        "a": "Über Meer mit mindestens etwa 26 Grad Celsius",
+        "wrong": [
+          "Über Eis",
+          "Über Wüsten",
+          "Über Gebirgen"
+        ],
+        "why": "Die Energie kommt aus warmem Meerwasser, das verdunstet."
+      },
+      {
+        "q": "Auge",
+        "a": "Im Auge ist es ruhig, rundherum sind die Winde am stärksten",
+        "wrong": [
+          "Im Auge ist der Wind am stärksten",
+          "Es gibt kein Auge",
+          "Im Auge ist es eiskalt"
+        ],
+        "why": "Das Zentrum ist von der Augenwand umgeben, in der die stärksten Winde wehen."
+      },
+      {
+        "q": "Tornado",
+        "a": "Ein kleiner rotierender Luftschlauch unter einer Gewitterwolke",
+        "wrong": [
+          "Ein Sturm über dem Meer, der tagelang dauert",
+          "Ein Sandsturm",
+          "Ein Wind aus den Alpen"
+        ],
+        "why": "Tornados sind kleinräumig, aber sehr zerstörerisch."
+      },
+      {
+        "q": "Gebiet",
+        "a": "Im Mittleren Westen der USA",
+        "wrong": [
+          "In der Antarktis",
+          "Im Amazonasbecken",
+          "In der Arktis"
+        ],
+        "why": "Dort treffen warme, feuchte und kalte, trockene Luft aufeinander. Das Gebiet gilt als Tornado Alley."
+      },
+      {
+        "q": "Wassertemperatur",
+        "kind": "gap",
+        "s": "Für einen tropischen Wirbelsturm muss das Meerwasser mindestens etwa ___ Grad warm sein.",
+        "a": "26",
+        "wrong": [
+          "10",
+          "15",
+          "5"
+        ],
+        "why": "Unter dieser Temperatur fehlt dem Sturm die Energie."
+      },
+      {
+        "q": "Folgen",
+        "a": "Sturmflut, Starkregen und Überschwemmungen an der Küste",
+        "wrong": [
+          "Dürre",
+          "Frost",
+          "Schneefall"
+        ],
+        "why": "Besonders gefährlich ist die Sturmflut, die Wasser ins Land drückt."
+      },
+      {
+        "q": "Schwächung",
+        "a": "Über Land verliert ein Hurrikan seine Kraft",
+        "wrong": [
+          "Er wird über Land stärker",
+          "Er bleibt gleich",
+          "Er verschwindet über Meer"
+        ],
+        "why": "Ohne warmes Wasser fehlt ihm die Energiequelle."
+      },
+      {
+        "q": "Vorsorge",
+        "a": "Frühwarnsysteme, Schutzräume und Evakuierungen",
+        "wrong": [
+          "Das Ignorieren der Warnungen",
+          "Mehr Häuser am Strand",
+          "Weniger Wettervorhersagen"
+        ],
+        "why": "Vorhersagen und Evakuierungen retten Menschenleben."
+      }
+    ],
+    "mitteleuropa-klima": [
+      {
+        "q": "Höhe",
+        "kind": "gap",
+        "s": "Pro 100 Meter Höhe wird es im Durchschnitt etwa ___ Grad kühler.",
+        "a": "0,6",
+        "wrong": [
+          "6",
+          "10",
+          "0,01"
+        ],
+        "why": "Das ist ein Durchschnittswert für die Abnahme der Temperatur mit der Höhe."
+      },
+      {
+        "q": "Faktor",
+        "a": "Die Entfernung zum Meer",
+        "wrong": [
+          "Die Farbe der Berge",
+          "Der Name der Stadt",
+          "Die Zahl der Einwohner"
+        ],
+        "why": "Meeresnähe beeinflusst Temperatur und Niederschlag."
+      },
+      {
+        "q": "Maritim",
+        "a": "Milde Winter, kühle Sommer, viel Niederschlag",
+        "wrong": [
+          "Sehr kalte Winter, heiße Sommer, wenig Niederschlag",
+          "Immer Frost",
+          "Immer Hitze"
+        ],
+        "why": "Das Meer wirkt wie ein Wärmespeicher."
+      },
+      {
+        "q": "Kontinental",
+        "a": "Kalte Winter, warme Sommer, große Temperaturunterschiede",
+        "wrong": [
+          "Immer mild",
+          "Ständig Regen",
+          "Keine Jahreszeiten"
+        ],
+        "why": "Im Inneren großer Landmassen fehlt der Einfluss des Meeres."
+      },
+      {
+        "q": "Westwinde",
+        "kind": "gap",
+        "s": "Mitteleuropa liegt in der Zone der ___ .",
+        "a": "Westwinde",
+        "wrong": [
+          "Passate",
+          "Polaren Ostwinde",
+          "Monsune"
+        ],
+        "why": "Sie bringen feuchte Luft vom Atlantik."
+      },
+      {
+        "q": "Luv",
+        "kind": "gap",
+        "s": "Die dem Wind zugewandte Seite eines Gebirges heißt ___ .",
+        "a": "Luv",
+        "wrong": [
+          "Lee",
+          "Gipfel",
+          "Hang"
+        ],
+        "why": "Dort steigt die Luft auf, kühlt ab und regnet sich ab."
+      },
+      {
+        "q": "Lee",
+        "kind": "gap",
+        "s": "Die dem Wind abgewandte Seite eines Gebirges heißt ___ .",
+        "a": "Lee",
+        "wrong": [
+          "Luv",
+          "Grat",
+          "Tal"
+        ],
+        "why": "Dort sinkt die Luft ab und ist trockener."
+      },
+      {
+        "q": "Steigungsregen",
+        "a": "Aufsteigende Luft kühlt ab, Wasserdampf kondensiert, es regnet",
+        "wrong": [
+          "Absteigende Luft bringt Regen",
+          "Wind bringt nie Regen",
+          "Regen entsteht nur im Tal"
+        ],
+        "why": "Das passiert an der Luvseite von Gebirgen."
+      },
+      {
+        "q": "Hoch",
+        "a": "Im Sommer meist trocken und warm, im Winter kalt",
+        "wrong": [
+          "Im Sommer Dauerregen",
+          "Immer Nebel",
+          "Immer Sturm"
+        ],
+        "why": "Hochdruckgebiete bringen oft stabiles, trockenes Wetter."
+      },
+      {
+        "q": "Westwetterlage",
+        "a": "Mild und feucht, mit Wolken und Regen",
+        "wrong": [
+          "Sehr kalt und trocken",
+          "Heiß und wolkenlos",
+          "Ständig Schnee"
+        ],
+        "why": "Die Luft kommt vom Atlantik."
+      }
+    ],
+    "tiefdruckgebiet": [
+      {
+        "q": "Warmfront",
+        "a": "Dauerregen mit Schichtwolken",
+        "wrong": [
+          "Heftige Gewitter",
+          "Wolkenlosen Himmel",
+          "Hagelstürme"
+        ],
+        "why": "Die warme Luft gleitet langsam auf."
+      },
+      {
+        "q": "Kaltfront",
+        "a": "Schauer, Gewitter und Windböen",
+        "wrong": [
+          "Langer, gleichmäßiger Regen",
+          "Hitze",
+          "Nebel"
+        ],
+        "why": "Die kalte Luft hebt warme Luft schnell an."
+      },
+      {
+        "q": "Folge",
+        "kind": "gap",
+        "s": "Nach der Kaltfront wird es ___ .",
+        "a": "kühler",
+        "wrong": [
+          "wärmer",
+          "heißer",
+          "feuchter"
+        ],
+        "why": "Kalte Luft ist nun angekommen."
+      },
+      {
+        "q": "Folge Warm",
+        "kind": "gap",
+        "s": "Nach der Warmfront wird es ___ .",
+        "a": "wärmer",
+        "wrong": [
+          "kühler",
+          "kälter",
+          "trockener"
+        ],
+        "why": "Warme Luft folgt im Warmsektor."
+      },
+      {
+        "q": "Zugrichtung",
+        "a": "Von West nach Ost",
+        "wrong": [
+          "Von Ost nach West",
+          "Von Nord nach Süd",
+          "Sie bleiben stehen"
+        ],
+        "why": "Die Westwinde schieben die Tiefs über Mitteleuropa."
+      },
+      {
+        "q": "Karte",
+        "a": "Warmfronten sind rot, Kaltfronten blau",
+        "wrong": [
+          "Warmfronten sind blau, Kaltfronten rot",
+          "Beide sind grün",
+          "Beide sind schwarz"
+        ],
+        "why": "Die Farben entsprechen der Temperatur der vorrückenden Luft."
+      },
+      {
+        "q": "Hoch",
+        "a": "Hochdruckgebiete bringen oft trockenes, beständiges Wetter",
+        "wrong": [
+          "Hochdruckgebiete bringen immer Gewitter",
+          "Hochdruckgebiete bringen Dauerregen",
+          "Hochdruckgebiete gibt es nicht"
+        ],
+        "why": "Absinkende Luft löst Wolken auf."
+      },
+      {
+        "q": "Isobaren",
+        "kind": "gap",
+        "s": "Linien gleichen Luftdrucks auf der Wetterkarte heißen ___ .",
+        "a": "Isobaren",
+        "wrong": [
+          "Isothermen",
+          "Fronten",
+          "Küsten"
+        ],
+        "why": "Eng beieinanderliegende Isobaren bedeuten starken Wind."
+      },
+      {
+        "q": "Dichte Isobaren",
+        "a": "Starker Wind",
+        "wrong": [
+          "Windstille",
+          "Dauerfrost",
+          "Nebel"
+        ],
+        "why": "Ein großer Druckunterschied auf kurzer Strecke erzeugt starken Wind."
+      },
+      {
+        "q": "Warmsektor",
+        "kind": "gap",
+        "s": "Zwischen Warm- und Kaltfront liegt der ___ .",
+        "a": "Warmsektor",
+        "wrong": [
+          "Kaltsektor",
+          "Polarsektor",
+          "Tiefsektor"
+        ],
+        "why": "Dort ist es meist mild und weniger regnerisch."
+      }
+    ],
+    "klimazonen": [
+      {
+        "q": "Tropen",
+        "a": "Tropischer Regenwald",
+        "wrong": [
+          "Tundra",
+          "Nadelwald",
+          "Steppe"
+        ],
+        "why": "Hohe Temperaturen und viel Regen lassen Regenwald wachsen."
+      },
+      {
+        "q": "Subtropen",
+        "a": "Wüste",
+        "wrong": [
+          "Regenwald",
+          "Tundra",
+          "Laubwald"
+        ],
+        "why": "Absinkende Luft in den Subtropen führt zu großer Trockenheit."
+      },
+      {
+        "q": "Mittelmeer",
+        "a": "Hartlaubwald mit Olivenbäumen und Korkeichen",
+        "wrong": [
+          "Tundra",
+          "Regenwald",
+          "Nadelwald im Dauerfrost"
+        ],
+        "why": "Trockene Sommer und milde, feuchte Winter prägen das Mittelmeerklima."
+      },
+      {
+        "q": "Gemäßigt",
+        "a": "Laub- und Mischwald",
+        "wrong": [
+          "Savanne",
+          "Wüste",
+          "Tundra"
+        ],
+        "why": "In Deutschland wächst von Natur aus vor allem Laub- und Mischwald."
+      },
+      {
+        "q": "Taiga",
+        "kind": "gap",
+        "s": "Der Nadelwaldgürtel im Norden heißt ___ .",
+        "a": "Taiga",
+        "wrong": [
+          "Tundra",
+          "Savanne",
+          "Steppe"
+        ],
+        "why": "Die Taiga zieht sich durch Kanada, Nordeuropa und Sibirien."
+      },
+      {
+        "q": "Tundra",
+        "kind": "gap",
+        "s": "Nördlich der Baumgrenze liegt die ___ .",
+        "a": "Tundra",
+        "wrong": [
+          "Taiga",
+          "Savanne",
+          "Wüste"
+        ],
+        "why": "Dort wachsen nur niedrige Pflanzen auf Dauerfrostboden."
+      },
+      {
+        "q": "Savanne",
+        "a": "Wechselfeuchte Tropen mit Gras und einzelnen Bäumen",
+        "wrong": [
+          "Dichter Wald",
+          "Eisfläche",
+          "Moor"
+        ],
+        "why": "Regenzeit und Trockenzeit bestimmen die Pflanzen."
+      },
+      {
+        "q": "Steppe",
+        "a": "Trockenes Grasland im Inneren der Kontinente",
+        "wrong": [
+          "Regenwald",
+          "Eiswüste",
+          "Mangrovensumpf"
+        ],
+        "why": "Zu trocken für Wald, aber nicht Wüste."
+      },
+      {
+        "q": "Höhenstufen",
+        "kind": "gap",
+        "s": "Im Gebirge ändert sich die Vegetation mit der ___ .",
+        "a": "Höhe",
+        "wrong": [
+          "Länge",
+          "Tiefe",
+          "Breite"
+        ],
+        "why": "Mit der Höhe wird es kälter. Die Pflanzenwelt ändert sich ähnlich wie von Süd nach Nord."
+      },
+      {
+        "q": "Zuordnung",
+        "a": "Je nach Temperatur und Niederschlag wachsen andere Pflanzen",
+        "wrong": [
+          "Die Vegetation ist überall gleich",
+          "Nur der Boden bestimmt die Vegetation",
+          "Nur der Wind bestimmt die Vegetation"
+        ],
+        "why": "Klima ist der wichtigste Faktor für die Vegetation."
+      }
+    ],
+    "regenwald-klima": [
+      {
+        "q": "Lage",
+        "kind": "gap",
+        "s": "Der tropische Regenwald liegt rund um den ___ .",
+        "a": "Äquator",
+        "wrong": [
+          "Nordpol",
+          "Polarkreis",
+          "Wendekreis des Steinbocks"
+        ],
+        "why": "Dort ist es am wärmsten und feuchtesten."
+      },
+      {
+        "q": "Temperatur",
+        "a": "Ganzjährig etwa 25 bis 28 Grad",
+        "wrong": [
+          "Im Winter unter null Grad",
+          "Im Sommer über 50 Grad",
+          "Zwischen 5 und 10 Grad"
+        ],
+        "why": "Die Sonne steht das ganze Jahr hoch."
+      },
+      {
+        "q": "Niederschlag",
+        "kind": "gap",
+        "s": "Im Regenwald fallen im Jahr mehr als ___ Millimeter Niederschlag.",
+        "a": "2000",
+        "wrong": [
+          "200",
+          "20",
+          "5"
+        ],
+        "why": "Zum Vergleich: In Deutschland fallen im Schnitt etwa 700 Millimeter."
+      },
+      {
+        "q": "Zenitalregen",
+        "a": "Ein kräftiger Regen am Nachmittag, wenn die Sonne am höchsten stand",
+        "wrong": [
+          "Ein Schneefall im Winter",
+          "Ein Regen nur in der Nacht",
+          "Ein Sandsturm"
+        ],
+        "why": "Die Wärme lässt feuchte Luft aufsteigen, und es bilden sich Gewitterwolken."
+      },
+      {
+        "q": "Jahreszeiten",
+        "a": "Es gibt keine Jahreszeiten im Sinne von Sommer und Winter",
+        "wrong": [
+          "Es gibt vier Jahreszeiten",
+          "Es gibt nur Winter",
+          "Es gibt nur Herbst"
+        ],
+        "why": "Die Temperatur schwankt kaum im Jahr."
+      },
+      {
+        "q": "Tageszeitenklima",
+        "kind": "gap",
+        "s": "Im Regenwald ist der Temperaturunterschied zwischen Tag und Nacht größer als zwischen den ___ .",
+        "a": "Monaten",
+        "wrong": [
+          "Stunden",
+          "Tagen",
+          "Wochen"
+        ],
+        "why": "Das nennt man Tageszeitenklima."
+      },
+      {
+        "q": "Verdunstung",
+        "a": "Wald und Boden geben viel Wasserdampf ab",
+        "wrong": [
+          "Der Wald trocknet aus",
+          "Es verdunstet nichts",
+          "Wasser gefriert"
+        ],
+        "why": "Der Wasserdampf steigt auf und bildet Wolken."
+      },
+      {
+        "q": "Regenwald",
+        "a": "Amazonasbecken, Kongobecken und Südostasien",
+        "wrong": [
+          "Sahara und Gobi",
+          "Alpen und Pyrenäen",
+          "Grönland und Spitzbergen"
+        ],
+        "why": "Das sind die großen zusammenhängenden Regenwaldgebiete der Erde."
+      },
+      {
+        "q": "Feuchte",
+        "kind": "gap",
+        "s": "Die Luft im Regenwald ist fast immer ___ .",
+        "a": "feucht",
+        "wrong": [
+          "trocken",
+          "gefroren",
+          "salzig"
+        ],
+        "why": "Die Luftfeuchtigkeit liegt meist bei 80 Prozent oder mehr."
+      },
+      {
+        "q": "Zenit",
+        "a": "Die Sonne steht mittags fast senkrecht",
+        "wrong": [
+          "Die Sonne steht nie hoch",
+          "Die Sonne ist nie zu sehen",
+          "Es gibt keine Sonne"
+        ],
+        "why": "Deshalb ist die Einstrahlung so stark."
+      }
+    ],
+    "regenwald-aufbau": [
+      {
+        "q": "Oberstes Stockwerk",
+        "a": "Die Urwaldriesen",
+        "wrong": [
+          "Die Strauchschicht",
+          "Der Boden",
+          "Die Krautschicht"
+        ],
+        "why": "Einzelne Bäume ragen weit über das Kronendach."
+      },
+      {
+        "q": "Kronendach",
+        "a": "Dichtes Blätterdach, in dem viele Tiere leben",
+        "wrong": [
+          "Ein dunkler Boden",
+          "Ein See",
+          "Eine Wiese"
+        ],
+        "why": "Hier gibt es viel Licht und Nahrung."
+      },
+      {
+        "q": "Licht",
+        "kind": "gap",
+        "s": "Am Boden des Regenwaldes erreicht nur sehr ___ Licht die Pflanzen.",
+        "a": "wenig",
+        "wrong": [
+          "viel",
+          "grelles",
+          "rotes"
+        ],
+        "why": "Das dichte Blätterdach schluckt fast alles Licht."
+      },
+      {
+        "q": "Epiphyten",
+        "a": "Pflanzen wie Orchideen, die auf Ästen wachsen",
+        "wrong": [
+          "Pflanzen im Boden",
+          "Wasserpflanzen",
+          "Wüstenpflanzen"
+        ],
+        "why": "Sie wachsen auf Bäumen, um Licht zu bekommen, und schaden dem Baum nicht."
+      },
+      {
+        "q": "Lianen",
+        "kind": "gap",
+        "s": "Kletterpflanzen, die sich an Bäumen emporranken, heißen ___ .",
+        "a": "Lianen",
+        "wrong": [
+          "Moose",
+          "Flechten",
+          "Gräser"
+        ],
+        "why": "Sie wachsen zum Licht im Kronendach."
+      },
+      {
+        "q": "Boden",
+        "a": "Er ist nährstoffarm mit dünner Humusschicht",
+        "wrong": [
+          "Er ist tief und sehr fruchtbar",
+          "Er besteht aus Sand",
+          "Er ist ständig gefroren"
+        ],
+        "why": "Regen wäscht Nährstoffe aus, und die Zersetzung ist sehr schnell."
+      },
+      {
+        "q": "Kreislauf",
+        "kind": "gap",
+        "s": "Der Nährstoffkreislauf im Regenwald ist ___ .",
+        "a": "kurz",
+        "wrong": [
+          "lang",
+          "unterbrochen",
+          "unbekannt"
+        ],
+        "why": "Abgestorbenes wird sofort zersetzt und wieder aufgenommen."
+      },
+      {
+        "q": "Zersetzung",
+        "a": "Sie geht wegen Wärme und Feuchte sehr schnell",
+        "wrong": [
+          "Sie dauert Jahrzehnte",
+          "Sie findet nicht statt",
+          "Sie braucht Frost"
+        ],
+        "why": "Pilze und Bakterien arbeiten bei Wärme und Feuchte besonders schnell."
+      },
+      {
+        "q": "Artenvielfalt",
+        "a": "Der Regenwald beherbergt mehr Arten als jedes andere Landlebensraum",
+        "wrong": [
+          "Der Regenwald hat nur wenige Arten",
+          "Er hat nur Tiere, keine Pflanzen",
+          "Er hat weniger Arten als die Tundra"
+        ],
+        "why": "Die Vielfalt von Pflanzen und Tieren ist riesig."
+      },
+      {
+        "q": "Immergrün",
+        "kind": "gap",
+        "s": "Weil Bäume im Regenwald das ganze Jahr Blätter tragen, nennt man ihn ___ .",
+        "a": "immergrün",
+        "wrong": [
+          "laubabwerfend",
+          "kahl",
+          "winterkalt"
+        ],
+        "why": "Es gibt keine kalte Jahreszeit, in der Bäume die Blätter abwerfen müssten."
+      }
+    ],
+    "wanderfeldbau": [
+      {
+        "q": "Brandrodung",
+        "kind": "gap",
+        "s": "Beim Wanderfeldbau wird der Wald durch ___ gerodet.",
+        "a": "Brandrodung",
+        "wrong": [
+          "Beweidung",
+          "Bewässerung",
+          "Aufforstung"
+        ],
+        "why": "Die Asche liefert kurzzeitig Nährstoffe."
+      },
+      {
+        "q": "Anbau",
+        "a": "Maniok, Mais und Bananen für die eigene Familie",
+        "wrong": [
+          "Kaffee für den Weltmarkt",
+          "Weizen für den Export",
+          "Soja für Tierfutter"
+        ],
+        "why": "Wanderfeldbau dient der Selbstversorgung."
+      },
+      {
+        "q": "Grund",
+        "a": "Der Boden wird nach wenigen Jahren nährstoffarm",
+        "wrong": [
+          "Es regnet zu wenig",
+          "Der Wald verschwindet für immer",
+          "Die Sonne scheint nicht"
+        ],
+        "why": "Die Nährstoffe stecken kaum im Boden. Sie sind bald aufgebraucht."
+      },
+      {
+        "q": "Brache",
+        "kind": "gap",
+        "s": "Das Brachliegen eines Feldes, damit sich der Wald erholt, heißt ___ .",
+        "a": "Brache",
+        "wrong": [
+          "Ernte",
+          "Saat",
+          "Düngung"
+        ],
+        "why": "Die Brache gibt dem Boden Zeit, sich zu erholen."
+      },
+      {
+        "q": "Selbstversorgung",
+        "a": "Man erzeugt vor allem für sich selbst, nicht für den Verkauf",
+        "wrong": [
+          "Man erzeugt nur für den Export",
+          "Man erzeugt nichts",
+          "Man kauft alles"
+        ],
+        "why": "Das ist das Gegenteil des Anbaus für den Weltmarkt."
+      },
+      {
+        "q": "Vorteil",
+        "a": "Kleine Flächen und ein Wald, der sich wieder erholen kann",
+        "wrong": [
+          "Der Wald wird für immer zerstört",
+          "Es entsteht eine Wüste",
+          "Es braucht große Maschinen"
+        ],
+        "why": "Bei ausreichend langer Brache bleibt der Wald erhalten."
+      },
+      {
+        "q": "Problem",
+        "a": "Bei mehr Menschen werden die Brachezeiten zu kurz",
+        "wrong": [
+          "Es gibt zu wenige Menschen",
+          "Es gibt zu viel Wald",
+          "Es gibt keine Sonne"
+        ],
+        "why": "Dann kann der Wald nicht nachwachsen."
+      },
+      {
+        "q": "Asche",
+        "kind": "gap",
+        "s": "Die ___ düngt den Boden nur für kurze Zeit.",
+        "a": "Asche",
+        "wrong": [
+          "Erde",
+          "Sonne",
+          "Luft"
+        ],
+        "why": "Sie enthält Nährstoffe der verbrannten Pflanzen."
+      },
+      {
+        "q": "Vergleich",
+        "a": "Wanderfeldbau ist kleinräumig, Plantagen sind großflächig",
+        "wrong": [
+          "Beide sind gleich groß",
+          "Plantagen sind kleiner",
+          "Wanderfeldbau braucht Maschinen"
+        ],
+        "why": "Plantagen verändern große Flächen dauerhaft."
+      },
+      {
+        "q": "Wirkung",
+        "a": "Bei langer Brache wächst der Wald nach",
+        "wrong": [
+          "Die Fläche wird nie wieder Wald",
+          "Es wächst Eis",
+          "Es wächst Wüste"
+        ],
+        "why": "Die Natur erholt sich, wenn sie genug Zeit hat."
+      }
+    ],
+    "kaffee": [
+      {
+        "q": "Größter Erzeuger",
+        "kind": "gap",
+        "s": "Der größte Kaffeeerzeuger der Welt ist ___ .",
+        "a": "Brasilien",
+        "wrong": [
+          "Deutschland",
+          "Kanada",
+          "Russland"
+        ],
+        "why": "Brasilien liefert etwa ein Drittel des Weltmarktes."
+      },
+      {
+        "q": "Klima",
+        "a": "Warm mit viel Regen, oft in Höhenlagen der Tropen",
+        "wrong": [
+          "Kalt und trocken",
+          "Heiß und trocken",
+          "Polar"
+        ],
+        "why": "Kaffeepflanzen brauchen Wärme, aber keine große Hitze."
+      },
+      {
+        "q": "Frucht",
+        "a": "Die Bohnen sind die Samen der Kaffeekirsche",
+        "wrong": [
+          "Die Bohnen wachsen an Bäumen als Äpfel",
+          "Kaffee wächst im Boden wie Kartoffeln",
+          "Kaffee ist ein Pilz"
+        ],
+        "why": "Jede Kirsche enthält meist zwei Samen."
+      },
+      {
+        "q": "Rösten",
+        "kind": "gap",
+        "s": "Geröstet wird Kaffee meistens in den ___ .",
+        "a": "Abnehmerländern",
+        "wrong": [
+          "Erzeugerländern",
+          "Tropen",
+          "Gebirgen"
+        ],
+        "why": "Das bringt dort einen großen Teil der Wertschöpfung."
+      },
+      {
+        "q": "Preis",
+        "a": "Er schwankt auf dem Weltmarkt stark",
+        "wrong": [
+          "Er bleibt immer gleich",
+          "Er steigt nie",
+          "Er wird von den Bauern festgelegt"
+        ],
+        "why": "Schlechte Ernten und Spekulation lassen die Preise schwanken."
+      },
+      {
+        "q": "Folge",
+        "a": "Bei niedrigen Preisen können Bauern ihre Kosten nicht decken",
+        "wrong": [
+          "Bei niedrigen Preisen verdienen Bauern mehr",
+          "Es verändert sich nichts",
+          "Die Bauern werden reich"
+        ],
+        "why": "Viele Familien geraten dann in Armut."
+      },
+      {
+        "q": "Plantage",
+        "kind": "gap",
+        "s": "Große Kaffeepflanzungen nennt man ___ .",
+        "a": "Plantagen",
+        "wrong": [
+          "Wiesen",
+          "Oasen",
+          "Moore"
+        ],
+        "why": "Kleinbauern bauen auf kleineren Flächen an."
+      },
+      {
+        "q": "Fairer Handel",
+        "a": "Er garantiert einen Mindestpreis",
+        "wrong": [
+          "Er verbietet den Handel",
+          "Er senkt die Preise",
+          "Er zahlt nichts"
+        ],
+        "why": "So sind Bauern besser vor Preisverfall geschützt."
+      },
+      {
+        "q": "Wertschöpfung",
+        "a": "Der größte Teil des Preises bleibt bei Händlern und Röstern",
+        "wrong": [
+          "Der größte Teil geht an die Pflücker",
+          "Der Bauer bekommt fast alles",
+          "Der Preis geht an den Staat"
+        ],
+        "why": "Der Anteil der Erzeuger am Ladenpreis ist klein."
+      },
+      {
+        "q": "Ernte",
+        "kind": "gap",
+        "s": "Die roten Früchte werden bei der Ernte von Hand ___ .",
+        "a": "gepflückt",
+        "wrong": [
+          "gegossen",
+          "gebacken",
+          "gefroren"
+        ],
+        "why": "Bei reifen Früchten wird oft von Hand gepflückt."
+      }
+    ],
+    "regenwald-gefahr": [
+      {
+        "q": "Ursache",
+        "a": "Rinderweiden und Sojaanbau",
+        "wrong": [
+          "Mehr Schneefall",
+          "Mehr Erdbeben",
+          "Mehr Gletscher"
+        ],
+        "why": "Fläche für Fleisch und Tierfutter ist ein Haupttreiber."
+      },
+      {
+        "q": "Palmöl",
+        "kind": "gap",
+        "s": "Für die Gewinnung von ___ werden Wälder in Südostasien gerodet.",
+        "a": "Palmöl",
+        "wrong": [
+          "Eis",
+          "Wasserstoff",
+          "Granit"
+        ],
+        "why": "Ölpalmen werden auf Plantagen angebaut."
+      },
+      {
+        "q": "Folge",
+        "a": "Pflanzen- und Tierarten verlieren ihren Lebensraum und sterben aus",
+        "wrong": [
+          "Es entstehen neue Arten in Massen",
+          "Die Artenvielfalt nimmt zu",
+          "Es ändert sich nichts"
+        ],
+        "why": "Viele Arten leben nur im Regenwald."
+      },
+      {
+        "q": "Kohlenstoffdioxid",
+        "kind": "gap",
+        "s": "Beim Verbrennen von Regenwald gelangt zusätzlich ___ in die Luft.",
+        "a": "CO2",
+        "wrong": [
+          "Sauerstoff",
+          "Wasser",
+          "Stickstoff"
+        ],
+        "why": "Das verstärkt den Treibhauseffekt."
+      },
+      {
+        "q": "Bodenerosion",
+        "a": "Ohne Bäume spült der Regen die dünne Humusschicht weg",
+        "wrong": [
+          "Der Boden wird fruchtbarer",
+          "Der Boden gefriert",
+          "Der Boden verändert sich nicht"
+        ],
+        "why": "Wurzeln halten den Boden fest. Ohne sie wird Boden abgetragen."
+      },
+      {
+        "q": "Menschen",
+        "a": "Indigene Völker verlieren ihren Lebensraum",
+        "wrong": [
+          "Indigene Völker werden reicher",
+          "Sie ziehen in den Wald",
+          "Für sie ändert sich nichts"
+        ],
+        "why": "Viele Gemeinschaften leben seit Generationen im Wald."
+      },
+      {
+        "q": "Schutz",
+        "a": "Schutzgebiete und nachhaltige Forstwirtschaft",
+        "wrong": [
+          "Mehr Straßen im Wald",
+          "Mehr Brandrodung",
+          "Mehr Palmölplantagen"
+        ],
+        "why": "Der Wald kann genutzt werden, ohne ihn zu zerstören."
+      },
+      {
+        "q": "Siegel",
+        "kind": "gap",
+        "s": "Ein ___ auf Holzprodukten zeigt, dass das Holz aus nachhaltiger Forstwirtschaft stammt.",
+        "a": "Siegel",
+        "wrong": [
+          "Stempel",
+          "Preis",
+          "Mantel"
+        ],
+        "why": "Bekannt ist zum Beispiel das FSC-Siegel."
+      },
+      {
+        "q": "Alltag",
+        "a": "Weniger Fleisch essen und auf zertifizierte Produkte achten",
+        "wrong": [
+          "Mehr Wegwerfprodukte kaufen",
+          "Nichts ändern",
+          "Mehr Palmöl nutzen"
+        ],
+        "why": "Wer nachhaltig einkauft, verringert den Druck auf Wälder."
+      },
+      {
+        "q": "Satellitenbild",
+        "a": "Gerodete Flächen erscheinen als helle, geometrische Flecken zwischen dunklem Wald",
+        "wrong": [
+          "Wald erscheint hell, Weiden dunkel",
+          "Satelliten zeigen keine Rodung",
+          "Alles sieht gleich aus"
+        ],
+        "why": "Straßen und Felder erzeugen auf Bildern typische Muster, an denen man Rodung erkennt."
+      }
+    ],
+    "savanne": [
+      {
+        "q": "Zeiten",
+        "kind": "gap",
+        "s": "In der Savanne wechseln sich Regenzeit und ___ ab.",
+        "a": "Trockenzeit",
+        "wrong": [
+          "Frostzeit",
+          "Schneezeit",
+          "Sturmzeit"
+        ],
+        "why": "Das nennt man wechselfeuchtes Klima."
+      },
+      {
+        "q": "Lage",
+        "a": "Zwischen dem Regenwald und der Wüste",
+        "wrong": [
+          "Am Nordpol",
+          "Mitten im Ozean",
+          "Am Gipfel des Himalaya"
+        ],
+        "why": "Die Niederschläge nehmen vom Äquator Richtung Wendekreis ab."
+      },
+      {
+        "q": "Baobab",
+        "a": "Er speichert Wasser im dicken Stamm",
+        "wrong": [
+          "Er trägt Eis",
+          "Er braucht keinen Boden",
+          "Er wächst nur im Wasser"
+        ],
+        "why": "Der Baobab überlebt so die lange Trockenzeit."
+      },
+      {
+        "q": "Schirmakazie",
+        "a": "Sie hat eine flache, weit ausladende Krone",
+        "wrong": [
+          "Sie wächst unter der Erde",
+          "Sie hat keine Blätter",
+          "Sie ist ein Gras"
+        ],
+        "why": "Die Krone spendet Schatten und verringert die Verdunstung."
+      },
+      {
+        "q": "Gras",
+        "kind": "gap",
+        "s": "Das vorherrschende Gewächs der Savanne ist ___ .",
+        "a": "Gras",
+        "wrong": [
+          "Moos",
+          "Flechte",
+          "Farn"
+        ],
+        "why": "Gräser wachsen in der Regenzeit schnell."
+      },
+      {
+        "q": "Tiere",
+        "a": "Elefanten, Zebras, Löwen und Giraffen",
+        "wrong": [
+          "Eisbären und Robben",
+          "Pinguine und Wale",
+          "Kamele und Wölfe"
+        ],
+        "why": "Viele große Pflanzenfresser und ihre Jäger leben hier, etwa in Ostafrika."
+      },
+      {
+        "q": "Dornsavanne",
+        "a": "Sie liegt am trockenen Rand und hat nur kurze Regenzeit",
+        "wrong": [
+          "Sie liegt am feuchten Rand und hat Dauerregen",
+          "Sie ist eine Eisfläche",
+          "Sie hat keinen Boden"
+        ],
+        "why": "Dornsträucher und kurzes Gras sind typisch."
+      },
+      {
+        "q": "Feuchtsavanne",
+        "kind": "gap",
+        "s": "Die ___ liegt nahe am Regenwald und hat die längste Regenzeit.",
+        "a": "Feuchtsavanne",
+        "wrong": [
+          "Dornsavanne",
+          "Trockensavanne",
+          "Wüste"
+        ],
+        "why": "Dort wächst das höchste Gras."
+      },
+      {
+        "q": "Savannenbrand",
+        "a": "In der Trockenzeit entzünden Blitze oder Menschen das trockene Gras",
+        "wrong": [
+          "Im Winter schneit es",
+          "Savannen brennen nie",
+          "Regen löst Brände aus"
+        ],
+        "why": "Pflanzen sind an Feuer angepasst und treiben danach wieder aus."
+      },
+      {
+        "q": "Kontinent",
+        "a": "Afrika, aber auch Südamerika und Australien",
+        "wrong": [
+          "Nur Europa",
+          "Nur die Antarktis",
+          "Nur Grönland"
+        ],
+        "why": "Savannen gibt es überall in den wechselfeuchten Tropen."
+      }
+    ],
+    "nomaden": [
+      {
+        "q": "Nomaden",
+        "kind": "gap",
+        "s": "Menschen, die mit ihren Herden von Weide zu Weide ziehen, heißen ___ .",
+        "a": "Nomaden",
+        "wrong": [
+          "Städter",
+          "Bauern",
+          "Fischer"
+        ],
+        "why": "Sie haben keinen festen Wohnort."
+      },
+      {
+        "q": "Tiere",
+        "a": "Rinder, Ziegen, Schafe und Kamele",
+        "wrong": [
+          "Eisbären und Robben",
+          "Kühe und Pinguine",
+          "Elefanten und Löwen"
+        ],
+        "why": "Je nach Gebiet halten Nomaden unterschiedliche Tiere."
+      },
+      {
+        "q": "Völker",
+        "a": "Massai in Ostafrika und Tuareg in der Sahara",
+        "wrong": [
+          "Inuit in der Arktis",
+          "Aborigines im Regenwald",
+          "Wikinger in Skandinavien"
+        ],
+        "why": "Beides sind bekannte Hirtenvölker."
+      },
+      {
+        "q": "Weidewechsel",
+        "kind": "gap",
+        "s": "Das regelmäßige Wechseln der Weideplätze heißt ___ .",
+        "a": "Weidewechsel",
+        "wrong": [
+          "Wanderfeldbau",
+          "Landflucht",
+          "Stockwerkbau"
+        ],
+        "why": "So können sich die Weiden erholen."
+      },
+      {
+        "q": "Nahrung",
+        "a": "Milch, Fleisch und Blut ihrer Tiere",
+        "wrong": [
+          "Getreide aus Fabriken",
+          "Nur Gemüse aus dem Garten",
+          "Fertigprodukte aus Supermärkten"
+        ],
+        "why": "Die Herden sind die Lebensgrundlage."
+      },
+      {
+        "q": "Gefahr",
+        "a": "Zu viele Tiere fressen die Weide leer (Überweidung)",
+        "wrong": [
+          "Zu wenige Tiere",
+          "Zu viel Gras",
+          "Zu viele Brunnen"
+        ],
+        "why": "Überweidung zerstört die Pflanzendecke."
+      },
+      {
+        "q": "Problem",
+        "a": "Dürren und Landnutzung durch Ackerbau schränken die Weideflächen ein",
+        "wrong": [
+          "Es gibt zu viele Weiden",
+          "Es regnet immer",
+          "Es gibt keine Probleme"
+        ],
+        "why": "Weniger Land für die Herden bedeutet weniger Futter."
+      },
+      {
+        "q": "Sesshaft",
+        "kind": "gap",
+        "s": "Wer an einem festen Ort lebt, ist ___ .",
+        "a": "sesshaft",
+        "wrong": [
+          "nomadisch",
+          "mobil",
+          "reisend"
+        ],
+        "why": "Immer mehr Hirtenfamilien werden sesshaft."
+      },
+      {
+        "q": "Behausung",
+        "a": "Zelte oder leichte Hütten, die man mitnehmen kann",
+        "wrong": [
+          "Hochhäuser",
+          "Burgen",
+          "Eishäuser"
+        ],
+        "why": "Sie sind schnell auf- und abzubauen."
+      },
+      {
+        "q": "Kamel",
+        "a": "Es kommt lange ohne Wasser aus und trägt Lasten durch die Wüste",
+        "wrong": [
+          "Es braucht täglich viel Wasser",
+          "Es lebt nur im Regenwald",
+          "Es kann nicht laufen"
+        ],
+        "why": "Kamele sind an Trockenheit angepasst."
+      }
+    ],
+    "ackerbau-trockenheit": [
+      {
+        "q": "Regenfeldbau",
+        "a": "Anbau nur mit dem Regen der Regenzeit",
+        "wrong": [
+          "Anbau mit Kanälen aus Flüssen",
+          "Anbau in Gewächshäusern",
+          "Anbau auf Eis"
+        ],
+        "why": "Das ist die verbreitete Form in der Savanne."
+      },
+      {
+        "q": "Pflanze",
+        "a": "Hirse",
+        "wrong": [
+          "Bananen",
+          "Reis im Wasser",
+          "Kakao"
+        ],
+        "why": "Hirse kommt mit wenig Wasser zurecht und ist ein Grundnahrungsmittel."
+      },
+      {
+        "q": "Dürre",
+        "kind": "gap",
+        "s": "Fällt der Regen in der Regenzeit aus, spricht man von einer ___ .",
+        "a": "Dürre",
+        "wrong": [
+          "Flut",
+          "Lawine",
+          "Sturmflut"
+        ],
+        "why": "Dann vertrocknen Felder, und es drohen Hungersnöte."
+      },
+      {
+        "q": "Bewässerung",
+        "a": "Wasser aus Brunnen oder Kanälen auf die Felder leiten",
+        "wrong": [
+          "Felder mit Eis bedecken",
+          "Felder in Schnee setzen",
+          "Regen nicht nutzen"
+        ],
+        "why": "Dadurch sind Ernten unabhängiger vom Regen."
+      },
+      {
+        "q": "Versalzung",
+        "kind": "gap",
+        "s": "Zu viel Bewässerung in heißem Klima kann den Boden ___ .",
+        "a": "versalzen",
+        "wrong": [
+          "vereisen",
+          "begrünen",
+          "verdoppeln"
+        ],
+        "why": "Verdunstet das Wasser, bleibt Salz zurück."
+      },
+      {
+        "q": "Steinwälle",
+        "a": "Sie bremsen das Regenwasser, damit es im Boden versickert",
+        "wrong": [
+          "Sie halten Tiere fern",
+          "Sie machen Wärme",
+          "Sie bringen Schnee"
+        ],
+        "why": "Wasser und Boden bleiben so länger auf dem Feld."
+      },
+      {
+        "q": "Pflanzgruben",
+        "a": "Kleine Gruben speichern Wasser und Dünger für die Pflanzen",
+        "wrong": [
+          "Gruben sind Verstecke für Tiere",
+          "Gruben dienen als Brunnen",
+          "Gruben bringen Frost"
+        ],
+        "why": "Diese Methode ist als Zaï-Gruben bekannt."
+      },
+      {
+        "q": "Sahel",
+        "kind": "gap",
+        "s": "Die Übergangszone zwischen Sahara und Savanne heißt ___ .",
+        "a": "Sahel",
+        "wrong": [
+          "Taiga",
+          "Tundra",
+          "Pampa"
+        ],
+        "why": "In der Sahelzone sind Dürren besonders gefährlich."
+      },
+      {
+        "q": "Risiko",
+        "a": "Bleibt der Regen aus, fällt die Ernte aus",
+        "wrong": [
+          "Ernten sind immer sicher",
+          "Es regnet immer genug",
+          "Dürre gibt es nicht"
+        ],
+        "why": "Kleine Bauern haben kaum Rücklagen."
+      },
+      {
+        "q": "Lösung",
+        "a": "Mehrere Maßnahmen verbinden: Wasser speichern, Boden schützen und passende Pflanzen wählen",
+        "wrong": [
+          "Gar nichts tun",
+          "Mehr Wald roden",
+          "Mehr Tiere weiden lassen"
+        ],
+        "why": "So steigt die Sicherheit der Ernte."
+      }
+    ],
+    "desertifikation": [
+      {
+        "q": "Desertifikation",
+        "kind": "gap",
+        "s": "Die Ausbreitung der Wüste nennt man ___ .",
+        "a": "Desertifikation",
+        "wrong": [
+          "Verstädterung",
+          "Brandrodung",
+          "Verwitterung"
+        ],
+        "why": "Sie betrifft besonders den Sahel."
+      },
+      {
+        "q": "Ursache",
+        "a": "Überweidung und Abholzung",
+        "wrong": [
+          "Mehr Gletscher",
+          "Mehr Regen",
+          "Mehr Wald"
+        ],
+        "why": "Ohne Pflanzen fehlt dem Boden der Schutz."
+      },
+      {
+        "q": "Brennholz",
+        "a": "Menschen nutzen Holz zum Kochen und holzen dadurch Bäume ab",
+        "wrong": [
+          "Holz wird zum Heizen von Kühlschränken genutzt",
+          "Es gibt kein Holz in der Savanne",
+          "Holz wird aus Eis gewonnen"
+        ],
+        "why": "Wo es keine andere Energie gibt, ist Brennholz wichtig."
+      },
+      {
+        "q": "Erosion",
+        "kind": "gap",
+        "s": "Ohne Pflanzen tragen Wind und Regen den fruchtbaren Boden ___ .",
+        "a": "ab",
+        "wrong": [
+          "auf",
+          "zu",
+          "an"
+        ],
+        "why": "Dieser Vorgang heißt Bodenerosion."
+      },
+      {
+        "q": "Folge",
+        "a": "Ernteausfälle, Hunger und Abwanderung",
+        "wrong": [
+          "Mehr Ernten und Reichtum",
+          "Mehr Regenwald",
+          "Mehr Eis"
+        ],
+        "why": "Fruchtbares Land geht verloren."
+      },
+      {
+        "q": "Dürre",
+        "a": "Lange Trockenzeiten verschärfen das Problem",
+        "wrong": [
+          "Dürren lösen das Problem",
+          "Dürren sind unwichtig",
+          "Dürren erzeugen Regenwald"
+        ],
+        "why": "Pflanzen vertrocknen, und der Boden wird schutzlos."
+      },
+      {
+        "q": "Gegenmaßnahme",
+        "a": "Aufforstung und Schutz des Bodens",
+        "wrong": [
+          "Mehr Rinder weiden lassen",
+          "Mehr Bäume fällen",
+          "Weniger Pflanzen anbauen"
+        ],
+        "why": "Pflanzen halten den Boden fest."
+      },
+      {
+        "q": "Grüne Mauer",
+        "kind": "gap",
+        "s": "Das Projekt Große Grüne ___ soll in Afrika einen Streifen aus Bäumen und Pflanzen anlegen.",
+        "a": "Mauer",
+        "wrong": [
+          "Straße",
+          "Stadt",
+          "Fabrik"
+        ],
+        "why": "Die Große Grüne Mauer soll sich quer durch die Sahelzone ziehen."
+      },
+      {
+        "q": "Angepasste Nutzung",
+        "a": "Weidewechsel, wassersparender Anbau und Brennholz sparen",
+        "wrong": [
+          "Alle Bäume fällen",
+          "Mehr Tiere auf kleinerer Fläche halten",
+          "Feuer legen"
+        ],
+        "why": "Angepasste Nutzung schont Boden und Pflanzen."
+      },
+      {
+        "q": "Region",
+        "a": "Die Sahelzone südlich der Sahara",
+        "wrong": [
+          "Die Alpen",
+          "Der Amazonas",
+          "Die Arktis"
+        ],
+        "why": "Dort rückt die Wüste besonders deutlich vor."
+      }
+    ],
     "klima-anzeichen": [
       {
         "q": "Klima",
