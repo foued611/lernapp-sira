@@ -1,0 +1,207 @@
+{
+  "schema": 1,
+  "id": "musik",
+  "title": "Musik-Werkstatt",
+  "greeting": "Hallo",
+  "intro": "Die Seiten folgen den Themen aus MusiX 2: Musiklehre, Stimme und Instrumente, Barock und Klassik, Formen und Stile, Musik in der Gesellschaft. Erst die Lektion, dann die Übung. Du kannst auch springen.",
+  "bossTitle": "Musik-Check",
+  "units": [
+    {
+      "id": "takt",
+      "color": "#5B8DEF",
+      "ic": "M1",
+      "title": "Takt und Rhythmus",
+      "de": "Taktarten, Zählzeiten, Notenwerte · Kapitel 2",
+      "card": { "name": "Die Eins trägt den Takt", "fact": "Die obere Zahl der Taktangabe sagt, wie viele Zählzeiten in einen Takt passen. Die erste ist meist die betonte." }
+    },
+    {
+      "id": "tonleitern",
+      "color": "#5B8DEF",
+      "ic": "M2",
+      "title": "Dur und Moll",
+      "de": "Tonleitern, Ganzton und Halbton · Kapitel 5",
+      "card": { "name": "Halbtöne machen den Unterschied", "fact": "Dur und Moll unterscheiden sich in der Lage der Halbtonschritte. Die Terz ist in Moll kleiner." }
+    },
+    {
+      "id": "akkorde",
+      "color": "#5B8DEF",
+      "ic": "M3",
+      "title": "Akkorde und Begleitung",
+      "de": "Dreiklänge, Umkehrungen, Hauptstufen · Kapitel 10",
+      "card": { "name": "Drei Töne, ein Klang", "fact": "Ein Dreiklang besteht aus Grundton, Terz und Quinte. In C-Dur sind die Hauptakkorde C, F und G." }
+    },
+    {
+      "id": "stimme",
+      "color": "#3DD6B0",
+      "ic": "K1",
+      "title": "Stimme und Stimmlagen",
+      "de": "Stimmbildung, Sopran bis Bass, Stimmwechsel · Kapitel 6",
+      "card": { "name": "Vier Lagen im Chor", "fact": "Von hoch nach tief: Sopran, Alt, Tenor, Bass. Die Stimmlippen im Kehlkopf erzeugen den Ton." }
+    },
+    {
+      "id": "instrumente",
+      "color": "#3DD6B0",
+      "ic": "K2",
+      "title": "Instrumente und Band",
+      "de": "Instrumentenfamilien, E-Gitarre, Zupfinstrumente · Kapitel 8",
+      "card": { "name": "Vier Wege zum Klang", "fact": "Saiten, Luftsäulen, Fell oder Metall und Strom: So lassen sich Instrumente nach der Klangerzeugung ordnen." }
+    },
+    {
+      "id": "akustik",
+      "color": "#3DD6B0",
+      "ic": "K3",
+      "title": "Schall und Tonhöhe",
+      "de": "Frequenz, Lautstärke, Klangfarbe, Gehörschutz · Kapitel 8",
+      "card": { "name": "Hertz macht die Tonhöhe", "fact": "Je höher die Frequenz, desto höher der Ton. Das eingestrichene a hat 440 Hertz." }
+    },
+    {
+      "id": "barock",
+      "color": "#E0A82E",
+      "ic": "E1",
+      "title": "Barock",
+      "de": "Generalbass, Suite, Oratorium, Bach und Händel · Kapitel 4",
+      "card": { "name": "Prunk und Generalbass", "fact": "Der Barock reicht etwa von 1600 bis 1750. Typisch sind der Generalbass und der Wechsel von laut und leise in Stufen." }
+    },
+    {
+      "id": "klassik",
+      "color": "#E0A82E",
+      "ic": "E2",
+      "title": "Klassik und Sinfonie",
+      "de": "Haydn, Mozart, Beethoven, vier Sätze · Kapitel 13",
+      "card": { "name": "Klare Form, klare Melodie", "fact": "Die Wiener Klassik mit Haydn, Mozart und Beethoven liebt Ausgewogenheit. Die Sinfonie hat meist vier Sätze." }
+    },
+    {
+      "id": "formen",
+      "color": "#FF6B88",
+      "ic": "S1",
+      "title": "Musikalische Formen",
+      "de": "Liedform, Rondo, Variation, Sonatensatz · Kapitel 12",
+      "card": { "name": "Form hat einen Plan", "fact": "Rondo heißt A-B-A-C-A. Der Sonatensatz hat Exposition, Durchführung und Reprise." }
+    },
+    {
+      "id": "blues-jazz",
+      "color": "#FF6B88",
+      "ic": "S2",
+      "title": "Blues und Jazz",
+      "de": "Zwölftaktiger Blues, Improvisation, Swing · Kapitel 12",
+      "card": { "name": "Zwölf Takte, drei Zeilen", "fact": "Der Blues hat zwölf Takte und drei Zeilen zu je vier Takten. Jazz lebt von der Improvisation." }
+    },
+    {
+      "id": "rock-pop",
+      "color": "#FF6B88",
+      "ic": "S3",
+      "title": "Rock, Pop und Studio",
+      "de": "Songaufbau, Mehrspuraufnahme, Beatles, Cover · Kapitel 7 und 11",
+      "card": { "name": "Strophe, Refrain, Bridge", "fact": "Ein Popsong hat meist Intro, Strophe, Refrain, Bridge und Outro. Im Studio werden die Spuren einzeln aufgenommen." }
+    },
+    {
+      "id": "musiktheater",
+      "color": "#FF6B88",
+      "ic": "S4",
+      "title": "Oper und Musical",
+      "de": "Arie, Rezitativ, Libretto, Wagner · Kapitel 9",
+      "card": { "name": "Bühne mit Musik", "fact": "In der Oper wird die Handlung gesungen, im Musical wechseln Gesang, Sprechtext und Tanz." }
+    },
+    {
+      "id": "markt",
+      "color": "#9B7BFF",
+      "ic": "W1",
+      "title": "Musik und Urheberrecht",
+      "de": "Musikmarkt, GEMA, Kopieren und Teilen · Kapitel 3",
+      "card": { "name": "Musik gehört jemandem", "fact": "Das Urheberrecht schützt Komponistinnen und Texter. In Deutschland gilt es bis 70 Jahre nach dem Tod." }
+    },
+    {
+      "id": "welt",
+      "color": "#9B7BFF",
+      "ic": "W2",
+      "title": "Musik der Welt",
+      "de": "Bartók, Andenmusik, Gamelan, Debussy · Kapitel 2 und 14",
+      "card": { "name": "Fremd und vertraut", "fact": "Debussy hörte 1889 auf der Pariser Weltausstellung ein Gamelan-Orchester. Das beeinflusste seine Musik." }
+    },
+    {
+      "id": "medien",
+      "color": "#9B7BFF",
+      "ic": "W3",
+      "title": "Musik und Medien",
+      "de": "Funktionale Musik, Film, Werbung · Kapitel 15",
+      "card": { "name": "Musik mit Absicht", "fact": "In Film und Werbung soll Musik eine Stimmung auslösen. Ein Jingle ist eine kurze, einprägsame Werbemelodie." }
+    }
+  ],
+  "notes": {
+    "takt": [
+      ["Taktangabe", "Oben: Zahl der Zählzeiten. Unten: Notenwert (4 gleich Viertel, 8 gleich Achtel)."],
+      ["Häufige Takte", "2/4 Marsch, 3/4 Walzer, 4/4 Pop und Rock, 6/8 zwei Gruppen zu je drei Achteln."],
+      ["Notenwerte", "Ganze gleich 4 Viertel, halbe gleich 2 Viertel, Achtel gleich ein halbes Viertel."]
+    ],
+    "tonleitern": [
+      ["Dur", "Halbtöne zwischen Stufe 3 und 4 sowie 7 und 8. Sonst Ganztöne."],
+      ["Moll", "Halbtöne zwischen Stufe 2 und 3 sowie 5 und 6. Die Terz ist klein."],
+      ["Klaviatur", "Zwischen E und F und zwischen H und C liegt ein Halbton, weil dort keine schwarze Taste ist."]
+    ],
+    "akkorde": [
+      ["Dreiklang", "Grundton, Terz, Quinte. Dur hat unten die große, Moll unten die kleine Terz."],
+      ["Hauptstufen", "I Tonika, IV Subdominante, V Dominante. In C-Dur: C, F, G."],
+      ["Umkehrung", "Der unterste Ton ist nicht der Grundton. Die Töne bleiben dieselben."]
+    ],
+    "stimme": [
+      ["Stimmlagen", "Hoch nach tief: Sopran, Alt, Tenor, Bass."],
+      ["So entsteht der Ton", "Atemluft bringt die Stimmlippen zum Schwingen. Mund, Nase und Rachen verstärken den Klang."],
+      ["Stimmwechsel", "Der Kehlkopf wächst, die Stimme wird tiefer. Bei Jungen deutlicher als bei Mädchen."]
+    ],
+    "instrumente": [
+      ["Familien", "Saiten, Blasinstrumente, Schlaginstrumente, elektronische Instrumente."],
+      ["E-Gitarre", "Der Tonabnehmer macht aus Saitenschwingung elektrische Signale. Der Verstärker macht sie hörbar."],
+      ["Zupfinstrumente", "Gitarre, Laute, Harfe, Mandoline, Banjo, Sitar."]
+    ],
+    "akustik": [
+      ["Drei Eigenschaften", "Tonhöhe hängt an der Frequenz, Lautstärke an der Amplitude, Klangfarbe an den Obertönen."],
+      ["Zahlen", "Kammerton a' gleich 440 Hz. Eine Oktave höher: doppelte Frequenz."],
+      ["Gehör", "Dauerhaft sehr laute Musik schädigt das Gehör. Gehörschutz hilft."]
+    ],
+    "barock": [
+      ["Zeit", "Etwa 1600 bis 1750. Bach, Händel, Vivaldi."],
+      ["Typisch", "Generalbass, Terrassendynamik, Verzierungen, Suite, Concerto, Oratorium."],
+      ["Orte", "Prunkvolle Höfe wie Versailles bei Ludwig XIV., dazu Kirche und Stadt."]
+    ],
+    "klassik": [
+      ["Zeit", "Wiener Klassik etwa 1770 bis 1827: Haydn, Mozart, Beethoven."],
+      ["Sinfonie", "Vier Sätze: schnell, langsam, Tanzsatz, schnelles Finale."],
+      ["Orchester", "Streicher, Holzbläser, Blechbläser, Schlagwerk."]
+    ],
+    "formen": [
+      ["Liedformen", "Strophenlied, dreiteilig A-B-A, Rondo A-B-A-C-A."],
+      ["Variation", "Ein Thema wird verändert und bleibt erkennbar: Tempo, Rhythmus, Dur oder Moll, Instrument."],
+      ["Sonatensatz", "Exposition (Themen vorstellen), Durchführung (verarbeiten), Reprise (Wiederkehr)."]
+    ],
+    "blues-jazz": [
+      ["Zwölftaktiger Blues", "Drei Zeilen zu je vier Takten. Harmonien in C: C C C C, F F C C, G F C C."],
+      ["Blue Notes", "Erniedrigte Töne, vor allem Terz und Septime. Sie geben dem Blues seine Färbung."],
+      ["Jazz", "Improvisation, Swing, Dixieland, Bebop. Scat ist Gesang auf Silben."]
+    ],
+    "rock-pop": [
+      ["Songaufbau", "Intro, Strophe, Refrain, Bridge, Outro."],
+      ["Studio", "Mehrspuraufnahme, Mischpult beim Abmischen, Mastering zum Schluss."],
+      ["Cover", "Eine neue Aufnahme eines schon bekannten Songs."]
+    ],
+    "musiktheater": [
+      ["Oper", "Gesang, Orchester, Bühne. Libretto ist das Textbuch."],
+      ["Teile", "Ouvertüre, Rezitativ, Arie, Chor."],
+      ["Musical", "Gesang, Sprechtext, Tanz, oft Popmusik. Entstand vor allem am Broadway."]
+    ],
+    "markt": [
+      ["Urheber", "Wer komponiert oder textet, besitzt das Urheberrecht. Es gilt bis 70 Jahre nach dem Tod."],
+      ["GEMA", "Sammelt Gebühren für öffentliche Aufführungen und verteilt sie an die Urheber."],
+      ["Teilen", "Musik anderer ohne Erlaubnis ins Netz zu stellen ist meist nicht erlaubt. Creative Commons nennt die Bedingungen."]
+    ],
+    "welt": [
+      ["Bartók", "Ungarischer Komponist, sammelte Volkslieder und baute sie in seine Stücke ein."],
+      ["Instrumente", "Panflöte und Charango aus den Anden, Gamelan aus Indonesien."],
+      ["Takt", "Bulgarische Tänze haben oft ungerade Takte wie 7/8."]
+    ],
+    "medien": [
+      ["Funktionale Musik", "Musik mit einem Zweck: Film, Werbung, Spiele, Sport."],
+      ["Jingle", "Kurze Melodie, die ein Produkt wiedererkennbar macht."],
+      ["Wirkung", "Tempo, Dur oder Moll und Instrumente steuern die Stimmung."]
+    ]
+  }
+}

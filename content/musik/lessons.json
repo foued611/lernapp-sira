@@ -1,0 +1,717 @@
+{
+  "takt": {
+    "goal": "Du kannst Taktangaben lesen, Taktarten unterscheiden und Notenwerte ineinander umrechnen.",
+    "tldr": [
+      "Der Takt ordnet die Schläge eines Stücks in gleich lange Abschnitte. Der Taktstrich trennt sie.",
+      "Die obere Zahl der Taktangabe sagt, wie viele Zählzeiten in einen Takt passen. Die untere nennt den Notenwert."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Herzschlag mit Betonung",
+      "html": "<p>Beim Gehen betonst du von selbst jeden zweiten oder dritten Schritt ein wenig mehr. Genau das macht der Takt: Er gruppiert gleichmäßige Schläge, und die erste Zählzeit jeder Gruppe wird betont.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          ["Takt", "Zählzeiten", "Typisch für"],
+          [
+            ["2/4", "2 Viertel", "Marsch"],
+            ["3/4", "3 Viertel", "Walzer"],
+            ["4/4", "4 Viertel", "Pop und Rock"],
+            ["6/8", "6 Achtel in 2 Gruppen", "wiegende Lieder"]
+          ],
+          [0.8, 1.6, 1.6],
+          "Tabelle: Taktarten mit Zählzeiten und typischer Musik"
+        ]
+      },
+      "caption": "Die Taktangabe verrät, wie du mitzählst."
+    },
+    "steps": {
+      "title": "So liest du eine Taktangabe",
+      "items": [
+        "Schau auf die obere Zahl: So viele Zählzeiten hat ein Takt.",
+        "Schau auf die untere Zahl: Sie nennt den Notenwert einer Zählzeit, 4 steht für Viertel und 8 für Achtel.",
+        "Zähle mit und betone die Eins. So hörst du, wo ein neuer Takt beginnt."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Eine Taktangabe ist kein Bruch zum Ausrechnen. 3/4 heißt nicht dreiviertel von etwas, sondern drei Viertelnoten pro Takt.</p>"
+    },
+    "rule": "Oben steht die Zahl der Zählzeiten, unten der Notenwert. Die erste Zählzeit eines Taktes ist die betonte.",
+    "check": {
+      "q": "Wie viele Viertelnoten passen in einen 4/4-Takt?",
+      "options": [
+        { "id": "a", "html": "drei" },
+        { "id": "b", "html": "vier" },
+        { "id": "c", "html": "acht" }
+      ],
+      "answer": "b",
+      "why": "Die obere 4 nennt vier Zählzeiten, die untere 4 sagt, dass jede eine Viertelnote ist."
+    }
+  },
+  "tonleitern": {
+    "goal": "Du kannst Dur und Moll unterscheiden und die Halbtonschritte beider Tonleitern angeben.",
+    "tldr": [
+      "Eine Tonleiter ordnet Töne in Stufen. Zwischen den Stufen liegt ein Ganzton oder ein Halbton.",
+      "Dur und Moll unterscheiden sich in der Lage der Halbtonschritte. Die Terz ist in Moll kleiner, deshalb klingt Moll oft dunkler."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: eine Treppe mit kurzen Stufen",
+      "html": "<p>Ein Ganzton ist eine normale Treppenstufe, ein Halbton eine flache. Wo die flachen Stufen liegen, entscheidet, ob die Treppe nach Dur oder nach Moll klingt.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          ["Tonleiter", "1-2", "2-3", "3-4", "4-5", "5-6", "6-7", "7-8"],
+          [
+            ["Dur", "G", "G", "H", "G", "G", "G", "H"],
+            ["Moll", "G", "H", "G", "G", "H", "G", "G"]
+          ],
+          [1.3, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7],
+          "Tabelle: Ganztöne und Halbtöne in Dur und Moll"
+        ]
+      },
+      "caption": "G steht für Ganzton, H für Halbton. In Dur liegen die Halbtöne bei 3-4 und 7-8."
+    },
+    "steps": {
+      "title": "So erkennst du Dur und Moll",
+      "items": [
+        "Spiele oder singe die Tonleiter von unten nach oben.",
+        "Prüfe die Terz, den dritten Ton: Der Abstand vom Grundton ist in Dur größer als in Moll.",
+        "Achte auf den Klang: Dur klingt oft hell, Moll oft dunkler. Das ist ein Eindruck, kein Beweis."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Dur ist nicht immer fröhlich und Moll nicht immer traurig. Verlass dich nicht auf das Gefühl, sondern auf den Aufbau der Tonleiter.</p>"
+    },
+    "rule": "Dur hat Halbtöne zwischen Stufe 3 und 4 sowie 7 und 8. Moll hat sie zwischen 2 und 3 sowie 5 und 6.",
+    "check": {
+      "q": "Zwischen welchen Tönen der weißen Tasten liegt ein Halbton?",
+      "options": [
+        { "id": "a", "html": "C und D" },
+        { "id": "b", "html": "E und F" },
+        { "id": "c", "html": "F und G" }
+      ],
+      "answer": "b",
+      "why": "Zwischen E und F liegt keine schwarze Taste, darum ist es ein Halbton. Zwischen C und D liegt eine, also ein Ganzton."
+    }
+  },
+  "akkorde": {
+    "goal": "Du kannst Dreiklänge aufbauen, Dur und Moll unterscheiden und die Hauptakkorde in C-Dur nennen.",
+    "tldr": [
+      "Ein Akkord sind mindestens drei Töne, die gleichzeitig erklingen. Der Dreiklang besteht aus Grundton, Terz und Quinte.",
+      "In Dur liegt unten die große, in Moll unten die kleine Terz. Mit den Hauptakkorden I, IV und V lassen sich viele Lieder begleiten."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Turm aus drei Bausteinen",
+      "html": "<p>Der Grundton ist der Boden, die Terz der mittlere Stein und die Quinte der obere. Tauschst du den mittleren Stein gegen einen etwas kleineren, wird aus Dur ein Moll-Dreiklang.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          ["Stufe", "Akkord in C-Dur", "Töne"],
+          [
+            ["I Tonika", "C-Dur", "c e g"],
+            ["IV Subdominante", "F-Dur", "f a c"],
+            ["V Dominante", "G-Dur", "g h d"]
+          ],
+          [1.5, 1.3, 1],
+          "Tabelle: Hauptakkorde in C-Dur mit ihren Tönen"
+        ]
+      },
+      "caption": "Diese drei Akkorde genügen für viele einfache Lieder."
+    },
+    "steps": {
+      "title": "So baust du einen Dreiklang",
+      "items": [
+        "Wähle den Grundton, zum Beispiel c.",
+        "Setze die Terz darüber: In Dur ist sie groß (vier Halbtöne), in Moll klein (drei Halbtöne).",
+        "Setze die Quinte darüber, sieben Halbtöne über dem Grundton. Fertig ist der Dreiklang."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Bei einer Umkehrung ändert sich der Akkord nicht, nur der unterste Ton. C-Dur mit e unten ist immer noch C-Dur.</p>"
+    },
+    "rule": "Dreiklang gleich Grundton, Terz, Quinte. Die Hauptstufen sind Tonika (I), Subdominante (IV) und Dominante (V).",
+    "check": {
+      "q": "Aus welchen Tönen besteht der C-Dur-Dreiklang?",
+      "options": [
+        { "id": "a", "html": "c, e, g" },
+        { "id": "b", "html": "c, d, e" },
+        { "id": "c", "html": "c, es, g" }
+      ],
+      "answer": "a",
+      "why": "Grundton c, große Terz e, Quinte g. Mit es statt e wäre es c-Moll."
+    }
+  },
+  "stimme": {
+    "goal": "Du kannst erklären, wie die Stimme entsteht, und die vier Stimmlagen des Chores zuordnen.",
+    "tldr": [
+      "Die Atemluft bringt die Stimmlippen im Kehlkopf zum Schwingen. Mund-, Nasen- und Rachenraum verstärken den Klang.",
+      "Von hoch nach tief heißen die Stimmlagen Sopran, Alt, Tenor und Bass. Im Stimmwechsel wird die Stimme tiefer."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Luftballon mit Öffnung",
+      "html": "<p>Lässt du Luft aus einem Ballon, schwingt die Öffnung und es quietscht. Zieht man sie straff, wird der Ton höher. Ähnlich ist es bei den Stimmlippen: Kurz und gespannt klingen sie höher, lang und locker tiefer.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          ["Stimmlage", "Wer singt sie", "Lage"],
+          [
+            ["Sopran", "Frauen, Kinder", "hoch"],
+            ["Alt", "Frauen, Kinder", "tiefer"],
+            ["Tenor", "Männer", "hoch"],
+            ["Bass", "Männer", "tief"]
+          ],
+          [1, 1.4, 1],
+          "Tabelle: Die vier Stimmlagen im Chor"
+        ]
+      },
+      "caption": "Im gemischten Chor singen alle vier Lagen zusammen."
+    },
+    "steps": {
+      "title": "So singst du frei",
+      "items": [
+        "Atme tief in den Bauch, das Zwerchfell senkt sich dabei.",
+        "Lass die Luft gleichmäßig strömen, statt zu pressen.",
+        "Öffne den Mund und spüre, wie der Klang im Raum vor dir wirkt."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Eine tiefe oder brüchige Stimme im Stimmwechsel ist kein Fehler. Der Kehlkopf wächst und die Stimmlippen werden länger, deshalb wird die Stimme tiefer.</p>"
+    },
+    "rule": "Von hoch nach tief: Sopran, Alt, Tenor, Bass. Die Stimmlippen schwingen und erzeugen den Ton.",
+    "check": {
+      "q": "Welche Stimmlage ist die tiefste Männerstimme im Chor?",
+      "options": [
+        { "id": "a", "html": "Tenor" },
+        { "id": "b", "html": "Alt" },
+        { "id": "c", "html": "Bass" }
+      ],
+      "answer": "c",
+      "why": "Der Bass ist die tiefste Lage. Der Tenor ist die hohe Männerstimme, der Alt eine tiefere Frauenstimme."
+    }
+  },
+  "instrumente": {
+    "goal": "Du kannst Instrumente nach ihrer Klangerzeugung ordnen und die Bandinstrumente nennen.",
+    "tldr": [
+      "Instrumente lassen sich nach der Klangerzeugung ordnen: Saiten, Blasinstrumente, Schlaginstrumente und elektronische Instrumente.",
+      "Eine Rockband besteht meist aus Gesang, E-Gitarre, E-Bass, Schlagzeug und oft Keyboard."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: vier Wege, Lärm zu machen",
+      "html": "<p>Du kannst an einer Saite zupfen, in ein Rohr pusten, auf etwas schlagen oder einen Stecker in die Steckdose stecken. Jeder Weg ist eine Instrumentenfamilie.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          ["Familie", "Klang entsteht durch", "Beispiel"],
+          [
+            ["Saiteninstrumente", "schwingende Saiten", "Gitarre, Geige"],
+            ["Blasinstrumente", "schwingende Luft", "Flöte, Trompete"],
+            ["Schlaginstrumente", "Fell oder Metall", "Trommel, Becken"],
+            ["Elektronisch", "elektrische Signale", "Synthesizer"]
+          ],
+          [1.5, 1.6, 1.4],
+          "Tabelle: Instrumentenfamilien mit Klangerzeugung und Beispielen"
+        ]
+      },
+      "caption": "Die E-Gitarre ist ein Saiteninstrument mit elektrischem Verstärker."
+    },
+    "steps": {
+      "title": "So findest du die Familie",
+      "items": [
+        "Frage: Was schwingt? Eine Saite, eine Luftsäule, ein Fell oder ein elektrisches Signal?",
+        "Ordne das Instrument der passenden Familie zu.",
+        "Bei der E-Gitarre: Der Tonabnehmer macht aus der Saitenschwingung ein elektrisches Signal, der Verstärker macht es hörbar."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Das Klavier ist nicht nur ein Tasteninstrument. Weil im Inneren Saiten von Hämmern angeschlagen werden, gehört es auch zu den Saiteninstrumenten.</p>"
+    },
+    "rule": "Nach der Klangerzeugung: Saiten, Blasinstrumente, Schlaginstrumente, elektronische Instrumente.",
+    "check": {
+      "q": "Was macht der Tonabnehmer einer E-Gitarre?",
+      "options": [
+        { "id": "a", "html": "Er verwandelt die Saitenschwingung in ein elektrisches Signal." },
+        { "id": "b", "html": "Er stimmt die Saiten." },
+        { "id": "c", "html": "Er spielt die Saiten von selbst." }
+      ],
+      "answer": "a",
+      "why": "Der Tonabnehmer fängt die Schwingung der Saite ein und wandelt sie in ein Signal für den Verstärker um."
+    }
+  },
+  "akustik": {
+    "goal": "Du kannst Tonhöhe, Lautstärke und Klangfarbe ihren Ursachen zuordnen und Gehörschutz begründen.",
+    "tldr": [
+      "Schall besteht aus Schwingungen. Die Tonhöhe hängt von der Frequenz ab, gemessen in Hertz.",
+      "Die Lautstärke hängt vom Ausschlag der Schwingung ab und wird in Dezibel gemessen. Die Klangfarbe entsteht durch Obertöne."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: eine Schaukel",
+      "html": "<p>Wie oft die Schaukel pro Sekunde hin und her geht, ist die Frequenz. Wie weit sie ausschlägt, ist die Amplitude. Viele schnelle Schwingungen ergeben einen hohen Ton, ein großer Ausschlag einen lauten.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          ["Eigenschaft", "Hängt ab von", "Einheit"],
+          [
+            ["Tonhöhe", "Frequenz", "Hertz (Hz)"],
+            ["Lautstärke", "Amplitude", "Dezibel (dB)"],
+            ["Klangfarbe", "Obertöne", "keine"]
+          ],
+          [1.2, 1.4, 1.4],
+          "Tabelle: Eigenschaften eines Klanges, Ursache und Einheit"
+        ]
+      },
+      "caption": "Drei Eigenschaften, drei Ursachen."
+    },
+    "steps": {
+      "title": "So unterscheidest du die Eigenschaften",
+      "items": [
+        "Tonhöhe: Wird der Ton höher oder tiefer, ändert sich die Frequenz.",
+        "Lautstärke: Wird der Ton lauter oder leiser, ändert sich die Amplitude.",
+        "Klangfarbe: Klingen zwei Instrumente bei gleichem Ton verschieden, liegt es an den Obertönen."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Lauter heißt nicht höher. Wenn du den Lautstärkeregler drehst, bleibt die Frequenz gleich, nur der Ausschlag wird größer.</p>"
+    },
+    "rule": "Tonhöhe gleich Frequenz in Hertz, Lautstärke gleich Amplitude in Dezibel, Klangfarbe gleich Obertöne.",
+    "check": {
+      "q": "Was passiert mit der Frequenz, wenn ein Ton eine Oktave höher klingt?",
+      "options": [
+        { "id": "a", "html": "Sie verdoppelt sich." },
+        { "id": "b", "html": "Sie halbiert sich." },
+        { "id": "c", "html": "Sie bleibt gleich." }
+      ],
+      "answer": "a",
+      "why": "Eine Oktave höher bedeutet doppelte Frequenz. Aus 440 Hertz werden 880 Hertz."
+    }
+  },
+  "barock": {
+    "goal": "Du kannst den Barock zeitlich einordnen und seine typischen Merkmale, Formen und Komponisten nennen.",
+    "tldr": [
+      "Der Barock reicht etwa von 1600 bis 1750. Seine Musik ist prunkvoll, verziert und voller Gegensätze.",
+      "Typisch sind der Generalbass als Fundament, Terrassendynamik, Suite, Concerto und Oratorium. Bach und Händel sind die bekanntesten Namen."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Schloss mit Schnörkeln",
+      "html": "<p>So wie die Schlösser der Barockzeit voller Verzierungen sind, trägt die Musik viele Verzierungen. Der Generalbass ist das feste Mauerwerk darunter.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          ["Begriff", "Bedeutung"],
+          [
+            ["Generalbass", "Bassstimme mit Akkordinstrument, spielt durch"],
+            ["Terrassendynamik", "laut und leise wechseln plötzlich"],
+            ["Suite", "Folge von Tänzen"],
+            ["Oratorium", "geistliches Werk ohne Bühne"]
+          ],
+          [1.2, 2],
+          "Tabelle: Wichtige Begriffe des Barock"
+        ]
+      },
+      "caption": "Vier Begriffe, an denen du den Barock erkennst."
+    },
+    "steps": {
+      "title": "So erkennst du Barockmusik",
+      "items": [
+        "Höre auf das Fundament: Ein Cembalo oder eine Orgel spielt zusammen mit einem tiefen Instrument fortlaufend die Akkorde.",
+        "Achte auf die Lautstärke: Sie wechselt eher in Stufen als in einem langen Anschwellen.",
+        "Achte auf Verzierungen: Töne werden mit kleinen Läufen und Trillern geschmückt."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Händel und Bach wurden im selben Jahr geboren, 1685, lebten aber ganz verschieden. Händel arbeitete in London, Bach war Kantor in Leipzig.</p>"
+    },
+    "rule": "Barock gleich etwa 1600 bis 1750, mit Generalbass, Terrassendynamik, Suite, Concerto und Oratorium.",
+    "check": {
+      "q": "Was meint der Begriff Terrassendynamik?",
+      "options": [
+        { "id": "a", "html": "Musik, die nur im Freien gespielt wird" },
+        { "id": "b", "html": "Plötzliche Wechsel zwischen laut und leise" },
+        { "id": "c", "html": "Ein langsames Anschwellen der Lautstärke" }
+      ],
+      "answer": "b",
+      "why": "Wie Stufen einer Terrasse springt die Lautstärke vom einen Niveau auf das andere. Ein langes Anschwellen wäre ein Crescendo."
+    }
+  },
+  "klassik": {
+    "goal": "Du kannst die Wiener Klassik einordnen, den Aufbau einer Sinfonie beschreiben und die Orchestergruppen nennen.",
+    "tldr": [
+      "Die Wiener Klassik mit Haydn, Mozart und Beethoven liebt klare Formen und ausgewogene Melodien.",
+      "Eine Sinfonie hat meist vier Sätze. Das Orchester besteht aus Streichern, Holzbläsern, Blechbläsern und Schlagwerk."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Theaterstück in vier Akten",
+      "html": "<p>Eine Sinfonie ist wie ein Stück mit vier Szenen: ein spannender Anfang, eine ruhige Szene, ein Tanz und ein schwungvolles Ende.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "flowDiagram",
+        "args": [
+          ["1. Satz|(schnell)", "2. Satz|(langsam)", "3. Satz|(Menuett oder Scherzo)", "4. Satz|(Finale, schnell)"],
+          "Ablauf: Die vier Sätze einer klassischen Sinfonie"
+        ]
+      },
+      "caption": "Schnell, langsam, Tanz, Finale: der typische Plan."
+    },
+    "steps": {
+      "title": "So hörst du eine Sinfonie",
+      "items": [
+        "Hör auf das Tempo: Schnell oder langsam verrät den Satz.",
+        "Achte auf die Instrumentengruppen: Streicher tragen oft die Melodie, Bläser setzen Farben.",
+        "Merke dir ein Thema und warte, wann es wiederkehrt."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Klassik meint hier eine Epoche, nicht jede klassische Musik. Gemeint ist die Zeit von etwa 1770 bis 1827. Im Alltag nennt man zwar auch Bach oder Wagner klassische Musik, in der Musikgeschichte ist das aber Barock und Romantik.</p>"
+    },
+    "rule": "Wiener Klassik gleich Haydn, Mozart, Beethoven. Die Sinfonie hat meist vier Sätze.",
+    "check": {
+      "q": "Welcher Komponist lebte als freier Künstler ohne feste Anstellung am Hof und hat die Egmont-Ouvertüre geschrieben?",
+      "options": [
+        { "id": "a", "html": "Beethoven" },
+        { "id": "b", "html": "Händel" },
+        { "id": "c", "html": "Vivaldi" }
+      ],
+      "answer": "a",
+      "why": "Beethoven schrieb die Musik zu Goethes Drama Egmont. Händel und Vivaldi lebten in der Barockzeit."
+    }
+  },
+  "formen": {
+    "goal": "Du kannst Liedform, Rondo, Variation und Sonatensatz unterscheiden und ihre Teile nennen.",
+    "tldr": [
+      "Musikalische Formen sind Baupläne. Man schreibt sie mit Buchstaben auf: A-B-A ist dreiteilig, A-B-A-C-A ein Rondo.",
+      "Eine Variation verändert ein Thema, ohne es unkenntlich zu machen. Der Sonatensatz hat Exposition, Durchführung und Reprise."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: eine Sandwich-Reihe",
+      "html": "<p>Beim Rondo kommt der Refrain A immer wieder wie die Brotscheibe, und dazwischen liegen verschiedene Belege B, C. Bei der Variation bleibt das Sandwich dasselbe, nur der Belag wird immer wieder gewechselt.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "flowDiagram",
+        "args": [
+          ["Exposition|(Themen vorstellen)", "Durchführung|(Themen verarbeiten)", "Reprise|(Themen kehren wieder)"],
+          "Ablauf: Die drei Teile des Sonatensatzes"
+        ]
+      },
+      "caption": "Die Sonatensatzform wirkt wie ein Gespräch mit Streit und Versöhnung."
+    },
+    "steps": {
+      "title": "So findest du die Form",
+      "items": [
+        "Höre ein Stück und gib jedem neuen Abschnitt einen Buchstaben.",
+        "Kehrt derselbe Abschnitt wieder, bekommt er denselben Buchstaben.",
+        "Lies die Folge ab: A-B-A heißt dreiteilig, A-B-A-C-A heißt Rondo."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Bei einer Variation darf das Thema nicht verschwinden. Wenn du es nicht mehr erkennst, ist es keine Variation mehr, sondern etwas Neues.</p>"
+    },
+    "rule": "Rondo gleich A-B-A-C-A. Sonatensatz gleich Exposition, Durchführung, Reprise.",
+    "check": {
+      "q": "Welcher Teil des Sonatensatzes steht in der Mitte?",
+      "options": [
+        { "id": "a", "html": "Exposition" },
+        { "id": "b", "html": "Reprise" },
+        { "id": "c", "html": "Durchführung" }
+      ],
+      "answer": "c",
+      "why": "Erst kommen die Themen (Exposition), dann werden sie verarbeitet (Durchführung), am Ende kehren sie wieder (Reprise)."
+    }
+  },
+  "blues-jazz": {
+    "goal": "Du kannst den zwölftaktigen Blues beschreiben und Jazz-Begriffe wie Improvisation, Swing und Scat erklären.",
+    "tldr": [
+      "Der Blues entstand Ende des 19. Jahrhunderts bei Afroamerikanern in den Südstaaten der USA. Er hat zwölf Takte in drei Zeilen.",
+      "Der Jazz lebt von der Improvisation, also dem spontanen Erfinden über einer Akkordfolge."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Gespräch mit Ruf und Antwort",
+      "html": "<p>Im Blues ruft eine Stimme etwas, ein Instrument antwortet. Das nennt man Call and Response. Wie in einem Gespräch hängt die Antwort davon ab, was gerade gefragt wurde.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          ["Takte", "1 bis 4", "5 bis 8", "9 bis 12"],
+          [
+            ["Stufen", "I I I I", "IV IV I I", "V IV I I"],
+            ["In C", "C C C C", "F F C C", "G F C C"]
+          ],
+          [0.8, 1.2, 1.2, 1.2],
+          "Tabelle: Zwölftaktiger Blues in C mit Stufen und Akkorden"
+        ]
+      },
+      "caption": "Jede Zeile hat vier Takte. Insgesamt sind es zwölf."
+    },
+    "steps": {
+      "title": "So spielst du einen Blues",
+      "items": [
+        "Lerne die Akkordfolge: Drei Zeilen zu je vier Takten.",
+        "Spiele die Töne der Blues-Tonleiter, die Blue Notes mit erniedrigter Terz und Septime.",
+        "Erfinde über den Akkorden eine Melodie. Das ist die Improvisation."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Improvisieren heißt nicht, wild irgendwas zu spielen. Gute Improvisation hält sich an die Akkorde und baut kleine Ideen auf, die sich wiederholen.</p>"
+    },
+    "rule": "Der Blues hat zwölf Takte in drei Zeilen. Jazz verbindet Improvisation und Swing.",
+    "check": {
+      "q": "Wie viele Takte hat der klassische Blues?",
+      "options": [
+        { "id": "a", "html": "acht" },
+        { "id": "b", "html": "zwölf" },
+        { "id": "c", "html": "sechzehn" }
+      ],
+      "answer": "b",
+      "why": "Der Blues hat drei Zeilen zu je vier Takten, das macht zwölf."
+    }
+  },
+  "rock-pop": {
+    "goal": "Du kannst den Aufbau eines Popsongs nennen, die Arbeit im Tonstudio beschreiben und Beatles und Cover einordnen.",
+    "tldr": [
+      "Ein Popsong hat meist Intro, Strophe, Refrain, Bridge und Outro. Der Refrain bleibt am besten im Ohr.",
+      "Im Studio werden die Instrumente auf getrennten Spuren aufgenommen und später abgemischt. Die Beatles aus Liverpool prägten die Popmusik der 1960er."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Film mit Hauptszene",
+      "html": "<p>Die Strophen erzählen die Geschichte, der Refrain ist die Hauptszene, die du am Ende mitsingst. Die Bridge ist die kurze Wendung, bevor es noch einmal zur Hauptszene geht.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "flowDiagram",
+        "args": [
+          ["Intro", "Strophe", "Refrain", "Bridge", "Refrain", "Outro"],
+          "Ablauf: Typischer Aufbau eines Popsongs"
+        ]
+      },
+      "caption": "Viele Popsongs folgen diesem Plan, aber nicht alle."
+    },
+    "steps": {
+      "title": "So entsteht ein Song im Studio",
+      "items": [
+        "Aufnehmen: Jedes Instrument wird einzeln auf einer eigenen Spur aufgenommen.",
+        "Abmischen: Am Mischpult werden Lautstärke und Klang der Spuren gegeneinander eingestellt.",
+        "Mastering: Zum Schluss bekommt der fertige Song den letzten Feinschliff für alle Geräte."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Ein Cover ist keine Kopie, sondern eine neue Aufnahme eines bekannten Songs durch andere Künstler. Wer es veröffentlicht, braucht meist die Erlaubnis der Urheber.</p>"
+    },
+    "rule": "Songaufbau gleich Intro, Strophe, Refrain, Bridge, Outro. Studio gleich aufnehmen, abmischen, mastern.",
+    "check": {
+      "q": "Was ist ein Cover?",
+      "options": [
+        { "id": "a", "html": "Eine neue Aufnahme eines schon bekannten Songs" },
+        { "id": "b", "html": "Das Bild auf der Hülle einer CD" },
+        { "id": "c", "html": "Ein Song ohne Gesang" }
+      ],
+      "answer": "a",
+      "why": "In der Musik heißt Cover eine neue Version eines Songs, der schon von anderen veröffentlicht wurde."
+    }
+  },
+  "musiktheater": {
+    "goal": "Du kannst Oper und Musical unterscheiden und die Fachbegriffe Libretto, Arie, Rezitativ und Ouvertüre erklären.",
+    "tldr": [
+      "In der Oper wird die Handlung gesungen und vom Orchester begleitet. Das Textbuch heißt Libretto.",
+      "Das Musical wechselt zwischen Gesang, gesprochenem Text und Tanz und nutzt oft Popmusik."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Film, der live gesungen wird",
+      "html": "<p>Eine Oper ist wie ein Theaterstück, bei dem die Gefühle in Musik ausbrechen. Die Arie ist dann der Moment, in dem eine Figur stehen bleibt und ihre Gefühle singt.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          ["", "Oper", "Musical"],
+          [
+            ["Sprache", "gesungen, Rezitativ", "Gesang und Sprechtext"],
+            ["Musik", "klassisch, Orchester", "Pop, Rock, Jazz"],
+            ["Stimmen", "ohne Mikrofon ausgebildet", "meist mit Mikrofon"]
+          ],
+          [0.9, 1.6, 1.6],
+          "Tabelle: Vergleich von Oper und Musical"
+        ]
+      },
+      "caption": "Beide verbinden Musik, Handlung und Bühne."
+    },
+    "steps": {
+      "title": "So hörst du eine Oper",
+      "items": [
+        "Beginne mit der Ouvertüre: Das Orchester stimmt auf das Stück ein.",
+        "Achte auf das Rezitativ: Es treibt die Handlung voran und klingt fast wie Sprechen.",
+        "Warte auf die Arie: Hier wird ein Gefühl in einem langen Solo ausgedrückt."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Libretto und Partitur sind nicht dasselbe. Das Libretto ist der Text, die Partitur die gesamte Musik mit allen Stimmen.</p>"
+    },
+    "rule": "Libretto gleich Textbuch, Arie gleich Solo für Gefühle, Rezitativ gleich Handlung, Ouvertüre gleich Einleitung.",
+    "check": {
+      "q": "Wer schrieb die Oper Der fliegende Holländer?",
+      "options": [
+        { "id": "a", "html": "Richard Wagner" },
+        { "id": "b", "html": "Wolfgang Amadeus Mozart" },
+        { "id": "c", "html": "Johann Sebastian Bach" }
+      ],
+      "answer": "a",
+      "why": "Wagner komponierte die Oper und schrieb auch den Text. Er nutzt für Figuren wiederkehrende Leitmotive."
+    }
+  },
+  "markt": {
+    "goal": "Du kannst erklären, wer an Musik Rechte hat, was die GEMA macht und was beim Teilen von Musik erlaubt ist.",
+    "tldr": [
+      "Das Urheberrecht schützt alle, die Musik komponieren oder texten. In Deutschland gilt es bis 70 Jahre nach dem Tod.",
+      "Die GEMA sammelt Gebühren für öffentliche Aufführungen und verteilt das Geld an die Urheber."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Fahrrad, das jemandem gehört",
+      "html": "<p>Auch wenn ein Fahrrad auf der Straße steht, darfst du es nicht einfach mitnehmen. Bei Musik ist es ähnlich: Sie ist im Netz leicht zu kopieren, aber sie gehört trotzdem den Urhebern.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          ["Wer", "Aufgabe"],
+          [
+            ["Urheber", "komponiert und textet"],
+            ["Interpret", "singt oder spielt"],
+            ["Plattenfirma", "produziert, bewirbt, verkauft"],
+            ["GEMA", "verteilt Gebühren an Urheber"]
+          ],
+          [1.2, 2],
+          "Tabelle: Wer im Musikmarkt welche Aufgabe hat"
+        ]
+      },
+      "caption": "Von der Idee bis zum Hörer sind viele Beteiligte im Spiel."
+    },
+    "steps": {
+      "title": "So gehst du fair mit Musik um",
+      "items": [
+        "Frage dich: Wer hat das gemacht? Diese Person hat Rechte daran.",
+        "Nutze Musik nur, wenn du sie gekauft oder legal gestreamt hast oder die Lizenz es erlaubt, zum Beispiel Creative Commons.",
+        "Stelle fremde Musik nicht ohne Erlaubnis ins Netz und nenne bei erlaubter Nutzung immer die Urheber."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Ein Ausschnitt ist nicht automatisch erlaubt, nur weil er kurz ist. Ein Sample aus einer fremden Aufnahme braucht in der Regel eine Erlaubnis.</p>"
+    },
+    "rule": "Urheber haben Rechte an ihrer Musik. Die GEMA verteilt Gebühren. Teilen ist nur mit Erlaubnis oder Lizenz in Ordnung.",
+    "check": {
+      "q": "Wofür ist die GEMA zuständig?",
+      "options": [
+        { "id": "a", "html": "Sie sammelt Gebühren für Aufführungen und zahlt sie an die Urheber." },
+        { "id": "b", "html": "Sie verkauft Eintrittskarten für Konzerte." },
+        { "id": "c", "html": "Sie bringt Kindern Instrumente bei." }
+      ],
+      "answer": "a",
+      "why": "Die GEMA ist eine Verwertungsgesellschaft. Sie verwaltet die Rechte für Urheber und verteilt die Einnahmen."
+    }
+  },
+  "welt": {
+    "goal": "Du kannst Beispiele für Musik aus anderen Kulturen nennen und erklären, wie sie die europäische Musik beeinflusst hat.",
+    "tldr": [
+      "Komponisten wie Béla Bartók sammelten Volkslieder und verwendeten sie in ihrer Musik. Auch Instrumente und Rhythmen aus fernen Ländern wurden aufgegriffen.",
+      "Claude Debussy hörte 1889 ein Gamelan-Orchester aus Indonesien auf der Pariser Weltausstellung. Das prägte seine Klangsprache."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: Rezepte aus aller Welt",
+      "html": "<p>Wenn ein Koch ein Gewürz aus einem fernen Land entdeckt, kocht er danach anders. Komponisten machten es ähnlich, wenn sie fremde Klänge hörten.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          ["Region", "Merkmal"],
+          [
+            ["Anden (Bolivien)", "Panflöte, Charango"],
+            ["Bulgarien", "ungerade Takte wie 7/8"],
+            ["Südafrika", "Gumboot-Tanz mit Gummistiefeln"],
+            ["Indonesien", "Gamelan aus Gongs und Metallklingern"]
+          ],
+          [1.4, 2],
+          "Tabelle: Musik aus verschiedenen Regionen der Welt"
+        ]
+      },
+      "caption": "Jede Region hat eigene Klänge, Instrumente und Rhythmen."
+    },
+    "steps": {
+      "title": "So hörst du fremde Musik",
+      "items": [
+        "Höre zuerst auf den Rhythmus: Gibt es ungerade Takte oder viele Überlagerungen?",
+        "Achte auf die Instrumente: Welche kennst du, welche sind neu?",
+        "Vergleiche mit deiner eigenen Musik und finde Gemeinsamkeiten und Unterschiede."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Fremd heißt nicht schlechter. Musik klingt für uns fremd, weil wir andere Klänge gewohnt sind, nicht weil sie weniger Regeln hätte.</p>"
+    },
+    "rule": "Bartók sammelte Volkslieder, Debussy ließ sich vom Gamelan beeinflussen, ungerade Takte sind in Bulgarien häufig.",
+    "check": {
+      "q": "Woher stammt das Gamelan-Orchester?",
+      "options": [
+        { "id": "a", "html": "Indonesien" },
+        { "id": "b", "html": "Bolivien" },
+        { "id": "c", "html": "Spanien" }
+      ],
+      "answer": "a",
+      "why": "Gamelan ist ein Orchester aus Gongs und Metallklingern von den indonesischen Inseln, zum Beispiel Java und Bali."
+    }
+  },
+  "medien": {
+    "goal": "Du kannst erklären, wie Musik in Film und Werbung Stimmung erzeugt, und Begriffe wie Jingle und funktionale Musik anwenden.",
+    "tldr": [
+      "Funktionale Musik hat einen Zweck, zum Beispiel Stimmung zu erzeugen, etwas zu verkaufen oder Spannung aufzubauen.",
+      "Ein Jingle ist eine kurze, einprägsame Melodie, an der man ein Produkt wiedererkennt."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Film ohne Ton",
+      "html": "<p>Schau dir eine spannende Szene ohne Musik an und sie wirkt viel harmloser. Die Musik sagt dir, wie du dich fühlen sollst, ohne dass jemand es ausspricht.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "flowDiagram",
+        "args": [
+          ["Absicht|(Welche Stimmung?)", "Musikmittel|(Tempo, Tonart, Instrumente)", "Wirkung|(Gefühl beim Publikum)"],
+          "Ablauf: Von der Absicht über die Musikmittel zur Wirkung"
+        ]
+      },
+      "caption": "Wer Musik einsetzt, wählt die Mittel passend zur gewünschten Wirkung."
+    },
+    "steps": {
+      "title": "So analysierst du Filmmusik",
+      "items": [
+        "Frage: Welche Stimmung hat die Szene, zum Beispiel Spannung, Freude oder Trauer?",
+        "Höre auf Tempo, Lautstärke und Instrumente. Schnelle, hohe Streicher wirken oft aufregend.",
+        "Prüfe, ob die Musik zur Szene passt oder bewusst einen Gegensatz erzeugt."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Nicht jede Musik im Film hören nur die Zuschauer. Schaltet eine Figur im Bild das Radio an, gehört die Musik zur Szene. Läuft sie nur für das Publikum, wurde sie zur Stimmung dazugemischt.</p>"
+    },
+    "rule": "Funktionale Musik hat einen Zweck. Ein Jingle ist eine kurze Werbemelodie. Tempo, Tonart und Instrumente steuern die Wirkung.",
+    "check": {
+      "q": "Was ist ein Jingle?",
+      "options": [
+        { "id": "a", "html": "Eine kurze, einprägsame Melodie in der Werbung" },
+        { "id": "b", "html": "Ein sehr langes Orchesterstück" },
+        { "id": "c", "html": "Ein Instrument der Rockband" }
+      ],
+      "answer": "a",
+      "why": "Ein Jingle ist eine kurze Melodie, oft mit einem Slogan, die ein Produkt wiedererkennbar macht."
+    }
+  }
+}
