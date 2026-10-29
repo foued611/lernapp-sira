@@ -27,9 +27,13 @@ Stand: 2026-10-29. Buch: MusiX 2, Das Kursbuch Musik 2 (Helbling, Detterbeck und
 | welt | 2 (Béla Bartók), 14 Fremd und vertraut |
 | medien | 15 Musik und Medien |
 
+## Klangbeispiele
+
+Jede Seite hat 2 bis 4 Beispiele zum Anhören (45 insgesamt, Karte „Zum Anhören“ in der Lektion). Sie werden live im Browser aus einfachen Schwingungen erzeugt (Web Audio), es gibt keine Audiodateien und keine Netzanfragen. Die Partituren stehen in `content/musik/data.json` unter `klang`, die Technik in `apps/musik/klang.js` und `klang-audio.js`. Alle Melodien sind eigene Erfindungen. Die Klänge sind nachgebaut und klingen nicht wie echte Instrumente oder Stimmen.
+
 ## Nicht übernommen
 
-- Hörbeispiele, Tonbeispiele, Videos und die DVD-ROM: Die App hat keinen Ton. Fragen zu einem gehörten Stück passen nicht zum Format.
+- Hörbeispiele, Tonbeispiele, Videos und die DVD-ROM des Buchs: Aufnahmen sind urheberrechtlich geschützt und werden nicht verwendet. Fragen zu einem gehörten Stück (Hörquiz) gibt es noch nicht.
 - Workshops (Recherchieren und Präsentieren, Beatboxing und Vocal Percussion, Sprechen über Musik, Hip-Hop-Tanz, Bluesimprovisation, Loops und Techno Beats): praktische Anteile.
 - Kapitel 16 Klangwelten (Minimal Music, Klanginstallationen, virtuelle Klangwelten) und Kapitel 1 (Move and Groove, Kontraste, Identitätssuche): bewusst weggelassen, bei Bedarf als nächste Seiten ergänzen.
 - Epochenvisitenkarten und Musiklabore als eigene Seiten.
