@@ -1,11 +1,14 @@
 # Lehrplan-Abgleich Geographie (Gymnasium BW, Klasse 7)
 
-Stand: 2026-10-29. Buch: Unsere Erde (Cornelsen), Inhaltsverzeichnis Kapitel 4 bis 8 und Einführungsseiten (Fotos des Nutzers).
+Stand: 2026-10-29. Buch: Unsere Erde (Cornelsen), Inhaltsverzeichnis Kapitel 1 bis 8 und Einführungsseiten (Fotos des Nutzers).
 
 ## Zuordnung Buch zu App
 
 | Kapitel im Buch | Seiten in der App |
 |---|---|
+| 1 Die Erdoberfläche im Wandel begreifen | O1 bis O5 |
+| 2 Merkmale von Klima und Vegetation erklären | L1 bis L9 |
+| 3 Zusammenhänge in der tropischen Zone untersuchen | T1 bis T9 |
 | 4 Ursachen und mögliche Auswirkungen des Klimawandels | K1 bis K5 |
 | 5 Zusammenhänge in der Polarzone | P1 bis P4 |
 | 6 Auswirkungen der Bevölkerungsentwicklung | B1 bis B6 |
@@ -14,7 +17,7 @@ Stand: 2026-10-29. Buch: Unsere Erde (Cornelsen), Inhaltsverzeichnis Kapitel 4 b
 
 ## Nicht enthalten
 
-- Kapitel 1 bis 3: Die Fotos zeigen das Inhaltsverzeichnis erst ab Kapitel 4. Fehlt für die Kapitel 1 bis 3 ein Foto, fehlen sie in der App.
+- Methodenseiten wie Kausalprofil, Klimadiagramm und Satellitenbild: nur als Themen eingeflossen. Das Klimadiagramm hat eine eigene Seite (L5).
 - Ozonloch (Buchseite 92): Das Buch kennzeichnet es selbst als über den Bildungsplan hinausgehend.
 - Geo-Methode, Geo-Aktiv, Geo-Check und Atlasteil: reine Arbeitsseiten, hier nur als Themen in die Lektionen eingeflossen.
 
