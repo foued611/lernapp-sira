@@ -13,6 +13,7 @@
 import { pick, shuffle, trackOf } from '../../helfer/index.js';
 import { choiceQuestion, option, typedQuestion } from './questions.js';
 import { esc, normalise } from './text.js';
+import { spreadPick } from './vielfalt.js';
 
 export const isGap = (item) => item.kind === 'gap';
 const gapText = (s) => s.split('___').map(esc).join('{{blank}}');
@@ -76,7 +77,7 @@ export function createPool({ data, manifest }, { typedLabel = 'Schreibe das fehl
   const quickRound = (rng) => Array.from({ length: 5 }, () => choice(anyItem(rng), rng));
   const blitzQuestion = (rng) => choice(anyItem(rng), rng);
   const bossRound = (rng) => Array.from({ length: 12 }, (_, i) => {
-    const item = pick(items[units[i % units.length].id], rng);
+    const item = pick(items[spreadPick(units, i, 12, rng).id], rng);
     return i % 4 === 3 && isGap(item) ? typed(item) : choice(item, rng);
   });
 

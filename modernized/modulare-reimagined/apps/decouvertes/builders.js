@@ -1,7 +1,7 @@
 // Französisch-Werkstatt: Aufgaben wie in jeder Pool-App (runde/src/pool.js), dazu die Seiten des Cahier de Verbes.
 // Seiten mit verbs kommen aus verben/builders.js, alle anderen aus data.items.
 // Zufall kommt immer als rng herein (AGENTS.md), ohne rng gibt es keine Aufgabe.
-import { createPool, isGap } from '../../runde/index.js';
+import { createPool, isGap, spreadPick } from '../../runde/index.js';
 import { pick } from '../../helfer/index.js';
 import { createModel } from './verben/model.js';
 import { createVerbBuilders } from './verben/builders.js';
@@ -26,9 +26,9 @@ export function createBuilders(paket) {
     return unit.verbs ? verbs.verbBlitz(unit, rng) : choice(pick(items[unit.id], rng), rng);
   };
 
-  // 12 Fragen, gleichmäßig über alle Seiten verteilt (sonst kämen die hinteren Seiten nie dran).
+  // 12 Fragen, über alle Seiten verteilt (spreadPick), sonst kämen die hinteren Seiten nie dran.
   const bossRound = (rng) => Array.from({ length: 12 }, (_, i) => {
-    const unit = units[Math.floor((i * units.length) / 12)];
+    const unit = spreadPick(units, i, 12, rng);
     if (unit.verbs) return verbs.verbQuestion(unit, rng);
     const item = pick(items[unit.id], rng);
     return i % 4 === 3 && isGap(item) ? typed(item) : choice(item, rng);
