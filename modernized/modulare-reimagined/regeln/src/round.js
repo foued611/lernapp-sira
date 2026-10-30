@@ -8,7 +8,7 @@ import { awardXP } from './xp.js';
 import { evaluateTrophyRule } from './trophies.js';
 import { recordMission } from './missions.js';
 
-const MODES = new Set(['lesson', 'boss', 'quick', 'blitz']);
+const MODES = new Set(['lesson', 'boss', 'quick', 'blitz', 'chapter']);
 
 // Bonus-XP gutschreiben und Niveau-Aufstieg oder Tagesziel in das Ergebnis übernehmen.
 function payBonus(ctx, amount) {
@@ -41,6 +41,14 @@ function settleLesson(ctx, unitId, missedSkills) {
   if (result.stars > ((app.stars && app.stars[unitId]) || 0)) app.stars[unitId] = result.stars;
 }
 
+// Der Kapitel-Test misst, was sitzt. Er verändert keine Sterne und zählt nicht als Übung der Seiten. Es gilt der Bestwert.
+function settleChapter(ctx, groupId) {
+  const { result, app, day } = ctx;
+  app.chapters = app.chapters || {};
+  result.prevBest = app.chapters[groupId]?.acc ?? null;
+  if (result.accuracy > (result.prevBest ?? -1)) app.chapters[groupId] = { acc: result.accuracy, day };
+}
+
 // Wochenmissionen verbuchen, nachdem die Runde ihre eigenen XP gezahlt hat. Mehrere Missionen in einer Runde
 // gehen als eine Gutschrift über payBonus, so meldet sich ein Niveau-Aufstieg nur einmal.
 // Eine gescheiterte Runde zählt nicht, wie beim Auffrischen.
@@ -61,8 +69,9 @@ function settleMissions(ctx, appId, unitId) {
 /**
  * @param {object} input
  * @param {string} input.appId          Kennung der App (landet in profile.lastApp)
- * @param {'lesson'|'boss'|'quick'|'blitz'} input.mode
+ * @param {'lesson'|'boss'|'quick'|'blitz'|'chapter'} input.mode
  * @param {{id: string}} [input.unit]   Seite; Pflicht bei mode 'lesson'
+ * @param {{id: string}} [input.group]  Kapitel; Pflicht bei mode 'chapter'
  * @param {boolean} [input.failed]
  * @param {number} input.accuracy       0 bis 1, berechnet mit roundAccuracy
  * @param {number} [input.wrong]
@@ -81,12 +90,13 @@ function settleMissions(ctx, appId, unitId) {
  */
 export function finishRound(input) {
   const {
-    appId, mode, unit, failed = false, accuracy, wrong = 0, almost = 0, bestCombo = 0, score = 0, retryRight = 0, missedSkills = [],
+    appId, mode, unit, group, failed = false, accuracy, wrong = 0, almost = 0, bestCombo = 0, score = 0, retryRight = 0, missedSkills = [],
     levelUp = null, goalHit = false, badges = [], unitIds = [], profile, app, day
   } = input;
   assertDay(day);
   if (!MODES.has(mode)) throw new TypeError(`Unbekannter Rundenmodus: ${mode}`);
   if (mode === 'lesson' && !(unit && unit.id)) throw new TypeError('Lektionsrunde ohne Seite');
+  if (mode === 'chapter' && !(group && group.id)) throw new TypeError('Kapitel-Test ohne Kapitel');
   if (!(accuracy >= 0 && accuracy <= 1)) throw new RangeError(`Genauigkeit muss zwischen 0 und 1 liegen: ${accuracy}`);
 
   // Blitz vergibt nie Sterne (rounds.js:11).
@@ -100,6 +110,8 @@ export function finishRound(input) {
   const result = {
     mode, failed, accuracy, wrong, almost, bestCombo, score, retryRight, prevAcc, gapDays,
     unitId: mode === 'lesson' ? unit.id : null,
+    groupId: mode === 'chapter' ? group.id : null,
+    prevBest: null,
     stars, bonus: 0, refresh: false, levelUp, goalHit, newBadges: [], missions: []
   };
   const ctx = { result, profile, app, day };
@@ -111,6 +123,7 @@ export function finishRound(input) {
   app.badges = app.badges || {};
 
   if (mode === 'lesson') settleLesson(ctx, unit.id, missedSkills);
+  if (mode === 'chapter') settleChapter(ctx, group.id);
   if (mode === 'blitz' && score > (app.best.blitz || 0)) app.best.blitz = score;
   // Der Endgegner zahlt nur bei einem Sieg (RULE-071).
   if (mode === 'boss' && !failed) {

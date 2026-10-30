@@ -42,4 +42,5 @@ test('KATALOG: Seiten im Katalog tragen nur, was Kachel und Suche brauchen', () 
   for (const entry of APPS) {
     for (const unit of entry.units) assert.deepEqual(Object.keys(unit).sort(), ['chapter', 'de', 'id', 'title']);
   }
+  assert.equal(buildCatalog([{ id: 'a', title: 'A', catalog: { subject: 'S', desc: 'D', order: 1 }, units: [] }])[0].status, 'live');
 });

@@ -6,13 +6,14 @@ import { starsOf } from '../helfer/index.js';
 import { awardXP, finishRound, isRefreshDue, updateStreak, weakestUnit } from '../regeln/index.js';
 import { NO_STORAGE } from './name.js';
 
-/** Aufgaben je Runde (Spec RULE-229): Lektion 8, Endgegner 12, Schnellrunde 5. Blitz ist nicht enthalten. */
-export const ROUND_SIZE = Object.freeze({ lesson: 8, quick: 5, boss: 12 });
+/** Aufgaben je Runde (Spec RULE-229): Lektion 8, Endgegner 12, Schnellrunde 5, Kapitel-Test 10. Blitz ist nicht enthalten. */
+export const ROUND_SIZE = Object.freeze({ lesson: 8, quick: 5, boss: 12, chapter: 10 });
 
 export { NO_STORAGE };
 const LEFT_SAVE_FAILED = 'Die XP konnten nicht gespeichert werden.';
 export const RESET_DONE = 'Der Fortschritt dieser App ist zurückgesetzt. Name und Gesamt-XP bleiben.';
 const NO_TASKS = 'Für diese Runde gibt es noch keine Aufgaben.';
+const CHAPTER_LOCKED = 'Der Kapitel-Test öffnet, sobald jede Seite des Kapitels mindestens einen Stern hat.';
 const QUICK_LOCKED = 'Übe zuerst eine Seite. Die 2-Minuten-Runde wiederholt, was du schon gelernt hast.';
 const BOSS_LOCKED = 'Der Endgegner ist noch gesperrt. Erst braucht jede Seite mindestens einen Stern.';
 
@@ -20,10 +21,11 @@ const BOSS_LOCKED = 'Der Endgegner ist noch gesperrt. Erst braucht jede Seite mi
 export const profileDefaults = () => ({ name: '', xp: 0, streak: 0, lastDay: '', lastApp: '', day: { d: '', xp: 0 } });
 // last und acc steuern Auffrischen und gezieltes Training (legacy profile.js:15).
 // seen: Schlüssel der Aufgaben, die richtig beantwortet wurden. Neue Runden bevorzugen andere (runde/src/vielfalt.js).
+// chapters: je Kapitel der beste Kapitel-Test { acc, day }.
 // missed: je Seite die Kategorien (skill, sonst Etikett) der Fragen, die in der letzten Lektionsrunde im ersten Versuch falsch waren (Fehler-Abruf).
 // refreshes: Zahl der bezahlten Auffrischungen (Trophäe refresh, Wochenmission refresh1 zählt separat).
 // merged: Quellen, deren Stand schon in diese App übernommen wurde (seiten/uebernahme.js).
-export const appDefaults = () => ({ xp: 0, stars: {}, badges: {}, best: {}, last: {}, acc: {}, seen: {}, missed: {}, refreshes: 0, merged: {} });
+export const appDefaults = () => ({ xp: 0, stars: {}, badges: {}, best: {}, last: {}, acc: {}, seen: {}, missed: {}, refreshes: 0, merged: {}, chapters: {} });
 // Obergrenze je App, damit der Stand klein bleibt. Die ältesten Schlüssel fallen zuerst weg.
 export const SEEN_MAX = 2000;
 export const RIGHT = Object.freeze(new Set(['ok', 'almost']));
@@ -65,6 +67,24 @@ export function followingUnit(app, units, unitId, day) {
   return order.find((u) => starsOf(app.stars, u.id) === 0) || order.find((u) => isRefreshDue(app, u.id, day)) || null;
 }
 
+/** Der Kapitel-Test lohnt erst ab zwei Seiten. Bei einer wäre er nur die Lektionsrunde dieser Seite. */
+export const hasChapterTest = (group) => group.units.length >= 2;
+
+/** Seiten des Kapitels, die noch keinen Stern haben. Der Test öffnet, wenn es keine mehr gibt. */
+export const chapterMissing = (app, group) => group.units.filter((u) => starsOf(app.stars, u.id) === 0);
+
+/**
+ * Aufgaben für den Kapitel-Test: abwechselnd aus den Seiten, aus jeder etwa gleich viele. Die Lektionsrunden liefern sie,
+ * deshalb braucht keine App eigenen Code. unitId sagt später, welche Seite noch sitzen muss.
+ */
+export function chapterQuestions(units, lesson, size, rng) {
+  const lists = units.map((unit) => lesson(unit, rng).map((question) => ({ ...question, unitId: unit.id })));
+  return Array.from({ length: size }, (_, i) => {
+    const list = lists[i % lists.length];
+    return list[Math.floor(i / lists.length) % list.length];
+  });
+}
+
 /**
  * Ist der Endgegner offen? RULE-206: erst wenn jede Seite mindestens einen Stern hat. Eine App kann
  * über bossUnlocked selbst entscheiden (legacy shell.js:43). Ohne Seiten ist er offen (RULE-134).
@@ -76,8 +96,9 @@ export function bossOpen({ app, unitIds, bossUnlocked, profile }) {
 
 // Die Quelle der Aufgaben für eine Rundenart. Ohne Quelle gibt es die Runde nicht. Der Zufall kommt von außen
 // (rng), damit die Aufgaben einer Runde reproduzierbar sind.
-function poolFor(config, mode, unit, rng, practised) {
+function poolFor(config, mode, unit, rng, practised, group) {
   const rounds = config.rounds || {};
+  if (mode === 'chapter') return group && typeof rounds.lesson === 'function' ? () => chapterQuestions(group.units, rounds.lesson, ROUND_SIZE.chapter, rng) : null;
   if (mode === 'lesson') return unit && typeof rounds.lesson === 'function' ? () => rounds.lesson(unit, rng) : null;
   if (mode === 'quick') return typeof rounds.quick === 'function' ? () => rounds.quick(rng, practised) : null;
   if (mode === 'boss') return typeof rounds.boss === 'function' ? () => rounds.boss(rng) : null;
@@ -94,7 +115,7 @@ const missedOf = (app, unit) => {
  * Startet eine Runde. Gibt { ok, round, mode, unit } oder { ok: false, message } zurück und wirft nie.
  * Der Endgegner startet nur, wenn er offen ist (RULE-206).
  */
-export function startRound({ config, mode, unit = null, app, profile, rng, known = new Set() }) {
+export function startRound({ config, mode, unit = null, group = null, app, profile, rng, known = new Set() }) {
   if (!Object.hasOwn(ROUND_SIZE, mode)) return failure('Diese Rundenart gibt es nicht.');
   const unitIds = config.units.map((u) => u.id);
   if (mode === 'boss' && !bossOpen({ app, unitIds, bossUnlocked: config.bossUnlocked, profile })) {
@@ -103,11 +124,13 @@ export function startRound({ config, mode, unit = null, app, profile, rng, known
   // Die Schnellrunde wiederholt. Sie zieht nur aus Seiten mit Stern, sonst käme ungelernter Stoff ohne Theorie.
   const practised = practisedUnits(app, config.units);
   if (mode === 'quick' && config.rounds?.quick && practised.length === 0) return failure(QUICK_LOCKED);
-  const source = poolFor(config, mode, unit, rng, practised);
+  if (mode === 'chapter' && group && chapterMissing(app, group).length) return failure(CHAPTER_LOCKED);
+  const source = poolFor(config, mode, unit, rng, practised, group);
   if (!source) return failure(NO_TASKS);
   try {
     const size = ROUND_SIZE[mode];
-    const fresh = freshPool(source, size, known);
+    // Der Test soll alle Seiten treffen. Deshalb gilt hier die Verteilung, nicht der Vorrang neuer Aufgaben.
+    const fresh = mode === 'chapter' ? uniqueQuestions(source()) : freshPool(source, size, known);
     if (!Array.isArray(fresh) || fresh.length === 0) return failure(NO_TASKS);
     // Nur Lektionsrunden holen Fehlerkategorien der letzten Runde zurück (Spec 5.2). Ohne Liste bleibt alles wie bisher.
     const missed = mode === 'lesson' ? missedOf(app, unit) : [];
@@ -115,7 +138,7 @@ export function startRound({ config, mode, unit = null, app, profile, rng, known
     const candidates = recalled.length ? uniqueQuestions([...recalled, ...fresh]) : fresh;
     const pool = missed.length ? withMissed(candidates, missed, Math.min(size, candidates.length), rng) : fresh;
     const round = createRound({ pool, size: Math.min(size, pool.length), rng, boss: mode === 'boss' });
-    return { ok: true, round, mode, unit };
+    return { ok: true, round, mode, unit, group };
   } catch (error) {
     return failure('Die Aufgaben konnten nicht erzeugt werden.', error);
   }
@@ -125,11 +148,12 @@ export function startRound({ config, mode, unit = null, app, profile, rng, known
  * Wertet ein Rundenergebnis mit regeln/ aus. Verändert profile und app, wie regeln es tut (RULE-195).
  * levelUp und goalHit kommen von der XP-Gutschrift der Runde selbst, damit eine Stufe nicht verloren geht.
  */
-export function evaluateRound({ appId, mode, unit, roundResult, profile, app, day, badges, unitIds, levelUp = null, goalHit = false }) {
+export function evaluateRound({ appId, mode, unit, group = null, roundResult, profile, app, day, badges, unitIds, levelUp = null, goalHit = false }) {
   return finishRound({
     appId,
     mode,
     unit: unit || undefined,
+    group: group || undefined,
     failed: roundResult.failed,
     accuracy: roundResult.accuracy,
     wrong: roundResult.wrong,
@@ -149,10 +173,13 @@ export function evaluateRound({ appId, mode, unit, roundResult, profile, app, da
 }
 
 /** Die Zahlen, die die Ergebnisansicht braucht. Alles aus Runde und Auswertung, nichts aus der Uhr. */
-export function summaryOf({ mode, unit, roundResult, result }) {
+export function summaryOf({ mode, unit, roundResult, result, weakUnits = [] }) {
   return {
     mode,
     unitId: unit ? unit.id : null,
+    groupId: result.groupId ?? null,
+    prevBest: result.prevBest ?? null,
+    weakUnits,
     failed: roundResult.failed,
     accuracy: roundResult.accuracy,
     correct: roundResult.correct,
@@ -186,11 +213,11 @@ async function saveBoth(profileStore, appStore) {
  * bricht die Anzeige nicht ab, er kommt als Meldung zurück (SEITE-SPEICHER-FEHLER).
  * Protokoll: App, Seite (oder null) und Ergebnisfelder, wie legacy shell.js:104 (RULE-247).
  */
-export async function settleRound({ appId, mode, unit, roundResult, profile, app, profileStore, appStore, log, day, badges, unitIds }) {
+export async function settleRound({ appId, mode, unit, group = null, weakUnits = [], roundResult, profile, app, profileStore, appStore, log, day, badges, unitIds }) {
   // Die XP der Runde zählen zuerst (Profil, App, Tagesziel). Legacy tat das während der Runde (quiz.js).
   const paid = awardXP(profile, app, roundResult.xp, day);
   const result = evaluateRound({
-    appId, mode, unit, roundResult, profile, app, day, badges, unitIds, levelUp: paid.levelUp, goalHit: paid.goalHit
+    appId, mode, unit, group, roundResult, profile, app, day, badges, unitIds, levelUp: paid.levelUp, goalHit: paid.goalHit
   });
   const saved = await saveBoth(profileStore, appStore);
   const logged = await log({
@@ -205,9 +232,11 @@ export async function settleRound({ appId, mode, unit, roundResult, profile, app
     xp: roundResult.xp,
     // Messung für spätere Auswertung: Abstand zur letzten Übung der Seite und Genauigkeit davor. Keine Person.
     gapDays: result.gapDays,
-    prevAcc: result.prevAcc
+    prevAcc: result.prevAcc,
+    // Nur der Kapitel-Test nennt sein Kapitel. Alle anderen Zeilen behalten ihre Form.
+    ...(group ? { group: group.id } : {})
   });
-  return { result, saved, logged, summary: summaryOf({ mode, unit, roundResult, result }) };
+  return { result, saved, logged, summary: summaryOf({ mode, unit, roundResult, result, weakUnits }) };
 }
 
 /**

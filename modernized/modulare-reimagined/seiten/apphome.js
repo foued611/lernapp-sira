@@ -10,6 +10,7 @@ import { doneUnits } from '../komponenten/ui.js';
 import { Mascot } from '../komponenten/mascot.js';
 import { Icon } from '../komponenten/icons.js';
 import { TrackLabel } from '../komponenten/tracks.js';
+import { chapterMissing, hasChapterTest } from './ablauf.js';
 import { BLITZ_SECONDS } from '../runde/index.js';
 import { NAME_MAX, maskName } from './name.js';
 import { unitTrack } from './registry.js';
@@ -111,6 +112,20 @@ function Station({ unit, track, state, stars, next, onStudy }) {
   );
 }
 
+// Der Kapitel-Test am Ende eines Kapitels. Solange er gesperrt ist, steht als Text da, was fehlt.
+function ChapterTest({ app, group, onStart }) {
+  const missing = chapterMissing(app, group).length;
+  const best = app.chapters?.[group.id]?.acc;
+  return h(
+    'div',
+    { className: 'chaptertest' },
+    h('p', null, h('b', null, 'Kapitel-Test'), missing
+      ? ` Noch ${missing} ${missing === 1 ? 'Seite' : 'Seiten'} üben, dann ist er offen.`
+      : ` 10 Aufgaben aus dem ganzen Kapitel, wie eine kleine Klassenarbeit.${typeof best === 'number' ? ` Bestwert: ${Math.round(best * 100)} %.` : ''}`),
+    missing ? null : h('button', { type: 'button', className: 'btn ghost', onClick: () => onStart(group) }, 'Test starten')
+  );
+}
+
 // Der Ring mit dem Tagesstand. Gleiche Maße wie in Legacy (viewBox 76, Radius 32).
 function Ring({ xp, goal }) {
   const C = 2 * Math.PI * 32;
@@ -146,9 +161,9 @@ function ResetLine({ phase, onReset }) {
 /**
  * Die App-Startseite. Props: config, app (Stand), profile, day, rec (Empfehlung oder null), open (Endgegner offen),
  * notice, storeMessage, persistent (Speicher bleibt über den Besuch hinaus), resetPhase, profileStore, onStudy, onStart,
- * onReset, onName, focusId (Station, von der die Person gerade kommt).
+ * onChapter, onReset, onName, focusId (Station, von der die Person gerade kommt).
  */
-export function AppHome({ config, app, profile, day, rec, open, notice, storeMessage, persistent = false, resetPhase, profileStore, onStudy, onStart, onReset, onName, focusId = null, footer = null }) {
+export function AppHome({ config, app, profile, day, rec, open, notice, storeMessage, persistent = false, resetPhase, profileStore, onStudy, onStart, onChapter = () => {}, onReset, onName, focusId = null, footer = null }) {
   const units = config.units;
   const done = doneUnits(app.stars, units.map((u) => u.id));
   const x = dailyXP(profile, day);
@@ -217,7 +232,8 @@ export function AppHome({ config, app, profile, day, rec, open, notice, storeMes
           'details',
           { key: id, className: 'pgroup', open: inGroup.some((u) => u.id === nextId || u.id === focusId) || undefined },
           h('summary', null, h('span', null, title), h('span', { className: 'muted' }, `${geschafft} von ${inGroup.length} geschafft${faellig ? ` · ${faellig} fällig` : ''}`)),
-          path
+          path,
+          hasChapterTest({ units: inGroup }) ? h(ChapterTest, { app, group: { id, title, units: inGroup }, onStart: onChapter }) : null
         );
       })
     ),

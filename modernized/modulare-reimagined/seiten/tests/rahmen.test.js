@@ -234,8 +234,8 @@ test('RULE-195 Die Ergebnisdaten haben einen festen Aufbau aus Runde und Auswert
   const env = await setup();
   const out = await finishLesson(env);
   assert.deepEqual(Object.keys(out.summary).sort(), [
-    'accuracy', 'almost', 'bestCombo', 'bonus', 'correct', 'failed', 'goalHit', 'levelUp', 'missions', 'mode', 'newBadges',
-    'refresh', 'relearned', 'score', 'stars', 'unitId', 'wrong', 'xp'
+    'accuracy', 'almost', 'bestCombo', 'bonus', 'correct', 'failed', 'goalHit', 'groupId', 'levelUp', 'missions', 'mode', 'newBadges',
+    'prevBest', 'refresh', 'relearned', 'score', 'stars', 'unitId', 'weakUnits', 'wrong', 'xp'
   ]);
   assert.equal(out.summary.unitId, 'start');
   assert.equal(out.summary.mode, 'lesson');

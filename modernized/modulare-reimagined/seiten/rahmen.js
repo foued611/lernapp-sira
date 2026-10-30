@@ -1,6 +1,6 @@
 // Ansicht einer App: Seite, Theorie, Spiel und Ergebnis. Den Ablauf einer Runde steuert ablauf.js, hier wird nur gezeichnet.
 import { createElement, useEffect, useReducer, useRef, useState } from 'react';
-import { createRng, starsOf, unitsInPath } from '../helfer/index.js';
+import { createRng, pathGroups, starsOf, unitsInPath } from '../helfer/index.js';
 import { TheoryPage } from '../komponenten/theory.js';
 import { BlitzPlay, startBlitz } from './blitz.js';
 import { AppHeader, AppHome, revealStation } from './apphome.js';
@@ -81,15 +81,15 @@ export function AppFrame({ app, profileStore, day, storage, startUnit = null }) 
   useEffect(() => onAddressBack((search) => followRef.current(search)), []);
   const logRow = (row) => (storage.handle ? storage.handle.logEvent(row) : Promise.resolve({ ok: false, error: NO_STORAGE }));
 
-  function begin(mode, unit = null) {
-    const started = startRound({ config, mode, unit, app: appState, profile, rng: createRng(seedNow()), known: knownOf(appState) });
+  function begin(mode, unit = null, group = null) {
+    const started = startRound({ config, mode, unit, group, app: appState, profile, rng: createRng(seedNow()), known: knownOf(appState) });
     if (!started.ok) {
       setNotice(started.message);
       return;
     }
     setNotice(null);
     enterRound();
-    setSession(started);
+    setSession({ ...started, weak: new Set() });
     setScreen('play');
   }
 
@@ -110,6 +110,7 @@ export function AppFrame({ app, profileStore, day, storage, startUnit = null }) 
     const question = session.round.current()?.question;
     const step = session.round.submit(response);
     if (step.accepted && RIGHT.has(step.outcome)) rememberRight(appState, question, appStore);
+    if (step.accepted && step.outcome === 'bad' && question?.unitId) session.weak.add(question.unitId);
     bump();
   }
 
@@ -124,6 +125,8 @@ export function AppFrame({ app, profileStore, day, storage, startUnit = null }) 
       appId: entry.id,
       mode: session.mode,
       unit: session.unit,
+      group: session.group,
+      weakUnits: config.units.filter((u) => session.weak.has(u.id)).map((u) => u.id),
       roundResult: step.result,
       profile,
       app: appState,
@@ -146,7 +149,9 @@ export function AppFrame({ app, profileStore, day, storage, startUnit = null }) 
   }
 
   function home() {
-    setStation(theoryUnit?.id || session?.unit?.id || settled?.summary.unitId || null);
+    // Nach dem Kapitel-Test zur letzten Seite des Kapitels: Darunter steht der neue Bestwert.
+    const tested = config.units.filter((u) => u.group === settled?.summary.groupId).at(-1)?.id;
+    setStation(theoryUnit?.id || session?.unit?.id || settled?.summary.unitId || tested || null);
     setSession(null);
     setBlitz(null);
     setSettled(null);
@@ -265,17 +270,18 @@ export function AppFrame({ app, profileStore, day, storage, startUnit = null }) 
     return frame(h('section', { className: 'card' }, h('p', null, 'Ergebnis wird gespeichert …')));
   }
   if (screen === 'result' && settled) {
-    const { unitId } = settled.summary;
-    const next = unitId ? followingUnit(appState, unitsInPath(config.units, config.groups), unitId, day) : null;
+    const { unitId, groupId, weakUnits } = settled.summary;
+    const weak = weakUnits.map((id) => config.units.find((u) => u.id === id));
+    const next = unitId ? followingUnit(appState, unitsInPath(config.units, config.groups), unitId, day) : weak[0] || null;
     const onAction = (id) => {
       if (id === 'home') goHome();
       else if (id === 'next') study(next);
       else if (id === 'theory') study(config.units.find((u) => u.id === settled.summary.unitId));
       else if (settled.summary.mode === 'blitz') beginBlitz();
-      else begin(settled.summary.mode, settled.summary.unitId ? config.units.find((u) => u.id === settled.summary.unitId) : null);
+      else begin(settled.summary.mode, unitId ? config.units.find((u) => u.id === unitId) : null, groupId ? pathGroups(config.units, config.groups).find((g) => g.id === groupId) : null);
     };
     return frame(h(Ergebnis, {
-      model: resultModel(settled.summary, { profile, day, words, next }),
+      model: resultModel(settled.summary, { profile, day, words, next, weakTitles: weak.map((u) => u.title) }),
       messages: messagesOf(settled),
       onAction
     }));
@@ -290,6 +296,7 @@ export function AppFrame({ app, profileStore, day, storage, startUnit = null }) 
     config, app: appState, profile, day, rec, open, notice, storeMessage, persistent, resetPhase, profileStore,
     onStudy: study,
     onStart: (mode, unit) => (mode === 'blitz' ? beginBlitz() : begin(mode, unit || null)),
+    onChapter: (group) => begin('chapter', null, group),
     onReset: reset,
     onName: saveNameAndRedraw,
     focusId: station,
