@@ -2,7 +2,7 @@
   "schema": 1,
   "id": "geometrie",
   "title": "Geometrie-Werkstatt",
-  "catalog": { "subject": "Mathematik", "desc": "Mittelsenkrechte, Winkelhalbierende, Dreiecke konstruieren, Winkel, Thales, Umkreis und Inkreis.", "order": 2 },
+  "catalog": { "fach": "mathematik", "klassen": [7], "lehrwerk": "Lambacher Schweizer 7", "subject": "Mathematik", "desc": "Mittelsenkrechte, Winkelhalbierende, Dreiecke konstruieren, Winkel, Thales, Umkreis und Inkreis.", "order": 2 },
   "greeting": "Hallo",
   "intro": "Erst konstruieren (Kapitel III), dann beweisen (Kapitel V). Halte Zirkel und Lineal bereit.",
   "bossTitle": "Der Konstruktions-Boss",

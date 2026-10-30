@@ -6,17 +6,17 @@ import { trackOf } from '../helfer/index.js';
 export const LIVE = 'live';
 export const SOON = 'soon';
 
-// Farbe je Fach für Kacheln und Weiter-Karte. Werte wie in legacy/modulare/registry.js:9-16.
+// Farbe je Fach für Kacheln und Weiter-Karte. Schlüssel ist die Kennung fach aus dem Katalog.
 export const SUBJECT_COLORS = Object.freeze({
-  Französisch: '#9B7BFF',
-  Mathematik: '#4CC3F5',
-  Deutsch: '#FF6B88',
-  Englisch: '#3DD6B0',
-  Informatik: '#FF9F43',
-  Physik: '#8BD450',
-  Geographie: '#E0A82E',
-  Biologie: '#2E9E5B',
-  Musik: '#C97B3A'
+  franzoesisch: '#9B7BFF',
+  mathematik: '#4CC3F5',
+  deutsch: '#FF6B88',
+  englisch: '#3DD6B0',
+  informatik: '#FF9F43',
+  physik: '#8BD450',
+  geographie: '#E0A82E',
+  biologie: '#2E9E5B',
+  musik: '#C97B3A'
 });
 
 const isText = (value) => typeof value === 'string' && value.trim() !== '';
@@ -41,6 +41,8 @@ export function validateRegistry(entries) {
     seen.add(entry.id);
     if (!isText(entry.title)) errors.push(`${where}: Titel fehlt`);
     if (!isText(entry.subject)) errors.push(`${where}: Fach fehlt`);
+    if (!isText(entry.fach)) errors.push(`${where}: Fachkennung fehlt`);
+    if (!Array.isArray(entry.klassen) || !entry.klassen.length) errors.push(`${where}: Klassen fehlen`);
     if (entry.status !== LIVE && entry.status !== SOON) errors.push(`${where}: Status muss live oder soon sein`);
   });
   return errors;

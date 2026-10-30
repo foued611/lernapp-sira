@@ -91,6 +91,14 @@ test('SEITE-LERNFLUSS Die Gruppe mit der zuletzt besuchten Station ist offen', (
   assert.equal(markup.match(/<details[^>]* open/g).length, 2);
 });
 
+test('SEITE-LERNFLUSS Ein Kapitel aus einer anderen Klasse sagt das, ein eigenes nicht', () => {
+  const units = [{ id: 'x', title: 'X', de: 'd', color: '#111111', group: 'g1' }, { id: 'y', title: 'Y', de: 'd', color: '#111111', group: 'g2' }];
+  const config = { ...configOf({ units }), klassen: [7], groups: [{ id: 'g1', title: 'G1', klasse: 7 }, { id: 'g2', title: 'G2', klasse: 6 }] };
+  const markup = home({}, { config });
+  assert.equal(markup.match(/aus Klasse/g).length, 1);
+  assert.match(markup, /aus Klasse 6/);
+});
+
 test('SEITE-LERNFLUSS Gruppen zählen geschafft ab zwei Sternen, wie der Kopf der App', () => {
   const config = { ...configOf({ units: [{ id: 'x', title: 'X', de: 'd', color: '#111111', group: 'g1' }, { id: 'y', title: 'Y', de: 'd', color: '#111111', group: 'g1' }] }), groups: [{ id: 'g1', title: 'G1' }] };
   assert.match(home({ stars: { x: 1, y: 2 } }, { config }), /1 von 2 geschafft/);

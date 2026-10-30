@@ -3,7 +3,7 @@
 /** Seiten je Kapitel, in der Reihenfolge von groups. Ohne groups eine Liste ohne Überschrift. */
 export function pathGroups(units, groups = []) {
   if (!groups.length) return [{ id: null, title: null, units }];
-  return groups.map(({ id, title }) => ({ id, title, units: units.filter((u) => u.group === id) }));
+  return groups.map(({ id, title, klasse }) => ({ id, title, klasse, units: units.filter((u) => u.group === id) }));
 }
 
 /** Seiten in der Reihenfolge des Lernpfads. Sie kann vom Manifest abweichen: Neue Seiten stehen dort immer hinten. */

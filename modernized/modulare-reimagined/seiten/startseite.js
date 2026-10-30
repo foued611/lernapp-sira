@@ -27,12 +27,12 @@ export function minouLine(xp, goal = DAILY_GOAL_XP) {
 }
 
 const hrefOf = (id) => `?app=${encodeURIComponent(id)}`;
-const colorOf = (subject) => SUBJECT_COLORS[subject] || '#9B7BFF';
+const colorOf = (fach) => SUBJECT_COLORS[fach] || '#9B7BFF';
 
 // Kachel ohne Fortschritt: Titel, Fach, Beschreibung und Link. Reicht für den leeren Zustand.
 function linkTile(app) {
   const { entry } = app;
-  const base = { id: entry.id, title: entry.title, subject: entry.subject, desc: entry.desc, color: colorOf(entry.subject) };
+  const base = { id: entry.id, title: entry.title, subject: entry.subject, fach: entry.fach, lehrwerk: entry.lehrwerk, desc: entry.desc, color: colorOf(entry.fach) };
   if (entry.status !== LIVE) return { ...base, kind: 'soon' };
   return { ...base, kind: 'link', href: hrefOf(entry.id) };
 }

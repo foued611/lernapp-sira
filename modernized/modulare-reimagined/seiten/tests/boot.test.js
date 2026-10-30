@@ -74,8 +74,8 @@ test('RULE-259 Eine doppelte Kennung in der App-Liste stoppt den Start mit einer
 
 test('RULE-259 Eine Kennung mit Großbuchstaben oder Schrägstrich wird abgelehnt', () => {
   const problems = validateRegistry([
-    { id: 'Mathe', subject: 'Mathematik', title: 'A', status: LIVE },
-    { id: '../x', subject: 'Mathematik', title: 'B', status: LIVE }
+    { id: 'Mathe', fach: 'mathematik', klassen: [7], subject: 'Mathematik', title: 'A', status: LIVE },
+    { id: '../x', fach: 'mathematik', klassen: [7], subject: 'Mathematik', title: 'B', status: LIVE }
   ]);
   assert.equal(problems.length, 2);
   assert.deepEqual(validateRegistry(REGISTRY), []);

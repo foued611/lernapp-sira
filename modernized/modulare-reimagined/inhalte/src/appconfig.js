@@ -51,6 +51,7 @@ export function buildConfig(bundle, logic, deps = {}) {
     tracks: manifest.tracks ?? {},
     units: manifest.units,
     groups: manifest.groups ?? [],
+    klassen: manifest.catalog?.klassen ?? [],
     resources: manifest.resources ?? [],
     lessons,
     notes,

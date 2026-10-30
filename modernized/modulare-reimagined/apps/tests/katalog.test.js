@@ -3,7 +3,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { buildCatalog } from '../../inhalte/index.js';
-import { LIVE, validateRegistry } from '../../seiten/registry.js';
+import { LIVE, SUBJECT_COLORS, validateRegistry } from '../../seiten/registry.js';
 import { logicIds } from '../index.js';
 import { APPS, paketVon } from './laden.js';
 
@@ -28,6 +28,15 @@ test('KATALOG: jede Live-App gliedert ihre Seiten in Kapitel', () => {
     const { manifest } = paketVon(entry.id);
     assert.ok(manifest.groups?.length >= 2, `${entry.id}: Kapitel fehlen`);
     assert.deepEqual(manifest.units.filter((u) => !u.group).map((u) => u.id), [], `${entry.id}: Seiten ohne Kapitel`);
+  }
+});
+
+test('KATALOG: jede App hat eine bekannte Fachkennung, ein Fach hat einen Namen', () => {
+  const namen = new Map();
+  for (const entry of APPS) {
+    assert.ok(Object.hasOwn(SUBJECT_COLORS, entry.fach), `${entry.id}: ${entry.fach}`);
+    if (namen.has(entry.fach)) assert.equal(entry.subject, namen.get(entry.fach));
+    namen.set(entry.fach, entry.subject);
   }
 });
 
