@@ -2,7 +2,7 @@
   "pflanzen-tierzelle": {
     "goal": "Du kannst die Bestandteile von Pflanzen- und Tierzellen nennen und ihre Aufgaben beschreiben.",
     "tldr": [
-      "Alle Lebewesen bestehen aus Zellen. Jede Zelle hat Zellmembran, Zellplasma und Zellkern.",
+      "Alle Lebewesen bestehen aus Zellen. Pflanzen- und Tierzellen haben Zellmembran, Zellplasma und Zellkern.",
       "Pflanzenzellen haben zusätzlich Zellwand, Chloroplasten und eine große Vakuole."
     ],
     "analogy": {
@@ -115,9 +115,10 @@
     "steps": {
       "title": "So mikroskopierst du",
       "items": [
-        "Lege ein dünnes Präparat mit Deckglas auf den Tisch und stelle das kleinste Objektiv ein.",
+        "Lege das dünne Präparat auf den Objektträger, decke es mit dem Deckglas ab und lege beides auf den Tisch. Stelle am Revolver das kleinste Objektiv ein.",
         "Stelle mit dem Grobtrieb scharf, dann mit dem Feintrieb.",
-        "Wechsle erst danach zum stärkeren Objektiv und stelle nur noch mit dem Feintrieb nach."
+        "Wechsle erst danach zum stärkeren Objektiv und stelle nur noch mit dem Feintrieb nach.",
+        "Zeichne, was du siehst: mit spitzem Bleistift und klaren Linien, ohne Schraffur. Beschrifte mit geraden Linien."
       ]
     },
     "pitfall": {
@@ -148,7 +149,8 @@
     "goal": "Du kannst die Organisationsstufen vom Organismus bis zur Zelle ordnen und erklären, wie Lebewesen wachsen.",
     "tldr": [
       "Gleiche Zellen bilden ein Gewebe, mehrere Gewebe ein Organ, Organe ein Organsystem.",
-      "Lebewesen wachsen, weil sich Zellen teilen. Pflanzenzellen strecken sich außerdem."
+      "Lebewesen wachsen, weil sich Zellen teilen. Pflanzenzellen strecken sich außerdem.",
+      "Manche Lebewesen bestehen aus nur einer Zelle. Sie heißen Einzeller, ein Beispiel ist das Pantoffeltierchen."
     ],
     "analogy": {
       "title": "Stell dir vor: eine Fußballmannschaft",
@@ -175,7 +177,7 @@
       "items": [
         "Frage: Ist es eine einzelne Zelle, Zellen derselben Art oder ein Teil mit einer Aufgabe?",
         "Muskelzellen bilden Muskelgewebe, Muskelgewebe mit anderen Geweben bildet das Organ Herz.",
-        "Alle Organe zusammen mit gemeinsamer Aufgabe sind ein Organsystem, zum Beispiel das Verdauungssystem."
+        "Mehrere Organe mit gemeinsamer Aufgabe sind ein Organsystem, zum Beispiel das Verdauungssystem."
       ]
     },
     "pitfall": {
@@ -229,7 +231,7 @@
     "steps": {
       "title": "So gehst du vor",
       "items": [
-        "Nenne die Ausgangsstoffe: Kohlenstoffdioxid aus der Luft und Wasser aus dem Boden.",
+        "Nenne die Ausgangsstoffe: Kohlenstoffdioxid aus der Luft, das durch die Spaltöffnungen ins Blatt kommt, und Wasser aus dem Boden.",
         "Nenne, was gebraucht wird: Licht und Chlorophyll in den Chloroplasten.",
         "Nenne die Produkte: Traubenzucker und Sauerstoff. Traubenzucker wird oft als Stärke gespeichert."
       ]
@@ -262,7 +264,7 @@
     "goal": "Du kannst die Zellatmung beschreiben und von der Atmung und der Fotosynthese unterscheiden.",
     "tldr": [
       "Bei der Zellatmung wird Traubenzucker mit Sauerstoff abgebaut. Dabei wird Energie nutzbar gemacht.",
-      "Kohlenstoffdioxid und Wasser entstehen als Abfallstoffe. Alle lebenden Zellen betreiben Zellatmung."
+      "Kohlenstoffdioxid und Wasser entstehen als Abfallstoffe. Pflanzenzellen betreiben Zellatmung genauso wie Tierzellen."
     ],
     "analogy": {
       "title": "Stell dir vor: ein Ofen mit Stromerzeuger",
@@ -286,12 +288,12 @@
       "title": "So unterscheidest du",
       "items": [
         "Atmung heißt Luft ein- und ausatmen: Das ist der Gasaustausch in der Lunge.",
-        "Zellatmung läuft in den Mitochondrien jeder Zelle ab und baut Traubenzucker ab.",
+        "Zellatmung läuft in den Mitochondrien der Zellen ab und baut Traubenzucker ab.",
         "Die Fotosynthese speichert Energie in Traubenzucker, die Zellatmung macht sie wieder nutzbar."
       ]
     },
     "pitfall": {
-      "html": "<p>Zellatmung ist nicht nur Atmung. Der Gasaustausch in der Lunge bringt Sauerstoff zu den Zellen. Die Zellatmung findet erst in den Zellen statt.</p>"
+      "html": "<p>Zellatmung ist nicht dasselbe wie Atmung. Der Gasaustausch in der Lunge bringt Sauerstoff ins Blut. Die Zellatmung findet erst in den Zellen statt.</p>"
     },
     "rule": "Traubenzucker plus Sauerstoff ergibt Kohlenstoffdioxid plus Wasser, und dabei wird Energie nutzbar. Ort: Mitochondrien.",
     "check": {
@@ -318,7 +320,7 @@
     "goal": "Du kannst Nährstoffe nach ihren Aufgaben ordnen und einfache Nachweise beschreiben.",
     "tldr": [
       "Kohlenhydrate und Fette liefern vor allem Energie, Proteine dienen vor allem dem Aufbau von Körperzellen.",
-      "Vitamine, Mineralstoffe, Wasser und Ballaststoffe braucht der Körper ebenfalls, liefern aber keine Energie."
+      "Vitamine, Mineralstoffe, Wasser und Ballaststoffe braucht der Körper ebenfalls, sie liefern aber keine oder kaum Energie."
     ],
     "analogy": {
       "title": "Stell dir vor: ein Haus bauen",
@@ -364,7 +366,7 @@
       "title": "So führst du einen Nachweis",
       "items": [
         "Stärke: Gib Iod-Kaliumiodid-Lösung auf das Lebensmittel. Blauviolett zeigt Stärke.",
-        "Fett: Reibe das Lebensmittel auf Papier. Bleibt ein durchscheinender Fleck, ist Fett enthalten.",
+        "Fett: Reibe das Lebensmittel auf Papier. Bleibt nach dem Trocknen ein durchscheinender Fleck, ist Fett enthalten.",
         "Notiere dein Ergebnis in einem Versuchsprotokoll."
       ]
     },
@@ -396,7 +398,8 @@
     "goal": "Du kannst den Weg der Nahrung beschreiben und erklären, was Enzyme tun.",
     "tldr": [
       "Die Nahrung wird mechanisch zerkleinert und von Enzymen chemisch zerlegt, bis die Bausteine ins Blut aufgenommen werden können.",
-      "Enzyme wirken nach dem Schlüssel-Schloss-Prinzip: Jedes passt nur zu einem Stoff."
+      "Enzyme wirken nach dem Schlüssel-Schloss-Prinzip: Jedes passt nur zu einem Stoff.",
+      "Im Magen tötet Salzsäure viele Bakterien ab. Im Dünndarm vergrößern Darmzotten die Oberfläche für die Aufnahme."
     ],
     "analogy": {
       "title": "Stell dir vor: Schere und Schlüssel",
@@ -526,7 +529,8 @@
     "goal": "Du kannst den Weg der Atemluft beschreiben und erklären, wie der Gasaustausch in den Lungenbläschen funktioniert.",
     "tldr": [
       "Die Atemluft strömt durch die Atemwege in die Lungenbläschen. Dort geht Sauerstoff ins Blut, Kohlenstoffdioxid wird abgegeben.",
-      "Das Zwerchfell und die Rippen bewegen den Brustraum und saugen die Luft ein."
+      "Das Zwerchfell und die Rippen bewegen den Brustraum und saugen die Luft ein.",
+      "Flimmerhärchen in den Atemwegen befördern Schleim mit Staub nach oben."
     ],
     "analogy": {
       "title": "Stell dir vor: ein Blasebalg",
@@ -556,7 +560,7 @@
       ]
     },
     "pitfall": {
-      "html": "<p>Die Lunge hat keine Muskeln, sie kann sich nicht selbst aufpumpen. Zwerchfell und Rippenmuskeln bewegen den Brustraum.</p>"
+      "html": "<p>Die Lunge kann sich nicht selbst aufpumpen. Zwerchfell und Rippenmuskeln bewegen den Brustraum.</p>"
     },
     "rule": "Gasaustausch: Sauerstoff geht ins Blut, Kohlenstoffdioxid aus dem Blut in die Lunge. Viele Lungenbläschen vergrößern die Oberfläche.",
     "check": {
@@ -771,14 +775,14 @@
     }
   },
   "verhuetung": {
-    "goal": "Du kannst erklären, wozu Verhütungsmittel dienen und warum ein Kondom auch schützt.",
+    "goal": "Du kannst erklären, wozu Verhütungsmittel dienen und warum ein Kondom auch vor vielen Infektionen schützt.",
     "tldr": [
-      "Verhütung verhindert, dass eine Schwangerschaft entsteht.",
+      "Verhütung soll verhindern, dass eine Schwangerschaft entsteht. Kein Mittel ist hundertprozentig sicher.",
       "Das Kondom verhindert zugleich viele Infektionen. Hormonelle Mittel wie die Pille gibt es nur auf ärztliches Rezept."
     ],
     "analogy": {
       "title": "Stell dir vor: ein Regenschirm",
-      "html": "<p>Wie ein Regenschirm vor Nässe schützt, schützen Verhütungsmittel vor einer Schwangerschaft. Manche Schirme haben aber Löcher, deshalb ist gute Information wichtig.</p>"
+      "html": "<p>Wie ein Regenschirm vor Nässe schützt, schützen Verhütungsmittel vor einer Schwangerschaft. Kein Schirm hält jeden Tropfen ab, und auch kein Mittel wirkt immer. Deshalb ist gute Information wichtig.</p>"
     },
     "figure": {
       "diagram": {
@@ -791,7 +795,7 @@
           [
             [
               "Kondom",
-              "Barriere, verhütet und schützt vor Infektionen"
+              "Barriere, verhütet und schützt vor vielen Infektionen"
             ],
             [
               "Pille",
@@ -799,7 +803,7 @@
             ],
             [
               "Beratung",
-              "Frauenarzt, Beratungsstelle"
+              "Frauenärztin, Frauenarzt oder Beratungsstelle"
             ]
           ],
           [
@@ -822,7 +826,7 @@
     "pitfall": {
       "html": "<p>Die Pille schützt nicht vor Infektionen. Dafür braucht man zusätzlich ein Kondom.</p>"
     },
-    "rule": "Verhütung verhindert Schwangerschaft, das Kondom schützt zusätzlich vor Infektionen. Beratung ist vertraulich.",
+    "rule": "Verhütung soll eine Schwangerschaft verhindern, das Kondom schützt zusätzlich vor vielen Infektionen. Beratung ist vertraulich.",
     "check": {
       "q": "Welches Mittel schützt auch vor Infektionen?",
       "options": [

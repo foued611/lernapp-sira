@@ -14,7 +14,7 @@
       "de": "Zellbestandteile und ihre Aufgaben · Zelle",
       "card": {
         "name": "Zelle ist nicht gleich Zelle",
-        "fact": "Nur Pflanzenzellen haben Zellwand und Chloroplasten. Zellkern und Zellmembran haben beide."
+        "fact": "Pflanzenzellen haben Zellwand und Chloroplasten, Tierzellen nicht. Zellkern und Zellmembran haben beide."
       }
     },
     {
@@ -101,7 +101,7 @@
       "title": "Lunge und Gasaustausch",
       "de": "Atemwege, Lungenbläschen, Atembewegung · Atmung",
       "card": {
-        "name": "Eine Fläche wie ein Wohnzimmer",
+        "name": "Eine Fläche wie eine Wohnung",
         "fact": "Die vielen Lungenbläschen vergrößern die Oberfläche der Lunge enorm. So geht der Gasaustausch schnell."
       }
     },
@@ -202,7 +202,7 @@
       ],
       [
         "Ort",
-        "In den Mitochondrien aller lebenden Zellen."
+        "In den Mitochondrien von Pflanzen- und Tierzellen."
       ]
     ],
     "naehrstoffe": [
@@ -282,7 +282,7 @@
       ],
       [
         "Puls",
-        "Der Puls steigt bei Belastung und sinkt bei Ruhe wieder."
+        "Der Puls steigt bei Belastung und sinkt bei Ruhe wieder. Ausdauertraining senkt den Ruhepuls."
       ]
     ],
     "befruchtung-geburt": [
@@ -302,11 +302,11 @@
     "verhuetung": [
       [
         "Zweck",
-        "Verhütung verhindert, dass eine Schwangerschaft entsteht."
+        "Verhütung soll verhindern, dass eine Schwangerschaft entsteht."
       ],
       [
         "Kondom",
-        "Verhütungsmittel und Schutz vor Infektionen."
+        "Verhütungsmittel und Schutz vor vielen Infektionen."
       ],
       [
         "Beratung",

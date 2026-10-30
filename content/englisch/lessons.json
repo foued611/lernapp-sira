@@ -1282,7 +1282,7 @@
     ],
     "analogy": {
       "title": "Stell dir vor: eine kurze Geschichte",
-      "html": "<p>Lies die Geschichte laut. Die fetten Wörter sind neu auf dieser Seite.</p><p>Tom feels <b>sleepy</b> and wants to <b>lie down</b>. The doctor wants to <b>examine</b> him. \"It is only a <b>virus</b>, not an <b>infection</b>,\" she says and gives him a <b>tablet</b>. <b>While</b> he waits, Tom eats an <b>apple</b>. He is <b>vegetarian</b>.</p>"
+      "html": "<p>Lies die Geschichte laut. Die fetten Wörter sind neu auf dieser Seite.</p><p>Tom feels <b>sleepy</b> and wants to <b>lie down</b>. The doctor wants to <b>examine</b> him. \"It is only a <b>virus</b>, not a bad <b>infection</b>,\" she says and gives him a <b>tablet</b>. <b>While</b> he waits, Tom eats an <b>apple</b>. He is <b>vegetarian</b>.</p>"
     },
     "figure": {
       "diagram": {
@@ -1311,7 +1311,7 @@
             ],
             [
               "takeaway",
-              "Restaurant/Imbissgeschäft mit Essen zum Mitnehmen"
+              "Imbiss; Essen zum Mitnehmen"
             ],
             [
               "strawberry",
@@ -1420,7 +1420,7 @@
         "Lies die Geschichte oben laut. Achte auf die fetten Wörter.",
         "Lies den Merkzettel Wort für Wort. Mach ein Häkchen bei den Wörtern, die du schon sicher kannst.",
         "Decke die deutsche Seite ab und sage jedes englische Wort laut. Dann decke das Englische ab und sage das deutsche Wort.",
-        "Merke dir die Verben mit Geräuschen: hiss (zischen), flash (aufblitzen).",
+        "Merke dir die Verben, die du hören oder sehen kannst: hiss (zischen), flash (aufblitzen).",
         "Starte danach die Runde. Falsche Antworten kommen noch einmal."
       ]
     },
@@ -2185,7 +2185,7 @@
             ],
             [
               "role",
-              "Rolle (in einem Theaterstück"
+              "Rolle (Theaterstück, Film)"
             ]
           ],
           [
@@ -2319,7 +2319,7 @@
     }
   },
   "schluss": {
-    "goal": "Du kannst die 11 Wörter von Seite 26 und die sechs Zusatzwörter auf Englisch und Deutsch und schreibst sie richtig.",
+    "goal": "Du kannst die 11 Wörter von Seite 26 und den Zusatzwörtern auf Englisch und Deutsch und schreibst sie richtig.",
     "tldr": [
       "Auf dieser Seite sind die letzten Wörter aus dem Kapitel 8.",
       "Dazu kommen sechs Zusatzwörter. Sie stehen nicht in der Lektüre, aber du sollst sie dir trotzdem merken."
@@ -2343,7 +2343,7 @@
             ],
             [
               "half",
-              "halb-"
+              "halb; Hälfte"
             ],
             [
               "to write sth. down",

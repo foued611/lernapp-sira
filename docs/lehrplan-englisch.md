@@ -40,7 +40,7 @@ Das Wörterverzeichnis gehört zu Access 2. Die Wörter liegen damit unter dem U
 
 Zusammen 229 Einträge. Ein Eintrag ist eine Zeile im Wörterverzeichnis. Wendungen wie „at the doctor's“, „(to) have a cold“ und ganze Sätze („What's wrong with her?“) sind eigene Einträge. Wörter mit zwei Bedeutungen oder zwei Wortarten (dear, kiss, rest, notice, groan) stehen zweimal, so wie im Buch.
 
-Jedes Wort hat drei Aufgaben: ein Lückensatz mit deutschem Tipp (wird auch zum Eintippen gespielt), Englisch zu Deutsch mit Beispielsatz und Deutsch zu Englisch. Bei den ganzen Sätzen ersetzt eine Situationsfrage („Was sagst du?“) den Lückensatz.
+Jedes Wort hat drei Aufgaben: ein Lückensatz mit deutschem Tipp (wird auch zum Eintippen gespielt), Englisch zu Deutsch mit Beispielsatz und Deutsch zu Englisch. Bei den ganzen Sätzen ersetzt eine Situationsfrage („Was sagst du?“) den Lückensatz. Wörter, die im Deutschen fast gleich lauten (thermometer, virus, Jupiter), fragen stattdessen die Bedeutung oder die Rechtschreibung ab, weil die Übersetzung nichts prüfen würde.
 
 ## Abschlusstest
 

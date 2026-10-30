@@ -3,7 +3,8 @@
     "goal": "Du kannst endogene und exogene Kräfte unterscheiden und die Schritte der Abtragung nennen.",
     "tldr": [
       "Endogene Kräfte wirken aus dem Erdinneren und bauen auf. Exogene Kräfte wirken von außen und tragen ab.",
-      "Gestein verwittert, das Material wird abgetragen, transportiert und an anderer Stelle abgelagert."
+      "Gestein verwittert, das Material wird abgetragen, transportiert und an anderer Stelle abgelagert.",
+      "Gestein verwittert zum Beispiel durch Frostsprengung: Wasser gefriert in Spalten, dehnt sich aus und sprengt den Fels. Abgelagertes Material heißt Sediment. Wird ein Gebirge nicht mehr gehoben, tragen exogene Kräfte es langsam ab."
     ],
     "analogy": {
       "title": "Stell dir vor: eine Sandburg",
@@ -60,7 +61,9 @@
     "goal": "Du kannst erklären, wie Gletscher Fjorde, Fjell und Schären geformt haben.",
     "tldr": [
       "In den Eiszeiten war Skandinavien von dickem Eis bedeckt. Das Eis schürfte und schliff den Untergrund ab.",
-      "Dabei entstanden U-förmige Täler, rundgeschliffenes Hochland (Fjell) und Felsinseln (Schären). Wo das Meer ein Trogtal flutete, entstand ein Fjord."
+      "Dabei entstanden U-förmige Täler (Trogtäler), rundgeschliffenes Hochland (Fjell) und Felsinseln (Schären). Wo das Meer ein Trogtal flutete, entstand ein Fjord.",
+      "Gletscher tragen Gesteinsschutt mit sich und schürfen damit den Untergrund aus. Schmilzt das Eis, bleibt der Schutt als Moräne liegen.",
+      "Die Eiszeiten heißen auch Kaltzeiten. Das sind Abschnitte von Zehntausenden Jahren, in denen große Teile der Erde vereist sind. Inlandeis ist eine riesige Eisdecke über ganzen Landschaften."
     ],
     "analogy": {
       "title": "Stell dir vor: Schleifpapier",
@@ -123,11 +126,11 @@
         },
         {
           "id": "b",
-          "html": "Ein Fluss grub ein V-Tal"
+          "html": "Ein Fluss grub ein tiefes V-Tal, das später vom Meer geflutet wurde"
         },
         {
           "id": "c",
-          "html": "Der Wind blies eine Mulde aus"
+          "html": "Der Wind blies eine Mulde aus, die sich mit Meerwasser füllte"
         }
       ],
       "answer": "a",
@@ -138,7 +141,8 @@
     "goal": "Du kannst die Formen am Ober-, Mittel- und Unterlauf eines Flusses erklären.",
     "tldr": [
       "Im Oberlauf ist das Gefälle groß. Der Fluss gräbt sich nach unten ein und bildet ein V-förmiges Tal.",
-      "Im Mittellauf schlängelt er sich in Mäandern. Außen nagt er am Prallhang, innen lagert er am Gleithang ab. Im Unterlauf bleibt viel Sand liegen, an der Mündung entsteht ein Delta."
+      "Im Mittellauf schlängelt er sich in Mäandern. Außen nagt er am Prallhang, innen lagert er am Gleithang ab. Im Unterlauf bleibt viel Sand liegen, an der Mündung verzweigt sich der Fluss zu einem Delta.",
+      "Der Ursprung eines Flusses heißt Quelle. Das flache Land neben dem Fluss, das bei Hochwasser überschwemmt wird, ist die Aue."
     ],
     "analogy": {
       "title": "Stell dir vor: ein Bobfahrer",
@@ -205,7 +209,7 @@
         },
         {
           "id": "c",
-          "html": "Nirgends"
+          "html": "In der Mitte des Flussbetts"
         }
       ],
       "answer": "a",
@@ -216,7 +220,9 @@
     "goal": "Du kannst erklären, wie Wind die Landschaft formt und welche Formen dabei entstehen.",
     "tldr": [
       "Wind bläst lockeren Sand und Staub aus, das heißt Deflation. Der Sand schleift Felsen ab, das heißt Korrasion.",
-      "Der Sand bleibt als Düne liegen. Sehr feiner Staub wird als Löss abgelagert und bildet fruchtbaren Boden."
+      "Der Sand bleibt als Düne liegen. Sehr feiner Staub wird als Löss abgelagert und bildet fruchtbaren Boden.",
+      "Eine Düne hat eine flache Seite zum Wind und eine steile Seite, die vom Wind abgewandt ist. Der Wind schiebt den Sand hinauf, hinten rutscht er ab. So zieht die Wanderdüne langsam weiter.",
+      "Der Wind wirkt vor allem in trockenen Gebieten mit wenig Pflanzen. Hecken und Bäume bremsen ihn und halten den Boden fest."
     ],
     "analogy": {
       "title": "Stell dir vor: ein Sandstrahlgebläse",
@@ -262,7 +268,7 @@
         },
         {
           "id": "c",
-          "html": "Pilzfelsen wachsen von oben nach unten"
+          "html": "Der Frost sprengt den Fuß ab, weil dort Wasser steht"
         }
       ],
       "answer": "a",
@@ -273,7 +279,8 @@
     "goal": "Du kannst verschiedene Wüstenarten unterscheiden und ihre Merkmale nennen.",
     "tldr": [
       "Eine Wüste ist ein Gebiet mit sehr wenig Niederschlag und kaum Pflanzen. Es muss nicht heiß sein.",
-      "Sandwüsten (Erg) sind selten. Häufiger sind Steinwüsten (Hamada) und Kieswüsten (Serir). Wo Wasser verdunstet, bleiben Salzwüsten zurück."
+      "Sandwüsten (Erg) sind selten. Häufiger sind Steinwüsten (Hamada) und Kieswüsten (Serir). Wo Wasser verdunstet, bleiben Salzwüsten zurück.",
+      "Eine Oase ist eine Stelle mit Wasser und Pflanzen, weil dort Grundwasser an die Oberfläche kommt. Ein Wadi ist ein trockenes Flussbett, das nur nach Starkregen Wasser führt."
     ],
     "analogy": {
       "title": "Stell dir vor: ein Küchenboden",
@@ -297,7 +304,7 @@
             [
               "Steinwüste (Hamada)",
               "Felsplateaus",
-              "Libysche Wüste"
+              "Hamada al-Hamra in Libyen"
             ],
             [
               "Kieswüste (Serir)",
@@ -305,9 +312,9 @@
               "Zentralsahara"
             ],
             [
-              "Kältewüste",
-              "Eis und Fels",
-              "Gobi, Antarktis"
+              "Kalte Wüste",
+              "Fels, Kies oder Eis",
+              "Gobi (eisige Winter), Antarktis"
             ]
           ],
           [
@@ -356,7 +363,8 @@
     "goal": "Du kannst die Temperaturzonen benennen und ihre Entstehung erklären.",
     "tldr": [
       "Am Äquator treffen die Sonnenstrahlen steil auf und erwärmen eine kleine Fläche stark. An den Polen treffen sie flach auf und verteilen sich auf eine große Fläche.",
-      "So entstehen die Zonen Tropen, Subtropen, gemäßigte Zone und Polarzone. Die Neigung der Erdachse sorgt für Jahreszeiten."
+      "So entstehen die Zonen Tropen, Subtropen, gemäßigte Zone und Polarzone. Die Neigung der Erdachse sorgt für Jahreszeiten.",
+      "Steht die Sonne genau senkrecht über einem Ort, steht sie im Zenit. Das gibt es nur zwischen den Wendekreisen."
     ],
     "analogy": {
       "title": "Stell dir vor: eine Taschenlampe",
@@ -412,7 +420,7 @@
       ]
     },
     "pitfall": {
-      "html": "<p>Die Zonen zeigen die Temperatur durch die Sonne. Sie sind nicht das gleiche wie die Klimazonen, die auch Niederschlag und Höhe einbeziehen.</p>"
+      "html": "<p>Die Zonen zeigen die Temperatur durch die Sonne. Sie sind nicht das Gleiche wie die Klimazonen, die auch Niederschlag und Höhe einbeziehen.</p>"
     },
     "rule": "Je steiler die Sonnenstrahlen, desto wärmer. Wendekreise 23,5 Grad, Polarkreise 66,5 Grad.",
     "check": {
@@ -439,7 +447,9 @@
     "goal": "Du kannst erklären, wie Wind entsteht und warum warme und kalte Luft unterschiedlichen Druck haben.",
     "tldr": [
       "Warme Luft steigt auf und hinterlässt am Boden ein Tief. Kalte Luft sinkt ab und bildet am Boden ein Hoch.",
-      "Der Wind weht am Boden vom Hoch zum Tief und gleicht den Druck aus. Seine Richtung wird nach der Herkunft benannt."
+      "Der Wind weht am Boden vom Hoch zum Tief und gleicht den Druck aus. Seine Richtung wird nach der Herkunft benannt.",
+      "Mit der Höhe nimmt der Luftdruck ab, weil weniger Luft darüber liegt. Du misst ihn mit dem Barometer in Hektopascal (hPa). Auf Meereshöhe sind es normal etwa 1013 hPa.",
+      "An der Küste erwärmt sich das Land am Tag schneller als das Meer. Über dem Land steigt Luft auf, und vom Meer strömt kühlere Luft nach. Je größer der Druckunterschied, desto stärker der Wind."
     ],
     "analogy": {
       "title": "Stell dir vor: ein Luftballon",
@@ -496,7 +506,8 @@
     "goal": "Du kannst die Passate und die Westwindzone erklären.",
     "tldr": [
       "Am Äquator steigt warme Luft auf. In den Subtropen sinkt sie ab und strömt am Boden zum Äquator zurück. Das sind die Passate.",
-      "Die Erddrehung lenkt die Winde auf der Nordhalbkugel nach rechts ab. Deshalb weht der Passat aus Nordost. In der gemäßigten Zone herrschen Westwinde."
+      "Die Erddrehung lenkt die Winde auf der Nordhalbkugel nach rechts und auf der Südhalbkugel nach links ab. Deshalb weht der Passat im Norden aus Nordost und im Süden aus Südost. In der gemäßigten Zone herrschen Westwinde.",
+      "Wo die Luft in den Subtropen absinkt, lösen sich Wolken auf. Deshalb liegen dort viele Wüsten. Rund um die Pole wehen kalte, trockene Ostwinde."
     ],
     "analogy": {
       "title": "Stell dir vor: ein Karussell",
@@ -547,7 +558,7 @@
       ]
     },
     "pitfall": {
-      "html": "<p>Der Passat weht nicht vom Äquator weg, sondern zum Äquator hin. Er bringt die Luft in die Tropen zurück.</p>"
+      "html": "<p>Der Passat weht nicht vom Äquator weg, sondern zum Äquator hin. Er bringt die Luft aus den Subtropen zum Äquator zurück.</p>"
     },
     "rule": "Passate wehen zum Äquator. In der gemäßigten Zone herrschen Westwinde.",
     "check": {
@@ -574,7 +585,8 @@
     "goal": "Du kannst erklären, wie Meeresströmungen das Klima beeinflussen.",
     "tldr": [
       "Winde treiben Meeresströmungen an. Warme Strömungen transportieren Wärme vom Äquator in höhere Breiten, kalte Strömungen bringen Kälte zum Äquator.",
-      "Der Golfstrom macht das Klima in Nordwesteuropa milder, als es nach der Lage zu erwarten wäre. Der kalte Humboldtstrom trägt zur Trockenheit an der Küste Perus und Chiles bei."
+      "Der Golfstrom macht das Klima in Nordwesteuropa milder, als es nach der Lage zu erwarten wäre. Der kalte Humboldtstrom trägt zur Trockenheit an der Küste Perus und Chiles bei, etwa in der Atacama-Wüste. Über dem kalten Wasser bilden sich kaum Regenwolken.",
+      "Der Golfstrom beginnt nahe der Karibik und setzt sich als Nordatlantikstrom fort. Deshalb ist Bergen in Norwegen viel milder als Südgrönland, obwohl beide etwa gleich weit nördlich liegen."
     ],
     "analogy": {
       "title": "Stell dir vor: eine Heizung mit Rohren",
@@ -651,8 +663,9 @@
   "klimadiagramm": {
     "goal": "Du kannst ein Klimadiagramm lesen und seine Bestandteile erklären.",
     "tldr": [
-      "Die Temperatur wird als rote Kurve gezeichnet, der Niederschlag als blaue Säulen. Auf der Rechtsachse steht doppelt so viel wie links (10 Grad entsprechen 20 Millimetern).",
-      "Aus dem Diagramm liest du Jahresmitteltemperatur, Jahresniederschlag, die wärmsten und kältesten Monate sowie feuchte und trockene Monate."
+      "Die Temperatur wird als rote Kurve gezeichnet, der Niederschlag als blaue Säulen. Die Temperatur liest du an der linken Achse ab, den Niederschlag an der rechten. Rechts stehen doppelt so große Zahlen wie links (10 Grad entsprechen 20 Millimetern).",
+      "Aus dem Diagramm liest du Jahresmitteltemperatur, Jahresniederschlag, die wärmsten und kältesten Monate sowie feuchte und trockene Monate.",
+      "Die Kopfzeile nennt Station, Höhe, Jahresmitteltemperatur und Jahresniederschlag. Ein Millimeter Niederschlag entspricht einem Liter Wasser pro Quadratmeter."
     ],
     "analogy": {
       "title": "Stell dir vor: ein Fieberkurven-Blatt",
@@ -678,7 +691,7 @@
       "items": [
         "Lies die Kopfzeile: Ort, Höhe, Jahreswerte.",
         "Finde den wärmsten und kältesten Monat.",
-        "Finde feuchte Monate (Säule über Kurve) und trockene Monate (Kurve über Säule)."
+        "Finde feuchte Monate (humid: Säule über Kurve) und trockene Monate (arid: Kurve über Säule)."
       ]
     },
     "pitfall": {
@@ -709,7 +722,9 @@
     "goal": "Du kannst erklären, wie Wirbelstürme entstehen und wie sie sich unterscheiden.",
     "tldr": [
       "Ein tropischer Wirbelsturm entsteht über Meer mit mindestens etwa 26 Grad Wassertemperatur. Warme, feuchte Luft steigt auf, und der Sturm beginnt zu rotieren.",
-      "Im Auge herrscht Ruhe, rundherum sind die Winde am stärksten. Tornados sind viel kleiner und entstehen über Land aus Gewitterwolken."
+      "Im Auge herrscht Ruhe, rundherum sind die Winde am stärksten. Tornados sind viel kleiner und entstehen über Land aus Gewitterwolken, besonders oft im Mittleren Westen der USA.",
+      "Der Name hängt vom Meer ab: Hurrikan im Atlantik und Ostpazifik, Taifun im Westpazifik, Zyklon im Indischen Ozean und im Südpazifik.",
+      "Über Land verliert ein tropischer Wirbelsturm seine Kraft, weil das warme Wasser fehlt. An der Küste drohen Sturmflut und Überschwemmungen. Frühwarnsysteme, Schutzräume und Evakuierungen retten Leben."
     ],
     "analogy": {
       "title": "Stell dir vor: Wasser im Abfluss",
@@ -787,7 +802,9 @@
     "goal": "Du kannst Klimafaktoren nennen und das Klima Mitteleuropas erklären.",
     "tldr": [
       "Das Klima eines Ortes hängt von der Breite, der Höhe, der Nähe zum Meer, den Meeresströmungen und dem Relief ab.",
-      "Mitteleuropa liegt in der Westwindzone. Im Westen mildert der Atlantik das Klima, nach Osten wird es kontinentaler, mit kälteren Wintern und heißeren Sommern."
+      "Mitteleuropa liegt in der Westwindzone. Im Westen mildert der Atlantik das Klima. Es ist maritim, also mit milden Wintern, kühlen Sommern und viel Niederschlag. Nach Osten wird es kontinentaler, mit kälteren Wintern und heißeren Sommern.",
+      "Luv ist die dem Wind zugewandte Seite eines Gebirges. Dort steigt die Luft auf, kühlt ab, Wasserdampf wird zu Tropfen, und es regnet. Das ist Steigungsregen. Lee ist die dem Wind abgewandte Seite. Dort sinkt die Luft ab und ist trockener.",
+      "Eine Westwetterlage bringt feuchte Atlantikluft mit Wolken und Regen. Ein Hoch bringt im Sommer meist trockenes, warmes Wetter, im Winter Kälte."
     ],
     "analogy": {
       "title": "Stell dir vor: eine Rezeptliste",
@@ -813,6 +830,10 @@
             [
               "Meeresnähe",
               "Mildes Klima, mehr Niederschlag"
+            ],
+            [
+              "Meeresströmung",
+              "Warm: milder, kalt: kühler"
             ],
             [
               "Relief",
@@ -853,7 +874,7 @@
         },
         {
           "id": "c",
-          "html": "Beide sind gleich"
+          "html": "Beide haben gleich große Temperaturunterschiede"
         }
       ],
       "answer": "a",
@@ -864,7 +885,8 @@
     "goal": "Du kannst den Durchzug eines Tiefdruckgebiets mit Warm- und Kaltfront beschreiben.",
     "tldr": [
       "Tiefs ziehen in der Westwindzone von West nach Ost. Dabei kommt zuerst die Warmfront, dann der Warmsektor und dann die Kaltfront.",
-      "An der Warmfront gleitet warme Luft auf: Schichtwolken, Dauerregen. An der Kaltfront drängt kalte Luft unter die warme: Schauer und Gewitter, dann wird es kühler."
+      "An der Warmfront gleitet warme Luft auf: Schichtwolken, Dauerregen. An der Kaltfront drängt kalte Luft unter die warme: Schauer und Gewitter, dann wird es kühler.",
+      "Isobaren sind Linien, die auf der Wetterkarte Orte mit gleichem Luftdruck verbinden. Liegen sie eng beieinander, weht starker Wind. Hochdruckgebiete bringen dagegen oft trockenes, beständiges Wetter."
     ],
     "analogy": {
       "title": "Stell dir vor: einen Keil",
@@ -876,7 +898,7 @@
         "args": [
           [
             "Warmfront|(Dauerregen)",
-            "Warmsektor|(mild, trocken)",
+            "Warmsektor|(mild, oft trocken)",
             "Kaltfront|(Schauer, Gewitter)",
             "Nach dem Tief|(kühl, klar)"
           ],
@@ -894,7 +916,7 @@
       ]
     },
     "pitfall": {
-      "html": "<p>Auf der Wetterkarte sind Warmfronten rot mit Halbkreisen, Kaltfronten blau mit Dreiecken. Die Zacken zeigen, wohin sie ziehen.</p>"
+      "html": "<p>Auf der Wetterkarte sind Warmfronten rot mit Halbkreisen, Kaltfronten blau mit Dreiecken. Halbkreise und Dreiecke zeigen, wohin die Front zieht.</p>"
     },
     "rule": "Warmfront: Dauerregen, dann wärmer. Kaltfront: Schauer und Gewitter, dann kühler.",
     "check": {
@@ -914,14 +936,16 @@
         }
       ],
       "answer": "a",
-      "why": "Die kalte Luft schiebt sich unter die warme. Sie steigt schnell auf, und es bilden sich hohe Wolken."
+      "why": "Die kalte Luft schiebt sich unter die warme. Die warme Luft steigt schnell auf, und es bilden sich hohe Wolken."
     }
   },
   "klimazonen": {
     "goal": "Du kannst Klima- und Vegetationszonen nennen und passende Vegetation zuordnen.",
     "tldr": [
       "Die Klimazonen folgen im Wesentlichen den Breitenkreisen. Die Vegetation passt sich an Wärme und Wasser an.",
-      "Vom Äquator zum Pol folgen Regenwald, Savanne, Wüste, Hartlaubwald, Laub- und Mischwald, Nadelwald (Taiga) und Tundra."
+      "Vom Äquator zum Pol folgen Regenwald, Savanne, Wüste, Hartlaubwald, Laub- und Mischwald, Nadelwald (Taiga) und Tundra.",
+      "Savannen wachsen in den wechselfeuchten Tropen, dort wechseln sich Regenzeit und Trockenzeit ab. Hartlaubwald wächst, wo die Sommer trocken und die Winter mild und feucht sind, etwa am Mittelmeer. Steppe ist trockenes Grasland im Inneren der Kontinente, zu trocken für Wald, aber keine Wüste.",
+      "Die Taiga ist der Nadelwaldgürtel im Norden. Nördlich der Baumgrenze liegt die Tundra. Im Gebirge ändert sich die Vegetation mit der Höhe, weil es nach oben kälter wird. Das sind die Höhenstufen."
     ],
     "analogy": {
       "title": "Stell dir vor: Schuhe für jedes Wetter",
@@ -1010,7 +1034,8 @@
     "goal": "Du kannst das Klima des tropischen Regenwaldes beschreiben und erklären.",
     "tldr": [
       "Am Äquator steht die Sonne mittags fast senkrecht. Es ist das ganze Jahr heiß, und es gibt keine Jahreszeiten, nur ein Tageszeitenklima.",
-      "Die Sonne erwärmt den Boden, Wasser verdunstet, die feuchte Luft steigt auf, und am Nachmittag regnet es. Das nennt man Zenitalregen."
+      "Die Sonne erwärmt den Boden, Wasser verdunstet, die feuchte Luft steigt auf, und am Nachmittag regnet es. Das nennt man Zenitalregen.",
+      "Die Luft ist fast immer feucht. Die großen Regenwälder liegen im Amazonasbecken, im Kongobecken und in Südostasien."
     ],
     "analogy": {
       "title": "Stell dir vor: einen Wasserkocher",
@@ -1052,11 +1077,11 @@
         },
         {
           "id": "b",
-          "html": "Es gibt vier Jahreszeiten"
+          "html": "Der Temperaturunterschied zwischen Sommer und Winter ist größer als zwischen Tag und Nacht"
         },
         {
           "id": "c",
-          "html": "Es schneit im Winter"
+          "html": "Es regnet jeden Tag zur gleichen Uhrzeit"
         }
       ],
       "answer": "a",
@@ -1067,7 +1092,9 @@
     "goal": "Du kannst den Stockwerkbau des Regenwaldes und den schnellen Nährstoffkreislauf erklären.",
     "tldr": [
       "Die Bäume bilden Stockwerke: Einzelne Urwaldriesen ragen über das Kronendach, darunter folgen Strauchschicht und Krautschicht. Am Boden erreicht nur wenig Licht die Pflanzen.",
-      "Abgestorbenes Material wird in der Wärme schnell zersetzt, und die Pflanzen nehmen die Nährstoffe sofort wieder auf. Der Boden selbst ist arm."
+      "Abgestorbenes Material wird in der Wärme schnell zersetzt, und die Pflanzen nehmen die Nährstoffe sofort wieder auf. Der Boden selbst ist arm, seine Humusschicht (die dunkle, nährstoffhaltige oberste Schicht) ist dünn.",
+      "Epiphyten wie Orchideen wachsen auf den Ästen der Bäume, um ans Licht zu kommen. Lianen wurzeln im Boden und ranken sich an den Bäumen hoch.",
+      "Der Regenwald ist immergrün, weil es keine kalte Jahreszeit gibt. Er beherbergt mehr Arten als jeder andere Lebensraum an Land."
     ],
     "analogy": {
       "title": "Stell dir vor: ein Hochhaus",
@@ -1143,8 +1170,9 @@
   "wanderfeldbau": {
     "goal": "Du kannst den Wanderfeldbau beschreiben und erklären, warum er an Grenzen stößt.",
     "tldr": [
-      "Beim Wanderfeldbau wird Wald gerodet und abgebrannt. Die Asche düngt den Boden für wenige Jahre.",
-      "Wenn die Erträge sinken, ziehen die Bauern weiter. Das Feld bleibt brach, und der Wald wächst nach. Bei zu vielen Menschen reicht die Brache nicht mehr."
+      "Beim Wanderfeldbau wird Wald gefällt und abgebrannt. Das heißt Brandrodung. Die Asche düngt den Boden für wenige Jahre.",
+      "Wenn die Erträge sinken, ziehen die Bauern weiter. Das Feld bleibt ungenutzt, das heißt Brache, und der Wald wächst nach. Bei zu vielen Menschen reicht die Brache nicht mehr.",
+      "Angebaut werden vor allem Maniok (eine stärkereiche Wurzelknolle), Mais und Bananen für die eigene Familie. Das nennt man Selbstversorgung."
     ],
     "analogy": {
       "title": "Stell dir vor: ein Picknick",
@@ -1186,11 +1214,11 @@
         },
         {
           "id": "b",
-          "html": "Sie wollen reisen"
+          "html": "Sie müssen das Feld für eine Plantage räumen"
         },
         {
           "id": "c",
-          "html": "Es gibt keinen Regen"
+          "html": "Der Regen bleibt dort für immer aus"
         }
       ],
       "answer": "a",
@@ -1201,7 +1229,8 @@
     "goal": "Du kannst erklären, wie Kaffee angebaut und gehandelt wird und warum Preisschwankungen Bauern treffen.",
     "tldr": [
       "Kaffee wächst als Strauch in den Tropen, oft in Höhenlagen. Die roten Früchte enthalten die Bohnen.",
-      "Die Bohnen werden geerntet, getrocknet und exportiert. Geröstet wird meist erst in den Abnehmerländern. Der Preis auf dem Weltmarkt schwankt stark."
+      "Die Bohnen werden geerntet, getrocknet und exportiert. Geröstet wird meist erst in den Abnehmerländern, also dort, wo der Kaffee gekauft und getrunken wird. Der Preis auf dem Weltmarkt schwankt stark.",
+      "Der größte Erzeuger ist Brasilien. Neben Kleinbauern gibt es große Pflanzungen, die Plantagen. Den größten Teil des Ladenpreises bekommen Händler und Röster. Der Faire Handel garantiert den Bauern einen Mindestpreis."
     ],
     "analogy": {
       "title": "Stell dir vor: einen Kuchen mit vielen Zutaten",
@@ -1231,7 +1260,7 @@
       ]
     },
     "pitfall": {
-      "html": "<p>Kaffee ist keine Baumfrucht und keine Bohne im Sinne einer Hülsenfrucht. Die Bohnen sind die Samen einer Kirsche.</p>"
+      "html": "<p>Kaffeebohnen sind keine Hülsenfrüchte wie Erbsen oder Linsen. Die Bohnen sind die Samen einer Kirsche.</p>"
     },
     "rule": "Kaffee: tropischer Strauch, Export, Rösten bei uns, schwankende Weltmarktpreise.",
     "check": {
@@ -1243,11 +1272,11 @@
         },
         {
           "id": "b",
-          "html": "Sie haben zu viel Zeit"
+          "html": "Sie müssen mehr Steuern auf die Ernte zahlen"
         },
         {
           "id": "c",
-          "html": "Der Regen ist zu schwach"
+          "html": "Die Sträucher tragen dann weniger Früchte"
         }
       ],
       "answer": "a",
@@ -1258,7 +1287,9 @@
     "goal": "Du kannst Ursachen und Folgen der Regenwaldrodung nennen und Schutzmaßnahmen beschreiben.",
     "tldr": [
       "Jedes Jahr gehen große Waldflächen verloren, weil Weiden, Äcker, Plantagen, Straßen und Minen angelegt werden.",
-      "Dadurch sterben Tier- und Pflanzenarten aus, es wird CO2 frei, und der kahle Boden wird abgetragen. Schutzgebiete und nachhaltige Nutzung helfen."
+      "Dadurch sterben Tier- und Pflanzenarten aus, es wird CO2 frei, und der kahle Boden wird abgetragen. Schutzgebiete und nachhaltige Nutzung helfen.",
+      "Auch indigene Völker, also die ersten Bewohner eines Gebiets, verlieren ihren Lebensraum. In Südostasien weicht der Wald vor allem Palmölplantagen.",
+      "Nachhaltig heißt: Man nutzt nur so viel, wie nachwächst. Ein Siegel wie FSC zeigt, dass Holz so gewonnen wurde. Auf Satellitenbildern erkennst du Rodung an hellen, geometrischen Flecken im dunklen Wald."
     ],
     "analogy": {
       "title": "Stell dir vor: einen Jenga-Turm",
@@ -1320,11 +1351,11 @@
         },
         {
           "id": "b",
-          "html": "Bäume erzeugen CO2"
+          "html": "Bäume geben mehr CO2 ab, als sie aus der Luft aufnehmen"
         },
         {
           "id": "c",
-          "html": "Der Wald schluckt Sonnenlicht"
+          "html": "Ohne Wald scheint die Sonne stärker auf den Boden"
         }
       ],
       "answer": "a",
@@ -1335,7 +1366,9 @@
     "goal": "Du kannst das Klima der Savanne beschreiben und Anpassungen von Pflanzen erklären.",
     "tldr": [
       "Savannen liegen zwischen Regenwald und Wüste. Je näher am Wendekreis, desto kürzer ist die Regenzeit.",
-      "Von der Regenzeit bis zur Trockenzeit wechselt die Landschaft von grün zu braun. Bäume werfen Blätter ab oder speichern Wasser."
+      "Von der Regenzeit bis zur Trockenzeit wechselt die Landschaft von grün zu braun. Bäume werfen Blätter ab oder speichern Wasser. Der Baobab speichert es im dicken Stamm, die Schirmakazie hat eine flache, weit ausladende Krone.",
+      "Savannen gibt es vor allem in Afrika, aber auch in Südamerika und Australien. In Ostafrika leben Elefanten, Zebras und Giraffen und ihre Jäger wie der Löwe.",
+      "In der Trockenzeit entzünden Blitze oder Menschen oft das dürre Gras. Viele Pflanzen sind an Feuer angepasst und treiben danach wieder aus."
     ],
     "analogy": {
       "title": "Stell dir vor: einen Schwamm",
@@ -1412,8 +1445,9 @@
   "nomaden": {
     "goal": "Du kannst die nomadische Viehwirtschaft beschreiben und ihre Probleme nennen.",
     "tldr": [
-      "Nomaden leben von ihren Herden. Sie ziehen nach den Regenfällen zu frischem Gras und Wasser.",
-      "Wachsende Herden, Dürren und neue Grenzen machen das Ziehen schwer. Manche Familien werden sesshaft."
+      "Nomaden leben von ihren Herden, in Afrika zum Beispiel die Massai in Ostafrika und die Tuareg in der Sahara. Sie ziehen nach den Regenfällen zu frischem Gras und Wasser.",
+      "Wachsende Herden, Dürren und neue Grenzen machen das Ziehen schwer. Manche Familien werden sesshaft.",
+      "Sie wechseln regelmäßig die Weide, damit sich das Gras erholt. Das heißt Weidewechsel. Zu große Herden fressen die Weide kahl, das heißt Überweidung."
     ],
     "analogy": {
       "title": "Stell dir vor: einen Rucksack-Urlaub",
@@ -1455,11 +1489,11 @@
         },
         {
           "id": "b",
-          "html": "Sie mögen keine Ruhe"
+          "html": "Sie wandern ohne festes Ziel durch das Land"
         },
         {
           "id": "c",
-          "html": "Der Schnee kommt"
+          "html": "Im Winter wird es dort zu kalt für die Tiere"
         }
       ],
       "answer": "a",
@@ -1470,7 +1504,8 @@
     "goal": "Du kannst erklären, wie Bauern in der Savanne mit Trockenheit umgehen.",
     "tldr": [
       "Im Regenfeldbau wird zu Beginn der Regenzeit gesät. Fällt der Regen aus, fällt auch die Ernte aus.",
-      "Bewässerung und Schutzmaßnahmen wie Steinwälle oder Pflanzgruben helfen, Wasser zu halten. Sie sind aufwendig und teuer."
+      "Bewässerung und Schutzmaßnahmen wie Steinwälle oder Pflanzgruben helfen, Wasser zu halten. Sie sind aufwendig und teuer.",
+      "Besonders gefährlich sind Dürren in der Sahelzone, dem trockenen Übergang zwischen der Sahara und den feuchteren Savannen. Bauern wählen dort Pflanzen, die wenig Wasser brauchen, zum Beispiel Hirse."
     ],
     "analogy": {
       "title": "Stell dir vor: einen Garten in den Ferien",
@@ -1548,7 +1583,8 @@
     "goal": "Du kannst erklären, wie Desertifikation entsteht und was dagegen hilft.",
     "tldr": [
       "Wenn zu viele Tiere die Pflanzen abfressen und Bäume als Brennholz geschlagen werden, fehlt dem Boden der Schutz. Wind und Regen tragen ihn ab.",
-      "Der Boden wird unfruchtbar, und die Wüste rückt vor. Aufforstung, Bodenschutz und angepasste Nutzung bremsen den Prozess."
+      "Der Boden wird unfruchtbar, und die Wüste rückt vor. Aufforstung, Bodenschutz und angepasste Nutzung bremsen den Prozess.",
+      "Besonders betroffen ist die Sahelzone südlich der Sahara. Das Projekt Große Grüne Mauer soll dort einen Streifen aus Bäumen und Pflanzen quer durch Afrika anlegen."
     ],
     "analogy": {
       "title": "Stell dir vor: eine Glatze",
@@ -1590,11 +1626,11 @@
         },
         {
           "id": "b",
-          "html": "Der Bau einer Wüste"
+          "html": "Das Anlegen von Feldern mitten in einer Wüste"
         },
         {
           "id": "c",
-          "html": "Ein Sandsturm"
+          "html": "Ein Sandsturm, der über ein Land hinwegzieht"
         }
       ],
       "answer": "a",

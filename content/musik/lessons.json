@@ -6,8 +6,8 @@
       "Die obere Zahl der Taktangabe sagt, wie viele Zählzeiten in einen Takt passen. Die untere nennt den Notenwert."
     ],
     "analogy": {
-      "title": "Stell dir vor: ein Herzschlag mit Betonung",
-      "html": "<p>Beim Gehen betonst du von selbst jeden zweiten oder dritten Schritt ein wenig mehr. Genau das macht der Takt: Er gruppiert gleichmäßige Schläge, und die erste Zählzeit jeder Gruppe wird betont.</p>"
+      "title": "Stell dir vor: Schritte mit Betonung",
+      "html": "<p>Beim Gehen kannst du jeden zweiten oder dritten Schritt ein wenig stärker betonen. Genau das macht der Takt: Er gruppiert gleichmäßige Schläge, und die erste Zählzeit jeder Gruppe wird betont.</p>"
     },
     "figure": {
       "diagram": {
@@ -37,7 +37,7 @@
     "pitfall": {
       "html": "<p>Eine Taktangabe ist kein Bruch zum Ausrechnen. 3/4 heißt nicht dreiviertel von etwas, sondern drei Viertelnoten pro Takt.</p>"
     },
-    "rule": "Oben steht die Zahl der Zählzeiten, unten der Notenwert. Die erste Zählzeit eines Taktes ist die betonte.",
+    "rule": "Oben steht die Zahl der Zählzeiten, unten der Notenwert. Die erste Zählzeit eines Taktes ist meist die am stärksten betonte.",
     "check": {
       "q": "Wie viele Viertelnoten passen in einen 4/4-Takt?",
       "options": [
@@ -154,7 +154,7 @@
     ],
     "analogy": {
       "title": "Stell dir vor: ein Luftballon mit Öffnung",
-      "html": "<p>Lässt du Luft aus einem Ballon, schwingt die Öffnung und es quietscht. Zieht man sie straff, wird der Ton höher. Ähnlich ist es bei den Stimmlippen: Kurz und gespannt klingen sie höher, lang und locker tiefer.</p>"
+      "html": "<p>Lässt du Luft aus einem Ballon, schwingt die Öffnung und es quietscht. Zieht man sie straff, wird der Ton höher. Ähnlich ist es bei den Stimmlippen: Straff gespannt klingen sie höher, locker gespannt tiefer. Dazu kommt die Größe: Längere Stimmlippen klingen von Natur aus tiefer.</p>"
     },
     "figure": {
       "diagram": {
@@ -512,10 +512,10 @@
     },
     "rule": "Songaufbau gleich Intro, Strophe, Refrain, Bridge, Outro. Studio gleich aufnehmen, abmischen, mastern.",
     "check": {
-      "q": "Was ist ein Cover?",
+      "q": "Was ist ein Cover-Song?",
       "options": [
         { "id": "a", "html": "Eine neue Aufnahme eines schon bekannten Songs" },
-        { "id": "b", "html": "Das Bild auf der Hülle einer CD" },
+        { "id": "b", "html": "Eine unveränderte Kopie der Originalaufnahme" },
         { "id": "c", "html": "Ein Song ohne Gesang" }
       ],
       "answer": "a",
@@ -540,7 +540,7 @@
           [
             ["Sprache", "gesungen, Rezitativ", "Gesang und Sprechtext"],
             ["Musik", "klassisch, Orchester", "Pop, Rock, Jazz"],
-            ["Stimmen", "ohne Mikrofon ausgebildet", "meist mit Mikrofon"]
+            ["Stimmen", "ausgebildet, ohne Mikrofon", "meist mit Mikrofon"]
           ],
           [0.9, 1.6, 1.6],
           "Tabelle: Vergleich von Oper und Musical"
@@ -640,7 +640,7 @@
             ["Anden (Bolivien)", "Panflöte, Charango"],
             ["Bulgarien", "ungerade Takte wie 7/8"],
             ["Südafrika", "Gumboot-Tanz mit Gummistiefeln"],
-            ["Indonesien", "Gamelan aus Gongs und Metallklingern"]
+            ["Indonesien", "Gamelan aus Gongs und Metallophonen"]
           ],
           [1.4, 2],
           "Tabelle: Musik aus verschiedenen Regionen der Welt"
@@ -668,7 +668,7 @@
         { "id": "c", "html": "Spanien" }
       ],
       "answer": "a",
-      "why": "Gamelan ist ein Orchester aus Gongs und Metallklingern von den indonesischen Inseln, zum Beispiel Java und Bali."
+      "why": "Gamelan ist ein Orchester aus Gongs und Metallophonen von den indonesischen Inseln, zum Beispiel Java und Bali."
     }
   },
   "medien": {

@@ -91,7 +91,7 @@
       "de": "Luftmassen im Austausch · Kapitel 2",
       "card": {
         "name": "Ein globales Förderband",
-        "fact": "Warme Luft steigt am Äquator auf und fließt zu den Polen. Unten strömt Luft zurück. Das erzeugt die Passate."
+        "fact": "Warme Luft steigt am Äquator auf und sinkt in den Subtropen ab. Am Boden strömt sie als Passat zum Äquator zurück."
       }
     },
     {
@@ -539,7 +539,7 @@
       ],
       [
         "Heiß und kalt",
-        "Heißwüste: Sahara. Kältewüste: Gobi, Antarktis."
+        "Heiße Wüste: Sahara. Kalte Wüsten: Antarktis, Gobi mit eisigen Wintern."
       ]
     ],
     "temperaturzonen": [
@@ -595,7 +595,7 @@
     "wirbelstuerme": [
       [
         "Tropische Wirbelstürme",
-        "Hurrikan im Atlantik, Taifun im Westpazifik, Zyklon im Indischen Ozean. Windgeschwindigkeiten ab 119 km/h."
+        "Hurrikan im Atlantik und Ostpazifik, Taifun im Westpazifik, Zyklon im Indischen Ozean und im Südpazifik. Windgeschwindigkeiten ab 119 km/h."
       ],
       [
         "Tornado",
