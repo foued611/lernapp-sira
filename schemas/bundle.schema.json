@@ -98,6 +98,7 @@
         "color": { "$ref": "#/$defs/color" },
         "track": { "$ref": "#/$defs/id" },
         "group": { "$ref": "#/$defs/id" },
+        "needs": { "type": "array", "uniqueItems": true, "description": "Seiten derselben App, auf denen diese aufbaut. Nur ein Hinweis, nichts wird gesperrt.", "items": { "$ref": "#/$defs/id" } },
         "card": { "type": "object", "required": ["name", "fact"], "additionalProperties": false, "properties": { "name": { "$ref": "#/$defs/text" }, "fact": { "$ref": "#/$defs/text" } } }
       }
     },

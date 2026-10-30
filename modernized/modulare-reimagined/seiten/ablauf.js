@@ -62,11 +62,19 @@ export const practisedUnits = (app, units) => units.filter((u) => starsOf(app.st
 /**
  * Welche Seite kommt nach unitId? Die nächste ohne Stern im Pfad, hinten angekommen geht es vorn weiter.
  * Ist nichts mehr offen, die erste fällige. Sonst null. Wer gezielt springt, bleibt so an seiner Stelle im Pfad.
+ * Wer gerade auffrischt (refreshing), macht damit weiter: Dann geht die fällige Seite vor der offenen.
  */
-export function followingUnit(app, units, unitId, day) {
+export function followingUnit(app, units, unitId, day, { refreshing = false } = {}) {
   const at = units.findIndex((u) => u.id === unitId);
   const order = [...units.slice(at + 1), ...units.slice(0, Math.max(at, 0))];
-  return order.find((u) => starsOf(app.stars, u.id) === 0) || order.find((u) => isRefreshDue(app, u.id, day)) || null;
+  const open = order.find((u) => starsOf(app.stars, u.id) === 0);
+  const due = order.find((u) => isRefreshDue(app, u.id, day));
+  return (refreshing ? due || open : open || due) || null;
+}
+
+/** Seiten, auf denen diese Seite aufbaut (needs) und die noch keinen Stern haben. Nur ein Hinweis, gesperrt wird nichts. */
+export function unmetNeeds(app, unit, units) {
+  return (unit.needs ?? []).map((id) => units.find((u) => u.id === id)).filter((u) => u && starsOf(app.stars, u.id) === 0);
 }
 
 /**

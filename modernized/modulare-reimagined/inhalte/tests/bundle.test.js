@@ -21,6 +21,8 @@ const mutations = [
   ['fehlender Lektionsteil (check)', (b) => { delete b.lessons.start.check; }],
   ['figure ohne diagram und svg', (b) => { b.lessons.start.figure = { caption: 'x' }; }],
   ['Seite verweist auf ein unbekanntes Kapitel', (b) => { b.manifest.groups = [{ id: 'eins', title: 'Eins' }]; b.manifest.units.forEach((u) => { u.group = 'eins'; }); b.manifest.units[1].group = 'zwei'; }],
+  ['Voraussetzung, die es nicht gibt', (b) => { b.manifest.units[0].needs = ['fehlt']; }],
+  ['Seite setzt sich selbst voraus', (b) => { b.manifest.units[0].needs = [b.manifest.units[0].id]; }],
   ['Seite mit group ohne groups', (b) => { b.manifest.units[0].group = 'eins'; }],
   ['Kapitel ohne Seite', (b) => { b.manifest.groups = [{ id: 'leer', title: 'Leer' }]; }],
   ['doppelte Seiten-ID', (b) => { b.manifest.units[1].id = 'start'; }],
