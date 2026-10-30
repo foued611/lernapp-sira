@@ -1,9 +1,8 @@
-// Startseite: Fortschritt, Empfehlung, Strangetikett, leerer Zustand, Maskierung des Namens.
+// Startseite: Fortschritt, leerer Zustand, Maskierung des Namens.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
-import { TrackLabel } from '../../komponenten/tracks.js';
 import { ProgressBar } from '../../komponenten/ui.js';
 import { profileDefaults } from '../ablauf.js';
 import { greetingOf, maskName, minouLine, nameFrom, saveName, saveGoal, GoalChoice, Seiten, startseiteModel, Startseite, MASK } from '../startseite.js';
@@ -46,64 +45,6 @@ test('RULE-075 Gelöschte Seiten zählen nicht mit, der Prozentwert bleibt zwisc
   assert.ok(tile.percent >= 0 && tile.percent <= 100);
 });
 
-test('RULE-242 Eine fällige Seite kommt zuerst: nach drei Tagen zum Auffrischen', async () => {
-  const env = await full((app) => {
-    app.stars = { start: 2 };
-    app.last = { start: '2026-10-23' };
-    app.acc = { weiter: 0.5 };
-  });
-  const training = env.model().training;
-  assert.equal(training.unitTitle, 'Erste Seite');
-  assert.equal(training.reason, 'Zeit zum Auffrischen');
-  assert.equal(training.refresh, true);
-});
-
-test('RULE-242 Ohne fällige Seite gewinnt die schwächste Seite unter 90 Prozent', async () => {
-  const env = await full((app) => {
-    app.stars = { start: 2, weiter: 2 };
-    app.last = { start: DAY, weiter: DAY };
-    app.acc = { start: 0.8, weiter: 0.6 };
-  });
-  const training = env.model().training;
-  assert.equal(training.unitTitle, 'Zweite Seite');
-  assert.equal(training.reason, 'Hier ist noch Luft nach oben');
-});
-
-test('RULE-242 Seiten mit drei Sternen werden nicht als schwach empfohlen', async () => {
-  const env = await full((app) => {
-    app.stars = { start: 3, weiter: 3 };
-    app.last = { start: DAY, weiter: DAY };
-    app.acc = { start: 0.5, weiter: 0.5 };
-  });
-  assert.equal(env.model().training, null);
-});
-
-test('RULE-258 Das Strangetikett erscheint nur an Seiten, die einen Strang haben', async () => {
-  const env = await full((app) => {
-    app.stars = { start: 2, weiter: 2 };
-    app.last = { start: DAY, weiter: DAY };
-    app.acc = { weiter: 0.5 };
-  });
-  const training = env.model().training;
-  assert.equal(training.unitTitle, 'Zweite Seite');
-  assert.equal(training.track.label, 'LRS-Förderung');
-  assert.match(renderToStaticMarkup(h(TrackLabel, { track: training.track })), /LRS-Förderung/);
-  assert.equal(renderToStaticMarkup(h(TrackLabel, { track: null })), '');
-});
-
-test('RULE-258 Eine Seite ohne Strang bekommt kein Etikett', async () => {
-  const env = await full((app) => {
-    app.stars = { start: 2, weiter: 3 };
-    app.last = { start: DAY, weiter: DAY };
-    app.acc = { start: 0.5 };
-  });
-  const training = env.model().training;
-  assert.equal(training.unitTitle, 'Erste Seite');
-  assert.equal(training.track, null);
-  const markup = renderToStaticMarkup(h(Startseite, { state: env.state }));
-  assert.equal((markup.match(/class="trk/g) || []).length, 0, 'kein Etikett im ganzen Markup');
-});
-
 test('RULE-202 Ohne Speicher zeigt die Startseite den leeren Zustand mit Meldung und ohne Fortschritt', async () => {
   const boot = await bootFixture({ openStorage: async () => null });
   const model = startseiteModel({ day: DAY, storage: boot.state.storage, profileStore: null, apps: boot.state.apps });
@@ -124,16 +65,13 @@ test('RULE-202 Ein Speicher, der nicht startet, bricht die Startseite nicht ab u
   assert.match(markup, /Demnächst/, 'die Platzhalter-App bleibt sichtbar');
 });
 
-test('RULE-206 Der gesperrte Endgegner steht als Text in der Kachel und nennt die fehlenden Seiten', async () => {
-  const env = await full((app) => { app.stars = { start: 2 }; });
-  const tile = tileOf(env.model(), 'mathe');
-  assert.equal(tile.boss.open, false);
-  assert.equal(tile.boss.text, 'Endgegner gesperrt: noch 1 Seite ohne Stern.');
-});
-
-test('RULE-206 Ist der Endgegner offen, sagt die Kachel das ebenfalls als Text', async () => {
-  const env = await full((app) => { app.stars = { start: 1, weiter: 1 }; });
-  assert.equal(tileOf(env.model(), 'mathe').boss.text, 'Endgegner offen.');
+test('RULE-242 Training und Endgegner stehen nicht auf der Startseite aller Apps, sondern wie im Legacy in der App', async () => {
+  const env = await full((app) => {
+    app.stars = { start: 2 };
+    app.last = { start: '2026-10-23' };
+  });
+  const markup = renderToStaticMarkup(h(Startseite, { state: env.state }));
+  assert.doesNotMatch(markup, /Endgegner|Gezieltes Training/);
 });
 
 test('SEITE-MASKIERUNG Der Name erscheint nie im Klartext auf der Startseite', async () => {

@@ -115,7 +115,7 @@ export function fakeSource(failing = []) {
 }
 
 // Was der Katalog aus dem Manifest der Testapps übernimmt.
-const FIXTURE_ENTRY = Object.freeze({ boss: true, tracks: TRACKS, units: bundleFor('x').manifest.units.map(({ id, title, track }) => ({ id, title, track })) });
+const FIXTURE_ENTRY = Object.freeze({ units: bundleFor('x').manifest.units.map(({ id }) => ({ id })) });
 
 export const REGISTRY = Object.freeze([
   { id: 'mathe', subject: 'Mathematik', title: 'Mathe-Werkstatt', desc: 'Zahlen und Gleichungen.', status: 'live', ...FIXTURE_ENTRY },

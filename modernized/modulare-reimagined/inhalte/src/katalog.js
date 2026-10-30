@@ -3,7 +3,7 @@
 
 const LIVE = 'live';
 
-/** Eintrag einer App. Von den Seiten bleibt nur, was Kacheln und Empfehlung zeigen. */
+/** Eintrag einer App. Von den Seiten bleibt nur die ID, die Kachel zählt damit den Fortschritt. */
 export function catalogEntry(manifest) {
   const { subject, desc, status = LIVE } = manifest.catalog;
   return {
@@ -12,9 +12,7 @@ export function catalogEntry(manifest) {
     title: manifest.title,
     desc,
     status,
-    boss: Boolean(manifest.bossTitle),
-    tracks: manifest.tracks ?? {},
-    units: manifest.units.map(({ id, title, track }) => (track ? { id, title, track } : { id, title }))
+    units: manifest.units.map(({ id }) => ({ id }))
   };
 }
 
