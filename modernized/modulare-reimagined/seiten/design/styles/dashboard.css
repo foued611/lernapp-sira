@@ -39,3 +39,13 @@
 .treffer a:hover{border-color:var(--ink)}
 .treffer b{display:block}
 .treffer small{display:block;color:var(--muted);font-size:13px}
+
+/* Fach mit mehreren Apps, Lehrwerk, frühere Klassen */
+.shell.dash [data-klasse]{white-space:nowrap}
+.shell.dash .tile .buch{display:block;margin-top:-6px;color:var(--muted);font-size:13px}
+.shell.dash .tile.fach{gap:14px}
+.shell.dash .course{display:grid;gap:8px;color:inherit;text-decoration:none;padding-top:12px;border-top:2px solid var(--line)}
+.shell.dash .tag+.course{padding-top:0;border-top:0}
+.shell.dash a.course:hover h3{text-decoration:underline}
+.shell.dash .frueher{margin-top:18px}
+.shell.dash .frueher .grid{margin-bottom:14px}

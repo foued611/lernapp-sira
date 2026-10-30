@@ -18,7 +18,8 @@ const QUICK_LOCKED = 'Übe zuerst eine Seite. Die 2-Minuten-Runde wiederholt, wa
 const BOSS_LOCKED = 'Der Endgegner ist noch gesperrt. Erst braucht jede Seite mindestens einen Stern.';
 
 // Gleicher Aufbau wie legacy/modulare/core/js/profile.js:14 und 16.
-export const profileDefaults = () => ({ name: '', xp: 0, streak: 0, lastDay: '', lastApp: '', day: { d: '', xp: 0 } });
+export const DEFAULT_KLASSE = 7;
+export const profileDefaults = () => ({ name: '', klasse: DEFAULT_KLASSE, xp: 0, streak: 0, lastDay: '', lastApp: '', day: { d: '', xp: 0 } });
 // last und acc steuern Auffrischen und gezieltes Training (legacy profile.js:15).
 // seen: Schlüssel der Aufgaben, die richtig beantwortet wurden. Neue Runden bevorzugen andere (runde/src/vielfalt.js).
 // chapters: je Kapitel der beste Kapitel-Test { acc, day }.

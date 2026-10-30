@@ -51,5 +51,14 @@ export function validateRegistry(entries) {
 /** Fächer in der Reihenfolge der Liste, ohne Dopplungen. Für die Auswahl auf der Startseite. */
 export const subjectsOf = (entries) => [...new Set(entries.map((entry) => entry.subject))];
 
+/** Klassen im Katalog, aufsteigend. Eine Wahl lohnt erst ab zwei. */
+export const klassenOf = (entries) => [...new Set(entries.flatMap((entry) => entry.klassen ?? []))].sort((a, b) => a - b);
+
+/** Steht die App in dieser Klasse? */
+export const inKlasse = (entry, klasse) => (entry.klassen ?? []).includes(klasse);
+
+/** Gehört die App nur zu früheren Klassen? Spätere Klassen zeigt die Startseite gar nicht, das wäre Stoff von morgen. */
+export const beforeKlasse = (entry, klasse) => (entry.klassen ?? []).length > 0 && Math.max(...entry.klassen) < klasse;
+
 /** Strang einer Seite für das Etikett. Ohne Strang: null, also kein Etikett (RULE-258). */
 export const unitTrack = (tracks, unit) => trackOf(tracks, unit);
