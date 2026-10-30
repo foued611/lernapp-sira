@@ -1,5 +1,5 @@
 // Ansicht einer App: Seite, Theorie, Spiel und Ergebnis. Den Ablauf einer Runde steuert ablauf.js, hier wird nur gezeichnet.
-import { createElement, useEffect, useReducer, useState } from 'react';
+import { createElement, useEffect, useReducer, useRef, useState } from 'react';
 import { createRng, starsOf, unitsInPath } from '../helfer/index.js';
 import { TheoryPage } from '../komponenten/theory.js';
 import { BlitzPlay, startBlitz } from './blitz.js';
@@ -8,6 +8,7 @@ import { Play } from './spiel.js';
 import { NO_STORAGE, saveName } from './name.js';
 import { Ergebnis, messagesOf, resultModel, wordsFor } from './ergebnis.js';
 import { Sicherung } from './sicherung.js';
+import { onAddressBack, pageRoot, pushAddress, replaceAddress, scrollToTop, searchOf, unitFromSearch } from './adresse.js';
 import { RESET_DONE, profileDefaults, appDefaults, RIGHT, knownOf, rememberRight, bossOpen, startRound, settleRound, settleLeave, settleBlitzLeave, leaveNotice, resetStep, resetApp, recommendationOf, followingUnit } from './ablauf.js';
 
 const h = createElement;
@@ -48,7 +49,7 @@ export function TheoryScreen({ config, unit, onBack, onStart, practised = false 
  * Die App-Seite. Hält den Ablauf der Ansicht: Start, Spiel, Speichern, Ergebnis. Die Entscheidungen
  * stehen in den Modellfunktionen oben. Ohne Speicher läuft die Seite mit einem Stand im Arbeitsspeicher.
  */
-export function AppFrame({ app, profileStore, day, storage }) {
+export function AppFrame({ app, profileStore, day, storage, startUnit = null }) {
   const { config, appStore, entry } = app;
   const words = wordsFor(config);
   const [memoryProfile] = useState(profileDefaults);
@@ -56,12 +57,14 @@ export function AppFrame({ app, profileStore, day, storage }) {
   const profile = profileStore ? profileStore.state : memoryProfile;
   const appState = appStore ? appStore.state : memoryApp;
   const unitIds = config.units.map((u) => u.id);
-  const [screen, setScreen] = useState('home');
+  // Ein Link kann direkt auf eine Seite zeigen. Eine unbekannte Seite führt zum Lernpfad.
+  const linkedUnit = config.units.find((u) => u.id === startUnit) || null;
+  const [screen, setScreen] = useState(linkedUnit ? 'theory' : 'home');
   const [session, setSession] = useState(null);
   const [settled, setSettled] = useState(null);
   const [notice, setNotice] = useState(null);
   const [resetPhase, setResetPhase] = useState('idle');
-  const [theoryUnit, setTheoryUnit] = useState(null);
+  const [theoryUnit, setTheoryUnit] = useState(linkedUnit);
   const [station, setStation] = useState(null);
   const [blitz, setBlitz] = useState(null);
   const [, bump] = useReducer((n) => n + 1, 0);
@@ -70,9 +73,12 @@ export function AppFrame({ app, profileStore, day, storage }) {
   const persistent = storage.status === 'ok';
   // Jede Ansicht beginnt oben. Nur der Rückweg zum Lernpfad landet bei der Station, von der die Person kommt.
   useEffect(() => {
-    if (screen === 'home' && station && revealStation(document, station)) return;
-    window.scrollTo(0, 0);
-  }, [screen, station]);
+    if (screen === 'home' && station && revealStation(pageRoot(), station)) return;
+    scrollToTop();
+  }, [screen, theoryUnit, station]);
+  // Die Taste des Browsers folgt der Adresse. Der Ref hält followAddress aktuell, die Anmeldung bleibt einmalig.
+  const followRef = useRef(null);
+  useEffect(() => onAddressBack((search) => followRef.current(search)), []);
   const logRow = (row) => (storage.handle ? storage.handle.logEvent(row) : Promise.resolve({ ok: false, error: NO_STORAGE }));
 
   function begin(mode, unit = null) {
@@ -82,8 +88,17 @@ export function AppFrame({ app, profileStore, day, storage }) {
       return;
     }
     setNotice(null);
+    enterRound();
     setSession(started);
     setScreen('play');
+  }
+
+  // Eine Runde ist ein eigener Schritt in der Adresse, damit die Zurück-Taste sie verlässt und nicht die App.
+  // Nochmal ersetzt den Schritt. Sonst müsste man nach jeder Runde einmal mehr zurück.
+  function enterRound() {
+    const search = searchOf(entry.id, session?.unit?.id || settled?.summary.unitId || theoryUnit?.id || null);
+    if (screen === 'result') replaceAddress(search);
+    else pushAddress(search);
   }
 
   function peek() {
@@ -124,6 +139,12 @@ export function AppFrame({ app, profileStore, day, storage }) {
     setScreen('result');
   }
 
+  // Zum Lernpfad mit eigenem Schritt in der Adresse.
+  function goHome() {
+    home();
+    pushAddress(searchOf(entry.id));
+  }
+
   function home() {
     setStation(theoryUnit?.id || session?.unit?.id || settled?.summary.unitId || null);
     setSession(null);
@@ -143,6 +164,7 @@ export function AppFrame({ app, profileStore, day, storage }) {
       return;
     }
     setNotice(null);
+    enterRound();
     setBlitz(started.run);
     setScreen('blitz');
   }
@@ -174,19 +196,35 @@ export function AppFrame({ app, profileStore, day, storage }) {
     const outcome = await settleBlitzLeave({ earned, answered, profile, app: appState, profileStore, appStore, day });
     home();
     setNotice(leaveNotice(outcome));
+    replaceAddress(searchOf(entry.id));
   }
 
   // Erst die Theorie der Seite, dann die Übung (AGENTS.md: Theorie, direkt danach Übung).
   function study(unit) {
+    showTheory(unit);
+    pushAddress(searchOf(entry.id, unit.id));
+  }
+
+  function showTheory(unit) {
+    setSettled(null);
     setNotice(null);
     setTheoryUnit(unit);
     setScreen('theory');
   }
 
+  // Zurück oder Vorwärts im Browser. Eine laufende Runde endet wie mit dem Kreuz und führt zum Lernpfad, dort steht der Hinweis.
+  async function followAddress(search) {
+    if (session) return leave();
+    if (blitz) return leaveBlitz();
+    const unit = config.units.find((u) => u.id === unitFromSearch(search));
+    return unit ? showTheory(unit) : home();
+  }
+  followRef.current = followAddress;
+
   // Verlassen zahlt die XP der Runde aus, wertet die Runde aber nicht (RULE-193).
   async function leave() {
     if (!session) {
-      home();
+      goHome();
       return;
     }
     const outcome = await settleLeave({ round: session.round, profile, app: appState, profileStore, appStore, day });
@@ -194,6 +232,7 @@ export function AppFrame({ app, profileStore, day, storage }) {
     // Der Hinweis zum Verlassen steht oben. Er darf nicht außer Sicht bleiben.
     setStation(null);
     setNotice(leaveNotice(outcome));
+    replaceAddress(searchOf(entry.id));
   }
 
   async function reset(event) {
@@ -209,7 +248,7 @@ export function AppFrame({ app, profileStore, day, storage }) {
   const frame = (content, unit = null) => h(
     'div',
     { className: 'shell' },
-    h(AppHeader, { config, profile, words, onHome: home, day }),
+    h(AppHeader, { config, profile, words, onHome: goHome, day }),
     h('main', { id: 'app', style: unit ? { '--lc': unit.color } : undefined }, content)
   );
 
@@ -220,7 +259,7 @@ export function AppFrame({ app, profileStore, day, storage }) {
     return frame(h(BlitzPlay, { run: blitz, onFinish: finishBlitz, onLeave: leaveBlitz }));
   }
   if (screen === 'theory' && theoryUnit) {
-    return frame(h(TheoryScreen, { config, unit: theoryUnit, onBack: home, onStart: () => begin('lesson', theoryUnit), practised: starsOf(appState.stars, theoryUnit.id) > 0 }), theoryUnit);
+    return frame(h(TheoryScreen, { config, unit: theoryUnit, onBack: goHome, onStart: () => begin('lesson', theoryUnit), practised: starsOf(appState.stars, theoryUnit.id) > 0 }), theoryUnit);
   }
   if (screen === 'saving') {
     return frame(h('section', { className: 'card' }, h('p', null, 'Ergebnis wird gespeichert …')));
@@ -229,7 +268,7 @@ export function AppFrame({ app, profileStore, day, storage }) {
     const { unitId } = settled.summary;
     const next = unitId ? followingUnit(appState, unitsInPath(config.units, config.groups), unitId, day) : null;
     const onAction = (id) => {
-      if (id === 'home') home();
+      if (id === 'home') goHome();
       else if (id === 'next') study(next);
       else if (id === 'theory') study(config.units.find((u) => u.id === settled.summary.unitId));
       else if (settled.summary.mode === 'blitz') beginBlitz();

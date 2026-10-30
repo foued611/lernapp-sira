@@ -244,7 +244,7 @@ export function Seiten({ boot }) {
     const app = state.apps.find((item) => item.entry.id === state.route.appId);
     if (!app || app.entry.status !== LIVE) return h(Notice, { title: 'Diese App gibt es nicht.', message: 'Wähle eine App auf der Startseite.' });
     if (app.error) return h(Notice, { title: 'Das hat nicht geklappt', message: app.error });
-    return h(AppFrame, { app, profileStore: state.profileStore, day: state.day, storage: state.storage });
+    return h(AppFrame, { app, profileStore: state.profileStore, day: state.day, storage: state.storage, startUnit: state.route.unitId });
   }
   return h(Startseite, { state });
 }
