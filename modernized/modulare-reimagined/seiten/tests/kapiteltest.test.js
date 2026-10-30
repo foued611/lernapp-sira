@@ -7,7 +7,7 @@ import { createRng } from '../../helfer/index.js';
 import { buildConfig } from '../../inhalte/index.js';
 import { finishRound } from '../../regeln/index.js';
 import { AppHome } from '../apphome.js';
-import { appDefaults, chapterMissing, chapterQuestions, hasChapterTest, profileDefaults, startRound } from '../ablauf.js';
+import { appDefaults, chapterMissing, chapterQuestions, hasChapterTest, profileDefaults, startRound, stationAfter } from '../ablauf.js';
 import { resultModel, wordsFor } from '../ergebnis.js';
 import { APPS, logicFor, paketVon } from '../../apps/tests/laden.js';
 import { configOf, DAY, questions } from './helpers.js';
@@ -80,6 +80,16 @@ test('SEITE-KAPITELTEST Ohne Fehler und mit neuem Bestwert sagt das Ergebnis bei
   assert.match(m.subtitle, /Neuer Bestwert/);
   assert.match(m.subtitle, /Alle Seiten sitzen/);
   assert.equal(m.actions[0].id, 'again');
+});
+
+test('SEITE-KAPITELTEST Nach dem Test führt der Rückweg zur letzten Seite des Kapitels', () => {
+  const units = [{ id: 'a', group: 'g1' }, { id: 'b', group: 'g1' }, { id: 'c', group: 'g2' }];
+  assert.equal(stationAfter({ summary: { groupId: 'g1', unitId: null }, units }), 'b');
+  assert.equal(stationAfter({ theoryUnit: { id: 'c' }, units }), 'c');
+  assert.equal(stationAfter({ session: { unit: { id: 'a' } }, units }), 'a');
+  assert.equal(stationAfter({ summary: { unitId: 'b', groupId: null }, units }), 'b');
+  assert.equal(stationAfter({ summary: { unitId: null, groupId: null }, units }), null);
+  assert.equal(stationAfter({ units }), null);
 });
 
 const render = (app, units) => {

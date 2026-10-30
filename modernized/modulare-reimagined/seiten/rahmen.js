@@ -9,7 +9,7 @@ import { NO_STORAGE, saveName } from './name.js';
 import { Ergebnis, messagesOf, resultModel, wordsFor } from './ergebnis.js';
 import { Sicherung } from './sicherung.js';
 import { onAddressBack, pageRoot, pushAddress, replaceAddress, scrollToTop, searchOf, unitFromSearch } from './adresse.js';
-import { RESET_DONE, profileDefaults, appDefaults, RIGHT, knownOf, rememberRight, bossOpen, startRound, settleRound, settleLeave, settleBlitzLeave, leaveNotice, resetStep, resetApp, recommendationOf, followingUnit } from './ablauf.js';
+import { RESET_DONE, profileDefaults, appDefaults, RIGHT, knownOf, rememberRight, bossOpen, startRound, settleRound, settleLeave, settleBlitzLeave, leaveNotice, resetStep, resetApp, recommendationOf, followingUnit, stationAfter } from './ablauf.js';
 
 const h = createElement;
 
@@ -149,9 +149,7 @@ export function AppFrame({ app, profileStore, day, storage, startUnit = null }) 
   }
 
   function home() {
-    // Nach dem Kapitel-Test zur letzten Seite des Kapitels: Darunter steht der neue Bestwert.
-    const tested = config.units.filter((u) => u.group === settled?.summary.groupId).at(-1)?.id;
-    setStation(theoryUnit?.id || session?.unit?.id || settled?.summary.unitId || tested || null);
+    setStation(stationAfter({ theoryUnit, session, summary: settled?.summary, units: config.units }));
     setSession(null);
     setBlitz(null);
     setSettled(null);

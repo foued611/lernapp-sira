@@ -67,6 +67,16 @@ export function followingUnit(app, units, unitId, day) {
   return order.find((u) => starsOf(app.stars, u.id) === 0) || order.find((u) => isRefreshDue(app, u.id, day)) || null;
 }
 
+/**
+ * Zu welcher Station führt der Rückweg zum Lernpfad? Zur besuchten Seite, nach dem Kapitel-Test zur letzten Seite des
+ * Kapitels, denn darunter steht der neue Bestwert. Sonst null: Die Ansicht beginnt oben.
+ */
+export function stationAfter({ theoryUnit, session, summary, units }) {
+  const seen = theoryUnit?.id || session?.unit?.id || summary?.unitId;
+  if (seen) return seen;
+  return units.filter((u) => u.group === summary?.groupId).at(-1)?.id ?? null;
+}
+
 /** Der Kapitel-Test lohnt erst ab zwei Seiten. Bei einer wäre er nur die Lektionsrunde dieser Seite. */
 export const hasChapterTest = (group) => group.units.length >= 2;
 
