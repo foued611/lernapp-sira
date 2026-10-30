@@ -6,6 +6,7 @@ import { bootSeiten } from './boot.js';
 import { loadLogic, loadStyle } from '../apps/index.js';
 import { Seiten } from './startseite.js';
 import { setBrowserPorts } from './sicherung.js';
+import { applySavedTheme, setThemePorts } from './thema.js';
 // Design wie in Legacy (legacy/modulare/core/styles). Eine Quelle für alle Ansichten, siehe seiten/design/README.md.
 import './design/styles/app.css';
 import './design/styles/dashboard.css';
@@ -27,6 +28,13 @@ setBrowserPorts({
 
 // Logik und Optik einer App kommen zusammen, erst wenn sie geöffnet wird.
 const openApp = async (id) => (await Promise.all([loadLogic(id), loadStyle(id)]))[0];
+
+// Vor dem ersten Zeichnen, damit die Seite nicht im falschen Schema aufblitzt.
+setThemePorts({
+  apply: (theme) => { document.documentElement.dataset.theme = theme; },
+  systemTheme: () => (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+});
+applySavedTheme();
 
 bootSeiten({ search: window.location.search, loadLogic: openApp }).then((boot) => {
   createRoot(document.getElementById('app')).render(h(Seiten, { boot }));

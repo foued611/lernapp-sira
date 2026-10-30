@@ -10,6 +10,7 @@ import { bossOpen, recommendationOf } from './ablauf.js';
 import { AppFrame } from './rahmen.js';
 import { NAME_MAX, NO_STORAGE, greetingOf, maskName, saveName } from './name.js';
 import { Sicherung } from './sicherung.js';
+import { ThemeToggle } from './thema.js';
 import { LIVE, SUBJECT_COLORS, subjectsOf, unitTrack } from './registry.js';
 import { MSG } from './boot.js';
 
@@ -213,7 +214,7 @@ export function Startseite({ state }) {
   return h(
     'div',
     { className: 'shell dash' },
-    h('div', { className: 'brand' }, 'Lernwerkstatt'),
+    h('div', { className: 'dashtop' }, h('div', { className: 'brand' }, 'Lernwerkstatt'), h(ThemeToggle)),
     h(
       'section',
       { className: 'card hero', id: 'hero' },
