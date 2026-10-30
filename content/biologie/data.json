@@ -122,6 +122,140 @@
           "Zelle aus der Mundschleimhaut"
         ],
         "why": "Tierzellen haben weder Zellwand noch Chloroplasten. Muskelzellen und Zellen der Mundschleimhaut sind Tierzellen."
+      },
+      {
+        "q": "Dieser Bestandteil füllt das Innere jeder Zelle aus.",
+        "kind": "gap",
+        "s": "Viele Vorgänge der Zelle laufen im ___ ab.",
+        "a": "Zellplasma",
+        "wrong": [
+          "Zellkern",
+          "Zellsaft",
+          "Zellwand"
+        ],
+        "why": "Im Zellplasma laufen die Vorgänge ab, der Zellkern steuert sie nur. Zellsaft liegt dagegen in der Vakuole der Pflanzenzelle.",
+        "accept": [
+          "Plasma",
+          "Zytoplasma",
+          "Cytoplasma"
+        ],
+        "level": 1,
+        "skill": "Aufgaben der Bestandteile"
+      },
+      {
+        "q": "Welche Aufzählung nennt nur Bestandteile, die beide Zelltypen haben?",
+        "a": "Zellkern, Zellmembran und Mitochondrien",
+        "wrong": [
+          "Zellkern, Zellwand und Zellplasma",
+          "Zellmembran, Chloroplasten und Zellkern",
+          "Zellplasma, große Vakuole und Mitochondrien"
+        ],
+        "why": "Jede falsche Aufzählung enthält einen Bestandteil, den nur Pflanzenzellen haben: Zellwand, Chloroplasten oder große Vakuole.",
+        "level": 1,
+        "skill": "Pflanzen- oder Tierzelle"
+      },
+      {
+        "q": "Prüfe, was dieser Zelle fehlt.",
+        "kind": "gap",
+        "s": "Eine Zelle hat Zellkern und Zellmembran, aber keine Zellwand. Es ist eine ___.",
+        "a": "Tierzelle",
+        "wrong": [
+          "Pflanzenzelle",
+          "Blattzelle"
+        ],
+        "why": "Pflanzenzellen haben immer eine Zellwand. Zellkern und Zellmembran helfen hier nicht weiter, denn die haben beide Zelltypen.",
+        "accept": [
+          "tierische Zelle"
+        ],
+        "level": 2,
+        "skill": "Pflanzen- oder Tierzelle"
+      },
+      {
+        "q": "Dafür fängt die Zelle Licht ein.",
+        "kind": "gap",
+        "s": "Tierzellen haben keine Chloroplasten. Deshalb können sie keine ___ betreiben.",
+        "a": "Fotosynthese",
+        "wrong": [
+          "Zellatmung",
+          "Zellteilung",
+          "Verdauung"
+        ],
+        "why": "Die Fotosynthese läuft in den Chloroplasten ab. Die Zellatmung geht auch ohne sie, denn sie läuft in den Mitochondrien.",
+        "accept": [
+          "Photosynthese"
+        ],
+        "level": 2,
+        "skill": "Aufgaben der Bestandteile"
+      },
+      {
+        "q": "Welche Zuordnung von Bestandteil und Aufgabe stimmt?",
+        "a": "Mitochondrien: stellen Energie bereit",
+        "wrong": [
+          "Chloroplasten: speichern den Zellsaft",
+          "Vakuole: steuert die Zelle",
+          "Zellwand: regelt den Stoffaustausch"
+        ],
+        "why": "Chloroplasten sind für die Fotosynthese da, die Vakuole speichert Zellsaft, der Zellkern steuert. Den Stoffaustausch regelt die Zellmembran, nicht die Zellwand.",
+        "level": 2,
+        "skill": "Aufgaben der Bestandteile"
+      },
+      {
+        "q": "Sie liegt innen an der festen Hülle an.",
+        "kind": "gap",
+        "s": "Bei der Pflanzenzelle kommt von außen nach innen erst die Zellwand, dann die ___.",
+        "a": "Zellmembran",
+        "wrong": [
+          "Vakuole",
+          "Zellplasma",
+          "Zellkern"
+        ],
+        "why": "Die Zellmembran liegt direkt innen an der Zellwand. Beide sind also da und nicht dasselbe. Vakuole, Zellplasma und Zellkern liegen weiter innen.",
+        "accept": [
+          "Membran"
+        ],
+        "level": 2,
+        "skill": "Zellwand und Zellmembran"
+      },
+      {
+        "q": "Eine Zelle hat eine Zellwand und eine große Vakuole, aber keine Chloroplasten. Was schließt du daraus?",
+        "a": "Es ist eine Pflanzenzelle, denn Tierzellen haben keine Zellwand.",
+        "wrong": [
+          "Es ist eine Tierzelle, denn die Chloroplasten fehlen.",
+          "Es ist eine Tierzelle, denn Tierzellen haben eine große Vakuole.",
+          "Es lässt sich nicht sagen, denn dafür braucht man beide Merkmale."
+        ],
+        "why": "Schon eine Zellwand zeigt die Pflanzenzelle. Dass die Chloroplasten fehlen, macht daraus noch keine Tierzelle.",
+        "level": 3,
+        "skill": "Pflanzen- oder Tierzelle"
+      },
+      {
+        "q": "Pflanzenzellen haben Chloroplasten. Warum brauchen sie trotzdem Mitochondrien?",
+        "a": "Die Mitochondrien stellen auch ihnen Energie bereit.",
+        "wrong": [
+          "In den Mitochondrien läuft die Fotosynthese ab.",
+          "Die Mitochondrien geben der Zelle ihren Halt.",
+          "Die Mitochondrien speichern den Zellsaft."
+        ],
+        "why": "Chloroplasten ersetzen die Mitochondrien nicht, denn in ihnen läuft die Fotosynthese ab. Energie bereitstellen müssen Mitochondrien in Pflanzen- und Tierzellen.",
+        "level": 3,
+        "skill": "Aufgaben der Bestandteile"
+      },
+      {
+        "q": "Diese Bestandteile brauchen für ihre Arbeit Licht.",
+        "kind": "gap",
+        "s": "Wurzelzellen liegen im dunklen Boden. Darum brauchen sie keine ___.",
+        "a": "Chloroplasten",
+        "wrong": [
+          "Mitochondrien",
+          "Zellkerne",
+          "Zellmembranen"
+        ],
+        "why": "In den Chloroplasten läuft die Fotosynthese, und die braucht Licht. Mitochondrien braucht die Wurzelzelle weiterhin, denn Energie braucht sie auch im Dunkeln.",
+        "accept": [
+          "Chloroplast"
+        ],
+        "level": 3,
+        "skill": "Aufgaben der Bestandteile"
       }
     ],
     "mikroskop": [
