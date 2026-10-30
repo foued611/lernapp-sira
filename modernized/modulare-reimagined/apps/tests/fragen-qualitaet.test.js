@@ -71,4 +71,11 @@ for (const { id, items } of apps) {
       .map((item) => item.wo);
     assert.deepEqual(fehler, []);
   });
+
+  test(`FRAGE ${id}: level ist 1, 2 oder 3 und nennt, was geübt wird`, () => {
+    const fehler = alle
+      .filter((item) => item.level !== undefined && (![1, 2, 3].includes(item.level) || !item.skill?.trim()))
+      .map((item) => item.wo);
+    assert.deepEqual(fehler, []);
+  });
 }
