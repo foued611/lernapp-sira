@@ -11,7 +11,8 @@ import { NAME_MAX, NO_STORAGE, greetingOf, maskName, saveName } from './name.js'
 import { Sicherung } from './sicherung.js';
 import { ThemeToggle } from './thema.js';
 import { Suche } from './suche.js';
-import { LIVE, SUBJECT_COLORS, subjectsOf } from './registry.js';
+import { LIVE, SUBJECT_COLORS, beforeKlasse, inKlasse, klassenOf, subjectsOf } from './registry.js';
+import { DEFAULT_KLASSE } from './ablauf.js';
 import { MSG } from './boot.js';
 
 const h = createElement;
@@ -27,12 +28,12 @@ export function minouLine(xp, goal = DAILY_GOAL_XP) {
 }
 
 const hrefOf = (id) => `?app=${encodeURIComponent(id)}`;
-const colorOf = (subject) => SUBJECT_COLORS[subject] || '#9B7BFF';
+const colorOf = (fach) => SUBJECT_COLORS[fach] || '#9B7BFF';
 
 // Kachel ohne Fortschritt: Titel, Fach, Beschreibung und Link. Reicht für den leeren Zustand.
 function linkTile(app) {
   const { entry } = app;
-  const base = { id: entry.id, title: entry.title, subject: entry.subject, desc: entry.desc, color: colorOf(entry.subject) };
+  const base = { id: entry.id, title: entry.title, subject: entry.subject, fach: entry.fach, lehrwerk: entry.lehrwerk, desc: entry.desc, color: colorOf(entry.fach) };
   if (entry.status !== LIVE) return { ...base, kind: 'soon' };
   return { ...base, kind: 'link', href: hrefOf(entry.id) };
 }
@@ -62,24 +63,48 @@ function tileOf(app) {
   return progressTile(app);
 }
 
+/** Kacheln je Fach, in der Reihenfolge des ersten Auftretens. Mathe und Geometrie stehen so auf einer Karte. */
+export function faecherOf(tiles) {
+  const faecher = [];
+  for (const tile of tiles) {
+    let fach = faecher.find((item) => item.fach === tile.fach);
+    if (!fach) faecher.push((fach = { fach: tile.fach, subject: tile.subject, color: tile.color, tiles: [] }));
+    fach.tiles.push(tile);
+  }
+  return faecher;
+}
+
+// Die gezeigte Klasse: die Wahl, sonst das Profil. Gibt es sie im Katalog nicht, gilt die höchste vorhandene.
+function klasseOf(klassen, wanted) {
+  return klassen.includes(wanted) ? wanted : klassen.at(-1) ?? wanted;
+}
+
 /**
  * Die Ansicht der Startseite als Daten. Ohne Speicher (profileStore null) gibt es den leeren Zustand:
  * eine Meldung und nur Links, kein Fortschritt (RULE-202). Sonst die volle Ansicht.
  */
-export function startseiteModel({ day, storage, profileStore, apps, subject = ALL }) {
-  const subjects = [ALL, ...subjectsOf(apps.map((app) => app.entry))];
+export function startseiteModel({ day, storage, profileStore, apps, subject = ALL, klasse = null }) {
+  const klassen = klassenOf(apps.map((app) => app.entry));
+  const current = klasseOf(klassen, klasse ?? profileStore?.state.klasse ?? DEFAULT_KLASSE);
+  const here = apps.filter((app) => inKlasse(app.entry, current));
+  const earlier = apps.filter((app) => beforeKlasse(app.entry, current));
+  const subjects = [ALL, ...subjectsOf(here.map((app) => app.entry))];
   const shown = (tile) => subject === ALL || tile.subject === subject;
+  const klassenInfo = { klasse: current, klassen };
   if (!profileStore) {
     return {
       mode: 'empty',
       message: storage.message || MSG.unavailable,
       subject,
       subjects,
-      tiles: apps.map(linkTile).filter(shown)
+      ...klassenInfo,
+      tiles: here.map(linkTile).filter(shown),
+      earlierTiles: earlier.map(linkTile)
     };
   }
   const profile = profileStore.state;
   const allTiles = apps.map(tileOf);
+  const tilesOf = (list) => allTiles.filter((tile) => list.some((app) => app.entry.id === tile.id));
   const x = dailyXP(profile, day);
   const goal = dailyGoal(profile);
   const lastApp = profile.lastApp;
@@ -88,6 +113,7 @@ export function startseiteModel({ day, storage, profileStore, apps, subject = AL
     message: storage.status === 'memory' ? storage.message : null,
     subject,
     subjects,
+    ...klassenInfo,
     greeting: greetingOf(profile.name),
     needsName: !profile.name,
     minou: minouLine(x, goal),
@@ -95,11 +121,19 @@ export function startseiteModel({ day, storage, profileStore, apps, subject = AL
     streak: currentStreak(profile, day),
     totalXP: profile.xp,
     trophies: apps.reduce((sum, app) => sum + (app.appStore ? Object.keys(app.appStore.state.badges || {}).length : 0), 0),
-    tiles: allTiles.filter(shown),
+    tiles: tilesOf(here).filter(shown),
+    earlierTiles: tilesOf(earlier),
     // Die Weiter-Karte hängt an der App, nicht am Fach-Filter. Sonst verschwände sie bei jeder Auswahl.
     continueTile: allTiles.find((tile) => tile.kind === 'live' && tile.id === lastApp) || null
   };
 }
+
+// Stand und Balken einer App.
+const progressOfTile = (tile) => [
+  h('div', { key: 'lab', className: 'lab' }, tile.info),
+  h('div', { key: 'bar', className: 'bar', role: 'progressbar', 'aria-label': `Fortschritt in ${tile.title}`, 'aria-valuemin': 0, 'aria-valuemax': 100, 'aria-valuenow': tile.percent },
+    h('i', { style: { width: `${tile.percent}%` } }))
+];
 
 // Eine Kachel, wie legacy dashboard.js:50-60: Fach, Titel, Beschreibung, Stand und Balken.
 function TileCard({ tile }) {
@@ -107,6 +141,7 @@ function TileCard({ tile }) {
   const head = [
     h('span', { key: 'tag', className: 'tag' }, tile.subject),
     h('h3', { key: 'title' }, tile.title),
+    tile.lehrwerk ? h('small', { key: 'buch', className: 'buch' }, tile.lehrwerk) : null,
     h('p', { key: 'desc' }, tile.desc)
   ];
   if (tile.kind === 'soon') {
@@ -116,13 +151,25 @@ function TileCard({ tile }) {
   if (tile.kind === 'nostore') {
     return h('a', { className: 'card tile', style, href: tile.href }, ...head, h('p', { className: 'notice' }, tile.message));
   }
+  return h('a', { className: 'card tile', style, href: tile.href }, ...head, ...progressOfTile(tile));
+}
+
+// Eine App auf der Karte eines Fachs mit mehreren Apps.
+function CourseRow({ tile }) {
+  const head = [h('h3', { key: 'title' }, tile.title), tile.lehrwerk ? h('small', { key: 'buch', className: 'buch' }, tile.lehrwerk) : null, h('p', { key: 'desc' }, tile.desc)];
+  if (tile.kind === 'soon') return h('div', { className: 'course' }, ...head, h('span', { className: 'pill' }, 'Demnächst'));
+  const notice = tile.kind === 'nostore' ? [h('p', { key: 'note', className: 'notice' }, tile.message)] : [];
+  return h('a', { className: 'course', href: tile.href }, ...head, ...notice, ...(tile.kind === 'live' ? progressOfTile(tile) : []));
+}
+
+// Eine Kachel je Fach. Hat das Fach nur eine App, bleibt es die Kachel dieser App.
+function FachCard({ fach }) {
+  if (fach.tiles.length === 1) return h(TileCard, { tile: fach.tiles[0] });
   return h(
-    'a',
-    { className: 'card tile', style, href: tile.href },
-    ...head,
-    h('div', { className: 'lab' }, tile.info),
-    h('div', { className: 'bar', role: 'progressbar', 'aria-label': `Fortschritt in ${tile.title}`, 'aria-valuemin': 0, 'aria-valuemax': 100, 'aria-valuenow': tile.percent },
-      h('i', { style: { width: `${tile.percent}%` } }))
+    'div',
+    { className: 'card tile fach', style: { '--c': fach.color } },
+    h('span', { className: 'tag' }, fach.subject),
+    ...fach.tiles.map((tile) => h(CourseRow, { key: tile.id, tile }))
   );
 }
 
@@ -160,17 +207,42 @@ export function GoalChoice({ goal, onChoose }) {
   );
 }
 
-/** Die Startseite. Hält nur die Fachauswahl und eine Meldung zum Tagesziel. Alles andere kommt aus dem Modell. */
+/** Speichert die Klasse. Eine Klasse außerhalb des Katalogs wird nicht gespeichert. */
+export async function saveKlasse(profileStore, klasse, klassen) {
+  if (!klassen.includes(klasse)) return { ok: false, skipped: true };
+  if (!profileStore) return { ok: false, error: NO_STORAGE };
+  profileStore.state.klasse = klasse;
+  return profileStore.save();
+}
+
+/** Die Wahl der Klasse. Mit nur einer Klasse im Katalog gibt es nichts zu wählen, dann fehlt sie. */
+export function KlassenWahl({ klasse, klassen, onChoose }) {
+  if (klassen.length < 2) return null;
+  return h(
+    'div',
+    { className: 'chips', role: 'group', 'aria-label': 'Deine Klasse' },
+    ...klassen.map((value) => h('button', { key: value, type: 'button', className: 'chip', 'data-klasse': value, 'aria-pressed': value === klasse, onClick: () => onChoose(value) }, `Klasse ${value}`, value === klasse ? h(Icon, { name: 'check' }) : null))
+  );
+}
+
+/** Die Startseite. Hält nur Fach- und Klassenwahl und eine Meldung zum Tagesziel. Alles andere kommt aus dem Modell. */
 export function Startseite({ state }) {
   const [subject, setSubject] = useState(ALL);
+  const [klasse, setKlasse] = useState(null);
   const [goalNote, setGoalNote] = useState(null);
   const [, bump] = useReducer((n) => n + 1, 0);
-  const model = startseiteModel({ day: state.day, storage: state.storage, profileStore: state.profileStore, apps: state.apps, subject });
+  const model = startseiteModel({ day: state.day, storage: state.storage, profileStore: state.profileStore, apps: state.apps, subject, klasse });
   const full = model.mode === 'full';
   const cont = full ? model.continueTile : null;
   async function saveNameAndRedraw(raw) {
     await saveName(state.profileStore, raw);
     bump();
+  }
+  // Die Wahl gilt sofort, auch ohne Speicher. Sie wird nur dann gemerkt, wenn es einen gibt.
+  async function chooseKlasse(value) {
+    setKlasse(value);
+    setSubject(ALL);
+    await saveKlasse(state.profileStore, value, model.klassen);
   }
   async function chooseGoal(value) {
     const saved = await saveGoal(state.profileStore, value);
@@ -219,11 +291,18 @@ export function Startseite({ state }) {
     h(
       'section',
       null,
-      h('h2', null, 'Alle Lern-Apps'),
+      h('h2', null, model.klassen.length > 1 ? `Lern-Apps für Klasse ${model.klasse}` : 'Alle Lern-Apps'),
+      h(KlassenWahl, { klasse: model.klasse, klassen: model.klassen, onChoose: chooseKlasse }),
       h('div', { className: 'chips', role: 'group', 'aria-label': 'Nach Fach filtern' },
         ...model.subjects.map((s) => h('button', { key: s, type: 'button', className: 'chip', 'data-s': s, 'aria-pressed': s === subject, onClick: () => setSubject(s) }, s))),
-      h('div', { className: 'grid' }, ...model.tiles.map((tile) => h(TileCard, { key: tile.id, tile }))),
-      model.tiles.length === 0 ? h('div', { className: 'card empty', style: { display: 'block' } }, 'In diesem Fach gibt es noch keine App.') : null
+      h('div', { className: 'grid' }, ...faecherOf(model.tiles).map((fach) => h(FachCard, { key: fach.fach, fach }))),
+      model.tiles.length === 0 ? h('div', { className: 'card empty', style: { display: 'block' } }, 'In diesem Fach gibt es noch keine App.') : null,
+      // Stoff früherer Klassen bleibt zum Wiederholen erreichbar, aber aus dem Weg.
+      model.earlierTiles.length
+        ? h('details', { className: 'pgroup frueher' },
+          h('summary', null, h('span', null, 'Aus früheren Klassen'), h('span', { className: 'muted' }, `${model.earlierTiles.length} ${model.earlierTiles.length === 1 ? 'App' : 'Apps'}`)),
+          h('div', { className: 'grid' }, ...faecherOf(model.earlierTiles).map((fach) => h(FachCard, { key: fach.fach, fach }))))
+        : null
     )
   );
 }

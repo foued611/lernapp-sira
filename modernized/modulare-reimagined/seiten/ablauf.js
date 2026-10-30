@@ -18,7 +18,8 @@ const QUICK_LOCKED = 'Übe zuerst eine Seite. Die 2-Minuten-Runde wiederholt, wa
 const BOSS_LOCKED = 'Der Endgegner ist noch gesperrt. Erst braucht jede Seite mindestens einen Stern.';
 
 // Gleicher Aufbau wie legacy/modulare/core/js/profile.js:14 und 16.
-export const profileDefaults = () => ({ name: '', xp: 0, streak: 0, lastDay: '', lastApp: '', day: { d: '', xp: 0 } });
+export const DEFAULT_KLASSE = 7;
+export const profileDefaults = () => ({ name: '', klasse: DEFAULT_KLASSE, xp: 0, streak: 0, lastDay: '', lastApp: '', day: { d: '', xp: 0 } });
 // last und acc steuern Auffrischen und gezieltes Training (legacy profile.js:15).
 // seen: Schlüssel der Aufgaben, die richtig beantwortet wurden. Neue Runden bevorzugen andere (runde/src/vielfalt.js).
 // chapters: je Kapitel der beste Kapitel-Test { acc, day }.
@@ -65,6 +66,16 @@ export function followingUnit(app, units, unitId, day) {
   const at = units.findIndex((u) => u.id === unitId);
   const order = [...units.slice(at + 1), ...units.slice(0, Math.max(at, 0))];
   return order.find((u) => starsOf(app.stars, u.id) === 0) || order.find((u) => isRefreshDue(app, u.id, day)) || null;
+}
+
+/**
+ * Zu welcher Station führt der Rückweg zum Lernpfad? Zur besuchten Seite, nach dem Kapitel-Test zur letzten Seite des
+ * Kapitels, denn darunter steht der neue Bestwert. Sonst null: Die Ansicht beginnt oben.
+ */
+export function stationAfter({ theoryUnit, session, summary, units }) {
+  const seen = theoryUnit?.id || session?.unit?.id || summary?.unitId;
+  if (seen) return seen;
+  return units.filter((u) => u.group === summary?.groupId).at(-1)?.id ?? null;
 }
 
 /** Der Kapitel-Test lohnt erst ab zwei Seiten. Bei einer wäre er nur die Lektionsrunde dieser Seite. */

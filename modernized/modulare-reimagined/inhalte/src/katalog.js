@@ -5,10 +5,13 @@ const LIVE = 'live';
 
 /** Eintrag einer App. Von den Seiten bleibt, was Kachel und Suche brauchen: die ID zählt den Fortschritt, der Rest wird gesucht. */
 export function catalogEntry(manifest) {
-  const { subject, desc, status = LIVE } = manifest.catalog;
+  const { fach, klassen, lehrwerk, subject, desc, status = LIVE } = manifest.catalog;
   const chapterOf = (unit) => (manifest.groups ?? []).find((group) => group.id === unit.group)?.title;
   return {
     id: manifest.id,
+    fach,
+    klassen,
+    lehrwerk,
     subject,
     title: manifest.title,
     desc,

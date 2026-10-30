@@ -179,6 +179,7 @@ a.btn{display:inline-block;text-align:center;text-decoration:none}
 .pgroup>summary:focus-visible{outline:3px solid currentColor;outline-offset:2px}
 .pgroup[open]>.path{margin-bottom:14px}
 .albumbox[open]{padding-bottom:14px}
+.pgroup .fromklasse{display:block;font-weight:400}
 .chaptertest{display:grid;gap:8px;justify-items:start;margin:0 0 14px;padding-top:12px;border-top:2px dashed var(--line)}
 .chaptertest p{margin:0;font-size:14px}
 .pgroup>summary>span:first-child{flex:1 1 auto}

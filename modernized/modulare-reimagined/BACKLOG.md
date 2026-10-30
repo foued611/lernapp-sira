@@ -1,6 +1,6 @@
 # Backlog Neubau (modernized/modulare-reimagined)
 
-Stand: 2026-10-27. Quelle: Architektur-Review, Design-Kritik und offene Punkte aus `analysis/modulare/PARITAET.md`.
+Stand: 2026-10-30. Quelle: Architektur-Review, Design-Kritik und offene Punkte aus `analysis/modulare/PARITAET.md`.
 
 Schätzungen sind Schätzungen, keine Messungen. Aufwand in Entwicklertagen (d), ohne Puffer für Browser-Tests.
 
@@ -11,8 +11,8 @@ Status: `offen`, `in Arbeit`, `erledigt`, `verworfen`.
 | ID | Thema | Beschreibung | Grund (Fundstelle) | Aufwand | Abhängig von | Status |
 |---|---|---|---|---|---|---|
 | A-1 | App-Katalog als Daten | App-Liste aus `content/<id>/manifest.json` (`subject`, `status`, `desc`) bauen. `seiten/registry.js` und `apps/index.js` nicht mehr von Hand pflegen. Test: Katalog und Logik stimmen überein. | Drei Quellen: `seiten/registry.js:22-28`, `apps/index.js:10`, `content/`. | 1–2 d | – | erledigt (Feld `catalog` im Manifest, `katalog.mjs`, `inhalte/src/katalog.js`) |
-| A-2 | Klassenstufe im Schema | Optionales Feld `klasse` (Default 7) in `schemas/bundle.schema.json` und im Manifest. Startseite gruppiert nach Klasse. Keine Änderung an IDs. | Kein Modell für weitere Klassen. | 1 d | A-1 | offen |
-| A-3 | Profil mit Klassenbezug | `profileDefaults` um `klasse` erweitern. Migration für bestehende Profile (Default 7). Spätere Mehrprofil-Fähigkeit vorbereiten. | `seiten/rahmen.js:33`: ein Profil pro Browser. | 1–2 d | A-2 | offen |
+| A-2 | Klassenstufe im Schema | Optionales Feld `klasse` (Default 7) in `schemas/bundle.schema.json` und im Manifest. Startseite gruppiert nach Klasse. Keine Änderung an IDs. | Kein Modell für weitere Klassen. | 1 d | A-1 | erledigt, anders als geplant: `klassen` als Liste im Katalog, dazu `groups[].klasse`, weil BW Klasse 7/8 als Doppelstufe führt. Regeln in `AGENTS.md`, Abschnitt Klassen. |
+| A-3 | Profil mit Klassenbezug | `profileDefaults` um `klasse` erweitern. Migration für bestehende Profile (Default 7). Spätere Mehrprofil-Fähigkeit vorbereiten. | `seiten/rahmen.js:33`: ein Profil pro Browser. | 1–2 d | A-2 | erledigt für `klasse` im Profil, ohne Migration (neue Standardfelder kommen beim Laden dazu). Mehrprofil-Fähigkeit offen. |
 | A-4 | Lazy Laden der Apps | Boot lädt nur Startseite und Kacheln. Inhalte, Logik und CSS einer App erst beim Öffnen laden. | `seiten/boot.js:107-109`: alle Apps parallel beim Start. | 0,5–1 d | A-1 | erledigt (Hauptpaket 422 kB auf 293 kB, `apps/index.js`) |
 | A-5 | Ereignisprotokoll begrenzen | Protokoll in IndexedDB mit Index auf `app`. Obergrenze oder Rotation wie bei `SEEN_MAX`. | `speicher/src/backend-storage.js:57` hängt die ganze Liste neu an. `log.js:21-23` liest alles. | 1 d | – | offen |
 | A-6 | `rahmen.js` aufteilen | Sitzungszustand (`sitzung.js`), Auswertung und Speicherung (`auswertung.js`), Rahmen-UI. Datei ist 485 Zeilen. | `seiten/rahmen.js`, größte Datei im Neubau. | 1–2 d | – | erledigt (`seiten/ablauf.js` ohne React, `rahmen.js` zeichnet) |
@@ -22,7 +22,7 @@ Status: `offen`, `in Arbeit`, `erledigt`, `verworfen`.
 
 | ID | Thema | Beschreibung | Grund | Aufwand | Abhängig von | Status |
 |---|---|---|---|---|---|---|
-| B-1 | Sicherung für mehrere Profile | Sicherung und Einspielen mit Klasse und Profil-Kennung. Altdateien bleiben lesbar. | Folgt aus A-3. | 1 d | A-3 | offen |
+| B-1 | Sicherung für mehrere Profile | Sicherung und Einspielen mit Klasse und Profil-Kennung. Altdateien bleiben lesbar. | Folgt aus A-3. | 1 d | A-3 | teils erledigt: `klasse` steht in der Sicherung (Test `SEITE-KLASSE`). Profil-Kennung offen, bis es mehrere Profile gibt. |
 | B-2 | Speicher-Fallback klar anzeigen | Ohne IndexedDB: Hinweis, welche Daten verloren gehen. Test für Arbeitsspeicher-Modus. | Bereits als Meldung da (`boot.js`), Ausbau offen. | 0,5 d | – | offen |
 | B-3 | Speicher-Grenze prüfen | Test: kein `localStorage` und kein `indexedDB` außerhalb `speicher/`. Heute nur manuell geprüft. | `inhalte/src/cache.js` nennt beides nur im Kommentar. Test verhindert Rückfall. | 0,5 d | – | erledigt (`speicher/tests/grenze.test.js`) |
 

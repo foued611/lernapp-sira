@@ -21,12 +21,12 @@ Merksatz: Wer Text ändert, fasst nur `content/` an. Wer eine neue Art von Aufga
 
 Eine Quelle liefert pro App ein Paket `{ manifest, lessons, badges, data }`. Die genaue Form steht in `schemas/bundle.schema.json`, `npm test` prüft jedes Paket in `content/` dagegen.
 
-- **manifest**: `schema` (Version, heute 1), `id`, `title`, `greeting`, `intro`, optional `bossTitle`, `words`, `inputChars`, `resources[]` (Material zum Öffnen oder Ausdrucken, z. B. PDF: `{ title, desc?, href }`, `href` nur relativ), `groups[]` (Kapitel des Lernpfads: `{ id, title }`, Seiten verweisen per `group` auf die `id`), `units[]`, `notes{}`.
+- **manifest**: `schema` (Version, heute 1), `id`, `title`, `greeting`, `intro`, optional `bossTitle`, `words`, `inputChars`, `resources[]` (Material zum Öffnen oder Ausdrucken, z. B. PDF: `{ title, desc?, href }`, `href` nur relativ), `groups[]` (Kapitel des Lernpfads: `{ id, title, klasse? }`, Seiten verweisen per `group` auf die `id`), `units[]`, `notes{}`.
 - **lessons**: je Seite genau eine Lektion mit `goal`, `tldr`, `analogy`, `figure`, `steps`, `pitfall`, `rule`, `check`. Bilder sind Verweise auf Diagramm-Funktionen der App, kein eingebettetes SVG.
 - **badges**: `{ id, n, d, rule }`. Die Regel ist ein Datenobjekt (`regeln/src/trophies.js`), kein Code. So kann eine Datenbank Trophäen speichern, ohne Code auszuführen.
 - **data**: freie Aufgabendaten. Ihre Form legt `logic.js` fest und wird nur dort interpretiert. Apps mit `poolApp()` nutzen `data.items` (Form siehe `runde/src/pool.js`).
 
-Feld `catalog` im Manifest (`subject`, `desc`, `order`, optional `status`) macht eine App auf der Startseite sichtbar. `katalog.mjs` baut daraus beim Bauen `content/katalog.json`. Die Startseite lädt nur diese Datei, Inhalte einer App kommen erst beim Öffnen. Die Quelle liefert beides: `load(appId)` und `catalog()`.
+Feld `catalog` im Manifest (`fach`, `klassen`, `subject`, `desc`, `order`, optional `lehrwerk` und `status`) macht eine App auf der Startseite sichtbar. `katalog.mjs` baut daraus beim Bauen `content/katalog.json`. Die Startseite lädt nur diese Datei, Inhalte einer App kommen erst beim Öffnen. Die Quelle liefert beides: `load(appId)` und `catalog()`.
 
 ## Quellen austauschen
 

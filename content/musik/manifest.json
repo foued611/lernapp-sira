@@ -2,7 +2,7 @@
   "schema": 1,
   "id": "musik",
   "title": "Musik-Werkstatt",
-  "catalog": { "subject": "Musik", "desc": "Takt, Dur und Moll, Akkorde, Stimme, Instrumente, Barock und Klassik, Blues und Jazz, Pop, Oper und Musical, Urheberrecht. Nach den Kapiteln von MusiX 2.", "order": 10 },
+  "catalog": { "fach": "musik", "klassen": [7], "lehrwerk": "MusiX 2", "subject": "Musik", "desc": "Takt, Dur und Moll, Akkorde, Stimme, Instrumente, Barock und Klassik, Blues und Jazz, Pop, Oper und Musical, Urheberrecht. Nach den Kapiteln von MusiX 2.", "order": 10 },
   "greeting": "Hallo",
   "intro": "Die Seiten folgen den Themen aus MusiX 2: Musiklehre, Stimme und Instrumente, Barock und Klassik, Formen und Stile, Musik in der Gesellschaft. Erst die Lektion, dann die Übung. Du kannst auch springen.",
   "bossTitle": "Musik-Check",

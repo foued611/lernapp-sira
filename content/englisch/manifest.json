@@ -2,7 +2,7 @@
   "schema": 1,
   "id": "englisch",
   "title": "Englisch-Werkstatt",
-  "catalog": { "subject": "Englisch", "desc": "Simple Past, Present Perfect, Konditionalsätze, Relativsätze, Passiv und indirekte Rede nach den Units von Access 3. Dazu 229 Vokabeln aus Access 2, Unit 6 mit Abschlusstest zum Ausdrucken.", "order": 3 },
+  "catalog": { "fach": "englisch", "klassen": [7], "lehrwerk": "English G Access 3", "subject": "Englisch", "desc": "Simple Past, Present Perfect, Konditionalsätze, Relativsätze, Passiv und indirekte Rede nach den Units von Access 3. Dazu 229 Vokabeln aus Access 2, Unit 6 mit Abschlusstest zum Ausdrucken.", "order": 3 },
   "greeting": "Hi",
   "intro": "Die Grammatik-Seiten folgen den Units von English G Access 3 (Klasse 7). Dahinter stehen 15 Vokabel-Seiten mit allen 229 Wörtern aus dem Dictionary von Access 2, Unit 6, und ein Abschlusstest zum Ausdrucken. Erst die Lektion, dann die Übung. Du kannst auch springen.",
   "bossTitle": "Final Check",
@@ -12,12 +12,12 @@
     { "id": "grammatik-unit-3", "title": "Grammatik · Unit 3" },
     { "id": "grammatik-unit-4", "title": "Grammatik · Unit 4" },
     { "id": "grammatik-unit-5", "title": "Grammatik · Unit 5" },
-    { "id": "vokabeln-1", "title": "Vokabeln · Kapitel 1" },
-    { "id": "vokabeln-2", "title": "Vokabeln · Kapitel 2" },
-    { "id": "vokabeln-3", "title": "Vokabeln · Kapitel 3" },
-    { "id": "vokabeln-4-5", "title": "Vokabeln · Kapitel 4 und 5" },
-    { "id": "vokabeln-6", "title": "Vokabeln · Kapitel 6" },
-    { "id": "vokabeln-7-8", "title": "Vokabeln · Kapitel 7 und 8" }
+    { "id": "vokabeln-1", "title": "Vokabeln · Kapitel 1", "klasse": 6 },
+    { "id": "vokabeln-2", "title": "Vokabeln · Kapitel 2", "klasse": 6 },
+    { "id": "vokabeln-3", "title": "Vokabeln · Kapitel 3", "klasse": 6 },
+    { "id": "vokabeln-4-5", "title": "Vokabeln · Kapitel 4 und 5", "klasse": 6 },
+    { "id": "vokabeln-6", "title": "Vokabeln · Kapitel 6", "klasse": 6 },
+    { "id": "vokabeln-7-8", "title": "Vokabeln · Kapitel 7 und 8", "klasse": 6 }
   ],
   "units": [
     {

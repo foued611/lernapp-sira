@@ -26,7 +26,7 @@ Ziel: Der Nutzer schickt Fotos aus einem Schulbuch oder eine Themenliste. Am End
 
 ### 2. Fach finden oder anlegen
 
-- Lies das Feld `catalog` in `content/*/manifest.json`. Dort stehen `subject`, `desc`, `order` und optional `status` jeder App, Kennung und Titel stehen im Manifest selbst.
+- Lies das Feld `catalog` in `content/*/manifest.json`. Dort stehen `fach`, `klassen`, `subject`, `desc`, `order` und optional `lehrwerk` und `status` jeder App, Kennung und Titel stehen im Manifest selbst.
 - Passt ein bestehendes Fach (z. B. Englisch für ein englisches Buch), wird eine **neue App** für dieses Buch angelegt, nicht eine bestehende erweitert. Die bestehende App hat eigene Logik, etwa `fr-verben` mit Verbtabellen. Erweitern ist nur auf Wunsch des Nutzers.
 - Gibt es für das Fach schon einen Platzhalter mit `"status": "soon"` im `catalog`, wird **dieser Eintrag** mit derselben Kennung live gesetzt (Feld entfernen). Kein zweiter Eintrag für dasselbe Fach.
 - Passt kein Fach, lege ein neues an:
@@ -61,7 +61,7 @@ Kopiere `modernized/modulare-reimagined/apps/_template/` nach `apps/<id>/`. Eine
 - `logic.js`: nichts zu ändern, außer dem Kommentar. Optional `typedLabel` für das Etikett der Eingabefragen.
 - `tests/<id>.test.js`: `paketVon('<id>')`, und die Testbeschreibungen mit dem Fachnamen.
 - Trage in `modernized/modulare-reimagined/apps/index.js` den Eintrag in `LOGIC` ein: `'<id>': () => import('./<id>/logic.js')`.
-- Setze im Manifest das Feld `catalog` mit `subject`, `desc` und `order` (nächste freie Zahl). Daraus entsteht die Kachel.
+- Setze im Manifest das Feld `catalog` mit `fach` (feste Kennung, neu auch in `SUBJECT_COLORS`), `klassen`, `subject`, `desc`, `order` (nächste freie Zahl) und `lehrwerk`. Daraus entsteht die Kachel. Eine App ist ein Lehrwerk-Band, siehe AGENTS.md, Abschnitt Klassen.
 
 Die Legacy-Oberfläche (`apps/<name>/` im Wurzelordner) baust du **nicht**. Der Nutzer hat entschieden, dass neue Apps nur im Neubau liegen.
 

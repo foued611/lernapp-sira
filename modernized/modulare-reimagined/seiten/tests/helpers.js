@@ -118,9 +118,9 @@ export function fakeSource(failing = []) {
 const FIXTURE_ENTRY = Object.freeze({ units: bundleFor('x').manifest.units.map(({ id }) => ({ id })) });
 
 export const REGISTRY = Object.freeze([
-  { id: 'mathe', subject: 'Mathematik', title: 'Mathe-Werkstatt', desc: 'Zahlen und Gleichungen.', status: 'live', ...FIXTURE_ENTRY },
-  { id: 'deutsch', subject: 'Deutsch', title: 'Deutsch-Werkstatt', desc: 'Texte und Regeln.', status: 'live', ...FIXTURE_ENTRY },
-  { id: 'physik', subject: 'Physik', title: 'Physik-App', desc: 'Kräfte.', status: 'soon' }
+  { id: 'mathe', fach: 'mathematik', klassen: [7], subject: 'Mathematik', title: 'Mathe-Werkstatt', desc: 'Zahlen und Gleichungen.', status: 'live', ...FIXTURE_ENTRY },
+  { id: 'deutsch', fach: 'deutsch', klassen: [7], subject: 'Deutsch', title: 'Deutsch-Werkstatt', desc: 'Texte und Regeln.', status: 'live', ...FIXTURE_ENTRY },
+  { id: 'physik', fach: 'physik', klassen: [7], subject: 'Physik', title: 'Physik-App', desc: 'Kräfte.', status: 'soon' }
 ]);
 
 // Logik der Testapps: Diagramm für die Lektionen und die Rundenquellen wie in einer echten App (logic.js).

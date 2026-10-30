@@ -16,6 +16,17 @@ Anweisungen für Coding-Agenten und Mitwirkende. Lies diese Datei vor jeder Änd
 - Alle Pfade im HTML und in Imports sind relativ, weil die Seite unter `/lernapp-sira/` liegt.
 - Schriften liegen selbst gehostet in `seiten/design/fonts/` (WOFF2, Lizenzen OFL daneben), es gibt keine Anfragen an Google. Neue externe Skripte oder Dienste nur nach Absprache (Datenschutz, DSGVO).
 
+## Klassen
+
+Die App ist für weitere Klassen vorbereitet. So kommt neuer Stoff dazu:
+
+- Eine App ist ein Lehrwerk-Band. Lambacher Schweizer 8 wird die neue App `mathe-8`. Ein Doppelband wie Biosphäre 7/8 bleibt eine App und bekommt weitere Kapitel.
+- Bestehende Kennungen bleiben. `mathe` ist und bleibt der Band für Klasse 7, sonst ginge der Lernstand verloren.
+- `catalog` im Manifest: `fach` (feste Kennung, Apps eines Fachs stehen zusammen), `klassen` (dort erscheint die App), `lehrwerk`.
+- `groups[].klasse` ist optional. Es markiert ein Kapitel, das nicht zu `klassen` der App gehört, zum Beispiel Wiederholung aus Klasse 6.
+- Die Klasse ist kein einzelner Wert je App, weil der Bildungsplan BW Klasse 7 und 8 als Doppelstufe führt.
+- Die Klassenwahl auf der Startseite erscheint erst, wenn der Katalog mehr als eine Klasse enthält. Sie steht in `profile.klasse`. Apps früherer Klassen bleiben eingeklappt erreichbar.
+
 ## Neubau
 
 Die Regeln des Neubaus (Grenzen, Zufall, App-Vertrag, Befehle) stehen in `modernized/modulare-reimagined/CLAUDE.md`. Sie gelten nur beim Arbeiten in diesem Ordner.
@@ -41,7 +52,7 @@ Regeln:
 
 - Alles liegt in der Browser-Datenbank IndexedDB (`speicher/src/backend-idb.js`, Datenbank `lernwerkstatt`). Ist sie nicht verfügbar, wechselt die App selbstständig auf `localStorage` oder zuletzt auf den Arbeitsspeicher.
 - Zwei Sammlungen: `docs` (JSON-Dokumente unter einem Schlüssel) und `log` (beliebige Ereignisse, z. B. jede beendete Runde mit App, Seite, Genauigkeit, Sternen).
-- `lernwerkstatt:profile`: Name, XP, Serie, letzte App, Tages-XP. `lernwerkstatt:app:<id>`: XP, Sterne je Seite, Trophäen, Bestwerte der App.
+- `lernwerkstatt:profile`: Name, Klasse, XP, Serie, letzte App, Tages-XP. `lernwerkstatt:app:<id>`: XP, Sterne je Seite, Trophäen, Bestwerte der App.
 - Das Schema ist offen. `openProfile(handle, defaults, { version, migrate })` und `openApp(handle, id, defaults)` sind asynchron (`await`), danach ist `store.state` synchron nutzbar, `store.save()` schreibt im Hintergrund. Gespeicherte Felder bleiben erhalten, neue Standardfelder werden beim Laden ergänzt (auch verschachtelt). Neue Felder brauchen deshalb keine Migration.
 - Eine Migration (`version` erhöhen, `migrate(old, fromVersion)`) ist nur nötig, wenn sich die Bedeutung vorhandener Felder ändert.
 - Eine neue Sammlung (z. B. für Karteikarten) braucht `DB_VERSION` in `speicher/src/constants.js` plus einen Zweig in `upgrade()` (`speicher/src/backend-idb.js`). Bestehende Sammlungen nie umbauen.
@@ -105,7 +116,7 @@ Regeln für Texte und Bilder:
 
 ## Lehrplan
 
-- Inhalt entspricht dem Gymnasium Baden-Württemberg, Klasse 7. Kein Stoff ab Klasse 8.
+- Inhalt entspricht dem Gymnasium Baden-Württemberg und der Klasse in `catalog.klassen`, heute Klasse 7. Kein Stoff aus höheren Klassen.
 - Orientierung an den Lehrwerken: Lambacher Schweizer 7 (Mathe), deutsch.ideen 7 Baden-Württemberg (Deutsch, Schulbuch; Abgleich in `docs/lehrplan-deutsch.md`), Green Line 3 / Access 3 (Englisch, Grammatik), Access 2 Unit 6 (Englisch, Wortschatz; Abgleich in `docs/lehrplan-englisch.md`), Découvertes 2 (Französisch).
 - Der Abgleich der Mathe-App mit dem Bildungsplan steht in `docs/lehrplan-mathe.md`. Dort ist auch vermerkt, was nicht amtlich geprüft ist. Neue Themen dort eintragen.
 - Korrekte Fachbegriffe verwenden und kurz erklären.

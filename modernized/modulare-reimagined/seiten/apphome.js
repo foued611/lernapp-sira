@@ -217,7 +217,7 @@ export function AppHome({ config, app, profile, day, rec, open, notice, storeMes
       null,
       h('h2', null, 'Dein Lernpfad'),
       h('p', { className: 'muted', style: { margin: '4px 0 14px', fontSize: '14px' } }, config.intro || 'Starte irgendwo. Die Reihenfolge ist nur ein Vorschlag.'),
-      ...pathGroups(units, config.groups).map(({ id, title, units: inGroup }) => {
+      ...pathGroups(units, config.groups).map(({ id, title, klasse, units: inGroup }) => {
         const path = h(
           'ol',
           { className: 'path' },
@@ -231,7 +231,7 @@ export function AppHome({ config, app, profile, day, rec, open, notice, storeMes
         return h(
           'details',
           { key: id, className: 'pgroup', open: inGroup.some((u) => u.id === nextId || u.id === focusId) || undefined },
-          h('summary', null, h('span', null, title), h('span', { className: 'muted' }, `${geschafft} von ${inGroup.length} geschafft${faellig ? ` · ${faellig} fällig` : ''}`)),
+          h('summary', null, h('span', null, title, klasse && !config.klassen?.includes(klasse) ? h('small', { className: 'muted fromklasse' }, `aus Klasse ${klasse}`) : null), h('span', { className: 'muted' }, `${geschafft} von ${inGroup.length} geschafft${faellig ? ` · ${faellig} fällig` : ''}`)),
           path,
           hasChapterTest({ units: inGroup }) ? h(ChapterTest, { app, group: { id, title, units: inGroup }, onStart: onChapter }) : null
         );
