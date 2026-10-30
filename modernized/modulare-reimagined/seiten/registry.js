@@ -1,7 +1,7 @@
 // Liste der Lern-Apps für die Startseite. Die Einträge stammen aus legacy/modulare/registry.js:18-66.
 // Bewusst ohne Seitenzahl: die kommt aus dem Inhaltspaket jeder App (RULE-259). Ohne Farben: das Fach steht als Text.
 import { assertAppId } from '../inhalte/index.js';
-import { trackOf } from '../komponenten/tracks.js';
+import { trackOf } from '../helfer/index.js';
 
 export const LIVE = 'live';
 export const SOON = 'soon';

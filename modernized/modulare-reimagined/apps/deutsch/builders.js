@@ -11,8 +11,7 @@
 //
 // Zufall kommt immer als rng herein (AGENTS.md: Zufall nur testbar). Ohne rng gibt es keinen Erzeuger.
 import { choiceQuestion, typedQuestion, option, esc, normalise } from '../../runde/index.js';
-import { pick, shuffle } from '../../helfer/index.js';
-import { trackOf } from '../../komponenten/tracks.js';
+import { pick, shuffle, trackOf } from '../../helfer/index.js';
 
 let UNITS = [];
 let ITEMS = {};

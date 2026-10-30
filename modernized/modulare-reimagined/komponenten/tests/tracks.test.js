@@ -2,7 +2,8 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
-import { trackOf, TrackLabel } from '../tracks.js';
+import { trackOf } from '../../helfer/index.js';
+import { TrackLabel } from '../tracks.js';
 
 const h = createElement;
 
