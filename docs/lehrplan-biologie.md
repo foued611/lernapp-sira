@@ -24,3 +24,4 @@ Stand: 2026-10-29. Quelle: Beispielcurriculum Biologie Klasse 7/8, Gymnasium (sc
 
 - Ob die Schule die Reihenfolge und den Umfang des Beispielcurriculums verwendet.
 - Fachinhalte (Zusammensetzung der Luft, Dauer der Schwangerschaft, Aufgaben der Blutbestandteile): Schulwissen, vor dem Einsatz gegenlesen lassen.
+- Die 128 Aufgaben, die 2026-10-30 dazugekommen sind (jede Seite jetzt 20, erkennbar an `level` und `skill`), hat noch keine Lehrkraft gegengelesen. Das gilt besonders für F1 und F2.
