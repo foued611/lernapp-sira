@@ -3,13 +3,14 @@
 // Jeder Aufruf von createPool hat seinen eigenen Stand. Zwei Apps können denselben Code mit anderem Inhalt nutzen.
 // Die Reihenfolge der Zufallsaufrufe ist fest, gleicher Seed liefert dieselben Fragen (Dual-Execution, analysis/modulare).
 //
-// Eine Aufgabe: { q, s?, kind?, a, wrong[], why, label?, skill?, accept? }
+// Eine Aufgabe: { q, s?, kind?, a, wrong[], why, label?, skill?, accept?, level? }
 //   q       Frage oder Anweisung (reiner Text)
 //   s       optional: ein Satz, der unter der Frage steht
 //   kind    'gap' = Lückensatz. In s steht ___ als Lücke. Dann sind Auswahl und Eintippen möglich
 //   a       richtige Antwort, wrong: falsche Antworten (bei 'gap' genügt eine, sonst mindestens drei)
 //   skill   optional: was die Aufgabe übt, für den Fehler-Abruf (runde/src/abruf.js). Fehlt es, gilt skillOf
 //   accept  optional: weitere richtige Eingaben beim Eintippen
+//   level   optional: 1 erkennen, 2 anwenden, 3 übertragen. Die Runden werten es noch nicht aus
 import { pick, shuffle, trackOf } from '../../helfer/index.js';
 import { choiceQuestion, option, typedQuestion } from './questions.js';
 import { esc, normalise } from './text.js';

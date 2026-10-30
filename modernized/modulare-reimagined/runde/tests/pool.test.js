@@ -32,6 +32,22 @@ test('POOL: recall liefert genau die Aufgaben der Seite mit diesem skill', () =>
   assert.deepEqual(recall({ id: 'gibt-es-nicht' }, ['Frage 2'], rngFor(1)), []);
 });
 
+test('POOL: geteilter skill holt alle Aufgaben dazu zurück', () => {
+  const p = paket();
+  p.data.items.a[0].skill = 'rechnen';
+  p.data.items.a[1].skill = 'rechnen';
+  const { recall } = createPool(p);
+  assert.deepEqual(recall({ id: 'a' }, ['rechnen'], rngFor(1)).map((q) => q.answer), ['A1', 'A2']);
+});
+
+test('POOL: level ändert keine Frage', () => {
+  const ohne = paket();
+  const mit = paket();
+  mit.data.items.a = mit.data.items.a.map((entry) => ({ ...entry, level: 2 }));
+  const fragen = (p) => JSON.stringify(createPool(p).lessonRound(p.manifest.units[0], rngFor(1)));
+  assert.equal(fragen(mit), fragen(ohne));
+});
+
 test('POOL: Strang nur mit withTrack, Etikett der Eingabe wählbar', () => {
   const p = paket();
   const ohne = createPool(p).choice(p.data.items.a[0], rngFor(1));
