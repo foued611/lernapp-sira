@@ -10,3 +10,5 @@ legacy/
 .impeccable/
 dist/
 **/public/content/
+# Fremder Skill, nur lokal
+.claude/skills/ui-ux-pro-max/

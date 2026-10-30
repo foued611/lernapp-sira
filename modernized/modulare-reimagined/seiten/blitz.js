@@ -1,6 +1,6 @@
 // Blitz: 45 Sekunden, nur Auswahlfragen, Combo und XP. Herkunft: legacy/modulare/core/js/blitz.js.
 // Die Regeln stehen in runde/ (createBlitz). Hier liegen Uhr, Anzeige und die Umrechnung in ein Rundenergebnis,
-// damit Auswertung und Speicher denselben Weg nehmen wie bei einer Runde (settleRound in rahmen.js).
+// damit Auswertung und Speicher denselben Weg nehmen wie bei einer Runde (settleRound in ablauf.js).
 import { createElement, Fragment, useEffect, useReducer, useRef, useState } from 'react';
 import { BLITZ_SECONDS, createBlitz } from '../runde/index.js';
 import { richText } from '../komponenten/rich.js';
