@@ -332,7 +332,7 @@ export function createBuilders({ data, manifest }) {
 
   const anyItem = (rng, from = units) => makeIn(pick(from, rng).id, rng);
   const quickRound = (rng, from = units) => distinctSlots(5, rng, (_, r) => choice(anyItem(r, from), r));
-  const blitzQuestion = (rng) => choice(anyItem(rng), rng);
+  const blitzQuestion = (rng, from = units) => choice(anyItem(rng, from), rng);
   const bossRound = (rng) => distinctSlots(12, rng, (i, r) => {
     const item = makeIn(units[i % units.length].id, r);
     return i % 4 === 3 && canType(item) ? typed(item) : choice(item, r);

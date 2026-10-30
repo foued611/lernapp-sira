@@ -22,11 +22,12 @@ export const DEFAULT_KLASSE = 7;
 export const profileDefaults = () => ({ name: '', klasse: DEFAULT_KLASSE, xp: 0, streak: 0, lastDay: '', lastApp: '', day: { d: '', xp: 0 } });
 // last und acc steuern Auffrischen und gezieltes Training (legacy profile.js:15).
 // seen: Schlüssel der Aufgaben, die richtig beantwortet wurden. Neue Runden bevorzugen andere (runde/src/vielfalt.js).
+// box: je Seite die Stufe in REVIEW_STEPS, also wie lange sie bis zum nächsten Auffrischen warten darf.
 // chapters: je Kapitel der beste Kapitel-Test { acc, day }.
 // missed: je Seite die Kategorien (skill, sonst Etikett) der Fragen, die in der letzten Lektionsrunde im ersten Versuch falsch waren (Fehler-Abruf).
 // refreshes: Zahl der bezahlten Auffrischungen (Trophäe refresh, Wochenmission refresh1 zählt separat).
 // merged: Quellen, deren Stand schon in diese App übernommen wurde (seiten/uebernahme.js).
-export const appDefaults = () => ({ xp: 0, stars: {}, badges: {}, best: {}, last: {}, acc: {}, seen: {}, missed: {}, refreshes: 0, merged: {}, chapters: {} });
+export const appDefaults = () => ({ xp: 0, stars: {}, badges: {}, best: {}, last: {}, acc: {}, seen: {}, missed: {}, refreshes: 0, merged: {}, chapters: {}, box: {} });
 // Obergrenze je App, damit der Stand klein bleibt. Die ältesten Schlüssel fallen zuerst weg.
 export const SEEN_MAX = 2000;
 export const RIGHT = Object.freeze(new Set(['ok', 'almost']));
@@ -61,11 +62,19 @@ export const practisedUnits = (app, units) => units.filter((u) => starsOf(app.st
 /**
  * Welche Seite kommt nach unitId? Die nächste ohne Stern im Pfad, hinten angekommen geht es vorn weiter.
  * Ist nichts mehr offen, die erste fällige. Sonst null. Wer gezielt springt, bleibt so an seiner Stelle im Pfad.
+ * Wer gerade auffrischt (refreshing), macht damit weiter: Dann geht die fällige Seite vor der offenen.
  */
-export function followingUnit(app, units, unitId, day) {
+export function followingUnit(app, units, unitId, day, { refreshing = false } = {}) {
   const at = units.findIndex((u) => u.id === unitId);
   const order = [...units.slice(at + 1), ...units.slice(0, Math.max(at, 0))];
-  return order.find((u) => starsOf(app.stars, u.id) === 0) || order.find((u) => isRefreshDue(app, u.id, day)) || null;
+  const open = order.find((u) => starsOf(app.stars, u.id) === 0);
+  const due = order.find((u) => isRefreshDue(app, u.id, day));
+  return (refreshing ? due || open : open || due) || null;
+}
+
+/** Seiten, auf denen diese Seite aufbaut (needs) und die noch keinen Stern haben. Nur ein Hinweis, gesperrt wird nichts. */
+export function unmetNeeds(app, unit, units) {
+  return (unit.needs ?? []).map((id) => units.find((u) => u.id === id)).filter((u) => u && starsOf(app.stars, u.id) === 0);
 }
 
 /**

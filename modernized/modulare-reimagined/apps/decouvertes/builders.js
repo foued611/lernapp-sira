@@ -21,8 +21,8 @@ export function createBuilders(paket) {
 
   const quickRound = (rng, from = units) => Array.from({ length: 5 }, () => questionIn(pick(from, rng), rng));
   // Blitz gibt immer Auswahl aus (Blitz hat keine Eingabe).
-  const blitzQuestion = (rng) => {
-    const unit = pick(units, rng);
+  const blitzQuestion = (rng, from = units) => {
+    const unit = pick(from, rng);
     return unit.verbs ? verbs.verbBlitz(unit, rng) : choice(pick(items[unit.id], rng), rng);
   };
 

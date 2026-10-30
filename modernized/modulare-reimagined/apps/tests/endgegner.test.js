@@ -49,6 +49,7 @@ for (const entry of APPS.filter((e) => e.status === LIVE && paketVon(e.id).data.
     for (let seed = 1; seed <= 50; seed++) {
       for (const frage of config.rounds.quick(createRng(seed), [unit])) assert.equal(seiten.get(frage.why), unit.id);
     }
+    if (!unit.verbs) for (let seed = 1; seed <= 50; seed++) assert.equal(seiten.get(config.blitz(createRng(seed), [unit]).why), unit.id);
   });
 }
 
@@ -61,6 +62,23 @@ for (const id of ['mathe', 'geometrie', 'info-zahlen']) {
     const eine = etiketten([config.units[0]]);
     assert.ok(eine.size < alle.size, `${eine.size} von ${alle.size}`);
     assert.ok([...eine].every((label) => alle.has(label)));
+  });
+
+  test(`BLITZ: ${id} fragt nur Seiten ab, die schon geübt sind`, () => {
+    const config = buildConfig(paketVon(id), logicFor(id));
+    const etiketten = (seiten) => new Set(Array.from({ length: 300 }, (_, seed) => config.blitz(createRng(seed + 1), seiten).label));
+    const alle = etiketten(config.units);
+    const eine = etiketten([config.units[0]]);
+    assert.ok(eine.size < alle.size, `${eine.size} von ${alle.size}`);
+  });
+}
+
+for (const entry of APPS.filter((e) => e.status === LIVE)) {
+  test(`BLITZ: ${entry.id} liefert aus jeder einzelnen Seite Auswahlfragen`, () => {
+    const config = buildConfig(paketVon(entry.id), logicFor(entry.id));
+    for (const unit of config.units) {
+      for (let seed = 1; seed <= 20; seed++) assert.equal(config.blitz(createRng(seed), [unit]).kind, 'choice', unit.id);
+    }
   });
 }
 

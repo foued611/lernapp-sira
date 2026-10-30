@@ -77,7 +77,7 @@ export function createPool({ data, manifest }, { typedLabel = 'Schreibe das fehl
   const anyItem = (rng, from = units) => pick(items[pick(from, rng).id], rng);
   /** from: die Seiten, aus denen die Runde zieht. Die Seiten-Schicht gibt die schon geübten mit. */
   const quickRound = (rng, from = units) => Array.from({ length: 5 }, () => choice(anyItem(rng, from), rng));
-  const blitzQuestion = (rng) => choice(anyItem(rng), rng);
+  const blitzQuestion = (rng, from = units) => choice(anyItem(rng, from), rng);
   const bossRound = (rng) => Array.from({ length: 12 }, (_, i) => {
     const item = pick(items[spreadPick(units, i, 12, rng).id], rng);
     return i % 4 === 3 && isGap(item) ? typed(item) : choice(item, rng);

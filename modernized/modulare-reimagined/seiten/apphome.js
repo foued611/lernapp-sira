@@ -254,7 +254,10 @@ export function AppHome({ config, app, profile, day, rec, open, notice, storeMes
           ? h('div', { className: 'card' },
             h('h3', null, 'Blitz'),
             h('p', null, `${BLITZ_SECONDS} Sekunden Tempo. Wie viele schaffst du? Bestwert: `, h('b', null, app.best.blitz || 0)),
-            h('button', { type: 'button', className: 'btn', onClick: () => onStart('blitz') }, 'Blitz starten'))
+            // Der Blitz wiederholt. Vor der ersten geübten Seite nennt die Karte das, statt ungelernten Stoff zu zeigen.
+            started
+              ? h('button', { type: 'button', className: 'btn', onClick: () => onStart('blitz') }, 'Blitz starten')
+              : h('p', null, 'Übe zuerst eine Seite, dann geht es los.'))
           : null,
         bossHasRounds
           ? h('div', { className: 'card' },

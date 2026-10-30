@@ -2,7 +2,7 @@
 // legacy/modulare/dashboard.js und index.html (Pixelparität, analysis/modulare/PARITAET.md). startseiteModel ist rein.
 // Die Komponenten zeichnen nur. Seiten ist die Wurzel (Start oder App).
 import { createElement, useReducer, useState } from 'react';
-import { DAILY_GOAL_XP, GOAL_CHOICES, currentStreak, dailyGoal, dailyXP, setDailyGoal } from '../regeln/index.js';
+import { DAILY_GOAL_XP, GOAL_CHOICES, currentStreak, dailyGoal, dailyXP, isRefreshDue, setDailyGoal } from '../regeln/index.js';
 import { progressOf, doneUnits } from '../komponenten/ui.js';
 import { Mascot } from '../komponenten/mascot.js';
 import { Icon } from '../komponenten/icons.js';
@@ -11,6 +11,7 @@ import { NAME_MAX, NO_STORAGE, greetingOf, maskName, saveName } from './name.js'
 import { Sicherung } from './sicherung.js';
 import { ThemeToggle } from './thema.js';
 import { Suche } from './suche.js';
+import { searchOf } from './adresse.js';
 import { LIVE, SUBJECT_COLORS, beforeKlasse, inKlasse, klassenOf, subjectsOf } from './registry.js';
 import { DEFAULT_KLASSE } from './ablauf.js';
 import { MSG } from './boot.js';
@@ -61,6 +62,31 @@ function tileOf(app) {
   if (app.entry.status !== LIVE) return linkTile(app);
   if (!app.appStore) return { ...linkTile(app), kind: 'nostore', message: app.storeMessage || MSG.unavailable };
   return progressTile(app);
+}
+
+// So viele fällige Seiten nennt die Karte "Heute". Mehr würde abschrecken, der Rest kommt danach dran.
+export const TODAY_MAX = 3;
+
+/**
+ * Fällige Seiten aus allen Apps, die am längsten nicht geübten zuerst. Auch Apps früherer Klassen zählen:
+ * Was vergessen wird, ist egal, wo es steht.
+ */
+export function todayOf(apps, day) {
+  const due = apps
+    .filter((app) => app.appStore)
+    .flatMap((app) => app.units
+      .filter((unit) => isRefreshDue(app.appStore.state, unit.id, day))
+      .map((unit) => ({ app, unit, last: app.appStore.state.last[unit.id] })))
+    .sort((a, b) => a.last.localeCompare(b.last));
+  return {
+    total: due.length,
+    items: due.slice(0, TODAY_MAX).map(({ app, unit }) => ({
+      key: `${app.entry.id}/${unit.id}`,
+      title: unit.title,
+      where: app.entry.title,
+      href: searchOf(app.entry.id, unit.id)
+    }))
+  };
 }
 
 /** Kacheln je Fach, in der Reihenfolge des ersten Auftretens. Mathe und Geometrie stehen so auf einer Karte. */
@@ -124,6 +150,7 @@ export function startseiteModel({ day, storage, profileStore, apps, subject = AL
     tiles: tilesOf(here).filter(shown),
     earlierTiles: tilesOf(earlier),
     // Die Weiter-Karte hängt an der App, nicht am Fach-Filter. Sonst verschwände sie bei jeder Auswahl.
+    today: todayOf(apps, day),
     continueTile: allTiles.find((tile) => tile.kind === 'live' && tile.id === lastApp) || null
   };
 }
@@ -225,6 +252,23 @@ export function KlassenWahl({ klasse, klassen, onChoose }) {
   );
 }
 
+// Die Karte "Heute": was jetzt fällig ist, über alle Fächer. Ohne fällige Seite gibt es sie nicht.
+function TodayCard({ today }) {
+  const more = today.total - today.items.length;
+  return h(
+    'section',
+    { className: 'card heute', 'aria-labelledby': 'heute-h' },
+    h('h2', { id: 'heute-h' }, 'Heute auffrischen'),
+    h('p', { className: 'muted' }, 'Diese Seiten sind fällig. Wiederholen nach ein paar Tagen hält dein Wissen fest.'),
+    h('ul', { className: 'treffer' }, ...today.items.map((item) => h(
+      'li',
+      { key: item.key },
+      h('a', { href: item.href }, h('b', null, item.title), h('small', null, item.where))
+    ))),
+    more > 0 ? h('p', { className: 'muted' }, `Dazu ${more} weitere ${more === 1 ? 'Seite' : 'Seiten'}.`) : null
+  );
+}
+
 /** Die Startseite. Hält nur Fach- und Klassenwahl und eine Meldung zum Tagesziel. Alles andere kommt aus dem Modell. */
 export function Startseite({ state }) {
   const [subject, setSubject] = useState(ALL);
@@ -279,6 +323,7 @@ export function Startseite({ state }) {
       full && goalNote ? h('p', { className: 'notice', role: 'status' }, goalNote) : null
     ),
     model.message ? h('p', { className: 'notice', role: 'status' }, model.message) : null,
+    full && model.today.total ? h(TodayCard, { today: model.today }) : null,
     cont
       ? h(
         'section',

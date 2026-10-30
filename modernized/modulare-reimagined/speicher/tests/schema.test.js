@@ -3,6 +3,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { IDBFactory } from 'fake-indexeddb';
 import { openStore } from '../index.js';
+import { firstBadField } from '../src/schema.js';
 import { blobOf } from './helpers.js';
 
 const PROFILE_KEY = 'lernwerkstatt:profile';
@@ -88,4 +89,20 @@ test('SCHEMA-FELDER: Ein gültiges Profil mit typischen Werten passiert die Prü
   const ergebnis = await h.importAll(blobOf(sicherung({ [PROFILE_KEY]: doc })), { confirm: true });
   assert.equal(ergebnis.ok, true);
   h.close();
+});
+
+test('SCHEMA: Ein Tag, den es im Kalender nicht gibt, wird abgelehnt', () => {
+  const key = 'lernwerkstatt:app:mathe';
+  assert.equal(firstBadField(key, { last: { a: '2026-10-30' } }), null);
+  assert.equal(firstBadField(key, { last: { a: '' } }), null);
+  assert.notEqual(firstBadField(key, { last: { a: '2026-02-31' } }), null);
+  assert.notEqual(firstBadField(key, { last: { a: '2026-13-01' } }), null);
+});
+
+test('SCHEMA: Stufen und Bestwerte der Kapitel haben feste Typen', () => {
+  const key = 'lernwerkstatt:app:mathe';
+  assert.equal(firstBadField(key, { box: { a: 2 }, chapters: { g: { acc: 0.8, day: '2026-10-30' } } }), null);
+  assert.equal(firstBadField(key, { box: { a: 'x' } }), 'box');
+  assert.equal(firstBadField(key, { chapters: 'x' }), 'chapters');
+  assert.equal(firstBadField(key, { chapters: { g: { acc: 2, day: '2026-10-30' } } }), 'chapters');
 });

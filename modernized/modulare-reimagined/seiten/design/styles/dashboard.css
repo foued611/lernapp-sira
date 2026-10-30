@@ -49,3 +49,8 @@
 .shell.dash a.course:hover h3{text-decoration:underline}
 .shell.dash .frueher{margin-top:18px}
 .shell.dash .frueher .grid{margin-bottom:14px}
+
+/* Karte "Heute" */
+.shell.dash .heute{display:grid;gap:10px;padding:18px}
+.shell.dash .heute h2{margin:0}
+.shell.dash .heute p{margin:0;font-size:14px}

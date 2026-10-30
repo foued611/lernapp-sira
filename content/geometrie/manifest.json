@@ -44,7 +44,7 @@
       }
     },
     {
-      "id": "dreiecke", "group": "kapitel-3",
+      "id": "dreiecke", "group": "kapitel-3", "needs": ["winkelhalbierende"],
       "color": "#3DD6B0",
       "ic": "△",
       "title": "Dreiecke konstruieren",
@@ -77,7 +77,7 @@
       }
     },
     {
-      "id": "thales", "group": "kapitel-5",
+      "id": "thales", "group": "kapitel-5", "needs": ["winkel"],
       "color": "#FF6B88",
       "ic": "◠",
       "title": "Satz des Thales",
@@ -88,7 +88,7 @@
       }
     },
     {
-      "id": "kreise", "group": "kapitel-5",
+      "id": "kreise", "group": "kapitel-5", "needs": ["mittelsenkrechte", "winkelhalbierende"],
       "color": "#8BD450",
       "ic": "◎",
       "title": "Umkreis und Inkreis",
@@ -99,7 +99,7 @@
       }
     },
     {
-      "id": "probleme", "group": "kapitel-5",
+      "id": "probleme", "group": "kapitel-5", "needs": ["winkel"],
       "color": "#FF8AD0",
       "ic": "?",
       "title": "Geometrische Probleme lösen",
