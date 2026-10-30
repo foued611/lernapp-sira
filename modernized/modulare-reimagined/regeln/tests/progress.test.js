@@ -1,7 +1,8 @@
 // Tests für Sterne, Trefferquote, Auffrischen und die Empfehlung für die nächste Übung.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { isRefreshDue, roundAccuracy, starsFor, weakestUnit } from '../src/progress.js';
+import { isRefreshDue, nextReviewStep, reviewStep, roundAccuracy, starsFor, weakestUnit } from '../src/progress.js';
+import { REVIEW_STEPS } from '../src/constants.js';
 
 const units = [{ id: 'u1' }, { id: 'u2' }, { id: 'u3' }];
 
@@ -136,4 +137,35 @@ test('Auffrischen: knapp unter 90 % bleibt bei 3 Tagen', () => {
 test('Auffrischen: ohne Genauigkeit gilt weiter 3 Tage', () => {
   const app = { stars: { a: 1 }, last: { a: '2026-10-24' } };
   assert.equal(isRefreshDue(app, 'a', '2026-10-27'), true);
+});
+
+test('Auffrischen: Mit Stufe zählt ihr Abstand, nicht die letzte Genauigkeit', () => {
+  const app = { stars: { a: 3 }, last: { a: '2026-10-01' }, acc: { a: 0.5 }, box: { a: 2 } };
+  assert.equal(isRefreshDue(app, 'a', '2026-10-14'), false);
+  assert.equal(isRefreshDue(app, 'a', '2026-10-15'), true);
+  assert.equal(isRefreshDue({ ...app, box: { a: 4 } }, 'a', '2026-11-29'), false);
+  assert.equal(isRefreshDue({ ...app, box: { a: 4 } }, 'a', '2026-11-30'), true);
+});
+
+test('Auffrischen: Eine fremde Stufe bleibt im gültigen Bereich', () => {
+  assert.equal(reviewStep({ box: { a: 99 } }, 'a'), REVIEW_STEPS.length - 1);
+  assert.equal(reviewStep({ box: { a: -2 } }, 'a'), 0);
+  assert.equal(reviewStep({ box: { a: 'x' }, acc: { a: 0.95 } }, 'a'), 1);
+});
+
+test('Auffrischen: Ab 2 Sternen geht die Stufe hoch, sonst zurück auf den Anfang', () => {
+  assert.equal(nextReviewStep(1, 2), 2);
+  assert.equal(nextReviewStep(4, 3), 4);
+  assert.equal(nextReviewStep(3, 1), 0);
+  assert.equal(nextReviewStep(3, 0), 0);
+});
+
+test('Auffrischen: Die Abstände wachsen und beginnen mit den alten Fristen', () => {
+  assert.deepEqual(REVIEW_STEPS, [3, 7, 14, 30, 60]);
+});
+
+test('Auffrischen: Ein kaputter Tag aus dem Speicher macht die Seite nicht fällig und wirft nicht', () => {
+  for (const last of ['2026-02-31', '2026-13-01', 'abc', 12, '']) {
+    assert.equal(isRefreshDue({ stars: { a: 2 }, last: { a: last }, acc: {} }, 'a', '2026-10-30'), false, String(last));
+  }
 });

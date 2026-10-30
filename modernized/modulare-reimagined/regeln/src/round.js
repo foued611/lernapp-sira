@@ -1,9 +1,9 @@
 // Auswertung einer beendeten Runde (rounds.js): Sterne, Auffrischen, Bestwerte, Endgegner,
 // Serie und Trophäen. Verändert profile und app. Das Ergebnis ist ein neues Objekt.
 import { BOSS_BONUS_XP, MISSION_REWARD_XP, REFRESH_BONUS_XP } from './constants.js';
-import { assertDay, dayDiff } from './dates.js';
+import { assertDay, dayDiff, isDay } from './dates.js';
 import { currentStreak, updateStreak } from './streak.js';
-import { isRefreshDue, starsFor } from './progress.js';
+import { isRefreshDue, nextReviewStep, reviewStep, starsFor } from './progress.js';
 import { awardXP } from './xp.js';
 import { evaluateTrophyRule } from './trophies.js';
 import { recordMission } from './missions.js';
@@ -25,7 +25,13 @@ function settleLesson(ctx, unitId, missedSkills) {
   const { result, app, day } = ctx;
   // Auffrischen wird vor dem Speichern des Übungstags geprüft. Danach wäre die Seite nicht mehr fällig.
   // Eine gescheiterte Runde bekommt keinen Bonus (rounds.js:19).
-  if (isRefreshDue(app, unitId, day) && !result.failed) {
+  const due = isRefreshDue(app, unitId, day);
+  // Die Stufe wird vor dem neuen Stand gelesen: Sie hängt ohne Eintrag an der alten Genauigkeit.
+  if (due) {
+    if (!app.box || typeof app.box !== 'object' || Array.isArray(app.box)) app.box = {};
+    app.box[unitId] = nextReviewStep(reviewStep(app, unitId), result.stars);
+  }
+  if (due && !result.failed) {
     result.refresh = true;
     app.refreshes = (app.refreshes || 0) + 1;
     payBonus(ctx, REFRESH_BONUS_XP);
@@ -44,7 +50,8 @@ function settleLesson(ctx, unitId, missedSkills) {
 // Der Kapitel-Test misst, was sitzt. Er verändert keine Sterne und zählt nicht als Übung der Seiten. Es gilt der Bestwert.
 function settleChapter(ctx, groupId) {
   const { result, app, day } = ctx;
-  app.chapters = app.chapters || {};
+  // Ein fremder Wert aus einer Sicherung wird ersetzt. Ein Text würde beim Schreiben werfen.
+  if (!app.chapters || typeof app.chapters !== 'object' || Array.isArray(app.chapters)) app.chapters = {};
   result.prevBest = app.chapters[groupId]?.acc ?? null;
   if (result.accuracy > (result.prevBest ?? -1)) app.chapters[groupId] = { acc: result.accuracy, day };
 }
@@ -106,7 +113,7 @@ export function finishRound(input) {
   // Ebenso der letzte Übungstag der Seite: settleLesson setzt app.last auf heute. Ohne Eintrag null.
   const lastDay = mode === 'lesson' && app.last ? app.last[unit.id] : undefined;
   // Liegt der letzte Übungstag in der Zukunft (Uhr zurückgestellt), zählt 0 statt einer negativen Zahl.
-  const gapDays = lastDay ? Math.max(0, dayDiff(lastDay, day)) : null;
+  const gapDays = isDay(lastDay) ? Math.max(0, dayDiff(lastDay, day)) : null;
   const result = {
     mode, failed, accuracy, wrong, almost, bestCombo, score, retryRight, prevAcc, gapDays,
     unitId: mode === 'lesson' ? unit.id : null,

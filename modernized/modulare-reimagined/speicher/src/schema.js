@@ -5,7 +5,12 @@ import { APP_KEY_PREFIX, PROFILE_KEY } from './constants.js';
 import { isPlain } from './util.js';
 
 const isInt = (value) => Number.isInteger(value) && value >= 0;
-const isDate = (value) => typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value);
+// Der Tag muss im Kalender existieren. 2026-02-31 sähe gültig aus, regeln/ wirft dabei aber (assertDay).
+const isDate = (value) => {
+  if (typeof value !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
+  const [year, month, day] = value.split('-').map(Number);
+  return new Date(Date.UTC(year, month - 1, day)).toISOString().slice(0, 10) === value;
+};
 const isOptionalDate = (value) => value === '' || isDate(value);
 const isUnit = (value) => typeof value === 'number' && Number.isFinite(value) && value >= 0 && value <= 1;
 const isStars = (value) => Number.isInteger(value) && value >= 0 && value <= 3;
@@ -42,6 +47,8 @@ const APP_TYPES = {
   badges: mapOf(isFlag),
   best: (value) => isPlain(value) && (value.blitz === undefined || isInt(value.blitz)) && (value.boss === undefined || isFlag(value.boss)),
   last: mapOf(isOptionalDate),
+  box: mapOf(isInt),
+  chapters: mapOf((value) => isPlain(value) && isUnit(value.acc) && isDate(value.day)),
   acc: mapOf(isUnit),
   refreshes: isInt,
   missed: mapOf(isTextList)

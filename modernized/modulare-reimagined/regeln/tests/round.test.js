@@ -2,6 +2,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { finishRound } from '../src/round.js';
+import { isRefreshDue } from '../src/progress.js';
 import { weekStart } from '../src/dates.js';
 
 const newProfile = (extra = {}) => ({ xp: 0, day: { d: '', xp: 0 }, streak: 0, lastDay: '', lastApp: '', ...extra });
@@ -445,4 +446,33 @@ test('Fehler-Abruf: Boss, Schnellrunde und Blitz lassen app.missed unberührt', 
     finishRound({ appId: 'mathe', mode, accuracy: 0.5, missedSkills: ['Y'], profile: newProfile(), app, day: MISSION_DAY });
     assert.deepEqual(app.missed, { a: ['X'] }, mode);
   });
+});
+
+const auffrischen = (app, accuracy, failed = false) => finishRound({ appId: 'mathe', mode: 'lesson', unit: { id: 'a' }, accuracy, failed, profile: { xp: 0, streak: 0, lastDay: '', lastApp: '', day: { d: '', xp: 0 } }, app, day: '2026-10-25' });
+
+test('RULE-242: Gelungenes Auffrischen rückt die Stufe weiter, die Seite wartet länger', () => {
+  const app = { xp: 0, stars: { a: 3 }, last: { a: '2026-10-01' }, acc: { a: 0.95 }, best: {}, badges: {} };
+  auffrischen(app, 0.8);
+  assert.equal(app.box.a, 2);
+  assert.equal(isRefreshDue(app, 'a', '2026-11-07'), false);
+  assert.equal(isRefreshDue(app, 'a', '2026-11-08'), true);
+});
+
+test('RULE-242: Ein schwaches oder gescheitertes Auffrischen setzt den Abstand zurück', () => {
+  for (const [accuracy, failed] of [[0.5, false], [0.9, true]]) {
+    const app = { xp: 0, stars: { a: 3 }, last: { a: '2026-09-01' }, acc: { a: 0.95 }, box: { a: 3 }, best: {}, badges: {} };
+    auffrischen(app, accuracy, failed);
+    assert.equal(app.box.a, 0);
+  }
+});
+
+test('RULE-242: Üben vor der Frist ändert die Stufe nicht', () => {
+  const app = { xp: 0, stars: { a: 3 }, last: { a: '2026-10-24' }, acc: { a: 0.95 }, box: { a: 2 }, best: {}, badges: {} };
+  auffrischen(app, 1);
+  assert.equal(app.box.a, 2);
+});
+
+test('RULE-242: Ein kaputter letzter Tag bricht die Auswertung nicht ab', () => {
+  const app = { xp: 0, stars: { a: 1 }, last: { a: '2026-02-31' }, acc: {}, best: {}, badges: {} };
+  assert.equal(auffrischen(app, 0.8).gapDays, null);
 });

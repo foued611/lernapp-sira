@@ -73,10 +73,11 @@ function blitzRun(engine, onRight = () => {}) {
  * now ist die Uhr in Millisekunden, von außen gegeben, damit Tests die Zeit steuern können.
  * known: schon richtig beantwortete Aufgaben, onRight: wird für jede richtige Antwort aufgerufen.
  */
-export function startBlitz({ config, rng, now = Date.now, known = new Set(), onRight = () => {} }) {
+export function startBlitz({ config, rng, now = Date.now, known = new Set(), onRight = () => {}, units }) {
   if (typeof config.blitz !== 'function') return { ok: false, message: 'Diese App hat keinen Blitz.' };
+  if (units && units.length === 0) return { ok: false, message: 'Übe zuerst eine Seite. Der Blitz wiederholt, was du schon gelernt hast.' };
   try {
-    const engine = createBlitz({ nextQuestion: () => config.blitz(rng), now, seconds: BLITZ_SECONDS, known });
+    const engine = createBlitz({ nextQuestion: () => config.blitz(rng, units), now, seconds: BLITZ_SECONDS, known });
     return { ok: true, run: blitzRun(engine, onRight) };
   } catch (error) {
     return { ok: false, message: 'Die Aufgaben konnten nicht erzeugt werden.', cause: error };
