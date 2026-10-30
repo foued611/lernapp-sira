@@ -76,6 +76,7 @@
         "ic": { "$ref": "#/$defs/text" },
         "color": { "$ref": "#/$defs/color" },
         "track": { "$ref": "#/$defs/id" },
+        "group": { "$ref": "#/$defs/text" },
         "card": { "type": "object", "required": ["name", "fact"], "additionalProperties": false, "properties": { "name": { "$ref": "#/$defs/text" }, "fact": { "$ref": "#/$defs/text" } } }
       }
     },

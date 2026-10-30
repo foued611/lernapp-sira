@@ -15,7 +15,8 @@
       "card": {
         "name": "Die Zeit der Geschichten",
         "fact": "Die meisten Geschichten laufen im Simple Past. Viele wichtige Verben sind unregelmäßig und müssen auswendig gelernt werden."
-      }
+      },
+      "group": "Grammatik · Access 3"
     },
     {
       "id": "present-perfect",
@@ -26,7 +27,8 @@
       "card": {
         "name": "Die Brücke zu heute",
         "fact": "Mit have oder has verbindest du Vergangenes mit heute: I have seen this film heißt, dass du ihn kennst."
-      }
+      },
+      "group": "Grammatik · Access 3"
     },
     {
       "id": "past-or-perfect",
@@ -37,7 +39,8 @@
       "card": {
         "name": "Das richtige Signalwort",
         "fact": "Steht ein fester Zeitpunkt wie yesterday, nimmt man den Simple Past. Ohne Zeitangabe oder mit Bezug zu heute: Present Perfect."
-      }
+      },
+      "group": "Grammatik · Access 3"
     },
     {
       "id": "perfect-progressive",
@@ -48,7 +51,8 @@
       "card": {
         "name": "Seit wann?",
         "fact": "for steht vor einem Zeitraum (for two hours), since vor einem Zeitpunkt (since Monday)."
-      }
+      },
+      "group": "Grammatik · Access 3"
     },
     {
       "id": "past-progressive",
@@ -59,7 +63,8 @@
       "card": {
         "name": "Mitten im Film",
         "fact": "Das Past Progressive ist wie eine Szene, die gerade läuft. Wenn etwas dazwischenkommt, steht es im Simple Past."
-      }
+      },
+      "group": "Grammatik · Access 3"
     },
     {
       "id": "will-future",
@@ -70,7 +75,8 @@
       "card": {
         "name": "Spontan entschieden",
         "fact": "Das Telefon klingelt, und du sagst: I will answer it. Das will entsteht genau in diesem Moment."
-      }
+      },
+      "group": "Grammatik · Access 3"
     },
     {
       "id": "conditional-1",
@@ -81,7 +87,8 @@
       "card": {
         "name": "Die echte Möglichkeit",
         "fact": "Im if-Satz steht das Präsens, auch wenn es um die Zukunft geht: If it rains, we will stay home."
-      }
+      },
+      "group": "Grammatik · Access 3"
     },
     {
       "id": "conditional-2",
@@ -92,7 +99,8 @@
       "card": {
         "name": "Der Wunsch-Satz",
         "fact": "Im Konditional 2 heißt es oft If I were you, auch für I. Das ist die klassische Form."
-      }
+      },
+      "group": "Grammatik · Access 3"
     },
     {
       "id": "relative-clauses",
@@ -103,7 +111,8 @@
       "card": {
         "name": "Der Erklärer-Satz",
         "fact": "Relativsätze sagen genauer, welche Person oder welches Ding gemeint ist: The girl who sings is my cousin."
-      }
+      },
+      "group": "Grammatik · Access 3"
     },
     {
       "id": "contact-clauses",
@@ -114,7 +123,8 @@
       "card": {
         "name": "Die kurze Form",
         "fact": "Ist das Relativpronomen Objekt, darf es wegfallen: The film we watched was funny."
-      }
+      },
+      "group": "Grammatik · Access 3"
     },
     {
       "id": "passive",
@@ -125,7 +135,8 @@
       "card": {
         "name": "Wer war es?",
         "fact": "Im Passiv steht die Handlung im Mittelpunkt, nicht der Täter: The bridge was built in 1990."
-      }
+      },
+      "group": "Grammatik · Access 3"
     },
     {
       "id": "modal-verbs",
@@ -136,7 +147,8 @@
       "card": {
         "name": "Verboten oder nicht nötig?",
         "fact": "mustn't heißt verboten, needn't heißt nicht nötig. Diese Verwechslung passiert fast allen am Anfang."
-      }
+      },
+      "group": "Grammatik · Access 3"
     },
     {
       "id": "modal-substitutes",
@@ -147,7 +159,8 @@
       "card": {
         "name": "Der Ersatzspieler",
         "fact": "Modale Verben haben keine Vergangenheit und Zukunft. Dann springen have to und be able to ein: I had to, I will be able to."
-      }
+      },
+      "group": "Grammatik · Access 3"
     },
     {
       "id": "past-perfect",
@@ -158,7 +171,8 @@
       "card": {
         "name": "Schon vorbei",
         "fact": "Past Perfect zeigt: Das war schon vorbei, bevor etwas anderes passierte. Meist steht ein Simple Past daneben."
-      }
+      },
+      "group": "Grammatik · Access 3"
     },
     {
       "id": "reflexive-pronouns",
@@ -169,7 +183,8 @@
       "card": {
         "name": "Das Spiegel-Wort",
         "fact": "Wenn Subjekt und Objekt dieselbe Person sind, endet das Pronomen auf -self: She hurt herself."
-      }
+      },
+      "group": "Grammatik · Access 3"
     },
     {
       "id": "indirect-speech",
@@ -180,172 +195,188 @@
       "card": {
         "name": "Was hat sie gesagt?",
         "fact": "In der indirekten Rede rückt die Zeit eine Stufe zurück: I am tired wird zu She said she was tired."
-      }
+      },
+      "group": "Grammatik · Access 3"
     },
     {
       "id": "krank",
       "color": "#3DD6B0",
       "ic": "v1",
-      "title": "Vokabeln: Krank im Bett",
+      "title": "Krank im Bett",
       "de": "Access 2, Unit 6 · Dictionary S. 2 · Kapitel 1",
       "card": {
         "name": "Gesund oder krank?",
         "fact": "Bei der Gesundheit sagt man well, nicht good: I don't feel well."
-      }
+      },
+      "group": "Vokabeln · Kapitel 1"
     },
     {
       "id": "husten",
       "color": "#3DD6B0",
       "ic": "v2",
-      "title": "Vokabeln: Husten, Hals und Pflaster",
+      "title": "Husten, Hals und Pflaster",
       "de": "Access 2, Unit 6 · Dictionary S. 3 und 4 · Kapitel 1",
       "card": {
         "name": "Have a …",
         "fact": "Bei Beschwerden sagt man have a cough, have a headache oder have a sore throat."
-      }
+      },
+      "group": "Vokabeln · Kapitel 1"
     },
     {
       "id": "essen",
       "color": "#3DD6B0",
       "ic": "v3",
-      "title": "Vokabeln: Untersuchen und Essen",
+      "title": "Untersuchen und Essen",
       "de": "Access 2, Unit 6 · Dictionary S. 5 · Kapitel 1",
       "card": {
         "name": "While oder during?",
         "fact": "while steht vor einem ganzen Satz, during steht vor einem Nomen."
-      }
+      },
+      "group": "Vokabeln · Kapitel 1"
     },
     {
       "id": "roemer",
       "color": "#3DD6B0",
       "ic": "v4",
-      "title": "Vokabeln: Medusa, Mosaik und Schlangen",
+      "title": "Medusa, Mosaik und Schlangen",
       "de": "Access 2, Unit 6 · Dictionary S. 6 · Kapitel 1",
       "card": {
         "name": "Die Gorgone",
         "fact": "Medusa war eine der drei Gorgonen aus der griechischen Sage."
-      }
+      },
+      "group": "Vokabeln · Kapitel 1"
     },
     {
       "id": "reich",
       "color": "#FF9F43",
       "ic": "v5",
-      "title": "Vokabeln: Stich, Knie und römisches Reich",
+      "title": "Stich, Knie und römisches Reich",
       "de": "Access 2, Unit 6 · Dictionary S. 7 · Kapitel 2",
       "card": {
         "name": "Römisches Britannien",
         "fact": "Britannia hieß die römische Provinz auf der Insel Britain."
-      }
+      },
+      "group": "Vokabeln · Kapitel 2"
     },
     {
       "id": "klippe",
       "color": "#FF9F43",
       "ic": "v6",
-      "title": "Vokabeln: Klippen, Höhlen und Soldaten",
+      "title": "Klippen, Höhlen und Soldaten",
       "de": "Access 2, Unit 6 · Dictionary S. 8 und 9 · Kapitel 2",
       "card": {
         "name": "Der schmale Weg",
         "fact": "narrow heißt schmal. Das Gegenteil von narrow ist wide."
-      }
+      },
+      "group": "Vokabeln · Kapitel 2"
     },
     {
       "id": "landgut",
       "color": "#FF9F43",
       "ic": "v7",
-      "title": "Vokabeln: Landgut, Karriere und Bergwerk",
+      "title": "Landgut, Karriere und Bergwerk",
       "de": "Access 2, Unit 6 · Dictionary S. 10 und 11 · Kapitel 2",
       "card": {
         "name": "Zwei Gesichter",
         "fact": "notice ist als Verb „bemerken“ und als Nomen ein Aushang."
-      }
+      },
+      "group": "Vokabeln · Kapitel 2"
     },
     {
       "id": "brunnen",
       "color": "#9B7BFF",
       "ic": "v8",
-      "title": "Vokabeln: Brunnen, Beeren und Berichte",
+      "title": "Brunnen, Beeren und Berichte",
       "de": "Access 2, Unit 6 · Dictionary S. 12 und 13 · Kapitel 3",
       "card": {
         "name": "Eis in der Sonne",
         "fact": "In der Sonne schmilzt Eis: ice melts."
-      }
+      },
+      "group": "Vokabeln · Kapitel 3"
     },
     {
       "id": "wache",
       "color": "#9B7BFF",
       "ic": "v9",
-      "title": "Vokabeln: Wachen, Gefahr und Wahrheit",
+      "title": "Wachen, Gefahr und Wahrheit",
       "de": "Access 2, Unit 6 · Dictionary S. 14 und 15 · Kapitel 3",
       "card": {
         "name": "Die Wahrheit",
         "fact": "truth ist die Wahrheit. Das Gegenteil heißt lie."
-      }
+      },
+      "group": "Vokabeln · Kapitel 3"
     },
     {
       "id": "hof",
       "color": "#4CC3F5",
       "ic": "v10",
-      "title": "Vokabeln: Im Innenhof",
+      "title": "Im Innenhof",
       "de": "Access 2, Unit 6 · Dictionary S. 16 und 17 · Kapitel 4",
       "card": {
         "name": "Stört es dich?",
         "fact": "Do you mind …? heißt: Hast du etwas dagegen?"
-      }
+      },
+      "group": "Vokabeln · Kapitel 4 und 5"
     },
     {
       "id": "laerm",
       "color": "#4CC3F5",
       "ic": "v11",
-      "title": "Vokabeln: Lärm, Ruhe und Festung",
+      "title": "Lärm, Ruhe und Festung",
       "de": "Access 2, Unit 6 · Dictionary S. 18 bis 20 · Kapitel 4 und 5",
       "card": {
         "name": "Laut und leise",
         "fact": "noise ist der Lärm, noisy ist laut. Mit rest ruhst du dich aus."
-      }
+      },
+      "group": "Vokabeln · Kapitel 4 und 5"
     },
     {
       "id": "geheimnis",
       "color": "#FF6B88",
       "ic": "v12",
-      "title": "Vokabeln: Geheimnis und Angriff",
+      "title": "Geheimnis und Angriff",
       "de": "Access 2, Unit 6 · Dictionary S. 21 und 22 · Kapitel 6",
       "card": {
         "name": "Das Geheimnis",
         "fact": "secret heißt Geheimnis und auch geheim."
-      }
+      },
+      "group": "Vokabeln · Kapitel 6"
     },
     {
       "id": "seil",
       "color": "#FF6B88",
       "ic": "v13",
-      "title": "Vokabeln: Seil, Tunnel und Rollen",
+      "title": "Seil, Tunnel und Rollen",
       "de": "Access 2, Unit 6 · Dictionary S. 23 · Kapitel 6",
       "card": {
         "name": "Alle am Seil",
         "fact": "Am Seil (rope) zieht man fest: pull it tight."
-      }
+      },
+      "group": "Vokabeln · Kapitel 6"
     },
     {
       "id": "koenig",
       "color": "#E0A82E",
       "ic": "v14",
-      "title": "Vokabeln: Könige, Prinzen und Beweise",
+      "title": "Könige, Prinzen und Beweise",
       "de": "Access 2, Unit 6 · Dictionary S. 24 und 25 · Kapitel 7",
       "card": {
         "name": "Königliches Blut",
         "fact": "royal blood heißt königliches Blut."
-      }
+      },
+      "group": "Vokabeln · Kapitel 7 und 8"
     },
     {
       "id": "schluss",
       "color": "#8BD450",
       "ic": "v15",
-      "title": "Vokabeln: Briefende und Zusatzwörter",
+      "title": "Briefende und Zusatzwörter",
       "de": "Access 2, Unit 6 · Dictionary S. 26 und Zusatzwörter · Kapitel 8",
       "card": {
         "name": "Selbstlaute",
         "fact": "a, e, i, o, u sind die fünf vowels."
-      }
+      },
+      "group": "Vokabeln · Kapitel 7 und 8"
     }
   ],
   "notes": {

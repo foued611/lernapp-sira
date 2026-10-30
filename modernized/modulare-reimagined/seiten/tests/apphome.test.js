@@ -179,3 +179,11 @@ test('SEITE-PFAD Der Endgegner bleibt gesperrt, solange er nicht offen ist, und 
   assert.match(renderApp(appWith(), { open: false }), /<button[^>]*disabled=""[^>]*>Noch gesperrt</);
   assert.doesNotMatch(renderApp(appWith(), { open: true }), /Noch gesperrt/);
 });
+
+test('SEITE-MISSIONEN Lernpfad: Seiten mit Feld group werden in Gruppen gefasst, ohne group bleibt es eine Liste ohne Überschrift', async () => {
+  const { pathGroups } = await import('../apphome.js');
+  const ohne = [{ id: 'a' }, { id: 'b' }];
+  assert.deepEqual(pathGroups(ohne), [{ title: null, units: ohne }]);
+  const mit = [{ id: 'a', group: 'Eins' }, { id: 'b', group: 'Zwei' }, { id: 'c', group: 'Eins' }, { id: 'd' }];
+  assert.deepEqual(pathGroups(mit).map((g) => [g.title, g.units.map((u) => u.id)]), [['Eins', ['a', 'c']], ['Zwei', ['b']], ['Weitere Seiten', ['d']]]);
+});

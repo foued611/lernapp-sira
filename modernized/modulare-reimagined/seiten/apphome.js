@@ -74,6 +74,22 @@ const STATION_TEXT = Object.freeze({
   fällig: { label: 'Zeit zum Auffrischen', icon: 'flame' }
 });
 
+/**
+ * Seiten nach ihrem optionalen Feld group in Gruppen, in der Reihenfolge des ersten Auftretens.
+ * Ohne group bei allen Seiten bleibt es eine Liste ohne Überschrift (so sehen alle anderen Apps aus).
+ */
+export function pathGroups(units) {
+  if (!units.some((u) => typeof u.group === 'string' && u.group)) return [{ title: null, units }];
+  const groups = [];
+  for (const u of units) {
+    const title = (typeof u.group === 'string' && u.group) || 'Weitere Seiten';
+    let g = groups.find((x) => x.title === title);
+    if (!g) groups.push((g = { title, units: [] }));
+    g.units.push(u);
+  }
+  return groups;
+}
+
 // Eine Station der Lernpfad-Karte: ein Knopf mit Titel, Zustand als Wort und Symbol und den Sternen.
 function Station({ unit, track, state, stars, next, onStudy }) {
   const { label, icon } = STATION_TEXT[state];
@@ -180,11 +196,22 @@ export function AppHome({ config, app, profile, day, rec, open, notice, storeMes
       null,
       h('h2', null, 'Dein Lernpfad'),
       h('p', { className: 'muted', style: { margin: '4px 0 14px', fontSize: '14px' } }, config.intro || 'Starte irgendwo. Die Reihenfolge ist nur ein Vorschlag.'),
-      h(
-        'ol',
-        { className: 'path' },
-        ...units.map((u) => h(Station, { key: u.id, unit: u, track: unitTrack(config.tracks, u), state: stationState(app, u, day), stars: starsOf(app.stars, u.id), next: u.id === nextId, onStudy }))
-      )
+      ...pathGroups(units).map(({ title, units: inGroup }) => {
+        const path = h(
+          'ol',
+          { className: 'path' },
+          ...inGroup.map((u) => h(Station, { key: u.id, unit: u, track: unitTrack(config.tracks, u), state: stationState(app, u, day), stars: starsOf(app.stars, u.id), next: u.id === nextId, onStudy }))
+        );
+        if (!title) return path;
+        const geschafft = inGroup.filter((u) => starsOf(app.stars, u.id) > 0).length;
+        // details/summary: ohne Skript bedienbar, mit Tastatur und Screenreader. Offen ist die Gruppe mit der nächsten Seite.
+        return h(
+          'details',
+          { key: title, className: 'pgroup', open: inGroup.some((u) => u.id === nextId) || undefined },
+          h('summary', null, h('span', null, title), h('span', { className: 'muted' }, `${geschafft} von ${inGroup.length} geschafft`)),
+          path
+        );
+      })
     ),
     h(
       'section',
