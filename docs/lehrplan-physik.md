@@ -1,6 +1,6 @@
 # Lehrplan-Abgleich Physik (Gymnasium BW, Klasse 7)
 
-Stand: 2026-10-28. Quelle: Bildungsplan 2016 Physik, Klassen 7/8 (bildungsplaene-bw.de, Gymnasium, Physik, 3.2 Klassen 7/8) und das Beispielcurriculum für Klasse 7 (schule-bw.de, BP2016 Beispielcurriculum Physik 7/8).
+Stand: 2026-10-30. Quelle: Bildungsplan 2016 Physik, Klassen 7/8 (bildungsplaene-bw.de, Gymnasium, Physik, 3.2 Klassen 7/8) und das Beispielcurriculum für Klasse 7 (schule-bw.de, BP2016 Beispielcurriculum Physik 7/8).
 
 ## Zuordnung
 
@@ -22,4 +22,5 @@ Der Bildungsplan gliedert Klasse 7 und 8 zusammen. Die App deckt nur die Bereich
 
 - Ob die Zuordnung zu Klasse 7 mit der Schule übereinstimmt. Das Beispielcurriculum ist eine Vorlage, kein verbindlicher Plan.
 - Ob die Werte stimmen, die die Aufgaben nennen (340 m/s, Hörbereich, g ≈ 10 N/kg). Sie sind Schulwissen, aber vor dem Einsatz gegenzulesen.
+- Aufgaben mit dem Feld `level` (ergänzt ab 2026-10-30) hat noch keine Lehrkraft gegengelesen. Das betrifft alle 160 neuen Aufgaben, je 10 auf den 16 Seiten.
 - Die Inhalte stammen aus eigenen Formulierungen. Das Lehrwerk Universum Physik Band 7/8 wurde nur als Themenliste genutzt.

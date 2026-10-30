@@ -19,7 +19,7 @@ function skillsPlayed(round) {
   return skills;
 }
 
-for (const id of ['englisch', 'decouvertes-2', 'biologie']) {
+for (const id of ['englisch', 'decouvertes-2', 'biologie', 'physik']) {
   test(`ABRUF: ${id} holt die falsche Aufgabe in die nächste Lektion`, () => {
     const paket = paketVon(id);
     const config = buildConfig(paket, logicFor(id));
