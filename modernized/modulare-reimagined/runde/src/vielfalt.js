@@ -30,6 +30,16 @@ export function distinctSlots(count, rng, makeAt, maxTries = 40) {
   return out;
 }
 
+/**
+ * Element für Platz i von count: Die Liste wird in count Abschnitte geteilt, jeder Platz zieht zufällig aus seinem.
+ * So deckt eine kurze Runde die ganze Liste ab, und über mehrere Runden kommt jedes Element dran.
+ */
+export function spreadPick(list, i, count, rng) {
+  const start = Math.floor((i * list.length) / count);
+  const end = Math.max(start + 1, Math.floor(((i + 1) * list.length) / count));
+  return pick(list.slice(start, end), rng);
+}
+
 /** Fragen ohne Dubletten, die erste bleibt. */
 export function uniqueQuestions(questions) {
   const seen = new Set();

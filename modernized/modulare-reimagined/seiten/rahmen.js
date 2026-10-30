@@ -1,14 +1,14 @@
 // Ansicht einer App: Seite, Theorie, Spiel und Ergebnis. Den Ablauf einer Runde steuert ablauf.js, hier wird nur gezeichnet.
-import { createElement, useReducer, useState } from 'react';
-import { createRng } from '../helfer/index.js';
+import { createElement, useEffect, useReducer, useState } from 'react';
+import { createRng, starsOf } from '../helfer/index.js';
 import { TheoryPage } from '../komponenten/theory.js';
 import { BlitzPlay, startBlitz } from './blitz.js';
-import { AppHeader, AppHome } from './apphome.js';
+import { AppHeader, AppHome, revealStation } from './apphome.js';
 import { Play } from './spiel.js';
 import { NO_STORAGE, saveName } from './name.js';
 import { Ergebnis, messagesOf, resultModel, wordsFor } from './ergebnis.js';
 import { Sicherung } from './sicherung.js';
-import { RESET_DONE, profileDefaults, appDefaults, RIGHT, knownOf, rememberRight, bossOpen, startRound, settleRound, settleLeave, settleBlitzLeave, leaveNotice, resetStep, resetApp, recommendationOf } from './ablauf.js';
+import { RESET_DONE, profileDefaults, appDefaults, RIGHT, knownOf, rememberRight, bossOpen, startRound, settleRound, settleLeave, settleBlitzLeave, leaveNotice, resetStep, resetApp, recommendationOf, followingUnit } from './ablauf.js';
 
 const h = createElement;
 
@@ -19,7 +19,8 @@ export { Play } from './spiel.js';
 
 // Die Theorie einer Seite mit Rückweg. Der Übungsknopf startet die Lektionsrunde dieser Seite.
 // Eine App kann ihre Theorie selbst zeichnen (config.Theory, z. B. mit Spielzeugen). Sonst gilt die Standardseite.
-export function TheoryScreen({ config, unit, onBack, onStart }) {
+// Ist die Seite schon geübt, gibt es den Weg zur Übung auch oben: Wer auffrischt, muss die Theorie nicht durchscrollen.
+export function TheoryScreen({ config, unit, onBack, onStart, practised = false }) {
   const page = config.Theory
     ? h(config.Theory, { unit, config, onStart: () => onStart() })
     : h(TheoryPage, {
@@ -30,7 +31,17 @@ export function TheoryScreen({ config, unit, onBack, onStart }) {
       onStart: () => onStart()
     });
   // Wie legacy shell.js:renderTheory: ein Textlink "← Zum Lernpfad" über der Seite.
-  return h('div', { className: 'seiten' }, h('button', { type: 'button', className: 'link back', onClick: onBack }, '← Zum Lernpfad'), page);
+  return h(
+    'div',
+    { className: 'seiten' },
+    h(
+      'div',
+      { className: 'theorytop' },
+      h('button', { type: 'button', className: 'link back', onClick: onBack }, '← Zum Lernpfad'),
+      practised ? h('button', { type: 'button', className: 'btn ghost', onClick: () => onStart() }, 'Direkt üben') : null
+    ),
+    page
+  );
 }
 
 /**
@@ -51,11 +62,17 @@ export function AppFrame({ app, profileStore, day, storage }) {
   const [notice, setNotice] = useState(null);
   const [resetPhase, setResetPhase] = useState('idle');
   const [theoryUnit, setTheoryUnit] = useState(null);
+  const [station, setStation] = useState(null);
   const [blitz, setBlitz] = useState(null);
   const [, bump] = useReducer((n) => n + 1, 0);
   // Ohne echten Speicher sagt die Seite das. Die Meldung der App gibt es nur bei blockiertem Speicher.
   const storeMessage = app.storeMessage || (storage.status === 'memory' ? storage.message : null);
   const persistent = storage.status === 'ok';
+  // Jede Ansicht beginnt oben. Nur der Rückweg zum Lernpfad landet bei der Station, von der die Person kommt.
+  useEffect(() => {
+    if (screen === 'home' && station && revealStation(document, station)) return;
+    window.scrollTo(0, 0);
+  }, [screen, station]);
   const logRow = (row) => (storage.handle ? storage.handle.logEvent(row) : Promise.resolve({ ok: false, error: NO_STORAGE }));
 
   function begin(mode, unit = null) {
@@ -108,6 +125,7 @@ export function AppFrame({ app, profileStore, day, storage }) {
   }
 
   function home() {
+    setStation(theoryUnit?.id || session?.unit?.id || settled?.summary.unitId || null);
     setSession(null);
     setBlitz(null);
     setSettled(null);
@@ -173,6 +191,8 @@ export function AppFrame({ app, profileStore, day, storage }) {
     }
     const outcome = await settleLeave({ round: session.round, profile, app: appState, profileStore, appStore, day });
     home();
+    // Der Hinweis zum Verlassen steht oben. Er darf nicht außer Sicht bleiben.
+    setStation(null);
     setNotice(leaveNotice(outcome));
   }
 
@@ -200,20 +220,23 @@ export function AppFrame({ app, profileStore, day, storage }) {
     return frame(h(BlitzPlay, { run: blitz, onFinish: finishBlitz, onLeave: leaveBlitz }));
   }
   if (screen === 'theory' && theoryUnit) {
-    return frame(h(TheoryScreen, { config, unit: theoryUnit, onBack: home, onStart: () => begin('lesson', theoryUnit) }), theoryUnit);
+    return frame(h(TheoryScreen, { config, unit: theoryUnit, onBack: home, onStart: () => begin('lesson', theoryUnit), practised: starsOf(appState.stars, theoryUnit.id) > 0 }), theoryUnit);
   }
   if (screen === 'saving') {
     return frame(h('section', { className: 'card' }, h('p', null, 'Ergebnis wird gespeichert …')));
   }
   if (screen === 'result' && settled) {
+    const { unitId } = settled.summary;
+    const next = unitId ? followingUnit(appState, config.units, unitId, day) : null;
     const onAction = (id) => {
       if (id === 'home') home();
+      else if (id === 'next') study(next);
       else if (id === 'theory') study(config.units.find((u) => u.id === settled.summary.unitId));
       else if (settled.summary.mode === 'blitz') beginBlitz();
       else begin(settled.summary.mode, settled.summary.unitId ? config.units.find((u) => u.id === settled.summary.unitId) : null);
     };
     return frame(h(Ergebnis, {
-      model: resultModel(settled.summary, { profile, day, words }),
+      model: resultModel(settled.summary, { profile, day, words, next }),
       messages: messagesOf(settled),
       onAction
     }));
@@ -230,6 +253,7 @@ export function AppFrame({ app, profileStore, day, storage }) {
     onStart: (mode, unit) => (mode === 'blitz' ? beginBlitz() : begin(mode, unit || null)),
     onReset: reset,
     onName: saveNameAndRedraw,
+    focusId: station,
     footer: h(Sicherung, { handle: storage.handle, day, includeName: true })
   }));
 }

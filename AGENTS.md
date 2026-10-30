@@ -62,6 +62,9 @@ Die Mechaniken sind so gewählt, dass sie das Lernen fördern und nicht nur belo
 - **Wochenmissionen:** Pro Woche (ab Montag) gibt es drei Missionen: drei verschiedene Seiten üben, eine Seite auffrischen, eine Runde mit mindestens 90 % Genauigkeit. Jede bringt 20 XP und wird pro Woche nur einmal bezahlt. Ein Blitz zählt nicht für die Runde mit 90 %, weil er keine echte Genauigkeit hat.
 - **Neue Trophäen-Typen:** `improved` (Genauigkeit einer Seite gegenüber dem letzten Mal um einen Mindestwert gestiegen), `retryRecovered` (Fehler der Runde im zweiten Versuch richtig beantwortet) und `refresh` (Zahl bezahlter Auffrischungen).
 - **Gezieltes Training:** Die Startseite einer App (`seiten/apphome.js`) schlägt die fällige oder schwächste Seite vor (`weakestUnit`). Die Startseite aller Apps zeigt das wie im Legacy nicht, ebenso wenig den Endgegner.
+- **2-Minuten-Runde:** Sie wiederholt und zieht nur aus Seiten mit mindestens einem Stern. Wer noch nichts geübt hat, startet mit der Theorie der ersten Seite.
+- **Nächster Schritt:** Ab 2 Sternen führt der Hauptknopf im Ergebnis zur nächsten offenen Seite (`followingUnit`). Darunter bleibt „Nochmal“ der Hauptknopf.
+- **Endgegner:** Die 12 Fragen verteilen sich über alle Seiten (`spreadPick`), jede Seite kommt über mehrere Runden dran.
 - **Sammelalbum:** Jede Seite hat eine Karte mit einem Fakt. Sie wird mit 1, 2 oder 3 Sternen zu Bronze, Silber, Gold. So gibt es ein sichtbares Ziel pro Seite.
 - **Mini-Check in der Lektion:** Eine Frage direkt nach der Theorie, ohne Druck und ohne XP. Sich selbst abfragen lernt besser als Nachlesen.
 - **Ereignisprotokoll:** Jede Runde wird mit `logEvent` gespeichert. Daraus lassen sich später Verläufe und Wiederholungspläne bauen.

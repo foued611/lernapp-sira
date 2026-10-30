@@ -323,6 +323,6 @@ export function blitzQuestion(rng) {
 export function createBuilders({ manifest }) {
   const allMakers = () => manifest.units.flatMap((u) => POOLS[u.id]);
   const bossRound = (rng) => distinctQuestions(allMakers(), 12, rng);
-  const quickRound = (rng) => distinctQuestions(allMakers(), 5, rng);
+  const quickRound = (rng, from = manifest.units) => distinctQuestions(from.flatMap((u) => POOLS[u.id]), 5, rng);
   return { lessonRound, quickRound, bossRound, blitzQuestion };
 }

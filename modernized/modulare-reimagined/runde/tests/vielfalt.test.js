@@ -2,7 +2,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { choiceQuestion } from '../src/questions.js';
-import { questionKey, distinctQuestions, freshPool } from '../src/vielfalt.js';
+import { questionKey, distinctQuestions, freshPool, spreadPick } from '../src/vielfalt.js';
 import { createBlitz } from '../src/blitz.js';
 import { createRng } from '../../helfer/index.js';
 
@@ -76,4 +76,26 @@ test('Blitz: bekannte Aufgaben kommen nach Möglichkeit nicht', () => {
     blitz.pick(blitz.current().question.answer);
   }
   assert.ok(seen.every((key) => !known.map(questionKey).includes(key)));
+});
+
+test('VIELFALT: spreadPick teilt die Liste in Abschnitte, jeder Platz zieht aus seinem', () => {
+  const liste = Array.from({ length: 44 }, (_, i) => i);
+  const rng = createRng(3);
+  for (let platz = 0; platz < 12; platz++) {
+    const wert = spreadPick(liste, platz, 12, rng);
+    assert.ok(wert >= Math.floor((platz * 44) / 12) && wert < Math.floor(((platz + 1) * 44) / 12), `Platz ${platz}: ${wert}`);
+  }
+});
+
+test('VIELFALT: spreadPick erreicht über mehrere Runden jedes Element', () => {
+  const liste = Array.from({ length: 44 }, (_, i) => i);
+  const rng = createRng(5);
+  const gesehen = new Set();
+  for (let runde = 0; runde < 60; runde++) for (let platz = 0; platz < 12; platz++) gesehen.add(spreadPick(liste, platz, 12, rng));
+  assert.equal(gesehen.size, 44);
+});
+
+test('VIELFALT: spreadPick kommt mit weniger Elementen als Plätzen aus', () => {
+  const rng = createRng(1);
+  for (let platz = 0; platz < 12; platz++) assert.ok(['a', 'b'].includes(spreadPick(['a', 'b'], platz, 12, rng)));
 });

@@ -3,7 +3,7 @@
 // Aufgaben in runde/. Alles ist rein oder async über injizierte Speicher. Die Ansicht dazu steht in rahmen.js.
 import { createRound, freshPool, questionKey, uniqueQuestions, withMissed } from '../runde/index.js';
 import { starsOf } from '../helfer/index.js';
-import { awardXP, finishRound, updateStreak, weakestUnit } from '../regeln/index.js';
+import { awardXP, finishRound, isRefreshDue, updateStreak, weakestUnit } from '../regeln/index.js';
 import { NO_STORAGE } from './name.js';
 
 /** Aufgaben je Runde (Spec RULE-229): Lektion 8, Endgegner 12, Schnellrunde 5. Blitz ist nicht enthalten. */
@@ -13,6 +13,7 @@ export { NO_STORAGE };
 const LEFT_SAVE_FAILED = 'Die XP konnten nicht gespeichert werden.';
 export const RESET_DONE = 'Der Fortschritt dieser App ist zurückgesetzt. Name und Gesamt-XP bleiben.';
 const NO_TASKS = 'Für diese Runde gibt es noch keine Aufgaben.';
+const QUICK_LOCKED = 'Übe zuerst eine Seite. Die 2-Minuten-Runde wiederholt, was du schon gelernt hast.';
 const BOSS_LOCKED = 'Der Endgegner ist noch gesperrt. Erst braucht jede Seite mindestens einen Stern.';
 
 // Gleicher Aufbau wie legacy/modulare/core/js/profile.js:14 und 16.
@@ -51,6 +52,19 @@ export function dayOf(ms) {
   return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
 }
 
+/** Seiten, die schon geübt sind (mindestens ein Stern). */
+export const practisedUnits = (app, units) => units.filter((u) => starsOf(app.stars, u.id) > 0);
+
+/**
+ * Welche Seite kommt nach unitId? Die nächste ohne Stern im Pfad, hinten angekommen geht es vorn weiter.
+ * Ist nichts mehr offen, die erste fällige. Sonst null. Wer gezielt springt, bleibt so an seiner Stelle im Pfad.
+ */
+export function followingUnit(app, units, unitId, day) {
+  const at = units.findIndex((u) => u.id === unitId);
+  const order = [...units.slice(at + 1), ...units.slice(0, Math.max(at, 0))];
+  return order.find((u) => starsOf(app.stars, u.id) === 0) || order.find((u) => isRefreshDue(app, u.id, day)) || null;
+}
+
 /**
  * Ist der Endgegner offen? RULE-206: erst wenn jede Seite mindestens einen Stern hat. Eine App kann
  * über bossUnlocked selbst entscheiden (legacy shell.js:43). Ohne Seiten ist er offen (RULE-134).
@@ -62,10 +76,10 @@ export function bossOpen({ app, unitIds, bossUnlocked, profile }) {
 
 // Die Quelle der Aufgaben für eine Rundenart. Ohne Quelle gibt es die Runde nicht. Der Zufall kommt von außen
 // (rng), damit die Aufgaben einer Runde reproduzierbar sind.
-function poolFor(config, mode, unit, rng) {
+function poolFor(config, mode, unit, rng, practised) {
   const rounds = config.rounds || {};
   if (mode === 'lesson') return unit && typeof rounds.lesson === 'function' ? () => rounds.lesson(unit, rng) : null;
-  if (mode === 'quick') return typeof rounds.quick === 'function' ? () => rounds.quick(rng) : null;
+  if (mode === 'quick') return typeof rounds.quick === 'function' ? () => rounds.quick(rng, practised) : null;
   if (mode === 'boss') return typeof rounds.boss === 'function' ? () => rounds.boss(rng) : null;
   return null;
 }
@@ -86,7 +100,10 @@ export function startRound({ config, mode, unit = null, app, profile, rng, known
   if (mode === 'boss' && !bossOpen({ app, unitIds, bossUnlocked: config.bossUnlocked, profile })) {
     return failure(BOSS_LOCKED);
   }
-  const source = poolFor(config, mode, unit, rng);
+  // Die Schnellrunde wiederholt. Sie zieht nur aus Seiten mit Stern, sonst käme ungelernter Stoff ohne Theorie.
+  const practised = practisedUnits(app, config.units);
+  if (mode === 'quick' && config.rounds?.quick && practised.length === 0) return failure(QUICK_LOCKED);
+  const source = poolFor(config, mode, unit, rng, practised);
   if (!source) return failure(NO_TASKS);
   try {
     const size = ROUND_SIZE[mode];

@@ -7,5 +7,5 @@ export { choiceQuestion, typedQuestion, matchQuestion, option } from './src/ques
 export { createPool, isGap, logicOf, poolApp, skillOf } from './src/pool.js';
 export { esc, normalise, stripAccents } from './src/text.js';
 export { compareTyped } from './src/check.js';
-export { questionKey, uniqueQuestions, distinctQuestions, distinctSlots, freshPool } from './src/vielfalt.js';
+export { questionKey, uniqueQuestions, distinctQuestions, distinctSlots, freshPool, spreadPick } from './src/vielfalt.js';
 export { HEARTS, XP, BLITZ_SECONDS, PEEK_XP } from './src/rules.js';

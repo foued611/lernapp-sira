@@ -92,12 +92,24 @@ export function pathGroups(units) {
   return groups;
 }
 
+/**
+ * Rückweg zum Lernpfad: bringt die Station in den Blick und setzt den Fokus auf ihren Knopf, damit es auch mit der
+ * Tastatur dort weitergeht. Gibt false zurück, wenn es die Station nicht gibt. root ist das Dokument.
+ */
+export function revealStation(root, unitId) {
+  const station = root.querySelector(`[data-unit="${unitId}"]`);
+  if (!station) return false;
+  station.scrollIntoView({ block: 'center' });
+  station.querySelector('button')?.focus({ preventScroll: true });
+  return true;
+}
+
 // Eine Station der Lernpfad-Karte: ein Knopf mit Titel, Zustand als Wort und Symbol und den Sternen.
 function Station({ unit, track, state, stars, next, onStudy }) {
   const { label, icon } = STATION_TEXT[state];
   return h(
     'li',
-    { className: 'station' },
+    { className: 'station', 'data-unit': unit.id },
     h(
       'button',
       { type: 'button', className: `node${next ? ' next' : ''}`, style: { '--lc': unit.color }, 'aria-current': next ? 'step' : undefined, onClick: () => onStudy(unit) },
@@ -149,9 +161,9 @@ function ResetLine({ phase, onReset }) {
 /**
  * Die App-Startseite. Props: config, app (Stand), profile, day, rec (Empfehlung oder null), open (Endgegner offen),
  * notice, storeMessage, persistent (Speicher bleibt über den Besuch hinaus), resetPhase, profileStore, onStudy, onStart,
- * onReset, onName.
+ * onReset, onName, focusId (Station, von der die Person gerade kommt).
  */
-export function AppHome({ config, app, profile, day, rec, open, notice, storeMessage, persistent = false, resetPhase, profileStore, onStudy, onStart, onReset, onName, footer = null }) {
+export function AppHome({ config, app, profile, day, rec, open, notice, storeMessage, persistent = false, resetPhase, profileStore, onStudy, onStart, onReset, onName, focusId = null, footer = null }) {
   const units = config.units;
   const done = doneUnits(app.stars, units.map((u) => u.id));
   const x = dailyXP(profile, day);
@@ -165,6 +177,7 @@ export function AppHome({ config, app, profile, day, rec, open, notice, storeMes
   // Sie wird nur hervorgehoben, nie gesperrt.
   const nextUnit = units.find((u) => stationState(app, u, day) === 'fällig') || units.find((u) => starsOf(app.stars, u.id) === 0);
   const nextId = nextUnit ? nextUnit.id : null;
+  const started = units.some((u) => starsOf(app.stars, u.id) > 0);
 
   return h(
     'div',
@@ -187,9 +200,14 @@ export function AppHome({ config, app, profile, day, rec, open, notice, storeMes
           ` ${x >= goal ? 'Geschafft. Du bist heute fertig.' : 'Eine kurze Runde bringt dich nah ran.'}`,
           // Das Tagesziel zählt XP aus allen Apps. Der Seitenstand gilt nur für diese App, deshalb getrennt.
           h('span', { style: { display: 'block', marginTop: '4px' } }, `In dieser App: ${done} von ${units.length} Seiten geschafft.`)),
-        config.rounds && typeof config.rounds.quick === 'function'
-          ? h('button', { type: 'button', className: 'btn sun', onClick: () => onStart('quick') }, '2-Minuten-Runde')
-          : null
+        // Die Schnellrunde wiederholt. Wer noch nichts geübt hat, startet mit der Theorie der ersten Seite.
+        started
+          ? (config.rounds && typeof config.rounds.quick === 'function'
+            ? h('button', { type: 'button', className: 'btn sun', onClick: () => onStart('quick') }, '2-Minuten-Runde')
+            : null)
+          : nextUnit
+            ? h('button', { type: 'button', className: 'btn sun', onClick: () => onStudy(nextUnit) }, `Starte mit ${nextUnit.title}`)
+            : null
       )
     ),
     h(WeekCard, { profile, day }),
@@ -205,11 +223,11 @@ export function AppHome({ config, app, profile, day, rec, open, notice, storeMes
           ...inGroup.map((u) => h(Station, { key: u.id, unit: u, track: unitTrack(config.tracks, u), state: stationState(app, u, day), stars: starsOf(app.stars, u.id), next: u.id === nextId, onStudy }))
         );
         if (!title) return path;
-        const geschafft = inGroup.filter((u) => starsOf(app.stars, u.id) > 0).length;
-        // details/summary: ohne Skript bedienbar, mit Tastatur und Screenreader. Offen ist die Gruppe mit der nächsten Seite.
+        const geschafft = doneUnits(app.stars, inGroup.map((u) => u.id));
+        // details/summary: ohne Skript bedienbar, mit Tastatur und Screenreader. Offen ist die Gruppe mit der nächsten Seite und die, aus der die Person gerade kommt.
         return h(
           'details',
-          { key: title, className: 'pgroup', open: inGroup.some((u) => u.id === nextId) || undefined },
+          { key: title, className: 'pgroup', open: inGroup.some((u) => u.id === nextId || u.id === focusId) || undefined },
           h('summary', null, h('span', null, title), h('span', { className: 'muted' }, `${geschafft} von ${inGroup.length} geschafft`)),
           path
         );
@@ -267,7 +285,7 @@ export function AppHome({ config, app, profile, day, rec, open, notice, storeMes
           const n = starsOf(app.stars, u.id);
           return n
             ? h('article', { key: u.id, className: `gcard t${n}`, style: { '--lc': u.color } }, h('span', { className: 'medal' }, medal[n]), h('h3', null, u.card.name), h('p', null, u.card.fact))
-            : h('article', { key: u.id, className: 'gcard t0' }, h('span', { className: 'medal' }, 'Gesperrt'), h('h3', null, 'Geheimkarte'), h('p', null, `Schaffe die Seite „${u.title}“, um sie freizuschalten.`));
+            : h('article', { key: u.id, className: 'gcard t0' }, h('span', { className: 'medal' }, 'Gesperrt'), h('h3', null, 'Geheimkarte'), h('p', null, `Übe die Seite „${u.title}“, um sie freizuschalten.`));
         }))
       )
       : null,
