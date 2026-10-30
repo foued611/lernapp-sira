@@ -47,7 +47,7 @@ function subtitleFor(summary, weakTitles) {
   if (summary.mode === 'boss') text = `Endgegner besiegt. ${BOSS_BONUS_XP} Bonus-XP gehören dir.`;
   else if (summary.mode === 'quick') text = 'Kurze Runde, echter Fortschritt.';
   else if (summary.refresh) text = `Aufgefrischt! Dafür gibt es ${REFRESH_BONUS_XP} Bonus-XP. Wiederholen nach ein paar Tagen bringt dein Wissen ins Langzeitgedächtnis.`;
-  else text = 'Seite geschafft. Mit mehr richtigen Antworten gibt es mehr Sterne.';
+  else text = summary.stars === 3 ? 'Seite geschafft. Alle drei Sterne gehören dir.' : 'Seite geschafft. Mit mehr richtigen Antworten gibt es mehr Sterne.';
   if (summary.relearned) {
     text += ` ${summary.relearned} falsche Aufgabe${summary.relearned > 1 ? 'n' : ''} hast du im zweiten Versuch richtig gelöst.`;
   }
