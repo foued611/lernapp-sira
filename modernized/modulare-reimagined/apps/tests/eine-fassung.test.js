@@ -67,6 +67,20 @@ for (const entry of APPS.filter((e) => e.status === LIVE)) {
     assert.deepEqual(folge(), folge());
   });
 
+  // Seiten eines Kapitels nutzen teils dieselben Erzeuger. So kann eine Aufgabe auf zwei Seiten in verschiedener Fassung stehen.
+  test(`EINE FASSUNG: ${entry.id} zeigt im Kapitel-Test keine Aufgabe in zwei Fassungen, und es bleiben 10`, () => {
+    const app = { ...appDefaults(), stars: Object.fromEntries(config.units.map((u) => [u.id, 1])) };
+    for (const { id, title } of config.groups) {
+      const units = config.units.filter((u) => u.group === id);
+      if (units.length < 2) continue;
+      for (let seed = 1; seed <= SEEDS * 10; seed += 1) {
+        const started = startRound({ config, mode: 'chapter', group: { id, title, units }, app, profile: profileDefaults(), rng: createRng(seed) });
+        assert.equal(started.round.current().total, 10, `${id}, Seed ${seed}`);
+        assert.deepEqual(doppelte(spiele(started.round, appDefaults())), [], `${id}, Seed ${seed}`);
+      }
+    }
+  });
+
   // Der Fehler-Abruf bringt seine Frage als Auswahl. Dieselbe Aufgabe darf nicht zusätzlich zum Eintippen dastehen.
   const items = paket.data.items;
   if (items) {

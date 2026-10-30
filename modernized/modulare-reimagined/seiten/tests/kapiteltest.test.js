@@ -6,6 +6,7 @@ import { renderToStaticMarkup } from 'react-dom/server';
 import { createRng } from '../../helfer/index.js';
 import { buildConfig } from '../../inhalte/index.js';
 import { finishRound } from '../../regeln/index.js';
+import { choiceQuestion, taskKey, typedQuestion } from '../../runde/index.js';
 import { AppHome } from '../apphome.js';
 import { appDefaults, chapterMissing, chapterQuestions, hasChapterTest, profileDefaults, startRound, stationAfter } from '../ablauf.js';
 import { resultModel, wordsFor } from '../ergebnis.js';
@@ -22,6 +23,23 @@ test('SEITE-KAPITELTEST Die Aufgaben kommen abwechselnd aus allen Seiten und nen
   assert.equal(list.length, 10);
   assert.equal(list.filter((q) => q.unitId === 'a').length, 5);
   assert.equal(list.filter((q) => q.unitId === 'b').length, 5);
+});
+
+test('SEITE-KAPITELTEST Dieselbe Aufgabe auf zwei Seiten kommt nur einmal, ihr Platz geht an die nächste Frage der Seite', () => {
+  const gleich = { label: 'Auswahl', prompt: 'Gleiche Frage', answer: 'richtig', choices: ['richtig', 'falsch'] };
+  const fragen = (unit) => [
+    unit.id === 'a' ? choiceQuestion({ ...gleich, rng: createRng(1) }) : typedQuestion({ ...gleich, label: 'Eingabe' }),
+    ...questions(3, unit.id)
+  ];
+  const list = chapterQuestions(group.units, fragen, 4, createRng(1));
+  assert.equal(list.filter((q) => q.prompt === gleich.prompt).length, 1);
+  assert.deepEqual(list.map((q) => q.unitId), ['a', 'b', 'a', 'b']);
+});
+
+test('SEITE-KAPITELTEST Reichen die Aufgaben einer Seite nicht, hilft die andere aus', () => {
+  const kurz = (unit) => questions(unit.id === 'a' ? 1 : 4, unit.id);
+  const list = chapterQuestions(group.units, kurz, 4, createRng(1));
+  assert.equal(new Set(list.map(taskKey)).size, 4);
 });
 
 test('SEITE-KAPITELTEST Ab zwei Seiten gibt es einen Test, offen erst mit Stern auf jeder Seite', () => {

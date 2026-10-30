@@ -96,12 +96,19 @@ export const chapterMissing = (app, group) => group.units.filter((u) => starsOf(
 /**
  * Aufgaben für den Kapitel-Test: abwechselnd aus den Seiten, aus jeder etwa gleich viele. Die Lektionsrunden liefern sie,
  * deshalb braucht keine App eigenen Code. unitId sagt später, welche Seite noch sitzen muss.
+ * Jeder Platz nimmt die erste noch freie Aufgabe seiner Seite, sonst einer anderen. Seiten teilen sich teils Erzeuger,
+ * und die Auswahl einer Seite darf nicht die Eingabe einer anderen verraten.
  */
 export function chapterQuestions(units, lesson, size, rng) {
   const lists = units.map((unit) => lesson(unit, rng).map((question) => ({ ...question, unitId: unit.id })));
+  const used = new Set();
   return Array.from({ length: size }, (_, i) => {
-    const list = lists[i % lists.length];
-    return list[Math.floor(i / lists.length) % list.length];
+    const turn = i % lists.length;
+    const list = lists[turn];
+    const free = [...lists.slice(turn), ...lists.slice(0, turn)].flat().find((q) => !used.has(taskKey(q)));
+    const question = free ?? list[Math.floor(i / lists.length) % list.length];
+    used.add(taskKey(question));
+    return question;
   });
 }
 
@@ -155,7 +162,7 @@ export function startRound({ config, mode, unit = null, group = null, app, profi
     // Nur Lektionsrunden holen Fehlerkategorien der letzten Runde zurück (Spec 5.2). Ohne Liste bleibt alles wie bisher.
     const missed = mode === 'lesson' ? missedOf(app, unit) : [];
     const recalled = missed.length && config.rounds.recall ? config.rounds.recall(unit, missed, rng) : [];
-    const candidates = recalled.length ? uniqueQuestions([...recalled, ...fresh], taskKey) : fresh;
+    const candidates = recalled.length ? uniqueQuestions([...recalled, ...fresh]) : fresh;
     const pool = missed.length ? withMissed(candidates, missed, Math.min(size, candidates.length), rng) : fresh;
     const round = createRound({ pool, size: Math.min(size, pool.length), rng, boss: mode === 'boss' });
     return { ok: true, round, mode, unit, group };

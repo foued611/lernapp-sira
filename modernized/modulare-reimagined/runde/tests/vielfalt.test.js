@@ -94,9 +94,8 @@ test('freshPool: sind alle Fassungen bekannt, kommt nur eine', () => {
   assert.deepEqual(freshPool(() => [auswahl(), eingabe()], 2, known, 3).map((q) => q.kind), ['choice']);
 });
 
-test('uniqueQuestions: mit taskKey bleibt die erste Fassung, ohne bleiben beide', () => {
-  assert.deepEqual(uniqueQuestions([auswahl(), eingabe()], taskKey).map((q) => q.kind), ['choice']);
-  assert.equal(uniqueQuestions([auswahl(), eingabe()]).length, 2);
+test('uniqueQuestions: die erste Fassung bleibt', () => {
+  assert.deepEqual(uniqueQuestions([auswahl(), eingabe()]).map((q) => q.kind), ['choice']);
 });
 
 test('Blitz: bekannte Aufgaben kommen nach Möglichkeit nicht', () => {

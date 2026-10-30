@@ -53,11 +53,11 @@ export function spreadPick(list, i, count, rng) {
   return pick(list.slice(start, end), rng);
 }
 
-/** Fragen ohne Dubletten, die erste bleibt. Mit keyOf = taskKey zählen die Fassungen einer Aufgabe als Dublette. */
-export function uniqueQuestions(questions, keyOf = questionKey) {
+/** Fragen ohne Dubletten, je Aufgabe bleibt die erste Fassung. */
+export function uniqueQuestions(questions) {
   const seen = new Set();
   return questions.filter((q) => {
-    const key = keyOf(q);
+    const key = taskKey(q);
     if (seen.has(key)) return false;
     seen.add(key);
     return true;
