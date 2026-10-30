@@ -168,3 +168,8 @@ test('SEITE-LERNFLUSS Die Theorie zeigt fehlende Voraussetzungen als Hinweis und
   assert.match(render([{ id: 'x', title: 'Terme' }]), /Übung starten|Theorie|Zum Lernpfad/);
   assert.doesNotMatch(render([]), /baut auf/);
 });
+
+test('SEITE-LERNFLUSS Mit drei Sternen verspricht das Ergebnis keine weiteren', () => {
+  assert.match(model({ stars: 3 }).subtitle, /Alle drei Sterne/);
+  assert.match(model({ stars: 2 }).subtitle, /mehr Sterne/);
+});

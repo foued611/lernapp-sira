@@ -107,6 +107,8 @@ a.btn{display:inline-block;text-align:center;text-decoration:none}
 .gline .bar{height:12px;border:2px solid var(--ink);border-radius:8px;overflow:hidden;margin-top:4px;background:var(--card)}
 .gline .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--btn-bg),var(--sun))}
 .acts{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+/* Auf dem Handy liegen die Knöpfe unter den Zahlen. Der Hauptknopf bleibt sichtbar, Flex statt Grid, weil sticky sonst in seiner Zelle endet. */
+@media (max-width:520px){.res{display:flex;flex-direction:column;align-items:center}.res .acts{display:contents}.res .acts .btn:not(.ghost){position:sticky;bottom:12px;z-index:2;width:100%}}
 .lvup{background:var(--marker);padding:6px 16px;border-radius:8px;font-family:var(--f-head);font-weight:800;font-size:20px;color:var(--ink);transform:rotate(-1.5deg)}
 .cf{position:fixed;top:-16px;width:10px;height:14px;z-index:20;pointer-events:none;animation:fall linear forwards}
 @keyframes fall{to{transform:translateY(110vh) rotate(720deg)}}
