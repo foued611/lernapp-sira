@@ -97,7 +97,7 @@ test('Vokabeln: Merkzettel, Lektion und Tabelle mit sechs Lernwörtern je Seite'
   }
 });
 
-test('Vokabeln: eine Runde fragt 8 verschiedene Wörter, jede dritte Frage zum Eintippen', () => {
+test('Vokabeln: eine Runde fragt 8 verschiedene Wörter, die Hälfte zum Eintippen', () => {
   for (const unit of VOKABELN) {
     for (let seed = 1; seed <= 30; seed += 1) {
       const woerter = lessonPicks(unit, createRng(seed)).map((item) => item.w);

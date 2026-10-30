@@ -56,10 +56,6 @@ test('RULE-229: Lektionsrunde 8 Fragen, Endgegner 12, Schnellrunde 5, Blitz ist 
     const unit = UNITS[seed % UNITS.length];
     const lektion = lessonRound(unit, rng);
     assert.equal(lektion.length, 8);
-    // Eingabe nur an jeder dritten Stelle (Position 3, 6 ...), wie in Legacy.
-    lektion.forEach((q, i) => {
-      if (q.kind === 'type') assert.equal(i % 3, 2);
-    });
     assert.equal(bossRound(rng).length, 12);
     assert.equal(quickRound(rng).length, 5);
     assert.equal(blitzQuestion(rng).kind, 'choice');

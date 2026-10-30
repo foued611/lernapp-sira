@@ -1,7 +1,7 @@
 // Französisch-Werkstatt: Aufgaben wie in jeder Pool-App (runde/src/pool.js), dazu die Seiten des Cahier de Verbes.
 // Seiten mit verbs kommen aus verben/builders.js, alle anderen aus data.items.
 // Zufall kommt immer als rng herein (AGENTS.md), ohne rng gibt es keine Aufgabe.
-import { createPool, isGap, spreadPick } from '../../runde/index.js';
+import { createPool, isTypeable, spreadPick } from '../../runde/index.js';
 import { pick } from '../../helfer/index.js';
 import { createModel } from './verben/model.js';
 import { createVerbBuilders } from './verben/builders.js';
@@ -13,7 +13,7 @@ export function createBuilders(paket) {
   const model = createModel(paket);
   const verbs = createVerbBuilders(model);
 
-  /** 8 Fragen einer Seite, jede dritte Lücke zum Eintippen. Verbseiten haben ihre eigene Runde. */
+  /** 8 Fragen einer Seite, die Hälfte zum Eintippen. Verbseiten haben ihre eigene Runde. */
   const lessonRound = (unit, rng) => (unit.verbs ? verbs.lessonRound(unit, rng) : itemRound(unit, rng));
 
   // Eine Frage aus einer beliebigen Seite. Verbseiten liefern eine Verbfrage, die anderen eine Aufgabe aus data.items.
@@ -31,7 +31,7 @@ export function createBuilders(paket) {
     const unit = spreadPick(units, i, 12, rng);
     if (unit.verbs) return verbs.verbQuestion(unit, rng);
     const item = pick(items[unit.id], rng);
-    return i % 4 === 3 && isGap(item) ? typed(item) : choice(item, rng);
+    return i % 4 === 3 && isTypeable(item) ? typed(item) : choice(item, rng);
   });
 
   return { ...pool, model, verbs, lessonRound, quickRound, bossRound, blitzQuestion };

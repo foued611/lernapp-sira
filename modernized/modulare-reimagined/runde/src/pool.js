@@ -16,6 +16,16 @@ import { esc, normalise } from './text.js';
 import { spreadPick } from './vielfalt.js';
 
 export const isGap = (item) => item.kind === 'gap';
+
+// Eingabefragen einer Lektionsrunde: die Hälfte. Selbst abrufen festigt mehr als Wiedererkennen, die Auswahl daneben
+// hält die Runde machbar. Die Runde mischt ihre Fragen, es zählt also die Zahl, nicht der Platz.
+export const TYPED_PER_LESSON = 4;
+const LESSON_SIZE = 8;
+const MAX_TYPED_WORDS = 2;
+
+/** Lücke, die sich fair eintippen lässt. Ab drei Wörtern gibt es zu viele richtige Formulierungen für accept. */
+export const isTypeable = (item) => isGap(item) && item.a.trim().split(/\s+/).length <= MAX_TYPED_WORDS;
+
 const gapText = (s) => s.split('___').map(esc).join('{{blank}}');
 // Das richtige Wort fett in der Lücke. Nur <b> ist im Inhaltsmarkup erlaubt (SEC-003).
 const filled = (s, word) => s.split('___').map(esc).join(`<b>${esc(word)}</b>`);
@@ -64,14 +74,25 @@ export function createPool({ data, manifest }, { typedLabel = 'Schreibe das fehl
     });
   }
 
-  const pickItems = (unitId, count, rng) => {
+  // Die eintippbaren Aufgaben zuerst, sonst bliebe das Ziel auf Seiten mit wenigen Lücken dem Zufall überlassen.
+  const pickLesson = (unitId, rng) => {
     const pool = shuffle(items[unitId], rng);
-    return Array.from({ length: count }, (_, i) => pool[i % pool.length]);
+    const toType = pool.filter(isTypeable).slice(0, TYPED_PER_LESSON);
+    const order = [...toType, ...pool.filter((item) => !toType.includes(item))];
+    return Array.from({ length: LESSON_SIZE }, (_, i) => order[i % order.length]);
   };
 
-  /** 8 Fragen einer Seite, jede dritte Lücke zum Eintippen. */
-  const lessonRound = (unit, rng) => pickItems(unit.id, 8, rng)
-    .map((item, i) => (i % 3 === 2 && isGap(item) ? typed(item) : choice(item, rng)));
+  /**
+   * Fragen zu den Aufgaben einer Lektionsrunde: die ersten eintippbaren zum Eintippen, der Rest als Auswahl.
+   * Gemischt, weil der Kapitel-Test nur die vorderen Fragen nimmt und sonst fast nur Eingaben bekäme.
+   */
+  const lessonQuestions = (picks, rng) => {
+    const toType = new Set(picks.filter(isTypeable).slice(0, TYPED_PER_LESSON));
+    return shuffle(picks.map((item) => (toType.has(item) ? typed(item) : choice(item, rng))), rng);
+  };
+
+  /** 8 Fragen einer Seite, die Hälfte zum Eintippen, soweit die Seite so viele eintippbare Lücken hat. */
+  const lessonRound = (unit, rng) => lessonQuestions(pickLesson(unit.id, rng), rng);
 
   const anyItem = (rng, from = units) => pick(items[pick(from, rng).id], rng);
   /** from: die Seiten, aus denen die Runde zieht. Die Seiten-Schicht gibt die schon geübten mit. */
@@ -79,13 +100,13 @@ export function createPool({ data, manifest }, { typedLabel = 'Schreibe das fehl
   const blitzQuestion = (rng, from = units) => choice(anyItem(rng, from), rng);
   const bossRound = (rng) => Array.from({ length: 12 }, (_, i) => {
     const item = pick(items[spreadPick(units, i, 12, rng).id], rng);
-    return i % 4 === 3 && isGap(item) ? typed(item) : choice(item, rng);
+    return i % 4 === 3 && isTypeable(item) ? typed(item) : choice(item, rng);
   });
 
   /** Fragen zu den Aufgaben einer Seite, die im Fehler-Abruf wiederkommen sollen. */
   const recall = (unit, skills, rng) => (items[unit.id] || []).filter((item) => skills.includes(skillOf(item))).map((item) => choice(item, rng));
 
-  return { units, items, choice, typed, pickItems, lessonRound, quickRound, bossRound, blitzQuestion, recall };
+  return { units, items, choice, typed, lessonQuestions, lessonRound, quickRound, bossRound, blitzQuestion, recall };
 }
 
 /** Macht aus Erzeugern den Teil des App-Vertrags, den eine Runde braucht. */
