@@ -80,12 +80,15 @@ export function createPool({ data, manifest }, { typedLabel = 'Schreibe das fehl
     return i % 4 === 3 && isGap(item) ? typed(item) : choice(item, rng);
   });
 
-  return { units, items, choice, typed, pickItems, lessonRound, quickRound, bossRound, blitzQuestion };
+  /** Fragen zu den Aufgaben einer Seite, die im Fehler-Abruf wiederkommen sollen. */
+  const recall = (unit, skills, rng) => (items[unit.id] || []).filter((item) => skills.includes(skillOf(item))).map((item) => choice(item, rng));
+
+  return { units, items, choice, typed, pickItems, lessonRound, quickRound, bossRound, blitzQuestion, recall };
 }
 
 /** Macht aus Erzeugern den Teil des App-Vertrags, den eine Runde braucht. */
 export const logicOf = (b) => ({
-  rounds: { lesson: b.lessonRound, quick: b.quickRound, boss: b.bossRound },
+  rounds: { lesson: b.lessonRound, quick: b.quickRound, boss: b.bossRound, recall: b.recall },
   blitz: b.blitzQuestion
 });
 

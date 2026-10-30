@@ -1,7 +1,7 @@
 // Ablauf einer App: Lebenszyklus einer Runde (starten, auswerten, speichern, protokollieren) und Zurücksetzen in zwei
 // Schritten. Ohne React, damit auch andere Oberflächen und Tests ihn nutzen können. Die Regeln stehen in regeln/, die
 // Aufgaben in runde/. Alles ist rein oder async über injizierte Speicher. Die Ansicht dazu steht in rahmen.js.
-import { createRound, freshPool, questionKey, withMissed } from '../runde/index.js';
+import { createRound, freshPool, questionKey, uniqueQuestions, withMissed } from '../runde/index.js';
 import { starsOf } from '../helfer/index.js';
 import { awardXP, finishRound, updateStreak, weakestUnit } from '../regeln/index.js';
 import { NO_STORAGE } from './name.js';
@@ -19,7 +19,7 @@ const BOSS_LOCKED = 'Der Endgegner ist noch gesperrt. Erst braucht jede Seite mi
 export const profileDefaults = () => ({ name: '', xp: 0, streak: 0, lastDay: '', lastApp: '', day: { d: '', xp: 0 } });
 // last und acc steuern Auffrischen und gezieltes Training (legacy profile.js:15).
 // seen: Schlüssel der Aufgaben, die richtig beantwortet wurden. Neue Runden bevorzugen andere (runde/src/vielfalt.js).
-// missed: je Seite die Labels der Fragen, die in der letzten Lektionsrunde im ersten Versuch falsch waren (Fehler-Abruf).
+// missed: je Seite die Kategorien (skill, sonst Etikett) der Fragen, die in der letzten Lektionsrunde im ersten Versuch falsch waren (Fehler-Abruf).
 // refreshes: Zahl der bezahlten Auffrischungen (Trophäe refresh, Wochenmission refresh1 zählt separat).
 // merged: Quellen, deren Stand schon in diese App übernommen wurde (seiten/uebernahme.js).
 export const appDefaults = () => ({ xp: 0, stars: {}, badges: {}, best: {}, last: {}, acc: {}, seen: {}, missed: {}, refreshes: 0, merged: {} });
@@ -94,7 +94,9 @@ export function startRound({ config, mode, unit = null, app, profile, rng, known
     if (!Array.isArray(fresh) || fresh.length === 0) return failure(NO_TASKS);
     // Nur Lektionsrunden holen Fehlerkategorien der letzten Runde zurück (Spec 5.2). Ohne Liste bleibt alles wie bisher.
     const missed = mode === 'lesson' ? missedOf(app, unit) : [];
-    const pool = missed.length ? withMissed(fresh, missed, Math.min(size, fresh.length), rng) : fresh;
+    const recalled = missed.length && config.rounds.recall ? config.rounds.recall(unit, missed, rng) : [];
+    const candidates = recalled.length ? uniqueQuestions([...recalled, ...fresh]) : fresh;
+    const pool = missed.length ? withMissed(candidates, missed, Math.min(size, candidates.length), rng) : fresh;
     const round = createRound({ pool, size: Math.min(size, pool.length), rng, boss: mode === 'boss' });
     return { ok: true, round, mode, unit };
   } catch (error) {
@@ -117,7 +119,7 @@ export function evaluateRound({ appId, mode, unit, roundResult, profile, app, da
     almost: roundResult.almost,
     bestCombo: roundResult.bestCombo,
     retryRight: roundResult.retryRight || 0,
-    missedLabels: roundResult.missedLabels || [],
+    missedSkills: roundResult.missedSkills || [],
     score: roundResult.score || 0,
     levelUp,
     goalHit,
