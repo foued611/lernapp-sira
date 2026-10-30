@@ -137,3 +137,12 @@ test('SEITE-A11Y Die Stationen des Lernpfads sind mindestens 44 px hoch, ohne fe
   const mapRules = base.split('\n').filter((line) => /^\.(node|path|station|state)/.test(line)).join('\n');
   assert.equal(/#[0-9a-fA-F]{3,6}\b/.test(mapRules), false, 'Lernpfad-CSS nutzt nur Tokens');
 });
+
+test('SEITE-A11Y Gesperrte Knöpfe bleiben lesbar, ohne Durchsichtigkeit', () => {
+  assert.match(styles, /\.btn:disabled\{[^}]*color:var\(--muted\)/);
+  assert.doesNotMatch(styles, /\.btn:disabled\{[^}]*opacity/);
+});
+
+test('SEITE-A11Y Die Fußleiste der Übung deckt den Inhalt ab, statt ihn durchscheinen zu lassen', () => {
+  assert.match(styles, /\.foot\{[^}]*background:var\(--paper\)/);
+});
