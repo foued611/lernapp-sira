@@ -30,6 +30,17 @@ export function distinctSlots(count, rng, makeAt, maxTries = 40) {
   return out;
 }
 
+/** Fragen ohne Dubletten, die erste bleibt. */
+export function uniqueQuestions(questions) {
+  const seen = new Set();
+  return questions.filter((q) => {
+    const key = questionKey(q);
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
 /** Zieht count Fragen aus den Erzeugern (jeder ist eine Funktion rng => Frage), ohne Dubletten. */
 export const distinctQuestions = (makers, count, rng, maxTries = 40) => distinctSlots(count, rng, () => pick(makers, rng)(rng), maxTries);
 

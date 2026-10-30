@@ -13,12 +13,6 @@ import {
   explainBinToDec, explainDecToBin, explainHexToDec, explainDecToHex, explainBinToHex, explainAdd
 } from './numbers.js';
 
-let UNITS = [];
-
-/** Bekommt die Seitenliste, bevor die erste Runde entsteht (AGENTS.md: Erzeuger lesen daraus, nie per Import). */
-export function init({ manifest }) {
-  UNITS = manifest.units;
-}
 
 // Schreibmaschinenschrift gibt es in richText nicht. Fett hebt die Zahl trotzdem heraus.
 const mono = (text) => `<b>${esc(text)}</b>`;
@@ -312,11 +306,6 @@ export function lessonRound(unit, rng) {
   });
 }
 
-const allMakers = () => UNITS.flatMap((u) => POOLS[u.id]);
-
-export const bossRound = (rng) => distinctQuestions(allMakers(), 12, rng);
-export const quickRound = (rng) => distinctQuestions(allMakers(), 5, rng);
-
 /** Blitz: nur Auswahlfragen, damit man schnell antworten kann. */
 export function blitzQuestion(rng) {
   const makers = [
@@ -328,4 +317,12 @@ export function blitzQuestion(rng) {
     if (q.kind === 'choice') return q;
   }
   return carryQ(rng);
+}
+
+/** Erzeuger für ein Inhaltspaket. Der Stand liegt hier, nicht im Modul. */
+export function createBuilders({ manifest }) {
+  const allMakers = () => manifest.units.flatMap((u) => POOLS[u.id]);
+  const bossRound = (rng) => distinctQuestions(allMakers(), 12, rng);
+  const quickRound = (rng) => distinctQuestions(allMakers(), 5, rng);
+  return { lessonRound, quickRound, bossRound, blitzQuestion };
 }

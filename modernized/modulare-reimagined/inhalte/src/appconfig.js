@@ -7,10 +7,11 @@ import { assertBundle } from './bundle.js';
 
 /**
  * Logik einer App (siehe AGENTS.md, App-Vertrag):
+ *   create    ({ data, manifest }) => { rounds, blitz?, diagrams?, Theory? }. Baut die Erzeuger für genau dieses Paket und hält
+ *             keinen Stand im Modul. So können zwei Apps dieselbe Logik mit anderem Inhalt nutzen (Klasse 7 und 8).
  *   rounds    { lesson(unit), quick?(), boss?() }
  *   blitz?    () => Frage
  *   diagrams? { name: (...args) => svg-Text }
- *   init?     ({ data, manifest }) => void
  *   theory?   (box, unit, ctx) => void (Legacy-Form, im Neubau nicht genutzt)
  *   Theory?   React-Komponente { unit, config, onStart } für eine eigene Theorieseite (Spielzeuge). Fehlt sie, zeigt der Rahmen die Standardseite.
  *   bossUnlocked? (state) => boolean
@@ -31,10 +32,10 @@ export function resolveFigure(figure, diagrams = {}, where = '') {
 export function buildConfig(bundle, logic, deps = {}) {
   assertBundle(bundle);
   const { manifest, badges, data } = bundle;
-  // logic.init bekommt die Daten, bevor die erste Runde entsteht (AGENTS.md). Erzeuger lesen daraus, nie per Import.
-  if (logic.init) logic.init({ data, manifest });
+  // create bekommt die Daten, bevor die erste Runde entsteht (AGENTS.md). Erzeuger lesen daraus, nie per Import.
+  const app = logic.create ? { ...logic, ...logic.create({ data, manifest }) } : logic;
   const lessons = Object.fromEntries(
-    Object.entries(bundle.lessons).map(([id, spec]) => [id, { ...spec, figure: resolveFigure(spec.figure, logic.diagrams, id) }])
+    Object.entries(bundle.lessons).map(([id, spec]) => [id, { ...spec, figure: resolveFigure(spec.figure, app.diagrams, id) }])
   );
   const notes = manifest.notes ?? {};
   const view = { lessons, notes, data, manifest };
@@ -54,14 +55,14 @@ export function buildConfig(bundle, logic, deps = {}) {
     notes,
     data,
     theory: (box, unit, api) => {
-      const render = logic.theory ?? deps.renderDefaultTheory;
-      if (!render) throw new Error('Keine Theorie-Ansicht: logic.theory fehlt und renderDefaultTheory wurde nicht injiziert');
+      const render = app.theory ?? deps.renderDefaultTheory;
+      if (!render) throw new Error('Keine Theorie-Ansicht: app.theory fehlt und renderDefaultTheory wurde nicht injiziert');
       return render(box, unit, { ...view, ...api });
     },
-    Theory: logic.Theory ?? null,
-    rounds: logic.rounds,
-    blitz: logic.blitz,
-    bossUnlocked: logic.bossUnlocked,
+    Theory: app.Theory ?? null,
+    rounds: app.rounds,
+    blitz: app.blitz,
+    bossUnlocked: app.bossUnlocked,
     badges: badges.map((b) => ({
       id: b.id,
       n: b.n,

@@ -3,12 +3,12 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { createRng } from '../../../helfer/index.js';
-import { init, choice, typed, lessonPicks, lessonRound, quickRound, bossRound, blitzQuestion } from '../builders.js';
+import { createBuilders } from '../builders.js';
 import { flowDiagram, tableDiagram, swapDiagram } from '../diagrams.js';
 import { paketVon } from '../../tests/laden.js';
 
 const paket = paketVon('englisch');
-init(paket);
+const { choice, typed, lessonPicks, lessonRound, quickRound, bossRound, blitzQuestion } = createBuilders(paket);
 const UNITS = paket.manifest.units;
 const ITEMS = paket.data.items;
 const alle = Object.values(ITEMS).flat();

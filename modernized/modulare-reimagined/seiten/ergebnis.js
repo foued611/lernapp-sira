@@ -51,7 +51,7 @@ function subtitleFor(summary) {
 }
 
 /**
- * Reine Ansicht des Ergebnisses. summary kommt aus rahmen.js (summaryOf).
+ * Reine Ansicht des Ergebnisses. summary kommt aus ablauf.js (summaryOf).
  * Der Feier-Hinweis folgt result.js:34. Bei gescheiterter Runde gibt es keinen.
  */
 export function resultModel(summary, { profile, day, words }) {

@@ -3,11 +3,11 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { createRng } from '../../../helfer/index.js';
-import { init, choice, typed, lessonRound, quickRound, bossRound, blitzQuestion } from '../builders.js';
+import logic from '../logic.js';
 import { paketVon } from '../../tests/laden.js';
 
 const paket = paketVon('deutsch');
-init(paket);
+const { choice, typed, lessonRound, quickRound, bossRound, blitzQuestion } = logic.pool(paket);
 const UNITS = paket.manifest.units;
 const ITEMS = paket.data.items;
 const alle = Object.values(ITEMS).flat();

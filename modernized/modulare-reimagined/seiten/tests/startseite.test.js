@@ -5,7 +5,7 @@ import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { TrackLabel } from '../../komponenten/tracks.js';
 import { ProgressBar } from '../../komponenten/ui.js';
-import { profileDefaults } from '../rahmen.js';
+import { profileDefaults } from '../ablauf.js';
 import { greetingOf, maskName, minouLine, nameFrom, saveName, saveGoal, GoalChoice, Seiten, startseiteModel, Startseite, MASK } from '../startseite.js';
 import { MSG } from '../boot.js';
 import { bootFixture, DAY, memoryHandle, NAME } from './helpers.js';
@@ -195,12 +195,12 @@ test('SEITE-SPEICHER-FEHLER Der Arbeitsspeicher als letzter Ausweg wird als Warn
   assert.equal(model.message, MSG.memory);
 });
 
-test('SEITE-SPEICHER-FEHLER Ein Ladefehler einer App zeigt ihre Meldung, die anderen Kacheln bleiben', async () => {
-  const boot = await bootFixture({ failing: ['deutsch'] });
-  const model = startseiteModel({ day: DAY, storage: boot.state.storage, profileStore: boot.state.profileStore, apps: boot.state.apps });
-  assert.equal(tileOf(model, 'deutsch').kind, 'error');
-  assert.equal(tileOf(model, 'deutsch').message, MSG.appLoad);
-  assert.equal(tileOf(model, 'mathe').kind, 'live');
+test('SEITE-SPEICHER-FEHLER Ein Ladefehler zeigt beim Öffnen der App eine Meldung, die Startseite bleibt', async () => {
+  const offen = await bootFixture({ failing: ['deutsch'], search: '?app=deutsch' });
+  assert.ok(renderToStaticMarkup(h(Seiten, { boot: offen })).includes(MSG.appLoad));
+  const start = await bootFixture({ failing: ['deutsch'] });
+  const model = startseiteModel({ day: DAY, storage: start.state.storage, profileStore: start.state.profileStore, apps: start.state.apps });
+  assert.equal(tileOf(model, 'deutsch').kind, 'live');
 });
 
 test('SEITE-A11Y Die Fachauswahl zeigt den gewählten Eintrag per aria-pressed', async () => {

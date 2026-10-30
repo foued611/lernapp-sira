@@ -7,19 +7,18 @@ import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { createRng } from '../../../../helfer/index.js';
 import { buildConfig } from '../../../../inhalte/index.js';
-import { appDefaults, profileDefaults, startRound } from '../../../../seiten/rahmen.js';
+import { appDefaults, profileDefaults, startRound } from '../../../../seiten/ablauf.js';
 import { paketVon } from '../../../tests/laden.js';
-import { init, V, UNITS, SP, RAW } from '../model.js';
-import { lessonRound, checkForm, hint, distract } from '../builders.js';
-import { init as initItems, bossRound, quickRound, blitzQuestion } from '../../builders.js';
-import { personDiagram, endingsDiagram } from '../diagrams.js';
-import { Theory } from '../../theory.js';
+import { createBuilders } from '../../builders.js';
+import { createVerbDiagrams } from '../diagrams.js';
 import { speak } from '../../sprache.js';
 import logic from '../../logic.js';
 
 const paket = paketVon('decouvertes-2');
-init(paket);
-initItems(paket);
+const { model, verbs, bossRound, quickRound, blitzQuestion } = createBuilders(paket);
+const { V, UNITS, SP, RAW } = model;
+const { personDiagram, endingsDiagram } = createVerbDiagrams(model);
+const { lessonRound, checkForm, hint, distract } = verbs;
 
 const alleFragen = (runden) => runden.flat();
 
@@ -172,7 +171,7 @@ test('Anbindung: Inhalte, Logik und Rahmen starten Lektion, Schnellrunde und End
 test('Theorie: Konjugation, Lektion und Übungsknopf sind da, ohne Sprachausgabe keine Vorlesen-Knöpfe', () => {
   const config = buildConfig(paket, logic);
   const etre = config.units.find((u) => u.id === 'etre');
-  const markup = renderToStaticMarkup(createElement(Theory, { unit: etre, config, onStart: () => {} }));
+  const markup = renderToStaticMarkup(createElement(config.Theory, { unit: etre, config, onStart: () => {} }));
   assert.match(markup, /<h1>être<\/h1>/);
   assert.equal((markup.match(/<tr>/g) || []).length, 6);
   assert.match(markup, /Übung starten · 8 Aufgaben/);

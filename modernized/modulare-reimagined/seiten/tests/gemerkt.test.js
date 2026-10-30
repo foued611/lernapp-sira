@@ -3,7 +3,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { choiceQuestion, questionKey } from '../../runde/index.js';
 import { createRng } from '../../helfer/index.js';
-import { SEEN_MAX, knownOf, rememberRight, startRound } from '../rahmen.js';
+import { SEEN_MAX, knownOf, rememberRight, startRound } from '../ablauf.js';
 
 const ask = (n) => choiceQuestion({ label: 'Test', prompt: `Frage ${n}`, answer: 'a', choices: ['a', 'b'], rng: createRng(n) });
 

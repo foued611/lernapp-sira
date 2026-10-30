@@ -4,3 +4,4 @@ export { probCheck } from './probability.js';
 export { createRng, shuffle, pick } from './random.js';
 export { rnd, fmt, nearby, MINUS } from './number.js';
 export { trackOf } from './tracks.js';
+export { starsOf } from './sterne.js';

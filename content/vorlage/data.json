@@ -9,7 +9,7 @@
           "5",
           "22"
         ],
-        "explain": "2 + 2 ergibt 4."
+        "why": "2 + 2 ergibt 4."
       },
       {
         "q": "Wie viel ist 3 + 4?",
@@ -19,7 +19,7 @@
           "8",
           "34"
         ],
-        "explain": "3 + 4 ergibt 7."
+        "why": "3 + 4 ergibt 7."
       },
       {
         "q": "Wie viel ist 5 + 5?",
@@ -29,7 +29,7 @@
           "11",
           "55"
         ],
-        "explain": "5 + 5 ergibt 10."
+        "why": "5 + 5 ergibt 10."
       }
     ],
     "weiter": [
@@ -41,7 +41,7 @@
           "8",
           "23"
         ],
-        "explain": "2 · 3 ergibt 6."
+        "why": "2 · 3 ergibt 6."
       },
       {
         "q": "Wie viel ist 4 · 4?",
@@ -51,7 +51,7 @@
           "12",
           "44"
         ],
-        "explain": "4 · 4 ergibt 16."
+        "why": "4 · 4 ergibt 16."
       },
       {
         "q": "Wie viel ist 3 · 5?",
@@ -61,7 +61,7 @@
           "12",
           "35"
         ],
-        "explain": "3 · 5 ergibt 15."
+        "why": "3 · 5 ergibt 15."
       }
     ]
   }

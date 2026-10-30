@@ -151,14 +151,14 @@ test('RULE-243: ohne Wiederholung ist retryRight 0', () => {
   assert.equal(round.result().retryRight, 0);
 });
 
-// Fehler-Abruf (Spec 5.2): missedLabels sind die Labels der Fragen, deren ERSTER Versuch falsch war.
-test('ABRUF: missedLabels nennt das Label einer im ersten Versuch falschen Frage', () => {
+// Fehler-Abruf (Spec 5.2): missedSkills sind die Labels der Fragen, deren ERSTER Versuch falsch war.
+test('ABRUF: missedSkills nennt das Label einer im ersten Versuch falschen Frage', () => {
   const round = createRound({ pool: [sampleChoice('Lücke füllen')], size: 1, rng: rngFor() });
   round.submit(wrongResponse(round.current().question));
   round.next();
   round.submit(correctResponse(round.current().question));
   round.next();
-  assert.deepEqual(round.result().missedLabels, ['Lücke füllen']);
+  assert.deepEqual(round.result().missedSkills, ['Lücke füllen']);
 });
 
 test('ABRUF: Eine richtig wiederholte Frage nimmt ihr Label nicht zusätzlich auf, richtige Fragen nie', () => {
@@ -171,10 +171,10 @@ test('ABRUF: Eine richtig wiederholte Frage nimmt ihr Label nicht zusätzlich au
     round.submit(correctResponse(round.current().question));
     round.next();
   }
-  assert.deepEqual(round.result().missedLabels, [first]);
+  assert.deepEqual(round.result().missedSkills, [first]);
 });
 
-test('ABRUF: Eine falsche Wiederholung ändert missedLabels nicht, jedes Label steht nur einmal', () => {
+test('ABRUF: Eine falsche Wiederholung ändert missedSkills nicht, jedes Label steht nur einmal', () => {
   const pool = [sampleChoice('A'), sampleChoice('A'), sampleChoice('B')];
   const round = createRound({ pool, size: 3, rng: rngFor(1) });
   const seen = [];
@@ -186,7 +186,7 @@ test('ABRUF: Eine falsche Wiederholung ändert missedLabels nicht, jedes Label s
     round.next();
   }
   const expected = [...new Set(seen)];
-  assert.deepEqual(round.result().missedLabels, expected, 'erstes Vorkommen, ohne Dubletten');
+  assert.deepEqual(round.result().missedSkills, expected, 'erstes Vorkommen, ohne Dubletten');
 });
 
 test('ABRUF: Ein knapp richtiger Erstversuch (almost) zählt nicht als Fehler', () => {
@@ -194,12 +194,12 @@ test('ABRUF: Ein knapp richtiger Erstversuch (almost) zählt nicht als Fehler', 
   const round = createRound({ pool: [q], size: 1, rng: rngFor() });
   round.submit({ text: 'irgendwas' });
   round.next();
-  assert.deepEqual(round.result().missedLabels, []);
+  assert.deepEqual(round.result().missedSkills, []);
 });
 
-test('ABRUF: Eine nur richtige Runde hat leere missedLabels', () => {
+test('ABRUF: Eine nur richtige Runde hat leere missedSkills', () => {
   const round = createRound({ pool: [sampleChoice('X')], size: 1, rng: rngFor() });
   round.submit(correctResponse(round.current().question));
   round.next();
-  assert.deepEqual(round.result().missedLabels, []);
+  assert.deepEqual(round.result().missedSkills, []);
 });

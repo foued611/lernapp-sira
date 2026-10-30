@@ -2,13 +2,13 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { createRng } from '../../../helfer/index.js';
-import { init, lessonRound, quickRound, bossRound } from '../builders.js';
+import { createBuilders } from '../builders.js';
 import { questionKey } from '../../../runde/index.js';
 import { paketVon } from '../../tests/laden.js';
 
 test('Lektion, Kurzrunde und Endgegner: keine Dubletten', () => {
   const { manifest } = paketVon('info-zahlen');
-  init({ manifest });
+  const { lessonRound, quickRound, bossRound } = createBuilders({ manifest });
   for (const unit of manifest.units) {
     for (let seed = 1; seed <= 150; seed++) {
       const qs = lessonRound(unit, createRng(seed * 31 + unit.id.length));

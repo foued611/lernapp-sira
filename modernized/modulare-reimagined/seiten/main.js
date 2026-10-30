@@ -3,16 +3,12 @@
 import { createElement } from 'react';
 import { createRoot } from 'react-dom/client';
 import { bootSeiten } from './boot.js';
-import { logicFor } from '../apps/index.js';
+import { loadLogic, loadStyle } from '../apps/index.js';
 import { Seiten } from './startseite.js';
 import { setBrowserPorts } from './sicherung.js';
 // Design wie in Legacy (legacy/modulare/core/styles). Eine Quelle für alle Ansichten, siehe seiten/design/README.md.
 import './design/styles/app.css';
 import './design/styles/dashboard.css';
-// Optik der Apps, die eigene Spielzeuge haben. Die Selektoren sind je App eindeutig.
-import '../apps/decouvertes/verben/app.css';
-import '../apps/info-zahlen/app.css';
-import '../apps/geometrie/app.css';
 
 const h = createElement;
 
@@ -29,6 +25,9 @@ setBrowserPorts({
   reloadPage: () => window.location.reload()
 });
 
-bootSeiten({ search: window.location.search, logicFor }).then((boot) => {
+// Logik und Optik einer App kommen zusammen, erst wenn sie geöffnet wird.
+const openApp = async (id) => (await Promise.all([loadLogic(id), loadStyle(id)]))[0];
+
+bootSeiten({ search: window.location.search, loadLogic: openApp }).then((boot) => {
   createRoot(document.getElementById('app')).render(h(Seiten, { boot }));
 });

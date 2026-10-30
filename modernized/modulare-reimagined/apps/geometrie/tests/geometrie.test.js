@@ -3,12 +3,12 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { createRng } from '../../../helfer/index.js';
-import { init, make, MAX_TRIES, POOLS, choice, typed, lessonRound, quickRound, bossRound, blitzQuestion } from '../builders.js';
+import { MAX_TRIES, POOLS, choice, typed, createBuilders } from '../builders.js';
 import * as diagrams from '../diagrams.js';
 import { paketVon } from '../../tests/laden.js';
 
 const paket = paketVon('geometrie');
-init(paket);
+const { make, lessonRound, quickRound, bossRound, blitzQuestion } = createBuilders(paket);
 const UNITS = paket.manifest.units;
 
 test('RULE-165: jede Aufgabe einer Seite hat ihre Antwort unter den Optionen oder akzeptiert sie als Zahl', () => {

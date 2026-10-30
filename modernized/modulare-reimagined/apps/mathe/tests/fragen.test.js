@@ -3,13 +3,12 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { createRng, MINUS } from '../../../helfer/index.js';
-import { POOLS, choice, typed, make } from '../builders.js';
+import { POOLS, choice, typed, createBuilders } from '../builders.js';
 import { euro, gcd, nah, termCheck } from '../math.js';
-import logic from '../logic.js';
 import { paketVon } from '../../tests/laden.js';
 
 const paket = paketVon('mathe');
-logic.init(paket);
+const { make } = createBuilders(paket);
 const UNITS = paket.manifest.units;
 const RUNS = 600;
 

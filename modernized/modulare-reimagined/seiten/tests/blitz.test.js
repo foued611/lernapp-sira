@@ -4,7 +4,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { createRng } from '../../helfer/index.js';
 import { openApp, openProfile } from '../../speicher/index.js';
-import { appDefaults, profileDefaults, settleBlitzLeave, settleRound } from '../rahmen.js';
+import { appDefaults, profileDefaults, settleBlitzLeave, settleRound } from '../ablauf.js';
 import { blitzRoundResult, startBlitz } from '../blitz.js';
 import { resultModel, wordsFor } from '../ergebnis.js';
 import { configOf, DAY, memoryHandle, UNIT_IDS } from './helpers.js';

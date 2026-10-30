@@ -1,6 +1,6 @@
 // Logik der Biologie-Werkstatt. Fragen, Lektionen, Trophäen und Seiten liegen in content/biologie/.
 // Vorlage: apps/englisch/logic.js.
-import { init, lessonRound, quickRound, bossRound, blitzQuestion } from './builders.js';
+import { poolApp } from '../../runde/index.js';
 import * as diagrams from './diagrams.js';
 
-export default { init, diagrams, rounds: { lesson: lessonRound, quick: quickRound, boss: bossRound }, blitz: blitzQuestion };
+export default poolApp({ diagrams, typedLabel: 'Schreibe die Form' });

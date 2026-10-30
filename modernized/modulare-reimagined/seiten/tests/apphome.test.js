@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { AppHome, stationState } from '../apphome.js';
-import { appDefaults, profileDefaults } from '../rahmen.js';
+import { appDefaults, profileDefaults } from '../ablauf.js';
 import { configOf, DAY, UNITS } from './helpers.js';
 
 const h = createElement;

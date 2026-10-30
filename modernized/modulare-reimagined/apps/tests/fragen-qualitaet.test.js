@@ -4,8 +4,8 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { normalise } from '../../runde/index.js';
-import { APPS, LIVE } from '../../seiten/registry.js';
-import { paketVon } from './laden.js';
+import { LIVE } from '../../seiten/registry.js';
+import { APPS, paketVon } from './laden.js';
 
 // Bei diesen Fragen stecken die Unterschiede in den Antworten, derselbe Text mehrmals ist also in Ordnung.
 const AUSWAHL_AUS_OPTIONEN = /^Welche[rs]? (Satz|Wort|Form)\b/;

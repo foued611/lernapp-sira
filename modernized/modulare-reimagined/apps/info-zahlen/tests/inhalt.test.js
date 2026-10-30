@@ -3,12 +3,11 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { createRng } from '../../../helfer/index.js';
-import { init, placeValueQ, lampsQ, largestWeightQ, decToBinQ, binToDecQ, hexToDecQ, decToHexQ, binToHexQ, hexToBinQ, addQ, carryQ, makersFor } from '../builders.js';
+import { placeValueQ, lampsQ, largestWeightQ, decToBinQ, binToDecQ, hexToDecQ, decToHexQ, binToHexQ, hexToBinQ, addQ, carryQ, makersFor } from '../builders.js';
 import { askablePlaces, WEIGHTS } from '../numbers.js';
 import { paketVon } from '../../tests/laden.js';
 
 const paket = paketVon('info-zahlen');
-init(paket);
 const RUNS = 1500;
 const ohneMarkup = (html) => html.replace(/<[^>]+>/g, '');
 const zahlen = (q) => [...ohneMarkup(q.prompt).matchAll(/[0-9A-F]+/g)].map((m) => m[0]);

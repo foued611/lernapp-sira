@@ -108,3 +108,11 @@ test('INHALTE-QUELLE: HTTP-Quelle prüft das Paket, das die API liefert', async 
   const fetchFn = fakeFetch({ [`${BASE}/apps/probe-app/content`]: { body: broken } });
   await assert.rejects(createHttpSource(BASE, 'fake-key', fetchFn).load('probe-app'), /das ganze Paket wird abgelehnt/);
 });
+
+test('INHALTE-QUELLE: statische Quelle und API liefern den Katalog', async () => {
+  const list = [{ id: 'probe-app' }];
+  const routes = { [`${BASE}/katalog.json`]: { body: list }, [`${BASE}/apps`]: { body: list } };
+  assert.deepEqual(await createStaticSource(BASE, fakeFetch(routes)).catalog(), list);
+  assert.deepEqual(await createHttpSource(BASE, 'fake-key', fakeFetch(routes)).catalog(), list);
+  await assert.rejects(createStaticSource(BASE, fakeFetch({})).catalog(), /nicht gefunden/);
+});

@@ -73,3 +73,10 @@ test('ABRUF: Ein kaputter missed-Wert zählt wie keiner', () => {
   assert.deepEqual(labelsOf(withMissed(pool(), undefined, 4, rngFor(9))), expected);
   assert.deepEqual(labelsOf(withMissed(pool(), 'A', 4, rngFor(9))), expected);
 });
+
+test('ABRUF: skill geht vor label, sonst gilt das Etikett wie bisher', () => {
+  const gleich = ['eins', 'zwei', 'drei', 'vier'].map((skill) => ({ ...sampleChoice('Wähle'), skill }));
+  for (let seed = 1; seed <= 20; seed += 1) {
+    assert.ok(withMissed(gleich, ['vier'], 2, rngFor(seed)).some((q) => q.skill === 'vier'), `Seed ${seed}`);
+  }
+});

@@ -2,6 +2,7 @@
   "schema": 1,
   "id": "biologie",
   "title": "Biologie-Werkstatt",
+  "catalog": { "subject": "Biologie", "desc": "Zelle, Fotosynthese, Zellatmung, Ernährung und Verdauung, Lunge, Blut und Kreislauf, Fortpflanzung. Nach den Kapiteln 1 bis 3 von Biosphäre 7/8.", "order": 9 },
   "greeting": "Hallo",
   "intro": "Die Seiten folgen den Themen aus Biosphäre 7/8 und dem Bildungsplan Biologie Klasse 7: Zelle, Stoffwechsel, Ernährung, Atmung und Kreislauf, Fortpflanzung. Erst die Lektion, dann die Übung. Du kannst auch springen.",
   "bossTitle": "Biologie-Check",

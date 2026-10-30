@@ -4,7 +4,8 @@
 import { createElement, useState } from 'react';
 import { DAILY_GOAL_XP, MISSION_REWARD_XP, REFRESH_BONUS_XP, currentStreak, dailyGoal, dailyXP, isRefreshDue, levelOf, levelThreshold, missionProgress } from '../regeln/index.js';
 import { LEVEL_TITLES, MISSION_TEXT } from './ergebnis.js';
-import { doneUnits, starsOf } from '../komponenten/ui.js';
+import { starsOf } from '../helfer/index.js';
+import { doneUnits } from '../komponenten/ui.js';
 import { Mascot } from '../komponenten/mascot.js';
 import { Icon } from '../komponenten/icons.js';
 import { TrackLabel } from '../komponenten/tracks.js';

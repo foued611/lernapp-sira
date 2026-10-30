@@ -26,11 +26,11 @@ Ziel: Der Nutzer schickt Fotos aus einem Schulbuch oder eine Themenliste. Am End
 
 ### 2. Fach finden oder anlegen
 
-- Lies `modernized/modulare-reimagined/seiten/registry.js`. Dort stehen Kennung, `subject`, `title`, `desc` und `status` jeder App.
+- Lies das Feld `catalog` in `content/*/manifest.json`. Dort stehen `subject`, `desc`, `order` und optional `status` jeder App, Kennung und Titel stehen im Manifest selbst.
 - Passt ein bestehendes Fach (z. B. Englisch für ein englisches Buch), wird eine **neue App** für dieses Buch angelegt, nicht eine bestehende erweitert. Die bestehende App hat eigene Logik, etwa `fr-verben` mit Verbtabellen. Erweitern ist nur auf Wunsch des Nutzers.
-- Gibt es für das Fach schon einen Platzhalter mit `status: SOON` (so steht `physik` in der Registry), wird **dieser Eintrag** mit derselben Kennung auf `LIVE` gesetzt. Kein zweiter Eintrag für dasselbe Fach.
+- Gibt es für das Fach schon einen Platzhalter mit `"status": "soon"` im `catalog`, wird **dieser Eintrag** mit derselben Kennung live gesetzt (Feld entfernen). Kein zweiter Eintrag für dasselbe Fach.
 - Passt kein Fach, lege ein neues an:
-  - Fachname auf Deutsch (z. B. "Biologie", "Geschichte"). Der Name steht als `subject` in beiden Registries.
+  - Fachname auf Deutsch (z. B. "Biologie", "Geschichte"). Der Name steht als `subject` im `catalog`.
   - `SUBJECT_COLORS` in `modernized/modulare-reimagined/seiten/registry.js` ergänzen, ein Hex-Wert, der noch nicht vergeben ist. Die Tests verlangen eine Farbe je Fach. Die Wurzel-`registry.js` gibt es auf `main` nicht mehr. Nur wenn sie existiert, dort ebenfalls ergänzen.
   - Neues Fach braucht `docs/lehrplan-<fach>.md` (siehe Schritt 3).
 - Die Kennung der App (`id`) ist Kleinbuchstaben mit Bindestrich, z. B. `decouvertes-2`. Sie darf später nie mehr umbenannt werden, weil sie den Speicherschlüssel bildet.
@@ -55,17 +55,15 @@ Schreibe zuerst eine Seite fertig (Lektion plus zehn Aufgaben), prüfe sie mit d
 
 ### 5. App-Code im Neubau anlegen
 
-Kopiere `modernized/modulare-reimagined/apps/englisch/` nach `apps/<id>/`. Die Englisch-App ist die Vorlage, weil sie den schlichten Aufbau hat. `apps/decouvertes/` nicht nehmen: die hat sich durch Zusammenführungen verändert und importiert Verbmodelle. Passe an:
+Kopiere `modernized/modulare-reimagined/apps/_template/` nach `apps/<id>/`. Eine Inhalts-App braucht keine eigenen Erzeuger, `logic.js` ruft nur `poolApp({ diagrams })` auf. `apps/decouvertes/` nicht nehmen: die hat sich durch Zusammenführungen verändert und importiert Verbmodelle. Passe an:
 
-- `builders.js` und `diagrams.js` bleiben unverändert, wenn das Format gleich ist.
-- `logic.js`: nichts zu ändern, außer dem Kommentar.
+- `diagrams.js`: nimm die Diagramme einer ähnlichen App, z. B. `apps/biologie/`.
+- `logic.js`: nichts zu ändern, außer dem Kommentar. Optional `typedLabel` für das Etikett der Eingabefragen.
 - `tests/<id>.test.js`: `paketVon('<id>')`, und die Testbeschreibungen mit dem Fachnamen.
-- Trage in `modernized/modulare-reimagined/apps/index.js` den Import und den Eintrag in `LOGIC` ein.
-- Trage in `modernized/modulare-reimagined/seiten/registry.js` die App als `status: LIVE` ein, mit `title`, `desc` und `subject`.
+- Trage in `modernized/modulare-reimagined/apps/index.js` den Eintrag in `LOGIC` ein: `'<id>': () => import('./<id>/logic.js')`.
+- Setze im Manifest das Feld `catalog` mit `subject`, `desc` und `order` (nächste freie Zahl). Daraus entsteht die Kachel.
 
 Die Legacy-Oberfläche (`apps/<name>/` im Wurzelordner) baust du **nicht**. Der Nutzer hat entschieden, dass neue Apps nur im Neubau liegen.
-
-Gibt es eine Wurzel-`registry.js` doch noch, verlangt ihr Test für jeden Ordner in `content/` einen Eintrag. Dann einen Platzhalter mit `status: 'soon'` und einem Kurztext "Nur im Neubau" ergänzen.
 
 Diagramme vom Typ `swapDiagram` (zwei Zeilen mit Pfeilen): Die Pfeile müssen Satzteile verbinden, die logisch zusammengehören, also Subjekt zu Subjekt. Die Paarung im Screenshot prüfen, die Tests merken sie nicht.
 

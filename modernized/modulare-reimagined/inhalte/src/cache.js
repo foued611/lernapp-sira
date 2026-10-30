@@ -9,6 +9,8 @@ import { assertBundle } from './bundle.js';
 /** Schlüssel bleibt wie in der Legacy-App. Er steht in gespeicherten Daten und wird nie umbenannt. */
 export const cacheKey = (appId) => `lernwerkstatt:content:${appId}`;
 
+const CATALOG_KEY = 'lernwerkstatt:katalog';
+
 /** Hüllt eine Quelle mit dem Zwischenspeicher. cache braucht get(key) und put(key, value). */
 export function withCache(source, cache) {
   if (!cache || typeof cache.get !== 'function' || typeof cache.put !== 'function') {
@@ -16,6 +18,17 @@ export function withCache(source, cache) {
   }
   return {
     name: `${source.name}+cache`,
+    async catalog() {
+      try {
+        const list = await source.catalog();
+        await Promise.resolve(cache.put(CATALOG_KEY, list)).catch(() => {});
+        return list;
+      } catch (loadError) {
+        const cached = await Promise.resolve().then(() => cache.get(CATALOG_KEY)).catch(() => undefined);
+        if (cached === undefined || cached === null) throw loadError;
+        return cached;
+      }
+    },
     async load(appId) {
       const key = cacheKey(appId);
       try {

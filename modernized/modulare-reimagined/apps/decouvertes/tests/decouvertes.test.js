@@ -3,14 +3,12 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { createRng } from '../../../helfer/index.js';
-import { init as initVerben } from '../verben/model.js';
-import { init, choice, typed, lessonRound, quickRound, bossRound, blitzQuestion } from '../builders.js';
+import { createBuilders } from '../builders.js';
 import { flowDiagram, tableDiagram, swapDiagram } from '../diagrams.js';
 import { paketVon } from '../../tests/laden.js';
 
 const paket = paketVon('decouvertes-2');
-init(paket);
-initVerben(paket);
+const { choice, typed, lessonRound, quickRound, bossRound, blitzQuestion } = createBuilders(paket);
 const UNITS = paket.manifest.units;
 const ITEMS = paket.data.items;
 const alle = Object.values(ITEMS).flat();

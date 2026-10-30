@@ -3,9 +3,11 @@
 // Die Komponenten zeichnen nur. Seiten ist die Wurzel (Start oder App).
 import { createElement, useReducer, useState } from 'react';
 import { DAILY_GOAL_XP, GOAL_CHOICES, REFRESH_BONUS_XP, currentStreak, dailyGoal, dailyXP, setDailyGoal } from '../regeln/index.js';
-import { progressOf, doneUnits, starsOf } from '../komponenten/ui.js';
+import { starsOf } from '../helfer/index.js';
+import { progressOf, doneUnits } from '../komponenten/ui.js';
 import { Mascot } from '../komponenten/mascot.js';
-import { AppFrame, bossOpen, recommendationOf } from './rahmen.js';
+import { bossOpen, recommendationOf } from './ablauf.js';
+import { AppFrame } from './rahmen.js';
 import { NAME_MAX, NO_STORAGE, greetingOf, maskName, saveName } from './name.js';
 import { Sicherung } from './sicherung.js';
 import { LIVE, SUBJECT_COLORS, subjectsOf, unitTrack } from './registry.js';
@@ -36,13 +38,13 @@ function linkTile(app) {
 
 // Der Endgegner in einer Kachel, als Text. Gesperrt heißt: "gesperrt", nicht nur eine andere Farbe (RULE-206).
 function bossLine(app, profile) {
-  const { config, units, appStore } = app;
-  if (!config.rounds || typeof config.rounds.boss !== 'function') return null;
+  const { units, appStore } = app;
+  if (!app.entry.boss) return null;
   const state = appStore.state;
   const unitIds = units.map((u) => u.id);
-  const open = bossOpen({ app: state, unitIds, bossUnlocked: config.bossUnlocked, profile });
+  // Auf der Startseite ist die Logik der App nicht geladen, hier gilt immer die Regel für alle (RULE-206).
+  const open = bossOpen({ app: state, unitIds, profile });
   if (open) return { open: true, text: 'Endgegner offen.' };
-  if (config.bossUnlocked) return { open: false, text: 'Endgegner gesperrt.' };
   const missing = unitIds.filter((id) => starsOf(state.stars, id) === 0).length;
   return { open: false, text: `Endgegner gesperrt: noch ${missing} ${missing === 1 ? 'Seite' : 'Seiten'} ohne Stern.` };
 }
@@ -68,14 +70,13 @@ function progressTile(app, profile) {
 // Die Kachel je App. Ohne Stand (Fehler oder kein Speicher) steht die Meldung dort, nicht eine Null.
 function tileOf(app, profile) {
   if (app.entry.status !== LIVE) return linkTile(app);
-  if (app.error) return { ...linkTile(app), kind: 'error', message: app.error };
   if (!app.appStore) return { ...linkTile(app), kind: 'nostore', message: app.storeMessage || MSG.unavailable };
   return progressTile(app, profile);
 }
 
 // Die Empfehlung für das Training. Erst die App, die zuletzt benutzt wurde, dann die übrigen (RULE-242).
 function trainingOf(apps, day, lastApp) {
-  const live = apps.filter((app) => app.entry.status === LIVE && app.appStore && app.config);
+  const live = apps.filter((app) => app.entry.status === LIVE && app.appStore);
   const ordered = [...live.filter((app) => app.entry.id === lastApp), ...live.filter((app) => app.entry.id !== lastApp)];
   for (const app of ordered) {
     const rec = recommendationOf(app.appStore.state, app.units, day);
@@ -85,7 +86,7 @@ function trainingOf(apps, day, lastApp) {
         appTitle: app.entry.title,
         href: hrefOf(app.entry.id),
         unitTitle: rec.unit.title,
-        track: unitTrack(app.config.tracks, rec.unit),
+        track: unitTrack(app.entry.tracks, rec.unit),
         reason: rec.reason,
         refresh: rec.code === 'refresh'
       };
@@ -144,9 +145,6 @@ function TileCard({ tile }) {
   ];
   if (tile.kind === 'soon') {
     return h('div', { className: 'card tile soon', style }, ...head, h('span', { className: 'pill' }, 'Demnächst'));
-  }
-  if (tile.kind === 'error') {
-    return h('div', { className: 'card tile error', style }, ...head, h('p', { className: 'notice', role: 'status' }, tile.message));
   }
   if (tile.kind === 'link') return h('a', { className: 'card tile', style, href: tile.href }, ...head);
   if (tile.kind === 'nostore') {

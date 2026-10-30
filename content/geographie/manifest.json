@@ -2,6 +2,7 @@
   "schema": 1,
   "id": "geographie",
   "title": "Geographie-Werkstatt",
+  "catalog": { "subject": "Geographie", "desc": "Erdoberfläche, Klima und Vegetation, Tropen, Klimawandel, Polarzone, Bevölkerung, Entwicklungsstand und Welthandel. Nach den Kapiteln 1 bis 8 von Unsere Erde.", "order": 8 },
   "greeting": "Hallo",
   "intro": "Die Seiten folgen den Kapiteln 1 bis 8 aus Unsere Erde: Erdoberfläche, Klima und Vegetation, Tropen, Klimawandel, Polarzone, Bevölkerung, Entwicklungsstand und Welthandel. Erst die Lektion, dann die Übung. Du kannst auch springen.",
   "bossTitle": "Der Weltatlas-Check",

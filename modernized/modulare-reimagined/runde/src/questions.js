@@ -27,7 +27,7 @@ export const option = (id, html = esc(id), fill) => (fill === undefined ? { id, 
  * @param {(value:string)=>string} [o.format]  Anzeige je Text, Standard esc()
  */
 export function choiceQuestion({
-  label, prompt, answer, choices, rng, format = esc, why, reveal, help, chip, sub, promptStyle = 'sentence', optionsLayout
+  label, skill, prompt, answer, choices, rng, format = esc, why, reveal, help, chip, sub, promptStyle = 'sentence', optionsLayout
 }) {
   requireRng(rng);
   requireText(label, 'label');
@@ -45,7 +45,7 @@ export function choiceQuestion({
   }
 
   return {
-    kind: 'choice', label, chip, prompt, promptStyle, sub, answer,
+    kind: 'choice', label, skill, chip, prompt, promptStyle, sub, answer,
     options: shuffle(all, rng), optionsLayout,
     reveal: reveal || format(answer), why, help
   };
@@ -56,7 +56,7 @@ export function choiceQuestion({
  * Die richtige Antwort muss von check als 'ok' bewertet werden (qtypes.js:106).
  */
 export function typedQuestion({
-  label, prompt, answer, check, placeholder, accents, why, reveal, help, chip, sub, promptStyle = 'sentence', format = esc
+  label, skill, prompt, answer, check, placeholder, accents, why, reveal, help, chip, sub, promptStyle = 'sentence', format = esc
 }) {
   requireText(label, 'label');
   requireText(answer, 'answer');
@@ -64,7 +64,7 @@ export function typedQuestion({
   if (check && check(answer) !== 'ok') throw new TypeError(`die richtige Antwort muss ok sein: ${label}`);
 
   return {
-    kind: 'type', label, chip, prompt, promptStyle, sub, answer, check, placeholder, accents,
+    kind: 'type', label, skill, chip, prompt, promptStyle, sub, answer, check, placeholder, accents,
     reveal: reveal || format(answer), why, help
   };
 }

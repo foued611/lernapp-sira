@@ -32,7 +32,7 @@ Das Inhaltspaket (`bundle`) hat immer dieselbe Form `{ manifest, lessons, badges
 Regeln:
 
 - Neue Texte, Fragen und Fakten gehören nach `content/`, nicht in `.js`. Neue Rechenarten oder Diagramme gehören in `logic.js`.
-- `logic.init({ data, manifest })` bekommt die Daten, bevor die erste Runde entsteht. Erzeuger lesen daraus, nie aus einem Import.
+- `logic.create({ data, manifest })` bekommt die Daten, bevor die erste Runde entsteht, und baut die Erzeuger für genau dieses Paket. Kein Stand im Modul, sonst stören sich Klassenstufen mit gleicher Logik.
 - Eine neue Trophäen-Regel ist ein neuer Eintrag in `TYPES` in `regeln/src/trophies.js` plus Test, kein Code in den Daten.
 - Inhalte, die später aus einer Datenbank kommen, dürfen kein ausführbares JavaScript enthalten. HTML-Felder (`html`) kommen aus vertrauenswürdigen Redaktionen und werden vor dem Einspielen geprüft.
 - Der Ordnername in `content/` ist die App-`id`. `npm test` prüft jedes Paket gegen das Schema (Ajv) und die Querverweise.
@@ -74,7 +74,7 @@ Die Mechaniken sind so gewählt, dass sie das Lernen fördern und nicht nur belo
 - Bedienbar mit Tastatur, sichtbarer Fokus, ausreichender Kontrast, Touch-Ziele mindestens 44 px. Wichtige Information nie nur über Farbe.
 - Oberflächentexte auf Deutsch, du-Ansprache, freundlich, ohne Kindersprache. Zielalter 12 bis 13. Keine Emojis, Icons kommen aus `komponenten/icons.js`.
 - Theorie-Seiten nutzen `.tcard`, `.thead`, `.notes` und `.note` aus `seiten/design/styles/base.css`.
-- Eine App-spezifische Optik gehört in `apps/<name>/app.css`, wird in `seiten/main.js` eingebunden und baut auf den Tokens auf.
+- Eine App-spezifische Optik gehört in `apps/<name>/app.css`, wird über `STYLE` in `apps/index.js` geladen und baut auf den Tokens auf.
 
 ## Lektionen
 
@@ -111,7 +111,7 @@ Regeln für Texte und Bilder:
 
 ## Neue App anlegen
 
-Im Neubau: `apps/_template/` nach `apps/<id>/` kopieren, `content/vorlage/` nach `content/<id>/`, Logik in `apps/index.js` eintragen, eigenes CSS in `seiten/main.js`, `status: 'live'` in `seiten/registry.js`. `apps/tests/smoke.test.js` und `apps/tests/endgegner.test.js` prüfen die App automatisch.
+Im Neubau: `apps/_template/` nach `apps/<id>/` kopieren, `content/vorlage/` nach `content/<id>/`, Feld `catalog` im Manifest setzen (`subject`, `desc`, `order`), Logik in `LOGIC` in `apps/index.js` eintragen, eigenes CSS in `STYLE` dort. Steht der Stoff ganz im Inhalt, bleibt `logic.js` beim `poolApp()` der Vorlage. `apps/tests/smoke.test.js` und `apps/tests/endgegner.test.js` prüfen die App automatisch.
 
 Der bisherige Code ist aus `main` entfernt (Branch `legacy`). Neue Apps nur im Neubau anlegen.
 
@@ -157,4 +157,4 @@ Kurze, deutsche Betreffzeile im Präsens oder Perfekt ("Mathe-App ergänzt", "Bo
 - [ ] Hell und dunkel angesehen, schmale Breite geprüft
 - [ ] Keine neuen festen Farben, keine absoluten Pfade
 - [ ] Inhalte passen zu Klasse 7 Gymnasium BW
-- [ ] `registry.js` und `AGENTS.md` aktuell
+- [ ] Feld `catalog` im Manifest und `AGENTS.md` aktuell

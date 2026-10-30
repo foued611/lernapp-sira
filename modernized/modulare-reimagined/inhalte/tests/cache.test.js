@@ -95,3 +95,14 @@ test('RULE-185: withCache verlangt get und put, es gibt keinen stillen Standard-
 test('RULE-185: der Name der Quelle wird mit +cache erweitert', () => {
   assert.equal(withCache({ name: 'http', load: async () => validBundle() }, memoryCache()).name, 'http+cache');
 });
+
+test('INHALTE-CACHE: der Katalog bleibt offline verfügbar', async () => {
+  const stored = new Map();
+  const cache = { get: async (k) => stored.get(k), put: async (k, v) => { stored.set(k, v); } };
+  const list = [{ id: 'probe-app' }];
+  assert.deepEqual(await withCache({ name: 'x', catalog: async () => list }, cache).catalog(), list);
+  const offline = { name: 'x', catalog: async () => { throw new Error('offline'); } };
+  assert.deepEqual(await withCache(offline, cache).catalog(), list);
+  stored.clear();
+  await assert.rejects(withCache(offline, cache).catalog(), /offline/);
+});

@@ -6,7 +6,7 @@ import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { Startseite } from '../startseite.js';
 import { AppHome } from '../apphome.js';
-import { appDefaults, profileDefaults } from '../rahmen.js';
+import { appDefaults, profileDefaults } from '../ablauf.js';
 import { bootFixture, configOf, DAY } from './helpers.js';
 
 const h = createElement;

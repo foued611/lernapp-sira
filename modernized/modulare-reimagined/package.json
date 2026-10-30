@@ -4,10 +4,12 @@
   "type": "module",
   "scripts": {
     "test": "node --test 'regeln/**/*.test.js' 'helfer/**/*.test.js' 'speicher/**/*.test.js' 'inhalte/**/*.test.js' 'runde/**/*.test.js' 'komponenten/**/*.test.js' 'seiten/**/*.test.js' 'apps/**/*.test.js'",
+    "inhalte": "rm -rf public/content && mkdir -p public && cp -R ../../content public/content && node katalog.mjs",
+    "predev": "npm run inhalte",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview --host 127.0.0.1",
-    "prebuild": "rm -rf public/content && mkdir -p public && cp -R ../../content public/content"
+    "prebuild": "npm run inhalte"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^6.1.2",
