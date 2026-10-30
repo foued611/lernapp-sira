@@ -37,15 +37,15 @@ test('INHALTE-KONFIG: resolveFigure lässt fertiges svg unverändert', () => {
   assert.equal(resolveFigure(figure), figure);
 });
 
-test('INHALTE-KONFIG: init bekommt Daten und Manifest, bevor die Lektionen entstehen', () => {
+test('INHALTE-KONFIG: create bekommt Daten und Manifest, bevor die Lektionen entstehen', () => {
   const bundle = validBundle();
   bundle.data = { fragen: [1] };
   const calls = [];
   buildConfig(bundle, {
     diagrams: { probeDiagram: () => { calls.push('diagram'); return '<svg></svg>'; } },
-    init: (arg) => calls.push(['init', arg.data, arg.manifest.id])
+    create: (arg) => { calls.push(['create', arg.data, arg.manifest.id]); return {}; }
   });
-  assert.deepEqual(calls[0], ['init', { fragen: [1] }, 'probe-app']);
+  assert.deepEqual(calls[0], ['create', { fragen: [1] }, 'probe-app']);
   assert.equal(calls[1], 'diagram');
 });
 

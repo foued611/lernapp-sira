@@ -3,11 +3,11 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { createRng } from '../../../helfer/index.js';
-import { init, makersFor, lessonRound, quickRound, bossRound, blitzQuestion } from '../builders.js';
+import { createBuilders, makersFor } from '../builders.js';
 import { paketVon } from '../../tests/laden.js';
 
 const paket = paketVon('info-zahlen');
-init(paket);
+const { lessonRound, quickRound, bossRound, blitzQuestion } = createBuilders(paket);
 const UNITS = paket.manifest.units;
 
 /** Prüft eine einzelne Frage auf den Vertrag. Gibt die Fehlerliste zurück, leer heißt gültig. */

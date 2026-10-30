@@ -3,12 +3,13 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { createRng } from '../../../helfer/index.js';
-import { init, POOLS, make, choice, typed, MAX_TRIES } from '../builders.js';
+import { POOLS, choice, typed, MAX_TRIES, createBuilders } from '../builders.js';
 import logic from '../logic.js';
 import { paketVon } from '../../tests/laden.js';
 
 const paket = paketVon('mathe');
-logic.init(paket);
+const { make } = createBuilders(paket);
+const app = logic.create(paket);
 const UNITS = paket.manifest.units;
 
 // Fragen mit Prüferfunktion lassen sich nicht mit deepEqual vergleichen. Ersatz: Form, Antworten und Prüfergebnisse.
@@ -69,26 +70,26 @@ test('RULE-229: Lektionsrunde 8 Fragen, Endgegner 12, Schnellrunde 5, Blitz ist 
   for (let seed = 1; seed <= 200; seed++) {
     const rng = createRng(seed);
     const unit = UNITS[seed % UNITS.length];
-    const lektion = logic.rounds.lesson(unit, rng);
+    const lektion = app.rounds.lesson(unit, rng);
     assert.equal(lektion.length, 8);
     // Eingabe nur an jeder dritten Stelle (Position 3, 6 ...), wie in Legacy.
     lektion.forEach((q, i) => {
       if (q.kind === 'type') assert.equal(i % 3, 2);
     });
-    const boss = logic.rounds.boss(rng);
+    const boss = app.rounds.boss(rng);
     assert.equal(boss.length, 12);
     boss.forEach((q, i) => {
       if (q.kind === 'type') assert.equal(i % 4, 3);
     });
-    assert.equal(logic.rounds.quick(rng).length, 5);
-    assert.equal(logic.blitz(rng).kind, 'choice');
+    assert.equal(app.rounds.quick(rng).length, 5);
+    assert.equal(app.blitz(rng).kind, 'choice');
   }
 });
 
 test('Gleicher Seed ergibt dieselben Aufgaben, anderer Seed andere', () => {
-  const a = kanonisch(logic.rounds.lesson(UNITS[0], createRng(42)));
-  const b = kanonisch(logic.rounds.lesson(UNITS[0], createRng(42)));
-  const c = kanonisch(logic.rounds.lesson(UNITS[0], createRng(43)));
+  const a = kanonisch(app.rounds.lesson(UNITS[0], createRng(42)));
+  const b = kanonisch(app.rounds.lesson(UNITS[0], createRng(42)));
+  const c = kanonisch(app.rounds.lesson(UNITS[0], createRng(43)));
   assert.deepEqual(a, b);
   assert.notDeepEqual(a, c);
 });

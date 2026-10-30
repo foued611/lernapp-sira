@@ -3,11 +3,11 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { createRng, MINUS } from '../../../helfer/index.js';
-import { init, make, POOLS } from '../builders.js';
+import { POOLS, createBuilders } from '../builders.js';
 import { paketVon } from '../../tests/laden.js';
 
 const paket = paketVon('geometrie');
-init(paket);
+const { make } = createBuilders(paket);
 const UNITS = paket.manifest.units;
 const RUNS = 800;
 const zahl = (text) => Number(String(text).replace(MINUS, '-').replace(',', '.').replace(/[^\d.-]/g, ''));

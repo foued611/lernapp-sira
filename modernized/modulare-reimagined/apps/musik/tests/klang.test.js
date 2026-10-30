@@ -3,14 +3,14 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { createElement as h } from 'react';
 import { renderToString } from 'react-dom/server';
-import { initKlang, klangOf, validateKlang, beatSeconds, scheduleScore, scoreSeconds, midiToFreq, VOICES, MAX_SECONDS } from '../klang.js';
+import { klangOf as klangAus, validateKlang, beatSeconds, scheduleScore, scoreSeconds, midiToFreq, VOICES, MAX_SECONDS } from '../klang.js';
 import { createPlayer } from '../klang-audio.js';
 import { KlangBox } from '../theory.js';
 import { paketVon } from '../../tests/laden.js';
 
 const paket = paketVon('musik');
 const ids = paket.manifest.units.map((u) => u.id);
-initKlang(paket.data);
+const klangOf = (id) => klangAus(paket.data, id);
 
 test('Jede Seite hat mindestens ein gültiges Klangbeispiel', () => {
   assert.deepEqual(validateKlang(paket.data.klang, ids), []);
@@ -61,7 +61,7 @@ test('Alle Stimmen der Daten sind bekannt', () => {
 
 test('Anzeige: jede Seite zeigt Titel und Knöpfe, ohne dass Ton entsteht', () => {
   for (const id of ids) {
-    const html = renderToString(h(KlangBox, { unitId: id }));
+    const html = renderToString(h(KlangBox, { data: paket.data, unitId: id }));
     for (const s of klangOf(id)) assert.ok(html.includes(s.label.replace(/&/g, '&amp;')) || html.includes(s.label), `${id}/${s.id} fehlt`);
     assert.match(html, /Zum Anhören/);
     assert.match(html, /aria-pressed="false"/);
@@ -69,7 +69,7 @@ test('Anzeige: jede Seite zeigt Titel und Knöpfe, ohne dass Ton entsteht', () =
 });
 
 test('Anzeige: eine unbekannte Seite zeigt keine Karte', () => {
-  assert.equal(renderToString(h(KlangBox, { unitId: 'gibt-es-nicht' })), '');
+  assert.equal(renderToString(h(KlangBox, { data: paket.data, unitId: 'gibt-es-nicht' })), '');
 });
 
 test('Spieler: ohne Audio im Browser meldet play() false und wirft nicht', () => {

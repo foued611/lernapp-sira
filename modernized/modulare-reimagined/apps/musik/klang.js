@@ -15,15 +15,11 @@ export const MAX_SECONDS = 40;
 /** Obergrenze für die Zahl der Ereignisse, damit ein Beispiel den Browser nicht überfordert. */
 export const MAX_EVENTS = 600;
 
-let KLANG = {};
-
-/** Bekommt das Datenpaket der App, bevor die erste Seite entsteht. Ohne "klang" gibt es keine Beispiele. */
-export function initKlang(data) {
-  KLANG = data && data.klang && typeof data.klang === 'object' ? data.klang : {};
+/** Beispiele einer Seite aus dem Datenpaket der App, sonst eine leere Liste. Ohne "klang" gibt es keine Beispiele. */
+export function klangOf(data, unitId) {
+  const klang = data && data.klang && typeof data.klang === 'object' ? data.klang : {};
+  return Object.hasOwn(klang, unitId) && Array.isArray(klang[unitId]) ? klang[unitId] : [];
 }
-
-/** Beispiele einer Seite, sonst eine leere Liste. */
-export const klangOf = (unitId) => (Object.hasOwn(KLANG, unitId) && Array.isArray(KLANG[unitId]) ? KLANG[unitId] : []);
 
 /** Frequenz in Hertz zu einer MIDI-Zahl. 69 gleich 440 Hertz. */
 export const midiToFreq = (midi) => 440 * 2 ** ((midi - 69) / 12);

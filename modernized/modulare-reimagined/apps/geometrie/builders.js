@@ -7,26 +7,10 @@
 import { choiceQuestion, typedQuestion, esc, distinctSlots } from '../../runde/index.js';
 import { pick, shuffle, rnd, fmt, nearby, MINUS, numCheck } from '../../helfer/index.js';
 
-// Seiten und Aufgabendaten kommen aus content/geometrie/ (siehe init). Hier liegt nur die Logik der Aufgaben.
-let UNITS = [];
-let MS_FACTS = [], WH_FACTS = [], DR_FACTS = [], TH_FACTS = [], KR_FACTS = [], GR_FACTS = [], PR_FACTS = [], THEOREMS = [], EINDEUTIG = [];
+// Seiten und Aufgabendaten kommen aus content/geometrie/ (siehe createBuilders). Hier liegt nur die Logik der Aufgaben.
 const asWords = (list) => list.map((item) => ({ ...item, choiceOnly: true }));
 
 export const MAX_TRIES = 200;
-
-/** Bekommt Seitenliste und Aufgabendaten, bevor die erste Runde entsteht. */
-export function init({ data, manifest }) {
-  UNITS = manifest.units;
-  MS_FACTS = asWords(data.msFacts);
-  WH_FACTS = asWords(data.whFacts);
-  DR_FACTS = asWords(data.drFacts);
-  TH_FACTS = asWords(data.thFacts);
-  KR_FACTS = asWords(data.krFacts);
-  GR_FACTS = asWords(data.grFacts);
-  PR_FACTS = asWords(data.prFacts);
-  THEOREMS = data.theorems;
-  EINDEUTIG = data.eindeutig;
-}
 
 const D = '°';
 // Längen und Winkel sind positiv. Sonst stünde bei kleinen Lösungen "−8 cm" unter den Optionen.
@@ -119,14 +103,14 @@ function dreieckUngleichung(rng) {
     [possible ? no : yes, 'Ja, drei Seiten ergeben immer ein Dreieck.', 'Nein, alle drei Seiten müssen gleich lang sein.'], why, 'Dreiecksungleichung');
 }
 
-function kongruenzsatz(rng) {
-  const [given, name] = pick(THEOREMS, rng);
+function kongruenzsatz(rng, { theorems }) {
+  const [given, name] = pick(theorems, rng);
   return words(`Gegeben sind ${given}. Welcher Kongruenzsatz passt?`, name, ['SSS', 'SWS', 'WSW', 'SsW'].filter((n) => n !== name),
     `${name} steht für „${given}“. Mit dieser Angabe ist das Dreieck bis auf Spiegelung und Drehung eindeutig festgelegt.`, 'Kongruenzsatz');
 }
 
-function eindeutig(rng) {
-  const [given, ans, why] = pick(EINDEUTIG, rng);
+function eindeutig(rng, { eindeutige }) {
+  const [given, ans, why] = pick(eindeutige, rng);
   const all = ['genau ein Dreieck', 'zwei verschiedene Dreiecke', 'unendlich viele Dreiecke', 'kein Dreieck'];
   return words(`Wie viele Dreiecke passen zu den Angaben? ${given}`, ans, all.filter((o) => o !== ans), why, 'Eindeutigkeit');
 }
@@ -286,24 +270,24 @@ function winkelKette(rng) {
   }, rng);
 }
 
-// Die Pools werden erst in init() gefüllt, daher wird die Liste beim Ziehen über eine Funktion geholt.
-const fixed = (getList) => (rng) => pick(getList(), rng);
+// Listen aus dem Inhalt kommen beim Ziehen aus dem Kontext (createBuilders).
+const fixed = (liste) => (rng, kontext) => pick(kontext[liste], rng);
 export const POOLS = {
-  mittelsenkrechte: [gleichWeit, mitteStrecke, zirkelRadius, fixed(() => MS_FACTS), fixed(() => MS_FACTS)],
-  winkelhalbierende: [haelfte, ganzerWinkel, fixed(() => WH_FACTS), haelfte],
-  dreiecke: [dreieckSeiten, dreieckUngleichung, kongruenzsatz, eindeutig, eindeutig, fixed(() => DR_FACTS)],
+  mittelsenkrechte: [gleichWeit, mitteStrecke, zirkelRadius, fixed('ms'), fixed('ms')],
+  winkelhalbierende: [haelfte, ganzerWinkel, fixed('wh'), haelfte],
+  dreiecke: [dreieckSeiten, dreieckUngleichung, kongruenzsatz, eindeutig, eindeutig, fixed('dr')],
   winkel: [winkelPaar, winkelPaar, winkelsumme, gleichschenklig],
-  thales: [thalesGamma, thalesBeta, thalesBeta, thalesRadius, fixed(() => TH_FACTS)],
-  kreise: [fixed(() => KR_FACTS), fixed(() => KR_FACTS), umkreisLage, thalesRadius],
-  groessen: [wirklichkeit, zeichnung, massstabFinden, hoeheBaum, fixed(() => GR_FACTS)],
-  probleme: [thalesMitte, thalesGleichschenklig, aussenwinkel, winkelKette, fixed(() => PR_FACTS)]
+  thales: [thalesGamma, thalesBeta, thalesBeta, thalesRadius, fixed('th')],
+  kreise: [fixed('kr'), fixed('kr'), umkreisLage, thalesRadius],
+  groessen: [wirklichkeit, zeichnung, massstabFinden, hoeheBaum, fixed('gr')],
+  probleme: [thalesMitte, thalesGleichschenklig, aussenwinkel, winkelKette, fixed('pr')]
 };
 
 /** Eine Aufgabe der Seite mit drei verschiedenen falschen Antworten. Nach MAX_TRIES Versuchen gibt es einen Fehler. */
-export function make(unitId, rng) {
+export function make(unitId, rng, kontext) {
   for (let tries = 1; tries <= MAX_TRIES; tries++) {
     const generate = pick(POOLS[unitId], rng);
-    const item = { ...generate(rng) };
+    const item = { ...generate(rng, kontext) };
     item.wrong = [...new Set(item.wrong)].filter((w) => w !== item.answer);
     if (item.wrong.length >= 3) return item;
   }
@@ -327,18 +311,32 @@ export function typed(item) {
 
 const canType = (item) => item.numeric && !item.choiceOnly;
 
-export function lessonRound(unit, rng) {
-  // Jeder Platz wird neu gewürfelt, solange er eine schon gezeigte Aufgabe liefert (runde/src/vielfalt.js).
-  return distinctSlots(8, rng, (i, r) => {
-    const item = make(unit.id, r);
-    return i % 3 === 2 && canType(item) ? typed(item) : choice(item, r);
-  });
-}
+/** Erzeuger für ein Inhaltspaket. Der Stand liegt hier, nicht im Modul. */
+export function createBuilders({ data, manifest }) {
+  const units = manifest.units;
+  const kontext = {
+    ms: asWords(data.msFacts), wh: asWords(data.whFacts), dr: asWords(data.drFacts), th: asWords(data.thFacts),
+    kr: asWords(data.krFacts), gr: asWords(data.grFacts), pr: asWords(data.prFacts),
+    theorems: data.theorems, eindeutige: data.eindeutig
+  };
+  const makeIn = (unitId, rng) => make(unitId, rng, kontext);
 
-const anyItem = (rng) => make(pick(UNITS, rng).id, rng);
-export const quickRound = (rng) => distinctSlots(5, rng, (_, r) => choice(anyItem(r), r));
-export const blitzQuestion = (rng) => choice(anyItem(rng), rng);
-export const bossRound = (rng) => distinctSlots(12, rng, (i, r) => {
-  const item = make(UNITS[i % UNITS.length].id, r);
-  return i % 4 === 3 && canType(item) ? typed(item) : choice(item, r);
-});
+  /** 8 Fragen, jede dritte zum Eintippen. */
+  function lessonRound(unit, rng) {
+    // Jeder Platz wird neu gewürfelt, solange er eine schon gezeigte Aufgabe liefert (runde/src/vielfalt.js).
+    return distinctSlots(8, rng, (i, r) => {
+      const item = makeIn(unit.id, r);
+      return i % 3 === 2 && canType(item) ? typed(item) : choice(item, r);
+    });
+  }
+
+  const anyItem = (rng) => makeIn(pick(units, rng).id, rng);
+  const quickRound = (rng) => distinctSlots(5, rng, (_, r) => choice(anyItem(r), r));
+  const blitzQuestion = (rng) => choice(anyItem(rng), rng);
+  const bossRound = (rng) => distinctSlots(12, rng, (i, r) => {
+    const item = makeIn(units[i % units.length].id, r);
+    return i % 4 === 3 && canType(item) ? typed(item) : choice(item, r);
+  });
+
+  return { make: makeIn, lessonRound, quickRound, bossRound, blitzQuestion };
+}

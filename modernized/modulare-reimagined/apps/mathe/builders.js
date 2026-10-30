@@ -11,15 +11,7 @@ import { choiceQuestion, typedQuestion, esc, distinctSlots } from '../../runde/i
 import { pick, shuffle, rnd, fmt, nearby, numCheck, probCheck, MINUS } from '../../helfer/index.js';
 import { par, linear, frac, gcd, termCheck, euro, nah, rund } from './math.js';
 
-// Inhalte kommen aus content/mathe/ (siehe init). Hier liegt nur die Logik der Aufgaben.
-let UNITS = [];
-let SITUATIONS = [];
-
-/** Bekommt Seitenliste und Aufgabendaten, bevor die erste Runde entsteht. */
-export function init({ data, manifest }) {
-  UNITS = manifest.units;
-  SITUATIONS = data.situations;
-}
+// Inhalte kommen aus content/mathe/ (siehe createBuilders). Hier liegt nur die Logik der Aufgaben.
 
 // Höchstzahl an Versuchen, bis eine Aufgabe drei falsche Antworten hat. Danach ein Fehler statt einer Endlosschleife.
 export const MAX_TRIES = 200;
@@ -209,8 +201,8 @@ function dreisatzAnti(rng) {
     why: `${w2 > w1 ? 'Mehr Arbeiter, weniger Tage' : 'Weniger Arbeiter, mehr Tage'} (antiproportional). Das Produkt bleibt gleich: ${w1} · ${d} = ${total} Arbeitertage. Geteilt durch ${w2} Arbeiter sind das ${fmt(r)} ${r === 1 ? 'Tag' : 'Tage'}.` };
 }
 
-function erkennen(rng) {
-  const [s, a] = pick(SITUATIONS, rng);
+function erkennen(rng, { situations }) {
+  const [s, a] = pick(situations, rng);
   const all = ['proportional', 'antiproportional', 'weder noch', 'beides'];
   const why = { proportional: 'Doppelt so viel von der einen Größe heißt doppelt so viel von der anderen.', antiproportional: 'Doppelt so viel von der einen Größe heißt nur halb so viel von der anderen. Das Produkt bleibt gleich.', 'weder noch': 'Hier gibt es keine feste Regel. Der Zusammenhang ist weder ein festes Vielfaches noch ein festes Produkt.' };
   return { prompt: s, answer: a, wrong: all.filter((o) => o !== a), choiceOnly: true, label: 'Welche Zuordnung ist das?', why: why[a] };
@@ -373,9 +365,9 @@ export function typed(item) {
 }
 
 /** Eine Aufgabe mit mindestens drei verschiedenen falschen Antworten. Nach MAX_TRIES Versuchen gibt es einen Fehler. */
-export function make(unitId, rng) {
+export function make(unitId, rng, kontext) {
   for (let tries = 1; tries <= MAX_TRIES; tries++) {
-    const item = pick(POOLS[unitId], rng)(rng);
+    const item = pick(POOLS[unitId], rng)(rng, kontext);
     item.wrong = [...new Set(item.wrong)].filter((w) => w !== item.answer);
     if (item.wrong.length >= 3) return item;
   }
@@ -383,19 +375,28 @@ export function make(unitId, rng) {
 }
 const canType = (item) => !item.choiceOnly;
 
-/** 8 Fragen, jede dritte zum Eintippen. */
-export function lessonRound(unit, rng) {
-  // Jeder Platz wird neu gewürfelt, solange er eine schon gezeigte Aufgabe liefert (runde/src/vielfalt.js).
-  return distinctSlots(8, rng, (i, r) => {
-    const item = make(unit.id, r);
-    return i % 3 === 2 && canType(item) ? typed(item) : choice(item, r);
-  });
-}
+/** Erzeuger für ein Inhaltspaket. Der Stand liegt hier, nicht im Modul. */
+export function createBuilders({ data, manifest }) {
+  const units = manifest.units;
+  const kontext = { situations: data.situations };
+  const makeIn = (unitId, rng) => make(unitId, rng, kontext);
 
-const anyItem = (rng) => make(pick(UNITS, rng).id, rng);
-export const quickRound = (rng) => distinctSlots(5, rng, (_, r) => choice(anyItem(r), r));
-export const blitzQuestion = (rng) => choice(anyItem(rng), rng);
-export const bossRound = (rng) => distinctSlots(12, rng, (i, r) => {
-  const item = make(UNITS[i % UNITS.length].id, r);
-  return i % 4 === 3 && canType(item) ? typed(item) : choice(item, r);
-});
+  /** 8 Fragen, jede dritte zum Eintippen. */
+  function lessonRound(unit, rng) {
+    // Jeder Platz wird neu gewürfelt, solange er eine schon gezeigte Aufgabe liefert (runde/src/vielfalt.js).
+    return distinctSlots(8, rng, (i, r) => {
+      const item = makeIn(unit.id, r);
+      return i % 3 === 2 && canType(item) ? typed(item) : choice(item, r);
+    });
+  }
+
+  const anyItem = (rng) => makeIn(pick(units, rng).id, rng);
+  const quickRound = (rng) => distinctSlots(5, rng, (_, r) => choice(anyItem(r), r));
+  const blitzQuestion = (rng) => choice(anyItem(rng), rng);
+  const bossRound = (rng) => distinctSlots(12, rng, (i, r) => {
+    const item = makeIn(units[i % units.length].id, r);
+    return i % 4 === 3 && canType(item) ? typed(item) : choice(item, r);
+  });
+
+  return { make: makeIn, lessonRound, quickRound, bossRound, blitzQuestion };
+}

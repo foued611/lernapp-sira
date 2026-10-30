@@ -4,6 +4,7 @@ export { createRound } from './src/round.js';
 export { withMissed } from './src/abruf.js';
 export { createBlitz } from './src/blitz.js';
 export { choiceQuestion, typedQuestion, matchQuestion, option } from './src/questions.js';
+export { createPool, isGap, logicOf, poolApp, skillOf } from './src/pool.js';
 export { esc, normalise, stripAccents } from './src/text.js';
 export { compareTyped } from './src/check.js';
 export { questionKey, distinctQuestions, distinctSlots, freshPool } from './src/vielfalt.js';

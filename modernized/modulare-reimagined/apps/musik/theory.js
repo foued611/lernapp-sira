@@ -13,8 +13,8 @@ import { createPlayer } from './klang-audio.js';
 const h = createElement;
 
 /** Karte mit den Beispielen einer Seite. Ohne Beispiele wird nichts gezeichnet. */
-export function KlangBox({ unitId, host = globalThis }) {
-  const sounds = klangOf(unitId);
+export function KlangBox({ data, unitId, host = globalThis }) {
+  const sounds = klangOf(data, unitId);
   const [playing, setPlaying] = useState(null);
   const [problem, setProblem] = useState(false);
   const player = useRef(null);
@@ -94,7 +94,7 @@ export function Theory({ unit, config, onStart }) {
       lesson: config.lessons ? config.lessons[unit.id] : undefined,
       unitId: unit.id,
       diagrams,
-      toy: h(KlangBox, { unitId: unit.id })
+      toy: h(KlangBox, { data: config.data, unitId: unit.id })
     }),
     h(Notes, { notes: config.notes ? config.notes[unit.id] : undefined }),
     h('div', null, h(Button, { onClick: () => onStart() }, 'Übung starten'))

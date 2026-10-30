@@ -7,15 +7,15 @@ import logic from '../logic.js';
 import { paketVon } from '../../tests/laden.js';
 
 const paket = paketVon('vorlage');
-logic.init(paket);
+const app = logic.create(paket);
 const UNITS = paket.manifest.units;
 
 test('VORLAGE: Runden und Blitz liefern gültige Fragen', () => {
   for (let seed = 1; seed <= 30; seed++) {
     const rng = createRng(seed);
-    assert.equal(logic.rounds.lesson(UNITS[seed % UNITS.length], rng).length, 8);
-    assert.equal(logic.rounds.quick(rng).length, 5);
-    assert.equal(logic.blitz(rng).kind, 'choice');
+    assert.equal(app.rounds.lesson(UNITS[seed % UNITS.length], rng).length, 8);
+    assert.equal(app.rounds.quick(rng).length, 5);
+    assert.equal(app.blitz(rng).kind, 'choice');
   }
 });
 
