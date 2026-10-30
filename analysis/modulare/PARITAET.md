@@ -133,7 +133,7 @@ Ohne Entscheidung über diese Punkte ist "1zu1 funktional" nicht erfüllbar.
 ## Stand der Arbeit (uncommitted)
 
 - Legacy-Styles in `seiten/design/styles` übernommen, `seiten/main.js` lädt sie.
-- Startseite: Markup wie `dashboard.js` (Kopf, Ring, Weiter-Karte, Kacheln). Endgegner-Zeile und Sicherung entfernt, weil Legacy sie dort nicht hat.
+- Startseite: Markup wie `dashboard.js` (Kopf, Ring, Weiter-Karte, Kacheln). Endgegner-Zeile, Karte "Gezieltes Training" und Sicherung entfernt, weil Legacy sie dort nicht hat. Endgegner und Training stehen auf der App-Startseite (`home.js`, `apphome.js`). Die zurückgebliebenen Modellfelder `tile.boss` und `training` sind seit 2026-10-30 ebenfalls entfernt.
 - App-Startseite: Markup wie `home.js` (Hero, Ring, Lernpfad, Spielmodi, Ausdrucken, Sammelalbum, Trophäen, Zurücksetzen). Kopfleiste wie `shell.js` (header.top).
 - Browser-Vergleich Deutsch-Startseite: Kopf und Lernpfad stimmen überein.
 - Spielansicht (`seiten/spiel.js`): Legacy-Markup für Fortschritt, Herzen, Fragekarte, Antwortkästchen, Eingabe mit Akzent-Leiste, Zuordnung, Rückmeldung mit Maskottchen. Im Browser geprüft (Runde Deutsch).

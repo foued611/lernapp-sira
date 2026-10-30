@@ -5,7 +5,7 @@ import assert from 'node:assert/strict';
 import { buildCatalog } from '../../inhalte/index.js';
 import { LIVE, validateRegistry } from '../../seiten/registry.js';
 import { logicIds } from '../index.js';
-import { APPS, logicFor, paketVon } from './laden.js';
+import { APPS, paketVon } from './laden.js';
 
 test('KATALOG: ist gültig und hat jede App genau einmal', () => {
   assert.deepEqual(validateRegistry(APPS), []);
@@ -16,11 +16,9 @@ test('KATALOG: jede App mit Logik steht im Katalog und umgekehrt', () => {
   assert.deepEqual(live, [...logicIds()].sort());
 });
 
-test('KATALOG: Endgegner und Seiten stimmen mit App und Manifest überein', () => {
+test('KATALOG: Seiten stimmen mit dem Manifest überein', () => {
   for (const entry of APPS) {
-    const { manifest, ...paket } = paketVon(entry.id);
-    const app = logicFor(entry.id).create({ data: paket.data, manifest });
-    assert.equal(entry.boss, typeof app.rounds.boss === 'function', `${entry.id}: boss`);
+    const { manifest } = paketVon(entry.id);
     assert.deepEqual(entry.units.map((u) => u.id), manifest.units.map((u) => u.id), `${entry.id}: Seiten`);
   }
 });
@@ -34,6 +32,6 @@ test('KATALOG: die Reihenfolge kommt aus order, Pakete ohne catalog fehlen', () 
 
 test('KATALOG: Seiten im Katalog tragen nur, was die Startseite braucht', () => {
   const [entry] = buildCatalog([{ id: 'a', title: 'A', catalog: { subject: 'S', desc: 'D', order: 1 }, units: [{ id: 'u', title: 'T', ic: '1', track: 't' }] }]);
-  assert.deepEqual(entry.units, [{ id: 'u', title: 'T', track: 't' }]);
+  assert.deepEqual(entry.units, [{ id: 'u' }]);
   assert.equal(entry.status, 'live');
 });
