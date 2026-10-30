@@ -66,16 +66,18 @@ a.btn{display:inline-block;text-align:center;text-decoration:none}
 .goalbox p{margin:0;font-size:14px;color:var(--hero-soft)}
 .goalbox p strong{color:var(--hero-fg);display:block;font-size:17px;font-family:var(--f-head);font-weight:800}
 .goalbox .btn{margin-left:auto}
-.path{display:grid;gap:14px;position:relative;list-style:none;margin:0;padding:0}
+.path{display:grid;gap:10px;position:relative;list-style:none;margin:0;padding:0}
 .station{margin:0}
-.path::before{content:"";position:absolute;left:46px;top:30px;bottom:30px;border-left:3px dashed var(--line)}
-.node{position:relative;display:grid;grid-template-columns:60px 1fr auto;align-items:center;gap:14px;width:100%;text-align:left;cursor:pointer;background:var(--card);border:2px solid var(--ink);border-radius:14px;box-shadow:4px 5px 0 var(--shadow);padding:12px 16px;min-height:var(--touch-min);transition:transform .1s}
+.path::before{content:"";position:absolute;left:36px;top:30px;bottom:30px;border-left:3px dashed var(--line)}
+.node{position:relative;display:grid;grid-template-columns:44px minmax(0,1fr);align-items:center;gap:12px;width:100%;text-align:left;cursor:pointer;background:var(--card);border:2px solid var(--ink);border-radius:14px;box-shadow:4px 5px 0 var(--shadow);padding:8px 12px;min-height:var(--touch-min);transition:transform .1s}
 .node:hover{transform:translate(-1px,-2px)}
-.node .circ{width:60px;height:60px;border-radius:18px;border:2px solid var(--ink);background:var(--lc);color:var(--on-accent);display:grid;place-items:center;font-family:var(--f-head);font-weight:800;font-size:22px;line-height:1;transform:rotate(-4deg)}
-.node .stitle{display:block;margin:0;font-family:var(--f-head);color:var(--ink);font-weight:800;font-size:22px;line-height:1.08;letter-spacing:-.02em;overflow-wrap:anywhere}
-.node small{display:block;color:var(--muted);font-size:13px}
+.node .circ{width:44px;height:44px;border-radius:14px;border:2px solid var(--ink);background:var(--lc);color:var(--on-accent);display:grid;place-items:center;font-family:var(--f-head);font-weight:800;font-size:16px;line-height:1;transform:rotate(-4deg)}
+.node .stitle{display:block;margin:0;font-family:var(--f-head);color:var(--ink);font-weight:800;font-size:17px;line-height:1.15;letter-spacing:-.01em;overflow-wrap:anywhere}
+.node small{display:block;color:var(--muted);font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.node .meta{display:flex;flex-wrap:wrap;align-items:center;gap:2px 10px;margin-top:2px}
 .node .go{font-size:13px;font-weight:600;color:var(--ink)}
 .stars{display:flex;gap:2px;font-size:24px;color:var(--muted)}
+.node .stars{font-size:16px}
 .stars .on{color:var(--star)}
 .modes{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
 .modes .card{display:grid;gap:10px;align-content:start}
@@ -112,7 +114,7 @@ a.btn{display:inline-block;text-align:center;text-decoration:none}
 .hero .mas{animation:bob 3s ease-in-out infinite}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.cf{display:none}}
 .hero .mas{width:92px}
-@media (max-width:520px){.node{grid-template-columns:52px 1fr}.node .circ{width:52px;height:52px;font-size:19px}.node .stars{grid-column:2}.path::before{left:42px}.hero .row1{grid-template-columns:70px 1fr}.hero .mas{width:70px}.goalbox .btn{margin-left:0;width:100%}header.top{position:static}}
+@media (max-width:520px){.hero .row1{grid-template-columns:70px 1fr}.hero .mas{width:70px}.goalbox .btn{margin-left:0;width:100%}header.top{position:static}}
 
 .alla{display:inline-flex;align-items:center;min-height:44px;font-size:13px;font-weight:600;color:var(--ink);text-decoration:none;border:2px solid var(--line);border-radius:20px;padding:2px 12px;position:relative}
 .alla::after{content:"";position:absolute;inset:-8px -4px}
@@ -156,7 +158,7 @@ a.btn{display:inline-block;text-align:center;text-decoration:none}
 .mission .mtext small{font-size:13px;color:var(--muted)}
 
 /* Lernpfad-Karte: Zustand als Wort mit Symbol, die nächste Station mit Rahmen und Text, nichts ist gesperrt */
-.node .state{display:inline-flex;align-items:center;gap:4px;margin-top:4px;font-size:13px;font-weight:700;color:var(--muted)}
+.node .state{display:inline-flex;align-items:center;gap:4px;font-size:13px;font-weight:700;color:var(--muted)}
 .node .state svg.ic{width:16px;height:16px}
 .node .state .dot{width:10px;height:10px;border:2px solid var(--muted);border-radius:50%}
 .node .s-gemeistert{color:var(--ink)}
@@ -164,8 +166,8 @@ a.btn{display:inline-block;text-align:center;text-decoration:none}
 .node .s-geübt svg.ic{fill:var(--star)}
 .node .s-fällig{background:var(--marker);color:var(--text);border-radius:8px;padding:1px 8px}
 .node .s-fällig svg.ic{fill:var(--flame)}
-.node.next{border-width:4px;padding:10px 14px}
-.node .nexttag{display:block;width:fit-content;margin-top:6px;background:var(--ink);color:var(--paper);border-radius:8px;padding:1px 8px;font-size:13px;font-weight:700}
+.node.next{border-width:4px;padding:6px 10px}
+.node .nexttag{display:block;width:fit-content;background:var(--ink);color:var(--paper);border-radius:8px;padding:1px 8px;font-size:13px;font-weight:700}
 
 /* Aufklappbare Gruppen im Lernpfad (optionales Feld group an Seiten) */
 .pgroup{border:2px solid var(--line);border-radius:var(--r,14px);padding:0 12px;margin:0 0 12px;background:var(--card,transparent)}

@@ -103,9 +103,10 @@ function Station({ unit, track, state, stars, next, onStudy }) {
         h('span', { className: 'stitle' }, unit.title),
         h('small', null, unit.de),
         h(TrackLabel, { track }),
-        h('span', { className: `state s-${state}` }, icon ? h(Icon, { name: icon }) : h('span', { className: 'dot', 'aria-hidden': 'true' }), label),
-        next ? h('span', { className: 'nexttag' }, 'Als Nächstes') : null),
-      h(Stars, { n: stars })
+        h('span', { className: 'meta' },
+          h('span', { className: `state s-${state}` }, icon ? h(Icon, { name: icon }) : h('span', { className: 'dot', 'aria-hidden': 'true' }), label),
+          h(Stars, { n: stars }),
+          next ? h('span', { className: 'nexttag' }, 'Als Nächstes') : null))
     )
   );
 }
@@ -201,7 +202,7 @@ export function AppHome({ config, app, profile, day, rec, open, notice, storeMes
       null,
       h('h2', null, 'Dein Lernpfad'),
       h('p', { className: 'muted', style: { margin: '4px 0 14px', fontSize: '14px' } }, config.intro || 'Starte irgendwo. Die Reihenfolge ist nur ein Vorschlag.'),
-      ...pathGroups(units, config.groups).map(({ title, units: inGroup }) => {
+      ...pathGroups(units, config.groups).map(({ id, title, units: inGroup }) => {
         const path = h(
           'ol',
           { className: 'path' },
@@ -209,11 +210,13 @@ export function AppHome({ config, app, profile, day, rec, open, notice, storeMes
         );
         if (!title) return path;
         const geschafft = doneUnits(app.stars, inGroup.map((u) => u.id));
+        // Ein zugeklapptes Kapitel versteckt seine Stationen. Fälliges muss trotzdem sichtbar bleiben.
+        const faellig = inGroup.filter((u) => stationState(app, u, day) === 'fällig').length;
         // details/summary: ohne Skript bedienbar, mit Tastatur und Screenreader. Offen ist die Gruppe mit der nächsten Seite und die, aus der die Person gerade kommt.
         return h(
           'details',
-          { key: title, className: 'pgroup', open: inGroup.some((u) => u.id === nextId || u.id === focusId) || undefined },
-          h('summary', null, h('span', null, title), h('span', { className: 'muted' }, `${geschafft} von ${inGroup.length} geschafft`)),
+          { key: id, className: 'pgroup', open: inGroup.some((u) => u.id === nextId || u.id === focusId) || undefined },
+          h('summary', null, h('span', null, title), h('span', { className: 'muted' }, `${geschafft} von ${inGroup.length} geschafft${faellig ? ` · ${faellig} fällig` : ''}`)),
           path
         );
       })
