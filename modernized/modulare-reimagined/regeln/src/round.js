@@ -3,7 +3,7 @@
 import { BOSS_BONUS_XP, MISSION_REWARD_XP, REFRESH_BONUS_XP } from './constants.js';
 import { assertDay, dayDiff } from './dates.js';
 import { currentStreak, updateStreak } from './streak.js';
-import { isRefreshDue, starsFor } from './progress.js';
+import { isRefreshDue, nextReviewStep, reviewStep, starsFor } from './progress.js';
 import { awardXP } from './xp.js';
 import { evaluateTrophyRule } from './trophies.js';
 import { recordMission } from './missions.js';
@@ -25,7 +25,13 @@ function settleLesson(ctx, unitId, missedSkills) {
   const { result, app, day } = ctx;
   // Auffrischen wird vor dem Speichern des Übungstags geprüft. Danach wäre die Seite nicht mehr fällig.
   // Eine gescheiterte Runde bekommt keinen Bonus (rounds.js:19).
-  if (isRefreshDue(app, unitId, day) && !result.failed) {
+  const due = isRefreshDue(app, unitId, day);
+  // Die Stufe wird vor dem neuen Stand gelesen: Sie hängt ohne Eintrag an der alten Genauigkeit.
+  if (due) {
+    if (!app.box || typeof app.box !== 'object' || Array.isArray(app.box)) app.box = {};
+    app.box[unitId] = nextReviewStep(reviewStep(app, unitId), result.stars);
+  }
+  if (due && !result.failed) {
     result.refresh = true;
     app.refreshes = (app.refreshes || 0) + 1;
     payBonus(ctx, REFRESH_BONUS_XP);

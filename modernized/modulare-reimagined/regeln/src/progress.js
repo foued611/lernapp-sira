@@ -1,6 +1,6 @@
 // Fortschritt je Seite: Sterne, Trefferquote, Auffrischen und Empfehlung.
 import {
-  ALMOST_WEIGHT, DUE_DAYS, DUE_DAYS_STRONG, MAX_STARS, REFRESH_STRONG_ACCURACY, STAR_THRESHOLDS,
+  ALMOST_WEIGHT, DUE_DAYS, DUE_DAYS_STRONG, MAX_STARS, REFRESH_STRONG_ACCURACY, REVIEW_STEPS, STAR_THRESHOLDS,
   WEAK_ACCURACY
 } from './constants.js';
 import { assertDay, dayDiff } from './dates.js';
@@ -44,18 +44,31 @@ export function roundAccuracy(attempts, originalCount) {
 
 const starsOf = (app, unitId) => (app.stars && app.stars[unitId]) || 0;
 
+/** Stufe einer Seite in REVIEW_STEPS. Ohne gespeicherte Stufe entscheidet die letzte Genauigkeit, wie bei alten Ständen. */
+export function reviewStep(app, unitId) {
+  const step = app.box && app.box[unitId];
+  if (Number.isInteger(step)) return Math.min(Math.max(step, 0), REVIEW_STEPS.length - 1);
+  const acc = app.acc && app.acc[unitId];
+  return typeof acc === 'number' && acc >= REFRESH_STRONG_ACCURACY ? REVIEW_STEPS.indexOf(DUE_DAYS_STRONG) : REVIEW_STEPS.indexOf(DUE_DAYS);
+}
+
 /**
- * Eine Seite ist fällig, wenn sie schon einen Stern hat und seit DUE_DAYS Tagen nicht geübt wurde
- * (profile.js:79-82). Lag die letzte Genauigkeit bei REFRESH_STRONG_ACCURACY oder darüber, gilt
- * die längere Frist DUE_DAYS_STRONG; ohne gespeicherte Genauigkeit bleibt es bei DUE_DAYS.
+ * Stufe nach einer Lektionsrunde auf einer fälligen Seite. Sitzt die Seite (ab 2 Sternen), geht es eine Stufe weiter.
+ * Sonst beginnt der kurze Abstand von vorn, denn dann war der Abstand zu lang.
+ */
+export function nextReviewStep(step, stars) {
+  return stars >= 2 ? Math.min(step + 1, REVIEW_STEPS.length - 1) : 0;
+}
+
+/**
+ * Eine Seite ist fällig, wenn sie schon einen Stern hat und der Abstand ihrer Stufe vorbei ist (reviewStep).
+ * Seiten ohne Stufe: DUE_DAYS, bei einer letzten Genauigkeit ab REFRESH_STRONG_ACCURACY DUE_DAYS_STRONG.
  */
 export function isRefreshDue(app, unitId, day) {
   assertDay(day);
   const last = app.last && app.last[unitId];
   if (!last || starsOf(app, unitId) <= 0) return false;
-  const acc = app.acc && app.acc[unitId];
-  const strong = typeof acc === 'number' && acc >= REFRESH_STRONG_ACCURACY;
-  return dayDiff(last, day) >= (strong ? DUE_DAYS_STRONG : DUE_DAYS);
+  return dayDiff(last, day) >= REVIEW_STEPS[reviewStep(app, unitId)];
 }
 
 // ISO-Tage ('YYYY-MM-DD') sortieren lexikografisch genauso wie in der Zeit.

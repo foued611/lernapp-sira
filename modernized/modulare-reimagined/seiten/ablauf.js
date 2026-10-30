@@ -22,11 +22,12 @@ export const DEFAULT_KLASSE = 7;
 export const profileDefaults = () => ({ name: '', klasse: DEFAULT_KLASSE, xp: 0, streak: 0, lastDay: '', lastApp: '', day: { d: '', xp: 0 } });
 // last und acc steuern Auffrischen und gezieltes Training (legacy profile.js:15).
 // seen: Schlüssel der Aufgaben, die richtig beantwortet wurden. Neue Runden bevorzugen andere (runde/src/vielfalt.js).
+// box: je Seite die Stufe in REVIEW_STEPS, also wie lange sie bis zum nächsten Auffrischen warten darf.
 // chapters: je Kapitel der beste Kapitel-Test { acc, day }.
 // missed: je Seite die Kategorien (skill, sonst Etikett) der Fragen, die in der letzten Lektionsrunde im ersten Versuch falsch waren (Fehler-Abruf).
 // refreshes: Zahl der bezahlten Auffrischungen (Trophäe refresh, Wochenmission refresh1 zählt separat).
 // merged: Quellen, deren Stand schon in diese App übernommen wurde (seiten/uebernahme.js).
-export const appDefaults = () => ({ xp: 0, stars: {}, badges: {}, best: {}, last: {}, acc: {}, seen: {}, missed: {}, refreshes: 0, merged: {}, chapters: {} });
+export const appDefaults = () => ({ xp: 0, stars: {}, badges: {}, best: {}, last: {}, acc: {}, seen: {}, missed: {}, refreshes: 0, merged: {}, chapters: {}, box: {} });
 // Obergrenze je App, damit der Stand klein bleibt. Die ältesten Schlüssel fallen zuerst weg.
 export const SEEN_MAX = 2000;
 export const RIGHT = Object.freeze(new Set(['ok', 'almost']));

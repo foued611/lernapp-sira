@@ -17,6 +17,12 @@ export const DUE_DAYS = 3;
  */
 export const DUE_DAYS_STRONG = 7;
 
+/**
+ * Abstände in Tagen, wenn eine Seite beim Auffrischen sitzt. Jede gelungene Auffrischung rückt eine Stufe weiter,
+ * sonst wäre eine fertige Seite für immer alle paar Tage fällig. Die ersten zwei Stufen sind DUE_DAYS und DUE_DAYS_STRONG.
+ */
+export const REVIEW_STEPS = Object.freeze([DUE_DAYS, DUE_DAYS_STRONG, 14, 30, 60]);
+
 /** Untergrenzen der Trefferquote für 3 bzw. 2 Sterne (profile.js:76). */
 export const STAR_THRESHOLDS = Object.freeze({ three: 0.9, two: 0.7 });
 
