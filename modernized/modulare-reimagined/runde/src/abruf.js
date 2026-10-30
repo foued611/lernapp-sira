@@ -1,6 +1,6 @@
 // Fehler-Abruf (Spec 5.2): Aus dem Pool einer Lektionsrunde werden Fragen gezogen, und mindestens eine Frage aus
 // den Fehlerkategorien der letzten Runde ist garantiert dabei. Die Kategorie ist q.skill, ohne Angabe das Etikett. "Garantiert dabei" heißt nicht "vorn": createRound
-// mischt die Reihenfolge ohnehin. Zufall nur über rng.
+// bestimmt die Reihenfolge selbst. Zufall nur über rng.
 // Die Garantie gilt nur für Kategorien, die im Pool vorkommen. Eine Kategorie, die die Aufgabenerzeuger nicht mehr liefern,
 // kann nicht zurückkommen. Das ist gewollt: dann gibt es keine Frage, die man wiederholen könnte.
 import { shuffle } from '../../helfer/index.js';

@@ -164,7 +164,7 @@ export function startRound({ config, mode, unit = null, group = null, app, profi
     const recalled = missed.length && config.rounds.recall ? config.rounds.recall(unit, missed, rng) : [];
     const candidates = recalled.length ? uniqueQuestions([...recalled, ...fresh]) : fresh;
     const pool = missed.length ? withMissed(candidates, missed, Math.min(size, candidates.length), rng) : fresh;
-    const round = createRound({ pool, size: Math.min(size, pool.length), rng, boss: mode === 'boss' });
+    const round = createRound({ pool, size: Math.min(size, pool.length), rng, boss: mode === 'boss', ramp: mode === 'lesson' });
     return { ok: true, round, mode, unit, group };
   } catch (error) {
     return failure('Die Aufgaben konnten nicht erzeugt werden.', error);

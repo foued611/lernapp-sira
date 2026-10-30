@@ -75,6 +75,7 @@ Die Mechaniken sind so gewählt, dass sie das Lernen fördern und nicht nur belo
 - **Neue Trophäen-Typen:** `improved` (Genauigkeit einer Seite gegenüber dem letzten Mal um einen Mindestwert gestiegen), `retryRecovered` (Fehler der Runde im zweiten Versuch richtig beantwortet) und `refresh` (Zahl bezahlter Auffrischungen).
 - **Gezieltes Training:** Die Startseite einer App (`seiten/apphome.js`) schlägt die fällige oder schwächste Seite vor (`weakestUnit`). Den Endgegner zeigt die Startseite aller Apps nicht.
 - **2-Minuten-Runde und Blitz:** Sie wiederholen und ziehen nur aus Seiten mit mindestens einem Stern. Wer noch nichts geübt hat, startet mit der Theorie der ersten Seite.
+- **Von leicht nach schwer:** Aufgaben können `level` tragen (1 erkennen, 2 anwenden, 3 übertragen). Eine Lektionsrunde läuft danach aufsteigend, Aufgaben ohne `level` stehen in der Mitte. Der zweite Versuch kommt weiter am Ende.
 - **Voraussetzungen:** `needs` an einer Seite nennt Seiten, auf denen sie aufbaut. Fehlt dort der Stern, zeigt die Theorie einen Hinweis mit Link. Gesperrt wird nichts.
 - **Nächster Schritt:** Ab 2 Sternen führt der Hauptknopf im Ergebnis zur nächsten offenen Seite, nach einer Auffrischung zur nächsten fälligen (`followingUnit`). Darunter bleibt „Nochmal“ der Hauptknopf.
 - **Kapitel-Test:** Hat ein Kapitel mindestens zwei Seiten und jede davon einen Stern, gibt es 10 gemischte Aufgaben daraus. Er ändert keine Sterne und zählt nicht als Übung der Seiten. Gespeichert wird der Bestwert (`app.chapters`), das Ergebnis nennt die Seiten mit Fehlern.

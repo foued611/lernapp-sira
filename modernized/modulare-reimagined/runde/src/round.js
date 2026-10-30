@@ -8,6 +8,8 @@ import { compareTyped } from './check.js';
 import { normalise } from './text.js';
 
 const KINDS = new Set(['choice', 'type', 'match']);
+// Aufgaben ohne level stehen zwischen den leichten und den schweren.
+const MIDDLE_LEVEL = 2;
 
 const refused = (reason) => ({ accepted: false, outcome: null, events: [], reason });
 
@@ -24,8 +26,9 @@ const checkIndex = (value, length, name) => {
  * @param {number} o.size          Zahl der Fragen, die aus dem Pool gezogen werden (ohne Zurücklegen)
  * @param {()=>number} o.rng       Zufall in [0, 1), z. B. createRng(seed)
  * @param {boolean} [o.boss]       Endgegner: 3 Herzen, keine Wiederholung
+ * @param {boolean} [o.ramp]       Von leicht nach schwer: Fragen mit kleinerem level zuerst, ohne level in der Mitte
  */
-export function createRound({ pool, size, rng, boss = false }) {
+export function createRound({ pool, size, rng, boss = false, ramp = false }) {
   if (!Array.isArray(pool) || pool.length === 0) throw new TypeError('pool braucht mindestens eine Frage');
   if (!Number.isInteger(size) || size < 1 || size > pool.length) {
     throw new RangeError(`size muss zwischen 1 und ${pool.length} liegen: ${size}`);
@@ -37,6 +40,8 @@ export function createRound({ pool, size, rng, boss = false }) {
 
   // Die Runde arbeitet auf Kopien. Der Pool des Aufrufers bleibt unverändert (quiz.js:69 arbeitet ebenso auf einer Kopie).
   const queue = shuffle(pool, rng).slice(0, size).map((q) => ({ ...q, retry: false }));
+  // sort ist stabil: Ohne level bleibt die gemischte Reihenfolge, gleicher Seed liefert dieselbe Runde wie vorher.
+  if (ramp) queue.sort((a, b) => (a.level ?? MIDDLE_LEVEL) - (b.level ?? MIDDLE_LEVEL));
   const originalCount = queue.length;
   const maxHearts = boss ? HEARTS.boss : HEARTS.normal;
 

@@ -10,7 +10,7 @@
 //   a       richtige Antwort, wrong: falsche Antworten (bei 'gap' genügt eine, sonst mindestens drei)
 //   skill   optional: was die Aufgabe übt, für den Fehler-Abruf (runde/src/abruf.js). Fehlt es, gilt skillOf
 //   accept  optional: weitere richtige Eingaben beim Eintippen
-//   level   optional: 1 erkennen, 2 anwenden, 3 übertragen. Die Runden werten es noch nicht aus
+//   level   optional: 1 erkennen, 2 anwenden, 3 übertragen. Eine Lektionsrunde läuft danach von leicht nach schwer
 import { pick, shuffle, trackOf } from '../../helfer/index.js';
 import { choiceQuestion, option, typedQuestion } from './questions.js';
 import { esc, normalise } from './text.js';
@@ -89,7 +89,8 @@ export function createPool({ data, manifest }, { typedLabel = 'Schreibe das fehl
    */
   const lessonQuestions = (picks, rng) => {
     const toType = new Set(picks.filter(isTypeable).slice(0, TYPED_PER_LESSON));
-    return shuffle(picks.map((item) => (toType.has(item) ? typed(item) : choice(item, rng))), rng);
+    const question = (item) => (toType.has(item) ? typed(item) : choice(item, rng));
+    return shuffle(picks.map((item) => (item.level ? { ...question(item), level: item.level } : question(item))), rng);
   };
 
   /** 8 Fragen einer Seite, die Hälfte zum Eintippen, soweit die Seite so viele eintippbare Lücken hat. */
