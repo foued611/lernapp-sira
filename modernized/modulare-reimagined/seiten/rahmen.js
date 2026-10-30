@@ -9,7 +9,7 @@ import { NO_STORAGE, saveName } from './name.js';
 import { Ergebnis, messagesOf, resultModel, wordsFor } from './ergebnis.js';
 import { Sicherung } from './sicherung.js';
 import { onAddressBack, pageRoot, pushAddress, replaceAddress, scrollToTop, searchOf, unitFromSearch } from './adresse.js';
-import { RESET_DONE, profileDefaults, appDefaults, RIGHT, knownOf, rememberRight, bossOpen, startRound, settleRound, settleLeave, settleBlitzLeave, leaveNotice, resetStep, resetApp, recommendationOf, followingUnit, stationAfter } from './ablauf.js';
+import { RESET_DONE, profileDefaults, appDefaults, RIGHT, knownOf, rememberRight, bossOpen, startRound, settleRound, settleLeave, settleBlitzLeave, leaveNotice, resetStep, resetApp, recommendationOf, followingUnit, stationAfter, practisedUnits } from './ablauf.js';
 
 const h = createElement;
 
@@ -161,7 +161,7 @@ export function AppFrame({ app, profileStore, day, storage, startUnit = null }) 
 
   // Blitz hat keine Seite und keine Runde aus rounds (Legacy: shell.js startBlitzRound).
   function beginBlitz() {
-    const started = startBlitz({ config, rng: createRng(seedNow()), known: knownOf(appState), onRight: (q) => rememberRight(appState, q, appStore) });
+    const started = startBlitz({ config, units: practisedUnits(appState, config.units), rng: createRng(seedNow()), known: knownOf(appState), onRight: (q) => rememberRight(appState, q, appStore) });
     if (!started.ok) {
       setNotice(started.message);
       return;

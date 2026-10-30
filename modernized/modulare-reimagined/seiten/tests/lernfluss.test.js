@@ -7,6 +7,7 @@ import { AppHome, revealStation } from '../apphome.js';
 import { appDefaults, followingUnit, practisedUnits, profileDefaults } from '../ablauf.js';
 import { Ergebnis, resultModel, wordsFor } from '../ergebnis.js';
 import { TheoryScreen } from '../rahmen.js';
+import { startBlitz } from '../blitz.js';
 import { configOf, DAY } from './helpers.js';
 
 const h = createElement;
@@ -126,4 +127,21 @@ test('SEITE-LERNFLUSS Ein zugeklapptes Kapitel nennt seine fälligen Seiten', ()
   const markup = home({ stars: { x: 2 }, last: { x: '2026-10-01' } }, { config });
   assert.match(markup, /1 von 1 geschafft · 1 fällig/);
   assert.match(markup, /0 von 1 geschafft</);
+});
+
+test('SEITE-LERNFLUSS Vor der ersten geübten Seite gibt es keinen Blitz, danach schon', () => {
+  const zu = home({});
+  assert.doesNotMatch(zu, /Blitz starten/);
+  assert.match(zu, /Übe zuerst eine Seite, dann geht es los/);
+  assert.match(home({ stars: { start: 1 } }), /Blitz starten/);
+});
+
+test('SEITE-LERNFLUSS Blitz zieht nur aus den übergebenen Seiten und startet ohne sie nicht', () => {
+  const seen = [];
+  const config = { ...configOf(), blitz: (rng, units) => { seen.push(units); return configOf().blitz(rng); } };
+  const units = [{ id: 'start' }];
+  assert.equal(startBlitz({ config, units: [], rng: () => 0.5 }).ok, false);
+  const started = startBlitz({ config, units, rng: () => 0.5, now: () => 0 });
+  assert.equal(started.ok, true);
+  assert.equal(seen[0], units);
 });

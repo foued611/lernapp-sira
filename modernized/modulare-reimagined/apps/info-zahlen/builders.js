@@ -306,17 +306,24 @@ export function lessonRound(unit, rng) {
   });
 }
 
-/** Blitz: nur Auswahlfragen, damit man schnell antworten kann. */
-export function blitzQuestion(rng) {
-  const makers = [
-    (r) => placeValueQ(r), (r) => binToDecQ('easy', r), lampsQ, (r) => decToBinQ('easy', r),
-    carryQ, hexDigitQ, (r) => hexToDecQ('easy', r), (r) => binToHexQ('easy', r)
-  ];
+// Auswahlfragen je Seite für den Blitz.
+const BLITZ_MAKERS = Object.freeze({
+  stellen: [(r) => placeValueQ(r)],
+  binaer: [(r) => binToDecQ('easy', r), lampsQ],
+  dez2bin: [(r) => decToBinQ('easy', r)],
+  addieren: [carryQ],
+  hex: [hexDigitQ, (r) => hexToDecQ('easy', r)],
+  binhex: [(r) => binToHexQ('easy', r)]
+});
+
+/** Blitz: nur Auswahlfragen, damit man schnell antworten kann. units: die Seiten, aus denen er zieht, sonst alle. */
+export function blitzQuestion(rng, units = null) {
+  const makers = units ? units.flatMap((u) => BLITZ_MAKERS[u.id]) : Object.values(BLITZ_MAKERS).flat();
   for (let i = 0; i < 30; i++) {
     const q = pick(makers, rng)(rng);
     if (q.kind === 'choice') return q;
   }
-  return carryQ(rng);
+  return pick(makers, rng)(rng);
 }
 
 /** Erzeuger für ein Inhaltspaket. Der Stand liegt hier, nicht im Modul. */
