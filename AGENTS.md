@@ -69,7 +69,7 @@ Die Mechaniken sind so gewählt, dass sie das Lernen fördern und nicht nur belo
 ## Design
 
 - Farben, Abstände und Radien kommen aus `seiten/design/styles/tokens.css`. Keine festen Farbwerte in App-CSS, außer der Akzentfarbe einer Seite (`unit.color`).
-- Jede Ansicht muss in hell und dunkel funktionieren (`prefers-color-scheme`).
+- Jede Ansicht muss in hell und dunkel funktionieren. Ohne Wahl gilt `prefers-color-scheme`, der Umschalter (`seiten/thema.js`) setzt `data-theme` und merkt die Wahl auf dem Gerät, nicht im Profil.
 - `prefers-reduced-motion` respektieren, Animationen abschaltbar halten.
 - Bedienbar mit Tastatur, sichtbarer Fokus, ausreichender Kontrast, Touch-Ziele mindestens 44 px. Wichtige Information nie nur über Farbe.
 - Oberflächentexte auf Deutsch, du-Ansprache, freundlich, ohne Kindersprache. Zielalter 12 bis 13. Keine Emojis, Icons kommen aus `komponenten/icons.js`.

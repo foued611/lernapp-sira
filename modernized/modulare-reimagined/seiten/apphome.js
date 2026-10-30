@@ -4,6 +4,7 @@
 import { createElement, useState } from 'react';
 import { DAILY_GOAL_XP, MISSION_REWARD_XP, REFRESH_BONUS_XP, currentStreak, dailyGoal, dailyXP, isRefreshDue, levelOf, levelThreshold, missionProgress } from '../regeln/index.js';
 import { LEVEL_TITLES, MISSION_TEXT } from './ergebnis.js';
+import { ThemeToggle } from './thema.js';
 import { starsOf } from '../helfer/index.js';
 import { doneUnits } from '../komponenten/ui.js';
 import { Mascot } from '../komponenten/mascot.js';
@@ -306,6 +307,7 @@ export function AppHeader({ config, profile, words, onHome, day }) {
     { className: 'top', id: 'hdr' },
     h('button', { type: 'button', className: 'brand', onClick: onHome }, config.title),
     h('a', { className: 'alla', href: './' }, 'Alle Apps'),
+    h(ThemeToggle),
     h(
       'div',
       { className: 'stats' },

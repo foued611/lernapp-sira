@@ -3,3 +3,4 @@
 export { openStore } from './src/open.js';
 export { appKey, openApp, openProfile, PROFILE_KEY } from './src/profile.js';
 export { BackupError } from './src/validate.js';
+export { readTheme, saveTheme } from './src/thema.js';
