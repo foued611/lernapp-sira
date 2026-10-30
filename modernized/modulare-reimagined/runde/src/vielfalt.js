@@ -1,11 +1,24 @@
 // Vielfalt in Übungen: dieselbe Aufgabe (gleicher Text, gleiche Antwort) kommt in einer Runde und im Blitz nicht zweimal.
 // Der Schlüssel zählt Text und Antwort, nicht die Reihenfolge der Optionen. Zufall nur über rng.
 import { pick } from '../../helfer/index.js';
+import { esc } from './text.js';
 
 const plain = (html = '') => String(html).replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
 
 /** Schlüssel einer Frage: Art, Titel, Fragetext ohne Markup, richtige Antwort, bei Zuordnungen die Werte links. */
+// Nicht ändern: gespeicherte seen-Schlüssel hängen daran, eine Änderung bräuchte eine Migration.
 export const questionKey = (q) => [q.kind, q.label, plain(q.prompt), q.answer ?? '', (q.leftValues || []).join('|')].join('\u0001');
+
+/**
+ * Schlüssel einer Aufgabe über ihre Fassungen (Auswahl, Eingabe, ganzer Satz): Text mit eingesetzter Antwort, dazu die Antwort.
+ * Stehen zwei Fassungen in einer Runde, verrät die Auswahl die getippte Antwort. Die Satz-Fassung hat keinen Fragetext,
+ * ihren Satz trägt reveal. Zuordnungen haben nur eine Fassung.
+ */
+export const taskKey = (q) => {
+  if (q.kind === 'match') return questionKey(q);
+  const text = q.prompt ? plain(q.prompt).replaceAll('{{blank}}', esc(q.answer)) : plain(q.reveal);
+  return [text, q.answer].join('\u0001');
+};
 
 /**
  * Baut count Fragen Platz für Platz. makeAt(i, rng) liefert die Frage für Platz i. Ein Platz wird neu gewürfelt,
@@ -40,11 +53,11 @@ export function spreadPick(list, i, count, rng) {
   return pick(list.slice(start, end), rng);
 }
 
-/** Fragen ohne Dubletten, die erste bleibt. */
+/** Fragen ohne Dubletten, je Aufgabe bleibt die erste Fassung. */
 export function uniqueQuestions(questions) {
   const seen = new Set();
   return questions.filter((q) => {
-    const key = questionKey(q);
+    const key = taskKey(q);
     if (seen.has(key)) return false;
     seen.add(key);
     return true;
@@ -59,19 +72,23 @@ export const distinctQuestions = (makers, count, rng, maxTries = 40) => distinct
  * generate() liefert eine Runde (Liste von Fragen). known ist die Menge der Schlüssel, die schon richtig waren.
  * Es werden so lange Runden gezogen, bis genug neue Fragen da sind. Reichen die neuen nicht, kommen die bekannten
  * dazu (der Wertebereich ist erschöpft). Der Pool hat mindestens size Fragen, createRound zieht daraus.
+ * Je Aufgabe bleibt eine Fassung. Eine neue schlägt eine bekannte: Wer die Auswahl konnte, darf jetzt tippen.
  */
 export function freshPool(generate, size, known = new Set(), tries = 30) {
-  const fresh = [];
-  const stale = [];
-  const seen = new Set();
-  for (let t = 0; t < tries && fresh.length < size; t++) {
+  const fresh = new Map();
+  const stale = new Map();
+  for (let t = 0; t < tries && fresh.size < size; t++) {
     for (const q of generate()) {
-      const key = questionKey(q);
-      if (seen.has(key)) continue;
-      seen.add(key);
-      (known.has(key) ? stale : fresh).push(q);
+      const task = taskKey(q);
+      if (fresh.has(task)) continue;
+      if (known.has(questionKey(q))) {
+        if (!stale.has(task)) stale.set(task, q);
+      } else {
+        stale.delete(task);
+        fresh.set(task, q);
+      }
     }
   }
-  if (fresh.length >= size) return fresh;
-  return [...fresh, ...stale.slice(0, size - fresh.length)];
+  const pool = [...fresh.values()];
+  return pool.length >= size ? pool : [...pool, ...[...stale.values()].slice(0, size - pool.length)];
 }

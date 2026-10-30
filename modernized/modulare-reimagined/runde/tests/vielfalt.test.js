@@ -1,8 +1,8 @@
 // Vielfalt: keine Aufgabe zweimal in einer Runde, keine im Blitz, solange der Wertebereich reicht.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { choiceQuestion } from '../src/questions.js';
-import { questionKey, distinctQuestions, freshPool, spreadPick } from '../src/vielfalt.js';
+import { choiceQuestion, option, typedQuestion } from '../src/questions.js';
+import { questionKey, taskKey, distinctQuestions, freshPool, spreadPick, uniqueQuestions } from '../src/vielfalt.js';
 import { createBlitz } from '../src/blitz.js';
 import { createRng } from '../../helfer/index.js';
 
@@ -60,6 +60,42 @@ test('freshPool: reichen die neuen nicht, kommen bekannte dazu, damit die Runde 
   const only = ask(1);
   const pool = freshPool(() => [only], 3, new Set([questionKey(only)]));
   assert.equal(pool.length, 1);
+});
+
+// Dieselbe Lücke in den Fassungen, die es gibt: Auswahl, Eingabe und ganzer Satz (Verbseiten).
+const LUECKE = { prompt: 'Il {{blank}} l&#39;ami.', answer: 'voit', reveal: 'Il <b>voit</b> l&#39;ami.' };
+const auswahl = () => choiceQuestion({ ...LUECKE, label: 'Auswahl', choices: [option('voit', 'voit', 'voit'), option('vois', 'vois', 'vois')], rng: createRng(1) });
+const eingabe = () => typedQuestion({ ...LUECKE, label: 'Eingabe' });
+const satz = () => choiceQuestion({ label: 'Satz', answer: 'voit', reveal: LUECKE.reveal, choices: ['voit', 'vois'], rng: createRng(1) });
+
+test('taskKey: Fassungen einer Aufgabe haben denselben Schlüssel, questionKey bleibt verschieden', () => {
+  assert.equal(new Set([auswahl(), eingabe(), satz()].map(taskKey)).size, 1);
+  assert.equal(new Set([auswahl(), eingabe(), satz()].map(questionKey)).size, 3);
+});
+
+test('taskKey: gleiche Antwort in einem anderen Satz ist eine andere Aufgabe', () => {
+  const andere = typedQuestion({ label: 'Eingabe', prompt: 'Elle {{blank}} la mer.', answer: 'voit' });
+  assert.notEqual(taskKey(eingabe()), taskKey(andere));
+});
+
+test('freshPool: behält je Aufgabe eine Fassung', () => {
+  const pool = freshPool(() => [auswahl(), eingabe(), satz()], 3);
+  assert.equal(pool.length, 1);
+  assert.equal(pool[0].label, 'Auswahl');
+});
+
+test('freshPool: eine neue Fassung schlägt die bekannte', () => {
+  const pool = freshPool(() => [auswahl(), eingabe()], 1, new Set([questionKey(auswahl())]));
+  assert.deepEqual(pool.map((q) => q.kind), ['type']);
+});
+
+test('freshPool: sind alle Fassungen bekannt, kommt nur eine', () => {
+  const known = new Set([auswahl(), eingabe()].map(questionKey));
+  assert.deepEqual(freshPool(() => [auswahl(), eingabe()], 2, known, 3).map((q) => q.kind), ['choice']);
+});
+
+test('uniqueQuestions: die erste Fassung bleibt', () => {
+  assert.deepEqual(uniqueQuestions([auswahl(), eingabe()]).map((q) => q.kind), ['choice']);
 });
 
 test('Blitz: bekannte Aufgaben kommen nach Möglichkeit nicht', () => {

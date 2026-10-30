@@ -1,7 +1,7 @@
 // Ablauf einer App: Lebenszyklus einer Runde (starten, auswerten, speichern, protokollieren) und Zurücksetzen in zwei
 // Schritten. Ohne React, damit auch andere Oberflächen und Tests ihn nutzen können. Die Regeln stehen in regeln/, die
 // Aufgaben in runde/. Alles ist rein oder async über injizierte Speicher. Die Ansicht dazu steht in rahmen.js.
-import { createRound, freshPool, questionKey, uniqueQuestions, withMissed } from '../runde/index.js';
+import { createRound, freshPool, questionKey, taskKey, uniqueQuestions, withMissed } from '../runde/index.js';
 import { starsOf } from '../helfer/index.js';
 import { awardXP, finishRound, isRefreshDue, updateStreak, weakestUnit } from '../regeln/index.js';
 import { NO_STORAGE } from './name.js';
@@ -96,12 +96,19 @@ export const chapterMissing = (app, group) => group.units.filter((u) => starsOf(
 /**
  * Aufgaben für den Kapitel-Test: abwechselnd aus den Seiten, aus jeder etwa gleich viele. Die Lektionsrunden liefern sie,
  * deshalb braucht keine App eigenen Code. unitId sagt später, welche Seite noch sitzen muss.
+ * Jeder Platz nimmt die erste noch freie Aufgabe seiner Seite, sonst einer anderen. Seiten teilen sich teils Erzeuger,
+ * und die Auswahl einer Seite darf nicht die Eingabe einer anderen verraten.
  */
 export function chapterQuestions(units, lesson, size, rng) {
   const lists = units.map((unit) => lesson(unit, rng).map((question) => ({ ...question, unitId: unit.id })));
+  const used = new Set();
   return Array.from({ length: size }, (_, i) => {
-    const list = lists[i % lists.length];
-    return list[Math.floor(i / lists.length) % list.length];
+    const turn = i % lists.length;
+    const list = lists[turn];
+    const free = [...lists.slice(turn), ...lists.slice(0, turn)].flat().find((q) => !used.has(taskKey(q)));
+    const question = free ?? list[Math.floor(i / lists.length) % list.length];
+    used.add(taskKey(question));
+    return question;
   });
 }
 

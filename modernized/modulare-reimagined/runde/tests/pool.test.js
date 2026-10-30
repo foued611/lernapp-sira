@@ -1,7 +1,7 @@
 // Gerüst der Inhalts-Apps: gemeinsame Erzeuger und Fehler-Abruf je Aufgabe.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { createPool, logicOf, poolApp, skillOf } from '../index.js';
+import { createPool, isTypeable, logicOf, poolApp, skillOf } from '../index.js';
 import { rngFor } from './helpers.js';
 
 const item = (n, extra = {}) => ({ q: `Frage ${n}`, a: `A${n}`, wrong: ['x', 'y', 'z'], why: 'Weil.', ...extra });
@@ -56,6 +56,62 @@ test('POOL: Strang nur mit withTrack, Etikett der Eingabe wählbar', () => {
   assert.equal(mit.choice(p.data.items.a[0], rngFor(1)).chip.label, 'Strang');
   assert.equal(mit.choice(p.data.items.b[0], rngFor(1)).chip, null);
   assert.equal(mit.typed(p.data.items.a[2]).label, 'Tippen');
+});
+
+// Zehn Aufgaben, davon so viele Lücken wie angegeben.
+const seite = (lücken, antwort = (n) => `A${n}`) => ({
+  manifest: { units: [{ id: 'a' }] },
+  data: {
+    items: {
+      a: Array.from({ length: 10 }, (_, n) => (n < lücken
+        ? { ...item(n, { a: antwort(n) }), kind: 'gap', s: `Satz ${n} mit ___.` }
+        : item(n)))
+    }
+  }
+});
+const getippt = (fragen) => fragen.filter((q) => q.kind === 'type');
+
+test('POOL: Lektionsrunde tippt die Hälfte, auch wenn die Lücken knapp sind', () => {
+  const { lessonRound } = createPool(seite(4));
+  for (let seed = 1; seed <= 200; seed += 1) {
+    const runde = lessonRound({ id: 'a' }, rngFor(seed));
+    assert.equal(runde.length, 8);
+    assert.equal(getippt(runde).length, 4, `Seed ${seed}`);
+  }
+});
+
+test('POOL: mehr Lücken als Eingabeplätze bleiben Auswahl', () => {
+  const { lessonRound } = createPool(seite(10));
+  for (let seed = 1; seed <= 50; seed += 1) assert.equal(getippt(lessonRound({ id: 'a' }, rngFor(seed))).length, 4);
+});
+
+test('POOL: Seite mit wenigen Lücken tippt alle, Runde bleibt voll', () => {
+  const { lessonRound } = createPool(seite(2));
+  for (let seed = 1; seed <= 50; seed += 1) {
+    const runde = lessonRound({ id: 'a' }, rngFor(seed));
+    assert.equal(runde.length, 8);
+    assert.equal(getippt(runde).length, 2);
+  }
+});
+
+test('POOL: Antworten bis zwei Wörter sind eintippbar, längere bleiben Auswahl', () => {
+  assert.equal(isTypeable({ kind: 'gap', a: 'Schall' }), true);
+  assert.equal(isTypeable({ kind: 'gap', a: 'will help' }), true);
+  assert.equal(isTypeable({ kind: 'gap', a: 'vom Lot weg' }), false);
+  assert.equal(isTypeable({ a: 'Schall' }), false);
+  const dreiWörter = seite(10, (n) => (n % 2 ? `kurz${n}` : `ein langes Wort${n}`));
+  const { lessonRound, bossRound } = createPool(dreiWörter);
+  for (let seed = 1; seed <= 50; seed += 1) {
+    const fragen = [...lessonRound({ id: 'a' }, rngFor(seed)), ...bossRound(rngFor(seed))];
+    assert.ok(getippt(fragen).every((q) => q.answer.startsWith('kurz')), `Seed ${seed}`);
+  }
+});
+
+test('POOL: gleicher Seed liefert dieselbe Lektionsrunde', () => {
+  const { lessonRound } = createPool(seite(6));
+  const bild = (seed) => JSON.stringify(lessonRound({ id: 'a' }, rngFor(seed)));
+  assert.equal(bild(5), bild(5));
+  assert.notEqual(bild(5), bild(6));
 });
 
 test('POOL: poolApp erfüllt den App-Vertrag', () => {

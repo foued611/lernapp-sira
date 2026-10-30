@@ -126,6 +126,7 @@ Verglichen: Startseite, Deutsch-Startseite, Theorie, Runde. Nicht verglichen: Er
 - RULE-056: Median bei gerader Anzahl als Mittel der beiden mittleren Werte. Legacy: nur 5 und 7 Werte.
 - RULE-202: Startseite ohne Speicher zeigt Meldung und Links. Legacy: leer.
 - Namensanzeige maskiert (SEITE-MASKIERUNG). Legacy: Name im Klartext.
+- RULE-225 (2026-10-30): Lektionsrunde der Pool-Apps mit 4 von 8 Eingabefragen, Lücken bis zwei Wörter (`AGENTS.md`, Eintippen). Legacy: Platz 3 und 6, jede Lücke.
 - Auflösung (Reveal) fehlt. Nicht von der Person entschieden, Stand aus UAT_P5B.md.
 
 Ohne Entscheidung über diese Punkte ist "1zu1 funktional" nicht erfüllbar.
