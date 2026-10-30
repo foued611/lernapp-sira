@@ -106,6 +106,7 @@ Regeln für Texte und Bilder:
 - Der Abgleich der Mathe-App mit dem Bildungsplan steht in `docs/lehrplan-mathe.md`. Dort ist auch vermerkt, was nicht amtlich geprüft ist. Neue Themen dort eintragen.
 - Korrekte Fachbegriffe verwenden und kurz erklären.
 - Jede Frage hat eine Erklärung (`why`), die den Denkfehler benennt. Keine Fragen, deren Antwort ohne Vorwissen zu erraten ist.
+- Jede Frage ist für sich verständlich: `q` ist bei Auswahlfragen eine vollständige Frage, kein Stichwort. Bei Lücken ist `q` ein Hinweis, der die Antwort ableitbar macht, ohne sie zu nennen. Falsche Antworten sind plausibel und wirklich falsch. `apps/tests/fragen-qualitaet.test.js` prüft den mechanischen Teil.
 - Fachliche Richtigkeit ist wichtiger als Umfang. Im Zweifel eine Aufgabe weglassen.
 
 ## Neue App anlegen

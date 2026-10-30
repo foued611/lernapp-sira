@@ -108,6 +108,7 @@ Im Browser prüfen, wenn Playwright verfügbar ist:
 - HTML-Felder (`html`, `tldr`, `steps`, `pitfall`, `analogy.html`) erlauben nur `<p>` und `<b>`. Kursiv `<i>` wird abgelehnt. Für Fremdsprache nimm Anführungszeichen „…“.
 - `check.why` wird als reiner Text angezeigt. Dort kein Markup.
 - Lücken: genau ein `___` im Satz. Alle anderen Aufgaben: mindestens drei falsche Antworten.
+- `q` ist bei Auswahlfragen eine vollständige Frage, nie ein Stichwort. Bei Lücken ist `q` ein echter Hinweis, der die Antwort ableitbar macht, sie aber nicht nennt (bei Sprachen meist der deutsche Satz). `apps/tests/fragen-qualitaet.test.js` prüft das.
 - Eingabe-Aufgaben vergleichen exakt (nach Kleinschreibung und Leerzeichen). Akzente zählen. Schreib die Antwort so, wie man sie tippt.
 - Diagramme nur über `flowDiagram`, `tableDiagram`, `swapDiagram`. Der Name in `figure.diagram.name` muss exakt stimmen.
 
