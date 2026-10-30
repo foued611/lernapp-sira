@@ -155,7 +155,7 @@
         "skill": "Pflanzen- oder Tierzelle"
       },
       {
-        "q": "Prüfe, was dieser Zelle fehlt.",
+        "q": "Entscheide zwischen Pflanzenzelle und Tierzelle: Prüfe, was fehlt.",
         "kind": "gap",
         "s": "Eine Zelle hat Zellkern und Zellmembran, aber keine Zellwand. Es ist eine ___.",
         "a": "Tierzelle",
@@ -217,14 +217,14 @@
         "skill": "Zellwand und Zellmembran"
       },
       {
-        "q": "Eine Zelle hat eine Zellwand und eine große Vakuole, aber keine Chloroplasten. Was schließt du daraus?",
+        "q": "Ist diese Zelle eine Pflanzenzelle oder eine Tierzelle? Sie hat eine Zellwand und eine große Vakuole, aber keine Chloroplasten.",
         "a": "Es ist eine Pflanzenzelle, denn Tierzellen haben keine Zellwand.",
         "wrong": [
           "Es ist eine Tierzelle, denn die Chloroplasten fehlen.",
           "Es ist eine Tierzelle, denn Tierzellen haben eine große Vakuole.",
           "Es lässt sich nicht sagen, denn dafür braucht man beide Merkmale."
         ],
-        "why": "Schon eine Zellwand zeigt die Pflanzenzelle. Dass die Chloroplasten fehlen, macht daraus noch keine Tierzelle.",
+        "why": "Von diesen beiden Zelltypen hat nur die Pflanzenzelle eine Zellwand. Dass die Chloroplasten fehlen, macht daraus noch keine Tierzelle.",
         "level": 3,
         "skill": "Pflanzen- oder Tierzelle"
       },
