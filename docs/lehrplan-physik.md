@@ -22,5 +22,5 @@ Der Bildungsplan gliedert Klasse 7 und 8 zusammen. Die App deckt nur die Bereich
 
 - Ob die Zuordnung zu Klasse 7 mit der Schule übereinstimmt. Das Beispielcurriculum ist eine Vorlage, kein verbindlicher Plan.
 - Ob die Werte stimmen, die die Aufgaben nennen (340 m/s, Hörbereich, g ≈ 10 N/kg). Sie sind Schulwissen, aber vor dem Einsatz gegenzulesen.
-- Aufgaben mit dem Feld `level` (ergänzt ab 2026-10-30) hat noch keine Lehrkraft gegengelesen. Bisher betrifft das die Seite A1.
+- Aufgaben mit dem Feld `level` (ergänzt ab 2026-10-30) hat noch keine Lehrkraft gegengelesen. Das betrifft alle 160 neuen Aufgaben, je 10 auf den 16 Seiten.
 - Die Inhalte stammen aus eigenen Formulierungen. Das Lehrwerk Universum Physik Band 7/8 wurde nur als Themenliste genutzt.
