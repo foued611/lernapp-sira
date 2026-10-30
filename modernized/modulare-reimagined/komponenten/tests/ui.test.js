@@ -3,7 +3,8 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
-import { Button, ProgressBar, StarRow, doneUnits, progressOf, starsOf, DONE_STARS } from '../ui.js';
+import { starsOf } from '../../helfer/index.js';
+import { Button, ProgressBar, StarRow, doneUnits, progressOf, DONE_STARS } from '../ui.js';
 
 const h = createElement;
 

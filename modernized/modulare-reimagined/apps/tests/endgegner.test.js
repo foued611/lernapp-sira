@@ -3,7 +3,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { buildConfig } from '../../inhalte/index.js';
-import { bossOpen, profileDefaults } from '../../seiten/rahmen.js';
+import { bossOpen, profileDefaults } from '../../seiten/ablauf.js';
 import { APPS, LIVE } from '../../seiten/registry.js';
 import { logicFor } from '../index.js';
 import { paketVon } from './laden.js';

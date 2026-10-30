@@ -73,7 +73,7 @@ export function verstoesse(graph) {
   return fehler;
 }
 
-/** Aufgaben-Erzeuger laufen ohne Oberfläche: von builders.js darf kein Weg zu React führen, auch nicht über Umwege. */
+/** Erzeuger und Ablauf laufen ohne Oberfläche: von dort darf kein Weg zu React führen, auch nicht über Umwege. */
 export function erzeugerMitReact(graph) {
   const erreichtReact = (datei, besucht = new Set()) => {
     if (datei === 'react') return true;
@@ -81,7 +81,7 @@ export function erzeugerMitReact(graph) {
     besucht.add(datei);
     return (graph[datei] || []).some((ziel) => erreichtReact(ziel, besucht));
   };
-  return Object.keys(graph).filter((datei) => /^apps\/.*builders\.js$/.test(datei) && erreichtReact(datei));
+  return Object.keys(graph).filter((datei) => (/^apps\/.*builders\.js$/.test(datei) || datei === 'seiten/ablauf.js') && erreichtReact(datei));
 }
 
 test('SEITE-SCHICHTEN Alle Importe halten die Richtung ein', () => {

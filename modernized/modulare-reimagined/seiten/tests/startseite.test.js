@@ -5,7 +5,7 @@ import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { TrackLabel } from '../../komponenten/tracks.js';
 import { ProgressBar } from '../../komponenten/ui.js';
-import { profileDefaults } from '../rahmen.js';
+import { profileDefaults } from '../ablauf.js';
 import { greetingOf, maskName, minouLine, nameFrom, saveName, saveGoal, GoalChoice, Seiten, startseiteModel, Startseite, MASK } from '../startseite.js';
 import { MSG } from '../boot.js';
 import { bootFixture, DAY, memoryHandle, NAME } from './helpers.js';

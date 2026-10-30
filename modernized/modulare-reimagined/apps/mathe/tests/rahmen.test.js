@@ -2,7 +2,7 @@
 // eigene Freischaltung (Legacy hat keine), deshalb gilt der Standard der Rahmenfunktion bossOpen aus seiten/rahmen.js.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { bossOpen, profileDefaults } from '../../../seiten/rahmen.js';
+import { bossOpen, profileDefaults } from '../../../seiten/ablauf.js';
 import logic from '../logic.js';
 import { paketVon } from '../../tests/laden.js';
 

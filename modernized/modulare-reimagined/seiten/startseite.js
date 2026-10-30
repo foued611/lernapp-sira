@@ -3,9 +3,11 @@
 // Die Komponenten zeichnen nur. Seiten ist die Wurzel (Start oder App).
 import { createElement, useReducer, useState } from 'react';
 import { DAILY_GOAL_XP, GOAL_CHOICES, REFRESH_BONUS_XP, currentStreak, dailyGoal, dailyXP, setDailyGoal } from '../regeln/index.js';
-import { progressOf, doneUnits, starsOf } from '../komponenten/ui.js';
+import { starsOf } from '../helfer/index.js';
+import { progressOf, doneUnits } from '../komponenten/ui.js';
 import { Mascot } from '../komponenten/mascot.js';
-import { AppFrame, bossOpen, recommendationOf } from './rahmen.js';
+import { bossOpen, recommendationOf } from './ablauf.js';
+import { AppFrame } from './rahmen.js';
 import { NAME_MAX, NO_STORAGE, greetingOf, maskName, saveName } from './name.js';
 import { Sicherung } from './sicherung.js';
 import { LIVE, SUBJECT_COLORS, subjectsOf, unitTrack } from './registry.js';

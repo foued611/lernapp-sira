@@ -2,7 +2,7 @@
 // Trophäen mit gleicher Kennung und anderer Regel werden umbenannt, und ein leerer alter Stand ändert nichts.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { appDefaults } from '../rahmen.js';
+import { appDefaults } from '../ablauf.js';
 import { hasProgress, mergeAppState, UEBERNAHMEN } from '../uebernahme.js';
 
 const old = { ...appDefaults(), refreshes: 2, xp: 40, stars: { etre: 2, avoir: 1 }, best: { etre: 0.8 }, badges: { first: true, 'besser-geworden': true } };

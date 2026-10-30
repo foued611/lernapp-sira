@@ -1,6 +1,7 @@
 // Gemeinsame Bausteine: Button, Fortschritt, Sterne. Die Legacy-Fassungen stecken in
 // legacy/modulare/core/js/views/home.js:8-9 (Sterne) und legacy/modulare/dashboard.js:19 (erledigt).
 import { createElement } from 'react';
+import { starsOf } from '../helfer/index.js';
 import { Icon } from './icons.js';
 
 const h = createElement;
@@ -10,10 +11,6 @@ const h = createElement;
  * analysis/modulare/RULE_REVIEWS.md). Legacy zählte schon ab einem Stern (dashboard.js:19).
  */
 export const DONE_STARS = 2;
-
-/** Sterne einer Seite. Fehlt der Eintrag oder ist er keine ganze Zahl, sind es 0. */
-export const starsOf = (stars, id) =>
-  stars && Object.hasOwn(stars, id) && Number.isInteger(stars[id]) ? stars[id] : 0;
 
 /** Anzahl erledigter Seiten. Zählt nur die übergebenen Seiten, veraltete IDs erhöhen die Zahl nicht. */
 export function doneUnits(stars, unitIds, threshold = DONE_STARS) {

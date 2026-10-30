@@ -5,7 +5,7 @@ import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { openApp, openProfile, PROFILE_KEY } from '../../speicher/index.js';
 import { buildExport, exportFileName, exportPayload, NAME_IN_FILE, NO_NAME_IN_FILE, NO_STORAGE, planSentence, Sicherung } from '../sicherung.js';
-import { appDefaults, profileDefaults } from '../rahmen.js';
+import { appDefaults, profileDefaults } from '../ablauf.js';
 import { DAY, memoryHandle, NAME } from './helpers.js';
 
 const h = createElement;

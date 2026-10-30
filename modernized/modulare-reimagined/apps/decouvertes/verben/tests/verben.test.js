@@ -7,7 +7,7 @@ import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { createRng } from '../../../../helfer/index.js';
 import { buildConfig } from '../../../../inhalte/index.js';
-import { appDefaults, profileDefaults, startRound } from '../../../../seiten/rahmen.js';
+import { appDefaults, profileDefaults, startRound } from '../../../../seiten/ablauf.js';
 import { paketVon } from '../../../tests/laden.js';
 import { init, V, UNITS, SP, RAW } from '../model.js';
 import { lessonRound, checkForm, hint, distract } from '../builders.js';

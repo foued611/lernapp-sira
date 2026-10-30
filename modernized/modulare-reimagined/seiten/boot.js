@@ -4,7 +4,7 @@
 import { assertAppId, buildConfig, createStaticSource } from '../inhalte/index.js';
 import { openApp, openProfile, openStore } from '../speicher/index.js';
 import { PROFILE_VERSION, evaluateTrophyRule, migrateProfile } from '../regeln/index.js';
-import { appDefaults, dayOf, profileDefaults } from './rahmen.js';
+import { appDefaults, dayOf, profileDefaults } from './ablauf.js';
 import { APPS, LIVE, validateRegistry } from './registry.js';
 import { UEBERNAHMEN, hasProgress, mergeAppState } from './uebernahme.js';
 

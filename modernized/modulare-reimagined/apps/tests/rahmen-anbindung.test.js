@@ -4,7 +4,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { buildConfig } from '../../inhalte/index.js';
 import { createRng } from '../../helfer/index.js';
-import { appDefaults, profileDefaults, startRound } from '../../seiten/rahmen.js';
+import { appDefaults, profileDefaults, startRound } from '../../seiten/ablauf.js';
 import { logicFor } from '../index.js';
 import { paketVon } from './laden.js';
 

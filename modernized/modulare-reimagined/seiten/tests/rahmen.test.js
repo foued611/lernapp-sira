@@ -5,10 +5,8 @@ import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { createRng } from '../../helfer/index.js';
 import { openApp, openProfile, PROFILE_KEY } from '../../speicher/index.js';
-import {
-  AppFrame, NO_STORAGE, Play, appDefaults, bossOpen, profileDefaults, resetApp, resetAppState, resetStep,
-  settleLeave, leaveNotice, settleRound, startRound, evaluateRound
-} from '../rahmen.js';
+import { NO_STORAGE, appDefaults, bossOpen, profileDefaults, resetApp, resetAppState, resetStep, settleLeave, leaveNotice, settleRound, startRound, evaluateRound } from '../ablauf.js';
+import { AppFrame, Play } from '../rahmen.js';
 import { messagesOf } from '../ergebnis.js';
 import { MSG } from '../boot.js';
 import { bootFixture, configOf, DAY, memoryHandle, NAME, playAll, UNIT_IDS } from './helpers.js';
