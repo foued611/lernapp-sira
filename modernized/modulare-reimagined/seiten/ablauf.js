@@ -1,7 +1,7 @@
 // Ablauf einer App: Lebenszyklus einer Runde (starten, auswerten, speichern, protokollieren) und Zurücksetzen in zwei
 // Schritten. Ohne React, damit auch andere Oberflächen und Tests ihn nutzen können. Die Regeln stehen in regeln/, die
 // Aufgaben in runde/. Alles ist rein oder async über injizierte Speicher. Die Ansicht dazu steht in rahmen.js.
-import { createRound, freshPool, questionKey, uniqueQuestions, withMissed } from '../runde/index.js';
+import { createRound, freshPool, questionKey, taskKey, uniqueQuestions, withMissed } from '../runde/index.js';
 import { starsOf } from '../helfer/index.js';
 import { awardXP, finishRound, isRefreshDue, updateStreak, weakestUnit } from '../regeln/index.js';
 import { NO_STORAGE } from './name.js';
@@ -155,7 +155,7 @@ export function startRound({ config, mode, unit = null, group = null, app, profi
     // Nur Lektionsrunden holen Fehlerkategorien der letzten Runde zurück (Spec 5.2). Ohne Liste bleibt alles wie bisher.
     const missed = mode === 'lesson' ? missedOf(app, unit) : [];
     const recalled = missed.length && config.rounds.recall ? config.rounds.recall(unit, missed, rng) : [];
-    const candidates = recalled.length ? uniqueQuestions([...recalled, ...fresh]) : fresh;
+    const candidates = recalled.length ? uniqueQuestions([...recalled, ...fresh], taskKey) : fresh;
     const pool = missed.length ? withMissed(candidates, missed, Math.min(size, candidates.length), rng) : fresh;
     const round = createRound({ pool, size: Math.min(size, pool.length), rng, boss: mode === 'boss' });
     return { ok: true, round, mode, unit, group };
