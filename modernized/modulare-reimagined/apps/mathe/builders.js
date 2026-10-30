@@ -390,8 +390,8 @@ export function createBuilders({ data, manifest }) {
     });
   }
 
-  const anyItem = (rng) => makeIn(pick(units, rng).id, rng);
-  const quickRound = (rng) => distinctSlots(5, rng, (_, r) => choice(anyItem(r), r));
+  const anyItem = (rng, from = units) => makeIn(pick(from, rng).id, rng);
+  const quickRound = (rng, from = units) => distinctSlots(5, rng, (_, r) => choice(anyItem(r, from), r));
   const blitzQuestion = (rng) => choice(anyItem(rng), rng);
   const bossRound = (rng) => distinctSlots(12, rng, (i, r) => {
     const item = makeIn(units[i % units.length].id, r);

@@ -4,7 +4,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { buildConfig } from '../../inhalte/index.js';
 import { createRng } from '../../helfer/index.js';
-import { bossOpen, profileDefaults } from '../../seiten/ablauf.js';
+import { appDefaults, bossOpen, profileDefaults, startRound } from '../../seiten/ablauf.js';
 import { LIVE } from '../../seiten/registry.js';
 import { APPS, logicFor, paketVon } from './laden.js';
 
@@ -34,4 +34,39 @@ for (const entry of APPS.filter((e) => e.status === LIVE && paketVon(e.id).data.
     }
     assert.deepEqual(Object.keys(items).filter((unit) => !getroffen.has(unit)), []);
   });
+
+  test(`SCHNELLRUNDE: ${entry.id} fragt nur Seiten ab, die schon geübt sind`, () => {
+    const config = buildConfig(paketVon(entry.id), logicFor(entry.id));
+    const items = paketVon(entry.id).data.items;
+    const seiten = seiteVon(items);
+    const unit = config.units.find((u) => items[u.id]);
+    const app = { ...appDefaults(), stars: { [unit.id]: 1 } };
+    for (let seed = 1; seed <= 20; seed++) {
+      const start = startRound({ config, mode: 'quick', app, profile: profileDefaults(), rng: createRng(seed) });
+      assert.equal(start.ok, true, start.message);
+      assert.equal(seiten.get(start.round.current().question.why), unit.id);
+    }
+    for (let seed = 1; seed <= 50; seed++) {
+      for (const frage of config.rounds.quick(createRng(seed), [unit])) assert.equal(seiten.get(frage.why), unit.id);
+    }
+  });
 }
+
+// Diese Apps erzeugen ihre Aufgaben im Code. Die Etiketten zeigen, wie breit eine Runde zieht.
+for (const id of ['mathe', 'geometrie', 'info-zahlen']) {
+  test(`SCHNELLRUNDE: ${id} fragt nur Seiten ab, die schon geübt sind`, () => {
+    const config = buildConfig(paketVon(id), logicFor(id));
+    const etiketten = (seiten) => new Set(Array.from({ length: 200 }, (_, seed) => config.rounds.quick(createRng(seed + 1), seiten).map((q) => q.label)).flat());
+    const alle = etiketten(config.units);
+    const eine = etiketten([config.units[0]]);
+    assert.ok(eine.size < alle.size, `${eine.size} von ${alle.size}`);
+    assert.ok([...eine].every((label) => alle.has(label)));
+  });
+}
+
+test('SCHNELLRUNDE: ohne geübte Seite startet sie nicht und sagt warum', () => {
+  const config = buildConfig(paketVon('mathe'), logicFor('mathe'));
+  const start = startRound({ config, mode: 'quick', app: appDefaults(), profile: profileDefaults(), rng: createRng(1) });
+  assert.equal(start.ok, false);
+  assert.match(start.message, /Seite/);
+});

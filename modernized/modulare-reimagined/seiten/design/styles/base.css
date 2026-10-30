@@ -45,6 +45,7 @@ a.btn{display:inline-block;text-align:center;text-decoration:none}
 .btn:disabled{background:var(--card);color:var(--muted);border-color:var(--line);box-shadow:none;cursor:not-allowed}
 .link{display:inline-flex;align-items:center;min-height:44px;background:none;border:0;padding:6px 0;cursor:pointer;color:var(--ink);text-decoration:underline;text-underline-offset:3px;font-size:14px;position:relative}
 .link::after{content:"";position:absolute;inset:-6px -4px}
+.theorytop{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 16px}
 .hero{background:var(--hero-bg);color:var(--hero-fg);border-color:var(--ink);display:grid;gap:16px;overflow:hidden;position:relative}
 .hero h1{color:var(--hero-fg)}
 .hero .muted{color:var(--hero-soft)}

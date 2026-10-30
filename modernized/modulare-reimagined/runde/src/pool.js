@@ -73,8 +73,9 @@ export function createPool({ data, manifest }, { typedLabel = 'Schreibe das fehl
   const lessonRound = (unit, rng) => pickItems(unit.id, 8, rng)
     .map((item, i) => (i % 3 === 2 && isGap(item) ? typed(item) : choice(item, rng)));
 
-  const anyItem = (rng) => pick(items[pick(units, rng).id], rng);
-  const quickRound = (rng) => Array.from({ length: 5 }, () => choice(anyItem(rng), rng));
+  const anyItem = (rng, from = units) => pick(items[pick(from, rng).id], rng);
+  /** from: die Seiten, aus denen die Runde zieht. Die Seiten-Schicht gibt die schon geübten mit. */
+  const quickRound = (rng, from = units) => Array.from({ length: 5 }, () => choice(anyItem(rng, from), rng));
   const blitzQuestion = (rng) => choice(anyItem(rng), rng);
   const bossRound = (rng) => Array.from({ length: 12 }, (_, i) => {
     const item = pick(items[spreadPick(units, i, 12, rng).id], rng);

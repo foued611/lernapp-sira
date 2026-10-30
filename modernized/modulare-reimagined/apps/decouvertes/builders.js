@@ -19,7 +19,7 @@ export function createBuilders(paket) {
   // Eine Frage aus einer beliebigen Seite. Verbseiten liefern eine Verbfrage, die anderen eine Aufgabe aus data.items.
   const questionIn = (unit, rng) => (unit.verbs ? verbs.verbQuestion(unit, rng) : choice(pick(items[unit.id], rng), rng));
 
-  const quickRound = (rng) => Array.from({ length: 5 }, () => questionIn(pick(units, rng), rng));
+  const quickRound = (rng, from = units) => Array.from({ length: 5 }, () => questionIn(pick(from, rng), rng));
   // Blitz gibt immer Auswahl aus (Blitz hat keine Eingabe).
   const blitzQuestion = (rng) => {
     const unit = pick(units, rng);

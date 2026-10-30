@@ -3,7 +3,7 @@
 import { createElement } from 'react';
 import { BOSS_BONUS_XP, MISSION_REWARD_XP, REFRESH_BONUS_XP, comboMultiplier, dailyGoal, dailyXP } from '../regeln/index.js';
 import { BLITZ_SECONDS } from '../runde/index.js';
-import { Button } from '../komponenten/ui.js';
+import { Button, DONE_STARS } from '../komponenten/ui.js';
 import { Icon } from '../komponenten/icons.js';
 import { Mascot } from '../komponenten/mascot.js';
 import { Confetti } from '../komponenten/confetti.js';
@@ -54,7 +54,7 @@ function subtitleFor(summary) {
  * Reine Ansicht des Ergebnisses. summary kommt aus ablauf.js (summaryOf).
  * Der Feier-Hinweis folgt result.js:34. Bei gescheiterter Runde gibt es keinen.
  */
-export function resultModel(summary, { profile, day, words }) {
+export function resultModel(summary, { profile, day, words, next = null }) {
   const x = dailyXP(profile, day);
   const goal = dailyGoal(profile);
   const titles = words.levelTitles || LEVEL_TITLES;
@@ -64,6 +64,7 @@ export function resultModel(summary, { profile, day, words }) {
   // Blitz hat keine Sterne. Titel, Stimmung und Zahlen folgen Legacy result.js:12-16.
   const blitz = summary.mode === 'blitz';
   const blitzWell = summary.score >= BLITZ_GOAL;
+  const forward = Boolean(next) && summary.mode === 'lesson' && !summary.failed && summary.stars >= DONE_STARS;
   let title = words.resultTitles[Math.max(0, summary.stars - 1)];
   if (summary.failed) title = 'Knapp daneben';
   else if (blitz) title = blitzWell ? words.blitzTitle : 'Zeit um';
@@ -92,9 +93,10 @@ export function resultModel(summary, { profile, day, words }) {
     levelLine: level,
     missionLine,
     badges: summary.newBadges.map((badge) => ({ id: badge.id, n: badge.n, d: badge.d })),
-    // Legacy result.js: Theorie nur nach einer Lektionsrunde, dann der Weg zurück.
+    // Theorie nur nach einer Lektionsrunde. Sitzt die Seite (ab DONE_STARS), führt der Hauptknopf zur nächsten.
     actions: [
-      { id: 'again', label: againLabel(summary.mode) },
+      ...(forward ? [{ id: 'next', label: `Weiter: ${next.title}`, primary: true }] : []),
+      { id: 'again', label: againLabel(summary.mode), primary: !forward },
       ...(summary.mode === 'lesson' && summary.unitId ? [{ id: 'theory', label: 'Theorie' }] : []),
       { id: 'home', label: 'Zum Lernpfad' }
     ],
@@ -135,7 +137,7 @@ export function Ergebnis({ model, messages = [], onAction }) {
     model.badges.length
       ? h('div', null, h('p', { className: 'kicker' }, 'Neue Trophäen'), h('div', { className: 'badges', style: { justifyContent: 'center' } }, ...model.badges.map((b) => h('div', { key: b.id, className: 'badge got' }, h('b', null, b.n), h('span', null, b.d)))))
       : null,
-    h('div', { className: 'acts' }, ...model.actions.map((a) => h(Button, { key: a.id, variant: a.id === 'again' ? 'primary' : 'ghost', onClick: () => onAction(a.id) }, a.label))),
+    h('div', { className: 'acts' }, ...model.actions.map((a) => h(Button, { key: a.id, variant: a.primary ? 'primary' : 'ghost', onClick: () => onAction(a.id) }, a.label))),
     ...messages.map((text) => h('p', { key: text, className: 'notice', role: 'status' }, text)),
     model.celebrate ? h(Confetti, { seed: 7, count: 40, reduced: false }) : null
   );
