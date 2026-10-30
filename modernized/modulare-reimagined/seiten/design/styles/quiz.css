@@ -38,11 +38,15 @@
 .mini td{padding:2px 12px 2px 0}
 .mini td:first-child{color:var(--muted)}
 .peek{background:var(--note);padding:10px 14px;box-shadow:3px 3px 0 var(--shadow);margin-top:8px;display:inline-block;border-radius:4px}
-.foot{position:sticky;bottom:0;padding-top:12px;padding-bottom:calc(12px + env(safe-area-inset-bottom,0px));background:linear-gradient(transparent,var(--paper) 18px)}
-.foot .row{display:flex;justify-content:flex-end}
+.foot{position:sticky;bottom:0;z-index:2;margin:16px -16px 0;padding:12px 16px calc(16px + env(safe-area-inset-bottom,0px));background:var(--paper)}
+.foot::before{content:"";position:absolute;inset:auto 0 100%;height:20px;background:linear-gradient(transparent,var(--paper));pointer-events:none}
+.foot .row{display:flex;align-items:center;gap:16px}
+.foot .row .btn{flex:none;margin-left:auto}
+.foot .hint{margin:0;font-size:14px;line-height:1.35;color:var(--muted)}
 .fb{display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:12px 16px;border:2px solid;border-radius:14px}
 .fb .mas{flex:none;width:56px}
 .fb .msg{flex:1 1 200px}
+.fb .btn{margin-left:auto}
 .fb.ok{background:var(--ok-bg);border-color:var(--ok)}
 .fb.almost{background:var(--note);border-color:var(--star)}
 .fb.bad{background:var(--pen-bg);border-color:var(--pen)}

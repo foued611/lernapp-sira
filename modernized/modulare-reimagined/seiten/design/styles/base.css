@@ -42,7 +42,7 @@ h3{font-size:21px}
 a.btn{display:inline-block;text-align:center;text-decoration:none}
 .btn.ghost{background:var(--card);color:var(--ink);box-shadow:0 5px 0 var(--shadow)}
 .btn.sun{background:var(--sun);color:var(--sun-fg);box-shadow:0 5px 0 var(--sun-shadow);border-color:var(--sun-fg)}
-.btn:disabled{opacity:.4;cursor:not-allowed}
+.btn:disabled{background:var(--card);color:var(--muted);border-color:var(--line);box-shadow:none;cursor:not-allowed}
 .link{display:inline-flex;align-items:center;min-height:44px;background:none;border:0;padding:6px 0;cursor:pointer;color:var(--ink);text-decoration:underline;text-underline-offset:3px;font-size:14px;position:relative}
 .link::after{content:"";position:absolute;inset:-6px -4px}
 .hero{background:var(--hero-bg);color:var(--hero-fg);border-color:var(--ink);display:grid;gap:16px;overflow:hidden;position:relative}
