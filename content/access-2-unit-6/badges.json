@@ -1,0 +1,247 @@
+[
+  {
+    "id": "first",
+    "n": "Erster Schritt",
+    "d": "Die erste Seite geübt",
+    "rule": {
+      "type": "anyUnit"
+    }
+  },
+  {
+    "id": "perfect",
+    "n": "Fehlerfrei",
+    "d": "Eine Runde ohne Fehler",
+    "rule": {
+      "type": "perfectRound"
+    }
+  },
+  {
+    "id": "combo",
+    "n": "Im Lauf",
+    "d": "Zehn richtige Antworten hintereinander",
+    "rule": {
+      "type": "combo",
+      "min": 10
+    }
+  },
+  {
+    "id": "streak",
+    "n": "Dranbleiben",
+    "d": "Drei Tage in Folge geübt",
+    "rule": {
+      "type": "streak",
+      "days": 3
+    }
+  },
+  {
+    "id": "boss",
+    "n": "Wörter-Endgegner",
+    "d": "Den Endgegner besiegt",
+    "rule": {
+      "type": "boss"
+    }
+  },
+  {
+    "id": "kapitel1",
+    "n": "Kapitel 1",
+    "d": "Alle Seiten von Kapitel 1 mit mindestens einem Stern",
+    "rule": {
+      "type": "units",
+      "ids": [
+        "krank",
+        "husten",
+        "essen",
+        "roemer"
+      ]
+    }
+  },
+  {
+    "id": "kapitel2",
+    "n": "Kapitel 2",
+    "d": "Alle Seiten von Kapitel 2 mit mindestens einem Stern",
+    "rule": {
+      "type": "units",
+      "ids": [
+        "reich",
+        "klippe",
+        "landgut"
+      ]
+    }
+  },
+  {
+    "id": "kapitel3",
+    "n": "Kapitel 3",
+    "d": "Alle Seiten von Kapitel 3 mit mindestens einem Stern",
+    "rule": {
+      "type": "units",
+      "ids": [
+        "brunnen",
+        "wache"
+      ]
+    }
+  },
+  {
+    "id": "kapitel4-5",
+    "n": "Kapitel 4 und 5",
+    "d": "Alle Seiten von Kapitel 4 und 5 mit mindestens einem Stern",
+    "rule": {
+      "type": "units",
+      "ids": [
+        "hof",
+        "laerm"
+      ]
+    }
+  },
+  {
+    "id": "kapitel6",
+    "n": "Kapitel 6",
+    "d": "Alle Seiten von Kapitel 6 mit mindestens einem Stern",
+    "rule": {
+      "type": "units",
+      "ids": [
+        "geheimnis",
+        "seil"
+      ]
+    }
+  },
+  {
+    "id": "kapitel7-8",
+    "n": "Kapitel 7 und 8",
+    "d": "Alle Seiten von Kapitel 7, 8 und den Zusatzwörtern mit mindestens einem Stern",
+    "rule": {
+      "type": "units",
+      "ids": [
+        "koenig",
+        "schluss"
+      ]
+    }
+  },
+  {
+    "id": "alle",
+    "n": "Wörter-Profi",
+    "d": "Alle 15 Seiten mit mindestens einem Stern",
+    "rule": {
+      "type": "units",
+      "ids": [
+        "krank",
+        "husten",
+        "essen",
+        "roemer",
+        "reich",
+        "klippe",
+        "landgut",
+        "brunnen",
+        "wache",
+        "hof",
+        "laerm",
+        "geheimnis",
+        "seil",
+        "koenig",
+        "schluss"
+      ]
+    }
+  },
+  {
+    "id": "meister",
+    "n": "Wörter-Meister",
+    "d": "Alle 15 Seiten mit drei Sternen",
+    "rule": {
+      "type": "all",
+      "rules": [
+        {
+          "type": "unit",
+          "id": "krank",
+          "stars": 3
+        },
+        {
+          "type": "unit",
+          "id": "husten",
+          "stars": 3
+        },
+        {
+          "type": "unit",
+          "id": "essen",
+          "stars": 3
+        },
+        {
+          "type": "unit",
+          "id": "roemer",
+          "stars": 3
+        },
+        {
+          "type": "unit",
+          "id": "reich",
+          "stars": 3
+        },
+        {
+          "type": "unit",
+          "id": "klippe",
+          "stars": 3
+        },
+        {
+          "type": "unit",
+          "id": "landgut",
+          "stars": 3
+        },
+        {
+          "type": "unit",
+          "id": "brunnen",
+          "stars": 3
+        },
+        {
+          "type": "unit",
+          "id": "wache",
+          "stars": 3
+        },
+        {
+          "type": "unit",
+          "id": "hof",
+          "stars": 3
+        },
+        {
+          "type": "unit",
+          "id": "laerm",
+          "stars": 3
+        },
+        {
+          "type": "unit",
+          "id": "geheimnis",
+          "stars": 3
+        },
+        {
+          "type": "unit",
+          "id": "seil",
+          "stars": 3
+        },
+        {
+          "type": "unit",
+          "id": "koenig",
+          "stars": 3
+        },
+        {
+          "type": "unit",
+          "id": "schluss",
+          "stars": 3
+        }
+      ]
+    }
+  },
+  {
+    "id": "nicht-aufgegeben",
+    "n": "Nicht aufgegeben",
+    "d": "Zwei Fehler im zweiten Versuch richtig gemacht",
+    "rule": {
+      "type": "retryRecovered",
+      "min": 2
+    }
+  },
+  {
+    "id": "zurueckgekommen",
+    "n": "Zurückgekommen",
+    "d": "Eine Seite nach Pause wieder aufgefrischt",
+    "rule": {
+      "type": "refresh",
+      "count": 1
+    }
+  }
+]
