@@ -4,7 +4,8 @@
 import { createElement, Fragment, useReducer } from 'react';
 import { Lesson } from '../../../komponenten/lesson.js';
 import { Notes, initialPractice, practiceReducer, thirdCell } from '../../../komponenten/theory.js';
-import { TrackLabel, trackOf } from '../../../komponenten/tracks.js';
+import { trackOf } from '../../../helfer/index.js';
+import { TrackLabel } from '../../../komponenten/tracks.js';
 import { Button } from '../../../komponenten/ui.js';
 import { SpeakButton } from '../sprache.js';
 import * as diagrams from './diagrams.js';

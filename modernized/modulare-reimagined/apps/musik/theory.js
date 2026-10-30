@@ -1,9 +1,10 @@
 // Theorieseite der Musik-Werkstatt: wie die Standardseite, dazu nach dem Bild die Karte "Zum Anhören" mit den Klangbeispielen
 // der Seite (content/musik/data.json, klang). Der Ton entsteht erst nach einem Tipp, nie von selbst.
 import { createElement, useEffect, useRef, useState } from 'react';
+import { trackOf } from '../../helfer/index.js';
 import { Lesson } from '../../komponenten/lesson.js';
 import { Notes } from '../../komponenten/theory.js';
-import { TrackLabel, trackOf } from '../../komponenten/tracks.js';
+import { TrackLabel } from '../../komponenten/tracks.js';
 import { Button } from '../../komponenten/ui.js';
 import * as diagrams from './diagrams.js';
 import { klangOf } from './klang.js';

@@ -3,7 +3,8 @@
 // Die Lektion steht außerhalb der Tabelle. Verbwechsel und Selbsttest ändern nur die Tabelle.
 import { createElement, Fragment, useReducer } from 'react';
 import { Lesson } from './lesson.js';
-import { TrackLabel, trackOf } from './tracks.js';
+import { trackOf } from '../helfer/index.js';
+import { TrackLabel } from './tracks.js';
 import { Button } from './ui.js';
 
 const h = createElement;
