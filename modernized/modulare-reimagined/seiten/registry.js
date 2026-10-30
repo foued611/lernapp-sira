@@ -31,6 +31,7 @@ export const APPS = Object.freeze([
   { id: 'physik', subject: 'Physik', title: 'Physik-Werkstatt', desc: 'Schall, Licht und Mechanik nach dem Bildungsplan Klasse 7/8: Schwingungen, Frequenz, Spiegel, Brechung, Geschwindigkeit und Kräfte.', status: LIVE },
   { id: 'geographie', subject: 'Geographie', title: 'Geographie-Werkstatt', desc: 'Erdoberfläche, Klima und Vegetation, Tropen, Klimawandel, Polarzone, Bevölkerung, Entwicklungsstand und Welthandel. Nach den Kapiteln 1 bis 8 von Unsere Erde.', status: LIVE },
   { id: 'biologie', subject: 'Biologie', title: 'Biologie-Werkstatt', desc: 'Zelle, Fotosynthese, Zellatmung, Ernährung und Verdauung, Lunge, Blut und Kreislauf, Fortpflanzung. Nach den Kapiteln 1 bis 3 von Biosphäre 7/8.', status: LIVE },
+  { id: 'access-2-unit-6', subject: 'Englisch', title: 'Englisch-Wortschatz Access 2', desc: 'Alle 229 Wörter aus dem Dictionary von Access 2, Unit 6: Arzt und Krankheit, Römer, Landschaft, Gefühle und Verben. Mit Merkzettel, Übungen und Abschlusstest zum Ausdrucken.', status: LIVE },
   { id: 'musik', subject: 'Musik', title: 'Musik-Werkstatt', desc: 'Takt, Dur und Moll, Akkorde, Stimme, Instrumente, Barock und Klassik, Blues und Jazz, Pop, Oper und Musical, Urheberrecht. Nach den Kapiteln von MusiX 2.', status: LIVE }
 ]);
 
