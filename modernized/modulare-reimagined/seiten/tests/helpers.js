@@ -114,9 +114,12 @@ export function fakeSource(failing = []) {
   };
 }
 
+// Was der Katalog aus dem Manifest der Testapps übernimmt.
+const FIXTURE_ENTRY = Object.freeze({ boss: true, tracks: TRACKS, units: bundleFor('x').manifest.units.map(({ id, title, track }) => ({ id, title, track })) });
+
 export const REGISTRY = Object.freeze([
-  { id: 'mathe', subject: 'Mathematik', title: 'Mathe-Werkstatt', desc: 'Zahlen und Gleichungen.', status: 'live' },
-  { id: 'deutsch', subject: 'Deutsch', title: 'Deutsch-Werkstatt', desc: 'Texte und Regeln.', status: 'live' },
+  { id: 'mathe', subject: 'Mathematik', title: 'Mathe-Werkstatt', desc: 'Zahlen und Gleichungen.', status: 'live', ...FIXTURE_ENTRY },
+  { id: 'deutsch', subject: 'Deutsch', title: 'Deutsch-Werkstatt', desc: 'Texte und Regeln.', status: 'live', ...FIXTURE_ENTRY },
   { id: 'physik', subject: 'Physik', title: 'Physik-App', desc: 'Kräfte.', status: 'soon' }
 ]);
 
@@ -136,7 +139,7 @@ export async function bootFixture({ failing = [], openStorage = () => memoryHand
     registry,
     source: fakeSource(failing),
     openStorage,
-    logicFor: () => LOGIC,
+    loadLogic: () => LOGIC,
     now: nowMs,
     search
   });

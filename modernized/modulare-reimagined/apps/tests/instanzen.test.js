@@ -4,9 +4,8 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { createRng } from '../../helfer/index.js';
 import { buildConfig } from '../../inhalte/index.js';
-import { APPS, LIVE } from '../../seiten/registry.js';
-import { logicFor } from '../index.js';
-import { paketVon } from './laden.js';
+import { LIVE } from '../../seiten/registry.js';
+import { APPS, logicFor, paketVon } from './laden.js';
 
 // Ein anderes Paket derselben App: Seiten und alle Listen in den Daten stehen umgekehrt.
 const umgekehrt = (wert) => {

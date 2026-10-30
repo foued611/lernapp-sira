@@ -2,6 +2,7 @@
   "schema": 1,
   "id": "deutsch",
   "title": "Deutsch-Werkstatt",
+  "catalog": { "subject": "Deutsch", "desc": "Inhaltsangabe, Adverbialsätze, Kommas, das und dass, Passiv, sprachliche Bilder, Rechtschreibung und Lesen.", "order": 6 },
   "greeting": "Hallo",
   "intro": "Inhaltsangabe, Adverbialsätze, Kommas, das und dass, Passiv und sprachliche Bilder. Dazu Rechtschreibung (doppelte Mitlaute, lange Vokale, s-Laute, Verlängern, Groß und klein) und Lesen mit Strategie. Starte irgendwo. Die Reihenfolge ist nur ein Vorschlag.",
   "bossTitle": "Der Grammatik-Boss",

@@ -40,7 +40,8 @@ export function createStaticSource(baseUrl, fetchFn) {
         PARTS.map(([part, required]) => getJSON(fetchFn, `${base}${appId}/${part}.json`, required))
       );
       return assertBundle({ manifest, lessons, badges, data: data ?? {} });
-    }
+    },
+    catalog: () => getJSON(fetchFn, `${base}katalog.json`, true)
   };
 }
 
@@ -63,6 +64,13 @@ export function createHttpSource(baseUrl, apiKey, fetchFn) {
       // Die Fehlermeldung nennt nur den Status, nie den Schlüssel.
       if (!response.ok) throw new Error(`Inhalte nicht erreichbar (${response.status})`);
       return assertBundle(await response.json());
+    },
+    async catalog() {
+      const response = await fetchFn(`${base}/apps`, {
+        headers: { Accept: 'application/json', Authorization: `Bearer ${apiKey}` }
+      });
+      if (!response.ok) throw new Error(`Katalog nicht erreichbar (${response.status})`);
+      return response.json();
     }
   };
 }

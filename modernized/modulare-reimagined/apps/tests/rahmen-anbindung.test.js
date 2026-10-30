@@ -5,8 +5,7 @@ import assert from 'node:assert/strict';
 import { buildConfig } from '../../inhalte/index.js';
 import { createRng } from '../../helfer/index.js';
 import { appDefaults, profileDefaults, startRound } from '../../seiten/ablauf.js';
-import { logicFor } from '../index.js';
-import { paketVon } from './laden.js';
+import { logicFor, paketVon } from './laden.js';
 
 for (const id of ['deutsch', 'geometrie']) {
   test(`ANBINDUNG: ${id} startet Lektion, Schnellrunde und Endgegner durch den Rahmen`, () => {

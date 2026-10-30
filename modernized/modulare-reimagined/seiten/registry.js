@@ -1,5 +1,5 @@
-// Liste der Lern-Apps für die Startseite. Die Einträge stammen aus legacy/modulare/registry.js:18-66.
-// Bewusst ohne Seitenzahl: die kommt aus dem Inhaltspaket jeder App (RULE-259). Ohne Farben: das Fach steht als Text.
+// Prüfung und Hilfen für den App-Katalog (content/katalog.json, aus den Manifesten gebaut). Eine Kachel öffnet die App über
+// ?app=<id> (siehe startseite.js). Die Farben je Fach sind Darstellung und stehen deshalb hier, nicht im Inhalt.
 import { assertAppId } from '../inhalte/index.js';
 import { trackOf } from '../helfer/index.js';
 
@@ -18,21 +18,6 @@ export const SUBJECT_COLORS = Object.freeze({
   Biologie: '#2E9E5B',
   Musik: '#C97B3A'
 });
-
-// Eine Kachel öffnet die App über ?app=<id> (siehe startseite.js). Die alten Pfade apps/<name>/index.html
-// gibt es in diesem Neubau nicht mehr.
-export const APPS = Object.freeze([
-  { id: 'mathe', subject: 'Mathematik', title: 'Mathe-Werkstatt', desc: 'Vorzeichen, Terme, Gleichungen, Prozente, Zinsen, Dreisatz, Daten und Zufall. Mit Waage, Zahlenstrahl und Kacheln erklärt.', status: LIVE },
-  { id: 'geometrie', subject: 'Mathematik', title: 'Geometrie-Werkstatt', desc: 'Mittelsenkrechte, Winkelhalbierende, Dreiecke konstruieren, Winkel, Thales, Umkreis und Inkreis.', status: LIVE },
-  { id: 'englisch', subject: 'Englisch', title: 'Englisch-Werkstatt', desc: 'Simple Past, Present Perfect, Konditionalsätze, Relativsätze, Passiv und indirekte Rede nach den Units von Access 3. Dazu 229 Vokabeln aus Access 2, Unit 6 mit Abschlusstest zum Ausdrucken.', status: LIVE },
-  { id: 'decouvertes-2', subject: 'Französisch', title: 'Französisch-Werkstatt', desc: 'Découvertes 2: Passé composé, Pronomen, vouloir, pouvoir und Verben auf -ir. Dazu das Cahier de Verbes (être, avoir, aller, faire, Présent) und die Zahlen auf Französisch.', status: LIVE },
-  { id: 'info-zahlen', subject: 'Informatik', title: 'Zahlenwerkstatt', desc: 'Binär und Hexadezimal: Lampen schalten, umrechnen und addieren wie ein Computer.', status: LIVE },
-  { id: 'deutsch', subject: 'Deutsch', title: 'Deutsch-Werkstatt', desc: 'Inhaltsangabe, Adverbialsätze, Kommas, das und dass, Passiv, sprachliche Bilder, Rechtschreibung und Lesen.', status: LIVE },
-  { id: 'physik', subject: 'Physik', title: 'Physik-Werkstatt', desc: 'Schall, Licht und Mechanik nach dem Bildungsplan Klasse 7/8: Schwingungen, Frequenz, Spiegel, Brechung, Geschwindigkeit und Kräfte.', status: LIVE },
-  { id: 'geographie', subject: 'Geographie', title: 'Geographie-Werkstatt', desc: 'Erdoberfläche, Klima und Vegetation, Tropen, Klimawandel, Polarzone, Bevölkerung, Entwicklungsstand und Welthandel. Nach den Kapiteln 1 bis 8 von Unsere Erde.', status: LIVE },
-  { id: 'biologie', subject: 'Biologie', title: 'Biologie-Werkstatt', desc: 'Zelle, Fotosynthese, Zellatmung, Ernährung und Verdauung, Lunge, Blut und Kreislauf, Fortpflanzung. Nach den Kapiteln 1 bis 3 von Biosphäre 7/8.', status: LIVE },
-  { id: 'musik', subject: 'Musik', title: 'Musik-Werkstatt', desc: 'Takt, Dur und Moll, Akkorde, Stimme, Instrumente, Barock und Klassik, Blues und Jazz, Pop, Oper und Musical, Urheberrecht. Nach den Kapiteln von MusiX 2.', status: LIVE }
-]);
 
 const isText = (value) => typeof value === 'string' && value.trim() !== '';
 

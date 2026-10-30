@@ -4,9 +4,8 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { buildConfig } from '../../inhalte/index.js';
 import { bossOpen, profileDefaults } from '../../seiten/ablauf.js';
-import { APPS, LIVE } from '../../seiten/registry.js';
-import { logicFor } from '../index.js';
-import { paketVon } from './laden.js';
+import { LIVE } from '../../seiten/registry.js';
+import { APPS, logicFor, paketVon } from './laden.js';
 
 for (const entry of APPS.filter((e) => e.status === LIVE)) {
   test(`RULE-206: ${entry.id} öffnet den Endgegner erst, wenn jede Seite einen Stern hat`, () => {

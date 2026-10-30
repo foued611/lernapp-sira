@@ -1,17 +1,19 @@
-// Startet die Seiten: lädt die Inhalte aller Apps, öffnet den Speicher und sammelt beides in einen Zustand.
+// Startet die Seiten: lädt den Katalog, öffnet den Speicher und sammelt beides in einen Zustand. Inhalte und Logik einer
+// App kommen erst, wenn sie geöffnet wird. So bleibt der Start klein, auch mit vielen Apps.
 // Fehler kommen als Meldung zurück, nicht als Abbruch (RULE-202, AGENTS.md: die App läuft auch ohne Speicher).
 // Herkunft: legacy/modulare/core/js/boot.js und dashboard.js:9-16 (dort ohne Fehlerbehandlung).
 import { assertAppId, buildConfig, createStaticSource } from '../inhalte/index.js';
 import { openApp, openProfile, openStore } from '../speicher/index.js';
 import { PROFILE_VERSION, evaluateTrophyRule, migrateProfile } from '../regeln/index.js';
 import { appDefaults, dayOf, profileDefaults } from './ablauf.js';
-import { APPS, LIVE, validateRegistry } from './registry.js';
+import { LIVE, validateRegistry } from './registry.js';
 import { UEBERNAHMEN, hasProgress, mergeAppState } from './uebernahme.js';
 
 // Meldungen für die Anzeige. Keine Namen, keine Kennungen aus dem Speicher.
 export const MSG = Object.freeze({
   unavailable: 'Der Speicher dieses Browsers ist nicht verfügbar. Ohne Speicher gibt es hier keinen Fortschritt. Die Apps laufen trotzdem, nur ohne Sterne und Punkte.',
   memory: 'Der Speicher dieses Browsers ist nicht nutzbar. Der Fortschritt bleibt nur, bis du diese Seite schließt.',
+  catalog: 'Die Liste der Apps konnte nicht geladen werden. Prüfe die Verbindung und lade die Seite neu.',
   appLoad: 'Die Inhalte dieser App konnten nicht geladen werden. Prüfe die Verbindung und lade die Seite neu.',
   registry: 'Die Liste der Apps ist fehlerhaft. Die Startseite kann nicht gezeigt werden.'
 });
@@ -54,13 +56,16 @@ async function openSession(openStorage) {
   }
 }
 
-// Lädt Inhalte einer App und baut die Konfiguration. Ein Fehler betrifft nur diese App, nicht die anderen.
+// Eine App, wie die Startseite sie kennt: nur der Katalogeintrag, noch ohne Inhalte.
+const shellOf = (entry) => ({ entry, config: null, units: entry.units ?? [], error: null, appStore: null, storeMessage: null });
+
+// Lädt Inhalte und Logik einer App und baut die Konfiguration. Ein Fehler betrifft nur diese App, nicht die anderen.
 async function loadEntry(entry, options) {
-  const base = { entry, config: null, units: [], error: null, appStore: null, storeMessage: null };
+  const base = shellOf(entry);
   if (entry.status !== LIVE) return base;
   try {
-    const bundle = await options.source.load(entry.id);
-    const config = buildConfig(bundle, options.logicFor(entry.id), { evaluateRule: options.evaluateRule });
+    const [bundle, logic] = await Promise.all([options.source.load(entry.id), options.loadLogic(entry.id)]);
+    const config = buildConfig(bundle, logic, { evaluateRule: options.evaluateRule });
     return { ...base, config, units: config.units };
   } catch (error) {
     return { ...base, error: MSG.appLoad, cause: error };
@@ -96,41 +101,56 @@ async function attachAppStore(app, handle) {
   }
 }
 
+// Die Liste der Apps. Ein Fehler ist kein Abbruch, sondern eine Meldung.
+async function loadEntries(o) {
+  if (o.registry) return { entries: o.registry };
+  try {
+    return { entries: await o.source.catalog() };
+  } catch (error) {
+    return { failure: { ok: false, message: MSG.catalog, cause: error } };
+  }
+}
+
 /**
- * Lädt alles für die Startseite. Gibt { ok: true, state } oder { ok: false, message } zurück und wirft nie.
+ * Lädt alles für die Startseite oder die App aus der Adresse. Gibt { ok: true, state } oder { ok: false, message } zurück und wirft nie.
  * Optionen (alle optional, für Tests und andere Laufzeiten):
- *   registry       Liste der Apps (Standard: APPS aus registry.js)
- *   source         Inhaltsquelle mit load(appId) (Standard: defaultSource)
+ *   registry       Liste der Apps (Standard: source.catalog())
+ *   source         Inhaltsquelle mit load(appId) und catalog() (Standard: defaultSource)
  *   openStorage    liefert einen Speicher-Handle (Standard: openStore)
- *   logicFor(id)   Logik einer App aus logic.js (Standard: leer)
+ *   loadLogic(id)  Logik einer App aus logic.js, auch als Promise (Standard: leer)
  *   evaluateRule   Trophäen-Auswertung (Standard: regeln)
  *   now            Uhr in Millisekunden
  *   search         Adressteil der Seite, z. B. "?app=mathe"
  */
 export async function bootSeiten(options = {}) {
   const o = {
-    registry: APPS,
     source: defaultSource(),
     openStorage: () => openStore(),
-    logicFor: () => ({}),
+    loadLogic: () => ({}),
     evaluateRule: evaluateTrophyRule,
     now: () => Date.now(),
     search: '',
     ...options
   };
-  const problems = validateRegistry(o.registry);
+  const { entries, failure } = await loadEntries(o);
+  if (failure) return failure;
+  const problems = validateRegistry(entries);
   if (problems.length) return { ok: false, message: MSG.registry, problems };
 
+  const appId = parseRoute(o.search);
+  const opened = appId ? entries.find((entry) => entry.id === appId) : null;
   const [session, loaded] = await Promise.all([
     openSession(o.openStorage),
-    Promise.all(o.registry.map((entry) => loadEntry(entry, o)))
+    Promise.all(entries.map((entry) => (entry === opened ? loadEntry(entry, o) : shellOf(entry))))
   ]);
-  const apps = await Promise.all(loaded.map((app) => attachAppStore(app, session.storage.handle)));
+  // Die Startseite zeigt den Stand aller Apps, eine geöffnete App braucht nur ihren eigenen.
+  const needsStore = (app) => !appId || app.entry === opened;
+  const apps = await Promise.all(loaded.map((app) => (needsStore(app) ? attachAppStore(app, session.storage.handle) : app)));
   return {
     ok: true,
     state: {
       day: dayOf(o.now()),
-      route: { appId: parseRoute(o.search) },
+      route: { appId },
       storage: session.storage,
       profileStore: session.profileStore,
       apps

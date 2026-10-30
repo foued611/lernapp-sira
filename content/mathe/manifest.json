@@ -2,6 +2,7 @@
   "schema": 1,
   "id": "mathe",
   "title": "Mathe-Werkstatt",
+  "catalog": { "subject": "Mathematik", "desc": "Vorzeichen, Terme, Gleichungen, Prozente, Zinsen, Dreisatz, Daten und Zufall. Mit Waage, Zahlenstrahl und Kacheln erklärt.", "order": 1 },
   "greeting": "Hallo",
   "intro": "Starte mit den Vorzeichen. Danach bauen Terme, Gleichungen, Prozente, Zinsen und der Dreisatz darauf auf. Am Ende kommen Daten und Zufall.",
   "bossTitle": "Der Rechen-Boss",

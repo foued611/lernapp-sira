@@ -2,6 +2,7 @@
   "schema": 1,
   "id": "physik",
   "title": "Physik-Werkstatt",
+  "catalog": { "subject": "Physik", "desc": "Schall, Licht und Mechanik nach dem Bildungsplan Klasse 7/8: Schwingungen, Frequenz, Spiegel, Brechung, Geschwindigkeit und Kräfte.", "order": 7 },
   "greeting": "Hallo",
   "intro": "Die Seiten folgen den Themen Akustik, Optik und Mechanik aus dem Bildungsplan Physik Klasse 7/8 (Gymnasium Baden-Württemberg). Erst die Lektion, dann die Übung. Du kannst auch springen.",
   "bossTitle": "Experiment-Check",

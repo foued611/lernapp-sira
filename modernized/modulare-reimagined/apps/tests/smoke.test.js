@@ -8,9 +8,8 @@ import { buildConfig } from '../../inhalte/index.js';
 import { createRng } from '../../helfer/index.js';
 import { appDefaults, profileDefaults, startRound } from '../../seiten/ablauf.js';
 import { TheoryScreen } from '../../seiten/rahmen.js';
-import { APPS, LIVE } from '../../seiten/registry.js';
-import { logicFor } from '../index.js';
-import { paketVon } from './laden.js';
+import { LIVE } from '../../seiten/registry.js';
+import { APPS, logicFor, paketVon } from './laden.js';
 
 const h = createElement;
 const live = APPS.filter((entry) => entry.status === LIVE);

@@ -26,6 +26,18 @@
         "title": { "$ref": "#/$defs/text" },
         "greeting": { "$ref": "#/$defs/text" },
         "intro": { "$ref": "#/$defs/text" },
+        "catalog": {
+          "type": "object",
+          "description": "Eintrag auf der Startseite. Fehlt das Feld, erscheint die App dort nicht (z. B. die Vorlage).",
+          "required": ["subject", "desc", "order"],
+          "additionalProperties": false,
+          "properties": {
+            "subject": { "$ref": "#/$defs/text" },
+            "desc": { "$ref": "#/$defs/text" },
+            "order": { "type": "integer", "minimum": 1 },
+            "status": { "enum": ["live", "soon"] }
+          }
+        },
         "bossTitle": { "$ref": "#/$defs/text" },
         "inputChars": { "type": "array", "items": { "type": "string", "minLength": 1, "maxLength": 2 } },
         "words": {

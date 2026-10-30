@@ -2,6 +2,7 @@
   "schema": 1,
   "id": "decouvertes-2",
   "title": "Französisch-Werkstatt",
+  "catalog": { "subject": "Französisch", "desc": "Découvertes 2: Passé composé, Pronomen, vouloir, pouvoir und Verben auf -ir. Dazu das Cahier de Verbes (être, avoir, aller, faire, Présent) und die Zahlen auf Französisch.", "order": 4 },
   "greeting": "Salut",
   "intro": "Zwei Bücher in einer App: die Unités aus Découvertes 2 und das Cahier de Verbes mit dem Présent. Erst die Lektion, dann die Übung. Du kannst auch springen.",
   "bossTitle": "Le Grand Défi",

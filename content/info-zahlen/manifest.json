@@ -2,6 +2,7 @@
   "schema": 1,
   "id": "info-zahlen",
   "title": "Zahlenwerkstatt",
+  "catalog": { "subject": "Informatik", "desc": "Binär und Hexadezimal: Lampen schalten, umrechnen und addieren wie ein Computer.", "order": 5 },
   "greeting": "Hallo",
   "intro": "Binär und Hexadezimal: so rechnen Computer. Lies die Theorie, probiere die Lampen aus und übe dann.",
   "bossTitle": "Der Bit-Boss",

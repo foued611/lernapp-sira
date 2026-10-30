@@ -2,6 +2,7 @@
   "schema": 1,
   "id": "englisch",
   "title": "Englisch-Werkstatt",
+  "catalog": { "subject": "Englisch", "desc": "Simple Past, Present Perfect, Konditionalsätze, Relativsätze, Passiv und indirekte Rede nach den Units von Access 3. Dazu 229 Vokabeln aus Access 2, Unit 6 mit Abschlusstest zum Ausdrucken.", "order": 3 },
   "greeting": "Hi",
   "intro": "Die Grammatik-Seiten folgen den Units von English G Access 3 (Klasse 7). Dahinter stehen 15 Vokabel-Seiten mit allen 229 Wörtern aus dem Dictionary von Access 2, Unit 6, und ein Abschlusstest zum Ausdrucken. Erst die Lektion, dann die Übung. Du kannst auch springen.",
   "bossTitle": "Final Check",

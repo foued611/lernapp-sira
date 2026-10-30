@@ -5,8 +5,7 @@ import { createRng } from '../../helfer/index.js';
 import { buildConfig } from '../../inhalte/index.js';
 import { skillOf } from '../../runde/index.js';
 import { appDefaults, profileDefaults, startRound } from '../../seiten/ablauf.js';
-import { logicFor } from '../index.js';
-import { paketVon } from './laden.js';
+import { logicFor, paketVon } from './laden.js';
 
 // Spielt die Runde richtig durch und sammelt, was gefragt wurde.
 function skillsPlayed(round) {
