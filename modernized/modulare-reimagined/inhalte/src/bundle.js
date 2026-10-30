@@ -52,6 +52,9 @@ function manifestErrors(manifest) {
   });
 
   errors.push(...groupErrors(manifest.groups, manifest.units));
+  manifest.units.filter(isObj).forEach((u) => {
+    (Array.isArray(u.needs) ? u.needs : []).filter((id) => !unitIds.includes(id) || id === u.id).forEach((id) => errors.push(`Seite ${u.id}: Voraussetzung "${id}" gibt es nicht`));
+  });
   errors.push(...resourceErrors(manifest.resources, isObj(tracks) ? tracks : {}));
   errors.push(...notesErrors(manifest.notes, unitIds));
   return { errors, unitIds: unitIds.filter(isId) };

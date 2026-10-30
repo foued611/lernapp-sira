@@ -9,7 +9,7 @@ import { NO_STORAGE, saveName } from './name.js';
 import { Ergebnis, messagesOf, resultModel, wordsFor } from './ergebnis.js';
 import { Sicherung } from './sicherung.js';
 import { onAddressBack, pageRoot, pushAddress, replaceAddress, scrollToTop, searchOf, unitFromSearch } from './adresse.js';
-import { RESET_DONE, profileDefaults, appDefaults, RIGHT, knownOf, rememberRight, bossOpen, startRound, settleRound, settleLeave, settleBlitzLeave, leaveNotice, resetStep, resetApp, recommendationOf, followingUnit, stationAfter, practisedUnits } from './ablauf.js';
+import { RESET_DONE, profileDefaults, appDefaults, RIGHT, knownOf, rememberRight, bossOpen, startRound, settleRound, settleLeave, settleBlitzLeave, leaveNotice, resetStep, resetApp, recommendationOf, followingUnit, stationAfter, practisedUnits, unmetNeeds } from './ablauf.js';
 
 const h = createElement;
 
@@ -21,7 +21,8 @@ export { Play } from './spiel.js';
 // Die Theorie einer Seite mit Rückweg. Der Übungsknopf startet die Lektionsrunde dieser Seite.
 // Eine App kann ihre Theorie selbst zeichnen (config.Theory, z. B. mit Spielzeugen). Sonst gilt die Standardseite.
 // Ist die Seite schon geübt, gibt es den Weg zur Übung auch oben: Wer auffrischt, muss die Theorie nicht durchscrollen.
-export function TheoryScreen({ config, unit, onBack, onStart, practised = false }) {
+// Fehlt eine Seite, auf der diese aufbaut, sagt das ein Hinweis mit Link. Gesperrt wird nichts: Die Reihenfolge ist ein Vorschlag.
+export function TheoryScreen({ config, unit, onBack, onStart, practised = false, missing = [], onStudy = () => {} }) {
   const page = config.Theory
     ? h(config.Theory, { unit, config, onStart: () => onStart() })
     : h(TheoryPage, {
@@ -41,6 +42,12 @@ export function TheoryScreen({ config, unit, onBack, onStart, practised = false 
       h('button', { type: 'button', className: 'link back', onClick: onBack }, '← Zum Lernpfad'),
       practised ? h('button', { type: 'button', className: 'btn ghost', onClick: () => onStart() }, 'Direkt üben') : null
     ),
+    missing.length
+      ? h('p', { className: 'notice needs' }, `Das baut auf ${missing.length === 1 ? 'dieser Seite' : 'diesen Seiten'} auf: `, ...missing.flatMap((u, i) => [
+        i ? ', ' : null,
+        h('button', { key: u.id, type: 'button', className: 'link', onClick: () => onStudy(u) }, u.title)
+      ]))
+      : null,
     page
   );
 }
@@ -262,7 +269,7 @@ export function AppFrame({ app, profileStore, day, storage, startUnit = null }) 
     return frame(h(BlitzPlay, { run: blitz, onFinish: finishBlitz, onLeave: leaveBlitz }));
   }
   if (screen === 'theory' && theoryUnit) {
-    return frame(h(TheoryScreen, { config, unit: theoryUnit, onBack: goHome, onStart: () => begin('lesson', theoryUnit), practised: starsOf(appState.stars, theoryUnit.id) > 0 }), theoryUnit);
+    return frame(h(TheoryScreen, { config, unit: theoryUnit, onBack: goHome, onStart: () => begin('lesson', theoryUnit), practised: starsOf(appState.stars, theoryUnit.id) > 0, missing: unmetNeeds(appState, theoryUnit, config.units), onStudy: study }), theoryUnit);
   }
   if (screen === 'saving') {
     return frame(h('section', { className: 'card' }, h('p', null, 'Ergebnis wird gespeichert …')));
@@ -270,7 +277,7 @@ export function AppFrame({ app, profileStore, day, storage, startUnit = null }) 
   if (screen === 'result' && settled) {
     const { unitId, groupId, weakUnits } = settled.summary;
     const weak = weakUnits.map((id) => config.units.find((u) => u.id === id));
-    const next = unitId ? followingUnit(appState, unitsInPath(config.units, config.groups), unitId, day) : weak[0] || null;
+    const next = unitId ? followingUnit(appState, unitsInPath(config.units, config.groups), unitId, day, { refreshing: settled.summary.refresh }) : weak[0] || null;
     const onAction = (id) => {
       if (id === 'home') goHome();
       else if (id === 'next') study(next);

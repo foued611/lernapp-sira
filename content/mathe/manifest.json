@@ -36,7 +36,7 @@
       }
     },
     {
-      "id": "terme", "group": "kapitel-1",
+      "id": "terme", "group": "kapitel-1", "needs": ["vorzeichen"],
       "color": "#FF9F43",
       "ic": "x",
       "title": "Terme vereinfachen",
@@ -58,7 +58,7 @@
       }
     },
     {
-      "id": "gleichungen", "group": "kapitel-4",
+      "id": "gleichungen", "group": "kapitel-4", "needs": ["terme"],
       "color": "#3DD6B0",
       "ic": "=",
       "title": "Gleichungen lösen",
@@ -80,7 +80,7 @@
       }
     },
     {
-      "id": "zinsen", "group": "kapitel-6",
+      "id": "zinsen", "group": "kapitel-6", "needs": ["prozent"],
       "color": "#FF6B88",
       "ic": "€",
       "title": "Zinsrechnung",
@@ -91,7 +91,7 @@
       }
     },
     {
-      "id": "kredit", "group": "kapitel-6",
+      "id": "kredit", "group": "kapitel-6", "needs": ["zinsen"],
       "color": "#FF6B88",
       "ic": "€",
       "title": "Kredit und Tilgung",

@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { AppHome, revealStation } from '../apphome.js';
-import { appDefaults, followingUnit, practisedUnits, profileDefaults } from '../ablauf.js';
+import { appDefaults, followingUnit, practisedUnits, profileDefaults, unmetNeeds } from '../ablauf.js';
 import { Ergebnis, resultModel, wordsFor } from '../ergebnis.js';
 import { TheoryScreen } from '../rahmen.js';
 import { startBlitz } from '../blitz.js';
@@ -144,4 +144,27 @@ test('SEITE-LERNFLUSS Blitz zieht nur aus den übergebenen Seiten und startet oh
   const started = startBlitz({ config, units, rng: () => 0.5, now: () => 0 });
   assert.equal(started.ok, true);
   assert.equal(seen[0], units);
+});
+
+test('SEITE-LERNFLUSS Wer auffrischt, macht mit der nächsten fälligen Seite weiter', () => {
+  const app = { stars: { a: 2, b: 2 }, last: { a: DAY, b: '2026-10-01' }, acc: {} };
+  assert.equal(followingUnit(app, units, 'a', DAY).id, 'c');
+  assert.equal(followingUnit(app, units, 'a', DAY, { refreshing: true }).id, 'b');
+  assert.equal(followingUnit({ stars: { a: 2 }, last: { a: DAY }, acc: {} }, units, 'a', DAY, { refreshing: true }).id, 'b');
+});
+
+test('SEITE-LERNFLUSS unmetNeeds nennt nur Seiten ohne Stern, unbekannte fallen weg', () => {
+  const unit = { id: 'c', needs: ['a', 'b', 'weg'] };
+  assert.deepEqual(unmetNeeds({ stars: { a: 1 } }, unit, units).map((u) => u.id), ['b']);
+  assert.deepEqual(unmetNeeds({ stars: { a: 1, b: 2 } }, unit, units), []);
+  assert.deepEqual(unmetNeeds({ stars: {} }, { id: 'a' }, units), []);
+});
+
+test('SEITE-LERNFLUSS Die Theorie zeigt fehlende Voraussetzungen als Hinweis und bleibt offen', () => {
+  const config = configOf();
+  const render = (missing) => renderToStaticMarkup(h(TheoryScreen, { config, unit: config.units[0], onBack: noop, onStart: noop, missing }));
+  assert.match(render([{ id: 'x', title: 'Terme' }]), /baut auf dieser Seite auf.*Terme/);
+  assert.match(render([{ id: 'x', title: 'Terme' }, { id: 'y', title: 'Zahlen' }]), /baut auf diesen Seiten auf/);
+  assert.match(render([{ id: 'x', title: 'Terme' }]), /Übung starten|Theorie|Zum Lernpfad/);
+  assert.doesNotMatch(render([]), /baut auf/);
 });

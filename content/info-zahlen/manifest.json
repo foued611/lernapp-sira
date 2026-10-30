@@ -47,7 +47,7 @@
       }
     },
     {
-      "id": "binaer", "group": "binaer",
+      "id": "binaer", "group": "binaer", "needs": ["stellen"],
       "color": "#FFC933",
       "ic": "01",
       "title": "Binär lesen",
@@ -58,7 +58,7 @@
       }
     },
     {
-      "id": "dez2bin", "group": "binaer",
+      "id": "dez2bin", "group": "binaer", "needs": ["binaer"],
       "color": "#FF8AD0",
       "ic": "→2",
       "title": "Normal → Binär",
@@ -69,7 +69,7 @@
       }
     },
     {
-      "id": "addieren", "group": "binaer",
+      "id": "addieren", "group": "binaer", "needs": ["binaer"],
       "color": "#3DD6B0",
       "ic": "1+1",
       "title": "Binär addieren",
@@ -91,7 +91,7 @@
       }
     },
     {
-      "id": "binhex", "group": "hex",
+      "id": "binhex", "group": "hex", "needs": ["binaer", "hex"],
       "color": "#FF6B88",
       "ic": "4:1",
       "title": "Binär ↔ Hex",

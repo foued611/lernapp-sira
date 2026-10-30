@@ -74,7 +74,8 @@ Die Mechaniken sind so gewählt, dass sie das Lernen fördern und nicht nur belo
 - **Neue Trophäen-Typen:** `improved` (Genauigkeit einer Seite gegenüber dem letzten Mal um einen Mindestwert gestiegen), `retryRecovered` (Fehler der Runde im zweiten Versuch richtig beantwortet) und `refresh` (Zahl bezahlter Auffrischungen).
 - **Gezieltes Training:** Die Startseite einer App (`seiten/apphome.js`) schlägt die fällige oder schwächste Seite vor (`weakestUnit`). Den Endgegner zeigt die Startseite aller Apps nicht.
 - **2-Minuten-Runde und Blitz:** Sie wiederholen und ziehen nur aus Seiten mit mindestens einem Stern. Wer noch nichts geübt hat, startet mit der Theorie der ersten Seite.
-- **Nächster Schritt:** Ab 2 Sternen führt der Hauptknopf im Ergebnis zur nächsten offenen Seite (`followingUnit`). Darunter bleibt „Nochmal“ der Hauptknopf.
+- **Voraussetzungen:** `needs` an einer Seite nennt Seiten, auf denen sie aufbaut. Fehlt dort der Stern, zeigt die Theorie einen Hinweis mit Link. Gesperrt wird nichts.
+- **Nächster Schritt:** Ab 2 Sternen führt der Hauptknopf im Ergebnis zur nächsten offenen Seite, nach einer Auffrischung zur nächsten fälligen (`followingUnit`). Darunter bleibt „Nochmal“ der Hauptknopf.
 - **Kapitel-Test:** Hat ein Kapitel mindestens zwei Seiten und jede davon einen Stern, gibt es 10 gemischte Aufgaben daraus. Er ändert keine Sterne und zählt nicht als Übung der Seiten. Gespeichert wird der Bestwert (`app.chapters`), das Ergebnis nennt die Seiten mit Fehlern.
 - **Endgegner:** Die 12 Fragen verteilen sich über alle Seiten (`spreadPick`), jede Seite kommt über mehrere Runden dran.
 - **Sammelalbum:** Jede Seite hat eine Karte mit einem Fakt. Sie wird mit 1, 2 oder 3 Sternen zu Bronze, Silber, Gold. So gibt es ein sichtbares Ziel pro Seite.
@@ -132,7 +133,7 @@ Der bisherige Code ist aus `main` entfernt (Branch `legacy`). Neue Apps nur im N
 
 ## Neue Seite, Trophäe oder Fragetyp
 
-- Seite: Eintrag in `manifest.json` (`units` mit `group`, `notes`), Lektion in `lessons.json`, Aufgaben in `data.json`/`builders.js`. Neue Seiten hinten anfügen, nicht umsortieren.
+- Seite: Eintrag in `manifest.json` (`units` mit `group`, optional `needs`, `notes`), Lektion in `lessons.json`, Aufgaben in `data.json`/`builders.js`. Neue Seiten hinten anfügen, nicht umsortieren.
 - Trophäe: Eintrag in `badges.json` mit neuer, nie verwendeter `id` und einer Regel.
 - Fragetyp: Es gibt `choice`, `type` und `match`, ein Register gibt es nicht. Ein neuer Typ braucht einen Erbauer in `runde/src/questions.js`, die Bewertung in `runde/src/round.js`, die Ansicht in `seiten/spiel.js`, Stil in `seiten/design/styles/quiz.css` und Tests in `runde/tests/`. Nie nur in einer App einen Sonderweg bauen.
 
