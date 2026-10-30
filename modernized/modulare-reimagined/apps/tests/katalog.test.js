@@ -38,8 +38,8 @@ test('KATALOG: die Reihenfolge kommt aus order, Pakete ohne catalog fehlen', () 
   assert.deepEqual(buildCatalog([a, ohne, b]).map((e) => e.id), ['b', 'a']);
 });
 
-test('KATALOG: Seiten im Katalog tragen nur, was die Startseite braucht', () => {
-  const [entry] = buildCatalog([{ id: 'a', title: 'A', catalog: { subject: 'S', desc: 'D', order: 1 }, units: [{ id: 'u', title: 'T', ic: '1', track: 't' }] }]);
-  assert.deepEqual(entry.units, [{ id: 'u' }]);
-  assert.equal(entry.status, 'live');
+test('KATALOG: Seiten im Katalog tragen nur, was Kachel und Suche brauchen', () => {
+  for (const entry of APPS) {
+    for (const unit of entry.units) assert.deepEqual(Object.keys(unit).sort(), ['chapter', 'de', 'id', 'title']);
+  }
 });

@@ -28,3 +28,14 @@
 .pill{justify-self:start;font-size:13px;font-weight:600;border:2px dashed var(--line);border-radius:14px;padding:1px 12px;color:var(--muted)}
 .shell.dash .empty{display:none;padding:18px;text-align:center}
 @media (max-width:520px){.shell.dash .cont{grid-template-columns:auto 1fr}.shell.dash .cont .btn{grid-column:1/-1}}
+
+/* Suche über alle Apps */
+.suche{display:grid;gap:8px;margin:0 0 16px}
+.suche input{width:100%;min-height:var(--touch-min);padding:10px 14px;font:inherit;color:var(--ink);background:var(--card);border:2px solid var(--ink);border-radius:14px}
+.suche input::placeholder{color:var(--muted);opacity:1}
+.suche .muted{margin:0;font-size:14px}
+.treffer{display:grid;gap:8px;list-style:none;margin:0;padding:0}
+.treffer a{display:block;min-height:var(--touch-min);padding:8px 14px;color:var(--ink);text-decoration:none;background:var(--card);border:2px solid var(--line);border-radius:14px}
+.treffer a:hover{border-color:var(--ink)}
+.treffer b{display:block}
+.treffer small{display:block;color:var(--muted);font-size:13px}

@@ -178,5 +178,6 @@ a.btn{display:inline-block;text-align:center;text-decoration:none}
 .pgroup>summary .muted{font-size:13px;font-weight:400;margin-left:auto}
 .pgroup>summary:focus-visible{outline:3px solid currentColor;outline-offset:2px}
 .pgroup[open]>.path{margin-bottom:14px}
+.albumbox[open]{padding-bottom:14px}
 .pgroup>summary>span:first-child{flex:1 1 auto}
 .pgroup>summary .muted{white-space:nowrap;flex:0 0 auto}

@@ -10,6 +10,7 @@ import { AppFrame } from './rahmen.js';
 import { NAME_MAX, NO_STORAGE, greetingOf, maskName, saveName } from './name.js';
 import { Sicherung } from './sicherung.js';
 import { ThemeToggle } from './thema.js';
+import { Suche } from './suche.js';
 import { LIVE, SUBJECT_COLORS, subjectsOf } from './registry.js';
 import { MSG } from './boot.js';
 
@@ -180,6 +181,7 @@ export function Startseite({ state }) {
     'div',
     { className: 'shell dash' },
     h('div', { className: 'dashtop' }, h('div', { className: 'brand' }, 'Lernwerkstatt'), h(ThemeToggle)),
+    h(Suche, { apps: state.apps.map((app) => app.entry) }),
     h(
       'section',
       { className: 'card hero', id: 'hero' },

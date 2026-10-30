@@ -264,10 +264,11 @@ export function AppHome({ config, app, profile, day, rec, open, notice, storeMes
       )
       : null,
     cardUnits.length
+      // Zugeklappt, sonst stünde die Liste aller Karten vor den Trophäen und vor der Sicherung.
       ? h(
-        'section',
-        null,
-        h('h2', null, 'Sammelalbum'),
+        'details',
+        { className: 'pgroup albumbox' },
+        h('summary', null, h('span', null, 'Sammelalbum'), h('span', { className: 'muted' }, `${cardUnits.filter((u) => starsOf(app.stars, u.id) > 0).length} von ${cardUnits.length} Karten`)),
         h('p', { className: 'muted', style: { margin: '4px 0 14px', fontSize: '14px' } }, 'Für jede Seite gibt es eine Karte. Mit mehr Sternen wird sie wertvoller: Bronze, Silber, Gold.'),
         h('div', { className: 'album' }, ...cardUnits.map((u) => {
           const n = starsOf(app.stars, u.id);
