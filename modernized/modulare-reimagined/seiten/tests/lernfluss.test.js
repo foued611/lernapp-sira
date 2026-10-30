@@ -86,13 +86,13 @@ test('SEITE-LERNFLUSS Jede Station trägt ihre Seite, damit der Rückweg sie fin
 });
 
 test('SEITE-LERNFLUSS Die Gruppe mit der zuletzt besuchten Station ist offen', () => {
-  const config = configOf({ units: [{ id: 'x', title: 'X', de: 'd', color: '#111111', group: 'G1' }, { id: 'y', title: 'Y', de: 'd', color: '#111111', group: 'G2' }] });
+  const config = { ...configOf({ units: [{ id: 'x', title: 'X', de: 'd', color: '#111111', group: 'g1' }, { id: 'y', title: 'Y', de: 'd', color: '#111111', group: 'g2' }] }), groups: [{ id: 'g1', title: 'G1' }, { id: 'g2', title: 'G2' }] };
   const markup = home({}, { config, focusId: 'y' });
   assert.equal(markup.match(/<details[^>]* open/g).length, 2);
 });
 
 test('SEITE-LERNFLUSS Gruppen zählen geschafft ab zwei Sternen, wie der Kopf der App', () => {
-  const config = configOf({ units: [{ id: 'x', title: 'X', de: 'd', color: '#111111', group: 'G1' }, { id: 'y', title: 'Y', de: 'd', color: '#111111', group: 'G1' }] });
+  const config = { ...configOf({ units: [{ id: 'x', title: 'X', de: 'd', color: '#111111', group: 'g1' }, { id: 'y', title: 'Y', de: 'd', color: '#111111', group: 'g1' }] }), groups: [{ id: 'g1', title: 'G1' }] };
   assert.match(home({ stars: { x: 1, y: 2 } }, { config }), /1 von 2 geschafft/);
 });
 

@@ -120,7 +120,7 @@ Der bisherige Code ist aus `main` entfernt (Branch `legacy`). Neue Apps nur im N
 
 ## Neue Seite, Trophäe oder Fragetyp
 
-- Seite: Eintrag in `manifest.json` (`units`, `notes`), Lektion in `lessons.json`, Aufgaben in `data.json`/`builders.js`. Neue Seiten hinten anfügen, nicht umsortieren.
+- Seite: Eintrag in `manifest.json` (`units` mit `group`, `notes`), Lektion in `lessons.json`, Aufgaben in `data.json`/`builders.js`. Neue Seiten hinten anfügen, nicht umsortieren.
 - Trophäe: Eintrag in `badges.json` mit neuer, nie verwendeter `id` und einer Regel.
 - Fragetyp: Es gibt `choice`, `type` und `match`, ein Register gibt es nicht. Ein neuer Typ braucht einen Erbauer in `runde/src/questions.js`, die Bewertung in `runde/src/round.js`, die Ansicht in `seiten/spiel.js`, Stil in `seiten/design/styles/quiz.css` und Tests in `runde/tests/`. Nie nur in einer App einen Sonderweg bauen.
 

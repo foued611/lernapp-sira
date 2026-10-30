@@ -1,6 +1,6 @@
 // Ansicht einer App: Seite, Theorie, Spiel und Ergebnis. Den Ablauf einer Runde steuert ablauf.js, hier wird nur gezeichnet.
 import { createElement, useEffect, useReducer, useState } from 'react';
-import { createRng, starsOf } from '../helfer/index.js';
+import { createRng, starsOf, unitsInPath } from '../helfer/index.js';
 import { TheoryPage } from '../komponenten/theory.js';
 import { BlitzPlay, startBlitz } from './blitz.js';
 import { AppHeader, AppHome, revealStation } from './apphome.js';
@@ -227,7 +227,7 @@ export function AppFrame({ app, profileStore, day, storage }) {
   }
   if (screen === 'result' && settled) {
     const { unitId } = settled.summary;
-    const next = unitId ? followingUnit(appState, config.units, unitId, day) : null;
+    const next = unitId ? followingUnit(appState, unitsInPath(config.units, config.groups), unitId, day) : null;
     const onAction = (id) => {
       if (id === 'home') home();
       else if (id === 'next') study(next);

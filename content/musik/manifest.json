@@ -6,9 +6,16 @@
   "greeting": "Hallo",
   "intro": "Die Seiten folgen den Themen aus MusiX 2: Musiklehre, Stimme und Instrumente, Barock und Klassik, Formen und Stile, Musik in der Gesellschaft. Erst die Lektion, dann die Übung. Du kannst auch springen.",
   "bossTitle": "Musik-Check",
+  "groups": [
+    { "id": "musiklehre", "title": "Musiklehre" },
+    { "id": "klang", "title": "Stimme und Instrumente" },
+    { "id": "epochen", "title": "Barock und Klassik" },
+    { "id": "stile", "title": "Formen und Stile" },
+    { "id": "gesellschaft", "title": "Musik in der Gesellschaft" }
+  ],
   "units": [
     {
-      "id": "takt",
+      "id": "takt", "group": "musiklehre",
       "color": "#5B8DEF",
       "ic": "M1",
       "title": "Takt und Rhythmus",
@@ -16,7 +23,7 @@
       "card": { "name": "Die Eins trägt den Takt", "fact": "Die obere Zahl der Taktangabe sagt, wie viele Zählzeiten in einen Takt passen. Die erste ist meist die betonte." }
     },
     {
-      "id": "tonleitern",
+      "id": "tonleitern", "group": "musiklehre",
       "color": "#5B8DEF",
       "ic": "M2",
       "title": "Dur und Moll",
@@ -24,7 +31,7 @@
       "card": { "name": "Halbtöne machen den Unterschied", "fact": "Dur und Moll unterscheiden sich in der Lage der Halbtonschritte. Die Terz ist in Moll kleiner." }
     },
     {
-      "id": "akkorde",
+      "id": "akkorde", "group": "musiklehre",
       "color": "#5B8DEF",
       "ic": "M3",
       "title": "Akkorde und Begleitung",
@@ -32,7 +39,7 @@
       "card": { "name": "Drei Töne, ein Klang", "fact": "Ein Dreiklang besteht aus Grundton, Terz und Quinte. In C-Dur sind die Hauptakkorde C, F und G." }
     },
     {
-      "id": "stimme",
+      "id": "stimme", "group": "klang",
       "color": "#3DD6B0",
       "ic": "K1",
       "title": "Stimme und Stimmlagen",
@@ -40,7 +47,7 @@
       "card": { "name": "Vier Lagen im Chor", "fact": "Von hoch nach tief: Sopran, Alt, Tenor, Bass. Die Stimmlippen im Kehlkopf erzeugen den Ton." }
     },
     {
-      "id": "instrumente",
+      "id": "instrumente", "group": "klang",
       "color": "#3DD6B0",
       "ic": "K2",
       "title": "Instrumente und Band",
@@ -48,7 +55,7 @@
       "card": { "name": "Vier Wege zum Klang", "fact": "Saiten, Luftsäulen, Fell oder Metall und Strom: So lassen sich Instrumente nach der Klangerzeugung ordnen." }
     },
     {
-      "id": "akustik",
+      "id": "akustik", "group": "klang",
       "color": "#3DD6B0",
       "ic": "K3",
       "title": "Schall und Tonhöhe",
@@ -56,7 +63,7 @@
       "card": { "name": "Hertz macht die Tonhöhe", "fact": "Je höher die Frequenz, desto höher der Ton. Das eingestrichene a hat 440 Hertz." }
     },
     {
-      "id": "barock",
+      "id": "barock", "group": "epochen",
       "color": "#E0A82E",
       "ic": "E1",
       "title": "Barock",
@@ -64,7 +71,7 @@
       "card": { "name": "Prunk und Generalbass", "fact": "Der Barock reicht etwa von 1600 bis 1750. Typisch sind der Generalbass und der Wechsel von laut und leise in Stufen." }
     },
     {
-      "id": "klassik",
+      "id": "klassik", "group": "epochen",
       "color": "#E0A82E",
       "ic": "E2",
       "title": "Klassik und Sinfonie",
@@ -72,7 +79,7 @@
       "card": { "name": "Klare Form, klare Melodie", "fact": "Die Wiener Klassik mit Haydn, Mozart und Beethoven liebt Ausgewogenheit. Die Sinfonie hat meist vier Sätze." }
     },
     {
-      "id": "formen",
+      "id": "formen", "group": "stile",
       "color": "#FF6B88",
       "ic": "S1",
       "title": "Musikalische Formen",
@@ -80,7 +87,7 @@
       "card": { "name": "Form hat einen Plan", "fact": "Rondo heißt A-B-A-C-A. Der Sonatensatz hat Exposition, Durchführung und Reprise." }
     },
     {
-      "id": "blues-jazz",
+      "id": "blues-jazz", "group": "stile",
       "color": "#FF6B88",
       "ic": "S2",
       "title": "Blues und Jazz",
@@ -88,7 +95,7 @@
       "card": { "name": "Zwölf Takte, drei Zeilen", "fact": "Der Blues hat zwölf Takte und drei Zeilen zu je vier Takten. Jazz lebt von der Improvisation." }
     },
     {
-      "id": "rock-pop",
+      "id": "rock-pop", "group": "stile",
       "color": "#FF6B88",
       "ic": "S3",
       "title": "Rock, Pop und Studio",
@@ -96,7 +103,7 @@
       "card": { "name": "Strophe, Refrain, Bridge", "fact": "Ein Popsong hat meist Intro, Strophe, Refrain, Bridge und Outro. Im Studio werden die Spuren einzeln aufgenommen." }
     },
     {
-      "id": "musiktheater",
+      "id": "musiktheater", "group": "stile",
       "color": "#FF6B88",
       "ic": "S4",
       "title": "Oper und Musical",
@@ -104,7 +111,7 @@
       "card": { "name": "Bühne mit Musik", "fact": "In der Oper wird die Handlung gesungen, im Musical wechseln Gesang, Sprechtext und Tanz." }
     },
     {
-      "id": "markt",
+      "id": "markt", "group": "gesellschaft",
       "color": "#9B7BFF",
       "ic": "W1",
       "title": "Musik und Urheberrecht",
@@ -112,7 +119,7 @@
       "card": { "name": "Musik gehört jemandem", "fact": "Das Urheberrecht schützt Komponistinnen und Texter. In Deutschland gilt es bis 70 Jahre nach dem Tod." }
     },
     {
-      "id": "welt",
+      "id": "welt", "group": "gesellschaft",
       "color": "#9B7BFF",
       "ic": "W2",
       "title": "Musik der Welt",
@@ -120,7 +127,7 @@
       "card": { "name": "Fremd und vertraut", "fact": "Debussy hörte 1889 auf der Pariser Weltausstellung ein Gamelan-Orchester. Das beeinflusste seine Musik." }
     },
     {
-      "id": "medien",
+      "id": "medien", "group": "gesellschaft",
       "color": "#9B7BFF",
       "ic": "W3",
       "title": "Musik und Medien",

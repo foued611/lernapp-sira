@@ -209,10 +209,13 @@ test('RULE-242 Die Karte "Gezieltes Training" nennt Grund und Seite, ohne Empfeh
   assert.doesNotMatch(renderApp(app), /Gezieltes Training/);
 });
 
-test('SEITE-MISSIONEN Lernpfad: Seiten mit Feld group werden in Gruppen gefasst, ohne group bleibt es eine Liste ohne Überschrift', async () => {
-  const { pathGroups } = await import('../apphome.js');
+test('SEITE-MISSIONEN Lernpfad: Seiten werden nach groups gefasst, ohne groups bleibt es eine Liste ohne Überschrift', async () => {
+  const { pathGroups, unitsInPath } = await import('../../helfer/index.js');
   const ohne = [{ id: 'a' }, { id: 'b' }];
-  assert.deepEqual(pathGroups(ohne), [{ title: null, units: ohne }]);
-  const mit = [{ id: 'a', group: 'Eins' }, { id: 'b', group: 'Zwei' }, { id: 'c', group: 'Eins' }, { id: 'd' }];
-  assert.deepEqual(pathGroups(mit).map((g) => [g.title, g.units.map((u) => u.id)]), [['Eins', ['a', 'c']], ['Zwei', ['b']], ['Weitere Seiten', ['d']]]);
+  assert.deepEqual(pathGroups(ohne), [{ id: null, title: null, units: ohne }]);
+  assert.deepEqual(unitsInPath(ohne), ohne);
+  const groups = [{ id: 'g2', title: 'Zwei' }, { id: 'g1', title: 'Eins' }];
+  const mit = [{ id: 'a', group: 'g1' }, { id: 'b', group: 'g2' }, { id: 'c', group: 'g1' }];
+  assert.deepEqual(pathGroups(mit, groups).map((g) => [g.id, g.title, g.units.map((u) => u.id)]), [['g2', 'Zwei', ['b']], ['g1', 'Eins', ['a', 'c']]]);
+  assert.deepEqual(unitsInPath(mit, groups).map((u) => u.id), ['b', 'a', 'c']);
 });

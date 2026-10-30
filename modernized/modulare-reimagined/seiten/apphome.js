@@ -5,7 +5,7 @@ import { createElement, useState } from 'react';
 import { DAILY_GOAL_XP, MISSION_REWARD_XP, REFRESH_BONUS_XP, currentStreak, dailyGoal, dailyXP, isRefreshDue, levelOf, levelThreshold, missionProgress } from '../regeln/index.js';
 import { LEVEL_TITLES, MISSION_TEXT } from './ergebnis.js';
 import { ThemeToggle } from './thema.js';
-import { starsOf } from '../helfer/index.js';
+import { pathGroups, starsOf, unitsInPath } from '../helfer/index.js';
 import { doneUnits } from '../komponenten/ui.js';
 import { Mascot } from '../komponenten/mascot.js';
 import { Icon } from '../komponenten/icons.js';
@@ -75,22 +75,6 @@ const STATION_TEXT = Object.freeze({
   gemeistert: { label: 'Gemeistert', icon: 'check' },
   fällig: { label: 'Zeit zum Auffrischen', icon: 'flame' }
 });
-
-/**
- * Seiten nach ihrem optionalen Feld group in Gruppen, in der Reihenfolge des ersten Auftretens.
- * Ohne group bei allen Seiten bleibt es eine Liste ohne Überschrift (so sehen alle anderen Apps aus).
- */
-export function pathGroups(units) {
-  if (!units.some((u) => typeof u.group === 'string' && u.group)) return [{ title: null, units }];
-  const groups = [];
-  for (const u of units) {
-    const title = (typeof u.group === 'string' && u.group) || 'Weitere Seiten';
-    let g = groups.find((x) => x.title === title);
-    if (!g) groups.push((g = { title, units: [] }));
-    g.units.push(u);
-  }
-  return groups;
-}
 
 /**
  * Rückweg zum Lernpfad: bringt die Station in den Blick und setzt den Fokus auf ihren Knopf, damit es auch mit der
@@ -175,7 +159,8 @@ export function AppHome({ config, app, profile, day, rec, open, notice, storeMes
   const medal = ['', 'Bronze', 'Silber', 'Gold'];
   // Die nächste Station: zuerst eine fällige (Auffrischen geht vor), sonst die erste ohne Stern.
   // Sie wird nur hervorgehoben, nie gesperrt.
-  const nextUnit = units.find((u) => stationState(app, u, day) === 'fällig') || units.find((u) => starsOf(app.stars, u.id) === 0);
+  const path = unitsInPath(units, config.groups);
+  const nextUnit = path.find((u) => stationState(app, u, day) === 'fällig') || path.find((u) => starsOf(app.stars, u.id) === 0);
   const nextId = nextUnit ? nextUnit.id : null;
   const started = units.some((u) => starsOf(app.stars, u.id) > 0);
 
@@ -216,7 +201,7 @@ export function AppHome({ config, app, profile, day, rec, open, notice, storeMes
       null,
       h('h2', null, 'Dein Lernpfad'),
       h('p', { className: 'muted', style: { margin: '4px 0 14px', fontSize: '14px' } }, config.intro || 'Starte irgendwo. Die Reihenfolge ist nur ein Vorschlag.'),
-      ...pathGroups(units).map(({ title, units: inGroup }) => {
+      ...pathGroups(units, config.groups).map(({ title, units: inGroup }) => {
         const path = h(
           'ol',
           { className: 'path' },

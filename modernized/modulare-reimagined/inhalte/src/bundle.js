@@ -51,6 +51,7 @@ function manifestErrors(manifest) {
     if (isObj(u) && u.track !== undefined && !(isObj(tracks) && Object.hasOwn(tracks, u.track))) errors.push(`Seite ${u.id}: Strang "${u.track}" ist in tracks nicht definiert`);
   });
 
+  errors.push(...groupErrors(manifest.groups, manifest.units));
   errors.push(...resourceErrors(manifest.resources, isObj(tracks) ? tracks : {}));
   errors.push(...notesErrors(manifest.notes, unitIds));
   return { errors, unitIds: unitIds.filter(isId) };
@@ -64,6 +65,20 @@ function unitErrors(u, i) {
   ['title', 'de', 'ic'].forEach((k) => { if (!isText(u[k])) errors.push(`Seite ${name}: ${k} fehlt`); });
   if (typeof u.color !== 'string' || !COLOR.test(u.color)) errors.push(`Seite ${name}: color muss #RRGGBB sein`);
   if (!isObj(u.card) || !isText(u.card.name) || !isText(u.card.fact)) errors.push(`Seite ${name}: card mit name und fact fehlt`);
+  return errors;
+}
+
+// Kapitel: Jede Seite verweist auf ein vorhandenes Kapitel, und kein Kapitel bleibt leer.
+function groupErrors(groups, units) {
+  const used = units.filter(isObj).map((u) => u.group).filter((g) => g !== undefined);
+  if (groups === undefined) return used.length ? ['manifest.groups fehlt, obwohl Seiten group nutzen'] : [];
+  if (!Array.isArray(groups)) return ['manifest.groups muss eine Liste sein'];
+  const ids = groups.map((g) => (isObj(g) ? g.id : undefined));
+  const errors = ids.filter((id, i) => ids.indexOf(id) !== i).map((id) => `groups: Kennung "${id}" doppelt`);
+  units.filter(isObj).forEach((u) => {
+    if (u.group !== undefined && !ids.includes(u.group)) errors.push(`Seite ${u.id}: Kapitel "${u.group}" ist in groups nicht definiert`);
+  });
+  ids.filter((id) => !used.includes(id)).forEach((id) => errors.push(`groups: Kapitel "${id}" hat keine Seite`));
   return errors;
 }
 

@@ -16,9 +16,16 @@
       "Mathe-Meister"
     ]
   },
+  "groups": [
+    { "id": "kapitel-1", "title": "Kapitel I: Zahlen und Terme" },
+    { "id": "kapitel-2", "title": "Kapitel II: Zuordnungen" },
+    { "id": "kapitel-4", "title": "Kapitel IV: Gleichungen" },
+    { "id": "kapitel-6", "title": "Kapitel VI: Prozente und Zinsen" },
+    { "id": "zusatz", "title": "Zusatz: Daten und Zufall" }
+  ],
   "units": [
     {
-      "id": "vorzeichen",
+      "id": "vorzeichen", "group": "kapitel-1",
       "color": "#4CC3F5",
       "ic": "±",
       "title": "Rechnen mit Vorzeichen",
@@ -29,7 +36,7 @@
       }
     },
     {
-      "id": "terme",
+      "id": "terme", "group": "kapitel-1",
       "color": "#FF9F43",
       "ic": "x",
       "title": "Terme vereinfachen",
@@ -40,7 +47,7 @@
       }
     },
     {
-      "id": "zuordnungen",
+      "id": "zuordnungen", "group": "kapitel-2",
       "color": "#8BD450",
       "ic": "⇄",
       "title": "Zuordnungen und Dreisatz",
@@ -51,7 +58,7 @@
       }
     },
     {
-      "id": "gleichungen",
+      "id": "gleichungen", "group": "kapitel-4",
       "color": "#3DD6B0",
       "ic": "=",
       "title": "Gleichungen lösen",
@@ -62,7 +69,7 @@
       }
     },
     {
-      "id": "prozent",
+      "id": "prozent", "group": "kapitel-6",
       "color": "#9B7BFF",
       "ic": "%",
       "title": "Prozentrechnung",
@@ -73,7 +80,7 @@
       }
     },
     {
-      "id": "zinsen",
+      "id": "zinsen", "group": "kapitel-6",
       "color": "#FF6B88",
       "ic": "€",
       "title": "Zinsrechnung",
@@ -84,7 +91,7 @@
       }
     },
     {
-      "id": "kredit",
+      "id": "kredit", "group": "kapitel-6",
       "color": "#FF6B88",
       "ic": "€",
       "title": "Kredit und Tilgung",
@@ -95,7 +102,7 @@
       }
     },
     {
-      "id": "daten",
+      "id": "daten", "group": "zusatz",
       "color": "#4CC3F5",
       "ic": "∅",
       "title": "Daten auswerten",
@@ -106,7 +113,7 @@
       }
     },
     {
-      "id": "zufall",
+      "id": "zufall", "group": "zusatz",
       "color": "#FF9F43",
       "ic": "?",
       "title": "Zufall und Wahrscheinlichkeit",

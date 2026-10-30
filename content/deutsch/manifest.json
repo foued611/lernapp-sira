@@ -23,9 +23,13 @@
       "Deutsch-Legende"
     ]
   },
+  "groups": [
+    { "id": "sprache", "title": "Sprache und Texte" },
+    { "id": "rechtschreibung", "title": "Rechtschreiben und Lesen" }
+  ],
   "units": [
     {
-      "id": "inhaltsangabe",
+      "id": "inhaltsangabe", "group": "sprache",
       "color": "#FF6B88",
       "ic": "IA",
       "title": "Inhaltsangabe",
@@ -36,7 +40,7 @@
       }
     },
     {
-      "id": "adverbial",
+      "id": "adverbial", "group": "sprache",
       "color": "#4CC3F5",
       "ic": "AS",
       "title": "Adverbialsätze",
@@ -47,7 +51,7 @@
       }
     },
     {
-      "id": "kommas",
+      "id": "kommas", "group": "sprache",
       "color": "#9B7BFF",
       "ic": ",",
       "title": "Nebensätze und Kommas",
@@ -58,7 +62,7 @@
       }
     },
     {
-      "id": "dassdas",
+      "id": "dassdas", "group": "sprache",
       "color": "#FFC933",
       "ic": "ss",
       "title": "das oder dass?",
@@ -69,7 +73,7 @@
       }
     },
     {
-      "id": "passiv",
+      "id": "passiv", "group": "sprache",
       "color": "#3DD6B0",
       "ic": "P",
       "title": "Aktiv und Passiv",
@@ -80,7 +84,7 @@
       }
     },
     {
-      "id": "stilmittel",
+      "id": "stilmittel", "group": "sprache",
       "color": "#FF9F43",
       "ic": "~",
       "title": "Sprachliche Bilder",
@@ -91,7 +95,7 @@
       }
     },
     {
-      "id": "doppelt",
+      "id": "doppelt", "group": "rechtschreibung",
       "color": "#E56B9F",
       "ic": "tt",
       "title": "Doppelte Mitlaute",
@@ -103,7 +107,7 @@
       "track": "lrs"
     },
     {
-      "id": "dehnung",
+      "id": "dehnung", "group": "rechtschreibung",
       "color": "#5B8DEF",
       "ic": "ie",
       "title": "Lange Vokale",
@@ -115,7 +119,7 @@
       "track": "lrs"
     },
     {
-      "id": "slaute",
+      "id": "slaute", "group": "rechtschreibung",
       "color": "#8AC926",
       "ic": "ß",
       "title": "s, ss oder ß?",
@@ -127,7 +131,7 @@
       "track": "lrs"
     },
     {
-      "id": "ableiten",
+      "id": "ableiten", "group": "rechtschreibung",
       "color": "#F28C38",
       "ic": "d/t",
       "title": "Verlängern und Ableiten",
@@ -139,7 +143,7 @@
       "track": "lrs"
     },
     {
-      "id": "gross",
+      "id": "gross", "group": "rechtschreibung",
       "color": "#B388EB",
       "ic": "Aa",
       "title": "Groß und klein",
@@ -151,7 +155,7 @@
       "track": "lrs"
     },
     {
-      "id": "lesen",
+      "id": "lesen", "group": "rechtschreibung",
       "color": "#2EC4B6",
       "ic": "Le",
       "title": "Lesen mit Strategie",
@@ -163,7 +167,7 @@
       "track": "lrs"
     },
     {
-      "id": "redewiedergabe",
+      "id": "redewiedergabe", "group": "sprache",
       "color": "#FF6B88",
       "ic": "„“",
       "title": "Indirekte Rede und Konjunktiv",
@@ -174,7 +178,7 @@
       }
     },
     {
-      "id": "attribute",
+      "id": "attribute", "group": "sprache",
       "color": "#4CC3F5",
       "ic": "At",
       "title": "Attribute und Attributsätze",
@@ -185,7 +189,7 @@
       }
     },
     {
-      "id": "wortarten",
+      "id": "wortarten", "group": "sprache",
       "color": "#3DD6B0",
       "ic": "W",
       "title": "Präposition, Konjunktion, Adverb",
