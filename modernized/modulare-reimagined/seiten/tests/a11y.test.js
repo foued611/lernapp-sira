@@ -44,6 +44,7 @@ const contrast = (a, b) => {
 const PAIRS = [
   ['text', 'card', 4.5],
   ['muted', 'card', 4.5],
+  ['hero-soft', 'hero-bg', 4.5],
   ['btn-fg', 'btn-bg', 4.5],
   ['ok', 'card', 4.5]
 ];
@@ -69,6 +70,10 @@ test('SEITE-A11Y Die Textfarben haben in hell und dunkel genug Kontrast (4,5 zu 
       assert.ok(ratio >= min, `${label}: ${fg} auf ${bg} hat ${ratio.toFixed(2)} zu 1, nötig ${min}`);
     }
   }
+});
+
+test('SEITE-A11Y Gedämpfter Text im Hero nutzt die helle Farbe, --muted ist dort zu dunkel', () => {
+  assert.match(styles, /\.hero \.muted\{color:var\(--hero-soft\)\}/);
 });
 
 test('SEITE-A11Y Der sichtbare Fokus ist im Stylesheet mit einem Rahmen definiert', () => {
