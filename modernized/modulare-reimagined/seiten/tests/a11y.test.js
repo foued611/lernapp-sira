@@ -49,6 +49,14 @@ const PAIRS = [
   ['ok', 'card', 4.5]
 ];
 
+// Text 4,5 zu 1, Fläche und Rahmen gegen den Hero 3 zu 1 (WCAG 1.4.11).
+const HERO_CHIP_PAIRS = [
+  ['hero-fg', 'hero-bg', 4.5],
+  ['sun-fg', 'sun', 4.5],
+  ['hero-soft', 'hero-bg', 3],
+  ['sun', 'hero-bg', 3]
+];
+
 test('SEITE-A11Y Alle Farben, die die Stylesheets benutzen, sind in den Tokens definiert', () => {
   const used = new Set([...styles.matchAll(/var\(--([a-z-]+)\)/g)].map((m) => m[1]));
   for (const name of used) {
@@ -74,6 +82,18 @@ test('SEITE-A11Y Die Textfarben haben in hell und dunkel genug Kontrast (4,5 zu 
 
 test('SEITE-A11Y Gedämpfter Text im Hero nutzt die helle Farbe, --muted ist dort zu dunkel', () => {
   assert.match(styles, /\.hero \.muted\{color:var\(--hero-soft\)\}/);
+});
+
+test('SEITE-A11Y Die Tagesziel-Wahl im Hero bleibt erkennbar, weil --ink dort dem Hintergrund gleicht', () => {
+  for (const [label, block] of [['hell', lightBlock], ['dunkel', darkBlock]]) {
+    const values = { ...valuesOf(lightBlock), ...valuesOf(block) };
+    for (const [fg, bg, min] of HERO_CHIP_PAIRS) {
+      const ratio = contrast(values[fg], values[bg]);
+      assert.ok(ratio >= min, `${label}: ${fg} auf ${bg} hat ${ratio.toFixed(2)} zu 1, nötig ${min}`);
+    }
+  }
+  assert.match(styles, /\.shell\.dash \.hero \.chip\{[^}]*background:var\(--hero-bg\);color:var\(--hero-fg\);border-color:var\(--hero-soft\)/);
+  assert.match(styles, /\.shell\.dash \.hero \.chip\[aria-pressed="true"\]\{background:var\(--sun\);color:var\(--sun-fg\);border-color:var\(--sun\)\}/);
 });
 
 test('SEITE-A11Y Der sichtbare Fokus ist im Stylesheet mit einem Rahmen definiert', () => {

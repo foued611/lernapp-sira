@@ -195,6 +195,13 @@ test('SEITE-WOCHENZIEL Die Auswahl zeigt drei Schaltflächen mit aria-pressed, d
   assert.match(markup, /aria-pressed="true"[^>]*>50 XP/);
 });
 
+test('SEITE-WOCHENZIEL Nur die gewählte Schaltfläche trägt ein Häkchen, der Zustand hängt nicht an der Farbe', () => {
+  const markup = renderToStaticMarkup(h(GoalChoice, { goal: 50, onChoose: () => {} }));
+  const buttons = markup.match(/<button[\s\S]*?<\/button>/g);
+  assert.deepEqual(buttons.map((b) => b.includes('<svg')), [false, false, true]);
+  assert.match(buttons[2], /<svg[^>]*aria-hidden="true"/);
+});
+
 test('SEITE-WOCHENZIEL saveGoal speichert einen erlaubten Wert im Profil', async () => {
   const handle = await memoryHandle();
   const { openProfile } = await import('../../speicher/index.js');

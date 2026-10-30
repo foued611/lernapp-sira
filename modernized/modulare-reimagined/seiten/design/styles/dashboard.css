@@ -13,6 +13,9 @@
 .shell.dash .chip{position:relative}
 .shell.dash .chip::after{content:"";position:absolute;inset:-5px -2px}
 .shell.dash .chip[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+/* Im Hero gleicht --ink im hellen Modus dem Hintergrund, die gewählte Fläche wäre unsichtbar. */
+.shell.dash .hero .chip{display:inline-flex;align-items:center;gap:6px;background:var(--hero-bg);color:var(--hero-fg);border-color:var(--hero-soft)}
+.shell.dash .hero .chip[aria-pressed="true"]{background:var(--sun);color:var(--sun-fg);border-color:var(--sun)}
 .shell.dash .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
 .shell.dash .tile{display:grid;gap:10px;align-content:start;padding:0 18px 18px;border-top:10px solid var(--c);color:inherit;text-decoration:none}
 .shell.dash .tile .tag{margin-top:14px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--muted)}

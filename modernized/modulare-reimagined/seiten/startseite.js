@@ -5,6 +5,7 @@ import { createElement, useReducer, useState } from 'react';
 import { DAILY_GOAL_XP, GOAL_CHOICES, currentStreak, dailyGoal, dailyXP, setDailyGoal } from '../regeln/index.js';
 import { progressOf, doneUnits } from '../komponenten/ui.js';
 import { Mascot } from '../komponenten/mascot.js';
+import { Icon } from '../komponenten/icons.js';
 import { AppFrame } from './rahmen.js';
 import { NAME_MAX, NO_STORAGE, greetingOf, maskName, saveName } from './name.js';
 import { Sicherung } from './sicherung.js';
@@ -152,7 +153,8 @@ export function GoalChoice({ goal, onChoose }) {
     h(
       'div',
       { className: 'chips', role: 'group', 'aria-label': 'Tagesziel wählen' },
-      ...GOAL_CHOICES.map((value) => h('button', { key: value, type: 'button', className: 'chip', 'data-goal': value, 'aria-pressed': value === goal, onClick: () => onChoose(value) }, `${value} XP`))
+      // Das Häkchen zeigt die Wahl auch ohne Farbe, aria-pressed sagt sie dem Screenreader.
+      ...GOAL_CHOICES.map((value) => h('button', { key: value, type: 'button', className: 'chip', 'data-goal': value, 'aria-pressed': value === goal, onClick: () => onChoose(value) }, `${value} XP`, value === goal ? h(Icon, { name: 'check' }) : null))
     )
   );
 }
