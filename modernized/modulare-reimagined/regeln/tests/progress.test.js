@@ -163,3 +163,9 @@ test('Auffrischen: Ab 2 Sternen geht die Stufe hoch, sonst zurück auf den Anfan
 test('Auffrischen: Die Abstände wachsen und beginnen mit den alten Fristen', () => {
   assert.deepEqual(REVIEW_STEPS, [3, 7, 14, 30, 60]);
 });
+
+test('Auffrischen: Ein kaputter Tag aus dem Speicher macht die Seite nicht fällig und wirft nicht', () => {
+  for (const last of ['2026-02-31', '2026-13-01', 'abc', 12, '']) {
+    assert.equal(isRefreshDue({ stars: { a: 2 }, last: { a: last }, acc: {} }, 'a', '2026-10-30'), false, String(last));
+  }
+});

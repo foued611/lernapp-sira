@@ -19,6 +19,16 @@ export function assertDay(day) {
   return day;
 }
 
+/** Gibt es diesen Tag? Für Werte aus dem Speicher, die nicht zum Absturz führen dürfen. */
+export function isDay(day) {
+  try {
+    assertDay(day);
+    return true;
+  } catch (error) {
+    return false;
+  }
+}
+
 const toUTC = (day) => {
   const [year, month, date] = assertDay(day).split('-').map(Number);
   return Date.UTC(year, month - 1, date);

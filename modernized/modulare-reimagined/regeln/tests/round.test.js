@@ -471,3 +471,8 @@ test('RULE-242: Üben vor der Frist ändert die Stufe nicht', () => {
   auffrischen(app, 1);
   assert.equal(app.box.a, 2);
 });
+
+test('RULE-242: Ein kaputter letzter Tag bricht die Auswertung nicht ab', () => {
+  const app = { xp: 0, stars: { a: 1 }, last: { a: '2026-02-31' }, acc: {}, best: {}, badges: {} };
+  assert.equal(auffrischen(app, 0.8).gapDays, null);
+});

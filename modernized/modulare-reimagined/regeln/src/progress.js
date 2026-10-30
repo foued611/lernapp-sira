@@ -3,7 +3,7 @@ import {
   ALMOST_WEIGHT, DUE_DAYS, DUE_DAYS_STRONG, MAX_STARS, REFRESH_STRONG_ACCURACY, REVIEW_STEPS, STAR_THRESHOLDS,
   WEAK_ACCURACY
 } from './constants.js';
-import { assertDay, dayDiff } from './dates.js';
+import { assertDay, dayDiff, isDay } from './dates.js';
 
 const OUTCOMES = new Set(['ok', 'almost', 'bad']);
 
@@ -67,7 +67,8 @@ export function nextReviewStep(step, stars) {
 export function isRefreshDue(app, unitId, day) {
   assertDay(day);
   const last = app.last && app.last[unitId];
-  if (!last || starsOf(app, unitId) <= 0) return false;
+  // Ein kaputter Tag aus dem Speicher macht die Seite nicht fällig. Sonst fiele die ganze Startseite aus.
+  if (!isDay(last) || starsOf(app, unitId) <= 0) return false;
   return dayDiff(last, day) >= REVIEW_STEPS[reviewStep(app, unitId)];
 }
 
