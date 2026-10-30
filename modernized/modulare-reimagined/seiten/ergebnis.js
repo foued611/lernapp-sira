@@ -36,7 +36,11 @@ const againLabel = (mode) => (mode === 'quick' ? 'Noch eine Runde' : 'Nochmal');
 const BLITZ_GOAL = 10;
 
 // Der Text unter dem Titel. Die Reihenfolge der Fälle folgt result.js:20-23.
-function subtitleFor(summary) {
+function subtitleFor(summary, weakTitles) {
+  if (summary.mode === 'chapter') {
+    const best = summary.prevBest !== null && summary.accuracy > summary.prevBest ? ' Neuer Bestwert.' : '';
+    return weakTitles.length ? `Kapitel-Test beendet.${best} Das übst du am besten noch: ${weakTitles.join(', ')}.` : `Kapitel-Test beendet.${best} Alle Seiten sitzen.`;
+  }
   if (summary.failed) return 'Das passiert jedem. Schau kurz in die Theorie, die nächste Runde läuft besser.';
   let text;
   if (summary.mode === 'blitz') return `${summary.score} richtig in ${BLITZ_SECONDS} Sekunden.`;
@@ -54,7 +58,7 @@ function subtitleFor(summary) {
  * Reine Ansicht des Ergebnisses. summary kommt aus ablauf.js (summaryOf).
  * Der Feier-Hinweis folgt result.js:34. Bei gescheiterter Runde gibt es keinen.
  */
-export function resultModel(summary, { profile, day, words, next = null }) {
+export function resultModel(summary, { profile, day, words, next = null, weakTitles = [] }) {
   const x = dailyXP(profile, day);
   const goal = dailyGoal(profile);
   const titles = words.levelTitles || LEVEL_TITLES;
@@ -64,7 +68,8 @@ export function resultModel(summary, { profile, day, words, next = null }) {
   // Blitz hat keine Sterne. Titel, Stimmung und Zahlen folgen Legacy result.js:12-16.
   const blitz = summary.mode === 'blitz';
   const blitzWell = summary.score >= BLITZ_GOAL;
-  const forward = Boolean(next) && summary.mode === 'lesson' && !summary.failed && summary.stars >= DONE_STARS;
+  const chapter = summary.mode === 'chapter';
+  const forward = Boolean(next) && (chapter || (summary.mode === 'lesson' && !summary.failed && summary.stars >= DONE_STARS));
   let title = words.resultTitles[Math.max(0, summary.stars - 1)];
   if (summary.failed) title = 'Knapp daneben';
   else if (blitz) title = blitzWell ? words.blitzTitle : 'Zeit um';
@@ -75,7 +80,7 @@ export function resultModel(summary, { profile, day, words, next = null }) {
     : null;
   return {
     title,
-    subtitle: subtitleFor(summary),
+    subtitle: subtitleFor(summary, weakTitles),
     mood: summary.failed ? 'hmm' : blitz ? (blitzWell ? 'cheer' : 'happy') : summary.stars === 3 ? 'cheer' : 'happy',
     stars: blitz ? null : summary.stars,
     facts: blitz
@@ -95,7 +100,7 @@ export function resultModel(summary, { profile, day, words, next = null }) {
     badges: summary.newBadges.map((badge) => ({ id: badge.id, n: badge.n, d: badge.d })),
     // Theorie nur nach einer Lektionsrunde. Sitzt die Seite (ab DONE_STARS), führt der Hauptknopf zur nächsten.
     actions: [
-      ...(forward ? [{ id: 'next', label: `Weiter: ${next.title}`, primary: true }] : []),
+      ...(forward ? [{ id: 'next', label: `${chapter ? 'Üben' : 'Weiter'}: ${next.title}`, primary: true }] : []),
       { id: 'again', label: againLabel(summary.mode), primary: !forward },
       ...(summary.mode === 'lesson' && summary.unitId ? [{ id: 'theory', label: 'Theorie' }] : []),
       { id: 'home', label: 'Zum Lernpfad' }

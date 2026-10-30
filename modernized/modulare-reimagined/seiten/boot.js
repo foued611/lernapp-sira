@@ -7,6 +7,7 @@ import { openApp, openProfile, openStore } from '../speicher/index.js';
 import { PROFILE_VERSION, evaluateTrophyRule, migrateProfile } from '../regeln/index.js';
 import { appDefaults, dayOf, profileDefaults } from './ablauf.js';
 import { LIVE, validateRegistry } from './registry.js';
+import { unitFromSearch } from './adresse.js';
 import { UEBERNAHMEN, hasProgress, mergeAppState } from './uebernahme.js';
 
 // Meldungen für die Anzeige. Keine Namen, keine Kennungen aus dem Speicher.
@@ -150,7 +151,7 @@ export async function bootSeiten(options = {}) {
     ok: true,
     state: {
       day: dayOf(o.now()),
-      route: { appId },
+      route: { appId, unitId: unitFromSearch(o.search) },
       storage: session.storage,
       profileStore: session.profileStore,
       apps

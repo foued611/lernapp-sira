@@ -50,6 +50,7 @@ export function buildConfig(bundle, logic, deps = {}) {
     dashboardHref: manifest.dashboardHref,
     tracks: manifest.tracks ?? {},
     units: manifest.units,
+    groups: manifest.groups ?? [],
     resources: manifest.resources ?? [],
     lessons,
     notes,

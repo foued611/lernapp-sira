@@ -6,9 +6,16 @@
   "greeting": "Hallo",
   "intro": "Die Seiten folgen den Themen aus Biosphäre 7/8 und dem Bildungsplan Biologie Klasse 7: Zelle, Stoffwechsel, Ernährung, Atmung und Kreislauf, Fortpflanzung. Erst die Lektion, dann die Übung. Du kannst auch springen.",
   "bossTitle": "Biologie-Check",
+  "groups": [
+    { "id": "zelle", "title": "Zelle" },
+    { "id": "stoffwechsel", "title": "Stoffwechsel" },
+    { "id": "ernaehrung", "title": "Ernährung" },
+    { "id": "kreislauf", "title": "Atmung und Kreislauf" },
+    { "id": "fortpflanzung", "title": "Fortpflanzung" }
+  ],
   "units": [
     {
-      "id": "pflanzen-tierzelle",
+      "id": "pflanzen-tierzelle", "group": "zelle",
       "color": "#2E9E5B",
       "ic": "Z1",
       "title": "Pflanzenzelle und Tierzelle",
@@ -19,7 +26,7 @@
       }
     },
     {
-      "id": "mikroskop",
+      "id": "mikroskop", "group": "zelle",
       "color": "#2E9E5B",
       "ic": "Z2",
       "title": "Mikroskopieren",
@@ -30,7 +37,7 @@
       }
     },
     {
-      "id": "zelle-organismus",
+      "id": "zelle-organismus", "group": "zelle",
       "color": "#2E9E5B",
       "ic": "Z3",
       "title": "Von der Zelle zum Organismus",
@@ -41,7 +48,7 @@
       }
     },
     {
-      "id": "fotosynthese",
+      "id": "fotosynthese", "group": "stoffwechsel",
       "color": "#E0A82E",
       "ic": "S1",
       "title": "Fotosynthese",
@@ -52,7 +59,7 @@
       }
     },
     {
-      "id": "zellatmung",
+      "id": "zellatmung", "group": "stoffwechsel",
       "color": "#E0A82E",
       "ic": "S2",
       "title": "Zellatmung",
@@ -63,7 +70,7 @@
       }
     },
     {
-      "id": "naehrstoffe",
+      "id": "naehrstoffe", "group": "ernaehrung",
       "color": "#FF9F43",
       "ic": "E1",
       "title": "Nährstoffe und Nachweise",
@@ -74,7 +81,7 @@
       }
     },
     {
-      "id": "verdauung",
+      "id": "verdauung", "group": "ernaehrung",
       "color": "#FF9F43",
       "ic": "E2",
       "title": "Verdauung und Enzyme",
@@ -85,7 +92,7 @@
       }
     },
     {
-      "id": "gesunde-ernaehrung",
+      "id": "gesunde-ernaehrung", "group": "ernaehrung",
       "color": "#FF9F43",
       "ic": "E3",
       "title": "Gesunde Ernährung",
@@ -96,7 +103,7 @@
       }
     },
     {
-      "id": "lunge",
+      "id": "lunge", "group": "kreislauf",
       "color": "#FF6B88",
       "ic": "K1",
       "title": "Lunge und Gasaustausch",
@@ -107,7 +114,7 @@
       }
     },
     {
-      "id": "blut",
+      "id": "blut", "group": "kreislauf",
       "color": "#FF6B88",
       "ic": "K2",
       "title": "Blut",
@@ -118,7 +125,7 @@
       }
     },
     {
-      "id": "herz-kreislauf",
+      "id": "herz-kreislauf", "group": "kreislauf",
       "color": "#FF6B88",
       "ic": "K3",
       "title": "Herz und Blutkreislauf",
@@ -129,7 +136,7 @@
       }
     },
     {
-      "id": "befruchtung-geburt",
+      "id": "befruchtung-geburt", "group": "fortpflanzung",
       "color": "#9B7BFF",
       "ic": "F1",
       "title": "Von der Befruchtung bis zur Geburt",
@@ -140,7 +147,7 @@
       }
     },
     {
-      "id": "verhuetung",
+      "id": "verhuetung", "group": "fortpflanzung",
       "color": "#9B7BFF",
       "ic": "F2",
       "title": "Verhütung und Schutz",

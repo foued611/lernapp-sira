@@ -5,11 +5,12 @@ import { createElement, useState } from 'react';
 import { DAILY_GOAL_XP, MISSION_REWARD_XP, REFRESH_BONUS_XP, currentStreak, dailyGoal, dailyXP, isRefreshDue, levelOf, levelThreshold, missionProgress } from '../regeln/index.js';
 import { LEVEL_TITLES, MISSION_TEXT } from './ergebnis.js';
 import { ThemeToggle } from './thema.js';
-import { starsOf } from '../helfer/index.js';
+import { pathGroups, starsOf, unitsInPath } from '../helfer/index.js';
 import { doneUnits } from '../komponenten/ui.js';
 import { Mascot } from '../komponenten/mascot.js';
 import { Icon } from '../komponenten/icons.js';
 import { TrackLabel } from '../komponenten/tracks.js';
+import { chapterMissing, hasChapterTest } from './ablauf.js';
 import { BLITZ_SECONDS } from '../runde/index.js';
 import { NAME_MAX, maskName } from './name.js';
 import { unitTrack } from './registry.js';
@@ -77,22 +78,6 @@ const STATION_TEXT = Object.freeze({
 });
 
 /**
- * Seiten nach ihrem optionalen Feld group in Gruppen, in der Reihenfolge des ersten Auftretens.
- * Ohne group bei allen Seiten bleibt es eine Liste ohne Überschrift (so sehen alle anderen Apps aus).
- */
-export function pathGroups(units) {
-  if (!units.some((u) => typeof u.group === 'string' && u.group)) return [{ title: null, units }];
-  const groups = [];
-  for (const u of units) {
-    const title = (typeof u.group === 'string' && u.group) || 'Weitere Seiten';
-    let g = groups.find((x) => x.title === title);
-    if (!g) groups.push((g = { title, units: [] }));
-    g.units.push(u);
-  }
-  return groups;
-}
-
-/**
  * Rückweg zum Lernpfad: bringt die Station in den Blick und setzt den Fokus auf ihren Knopf, damit es auch mit der
  * Tastatur dort weitergeht. Gibt false zurück, wenn es die Station nicht gibt. root ist das Dokument.
  */
@@ -119,10 +104,25 @@ function Station({ unit, track, state, stars, next, onStudy }) {
         h('span', { className: 'stitle' }, unit.title),
         h('small', null, unit.de),
         h(TrackLabel, { track }),
-        h('span', { className: `state s-${state}` }, icon ? h(Icon, { name: icon }) : h('span', { className: 'dot', 'aria-hidden': 'true' }), label),
-        next ? h('span', { className: 'nexttag' }, 'Als Nächstes') : null),
-      h(Stars, { n: stars })
+        h('span', { className: 'meta' },
+          h('span', { className: `state s-${state}` }, icon ? h(Icon, { name: icon }) : h('span', { className: 'dot', 'aria-hidden': 'true' }), label),
+          h(Stars, { n: stars }),
+          next ? h('span', { className: 'nexttag' }, 'Als Nächstes') : null))
     )
+  );
+}
+
+// Der Kapitel-Test am Ende eines Kapitels. Solange er gesperrt ist, steht als Text da, was fehlt.
+function ChapterTest({ app, group, onStart }) {
+  const missing = chapterMissing(app, group).length;
+  const best = app.chapters?.[group.id]?.acc;
+  return h(
+    'div',
+    { className: 'chaptertest' },
+    h('p', null, h('b', null, 'Kapitel-Test'), missing
+      ? ` Noch ${missing} ${missing === 1 ? 'Seite' : 'Seiten'} üben, dann ist er offen.`
+      : ` 10 Aufgaben aus dem ganzen Kapitel, wie eine kleine Klassenarbeit.${typeof best === 'number' ? ` Bestwert: ${Math.round(best * 100)} %.` : ''}`),
+    missing ? null : h('button', { type: 'button', className: 'btn ghost', onClick: () => onStart(group) }, 'Test starten')
   );
 }
 
@@ -161,9 +161,9 @@ function ResetLine({ phase, onReset }) {
 /**
  * Die App-Startseite. Props: config, app (Stand), profile, day, rec (Empfehlung oder null), open (Endgegner offen),
  * notice, storeMessage, persistent (Speicher bleibt über den Besuch hinaus), resetPhase, profileStore, onStudy, onStart,
- * onReset, onName, focusId (Station, von der die Person gerade kommt).
+ * onChapter, onReset, onName, focusId (Station, von der die Person gerade kommt).
  */
-export function AppHome({ config, app, profile, day, rec, open, notice, storeMessage, persistent = false, resetPhase, profileStore, onStudy, onStart, onReset, onName, focusId = null, footer = null }) {
+export function AppHome({ config, app, profile, day, rec, open, notice, storeMessage, persistent = false, resetPhase, profileStore, onStudy, onStart, onChapter = () => {}, onReset, onName, focusId = null, footer = null }) {
   const units = config.units;
   const done = doneUnits(app.stars, units.map((u) => u.id));
   const x = dailyXP(profile, day);
@@ -175,7 +175,8 @@ export function AppHome({ config, app, profile, day, rec, open, notice, storeMes
   const medal = ['', 'Bronze', 'Silber', 'Gold'];
   // Die nächste Station: zuerst eine fällige (Auffrischen geht vor), sonst die erste ohne Stern.
   // Sie wird nur hervorgehoben, nie gesperrt.
-  const nextUnit = units.find((u) => stationState(app, u, day) === 'fällig') || units.find((u) => starsOf(app.stars, u.id) === 0);
+  const path = unitsInPath(units, config.groups);
+  const nextUnit = path.find((u) => stationState(app, u, day) === 'fällig') || path.find((u) => starsOf(app.stars, u.id) === 0);
   const nextId = nextUnit ? nextUnit.id : null;
   const started = units.some((u) => starsOf(app.stars, u.id) > 0);
 
@@ -216,7 +217,7 @@ export function AppHome({ config, app, profile, day, rec, open, notice, storeMes
       null,
       h('h2', null, 'Dein Lernpfad'),
       h('p', { className: 'muted', style: { margin: '4px 0 14px', fontSize: '14px' } }, config.intro || 'Starte irgendwo. Die Reihenfolge ist nur ein Vorschlag.'),
-      ...pathGroups(units).map(({ title, units: inGroup }) => {
+      ...pathGroups(units, config.groups).map(({ id, title, units: inGroup }) => {
         const path = h(
           'ol',
           { className: 'path' },
@@ -224,12 +225,15 @@ export function AppHome({ config, app, profile, day, rec, open, notice, storeMes
         );
         if (!title) return path;
         const geschafft = doneUnits(app.stars, inGroup.map((u) => u.id));
+        // Ein zugeklapptes Kapitel versteckt seine Stationen. Fälliges muss trotzdem sichtbar bleiben.
+        const faellig = inGroup.filter((u) => stationState(app, u, day) === 'fällig').length;
         // details/summary: ohne Skript bedienbar, mit Tastatur und Screenreader. Offen ist die Gruppe mit der nächsten Seite und die, aus der die Person gerade kommt.
         return h(
           'details',
-          { key: title, className: 'pgroup', open: inGroup.some((u) => u.id === nextId || u.id === focusId) || undefined },
-          h('summary', null, h('span', null, title), h('span', { className: 'muted' }, `${geschafft} von ${inGroup.length} geschafft`)),
-          path
+          { key: id, className: 'pgroup', open: inGroup.some((u) => u.id === nextId || u.id === focusId) || undefined },
+          h('summary', null, h('span', null, title), h('span', { className: 'muted' }, `${geschafft} von ${inGroup.length} geschafft${faellig ? ` · ${faellig} fällig` : ''}`)),
+          path,
+          hasChapterTest({ units: inGroup }) ? h(ChapterTest, { app, group: { id, title, units: inGroup }, onStart: onChapter }) : null
         );
       })
     ),
@@ -276,10 +280,11 @@ export function AppHome({ config, app, profile, day, rec, open, notice, storeMes
       )
       : null,
     cardUnits.length
+      // Zugeklappt, sonst stünde die Liste aller Karten vor den Trophäen und vor der Sicherung.
       ? h(
-        'section',
-        null,
-        h('h2', null, 'Sammelalbum'),
+        'details',
+        { className: 'pgroup albumbox' },
+        h('summary', null, h('span', null, 'Sammelalbum'), h('span', { className: 'muted' }, `${cardUnits.filter((u) => starsOf(app.stars, u.id) > 0).length} von ${cardUnits.length} Karten`)),
         h('p', { className: 'muted', style: { margin: '4px 0 14px', fontSize: '14px' } }, 'Für jede Seite gibt es eine Karte. Mit mehr Sternen wird sie wertvoller: Bronze, Silber, Gold.'),
         h('div', { className: 'album' }, ...cardUnits.map((u) => {
           const n = starsOf(app.stars, u.id);

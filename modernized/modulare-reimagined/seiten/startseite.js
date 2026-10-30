@@ -10,6 +10,7 @@ import { AppFrame } from './rahmen.js';
 import { NAME_MAX, NO_STORAGE, greetingOf, maskName, saveName } from './name.js';
 import { Sicherung } from './sicherung.js';
 import { ThemeToggle } from './thema.js';
+import { Suche } from './suche.js';
 import { LIVE, SUBJECT_COLORS, subjectsOf } from './registry.js';
 import { MSG } from './boot.js';
 
@@ -180,6 +181,7 @@ export function Startseite({ state }) {
     'div',
     { className: 'shell dash' },
     h('div', { className: 'dashtop' }, h('div', { className: 'brand' }, 'Lernwerkstatt'), h(ThemeToggle)),
+    h(Suche, { apps: state.apps.map((app) => app.entry) }),
     h(
       'section',
       { className: 'card hero', id: 'hero' },
@@ -244,7 +246,7 @@ export function Seiten({ boot }) {
     const app = state.apps.find((item) => item.entry.id === state.route.appId);
     if (!app || app.entry.status !== LIVE) return h(Notice, { title: 'Diese App gibt es nicht.', message: 'Wähle eine App auf der Startseite.' });
     if (app.error) return h(Notice, { title: 'Das hat nicht geklappt', message: app.error });
-    return h(AppFrame, { app, profileStore: state.profileStore, day: state.day, storage: state.storage });
+    return h(AppFrame, { app, profileStore: state.profileStore, day: state.day, storage: state.storage, startUnit: state.route.unitId });
   }
   return h(Startseite, { state });
 }

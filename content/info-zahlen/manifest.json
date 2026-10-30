@@ -30,9 +30,13 @@
       "Zahlen-Legende"
     ]
   },
+  "groups": [
+    { "id": "binaer", "title": "Stellenwerte und Binärzahlen" },
+    { "id": "hex", "title": "Hexadezimalzahlen" }
+  ],
   "units": [
     {
-      "id": "stellen",
+      "id": "stellen", "group": "binaer",
       "color": "#4CC3F5",
       "ic": "10",
       "title": "Stellenwerte",
@@ -43,7 +47,7 @@
       }
     },
     {
-      "id": "binaer",
+      "id": "binaer", "group": "binaer",
       "color": "#FFC933",
       "ic": "01",
       "title": "Binär lesen",
@@ -54,7 +58,7 @@
       }
     },
     {
-      "id": "dez2bin",
+      "id": "dez2bin", "group": "binaer",
       "color": "#FF8AD0",
       "ic": "→2",
       "title": "Normal → Binär",
@@ -65,7 +69,7 @@
       }
     },
     {
-      "id": "addieren",
+      "id": "addieren", "group": "binaer",
       "color": "#3DD6B0",
       "ic": "1+1",
       "title": "Binär addieren",
@@ -76,7 +80,7 @@
       }
     },
     {
-      "id": "hex",
+      "id": "hex", "group": "hex",
       "color": "#9B7BFF",
       "ic": "F",
       "title": "Hexadezimal",
@@ -87,7 +91,7 @@
       }
     },
     {
-      "id": "binhex",
+      "id": "binhex", "group": "hex",
       "color": "#FF6B88",
       "ic": "4:1",
       "title": "Binär ↔ Hex",
