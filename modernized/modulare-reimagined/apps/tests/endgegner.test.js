@@ -4,6 +4,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { buildConfig } from '../../inhalte/index.js';
 import { createRng } from '../../helfer/index.js';
+import { answerAndNext, correctResponse } from '../../runde/tests/helpers.js';
 import { appDefaults, bossOpen, profileDefaults, startRound } from '../../seiten/ablauf.js';
 import { LIVE } from '../../seiten/registry.js';
 import { APPS, logicFor, paketVon } from './laden.js';
@@ -87,4 +88,21 @@ test('SCHNELLRUNDE: ohne geübte Seite startet sie nicht und sagt warum', () => 
   const start = startRound({ config, mode: 'quick', app: appDefaults(), profile: profileDefaults(), rng: createRng(1) });
   assert.equal(start.ok, false);
   assert.match(start.message, /Seite/);
+});
+
+test('REIHENFOLGE: Eine Physik-Lektion läuft von leicht nach schwer', () => {
+  const config = buildConfig(paketVon('physik'), logicFor('physik'));
+  const app = { ...appDefaults(), stars: Object.fromEntries(config.units.map((u) => [u.id, 1])) };
+  const levels = (mode, seed) => {
+    const start = startRound({ config, mode, unit: config.units[0], app, profile: profileDefaults(), rng: createRng(seed) });
+    return Array.from({ length: start.round.current().total }, () => {
+      const { question } = start.round.current();
+      answerAndNext(start.round, correctResponse(question));
+      return question.level ?? 2;
+    });
+  };
+  const aufsteigend = (list) => list.every((level, i) => i === 0 || list[i - 1] <= level);
+  const seeds = Array.from({ length: 20 }, (_, i) => i + 1);
+  assert.ok(seeds.every((seed) => aufsteigend(levels('lesson', seed))));
+  assert.ok(seeds.some((seed) => new Set(levels('lesson', seed)).size > 1), 'Die Runden mischen die Stufen');
 });

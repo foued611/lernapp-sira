@@ -40,12 +40,14 @@ test('POOL: geteilter skill holt alle Aufgaben dazu zurück', () => {
   assert.deepEqual(recall({ id: 'a' }, ['rechnen'], rngFor(1)).map((q) => q.answer), ['A1', 'A2']);
 });
 
-test('POOL: level ändert keine Frage', () => {
+test('POOL: level ändert an der Frage nur das Feld level', () => {
   const ohne = paket();
   const mit = paket();
   mit.data.items.a = mit.data.items.a.map((entry) => ({ ...entry, level: 2 }));
-  const fragen = (p) => JSON.stringify(createPool(p).lessonRound(p.manifest.units[0], rngFor(1)));
-  assert.equal(fragen(mit), fragen(ohne));
+  const fragen = (p) => createPool(p).lessonRound(p.manifest.units[0], rngFor(1));
+  const alsText = (liste) => JSON.stringify(liste.map(({ level, ...frage }) => frage));
+  assert.equal(alsText(fragen(mit)), alsText(fragen(ohne)));
+  assert.ok(fragen(mit).every((frage) => frage.level === 2));
 });
 
 test('POOL: Strang nur mit withTrack, Etikett der Eingabe wählbar', () => {
