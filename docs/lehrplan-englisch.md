@@ -1,6 +1,6 @@
 # Lehrplan-Abgleich Englisch (Gymnasium BW)
 
-Stand: 2026-10-30. Gilt für die App `access-2-unit-6` (Englisch-Wortschatz Access 2). Die ältere App `englisch` (Grammatik nach Access 3) ist hier nicht abgeglichen.
+Stand: 2026-10-30. Gilt für die 15 Vokabel-Seiten („Vokabeln: …“) in der App `englisch` (Inhalte in `content/englisch/`, Seiten-Ids siehe Tabelle). Die Grammatik-Seiten nach Access 3 sind hier nicht abgeglichen.
 
 Buch: English G Access 2 (Cornelsen), Unit 6, Abschnitt „Dictionary“ (Seiten 37 und 39 im Heft). Das Buch diente nur als Wortliste. Alle Beispielsätze, Merkhilfen, Geschichten und Aufgaben sind eigene Formulierungen.
 
@@ -44,7 +44,7 @@ Jedes Wort hat drei Aufgaben: ein Lückensatz mit deutschem Tipp (wird auch zum 
 
 ## Abschlusstest
 
-Der Endgegner in der App ist eine Stichprobe: 12 Fragen aus 12 verschiedenen Lernseiten. Er prüft nicht, ob alle Wörter sitzen. Dafür gibt es den Abschlusstest zum Ausdrucken (`public/files/access-2-unit-6-abschlusstest.pdf`): alle 229 Wörter, je eins pro Zeile, etwa zur Hälfte Englisch zu Deutsch und zur Hälfte Deutsch zu Englisch zum Hinschreiben, also mit Rechtschreibung. Wörter mit mehreren Bedeutungen haben im Test einen Hilfssatz.
+Der Endgegner der Englisch-App ist eine Stichprobe: 12 Fragen aus 12 zufällig gewählten Seiten, Grammatik und Vokabeln gemischt. Er prüft nicht, ob alle Wörter sitzen. Dafür gibt es den Abschlusstest zum Ausdrucken (`public/files/access-2-unit-6-abschlusstest.pdf`, in der App unter „Zum Ausdrucken“): alle 229 Wörter, je eins pro Zeile, etwa zur Hälfte Englisch zu Deutsch und zur Hälfte Deutsch zu Englisch zum Hinschreiben, also mit Rechtschreibung. Wörter mit mehreren Bedeutungen haben im Test einen Hilfssatz.
 
 Der Vorschlag zur Bewertung steht auf dem Test: gelernt ab 207 von 229 Wörtern (90 Prozent), Lernseiten unter 80 Prozent noch einmal üben. Das ist ein Vorschlag der App, keine Vorgabe der Schule. Das Lösungsblatt ist nicht im Repository, damit es in der App nicht aufrufbar ist.
 

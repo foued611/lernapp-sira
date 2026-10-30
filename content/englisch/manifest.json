@@ -3,90 +3,768 @@
   "id": "englisch",
   "title": "Englisch-Werkstatt",
   "greeting": "Hi",
-  "intro": "Die Seiten folgen den Units von English G Access 3 (Klasse 7). Erst die Lektion, dann die Übung. Du kannst auch springen.",
+  "intro": "Die Grammatik-Seiten folgen den Units von English G Access 3 (Klasse 7). Dahinter stehen 15 Vokabel-Seiten mit allen 229 Wörtern aus dem Dictionary von Access 2, Unit 6, und ein Abschlusstest zum Ausdrucken. Erst die Lektion, dann die Übung. Du kannst auch springen.",
   "bossTitle": "Final Check",
   "units": [
-    { "id": "simple-past", "color": "#FF9F43", "ic": "1a", "title": "Simple Past", "de": "Erzählen, was passiert ist · Unit 1", "card": { "name": "Die Zeit der Geschichten", "fact": "Die meisten Geschichten laufen im Simple Past. Viele wichtige Verben sind unregelmäßig und müssen auswendig gelernt werden." } },
-    { "id": "present-perfect", "color": "#FF9F43", "ic": "1b", "title": "Present Perfect", "de": "have/has + Partizip II · Unit 1", "card": { "name": "Die Brücke zu heute", "fact": "Mit have oder has verbindest du Vergangenes mit heute: I have seen this film heißt, dass du ihn kennst." } },
-    { "id": "past-or-perfect", "color": "#FF9F43", "ic": "1c", "title": "Simple Past oder Present Perfect?", "de": "Die Zeitangabe entscheidet · Unit 1", "card": { "name": "Das richtige Signalwort", "fact": "Steht ein fester Zeitpunkt wie yesterday, nimmt man den Simple Past. Ohne Zeitangabe oder mit Bezug zu heute: Present Perfect." } },
-    { "id": "perfect-progressive", "color": "#FF9F43", "ic": "1d", "title": "Present Perfect Progressive", "de": "for und since · seit wann, wie lange · Unit 1", "card": { "name": "Seit wann?", "fact": "for steht vor einem Zeitraum (for two hours), since vor einem Zeitpunkt (since Monday)." } },
-    { "id": "past-progressive", "color": "#FF9F43", "ic": "1e", "title": "Past Progressive", "de": "Verlauf in der Vergangenheit · Unit 1", "card": { "name": "Mitten im Film", "fact": "Das Past Progressive ist wie eine Szene, die gerade läuft. Wenn etwas dazwischenkommt, steht es im Simple Past." } },
-    { "id": "will-future", "color": "#3DD6B0", "ic": "2a", "title": "Will-Future", "de": "Vorhersagen und spontane Entscheidungen · Unit 2", "card": { "name": "Spontan entschieden", "fact": "Das Telefon klingelt, und du sagst: I will answer it. Das will entsteht genau in diesem Moment." } },
-    { "id": "conditional-1", "color": "#3DD6B0", "ic": "2b", "title": "Wenn es klappen kann", "de": "if + Präsens, will + Grundform · Unit 2", "card": { "name": "Die echte Möglichkeit", "fact": "Im if-Satz steht das Präsens, auch wenn es um die Zukunft geht: If it rains, we will stay home." } },
-    { "id": "conditional-2", "color": "#3DD6B0", "ic": "2c", "title": "Wenn es nur ein Traum wäre", "de": "if + Simple Past, would + Grundform · Unit 2", "card": { "name": "Der Wunsch-Satz", "fact": "Im Konditional 2 heißt es oft If I were you, auch für I. Das ist die klassische Form." } },
-    { "id": "relative-clauses", "color": "#9B7BFF", "ic": "3a", "title": "Relativsätze", "de": "who, which, that, where, whose · Unit 3", "card": { "name": "Der Erklärer-Satz", "fact": "Relativsätze sagen genauer, welche Person oder welches Ding gemeint ist: The girl who sings is my cousin." } },
-    { "id": "contact-clauses", "color": "#9B7BFF", "ic": "3b", "title": "Relativsätze ohne Pronomen", "de": "Das Pronomen fällt weg · Unit 3", "card": { "name": "Die kurze Form", "fact": "Ist das Relativpronomen Objekt, darf es wegfallen: The film we watched was funny." } },
-    { "id": "passive", "color": "#9B7BFF", "ic": "3c", "title": "Passiv", "de": "be + Partizip II · Unit 3", "card": { "name": "Wer war es?", "fact": "Im Passiv steht die Handlung im Mittelpunkt, nicht der Täter: The bridge was built in 1990." } },
-    { "id": "modal-verbs", "color": "#4CC3F5", "ic": "4a", "title": "Modale Verben", "de": "can, must, mustn't, needn't · Unit 4", "card": { "name": "Verboten oder nicht nötig?", "fact": "mustn't heißt verboten, needn't heißt nicht nötig. Diese Verwechslung passiert fast allen am Anfang." } },
-    { "id": "modal-substitutes", "color": "#4CC3F5", "ic": "4b", "title": "Ersatz für modale Verben", "de": "have to, be able to, be allowed to · Unit 4", "card": { "name": "Der Ersatzspieler", "fact": "Modale Verben haben keine Vergangenheit und Zukunft. Dann springen have to und be able to ein: I had to, I will be able to." } },
-    { "id": "past-perfect", "color": "#4CC3F5", "ic": "4c", "title": "Past Perfect", "de": "had + Partizip II · Unit 4", "card": { "name": "Schon vorbei", "fact": "Past Perfect zeigt: Das war schon vorbei, bevor etwas anderes passierte. Meist steht ein Simple Past daneben." } },
-    { "id": "reflexive-pronouns", "color": "#FF6B88", "ic": "5a", "title": "Reflexivpronomen", "de": "myself, yourself, each other · Unit 5", "card": { "name": "Das Spiegel-Wort", "fact": "Wenn Subjekt und Objekt dieselbe Person sind, endet das Pronomen auf -self: She hurt herself." } },
-    { "id": "indirect-speech", "color": "#FF6B88", "ic": "5b", "title": "Indirekte Rede", "de": "Aussagen wiedergeben, Zeiten verschieben · Unit 5", "card": { "name": "Was hat sie gesagt?", "fact": "In der indirekten Rede rückt die Zeit eine Stufe zurück: I am tired wird zu She said she was tired." } }
+    {
+      "id": "simple-past",
+      "color": "#FF9F43",
+      "ic": "1a",
+      "title": "Simple Past",
+      "de": "Erzählen, was passiert ist · Unit 1",
+      "card": {
+        "name": "Die Zeit der Geschichten",
+        "fact": "Die meisten Geschichten laufen im Simple Past. Viele wichtige Verben sind unregelmäßig und müssen auswendig gelernt werden."
+      }
+    },
+    {
+      "id": "present-perfect",
+      "color": "#FF9F43",
+      "ic": "1b",
+      "title": "Present Perfect",
+      "de": "have/has + Partizip II · Unit 1",
+      "card": {
+        "name": "Die Brücke zu heute",
+        "fact": "Mit have oder has verbindest du Vergangenes mit heute: I have seen this film heißt, dass du ihn kennst."
+      }
+    },
+    {
+      "id": "past-or-perfect",
+      "color": "#FF9F43",
+      "ic": "1c",
+      "title": "Simple Past oder Present Perfect?",
+      "de": "Die Zeitangabe entscheidet · Unit 1",
+      "card": {
+        "name": "Das richtige Signalwort",
+        "fact": "Steht ein fester Zeitpunkt wie yesterday, nimmt man den Simple Past. Ohne Zeitangabe oder mit Bezug zu heute: Present Perfect."
+      }
+    },
+    {
+      "id": "perfect-progressive",
+      "color": "#FF9F43",
+      "ic": "1d",
+      "title": "Present Perfect Progressive",
+      "de": "for und since · seit wann, wie lange · Unit 1",
+      "card": {
+        "name": "Seit wann?",
+        "fact": "for steht vor einem Zeitraum (for two hours), since vor einem Zeitpunkt (since Monday)."
+      }
+    },
+    {
+      "id": "past-progressive",
+      "color": "#FF9F43",
+      "ic": "1e",
+      "title": "Past Progressive",
+      "de": "Verlauf in der Vergangenheit · Unit 1",
+      "card": {
+        "name": "Mitten im Film",
+        "fact": "Das Past Progressive ist wie eine Szene, die gerade läuft. Wenn etwas dazwischenkommt, steht es im Simple Past."
+      }
+    },
+    {
+      "id": "will-future",
+      "color": "#3DD6B0",
+      "ic": "2a",
+      "title": "Will-Future",
+      "de": "Vorhersagen und spontane Entscheidungen · Unit 2",
+      "card": {
+        "name": "Spontan entschieden",
+        "fact": "Das Telefon klingelt, und du sagst: I will answer it. Das will entsteht genau in diesem Moment."
+      }
+    },
+    {
+      "id": "conditional-1",
+      "color": "#3DD6B0",
+      "ic": "2b",
+      "title": "Wenn es klappen kann",
+      "de": "if + Präsens, will + Grundform · Unit 2",
+      "card": {
+        "name": "Die echte Möglichkeit",
+        "fact": "Im if-Satz steht das Präsens, auch wenn es um die Zukunft geht: If it rains, we will stay home."
+      }
+    },
+    {
+      "id": "conditional-2",
+      "color": "#3DD6B0",
+      "ic": "2c",
+      "title": "Wenn es nur ein Traum wäre",
+      "de": "if + Simple Past, would + Grundform · Unit 2",
+      "card": {
+        "name": "Der Wunsch-Satz",
+        "fact": "Im Konditional 2 heißt es oft If I were you, auch für I. Das ist die klassische Form."
+      }
+    },
+    {
+      "id": "relative-clauses",
+      "color": "#9B7BFF",
+      "ic": "3a",
+      "title": "Relativsätze",
+      "de": "who, which, that, where, whose · Unit 3",
+      "card": {
+        "name": "Der Erklärer-Satz",
+        "fact": "Relativsätze sagen genauer, welche Person oder welches Ding gemeint ist: The girl who sings is my cousin."
+      }
+    },
+    {
+      "id": "contact-clauses",
+      "color": "#9B7BFF",
+      "ic": "3b",
+      "title": "Relativsätze ohne Pronomen",
+      "de": "Das Pronomen fällt weg · Unit 3",
+      "card": {
+        "name": "Die kurze Form",
+        "fact": "Ist das Relativpronomen Objekt, darf es wegfallen: The film we watched was funny."
+      }
+    },
+    {
+      "id": "passive",
+      "color": "#9B7BFF",
+      "ic": "3c",
+      "title": "Passiv",
+      "de": "be + Partizip II · Unit 3",
+      "card": {
+        "name": "Wer war es?",
+        "fact": "Im Passiv steht die Handlung im Mittelpunkt, nicht der Täter: The bridge was built in 1990."
+      }
+    },
+    {
+      "id": "modal-verbs",
+      "color": "#4CC3F5",
+      "ic": "4a",
+      "title": "Modale Verben",
+      "de": "can, must, mustn't, needn't · Unit 4",
+      "card": {
+        "name": "Verboten oder nicht nötig?",
+        "fact": "mustn't heißt verboten, needn't heißt nicht nötig. Diese Verwechslung passiert fast allen am Anfang."
+      }
+    },
+    {
+      "id": "modal-substitutes",
+      "color": "#4CC3F5",
+      "ic": "4b",
+      "title": "Ersatz für modale Verben",
+      "de": "have to, be able to, be allowed to · Unit 4",
+      "card": {
+        "name": "Der Ersatzspieler",
+        "fact": "Modale Verben haben keine Vergangenheit und Zukunft. Dann springen have to und be able to ein: I had to, I will be able to."
+      }
+    },
+    {
+      "id": "past-perfect",
+      "color": "#4CC3F5",
+      "ic": "4c",
+      "title": "Past Perfect",
+      "de": "had + Partizip II · Unit 4",
+      "card": {
+        "name": "Schon vorbei",
+        "fact": "Past Perfect zeigt: Das war schon vorbei, bevor etwas anderes passierte. Meist steht ein Simple Past daneben."
+      }
+    },
+    {
+      "id": "reflexive-pronouns",
+      "color": "#FF6B88",
+      "ic": "5a",
+      "title": "Reflexivpronomen",
+      "de": "myself, yourself, each other · Unit 5",
+      "card": {
+        "name": "Das Spiegel-Wort",
+        "fact": "Wenn Subjekt und Objekt dieselbe Person sind, endet das Pronomen auf -self: She hurt herself."
+      }
+    },
+    {
+      "id": "indirect-speech",
+      "color": "#FF6B88",
+      "ic": "5b",
+      "title": "Indirekte Rede",
+      "de": "Aussagen wiedergeben, Zeiten verschieben · Unit 5",
+      "card": {
+        "name": "Was hat sie gesagt?",
+        "fact": "In der indirekten Rede rückt die Zeit eine Stufe zurück: I am tired wird zu She said she was tired."
+      }
+    },
+    {
+      "id": "krank",
+      "color": "#3DD6B0",
+      "ic": "v1",
+      "title": "Vokabeln: Krank im Bett",
+      "de": "Access 2, Unit 6 · Dictionary S. 2 · Kapitel 1",
+      "card": {
+        "name": "Gesund oder krank?",
+        "fact": "Bei der Gesundheit sagt man well, nicht good: I don't feel well."
+      }
+    },
+    {
+      "id": "husten",
+      "color": "#3DD6B0",
+      "ic": "v2",
+      "title": "Vokabeln: Husten, Hals und Pflaster",
+      "de": "Access 2, Unit 6 · Dictionary S. 3 und 4 · Kapitel 1",
+      "card": {
+        "name": "Have a …",
+        "fact": "Bei Beschwerden sagt man have a cough, have a headache oder have a sore throat."
+      }
+    },
+    {
+      "id": "essen",
+      "color": "#3DD6B0",
+      "ic": "v3",
+      "title": "Vokabeln: Untersuchen und Essen",
+      "de": "Access 2, Unit 6 · Dictionary S. 5 · Kapitel 1",
+      "card": {
+        "name": "While oder during?",
+        "fact": "while steht vor einem ganzen Satz, during steht vor einem Nomen."
+      }
+    },
+    {
+      "id": "roemer",
+      "color": "#3DD6B0",
+      "ic": "v4",
+      "title": "Vokabeln: Medusa, Mosaik und Schlangen",
+      "de": "Access 2, Unit 6 · Dictionary S. 6 · Kapitel 1",
+      "card": {
+        "name": "Die Gorgone",
+        "fact": "Medusa war eine der drei Gorgonen aus der griechischen Sage."
+      }
+    },
+    {
+      "id": "reich",
+      "color": "#FF9F43",
+      "ic": "v5",
+      "title": "Vokabeln: Stich, Knie und römisches Reich",
+      "de": "Access 2, Unit 6 · Dictionary S. 7 · Kapitel 2",
+      "card": {
+        "name": "Römisches Britannien",
+        "fact": "Britannia hieß die römische Provinz auf der Insel Britain."
+      }
+    },
+    {
+      "id": "klippe",
+      "color": "#FF9F43",
+      "ic": "v6",
+      "title": "Vokabeln: Klippen, Höhlen und Soldaten",
+      "de": "Access 2, Unit 6 · Dictionary S. 8 und 9 · Kapitel 2",
+      "card": {
+        "name": "Der schmale Weg",
+        "fact": "narrow heißt schmal. Das Gegenteil von narrow ist wide."
+      }
+    },
+    {
+      "id": "landgut",
+      "color": "#FF9F43",
+      "ic": "v7",
+      "title": "Vokabeln: Landgut, Karriere und Bergwerk",
+      "de": "Access 2, Unit 6 · Dictionary S. 10 und 11 · Kapitel 2",
+      "card": {
+        "name": "Zwei Gesichter",
+        "fact": "notice ist als Verb „bemerken“ und als Nomen ein Aushang."
+      }
+    },
+    {
+      "id": "brunnen",
+      "color": "#9B7BFF",
+      "ic": "v8",
+      "title": "Vokabeln: Brunnen, Beeren und Berichte",
+      "de": "Access 2, Unit 6 · Dictionary S. 12 und 13 · Kapitel 3",
+      "card": {
+        "name": "Eis in der Sonne",
+        "fact": "In der Sonne schmilzt Eis: ice melts."
+      }
+    },
+    {
+      "id": "wache",
+      "color": "#9B7BFF",
+      "ic": "v9",
+      "title": "Vokabeln: Wachen, Gefahr und Wahrheit",
+      "de": "Access 2, Unit 6 · Dictionary S. 14 und 15 · Kapitel 3",
+      "card": {
+        "name": "Die Wahrheit",
+        "fact": "truth ist die Wahrheit. Das Gegenteil heißt lie."
+      }
+    },
+    {
+      "id": "hof",
+      "color": "#4CC3F5",
+      "ic": "v10",
+      "title": "Vokabeln: Im Innenhof",
+      "de": "Access 2, Unit 6 · Dictionary S. 16 und 17 · Kapitel 4",
+      "card": {
+        "name": "Stört es dich?",
+        "fact": "Do you mind …? heißt: Hast du etwas dagegen?"
+      }
+    },
+    {
+      "id": "laerm",
+      "color": "#4CC3F5",
+      "ic": "v11",
+      "title": "Vokabeln: Lärm, Ruhe und Festung",
+      "de": "Access 2, Unit 6 · Dictionary S. 18 bis 20 · Kapitel 4 und 5",
+      "card": {
+        "name": "Laut und leise",
+        "fact": "noise ist der Lärm, noisy ist laut. Mit rest ruhst du dich aus."
+      }
+    },
+    {
+      "id": "geheimnis",
+      "color": "#FF6B88",
+      "ic": "v12",
+      "title": "Vokabeln: Geheimnis und Angriff",
+      "de": "Access 2, Unit 6 · Dictionary S. 21 und 22 · Kapitel 6",
+      "card": {
+        "name": "Das Geheimnis",
+        "fact": "secret heißt Geheimnis und auch geheim."
+      }
+    },
+    {
+      "id": "seil",
+      "color": "#FF6B88",
+      "ic": "v13",
+      "title": "Vokabeln: Seil, Tunnel und Rollen",
+      "de": "Access 2, Unit 6 · Dictionary S. 23 · Kapitel 6",
+      "card": {
+        "name": "Alle am Seil",
+        "fact": "Am Seil (rope) zieht man fest: pull it tight."
+      }
+    },
+    {
+      "id": "koenig",
+      "color": "#E0A82E",
+      "ic": "v14",
+      "title": "Vokabeln: Könige, Prinzen und Beweise",
+      "de": "Access 2, Unit 6 · Dictionary S. 24 und 25 · Kapitel 7",
+      "card": {
+        "name": "Königliches Blut",
+        "fact": "royal blood heißt königliches Blut."
+      }
+    },
+    {
+      "id": "schluss",
+      "color": "#8BD450",
+      "ic": "v15",
+      "title": "Vokabeln: Briefende und Zusatzwörter",
+      "de": "Access 2, Unit 6 · Dictionary S. 26 und Zusatzwörter · Kapitel 8",
+      "card": {
+        "name": "Selbstlaute",
+        "fact": "a, e, i, o, u sind die fünf vowels."
+      }
+    }
   ],
   "notes": {
     "simple-past": [
-      ["Regelmäßig", "Grundform + -ed: play – played. Endet das Verb auf -e, nur -d: live – lived."],
-      ["Unregelmäßig", "Auswendig lernen, zum Beispiel go – went, see – saw, buy – bought."]
+      [
+        "Regelmäßig",
+        "Grundform + -ed: play – played. Endet das Verb auf -e, nur -d: live – lived."
+      ],
+      [
+        "Unregelmäßig",
+        "Auswendig lernen, zum Beispiel go – went, see – saw, buy – bought."
+      ]
     ],
     "present-perfect": [
-      ["Bildung", "have/has + Partizip II: I have seen, she has gone."],
-      ["Signalwörter", "ever, never, already, yet, just."]
+      [
+        "Bildung",
+        "have/has + Partizip II: I have seen, she has gone."
+      ],
+      [
+        "Signalwörter",
+        "ever, never, already, yet, just."
+      ]
     ],
     "past-or-perfect": [
-      ["Feste Zeit", "yesterday, last week, in 2020, ago: Simple Past."],
-      ["Ohne feste Zeit", "Erfahrung oder Bezug zu heute: Present Perfect."]
+      [
+        "Feste Zeit",
+        "yesterday, last week, in 2020, ago: Simple Past."
+      ],
+      [
+        "Ohne feste Zeit",
+        "Erfahrung oder Bezug zu heute: Present Perfect."
+      ]
     ],
     "perfect-progressive": [
-      ["Bildung", "have/has been + Verb mit -ing."],
-      ["for und since", "for + Zeitraum (for two hours), since + Zeitpunkt (since Monday)."]
+      [
+        "Bildung",
+        "have/has been + Verb mit -ing."
+      ],
+      [
+        "for und since",
+        "for + Zeitraum (for two hours), since + Zeitpunkt (since Monday)."
+      ]
     ],
     "past-progressive": [
-      ["Bildung", "was/were + Verb mit -ing: I was reading, they were playing."],
-      ["Zusammen mit Simple Past", "when vor dem kurzen Ereignis, while vor dem Verlauf."]
+      [
+        "Bildung",
+        "was/were + Verb mit -ing: I was reading, they were playing."
+      ],
+      [
+        "Zusammen mit Simple Past",
+        "when vor dem kurzen Ereignis, while vor dem Verlauf."
+      ]
     ],
     "will-future": [
-      ["Bildung", "will + Grundform. Verneinung: won't (will not)."],
-      ["Gebrauch", "Vorhersagen und spontane Entscheidungen im Moment des Sprechens."]
+      [
+        "Bildung",
+        "will + Grundform. Verneinung: won't (will not)."
+      ],
+      [
+        "Gebrauch",
+        "Vorhersagen und spontane Entscheidungen im Moment des Sprechens."
+      ]
     ],
     "conditional-1": [
-      ["Bildung", "if + Präsens, will + Grundform."],
-      ["Gebrauch", "Eine Bedingung, die wirklich eintreten kann."]
+      [
+        "Bildung",
+        "if + Präsens, will + Grundform."
+      ],
+      [
+        "Gebrauch",
+        "Eine Bedingung, die wirklich eintreten kann."
+      ]
     ],
     "conditional-2": [
-      ["Bildung", "if + Simple Past, would + Grundform."],
-      ["Gebrauch", "Eine Bedingung, die nicht wahr ist oder unwahrscheinlich ist."]
+      [
+        "Bildung",
+        "if + Simple Past, would + Grundform."
+      ],
+      [
+        "Gebrauch",
+        "Eine Bedingung, die nicht wahr ist oder unwahrscheinlich ist."
+      ]
     ],
     "relative-clauses": [
-      ["who, which, that", "who für Personen, which für Dinge, that für beides."],
-      ["where, whose", "where für Orte, whose für Besitz: whose bag."]
+      [
+        "who, which, that",
+        "who für Personen, which für Dinge, that für beides."
+      ],
+      [
+        "where, whose",
+        "where für Orte, whose für Besitz: whose bag."
+      ]
     ],
     "contact-clauses": [
-      ["Regel", "Das Relativpronomen darf wegfallen, wenn danach ein Subjekt folgt."],
-      ["Nicht weglassen", "Folgt direkt ein Verb, bleibt who oder which."]
+      [
+        "Regel",
+        "Das Relativpronomen darf wegfallen, wenn danach ein Subjekt folgt."
+      ],
+      [
+        "Nicht weglassen",
+        "Folgt direkt ein Verb, bleibt who oder which."
+      ]
     ],
     "passive": [
-      ["Bildung", "be + Partizip II. Die Zeit steckt im be."],
-      ["Der Täter", "mit by, oder er fehlt ganz."]
+      [
+        "Bildung",
+        "be + Partizip II. Die Zeit steckt im be."
+      ],
+      [
+        "Der Täter",
+        "mit by, oder er fehlt ganz."
+      ]
     ],
     "modal-verbs": [
-      ["Ohne to, ohne -s", "can go, nicht can to go. he can, nicht he cans."],
-      ["Verbote", "mustn't = verboten, needn't = nicht nötig."]
+      [
+        "Ohne to, ohne -s",
+        "can go, nicht can to go. he can, nicht he cans."
+      ],
+      [
+        "Verbote",
+        "mustn't = verboten, needn't = nicht nötig."
+      ]
     ],
     "modal-substitutes": [
-      ["Ersatz", "have to, be able to, be allowed to."],
-      ["Verneinung", "don't have to heißt: nicht nötig."]
+      [
+        "Ersatz",
+        "have to, be able to, be allowed to."
+      ],
+      [
+        "Verneinung",
+        "don't have to heißt: nicht nötig."
+      ]
     ],
     "past-perfect": [
-      ["Bildung", "had + Partizip II."],
-      ["Gebrauch", "Die ältere von zwei Vergangenheitshandlungen."]
+      [
+        "Bildung",
+        "had + Partizip II."
+      ],
+      [
+        "Gebrauch",
+        "Die ältere von zwei Vergangenheitshandlungen."
+      ]
     ],
     "reflexive-pronouns": [
-      ["Singular", "myself, yourself, himself, herself, itself."],
-      ["Plural", "ourselves, yourselves, themselves und each other."]
+      [
+        "Singular",
+        "myself, yourself, himself, herself, itself."
+      ],
+      [
+        "Plural",
+        "ourselves, yourselves, themselves und each other."
+      ]
     ],
     "indirect-speech": [
-      ["Zeit zurück", "am/is → was, will → would, can → could, have → had."],
-      ["Zeitangaben", "now → then, today → that day, tomorrow → the next day, yesterday → the day before."]
+      [
+        "Zeit zurück",
+        "am/is → was, will → would, can → could, have → had."
+      ],
+      [
+        "Zeitangaben",
+        "now → then, today → that day, tomorrow → the next day, yesterday → the day before."
+      ]
+    ],
+    "krank": [
+      [
+        "Nomen",
+        "chapter = Kapitel · doctor = Arzt, Ärztin; Doktor · curtain = Vorhang · thermometer = Thermometer · temperature = Temperatur, Fieber"
+      ],
+      [
+        "Verben",
+        "(to) see a doctor = einen Arzt aufsuchen · (to) shine = scheinen (Sonne) · (to) groan = stöhnen · (to) have a cold = eine Erkältung haben, erkältet sein · (to) have a temperature = Fieber haben"
+      ],
+      [
+        "Eigenschaften und kleine Wörter",
+        "straight = direkt, geradewegs · well = (gesundheitlich) gut, gesund · ill = krank"
+      ],
+      [
+        "Sätze und Wendungen",
+        "at the doctor's = beim Arzt · What's wrong with her? = Was fehlt ihr? Was ist los mit ihr? · I don't feel well. = Ich fühle mich nicht gut."
+      ]
+    ],
+    "husten": [
+      [
+        "Nomen",
+        "patient = Patient, Patientin · cough = Husten · hospital = Krankenhaus · throat = Hals, Kehle (innen, beim Schlucken) · sweets (pl) = Süßigkeiten · counter = Theke · seat = Sitz, Platz · finger = Finger · plaster = (Heft-)Pflaster · burger = Hamburger · dear = Schatz, Liebling"
+      ],
+      [
+        "Verben",
+        "(to) have a cough = Husten haben · (to) have a sore throat = Halsschmerzen haben · (to) turn to sb. = sich jm. zuwenden; sich an jn. wenden · (to) have a headache = Kopfschmerzen haben · (to) frown = die Stirn runzeln · (to) be sick = sich übergeben"
+      ],
+      [
+        "Eigenschaften und kleine Wörter",
+        "sore = wund · a little = ein bisschen, ein wenig, etwas"
+      ],
+      [
+        "Sätze und Wendungen",
+        "you needn't do it = du musst es nicht tun"
+      ]
+    ],
+    "essen": [
+      [
+        "Nomen",
+        "dentist = Zahnarzt, Zahnärztin · virus = Virus · infection = Infektion · takeaway = Restaurant/Imbissgeschäft mit Essen zum Mitnehmen; Essen zum Mitnehmen · apple = Apfel · strawberry = Erdbeere · tablet = Tablette · guide = Fremdenführer/in; Reiseleiter/in · villa = Landhaus · Bignor = Dorf in Südengland"
+      ],
+      [
+        "Verben",
+        "(to) examine = untersuchen · (to) lie down = sich hinlegen · (to) kiss = küssen; sich küssen"
+      ],
+      [
+        "Eigenschaften und kleine Wörter",
+        "while = während (vor einem Satz) · sleepy = schläfrig · vegetarian = Vegetarier, Vegetarierin; vegetarisch · Roman = römisch; Römer/in"
+      ]
+    ],
+    "roemer": [
+      [
+        "Nomen",
+        "mosaic = Mosaik · Medusa = eine der drei Gorgonen aus der griechischen Mythologie · Gorgon = Gorgone · legend = Legende, Sage · stone = Stein · gladiator = Gladiator · back = Rücken · blanket = Decke, Bettdecke"
+      ],
+      [
+        "Verben",
+        "(to) flash = aufblitzen, funkeln · (to) notice = merken, bemerken · (to) hiss = zischen · (to) turn sb. into sth. = jn. in etwas verwandeln/umwandeln · (to) seem (to do) = (zu tun) scheinen · (to) stare (at sb./sth.) = (jn./etwas an)starren"
+      ],
+      [
+        "Eigenschaften und kleine Wörter",
+        "like (infml) = als ob · peaceful = friedlich"
+      ],
+      [
+        "Sätze und Wendungen",
+        "I would try = ich würde versuchen"
+      ]
+    ],
+    "reich": [
+      [
+        "Nomen",
+        "groan = Stöhnen · neck = Hals (von außen) · bee = Biene · knee = Knie · Iscalis = römische Siedlung in Südwestengland · Britannia = Britannien (römische Provinz) · empire = Reich · Dumnonia = römisches Gebiet in Südwestengland"
+      ],
+      [
+        "Verben",
+        "(to) hit = treffen · (to) block = blockieren, sperren"
+      ],
+      [
+        "Eigenschaften und kleine Wörter",
+        "fresh = frisch"
+      ]
+    ],
+    "klippe": [
+      [
+        "Nomen",
+        "cliff = Klippe · distance = Entfernung · cave = Höhle · bridge = Brücke · soldier = Soldat, Soldatin · massage = Massage · piece = Stück"
+      ],
+      [
+        "Verben",
+        "(to) store = speichern, lagern · (to) argue = (sich) streiten · (to) march = marschieren · (to) enter = betreten, hineingehen in · (to) bet = wetten"
+      ],
+      [
+        "Eigenschaften und kleine Wörter",
+        "narrow = schmal, eng · towards ... = in Richtung ..."
+      ],
+      [
+        "Sätze und Wendungen",
+        "as a child = als Kind · What size melon would you like? = Wie groß soll die Melone sein?"
+      ]
+    ],
+    "landgut": [
+      [
+        "Nomen",
+        "notice = Aushang, Nachricht · volunteer = Freiwillige(r) · estate = Landsitz, Gut · career = Karriere · future = Zukunft · battle = Schlacht; Kampf · chance = Gelegenheit, Möglichkeit, Chance · lead = Blei · mine = Bergwerk, Mine · floor = Stock(werk) · iced tea = Eistee"
+      ],
+      [
+        "Verben",
+        "(to) earn = verdienen (Geld) · (to) run sth. = etwas leiten, führen · (to) trust = trauen, vertrauen · (to) look at each other = sich anschauen · (to) adopt = adoptieren"
+      ],
+      [
+        "Eigenschaften und kleine Wörter",
+        "exactly = genau · horrible = grauenhaft, entsetzlich · somewhere = irgendwo(hin)"
+      ],
+      [
+        "Sätze und Wendungen",
+        "anything else = sonst noch etwas · I'll have a glass of water. = Ich nehme ein Glas Wasser."
+      ]
+    ],
+    "brunnen": [
+      [
+        "Nomen",
+        "berry = Beere · fountain = Brunnen · report = Bericht, Reportage · figure = Figur, Gestalt"
+      ],
+      [
+        "Verben",
+        "(to) kneel = knien · (to) melt = schmelzen · (to) fill = (sich) füllen · (to) be able to do sth. = etwas tun können"
+      ],
+      [
+        "Eigenschaften und kleine Wörter",
+        "sticky = klebrig"
+      ]
+    ],
+    "wache": [
+      [
+        "Nomen",
+        "guard = Wachposten, Wache · grin = Grinsen · Caius = Name einer Figur in der Lektüre (gesprochen: Kaius) · tongue = Zunge · stomach = Magen · enemy = Feind, Feindin · danger = Gefahr · truth = Wahrheit"
+      ],
+      [
+        "Verben",
+        "(to) go dark = dunkel werden · (to) lick = lecken · (to) tap = tippen, (vorsichtig) klopfen · (to) be afraid = Angst haben · (to) set off = losgehen, aufbrechen"
+      ],
+      [
+        "Eigenschaften und kleine Wörter",
+        "each = jeder, jede, jedes (einzelne) · terrible = schrecklich, furchtbar · wise = weise"
+      ],
+      [
+        "Sätze und Wendungen",
+        "May I ask? = Darf ich fragen? · in surprise = voller Überraschung"
+      ]
+    ],
+    "hof": [
+      [
+        "Nomen",
+        "courtyard = Innenhof · beard = Bart · direction = Richtung · chest = Brust, Brustkorb · statue = Statue · toe = Zeh · doubt = Zweifel"
+      ],
+      [
+        "Verben",
+        "(to) walk off = weglaufen · (to) be going on = passieren, im Gang sein · (to) beat = schlagen; klopfen · (to) mind = etwas dagegen haben"
+      ],
+      [
+        "Eigenschaften und kleine Wörter",
+        "inside sth. = innerhalb von etwas"
+      ],
+      [
+        "Sätze und Wendungen",
+        "Stop it! (infml) = Hör auf (damit)! · that one = diese(r, s)"
+      ]
+    ],
+    "laerm": [
+      [
+        "Nomen",
+        "reason = Grund, Begründung · noise = Geräusch; Lärm · bank = Böschung · rest = Ruhe, Pause · Glevum = römisches Militärlager in Westengland · commander = Kommandant, Kommandantin · fort = Festung, Militärlager"
+      ],
+      [
+        "Verben",
+        "(to) kill = töten · (to) realize sth. = etwas erkennen · (to) build = bauen · (to) rest = sich ausruhen · (to) get comfortable = sich es bequem machen · (to) steal = stehlen"
+      ],
+      [
+        "Eigenschaften und kleine Wörter",
+        "noisy = laut, lärmend, voller Lärm · wide = breit · serious = ernst; ernsthaft · during = während (vor einem Nomen)"
+      ],
+      [
+        "Sätze und Wendungen",
+        "We mustn't be in the forest. = Wir dürfen nicht im Wald sein. · worth a lot of money = viel Geld wert"
+      ]
+    ],
+    "geheimnis": [
+      [
+        "Nomen",
+        "secret = Geheimnis · ice = Eis · Jupiter = Jupiter · wife = Ehefrau · wig = Perücke · attack = Angriff, Attacke"
+      ],
+      [
+        "Verben",
+        "(to) scream = schreien · (to) knock sb. down = jn. niederschlagen · (to) carry sb. off = jn. wegtragen · (to) tie sb. up = jn. festbinden"
+      ],
+      [
+        "Sätze und Wendungen",
+        "from behind = von hinten"
+      ]
+    ],
+    "seil": [
+      [
+        "Nomen",
+        "rope = Seil · tunnel = Tunnel · role = Rolle (in einem Theaterstück, Film) · sculptor = Bildhauer, Bildhauerin · copy = Kopie"
+      ],
+      [
+        "Verben",
+        "(to) pull sth. tight = etwas festziehen · (to) add = hinzufügen · (to) scare sb. = jn. erschrecken; jm. Angst machen · (to) make sb. believe sth. = jn. dazu bringen, etwas zu glauben"
+      ],
+      [
+        "Eigenschaften und kleine Wörter",
+        "several = mehrere, verschiedene · real = echt, wirklich"
+      ],
+      [
+        "Sätze und Wendungen",
+        "You're alive. = Du bist am Leben. · something else = etwas anderes"
+      ]
+    ],
+    "koenig": [
+      [
+        "Nomen",
+        "entrance = Eingang · servant = Diener, Dienerin · proof (no pl) = Beweis(e) · order = Befehl · king = König · prince = Prinz · princess = Prinzessin · blood = Blut · crown = Krone · mate (infml) = Kumpel"
+      ],
+      [
+        "Verben",
+        "(to) get down = absteigen · (to) question sb. = jm. Fragen stellen · (to) arrest = verhaften, festnehmen"
+      ],
+      [
+        "Eigenschaften und kleine Wörter",
+        "loyal = loyal, treu ergeben · royal = königlich"
+      ],
+      [
+        "Sätze und Wendungen",
+        "Let us go. = Lassen Sie uns gehen."
+      ]
+    ],
+    "schluss": [
+      [
+        "Nomen",
+        "kiss = Kuss · cast = Besetzung; Mitwirkende (Theaterstück, Film) · consonant = Konsonant, Mitlaut · interview = Interview · skill = Fertigkeit · vowel = Vokal, Selbstlaut"
+      ],
+      [
+        "Verben",
+        "(to) write sth. down = etwas aufschreiben · (to) hand sth. in = etwas abgeben; etwas einreichen"
+      ],
+      [
+        "Eigenschaften und kleine Wörter",
+        "dear = liebe(r, s) · finally = endlich, schließlich · half = halb-"
+      ]
     ]
-  }
+  },
+  "resources": [
+    {
+      "title": "Abschlusstest Wortschatz",
+      "desc": "Alle 229 Wörter zum Ausdrucken, 11 Seiten. Auf Papier schreiben und danach mit einem Erwachsenen auswerten.",
+      "href": "files/access-2-unit-6-abschlusstest.pdf"
+    }
+  ]
 }
