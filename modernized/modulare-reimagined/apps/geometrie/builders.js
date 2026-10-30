@@ -1,5 +1,6 @@
 // Erzeugt Geometrie-Fragen (Herkunft: legacy/modulare/apps/geometrie/builders.js). Rechenaufgaben mit Zufallswerten,
-// dazu Begriffs- und Konstruktionsfragen als feste Auswahl. Die Reihenfolge der Zufallsaufrufe entspricht der Legacy-Fassung.
+// dazu Begriffs- und Konstruktionsfragen als feste Auswahl. Seit der Inhaltsprüfung vom 2026-10-30 weichen einige Erzeuger bewusst
+// von der Legacy-Fassung ab, der Vergleich analysis/modulare/dual/geometrie_dual.mjs gilt deshalb nicht mehr.
 //
 // Schuld 6 (Endlosschleife): Ein Erzeuger, der keine Aufgabe mit drei falschen Antworten findet, bricht nach
 // MAX_TRIES Versuchen mit einer Fehlermeldung ab. Die Seite zeigt dann "Die Aufgaben konnten nicht erzeugt werden."
@@ -28,10 +29,17 @@ export function init({ data, manifest }) {
 }
 
 const D = '°';
+// Längen und Winkel sind positiv. Sonst stünde bei kleinen Lösungen "−8 cm" unter den Optionen.
+const positive = (value, extras, rng) => {
+  const found = nearby(value, extras, rng).filter((v) => v > 0);
+  for (let d = 1; found.length < 3; d++) if (!found.includes(value + d)) found.push(value + d);
+  return found;
+};
+
 // Numerische Aufgabe. extras sind bevorzugte falsche Zahlen, die übrigen Plätze füllt nearby() mit rng.
 const num = ({ value, prompt, why, label, extras = [], unit = '' }, rng) => ({
   prompt, answer: fmt(value) + unit, value, numeric: true, why, label,
-  wrong: nearby(value, extras, rng).map((v) => fmt(v) + unit), unit
+  wrong: positive(value, extras, rng).map((v) => fmt(v) + unit), unit
 });
 const words = (prompt, answer, wrong, why, label) => ({ prompt, answer, wrong, why, label, choiceOnly: true });
 
@@ -58,7 +66,7 @@ function mitteStrecke(rng) {
 function zirkelRadius(rng) {
   const ab = pick([4, 6, 8, 10], rng), h = ab / 2;
   return words(`Du konstruierst die Mittelsenkrechte der Strecke AB mit AB = ${ab} cm. Welchen Zirkelradius darfst du einstellen?`,
-    `mehr als ${h} cm`, [`genau ${h} cm`, `weniger als ${h} cm`, `genau ${ab * 2} cm, sonst nichts`],
+    `mehr als ${h} cm`, [`genau ${h} cm`, `weniger als ${h} cm`, `nur genau ${ab} cm`],
     `Die Kreisbögen um A und B müssen sich in zwei Punkten schneiden. Das klappt nur, wenn der Radius größer ist als die Hälfte der Strecke (${h} cm). Bei genau ${h} cm berühren sich die Bögen nur in M, bei weniger treffen sie sich gar nicht.`, 'Konstruktion');
 }
 
@@ -91,16 +99,24 @@ function dreieckSeiten(rng) {
     if (++tries > MAX_TRIES) throw new RangeError(`Keine Seitenlängen für ein Dreieck nach ${MAX_TRIES} Versuchen`);
     a = rnd(3, 9, rng); b = rnd(3, 9, rng); c = rnd(3, 9, rng);
   } while (a + b <= c || a + c <= b || b + c <= a);
-  return words(`Ein Dreieck hat die Seiten a = ${a} cm, b = ${b} cm und c = ${c} cm. Wie viele Dreiecke gibt es dazu?`, 'genau eines (bis auf Spiegelung und Drehung)',
-    ['kein einziges', 'unendlich viele', 'genau zwei verschiedene'],
-    `Bei drei Seiten (SSS) gibt es höchstens ein Dreieck, und weil jede Seite kürzer ist als die beiden anderen zusammen, gibt es auch eines.`, 'Eindeutigkeit');
+  return words(`Gegeben sind die Seiten a = ${a} cm, b = ${b} cm und c = ${c} cm. Wie viele verschiedene Dreiecke passen dazu?`, 'genau eines',
+    ['keines', 'unendlich viele', 'genau zwei'],
+    `Bei drei Seiten (SSS) gibt es höchstens ein Dreieck, gespiegelte und gedrehte Lagen zählen nicht als neues Dreieck. Weil jede Seite kürzer ist als die beiden anderen zusammen, gibt es auch eines.`, 'Eindeutigkeit');
 }
 
 function dreieckUngleichung(rng) {
-  const a = rnd(2, 6, rng), b = rnd(2, 6, rng), c = a + b + rnd(1, 4, rng);
-  return words(`Kann man ein Dreieck mit a = ${a} cm, b = ${b} cm und c = ${c} cm zeichnen?`, 'Nein, a + b ist nicht größer als c',
-    ['Ja, mit SSS geht es immer', 'Ja, aber nur mit einem Winkelmesser', 'Ja, wenn man c etwas kürzer zeichnet'],
-    `Die beiden kurzen Seiten ${a} cm und ${b} cm sind zusammen nur ${a + b} cm lang und reichen nicht bis zur Seite c = ${c} cm. Die Kreisbögen schneiden sich nicht. Zwei Seiten müssen zusammen immer länger sein als die dritte.`, 'Dreiecksungleichung');
+  // Mal geht es, mal nicht. Wäre die Antwort immer Nein, müsste niemand rechnen. c ist stets die längste Seite.
+  const a = rnd(2, 6, rng), b = rnd(2, 6, rng), c = a + b + pick([-1, 0, 1, 3], rng);
+  const yes = 'Ja, die zwei kürzeren Seiten sind zusammen länger als die längste.';
+  const no = 'Nein, die zwei kürzeren Seiten sind zusammen nicht länger als die längste.';
+  const possible = c < a + b;
+  const why = possible
+    ? `${a} cm + ${b} cm = ${a + b} cm, das ist mehr als c = ${c} cm. Die Kreisbögen schneiden sich, das Dreieck lässt sich zeichnen.`
+    : c === a + b
+      ? `${a} cm + ${b} cm ergeben genau c = ${c} cm. Die Bögen berühren sich nur auf der Strecke, es entsteht kein Dreieck. Zwei Seiten müssen zusammen immer länger sein als die dritte.`
+      : `Die Seiten ${a} cm und ${b} cm sind zusammen nur ${a + b} cm lang und reichen nicht bis zur Seite c = ${c} cm. Die Kreisbögen schneiden sich nicht. Zwei Seiten müssen zusammen immer länger sein als die dritte.`;
+  return words(`Kann man ein Dreieck mit a = ${a} cm, b = ${b} cm und c = ${c} cm zeichnen?`, possible ? yes : no,
+    [possible ? no : yes, 'Ja, drei Seiten ergeben immer ein Dreieck.', 'Nein, alle drei Seiten müssen gleich lang sein.'], why, 'Dreiecksungleichung');
 }
 
 function kongruenzsatz(rng) {
@@ -111,7 +127,7 @@ function kongruenzsatz(rng) {
 
 function eindeutig(rng) {
   const [given, ans, why] = pick(EINDEUTIG, rng);
-  const all = ['genau ein Dreieck', 'höchstens zwei Dreiecke möglich', 'unendlich viele Dreiecke (verschieden groß)', 'kein Dreieck'];
+  const all = ['genau ein Dreieck', 'zwei verschiedene Dreiecke', 'unendlich viele Dreiecke', 'kein Dreieck'];
   return words(`Wie viele Dreiecke passen zu den Angaben? ${given}`, ans, all.filter((o) => o !== ans), why, 'Eindeutigkeit');
 }
 
@@ -125,11 +141,15 @@ const ANGLE_KINDS = [
 ];
 
 function winkelPaar(rng) {
-  const [kind, fn, why] = pick(ANGLE_KINDS, rng), a = rnd(2, 17, rng) * 10, v = fn(a);
+  const [kind, fn, why] = pick(ANGLE_KINDS, rng);
+  // Bei 90° sind alle vier Winkel gleich, da gibt es nichts zu unterscheiden.
+  let a = 90;
+  while (a === 90) a = rnd(2, 17, rng) * 10;
+  const v = fn(a);
   const needsParallel = kind === 'Stufenwinkel' || kind === 'Wechselwinkel';
   return num({
-    value: v, prompt: `${needsParallel ? 'Zwei parallele Geraden werden von einer dritten geschnitten.' : 'Zwei Geraden schneiden sich.'} Ein Winkel misst ${a}${D}. Wie groß ist der ${kind}?`,
-    why: `${why} Also ${fmt(v)}${D}.`, label: 'Winkel', extras: [180 - a, a, 90 - (a % 90)].filter((x) => x > 0), unit: D
+    value: v, prompt: `${needsParallel ? 'Zwei parallele Geraden werden von einer dritten geschnitten.' : 'Zwei Geraden schneiden sich.'} Ein Winkel misst ${a}${D}. Wie groß ist sein ${kind}?`,
+    why: `${why} Also ${fmt(v)}${D}.`, label: 'Winkel', extras: [180 - a, a, 360 - a, a + 10], unit: D
   }, rng);
 }
 
@@ -182,10 +202,10 @@ function thalesRadius(rng) {
 
 function umkreisLage(rng) {
   const kind = pick(['spitzwinkliges', 'rechtwinkliges', 'stumpfwinkliges'], rng);
-  const ans = { spitzwinkliges: 'innerhalb des Dreiecks', rechtwinkliges: 'in der Mitte der Hypotenuse', stumpfwinkliges: 'außerhalb des Dreiecks' }[kind];
-  const all = ['innerhalb des Dreiecks', 'in der Mitte der Hypotenuse', 'außerhalb des Dreiecks', 'immer im Schwerpunkt'];
+  const ans = { spitzwinkliges: 'innerhalb des Dreiecks', rechtwinkliges: 'auf einer Seite des Dreiecks', stumpfwinkliges: 'außerhalb des Dreiecks' }[kind];
+  const all = ['innerhalb des Dreiecks', 'auf einer Seite des Dreiecks', 'außerhalb des Dreiecks', 'in einer Ecke des Dreiecks'];
   return words(`Ein ${kind} Dreieck: Wo liegt der Mittelpunkt des Umkreises?`, ans, all.filter((o) => o !== ans),
-    { spitzwinkliges: 'Bei drei spitzen Winkeln treffen sich die Mittelsenkrechten im Inneren.', rechtwinkliges: 'Beim rechten Winkel ist die Hypotenuse Durchmesser des Thaleskreises, der Mittelpunkt liegt auf ihr.', stumpfwinkliges: 'Beim stumpfen Winkel wandert der Mittelpunkt aus dem Dreieck hinaus.' }[kind], 'Lage');
+    { spitzwinkliges: 'Bei drei spitzen Winkeln treffen sich die Mittelsenkrechten im Inneren.', rechtwinkliges: 'Beim rechten Winkel ist die Hypotenuse Durchmesser des Thaleskreises, der Mittelpunkt liegt in ihrer Mitte.', stumpfwinkliges: 'Beim stumpfen Winkel wandert der Mittelpunkt aus dem Dreieck hinaus.' }[kind], 'Lage');
 }
 
 // --- Größen durch Konstruieren bestimmen (Maßstab) ------------------------------------------------------
@@ -196,16 +216,18 @@ const meters = (cm, scale) => (cm * scale) / 100;
 function wirklichkeit(rng) {
   const n = pick(SCALES, rng), d = rnd(2, 9, rng), m = meters(d, n);
   return num({
-    value: m, prompt: `Eine Zeichnung hat den Maßstab 1 : ${n}. Eine Strecke ist darin ${d} cm lang. Wie lang ist sie in Wirklichkeit?`,
+    value: m, prompt: `Eine Zeichnung hat den Maßstab 1 : ${n}. Eine Strecke ist darin ${d} cm lang. Wie viele Meter sind das in Wirklichkeit?`,
     why: `Maßstab 1 : ${n} heißt: 1 cm in der Zeichnung sind ${n} cm in Wirklichkeit. ${d} · ${n} cm = ${d * n} cm = ${fmt(m)} m.`,
     label: 'Maßstab', extras: [d * n, m * 10, m / 10, d + n / 100], unit: ' m'
   }, rng);
 }
 
 function zeichnung(rng) {
-  const n = pick([50, 100, 200], rng), d = rnd(3, 12, rng), real = meters(d, n);
+  // Gegenstand und Maßstab passen zusammen. Bei 1 : 50 käme sonst ein Haus von 1,5 m heraus.
+  const [n, thing, min] = pick([[50, 'Ein Zimmer', 6], [100, 'Ein Boot', 3], [200, 'Ein Haus', 4]], rng);
+  const d = rnd(min, 12, rng), real = meters(d, n);
   return num({
-    value: d, prompt: `Ein Haus ist ${fmt(real)} m lang. Du zeichnest es im Maßstab 1 : ${n}. Wie lang ist die Strecke in der Zeichnung?`,
+    value: d, prompt: `${thing} ist ${fmt(real)} m lang. Du zeichnest es im Maßstab 1 : ${n}. Wie viele Zentimeter lang wird es in der Zeichnung?`,
     why: `${fmt(real)} m = ${real * 100} cm. Im Maßstab 1 : ${n} teilst du durch ${n}: ${real * 100} cm : ${n} = ${d} cm.`,
     label: 'Maßstab', extras: [real * 100, d * 10, real * n, d + 2], unit: ' cm'
   }, rng);

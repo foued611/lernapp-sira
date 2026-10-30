@@ -1,0 +1,850 @@
+{
+  "pflanzen-tierzelle": {
+    "goal": "Du kannst die Bestandteile von Pflanzen- und Tierzellen nennen und ihre Aufgaben beschreiben.",
+    "tldr": [
+      "Alle Lebewesen bestehen aus Zellen. Pflanzen- und Tierzellen haben Zellmembran, Zellplasma und Zellkern.",
+      "Pflanzenzellen haben zusätzlich Zellwand, Chloroplasten und eine große Vakuole."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Haus mit Zaun",
+      "html": "<p>Die Zellmembran ist wie ein Gartentor: Sie lässt Wichtiges hinein und hinaus. Der Zellkern ist das Büro mit den Bauplänen. Die Zellwand der Pflanze ist zusätzlich eine feste Mauer um das Grundstück.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Bestandteil",
+            "Pflanzenzelle",
+            "Tierzelle"
+          ],
+          [
+            [
+              "Zellkern",
+              "ja",
+              "ja"
+            ],
+            [
+              "Zellmembran",
+              "ja",
+              "ja"
+            ],
+            [
+              "Zellwand",
+              "ja",
+              "nein"
+            ],
+            [
+              "Chloroplasten",
+              "ja",
+              "nein"
+            ],
+            [
+              "Große Vakuole",
+              "ja",
+              "nein"
+            ]
+          ],
+          [
+            1.6,
+            1,
+            1
+          ],
+          "Tabelle: Welche Bestandteile Pflanzen- und Tierzellen haben"
+        ]
+      },
+      "caption": "Chloroplasten, Zellwand und große Vakuole fehlen der Tierzelle."
+    },
+    "steps": {
+      "title": "So prüfst du eine Zelle",
+      "items": [
+        "Suche den Zellkern: Er steuert die Zelle. Ihn haben beide Zelltypen.",
+        "Frage: Gibt es eine feste Zellwand oder grüne Chloroplasten? Dann ist es eine Pflanzenzelle.",
+        "Ordne jedem Bestandteil seine Aufgabe zu, zum Beispiel Zellmembran gleich Stoffaustausch."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Zellwand und Zellmembran sind nicht dasselbe. Die Zellwand gibt der Pflanzenzelle Halt. Die Zellmembran liegt innen daran und regelt, was hinein und hinaus darf.</p>"
+    },
+    "rule": "Pflanzenzellen haben Zellwand, Chloroplasten und eine große Vakuole. Tier- und Pflanzenzellen haben Zellkern, Zellplasma, Zellmembran und Mitochondrien.",
+    "check": {
+      "q": "Welcher Bestandteil kommt nur in Pflanzenzellen vor?",
+      "options": [
+        {
+          "id": "a",
+          "html": "Chloroplasten"
+        },
+        {
+          "id": "b",
+          "html": "Zellkern"
+        },
+        {
+          "id": "c",
+          "html": "Zellmembran"
+        }
+      ],
+      "answer": "a",
+      "why": "Chloroplasten enthalten den grünen Farbstoff für die Fotosynthese. Tierzellen haben sie nicht."
+    }
+  },
+  "mikroskop": {
+    "goal": "Du kannst die Teile eines Mikroskops benennen und die Gesamtvergrößerung berechnen.",
+    "tldr": [
+      "Ein Mikroskop vergrößert in zwei Stufen: durch das Okular und durch das Objektiv.",
+      "Die Gesamtvergrößerung ist das Produkt beider Vergrößerungen."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: eine Lupe hinter der Lupe",
+      "html": "<p>Das Objektiv macht ein vergrößertes Bild vom Präparat. Durch das Okular schaust du dir dieses Bild noch einmal vergrößert an, wie mit einer zweiten Lupe.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "flowDiagram",
+        "args": [
+          [
+            "Präparat|(dünn und durchsichtig)",
+            "Objektiv|(erste Vergrößerung)",
+            "Okular|(zweite Vergrößerung)",
+            "Auge|(sieht das Bild)"
+          ],
+          "Ablauf: Vom Präparat über Objektiv und Okular zum Auge"
+        ]
+      },
+      "caption": "Licht geht durch das Präparat, danach durch Objektiv und Okular."
+    },
+    "steps": {
+      "title": "So mikroskopierst du",
+      "items": [
+        "Lege das dünne Präparat auf den Objektträger, decke es mit dem Deckglas ab und lege beides auf den Tisch. Stelle am Revolver das kleinste Objektiv ein.",
+        "Stelle mit dem Grobtrieb scharf, dann mit dem Feintrieb.",
+        "Wechsle erst danach zum stärkeren Objektiv und stelle nur noch mit dem Feintrieb nach.",
+        "Zeichne, was du siehst: mit spitzem Bleistift und klaren Linien, ohne Schraffur. Beschrifte mit geraden Linien."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Mit dem Grobtrieb bei starker Vergrößerung scharf stellen kann das Objektiv auf das Präparat drücken. Beim starken Objektiv deshalb nur den Feintrieb benutzen.</p>"
+    },
+    "rule": "Gesamtvergrößerung gleich Okular mal Objektiv. Beginne immer mit dem kleinsten Objektiv.",
+    "check": {
+      "q": "Okular 10-fach, Objektiv 40-fach. Wie groß ist die Gesamtvergrößerung?",
+      "options": [
+        {
+          "id": "a",
+          "html": "400-fach"
+        },
+        {
+          "id": "b",
+          "html": "50-fach"
+        },
+        {
+          "id": "c",
+          "html": "4-fach"
+        }
+      ],
+      "answer": "a",
+      "why": "Du multiplizierst: 10 mal 40 ergibt 400. Addieren wäre falsch."
+    }
+  },
+  "zelle-organismus": {
+    "goal": "Du kannst die Organisationsstufen vom Organismus bis zur Zelle ordnen und erklären, wie Lebewesen wachsen.",
+    "tldr": [
+      "Gleiche Zellen bilden ein Gewebe, mehrere Gewebe ein Organ, Organe ein Organsystem.",
+      "Lebewesen wachsen, weil sich Zellen teilen. Pflanzenzellen strecken sich außerdem.",
+      "Manche Lebewesen bestehen aus nur einer Zelle. Sie heißen Einzeller, ein Beispiel ist das Pantoffeltierchen."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: eine Fußballmannschaft",
+      "html": "<p>Ein Spieler ist wie eine Zelle. Die Abwehr ist wie ein Gewebe aus gleichen Spielern. Die ganze Mannschaft erreicht etwas, was kein Einzelner schafft, so wie ein Organismus.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "flowDiagram",
+        "args": [
+          [
+            "Zelle",
+            "Gewebe",
+            "Organ",
+            "Organsystem",
+            "Organismus"
+          ],
+          "Stufen von der Zelle bis zum Organismus"
+        ]
+      },
+      "caption": "Von links nach rechts wird die Ordnung größer und komplexer."
+    },
+    "steps": {
+      "title": "So ordnest du Beispiele",
+      "items": [
+        "Frage: Ist es eine einzelne Zelle, Zellen derselben Art oder ein Teil mit einer Aufgabe?",
+        "Muskelzellen bilden Muskelgewebe, Muskelgewebe mit anderen Geweben bildet das Organ Herz.",
+        "Mehrere Organe mit gemeinsamer Aufgabe sind ein Organsystem, zum Beispiel das Verdauungssystem."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Ein Organ besteht nicht nur aus einem Gewebe. Das Herz hat Muskelgewebe, aber auch Bindegewebe und Nervengewebe.</p>"
+    },
+    "rule": "Zelle, Gewebe, Organ, Organsystem, Organismus. Wachstum entsteht durch Zellteilung, bei Pflanzen auch durch Zellstreckung.",
+    "check": {
+      "q": "Welche Reihenfolge stimmt?",
+      "options": [
+        {
+          "id": "a",
+          "html": "Zelle, Gewebe, Organ, Organsystem"
+        },
+        {
+          "id": "b",
+          "html": "Organ, Zelle, Gewebe, Organsystem"
+        },
+        {
+          "id": "c",
+          "html": "Gewebe, Zelle, Organsystem, Organ"
+        }
+      ],
+      "answer": "a",
+      "why": "Die Stufen werden von klein nach groß geordnet: Zellen bilden Gewebe, Gewebe bilden Organe."
+    }
+  },
+  "fotosynthese": {
+    "goal": "Du kannst die Fotosynthese mit einer Wortgleichung beschreiben und sagen, wo sie stattfindet.",
+    "tldr": [
+      "Bei der Fotosynthese stellen Pflanzen aus Kohlenstoffdioxid und Wasser mithilfe von Licht Traubenzucker her. Dabei entsteht Sauerstoff.",
+      "Sie läuft in den Chloroplasten ab. Das Chlorophyll fängt das Licht ein."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: eine Solarfabrik",
+      "html": "<p>Ein Blatt arbeitet wie eine kleine Fabrik. Die Sonne liefert den Strom, Wasser und Kohlenstoffdioxid sind die Rohstoffe, Traubenzucker ist das Produkt und Sauerstoff entsteht als Abgas.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "flowDiagram",
+        "args": [
+          [
+            "Kohlenstoffdioxid|+ Wasser",
+            "Licht|+ Chlorophyll",
+            "Traubenzucker|+ Sauerstoff"
+          ],
+          "Fotosynthese: Aus Kohlenstoffdioxid und Wasser entstehen mit Licht Traubenzucker und Sauerstoff"
+        ]
+      },
+      "caption": "Links stehen die Ausgangsstoffe, rechts die Produkte."
+    },
+    "steps": {
+      "title": "So gehst du vor",
+      "items": [
+        "Nenne die Ausgangsstoffe: Kohlenstoffdioxid aus der Luft, das durch die Spaltöffnungen ins Blatt kommt, und Wasser aus dem Boden.",
+        "Nenne, was gebraucht wird: Licht und Chlorophyll in den Chloroplasten.",
+        "Nenne die Produkte: Traubenzucker und Sauerstoff. Traubenzucker wird oft als Stärke gespeichert."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Pflanzen atmen auch. Auch sie veratmen Traubenzucker, nur dass bei Licht die Fotosynthese viel stärker ist.</p>"
+    },
+    "rule": "Kohlenstoffdioxid plus Wasser ergibt mit Licht und Chlorophyll Traubenzucker plus Sauerstoff.",
+    "check": {
+      "q": "Welcher Stoff entsteht bei der Fotosynthese als Nebenprodukt?",
+      "options": [
+        {
+          "id": "a",
+          "html": "Sauerstoff"
+        },
+        {
+          "id": "b",
+          "html": "Kohlenstoffdioxid"
+        },
+        {
+          "id": "c",
+          "html": "Wasserstoff"
+        }
+      ],
+      "answer": "a",
+      "why": "Aus Wasser und Kohlenstoffdioxid entsteht Traubenzucker. Dabei wird Sauerstoff abgegeben."
+    }
+  },
+  "zellatmung": {
+    "goal": "Du kannst die Zellatmung beschreiben und von der Atmung und der Fotosynthese unterscheiden.",
+    "tldr": [
+      "Bei der Zellatmung wird Traubenzucker mit Sauerstoff abgebaut. Dabei wird Energie nutzbar gemacht.",
+      "Kohlenstoffdioxid und Wasser entstehen als Abfallstoffe. Pflanzenzellen betreiben Zellatmung genauso wie Tierzellen."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Ofen mit Stromerzeuger",
+      "html": "<p>Wie ein Ofen Holz mit Sauerstoff verbrennt, baut die Zelle Traubenzucker mit Sauerstoff ab. Nur geschieht das kontrolliert und in kleinen Schritten, und die Energie wird gleich nutzbar gemacht.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "flowDiagram",
+        "args": [
+          [
+            "Traubenzucker|+ Sauerstoff",
+            "Mitochondrien|(Zellatmung)",
+            "Kohlenstoffdioxid|+ Wasser + Energie"
+          ],
+          "Zellatmung: Aus Traubenzucker und Sauerstoff entstehen Kohlenstoffdioxid, Wasser und nutzbare Energie"
+        ]
+      },
+      "caption": "Die Zellatmung ist praktisch die Umkehrung der Fotosynthese."
+    },
+    "steps": {
+      "title": "So unterscheidest du",
+      "items": [
+        "Atmung heißt Luft ein- und ausatmen: Das ist der Gasaustausch in der Lunge.",
+        "Zellatmung läuft in den Mitochondrien der Zellen ab und baut Traubenzucker ab.",
+        "Die Fotosynthese speichert Energie in Traubenzucker, die Zellatmung macht sie wieder nutzbar."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Zellatmung ist nicht dasselbe wie Atmung. Der Gasaustausch in der Lunge bringt Sauerstoff ins Blut. Die Zellatmung findet erst in den Zellen statt.</p>"
+    },
+    "rule": "Traubenzucker plus Sauerstoff ergibt Kohlenstoffdioxid plus Wasser, und dabei wird Energie nutzbar. Ort: Mitochondrien.",
+    "check": {
+      "q": "Wo findet die Zellatmung statt?",
+      "options": [
+        {
+          "id": "a",
+          "html": "In den Mitochondrien"
+        },
+        {
+          "id": "b",
+          "html": "In den Chloroplasten"
+        },
+        {
+          "id": "c",
+          "html": "Nur in der Lunge"
+        }
+      ],
+      "answer": "a",
+      "why": "Mitochondrien gibt es in Tier- und Pflanzenzellen. Dort wird Energie aus Traubenzucker nutzbar gemacht."
+    }
+  },
+  "naehrstoffe": {
+    "goal": "Du kannst Nährstoffe nach ihren Aufgaben ordnen und einfache Nachweise beschreiben.",
+    "tldr": [
+      "Kohlenhydrate und Fette liefern vor allem Energie, Proteine dienen vor allem dem Aufbau von Körperzellen.",
+      "Vitamine, Mineralstoffe, Wasser und Ballaststoffe braucht der Körper ebenfalls, sie liefern aber keine oder kaum Energie."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Haus bauen",
+      "html": "<p>Proteine sind wie Ziegel, aus ihnen wird der Körper gebaut. Kohlenhydrate sind der Brennstoff für den Alltag, Fette sind wie ein Heizöllager für später.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Nährstoff",
+            "Aufgabe",
+            "Beispiel"
+          ],
+          [
+            [
+              "Kohlenhydrate",
+              "Energie",
+              "Nudeln, Brot"
+            ],
+            [
+              "Fette",
+              "Energiespeicher",
+              "Öl, Nüsse"
+            ],
+            [
+              "Proteine",
+              "Baustoff",
+              "Fleisch, Linsen"
+            ]
+          ],
+          [
+            1.2,
+            1.2,
+            1.4
+          ],
+          "Tabelle: Aufgaben der drei Hauptnährstoffe"
+        ]
+      },
+      "caption": "Fett enthält pro Gramm etwa doppelt so viel Energie wie Kohlenhydrate."
+    },
+    "steps": {
+      "title": "So führst du einen Nachweis",
+      "items": [
+        "Stärke: Gib Iod-Kaliumiodid-Lösung auf das Lebensmittel. Blauviolett zeigt Stärke.",
+        "Fett: Reibe das Lebensmittel auf Papier. Bleibt nach dem Trocknen ein durchscheinender Fleck, ist Fett enthalten.",
+        "Notiere dein Ergebnis in einem Versuchsprotokoll."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Wasser ist kein Energielieferant, aber lebenswichtig. Vitamine und Mineralstoffe liefern ebenfalls keine Energie.</p>"
+    },
+    "rule": "Kohlenhydrate sind der schnelle Energielieferant, Fette der Speicher, Proteine der Baustoff.",
+    "check": {
+      "q": "Womit weist man Stärke nach?",
+      "options": [
+        {
+          "id": "a",
+          "html": "Iod-Kaliumiodid-Lösung"
+        },
+        {
+          "id": "b",
+          "html": "Fettfleck auf Papier"
+        },
+        {
+          "id": "c",
+          "html": "Kalkwasser"
+        }
+      ],
+      "answer": "a",
+      "why": "Iod färbt Stärke blauviolett. Der Fettfleck-Test ist für Fett, Kalkwasser für Kohlenstoffdioxid."
+    }
+  },
+  "verdauung": {
+    "goal": "Du kannst den Weg der Nahrung beschreiben und erklären, was Enzyme tun.",
+    "tldr": [
+      "Die Nahrung wird mechanisch zerkleinert und von Enzymen chemisch zerlegt, bis die Bausteine ins Blut aufgenommen werden können.",
+      "Enzyme wirken nach dem Schlüssel-Schloss-Prinzip: Jedes passt nur zu einem Stoff.",
+      "Im Magen tötet Salzsäure viele Bakterien ab. Im Dünndarm vergrößern Darmzotten die Oberfläche für die Aufnahme."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: Schere und Schlüssel",
+      "html": "<p>Kauen und Magenbewegungen zerkleinern wie eine Schere. Enzyme sind dagegen wie Schlüssel, die genau ein Schloss öffnen und so nur einen bestimmten Stoff zerlegen.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "flowDiagram",
+        "args": [
+          [
+            "Mund|Stärke wird gespalten",
+            "Magen|Proteine werden gespalten",
+            "Dünndarm|Fett, Stärke, Proteine, Aufnahme ins Blut",
+            "Dickdarm|Wasser wird entzogen"
+          ],
+          "Weg der Nahrung: Mund, Magen, Dünndarm, Dickdarm"
+        ]
+      },
+      "caption": "Im Dünndarm findet der Großteil der Verdauung und der Aufnahme ins Blut statt."
+    },
+    "steps": {
+      "title": "So erklärst du ein Enzym",
+      "items": [
+        "Nenne den Stoff, den das Enzym zerlegt, zum Beispiel Amylase und Stärke.",
+        "Sage: Das Enzym passt nur zu diesem Stoff, wie ein Schlüssel zu seinem Schloss.",
+        "Das Enzym bleibt erhalten und kann viele Teilchen zerlegen."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Enzyme sind keine Lebewesen und werden nicht verbraucht. Die Galle ist auch kein Enzym, sie hilft nur beim Fettabbau.</p>"
+    },
+    "rule": "Enzyme zerlegen Nährstoffe. Jedes Enzym passt nur zu einem Stoff. Aufgenommen werden die Bausteine im Dünndarm.",
+    "check": {
+      "q": "Welches Enzym zerlegt Stärke im Mund?",
+      "options": [
+        {
+          "id": "a",
+          "html": "Amylase"
+        },
+        {
+          "id": "b",
+          "html": "Lipase"
+        },
+        {
+          "id": "c",
+          "html": "Protease"
+        }
+      ],
+      "answer": "a",
+      "why": "Amylase im Speichel beginnt den Stärkeabbau. Lipase baut Fette ab, Protease Proteine."
+    }
+  },
+  "gesunde-ernaehrung": {
+    "goal": "Du kannst Merkmale einer ausgewogenen Ernährung nennen und begründen.",
+    "tldr": [
+      "Eine ausgewogene Ernährung liefert genug Energie, Baustoffe, Vitamine, Mineralstoffe und Wasser.",
+      "Wer viel verbraucht, braucht mehr Energie. Wer mehr isst, als er braucht, speichert den Rest als Fett."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Auto tanken",
+      "html": "<p>Ein Auto braucht passenden Treibstoff. Zu wenig bleibt liegen, zu viel läuft über. Der Körper ist ähnlich: Er braucht die richtige Menge und Mischung.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Meist essen",
+            "Mäßig essen",
+            "Selten essen"
+          ],
+          [
+            [
+              "Obst, Gemüse",
+              "Milch, Fleisch, Fisch",
+              "Süßes, Fettiges"
+            ],
+            [
+              "Vollkorn",
+              "Eier",
+              "Süße Getränke"
+            ]
+          ],
+          [
+            1,
+            1,
+            1
+          ],
+          "Tabelle: Was man oft, mäßig und selten essen sollte"
+        ]
+      },
+      "caption": "Wasser und ungesüßte Getränke sind die beste Wahl zum Trinken."
+    },
+    "steps": {
+      "title": "So bewertest du eine Mahlzeit",
+      "items": [
+        "Gibt es Obst oder Gemüse und etwas Vollkorn?",
+        "Enthält sie genug Proteine und nicht zu viel Fett oder Zucker?",
+        "Dazu ein Getränk ohne Zucker, am besten Wasser."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Gesund heißt nicht streng verbieten. Auch Süßes darf vorkommen, es sollte aber die Ausnahme sein.</p>"
+    },
+    "rule": "Ausgewogen essen: viel Pflanzliches, genug trinken, Zucker und Fett sparsam.",
+    "check": {
+      "q": "Welche Getränke sind am besten für den Durst?",
+      "options": [
+        {
+          "id": "a",
+          "html": "Wasser und ungesüßte Tees"
+        },
+        {
+          "id": "b",
+          "html": "Limonade"
+        },
+        {
+          "id": "c",
+          "html": "Energy-Drinks"
+        }
+      ],
+      "answer": "a",
+      "why": "Sie enthalten keinen Zucker. Süße Getränke liefern viel Energie, sättigen aber kaum."
+    }
+  },
+  "lunge": {
+    "goal": "Du kannst den Weg der Atemluft beschreiben und erklären, wie der Gasaustausch in den Lungenbläschen funktioniert.",
+    "tldr": [
+      "Die Atemluft strömt durch die Atemwege in die Lungenbläschen. Dort geht Sauerstoff ins Blut, Kohlenstoffdioxid wird abgegeben.",
+      "Das Zwerchfell und die Rippen bewegen den Brustraum und saugen die Luft ein.",
+      "Flimmerhärchen in den Atemwegen befördern Schleim mit Staub nach oben."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Blasebalg",
+      "html": "<p>Wenn du einen Blasebalg auseinanderziehst, strömt Luft hinein. Genauso vergrößert dein Zwerchfell beim Einatmen den Brustraum, und der Unterdruck zieht die Luft in die Lunge.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "flowDiagram",
+        "args": [
+          [
+            "Nase und Mund",
+            "Luftröhre",
+            "Bronchien",
+            "Lungenbläschen|Gasaustausch"
+          ],
+          "Weg der Atemluft von der Nase bis zu den Lungenbläschen"
+        ]
+      },
+      "caption": "In den Lungenbläschen tritt Sauerstoff über sehr dünne Wände ins Blut über."
+    },
+    "steps": {
+      "title": "So beschreibst du das Einatmen",
+      "items": [
+        "Das Zwerchfell zieht sich zusammen und flacht ab, die Rippen heben sich.",
+        "Der Brustraum wird größer, der Druck in der Lunge sinkt.",
+        "Luft strömt von außen in die Lunge. Beim Ausatmen läuft alles umgekehrt."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Die Lunge kann sich nicht selbst aufpumpen. Zwerchfell und Rippenmuskeln bewegen den Brustraum.</p>"
+    },
+    "rule": "Gasaustausch: Sauerstoff geht ins Blut, Kohlenstoffdioxid aus dem Blut in die Lunge. Viele Lungenbläschen vergrößern die Oberfläche.",
+    "check": {
+      "q": "Was passiert beim Einatmen?",
+      "options": [
+        {
+          "id": "a",
+          "html": "Das Zwerchfell flacht ab und der Brustraum wird größer"
+        },
+        {
+          "id": "b",
+          "html": "Das Zwerchfell wölbt sich nach oben"
+        },
+        {
+          "id": "c",
+          "html": "Die Lunge pumpt sich selbst auf"
+        }
+      ],
+      "answer": "a",
+      "why": "Durch das Abflachen des Zwerchfells entsteht Unterdruck und Luft strömt ein."
+    }
+  },
+  "blut": {
+    "goal": "Du kannst die Bestandteile des Blutes und ihre Aufgaben nennen.",
+    "tldr": [
+      "Blut besteht aus Blutplasma und Blutzellen: roten und weißen Blutzellen sowie Blutplättchen.",
+      "Es transportiert Stoffe, wehrt Krankheitserreger ab und verschließt Wunden."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Lieferdienst",
+      "html": "<p>Das Plasma ist die Straße, die roten Blutzellen sind Lieferwagen für Sauerstoff, die weißen Blutzellen sind die Polizei, und die Blutplättchen sind der Bautrupp für Reparaturen.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Bestandteil",
+            "Aufgabe"
+          ],
+          [
+            [
+              "Blutplasma",
+              "Transport von Nährstoffen und Abfällen"
+            ],
+            [
+              "Rote Blutzellen",
+              "Sauerstoff transportieren"
+            ],
+            [
+              "Weiße Blutzellen",
+              "Krankheitserreger abwehren"
+            ],
+            [
+              "Blutplättchen",
+              "Wunde verschließen"
+            ]
+          ],
+          [
+            1.2,
+            2
+          ],
+          "Tabelle: Bestandteile des Blutes und ihre Aufgaben"
+        ]
+      },
+      "caption": "Der rote Farbstoff Hämoglobin bindet den Sauerstoff."
+    },
+    "steps": {
+      "title": "So ordnest du Aufgaben zu",
+      "items": [
+        "Frage: Geht es um Transport, Abwehr oder Wundverschluss?",
+        "Transport von Sauerstoff: rote Blutzellen mit Hämoglobin.",
+        "Abwehr: weiße Blutzellen. Wundverschluss: Blutplättchen."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Blut ist nicht nur Sauerstofftransport. Es transportiert auch Nährstoffe, Kohlenstoffdioxid, Wärme und wehrt Erreger ab.</p>"
+    },
+    "rule": "Blutplasma, rote und weiße Blutzellen, Blutplättchen. Hämoglobin bindet Sauerstoff.",
+    "check": {
+      "q": "Welche Zellen transportieren Sauerstoff?",
+      "options": [
+        {
+          "id": "a",
+          "html": "Rote Blutzellen"
+        },
+        {
+          "id": "b",
+          "html": "Weiße Blutzellen"
+        },
+        {
+          "id": "c",
+          "html": "Blutplättchen"
+        }
+      ],
+      "answer": "a",
+      "why": "Rote Blutzellen enthalten Hämoglobin, der Sauerstoff bindet."
+    }
+  },
+  "herz-kreislauf": {
+    "goal": "Du kannst den Doppelkreislauf beschreiben und den Bau des Herzens erklären.",
+    "tldr": [
+      "Das Herz pumpt das Blut durch zwei Kreisläufe: den Lungenkreislauf und den Körperkreislauf.",
+      "Arterien führen das Blut vom Herzen weg, Venen zum Herzen hin."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: eine Acht",
+      "html": "<p>Zeichne eine Acht: In der einen Schlaufe fließt das Blut zur Lunge und zurück, in der anderen durch den Körper und zurück. In der Mitte, wo sich die Linien kreuzen, liegt das Herz.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "flowDiagram",
+        "args": [
+          [
+            "Herz|(rechte Seite)",
+            "Lunge|(Sauerstoff aufnehmen)",
+            "Herz|(linke Seite)",
+            "Körper|(Sauerstoff abgeben)"
+          ],
+          "Doppelkreislauf: Herz, Lunge, Herz, Körper"
+        ]
+      },
+      "caption": "Das Herz hat zwei Hälften, jede mit Vorhof und Kammer. Klappen sorgen für die Richtung des Blutflusses."
+    },
+    "steps": {
+      "title": "So verfolgst du das Blut",
+      "items": [
+        "Sauerstoffarmes Blut kommt aus dem Körper in die rechte Herzhälfte und wird zur Lunge gepumpt.",
+        "In der Lunge nimmt es Sauerstoff auf und fließt in die linke Herzhälfte.",
+        "Die linke Kammer pumpt es durch die Aorta in den Körper."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Arterien führen nicht immer sauerstoffreiches Blut. Es kommt auf die Richtung an: Arterien führen vom Herzen weg, die Lungenarterie führt sauerstoffarmes Blut.</p>"
+    },
+    "rule": "Arterien führen vom Herzen weg, Venen zum Herzen hin. Kapillaren tauschen Stoffe aus.",
+    "check": {
+      "q": "Wie heißen Gefäße, die Blut zum Herzen hin führen?",
+      "options": [
+        {
+          "id": "a",
+          "html": "Venen"
+        },
+        {
+          "id": "b",
+          "html": "Arterien"
+        },
+        {
+          "id": "c",
+          "html": "Kapillaren"
+        }
+      ],
+      "answer": "a",
+      "why": "Venen führen das Blut zum Herzen. Arterien führen es vom Herzen weg."
+    }
+  },
+  "befruchtung-geburt": {
+    "goal": "Du kannst beschreiben, wie ein Kind entsteht und wie es sich bis zur Geburt entwickelt.",
+    "tldr": [
+      "Aus Eizelle und Spermienzelle entsteht durch Befruchtung die erste Zelle eines neuen Menschen.",
+      "Der Embryo wächst in der Gebärmutter und wird über Plazenta und Nabelschnur versorgt. Nach etwa 40 Wochen wird das Kind geboren."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Zuhause im Wasser",
+      "html": "<p>Das Kind wächst geschützt in einer Fruchtblase im Fruchtwasser. Wie in einem Schwimmbecken ist es dort gepolstert und warm, und die Nabelschnur ist seine Versorgungsleitung.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "flowDiagram",
+        "args": [
+          [
+            "Befruchtung|(Eileiter)",
+            "Einnistung|(Gebärmutter)",
+            "Embryo und Fetus|(Wachstum)",
+            "Geburt|(nach etwa 40 Wochen)"
+          ],
+          "Von der Befruchtung über die Einnistung und das Wachstum bis zur Geburt"
+        ]
+      },
+      "caption": "Die Plazenta liefert Sauerstoff und Nährstoffe und nimmt Abfallstoffe auf. Blut von Mutter und Kind vermischt sich nicht."
+    },
+    "steps": {
+      "title": "So beschreibst du die Entwicklung",
+      "items": [
+        "Befruchtung im Eileiter: Die Zellkerne von Eizelle und Spermienzelle verschmelzen.",
+        "Die Zelle teilt sich und nistet sich in der Gebärmutter ein. Es entsteht der Embryo.",
+        "Ab etwa dem dritten Monat spricht man vom Fetus. Er wächst bis zur Geburt weiter."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Mutter und Kind haben getrennte Blutkreisläufe. Stoffe wechseln nur über die Plazenta, Alkohol, Nikotin und Drogen gelangen dabei aber zum Kind und schaden ihm.</p>"
+    },
+    "rule": "Befruchtung, Einnistung, Embryo, Fetus, Geburt. Plazenta und Nabelschnur versorgen das Kind.",
+    "check": {
+      "q": "Wo findet die Befruchtung normalerweise statt?",
+      "options": [
+        {
+          "id": "a",
+          "html": "Im Eileiter"
+        },
+        {
+          "id": "b",
+          "html": "In der Gebärmutter"
+        },
+        {
+          "id": "c",
+          "html": "Im Eierstock"
+        }
+      ],
+      "answer": "a",
+      "why": "Die Eizelle wandert durch den Eileiter. Dort treffen Spermienzellen auf sie. Danach wandert sie in die Gebärmutter."
+    }
+  },
+  "verhuetung": {
+    "goal": "Du kannst erklären, wozu Verhütungsmittel dienen und warum ein Kondom auch vor vielen Infektionen schützt.",
+    "tldr": [
+      "Verhütung soll verhindern, dass eine Schwangerschaft entsteht. Kein Mittel ist hundertprozentig sicher.",
+      "Das Kondom verhindert zugleich viele Infektionen. Hormonelle Mittel wie die Pille gibt es nur auf ärztliches Rezept."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Regenschirm",
+      "html": "<p>Wie ein Regenschirm vor Nässe schützt, schützen Verhütungsmittel vor einer Schwangerschaft. Kein Schirm hält jeden Tropfen ab, und auch kein Mittel wirkt immer. Deshalb ist gute Information wichtig.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Mittel",
+            "Wirkung"
+          ],
+          [
+            [
+              "Kondom",
+              "Barriere, verhütet und schützt vor vielen Infektionen"
+            ],
+            [
+              "Pille",
+              "Hormone verhindern den Eisprung, nur auf Rezept"
+            ],
+            [
+              "Beratung",
+              "Frauenärztin, Frauenarzt oder Beratungsstelle"
+            ]
+          ],
+          [
+            1,
+            2.2
+          ],
+          "Tabelle: Verhütungsmittel und ihre Wirkung"
+        ]
+      },
+      "caption": "Nicht jedes Mittel schützt vor Infektionen. Das Kondom ist hier besonders wichtig."
+    },
+    "steps": {
+      "title": "So informierst du dich sicher",
+      "items": [
+        "Frage eine Ärztin, einen Arzt oder eine Beratungsstelle, nicht nur das Internet.",
+        "Verhütung und Schutz vor Infektionen sind zwei Ziele. Das Kondom erfüllt beide.",
+        "Entscheidungen über den eigenen Körper triffst du selbst. Niemand darf dich zu etwas drängen."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Die Pille schützt nicht vor Infektionen. Dafür braucht man zusätzlich ein Kondom.</p>"
+    },
+    "rule": "Verhütung soll eine Schwangerschaft verhindern, das Kondom schützt zusätzlich vor vielen Infektionen. Beratung ist vertraulich.",
+    "check": {
+      "q": "Welches Mittel schützt auch vor Infektionen?",
+      "options": [
+        {
+          "id": "a",
+          "html": "Das Kondom"
+        },
+        {
+          "id": "b",
+          "html": "Die Pille"
+        },
+        {
+          "id": "c",
+          "html": "Keines davon"
+        }
+      ],
+      "answer": "a",
+      "why": "Das Kondom ist eine Barriere. Die Pille wirkt hormonell und schützt nicht vor Infektionen."
+    }
+  }
+}

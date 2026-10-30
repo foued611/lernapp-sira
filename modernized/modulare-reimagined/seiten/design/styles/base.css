@@ -164,3 +164,15 @@ a.btn{display:inline-block;text-align:center;text-decoration:none}
 .node .s-fällig svg.ic{fill:var(--flame)}
 .node.next{border-width:4px;padding:10px 14px}
 .node .nexttag{display:block;width:fit-content;margin-top:6px;background:var(--ink);color:var(--paper);border-radius:8px;padding:1px 8px;font-size:13px;font-weight:700}
+
+/* Aufklappbare Gruppen im Lernpfad (optionales Feld group an Seiten) */
+.pgroup{border:2px solid var(--line);border-radius:var(--r,14px);padding:0 12px;margin:0 0 12px;background:var(--card,transparent)}
+.pgroup>summary{display:flex;justify-content:space-between;align-items:center;gap:10px;min-height:48px;cursor:pointer;font-weight:700;list-style:none}
+.pgroup>summary::-webkit-details-marker{display:none}
+.pgroup>summary::after{content:"+";font-weight:700;margin-left:6px}
+.pgroup[open]>summary::after{content:"\2212"}
+.pgroup>summary .muted{font-size:13px;font-weight:400;margin-left:auto}
+.pgroup>summary:focus-visible{outline:3px solid currentColor;outline-offset:2px}
+.pgroup[open]>.path{margin-bottom:14px}
+.pgroup>summary>span:first-child{flex:1 1 auto}
+.pgroup>summary .muted{white-space:nowrap;flex:0 0 auto}

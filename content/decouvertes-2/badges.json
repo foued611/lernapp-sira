@@ -58,7 +58,7 @@
   {
     "id": "alle",
     "n": "Grammairien",
-    "d": "Alle Seiten mit mindestens einem Stern",
+    "d": "Alle Unité-Seiten mit mindestens einem Stern",
     "rule": {
       "type": "units",
       "ids": [
@@ -161,7 +161,7 @@
   {
     "id": "blitz10",
     "n": "Éclair",
-    "d": "10 richtige im Blitz-Modus",
+    "d": "10 richtige im Blitz-Modus, höchstens ein Fehler",
     "rule": {
       "type": "blitz",
       "min": 10,

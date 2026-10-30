@@ -42,6 +42,59 @@
     }
   },
   {
+    "id": "erdoberflaeche",
+    "n": "Landschaftsformer",
+    "d": "Alle Seiten zur Erdoberfläche im Wandel mit mindestens einem Stern",
+    "rule": {
+      "type": "units",
+      "ids": [
+        "exogene-kraefte",
+        "eis-formt",
+        "fluesse",
+        "wind-erosion",
+        "wuestenarten"
+      ]
+    }
+  },
+  {
+    "id": "klima-vegetation",
+    "n": "Klimaforscher",
+    "d": "Alle Seiten zu Klima und Vegetation mit mindestens einem Stern",
+    "rule": {
+      "type": "units",
+      "ids": [
+        "temperaturzonen",
+        "luftdruck-wind",
+        "zirkulation",
+        "waermetransport",
+        "klimadiagramm",
+        "wirbelstuerme",
+        "mitteleuropa-klima",
+        "tiefdruckgebiet",
+        "klimazonen"
+      ]
+    }
+  },
+  {
+    "id": "tropen",
+    "n": "Tropenkenner",
+    "d": "Alle Seiten zur tropischen Zone mit mindestens einem Stern",
+    "rule": {
+      "type": "units",
+      "ids": [
+        "regenwald-klima",
+        "regenwald-aufbau",
+        "wanderfeldbau",
+        "kaffee",
+        "regenwald-gefahr",
+        "savanne",
+        "nomaden",
+        "ackerbau-trockenheit",
+        "desertifikation"
+      ]
+    }
+  },
+  {
     "id": "klima",
     "n": "Klima-Experte",
     "d": "Alle Seiten zum Klimawandel mit mindestens einem Stern",
@@ -102,7 +155,7 @@
   {
     "id": "wirtschaft",
     "n": "Welthandels-Profi",
-    "d": "Alle Seiten zum Wirtschaftlichen Handeln mit mindestens einem Stern",
+    "d": "Alle Seiten zum wirtschaftlichen Handeln mit mindestens einem Stern",
     "rule": {
       "type": "units",
       "ids": [

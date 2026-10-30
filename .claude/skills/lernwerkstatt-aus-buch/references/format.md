@@ -71,7 +71,7 @@ Regeln:
 {
   "items": {
     "quel": [
-      { "q": "Fragebegleiter quel", "kind": "gap", "s": "___ heure est-il ?", "a": "Quelle", "wrong": ["Quel", "Quels", "Quelles"], "why": "heure ist weiblich und Singular." },
+      { "q": "Wie spät ist es?", "kind": "gap", "s": "___ heure est-il ?", "a": "Quelle", "wrong": ["Quel", "Quels", "Quelles"], "why": "heure ist weiblich und Singular." },
       { "q": "Welcher Satz ist richtig?", "a": "Quel jour sommes-nous ?", "wrong": ["Quelle jour sommes-nous ?", "Quelles jours sommes-nous ?", "Quel jours sommes-nous ?"], "why": "jour ist männlich." }
     ]
   }

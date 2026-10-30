@@ -76,7 +76,7 @@
   "quel": {
     "goal": "Du kannst nach Dingen und Personen fragen und dabei quel in der richtigen Form benutzen.",
     "tldr": [
-      "quel heißt welcher. Es steht vor dem Nomen und stimmt mit ihm überein.",
+      "quel heißt welcher. Es steht vor dem Nomen oder vor être und stimmt mit dem Nomen überein.",
       "Formen: quel, quelle, quels, quelles."
     ],
     "analogy": {
@@ -218,7 +218,7 @@
     "goal": "Du kannst mit ce, cet, cette und ces auf Personen und Dinge zeigen.",
     "tldr": [
       "Die Form richtet sich nach dem Nomen: ce (m.), cet (m. vor Vokal), cette (f.), ces (Plural).",
-      "cet steht vor einem Vokal oder stummen h: cet homme, cet hôtel."
+      "cet steht vor männlichen Nomen mit Vokal oder stummem h: cet homme, cet hôtel."
     ],
     "analogy": {
       "title": "Stell dir vor: der Zeigefinger",
@@ -363,22 +363,22 @@
     },
     "rule": "avoir im Präsens + Partizip II. Regelmäßig: -é, -i, -u. Unregelmäßig: auswendig lernen.",
     "check": {
-      "q": "Hier, j'___ fait mes devoirs.",
+      "q": "Hier, ___ mes devoirs.",
       "options": [
         {
-          "id": "ai fait",
-          "html": "ai fait"
+          "id": "j'ai fait",
+          "html": "j'ai fait"
         },
         {
-          "id": "suis fait",
-          "html": "suis fait"
+          "id": "je suis fait",
+          "html": "je suis fait"
         },
         {
-          "id": "ai faire",
-          "html": "ai faire"
+          "id": "j'ai faire",
+          "html": "j'ai faire"
         }
       ],
-      "answer": "ai fait",
+      "answer": "j'ai fait",
       "why": "faire wird mit avoir gebildet, das Partizip ist fait."
     }
   },
@@ -438,7 +438,7 @@
       ]
     },
     "pitfall": {
-      "html": "<p>Im Plural steht immer -oy-: <b>nous voyons</b>, nicht <b>nous vois</b>.</p>"
+      "html": "<p>Bei nous und vous steht -oy-: <b>nous voyons</b>, nicht <b>nous vois</b>. Bei ils steht wieder -oi-: <b>ils voient</b>.</p>"
     },
     "rule": "voir: je vois, nous voyons, ils voient. Partizip: vu.",
     "check": {
@@ -620,14 +620,14 @@
     }
   },
   "pc-etre": {
-    "goal": "Du kannst das passé composé mit être bilden, bei Bewegungen und Zuständen, und das Partizip richtig anpassen.",
+    "goal": "Du kannst das passé composé mit être bilden und das Partizip richtig anpassen.",
     "tldr": [
-      "Bei Bewegung und Zustand steht être statt avoir: je suis allé(e), elle est partie.",
+      "Einige Verben bilden das passé composé mit être statt avoir, vor allem Verben der Bewegung: je suis allé(e), elle est partie.",
       "Das Partizip stimmt mit dem Subjekt überein: Elle est allée. Ils sont partis."
     ],
     "analogy": {
       "title": "Stell dir vor: der Umzug",
-      "html": "<p>Wer geht, kommt oder bleibt, bewegt sich. Dafür nimmt man être. Das Partizip passt sich dem Subjekt an: Bei einer Frau kommt ein -e dazu.</p>"
+      "html": "<p>Bei diesen Verben geht es darum, wohin jemand geht, woher er kommt oder wo er bleibt. Dafür nimmt man être. Das Partizip passt sich dem Subjekt an: Bei einer Frau kommt ein -e dazu.</p>"
     },
     "figure": {
       "diagram": {
@@ -646,7 +646,7 @@
     "steps": {
       "title": "So bildest du den Satz",
       "items": [
-        "Bewegungsverben: aller, venir, arriver, partir, entrer, sortir, rester, monter, descendre, naître.",
+        "Diese Verben stehen mit être: aller, venir, arriver, partir, entrer, sortir, rester, monter, descendre, naître. Lerne sie als Liste, denn nicht jedes Bewegungsverb gehört dazu: j'ai marché.",
         "être im Präsens: je suis, tu es, il est, nous sommes, vous êtes, ils sont.",
         "Übereinstimmung: weiblich -e, Plural -s: elle est partie, ils sont partis.",
         "Verneinung: Je ne suis pas allé."
@@ -655,9 +655,9 @@
     "pitfall": {
       "html": "<p>Nicht <b>j'ai allé</b>. Bei aller heißt es <b>je suis allé</b> oder bei einer Frau <b>je suis allée</b>.</p>"
     },
-    "rule": "Bewegung oder Zustand: être statt avoir. Das Partizip stimmt mit dem Subjekt überein.",
+    "rule": "aller, venir, rester und die anderen Verben der Liste: être statt avoir. Das Partizip stimmt mit dem Subjekt überein.",
     "check": {
-      "q": "Sie ist nach Hause gegangen (eine Frau):",
+      "q": "Wie sagt man: Sie ist nach Hause gegangen (eine Frau)?",
       "options": [
         {
           "id": "Elle est allée à la maison.",
@@ -816,7 +816,7 @@
       ]
     },
     "pitfall": {
-      "html": "<p>Nicht <b>nous achètons</b>. Im Plural steht <b>nous achetons</b> ohne Akzent.</p>"
+      "html": "<p>Nicht <b>nous achètons</b>. Bei nous und vous steht das e ohne Akzent: <b>nous achetons</b>.</p>"
     },
     "rule": "acheter: è im Singular und bei ils. boire: Partizip bu.",
     "check": {
@@ -867,12 +867,12 @@
       "items": [
         "Ersetze das Nomen durch le (m.), la (f.), l' (Vokal) oder les (Plural).",
         "Stelle das Pronomen vor das konjugierte Verb: Je la connais.",
-        "Im passé composé steht es vor avoir: Il les a vus.",
+        "Im passé composé steht es vor avoir, und das Partizip richtet sich nach dem Pronomen: Il les a vus. Je l'ai vue.",
         "Verneinung um das Pronomen: Je ne le vois pas."
       ]
     },
     "pitfall": {
-      "html": "<p>Das Pronomen steht nie hinter dem Verb: <b>Je vois le</b> ist falsch. Richtig: <b>Je le vois</b>.</p>"
+      "html": "<p>Im Aussagesatz steht das Pronomen nicht hinter dem Verb: <b>Je vois le</b> ist falsch. Richtig: <b>Je le vois</b>.</p>"
     },
     "rule": "le, la, l', les ersetzen ein Nomen und stehen vor dem Verb.",
     "check": {
@@ -898,7 +898,7 @@
   "objekt-person": {
     "goal": "Du kannst Personen als Objekt benutzen, mit me, te, nous und vous, richtig vor dem Verb.",
     "tldr": [
-      "me = mich, te = dich, nous = uns, vous = euch oder Sie.",
+      "me = mich oder mir, te = dich oder dir, nous = uns, vous = euch oder Sie.",
       "Sie stehen vor dem konjugierten Verb: Il me voit. Elle vous aime."
     ],
     "analogy": {
@@ -917,12 +917,12 @@
           [
             [
               "me",
-              "mich",
+              "mich, mir",
               "Il me voit."
             ],
             [
               "te",
-              "dich",
+              "dich, dir",
               "Je te parle."
             ],
             [
@@ -960,7 +960,7 @@
     },
     "rule": "me, te, nous, vous stehen als Objekt vor dem Verb.",
     "check": {
-      "q": "Er sieht dich.",
+      "q": "Wie sagt man: Er sieht dich?",
       "options": [
         {
           "id": "Il te voit.",
@@ -982,7 +982,7 @@
   "indirekte-rede": {
     "goal": "Du kannst berichten, was jemand gesagt oder gefragt hat, mit que und si.",
     "tldr": [
-      "Aussagen: Il dit que … Das que bleibt.",
+      "Aussagen: Il dit que … Das que darf nicht fehlen.",
       "Ja-Nein-Fragen: Il demande si … (ob). Fragewörter bleiben: Il demande où tu habites."
     ],
     "analogy": {
@@ -1016,7 +1016,7 @@
     },
     "rule": "dire que für Aussagen, demander si für Ja-Nein-Fragen. Fragewörter bleiben.",
     "check": {
-      "q": "Er fragt, ob du kommst.",
+      "q": "Wie sagt man: Er fragt, ob du kommst?",
       "options": [
         {
           "id": "Il demande si tu viens.",
@@ -1038,7 +1038,7 @@
   "sortir": {
     "goal": "Du kannst das Verb sortir (ausgehen, herausgehen) konjugieren und im passé composé mit être bilden.",
     "tldr": [
-      "sortir hat im Präsens überall den Stamm sort-: je sors, nous sortons, ils sortent.",
+      "sortir heißt im Singular je sors, tu sors, il sort. Im Plural lautet der Stamm sort-: nous sortons, ils sortent.",
       "Im passé composé steht être: je suis sorti(e)."
     ],
     "analogy": {
@@ -1079,7 +1079,7 @@
           "Tabelle: sortir im Präsens und passé composé"
         ]
       },
-      "caption": "Im Präsens ist der Stamm sort- überall gleich."
+      "caption": "Bei je und tu fällt das t weg: je sors. Im Plural bleibt es: nous sortons."
     },
     "steps": {
       "title": "So konjugierst du",
@@ -1093,9 +1093,9 @@
     "pitfall": {
       "html": "<p>Nicht <b>je suis sortir</b>. Im passé composé steht être und das Partizip sorti.</p>"
     },
-    "rule": "sortir = ausgehen. Präsens: sort-. passé composé mit être, Partizip stimmt mit dem Subjekt überein.",
+    "rule": "sortir = ausgehen. Präsens: je sors, nous sortons. passé composé mit être, Partizip stimmt mit dem Subjekt überein.",
     "check": {
-      "q": "Sie ist gestern ausgegangen (eine Frau).",
+      "q": "Wie sagt man: Sie ist gestern ausgegangen (eine Frau)?",
       "options": [
         {
           "id": "Elle est sortie hier.",
@@ -1190,7 +1190,7 @@
         }
       ],
       "answer": "nouvel",
-      "why": "hôtel beginnt mit einem Vokal. Männlich davor: nouvel."
+      "why": "hôtel ist männlich und beginnt mit stummem h. Davor steht nouvel."
     }
   },
   "devoir-recevoir": {
@@ -1330,9 +1330,9 @@
     "pitfall": {
       "html": "<p>Nicht <b>nous choisons</b>. Im Plural steht <b>-iss-</b>: <b>nous choisissons</b>.</p>"
     },
-    "rule": "Verben auf -ir: Plural mit -iss-. Partizip auf -i.",
+    "rule": "Verben wie choisir: Plural mit -iss-. Partizip auf -i.",
     "check": {
-      "q": "Wir wählen ein Buch.",
+      "q": "Wie sagt man: Wir wählen ein Buch?",
       "options": [
         {
           "id": "Nous choisissons un livre.",
@@ -1388,7 +1388,7 @@
     },
     "rule": "lui = einer Person (à + Person), leur = mehreren Personen (à + Personen).",
     "check": {
-      "q": "Ich schreibe ihr (Léa).",
+      "q": "Wie sagt man: Ich schreibe ihr (Léa)?",
       "options": [
         {
           "id": "Je lui écris.",
@@ -2037,7 +2037,7 @@
   "zahlen-zwanziger": {
     "goal": "Du kannst die Zahlen von 70 bis 99 bilden und erklären, warum sie so klingen.",
     "tldr": [
-      "Ab 70 zählt man in Zwanzigern: 80 = 4 × 20, 90 = 4 × 20 + 10.",
+      "Ab 70 zählt man anders: 70 = 60 + 10, 80 = 4 × 20, 90 = 4 × 20 + 10.",
       "70 heißt soixante-dix, 80 quatre-vingts, 90 quatre-vingt-dix.",
       "Das s bei quatre-vingts fällt weg, wenn eine Zahl folgt: quatre-vingt-un."
     ],
@@ -2148,7 +2148,7 @@
     "pitfall": {
       "html": "<p>Es heißt <b>deux cent un</b>, nicht <b>deux cents un</b>. Das s steht nur, wenn die Zahl endet.</p>"
     },
-    "rule": "cent und Vielfache: s am Ende, wenn nichts folgt. mille: nie ein s.",
+    "rule": "Vielfache von cent: s am Ende, wenn nichts folgt. mille: nie ein s.",
     "check": {
       "q": "Wie heißt 300?",
       "options": [

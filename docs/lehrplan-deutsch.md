@@ -31,7 +31,7 @@ Regel: Die App deckt nur ab, was bekannt und im Buch eindeutig ist. Alles andere
 - Miteinander sprechen und argumentieren (10 bis 21), Szenisches Spiel (58 bis 69), Überzeugend präsentieren (176 bis 187): mündlich, passen schlecht zu einem Quiz.
 - Literarisches und gestaltendes Schreiben (22 bis 35): kreatives Schreiben, nicht automatisch prüfbar.
 - Texte und Medien: Kurzgeschichten, Kalendergeschichten, Novelle „Kleider machen Leute“, Jugendbuch „Train Kids“, Balladen, Sachtexte, Literaturverfilmung. Offen: Welche Texte liest der Klasse? Erst dann sind Merkmal-Quiz je Gattung sinnvoll.
-- Gedichte: Reim, Metrum, klangliche Stilmittel (136 bis 139).
+- Gedichte: Reim, Metrum, klangliche Stilmittel (136 bis 139). Ausnahme: Die Alliteration steht in `stilmittel`, weil sie dort abgefragt wird. Eine Lehrkraft prüft, ob sie zum Stoff gehört.
 - Sprachgebrauch: Prädikat und Satzglieder (201 bis 203), Tempusformen (229), Adjektive (231), Pronomen (232), Wortbildung und Fachwörter (246 bis 249), Wort- und Sprachkunde (238 bis 245), Getrennt- und Zusammenschreibung (261 bis 263), Fremdwörter (256), Sprache und Identität (274 bis 282).
 
 ## Hinweise

@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
-import { Lesson, checkFeedback } from '../lesson.js';
+import { Lesson, checkFeedback, checkOptions } from '../lesson.js';
 import { diagram, rect, text } from '../svg.js';
 import { richText } from '../rich.js';
 
@@ -112,4 +112,14 @@ test('KOMP-A11Y Mini-Check: Antwortknöpfe sind echte Schaltflächen', () => {
   const markup = draw({ lesson: full, unitId: 'x', diagrams });
   assert.equal(markup.split('<button type="button" class="opt"').length - 1, 2);
   assert.doesNotMatch(markup, /data-lsn|onclick/i);
+});
+
+test('Mini-Check: Reihenfolge bleibt gleich, enthält alle Antworten und die richtige steht nicht immer vorn', () => {
+  const options = ['a', 'b', 'c', 'd'].map((id) => ({ id, html: id }));
+  const first = Array.from({ length: 40 }, (_, i) => checkOptions({ q: `Frage ${i}`, options })[0].id);
+  assert.equal(new Set(first).size, 4);
+  const check = { q: 'Frage', options };
+  assert.deepEqual(checkOptions(check), checkOptions(check));
+  assert.deepEqual(checkOptions(check).map((o) => o.id).sort(), ['a', 'b', 'c', 'd']);
+  assert.equal(options[0].id, 'a');
 });

@@ -5,8 +5,8 @@
       "answer": "Er ist von A und B gleich weit entfernt.",
       "wrong": [
         "Er liegt auf der Strecke AB.",
-        "Er ist doppelt so weit von A wie von B entfernt.",
-        "Er liegt immer genau 90° von A entfernt."
+        "Er ist von A weiter entfernt als von B.",
+        "Er hat von der Strecke AB immer denselben Abstand."
       ],
       "why": "Das ist die wichtigste Eigenschaft der Mittelsenkrechten. Darum benutzt man sie, um einen Punkt zu finden, der von zwei Orten gleich weit weg ist.",
       "label": "Eigenschaft"
@@ -24,11 +24,11 @@
     },
     {
       "prompt": "Womit beginnst du die Konstruktion der Mittelsenkrechten von AB?",
-      "answer": "Mit einem Kreisbogen um A, der AB halb überschreitet",
+      "answer": "Mit einem Kreisbogen um A, dessen Radius größer als die halbe Strecke ist",
       "wrong": [
-        "Mit dem Lineal durch die Mitte von AB",
-        "Mit dem Geodreieck an einer beliebigen Stelle",
-        "Mit einem Kreis um M"
+        "Mit einem Kreis um M, dessen Radius so groß wie die halbe Strecke ist",
+        "Mit einer Linie durch die Mitte von AB, die du nach Augenmaß festlegst",
+        "Mit einem rechten Winkel bei A, den du mit dem Geodreieck zeichnest"
       ],
       "why": "Erst zwei gleich große Kreisbögen um A und um B, danach die Gerade durch die beiden Schnittpunkte. Die Mitte M kennst du am Anfang noch nicht.",
       "label": "Konstruktion"
@@ -39,22 +39,22 @@
       "prompt": "Was gilt für jeden Punkt auf der Winkelhalbierenden?",
       "answer": "Er hat zu beiden Schenkeln denselben Abstand.",
       "wrong": [
-        "Er hat vom Scheitel den Abstand 0.",
+        "Er ist vom Scheitel immer gleich weit entfernt.",
         "Er liegt auf einem der beiden Schenkel.",
-        "Er ist von beiden Schenkeln 90° entfernt."
+        "Er ist von einem Schenkel doppelt so weit entfernt wie vom anderen."
       ],
-      "why": "Genau deshalb ist die Winkelhalbierende nützlich: Sie findet alle Punkte, die zu zwei Geraden gleichen Abstand haben.",
+      "why": "Genau deshalb ist die Winkelhalbierende nützlich: Auf ihr liegen alle Punkte im Winkel, die von beiden Schenkeln gleich weit entfernt sind.",
       "label": "Eigenschaft"
     },
     {
-      "prompt": "Wie konstruierst du eine Winkelhalbierende?",
+      "prompt": "Wie konstruierst du eine Winkelhalbierende mit Zirkel und Lineal?",
       "answer": "Bogen um den Scheitel, dann zwei gleich große Bögen um die Schnittpunkte mit den Schenkeln",
       "wrong": [
-        "Zwei Bögen um die Endpunkte der Schenkel",
-        "Mit dem Lineal in die Mitte zwischen die Schenkel zeichnen",
-        "Den Winkel messen und mit dem Geodreieck halbieren"
+        "Zwei gleich große Bögen um die Endpunkte der Schenkel, dann deren Verbindung halbieren",
+        "Bogen um den Scheitel, dann eine Linie nach Augenmaß in die Mitte des Bogens zeichnen",
+        "Bogen um einen Punkt auf einem Schenkel, dann eine Senkrechte zum anderen Schenkel"
       ],
-      "why": "So geht es nur mit Zirkel und Lineal: Der Bogen um den Scheitel S liefert zwei Punkte U und V. Von U und V aus zeichnest du zwei gleich große Bögen. Ihr Schnittpunkt W liegt auf der Winkelhalbierenden.",
+      "why": "Die Endpunkte gezeichneter Schenkel sind zufällig, und Augenmaß ist nicht exakt. Der Bogen um den Scheitel S liefert zwei Punkte U und V. Von U und V aus zeichnest du zwei gleich große Bögen. Ihr Schnittpunkt W liegt auf der Winkelhalbierenden.",
       "label": "Konstruktion"
     }
   ],
@@ -63,20 +63,20 @@
       "prompt": "Womit beginnst du das Konstruieren eines Dreiecks aus a, b und c?",
       "answer": "Mit einer Seite, zum Beispiel c",
       "wrong": [
-        "Mit dem Kreis um C",
-        "Mit der Höhe",
-        "Mit dem Umkreis"
+        "Mit einem Kreis um die Ecke C",
+        "Mit der Höhe auf die Seite c",
+        "Mit dem Umkreis des Dreiecks"
       ],
       "why": "Zuerst zeichnest du eine Seite. Die Ecke C findest du danach als Schnittpunkt zweier Kreisbögen, deren Radien die Seiten b und a sind.",
       "label": "Konstruktion"
     },
     {
-      "prompt": "Wie finden die Kreisbögen bei SSS die Ecke C?",
+      "prompt": "Wie findest du beim Konstruieren mit drei Seiten (SSS) die Ecke C?",
       "answer": "C ist der Schnittpunkt von Bogen um A (Radius b) und Bogen um B (Radius a)",
       "wrong": [
-        "C liegt auf der Mitte von AB",
-        "C liegt auf dem Bogen um M",
-        "C liegt auf einem beliebigen Punkt über AB"
+        "C ist der Schnittpunkt von Bogen um A (Radius a) und Bogen um B (Radius b)",
+        "C ist der Schnittpunkt von Bogen um A (Radius c) und Bogen um B (Radius c)",
+        "C ist ein beliebiger Punkt über AB, der von A den Abstand b hat"
       ],
       "why": "C hat von A den Abstand b und von B den Abstand a. Beide Bedingungen zusammen treffen nur auf den Schnittpunkt der Bögen zu.",
       "label": "Konstruktion"
@@ -135,7 +135,7 @@
       "wrong": [
         "der Inkreis",
         "der Thaleskreis in jedem Fall",
-        "der Kreis um den Schwerpunkt"
+        "der Halbkreis über der längsten Seite"
       ],
       "why": "Der Umkreis läuft durch A, B und C. Der Inkreis dagegen berührt die drei Seiten von innen.",
       "label": "Kreise"
@@ -173,8 +173,8 @@
   "eindeutig": [
     [
       "a = 5 cm, b = 7 cm, α = 40°. Der Winkel α liegt der kürzeren Seite a gegenüber.",
-      "höchstens zwei Dreiecke möglich",
-      "Liegt der Winkel der kürzeren Seite gegenüber, kann der Kreisbogen die Seite zweimal treffen. Das ist kein Kongruenzsatz."
+      "zwei verschiedene Dreiecke",
+      "Der Winkel liegt der kürzeren Seite gegenüber. Hier trifft der Kreisbogen um C den freien Schenkel zweimal, also gibt es zwei Dreiecke. Das ist kein Kongruenzsatz."
     ],
     [
       "a = 7 cm, b = 5 cm, α = 40°. Der Winkel α liegt der längeren Seite a gegenüber.",
@@ -183,7 +183,7 @@
     ],
     [
       "α = 40°, β = 60°, γ = 80°",
-      "unendlich viele Dreiecke (verschieden groß)",
+      "unendlich viele Dreiecke",
       "Drei Winkel legen nur die Form fest, nicht die Größe. Man kann das Dreieck beliebig vergrößern. Für Eindeutigkeit braucht man mindestens eine Seite."
     ],
     [
@@ -216,22 +216,22 @@
     },
     {
       "prompt": "Warum zeichnest du ein großes Grundstück im Maßstab?",
-      "answer": "Damit es verkleinert auf das Blatt passt und alle Längen im gleichen Verhältnis bleiben",
+      "answer": "Damit es aufs Blatt passt und alle Längen im gleichen Verhältnis bleiben",
       "wrong": [
-        "Damit man die Winkel weglassen kann",
-        "Damit alle Strecken gleich lang aussehen",
-        "Damit man nicht mehr messen muss"
+        "Damit man die Winkel beim Zeichnen weglassen kann",
+        "Damit alle Strecken auf dem Blatt gleich lang aussehen",
+        "Damit man auf dem Grundstück nichts mehr messen muss"
       ],
       "why": "Im Maßstab werden alle Längen mit demselben Faktor verkleinert. Winkel bleiben dabei gleich, und man kann die wirklichen Längen später zurückrechnen.",
       "label": "Maßstab"
     },
     {
       "prompt": "Wie bestimmst du eine unzugängliche Länge, zum Beispiel die Breite eines Flusses?",
-      "answer": "Du zeichnest ein Dreieck mit gemessenen Größen im Maßstab und liest die gesuchte Länge ab",
+      "answer": "Du konstruierst aus gemessenen Größen ein Dreieck im Maßstab und liest die Länge ab",
       "wrong": [
-        "Du schätzt sie nach Augenmaß",
         "Du zeichnest das Dreieck beliebig groß und nimmst die Zahl so, wie sie ist",
-        "Du verdoppelst die Länge der nächsten Strecke"
+        "Du schätzt die Länge nach Augenmaß und zeichnest sie dann im Maßstab auf",
+        "Du misst die Strecke am Ufer und verdoppelst sie, weil das Dreieck zwei Seiten hat"
       ],
       "why": "Du misst, was du erreichen kannst (Strecken und Winkel), konstruierst daraus ein Dreieck im Maßstab und liest die gesuchte Strecke ab. Dann rechnest du mit dem Maßstab auf die Wirklichkeit um.",
       "label": "Konstruieren"
@@ -255,7 +255,7 @@
       "wrong": [
         "Sofort rechnen",
         "Das Ergebnis schätzen und aufschreiben",
-        "Die Aufgabe überspringen"
+        "Eine passende Formel aufschreiben"
       ],
       "why": "Mit einer Skizze siehst du, was gegeben und was gesucht ist. Erst dann kannst du passende Sätze auswählen.",
       "label": "Strategie"
@@ -275,20 +275,20 @@
       "prompt": "In einem Dreieck sind zwei Seiten Radien desselben Kreises. Was folgt daraus?",
       "answer": "Das Dreieck ist gleichschenklig, die Basiswinkel sind gleich",
       "wrong": [
-        "Das Dreieck ist rechtwinklig",
-        "Das Dreieck ist gleichseitig",
-        "Es folgt nichts Besonderes"
+        "Das Dreieck ist rechtwinklig, der dritte Winkel ist 90°",
+        "Das Dreieck ist gleichseitig, alle Winkel sind 60°",
+        "Das Dreieck ist stumpfwinklig, die Spitze ist größer als 90°"
       ],
       "why": "Zwei Radien sind gleich lang. Zwei gleich lange Seiten bedeuten ein gleichschenkliges Dreieck, dessen Basiswinkel gleich groß sind.",
       "label": "Strategie"
     },
     {
       "prompt": "Wie schreibst du eine Begründung auf?",
-      "answer": "Behauptung, Sätze oder Regeln, die du benutzt, und dann die Folgerung",
+      "answer": "Mit der Behauptung, den benutzten Sätzen und der Folgerung",
       "wrong": [
-        "Nur das Ergebnis",
-        "Nur die Skizze",
-        "Eine lange Rechnung ohne Worte"
+        "Mit dem Ergebnis und einem Bild ohne Text",
+        "Mit einer Rechnung ohne Worte und ohne Sätze",
+        "Mit dem Hinweis, dass es in der Skizze so aussieht"
       ],
       "why": "Eine Begründung zeigt, warum etwas stimmt: Was weiß ich, welche Regel benutze ich, was folgt daraus?",
       "label": "Begründen"

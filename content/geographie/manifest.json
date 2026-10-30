@@ -3,9 +3,262 @@
   "id": "geographie",
   "title": "Geographie-Werkstatt",
   "greeting": "Hallo",
-  "intro": "Die Seiten folgen den Kapiteln 4 bis 8 aus Unsere Erde: Klimawandel, Polarzone, Bevölkerungsentwicklung, Entwicklungsstand und Welthandel. Erst die Lektion, dann die Übung. Du kannst auch springen.",
+  "intro": "Die Seiten folgen den Kapiteln 1 bis 8 aus Unsere Erde: Erdoberfläche, Klima und Vegetation, Tropen, Klimawandel, Polarzone, Bevölkerung, Entwicklungsstand und Welthandel. Erst die Lektion, dann die Übung. Du kannst auch springen.",
   "bossTitle": "Der Weltatlas-Check",
   "units": [
+    {
+      "id": "exogene-kraefte",
+      "color": "#C97B4A",
+      "ic": "O1",
+      "title": "Exogene Kräfte",
+      "de": "Wie die Erdoberfläche geformt wird · Kapitel 1",
+      "card": {
+        "name": "Aufbauen und abtragen",
+        "fact": "Kräfte aus dem Erdinneren bauen Gebirge auf. Kräfte von außen wie Wasser, Eis und Wind tragen sie wieder ab."
+      }
+    },
+    {
+      "id": "eis-formt",
+      "color": "#C97B4A",
+      "ic": "O2",
+      "title": "Vom Eis geformt",
+      "de": "Schären, Fjell und Fjord · Kapitel 1",
+      "card": {
+        "name": "Hobel aus Eis",
+        "fact": "Gletscher schliffen Skandinavien zurecht: rundes Hochland, tiefe Meeresarme und kleine Felsinseln."
+      }
+    },
+    {
+      "id": "fluesse",
+      "color": "#C97B4A",
+      "ic": "O3",
+      "title": "Flüsse gestalten die Landschaft",
+      "de": "Ober-, Mittel- und Unterlauf · Kapitel 1",
+      "card": {
+        "name": "Vom Gebirge zum Meer",
+        "fact": "Ein Fluss gräbt oben tief ein, schlängelt sich in der Mitte und lagert unten Sand ab."
+      }
+    },
+    {
+      "id": "wind-erosion",
+      "color": "#C97B4A",
+      "ic": "O4",
+      "title": "Erosion durch Wind",
+      "de": "Dünen, Pilzfelsen, Löss · Kapitel 1",
+      "card": {
+        "name": "Sandstrahlgebläse der Natur",
+        "fact": "Wind trägt feine Teilchen weg und schleift Fels mit Sand. So entstehen Dünen und Pilzfelsen."
+      }
+    },
+    {
+      "id": "wuestenarten",
+      "color": "#C97B4A",
+      "ic": "O5",
+      "title": "Wüste ist nicht gleich Wüste",
+      "de": "Sand, Stein, Salz und Kälte · Kapitel 1",
+      "card": {
+        "name": "Nicht alle Wüsten sind Sand",
+        "fact": "Die meisten Wüsten bestehen aus Fels und Geröll. Auch kalte Gebiete können Wüsten sein."
+      }
+    },
+    {
+      "id": "temperaturzonen",
+      "color": "#5B8DEF",
+      "ic": "L1",
+      "title": "Die Temperaturzonen der Erde",
+      "de": "Von heiß bis kalt · Kapitel 2",
+      "card": {
+        "name": "Der Sonnenstand entscheidet",
+        "fact": "Je steiler die Sonne steht, desto wärmer wird es. Daraus ergeben sich vier Temperaturzonen."
+      }
+    },
+    {
+      "id": "luftdruck-wind",
+      "color": "#5B8DEF",
+      "ic": "L2",
+      "title": "Luftdruck und Wind",
+      "de": "Motor des Windes · Kapitel 2",
+      "card": {
+        "name": "Von Hoch nach Tief",
+        "fact": "Wind entsteht, weil Luft von einem Gebiet mit hohem Luftdruck zu einem mit niedrigem Luftdruck strömt."
+      }
+    },
+    {
+      "id": "zirkulation",
+      "color": "#5B8DEF",
+      "ic": "L3",
+      "title": "Passate und die Zirkulation der Atmosphäre",
+      "de": "Luftmassen im Austausch · Kapitel 2",
+      "card": {
+        "name": "Ein globales Förderband",
+        "fact": "Warme Luft steigt am Äquator auf und sinkt in den Subtropen ab. Am Boden strömt sie als Passat zum Äquator zurück."
+      }
+    },
+    {
+      "id": "waermetransport",
+      "color": "#5B8DEF",
+      "ic": "L4",
+      "title": "Wärmetransport durch Meeresströmungen",
+      "de": "Golfstrom und Humboldtstrom · Kapitel 2",
+      "card": {
+        "name": "Heizung im Meer",
+        "fact": "Meeresströmungen bringen Wärme oder Kälte zu den Küsten und verändern dort das Klima."
+      }
+    },
+    {
+      "id": "klimadiagramm",
+      "color": "#5B8DEF",
+      "ic": "L5",
+      "title": "Klimadiagramme zeichnen und lesen",
+      "de": "Methode · Kapitel 2",
+      "card": {
+        "name": "Ein Jahr auf einen Blick",
+        "fact": "Ein Klimadiagramm zeigt Temperatur als Kurve und Niederschlag als Säulen für zwölf Monate."
+      }
+    },
+    {
+      "id": "wirbelstuerme",
+      "color": "#5B8DEF",
+      "ic": "L6",
+      "title": "Wirbelstürme",
+      "de": "Hurrikane und Tornados · Kapitel 2",
+      "card": {
+        "name": "Stürme mit Auge",
+        "fact": "Tropische Wirbelstürme entstehen über sehr warmem Meer. Tornados sind kleiner, aber extrem heftig."
+      }
+    },
+    {
+      "id": "mitteleuropa-klima",
+      "color": "#5B8DEF",
+      "ic": "L7",
+      "title": "Klimafaktoren in Mitteleuropa",
+      "de": "Großwetterlagen · Kapitel 2",
+      "card": {
+        "name": "Was das Klima bestimmt",
+        "fact": "Breite, Höhe, Meeresnähe, Meeresströmungen und Relief prägen das Klima eines Ortes."
+      }
+    },
+    {
+      "id": "tiefdruckgebiet",
+      "color": "#5B8DEF",
+      "ic": "L8",
+      "title": "Ein Tiefdruckgebiet zieht durch",
+      "de": "Warmfront und Kaltfront · Kapitel 2",
+      "card": {
+        "name": "Wetter in Etappen",
+        "fact": "Zieht ein Tief durch, wechseln Wolken, Regen und Temperatur nach einem festen Muster."
+      }
+    },
+    {
+      "id": "klimazonen",
+      "color": "#5B8DEF",
+      "ic": "L9",
+      "title": "Klima- und Vegetationszonen",
+      "de": "Wo wächst was? · Kapitel 2",
+      "card": {
+        "name": "Pflanzen verraten das Klima",
+        "fact": "Temperatur und Niederschlag bestimmen, welche Pflanzen wachsen. So entstehen die Klima- und Vegetationszonen."
+      }
+    },
+    {
+      "id": "regenwald-klima",
+      "color": "#4CAF50",
+      "ic": "T1",
+      "title": "Klima des Regenwaldes",
+      "de": "Sehr warm und immer feucht · Kapitel 3",
+      "card": {
+        "name": "Treibhaus am Äquator",
+        "fact": "Im tropischen Regenwald ist es ganzjährig heiß und feucht. Fast täglich regnet es am Nachmittag."
+      }
+    },
+    {
+      "id": "regenwald-aufbau",
+      "color": "#4CAF50",
+      "ic": "T2",
+      "title": "Aufbau des Regenwaldes",
+      "de": "Stockwerke und Nährstoffkreislauf · Kapitel 3",
+      "card": {
+        "name": "Ein Haus aus Grün",
+        "fact": "Der Regenwald ist in Stockwerke gegliedert. Am Boden ist es dunkel, in den Kronen herrscht das Leben."
+      }
+    },
+    {
+      "id": "wanderfeldbau",
+      "color": "#4CAF50",
+      "ic": "T3",
+      "title": "Wanderfeldbau",
+      "de": "Selbstversorgung im Regenwald · Kapitel 3",
+      "card": {
+        "name": "Anbauen und weiterziehen",
+        "fact": "Bauern roden ein Stück Wald, bauen einige Jahre an und ziehen dann weiter. Der Wald erholt sich in der Zeit."
+      }
+    },
+    {
+      "id": "kaffee",
+      "color": "#4CAF50",
+      "ic": "T4",
+      "title": "Kaffee für den Weltmarkt",
+      "de": "Vom Strauch in die Tasse · Kapitel 3",
+      "card": {
+        "name": "Eine Bohne, viele Stationen",
+        "fact": "Kaffee wächst in den Tropen und wird in alle Welt verkauft. Der Preis schwankt stark."
+      }
+    },
+    {
+      "id": "regenwald-gefahr",
+      "color": "#4CAF50",
+      "ic": "T5",
+      "title": "Der Regenwald in Gefahr",
+      "de": "Rodung und Schutz · Kapitel 3",
+      "card": {
+        "name": "Wald weicht Weide und Feld",
+        "fact": "Wald wird für Rinderweiden, Soja, Holz und Palmöl gerodet. Das hat Folgen für Klima, Tiere und Menschen."
+      }
+    },
+    {
+      "id": "savanne",
+      "color": "#4CAF50",
+      "ic": "T6",
+      "title": "Savannen",
+      "de": "Grasländer der wechselfeuchten Tropen · Kapitel 3",
+      "card": {
+        "name": "Regenzeit und Trockenzeit",
+        "fact": "In der Savanne wechseln sich Regenzeit und Trockenzeit ab. Das prägt Pflanzen und Tiere."
+      }
+    },
+    {
+      "id": "nomaden",
+      "color": "#4CAF50",
+      "ic": "T7",
+      "title": "Nomadische Viehwirtschaft",
+      "de": "Mit den Herden ziehen · Kapitel 3",
+      "card": {
+        "name": "Wasser und Weide folgen",
+        "fact": "Nomaden ziehen mit ihren Herden zu den Orten, an denen gerade Gras wächst."
+      }
+    },
+    {
+      "id": "ackerbau-trockenheit",
+      "color": "#4CAF50",
+      "ic": "T8",
+      "title": "Ackerbau im Kampf mit der Trockenheit",
+      "de": "Regenfeldbau und Bewässerung · Kapitel 3",
+      "card": {
+        "name": "Anbauen, wenn es regnet",
+        "fact": "In der Savanne hängt die Ernte vom Regen ab. Bleibt er aus, drohen Hunger und Not."
+      }
+    },
+    {
+      "id": "desertifikation",
+      "color": "#4CAF50",
+      "ic": "T9",
+      "title": "Aus Savannen werden Wüsten",
+      "de": "Die Wüste breitet sich aus · Kapitel 3",
+      "card": {
+        "name": "Wenn Land verkümmert",
+        "fact": "Durch Überweidung, Abholzung und Dürre breitet sich die Wüste aus. Das nennt man Desertifikation."
+      }
+    },
     {
       "id": "klima-anzeichen",
       "color": "#E8684A",
@@ -69,7 +322,7 @@
       "de": "Bedeckt vom Eis · Kapitel 5",
       "card": {
         "name": "Zwei Pole, zwei Welten",
-        "fact": "Die Arktis ist ein vereistes Meer um den Nordpol. Die Antarktis ist ein Kontinent aus Eis um den Südpol."
+        "fact": "Die Arktis ist ein vereistes Meer um den Nordpol. Die Antarktis ist ein von Eis bedeckter Kontinent um den Südpol."
       }
     },
     {
@@ -124,7 +377,7 @@
       "de": "Wachstum und Ein-Kind-Politik · Kapitel 6",
       "card": {
         "name": "Zwei Riesen, zwei Wege",
-        "fact": "Indien wächst weiter stark. China wollte das Wachstum mit der Ein-Kind-Politik bremsen und hat nun mit einer alternden Gesellschaft zu tun."
+        "fact": "Indien wächst weiter, weil viele junge Menschen Kinder bekommen. China wollte das Wachstum mit der Ein-Kind-Politik bremsen und hat nun mit einer alternden Gesellschaft zu tun."
       }
     },
     {
@@ -239,6 +492,236 @@
     }
   ],
   "notes": {
+    "exogene-kraefte": [
+      [
+        "Endogen",
+        "Kräfte aus dem Erdinneren: Vulkane, Erdbeben, Gebirgsbildung."
+      ],
+      [
+        "Exogen",
+        "Kräfte von außen: Verwitterung, Abtragung, Transport und Ablagerung durch Wasser, Eis, Wind und Schwerkraft."
+      ]
+    ],
+    "eis-formt": [
+      [
+        "Fjord",
+        "Tiefer, schmaler Meeresarm. Ein vom Meer überflutetes Trogtal."
+      ],
+      [
+        "Fjell und Schären",
+        "Fjell: rundgeschliffenes Hochland. Schären: rundgeschliffene Felsinseln vor der Küste."
+      ]
+    ],
+    "fluesse": [
+      [
+        "Oberlauf",
+        "Steiles Gefälle, Tiefenerosion, V-förmiges Kerbtal."
+      ],
+      [
+        "Mittel- und Unterlauf",
+        "Mäander, Prallhang und Gleithang. Am Ende Delta oder Trichtermündung."
+      ]
+    ],
+    "wind-erosion": [
+      [
+        "Ausblasung und Sandschliff",
+        "Wind bläst feines Material aus (Deflation) und schleift Felsen mit Sand (Korrasion)."
+      ],
+      [
+        "Ablagerung",
+        "Sand sammelt sich in Dünen, feiner Staub bildet fruchtbaren Löss."
+      ]
+    ],
+    "wuestenarten": [
+      [
+        "Arten",
+        "Sandwüste (Erg), Steinwüste (Hamada), Kieswüste (Serir), Salzwüste."
+      ],
+      [
+        "Heiß und kalt",
+        "Heiße Wüste: Sahara. Kalte Wüsten: Antarktis, Gobi mit eisigen Wintern."
+      ]
+    ],
+    "temperaturzonen": [
+      [
+        "Zonen",
+        "Tropen, Subtropen, gemäßigte Zone und Polarzone. Grenzen: Wendekreise bei 23,5 Grad und Polarkreise bei 66,5 Grad."
+      ],
+      [
+        "Ursache",
+        "Die Sonnenstrahlen treffen am Äquator steil, an den Polen flach auf."
+      ]
+    ],
+    "luftdruck-wind": [
+      [
+        "Luftdruck",
+        "Das Gewicht der Luft. Gemessen in Hektopascal (hPa). Normal sind etwa 1013 hPa."
+      ],
+      [
+        "Wind",
+        "Er weht vom Hoch zum Tief. Je größer der Druckunterschied, desto stärker."
+      ]
+    ],
+    "zirkulation": [
+      [
+        "Passate",
+        "Beständige Winde in den Tropen. Auf der Nordhalbkugel Nordostpassat, auf der Südhalbkugel Südostpassat."
+      ],
+      [
+        "Westwinde",
+        "In der gemäßigten Zone weht meist Wind aus Westen."
+      ]
+    ],
+    "waermetransport": [
+      [
+        "Warm",
+        "Golfstrom und Nordatlantikstrom bringen Wärme nach Nordwesteuropa."
+      ],
+      [
+        "Kalt",
+        "Der Humboldtstrom bringt kaltes Wasser an die Westküste Südamerikas."
+      ]
+    ],
+    "klimadiagramm": [
+      [
+        "Aufbau",
+        "Linke Achse: Temperatur in Grad Celsius. Rechte Achse: Niederschlag in Millimetern. Verhältnis 10 Grad zu 20 Millimeter."
+      ],
+      [
+        "Lesen",
+        "Liegt die Kurve über den Säulen, ist es trocken (arid). Ragen die Säulen darüber, ist es feucht (humid)."
+      ]
+    ],
+    "wirbelstuerme": [
+      [
+        "Tropische Wirbelstürme",
+        "Hurrikan im Atlantik und Ostpazifik, Taifun im Westpazifik, Zyklon im Indischen Ozean und im Südpazifik. Windgeschwindigkeiten ab 119 km/h."
+      ],
+      [
+        "Tornado",
+        "Rotierender Luftschlauch unter einer Gewitterwolke, oft nur wenige hundert Meter breit."
+      ]
+    ],
+    "mitteleuropa-klima": [
+      [
+        "Klimafaktoren",
+        "Geografische Breite, Höhe über dem Meer, Entfernung zum Meer, Meeresströmungen, Relief."
+      ],
+      [
+        "Mitteleuropa",
+        "Gemäßigte Zone mit Westwinden. Im Westen maritim, im Osten kontinental."
+      ]
+    ],
+    "tiefdruckgebiet": [
+      [
+        "Warmfront",
+        "Warme Luft gleitet auf kalte auf. Es regnet lange und gleichmäßig, danach wird es wärmer."
+      ],
+      [
+        "Kaltfront",
+        "Kalte Luft schiebt sich unter warme. Schauer, Gewitter, Windböen, dann kühler."
+      ]
+    ],
+    "klimazonen": [
+      [
+        "Zonen",
+        "Tropen, Subtropen, gemäßigte Zone, Kaltzone und Polarzone. Dazu Höhenstufen im Gebirge."
+      ],
+      [
+        "Vegetation",
+        "Regenwald, Savanne, Wüste, Hartlaubwald, Laubwald, Steppe, Nadelwald, Tundra."
+      ]
+    ],
+    "regenwald-klima": [
+      [
+        "Temperatur",
+        "Ganzjährig etwa 25 bis 28 Grad. Der Unterschied zwischen Tag und Nacht ist größer als der zwischen den Monaten."
+      ],
+      [
+        "Niederschlag",
+        "Über 2000 Millimeter im Jahr, fast täglich ein kurzer, heftiger Regen am Nachmittag (Zenitalregen)."
+      ]
+    ],
+    "regenwald-aufbau": [
+      [
+        "Stockwerke",
+        "Urwaldriesen, Kronendach, Strauchschicht, Krautschicht, Boden."
+      ],
+      [
+        "Nährstoffe",
+        "Der Boden ist nährstoffarm. Die Nährstoffe stecken in den Pflanzen und werden schnell wiederverwertet."
+      ]
+    ],
+    "wanderfeldbau": [
+      [
+        "Ablauf",
+        "Roden, Brennen, Pflanzen, Ernten, Brachliegen. Die Asche düngt kurz."
+      ],
+      [
+        "Grenzen",
+        "Bei wachsender Bevölkerung wird die Brache zu kurz. Der Boden erholt sich nicht."
+      ]
+    ],
+    "kaffee": [
+      [
+        "Anbau",
+        "Kaffeesträucher in tropischen Hochlagen. Größte Erzeuger: Brasilien, Vietnam, Kolumbien."
+      ],
+      [
+        "Weltmarkt",
+        "Der Preis schwankt, Bauern geraten bei niedrigen Preisen in Not."
+      ]
+    ],
+    "regenwald-gefahr": [
+      [
+        "Ursachen",
+        "Rinderweiden, Soja, Palmöl, Holz, Bergbau und Straßen."
+      ],
+      [
+        "Folgen",
+        "Artenverlust, mehr CO2 in der Luft, Bodenerosion und Verlust von Lebensraum."
+      ]
+    ],
+    "savanne": [
+      [
+        "Savannenarten",
+        "Feuchtsavanne, Trockensavanne, Dornsavanne. Von feucht nach trocken."
+      ],
+      [
+        "Anpassung",
+        "Bäume wie Baobab und Schirmakazie speichern Wasser oder haben flache Kronen, die weit Schatten werfen."
+      ]
+    ],
+    "nomaden": [
+      [
+        "Lebensweise",
+        "Hirtenvölker wie Massai und Tuareg ziehen mit Rindern, Ziegen oder Kamelen."
+      ],
+      [
+        "Probleme",
+        "Dürre, wachsende Herden, Grenzen und die Ausweitung von Ackerland."
+      ]
+    ],
+    "ackerbau-trockenheit": [
+      [
+        "Regenfeldbau",
+        "Anbau nur mit natürlichem Regen. Hirse, Mais und Erdnüsse."
+      ],
+      [
+        "Bewässerung",
+        "Wasser aus Brunnen oder Kanälen. Hilft, kostet aber und kann Boden versalzen."
+      ]
+    ],
+    "desertifikation": [
+      [
+        "Ursachen",
+        "Überweidung, Abholzung für Brennholz, falsche Anbaumethoden, Dürre und Klimawandel."
+      ],
+      [
+        "Folgen",
+        "Bodenerosion, Ernteausfälle, Hunger und Abwanderung."
+      ]
+    ],
     "klima-anzeichen": [
       [
         "Wetter und Klima",
@@ -342,7 +825,7 @@
     "indien-china": [
       [
         "Indien",
-        "2023 wurde Indien nach Schätzung der UN das bevölkerungsreichste Land. Armut, Tradition und Altersvorsorge halten die Kinderzahl hoch."
+        "2023 wurde Indien nach Schätzung der UN das bevölkerungsreichste Land. Die Geburtenrate ist stark gesunken, aber viele junge Menschen bekommen Kinder. Deshalb wächst die Bevölkerung weiter."
       ],
       [
         "China",

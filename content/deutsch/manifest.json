@@ -53,7 +53,7 @@
       "de": "Haupt- und Nebensatz, Satzbau",
       "card": {
         "name": "Komma-Kommissar",
-        "fact": "Vor „weil“, „dass“ und „obwohl“ steht immer ein Komma, denn mit ihnen beginnt ein Nebensatz."
+        "fact": "Ein Nebensatz mit „weil“, „dass“ oder „obwohl“ wird immer durch ein Komma vom Hauptsatz getrennt."
       }
     },
     {
@@ -109,7 +109,7 @@
       "de": "ie, Dehnungs-h und Doppelvokal",
       "card": {
         "name": "Dehnungs-Held",
-        "fact": "Das lange i schreibst du meistens als ie: Tier, Wiese, Spiegel. Nur wenige Wörter wie Tiger und Igel haben ein einfaches i."
+        "fact": "Das lange i schreibst du meistens als ie: Tier, Wiese, Spiegel. Ausnahmen wie Tiger und Igel haben ein einfaches i."
       },
       "track": "lrs"
     },
@@ -191,7 +191,7 @@
       "de": "Wörter, die nicht gebeugt werden",
       "card": {
         "name": "Wort-Sortierer",
-        "fact": "Präpositionen, Konjunktionen und Adverbien verändern sich nie. Man nennt sie unveränderliche Wörter."
+        "fact": "Präpositionen, Konjunktionen und Adverbien werden nicht gebeugt. Man nennt sie unveränderliche Wörter."
       }
     }
   ],
@@ -265,7 +265,7 @@
       ],
       [
         "Metapher",
-        "Ohne „wie“: Zeit ist Geld."
+        "Bild ohne „wie“: Zeit ist Geld."
       ],
       [
         "Personifikation",
@@ -274,6 +274,10 @@
       [
         "Hyperbel",
         "Starke Übertreibung: tausendmal gesagt."
+      ],
+      [
+        "Alliteration",
+        "Mehrere Wörter hintereinander beginnen mit demselben Laut: Milch macht müde Männer munter."
       ]
     ],
     "doppelt": [
@@ -361,11 +365,11 @@
       ],
       [
         "Profi-Trick: Rückwärts suchen",
-        "Bist du bei ä oder äu unsicher, such das Wort mit a oder au: Läufer kommt von laufen. Findest du keins, schreib e oder eu: Eltern, Leute."
+        "Bist du bei ä oder äu unsicher, such das Wort mit a oder au: Läufer kommt von laufen. Findest du keins, schreib e oder eu: Bett, Leute."
       ],
       [
-        "Profi-Trick: Verlängern bei Adjektiven",
-        "Steigere oder beuge das Wort: bunt, bunte. Korb, Körbe. Verben: er lobt, loben."
+        "Profi-Trick: Verlängern",
+        "Adjektive beugen: bunt, bunte. Nomen in die Mehrzahl setzen: Korb, Körbe. Verben in die Grundform setzen: er lobt, loben."
       ],
       [
         "Profi-Trick: Stängel",
@@ -391,7 +395,7 @@
       ],
       [
         "Profi-Trick: Tageszeiten",
-        "heute Abend und gestern Morgen schreibst du groß. morgen früh und abends schreibst du klein."
+        "„heute Abend“ und „gestern Morgen“ schreibst du groß. „morgen früh“ und „abends“ schreibst du klein."
       ]
     ],
     "lesen": [
@@ -459,7 +463,7 @@
       ],
       [
         "Adverb",
-        "Gibt Umstände an und bleibt unverändert: gestern, dort, oft."
+        "Gibt Umstände an und wird nicht gebeugt: gestern, dort, oft."
       ],
       [
         "Wechselpräpositionen",

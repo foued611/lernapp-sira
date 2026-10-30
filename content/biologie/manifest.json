@@ -1,0 +1,317 @@
+{
+  "schema": 1,
+  "id": "biologie",
+  "title": "Biologie-Werkstatt",
+  "greeting": "Hallo",
+  "intro": "Die Seiten folgen den Themen aus Biosphäre 7/8 und dem Bildungsplan Biologie Klasse 7: Zelle, Stoffwechsel, Ernährung, Atmung und Kreislauf, Fortpflanzung. Erst die Lektion, dann die Übung. Du kannst auch springen.",
+  "bossTitle": "Biologie-Check",
+  "units": [
+    {
+      "id": "pflanzen-tierzelle",
+      "color": "#2E9E5B",
+      "ic": "Z1",
+      "title": "Pflanzenzelle und Tierzelle",
+      "de": "Zellbestandteile und ihre Aufgaben · Zelle",
+      "card": {
+        "name": "Zelle ist nicht gleich Zelle",
+        "fact": "Pflanzenzellen haben Zellwand und Chloroplasten, Tierzellen nicht. Zellkern und Zellmembran haben beide."
+      }
+    },
+    {
+      "id": "mikroskop",
+      "color": "#2E9E5B",
+      "ic": "Z2",
+      "title": "Mikroskopieren",
+      "de": "Bau, Vergrößerung, Präparat · Zelle",
+      "card": {
+        "name": "Okular mal Objektiv",
+        "fact": "Die Gesamtvergrößerung ist Okular-Vergrößerung mal Objektiv-Vergrößerung. 10 mal 40 ergibt 400."
+      }
+    },
+    {
+      "id": "zelle-organismus",
+      "color": "#2E9E5B",
+      "ic": "Z3",
+      "title": "Von der Zelle zum Organismus",
+      "de": "Wachstum, Gewebe, Organe · Zelle",
+      "card": {
+        "name": "Ordnung in Stufen",
+        "fact": "Zelle, Gewebe, Organ, Organsystem, Organismus: Jede Stufe ist mehr als die Summe der Teile."
+      }
+    },
+    {
+      "id": "fotosynthese",
+      "color": "#E0A82E",
+      "ic": "S1",
+      "title": "Fotosynthese",
+      "de": "Licht, Wasser, Kohlenstoffdioxid · Stoffwechsel",
+      "card": {
+        "name": "Zucker aus Licht",
+        "fact": "Pflanzen machen mit Lichtenergie aus Wasser und Kohlenstoffdioxid Traubenzucker und Sauerstoff."
+      }
+    },
+    {
+      "id": "zellatmung",
+      "color": "#E0A82E",
+      "ic": "S2",
+      "title": "Zellatmung",
+      "de": "Energie aus Traubenzucker · Stoffwechsel",
+      "card": {
+        "name": "Kraftwerk Mitochondrium",
+        "fact": "In den Mitochondrien wird mit Sauerstoff Energie aus Traubenzucker nutzbar gemacht. Das passiert Tag und Nacht."
+      }
+    },
+    {
+      "id": "naehrstoffe",
+      "color": "#FF9F43",
+      "ic": "E1",
+      "title": "Nährstoffe und Nachweise",
+      "de": "Kohlenhydrate, Fette, Proteine · Ernährung",
+      "card": {
+        "name": "Drei Hauptnährstoffe",
+        "fact": "Kohlenhydrate, Fette und Proteine liefern Energie und Baustoffe. Fett enthält pro Gramm am meisten Energie."
+      }
+    },
+    {
+      "id": "verdauung",
+      "color": "#FF9F43",
+      "ic": "E2",
+      "title": "Verdauung und Enzyme",
+      "de": "Vom Mund bis zum Darm · Ernährung",
+      "card": {
+        "name": "Schlüssel und Schloss",
+        "fact": "Ein Enzym passt zu seinem Stoff wie ein Schlüssel zum Schloss. Amylase im Speichel zerlegt Stärke."
+      }
+    },
+    {
+      "id": "gesunde-ernaehrung",
+      "color": "#FF9F43",
+      "ic": "E3",
+      "title": "Gesunde Ernährung",
+      "de": "Ausgewogen essen und trinken · Ernährung",
+      "card": {
+        "name": "Vielfalt auf dem Teller",
+        "fact": "Viel Obst, Gemüse und Vollkorn, wenig Zucker und Fett: Das ist die Grundregel einer ausgewogenen Ernährung."
+      }
+    },
+    {
+      "id": "lunge",
+      "color": "#FF6B88",
+      "ic": "K1",
+      "title": "Lunge und Gasaustausch",
+      "de": "Atemwege, Lungenbläschen, Atembewegung · Atmung",
+      "card": {
+        "name": "Eine Fläche wie eine Wohnung",
+        "fact": "Die vielen Lungenbläschen vergrößern die Oberfläche der Lunge enorm. So geht der Gasaustausch schnell."
+      }
+    },
+    {
+      "id": "blut",
+      "color": "#FF6B88",
+      "ic": "K2",
+      "title": "Blut",
+      "de": "Zusammensetzung und Aufgaben · Blut",
+      "card": {
+        "name": "Rot, weiß, Plättchen",
+        "fact": "Rote Blutzellen transportieren Sauerstoff, weiße wehren Krankheitserreger ab, Blutplättchen verschließen Wunden."
+      }
+    },
+    {
+      "id": "herz-kreislauf",
+      "color": "#FF6B88",
+      "ic": "K3",
+      "title": "Herz und Blutkreislauf",
+      "de": "Doppelkreislauf, Herzbau, Puls · Kreislaufsystem",
+      "card": {
+        "name": "Zwei Kreisläufe, eine Pumpe",
+        "fact": "Das Herz pumpt das Blut durch den Lungenkreislauf und den Körperkreislauf. Arterien führen vom Herz weg."
+      }
+    },
+    {
+      "id": "befruchtung-geburt",
+      "color": "#9B7BFF",
+      "ic": "F1",
+      "title": "Von der Befruchtung bis zur Geburt",
+      "de": "Geschlechtszellen, Schwangerschaft, Geburt · Fortpflanzung",
+      "card": {
+        "name": "Zwei Zellkerne verschmelzen",
+        "fact": "Bei der Befruchtung verschmelzen die Zellkerne von Eizelle und Spermienzelle. So entsteht der Beginn eines neuen Menschen."
+      }
+    },
+    {
+      "id": "verhuetung",
+      "color": "#9B7BFF",
+      "ic": "F2",
+      "title": "Verhütung und Schutz",
+      "de": "Methoden, Schutz vor Infektionen, Beratung · Fortpflanzung",
+      "card": {
+        "name": "Wissen schützt",
+        "fact": "Das Kondom verhindert Schwangerschaft und schützt zugleich vor vielen sexuell übertragbaren Infektionen."
+      }
+    }
+  ],
+  "notes": {
+    "pflanzen-tierzelle": [
+      [
+        "Beide Zellen",
+        "Zellkern (Steuerzentrale), Zellplasma (Ort der Stoffwechselvorgänge), Zellmembran (Grenze, regelt den Stoffaustausch), Mitochondrien (Energie)."
+      ],
+      [
+        "Nur Pflanzenzelle",
+        "Zellwand (stabil), Chloroplasten (Fotosynthese), große Vakuole (Zellsaft, Wasser)."
+      ]
+    ],
+    "mikroskop": [
+      [
+        "Rechnung",
+        "Gesamtvergrößerung = Okular mal Objektiv."
+      ],
+      [
+        "Reihenfolge",
+        "Immer mit dem kleinsten Objektiv beginnen, scharf stellen, erst dann wechseln."
+      ]
+    ],
+    "zelle-organismus": [
+      [
+        "Stufen",
+        "Zelle, Gewebe, Organ, Organsystem, Organismus."
+      ],
+      [
+        "Wachstum",
+        "Zellen teilen sich. Pflanzenzellen strecken sich zusätzlich."
+      ]
+    ],
+    "fotosynthese": [
+      [
+        "Wortgleichung",
+        "Kohlenstoffdioxid plus Wasser ergibt mit Lichtenergie Traubenzucker plus Sauerstoff."
+      ],
+      [
+        "Ort",
+        "In den Chloroplasten, mit Chlorophyll als Farbstoff."
+      ],
+      [
+        "Nachweis",
+        "Stärke färbt sich mit Iod-Kaliumiodid-Lösung blauviolett."
+      ]
+    ],
+    "zellatmung": [
+      [
+        "Wortgleichung",
+        "Traubenzucker plus Sauerstoff ergibt Kohlenstoffdioxid plus Wasser, dabei wird Energie nutzbar."
+      ],
+      [
+        "Ort",
+        "In den Mitochondrien von Pflanzen- und Tierzellen."
+      ]
+    ],
+    "naehrstoffe": [
+      [
+        "Hauptnährstoffe",
+        "Kohlenhydrate (Energie), Fette (Energiespeicher), Proteine (Baustoffe)."
+      ],
+      [
+        "Weitere Stoffe",
+        "Vitamine, Mineralstoffe, Wasser, Ballaststoffe."
+      ],
+      [
+        "Nachweise",
+        "Stärke: Iod-Kaliumiodid blauviolett. Fett: Fettfleck auf Papier."
+      ]
+    ],
+    "verdauung": [
+      [
+        "Weg der Nahrung",
+        "Mund, Speiseröhre, Magen, Dünndarm, Dickdarm."
+      ],
+      [
+        "Enzyme",
+        "Amylase (Stärke), Protease (Proteine), Lipase (Fette). Jedes Enzym passt nur zu einem Stoff."
+      ],
+      [
+        "Resorption",
+        "Im Dünndarm gehen die Nährstoffe ins Blut über. Darmzotten vergrößern die Oberfläche."
+      ]
+    ],
+    "gesunde-ernaehrung": [
+      [
+        "Faustregel",
+        "Viel pflanzliche Lebensmittel, Wasser trinken, Zucker und Fett sparsam."
+      ],
+      [
+        "Energiebedarf",
+        "Wer sich viel bewegt, braucht mehr Energie."
+      ]
+    ],
+    "lunge": [
+      [
+        "Weg der Luft",
+        "Nase, Rachen, Kehlkopf, Luftröhre, Bronchien, Lungenbläschen."
+      ],
+      [
+        "Einatmen",
+        "Zwerchfell flacht ab, Rippen heben sich, Brustraum wird größer, Luft strömt ein."
+      ],
+      [
+        "Gasaustausch",
+        "In den Lungenbläschen geht Sauerstoff ins Blut und Kohlenstoffdioxid aus dem Blut."
+      ]
+    ],
+    "blut": [
+      [
+        "Blutplasma",
+        "Flüssiger Anteil, transportiert Nährstoffe, Abfallstoffe und Wärme."
+      ],
+      [
+        "Rote Blutzellen",
+        "Enthalten Hämoglobin und transportieren Sauerstoff."
+      ],
+      [
+        "Weiße Zellen und Plättchen",
+        "Abwehr und Wundverschluss."
+      ]
+    ],
+    "herz-kreislauf": [
+      [
+        "Doppelkreislauf",
+        "Lungenkreislauf (Herz, Lunge, Herz) und Körperkreislauf (Herz, Körper, Herz)."
+      ],
+      [
+        "Gefäße",
+        "Arterien führen vom Herzen weg, Venen zum Herzen hin, Kapillaren tauschen Stoffe aus."
+      ],
+      [
+        "Puls",
+        "Der Puls steigt bei Belastung und sinkt bei Ruhe wieder. Ausdauertraining senkt den Ruhepuls."
+      ]
+    ],
+    "befruchtung-geburt": [
+      [
+        "Geschlechtszellen",
+        "Eizelle (aus dem Eierstock) und Spermienzelle (aus dem Hoden)."
+      ],
+      [
+        "Befruchtung",
+        "Im Eileiter verschmelzen die Zellkerne von Eizelle und Spermienzelle."
+      ],
+      [
+        "Schwangerschaft",
+        "Der Embryo nistet sich in der Gebärmutter ein, wächst und wird über Plazenta und Nabelschnur versorgt."
+      ]
+    ],
+    "verhuetung": [
+      [
+        "Zweck",
+        "Verhütung soll verhindern, dass eine Schwangerschaft entsteht."
+      ],
+      [
+        "Kondom",
+        "Verhütungsmittel und Schutz vor vielen Infektionen."
+      ],
+      [
+        "Beratung",
+        "Frauenärztin, Frauenarzt und Beratungsstellen helfen vertraulich."
+      ]
+    ]
+  }
+}

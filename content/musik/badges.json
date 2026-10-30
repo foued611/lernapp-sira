@@ -1,0 +1,12 @@
+[
+  { "id": "first", "n": "Erster Ton", "d": "Die erste Seite geübt", "rule": { "type": "anyUnit" } },
+  { "id": "perfect", "n": "Fehlerfrei", "d": "Eine Runde ohne Fehler", "rule": { "type": "perfectRound" } },
+  { "id": "combo", "n": "Im Takt", "d": "Fünf richtige Antworten hintereinander", "rule": { "type": "combo", "min": 5 } },
+  { "id": "streak", "n": "Dranbleiben", "d": "Drei Tage in Folge geübt", "rule": { "type": "streak", "days": 3 } },
+  { "id": "boss", "n": "Musik-Check", "d": "Den Endgegner besiegt", "rule": { "type": "boss" } },
+  { "id": "musiklehre", "n": "Musiklehre geschafft", "d": "Takt, Dur und Moll und Akkorde mit mindestens einem Stern", "rule": { "type": "units", "ids": ["takt", "tonleitern", "akkorde"] } },
+  { "id": "klang", "n": "Klang geschafft", "d": "Stimme, Instrumente und Schall mit mindestens einem Stern", "rule": { "type": "units", "ids": ["stimme", "instrumente", "akustik"] } },
+  { "id": "epochen", "n": "Epochen geschafft", "d": "Barock und Klassik mit mindestens einem Stern", "rule": { "type": "units", "ids": ["barock", "klassik"] } },
+  { "id": "stile", "n": "Formen und Stile geschafft", "d": "Alle vier Seiten zu Formen und Stilen mit mindestens einem Stern", "rule": { "type": "units", "ids": ["formen", "blues-jazz", "rock-pop", "musiktheater"] } },
+  { "id": "gesellschaft", "n": "Musik und Welt geschafft", "d": "Urheberrecht, Weltmusik und Medien mit mindestens einem Stern", "rule": { "type": "units", "ids": ["markt", "welt", "medien"] } }
+]

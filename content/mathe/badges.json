@@ -109,7 +109,7 @@
   {
     "id": "blitz10",
     "n": "Blitzrechner",
-    "d": "10 richtige im Blitz-Modus",
+    "d": "10 richtige im Blitz-Modus mit höchstens einem Fehler",
     "rule": {
       "type": "blitz",
       "min": 10,

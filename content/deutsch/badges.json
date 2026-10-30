@@ -73,7 +73,7 @@
   {
     "id": "combo5",
     "n": "Serie von 5",
-    "d": "Fünf richtige in Folge",
+    "d": "Fünf richtige Antworten in Folge",
     "rule": {
       "type": "combo",
       "min": 5
@@ -82,7 +82,7 @@
   {
     "id": "blitz10",
     "n": "Blitz-Schreiber",
-    "d": "10 richtige im Blitz-Modus",
+    "d": "10 richtige Antworten im Blitz-Modus",
     "rule": {
       "type": "blitz",
       "min": 10,
@@ -225,7 +225,7 @@
   {
     "id": "zurueckgekommen",
     "n": "Zurückgekommen",
-    "d": "Eine Seite nach Pause wieder aufgefrischt",
+    "d": "Eine Seite nach einer Pause wieder aufgefrischt",
     "rule": {
       "type": "refresh",
       "count": 1

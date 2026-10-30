@@ -8,6 +8,9 @@ import { fileURLToPath } from 'node:url';
 
 const APPS = join(dirname(fileURLToPath(import.meta.url)), '..');
 
+// Kommentare zählen nicht: sie dürfen beschreiben, warum etwas hier nicht vorkommt.
+const ohneKommentare = (text) => text.replace(/\/\*[\s\S]*?\*\//g, '').replace(/(^|[^:\\])\/\/.*$/gm, '$1');
+
 function quellen(ordner) {
   return readdirSync(ordner, { withFileTypes: true }).flatMap((eintrag) => {
     const pfad = join(ordner, eintrag.name);
@@ -18,7 +21,7 @@ function quellen(ordner) {
 
 for (const pfad of quellen(APPS)) {
   test(`APPS-GRENZEN: ${relative(APPS, pfad)} nutzt keinen globalen Zufall und kein document`, () => {
-    const text = readFileSync(pfad, 'utf8');
+    const text = ohneKommentare(readFileSync(pfad, 'utf8'));
     assert.doesNotMatch(text, /Math\.random/, `${pfad} nutzt Math.random`);
     assert.doesNotMatch(text, /\bdocument\./, `${pfad} greift auf document zu`);
   });

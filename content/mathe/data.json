@@ -1,11 +1,11 @@
 {
   "situations": [
     [
-      "Anzahl der Brötchen ↔ Preis",
+      "Anzahl der Brötchen ↔ Gesamtpreis, jedes Brötchen kostet gleich viel",
       "proportional"
     ],
     [
-      "Anzahl der Kopien ↔ Gesamtkosten",
+      "Anzahl der Kopien ↔ Gesamtkosten, jede Kopie kostet gleich viel",
       "proportional"
     ],
     [
