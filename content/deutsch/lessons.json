@@ -7,7 +7,7 @@
       "Nur das Wesentliche kommt hinein, in der Reihenfolge der Handlung."
     ],
     "analogy": {
-      "title": "Stell dir vor: du erzählst einem Freund einen Film",
+      "title": "Stell dir vor: Du erzählst einem Freund einen Film",
       "html": "<p>Dein Freund kennt den Film nicht. Du sagst nicht jede Szene und nicht jedes Wort, sondern nur, <b>worum es geht</b> und was die wichtigsten Dinge sind, die passieren.</p><p>Genau das ist eine Inhaltsangabe, nur schriftlich und sachlich.</p>"
     },
     "figure": {
@@ -41,16 +41,16 @@
       "q": "In der Vorlage steht: „Lea ging nach Hause und weinte.“ Was schreibst du in der Inhaltsangabe?",
       "options": [
         {
-          "id": "Lea geht nach Hause und weint.",
-          "html": "Lea geht nach Hause und weint."
-        },
-        {
           "id": "Lea ging nach Hause und weinte.",
           "html": "Lea ging nach Hause und weinte."
         },
         {
           "id": "Lea ist nach Hause gegangen und hat geweint.",
           "html": "Lea ist nach Hause gegangen und hat geweint."
+        },
+        {
+          "id": "Lea geht nach Hause und weint.",
+          "html": "Lea geht nach Hause und weint."
         },
         {
           "id": "Die arme Lea ging nach Hause.",
@@ -140,12 +140,12 @@
       "q": "„Er spart, damit er sich ein Rad kaufen kann.“ Welche Art Adverbialsatz?",
       "options": [
         {
-          "id": "final (Zweck)",
-          "html": "final (Zweck)"
-        },
-        {
           "id": "kausal (Grund)",
           "html": "kausal (Grund)"
+        },
+        {
+          "id": "final (Zweck)",
+          "html": "final (Zweck)"
         },
         {
           "id": "temporal (Zeit)",
@@ -202,10 +202,6 @@
       "q": "Welcher Satz ist richtig?",
       "options": [
         {
-          "id": "Ich glaube, dass er kommt.",
-          "html": "Ich glaube, dass er kommt."
-        },
-        {
           "id": "Ich glaube dass er kommt.",
           "html": "Ich glaube dass er kommt."
         },
@@ -216,6 +212,10 @@
         {
           "id": "Ich, glaube dass er kommt.",
           "html": "Ich, glaube dass er kommt."
+        },
+        {
+          "id": "Ich glaube, dass er kommt.",
+          "html": "Ich glaube, dass er kommt."
         }
       ],
       "answer": "Ich glaube, dass er kommt.",
@@ -288,12 +288,12 @@
           "html": "das"
         },
         {
-          "id": "dasss",
-          "html": "dasss"
+          "id": "daß",
+          "html": "daß"
         }
       ],
       "answer": "dass",
-      "why": "„Ich hoffe, welches du kommst“ passt nicht. Also ist es die Konjunktion „dass“."
+      "why": "„Ich hoffe, welches du kommst“ passt nicht. Also ist es die Konjunktion „dass“. Die Schreibung „daß“ ist veraltet."
     }
   },
   "passiv": {
@@ -345,16 +345,12 @@
       ]
     },
     "pitfall": {
-      "html": "<p>Behalte die <b>Zeitform</b>. „Der Koch brät“ (Präsens) wird „wird gebraten“, nicht „wurde gebraten“.</p><p>Und: Das Passiv braucht <b>werden</b>, nicht „sein“.</p>"
+      "html": "<p>Behalte die <b>Zeitform</b>. „Der Koch brät“ (Präsens) wird „wird gebraten“, nicht „wurde gebraten“.</p><p>Und: Das Passiv, das du hier übst, bildest du mit <b>werden</b>, nicht mit „sein“.</p>"
     },
     "rule": "Passiv = werden + Partizip II. Das Akkusativobjekt wird Subjekt.",
     "check": {
-      "q": "Welcher Satz ist das Passiv von „Die Kinder bauen eine Hütte.“?",
+      "q": "Welcher Satz ist das Passiv von „Die Kinder bauen eine Hütte“?",
       "options": [
-        {
-          "id": "Eine Hütte wird von den Kindern gebaut.",
-          "html": "Eine Hütte wird von den Kindern gebaut."
-        },
         {
           "id": "Eine Hütte baut von den Kindern.",
           "html": "Eine Hütte baut von den Kindern."
@@ -364,20 +360,24 @@
           "html": "Die Kinder werden eine Hütte gebaut."
         },
         {
-          "id": "Eine Hütte ist von den Kindern gebaut.",
-          "html": "Eine Hütte ist von den Kindern gebaut."
+          "id": "Eine Hütte wird von den Kindern gebaut.",
+          "html": "Eine Hütte wird von den Kindern gebaut."
+        },
+        {
+          "id": "Eine Hütte wurde von den Kindern gebaut.",
+          "html": "Eine Hütte wurde von den Kindern gebaut."
         }
       ],
       "answer": "Eine Hütte wird von den Kindern gebaut.",
-      "why": "Die Hütte (Akkusativobjekt) wird Subjekt, dazu „wird gebaut“ im Präsens."
+      "why": "Die Hütte (Akkusativobjekt) wird Subjekt, dazu „wird gebaut“. Die Zeitform bleibt Präsens."
     }
   },
   "stilmittel": {
-    "goal": "Du kannst Vergleich, Metapher, Personifikation und Hyperbel erkennen.",
+    "goal": "Du kannst Vergleich, Metapher, Personifikation, Hyperbel und Alliteration erkennen.",
     "tldr": [
       "Sprachliche Bilder machen Texte anschaulich.",
       "Vergleich: mit „wie“. Metapher: ohne „wie“.",
-      "Personifikation: Dinge handeln wie Menschen. Hyperbel: starke Übertreibung."
+      "Personifikation: Dinge handeln wie Menschen. Hyperbel: starke Übertreibung. Alliteration: gleicher Anlaut."
     ],
     "analogy": {
       "title": "Stell dir vor: Malen mit Wörtern",
@@ -412,6 +412,11 @@
               "Hyperbel",
               "Übertreibung",
               "tausendmal gesagt"
+            ],
+            [
+              "Alliteration",
+              "gleicher Anlaut",
+              "müde Männer munter"
             ]
           ],
           [
@@ -419,10 +424,10 @@
             2,
             3
           ],
-          "Sprachliche Bilder"
+          "Stilmittel"
         ]
       },
-      "caption": "Vier wichtige sprachliche Bilder mit Merkmal und Beispiel."
+      "caption": "Fünf wichtige Stilmittel mit Merkmal und Beispiel."
     },
     "steps": {
       "title": "So bestimmst du das Stilmittel: „Die Sonne lacht.“",
@@ -433,19 +438,19 @@
       ]
     },
     "pitfall": {
-      "html": "<p>Vergleich und Metapher verwechseln viele. Merke: <b>wie</b> im Satz heißt Vergleich. Fehlt es, ist es eine Metapher.</p>"
+      "html": "<p>Vergleich und Metapher verwechseln viele. Merke: Beim Vergleich verbindet <b>wie</b> die beiden Dinge. Bei der Metapher fehlt es: Das Bild steht direkt für die Sache.</p>"
     },
-    "rule": "wie = Vergleich. Ohne wie = Metapher. Ding handelt wie ein Mensch = Personifikation.",
+    "rule": "Bild mit wie = Vergleich. Bild ohne wie = Metapher. Ding handelt wie ein Mensch = Personifikation.",
     "check": {
       "q": "„Er ist ein Fels in der Brandung.“ Welches Stilmittel?",
       "options": [
         {
-          "id": "Metapher",
-          "html": "Metapher"
-        },
-        {
           "id": "Vergleich",
           "html": "Vergleich"
+        },
+        {
+          "id": "Metapher",
+          "html": "Metapher"
         },
         {
           "id": "Personifikation",
@@ -523,7 +528,7 @@
     "pitfall": {
       "html": "<p>Nicht jeder kurze Vokal bekommt einen doppelten Mitlaut. Folgen zwei verschiedene Mitlaute, bleibt es dabei: <b>Hand</b>, <b>Wolke</b>, <b>Fenster</b>. Doppelt wird nur, wenn nach dem kurzen Vokal <b>ein</b> Mitlaut käme.</p>"
     },
-    "rule": "Kurzer Vokal, dann doppelter Mitlaut. Aus kk wird ck, aus zz wird tz.",
+    "rule": "Kurzer Vokal, dann meist doppelter Mitlaut. Aus kk wird ck, aus zz wird tz.",
     "check": {
       "q": "Welches Wort ist richtig geschrieben?",
       "options": [
@@ -631,7 +636,7 @@
   "slaute": {
     "goal": "Du kannst entscheiden, ob du s, ss oder ß schreibst.",
     "tldr": [
-      "Nach kurzem Vokal schreibst du ss: Wasser, müssen, Fluss.",
+      "Zischt das s nach kurzem Vokal, schreibst du ss: Wasser, müssen, Fluss.",
       "Nach langem Vokal oder Zwielaut schreibst du ß, wenn das s zischt: Straße, heiß, draußen.",
       "Summt das s, schreibst du ein einfaches s: Rose, lesen."
     ],
@@ -696,16 +701,16 @@
       "q": "Welches Wort ist richtig geschrieben?",
       "options": [
         {
-          "id": "Straße",
-          "html": "Straße"
-        },
-        {
           "id": "Strasse",
           "html": "Strasse"
         },
         {
           "id": "Strase",
           "html": "Strase"
+        },
+        {
+          "id": "Straße",
+          "html": "Straße"
         }
       ],
       "answer": "Straße",
@@ -768,7 +773,7 @@
       "title": "So prüfst du: Kind oder Kint?",
       "items": [
         "Mache das Wort länger: ein Kind, viele Kinder.",
-        "Höre auf das Ende der Silbe: Kin-der hat ein d.",
+        "Höre auf den Anfang der zweiten Silbe: Kin-der hat ein d.",
         "Also schreibst du auch Kind mit <b>d</b>."
       ]
     },
@@ -780,12 +785,12 @@
       "q": "Die Mehrzahl heißt Wälder. Wie schreibst du die Einzahl?",
       "options": [
         {
-          "id": "Wald",
-          "html": "Wald"
-        },
-        {
           "id": "Walt",
           "html": "Walt"
+        },
+        {
+          "id": "Wald",
+          "html": "Wald"
         },
         {
           "id": "Walld",
@@ -857,9 +862,9 @@
       ]
     },
     "pitfall": {
-      "html": "<p>Nicht jedes „morgen“ oder „früh“ ist ein Nomen. <b>morgen früh</b> schreibst du klein. <b>heute Morgen</b> schreibst du mit großem M, weil Morgen hier die Tageszeit nennt.</p>"
+      "html": "<p>Nicht jedes „morgen“ ist ein Nomen. In <b>morgen früh</b> meint es den nächsten Tag und bleibt klein. In <b>heute Morgen</b> nennt es die Tageszeit und wird großgeschrieben.</p>"
     },
-    "rule": "Steht ein Signalwort davor (der, das, beim, zum, etwas, nichts, viel), schreibst du groß.",
+    "rule": "Steht ein Signalwort davor (das, beim, zum, etwas, nichts, viel) und wird das Wort als Nomen gebraucht, schreibst du groß.",
     "check": {
       "q": "Welcher Satz ist richtig geschrieben?",
       "options": [
@@ -910,7 +915,7 @@
       "items": [
         "Lies die Überschrift und überlege: Was weiß ich schon dazu?",
         "Lies den ersten Absatz und unterstreiche ein bis drei Schlüsselwörter.",
-        "Ein Wort fehlt? Lies den Satz davor und danach. Oft verrät der Zusammenhang die Bedeutung.",
+        "Du verstehst ein Wort nicht? Lies den Satz davor und danach. Oft verrät der Zusammenhang die Bedeutung.",
         "Schreibe am Ende in einem Satz auf, worum es geht."
       ]
     },
@@ -946,7 +951,7 @@
       "Sieht der Konjunktiv I aus wie das Präsens, nimmst du eine Ersatzform: sie hätten."
     ],
     "analogy": {
-      "title": "Stell dir vor: du bist Reporter",
+      "title": "Stell dir vor: Du bist Reporter",
       "html": "<p>Du hörst, wie Anna sagt: „Ich bin müde.“ Im Radio sagst du: „Anna sagt, sie <b>sei</b> müde.“ Du gibst weiter, was gesagt wurde, aber du sprichst nicht mit ihrer Stimme.</p>"
     },
     "figure": {
@@ -994,12 +999,8 @@
     },
     "rule": "Ohne Anführungszeichen, Pronomen anpassen, Konjunktiv I; Ersatzform, wenn er gleich aussieht wie das Präsens.",
     "check": {
-      "q": "Wie lautet die indirekte Rede? Mia sagt: „Ich bin zu Hause.“",
+      "q": "Wie lautet die indirekte Rede im Konjunktiv I? Mia sagt: „Ich bin zu Hause.“",
       "options": [
-        {
-          "id": "Mia sagt, sie sei zu Hause.",
-          "html": "Mia sagt, sie sei zu Hause."
-        },
         {
           "id": "Mia sagt, ich sei zu Hause.",
           "html": "Mia sagt, ich sei zu Hause."
@@ -1007,6 +1008,10 @@
         {
           "id": "Mia sagt, sie ist zu Hause.",
           "html": "Mia sagt, sie ist zu Hause."
+        },
+        {
+          "id": "Mia sagt, sie sei zu Hause.",
+          "html": "Mia sagt, sie sei zu Hause."
         },
         {
           "id": "Mia sagt, sie war zu Hause.",
@@ -1021,7 +1026,7 @@
     "goal": "Du kannst Attribute erkennen und ihre Art bestimmen.",
     "tldr": [
       "Ein Attribut beschreibt ein Nomen näher.",
-      "Es gibt vier Arten: Adjektiv, Genitiv, Präposition, Nebensatz.",
+      "Hier übst du vier Arten: Adjektiv, Genitiv, Präposition, Nebensatz.",
       "Bei der Umstellprobe wandert das Attribut mit seinem Nomen."
     ],
     "analogy": {
@@ -1086,12 +1091,12 @@
       "q": "Welche Art Attribut ist „das Buch, das ich lese“?",
       "options": [
         {
-          "id": "Attributsatz",
-          "html": "Attributsatz"
-        },
-        {
           "id": "Adjektivattribut",
           "html": "Adjektivattribut"
+        },
+        {
+          "id": "Attributsatz",
+          "html": "Attributsatz"
         },
         {
           "id": "Genitivattribut",
@@ -1111,7 +1116,7 @@
     "tldr": [
       "Präpositionen stehen vor Nomen und verlangen einen Fall.",
       "Konjunktionen verbinden Wörter und Sätze.",
-      "Adverbien geben Umstände an und bleiben unverändert."
+      "Adverbien geben Umstände an und werden nicht gebeugt."
     ],
     "analogy": {
       "title": "Stell dir vor: Verkehrsschilder und Klebeband",
@@ -1139,7 +1144,7 @@
             ],
             [
               "Adverb",
-              "unveränderlich",
+              "wird nicht gebeugt",
               "gestern, dort, oft"
             ]
           ],
@@ -1165,14 +1170,10 @@
     "pitfall": {
       "html": "<p>Bei Wechselpräpositionen (auf, in, unter, neben …) hilft die Frage: <b>Wo?</b> Dann Dativ („auf dem Tisch“). <b>Wohin?</b> Dann Akkusativ („auf den Tisch“).</p>"
     },
-    "rule": "Präposition + Fall, Konjunktion verbindet, Adverb bleibt unverändert. Wo? Dativ, wohin? Akkusativ.",
+    "rule": "Präposition + Fall, Konjunktion verbindet, Adverb wird nicht gebeugt. Wo? Dativ, wohin? Akkusativ.",
     "check": {
       "q": "Welche Wortart ist „dort“ in „Sie wohnt dort“?",
       "options": [
-        {
-          "id": "Adverb",
-          "html": "Adverb"
-        },
         {
           "id": "Präposition",
           "html": "Präposition"
@@ -1184,6 +1185,10 @@
         {
           "id": "Adjektiv",
           "html": "Adjektiv"
+        },
+        {
+          "id": "Adverb",
+          "html": "Adverb"
         }
       ],
       "answer": "Adverb",

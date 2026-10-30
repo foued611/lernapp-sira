@@ -18,6 +18,12 @@ export function placeSum(n) {
   return parts.length ? parts.join(' + ') : '0';
 }
 
+/** Stellen (0 = Tausender bis 3 = Einer), deren Ziffer keine Null ist und genau einmal in der Zahl vorkommt. */
+export function askablePlaces(n) {
+  const digits = placeDigits(n);
+  return [0, 1, 2, 3].filter((i) => digits[i] !== '0' && digits.indexOf(digits[i]) === digits.lastIndexOf(digits[i]));
+}
+
 /** Stellenwerte, über denen in der Binärzahl eine 1 steht. */
 export function onesWeights(bin) {
   const len = bin.length;
@@ -45,8 +51,12 @@ export const explainBinToDec = (bin) => {
   return `${bin}: ${w.length ? w.join(' + ') : '0'} = ${parseInt(bin, 2)}. Zähle die Stellenwerte zusammen, über denen eine 1 steht.`;
 };
 export const explainDecToBin = (n) => `${n} = ${toBin(n)}. Gehe von links durch die Stellenwerte (128, 64, 32 …): Passt er noch hinein, schreibe 1 und ziehe ihn ab, sonst 0.`;
-export const explainHexToDec = (n) => `${toHex(n)} = ${Math.floor(n / 16)} × 16 + ${n % 16} = ${n}. Die linke Ziffer zählt 16-fach (A=10 … F=15).`;
-export const explainDecToHex = (n) => `${n} : 16 = ${Math.floor(n / 16)} Rest ${n % 16}. Das ergibt ${HEX[Math.floor(n / 16)]} und ${HEX[n % 16]}, also ${toHex(n)}.`;
+export const explainHexToDec = (n) => (n < 16
+  ? `${toHex(n)} = ${n}. Nach der 9 geht es mit Buchstaben weiter: A=10 … F=15.`
+  : `${toHex(n)} = ${Math.floor(n / 16)} × 16 + ${n % 16} = ${n}. Die linke Ziffer zählt 16-fach (A=10 … F=15).`);
+export const explainDecToHex = (n) => (n < 16
+  ? `${n} ist kleiner als 16, also reicht eine Hex-Ziffer: ${toHex(n)}.`
+  : `${n} : 16 = ${Math.floor(n / 16)} Rest ${n % 16}. Das ergibt ${HEX[Math.floor(n / 16)]} und ${HEX[n % 16]}, also ${toHex(n)}.`);
 export const explainBinToHex = (bin) => {
   const groups = bin.padStart(Math.ceil(bin.length / 4) * 4, '0').match(/.{4}/g);
   return `Vierergruppen: ${groups.map((g) => `${g} = ${HEX[parseInt(g, 2)]}`).join(', ')}.`;

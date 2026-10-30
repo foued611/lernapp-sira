@@ -5,7 +5,7 @@
   { "id": "hex", "n": "Hex-Held", "d": "Die Seite zu Hexadezimal geschafft", "rule": { "type": "unit", "id": "hex" } },
   { "id": "perfect", "n": "Fehlerfrei", "d": "Eine Runde ohne Fehler", "rule": { "type": "perfectRound" } },
   { "id": "combo5", "n": "Serie von 5", "d": "Fünf richtige in Folge", "rule": { "type": "combo", "min": 5 } },
-  { "id": "blitz10", "n": "Blitzrechner", "d": "10 richtige im Blitz-Modus", "rule": { "type": "blitz", "min": 10, "maxWrong": 1 } },
+  { "id": "blitz10", "n": "Blitzrechner", "d": "10 richtige im Blitz-Modus mit höchstens einem Fehler", "rule": { "type": "blitz", "min": 10, "maxWrong": 1 } },
   { "id": "boss", "n": "Bit-Boss besiegt", "d": "Den Endgegner geschafft", "rule": { "type": "boss" } },
   { "id": "streak3", "n": "Dranbleiber", "d": "Drei Tage in Folge geübt", "rule": { "type": "streak", "days": 3 } },
   { "id": "besser-geworden", "n": "Besser geworden", "d": "Bei „Stellenwerte“ 20 Prozentpunkte besser als beim letzten Mal", "rule": { "type": "improved", "unit": "stellen", "by": 0.2 } },

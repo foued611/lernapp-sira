@@ -78,7 +78,7 @@
           2
         ]
       },
-      "caption": "Orange Kacheln sind x, gelbe sind Einer. Gleiche Kacheln werden zusammengelegt."
+      "caption": "Helle Kacheln mit x stehen für x, gelbe Kacheln mit 1 sind Einer. Gleiche Kacheln werden zusammengelegt."
     },
     "steps": {
       "title": "So rechnest du 4 · (x + 3), Schritt für Schritt",
@@ -142,7 +142,7 @@
     "steps": {
       "title": "So löst du 3x − 5 = 16, Schritt für Schritt",
       "items": [
-        "Schreibe die Umformung rechts neben die Gleichung. Das nennt man Äquivalenzumformung.",
+        "Eine Umformung, die die Lösung nicht verändert, heißt <b>Äquivalenzumformung</b>. Du schreibst sie rechts neben die Gleichung.",
         "Mache das Minus rückgängig: <b>3x − 5 = 16 | + 5</b> ergibt 3x = 21.",
         "Mache das Mal rückgängig: <b>3x = 21 | : 3</b> ergibt x = 7.",
         "Probe: 3 · 7 − 5 = 16. Links und rechts stimmen, die Lösung ist richtig."
@@ -432,7 +432,7 @@
           5
         ]
       },
-      "caption": "Urne mit 3 roten und 5 blauen Kugeln: P(rot) = 3/8."
+      "caption": "Urne mit 3 roten (r) und 5 blauen (b) Kugeln: P(rot) = 3/8."
     },
     "steps": {
       "title": "So bestimmst du die Wahrscheinlichkeit für eine gerade Zahl beim Würfeln",
@@ -455,8 +455,8 @@
           "html": "1/4"
         },
         {
-          "id": "1/3",
-          "html": "1/3"
+          "id": "1/8",
+          "html": "1/8"
         },
         {
           "id": "2/6",

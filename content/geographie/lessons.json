@@ -1605,7 +1605,7 @@
     "goal": "Du kannst Wetter und Klima unterscheiden und Anzeichen des Klimawandels nennen.",
     "tldr": [
       "Wetter gilt für einen Ort und einen Tag. Klima ist der Durchschnitt über mindestens 30 Jahre.",
-      "Seit der vorindustriellen Zeit ist die weltweite Durchschnittstemperatur um etwa ein Grad gestiegen. Gletscher und Meereis schrumpfen, der Meeresspiegel steigt."
+      "Seit der vorindustriellen Zeit ist die weltweite Durchschnittstemperatur um mehr als ein Grad gestiegen. Gletscher und Meereis schrumpfen, der Meeresspiegel steigt."
     ],
     "analogy": {
       "title": "Stell dir vor: dein Zeugnis",
@@ -1785,7 +1785,7 @@
         },
         {
           "id": "c",
-          "html": "Es löscht die Sonne aus"
+          "html": "Es zerstört die Ozonschicht"
         }
       ],
       "answer": "a",
@@ -1868,7 +1868,7 @@
         },
         {
           "id": "c",
-          "html": "Wolken über dem Meer"
+          "html": "Eisberge, die im Meer treiben"
         }
       ],
       "answer": "a",
@@ -2000,7 +2000,7 @@
       "items": [
         "Prüfe: Liegt unter dem Eis Meer oder Land?",
         "Meer heißt Arktis, Land heißt Antarktis.",
-        "Merke: Eisbären leben nur in der Arktis, Pinguine nur auf der Südhalbkugel."
+        "Merke: Eisbären leben nur in der Arktis, Pinguine fast nur auf der Südhalbkugel."
       ]
     },
     "pitfall": {
@@ -2020,7 +2020,7 @@
         },
         {
           "id": "c",
-          "html": "Grönland-Meer"
+          "html": "Das Nordpolarmeer"
         }
       ],
       "answer": "a",
@@ -2077,7 +2077,7 @@
         },
         {
           "id": "c",
-          "html": "Die Erde wird im Sommer größer"
+          "html": "Die Erde ist im Sommer näher an der Sonne"
         }
       ],
       "answer": "a",
@@ -2130,7 +2130,7 @@
         },
         {
           "id": "b",
-          "html": "Dort ist es zu heiß"
+          "html": "Es regnet dort zu viel"
         },
         {
           "id": "c",
@@ -2209,7 +2209,7 @@
       "options": [
         {
           "id": "a",
-          "html": "Friedliche Nutzung und Forschung, keine Gebietsansprüche"
+          "html": "Friedliche Nutzung und Forschung, Gebietsansprüche ruhen"
         },
         {
           "id": "b",
@@ -2283,8 +2283,8 @@
   "indien-china": {
     "goal": "Du kannst das Bevölkerungswachstum in Indien erklären und die Folgen der Ein-Kind-Politik in China nennen.",
     "tldr": [
-      "Indien ist heute das bevölkerungsreichste Land der Erde. Viele junge Menschen, Armut und fehlende Altersvorsorge halten die Geburtenrate hoch.",
-      "China begrenzte ab 1979 die Kinderzahl. Das bremste das Wachstum, führte aber zu zu wenigen jungen Menschen und zu mehr Jungen als Mädchen."
+      "Nach Schätzung der Vereinten Nationen ist Indien seit 2023 das bevölkerungsreichste Land der Erde. Die Geburtenrate ist stark gesunken, doch viele junge Menschen bekommen Kinder. Darum wächst die Bevölkerung weiter.",
+      "China begrenzte ab 1979 die Kinderzahl. Das bremste das Wachstum, führte aber dazu, dass junge Menschen fehlen und es mehr Jungen als Mädchen gibt."
     ],
     "analogy": {
       "title": "Stell dir vor: eine Regel in der Klasse",
@@ -2302,7 +2302,7 @@
           [
             [
               "Indien",
-              "Familienplanung, keine Zwangsregel",
+              "Familienplanung, keine landesweite Grenze",
               "Bevölkerung wächst weiter"
             ],
             [
@@ -2332,7 +2332,7 @@
     "pitfall": {
       "html": "<p>Die Ein-Kind-Politik gibt es seit 2016 nicht mehr. China erlaubt inzwischen zwei, später drei Kinder, doch die Geburtenrate bleibt niedrig.</p>"
     },
-    "rule": "Indien: stark wachsend. China: Wachstum gebremst, aber Überalterung.",
+    "rule": "Indien: wächst weiter, weil die Bevölkerung jung ist. China: Wachstum gestoppt, dazu Überalterung.",
     "check": {
       "q": "Was war eine Folge der Ein-Kind-Politik?",
       "options": [
@@ -2361,7 +2361,7 @@
     ],
     "analogy": {
       "title": "Stell dir vor: ein Baum im Querschnitt",
-      "html": "<p>Wie Jahresringe zeigt die Pyramide, wie viele Menschen in welchem Alter leben. Jede Ebene ist ein Jahrgang.</p>"
+      "html": "<p>Wie Jahresringe zeigt die Pyramide, wie viele Menschen in welchem Alter leben. Jede Ebene ist eine Altersgruppe.</p>"
     },
     "figure": {
       "diagram": {
@@ -2632,7 +2632,7 @@
         },
         {
           "id": "c",
-          "html": "Weil es zu viele Parks gibt"
+          "html": "Weil die Mieten in der Stadt zu niedrig sind"
         }
       ],
       "answer": "a",
@@ -2643,7 +2643,7 @@
     "goal": "Du kannst Merkmale des Entwicklungsstandes nennen und Länder einordnen.",
     "tldr": [
       "Der Entwicklungsstand eines Landes wird mit Indikatoren gemessen, zum Beispiel Einkommen, Lebenserwartung, Kindersterblichkeit und Bildung.",
-      "Man unterscheidet Industrieländer, Schwellenländer und Entwicklungsländer. Bangladesch gilt als Entwicklungsland, Malaysia als Schwellenland."
+      "Man unterscheidet Industrieländer, Schwellenländer und Entwicklungsländer. Bangladesch wird oft als Entwicklungsland eingeordnet, Malaysia als Schwellenland. Die Grenzen sind fließend."
     ],
     "analogy": {
       "title": "Stell dir vor: ein Zeugnis",
@@ -2845,7 +2845,7 @@
         },
         {
           "id": "c",
-          "html": "Man baut Mauern"
+          "html": "Man entscheidet alles für die Menschen vor Ort"
         }
       ],
       "answer": "a",
@@ -2951,7 +2951,7 @@
       "options": [
         {
           "id": "a",
-          "html": "Sie reifen auf dem Transport nach und kommen unversehrt an"
+          "html": "So überstehen sie den langen Transport und reifen erst in Europa"
         },
         {
           "id": "b",

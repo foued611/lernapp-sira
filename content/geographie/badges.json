@@ -155,7 +155,7 @@
   {
     "id": "wirtschaft",
     "n": "Welthandels-Profi",
-    "d": "Alle Seiten zum Wirtschaftlichen Handeln mit mindestens einem Stern",
+    "d": "Alle Seiten zum wirtschaftlichen Handeln mit mindestens einem Stern",
     "rule": {
       "type": "units",
       "ids": [

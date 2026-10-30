@@ -46,7 +46,7 @@
       "de": "Kapitel III: SSS, SWS, WSW, SsW",
       "card": {
         "name": "Dreiecks-Baumeister",
-        "fact": "Das Dreieck ist die einzige Form, die sich nicht verbiegen lässt. Darum bestehen Brücken und Dächer aus Dreiecken."
+        "fact": "Das Dreieck ist das einzige Vieleck, das sich nicht verbiegen lässt. Darum stecken in Brücken und Dächern so viele Dreiecke."
       }
     },
     {
@@ -149,7 +149,7 @@
       ],
       [
         "SsW",
-        "Zwei Seiten und der Winkel, der der längeren Seite gegenüberliegt. Liegt er der kürzeren gegenüber, gibt es zwei Lösungen."
+        "Zwei Seiten und der Winkel, der der längeren Seite gegenüberliegt. Liegt er der kürzeren gegenüber, kann es zwei Lösungen geben oder auch keine."
       ]
     ],
     "winkel": [

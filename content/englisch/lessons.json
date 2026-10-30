@@ -357,31 +357,31 @@
         "name": "tableDiagram",
         "args": [
           [
-            "Satz",
-            "Hilfsverb",
-            "Grundform"
+            "Satzart",
+            "will-Form",
+            "Beispiel"
           ],
           [
             [
-              "She",
+              "Bejahung",
               "will",
-              "call you"
+              "She will call you."
             ],
             [
-              "I",
+              "Verneinung",
               "won't",
-              "forget"
+              "I won't forget."
             ],
             [
+              "Frage",
               "Will",
-              "they",
-              "come?"
+              "Will they come?"
             ]
           ],
           [
             1.2,
             1,
-            1.4
+            1.8
           ],
           "Tabelle: Bejahung, Verneinung und Frage mit will"
         ]
@@ -567,7 +567,7 @@
       ]
     },
     "pitfall": {
-      "html": "<p>Nie zwei Subjekte: „the man who he lives here“ ist falsch. Das Relativpronomen ist selbst das Subjekt des Relativsatzes.</p>"
+      "html": "<p>Nie zwei Subjekte: „the man who he lives here“ ist falsch. Hier ist das Relativpronomen selbst das Subjekt des Relativsatzes.</p>"
     },
     "rule": "who = Person, which = Ding, that = beides, where = Ort, whose = wessen.",
     "check": {
@@ -627,7 +627,7 @@
     },
     "rule": "Das Pronomen darf weg, wenn danach ein Subjekt folgt.",
     "check": {
-      "q": "In welchem Satz darf das Pronomen wegfallen?",
+      "q": "In welchem Satz wurde das Pronomen richtig weggelassen?",
       "options": [
         {
           "id": "The bag I bought yesterday is red.",
@@ -647,7 +647,7 @@
     }
   },
   "passive": {
-    "goal": "Du kannst das Passiv in Präsens und Präteritum bilden und erkennst, wann der Täter wegfällt.",
+    "goal": "Du kannst das Passiv in Präsens, Präteritum und Zukunft bilden und erkennst, wann der Täter wegfällt.",
     "tldr": [
       "Passiv = be + Partizip II. Das Objekt wird zum Subjekt: The cake is baked.",
       "Die Zeit steckt im Hilfsverb be. Der Täter steht mit by oder fehlt ganz."
@@ -687,7 +687,7 @@
       "title": "So bildest du den Passivsatz",
       "items": [
         "Das Objekt des Aktivsatzes wird Subjekt: Mum bakes the cake wird zu The cake …",
-        "Verb: be in der Zeit des Aktivsatzes plus Partizip II. bakes wird zu is baked, baked wird zu was baked.",
+        "Verb: be in der Zeit des Aktivsatzes plus Partizip II. bakes wird zu is baked, baked wird zu was baked, will bake wird zu will be baked.",
         "Der Täter steht mit by: by Mum. Oft bleibt er weg, wenn er unwichtig ist.",
         "Probe: Steht be vor dem Partizip II? Dann ist es Passiv."
       ]
@@ -803,7 +803,7 @@
   "modal-substitutes": {
     "goal": "Du kannst Pflicht, Fähigkeit und Erlaubnis auch in der Vergangenheit und Zukunft ausdrücken, mit have to, be able to und be allowed to.",
     "tldr": [
-      "Modale Verben haben keine Zukunft und keine Vergangenheit. Dann helfen Ersatzformen.",
+      "Modale Verben haben keine Zukunftsform, must hat auch keine Vergangenheit. Dann helfen Ersatzformen.",
       "have to = Pflicht, be able to = Fähigkeit, be allowed to = Erlaubnis."
     ],
     "analogy": {
@@ -856,7 +856,7 @@
       ]
     },
     "pitfall": {
-      "html": "<p>Es gibt kein „musted“ und kein „canned“. In der Vergangenheit sagt man „had to“ und „was able to“.</p>"
+      "html": "<p>Als Vergangenheit von must und can gibt es kein „musted“ und kein „canned“. Du sagst „had to“ und „could“ oder „was able to“.</p>"
     },
     "rule": "Für Zeiten, die modale Verben nicht haben: have to, be able to, be allowed to.",
     "check": {
@@ -936,7 +936,7 @@
     }
   },
   "reflexive-pronouns": {
-    "goal": "Du kannst Reflexivpronomen wie myself und each other richtig einsetzen.",
+    "goal": "Du kannst Reflexivpronomen wie myself und das Wort each other richtig einsetzen.",
     "tldr": [
       "Sind Subjekt und Objekt dieselbe Person, endet das Pronomen auf -self: She hurt herself.",
       "Wenn sich zwei oder mehr Personen gegenseitig betreffen, sagt man each other."
@@ -959,7 +959,7 @@
               "myself"
             ],
             [
-              "you",
+              "you (eine Person)",
               "yourself"
             ],
             [
@@ -971,8 +971,16 @@
               "herself"
             ],
             [
+              "it",
+              "itself"
+            ],
+            [
               "we",
               "ourselves"
+            ],
+            [
+              "you (mehrere)",
+              "yourselves"
             ],
             [
               "they",
@@ -1061,10 +1069,11 @@
     "steps": {
       "title": "So gibst du Aussagen wieder",
       "items": [
-        "Nach said oder told folgt die Person bei told: She told me that … Bei say steht keine Person direkt danach.",
-        "Zeit eine Stufe zurück: is oder am wird was, will wird would, can wird could, have wird had.",
+        "Bei told folgt direkt die Person: She told me that … Bei said steht keine Person direkt danach.",
+        "Zeit eine Stufe zurück: is oder am wird was, will wird would, can wird could, have wird had, saw wird had seen.",
         "Zeitangaben ändern sich: now wird then, today wird that day, tomorrow wird the next day, yesterday wird the day before.",
-        "Befehle mit to: Open your books wird zu told us to open our books."
+        "Befehle mit to: Open your books wird zu told us to open our books.",
+        "Ja-Nein-Fragen mit if: Are you ready? wird zu She asked if I was ready."
       ]
     },
     "pitfall": {
@@ -1088,7 +1097,7 @@
         }
       ],
       "answer": "She said that she was hungry.",
-      "why": "Bei said folgt keine Person. Bei told müsste eine Person folgen: told me. Ohne Person klingt told unvollständig."
+      "why": "Bei said folgt keine Person. Bei told müsste eine Person folgen: told me. Ohne Person ist der Satz mit told falsch."
     }
   },
   "krank": {

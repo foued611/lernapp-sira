@@ -158,7 +158,7 @@
       "de": "have to, be able to, be allowed to · Unit 4",
       "card": {
         "name": "Der Ersatzspieler",
-        "fact": "Modale Verben haben keine Vergangenheit und Zukunft. Dann springen have to und be able to ein: I had to, I will be able to."
+        "fact": "Modale Verben haben keine Zukunftsform, must hat auch keine Vergangenheit. Dann springen have to und be able to ein: I had to, I will be able to."
       },
       "group": "Grammatik · Access 3"
     },
@@ -527,13 +527,13 @@
       ],
       [
         "Plural",
-        "ourselves, yourselves, themselves und each other."
+        "ourselves, yourselves, themselves. Gegenseitig: each other."
       ]
     ],
     "indirect-speech": [
       [
         "Zeit zurück",
-        "am/is → was, will → would, can → could, have → had."
+        "am/is → was, will → would, can → could, have → had, saw → had seen."
       ],
       [
         "Zeitangaben",

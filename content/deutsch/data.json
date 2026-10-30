@@ -3,13 +3,13 @@
     "inhaltsangabe": [
       {
         "q": "Welcher Satz ist ein guter Basissatz?",
-        "a": "In der Kurzgeschichte „Das Brot“ von Wolfgang Borchert geht es um eine Frau, die ihrem Mann nachts heimlich ihre Scheibe Brot überlässt.",
+        "a": "In der Kurzgeschichte „Das Brot“ von Wolfgang Borchert geht es um eine Frau, die ihren Mann nachts beim heimlichen Essen ertappt, ihn aber nicht bloßstellt.",
         "wrong": [
-          "Ich finde die Geschichte „Das Brot“ sehr traurig und schön.",
-          "Die Frau stand mitten in der Nacht auf und ging in die Küche.",
-          "Wolfgang Borchert schrieb viele Geschichten."
+          "In der Kurzgeschichte „Das Brot“ von Wolfgang Borchert fand ich besonders traurig, dass die Frau am Ende hungrig bleibt.",
+          "In der Nacht steht eine Frau auf, geht in die Küche und sieht einen Teller und Krümel auf dem Tisch.",
+          "Die Kurzgeschichte „Das Brot“ ist von Wolfgang Borchert und nur wenige Seiten lang."
         ],
-        "why": "Der Basissatz nennt Textsorte, Titel, Autor und das Thema in einem Satz im Präsens. Meinung und Einzelheiten gehören nicht hinein.",
+        "why": "Der Basissatz nennt Textsorte, Titel, Autor und Thema in einem Satz im Präsens. Meinung, Einzelheiten der Handlung oder ein Satz ohne Thema reichen nicht.",
         "label": "Basissatz"
       },
       {
@@ -73,9 +73,9 @@
         "wrong": [
           "ich finde, ich glaube, meiner Meinung nach",
           "krass, mega, voll, echt",
-          "Hilfe, Achtung, Vorsicht, Stopp"
+          "plötzlich, auf einmal, mit einem Schlag"
         ],
-        "why": "Zeitliche und logische Verknüpfungen zeigen, wie die Handlung zusammenhängt.",
+        "why": "Zeitliche und logische Verknüpfungen zeigen, wie die Handlung zusammenhängt. Wörter wie „plötzlich“ machen spannend, das gehört in eine Erzählung.",
         "label": "Verknüpfungen"
       },
       {
@@ -95,7 +95,7 @@
         "wrong": [
           "Wörtlich abgeschrieben, mit Anführungszeichen",
           "Jede Rede Wort für Wort in der Ich-Form",
-          "Immer in Großbuchstaben hervorgehoben"
+          "Jeden gesagten Satz einzeln, in der Reihenfolge des Textes"
         ],
         "why": "Du berichtest, was gesagt wird, zum Beispiel: „Sie bittet ihn zu bleiben.“ Das spart Platz und bleibt sachlich.",
         "label": "Wörtliche Rede"
@@ -104,8 +104,8 @@
         "q": "Was kann am Schluss einer Inhaltsangabe stehen, wenn die Aufgabe es verlangt?",
         "a": "Eine kurze Aussage dazu, worum es dem Text im Kern geht",
         "wrong": [
-          "Eine Liste aller Nebenfiguren",
-          "Der erste Satz der Geschichte",
+          "Eine genaue Beschreibung aller Nebenfiguren",
+          "Ein langes wörtliches Zitat aus dem Text",
           "Eine neue Fortsetzung der Geschichte"
         ],
         "why": "Ein knapper Schlusssatz kann die Kernaussage benennen. Eine Fortsetzung zu erfinden gehört nicht zur Inhaltsangabe.",
@@ -113,7 +113,7 @@
       },
       {
         "q": "Warum schreibst du in einer Inhaltsangabe keine eigene Meinung?",
-        "a": "Sie soll neutral informieren, auch Leser, die den Text nicht kennen",
+        "a": "Weil sie neutral informieren soll, auch Leser, die den Text nicht kennen",
         "wrong": [
           "Weil Meinungen immer falsch sind",
           "Weil die Lehrkraft sie nicht lesen will",
@@ -137,9 +137,9 @@
         "q": "In welcher Reihenfolge ist eine Inhaltsangabe aufgebaut?",
         "a": "Basissatz, dann die Handlung in zeitlicher Reihenfolge, zuletzt (falls verlangt) der Schluss",
         "wrong": [
-          "Schluss, Basissatz, Handlung",
-          "Handlung, eigene Meinung, Titel",
-          "Immer rückwärts vom Ende an"
+          "Handlung in zeitlicher Reihenfolge, dann Basissatz, zuletzt (falls verlangt) der Schluss",
+          "Schluss, dann Basissatz, zuletzt die Handlung in zeitlicher Reihenfolge",
+          "Basissatz, dann die eigene Meinung, zuletzt die Handlung in zeitlicher Reihenfolge"
         ],
         "why": "So kann jeder dem Text von Anfang bis Ende folgen. Der Basissatz kommt immer zuerst.",
         "label": "Aufbau"
@@ -390,7 +390,7 @@
           "Ich weiß dass, du recht hast.",
           "Ich, weiß dass du recht hast."
         ],
-        "why": "Vor „dass“ steht immer ein Komma.",
+        "why": "Das Komma steht vor „dass“, weil dort der Nebensatz beginnt. Hinter „dass“ oder hinter „Ich“ trennt es nichts.",
         "label": "Komma setzen"
       },
       {
@@ -417,11 +417,11 @@
       },
       {
         "q": "Woran erkennst du einen Nebensatz?",
-        "a": "Er beginnt mit einer Konjunktion wie weil oder dass, das gebeugte Verb steht am Ende",
+        "a": "Er beginnt oft mit einer Konjunktion wie weil oder dass, das gebeugte Verb steht am Ende",
         "wrong": [
-          "Er hat immer genau fünf Wörter",
-          "Er steht immer am Satzanfang",
-          "Er hat kein Verb"
+          "Er beginnt mit einem Nomen, das gebeugte Verb steht an zweiter Stelle",
+          "Er beginnt mit und oder aber, das gebeugte Verb steht an zweiter Stelle",
+          "Er hat kein gebeugtes Verb und steht immer am Satzanfang"
         ],
         "why": "Konjunktion vorne, Verb hinten: So erkennst du einen Nebensatz.",
         "label": "Nebensatz"
@@ -434,7 +434,7 @@
           "Der lustige Film läuft im Kino.",
           "Sie lacht laut."
         ],
-        "why": "Nur im ersten Satz gibt es einen Nebensatz: „weil der Film lustig ist“.",
+        "why": "Nur hier gibt es einen Nebensatz: „weil der Film lustig ist“. „Sie lacht und er weint“ sind zwei Hauptsätze.",
         "label": "Satzarten"
       },
       {
@@ -478,7 +478,7 @@
           "Wir hoffen, dass es bald Essen gibt.",
           "Er sagt, dass er kommt."
         ],
-        "why": "Vor „und“ steht zwischen zwei Eigenschaftswörtern kein Komma. Es verbindet nur Wörter, keine Sätze.",
+        "why": "Vor „und“ steht hier kein Komma, denn „und“ verbindet nur zwei Adjektive, keine Sätze.",
         "label": "Überflüssiges Komma"
       },
       {
@@ -486,16 +486,16 @@
         "a": "weil",
         "wrong": [
           "und",
-          "dort",
-          "sehr"
+          "denn",
+          "dort"
         ],
-        "why": "„Weil“ ist eine unterordnende Konjunktion. Sie beginnt einen Nebensatz.",
+        "why": "„Weil“ ist eine unterordnende Konjunktion und beginnt einen Nebensatz. Nach „und“ und „denn“ bleibt die Wortstellung des Hauptsatzes.",
         "label": "Konjunktionen"
       }
     ],
     "dassdas": [
       {
-        "q": "Setze das richtige Wort ein.",
+        "q": "Setze „das“ oder „dass“ ein. Mach die Ersatzprobe.",
         "s": "Ich weiß, ___ du recht hast.",
         "kind": "gap",
         "a": "dass",
@@ -506,7 +506,7 @@
         "label": "Das oder dass?"
       },
       {
-        "q": "Setze das richtige Wort ein.",
+        "q": "Setze „das“ oder „dass“ ein. Mach die Ersatzprobe.",
         "s": "___ Buch gefällt mir.",
         "kind": "gap",
         "a": "Das",
@@ -517,7 +517,7 @@
         "label": "Das oder dass?"
       },
       {
-        "q": "Setze das richtige Wort ein.",
+        "q": "Setze „das“ oder „dass“ ein. Mach die Ersatzprobe.",
         "s": "Das ist das Haus, ___ ich meine.",
         "kind": "gap",
         "a": "das",
@@ -528,7 +528,7 @@
         "label": "Das oder dass?"
       },
       {
-        "q": "Setze das richtige Wort ein.",
+        "q": "Setze „das“ oder „dass“ ein. Mach die Ersatzprobe.",
         "s": "Er sagt, ___ er müde ist.",
         "kind": "gap",
         "a": "dass",
@@ -539,18 +539,18 @@
         "label": "Das oder dass?"
       },
       {
-        "q": "Setze das richtige Wort ein.",
+        "q": "Setze „das“ oder „dass“ ein. Mach die Ersatzprobe.",
         "s": "Sie hofft, ___ es morgen schneit.",
         "kind": "gap",
         "a": "dass",
         "wrong": [
           "das"
         ],
-        "why": "Nach „hoffen“ folgt ein Nebensatz mit „dass“.",
+        "why": "„dieses“ oder „welches“ passen nicht. Nach „hoffen“ folgt hier ein Nebensatz mit „dass“.",
         "label": "Das oder dass?"
       },
       {
-        "q": "Setze das richtige Wort ein.",
+        "q": "Setze „das“ oder „dass“ ein. Mach die Ersatzprobe.",
         "s": "Ich möchte ___ blaue Fahrrad.",
         "kind": "gap",
         "a": "das",
@@ -561,7 +561,7 @@
         "label": "Das oder dass?"
       },
       {
-        "q": "Setze das richtige Wort ein.",
+        "q": "Setze „das“ oder „dass“ ein. Mach die Ersatzprobe.",
         "s": "Es ist wichtig, ___ du pünktlich kommst.",
         "kind": "gap",
         "a": "dass",
@@ -572,7 +572,7 @@
         "label": "Das oder dass?"
       },
       {
-        "q": "Setze das richtige Wort ein.",
+        "q": "Setze „das“ oder „dass“ ein. Mach die Ersatzprobe.",
         "s": "Das Mädchen, ___ dort steht, ist meine Schwester.",
         "kind": "gap",
         "a": "das",
@@ -583,18 +583,18 @@
         "label": "Das oder dass?"
       },
       {
-        "q": "Setze das richtige Wort ein.",
+        "q": "Setze „das“ oder „dass“ ein. Mach die Ersatzprobe.",
         "s": "Ich freue mich, ___ du da bist.",
         "kind": "gap",
         "a": "dass",
         "wrong": [
           "das"
         ],
-        "why": "Hier beginnt ein Nebensatz. Er sagt, worüber du dich freust. Also „dass“.",
+        "why": "Hier beginnt ein Nebensatz. Er sagt, worüber ich mich freue. „dieses“ oder „welches“ passen nicht, also „dass“.",
         "label": "Das oder dass?"
       },
       {
-        "q": "Setze das richtige Wort ein.",
+        "q": "Setze „das“ oder „dass“ ein. Mach die Ersatzprobe.",
         "s": "Wie heißt ___ Lied?",
         "kind": "gap",
         "a": "das",
@@ -605,7 +605,7 @@
         "label": "Das oder dass?"
       },
       {
-        "q": "Setze das richtige Wort ein.",
+        "q": "Setze „das“ oder „dass“ ein. Mach die Ersatzprobe.",
         "s": "Wie heißt das Lied, ___ du gerade hörst?",
         "kind": "gap",
         "a": "das",
@@ -616,7 +616,7 @@
         "label": "Das oder dass?"
       },
       {
-        "q": "Setze das richtige Wort ein.",
+        "q": "Setze „das“ oder „dass“ ein. Mach die Ersatzprobe.",
         "s": "___ ist mein Freund.",
         "kind": "gap",
         "a": "Das",
@@ -631,8 +631,8 @@
         "a": "Du ersetzt das Wort durch „dieses“ oder „welches“. Passt es, schreibst du „das“.",
         "wrong": [
           "Du ersetzt es durch „weil“. Passt es, schreibst du „dass“.",
-          "Du zählst die Buchstaben im Satz.",
-          "Du schaust, ob ein Komma davorsteht."
+          "Du ersetzt es durch „dieses“ oder „welches“. Passt es, schreibst du „dass“.",
+          "Du schaust, ob ein Komma davorsteht. Dann schreibst du „dass“."
         ],
         "why": "Passt „dieses“ oder „welches“, ist es „das“. Passt keins von beiden, schreibst du „dass“.",
         "label": "Ersatzprobe"
@@ -641,9 +641,9 @@
         "q": "Wann schreibst du „dass“?",
         "a": "Wenn es einen Nebensatz einleitet und sich nicht durch „dieses“ oder „welches“ ersetzen lässt",
         "wrong": [
-          "Wenn ein Nomen davorsteht",
-          "Am Satzanfang",
-          "Immer nach einem Komma"
+          "Wenn ein Nomen und ein Komma davorstehen",
+          "Wenn es am Satzanfang steht",
+          "Immer wenn ein Komma davorsteht"
         ],
         "why": "„Dass“ ist eine Konjunktion. Sie verbindet zwei Sätze.",
         "label": "Regel"
@@ -689,9 +689,9 @@
         "wrong": [
           "Das Fleisch brät vom Koch.",
           "Der Koch wird das Fleisch gebraten.",
-          "Das Fleisch ist vom Koch gebraten."
+          "Das Fleisch wurde vom Koch gebraten."
         ],
-        "why": "Das Akkusativobjekt „das Fleisch“ wird zum Subjekt. Der Handelnde steht mit „von“ im Satz.",
+        "why": "Das Akkusativobjekt „das Fleisch“ wird zum Subjekt. Der Handelnde steht mit „von“ im Satz, und die Zeitform bleibt Präsens.",
         "label": "Umformen"
       },
       {
@@ -731,26 +731,26 @@
         "q": "Wann benutzt man gern das Passiv?",
         "a": "Wenn die Handlung wichtiger ist als die handelnde Person",
         "wrong": [
-          "Wenn man immer lange Sätze schreiben will",
+          "Wenn die handelnde Person besonders betont werden soll",
           "Wenn man jemanden direkt anspricht",
-          "Wenn man nur Fragen stellt"
+          "Wenn man von der Zukunft erzählen will"
         ],
         "why": "Im Passiv steht die Handlung im Mittelpunkt, zum Beispiel: „Die Straße wird repariert.“",
         "label": "Wirkung"
       },
       {
         "q": "Mit welchem Wort schließt du im Passiv die handelnde Person an?",
-        "a": "von (oder durch)",
+        "a": "von",
         "wrong": [
           "mit",
           "für",
           "zu"
         ],
-        "why": "„Das Auto wird von dem Mechaniker repariert.“",
+        "why": "„Das Auto wird von dem Mechaniker repariert.“ Seltener geht auch „durch“. „Mit“ nennt das Werkzeug, nicht die handelnde Person.",
         "label": "Handelnder"
       },
       {
-        "q": "In welcher Zeitform steht: „Das Auto wurde repariert.“?",
+        "q": "In welcher Zeitform steht der Satz „Das Auto wurde repariert“?",
         "a": "Präteritum",
         "wrong": [
           "Präsens",
@@ -761,7 +761,7 @@
         "label": "Zeitform"
       },
       {
-        "q": "Wie lautet der Satz „Man repariert die Straße.“ im Passiv?",
+        "q": "Wie lautet der Satz „Man repariert die Straße“ im Passiv?",
         "a": "Die Straße wird repariert.",
         "wrong": [
           "Die Straße repariert man.",
@@ -779,7 +779,7 @@
         "a": "Personifikation",
         "wrong": [
           "Vergleich",
-          "Metapher",
+          "Hyperbel",
           "Alliteration"
         ],
         "why": "Der Wind kann nicht flüstern. Die Sprache gibt ihm eine menschliche Eigenschaft.",
@@ -824,7 +824,7 @@
       {
         "q": "Welches Stilmittel steckt hier?",
         "s": "Ich habe dir das schon tausendmal gesagt.",
-        "a": "Hyperbel (Übertreibung)",
+        "a": "Hyperbel",
         "wrong": [
           "Vergleich",
           "Personifikation",
@@ -871,11 +871,11 @@
       },
       {
         "q": "Woran erkennst du einen Vergleich?",
-        "a": "An dem Wort „wie“ (oder „als ob“)",
+        "a": "An dem Wort „wie“ oder „als ob“",
         "wrong": [
-          "Der Satz ist sehr lang",
-          "Es kommt ein Ausrufezeichen vor",
-          "Es werden Zahlen genannt"
+          "An einer starken Übertreibung",
+          "An einem Ding, das sich verhält wie ein Mensch",
+          "An mehreren Wörtern mit gleichem Anlaut"
         ],
         "why": "Der Vergleich verbindet zwei Dinge mit „wie“.",
         "label": "Merkmal"
@@ -884,9 +884,9 @@
         "q": "Was ist der Unterschied zwischen Vergleich und Metapher?",
         "a": "Beim Vergleich steht „wie“, bei der Metapher fehlt es",
         "wrong": [
-          "Die Metapher ist immer länger",
-          "Der Vergleich ist immer eine Frage",
-          "Es gibt keinen Unterschied"
+          "Beim Vergleich fehlt „wie“, bei der Metapher steht es",
+          "Beim Vergleich handeln Dinge wie Menschen, bei der Metapher nicht",
+          "Die Metapher übertreibt immer, der Vergleich nie"
         ],
         "why": "„Stark wie ein Bär“ ist ein Vergleich, „Er ist ein Bär“ eine Metapher.",
         "label": "Unterschied"
@@ -896,7 +896,7 @@
         "a": "Sie machen etwas anschaulich und erzeugen Wirkung",
         "wrong": [
           "Sie machen den Text kürzer",
-          "Sie ersetzen die Rechtschreibung",
+          "Sie beweisen, dass der Text wahr ist",
           "Sie machen den Text sachlicher"
         ],
         "why": "Bilder wecken Vorstellungen. Deshalb passen sie in Gedichte und Erzählungen, nicht in eine Inhaltsangabe.",
@@ -917,7 +917,7 @@
       },
       {
         "q": "Setze das richtige Wort ein.",
-        "s": "Meine ___ kocht heute Kartoffelsuppe.",
+        "s": "Mein Vater und meine ___ sind meine Eltern.",
         "kind": "gap",
         "a": "Mutter",
         "wrong": [
@@ -938,7 +938,7 @@
         "label": "Kurzer Vokal"
       },
       {
-        "q": "Setze das richtige Wort ein.",
+        "q": "Setze das richtige Wort ein. Gemeint ist: ein großes Wasserfahrzeug.",
         "s": "Wir fahren mit dem ___ auf die Insel.",
         "kind": "gap",
         "a": "Schiff",
@@ -949,7 +949,7 @@
         "label": "Kurzer Vokal"
       },
       {
-        "q": "Setze das richtige Wort ein.",
+        "q": "Setze das richtige Wort ein. Das Gegenteil ist „gehen“.",
         "s": "Du darfst gern zu uns ___.",
         "kind": "gap",
         "a": "kommen",
@@ -961,7 +961,7 @@
       },
       {
         "q": "Setze das richtige Wort ein.",
-        "s": "Zur Suppe gehört ein ___.",
+        "s": "Die Suppe isst du mit einem ___.",
         "kind": "gap",
         "a": "Löffel",
         "wrong": [
@@ -972,7 +972,7 @@
       },
       {
         "q": "Setze das richtige Wort ein.",
-        "s": "Bitte stell den ___ auf den Tisch.",
+        "s": "Beim Tischdecken legst du Messer und Gabel neben den ___.",
         "kind": "gap",
         "a": "Teller",
         "wrong": [
@@ -983,7 +983,7 @@
       },
       {
         "q": "Setze das richtige Wort ein.",
-        "s": "Im Schwimmbad darfst du ___.",
+        "s": "Ein Fisch kann nicht laufen, aber gut ___.",
         "kind": "gap",
         "a": "schwimmen",
         "wrong": [
@@ -994,7 +994,7 @@
       },
       {
         "q": "Setze das richtige Wort ein.",
-        "s": "Wir treffen uns in der ___ des Marktplatzes.",
+        "s": "Die 5 steht genau in der ___ zwischen 4 und 6.",
         "kind": "gap",
         "a": "Mitte",
         "wrong": [
@@ -1016,7 +1016,7 @@
       },
       {
         "q": "Setze das richtige Wort ein.",
-        "s": "Die ___ liegt faul auf dem Sofa.",
+        "s": "Die ___ fängt eine Maus und schnurrt.",
         "kind": "gap",
         "a": "Katze",
         "wrong": [
@@ -1026,8 +1026,8 @@
         "label": "ck und tz"
       },
       {
-        "q": "Setze das richtige Wort ein.",
-        "s": "Im Winter trage ich einen warmen ___.",
+        "q": "Setze „Schal“ oder „Schall“ ein.",
+        "s": "Um den Hals trage ich im Winter einen warmen ___.",
         "kind": "gap",
         "a": "Schal",
         "wrong": [
@@ -1037,7 +1037,7 @@
         "label": "Kurz oder lang?"
       },
       {
-        "q": "Setze das richtige Wort ein.",
+        "q": "Setze „Schal“ oder „Schall“ ein.",
         "s": "Der ___ der Glocke war im ganzen Dorf zu hören.",
         "kind": "gap",
         "a": "Schall",
@@ -1048,7 +1048,7 @@
         "label": "Kurz oder lang?"
       },
       {
-        "q": "Setze das richtige Wort ein.",
+        "q": "Setze „bitten“ oder „bieten“ ein.",
         "s": "Darf ich dich um Hilfe ___?",
         "kind": "gap",
         "a": "bitten",
@@ -1059,14 +1059,14 @@
         "label": "Kurz oder lang?"
       },
       {
-        "q": "Bei welchem Wort ist der Vokal kurz?",
+        "q": "Bei welchem Wort ist der betonte Vokal kurz?",
         "a": "Mitte",
         "wrong": [
           "Miete",
-          "Kamel",
+          "Hase",
           "Ofen"
         ],
-        "why": "In Mitte ist das i kurz, deshalb tt. In Miete, Kamel und Ofen sind die Vokale lang.",
+        "why": "In Mitte ist das i kurz, deshalb tt. In Miete, Hase und Ofen sind die betonten Vokale lang.",
         "label": "Kurz oder lang?"
       },
       {
@@ -1110,7 +1110,7 @@
         "wrong": [
           "Meser"
         ],
-        "why": "Soooon-ne und Meeesser klingen falsch, das e ist kurz. Also doppelter Mitlaut: Mes-ser.",
+        "why": "Meeesser klingt falsch, das e ist kurz. Also doppelter Mitlaut: Mes-ser.",
         "label": "Profi-Trick"
       },
       {
@@ -1119,14 +1119,14 @@
         "wrong": [
           "Immer zwei Mitlaute schreiben, sicher ist sicher.",
           "Das Wort rückwärts lesen.",
-          "Den ersten Buchstaben groß schreiben."
+          "Die Silben zählen: Zwei Silben bedeuten zwei t."
         ],
         "why": "Die Dehnprobe zeigt, ob der Vokal lang ist. Bei langem Vokal steht kein Doppelmitlaut.",
         "label": "Profi-Trick"
       },
       {
         "q": "Setze das richtige Wort ein.",
-        "s": "Im Winter streue ich ___ auf den Weg.",
+        "s": "Ins Nudelwasser kommt eine Prise ___.",
         "kind": "gap",
         "a": "Salz",
         "wrong": [
@@ -1139,7 +1139,7 @@
     "dehnung": [
       {
         "q": "Setze das richtige Wort ein.",
-        "s": "Auf der ___ spielen die Kinder Fußball.",
+        "s": "Auf der ___ wachsen Gras und Blumen.",
         "kind": "gap",
         "a": "Wiese",
         "wrong": [
@@ -1194,7 +1194,7 @@
       },
       {
         "q": "Setze das richtige Wort ein.",
-        "s": "Die ___ hat heute Verspätung.",
+        "s": "Die ___ fährt auf Schienen und hat heute Verspätung.",
         "kind": "gap",
         "a": "Bahn",
         "wrong": [
@@ -1216,7 +1216,7 @@
       },
       {
         "q": "Setze das richtige Wort ein.",
-        "s": "Meine Tante hat einen ___.",
+        "s": "Mein Onkel hat eine Tochter und einen ___.",
         "kind": "gap",
         "a": "Sohn",
         "wrong": [
@@ -1227,7 +1227,7 @@
       },
       {
         "q": "Setze das richtige Wort ein.",
-        "s": "Wir ___ in einem kleinen Haus.",
+        "s": "Wir ___ im dritten Stock.",
         "kind": "gap",
         "a": "wohnen",
         "wrong": [
@@ -1238,7 +1238,7 @@
       },
       {
         "q": "Setze das richtige Wort ein.",
-        "s": "Auf dem See schwimmt ein ___.",
+        "s": "Mit dem ___ rudern wir über den See.",
         "kind": "gap",
         "a": "Boot",
         "wrong": [
@@ -1249,7 +1249,7 @@
       },
       {
         "q": "Setze das richtige Wort ein.",
-        "s": "Im Urlaub fahren wir ans ___.",
+        "s": "Im Urlaub fahren wir ans ___ und baden in den Wellen.",
         "kind": "gap",
         "a": "Meer",
         "wrong": [
@@ -1259,18 +1259,18 @@
         "label": "Doppelvokal"
       },
       {
-        "q": "Setze das richtige Wort ein.",
+        "q": "Setze „mehr“ oder „Meer“ ein.",
         "s": "Ich möchte noch ___ Kuchen.",
         "kind": "gap",
         "a": "mehr",
         "wrong": [
-          "meer"
+          "Meer"
         ],
         "why": "Mehr hat ein Dehnungs-h. Das Meer (Ozean) schreibst du mit ee.",
         "label": "Meer oder mehr?"
       },
       {
-        "q": "Setze das richtige Wort ein.",
+        "q": "Setze „Wal“ oder „Wahl“ ein.",
         "s": "Der ___ ist ein Säugetier und lebt im Meer.",
         "kind": "gap",
         "a": "Wal",
@@ -1281,7 +1281,7 @@
         "label": "Wal oder Wahl?"
       },
       {
-        "q": "Setze das richtige Wort ein.",
+        "q": "Setze „Wal“ oder „Wahl“ ein.",
         "s": "Bei der ___ darf jeder abstimmen.",
         "kind": "gap",
         "a": "Wahl",
@@ -1325,7 +1325,7 @@
         "label": "Doppelvokal"
       },
       {
-        "q": "Setze das richtige Wort ein.",
+        "q": "Setze das richtige Wort ein. Gemeint ist: testen, wie etwas schmeckt.",
         "s": "Ich möchte das neue Essen ___.",
         "kind": "gap",
         "a": "probieren",
@@ -1348,7 +1348,7 @@
       },
       {
         "q": "Setze das richtige Wort ein.",
-        "s": "Im Zoo sehen wir einen ___.",
+        "s": "Der ___ ist eine große Raubkatze mit schwarzen Streifen.",
         "kind": "gap",
         "a": "Tiger",
         "wrong": [
@@ -1369,12 +1369,12 @@
         "label": "Profi-Trick"
       },
       {
-        "q": "Setze das richtige Wort ein.",
+        "q": "Setze das richtige Wort ein. Es gehört zu „fahren“.",
         "s": "Wir machen eine ___ mit dem Zug.",
         "kind": "gap",
         "a": "Fahrt",
         "wrong": [
-          "Fart"
+          "Faart"
         ],
         "why": "Das h bleibt in der Wortfamilie von fahren: Fahrt, Fahrer.",
         "label": "Profi-Trick"
@@ -1383,7 +1383,7 @@
     "slaute": [
       {
         "q": "Setze das richtige Wort ein.",
-        "s": "Wir wohnen in einer ruhigen ___.",
+        "s": "Bevor ich über die ___ gehe, schaue ich nach links und rechts.",
         "kind": "gap",
         "a": "Straße",
         "wrong": [
@@ -1393,7 +1393,7 @@
         "label": "s, ss oder ß?"
       },
       {
-        "q": "Setze das richtige Wort ein.",
+        "q": "Setze das richtige Wort ein. Es beginnt mit „blo“.",
         "s": "Sie lief mit ___ Füßen über den Sand.",
         "kind": "gap",
         "a": "bloßen",
@@ -1405,7 +1405,7 @@
       },
       {
         "q": "Setze das richtige Wort ein.",
-        "s": "Nach der Wanderung tut mir der ___ weh.",
+        "s": "Am ___ trage ich einen Schuh.",
         "kind": "gap",
         "a": "Fuß",
         "wrong": [
@@ -1416,7 +1416,7 @@
       },
       {
         "q": "Setze das richtige Wort ein.",
-        "s": "Heute ist es draußen sehr ___.",
+        "s": "Vorsicht, der Herd ist noch sehr ___!",
         "kind": "gap",
         "a": "heiß",
         "wrong": [
@@ -1426,7 +1426,7 @@
         "label": "s, ss oder ß?"
       },
       {
-        "q": "Setze das richtige Wort ein.",
+        "q": "Setze das richtige Wort ein. Es beginnt mit „Sp“.",
         "s": "Das Spiel hat mir viel ___ gemacht.",
         "kind": "gap",
         "a": "Spaß",
@@ -1438,7 +1438,7 @@
       },
       {
         "q": "Setze das richtige Wort ein.",
-        "s": "Der Elefant ist sehr ___.",
+        "s": "Der Elefant ist sehr ___, die Maus ist klein.",
         "kind": "gap",
         "a": "groß",
         "wrong": [
@@ -1449,7 +1449,7 @@
       },
       {
         "q": "Setze das richtige Wort ein.",
-        "s": "Zum Frühstück möchte ich ein Brötchen ___.",
+        "s": "Ich habe Hunger und möchte etwas ___.",
         "kind": "gap",
         "a": "essen",
         "wrong": [
@@ -1460,7 +1460,7 @@
       },
       {
         "q": "Setze das richtige Wort ein.",
-        "s": "Der ___ ist heute sehr breit.",
+        "s": "Die Donau ist ein langer ___.",
         "kind": "gap",
         "a": "Fluss",
         "wrong": [
@@ -1470,7 +1470,7 @@
         "label": "s, ss oder ß?"
       },
       {
-        "q": "Setze das richtige Wort ein.",
+        "q": "Setze das richtige Wort ein. Gemeint ist: Es bleibt uns nichts anderes übrig.",
         "s": "Wir ___ jetzt nach Hause gehen.",
         "kind": "gap",
         "a": "müssen",
@@ -1482,7 +1482,7 @@
       },
       {
         "q": "Setze das richtige Wort ein.",
-        "s": "In der Flasche ist kaltes ___.",
+        "s": "Pflanzen brauchen Licht und ___.",
         "kind": "gap",
         "a": "Wasser",
         "wrong": [
@@ -1493,7 +1493,7 @@
       },
       {
         "q": "Setze das richtige Wort ein.",
-        "s": "Im Garten blüht eine rote ___.",
+        "s": "Die ___ hat Dornen und duftet.",
         "kind": "gap",
         "a": "Rose",
         "wrong": [
@@ -1503,7 +1503,7 @@
         "label": "Summendes s"
       },
       {
-        "q": "Setze das richtige Wort ein.",
+        "q": "Setze das richtige Wort ein. Gemeint ist, was du gerade mit diesem Satz tust.",
         "s": "Am Wochenende möchte ich ein Buch ___.",
         "kind": "gap",
         "a": "lesen",
@@ -1515,7 +1515,7 @@
       },
       {
         "q": "Setze das richtige Wort ein.",
-        "s": "Mein Pullover ist ___.",
+        "s": "Frischer Schnee ist so ___ wie Milch.",
         "kind": "gap",
         "a": "weiß",
         "wrong": [
@@ -1526,7 +1526,7 @@
       },
       {
         "q": "Setze das richtige Wort ein.",
-        "s": "Bei Sonnenschein spielen wir ___.",
+        "s": "Wir spielen nicht drinnen, sondern ___.",
         "kind": "gap",
         "a": "draußen",
         "wrong": [
@@ -1536,7 +1536,7 @@
         "label": "s, ss oder ß?"
       },
       {
-        "q": "Setze das richtige Wort ein.",
+        "q": "Setze „Maße“ oder „Masse“ ein.",
         "s": "Die ___ des Tisches sind zwei Meter mal ein Meter.",
         "kind": "gap",
         "a": "Maße",
@@ -1547,7 +1547,7 @@
         "label": "Maße oder Masse?"
       },
       {
-        "q": "Setze das richtige Wort ein.",
+        "q": "Setze „Maße“ oder „Masse“ ein.",
         "s": "Eine große ___ von Menschen wartete vor dem Stadion.",
         "kind": "gap",
         "a": "Masse",
@@ -1614,7 +1614,7 @@
       },
       {
         "q": "Setze das richtige Wort ein.",
-        "s": "Im Sommer baden wir im ___.",
+        "s": "Unter der Brücke fließt ein breiter ___.",
         "kind": "gap",
         "a": "Fluss",
         "wrong": [
@@ -1636,7 +1636,7 @@
       },
       {
         "q": "Setze das richtige Wort ein.",
-        "s": "Auf der ___ fahren viele Autos.",
+        "s": "Die Autobahn ist eine sehr breite ___.",
         "kind": "gap",
         "a": "Straße",
         "wrong": [
@@ -1649,7 +1649,7 @@
     "ableiten": [
       {
         "q": "Setze das richtige Wort ein.",
-        "s": "Sie trägt einen ___ voller Äpfel.",
+        "s": "Sie trägt einen geflochtenen ___ voller Äpfel.",
         "kind": "gap",
         "a": "Korb",
         "wrong": [
@@ -1671,7 +1671,7 @@
       },
       {
         "q": "Setze das richtige Wort ein.",
-        "s": "Wir steigen auf einen hohen ___.",
+        "s": "Der Mount Everest ist der höchste ___ der Welt.",
         "kind": "gap",
         "a": "Berg",
         "wrong": [
@@ -1681,7 +1681,7 @@
         "label": "g oder k"
       },
       {
-        "q": "Setze das richtige Wort ein.",
+        "q": "Setze das richtige Wort ein. Das Gegenteil von „dumm“, es beginnt mit k.",
         "s": "Das war nicht sehr ___ von dir.",
         "kind": "gap",
         "a": "klug",
@@ -1693,7 +1693,7 @@
       },
       {
         "q": "Setze das richtige Wort ein.",
-        "s": "Das ___ spielt im Sandkasten.",
+        "s": "Ein ___ ist noch nicht erwachsen.",
         "kind": "gap",
         "a": "Kind",
         "wrong": [
@@ -1714,8 +1714,8 @@
         "label": "d oder t"
       },
       {
-        "q": "Setze das richtige Wort ein.",
-        "s": "Wir wohnen in einer großen ___.",
+        "q": "Setze „Stadt“ oder „statt“ ein.",
+        "s": "Berlin ist die größte ___ in Deutschland.",
         "kind": "gap",
         "a": "Stadt",
         "wrong": [
@@ -1725,7 +1725,7 @@
         "label": "d oder t"
       },
       {
-        "q": "Setze das richtige Wort ein.",
+        "q": "Setze „Stadt“ oder „statt“ ein.",
         "s": "Ich trinke Tee ___ Kaffee.",
         "kind": "gap",
         "a": "statt",
@@ -1737,18 +1737,18 @@
       },
       {
         "q": "Setze das richtige Wort ein.",
-        "s": "Das Bild ist sehr ___.",
+        "s": "Der Regenbogen ist ganz ___.",
         "kind": "gap",
         "a": "bunt",
         "wrong": [
           "bund"
         ],
-        "why": "Verlängern: bunte Bilder. Dort hörst du ein t.",
+        "why": "Verlängern: bunte Farben. Dort hörst du ein t.",
         "label": "d oder t"
       },
       {
         "q": "Setze das richtige Wort ein.",
-        "s": "Im Herbst ernten wir viele ___.",
+        "s": "Aus ___ presst man Apfelsaft.",
         "kind": "gap",
         "a": "Äpfel",
         "wrong": [
@@ -1759,7 +1759,7 @@
       },
       {
         "q": "Setze das richtige Wort ein.",
-        "s": "Meine ___ sind kalt vom Schnee.",
+        "s": "Vor dem Essen wasche ich mir die ___.",
         "kind": "gap",
         "a": "Hände",
         "wrong": [
@@ -1770,7 +1770,7 @@
       },
       {
         "q": "Setze das richtige Wort ein.",
-        "s": "Mein Bruder ist ___ als ich.",
+        "s": "Meine Schwester ist schon 14, ich bin 12. Sie ist zwei Jahre ___ als ich.",
         "kind": "gap",
         "a": "älter",
         "wrong": [
@@ -1781,7 +1781,7 @@
       },
       {
         "q": "Setze das richtige Wort ein.",
-        "s": "Im Park stehen viele alte ___.",
+        "s": "Eichen, Buchen und Tannen sind ___.",
         "kind": "gap",
         "a": "Bäume",
         "wrong": [
@@ -1792,7 +1792,7 @@
       },
       {
         "q": "Setze das richtige Wort ein.",
-        "s": "Im Keller sitzen zwei kleine ___.",
+        "s": "Die Katze jagt im Keller zwei ___.",
         "kind": "gap",
         "a": "Mäuse",
         "wrong": [
@@ -1803,7 +1803,7 @@
       },
       {
         "q": "Setze das richtige Wort ein.",
-        "s": "Im Garten wachsen viele ___.",
+        "s": "Petersilie und Schnittlauch sind ___.",
         "kind": "gap",
         "a": "Kräuter",
         "wrong": [
@@ -1814,7 +1814,7 @@
       },
       {
         "q": "Setze das richtige Wort ein.",
-        "s": "Meine ___ holen mich später ab.",
+        "s": "Mutter und Vater sind zusammen meine ___.",
         "kind": "gap",
         "a": "Eltern",
         "wrong": [
@@ -1857,7 +1857,7 @@
         "label": "Ableiten"
       },
       {
-        "q": "Welches Wort schreibst du mit äu, weil es von au kommt?",
+        "q": "Welche Schreibweise ist richtig, wenn das Wort von „laufen“ kommt?",
         "a": "Läufer",
         "wrong": [
           "Leufer",
@@ -1869,7 +1869,7 @@
       },
       {
         "q": "Setze das richtige Wort ein.",
-        "s": "Im Herbst sind die Blätter ___.",
+        "s": "Im Herbst sind die Blätter gelb, rot und braun, also ___.",
         "kind": "gap",
         "a": "bunt",
         "wrong": [
@@ -1880,7 +1880,7 @@
       },
       {
         "q": "Setze das richtige Wort ein.",
-        "s": "Im Garten steht ein ___ voller Äpfel.",
+        "s": "Der Basketball fliegt direkt in den ___.",
         "kind": "gap",
         "a": "Korb",
         "wrong": [
@@ -1901,7 +1901,7 @@
         "label": "Profi-Trick"
       },
       {
-        "q": "Setze das richtige Wort ein.",
+        "q": "Setze das richtige Wort ein. Verwandt ist „Stange“.",
         "s": "Der ___ der Blume ist grün.",
         "kind": "gap",
         "a": "Stängel",
@@ -1973,10 +1973,10 @@
         "a": "Wir treffen uns morgen früh.",
         "wrong": [
           "Wir treffen uns Morgen früh.",
-          "Wir treffen uns morgen Früh.",
+          "Wir treffen uns Morgen Früh.",
           "wir treffen uns morgen früh."
         ],
-        "why": "Morgen (am nächsten Tag) und früh sind Adverbien und stehen klein.",
+        "why": "„morgen“ meint hier den nächsten Tag. Es ist ein Adverb und bleibt klein. Groß ist es nur als Tageszeit: heute Morgen.",
         "label": "Groß oder klein?"
       },
       {
@@ -2009,7 +2009,7 @@
           "Im Zoo gibt es Viel Interessantes zu sehen.",
           "Im Zoo gibt es viel Interessantes zu Sehen."
         ],
-        "why": "Nach viel wird das Adjektiv zum Nomen: viel Interessantes. Zu sehen ist ein Verb und bleibt klein.",
+        "why": "Nach viel wird das Adjektiv zum Nomen: viel Interessantes. Nach „zu“ bleibt „sehen“ ein Verb und klein.",
         "label": "Groß oder klein?"
       },
       {
@@ -2020,12 +2020,12 @@
           "Nach dem Essen gehen wir Spazieren.",
           "nach dem Essen gehen wir spazieren."
         ],
-        "why": "Nach dem steht das Nomen Essen. Spazieren ist hier ein Verb.",
+        "why": "Nach dem steht das Nomen Essen. „spazieren“ ist hier ein Verb und bleibt klein.",
         "label": "Groß oder klein?"
       },
       {
         "q": "Woran erkennst du ein nominalisiertes Verb?",
-        "a": "Davor steht ein Artikel oder ein Wort wie beim, zum, im.",
+        "a": "Davor steht oft ein Artikel oder ein Wort wie beim, zum, im.",
         "wrong": [
           "Es endet immer auf -en.",
           "Es steht immer am Satzanfang.",
@@ -2038,9 +2038,9 @@
         "q": "Wie schreibst du Adjektive nach etwas, nichts, viel, alles?",
         "a": "Groß, weil sie zu Nomen werden: etwas Neues.",
         "wrong": [
-          "Immer klein.",
+          "Klein, weil sie Adjektive bleiben: etwas neues.",
           "Nur am Satzanfang groß.",
-          "In Anführungszeichen."
+          "Groß nur nach alles, sonst klein."
         ],
         "why": "Nach etwas, nichts, viel und alles wird das Adjektiv zum Nomen: etwas Neues, nichts Besonderes.",
         "label": "Signalwörter"
@@ -2058,7 +2058,7 @@
       },
       {
         "q": "Welche Probe hilft bei Groß oder klein?",
-        "a": "Kann ein Artikel oder ein Adjektiv davor stehen?",
+        "a": "Kann ein Artikel oder ein Adjektiv davorstehen?",
         "wrong": [
           "Ist das Wort lang?",
           "Steht es am Satzanfang?",
@@ -2093,11 +2093,11 @@
         "q": "Welcher Satz ist richtig geschrieben?",
         "a": "Wir sehen uns morgen früh.",
         "wrong": [
-          "Wir sehen uns morgen Früh.",
           "Wir sehen uns Morgen früh.",
-          "Wir sehen uns morgen FRÜH."
+          "Wir sehen uns Morgen Früh.",
+          "wir sehen uns morgen früh."
         ],
-        "why": "morgen früh schreibst du klein. früh ist hier ein Adverb.",
+        "why": "„morgen“ ist hier ein Adverb für den nächsten Tag und bleibt klein. „Morgen“ als Tageszeit steht so: heute Morgen.",
         "label": "Profi-Trick"
       }
     ],
@@ -2173,7 +2173,7 @@
         "label": "Aussage prüfen"
       },
       {
-        "q": "Wozu helfen Zwischenüberschriften beim Lesen?",
+        "q": "Wozu dienen Zwischenüberschriften beim Lesen?",
         "a": "Sie zeigen, worum es im nächsten Abschnitt geht.",
         "wrong": [
           "Sie ersetzen den Text.",
@@ -2186,7 +2186,7 @@
       {
         "q": "Um welche Textsorte handelt es sich?",
         "s": "Zutaten: 200 g Mehl, 2 Eier, 1 Prise Salz. Verrühre alles zu einem glatten Teig und lass ihn zehn Minuten ruhen.",
-        "a": "Eine Anleitung (Rezept)",
+        "a": "Eine Anleitung",
         "wrong": [
           "Eine Erzählung",
           "Ein Gedicht",
@@ -2219,21 +2219,21 @@
         "label": "Nach dem Lesen"
       },
       {
-        "q": "Wer bedankt sich?",
-        "s": "Mia gab Jonas ihr Fahrrad, weil er seins vergessen hatte. Er bedankte sich bei ihr.",
-        "a": "Jonas",
+        "q": "Wer bedankt sich bei wem?",
+        "s": "Mia lieh Jonas ihr Fahrrad, weil er seins vergessen hatte. Er bedankte sich bei ihr.",
+        "a": "Jonas bei Mia",
         "wrong": [
-          "Mia",
-          "Beide",
-          "Das Fahrrad"
+          "Mia bei Jonas",
+          "Jonas bei seinen Eltern",
+          "Mia bei ihren Eltern"
         ],
-        "why": "Mia gibt Jonas das Fahrrad, weil er seins vergessen hat. Er bezieht sich auf Jonas, ihr auf Mia.",
+        "why": "„Er“ meint Jonas, denn er hat das Fahrrad vergessen. „ihr“ meint Mia, denn sie hat es ihm geliehen.",
         "label": "Bezüge"
       },
       {
         "q": "Wie verstehst du das Wort „Drehleiter“, ohne nachzuschlagen?",
         "s": "Die Feuerwehr rückte mit der Drehleiter aus.",
-        "a": "Ich zerlege es in Drehen und Leiter.",
+        "a": "Ich zerlege es in „drehen“ und „Leiter“.",
         "wrong": [
           "Ich überspringe den ganzen Satz.",
           "Ich rate irgendein Wort.",
@@ -2250,7 +2250,7 @@
           "Der Film läuft seit Donnerstag im Kino.",
           "Im Film spielen drei Kinder mit."
         ],
-        "why": "Der beste bewertet den Film. Die anderen Sätze enthalten Fakten, die du überprüfen kannst.",
+        "why": "„der beste“ bewertet den Film. Die anderen Sätze enthalten Fakten, die du überprüfen kannst.",
         "label": "Fakt oder Meinung"
       },
       {
@@ -2334,7 +2334,7 @@
         "label": "Indirekte Rede"
       },
       {
-        "q": "Forme um: „Ich habe Hunger“, sagt Tom.",
+        "q": "Forme in die indirekte Rede mit Konjunktiv I um: „Ich habe Hunger“, sagt Tom.",
         "a": "Tom sagt, er habe Hunger.",
         "wrong": [
           "Tom sagt, ich habe Hunger.",
@@ -2345,7 +2345,7 @@
         "label": "Umformen"
       },
       {
-        "q": "Forme um: „Ich bin krank“, sagt Lea.",
+        "q": "Forme in die indirekte Rede mit Konjunktiv I um: „Ich bin krank“, sagt Lea.",
         "a": "Lea sagt, sie sei krank.",
         "wrong": [
           "Lea sagt, sie ist krank.",
@@ -2356,14 +2356,14 @@
         "label": "Umformen"
       },
       {
-        "q": "Welcher Satz ist richtig?",
+        "q": "Wie gibst du „Ich komme später“ in der indirekten Rede mit Konjunktiv I wieder?",
         "a": "Er sagt, er komme später.",
         "wrong": [
           "Er sagt, ich komme später.",
           "Er sagt, er kam später.",
           "Er sagt, er kommen später."
         ],
-        "why": "Konjunktiv I von „kommen“ in der 3. Person Singular: Stamm plus -e, also „komme“.",
+        "why": "„Ich“ wird zu „er“. Konjunktiv I von „kommen“ in der 3. Person Singular: Stamm plus -e, also „komme“.",
         "label": "Konjunktiv I"
       },
       {
@@ -2415,7 +2415,7 @@
         "label": "Konjunktiv I"
       },
       {
-        "q": "Setze die richtige Form ein. Tipp: Ersatzform.",
+        "q": "Setze die richtige Form von „haben“ ein. Tipp: Ersatzform.",
         "s": "Die Kinder sagen, sie ___ Hunger.",
         "kind": "gap",
         "a": "hätten",
@@ -2446,7 +2446,7 @@
           "Sie steht immer im Futur",
           "Sie hat immer ein Ausrufezeichen"
         ],
-        "why": "Verben des Sagens sind zum Beispiel sagen, meinen, erzählen, berichten.",
+        "why": "Anführungszeichen gibt es nur bei wörtlicher Rede. Verben des Sagens sind zum Beispiel sagen, meinen, erzählen, berichten.",
         "label": "Merkmale"
       },
       {
@@ -2597,7 +2597,7 @@
         "wrong": [
           "Wann? Wo? Warum?",
           "Wer oder was tut etwas?",
-          "Wem oder was?"
+          "Wen oder was?"
         ],
         "why": "Die Fragen beziehen sich immer auf das Nomen.",
         "label": "Frage"
@@ -2610,7 +2610,7 @@
           "Es kann allein verschoben werden",
           "Es fällt beim Umstellen weg"
         ],
-        "why": "Das Attribut gehört zum Nomen. Du verschiebst beide zusammen: „Das rote Auto / Das Auto, das rote …“.",
+        "why": "Das Attribut gehört zum Nomen. Du verschiebst beide zusammen: „Das rote Auto steht vor der Tür.“ Umgestellt: „Vor der Tür steht das rote Auto.“",
         "label": "Umstellprobe"
       },
       {
@@ -2719,7 +2719,7 @@
           "Konjunktion",
           "Adjektiv"
         ],
-        "why": "„oft“ sagt, wie häufig. Es bleibt unverändert und ist ein Adverb.",
+        "why": "„oft“ sagt, wie häufig. Es bekommt keine Endung und ist ein Adverb.",
         "label": "Wortart bestimmen"
       },
       {
@@ -2757,7 +2757,7 @@
         "label": "Fall"
       },
       {
-        "q": "Wähle den richtigen Artikel.",
+        "q": "Setze „dem“ oder „den“ ein.",
         "s": "Ich stelle das Glas auf ___ Tisch.",
         "kind": "gap",
         "a": "den",
@@ -2768,7 +2768,7 @@
         "label": "Wo oder wohin?"
       },
       {
-        "q": "Wähle den richtigen Artikel.",
+        "q": "Setze „dem“ oder „den“ ein.",
         "s": "Das Glas steht auf ___ Tisch.",
         "kind": "gap",
         "a": "dem",
@@ -2779,14 +2779,14 @@
         "label": "Wo oder wohin?"
       },
       {
-        "q": "Kann man Adverbien beugen oder steigern?",
-        "a": "Nein, sie bleiben unverändert",
+        "q": "Kann man Adverbien beugen?",
+        "a": "Nein, sie bekommen keine Endungen",
         "wrong": [
           "Ja, wie Adjektive",
           "Ja, wie Verben",
           "Ja, wie Nomen"
         ],
-        "why": "Adverbien wie „heute“, „dort“, „gern“ verändern sich nicht.",
+        "why": "Adverbien wie „heute“, „dort“, „gern“ werden nicht gebeugt. Nur wenige lassen sich steigern, zum Beispiel „oft, öfter“.",
         "label": "Merkmal"
       },
       {

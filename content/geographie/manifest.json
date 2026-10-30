@@ -322,7 +322,7 @@
       "de": "Bedeckt vom Eis · Kapitel 5",
       "card": {
         "name": "Zwei Pole, zwei Welten",
-        "fact": "Die Arktis ist ein vereistes Meer um den Nordpol. Die Antarktis ist ein Kontinent aus Eis um den Südpol."
+        "fact": "Die Arktis ist ein vereistes Meer um den Nordpol. Die Antarktis ist ein von Eis bedeckter Kontinent um den Südpol."
       }
     },
     {
@@ -377,7 +377,7 @@
       "de": "Wachstum und Ein-Kind-Politik · Kapitel 6",
       "card": {
         "name": "Zwei Riesen, zwei Wege",
-        "fact": "Indien wächst weiter stark. China wollte das Wachstum mit der Ein-Kind-Politik bremsen und hat nun mit einer alternden Gesellschaft zu tun."
+        "fact": "Indien wächst weiter, weil viele junge Menschen Kinder bekommen. China wollte das Wachstum mit der Ein-Kind-Politik bremsen und hat nun mit einer alternden Gesellschaft zu tun."
       }
     },
     {
@@ -825,7 +825,7 @@
     "indien-china": [
       [
         "Indien",
-        "2023 wurde Indien nach Schätzung der UN das bevölkerungsreichste Land. Armut, Tradition und Altersvorsorge halten die Kinderzahl hoch."
+        "2023 wurde Indien nach Schätzung der UN das bevölkerungsreichste Land. Die Geburtenrate ist stark gesunken, aber viele junge Menschen bekommen Kinder. Deshalb wächst die Bevölkerung weiter."
       ],
       [
         "China",

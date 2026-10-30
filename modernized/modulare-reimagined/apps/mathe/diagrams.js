@@ -78,7 +78,7 @@ export function tableDiagram(kind = 'prop', k = 3) {
     parts.push(rect(cx - 36, 34, 72, 36, 'box'), text(cx, 59, String(x), 'md mono'));
     parts.push(rect(cx - 36, 94, 72, 36, i === 1 ? 'hi' : 'box'), text(cx, 119, fmt(ys[i]), `md mono${i === 1 ? ' on-sun' : ''}`));
   });
-  parts.push(text(260, 168, prop ? 'x 2 oben, x 2 unten: Quotient y : x bleibt gleich' : 'x 2 oben, : 2 unten: Produkt x · y bleibt gleich', 'sm mu'));
+  parts.push(text(260, 168, prop ? '· 2 oben, · 2 unten: Quotient y : x bleibt gleich' : '· 2 oben, : 2 unten: Produkt x · y bleibt gleich', 'sm mu'));
   parts.push(text(260, 196, prop ? `Immer ${k} € pro Heft` : `Immer ${total} Arbeitertage`, 'md mono'));
   return diagram(520, 212, prop ? `Tabelle proportional: Preis ist immer ${k} mal die Anzahl` : `Tabelle antiproportional: Anzahl mal Tage ergibt immer ${total}`, parts);
 }
@@ -107,7 +107,7 @@ export function dataDiagram(xs = [3, 9, 4, 4, 7]) {
   const labelX = x0 + (middles[0] * w + (middles[middles.length - 1] + 1) * w) / 2;
   parts.push(text(labelX, 112, 'Median', 'sm mu'));
   const mean = s.reduce((a, b) => a + b, 0) / n;
-  parts.push(text(260, 150, `Mittelwert = ${s.join(' + ')} : ${n} = ${fmt(mean)}`, 'md mono'));
+  parts.push(text(260, 150, `Mittelwert = (${s.join(' + ')}) : ${n} = ${fmt(mean)}`, 'md mono'));
   parts.push(text(260, 180, `Spannweite = ${s[n - 1]} ${MINUS} ${s[0]} = ${s[n - 1] - s[0]}`, 'md mono'));
   const median = middles.reduce((a, i) => a + s[i], 0) / middles.length;
   return diagram(520, 200, `Werte ${s.join(', ')}: Median ${fmt(median)}, Mittelwert ${fmt(mean)}, Spannweite ${s[n - 1] - s[0]}`, parts);
@@ -119,7 +119,8 @@ export function urnDiagram(r = 3, b = 5) {
   const parts = [rect(150, 30, 220, 130, 'box', 24)];
   for (let i = 0; i < n; i++) {
     const cx = 185 + (i % cols) * 50, cy = 62 + Math.floor(i / cols) * 44;
-    parts.push(circle(cx, cy, 16, i < r ? 'hi' : 'off'));
+    // Rot und Blau stehen als Buchstabe in der Kugel: Die Farben kommen aus den Tokens, und Farbe allein reicht nie.
+    parts.push(circle(cx, cy, 16, i < r ? 'hi' : 'off'), text(cx, cy + 6, i < r ? 'r' : 'b', `md mono${i < r ? ' on-sun' : ''}`));
   }
   parts.push(text(260, 190, `P(rot) = ${r} : ${n} = ${r}/${n}`, 'md mono'));
   parts.push(text(260, 214, 'günstige Ergebnisse : alle Ergebnisse', 'sm mu'));

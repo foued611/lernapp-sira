@@ -1,6 +1,6 @@
 // Aufgaben der Zahlenwerkstatt im Quiz-Format (runde/index.js). Herkunft: legacy/modulare/apps/informatik/builders.js.
-// Zufall nur über rng (helfer createRng). Die Reihenfolge der Zufallsaufrufe ist die der Legacy-Fassung, damit gleicher
-// Seed in Legacy und Neubau dieselben Fragen ergibt (Dual-Execution, analysis/modulare/dual/info-zahlen_dual.mjs).
+// Zufall nur über rng (helfer createRng). Seit der Inhaltsprüfung vom 2026-10-30 ziehen einige Erzeuger bewusst anders als
+// die Legacy-Fassung, damit keine verratenen Fragen entstehen. Der Vergleich analysis/modulare/dual/info-zahlen_dual.mjs gilt deshalb nicht mehr.
 //
 // Abweichungen von Legacy in der Darstellung:
 //   - Schreibmaschinenschrift (span.mono) wird zu <b>, weil richText nur b, strong, i, em, p, ul, ol, li, br kennt.
@@ -9,7 +9,7 @@
 import { choiceQuestion, typedQuestion, matchQuestion, esc, distinctQuestions, distinctSlots } from '../../runde/index.js';
 import { pick, shuffle, rnd } from '../../helfer/index.js';
 import {
-  HEX, WEIGHTS, toBin, toHex, placeDigits, placeSum, onesWeights, distractors,
+  HEX, WEIGHTS, toBin, toHex, placeDigits, placeSum, askablePlaces, onesWeights, distractors,
   explainBinToDec, explainDecToBin, explainHexToDec, explainDecToHex, explainBinToHex, explainAdd
 } from './numbers.js';
 
@@ -55,16 +55,20 @@ function typed({ type, answer, ...rest }) {
 
 const flipBits = (bin) => bin.split('').map((c) => (c === '1' ? '0' : '1')).join('');
 const reversed = (bin) => bin.split('').reverse().join('');
+// Führende Nullen weg. Sonst stünden 01 und 1 als zwei verschiedene Optionen da, obwohl sie gleich viel wert sind.
+const plainBin = (bin) => toBin(parseInt(bin, 2));
 
 // --- Seite 1: Stellenwerte -------------------------------------------------
 
 export function placeValueQ(rng) {
   const kind = rnd(0, 2, rng);
-  const n = rnd(100, 9999, rng);
+  let n = rnd(100, 9999, rng);
+  // Gefragt wird nur nach einer Ziffer, die genau einmal in der Zahl steht und keine Null ist. Bei 5525 wäre "die 5" nicht eindeutig.
+  while (kind === 0 && askablePlaces(n).length === 0) n = rnd(100, 9999, rng);
   const d = placeDigits(n);
   const names = ['Tausender', 'Hunderter', 'Zehner', 'Einer'];
   if (kind === 0) {
-    const i = rnd(0, 3, rng);
+    const i = pick(askablePlaces(n), rng);
     const digit = d[i];
     const value = String(Number(digit) * WEIGHT_VALUES[i]);
     return choice({
@@ -72,17 +76,17 @@ export function placeValueQ(rng) {
       prompt: `Welchen Wert hat die <b>${digit}</b> in ${mono(String(n))}?`,
       promptStyle: 'sentence',
       answer: value,
-      wrong: [Number(digit) * 10 * WEIGHT_VALUES[i], Number(digit), Number(digit) * WEIGHT_VALUES[Math.min(3, i + 1)], Number(digit) * WEIGHT_VALUES[Math.max(0, i - 1)]],
+      wrong: WEIGHT_VALUES.map((w) => Number(digit) * w),
       why: `Die ${digit} steht an der ${names[i]}-Stelle (${names[i]} = ${WEIGHT_VALUES[i]}). Also ${digit} × ${WEIGHT_VALUES[i]} = ${value}.`
     }, rng);
   }
   if (kind === 1) {
     return choice({
       label: 'Zahl zerlegen',
-      prompt: `Zerlege ${mono(String(n))}:`,
+      prompt: `Zerlege ${mono(String(n))} in Stellenwerte:`,
       promptStyle: 'sentence',
       answer: placeSum(n),
-      wrong: [placeSum(Number(d.slice().reverse().join(''))), placeSum(n + 10), placeSum(n - 100), placeSum(Number(d[1] + d[0] + d[3] + d[2]))],
+      wrong: [Number(d.slice().reverse().join('')), n + 10, n - 100, Number(d[1] + d[0] + d[3] + d[2]), n + 100, n + 1].filter((v) => v > 0).map(placeSum),
       why: `Jede Ziffer wird mit ihrem Stellenwert multipliziert: ${placeSum(n)}.`
     }, rng);
   }
@@ -117,7 +121,9 @@ export function binToDecQ(level, rng) {
 }
 
 export function lampsQ(rng) {
-  const n = rnd(3, 255, rng);
+  // Mindestens zwei Lampen: Bei nur einer Lampe stünde die Antwort schon in der Frage.
+  let n = rnd(3, 255, rng);
+  while (onesWeights(toBin(n)).length < 2) n = rnd(3, 255, rng);
   const bin = toBin(n).padStart(8, '0');
   const lit = onesWeights(bin);
   return choice({
@@ -138,7 +144,7 @@ export function decToBinQ(level, rng) {
     return choice({
       label: 'Normal → Binär',
       prompt: `Schreibe ${mono(String(n))} binär.`, promptStyle: 'sentence',
-      answer: bin, wrong: [reversed(bin), flipBits(bin), toBin(n + 1), toBin(n - 1), toBin(n + 2)],
+      answer: bin, wrong: [reversed(bin), flipBits(bin), toBin(n + 1), toBin(n - 1), toBin(n + 2)].map(plainBin),
       why: explainDecToBin(n), help: weightsHelp
     }, rng);
   }
@@ -149,12 +155,14 @@ export function decToBinQ(level, rng) {
 }
 
 export function largestWeightQ(rng) {
-  const n = rnd(5, 255, rng);
+  // Keine Zweierpotenz: Sonst wäre die gesuchte Zahl schon die gefragte.
+  let n = rnd(5, 255, rng);
+  while (WEIGHTS.includes(n)) n = rnd(5, 255, rng);
   const w = WEIGHTS.find((x) => x <= n);
   return choice({
     label: 'Den Anfang finden',
     prompt: `Welcher Stellenwert ist der <b>größte</b>, der noch in ${mono(String(n))} passt?`, promptStyle: 'sentence',
-    answer: String(w), wrong: [w * 2, w / 2, n, w * 4].map(Math.floor),
+    answer: String(w), wrong: [w * 2, w / 2, w / 4, w * 4],
     why: `${w} passt noch hinein (${w} ≤ ${n}), der nächstgrößere Stellenwert ${w * 2} aber nicht. Dort fängst du an.`, help: weightsHelp
   }, rng);
 }
@@ -174,11 +182,16 @@ export function addQ(level, rng) {
 }
 
 export function carryQ(rng) {
-  const rules = [['1 + 1', '10', 'Das Ergebnis ist 10: schreibe 0 und merke dir 1.'], ['1 + 1 + 1', '11', 'Das Ergebnis ist 11: schreibe 1 und merke dir 1.'], ['1 + 0', '1', 'Hier gibt es keinen Übertrag.'], ['0 + 0', '0', 'Hier gibt es keinen Übertrag.']];
+  const rules = [
+    ['1 + 1', '10', 'Binär gibt es keine 2. Das Ergebnis ist 10: schreibe 0 und merke dir 1.'],
+    ['1 + 1 + 1', '11', 'Binär gibt es keine 3. Das Ergebnis ist 11: schreibe 1 und merke dir 1.'],
+    ['1 + 0', '1', 'Das Ergebnis ist kleiner als 2, passt also in eine Stelle. Es gibt keinen Übertrag.'],
+    ['0 + 0', '0', 'Null plus null bleibt null, auch im Binärsystem. Es gibt keinen Übertrag.']
+  ];
   const [sum, answer, why] = pick(rules, rng);
   return choice({
     label: 'Binär-Regel', prompt: `${mono(sum)} = ?`, promptStyle: 'big',
-    answer, wrong: ['0', '1', '10', '11', '2'], why: `Binär gibt es keine 2. ${why}`
+    answer, wrong: ['0', '1', '10', '11', '2'], why
   }, rng);
 }
 
@@ -190,7 +203,7 @@ export function hexToDecQ(level, rng) {
   if (rnd(0, 1, rng)) {
     return choice({
       label: 'Hex → Normal', prompt: `Was ist ${mono(hex)} (hex) als normale Zahl?`, promptStyle: 'sentence',
-      answer: String(n), wrong: [parseInt(hex.split('').reverse().join(''), 16), n + 1, n - 1, n + 16, parseInt(hex, 10)],
+      answer: String(n), wrong: [/^\d+$/.test(hex) ? Number(hex) : NaN, parseInt(hex.split('').reverse().join(''), 16), n + 1, n - 1, n + 16],
       why: explainHexToDec(n), help: hexHelp
     }, rng);
   }
@@ -256,7 +269,7 @@ export function hexToBinQ(rng) {
   });
 }
 
-/** Zuordnung: Vierergruppe zu Hex-Ziffer. Die Oberfläche kann Zuordnungen heute noch nicht beantworten (siehe Bericht). */
+/** Zuordnung: Vierergruppe zu Hex-Ziffer. */
 export function nibbleMatchQ(rng) {
   const values = shuffle([1, 2, 4, 5, 8, 9, 10, 11, 12, 13, 14, 15], rng).slice(0, 4);
   return matchQuestion({

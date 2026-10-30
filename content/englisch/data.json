@@ -2,7 +2,7 @@
   "items": {
     "simple-past": [
       {
-        "q": "Simple Past: unregelmäßiges Verb",
+        "q": "Verb: go",
         "kind": "gap",
         "s": "Yesterday we ___ to the cinema.",
         "a": "went",
@@ -14,7 +14,7 @@
         "why": "go ist unregelmäßig. Der Simple Past lautet went. gone ist das Partizip II und braucht have."
       },
       {
-        "q": "Simple Past: regelmäßiges Verb",
+        "q": "Verb: finish",
         "kind": "gap",
         "s": "She ___ her homework an hour ago.",
         "a": "finished",
@@ -26,9 +26,9 @@
         "why": "finish ist regelmäßig, also kommt -ed dazu. Nach ago steht der Simple Past."
       },
       {
-        "q": "Simple Past: unregelmäßiges Verb",
+        "q": "Verb: see",
         "kind": "gap",
-        "s": "They ___ a great film on Sunday.",
+        "s": "They ___ a great film last Sunday.",
         "a": "saw",
         "wrong": [
           "see",
@@ -38,9 +38,9 @@
         "why": "see wird im Simple Past zu saw. seen ist das Partizip II und braucht have."
       },
       {
-        "q": "Simple Past: Bedeutung beachten",
+        "q": "Verb: lose",
         "kind": "gap",
-        "s": "I ___ my keys at the station.",
+        "s": "I ___ my keys at the station yesterday.",
         "a": "lost",
         "wrong": [
           "loose",
@@ -50,16 +50,19 @@
         "why": "lose wird im Simple Past zu lost. loose ist ein Adjektiv für locker, losed gibt es nicht."
       },
       {
-        "q": "Verneinung im Simple Past",
+        "q": "Verneinung, Verb: finish",
         "kind": "gap",
-        "s": "We ___ the film because it was too long.",
+        "s": "Last night we ___ the film because it was too long.",
         "a": "did not finish",
         "wrong": [
           "did not finished",
           "have not finished",
           "not finished"
         ],
-        "why": "Nach did not steht die Grundform finish. Das Hilfsverb did zeigt schon die Vergangenheit."
+        "why": "Nach did not steht die Grundform finish, denn did zeigt schon die Vergangenheit. Zu last night passt kein Present Perfect.",
+        "accept": [
+          "didn't finish"
+        ]
       },
       {
         "q": "Welcher Satz steht im Simple Past richtig?",
@@ -82,19 +85,19 @@
         "why": "begin, began, begun. begun ist das Partizip II und steht nur mit have oder be."
       },
       {
-        "q": "Simple Past: Verb auf -e",
+        "q": "Verb: arrive",
         "kind": "gap",
-        "s": "The train ___ at eight o'clock.",
+        "s": "The train ___ at eight o'clock last night.",
         "a": "arrived",
         "wrong": [
           "arrive",
           "arrives",
           "has arrived"
         ],
-        "why": "arrive endet auf -e, deshalb kommt nur -d dazu. Die Zeitangabe at eight o'clock verlangt den Simple Past."
+        "why": "arrive endet auf -e, deshalb kommt nur -d dazu. last night ist eine feste Zeit in der Vergangenheit und verlangt den Simple Past."
       },
       {
-        "q": "Simple Past: unregelmäßiges Verb",
+        "q": "Verb: fly",
         "kind": "gap",
         "s": "Last summer we ___ to Spain.",
         "a": "flew",
@@ -118,7 +121,7 @@
     ],
     "present-perfect": [
       {
-        "q": "Present Perfect: Erfahrung",
+        "q": "Ich habe Rom zweimal besucht.",
         "kind": "gap",
         "s": "I have ___ Rome twice.",
         "a": "visited",
@@ -130,7 +133,7 @@
         "why": "Nach have steht das Partizip II. visit ist regelmäßig: visited."
       },
       {
-        "q": "Present Perfect: unregelmäßig",
+        "q": "Verb: leave",
         "kind": "gap",
         "s": "She has ___ her phone at home.",
         "a": "left",
@@ -142,7 +145,7 @@
         "why": "leave, left, left. Das Partizip II von leave ist left."
       },
       {
-        "q": "Present Perfect: Ergebnis",
+        "q": "Verb: buy",
         "kind": "gap",
         "s": "We have already ___ the new game.",
         "a": "bought",
@@ -154,7 +157,7 @@
         "why": "buy, bought, bought. Mit already passt der Present Perfect."
       },
       {
-        "q": "Welcher Satz fragt nach einer Erfahrung?",
+        "q": "Welche Frage nach einer Erfahrung ist richtig?",
         "a": "Have you ever eaten sushi?",
         "wrong": [
           "Did you ever ate sushi?",
@@ -164,7 +167,7 @@
         "why": "Bei Erfahrungen steht have plus Partizip II: eaten. ate ist Simple Past, eat ist die Grundform."
       },
       {
-        "q": "Present Perfect: Wetter",
+        "q": "Verb: rain",
         "kind": "gap",
         "s": "It has ___ twice this week.",
         "a": "rained",
@@ -176,7 +179,7 @@
         "why": "Nach has steht das Partizip II. rain ist regelmäßig: rained. this week bezieht sich auf die laufende Woche."
       },
       {
-        "q": "Present Perfect: unregelmäßig",
+        "q": "Verb: ride",
         "kind": "gap",
         "s": "My brother has never ___ a horse.",
         "a": "ridden",
@@ -188,7 +191,7 @@
         "why": "ride, rode, ridden. Das Partizip II ridden steht nach has never."
       },
       {
-        "q": "Present Perfect: Frage",
+        "q": "Verb: find",
         "kind": "gap",
         "s": "Have you ___ your keys?",
         "a": "found",
@@ -220,7 +223,7 @@
         "why": "just heißt gerade eben. yesterday, last night und ago verlangen den Simple Past."
       },
       {
-        "q": "Present Perfect: go",
+        "q": "Verb: go",
         "kind": "gap",
         "s": "The bus has ___ already.",
         "a": "gone",
@@ -234,7 +237,7 @@
     ],
     "past-or-perfect": [
       {
-        "q": "Feste Zeit: last Sunday",
+        "q": "Verb: watch",
         "kind": "gap",
         "s": "We ___ the match last Sunday.",
         "a": "watched",
@@ -246,19 +249,22 @@
         "why": "last Sunday ist ein fester Zeitpunkt in der Vergangenheit. Dann steht der Simple Past."
       },
       {
-        "q": "Ergebnis heute",
+        "q": "Verb: finish",
         "kind": "gap",
-        "s": "I ___ my homework, so I can go out now.",
+        "s": "I ___ my homework already, so I can go out now.",
         "a": "have finished",
         "wrong": [
           "finished",
           "finish",
           "have finish"
         ],
-        "why": "Das Ergebnis wirkt bis heute: Ich kann jetzt raus. Dafür braucht man den Present Perfect."
+        "why": "already und das Ergebnis heute (Ich kann jetzt raus) verlangen den Present Perfect.",
+        "accept": [
+          "'ve finished"
+        ]
       },
       {
-        "q": "Feste Jahreszahl",
+        "q": "Verb: discover",
         "kind": "gap",
         "s": "Columbus ___ America in 1492.",
         "a": "discovered",
@@ -270,7 +276,7 @@
         "why": "Mit der Jahreszahl 1492 ist die Zeit abgeschlossen. Dann steht der Simple Past."
       },
       {
-        "q": "Wie sagt man: Ich war schon mal in London? (ohne feste Zeitangabe)",
+        "q": "Wie sagt man ohne feste Zeitangabe: Ich war schon mal in London?",
         "a": "I have been to London.",
         "wrong": [
           "I have went to London.",
@@ -280,7 +286,7 @@
         "why": "Ohne feste Zeit und mit Erfahrung: have been. went ist Simple Past, been ist das Partizip von be."
       },
       {
-        "q": "Feste Zeit: yesterday",
+        "q": "Verb: close",
         "kind": "gap",
         "s": "The shop ___ at six p.m. yesterday.",
         "a": "closed",
@@ -302,7 +308,7 @@
         "why": "last night ist eine feste Zeit, also Simple Past. Nach did steht die Grundform watch."
       },
       {
-        "q": "Feste Zeit: last year",
+        "q": "Verb: learn",
         "kind": "gap",
         "s": "Last year we ___ a lot of new words.",
         "a": "learned",
@@ -311,10 +317,13 @@
           "learn",
           "learning"
         ],
-        "why": "last year ist eine feste Zeitangabe. Dann steht der Simple Past: learned."
+        "why": "last year ist eine feste Zeitangabe. Dann steht der Simple Past: learned.",
+        "accept": [
+          "learnt"
+        ]
       },
       {
-        "q": "Feste Jahreszahl: in 2020",
+        "q": "Verb: move",
         "kind": "gap",
         "s": "She ___ to Berlin in 2020.",
         "a": "moved",
@@ -336,7 +345,7 @@
         "why": "just und ein Ergebnis heute gehören zum Present Perfect. yesterday verlangt den Simple Past. Beides zusammen passt nicht."
       },
       {
-        "q": "Feste Zeit: last month",
+        "q": "Verb: pass",
         "kind": "gap",
         "s": "My sister ___ her driving test last month.",
         "a": "passed",
@@ -350,7 +359,7 @@
     ],
     "perfect-progressive": [
       {
-        "q": "for oder since?",
+        "q": "Ich warte seit zwei Stunden.",
         "kind": "gap",
         "s": "I have been ___ for two hours.",
         "a": "waiting",
@@ -359,10 +368,10 @@
           "waited",
           "waits"
         ],
-        "why": "have been plus -ing zeigt eine Handlung, die noch andauert. waited ist Simple Past."
+        "why": "Die Handlung dauert noch an, deshalb steht nach have been die -ing-Form. Ohne -ing ist der Satz falsch."
       },
       {
-        "q": "Verlauf mit since",
+        "q": "Sie übt seit Montag Klavier.",
         "kind": "gap",
         "s": "She has been ___ the piano since Monday.",
         "a": "practising",
@@ -371,10 +380,13 @@
           "practises",
           "practised"
         ],
-        "why": "since Monday nennt den Startpunkt, und die Handlung läuft noch. Dafür steht has been plus -ing."
+        "why": "since Monday nennt den Startpunkt, und die Handlung läuft noch. Dafür steht has been plus -ing.",
+        "accept": [
+          "practicing"
+        ]
       },
       {
-        "q": "Verlauf mit since",
+        "q": "Wir spielen seit dem Frühstück.",
         "kind": "gap",
         "s": "We have been ___ since breakfast.",
         "a": "playing",
@@ -396,19 +408,19 @@
         "why": "since steht vor einem Zeitpunkt wie this morning. since two hours ist falsch, richtig wäre for two hours. has been braucht das Verb mit -ing."
       },
       {
-        "q": "Frage mit how long",
+        "q": "Wie lange wartest du schon auf den Bus?",
         "kind": "gap",
         "s": "How long have you ___ for the bus?",
         "a": "been waiting",
         "wrong": [
           "waiting",
-          "waited",
+          "been waited",
           "wait"
         ],
-        "why": "Die Frage How long have you been ...? passt zu einer Handlung, die noch läuft. waited wäre Simple Past."
+        "why": "Die Handlung läuft noch, deshalb steht nach How long have you die Form been plus -ing. Bei waiting allein fehlt been, been waited ist keine Verlaufsform."
       },
       {
-        "q": "Hilfsverb bei they",
+        "q": "Sie üben seit dem Mittagessen.",
         "kind": "gap",
         "s": "They ___ been practising since lunch.",
         "a": "have",
@@ -420,7 +432,7 @@
         "why": "Bei they steht have. has gilt für he, she und it."
       },
       {
-        "q": "Verlauf mit for",
+        "q": "Verb: walk",
         "kind": "gap",
         "s": "The dog has been ___ around the garden for an hour.",
         "a": "walking",
@@ -442,7 +454,7 @@
         "why": "Der Frageaufbau ist How long, have, Subjekt, been, dann -ing. did und read passen hier nicht."
       },
       {
-        "q": "for oder since?",
+        "q": "Verb: run",
         "kind": "gap",
         "s": "I have been ___ for an hour.",
         "a": "running",
@@ -451,22 +463,22 @@
           "runs",
           "run"
         ],
-        "why": "for an hour nennt die Dauer. Nach have been steht die Form mit -ing. ran ist Simple Past."
+        "why": "for an hour nennt die Dauer. Nach have been steht die Form mit -ing, bei run mit Doppel-n: running. ran ist Simple Past."
       },
       {
         "q": "Welcher Satz ist richtig?",
         "a": "My friend has been practising the piano since Easter.",
         "wrong": [
-          "My friend has been practising the piano for Easter.",
+          "My friend has been practising the piano since two weeks.",
           "My friend is practising the piano since Easter.",
           "My friend has been practise the piano since Easter."
         ],
-        "why": "Easter ist ein Zeitpunkt, deshalb since. for steht vor einem Zeitraum. is practising braucht has been."
+        "why": "Easter ist ein Zeitpunkt, deshalb since. Vor einem Zeitraum wie two weeks steht for, nicht since. Statt is practising braucht der Satz has been practising."
       }
     ],
     "past-progressive": [
       {
-        "q": "Verlaufsform",
+        "q": "Um sieben Uhr habe ich gerade das Abendessen gekocht.",
         "kind": "gap",
         "s": "At seven o'clock I was ___ dinner.",
         "a": "cooking",
@@ -478,7 +490,7 @@
         "why": "was plus Verb mit -ing bildet den Past Progressive: cooking."
       },
       {
-        "q": "Verlauf mit they",
+        "q": "Sie spielten gerade Fußball, als es zu regnen anfing.",
         "kind": "gap",
         "s": "They ___ playing football when it started to rain.",
         "a": "were",
@@ -490,16 +502,16 @@
         "why": "They braucht were. was steht bei I, he, she und it."
       },
       {
-        "q": "while und Verlauf",
+        "q": "Während meine Schwester gerade duschte, klingelte es an der Tür.",
         "kind": "gap",
         "s": "While my sister ___ a shower, the doorbell rang.",
         "a": "was taking",
         "wrong": [
-          "took",
+          "was take",
           "has taken",
           "takes"
         ],
-        "why": "Bei while steht meist der Verlauf: was taking. Die Klingel ist das kurze Ereignis im Simple Past."
+        "why": "Das Duschen läuft noch, als es klingelt. Dafür steht der Verlauf: was taking. was take gibt es nicht. Die Klingel ist das kurze Ereignis im Simple Past."
       },
       {
         "q": "Welcher Satz ist richtig?",
@@ -512,19 +524,19 @@
         "why": "Das Ankommen ist kurz, also came. Bei my mum steht was, danach das Verb mit -ing."
       },
       {
-        "q": "Verlauf mit while",
+        "q": "Während wir gerade den Kuchen backten, fiel der Strom aus.",
         "kind": "gap",
         "s": "While we ___ the cake, the power went off.",
         "a": "were baking",
         "wrong": [
-          "baked",
-          "bake",
-          "have baked"
+          "were bake",
+          "have baked",
+          "bake"
         ],
-        "why": "Bei while steht der Verlauf: were baking. baked wäre ein abgeschlossener Moment."
+        "why": "Das Backen läuft noch, als der Strom ausfällt. Dafür steht der Verlauf: were baking. were bake gibt es nicht."
       },
       {
-        "q": "Hintergrund",
+        "q": "Die Kinder spielten gerade im Garten, als der Regen anfing.",
         "kind": "gap",
         "s": "The children were ___ in the garden when the rain started.",
         "a": "playing",
@@ -546,7 +558,7 @@
         "why": "Der Verlauf sleeping steht mit was. Das Klingeln unterbricht, deshalb rang im Simple Past."
       },
       {
-        "q": "Frage im Verlauf",
+        "q": "Was hast du gestern um neun Uhr gerade gemacht?",
         "kind": "gap",
         "s": "What ___ you doing at nine yesterday?",
         "a": "were",
@@ -558,7 +570,7 @@
         "why": "Bei you steht were im Past Progressive. was gehört zu I, he, she und it."
       },
       {
-        "q": "Unterbrechung durch die Polizei",
+        "q": "Er fuhr gerade Auto, als die Polizei ihn anhielt.",
         "kind": "gap",
         "s": "He ___ the car when the police stopped him.",
         "a": "was driving",
@@ -570,52 +582,61 @@
         "why": "Der Verlauf steht im Past Progressive: was driving. drove wäre ein abgeschlossenes Ereignis."
       },
       {
-        "q": "Welches Signal passt besonders gut zum Past Progressive?",
+        "q": "Welche Zeitangabe passt besonders gut zum Past Progressive?",
         "a": "at 8 o'clock yesterday",
         "wrong": [
-          "already",
-          "ever",
-          "just"
+          "since last Monday",
+          "so far this week",
+          "by next Monday"
         ],
-        "why": "at mit einer Uhrzeit beschreibt einen Moment mitten im Verlauf. already, ever und just gehören zum Present Perfect."
+        "why": "at mit einer Uhrzeit nennt einen Moment, in dem etwas gerade lief. since und so far gehören zum Present Perfect, by next Monday zur Zukunft."
       }
     ],
     "will-future": [
       {
-        "q": "Vorhersage mit I think",
+        "q": "Ich glaube, es wird morgen regnen.",
         "kind": "gap",
-        "s": "I think it ___ rain tomorrow.",
-        "a": "will",
+        "s": "I think it ___ tomorrow.",
+        "a": "will rain",
         "wrong": [
-          "would",
-          "is",
-          "does"
+          "will rains",
+          "will to rain",
+          "is rain"
         ],
-        "why": "Bei Vermutungen über die Zukunft steht will. would ist die Form für unwirkliche Fälle."
+        "why": "Bei Vermutungen über die Zukunft steht will plus Grundform. Die Grundform hat kein -s und kein to.",
+        "accept": [
+          "'ll rain"
+        ]
       },
       {
-        "q": "Versprechen",
+        "q": "Keine Sorge, ich helfe dir bei den Hausaufgaben.",
         "kind": "gap",
-        "s": "Don't worry, I ___ help you with your homework.",
-        "a": "will",
+        "s": "Don't worry, I ___ you with your homework.",
+        "a": "will help",
         "wrong": [
-          "am",
-          "would",
-          "do"
+          "will helping",
+          "will to help",
+          "am help"
         ],
-        "why": "Eine spontane Zusage oder ein Versprechen braucht will plus Grundform. am ist die Verlaufsform."
+        "why": "Eine spontane Zusage oder ein Versprechen braucht will plus Grundform. Nach will steht weder -ing noch to, und am help gibt es nicht.",
+        "accept": [
+          "'ll help"
+        ]
       },
       {
-        "q": "Verneinung",
+        "q": "Ich verspreche, dass ich es niemandem verraten werde.",
         "kind": "gap",
         "s": "I promise I ___ tell anybody.",
         "a": "won't",
         "wrong": [
           "don't",
           "isn't",
-          "wouldn't"
+          "haven't"
         ],
-        "why": "won't ist die Kurzform von will not. don't und isn't passen nicht zu will."
+        "why": "won't ist die Kurzform von will not. Für ein Versprechen über die Zukunft passen don't, isn't und haven't nicht.",
+        "accept": [
+          "will not"
+        ]
       },
       {
         "q": "Welcher Satz ist richtig?",
@@ -628,31 +649,34 @@
         "why": "Bei Fragen mit will steht das Subjekt danach, dann die Grundform ohne to und ohne -s."
       },
       {
-        "q": "Spontane Entscheidung",
+        "q": "Das Telefon klingelt. Ich gehe ran.",
         "kind": "gap",
-        "s": "The phone is ringing. I ___ answer it.",
-        "a": "will",
+        "s": "The phone is ringing. I ___ it.",
+        "a": "will answer",
         "wrong": [
-          "am",
-          "go",
-          "do"
+          "will answers",
+          "am answer",
+          "will answering"
         ],
-        "why": "Die Entscheidung fällt im Moment des Sprechens. Dafür steht will."
+        "why": "Die Entscheidung fällt im Moment des Sprechens. Dafür steht will plus Grundform, ohne -s und ohne -ing.",
+        "accept": [
+          "'ll answer"
+        ]
       },
       {
-        "q": "Wettervorhersage",
+        "q": "Morgen wird das Wetter sonnig sein.",
         "kind": "gap",
-        "s": "Tomorrow the weather ___ be sunny.",
-        "a": "will",
+        "s": "Tomorrow the weather ___ sunny.",
+        "a": "will be",
         "wrong": [
-          "would",
-          "is",
-          "did"
+          "will is",
+          "will being",
+          "is be"
         ],
-        "why": "Eine Vorhersage für morgen braucht will. Das Verb danach ist die Grundform be."
+        "why": "Eine Vorhersage für morgen braucht will. Danach steht die Grundform be, nicht is oder being."
       },
       {
-        "q": "Verneinung von will",
+        "q": "Wie lautet die Verneinung von „They will help us.“?",
         "a": "They won't help us.",
         "wrong": [
           "They don't will help us.",
@@ -662,31 +686,37 @@
         "why": "won't ist die Kurzform von will not. Mit don't oder not vor will ist der Satz falsch."
       },
       {
-        "q": "Vorhersage in der Frage",
+        "q": "Glaubst du, dass sie den Test morgen bestehen wird?",
         "kind": "gap",
-        "s": "Do you think she ___ pass the test?",
-        "a": "will",
+        "s": "Do you think she ___ the test tomorrow?",
+        "a": "will pass",
         "wrong": [
-          "would",
-          "does",
-          "can not"
+          "will passes",
+          "does pass",
+          "is pass"
         ],
-        "why": "Nach think steht eine Vorhersage mit will. does ist ein Hilfsverb für die Gegenwart."
+        "why": "Mit think fragst du nach einer Vorhersage für morgen. Dafür steht will plus Grundform. does pass wäre Gegenwart.",
+        "accept": [
+          "'ll pass"
+        ]
       },
       {
-        "q": "Sichere Vorhersage",
+        "q": "Ich bin sicher, dass dir der Urlaub gefallen wird.",
         "kind": "gap",
-        "s": "I'm sure you ___ enjoy the holiday.",
-        "a": "will",
+        "s": "I'm sure you ___ the holiday.",
+        "a": "will enjoy",
         "wrong": [
-          "would",
-          "do",
-          "are"
+          "will enjoying",
+          "will to enjoy",
+          "are enjoy"
         ],
-        "why": "Bei einer sicheren Vorhersage steht will plus Grundform: will enjoy."
+        "why": "Bei einer sicheren Vorhersage steht will plus Grundform: will enjoy. Nach will steht weder -ing noch to.",
+        "accept": [
+          "'ll enjoy"
+        ]
       },
       {
-        "q": "Welcher Satz drückt ein Versprechen aus?",
+        "q": "Welches Versprechen ist richtig formuliert?",
         "a": "I will always be your friend.",
         "wrong": [
           "I am always be your friend.",
@@ -698,7 +728,7 @@
     ],
     "conditional-1": [
       {
-        "q": "Bedingung im Präsens",
+        "q": "Verb: rain",
         "kind": "gap",
         "s": "If it ___ tomorrow, we will stay at home.",
         "a": "rains",
@@ -710,7 +740,7 @@
         "why": "Im if-Satz steht das Präsens, auch wenn es um die Zukunft geht. will steht nur im Hauptsatz."
       },
       {
-        "q": "if-Satz",
+        "q": "Wenn du fleißig lernst, bestehst du den Test.",
         "kind": "gap",
         "s": "If you ___ hard, you will pass the test.",
         "a": "study",
@@ -719,10 +749,13 @@
           "studied",
           "studying"
         ],
-        "why": "Der if-Satz steht im Präsens. Ein will gehört dort nicht hin."
+        "why": "Der if-Satz steht im Präsens. Ein will gehört dort nicht hin.",
+        "accept": [
+          "work"
+        ]
       },
       {
-        "q": "if-Satz mit he, she, it",
+        "q": "Wir fahren an den See, wenn die Sonne scheint.",
         "kind": "gap",
         "s": "We will go to the lake if the sun ___.",
         "a": "shines",
@@ -744,7 +777,7 @@
         "why": "Im if-Satz steht das Präsens (is), im Hauptsatz will mit be. will gehört nicht in den if-Satz."
       },
       {
-        "q": "if-Satz mit have",
+        "q": "Wenn ich genug Geld habe, kaufe ich das neue Fahrrad.",
         "kind": "gap",
         "s": "If I ___ enough money, I will buy the new bike.",
         "a": "have",
@@ -756,19 +789,19 @@
         "why": "Nach if steht das Präsens: have. had wäre Konditional 2."
       },
       {
-        "q": "if-Satz mit everybody",
+        "q": "Die Party wird lustig, wenn alle kommen.",
         "kind": "gap",
-        "s": "The party will be fun if everybody ___ come.",
+        "s": "The party will be fun if everybody ___.",
         "a": "comes",
         "wrong": [
           "will come",
-          "came",
+          "come",
           "coming"
         ],
-        "why": "Bei everybody kommt -s dazu: comes. Der if-Satz steht im Präsens."
+        "why": "everybody zählt als Singular, auch wenn im Deutschen alle kommen steht. Deshalb kommt -s dazu: comes. Der if-Satz steht im Präsens."
       },
       {
-        "q": "if-Satz mit miss",
+        "q": "Wenn du den Bus verpasst, kommst du zu spät.",
         "kind": "gap",
         "s": "If you ___ the bus, you will be late.",
         "a": "miss",
@@ -780,19 +813,22 @@
         "why": "Der if-Satz steht im Präsens: miss. missed wäre Vergangenheit."
       },
       {
-        "q": "Hauptsatz bei realistischer Bedingung",
+        "q": "Wenn es schneit, bauen wir einen Schneemann.",
         "kind": "gap",
-        "s": "If it snows, we ___ build a snowman.",
-        "a": "will",
+        "s": "If it snows, we ___ a snowman.",
+        "a": "will build",
         "wrong": [
-          "would",
-          "are",
-          "do"
+          "would build",
+          "built",
+          "will built"
         ],
-        "why": "Im Hauptsatz steht will, weil die Bedingung realistisch ist. would gehört zu Konditional 2."
+        "why": "Im Hauptsatz steht will plus Grundform, weil die Bedingung realistisch ist. would gehört zu Konditional 2.",
+        "accept": [
+          "'ll build"
+        ]
       },
       {
-        "q": "Bitte mit if",
+        "q": "Ruf mich an, wenn du Probleme hast.",
         "kind": "gap",
         "s": "Call me if you ___ any problems.",
         "a": "have",
@@ -816,7 +852,7 @@
     ],
     "conditional-2": [
       {
-        "q": "if-Satz mit Vergangenheit",
+        "q": "Wenn ich ein Pferd hätte, würde ich jeden Tag reiten.",
         "kind": "gap",
         "s": "If I ___ a horse, I would ride it every day.",
         "a": "had",
@@ -828,7 +864,7 @@
         "why": "Im if-Satz steht der Simple Past: had. would gehört in den Hauptsatz."
       },
       {
-        "q": "Ratschlag mit were",
+        "q": "An deiner Stelle würde ich mit der Lehrerin sprechen.",
         "kind": "gap",
         "s": "If I were you, I ___ talk to the teacher.",
         "a": "would",
@@ -840,7 +876,7 @@
         "why": "Im Hauptsatz steht would plus Grundform. will gehört zu Konditional 1."
       },
       {
-        "q": "if-Satz mit Vergangenheit",
+        "q": "Wenn sie mehr Zeit hätte, würde sie Gitarre lernen.",
         "kind": "gap",
         "s": "If she ___ more time, she would learn to play the guitar.",
         "a": "had",
@@ -862,19 +898,19 @@
         "why": "Im if-Satz steht der Simple Past, im Hauptsatz would plus Grundform. will und swam passen nicht zu dieser Form."
       },
       {
-        "q": "Frage mit would",
+        "q": "Was würdest du tun, wenn du im Lotto gewinnen würdest?",
         "kind": "gap",
         "s": "What ___ you do if you won the lottery?",
         "a": "would",
         "wrong": [
           "will",
-          "did",
-          "do"
+          "do",
+          "have"
         ],
-        "why": "Im Hauptsatz einer solchen Frage steht would: What would you do? did und do passen hier nicht."
+        "why": "Im Hauptsatz einer solchen Frage steht would: What would you do? will gehört zu Konditional 1, do und have passen nicht zu einem nur gedachten Fall."
       },
       {
-        "q": "Bedingung mit were",
+        "q": "Wenn es nicht so kalt wäre, würden wir schwimmen gehen.",
         "kind": "gap",
         "s": "If it ___ not so cold, we would go swimming.",
         "a": "were",
@@ -883,10 +919,13 @@
           "will be",
           "would be"
         ],
-        "why": "Im if-Satz steht der Simple Past von be: were. Bei Konditional 2 wird meist were verwendet."
+        "why": "Im if-Satz steht der Simple Past von be. Bei Konditional 2 nimmt man meist were, im Alltag hört man bei it auch was.",
+        "accept": [
+          "was"
+        ]
       },
       {
-        "q": "if-Satz mit Zeit",
+        "q": "Ich würde dir helfen, wenn ich Zeit hätte, aber ich habe zu tun.",
         "kind": "gap",
         "s": "I would help you if I ___ the time, but I am busy.",
         "a": "had",
@@ -908,7 +947,7 @@
         "why": "Der if-Satz hat den Simple Past (had), der Hauptsatz would. would im if-Satz und will im Hauptsatz sind falsch."
       },
       {
-        "q": "if-Satz mit train",
+        "q": "Wenn du härter trainieren würdest, würdest du das Rennen gewinnen.",
         "kind": "gap",
         "s": "If you ___ harder, you would win the race.",
         "a": "trained",
@@ -920,7 +959,7 @@
         "why": "Der if-Satz steht im Simple Past: trained. train wäre Präsens."
       },
       {
-        "q": "Wunschsatz mit lived",
+        "q": "Sie wären glücklicher, wenn sie in einem größeren Haus wohnen würden.",
         "kind": "gap",
         "s": "They would be happier if they ___ in a bigger house.",
         "a": "lived",
@@ -934,7 +973,7 @@
     ],
     "relative-clauses": [
       {
-        "q": "Relativpronomen für Personen",
+        "q": "Die Frau, die nebenan wohnt, ist Krankenschwester.",
         "kind": "gap",
         "s": "The woman ___ lives next door is a nurse.",
         "a": "who",
@@ -943,10 +982,13 @@
           "where",
           "which"
         ],
-        "why": "Für Personen steht who. which ist für Dinge, whose zeigt Besitz, where für Orte."
+        "why": "Für Personen steht who. which ist für Dinge, whose zeigt Besitz, where für Orte.",
+        "accept": [
+          "that"
+        ]
       },
       {
-        "q": "Relativpronomen für Orte",
+        "q": "Lissabon ist die Stadt, in der meine Tante wohnt.",
         "kind": "gap",
         "s": "Lisbon is the city ___ my aunt lives.",
         "a": "where",
@@ -955,10 +997,13 @@
           "which",
           "whose"
         ],
-        "why": "Für Orte steht where. in which wäre auch möglich, which allein fehlt die Präposition."
+        "why": "Für Orte steht where. in which wäre auch möglich, bei which allein fehlt die Präposition.",
+        "accept": [
+          "in which"
+        ]
       },
       {
-        "q": "Relativpronomen für Besitz",
+        "q": "Mein Freund, dessen Hund den Preis gewonnen hat, ist in meiner Klasse.",
         "kind": "gap",
         "s": "My friend ___ dog won the prize is in my class.",
         "a": "whose",
@@ -970,7 +1015,7 @@
         "why": "whose zeigt Besitz: whose dog heißt der Hund, der dem Freund gehört."
       },
       {
-        "q": "Relativpronomen für Dinge",
+        "q": "Das Handy, das auf dem Tisch liegt, gehört mir.",
         "kind": "gap",
         "s": "The phone ___ is on the table is mine.",
         "a": "which",
@@ -979,7 +1024,10 @@
           "whose",
           "where"
         ],
-        "why": "Für Dinge steht which oder that. who passt nur für Personen."
+        "why": "Für Dinge steht which oder that. who passt nur für Personen.",
+        "accept": [
+          "that"
+        ]
       },
       {
         "q": "Welcher Satz ist richtig?",
@@ -992,7 +1040,7 @@
         "why": "Für Personen steht who. which passt zu Dingen, whose braucht danach ein Hauptwort, where steht für Orte."
       },
       {
-        "q": "Relativpronomen mit Ding",
+        "q": "Kennst du das Geschäft, das frisches Brot verkauft?",
         "kind": "gap",
         "s": "Do you know the shop ___ sells fresh bread?",
         "a": "which",
@@ -1001,10 +1049,13 @@
           "whose",
           "where"
         ],
-        "why": "Das Geschäft ist hier eine Sache, deshalb which oder that. who passt nur für Personen."
+        "why": "Das Geschäft ist hier eine Sache, deshalb which oder that. who passt nur für Personen.",
+        "accept": [
+          "that"
+        ]
       },
       {
-        "q": "Relativpronomen für Ort",
+        "q": "Das Dorf, in dem wir letzten Sommer waren, ist sehr klein.",
         "kind": "gap",
         "s": "The village ___ we stayed last summer is very small.",
         "a": "where",
@@ -1013,11 +1064,14 @@
           "which",
           "whose"
         ],
-        "why": "Für Orte steht where. which würde hier die Präposition fehlen lassen."
+        "why": "Für Orte steht where. in which wäre auch möglich, bei which allein fehlt die Präposition.",
+        "accept": [
+          "in which"
+        ]
       },
       {
         "q": "Welche Aussage zu whose stimmt?",
-        "a": "whose zeigt, wem etwas gehört, zum Beispiel whose bag.",
+        "a": "whose zeigt, wem etwas gehört: whose bag.",
         "wrong": [
           "whose ersetzt immer das Subjekt des Satzes.",
           "whose steht nur für Orte.",
@@ -1026,7 +1080,7 @@
         "why": "whose heißt wessen und steht vor einem Hauptwort. Die anderen Aussagen gehören zu who, where oder when."
       },
       {
-        "q": "Zusatzinfo mit Komma",
+        "q": "Frau Green, die Mathe unterrichtet, ist sehr streng.",
         "kind": "gap",
         "s": "Mrs Green, ___ teaches maths, is very strict.",
         "a": "who",
@@ -1035,10 +1089,10 @@
           "whose",
           "where"
         ],
-        "why": "Mrs Green ist eine Person, deshalb who. Der Relativsatz steht zwischen Kommas, weil er nur Zusatzinfo gibt."
+        "why": "Mrs Green ist eine Person, deshalb who. Der Relativsatz steht zwischen Kommas, weil er nur Zusatzinfo gibt. In solchen Sätzen steht nie that."
       },
       {
-        "q": "Relativpronomen für Film",
+        "q": "Der Film, den wir am Freitag gesehen haben, war lustig.",
         "kind": "gap",
         "s": "The film ___ we saw on Friday was funny.",
         "a": "which",
@@ -1047,7 +1101,10 @@
           "where",
           "whose"
         ],
-        "why": "Für einen Film, also eine Sache, steht which oder that. who ist nur für Personen."
+        "why": "Für einen Film, also eine Sache, steht which oder that. who ist nur für Personen.",
+        "accept": [
+          "that"
+        ]
       }
     ],
     "contact-clauses": [
@@ -1062,19 +1119,19 @@
         "why": "Hier fällt das Objekt-Pronomen weg, weil danach das Subjekt I folgt. In den anderen Sätzen fehlt das Subjekt des Relativsatzes."
       },
       {
-        "q": "Verb des Hauptsatzes",
+        "q": "Die Schuhe, die ich gekauft habe, sind zu klein.",
         "kind": "gap",
         "s": "The shoes I bought ___ too small.",
         "a": "are",
         "wrong": [
           "is",
-          "were",
+          "was",
           "be"
         ],
         "why": "Das Verb im Hauptsatz richtet sich nach dem Hauptwort shoes, also Plural: are."
       },
       {
-        "q": "Kontaktsatz mit Singular",
+        "q": "Der Mann, den ich gestern getroffen habe, war sehr freundlich.",
         "kind": "gap",
         "s": "The man I met yesterday ___ very friendly.",
         "a": "was",
@@ -1086,7 +1143,7 @@
         "why": "Das Hauptwort the man ist Singular, deshalb was. Das Pronomen fehlt, weil es Objekt ist."
       },
       {
-        "q": "Kontaktsatz mit Singular",
+        "q": "Der Kuchen, den meine Oma gebacken hat, war köstlich.",
         "kind": "gap",
         "s": "The cake my grandma baked ___ delicious.",
         "a": "was",
@@ -1103,12 +1160,12 @@
         "wrong": [
           "The dog we saw in the park were black.",
           "The dog saw we in the park was black.",
-          "The dog we saw in the park is were black."
+          "The dog we saw in the park are black."
         ],
         "why": "Das Verb richtet sich nach dem Hauptwort dog, also was. Im Relativsatz bleibt die Reihenfolge Subjekt, dann Verb: we saw."
       },
       {
-        "q": "Kontaktsatz mit Plural",
+        "q": "Die Leute, die wir im Urlaub getroffen haben, waren aus Spanien.",
         "kind": "gap",
         "s": "The people we met on holiday ___ from Spain.",
         "a": "were",
@@ -1120,19 +1177,19 @@
         "why": "Das Hauptwort people ist Plural, deshalb were."
       },
       {
-        "q": "Kontaktsatz mit Singular",
+        "q": "Das Geschenk, das mir meine Tante gegeben hat, ist eine Kamera.",
         "kind": "gap",
         "s": "The present my aunt gave me ___ a camera.",
         "a": "is",
         "wrong": [
           "are",
           "be",
-          "was"
+          "were"
         ],
         "why": "Das Hauptwort present ist Singular, deshalb is. Das Pronomen fehlt, weil es Objekt ist."
       },
       {
-        "q": "Subjekt bleibt stehen",
+        "q": "Der Junge, der dich angerufen hat, ist mein Bruder.",
         "kind": "gap",
         "s": "The boy ___ phoned you is my brother.",
         "a": "who",
@@ -1141,10 +1198,13 @@
           "whose",
           "where"
         ],
-        "why": "Hier ist das Pronomen Subjekt, danach folgt das Verb phoned. Es darf nicht fehlen: who."
+        "why": "Hier ist das Pronomen Subjekt, danach folgt das Verb phoned. Es darf nicht fehlen: who.",
+        "accept": [
+          "that"
+        ]
       },
       {
-        "q": "Subjekt bleibt stehen",
+        "q": "Die Leute, die nebenan wohnen, sind sehr freundlich.",
         "kind": "gap",
         "s": "The people ___ live next door are very friendly.",
         "a": "who",
@@ -1153,7 +1213,10 @@
           "whose",
           "where"
         ],
-        "why": "Direkt nach dem Pronomen folgt das Verb live. Das Pronomen ist Subjekt und bleibt: who."
+        "why": "Direkt nach dem Pronomen folgt das Verb live. Das Pronomen ist Subjekt und bleibt: who.",
+        "accept": [
+          "that"
+        ]
       },
       {
         "q": "Welcher Satz ist richtig?",
@@ -1163,24 +1226,24 @@
           "The girl my brother likes live next door.",
           "The girl who likes my brother live next door."
         ],
-        "why": "Das Pronomen whom oder who fällt als Objekt weg. Das Verb lives passt zum Singular girl, die anderen Sätze haben Fehler."
+        "why": "Das Pronomen who oder that fällt als Objekt weg. Folgt auf girl direkt ein Verb, darf es nicht fehlen. Zum Singular girl passt lives, nicht live."
       }
     ],
     "passive": [
       {
-        "q": "Passiv im Präsens",
+        "q": "Die Briefe werden jeden Tag ausgetragen.",
         "kind": "gap",
         "s": "The letters ___ delivered every day.",
         "a": "are",
         "wrong": [
           "is",
           "be",
-          "were"
+          "was"
         ],
         "why": "Das Hauptwort letters ist Plural, also are. Danach folgt das Partizip II delivered."
       },
       {
-        "q": "Passiv im Präteritum",
+        "q": "Die Brücke wurde 1990 gebaut.",
         "kind": "gap",
         "s": "The bridge ___ built in 1990.",
         "a": "was",
@@ -1192,16 +1255,16 @@
         "why": "1990 ist vorbei, also Präteritum: was. is ist Präsens, will ist Zukunft."
       },
       {
-        "q": "Passiv im Präsens",
+        "q": "Englisch wird in vielen Ländern gesprochen.",
         "kind": "gap",
-        "s": "English ___ spoken in many countries.",
-        "a": "is",
+        "s": "English ___ in many countries.",
+        "a": "is spoken",
         "wrong": [
-          "speaks",
           "is speak",
-          "speaking"
+          "speaks",
+          "is speaking"
         ],
-        "why": "English steht als Singular, also is spoken. speaks ist Aktiv und is speak falsch, weil das Partizip spoken heißt."
+        "why": "English steht als Singular, also is spoken. speaks und is speaking sind Aktiv, is speak ist falsch, weil das Partizip spoken heißt."
       },
       {
         "q": "Welcher Passiv-Satz ist richtig?",
@@ -1214,31 +1277,31 @@
         "why": "Das Partizip II von break heißt broken. Den Täter nennt man mit by, das fehlt in einer der Antworten."
       },
       {
-        "q": "Passiv in der Zukunft",
+        "q": "Die neue Brücke wird nächsten Monat eröffnet.",
         "kind": "gap",
         "s": "The new bridge ___ next month.",
         "a": "will be opened",
         "wrong": [
-          "will open",
-          "is opened",
-          "opened"
+          "will opened",
+          "was opened",
+          "will been opened"
         ],
-        "why": "Passiv mit Zukunft: will be plus Partizip II. will open ist Aktiv, is opened ist Präsens."
+        "why": "Passiv mit Zukunft: will be plus Partizip II. Nach will steht die Grundform be, nicht been. was opened passt nicht zu next month."
       },
       {
-        "q": "Passiv im Präsens mit Plural",
+        "q": "Unsere Zimmer werden jeden Samstag geputzt.",
         "kind": "gap",
         "s": "Our rooms ___ cleaned every Saturday.",
         "a": "are",
         "wrong": [
           "is",
-          "were",
+          "was",
           "be"
         ],
         "why": "Our rooms ist Plural, deshalb are. Das Verb richtet sich im Passiv nach dem Subjekt."
       },
       {
-        "q": "Passiv im Präteritum mit yesterday",
+        "q": "Das Auto wurde gestern repariert.",
         "kind": "gap",
         "s": "The car ___ repaired yesterday.",
         "a": "was",
@@ -1250,7 +1313,8 @@
         "why": "yesterday ist vorbei, also Präteritum: was. has und will passen nicht zur Zeitangabe."
       },
       {
-        "q": "Wie wird der Satz ins Passiv gesetzt?",
+        "q": "Wie lautet dieser Satz im Passiv?",
+        "s": "They sell fresh bread here.",
         "a": "Fresh bread is sold here.",
         "wrong": [
           "Fresh bread sells here.",
@@ -1260,7 +1324,7 @@
         "why": "Das Objekt fresh bread wird Subjekt. Das Verb is sold ist be plus Partizip II. bread ist ein Singular."
       },
       {
-        "q": "Passiv im Präteritum mit Täter",
+        "q": "Der Dieb wurde gestern von der Polizei festgenommen.",
         "kind": "gap",
         "s": "The thief ___ by the police yesterday.",
         "a": "was arrested",
@@ -1272,21 +1336,21 @@
         "why": "yesterday ist Präteritum: was plus Partizip II arrested."
       },
       {
-        "q": "Passiv ohne Täter",
+        "q": "Kaffee wird in vielen Ländern angebaut.",
         "kind": "gap",
         "s": "Coffee ___ grown in many countries.",
         "a": "is",
         "wrong": [
-          "grows",
-          "has",
-          "will"
+          "are",
+          "be",
+          "being"
         ],
-        "why": "Passiv im Präsens: is plus grown. Der Täter fehlt, weil er unwichtig ist."
+        "why": "Passiv im Präsens: is plus Partizip II grown. coffee zählt als Singular, deshalb nicht are. Der Täter fehlt, weil er unwichtig ist."
       }
     ],
     "modal-verbs": [
       {
-        "q": "Fähigkeit",
+        "q": "Sie kann drei Sprachen sprechen.",
         "kind": "gap",
         "s": "She ___ speak three languages.",
         "a": "can",
@@ -1298,7 +1362,7 @@
         "why": "Modale Verben haben kein -s und stehen ohne to: can. is can ist doppelt gemoppelt."
       },
       {
-        "q": "Pflicht",
+        "q": "Du musst im Auto einen Sicherheitsgurt tragen.",
         "kind": "gap",
         "s": "You ___ wear a seat belt in the car.",
         "a": "must",
@@ -1307,10 +1371,13 @@
           "have",
           "musts"
         ],
-        "why": "Pflicht drückt must aus. mustn't würde Verbot bedeuten."
+        "why": "Pflicht drückt must aus. mustn't würde Verbot bedeuten.",
+        "accept": [
+          "have to"
+        ]
       },
       {
-        "q": "Verbot",
+        "q": "Du darfst hier nicht rauchen. Es ist verboten.",
         "kind": "gap",
         "s": "You ___ smoke here. It is forbidden.",
         "a": "mustn't",
@@ -1319,19 +1386,31 @@
           "must",
           "don't have to"
         ],
-        "why": "Etwas ist verboten: mustn't. needn't wäre nur nicht nötig, must wäre Pflicht."
+        "why": "Etwas ist verboten: mustn't. needn't wäre nur nicht nötig, must wäre Pflicht.",
+        "accept": [
+          "must not",
+          "can't",
+          "cannot"
+        ]
       },
       {
-        "q": "nicht nötig",
+        "q": "Wir müssen uns nicht beeilen. Wir haben viel Zeit.",
         "kind": "gap",
         "s": "We ___ hurry. We have plenty of time.",
         "a": "needn't",
         "wrong": [
           "mustn't",
           "can't",
-          "don't"
+          "must"
         ],
-        "why": "Es ist nicht nötig, sich zu beeilen: needn't. mustn't hieße verboten."
+        "why": "Es ist nicht nötig, sich zu beeilen: needn't. mustn't hieße verboten, must passt nicht, weil genug Zeit da ist.",
+        "accept": [
+          "need not",
+          "don't have to",
+          "do not have to",
+          "don't need to",
+          "do not need to"
+        ]
       },
       {
         "q": "Welcher Satz ist richtig?",
@@ -1344,7 +1423,7 @@
         "why": "Modale Verben haben kein -s und keine to-Form. Richtig ist can plus Grundform play."
       },
       {
-        "q": "Fähigkeit in der Vergangenheit",
+        "q": "Als ich sechs war, konnte ich Fahrrad fahren.",
         "kind": "gap",
         "s": "When I was six, I ___ ride a bike.",
         "a": "could",
@@ -1353,10 +1432,13 @@
           "cans",
           "can to"
         ],
-        "why": "Die Vergangenheit von can ist could. Das drückt Fähigkeit in der Vergangenheit aus."
+        "why": "Die Vergangenheit von can ist could. Das drückt Fähigkeit in der Vergangenheit aus.",
+        "accept": [
+          "was able to"
+        ]
       },
       {
-        "q": "Unmöglichkeit",
+        "q": "Wir können die Burg von unserem Hotel aus nicht sehen. Sie ist zu weit weg.",
         "kind": "gap",
         "s": "We ___ see the castle from our hotel. It is too far away.",
         "a": "can't",
@@ -1365,10 +1447,14 @@
           "needn't",
           "must"
         ],
-        "why": "Es ist nicht möglich, weil es zu weit weg ist: can't. mustn't wäre ein Verbot."
+        "why": "Es ist nicht möglich, weil es zu weit weg ist: can't. mustn't wäre ein Verbot.",
+        "accept": [
+          "cannot",
+          "can not"
+        ]
       },
       {
-        "q": "Fähigkeit verneint",
+        "q": "Mein kleiner Bruder kann noch nicht lesen. Er ist erst drei.",
         "kind": "gap",
         "s": "My little brother ___ read yet. He is only three.",
         "a": "can't",
@@ -1377,7 +1463,11 @@
           "needn't",
           "can"
         ],
-        "why": "Er kann noch nicht lesen: can't. mustn't wäre ein Verbot, needn't heißt nicht nötig."
+        "why": "Er kann noch nicht lesen: can't. mustn't wäre ein Verbot, needn't heißt nicht nötig.",
+        "accept": [
+          "cannot",
+          "can not"
+        ]
       },
       {
         "q": "Was heißt „You needn't bring a pen“?",
@@ -1390,7 +1480,7 @@
         "why": "needn't heißt nicht nötig. Verboten wäre mustn't, Pflicht wäre must."
       },
       {
-        "q": "Fähigkeit in der Vergangenheit",
+        "q": "Als Kind konnte Tom sehr schnell schwimmen.",
         "kind": "gap",
         "s": "Tom ___ swim very fast when he was a child.",
         "a": "could",
@@ -1399,12 +1489,15 @@
           "must",
           "cans"
         ],
-        "why": "Fähigkeit in der Vergangenheit: could. can ist Präsens, must drückt Pflicht aus."
+        "why": "Fähigkeit in der Vergangenheit: could. can ist Präsens, must drückt Pflicht aus.",
+        "accept": [
+          "was able to"
+        ]
       }
     ],
     "modal-substitutes": [
       {
-        "q": "Vergangenheit von must",
+        "q": "Gestern musste ich um fünf aufstehen.",
         "kind": "gap",
         "s": "Yesterday I ___ get up at five.",
         "a": "had to",
@@ -1416,7 +1509,7 @@
         "why": "must hat keine Vergangenheit. Dafür nimmt man had to."
       },
       {
-        "q": "Zukunft von can",
+        "q": "Nächstes Jahr wird sie über den See schwimmen können.",
         "kind": "gap",
         "s": "Next year she will ___ swim across the lake.",
         "a": "be able to",
@@ -1428,19 +1521,19 @@
         "why": "can hat keine Zukunftsform. will be able to drückt Fähigkeit in der Zukunft aus."
       },
       {
-        "q": "Erlaubnis ohne Modalverb",
+        "q": "An unserer Schule dürfen die Schüler ihre Handys im Unterricht nicht benutzen.",
         "kind": "gap",
-        "s": "In our school students are not ___ use their phones in class.",
+        "s": "At our school students are not ___ use their phones in class.",
         "a": "allowed to",
         "wrong": [
+          "allow to",
           "can",
-          "must",
-          "able to"
+          "must"
         ],
-        "why": "Erlaubnis drückt man mit be allowed to aus. Nach are not steht allowed to."
+        "why": "Erlaubnis drückt man mit be allowed to aus. Nach are not steht das Partizip allowed, dann to."
       },
       {
-        "q": "nicht nötig",
+        "q": "Du musst morgen nicht kommen. Es ist ein freier Tag.",
         "kind": "gap",
         "s": "You ___ come tomorrow. It is a free day.",
         "a": "don't have to",
@@ -1449,7 +1542,14 @@
           "can't",
           "aren't allowed to"
         ],
-        "why": "Es ist nicht nötig: don't have to. mustn't wäre ein Verbot, can't heißt nicht können."
+        "why": "Es ist nicht nötig: don't have to. mustn't wäre ein Verbot, can't heißt nicht können.",
+        "accept": [
+          "do not have to",
+          "needn't",
+          "need not",
+          "don't need to",
+          "do not need to"
+        ]
       },
       {
         "q": "Welcher Satz ist richtig?",
@@ -1462,28 +1562,40 @@
         "why": "Fähigkeit in der Vergangenheit: was able to plus Grundform ohne -s. musted gibt es nicht."
       },
       {
-        "q": "Erlaubnis in der Vergangenheit",
+        "q": "Wir durften gestern Abend nicht ins Kino, weil unsere Eltern nein gesagt haben.",
         "kind": "gap",
-        "s": "We ___ go to the cinema last night, because our parents said no.",
+        "s": "We ___ go to the cinema last night because our parents said no.",
         "a": "weren't allowed to",
         "wrong": [
           "mustn't",
-          "couldn't",
-          "don't have to"
+          "didn't have to",
+          "aren't allowed to"
         ],
-        "why": "Wir durften nicht: weren't allowed to. couldn't hieße nicht können, don't have to wäre nicht nötig."
+        "why": "Wir durften nicht: weren't allowed to. mustn't hat keine Vergangenheit, didn't have to hieße nicht nötig, aren't allowed to ist Präsens.",
+        "accept": [
+          "were not allowed to",
+          "couldn't",
+          "could not"
+        ]
       },
       {
-        "q": "nicht nötig, dritte Person",
+        "q": "Sam muss freitags nicht lange arbeiten.",
         "kind": "gap",
-        "s": "Sam ___ work late on Fridays. He has to finish early.",
+        "s": "Sam ___ work late on Fridays. He can go home early if he wants to.",
         "a": "doesn't have to",
         "wrong": [
           "mustn't",
-          "can't",
-          "isn't able to"
+          "don't have to",
+          "hasn't to"
         ],
-        "why": "Bei he, she, it steht does: doesn't have to. mustn't wäre ein Verbot."
+        "why": "Bei he, she, it steht does: doesn't have to. mustn't wäre ein Verbot, hasn't to gibt es nicht.",
+        "accept": [
+          "does not have to",
+          "needn't",
+          "need not",
+          "doesn't need to",
+          "does not need to"
+        ]
       },
       {
         "q": "Was heißt „I have to wear a uniform“?",
@@ -1496,7 +1608,7 @@
         "why": "have to heißt müssen, also Pflicht. Die Verneinung wäre don't have to."
       },
       {
-        "q": "Zukunft mit Fähigkeit",
+        "q": "Wirst du zur Party kommen können?",
         "kind": "gap",
         "s": "Will you ___ come to the party?",
         "a": "be able to",
@@ -1508,7 +1620,7 @@
         "why": "Nach will steht die Grundform: be able to. can hat keine Zukunftsform."
       },
       {
-        "q": "Fähigkeit verneint",
+        "q": "Wegen des Lärms konnte ich letzte Nacht nicht schlafen.",
         "kind": "gap",
         "s": "Because of the noise, I was not ___ sleep last night.",
         "a": "able to",
@@ -1522,7 +1634,7 @@
     ],
     "past-perfect": [
       {
-        "q": "Ältere Handlung mit already",
+        "q": "Als ich ankam, war der Bus schon abgefahren.",
         "kind": "gap",
         "s": "When I arrived, the bus ___ already left.",
         "a": "had",
@@ -1534,7 +1646,7 @@
         "why": "Der Bus war schon weg, bevor ich kam: had left. Das ist die ältere Handlung im Past Perfect."
       },
       {
-        "q": "Erfahrung vor einem Zeitpunkt",
+        "q": "Sie hatte das Meer noch nie gesehen, bevor sie nach Spanien fuhr.",
         "kind": "gap",
         "s": "She had never ___ the sea before she went to Spain.",
         "a": "seen",
@@ -1546,7 +1658,7 @@
         "why": "Das Partizip II von see ist seen. Im Past Perfect steht had plus Partizip II."
       },
       {
-        "q": "by the time",
+        "q": "Als der Zug endlich kam, hatten wir schon eine Stunde gewartet.",
         "kind": "gap",
         "s": "By the time the train came, we ___ waited for an hour.",
         "a": "had",
@@ -1555,7 +1667,7 @@
           "has",
           "were"
         ],
-        "why": "by the time zeigt die ältere Vergangenheit: had waited."
+        "why": "Das Warten lag vor der Ankunft des Zuges, und die steht im Simple Past. Deshalb Past Perfect: had waited."
       },
       {
         "q": "Welcher Satz ist richtig?",
@@ -1568,7 +1680,7 @@
         "why": "Das Essen war schon vorbei, bevor ich nach Hause kam: had eaten. has eaten ist Present Perfect, ate ist Simple Past."
       },
       {
-        "q": "Verneinung im Past Perfect",
+        "q": "Die Kinder hatten ihr Mittagessen noch nicht beendet, als es klingelte.",
         "kind": "gap",
         "s": "The children ___ finished their lunch when the bell rang.",
         "a": "hadn't",
@@ -1577,10 +1689,13 @@
           "didn't",
           "wasn't"
         ],
-        "why": "Im Past Perfect verneint man mit hadn't plus Partizip II: hadn't finished."
+        "why": "Im Past Perfect verneint man mit hadn't plus Partizip II: hadn't finished.",
+        "accept": [
+          "had not"
+        ]
       },
       {
-        "q": "already im Past Perfect",
+        "q": "Ich hatte das Buch schon gelesen, als ich den Film sah.",
         "kind": "gap",
         "s": "I ___ already read the book when I saw the film.",
         "a": "had",
@@ -1596,13 +1711,13 @@
         "a": "Es beschreibt eine Handlung, die vor einer anderen Vergangenheitshandlung passiert ist.",
         "wrong": [
           "Es beschreibt eine Handlung, die erst in der Zukunft passiert.",
-          "Es wird immer mit did gebildet.",
-          "Es steht nur mit yesterday."
+          "Es wird immer mit did und der Grundform gebildet.",
+          "Es steht nur in Sätzen mit festen Zeitangaben wie yesterday."
         ],
         "why": "Past Perfect zeigt, was früher war: had plus Partizip II. did gehört zum Simple Past in Fragen und Verneinungen."
       },
       {
-        "q": "Signalwort already",
+        "q": "Als wir ankamen, hatten die anderen schon gegessen.",
         "kind": "gap",
         "s": "When we arrived, the others ___ already eaten.",
         "a": "had",
@@ -1614,7 +1729,7 @@
         "why": "Die anderen hatten schon gegessen, bevor wir kamen: had eaten."
       },
       {
-        "q": "Ältere Handlung mit when",
+        "q": "Als die Lehrerin hereinkam, hatte die Klasse schon mit dem Test angefangen.",
         "kind": "gap",
         "s": "When the teacher came in, the class ___ already started the test.",
         "a": "had",
@@ -1623,10 +1738,10 @@
           "have",
           "was"
         ],
-        "why": "Der Unterricht hatte schon begonnen, bevor der Lehrer kam: had started."
+        "why": "Die Klasse hatte schon angefangen, bevor die Lehrerin kam: had started."
       },
       {
-        "q": "Erfahrung in der Vergangenheit",
+        "q": "Vor den Ferien war ich noch nie im Ausland gewesen.",
         "kind": "gap",
         "s": "Before the holiday I ___ never been abroad.",
         "a": "had",
@@ -1640,7 +1755,7 @@
     ],
     "reflexive-pronouns": [
       {
-        "q": "Subjekt ist Objekt",
+        "q": "Sie hat sich verletzt, als sie vom Fahrrad fiel.",
         "kind": "gap",
         "s": "She hurt ___ when she fell off the bike.",
         "a": "herself",
@@ -1652,7 +1767,7 @@
         "why": "Die Person, die sich verletzt, ist dieselbe wie das Subjekt. Dann steht ein -self-Pronomen: herself."
       },
       {
-        "q": "selbst",
+        "q": "Ich kann das selbst machen, danke.",
         "kind": "gap",
         "s": "I can do it ___, thank you.",
         "a": "myself",
@@ -1661,10 +1776,10 @@
           "mine",
           "my"
         ],
-        "why": "Die Person ist I, also myself. me wäre ein Objekt für eine andere Person."
+        "why": "Das betonte selbst heißt bei I myself. me, mine und my haben diese Bedeutung nicht."
       },
       {
-        "q": "Mehrere Personen",
+        "q": "Die Jungen sahen sich selbst im Spiegel an.",
         "kind": "gap",
         "s": "The boys looked at ___ in the mirror.",
         "a": "themselves",
@@ -1673,10 +1788,10 @@
           "they",
           "theirs"
         ],
-        "why": "Die Jungen schauen sich selbst an. Bei they steht themselves."
+        "why": "Die Jungen schauen sich selbst an. Bei they steht themselves. them wären andere Personen."
       },
       {
-        "q": "Wir",
+        "q": "Wir haben uns auf der Party gut amüsiert.",
         "kind": "gap",
         "s": "We enjoyed ___ at the party.",
         "a": "ourselves",
@@ -1685,7 +1800,7 @@
           "ours",
           "we"
         ],
-        "why": "Wir haben uns selbst gut unterhalten: ourselves. us wäre ein Objekt für andere."
+        "why": "enjoy yourself heißt sich amüsieren. Bei we wird daraus ourselves. us, ours und we sind keine Formen auf -selves."
       },
       {
         "q": "Welcher Satz ist richtig?",
@@ -1698,7 +1813,7 @@
         "why": "Bei zwei Personen, die sich gegenseitig kennen, sagt man each other. themself gibt es nicht und each allein fehlt das other."
       },
       {
-        "q": "Selbst mit she",
+        "q": "Meine kleine Schwester ist erst vier, aber sie zieht sich jeden Morgen selbst an.",
         "kind": "gap",
         "s": "My little sister is only four, but she dresses ___ every morning.",
         "a": "herself",
@@ -1707,10 +1822,10 @@
           "hers",
           "she"
         ],
-        "why": "Sie zieht sich selbst an: herself."
+        "why": "Subjekt und Objekt sind dieselbe Person: herself. her wäre eine andere Person."
       },
       {
-        "q": "Warnung",
+        "q": "Pass auf! Schneide dich nicht mit dem Messer.",
         "kind": "gap",
         "s": "Be careful! Don't cut ___ with that knife.",
         "a": "yourself",
@@ -1719,7 +1834,7 @@
           "yours",
           "your"
         ],
-        "why": "Du sollst dich selbst nicht schneiden: yourself."
+        "why": "Du sollst dich nicht selbst schneiden. Subjekt und Objekt sind dieselbe Person, deshalb yourself."
       },
       {
         "q": "Welche Form passt: Ich habe das Bild selbst gemalt.",
@@ -1732,7 +1847,7 @@
         "why": "Die Verstärkung selbst heißt myself. mine ist ein Besitzpronomen, me ist Objekt, myselfs gibt es nicht."
       },
       {
-        "q": "Gegenseitig",
+        "q": "Die zwei Mädchen schrieben sich gegenseitig Briefe.",
         "kind": "gap",
         "s": "The two girls wrote letters to ___.",
         "a": "each other",
@@ -1744,16 +1859,16 @@
         "why": "Die zwei Mädchen schreiben einander Briefe: each other. themselves hieße, sie schreiben an sich selbst."
       },
       {
-        "q": "Tier mit it",
+        "q": "Die Katze putzte sich. Nimm it für die Katze.",
         "kind": "gap",
         "s": "The cat washed ___.",
         "a": "itself",
         "wrong": [
           "it",
           "its",
-          "himself"
+          "themselves"
         ],
-        "why": "Bei einem Tier, das mit it bezeichnet wird, steht itself. its ist das Besitzpronomen."
+        "why": "Bei einem Tier, das mit it bezeichnet wird, steht itself. its zeigt Besitz, themselves steht bei they."
       }
     ],
     "indirect-speech": [
@@ -1815,7 +1930,10 @@
           "tomorrow",
           "the next day"
         ],
-        "why": "yesterday wird in der indirekten Rede zu the day before."
+        "why": "yesterday wird in der indirekten Rede zu the day before.",
+        "accept": [
+          "the previous day"
+        ]
       },
       {
         "q": "Welcher Satz ist richtig?",
@@ -1828,16 +1946,19 @@
         "why": "Bei told folgt die Person direkt danach: told me. Die Zeit rückt zurück: was. say braucht keine Person."
       },
       {
-        "q": "Ja-Nein-Frage in der indirekten Rede",
+        "q": "Direkte Frage: 'Have you done your homework?'",
         "kind": "gap",
         "s": "Mum asked me ___ I had done my homework.",
         "a": "if",
         "wrong": [
           "that",
           "what",
-          "when"
+          "which"
         ],
-        "why": "Bei Ja-Nein-Fragen steht if oder whether. that gehört zu Aussagen, what und when sind Fragewörter für Inhalte."
+        "why": "Bei Ja-Nein-Fragen steht if oder whether. that gehört zu Aussagen, what und which fragen nach einem Inhalt.",
+        "accept": [
+          "whether"
+        ]
       },
       {
         "q": "Direkte Rede: 'I'll see you tomorrow.'",
@@ -1849,10 +1970,13 @@
           "yesterday",
           "the day before"
         ],
-        "why": "tomorrow wird in der indirekten Rede zu the next day."
+        "why": "tomorrow wird in der indirekten Rede zu the next day.",
+        "accept": [
+          "the following day"
+        ]
       },
       {
-        "q": "Welche Änderung ist richtig?",
+        "q": "Welche Änderung ist in der indirekten Rede richtig?",
         "a": "Aus now wird then.",
         "wrong": [
           "Now bleibt immer gleich.",
@@ -1862,7 +1986,7 @@
         "why": "now wird zu then, weil die Rede aus der Vergangenheit berichtet wird. Die anderen Umwandlungen sind falsch."
       },
       {
-        "q": "Befehl in der indirekten Rede",
+        "q": "Direkte Rede: 'Open your books!'",
         "kind": "gap",
         "s": "The teacher told us ___ our books.",
         "a": "to open",

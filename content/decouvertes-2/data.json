@@ -2,7 +2,7 @@
   "items": {
     "connaitre-savoir": [
       {
-        "q": "connaître oder savoir?",
+        "q": "Ich kenne dieses Lied.",
         "kind": "gap",
         "s": "Je ___ cette chanson.",
         "a": "connais",
@@ -14,7 +14,7 @@
         "why": "Ein Lied kennt man: connaître, mit je: connais."
       },
       {
-        "q": "connaître oder savoir?",
+        "q": "Weißt du, wo der Bahnhof ist?",
         "kind": "gap",
         "s": "Tu ___ où est la gare ?",
         "a": "sais",
@@ -23,10 +23,10 @@
           "connaît",
           "savons"
         ],
-        "why": "Ein Fakt, wo etwas ist, weiß man: savoir, mit tu: sais."
+        "why": "Wo etwas ist, ist ein Wissen: savoir, mit tu: sais."
       },
       {
-        "q": "connaître oder savoir?",
+        "q": "Wir kennen dieses Viertel gut.",
         "kind": "gap",
         "s": "Nous ___ bien ce quartier.",
         "a": "connaissons",
@@ -38,7 +38,7 @@
         "why": "Ein Ort: connaître. Mit nous: connaissons."
       },
       {
-        "q": "connaître oder savoir?",
+        "q": "Könnt ihr Französisch sprechen?",
         "kind": "gap",
         "s": "Vous ___ parler français ?",
         "a": "savez",
@@ -50,7 +50,7 @@
         "why": "Eine Fähigkeit: savoir. Mit vous: savez."
       },
       {
-        "q": "connaître oder savoir?",
+        "q": "Sie kennen Madame Dupont sehr gut.",
         "kind": "gap",
         "s": "Ils ___ très bien Madame Dupont.",
         "a": "connaissent",
@@ -62,7 +62,7 @@
         "why": "Eine Person: connaître. Mit ils: connaissent."
       },
       {
-        "q": "connaître oder savoir?",
+        "q": "Sie kann seit fünf Jahren schwimmen.",
         "kind": "gap",
         "s": "Elle ___ nager depuis cinq ans.",
         "a": "sait",
@@ -74,19 +74,19 @@
         "why": "nager ist ein Infinitiv, also savoir: elle sait."
       },
       {
-        "q": "connaître oder savoir?",
+        "q": "Ich weiß nicht, warum er zu spät kommt.",
         "kind": "gap",
-        "s": "Je ne ___ pas la réponse.",
+        "s": "Je ne ___ pas pourquoi il est en retard.",
         "a": "sais",
         "wrong": [
           "connais",
           "connaît",
           "savons"
         ],
-        "why": "Die Antwort ist ein Wissen: savoir."
+        "why": "Hier geht es um Wissen: savoir, mit je: sais."
       },
       {
-        "q": "connaître oder savoir?",
+        "q": "Ich weiß, dass du recht hast.",
         "kind": "gap",
         "s": "Je ___ que tu as raison.",
         "a": "sais",
@@ -103,7 +103,7 @@
         "wrong": [
           "Je sais Paul.",
           "Je connaît Paul.",
-          "Je connais savoir Paul."
+          "Je connaître Paul."
         ],
         "why": "Bei Personen steht connaître, mit je: connais."
       },
@@ -120,7 +120,7 @@
     ],
     "quel": [
       {
-        "q": "Fragebegleiter quel",
+        "q": "Wie spät ist es?",
         "kind": "gap",
         "s": "___ heure est-il ?",
         "a": "Quelle",
@@ -132,7 +132,7 @@
         "why": "heure ist weiblich und Singular: quelle."
       },
       {
-        "q": "Fragebegleiter quel",
+        "q": "Welchen Film möchtest du sehen?",
         "kind": "gap",
         "s": "___ film veux-tu voir ?",
         "a": "Quel",
@@ -144,7 +144,7 @@
         "why": "film ist männlich und Singular: quel."
       },
       {
-        "q": "Fragebegleiter quel",
+        "q": "Welche Bücher hast du gelesen?",
         "kind": "gap",
         "s": "___ livres as-tu lus ?",
         "a": "Quels",
@@ -156,7 +156,7 @@
         "why": "livres ist männlich und Plural: quels."
       },
       {
-        "q": "Fragebegleiter quel",
+        "q": "Welche Städte hast du besucht?",
         "kind": "gap",
         "s": "___ villes as-tu visitées ?",
         "a": "Quelles",
@@ -168,7 +168,7 @@
         "why": "villes ist weiblich und Plural: quelles."
       },
       {
-        "q": "Fragebegleiter quel",
+        "q": "Wie alt bist du?",
         "kind": "gap",
         "s": "___ âge as-tu ?",
         "a": "Quel",
@@ -180,7 +180,7 @@
         "why": "âge ist männlich und Singular: quel."
       },
       {
-        "q": "Fragebegleiter quel",
+        "q": "In welcher Straße wohnst du?",
         "kind": "gap",
         "s": "Dans ___ rue habites-tu ?",
         "a": "quelle",
@@ -192,7 +192,7 @@
         "why": "rue ist weiblich und Singular: quelle."
       },
       {
-        "q": "Fragebegleiter quel",
+        "q": "Ich weiß nicht, welchen Zug ich nehmen soll.",
         "kind": "gap",
         "s": "Je ne sais pas ___ train prendre.",
         "a": "quel",
@@ -204,7 +204,7 @@
         "why": "train ist männlich und Singular: quel."
       },
       {
-        "q": "Fragebegleiter quel",
+        "q": "Welche sind deine Freunde?",
         "kind": "gap",
         "s": "___ sont tes amis ?",
         "a": "Quels",
@@ -213,7 +213,7 @@
           "Quelle",
           "Quelles"
         ],
-        "why": "amis ist männlich und Plural: quels."
+        "why": "amis steht hinter sont, quel richtet sich trotzdem danach. amis ist männlich und Plural: quels."
       },
       {
         "q": "Welcher Satz ist richtig?",
@@ -238,7 +238,7 @@
     ],
     "relativ-pronomen": [
       {
-        "q": "Relativpronomen",
+        "q": "Das ist der Junge, der nebenan wohnt.",
         "kind": "gap",
         "s": "C'est le garçon ___ habite à côté.",
         "a": "qui",
@@ -250,7 +250,7 @@
         "why": "habite ist das Verb, also steht qui."
       },
       {
-        "q": "Relativpronomen",
+        "q": "Hier ist der Film, den ich am liebsten mag.",
         "kind": "gap",
         "s": "Voici le film ___ je préfère.",
         "a": "que",
@@ -262,7 +262,7 @@
         "why": "Danach steht das Subjekt je, also que."
       },
       {
-        "q": "Relativpronomen",
+        "q": "Paris ist die Stadt, in der ich wohne.",
         "kind": "gap",
         "s": "Paris est la ville ___ j'habite.",
         "a": "où",
@@ -274,7 +274,7 @@
         "why": "Eine Stadt ist ein Ort, also où."
       },
       {
-        "q": "Relativpronomen",
+        "q": "Der Hund, der im Garten schläft, gehört meinem Bruder.",
         "kind": "gap",
         "s": "Le chien ___ dort dans le jardin est à mon frère.",
         "a": "qui",
@@ -286,7 +286,7 @@
         "why": "dort ist das Verb, also qui."
       },
       {
-        "q": "Relativpronomen",
+        "q": "Das ist das Lied, das du die ganze Zeit hörst.",
         "kind": "gap",
         "s": "C'est la chanson ___ tu écoutes tout le temps.",
         "a": "que",
@@ -298,7 +298,7 @@
         "why": "Danach steht das Subjekt tu, also que."
       },
       {
-        "q": "Relativpronomen",
+        "q": "Das Restaurant, in dem wir essen, ist sehr gut.",
         "kind": "gap",
         "s": "Le restaurant ___ on mange est très bon.",
         "a": "où",
@@ -310,7 +310,7 @@
         "why": "Ein Ort, an dem man isst: où."
       },
       {
-        "q": "Relativpronomen",
+        "q": "Die Zeitung, die ich lese, ist interessant.",
         "kind": "gap",
         "s": "Le journal ___ je lis est intéressant.",
         "a": "que",
@@ -342,7 +342,7 @@
         "why": "Danach steht das Subjekt j', also que."
       },
       {
-        "q": "Relativpronomen",
+        "q": "Der Tag, an dem ich geboren bin, ist der 3. Mai.",
         "kind": "gap",
         "s": "Le jour ___ je suis né est le 3 mai.",
         "a": "où",
@@ -356,7 +356,7 @@
     ],
     "demonstrativ": [
       {
-        "q": "Demonstrativbegleiter",
+        "q": "Dieser Junge ist mein Bruder.",
         "kind": "gap",
         "s": "___ garçon est mon frère.",
         "a": "Ce",
@@ -368,7 +368,7 @@
         "why": "garçon ist männlich und beginnt mit Konsonant: ce."
       },
       {
-        "q": "Demonstrativbegleiter",
+        "q": "Dieser Freund wohnt in Paris.",
         "kind": "gap",
         "s": "___ ami habite à Paris.",
         "a": "Cet",
@@ -377,10 +377,10 @@
           "Cette",
           "Ces"
         ],
-        "why": "ami beginnt mit Vokal: cet."
+        "why": "ami ist männlich und beginnt mit Vokal: cet."
       },
       {
-        "q": "Demonstrativbegleiter",
+        "q": "Ich mag dieses Lied.",
         "kind": "gap",
         "s": "J'aime ___ chanson.",
         "a": "cette",
@@ -392,7 +392,7 @@
         "why": "chanson ist weiblich und Singular: cette."
       },
       {
-        "q": "Demonstrativbegleiter",
+        "q": "Diese Kinder spielen im Park.",
         "kind": "gap",
         "s": "___ enfants jouent dans le parc.",
         "a": "Ces",
@@ -404,7 +404,7 @@
         "why": "enfants ist Plural: ces."
       },
       {
-        "q": "Demonstrativbegleiter",
+        "q": "Diese Schule ist sehr groß.",
         "kind": "gap",
         "s": "___ école est très grande.",
         "a": "Cette",
@@ -413,10 +413,10 @@
           "Cet",
           "Ces"
         ],
-        "why": "école ist weiblich: cette."
+        "why": "école ist weiblich: cette, auch vor einem Vokal."
       },
       {
-        "q": "Demonstrativbegleiter",
+        "q": "Kennst du dieses Restaurant?",
         "kind": "gap",
         "s": "Tu connais ___ restaurant ?",
         "a": "ce",
@@ -428,7 +428,7 @@
         "why": "restaurant ist männlich und beginnt mit Konsonant: ce."
       },
       {
-        "q": "Demonstrativbegleiter",
+        "q": "Diese Freundin ist sehr nett.",
         "kind": "gap",
         "s": "___ amie est très sympa.",
         "a": "Cette",
@@ -437,7 +437,7 @@
           "Cet",
           "Ces"
         ],
-        "why": "amie ist weiblich: cette."
+        "why": "amie ist weiblich: cette, auch vor einem Vokal."
       },
       {
         "q": "Welcher Satz ist richtig?",
@@ -460,7 +460,7 @@
         "why": "fleurs ist Plural: ces."
       },
       {
-        "q": "Demonstrativbegleiter",
+        "q": "Ich mag diese Musik nicht.",
         "kind": "gap",
         "s": "Je n'aime pas ___ musique.",
         "a": "cette",
@@ -474,7 +474,7 @@
     ],
     "pc-avoir": [
       {
-        "q": "passé composé, regelmäßig",
+        "q": "Gestern habe ich eine Pizza gegessen.",
         "kind": "gap",
         "s": "Hier, j'ai ___ une pizza.",
         "a": "mangé",
@@ -486,7 +486,7 @@
         "why": "manger ist ein -er-Verb, das Partizip endet auf -é: mangé."
       },
       {
-        "q": "passé composé, unregelmäßig",
+        "q": "Hast du deine Hausaufgaben gemacht?",
         "kind": "gap",
         "s": "Tu as ___ tes devoirs ?",
         "a": "fait",
@@ -498,7 +498,7 @@
         "why": "faire hat das Partizip fait."
       },
       {
-        "q": "passé composé, unregelmäßig",
+        "q": "Wir haben den Zug um 8 Uhr genommen.",
         "kind": "gap",
         "s": "Nous avons ___ le train de 8 h.",
         "a": "pris",
@@ -510,7 +510,7 @@
         "why": "prendre hat das Partizip pris."
       },
       {
-        "q": "passé composé, unregelmäßig",
+        "q": "Habt ihr diesen Film gesehen?",
         "kind": "gap",
         "s": "Vous avez ___ ce film ?",
         "a": "vu",
@@ -522,7 +522,7 @@
         "why": "voir hat das Partizip vu."
       },
       {
-        "q": "passé composé, unregelmäßig",
+        "q": "Er hat ein sehr interessantes Buch gelesen.",
         "kind": "gap",
         "s": "Il a ___ un livre très intéressant.",
         "a": "lu",
@@ -534,7 +534,7 @@
         "why": "lire hat das Partizip lu."
       },
       {
-        "q": "passé composé, unregelmäßig",
+        "q": "Sie hatten viel Arbeit.",
         "kind": "gap",
         "s": "Elles ont ___ beaucoup de travail.",
         "a": "eu",
@@ -546,7 +546,7 @@
         "why": "avoir hat das Partizip eu."
       },
       {
-        "q": "passé composé, regelmäßig",
+        "q": "Ich habe mein Handy zu Hause vergessen.",
         "kind": "gap",
         "s": "J'ai ___ mon portable à la maison.",
         "a": "oublié",
@@ -558,7 +558,7 @@
         "why": "oublier ist ein -er-Verb: oublié."
       },
       {
-        "q": "passé composé, regelmäßig",
+        "q": "Mein Bruder hat drei Jahre lang in Berlin gewohnt.",
         "kind": "gap",
         "s": "Mon frère a ___ à Berlin pendant trois ans.",
         "a": "habité",
@@ -592,7 +592,7 @@
     ],
     "voir": [
       {
-        "q": "voir im Präsens",
+        "q": "Ich sehe meine Freunde morgen.",
         "kind": "gap",
         "s": "Je ___ mes amis demain.",
         "a": "vois",
@@ -604,7 +604,7 @@
         "why": "Mit je steht vois."
       },
       {
-        "q": "voir im Präsens",
+        "q": "Wir sehen das Meer vom Fenster aus.",
         "kind": "gap",
         "s": "Nous ___ la mer depuis la fenêtre.",
         "a": "voyons",
@@ -616,7 +616,7 @@
         "why": "Mit nous steht voyons, mit y."
       },
       {
-        "q": "voir im Präsens",
+        "q": "Sie sehen heute Abend einen Film.",
         "kind": "gap",
         "s": "Ils ___ un film ce soir.",
         "a": "voient",
@@ -628,7 +628,7 @@
         "why": "Mit ils steht voient."
       },
       {
-        "q": "voir im Präsens",
+        "q": "Mit ihrer Brille sieht sie gut.",
         "kind": "gap",
         "s": "Elle ___ bien avec ses lunettes.",
         "a": "voit",
@@ -640,7 +640,7 @@
         "why": "Mit elle steht voit."
       },
       {
-        "q": "voir im passé composé",
+        "q": "Gestern habe ich meine Großmutter gesehen.",
         "kind": "gap",
         "s": "Hier, j'ai ___ ma grand-mère.",
         "a": "vu",
@@ -652,7 +652,7 @@
         "why": "Das Partizip von voir ist vu."
       },
       {
-        "q": "voir im Präsens",
+        "q": "Seht ihr den Unterschied?",
         "kind": "gap",
         "s": "Vous ___ la différence ?",
         "a": "voyez",
@@ -664,7 +664,7 @@
         "why": "Mit vous steht voyez."
       },
       {
-        "q": "voir im Präsens",
+        "q": "Siehst du die Katze auf dem Dach?",
         "kind": "gap",
         "s": "Tu ___ le chat sur le toit ?",
         "a": "vois",
@@ -676,7 +676,7 @@
         "why": "Mit tu steht vois."
       },
       {
-        "q": "voir im Präsens",
+        "q": "Ich sehe den Unterschied gut.",
         "kind": "gap",
         "s": "Je ___ bien la différence.",
         "a": "vois",
@@ -705,12 +705,12 @@
           "Ils ont voient le match.",
           "Ils ont vus le match."
         ],
-        "why": "Im passé composé mit avoir bleibt das Partizip vu."
+        "why": "Nach avoir bleibt das Partizip hier unverändert: vu."
       }
     ],
     "vouloir-pouvoir": [
       {
-        "q": "vouloir oder pouvoir?",
+        "q": "Ich will heute Abend ins Kino gehen.",
         "kind": "gap",
         "s": "Je ___ aller au cinéma ce soir.",
         "a": "veux",
@@ -719,10 +719,10 @@
           "veut",
           "peux"
         ],
-        "why": "Mit je steht veux: Ich möchte."
+        "why": "wollen heißt vouloir, mit je: veux. peux hieße: Ich kann."
       },
       {
-        "q": "vouloir oder pouvoir?",
+        "q": "Kannst du mir bitte helfen?",
         "kind": "gap",
         "s": "Tu ___ m'aider, s'il te plaît ?",
         "a": "peux",
@@ -731,10 +731,10 @@
           "peut",
           "veux"
         ],
-        "why": "Mit tu steht peux: Kannst du?"
+        "why": "können heißt pouvoir, mit tu: peux. veux hieße: Willst du?"
       },
       {
-        "q": "vouloir oder pouvoir?",
+        "q": "Wir wollen um acht Uhr losfahren.",
         "kind": "gap",
         "s": "Nous ___ partir à huit heures.",
         "a": "voulons",
@@ -743,10 +743,10 @@
           "voulez",
           "pouvons"
         ],
-        "why": "Mit nous steht voulons: Wir wollen."
+        "why": "wollen heißt vouloir, mit nous: voulons. pouvons hieße: Wir können."
       },
       {
-        "q": "vouloir oder pouvoir?",
+        "q": "Sie wollen Fußball spielen.",
         "kind": "gap",
         "s": "Ils ___ jouer au foot.",
         "a": "veulent",
@@ -755,10 +755,10 @@
           "veut",
           "peuvent"
         ],
-        "why": "Mit ils steht veulent."
+        "why": "wollen heißt vouloir, mit ils: veulent. peuvent hieße: Sie können."
       },
       {
-        "q": "vouloir oder pouvoir?",
+        "q": "Können Sie langsamer sprechen?",
         "kind": "gap",
         "s": "Vous ___ parler plus lentement ?",
         "a": "pouvez",
@@ -767,10 +767,10 @@
           "pouvons",
           "peut"
         ],
-        "why": "Mit vous steht pouvez: Könnten Sie ...?"
+        "why": "können heißt pouvoir, mit vous: pouvez. voulez hieße: Wollen Sie?"
       },
       {
-        "q": "vouloir oder pouvoir?",
+        "q": "Sie kann dieses Wochenende nicht kommen.",
         "kind": "gap",
         "s": "Elle ne ___ pas venir ce week-end.",
         "a": "peut",
@@ -782,7 +782,7 @@
         "why": "Mit elle steht peut, mit ne ... pas: kann nicht."
       },
       {
-        "q": "passé composé von pouvoir",
+        "q": "Gestern konnte ich nicht kommen.",
         "kind": "gap",
         "s": "Hier, je n'ai pas ___ venir.",
         "a": "pu",
@@ -791,19 +791,19 @@
           "peux",
           "pouvu"
         ],
-        "why": "Das Partizip von pouvoir ist pu."
+        "why": "können heißt pouvoir, das Partizip ist pu. voulu käme von vouloir."
       },
       {
-        "q": "Höflich bitten",
+        "q": "Ich hätte gern einen Kaffee, bitte.",
         "kind": "gap",
         "s": "Je ___ un café, s'il vous plaît.",
         "a": "voudrais",
         "wrong": [
-          "veux",
+          "voudrait",
           "voulons",
           "veulent"
         ],
-        "why": "voudrais ist die höfliche Form von veux."
+        "why": "Mit je steht voudrais: die höfliche Form für ich möchte."
       },
       {
         "q": "Welcher Satz ist richtig?",
@@ -828,7 +828,7 @@
     ],
     "venir": [
       {
-        "q": "venir im Präsens",
+        "q": "Ich komme aus Berlin.",
         "kind": "gap",
         "s": "Je ___ de Berlin.",
         "a": "viens",
@@ -840,7 +840,7 @@
         "why": "Mit je steht viens."
       },
       {
-        "q": "venir im Präsens",
+        "q": "Sie kommen morgen zur Feier.",
         "kind": "gap",
         "s": "Ils ___ demain à la fête.",
         "a": "viennent",
@@ -852,7 +852,7 @@
         "why": "Mit ils steht viennent."
       },
       {
-        "q": "venir de",
+        "q": "Wir haben die Arbeit gerade beendet.",
         "kind": "gap",
         "s": "Nous ___ de terminer le travail.",
         "a": "venons",
@@ -864,7 +864,7 @@
         "why": "Mit nous steht venons. venir de heißt: gerade eben."
       },
       {
-        "q": "venir im Präsens",
+        "q": "Kommt ihr mit uns ins Kino?",
         "kind": "gap",
         "s": "Vous ___ au cinéma avec nous ?",
         "a": "venez",
@@ -876,7 +876,7 @@
         "why": "Mit vous steht venez."
       },
       {
-        "q": "venir de",
+        "q": "Er ist gerade angekommen.",
         "kind": "gap",
         "s": "Il ___ d'arriver.",
         "a": "vient",
@@ -888,7 +888,7 @@
         "why": "Mit il steht vient: Er ist gerade angekommen."
       },
       {
-        "q": "venir im Präsens",
+        "q": "Kommst du nach der Schule zu mir?",
         "kind": "gap",
         "s": "Tu ___ chez moi après l'école ?",
         "a": "viens",
@@ -900,7 +900,7 @@
         "why": "Mit tu steht viens."
       },
       {
-        "q": "venir de",
+        "q": "Sie haben gerade das Klassenzimmer verlassen.",
         "kind": "gap",
         "s": "Elles ___ de sortir de la classe.",
         "a": "viennent",
@@ -912,7 +912,7 @@
         "why": "Mit elles steht viennent."
       },
       {
-        "q": "venir de",
+        "q": "Ich habe gerade meine Hausaufgaben gemacht.",
         "kind": "gap",
         "s": "Je ___ de faire mes devoirs.",
         "a": "viens",
@@ -946,7 +946,7 @@
     ],
     "pc-etre": [
       {
-        "q": "passé composé mit être",
+        "q": "Gestern bin ich ins Kino gegangen.",
         "kind": "gap",
         "s": "Hier, je ___ allé au cinéma.",
         "a": "suis",
@@ -958,7 +958,7 @@
         "why": "aller ist ein Bewegungsverb: être, mit je: suis."
       },
       {
-        "q": "passé composé mit être",
+        "q": "Sie ist um acht Uhr losgefahren.",
         "kind": "gap",
         "s": "Elle ___ partie à huit heures.",
         "a": "est",
@@ -970,7 +970,7 @@
         "why": "partir steht mit être, mit elle: est."
       },
       {
-        "q": "passé composé mit être",
+        "q": "Sie sind zu spät angekommen.",
         "kind": "gap",
         "s": "Ils ___ arrivés en retard.",
         "a": "sont",
@@ -982,7 +982,7 @@
         "why": "arriver steht mit être, mit ils: sont."
       },
       {
-        "q": "passé composé mit être",
+        "q": "Marie ist zu Hause geblieben.",
         "kind": "gap",
         "s": "Marie ___ restée à la maison.",
         "a": "est",
@@ -991,10 +991,10 @@
           "sont",
           "es"
         ],
-        "why": "rester steht mit être, Marie ist ein Singular: est."
+        "why": "rester steht mit être, Marie ist eine einzelne Person: est."
       },
       {
-        "q": "passé composé mit être",
+        "q": "Wir sind nach Lyon gefahren.",
         "kind": "gap",
         "s": "Nous ___ allés à Lyon.",
         "a": "sommes",
@@ -1006,7 +1006,7 @@
         "why": "aller steht mit être, mit nous: sommes."
       },
       {
-        "q": "passé composé mit être",
+        "q": "Ihr seid in den dritten Stock hinaufgegangen.",
         "kind": "gap",
         "s": "Vous ___ montés au troisième étage.",
         "a": "êtes",
@@ -1018,7 +1018,7 @@
         "why": "monter steht mit être, mit vous: êtes."
       },
       {
-        "q": "passé composé mit être",
+        "q": "Bist du gestern gekommen?",
         "kind": "gap",
         "s": "Tu ___ venu hier ?",
         "a": "es",
@@ -1030,7 +1030,7 @@
         "why": "venir steht mit être, mit tu: es."
       },
       {
-        "q": "passé composé mit être",
+        "q": "Meine Eltern sind zu Hause geblieben.",
         "kind": "gap",
         "s": "Mes parents ___ restés à la maison.",
         "a": "sont",
@@ -1064,7 +1064,7 @@
     ],
     "teilungsartikel": [
       {
-        "q": "Teilungsartikel",
+        "q": "Er trinkt jeden Morgen Milch.",
         "kind": "gap",
         "s": "Il boit ___ lait tous les matins.",
         "a": "du",
@@ -1076,7 +1076,7 @@
         "why": "lait ist männlich: du lait."
       },
       {
-        "q": "Teilungsartikel",
+        "q": "Möchtest du Marmelade?",
         "kind": "gap",
         "s": "Tu veux ___ confiture ?",
         "a": "de la",
@@ -1088,7 +1088,7 @@
         "why": "confiture ist weiblich: de la confiture."
       },
       {
-        "q": "Teilungsartikel",
+        "q": "Wir essen Tomaten.",
         "kind": "gap",
         "s": "Nous mangeons ___ tomates.",
         "a": "des",
@@ -1100,7 +1100,7 @@
         "why": "tomates ist Plural: des."
       },
       {
-        "q": "Teilungsartikel",
+        "q": "Möchtet ihr Wasser?",
         "kind": "gap",
         "s": "Vous voulez ___ eau ?",
         "a": "de l'",
@@ -1112,7 +1112,7 @@
         "why": "eau beginnt mit Vokal: de l'."
       },
       {
-        "q": "Teilungsartikel nach Verneinung",
+        "q": "Ich esse nie Fleisch.",
         "kind": "gap",
         "s": "Je ne mange jamais ___ viande.",
         "a": "de",
@@ -1124,19 +1124,19 @@
         "why": "Nach der Verneinung steht nur de."
       },
       {
-        "q": "Mengenangabe",
+        "q": "Auf der Straße sind viele Leute.",
         "kind": "gap",
-        "s": "Il y a ___ monde dans la rue.",
-        "a": "beaucoup de",
+        "s": "Il y a beaucoup ___ monde dans la rue.",
+        "a": "de",
         "wrong": [
-          "beaucoup du",
           "du",
+          "de la",
           "des"
         ],
-        "why": "beaucoup de ist eine Mengenangabe, danach steht nur de."
+        "why": "beaucoup ist eine Mengenangabe, danach steht nur de."
       },
       {
-        "q": "Mengenangabe",
+        "q": "Ich hätte gern ein Kilo Äpfel.",
         "kind": "gap",
         "s": "Je voudrais un kilo ___ pommes.",
         "a": "de",
@@ -1148,7 +1148,7 @@
         "why": "Nach einer Mengenangabe steht nur de."
       },
       {
-        "q": "Teilungsartikel",
+        "q": "Er tut Zucker in seinen Tee.",
         "kind": "gap",
         "s": "Il met ___ sucre dans son thé.",
         "a": "du",
@@ -1182,7 +1182,7 @@
     ],
     "acheter-payer-boire": [
       {
-        "q": "acheter",
+        "q": "Ich kaufe jeden Morgen ein Baguette.",
         "kind": "gap",
         "s": "Je ___ une baguette tous les matins.",
         "a": "achète",
@@ -1194,7 +1194,7 @@
         "why": "Mit je steht der Akzent: achète."
       },
       {
-        "q": "acheter",
+        "q": "Du kaufst deine Hefte im Schreibwarenladen.",
         "kind": "gap",
         "s": "Tu ___ tes cahiers à la papeterie.",
         "a": "achètes",
@@ -1206,7 +1206,7 @@
         "why": "Mit tu steht achètes."
       },
       {
-        "q": "acheter",
+        "q": "Sie kaufen Geschenke für Weihnachten.",
         "kind": "gap",
         "s": "Ils ___ des cadeaux pour Noël.",
         "a": "achètent",
@@ -1218,7 +1218,7 @@
         "why": "Mit ils steht achètent."
       },
       {
-        "q": "acheter",
+        "q": "Was für Brot kauft ihr?",
         "kind": "gap",
         "s": "Vous ___ quoi comme pain ?",
         "a": "achetez",
@@ -1230,7 +1230,7 @@
         "why": "Mit vous steht achetez, ohne Akzent."
       },
       {
-        "q": "payer",
+        "q": "Wir bezahlen das Essen.",
         "kind": "gap",
         "s": "Nous ___ le repas.",
         "a": "payons",
@@ -1242,7 +1242,7 @@
         "why": "Mit nous steht payons."
       },
       {
-        "q": "payer",
+        "q": "Sie zahlen ihre Miete am Monatsersten.",
         "kind": "gap",
         "s": "Ils ___ leur loyer le premier du mois.",
         "a": "paient",
@@ -1251,10 +1251,13 @@
           "paie",
           "payez"
         ],
-        "why": "Mit ils steht paient."
+        "why": "Mit ils steht paient. Auch payent ist richtig.",
+        "accept": [
+          "payent"
+        ]
       },
       {
-        "q": "boire",
+        "q": "Ich trinke jeden Morgen einen Kaffee.",
         "kind": "gap",
         "s": "Je ___ un café tous les matins.",
         "a": "bois",
@@ -1266,7 +1269,7 @@
         "why": "Mit je steht bois."
       },
       {
-        "q": "boire",
+        "q": "Wir trinken beim Sport Wasser.",
         "kind": "gap",
         "s": "Nous ___ de l'eau pendant le sport.",
         "a": "buvons",
@@ -1278,7 +1281,7 @@
         "why": "Mit nous steht buvons."
       },
       {
-        "q": "passé composé von boire",
+        "q": "Sie hat ihren ganzen Orangensaft getrunken.",
         "kind": "gap",
         "s": "Elle a ___ tout son jus d'orange.",
         "a": "bu",
@@ -1302,7 +1305,7 @@
     ],
     "objekt-direkt": [
       {
-        "q": "Direktes Objektpronomen",
+        "q": "Kennst du Paul? Ja, ich kenne ihn.",
         "kind": "gap",
         "s": "Tu connais Paul ? Oui, je ___ connais.",
         "a": "le",
@@ -1314,7 +1317,7 @@
         "why": "Paul ist männlich: le."
       },
       {
-        "q": "Direktes Objektpronomen",
+        "q": "Willst du den Apfel? Ja, ich will ihn.",
         "kind": "gap",
         "s": "Tu veux la pomme ? Oui, je ___ veux.",
         "a": "la",
@@ -1326,7 +1329,7 @@
         "why": "pomme ist weiblich: la."
       },
       {
-        "q": "Direktes Objektpronomen",
+        "q": "Diese Filme? Wir schauen sie heute Abend an.",
         "kind": "gap",
         "s": "Ces films ? Nous ___ regardons ce soir.",
         "a": "les",
@@ -1338,7 +1341,7 @@
         "why": "films ist Plural: les."
       },
       {
-        "q": "Direktes Objektpronomen",
+        "q": "Das Lied? Ich habe es gestern gehört.",
         "kind": "gap",
         "s": "La chanson ? Je ___ ai entendue hier.",
         "a": "l'",
@@ -1347,10 +1350,10 @@
           "le",
           "les"
         ],
-        "why": "Vor avoir (ai) steht l'."
+        "why": "chanson ist weiblich: la. Vor dem Vokal in ai wird la zu l'."
       },
       {
-        "q": "Direktes Objektpronomen",
+        "q": "Die Croissants? Ich habe sie gekauft.",
         "kind": "gap",
         "s": "Les croissants ? Je ___ ai achetés.",
         "a": "les",
@@ -1359,10 +1362,10 @@
           "la",
           "l'"
         ],
-        "why": "croissants ist Plural: les."
+        "why": "croissants ist Plural: les. Nur le und la werden vor Vokal zu l'."
       },
       {
-        "q": "Direktes Objektpronomen",
+        "q": "Hast du den Film gesehen? Ja, ich habe ihn gesehen.",
         "kind": "gap",
         "s": "Tu as vu le film ? Oui, je ___ ai vu.",
         "a": "l'",
@@ -1371,10 +1374,10 @@
           "la",
           "les"
         ],
-        "why": "Vor avoir (ai) steht l'."
+        "why": "film ist männlich: le. Vor dem Vokal in ai wird le zu l'."
       },
       {
-        "q": "Direktes Objektpronomen",
+        "q": "Ladet ihr eure Freunde ein? Ja, wir laden sie ein.",
         "kind": "gap",
         "s": "Vous invitez vos amis ? Oui, nous ___ invitons.",
         "a": "les",
@@ -1386,9 +1389,9 @@
         "why": "amis ist Plural: les."
       },
       {
-        "q": "Direktes Objektpronomen",
+        "q": "Diese Sprache? Er versteht sie nicht.",
         "kind": "gap",
-        "s": "Il ne ___ comprend pas.",
+        "s": "Cette langue ? Il ne ___ comprend pas.",
         "a": "la",
         "wrong": [
           "le",
@@ -1398,7 +1401,7 @@
         "why": "langue ist weiblich: la."
       },
       {
-        "q": "Direktes Objektpronomen",
+        "q": "Dieser Kuchen ist gut, ich esse ihn.",
         "kind": "gap",
         "s": "Ce gâteau est bon, je ___ mange.",
         "a": "le",
@@ -1422,7 +1425,7 @@
     ],
     "objekt-person": [
       {
-        "q": "me, te, nous, vous",
+        "q": "Du verstehst mich gut.",
         "kind": "gap",
         "s": "Tu ___ comprends bien.",
         "a": "me",
@@ -1434,7 +1437,7 @@
         "why": "me heißt mich: Tu me comprends."
       },
       {
-        "q": "me, te, nous, vous",
+        "q": "Ich lade dich zu meinem Fest ein.",
         "kind": "gap",
         "s": "Je ___ invite à ma fête.",
         "a": "te",
@@ -1446,7 +1449,7 @@
         "why": "te heißt dich."
       },
       {
-        "q": "me, te, nous, vous",
+        "q": "Die Lehrer mögen uns sehr.",
         "kind": "gap",
         "s": "Les profs ___ aiment beaucoup.",
         "a": "nous",
@@ -1458,7 +1461,7 @@
         "why": "nous heißt uns: Die Lehrer mögen uns."
       },
       {
-        "q": "me, te, nous, vous",
+        "q": "Meine Eltern warten am Bahnhof auf euch.",
         "kind": "gap",
         "s": "Mes parents ___ attendent à la gare.",
         "a": "vous",
@@ -1470,19 +1473,19 @@
         "why": "vous heißt euch oder Sie."
       },
       {
-        "q": "me, te, nous, vous",
+        "q": "Er hat mir ein Geschenk gegeben.",
         "kind": "gap",
         "s": "Il ___ a donné un cadeau.",
         "a": "m'",
         "wrong": [
-          "te",
-          "nous",
-          "vous"
+          "me",
+          "t'",
+          "nous"
         ],
-        "why": "Vor avoir (a) wird me zu m'."
+        "why": "mir heißt hier me. Vor a wird me zu m'."
       },
       {
-        "q": "me, te, nous, vous",
+        "q": "Ich sehe dich nicht.",
         "kind": "gap",
         "s": "Je ne ___ vois pas.",
         "a": "te",
@@ -1494,7 +1497,7 @@
         "why": "te heißt dich. ne ... pas steht um das Pronomen herum."
       },
       {
-        "q": "me, te, nous, vous",
+        "q": "Der Lehrer bittet uns zu kommen.",
         "kind": "gap",
         "s": "Le prof ___ demande de venir.",
         "a": "nous",
@@ -1506,7 +1509,7 @@
         "why": "nous heißt uns: Der Lehrer bittet uns."
       },
       {
-        "q": "me, te, nous, vous",
+        "q": "Dieser Film gefällt dir sehr.",
         "kind": "gap",
         "s": "Ce film ___ plaît beaucoup.",
         "a": "te",
@@ -1528,7 +1531,7 @@
         "why": "Das Pronomen nous steht vor dem Verb attend."
       },
       {
-        "q": "me, te, nous, vous",
+        "q": "Ich schreibe euch einen Brief.",
         "kind": "gap",
         "s": "Je ___ écris une lettre.",
         "a": "vous",
@@ -1542,7 +1545,7 @@
     ],
     "indirekte-rede": [
       {
-        "q": "Aussage",
+        "q": "Sie sagt, dass sie Hunger hat.",
         "kind": "gap",
         "s": "Elle dit ___ elle a faim.",
         "a": "qu'",
@@ -1554,7 +1557,7 @@
         "why": "Aussagen leitet man mit que ein. Vor Vokal wird es qu'."
       },
       {
-        "q": "Ja-Nein-Frage",
+        "q": "Er fragt, ob du Sport magst.",
         "kind": "gap",
         "s": "Il demande ___ tu aimes le sport.",
         "a": "si",
@@ -1566,7 +1569,7 @@
         "why": "Ja-Nein-Fragen leitet man mit si (ob) ein."
       },
       {
-        "q": "Ja-Nein-Frage",
+        "q": "Meine Mutter fragt, ob ich heute Abend nach Hause komme.",
         "kind": "gap",
         "s": "Ma mère demande ___ je rentre ce soir.",
         "a": "si",
@@ -1578,31 +1581,31 @@
         "why": "Ja-Nein-Frage: si (ob)."
       },
       {
-        "q": "Aussage",
+        "q": "Er sagt mir, dass er zufrieden ist.",
         "kind": "gap",
         "s": "Il me dit ___ il est content.",
         "a": "qu'",
         "wrong": [
+          "que",
           "si",
-          "où",
-          "quand"
+          "où"
         ],
         "why": "Aussage: que, vor Vokal qu'."
       },
       {
-        "q": "Aussage",
+        "q": "Sie sagen, dass sie morgen kommen.",
         "kind": "gap",
         "s": "Elles disent ___ elles viennent demain.",
         "a": "qu'",
         "wrong": [
+          "que",
           "si",
-          "où",
-          "quand"
+          "où"
         ],
         "why": "Aussage: que, vor Vokal qu'."
       },
       {
-        "q": "Fragewort bleibt",
+        "q": "Er fragt, wo du wohnst.",
         "kind": "gap",
         "s": "Il demande ___ tu habites.",
         "a": "où",
@@ -1614,7 +1617,7 @@
         "why": "Das Fragewort où bleibt erhalten."
       },
       {
-        "q": "Fragewort bleibt",
+        "q": "Ich frage, wann der Zug abfährt.",
         "kind": "gap",
         "s": "Je demande ___ le train part.",
         "a": "quand",
@@ -1646,7 +1649,7 @@
         "why": "Ja-Nein-Frage: si, danach keine Umstellung."
       },
       {
-        "q": "Ja-Nein-Frage",
+        "q": "Wir fragen, ob ihr kommen wollt.",
         "kind": "gap",
         "s": "Nous demandons ___ vous voulez venir.",
         "a": "si",
@@ -1660,7 +1663,7 @@
     ],
     "sortir": [
       {
-        "q": "sortir im Präsens",
+        "q": "Ich gehe heute Abend mit meinen Freunden aus.",
         "kind": "gap",
         "s": "Je ___ ce soir avec mes amis.",
         "a": "sors",
@@ -1672,7 +1675,7 @@
         "why": "Mit je steht sors."
       },
       {
-        "q": "sortir im Präsens",
+        "q": "Sonntags gehen wir früh aus dem Haus.",
         "kind": "gap",
         "s": "Nous ___ tôt le dimanche.",
         "a": "sortons",
@@ -1684,7 +1687,7 @@
         "why": "Mit nous steht sortons."
       },
       {
-        "q": "passé composé mit être",
+        "q": "Sie sind um vier Uhr aus der Schule gegangen.",
         "kind": "gap",
         "s": "Ils ___ sortis de l'école à quatre heures.",
         "a": "sont",
@@ -1696,7 +1699,7 @@
         "why": "sortir steht mit être, Plural: sont."
       },
       {
-        "q": "passé composé mit être",
+        "q": "Sie ist gestern Abend ausgegangen.",
         "kind": "gap",
         "s": "Elle ___ sortie hier soir.",
         "a": "est",
@@ -1708,7 +1711,7 @@
         "why": "sortir steht mit être, mit elle: est."
       },
       {
-        "q": "passé composé mit être",
+        "q": "Bist du schon ausgegangen?",
         "kind": "gap",
         "s": "Tu ___ déjà sorti ?",
         "a": "es",
@@ -1720,7 +1723,7 @@
         "why": "sortir steht mit être, mit tu: es."
       },
       {
-        "q": "passé composé mit être",
+        "q": "Seid ihr gestern spät ausgegangen?",
         "kind": "gap",
         "s": "Vous ___ sortis tard hier ?",
         "a": "êtes",
@@ -1732,7 +1735,7 @@
         "why": "sortir steht mit être, mit vous: êtes."
       },
       {
-        "q": "sortir im Präsens",
+        "q": "Der Hund geht in den Garten hinaus.",
         "kind": "gap",
         "s": "Le chien ___ dans le jardin.",
         "a": "sort",
@@ -1744,7 +1747,7 @@
         "why": "Mit le chien (er) steht sort."
       },
       {
-        "q": "passé composé mit être",
+        "q": "Meine Schwestern sind gestern ausgegangen.",
         "kind": "gap",
         "s": "Mes sœurs sont ___ hier.",
         "a": "sorties",
@@ -1761,7 +1764,7 @@
         "wrong": [
           "J'ai sorti avec Léa.",
           "Je suis sortir avec Léa.",
-          "Je sors est avec Léa."
+          "Je suis sort avec Léa."
         ],
         "why": "sortir steht im passé composé mit être."
       },
@@ -1771,14 +1774,14 @@
         "wrong": [
           "Nous avons sorti ensemble.",
           "Nous sommes sortir ensemble.",
-          "Nous sortons sommes ensemble."
+          "Nous sommes sorti ensemble."
         ],
         "why": "sortir steht mit être: sommes sortis."
       }
     ],
     "beau-nouveau-vieux": [
       {
-        "q": "beau, nouveau, vieux",
+        "q": "Das ist ein schönes Buch.",
         "kind": "gap",
         "s": "C'est un ___ livre.",
         "a": "beau",
@@ -1790,7 +1793,7 @@
         "why": "livre ist männlich und beginnt mit Konsonant: beau."
       },
       {
-        "q": "beau, nouveau, vieux",
+        "q": "Sie wohnt in einem schönen Haus.",
         "kind": "gap",
         "s": "Elle habite dans une ___ maison.",
         "a": "belle",
@@ -1802,19 +1805,19 @@
         "why": "maison ist weiblich: belle."
       },
       {
-        "q": "beau, nouveau, vieux",
+        "q": "Das ist ein schöner Baum.",
         "kind": "gap",
-        "s": "Il a un ___ ami.",
+        "s": "C'est un ___ arbre.",
         "a": "bel",
         "wrong": [
           "beau",
           "belle",
           "beaux"
         ],
-        "why": "ami beginnt mit Vokal: bel."
+        "why": "arbre ist männlich und beginnt mit Vokal: bel."
       },
       {
-        "q": "beau, nouveau, vieux",
+        "q": "Ich habe ein neues Telefon gekauft.",
         "kind": "gap",
         "s": "J'ai acheté un ___ téléphone.",
         "a": "nouveau",
@@ -1826,7 +1829,7 @@
         "why": "téléphone ist männlich, Konsonant: nouveau."
       },
       {
-        "q": "beau, nouveau, vieux",
+        "q": "Das ist eine neue Idee.",
         "kind": "gap",
         "s": "C'est une ___ idée.",
         "a": "nouvelle",
@@ -1838,7 +1841,7 @@
         "why": "idée ist weiblich: nouvelle."
       },
       {
-        "q": "beau, nouveau, vieux",
+        "q": "Dieser alte Baum ist sehr groß.",
         "kind": "gap",
         "s": "Ce ___ arbre est très grand.",
         "a": "vieil",
@@ -1850,7 +1853,7 @@
         "why": "arbre ist männlich und beginnt mit Vokal: vieil."
       },
       {
-        "q": "beau, nouveau, vieux",
+        "q": "Ich mag die alten Filme nicht.",
         "kind": "gap",
         "s": "Je n'aime pas les ___ films.",
         "a": "vieux",
@@ -1862,16 +1865,16 @@
         "why": "films ist männlich Plural: vieux."
       },
       {
-        "q": "beau, nouveau, vieux",
+        "q": "In diesem Park gibt es schöne Bäume.",
         "kind": "gap",
-        "s": "Ils ont de ___ amis.",
+        "s": "Il y a de ___ arbres dans ce parc.",
         "a": "beaux",
         "wrong": [
           "belles",
           "bel",
           "beau"
         ],
-        "why": "Plural: beaux, auch vor Vokal."
+        "why": "arbres ist männlich Plural: beaux, auch vor Vokal."
       },
       {
         "q": "Welcher Satz ist richtig?",
@@ -1896,7 +1899,7 @@
     ],
     "devoir-recevoir": [
       {
-        "q": "devoir",
+        "q": "Ich muss vor 20 Uhr nach Hause.",
         "kind": "gap",
         "s": "Je ___ rentrer avant 20 heures.",
         "a": "dois",
@@ -1908,7 +1911,7 @@
         "why": "Mit je steht dois: Ich muss."
       },
       {
-        "q": "devoir",
+        "q": "Du musst deine Hausaufgaben machen.",
         "kind": "gap",
         "s": "Tu ___ faire tes devoirs.",
         "a": "dois",
@@ -1920,7 +1923,7 @@
         "why": "Mit tu steht dois."
       },
       {
-        "q": "devoir",
+        "q": "Wir müssen jetzt gehen.",
         "kind": "gap",
         "s": "Nous ___ partir maintenant.",
         "a": "devons",
@@ -1932,7 +1935,7 @@
         "why": "Mit nous steht devons."
       },
       {
-        "q": "devoir",
+        "q": "Sie schulden der Bank viel Geld.",
         "kind": "gap",
         "s": "Ils ___ beaucoup d'argent à la banque.",
         "a": "doivent",
@@ -1944,7 +1947,7 @@
         "why": "Mit ils steht doivent. devoir heißt hier schulden."
       },
       {
-        "q": "recevoir",
+        "q": "Ich bekomme ein Geschenk von meinem Onkel.",
         "kind": "gap",
         "s": "Je ___ un cadeau de mon oncle.",
         "a": "reçois",
@@ -1956,7 +1959,7 @@
         "why": "Mit je steht reçois: ich bekomme."
       },
       {
-        "q": "recevoir",
+        "q": "Wir haben oft Freunde zu Besuch.",
         "kind": "gap",
         "s": "Nous ___ souvent des amis.",
         "a": "recevons",
@@ -1968,7 +1971,7 @@
         "why": "Mit nous steht recevons: wir empfangen."
       },
       {
-        "q": "passé composé von recevoir",
+        "q": "Sie hat gestern einen Brief bekommen.",
         "kind": "gap",
         "s": "Elle a ___ une lettre hier.",
         "a": "reçu",
@@ -1980,7 +1983,7 @@
         "why": "Das Partizip von recevoir ist reçu."
       },
       {
-        "q": "passé composé von devoir",
+        "q": "Ich musste gestern früh gehen.",
         "kind": "gap",
         "s": "J'ai ___ partir tôt hier.",
         "a": "dû",
@@ -1992,7 +1995,7 @@
         "why": "Das Partizip von devoir ist dû."
       },
       {
-        "q": "devoir",
+        "q": "Ihr müsst zu Hause bleiben.",
         "kind": "gap",
         "s": "Vous ___ rester à la maison.",
         "a": "devez",
@@ -2016,7 +2019,7 @@
     ],
     "choisir": [
       {
-        "q": "choisir im Präsens",
+        "q": "Ich wähle ein Schokoladeneis.",
         "kind": "gap",
         "s": "Je ___ une glace au chocolat.",
         "a": "choisis",
@@ -2028,7 +2031,7 @@
         "why": "Mit je steht choisis: im Singular fällt -iss- weg."
       },
       {
-        "q": "choisir im Präsens",
+        "q": "Wir wählen ein Restaurant aus.",
         "kind": "gap",
         "s": "Nous ___ un restaurant.",
         "a": "choisissons",
@@ -2040,7 +2043,7 @@
         "why": "Im Plural steht -iss-: choisissons."
       },
       {
-        "q": "choisir im Präsens",
+        "q": "Sie wählen ihre Kurse für das nächste Jahr.",
         "kind": "gap",
         "s": "Ils ___ leurs cours pour l'année prochaine.",
         "a": "choisissent",
@@ -2052,7 +2055,7 @@
         "why": "Mit ils steht choisissent."
       },
       {
-        "q": "finir im Präsens",
+        "q": "Beendest du deine Arbeit um 17 Uhr?",
         "kind": "gap",
         "s": "Tu ___ ton travail à 17 h ?",
         "a": "finis",
@@ -2064,7 +2067,7 @@
         "why": "Mit tu steht finis."
       },
       {
-        "q": "finir im Präsens",
+        "q": "Beendet ihr euer Referat diese Woche?",
         "kind": "gap",
         "s": "Vous ___ votre exposé cette semaine ?",
         "a": "finissez",
@@ -2076,7 +2079,7 @@
         "why": "Mit vous steht finissez."
       },
       {
-        "q": "réussir im Präsens",
+        "q": "Sie besteht ihre Prüfungen immer.",
         "kind": "gap",
         "s": "Elle ___ toujours ses examens.",
         "a": "réussit",
@@ -2088,9 +2091,9 @@
         "why": "Mit elle steht réussit."
       },
       {
-        "q": "Partizip",
+        "q": "Ich habe ein gutes Buch ausgewählt.",
         "kind": "gap",
-        "s": "J'ai ___ une bonne décision.",
+        "s": "J'ai ___ un bon livre.",
         "a": "choisi",
         "wrong": [
           "choisis",
@@ -2100,7 +2103,7 @@
         "why": "Das Partizip von choisir ist choisi."
       },
       {
-        "q": "Partizip",
+        "q": "Wir haben mittags aufgehört zu essen.",
         "kind": "gap",
         "s": "Nous avons ___ de manger à midi.",
         "a": "fini",
@@ -2112,7 +2115,7 @@
         "why": "Das Partizip von finir ist fini. finir de heißt: aufhören mit."
       },
       {
-        "q": "réfléchir im Präsens",
+        "q": "Er denkt lange nach, bevor er antwortet.",
         "kind": "gap",
         "s": "Il ___ longtemps avant de répondre.",
         "a": "réfléchit",
@@ -2136,7 +2139,7 @@
     ],
     "lui-leur": [
       {
-        "q": "lui oder leur?",
+        "q": "Ich spreche morgen mit ihm.",
         "kind": "gap",
         "s": "Je ___ parle demain. (à Paul)",
         "a": "lui",
@@ -2148,7 +2151,7 @@
         "why": "Eine Person mit à: lui."
       },
       {
-        "q": "lui oder leur?",
+        "q": "Gibst du ihnen ein Geschenk?",
         "kind": "gap",
         "s": "Tu ___ donnes un cadeau ? (à tes amis)",
         "a": "leur",
@@ -2160,7 +2163,7 @@
         "why": "Mehrere Personen mit à: leur."
       },
       {
-        "q": "lui oder leur?",
+        "q": "Er ruft sie jeden Abend an.",
         "kind": "gap",
         "s": "Il ___ téléphone tous les soirs. (à sa mère)",
         "a": "lui",
@@ -2172,7 +2175,7 @@
         "why": "Eine Person mit à: lui."
       },
       {
-        "q": "lui oder leur?",
+        "q": "Wir schreiben ihnen oft.",
         "kind": "gap",
         "s": "Nous ___ écrivons souvent. (à nos grands-parents)",
         "a": "leur",
@@ -2184,7 +2187,7 @@
         "why": "Mehrere Personen mit à: leur."
       },
       {
-        "q": "lui oder leur?",
+        "q": "Sie hat ihm das Foto gezeigt.",
         "kind": "gap",
         "s": "Elle ___ a montré la photo. (à Marc)",
         "a": "lui",
@@ -2196,7 +2199,7 @@
         "why": "Eine Person mit à: lui, vor dem Verb."
       },
       {
-        "q": "lui oder leur?",
+        "q": "Ich habe ihnen die Wahrheit gesagt.",
         "kind": "gap",
         "s": "Je ___ ai dit la vérité. (à mes parents)",
         "a": "leur",
@@ -2208,7 +2211,7 @@
         "why": "Mehrere Personen mit à: leur."
       },
       {
-        "q": "lui oder leur?",
+        "q": "Ich antworte ihr sofort.",
         "kind": "gap",
         "s": "Je ___ réponds tout de suite. (à Lucie)",
         "a": "lui",
@@ -2220,7 +2223,7 @@
         "why": "Eine Person mit à: lui."
       },
       {
-        "q": "lui oder leur?",
+        "q": "Fragt ihr sie etwas?",
         "kind": "gap",
         "s": "Vous ___ demandez quelque chose ? (à vos amis)",
         "a": "leur",
@@ -2236,25 +2239,25 @@
         "a": "Je leur parle souvent.",
         "wrong": [
           "Je parle leur souvent.",
-          "Je lui parle souvent.",
+          "Je parle à leur souvent.",
           "Je leurs parle souvent."
         ],
-        "why": "Mehrere Personen mit à: leur, vor dem Verb."
+        "why": "leur steht vor dem Verb und bekommt kein s."
       },
       {
         "q": "Welcher Satz ist richtig?",
         "a": "Il lui a donné son numéro.",
         "wrong": [
-          "Il leur a donné son numéro.",
+          "Il a lui donné son numéro.",
           "Il a donné lui son numéro.",
           "Il lui a donner son numéro."
         ],
-        "why": "Eine Person (à Sophie): lui, vor avoir."
+        "why": "lui steht vor avoir, danach folgt das Partizip donné."
       }
     ],
     "tout": [
       {
-        "q": "tout, toute, tous, toutes",
+        "q": "Es regnet die ganze Zeit.",
         "kind": "gap",
         "s": "Il pleut ___ le temps.",
         "a": "tout",
@@ -2266,7 +2269,7 @@
         "why": "temps ist männlich: tout le temps."
       },
       {
-        "q": "tout, toute, tous, toutes",
+        "q": "Ich habe den ganzen Tag gearbeitet.",
         "kind": "gap",
         "s": "J'ai travaillé ___ la journée.",
         "a": "toute",
@@ -2278,7 +2281,7 @@
         "why": "journée ist weiblich: toute la journée."
       },
       {
-        "q": "tout, toute, tous, toutes",
+        "q": "Ich gehe jeden Tag zur Schule.",
         "kind": "gap",
         "s": "Je vais à l'école ___ les jours.",
         "a": "tous",
@@ -2290,7 +2293,7 @@
         "why": "jours ist männlich Plural: tous les jours."
       },
       {
-        "q": "tout, toute, tous, toutes",
+        "q": "Alle Mädchen sind da.",
         "kind": "gap",
         "s": "___ les filles sont là.",
         "a": "Toutes",
@@ -2302,7 +2305,7 @@
         "why": "filles ist weiblich Plural: toutes."
       },
       {
-        "q": "tout als Pronomen",
+        "q": "Das ist alles für heute.",
         "kind": "gap",
         "s": "C'est ___ pour aujourd'hui.",
         "a": "tout",
@@ -2314,7 +2317,7 @@
         "why": "Allein als Pronomen heißt tout alles."
       },
       {
-        "q": "tout, toute, tous, toutes",
+        "q": "Er hat den ganzen Kuchen gegessen.",
         "kind": "gap",
         "s": "Il a mangé ___ le gâteau.",
         "a": "tout",
@@ -2326,7 +2329,7 @@
         "why": "gâteau ist männlich: tout le gâteau."
       },
       {
-        "q": "tout, toute, tous, toutes",
+        "q": "Alle meine Freunde kommen zum Fest.",
         "kind": "gap",
         "s": "___ mes amis viennent à la fête.",
         "a": "Tous",
@@ -2338,7 +2341,7 @@
         "why": "amis ist männlich Plural: tous."
       },
       {
-        "q": "tout, toute, tous, toutes",
+        "q": "Sie hat das ganze Buch in einer Stunde gelesen.",
         "kind": "gap",
         "s": "Elle a lu ___ le livre en une heure.",
         "a": "tout",
@@ -2372,7 +2375,7 @@
     ],
     "zahlen-grund": [
       {
-        "q": "Ein Satz über die Woche",
+        "q": "Eine Woche hat sieben Tage.",
         "kind": "gap",
         "s": "Il y a ___ jours dans une semaine.",
         "a": "sept",
@@ -2381,10 +2384,13 @@
           "huit",
           "neuf"
         ],
-        "why": "Eine Woche hat sieben Tage: sept."
+        "why": "Eine Woche hat sieben Tage: sept.",
+        "accept": [
+          "7"
+        ]
       },
       {
-        "q": "Alter",
+        "q": "Ich bin 12 Jahre alt.",
         "kind": "gap",
         "s": "J'ai ___ ans.",
         "a": "douze",
@@ -2393,10 +2399,13 @@
           "treize",
           "dix"
         ],
-        "why": "douze ist 12. Es ist ein eigenes Wort, nicht 10 + 2."
+        "why": "douze ist 12. Es ist ein eigenes Wort, nicht 10 + 2.",
+        "accept": [
+          "12"
+        ]
       },
       {
-        "q": "Tiere",
+        "q": "Eine Katze hat vier Pfoten.",
         "kind": "gap",
         "s": "Un chat a ___ pattes.",
         "a": "quatre",
@@ -2405,10 +2414,13 @@
           "six",
           "huit"
         ],
-        "why": "Eine Katze hat vier Pfoten: quatre."
+        "why": "Eine Katze hat vier Pfoten: quatre.",
+        "accept": [
+          "4"
+        ]
       },
       {
-        "q": "Fahrzeuge",
+        "q": "Ein Fahrrad hat zwei Räder.",
         "kind": "gap",
         "s": "Un vélo a ___ roues.",
         "a": "deux",
@@ -2417,10 +2429,13 @@
           "un",
           "quatre"
         ],
-        "why": "Ein Fahrrad hat zwei Räder: deux."
+        "why": "Ein Fahrrad hat zwei Räder: deux.",
+        "accept": [
+          "2"
+        ]
       },
       {
-        "q": "Uhrzeit",
+        "q": "Es ist 9 Uhr.",
         "kind": "gap",
         "s": "Il est ___ heures.",
         "a": "neuf",
@@ -2429,10 +2444,13 @@
           "dix",
           "sept"
         ],
-        "why": "Es ist 9 Uhr: neuf heures."
+        "why": "Es ist 9 Uhr: neuf heures.",
+        "accept": [
+          "9"
+        ]
       },
       {
-        "q": "Sport",
+        "q": "Das Spiel endet 3 zu 0.",
         "kind": "gap",
         "s": "Le match finit trois à ___.",
         "a": "zéro",
@@ -2441,10 +2459,13 @@
           "dix",
           "sept"
         ],
-        "why": "Null heißt zéro, auch beim Ergebnis: trois à zéro."
+        "why": "Null heißt zéro, auch beim Ergebnis: trois à zéro.",
+        "accept": [
+          "0"
+        ]
       },
       {
-        "q": "Wähle die richtige Zahl",
+        "q": "Welche Zahl ist cinq?",
         "a": "5",
         "wrong": [
           "3",
@@ -2454,7 +2475,7 @@
         "why": "cinq heißt fünf, geschrieben 5."
       },
       {
-        "q": "Wie schreibt man 16?",
+        "q": "Wie schreibt man 16 auf Französisch?",
         "a": "seize",
         "wrong": [
           "six",
@@ -2464,7 +2485,7 @@
         "why": "16 ist seize. Es ist kein dix plus six, sondern ein eigenes Wort."
       },
       {
-        "q": "Welches Wort passt zu 1?",
+        "q": "Welches französische Wort passt zu 1?",
         "a": "un",
         "wrong": [
           "deux",
@@ -2486,7 +2507,7 @@
     ],
     "zahlen-zehner": [
       {
-        "q": "Zahl 17",
+        "q": "17 ist 10 + 7.",
         "kind": "gap",
         "s": "17 = dix-___",
         "a": "sept",
@@ -2498,7 +2519,7 @@
         "why": "17 = dix + sept. Die Einer kommen nach dix."
       },
       {
-        "q": "Zahl 19",
+        "q": "19 ist 10 + 9.",
         "kind": "gap",
         "s": "19 = dix-___",
         "a": "neuf",
@@ -2510,7 +2531,7 @@
         "why": "19 = dix-neuf."
       },
       {
-        "q": "Zahl 18",
+        "q": "18 ist 10 + 8.",
         "kind": "gap",
         "s": "18 = dix-___",
         "a": "huit",
@@ -2522,7 +2543,7 @@
         "why": "18 = dix-huit."
       },
       {
-        "q": "Wähle die richtige Schreibweise",
+        "q": "Wie schreibt man 20 auf Französisch?",
         "a": "vingt",
         "wrong": [
           "vint",
@@ -2532,7 +2553,7 @@
         "why": "vingt ist 20. Das s steht nur in quatre-vingts (80)."
       },
       {
-        "q": "Zahl 21",
+        "q": "21 ist 20 + 1.",
         "kind": "gap",
         "s": "21 = vingt et ___",
         "a": "un",
@@ -2544,7 +2565,7 @@
         "why": "21 = vingt et un. Das et steht bei 1."
       },
       {
-        "q": "Zahl 22",
+        "q": "22 ist 20 + 2.",
         "kind": "gap",
         "s": "22 = vingt-___",
         "a": "deux",
@@ -2556,7 +2577,7 @@
         "why": "22 = vingt-deux: mit Bindestrich, ohne et."
       },
       {
-        "q": "Wähle die richtige Zahl",
+        "q": "Welche Zahl ist trente?",
         "a": "30",
         "wrong": [
           "13",
@@ -2566,7 +2587,7 @@
         "why": "trente ist 30. Bei 13 heißt es treize."
       },
       {
-        "q": "Zahl 40",
+        "q": "Der Zehner nach trente (30).",
         "kind": "gap",
         "s": "40 = ___",
         "a": "quarante",
@@ -2578,7 +2599,7 @@
         "why": "quarante ist 40. Nicht verwechseln mit quatorze (14)."
       },
       {
-        "q": "Alter",
+        "q": "Meine Tante ist 60 Jahre alt.",
         "kind": "gap",
         "s": "Ma tante a ___ ans.",
         "a": "soixante",
@@ -2587,10 +2608,13 @@
           "cinquante",
           "soixante-dix"
         ],
-        "why": "soixante ist 60."
+        "why": "soixante ist 60.",
+        "accept": [
+          "60"
+        ]
       },
       {
-        "q": "Wähle die richtige Zahl",
+        "q": "Welche Zahl ist soixante-neuf?",
         "a": "69",
         "wrong": [
           "79",
@@ -2600,7 +2624,7 @@
         "why": "soixante-neuf ist 60 + 9 = 69."
       },
       {
-        "q": "Zahl 61",
+        "q": "61 ist 60 + 1.",
         "kind": "gap",
         "s": "61 = soixante et ___",
         "a": "un",
@@ -2612,7 +2636,7 @@
         "why": "61 = soixante et un, wie 21 mit vingt et un."
       },
       {
-        "q": "Wie schreibt man 50?",
+        "q": "Wie schreibt man 50 auf Französisch?",
         "a": "cinquante",
         "wrong": [
           "quinze",
@@ -2624,7 +2648,7 @@
     ],
     "zahlen-zwanziger": [
       {
-        "q": "Zahl 70",
+        "q": "70 ist 60 + 10.",
         "kind": "gap",
         "s": "70 = soixante-___",
         "a": "dix",
@@ -2636,7 +2660,7 @@
         "why": "70 = 60 + 10: soixante-dix."
       },
       {
-        "q": "Zahl 71",
+        "q": "71 ist 60 + 11.",
         "kind": "gap",
         "s": "71 = soixante et ___",
         "a": "onze",
@@ -2648,7 +2672,7 @@
         "why": "71 = soixante et onze. Mit et, wie bei 61."
       },
       {
-        "q": "Zahl 72",
+        "q": "72 ist 60 + 12.",
         "kind": "gap",
         "s": "72 = soixante-___",
         "a": "douze",
@@ -2660,7 +2684,7 @@
         "why": "72 = 60 + 12: soixante-douze."
       },
       {
-        "q": "Zahl 77",
+        "q": "77 ist 60 + 10 + 7.",
         "kind": "gap",
         "s": "77 = soixante-dix-___",
         "a": "sept",
@@ -2672,7 +2696,7 @@
         "why": "77 = 60 + 17: soixante-dix-sept."
       },
       {
-        "q": "Wie heißt 80?",
+        "q": "Wie heißt 80 auf Französisch?",
         "a": "quatre-vingts",
         "wrong": [
           "quatre-vingt",
@@ -2682,7 +2706,7 @@
         "why": "80 = quatre-vingts, mit s, weil nichts danach kommt."
       },
       {
-        "q": "Zahl 81",
+        "q": "81 ist 4 × 20 + 1.",
         "kind": "gap",
         "s": "81 = quatre-vingt-___",
         "a": "un",
@@ -2694,17 +2718,17 @@
         "why": "81 = quatre-vingt-un. Das s fällt weg, sobald eine Zahl folgt."
       },
       {
-        "q": "Wähle die richtige Zahl",
+        "q": "Welche Zahl ist quatre-vingt-dix?",
         "a": "90",
         "wrong": [
-          "40",
-          "19",
+          "80",
+          "70",
           "99"
         ],
         "why": "quatre-vingt-dix ist 4 × 20 + 10 = 90."
       },
       {
-        "q": "Zahl 99",
+        "q": "99 ist 4 × 20 + 10 + 9.",
         "kind": "gap",
         "s": "99 = quatre-vingt-dix-___",
         "a": "neuf",
@@ -2716,7 +2740,7 @@
         "why": "99 = 80 + 19: quatre-vingt-dix-neuf."
       },
       {
-        "q": "Wie heißt 75?",
+        "q": "Wie heißt 75 auf Französisch?",
         "a": "soixante-quinze",
         "wrong": [
           "quatre-vingt-quinze",
@@ -2726,7 +2750,7 @@
         "why": "75 = 60 + 15: soixante-quinze. quatre-vingt-quinze wäre 95."
       },
       {
-        "q": "Zahl 85",
+        "q": "Mein Großvater ist 85 Jahre alt.",
         "kind": "gap",
         "s": "Mon grand-père a quatre-vingt-___ ans.",
         "a": "cinq",
@@ -2740,7 +2764,7 @@
     ],
     "zahlen-gross": [
       {
-        "q": "Wie heißt 100?",
+        "q": "Wie heißt 100 auf Französisch?",
         "a": "cent",
         "wrong": [
           "cents",
@@ -2750,19 +2774,19 @@
         "why": "100 ist cent. Mit s wird es nur bei Vielfachen am Ende: deux cents."
       },
       {
-        "q": "Zahl 200",
+        "q": "Zweimal hundert, danach folgt nichts.",
         "kind": "gap",
         "s": "200 = deux ___",
         "a": "cents",
         "wrong": [
           "cent",
           "centes",
-          "cinq"
+          "mille"
         ],
         "why": "200 = deux cents: das s bleibt, weil keine Zahl folgt."
       },
       {
-        "q": "Zahl 201",
+        "q": "200 + 1.",
         "kind": "gap",
         "s": "201 = deux cent ___",
         "a": "un",
@@ -2771,10 +2795,10 @@
           "unes",
           "onze"
         ],
-        "why": "201 = deux cent un: das s fällt weg, sobald eine Zahl folgt."
+        "why": "201 = deux cent un: Die 1 heißt un, ohne et und ohne s."
       },
       {
-        "q": "Zahl 1000",
+        "q": "Das Wort für tausend.",
         "kind": "gap",
         "s": "1000 = ___",
         "a": "mille",
@@ -2786,7 +2810,7 @@
         "why": "1000 = mille. Mille hat nie ein s."
       },
       {
-        "q": "Zahl 2000",
+        "q": "Zweimal tausend.",
         "kind": "gap",
         "s": "2000 = deux ___",
         "a": "mille",
@@ -2798,7 +2822,7 @@
         "why": "deux mille: mille bleibt gleich, auch im Plural."
       },
       {
-        "q": "Wie heißt eine Million?",
+        "q": "Wie heißt eine Million auf Französisch?",
         "a": "un million",
         "wrong": [
           "un mille",
@@ -2808,7 +2832,7 @@
         "why": "Eine Million ist un million. Million ist ein Wort mit eigenem Artikel."
       },
       {
-        "q": "Zahl 150",
+        "q": "100 + 50.",
         "kind": "gap",
         "s": "150 = cent ___",
         "a": "cinquante",
@@ -2820,7 +2844,7 @@
         "why": "150 = cent cinquante. Hier kein et."
       },
       {
-        "q": "Wähle die richtige Zahl",
+        "q": "Welche Zahl ist deux cent trois?",
         "a": "203",
         "wrong": [
           "230",
@@ -2830,19 +2854,19 @@
         "why": "deux cent trois ist 200 + 3 = 203."
       },
       {
-        "q": "Zahl 300",
+        "q": "Dreimal hundert, danach folgt nichts.",
         "kind": "gap",
         "s": "300 = trois ___",
         "a": "cents",
         "wrong": [
           "cent",
           "centes",
-          "trois"
+          "mille"
         ],
         "why": "300 = trois cents: das s bleibt, weil keine Zahl folgt."
       },
       {
-        "q": "Zahl 350",
+        "q": "300 + 50.",
         "kind": "gap",
         "s": "350 = trois cent ___",
         "a": "cinquante",
