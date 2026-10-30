@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { AppHome, stationState } from '../apphome.js';
-import { appDefaults, profileDefaults } from '../ablauf.js';
+import { appDefaults, profileDefaults, recommendationOf } from '../ablauf.js';
 import { configOf, DAY, UNITS } from './helpers.js';
 
 const h = createElement;
@@ -72,9 +72,9 @@ const OLD = '2026-10-20'; // sechs Tage vor DAY: ab 3 Tagen fällig, mit starker
 const appWith = (extra = {}) => ({ ...appDefaults(), ...extra });
 const U = (id) => ({ id });
 
-function renderApp(app, { open = false, units = UNITS } = {}) {
+function renderApp(app, { open = false, units = UNITS, rec = null } = {}) {
   return renderToStaticMarkup(h(AppHome, {
-    config: configOf({ units }), app, profile: profileDefaults(), day: DAY, rec: null, open, notice: null, storeMessage: null,
+    config: configOf({ units }), app, profile: profileDefaults(), day: DAY, rec, open, notice: null, storeMessage: null,
     persistent: false, resetPhase: 'idle', profileStore: null, onStudy: noop, onStart: noop, onReset: noop, onName: noop
   }));
 }
@@ -178,6 +178,35 @@ test('SEITE-PFAD Eine fällige Station ist vor der ersten Station ohne Stern die
 test('SEITE-PFAD Der Endgegner bleibt gesperrt, solange er nicht offen ist, und öffnet mit open', () => {
   assert.match(renderApp(appWith(), { open: false }), /<button[^>]*disabled=""[^>]*>Noch gesperrt</);
   assert.doesNotMatch(renderApp(appWith(), { open: true }), /Noch gesperrt/);
+});
+
+test('RULE-242 Eine fällige Seite kommt zuerst: nach drei Tagen zum Auffrischen', () => {
+  const app = appWith({ stars: { start: 2 }, last: { start: '2026-10-23' }, acc: { weiter: 0.5 } });
+  const rec = recommendationOf(app, UNITS, DAY);
+  assert.equal(rec.unit.title, 'Erste Seite');
+  assert.equal(rec.reason, 'Zeit zum Auffrischen');
+  assert.equal(rec.code, 'refresh');
+});
+
+test('RULE-242 Ohne fällige Seite gewinnt die schwächste Seite unter 90 Prozent', () => {
+  const app = appWith({ stars: { start: 2, weiter: 2 }, last: { start: DAY, weiter: DAY }, acc: { start: 0.8, weiter: 0.6 } });
+  const rec = recommendationOf(app, UNITS, DAY);
+  assert.equal(rec.unit.title, 'Zweite Seite');
+  assert.equal(rec.reason, 'Hier ist noch Luft nach oben');
+});
+
+test('RULE-242 Seiten mit drei Sternen werden nicht als schwach empfohlen', () => {
+  const app = appWith({ stars: { start: 3, weiter: 3 }, last: { start: DAY, weiter: DAY }, acc: { start: 0.5, weiter: 0.5 } });
+  assert.equal(recommendationOf(app, UNITS, DAY), null);
+});
+
+test('RULE-242 Die Karte "Gezieltes Training" nennt Grund und Seite, ohne Empfehlung fehlt sie', () => {
+  const app = appWith({ stars: { start: 2 }, last: { start: '2026-10-23' } });
+  const markup = renderApp(app, { rec: recommendationOf(app, UNITS, DAY) });
+  assert.match(markup, /Gezieltes Training/);
+  assert.match(markup, /Zeit zum Auffrischen: <b>Erste Seite<\/b>/);
+  assert.match(markup, /Jetzt trainieren/);
+  assert.doesNotMatch(renderApp(app), /Gezieltes Training/);
 });
 
 test('SEITE-MISSIONEN Lernpfad: Seiten mit Feld group werden in Gruppen gefasst, ohne group bleibt es eine Liste ohne Überschrift', async () => {

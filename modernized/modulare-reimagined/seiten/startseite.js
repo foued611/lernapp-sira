@@ -2,16 +2,14 @@
 // legacy/modulare/dashboard.js und index.html (Pixelparität, analysis/modulare/PARITAET.md). startseiteModel ist rein.
 // Die Komponenten zeichnen nur. Seiten ist die Wurzel (Start oder App).
 import { createElement, useReducer, useState } from 'react';
-import { DAILY_GOAL_XP, GOAL_CHOICES, REFRESH_BONUS_XP, currentStreak, dailyGoal, dailyXP, setDailyGoal } from '../regeln/index.js';
-import { starsOf } from '../helfer/index.js';
+import { DAILY_GOAL_XP, GOAL_CHOICES, currentStreak, dailyGoal, dailyXP, setDailyGoal } from '../regeln/index.js';
 import { progressOf, doneUnits } from '../komponenten/ui.js';
 import { Mascot } from '../komponenten/mascot.js';
-import { bossOpen, recommendationOf } from './ablauf.js';
 import { AppFrame } from './rahmen.js';
 import { NAME_MAX, NO_STORAGE, greetingOf, maskName, saveName } from './name.js';
 import { Sicherung } from './sicherung.js';
 import { ThemeToggle } from './thema.js';
-import { LIVE, SUBJECT_COLORS, subjectsOf, unitTrack } from './registry.js';
+import { LIVE, SUBJECT_COLORS, subjectsOf } from './registry.js';
 import { MSG } from './boot.js';
 
 const h = createElement;
@@ -37,21 +35,9 @@ function linkTile(app) {
   return { ...base, kind: 'link', href: hrefOf(entry.id) };
 }
 
-// Der Endgegner in einer Kachel, als Text. Gesperrt heißt: "gesperrt", nicht nur eine andere Farbe (RULE-206).
-function bossLine(app, profile) {
-  const { units, appStore } = app;
-  if (!app.entry.boss) return null;
-  const state = appStore.state;
-  const unitIds = units.map((u) => u.id);
-  // Auf der Startseite ist die Logik der App nicht geladen, hier gilt immer die Regel für alle (RULE-206).
-  const open = bossOpen({ app: state, unitIds, profile });
-  if (open) return { open: true, text: 'Endgegner offen.' };
-  const missing = unitIds.filter((id) => starsOf(state.stars, id) === 0).length;
-  return { open: false, text: `Endgegner gesperrt: noch ${missing} ${missing === 1 ? 'Seite' : 'Seiten'} ohne Stern.` };
-}
-
 // Kachel mit Fortschritt. Erledigt ab 2 von 3 Sternen (RULE-075), Prozent als Text, auf 0 bis 100 begrenzt.
-function progressTile(app, profile) {
+// Endgegner und Gezieltes Training stehen wie im Legacy nur auf der App-Startseite (apphome.js), nicht hier.
+function progressTile(app) {
   const state = app.appStore.state;
   const unitIds = app.units.map((u) => u.id);
   const done = doneUnits(state.stars, unitIds);
@@ -63,37 +49,15 @@ function progressTile(app, profile) {
     done,
     total,
     percent: progressOf(done, total),
-    info: started ? `${done} von ${total} Seiten · ${state.xp} XP` : 'Noch nicht gestartet',
-    boss: bossLine(app, profile)
+    info: started ? `${done} von ${total} Seiten · ${state.xp} XP` : 'Noch nicht gestartet'
   };
 }
 
 // Die Kachel je App. Ohne Stand (Fehler oder kein Speicher) steht die Meldung dort, nicht eine Null.
-function tileOf(app, profile) {
+function tileOf(app) {
   if (app.entry.status !== LIVE) return linkTile(app);
   if (!app.appStore) return { ...linkTile(app), kind: 'nostore', message: app.storeMessage || MSG.unavailable };
-  return progressTile(app, profile);
-}
-
-// Die Empfehlung für das Training. Erst die App, die zuletzt benutzt wurde, dann die übrigen (RULE-242).
-function trainingOf(apps, day, lastApp) {
-  const live = apps.filter((app) => app.entry.status === LIVE && app.appStore);
-  const ordered = [...live.filter((app) => app.entry.id === lastApp), ...live.filter((app) => app.entry.id !== lastApp)];
-  for (const app of ordered) {
-    const rec = recommendationOf(app.appStore.state, app.units, day);
-    if (rec) {
-      return {
-        appId: app.entry.id,
-        appTitle: app.entry.title,
-        href: hrefOf(app.entry.id),
-        unitTitle: rec.unit.title,
-        track: unitTrack(app.entry.tracks, rec.unit),
-        reason: rec.reason,
-        refresh: rec.code === 'refresh'
-      };
-    }
-  }
-  return null;
+  return progressTile(app);
 }
 
 /**
@@ -113,7 +77,7 @@ export function startseiteModel({ day, storage, profileStore, apps, subject = AL
     };
   }
   const profile = profileStore.state;
-  const allTiles = apps.map((app) => tileOf(app, profile));
+  const allTiles = apps.map(tileOf);
   const x = dailyXP(profile, day);
   const goal = dailyGoal(profile);
   const lastApp = profile.lastApp;
@@ -131,8 +95,7 @@ export function startseiteModel({ day, storage, profileStore, apps, subject = AL
     trophies: apps.reduce((sum, app) => sum + (app.appStore ? Object.keys(app.appStore.state.badges || {}).length : 0), 0),
     tiles: allTiles.filter(shown),
     // Die Weiter-Karte hängt an der App, nicht am Fach-Filter. Sonst verschwände sie bei jeder Auswahl.
-    continueTile: allTiles.find((tile) => tile.kind === 'live' && tile.id === lastApp) || null,
-    training: trainingOf(apps, day, lastApp)
+    continueTile: allTiles.find((tile) => tile.kind === 'live' && tile.id === lastApp) || null
   };
 }
 
