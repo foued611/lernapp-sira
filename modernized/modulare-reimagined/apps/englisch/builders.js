@@ -46,7 +46,7 @@ export function choice(item, rng) {
 export function typed(item) {
   const accepted = [item.a, ...(item.accept || [])].map(normalise);
   return typedQuestion({
-    label: item.w === undefined ? 'Schreibe die Form' : 'Schreibe das Wort', prompt: gapText(item.s), sub: item.q, answer: item.a,
+    label: 'Schreibe das fehlende Wort', prompt: gapText(item.s), sub: item.q, answer: item.a,
     check: (input) => (accepted.includes(normalise(input)) ? 'ok' : 'bad'), placeholder: 'Wort eintippen',
     reveal: filled(item.s, item.a), why: item.why
   });

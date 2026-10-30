@@ -15,6 +15,14 @@ const report = (onProblem, problem) => {
 
 const section = (cls, ...children) => h('section', { className: `card lsn ${cls}` }, ...children);
 
+const hash = (text) => [...text].reduce((sum, c) => Math.imul(sum ^ c.codePointAt(0), 16777619) >>> 0, 2166136261);
+
+/**
+ * Antworten des Mini-Checks in fester, aber je Frage anderer Reihenfolge. In den Daten steht die richtige oft zuerst.
+ * Ohne Zufall: Die Lektion hat kein rng und soll beim Neuzeichnen nicht springen.
+ */
+export const checkOptions = (check) => [...check.options].sort((a, b) => hash(a.id + check.q) - hash(b.id + check.q));
+
 /**
  * Rückmeldung zur Mini-Prüfung. Der Text sagt "Richtig!" oder "Nicht ganz.", die Farbe ist nur Zusatz (KOMP-A11Y).
  * Legacy: lesson.js:61-70.
@@ -134,7 +142,7 @@ export function Lesson({ lesson, unitId, diagrams, toy, onProblem }) {
         h(
           'div',
           { className: 'opts lsn-opts', role: 'group', 'aria-label': 'Antwortmöglichkeiten' },
-          ...check.options.map((o) => {
+          ...checkOptions(check).map((o) => {
             // Nach der Antwort sind alle Knöpfe gesperrt. Richtig und falsch bekommen eine Klasse, der Text sagt es auch.
             let state = '';
             if (answer !== null) {

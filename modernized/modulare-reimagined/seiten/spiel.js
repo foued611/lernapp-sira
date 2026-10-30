@@ -3,6 +3,7 @@
 // gezeichnet und die Auswahl gesammelt. Ein Klick auf eine Antwort sendet nichts, erst "Prüfen" (wie Legacy).
 import { createElement, useEffect, useState } from 'react';
 import { comboMultiplier } from '../regeln/index.js';
+import { esc } from '../runde/index.js';
 import { Icon } from '../komponenten/icons.js';
 import { Mascot } from '../komponenten/mascot.js';
 import { richText } from '../komponenten/rich.js';
@@ -12,6 +13,20 @@ const h = createElement;
 
 const FALLBACK_WHY = 'Schau dir die Formen noch einmal an, dann klappt es.';
 const blankOut = (text) => String(text || '').split('{{blank}}');
+
+/**
+ * Was in der Lücke steht: nach der Antwort das richtige Wort, davor die gewählte Option.
+ * Nie reveal: das ist der ganze Satz, in der Lücke stünde er doppelt (legacy qtypes.js:blankHTML).
+ */
+export function blankFill(question, feedback, selected) {
+  if (feedback) {
+    const right = question.kind === 'choice' ? question.options.find((o) => o.id === question.answer) : null;
+    return esc(right && right.fill !== undefined ? right.fill : question.answer);
+  }
+  if (question.kind !== 'choice' || selected === null) return null;
+  const chosen = question.options[selected];
+  return chosen.fill !== undefined ? esc(chosen.fill) : null;
+}
 
 // Lobe aus words.praise, eines je Frage, damit die Anzeige ruhig und testbar bleibt (AGENTS.md: Zufall nur testbar).
 export const praiseOf = (praise, index) => (praise && praise.length ? praise[index % praise.length] : 'Richtig!');
@@ -240,10 +255,7 @@ function PlayBody({ session, praise, inputChars = [], onAnswer, onNext, onLeave,
         onLeft: chooseLeft, onRight: pairWith
       });
 
-  // Was in der Lücke steht: nach der Antwort die Auflösung, davor die gewählte Option.
-  let filled = null;
-  if (feedback) filled = q.reveal || q.answer;
-  else if (kind === 'choice' && selected !== null) filled = q.options[selected].html;
+  const filled = blankFill(q, feedback, selected);
 
   const label = q.label ? h('p', { className: 'qlabel' }, q.label) : null;
   const prompt = q.prompt ? h(Prompt, { question: q, feedback, filled }) : null;
