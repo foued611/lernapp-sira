@@ -405,7 +405,8 @@
           "It is raining since this morning.",
           "It has been raining since two hours."
         ],
-        "why": "since steht vor einem Zeitpunkt wie this morning. since two hours ist falsch, richtig wäre for two hours. has been braucht das Verb mit -ing."
+        "why": "since steht vor einem Zeitpunkt wie this morning. since two hours ist falsch, richtig wäre for two hours. has been braucht das Verb mit -ing.",
+        "label": "Zeitangabe: Regen"
       },
       {
         "q": "Wie lange wartest du schon auf den Bus?",
@@ -473,7 +474,8 @@
           "My friend is practising the piano since Easter.",
           "My friend has been practise the piano since Easter."
         ],
-        "why": "Easter ist ein Zeitpunkt, deshalb since. Vor einem Zeitraum wie two weeks steht for, nicht since. Statt is practising braucht der Satz has been practising."
+        "why": "Easter ist ein Zeitpunkt, deshalb since. Vor einem Zeitraum wie two weeks steht for, nicht since. Statt is practising braucht der Satz has been practising.",
+        "label": "Zeitangabe: Klavier"
       }
     ],
     "past-progressive": [
@@ -521,7 +523,8 @@
           "When I came home, my mum were cooking.",
           "When I came home, my mum is cooking."
         ],
-        "why": "Das Ankommen ist kurz, also came. Bei my mum steht was, danach das Verb mit -ing."
+        "why": "Das Ankommen ist kurz, also came. Bei my mum steht was, danach das Verb mit -ing.",
+        "label": "Unterbrechung: Heimkommen"
       },
       {
         "q": "Während wir gerade den Kuchen backten, fiel der Strom aus.",
@@ -555,7 +558,8 @@
           "I sleeping when the phone rang.",
           "I was sleeps when the phone rang."
         ],
-        "why": "Der Verlauf sleeping steht mit was. Das Klingeln unterbricht, deshalb rang im Simple Past."
+        "why": "Der Verlauf sleeping steht mit was. Das Klingeln unterbricht, deshalb rang im Simple Past.",
+        "label": "Unterbrechung: Telefon"
       },
       {
         "q": "Was hast du gestern um neun Uhr gerade gemacht?",
@@ -774,7 +778,8 @@
           "We will be late if the bus be late.",
           "We will late if the bus is late."
         ],
-        "why": "Im if-Satz steht das Präsens (is), im Hauptsatz will mit be. will gehört nicht in den if-Satz."
+        "why": "Im if-Satz steht das Präsens (is), im Hauptsatz will mit be. will gehört nicht in den if-Satz.",
+        "label": "If-Satz: Bus"
       },
       {
         "q": "Wenn ich genug Geld habe, kaufe ich das neue Fahrrad.",
@@ -847,7 +852,8 @@
           "If she is late, we will starts without her.",
           "If she is late, we without her will start."
         ],
-        "why": "Im if-Satz steht das Präsens (is), im Hauptsatz will mit der Grundform start, ohne -s und ohne Umstellung."
+        "why": "Im if-Satz steht das Präsens (is), im Hauptsatz will mit der Grundform start, ohne -s und ohne Umstellung.",
+        "label": "If-Satz: Start ohne sie"
       }
     ],
     "conditional-2": [
@@ -1162,7 +1168,8 @@
           "The dog saw we in the park was black.",
           "The dog we saw in the park are black."
         ],
-        "why": "Das Verb richtet sich nach dem Hauptwort dog, also was. Im Relativsatz bleibt die Reihenfolge Subjekt, dann Verb: we saw."
+        "why": "Das Verb richtet sich nach dem Hauptwort dog, also was. Im Relativsatz bleibt die Reihenfolge Subjekt, dann Verb: we saw.",
+        "label": "Relativsatz: Hund"
       },
       {
         "q": "Die Leute, die wir im Urlaub getroffen haben, waren aus Spanien.",
@@ -1226,7 +1233,8 @@
           "The girl my brother likes live next door.",
           "The girl who likes my brother live next door."
         ],
-        "why": "Das Pronomen who oder that fällt als Objekt weg. Folgt auf girl direkt ein Verb, darf es nicht fehlen. Zum Singular girl passt lives, nicht live."
+        "why": "Das Pronomen who oder that fällt als Objekt weg. Folgt auf girl direkt ein Verb, darf es nicht fehlen. Zum Singular girl passt lives, nicht live.",
+        "label": "Relativsatz: Nachbarin"
       }
     ],
     "passive": [
