@@ -71,7 +71,7 @@ export function resultModel(summary, { profile, day, words, next = null, weakTit
   const chapter = summary.mode === 'chapter';
   const forward = Boolean(next) && (chapter || (summary.mode === 'lesson' && !summary.failed && summary.stars >= DONE_STARS));
   let title = words.resultTitles[Math.max(0, summary.stars - 1)];
-  if (summary.failed) title = 'Knapp daneben';
+  if (summary.failed) title = 'Noch nicht geschafft';
   else if (blitz) title = blitzWell ? words.blitzTitle : 'Zeit um';
   // Die XP der Missionen stehen im Gesamtbetrag. Dieser Satz sagt, woher ein Teil davon kommt.
   const missions = summary.missions || [];

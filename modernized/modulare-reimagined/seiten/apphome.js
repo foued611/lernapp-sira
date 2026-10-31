@@ -147,7 +147,7 @@ function NameForm({ onSave }) {
     'form',
     { className: 'name', onSubmit: (event) => { event.preventDefault(); onSave(value); } },
     h('input', { id: 'nm', type: 'text', value, maxLength: NAME_MAX, autoComplete: 'off', placeholder: 'Wie heißt du?', 'aria-label': 'Dein Name', onChange: (event) => setValue(event.target.value) }),
-    h('button', { type: 'submit', className: 'btn sun' }, 'Los')
+    h('button', { type: 'submit', className: 'btn sun' }, 'Speichern')
   );
 }
 
@@ -169,7 +169,7 @@ export function AppHome({ config, app, profile, day, rec, open, notice, storeMes
   const x = dailyXP(profile, day);
   const goal = dailyGoal(profile);
   const masked = maskName(profile.name);
-  const greeting = `${config.greeting || 'Hallo'}${masked ? `, ${masked}` : ''} !`;
+  const greeting = `${config.greeting || 'Hallo'}${masked ? `, ${masked}` : ''}!`;
   const bossHasRounds = Boolean(config.rounds && typeof config.rounds.boss === 'function');
   const cardUnits = units.filter((u) => u.card);
   const medal = ['', 'Bronze', 'Silber', 'Gold'];
@@ -191,7 +191,8 @@ export function AppHome({ config, app, profile, day, rec, open, notice, storeMes
       h('div', { className: 'row1' }, h(Mascot, { mood: 'happy' }), h('div', null,
         h('h1', null, greeting),
         h('div', { className: 'bubble', style: { marginTop: '10px' } }, minouOf(x, day, goal)))),
-      !profile.name && profileStore ? h(NameForm, { onSave: onName }) : null,
+      // Vor der ersten Runde gibt es nur einen Knopf. Den Namen fragt schon die Startseite aller Apps.
+      started && !profile.name && profileStore ? h(NameForm, { onSave: onName }) : null,
       h(
         'div',
         { className: 'goalbox' },
@@ -207,11 +208,10 @@ export function AppHome({ config, app, profile, day, rec, open, notice, storeMes
             ? h('button', { type: 'button', className: 'btn sun', onClick: () => onStart('quick') }, '2-Minuten-Runde')
             : null)
           : nextUnit
-            ? h('button', { type: 'button', className: 'btn sun', onClick: () => onStudy(nextUnit) }, `Starte mit ${nextUnit.title}`)
+            ? h('button', { type: 'button', className: 'btn sun', onClick: () => onStudy(nextUnit) }, `Los: ${nextUnit.title}`)
             : null
       )
     ),
-    h(WeekCard, { profile, day }),
     h(
       'section',
       null,
@@ -237,6 +237,8 @@ export function AppHome({ config, app, profile, day, rec, open, notice, storeMes
         );
       })
     ),
+    // Erst der Lernpfad, dann die Woche: Zuerst muss klar sein, wo es weitergeht.
+    h(WeekCard, { profile, day }),
     h(
       'section',
       null,
@@ -297,11 +299,12 @@ export function AppHome({ config, app, profile, day, rec, open, notice, storeMes
         }))
       )
       : null,
+    // Zugeklappt wie das Sammelalbum, sonst stünde die lange Liste vor der Sicherung.
     h(
-      'section',
-      null,
-      h('h2', null, 'Trophäen'),
-      h('div', { className: 'badges', style: { marginTop: '12px' } }, ...config.badges.map((b) => h(
+      'details',
+      { className: 'pgroup albumbox' },
+      h('summary', null, h('span', null, 'Trophäen'), h('span', { className: 'muted' }, `${config.badges.filter((b) => app.badges[b.id]).length} von ${config.badges.length}`)),
+      h('div', { className: 'badges' }, ...config.badges.map((b) => h(
         'div',
         { key: b.id, className: `badge ${app.badges[b.id] ? 'got' : ''}` },
         h('b', null, b.n),
