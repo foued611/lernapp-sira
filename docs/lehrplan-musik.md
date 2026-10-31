@@ -44,4 +44,5 @@ Jede Seite hat 2 bis 4 Beispiele zum Anhören (45 insgesamt, Karte „Zum Anhör
 - Ob MusiX 2 an der Schule in Klasse 7 oder in Klasse 8 eingesetzt wird. Das Titelblatt nennt nur allgemeinbildende Schulen. Die Aufgaben sind auf das Niveau von Klasse 7 gehalten.
 - Ob die Schule dieselbe Reihenfolge und Tiefe wie das Beispielcurriculum behandelt.
 - Fachinhalte (Jahreszahlen, Komponisten, Begriffe, Urheberrecht): Schulwissen aus eigener Kenntnis geschrieben, nicht gegen das Buch abgeglichen. Vor dem Einsatz von einer Lehrkraft gegenlesen lassen.
+- Die 125 Aufgaben, die 2026-10-30 dazugekommen sind (jede Seite jetzt 20, erkennbar an `level` und `skill`), hat noch keine Lehrkraft gegengelesen.
 - Die Seite Musik und Urheberrecht ist kein Rechtsrat. Sie gibt Grundregeln für Schülerinnen und Schüler wieder.
