@@ -164,7 +164,7 @@
   {
     "id": "spelling-all",
     "n": "Rechtschreib-Meister",
-    "d": "Alle fünf Rechtschreib-Seiten geschafft",
+    "d": "Die fünf Grund-Seiten zur Rechtschreibung geschafft",
     "rule": {
       "type": "units",
       "ids": [
@@ -234,7 +234,7 @@
   {
     "id": "lrs-spelling",
     "n": "Rechtschreib-Profi",
-    "d": "Alle Seiten zu Wortbausteinen, Lauten, Zusammensetzungen, Groß- und Kleinschreibung geschafft",
+    "d": "Alle Seiten im Kapitel „Rechtschreiben vertiefen“ geschafft",
     "rule": {
       "type": "units",
       "ids": [

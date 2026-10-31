@@ -1359,7 +1359,7 @@
     },
     "rule": "Am Anfang des Wortstamms schreibst du sp und st. Den Laut „kw“ schreibst du qu. Bei pf sprichst du beide Laute. Das v lernst du als Merkwort.",
     "check": {
-      "q": "Wie schreibst du den Laut „kw“ in „Quelle“?",
+      "q": "Wie schreibst du den Laut „kw“ am Wortanfang?",
       "options": [
         {
           "id": "qu",

@@ -121,7 +121,7 @@ Regeln für Texte und Bilder:
 ## Lehrplan
 
 - Inhalt entspricht dem Gymnasium Baden-Württemberg und der Klasse in `catalog.klassen`, heute Klasse 7. Kein Stoff aus höheren Klassen.
-- Orientierung an den Lehrwerken: Lambacher Schweizer 7 (Mathe), deutsch.ideen 7 Baden-Württemberg (Deutsch, Schulbuch; Abgleich in `docs/lehrplan-deutsch.md`), Green Line 3 / Access 3 (Englisch, Grammatik), Access 2 Unit 6 (Englisch, Wortschatz; Abgleich in `docs/lehrplan-englisch.md`), Découvertes 2 (Französisch).
+- Orientierung an den Lehrwerken: Lambacher Schweizer 7 (Mathe), deutsch.ideen 7 Baden-Württemberg (Deutsch, Schulbuch; Abgleich in `docs/lehrplan-deutsch.md`), Gezielt fördern, Intensivkurs LRS 7/8 (Deutsch, Förderheft; Abgleich in `docs/rechtschreib-plan.md`), Green Line 3 / Access 3 (Englisch, Grammatik), Access 2 Unit 6 (Englisch, Wortschatz; Abgleich in `docs/lehrplan-englisch.md`), Découvertes 2 (Französisch).
 - Der Abgleich der Mathe-App mit dem Bildungsplan steht in `docs/lehrplan-mathe.md`. Dort ist auch vermerkt, was nicht amtlich geprüft ist. Neue Themen dort eintragen.
 - Korrekte Fachbegriffe verwenden und kurz erklären.
 - Jede Frage hat eine Erklärung (`why`), die den Denkfehler benennt. Keine Fragen, deren Antwort ohne Vorwissen zu erraten ist.

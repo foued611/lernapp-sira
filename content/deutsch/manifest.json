@@ -26,6 +26,7 @@
   "groups": [
     { "id": "sprache", "title": "Sprache und Texte" },
     { "id": "rechtschreibung", "title": "Rechtschreiben und Lesen" },
+    { "id": "rechtschreibung-plus", "title": "Rechtschreiben vertiefen" },
     { "id": "grammatik", "title": "Grammatik" }
   ],
   "units": [
@@ -202,7 +203,7 @@
     },
     {
       "id": "bausteine",
-      "group": "rechtschreibung",
+      "group": "rechtschreibung-plus",
       "track": "lrs",
       "color": "#FF8A5B",
       "ic": "be",
@@ -215,7 +216,7 @@
     },
     {
       "id": "laute",
-      "group": "rechtschreibung",
+      "group": "rechtschreibung-plus",
       "track": "lrs",
       "color": "#4DB6AC",
       "ic": "sp",
@@ -228,7 +229,7 @@
     },
     {
       "id": "xlaute",
-      "group": "rechtschreibung",
+      "group": "rechtschreibung-plus",
       "track": "lrs",
       "color": "#A569BD",
       "ic": "x",
@@ -241,7 +242,7 @@
     },
     {
       "id": "zusammen",
-      "group": "rechtschreibung",
+      "group": "rechtschreibung-plus",
       "track": "lrs",
       "color": "#5DADE2",
       "ic": "+",
@@ -254,7 +255,7 @@
     },
     {
       "id": "trennbar",
-      "group": "rechtschreibung",
+      "group": "rechtschreibung-plus",
       "track": "lrs",
       "color": "#F4D03F",
       "ic": "ab",
@@ -267,7 +268,7 @@
     },
     {
       "id": "silben",
-      "group": "rechtschreibung",
+      "group": "rechtschreibung-plus",
       "track": "lrs",
       "color": "#85C1E9",
       "ic": "Si",
@@ -280,7 +281,7 @@
     },
     {
       "id": "gross-mehr",
-      "group": "rechtschreibung",
+      "group": "rechtschreibung-plus",
       "track": "lrs",
       "color": "#E67E9B",
       "ic": "GS",
@@ -293,7 +294,7 @@
     },
     {
       "id": "klein",
-      "group": "rechtschreibung",
+      "group": "rechtschreibung-plus",
       "track": "lrs",
       "color": "#58D68D",
       "ic": "kl",
@@ -306,7 +307,7 @@
     },
     {
       "id": "fremd",
-      "group": "rechtschreibung",
+      "group": "rechtschreibung-plus",
       "track": "lrs",
       "color": "#EB984E",
       "ic": "Fw",

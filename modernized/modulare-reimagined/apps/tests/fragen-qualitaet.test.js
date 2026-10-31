@@ -13,6 +13,9 @@ const AUSWAHL_AUS_OPTIONEN = /^Welche[rs]? (Satz|Wort|Form)\b/;
 // Sagt nichts darüber, was gesucht ist. Mit einem Satz in s oder als Lücke ist die Aufgabe dagegen klar.
 const LEERE_ANWEISUNG = /^Wähle (die|das|den|der) richtig/;
 
+// Diese Apps nutzen "Welcher Satz ist richtig?" noch ohne Etikett. Der Test kommt dazu, sobald ihre Aufgaben eines haben.
+const OHNE_ETIKETTEN = ['englisch', 'decouvertes-2'];
+
 const alsWort = (wort) => new RegExp(`(^|[^\\p{L}])${wort.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}($|[^\\p{L}])`, 'iu');
 const enthält = (text, wort) => alsWort(wort).test(text);
 const gleicheAntwort = (a, b) => normalise(a) === normalise(b);
@@ -55,6 +58,28 @@ for (const { id, items } of apps) {
       .filter((item) => item.a.length >= 3 && !item.q.includes(' oder ') && enthält(item.q, item.a)
         && !item.wrong.some((wrong) => enthält(item.q, wrong)))
       .map((item) => `${item.wo}: ${item.q} -> ${item.a}`);
+    assert.deepEqual(fehler, []);
+  });
+
+  // Das Etikett steht in der Auswahl über der Frage. "chs" bei Fuchs/Fuks wäre die Lösung im Titel.
+  test(`FRAGE ${id}: das Etikett verrät die Antwort nicht`, () => {
+    const nennt = (text, teil) => normalise(text).includes(teil);
+    const fehler = lücken
+      .filter((item) => item.label)
+      .filter((item) => {
+        const teil = normalise(item.label).replace(/^-/, '');
+        return nennt(item.a, teil) && !item.wrong.some((wrong) => nennt(wrong, teil));
+      })
+      .map((item) => `${item.wo}: ${item.label} -> ${item.a}`);
+    assert.deepEqual(fehler, []);
+  });
+
+  // Ohne Etikett ist der Fragetext die Kategorie (skillOf). Gleicher Text hieße: Der Fehler-Abruf hält eine fremde Aufgabe für die verfehlte.
+  test(`FRAGE ${id}: gleicher Fragetext auf einer Seite hat eine eigene Kategorie`, { skip: OHNE_ETIKETTEN.includes(id) }, () => {
+    const fehler = Object.entries(items).flatMap(([unit, list]) => {
+      const ohne = list.filter((item) => !item.skill && !item.w && !item.label && !item.s).map((item) => item.q);
+      return [...new Set(ohne.filter((q, i) => ohne.indexOf(q) !== i))].map((q) => `${id}/${unit}: ${q}`);
+    });
     assert.deepEqual(fehler, []);
   });
 

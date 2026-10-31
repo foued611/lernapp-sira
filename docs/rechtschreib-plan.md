@@ -29,7 +29,8 @@ Alle Texte und Beispielsätze sind eigene Formulierungen. Es wird nichts aus Leh
 
 ## Hinweise zu den Aufgaben
 
-- Lückenaufgaben haben genau eine falsche Schreibweise. Sie ist so gewählt, wie sie in der Praxis oft vorkommt (z. B. „Fluß“, „Hunt“).
+- Lückenaufgaben der ersten sechs Seiten haben genau eine falsche Schreibweise, die elf neuen Seiten eine bis drei. Sie sind so gewählt, wie sie in der Praxis oft vorkommen (z. B. „Fluß“, „Hunt“).
+- Eintippen prüft kein Groß und Klein. Deshalb üben die Lücken in `gross-mehr` und `klein` die Schreibung der Wörter, das Thema Groß und Klein prüfen dort die Auswahlaufgaben.
 - Eingaben mit „ß“: Die Sonderzeichen-Leiste (`inputChars`) bietet ä, ö, ü und ß an.
 - Der Vertragstest in `tests/deutsch.test.js` prüft Groß- und Kleinschreibung beim Eintippen mit wechselnder Schreibung, weil `toUpperCase()` aus „ß“ ein „SS“ machen würde.
 
@@ -47,19 +48,19 @@ Die Lehrkraft empfiehlt das Förderheft „Gezielt fördern, Intensivkurs LRS 7/
 
 | Seite (`id`) | Gruppe | Thema | Themenfeld im Heft |
 |---|---|---|---|
-| `bausteine` | Rechtschreiben und Lesen | Vorsilben, ent/end, wieder/wider, fer-, her- | Wortbausteine, Nachdenkwörter |
-| `laute` | Rechtschreiben und Lesen | sp, st, qu, pf, v | Besondere Laute |
-| `xlaute` | Rechtschreiben und Lesen | chs, cks, x | Ähnlich klingende x-Laute |
-| `zusammen` | Rechtschreiben und Lesen | Fugenelemente, Groß und klein bei Zusammensetzungen, drei gleiche Buchstaben | Zusammensetzungen |
-| `trennbar` | Rechtschreiben und Lesen | trennbare und nicht trennbare Verben, Infinitiv mit zu | Zusammengesetzte Verben, Infinitiv mit zu |
-| `silben` | Rechtschreiben und Lesen | Silben mitsprechen, lange Wörter gliedern | Leseflüssigkeit (Wortreihen), Mitsprechwörter |
-| `gross-mehr` | Rechtschreiben und Lesen | weitere Signale für Großschreibung | Großschreibung |
-| `klein` | Rechtschreiben und Lesen | Zahlen, Adjektivendungen, Superlativ, Zeitangaben auf -s | Kleinschreibung |
-| `fremd` | Rechtschreiben und Lesen | Endungen, Wortbausteine, Bedeutungen | Fremdwörter |
+| `bausteine` | Rechtschreiben vertiefen | Vorsilben, ent/end, wieder/wider, fer-, her- | Wortbausteine, Nachdenkwörter |
+| `laute` | Rechtschreiben vertiefen | sp, st, qu, pf, v | Besondere Laute |
+| `xlaute` | Rechtschreiben vertiefen | chs, cks, x | Ähnlich klingende x-Laute |
+| `zusammen` | Rechtschreiben vertiefen | Fugenelemente, Groß und klein bei Zusammensetzungen, drei gleiche Buchstaben | Zusammensetzungen |
+| `trennbar` | Rechtschreiben vertiefen | trennbare und nicht trennbare Verben, Infinitiv mit zu | Zusammengesetzte Verben, Infinitiv mit zu |
+| `silben` | Rechtschreiben vertiefen | Silben mitsprechen, lange Wörter gliedern | Leseflüssigkeit (Wortreihen), Mitsprechwörter |
+| `gross-mehr` | Rechtschreiben vertiefen | weitere Signale für Großschreibung | Großschreibung |
+| `klein` | Rechtschreiben vertiefen | Zahlen, Adjektivendungen, Superlativ, Zeitangaben auf -s | Kleinschreibung |
+| `fremd` | Rechtschreiben vertiefen | Endungen, Wortbausteine, Bedeutungen | Fremdwörter |
 | `satzglieder` | Grammatik | Subjekt, Prädikat, Objekte, vier Fälle | Satzglieder |
 | `zeitformen` | Grammatik | Präsens bis Futur I, haben und sein | Zeitformen |
 
-Die Gruppe „Grammatik“ ist neu in `manifest.groups`. Drei Trophäen kommen dazu (`lrs-spelling`, `lrs-grammar`, `lrs-compound`).
+Die Gruppen „Rechtschreiben vertiefen“ und „Grammatik“ sind neu in `manifest.groups`. Die neun Rechtschreibseiten bilden ein eigenes Kapitel, weil der Kapitel-Test nur 10 Plätze hat und der Test im alten Kapitel offen bleiben soll. Drei Trophäen kommen dazu (`lrs-spelling`, `lrs-grammar`, `lrs-compound`).
 
 ### Nicht übernommen
 
