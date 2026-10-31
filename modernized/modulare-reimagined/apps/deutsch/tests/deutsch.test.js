@@ -63,9 +63,9 @@ test('RULE-229: Lektionsrunde 8 Fragen, Endgegner 12, Schnellrunde 5, Blitz ist 
 });
 
 test('Gleicher Seed ergibt dieselben Aufgaben', () => {
-  const a = lessonRound(UNITS[0], createRng(42));
-  const b = lessonRound(UNITS[0], createRng(42));
-  assert.deepEqual(a, b);
+  const a = JSON.stringify(lessonRound(UNITS[0], createRng(42)));
+  const b = JSON.stringify(lessonRound(UNITS[0], createRng(42)));
+  assert.equal(a, b);
 });
 
 test('Lückensätze zeigen die Lücke als {{blank}} und den Hinweis als sub', () => {

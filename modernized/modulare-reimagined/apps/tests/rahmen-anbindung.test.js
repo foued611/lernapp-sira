@@ -31,8 +31,9 @@ test('ANBINDUNG: Gleicher Seed startet dieselbe Runde', () => {
   const config = buildConfig(paketVon('deutsch'), logicFor('deutsch'));
   const app = appDefaults();
   const profile = profileDefaults();
-  const start = () => startRound({ config, mode: 'lesson', unit: config.units[2], app, profile, rng: createRng(11) }).round.current().question;
-  assert.deepEqual(start(), start());
+  // Über JSON verglichen: Eingabefragen tragen eine eigene Prüffunktion, die nie dieselbe Referenz hat.
+  const start = () => JSON.stringify(startRound({ config, mode: 'lesson', unit: config.units[2], app, profile, rng: createRng(11) }).round.current().question);
+  assert.equal(start(), start());
 });
 
 test('ANBINDUNG: eine Seite ohne Logik meldet, statt zu starten', () => {
