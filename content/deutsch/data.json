@@ -154,6 +154,97 @@
         ],
         "why": "Was die Handlung nicht voranbringt, lässt du weg. Die Farbe der Jacke ist für den Ablauf unwichtig.",
         "label": "Wesentliches"
+      },
+      {
+        "q": "Der Schreiber zeigt damit, was er selbst denkt.",
+        "kind": "gap",
+        "s": "Ein Wort wie „furchtbar“ oder „arm“ ist in einer Inhaltsangabe eine ___ und gehört nicht hinein.",
+        "a": "Wertung",
+        "accept": [
+          "Bewertung",
+          "Meinung"
+        ],
+        "wrong": [
+          "Zeitangabe",
+          "Textsorte"
+        ],
+        "why": "Gefühlswörter zeigen deine eigene Haltung zur Figur. Eine Inhaltsangabe berichtet aber nur, was geschieht.",
+        "label": "Sachlich schreiben",
+        "level": 1,
+        "skill": "Sachlich schreiben"
+      },
+      {
+        "q": "Setze die Zeitform ein, in der eine Inhaltsangabe steht.",
+        "kind": "gap",
+        "s": "Im Text steht: „Tom fiel vom Rad.“ In der Inhaltsangabe schreibst du: Tom ___ vom Rad.",
+        "a": "fällt",
+        "wrong": [
+          "fiel",
+          "fällte"
+        ],
+        "why": "Auch wenn die Vorlage im Präteritum erzählt, schreibst du im Präsens. Der Stammvokal wechselt zu „ä“, „fällte“ gehört zu einem anderen Verb.",
+        "label": "Zeitform",
+        "level": 2,
+        "skill": "Zeitform"
+      },
+      {
+        "q": "Welche Angabe fehlt im Basissatz „In der Kurzgeschichte ‚Die Mutprobe‘ geht es um einen Jungen, der vom Turm springt“?",
+        "a": "Der Autor",
+        "wrong": [
+          "Die Textsorte",
+          "Der Titel",
+          "Das Thema"
+        ],
+        "why": "Textsorte (Kurzgeschichte), Titel (Die Mutprobe) und Thema (der Junge und sein Sprung) stehen im Satz. Es fehlt, wer den Text geschrieben hat.",
+        "label": "Basissatz",
+        "level": 2,
+        "skill": "Basissatz"
+      },
+      {
+        "q": "Welche Zusammenfassung passt am besten in eine Inhaltsangabe?",
+        "s": "Anna verliert ihren Schlüssel. Sie sucht lange. Ihr Nachbar hilft ihr und findet ihn unter der Matte.",
+        "a": "Anna verliert ihren Schlüssel, doch ihr Nachbar findet ihn wieder.",
+        "wrong": [
+          "Anna sucht lange.",
+          "Zum Glück hat die arme Anna so einen netten Nachbarn.",
+          "Anna verlor ihren Schlüssel, doch ihr Nachbar fand ihn wieder."
+        ],
+        "why": "Der richtige Satz nennt das Wesentliche sachlich und im Präsens. „Anna sucht lange“ lässt das Ergebnis weg, „die arme Anna“ wertet, und das Präteritum ist die falsche Zeitform.",
+        "label": "Wesentliches",
+        "level": 2,
+        "skill": "Wesentliches"
+      },
+      {
+        "q": "Fasse mit einem Oberbegriff zusammen.",
+        "kind": "gap",
+        "s": "Statt „Er packt Hefte, Stifte und Bücher ein“ schreibst du kürzer: Er packt seine ___ ein.",
+        "a": "Schulsachen",
+        "accept": [
+          "Sachen",
+          "Schulmaterial",
+          "Schulmaterialien"
+        ],
+        "wrong": [
+          "Kleider",
+          "Vorräte"
+        ],
+        "why": "Ein Oberbegriff ersetzt eine Aufzählung. Wer alle Dinge einzeln nennt, gibt Einzelheiten wieder statt zusammenzufassen.",
+        "label": "Wesentliches",
+        "level": 3,
+        "skill": "Wesentliches"
+      },
+      {
+        "q": "Im Text ruft Tom: „Gib mir sofort mein Rad zurück!“ Was passt in die Inhaltsangabe?",
+        "a": "Tom fordert sein Rad zurück.",
+        "wrong": [
+          "Tom ruft: „Gib mir sofort mein Rad zurück!“",
+          "Tom forderte sein Rad zurück.",
+          "Der arme Tom will endlich sein geliebtes Rad zurück."
+        ],
+        "why": "Wörtliche Rede fasst du in eigenen Worten zusammen. Das Zitat übernimmt sie, „forderte“ steht nicht im Präsens, und „der arme Tom“ ist eine Wertung.",
+        "label": "Wörtliche Rede",
+        "level": 3,
+        "skill": "Wörtliche Rede"
       }
     ],
     "adverbial": [
@@ -357,6 +448,81 @@
         ],
         "why": "Finalsätze nennen Ziel oder Zweck, meist mit „damit“.",
         "label": "Fragewort"
+      },
+      {
+        "q": "Frage: Unter welcher Bedingung geschieht etwas?",
+        "kind": "gap",
+        "s": "Ein Nebensatz mit „falls“ nennt eine Bedingung. Das ist ein ___.",
+        "a": "Konditionalsatz",
+        "accept": [
+          "Bedingungssatz"
+        ],
+        "wrong": [
+          "Kausalsatz",
+          "Finalsatz"
+        ],
+        "why": "„Falls“ nennt eine Bedingung, das Fachwort dafür ist konditional. Ein Kausalsatz nennt den Grund, ein Finalsatz den Zweck.",
+        "label": "Adverbialsatz bestimmen",
+        "level": 1,
+        "skill": "Adverbialsatz bestimmen"
+      },
+      {
+        "q": "Gesucht ist die Konjunktion für einen Gegengrund.",
+        "kind": "gap",
+        "s": "___ er Fieber hatte, ging er zur Schule.",
+        "a": "Obwohl",
+        "accept": [
+          "Obgleich",
+          "Obschon"
+        ],
+        "wrong": [
+          "Weil",
+          "Damit"
+        ],
+        "why": "Mit Fieber bleibt man normalerweise zu Hause. Er geht trotzdem, das ist ein Gegengrund. „Weil“ würde das Fieber zum Grund für den Schulbesuch machen.",
+        "label": "Konjunktionen",
+        "level": 2,
+        "skill": "Konjunktionen"
+      },
+      {
+        "q": "Frage: Wozu übt sie? Gesucht ist das Ziel.",
+        "kind": "gap",
+        "s": "Sie übt jeden Tag, ___ sie beim Konzert sicher spielt.",
+        "a": "damit",
+        "wrong": [
+          "weil",
+          "obwohl"
+        ],
+        "why": "Das sichere Spielen ist das Ziel, also ein Zweck. „Weil“ würde es zum Grund machen, obwohl es erst in der Zukunft liegt.",
+        "label": "Konjunktionen",
+        "level": 2,
+        "skill": "Konjunktionen"
+      },
+      {
+        "q": "Wie drückst du „Trotz des Regens spielten wir Fußball“ mit einem Nebensatz aus, ohne den Sinn zu ändern?",
+        "a": "Obwohl es regnete, spielten wir Fußball.",
+        "wrong": [
+          "Weil es regnete, spielten wir Fußball.",
+          "Damit es regnete, spielten wir Fußball.",
+          "Als es regnete, spielten wir Fußball."
+        ],
+        "why": "„Trotz“ nennt einen Gegengrund, also passt „obwohl“. „Weil“ machte den Regen zum Grund, und „als“ nennt nur die Zeit und lässt den Gegensatz weg.",
+        "label": "Konjunktionen",
+        "level": 3,
+        "skill": "Konjunktionen"
+      },
+      {
+        "q": "In welchem Satz meint „wenn“ eine Zeit und keine Bedingung?",
+        "a": "Jeden Tag, wenn die Schule aus ist, gehe ich heim.",
+        "wrong": [
+          "Wenn du mir hilfst, bin ich schneller fertig.",
+          "Wenn es stürmt, fällt das Spiel aus.",
+          "Wenn du willst, komme ich mit."
+        ],
+        "why": "„Jeden Tag“ zeigt, dass es sicher geschieht, „wenn“ meint hier „immer dann“. In den anderen Sätzen ist offen, ob es eintritt. Dieselbe Konjunktion kann also Verschiedenes bedeuten.",
+        "label": "Adverbialsatz bestimmen",
+        "level": 3,
+        "skill": "Adverbialsatz bestimmen"
       }
     ],
     "kommas": [
@@ -491,6 +657,128 @@
         ],
         "why": "„Weil“ ist eine unterordnende Konjunktion und beginnt einen Nebensatz. Nach „und“ und „denn“ bleibt die Wortstellung des Hauptsatzes.",
         "label": "Konjunktionen"
+      },
+      {
+        "q": "Denk an das Auto, das allein fahren kann.",
+        "kind": "gap",
+        "s": "Ein Satz, der allein stehen kann, heißt ___.",
+        "a": "Hauptsatz",
+        "wrong": [
+          "Nebensatz",
+          "Nachsatz"
+        ],
+        "why": "Ein Hauptsatz ist für sich vollständig. Ein Nebensatz wie „weil es regnet“ braucht einen Hauptsatz, sonst bleibt er unvollständig.",
+        "label": "Satzarten",
+        "level": 1,
+        "skill": "Satzarten"
+      },
+      {
+        "q": "Denk an den Satz „Ich weiß, dass du kommst.“",
+        "kind": "gap",
+        "s": "Ein Komma steht ___ einer Konjunktion wie „dass“, weil dort der Nebensatz beginnt.",
+        "a": "vor",
+        "accept": [
+          "direkt vor"
+        ],
+        "wrong": [
+          "nach",
+          "hinter"
+        ],
+        "why": "Die Konjunktion gehört schon zum Nebensatz, das Komma trennt ihn davor ab. Ein Komma dahinter zerreißt den Nebensatz.",
+        "label": "Komma setzen",
+        "level": 1,
+        "skill": "Komma setzen"
+      },
+      {
+        "q": "In welchem Satz steht das Komma falsch?",
+        "a": "Ich lerne heute weil, morgen ein Test ist.",
+        "wrong": [
+          "Ich lerne heute, weil morgen ein Test ist.",
+          "Weil morgen ein Test ist, lerne ich heute.",
+          "Ich lerne heute, damit ich morgen sicher bin."
+        ],
+        "why": "Das Komma steht vor der Konjunktion, denn dort beginnt der Nebensatz. Nach „weil“ gehört es nicht.",
+        "label": "Komma setzen",
+        "level": 1,
+        "skill": "Komma setzen"
+      },
+      {
+        "q": "Das Verb steht am Ende. Gesucht ist eine Konjunktion, die den Grund nennt.",
+        "kind": "gap",
+        "s": "Ich gehe heute früh ins Bett, ___ ich morgen fit sein will.",
+        "a": "weil",
+        "accept": [
+          "da"
+        ],
+        "wrong": [
+          "denn",
+          "und"
+        ],
+        "why": "Das gebeugte Verb „will“ steht am Ende, also beginnt hier ein Nebensatz. Nach „denn“ und „und“ stünde es an zweiter Stelle.",
+        "label": "Konjunktionen",
+        "level": 2,
+        "skill": "Konjunktionen"
+      },
+      {
+        "q": "Schau dir an: „Als die Sonne aufging, standen wir auf.“",
+        "kind": "gap",
+        "s": "Steht der Nebensatz vorn, beginnt der folgende Hauptsatz mit dem ___.",
+        "a": "Verb",
+        "accept": [
+          "gebeugten Verb",
+          "Prädikat"
+        ],
+        "wrong": [
+          "Subjekt",
+          "Komma"
+        ],
+        "why": "Der ganze Nebensatz nimmt die erste Stelle ein, darum folgt direkt das Verb. „Als die Sonne aufging, wir standen auf“ wäre falsch.",
+        "label": "Satzbau",
+        "level": 2,
+        "skill": "Satzbau"
+      },
+      {
+        "q": "Welcher Satz braucht kein Komma?",
+        "a": "Am Abend gingen wir müde nach Hause.",
+        "wrong": [
+          "Ich frage mich ob er kommt.",
+          "Er lachte obwohl er traurig war.",
+          "Sobald es hell wird stehen wir auf."
+        ],
+        "why": "„Am Abend“ ist nur eine Zeitangabe und kein Nebensatz: Es fehlt ein eigenes gebeugtes Verb. Die anderen Sätze haben je einen Nebensatz, der abgetrennt werden muss.",
+        "label": "Satzarten",
+        "level": 2,
+        "skill": "Satzarten"
+      },
+      {
+        "q": "Zähle die Nebensätze. Jeder bekommt hier genau ein Komma.",
+        "kind": "gap",
+        "s": "Der Satz „Als es dunkel wurde gingen wir heim weil wir müde waren“ braucht ___ Kommas.",
+        "a": "zwei",
+        "accept": [
+          "2"
+        ],
+        "wrong": [
+          "drei",
+          "vier"
+        ],
+        "why": "Richtig ist: „Als es dunkel wurde, gingen wir heim, weil wir müde waren.“ Jeder der beiden Nebensätze wird vom Hauptsatz getrennt.",
+        "label": "Komma setzen",
+        "level": 3,
+        "skill": "Komma setzen"
+      },
+      {
+        "q": "Welcher Satz ist richtig geschrieben?",
+        "a": "Der Film, den wir gestern sahen, war spannend.",
+        "wrong": [
+          "Der Film den wir gestern sahen, war spannend.",
+          "Der Film, den wir gestern sahen war spannend.",
+          "Der Film den, wir gestern sahen war spannend."
+        ],
+        "why": "Der Nebensatz steht mitten im Hauptsatz. Deshalb braucht er ein Komma davor und eines dahinter. Wer nur eines setzt, trennt ihn nicht ganz ab.",
+        "label": "Komma setzen",
+        "level": 3,
+        "skill": "Komma setzen"
       }
     ],
     "dassdas": [
@@ -647,6 +935,85 @@
         ],
         "why": "„Dass“ ist eine Konjunktion. Sie verbindet zwei Sätze.",
         "label": "Regel"
+      },
+      {
+        "q": "Setze „das“ oder „dass“ ein. Mach die Ersatzprobe.",
+        "kind": "gap",
+        "s": "Ich finde es schön, ___ wir uns wiedersehen.",
+        "a": "dass",
+        "wrong": [
+          "das"
+        ],
+        "why": "„Ich finde es schön, welches wir uns wiedersehen“ ergibt keinen Sinn. Der Satz nach dem Komma ist ein Nebensatz, also „dass“.",
+        "label": "Das oder dass?",
+        "level": 1,
+        "skill": "Das oder dass?"
+      },
+      {
+        "q": "Welche Wortart ist „dass“?",
+        "a": "Konjunktion",
+        "wrong": [
+          "Artikel",
+          "Pronomen",
+          "Adverb"
+        ],
+        "why": "„Dass“ leitet einen Nebensatz ein, das ist die Aufgabe einer Konjunktion. Artikel und Pronomen schreibst du mit einem s.",
+        "label": "Regel",
+        "level": 1,
+        "skill": "Regel"
+      },
+      {
+        "q": "Setze „das“ oder „dass“ ein. Mach die Ersatzprobe.",
+        "kind": "gap",
+        "s": "Er sagt, ___ das Spiel, das er kennt, lange dauert.",
+        "a": "dass",
+        "wrong": [
+          "das"
+        ],
+        "why": "„Er sagt, welches das Spiel“ passt nicht. Dahinter stehen zwar zwei „das“, aber sie sind Artikel und Pronomen. Die Probe gilt immer für das Wort an der Lücke.",
+        "label": "Das oder dass?",
+        "level": 2,
+        "skill": "Das oder dass?"
+      },
+      {
+        "q": "Welcher Satz ist richtig geschrieben?",
+        "a": "Ich weiß, dass das stimmt.",
+        "wrong": [
+          "Ich weiß, das dass stimmt.",
+          "Ich weiß, das das stimmt.",
+          "Ich weiß, dass dass stimmt."
+        ],
+        "why": "Das erste Wort leitet den Nebensatz ein und lässt sich nicht ersetzen, also „dass“. Das zweite lässt sich durch „dieses“ ersetzen, also „das“.",
+        "label": "Das oder dass?",
+        "level": 2,
+        "skill": "Das oder dass?"
+      },
+      {
+        "q": "Setze „das“ oder „dass“ ein. Mach die Ersatzprobe.",
+        "kind": "gap",
+        "s": "Ich glaube, ___ Buch gehört dir.",
+        "a": "das",
+        "wrong": [
+          "dass"
+        ],
+        "why": "Nach „Ich glaube,“ erwartet man „dass“, aber „dieses Buch gehört dir“ passt. Das Verb steht an zweiter Stelle, es ist also kein Nebensatz, und „das“ ist Artikel.",
+        "label": "Das oder dass?",
+        "level": 3,
+        "skill": "Das oder dass?"
+      },
+      {
+        "q": "Wie oft passt in diesem Satz „dieses“ oder „welches“?",
+        "s": "Das Mädchen sagt, dass das Heft, das dort liegt, ihr gehört.",
+        "a": "Dreimal",
+        "wrong": [
+          "Einmal",
+          "Zweimal",
+          "Viermal"
+        ],
+        "why": "„Dieses Mädchen“, „dieses Heft“ und „welches dort liegt“ passen. Nur das zweite Wort, „dass“, lässt sich nicht ersetzen. Wer nur auf die Kommas schaut, zählt falsch.",
+        "label": "Ersatzprobe",
+        "level": 3,
+        "skill": "Ersatzprobe"
       }
     ],
     "passiv": [
@@ -1026,6 +1393,139 @@
         ],
         "why": "Bilder wecken Vorstellungen. Deshalb passen sie in Gedichte und Erzählungen, nicht in eine Inhaltsangabe.",
         "label": "Wirkung"
+      },
+      {
+        "q": "Das Fachwort beginnt mit H.",
+        "kind": "gap",
+        "s": "Eine starke Übertreibung wie „Ich sterbe vor Hunger“ heißt ___.",
+        "a": "Hyperbel",
+        "accept": [
+          "Hyperbole"
+        ],
+        "wrong": [
+          "Metapher",
+          "Alliteration"
+        ],
+        "why": "Niemand stirbt hier wirklich, der Hunger wird übertrieben. Ein bloßes Bild ohne Übertreibung wäre keine Hyperbel.",
+        "label": "Merkmal",
+        "level": 1,
+        "skill": "Merkmal"
+      },
+      {
+        "q": "Ein Beispiel ist „mit Kind und Kegel“.",
+        "kind": "gap",
+        "s": "Beginnen mehrere Wörter nacheinander mit demselben Laut, heißt das ___.",
+        "a": "Alliteration",
+        "accept": [
+          "Stabreim"
+        ],
+        "wrong": [
+          "Hyperbel",
+          "Personifikation"
+        ],
+        "why": "Hier zählt der Klang am Wortanfang, nicht die Bedeutung. Ein Reim wäre etwas anderes, er steht am Wortende.",
+        "label": "Merkmal",
+        "level": 1,
+        "skill": "Merkmal"
+      },
+      {
+        "q": "In welchem Satz wird stark übertrieben?",
+        "a": "Mein Rucksack wiegt eine Tonne.",
+        "wrong": [
+          "Mein Rucksack wiegt heute fünf Kilo.",
+          "Mein Rucksack ist schwerer als deiner.",
+          "Mein Rucksack liegt im Flur."
+        ],
+        "why": "Eine Tonne kann kein Rucksack wiegen. Die anderen Sätze können wörtlich stimmen. „Schwerer als“ ist ein echter Vergleich, keine Übertreibung.",
+        "label": "Stilmittel bestimmen",
+        "level": 1,
+        "skill": "Stilmittel bestimmen"
+      },
+      {
+        "q": "Überlege, wer hier handelt und wie.",
+        "kind": "gap",
+        "s": "„Das Meer ruft nach mir“: Das Meer verhält sich wie ein Mensch. Das ist eine ___.",
+        "a": "Personifikation",
+        "accept": [
+          "Personifizierung",
+          "Vermenschlichung"
+        ],
+        "wrong": [
+          "Hyperbel",
+          "Alliteration"
+        ],
+        "why": "Nur Menschen können rufen. Wird einem Ding so eine Fähigkeit gegeben, ist das eine Personifikation, keine Übertreibung.",
+        "label": "Stilmittel bestimmen",
+        "level": 2,
+        "skill": "Stilmittel bestimmen"
+      },
+      {
+        "q": "Setze das Wort ein, das aus dem Satz ein sprachliches Bild mit Vergleichswort macht.",
+        "kind": "gap",
+        "s": "Er ist schnell ___ der Blitz.",
+        "a": "wie",
+        "wrong": [
+          "als",
+          "so"
+        ],
+        "why": "Nach der Grundform des Adjektivs steht „wie“. „Als“ gehört zur Steigerung: „schneller als der Blitz“.",
+        "label": "Merkmal",
+        "level": 2,
+        "skill": "Merkmal"
+      },
+      {
+        "q": "In welchem Satz steht eine Metapher?",
+        "a": "Das Klassenzimmer war ein Bienenstock.",
+        "wrong": [
+          "Im Klassenzimmer war es laut wie in einem Bienenstock.",
+          "Im Klassenzimmer war es heute sehr laut.",
+          "Im Klassenzimmer lachten alle laut."
+        ],
+        "why": "Ohne „wie“ steht das Bild direkt für die Sache: Niemand meint echte Bienen. Mit „wie“ wäre es ein Vergleich, und die anderen beiden Sätze sind wörtlich gemeint.",
+        "label": "Unterschied",
+        "level": 2,
+        "skill": "Unterschied"
+      },
+      {
+        "q": "Was geht durch ein Sieb hindurch? Übertrage das auf den Kopf.",
+        "kind": "gap",
+        "s": "„Mein Kopf ist ein Sieb“ bedeutet: Ich ___ vieles schnell.",
+        "a": "vergesse",
+        "wrong": [
+          "weiß",
+          "lerne"
+        ],
+        "why": "Eine Metapher meint nicht das Wörtliche. Wie Wasser durch ein Sieb läuft, gehen die Gedanken verloren, also geht es ums Vergessen, nicht um einen löchrigen Kopf.",
+        "label": "Wirkung",
+        "level": 3,
+        "skill": "Wirkung"
+      },
+      {
+        "q": "Welcher Satz enthält kein sprachliches Bild, obwohl „wie“ darin steht?",
+        "a": "Tom ist so groß wie sein Bruder.",
+        "wrong": [
+          "Tom ist flink wie ein Wiesel.",
+          "Tom brüllt wie ein Löwe.",
+          "Tom schläft wie ein Stein."
+        ],
+        "why": "Hier werden zwei Menschen sachlich verglichen, es entsteht kein Bild. „Wie“ allein macht noch kein Stilmittel, entscheidend ist das Bild aus einem anderen Bereich.",
+        "label": "Merkmal",
+        "level": 3,
+        "skill": "Merkmal"
+      },
+      {
+        "q": "Welche Wirkung hat dieses sprachliche Bild?",
+        "s": "Die Wellen schlugen wütend gegen das Boot.",
+        "a": "Das Meer wirkt bedrohlich, als hätte es einen eigenen Willen.",
+        "wrong": [
+          "Der Satz zeigt genau, wie hoch die Wellen sind.",
+          "Der Text wirkt dadurch sachlicher.",
+          "Das Boot wirkt dadurch größer."
+        ],
+        "why": "Wellen können nicht wütend sein. Das Bild gibt ihnen ein Gefühl und macht die Gefahr spürbar. Es liefert keine Messwerte und macht den Text nicht sachlicher.",
+        "label": "Wirkung",
+        "level": 3,
+        "skill": "Wirkung"
       }
     ],
     "doppelt": [
@@ -2224,6 +2724,50 @@
         ],
         "why": "„morgen“ ist hier ein Adverb für den nächsten Tag und bleibt klein. „Morgen“ als Tageszeit steht so: heute Morgen.",
         "label": "Profi-Trick"
+      },
+      {
+        "q": "Denk an das Namensschild aus der Lektion.",
+        "kind": "gap",
+        "s": "Ein Verb oder Adjektiv schreibst du groß, wenn es als ___ gebraucht wird.",
+        "a": "Nomen",
+        "accept": [
+          "Substantiv"
+        ],
+        "wrong": [
+          "Adverb",
+          "Pronomen"
+        ],
+        "why": "Nicht die Wortart im Wörterbuch entscheidet, sondern der Gebrauch im Satz. „Lesen“ ist ein Verb, in „das Lesen“ wird es als Nomen gebraucht.",
+        "label": "Signalwörter",
+        "level": 1,
+        "skill": "Signalwörter"
+      },
+      {
+        "q": "Zerlege das Signalwort in Präposition und Artikel.",
+        "kind": "gap",
+        "s": "In „beim Lesen“ ist „beim“ verschmolzen aus „bei ___“.",
+        "a": "dem",
+        "wrong": [
+          "den",
+          "der"
+        ],
+        "why": "„Beim“ steht für „bei dem“. Darin steckt ein Artikel, und dahinter gehört ein Nomen. Darum ist „beim“ ein Signalwort.",
+        "label": "Signalwörter",
+        "level": 2,
+        "skill": "Signalwörter"
+      },
+      {
+        "q": "Welcher Satz ist richtig geschrieben?",
+        "a": "Heute Morgen sagte sie, dass sie uns morgen früh besucht.",
+        "wrong": [
+          "Heute morgen sagte sie, dass sie uns morgen früh besucht.",
+          "Heute Morgen sagte sie, dass sie uns Morgen früh besucht.",
+          "Heute morgen sagte sie, dass sie uns Morgen früh besucht."
+        ],
+        "why": "„Heute Morgen“ nennt die Tageszeit, also groß. „Morgen früh“ meint den nächsten Tag, also klein. Wer beide gleich behandelt, macht einen der beiden Fehler.",
+        "label": "Groß oder klein?",
+        "level": 3,
+        "skill": "Groß oder klein?"
       }
     ],
     "lesen": [
@@ -2444,6 +2988,20 @@
         ],
         "why": "Zweites, gezieltes Lesen mit Markieren bringt meist das Verständnis.",
         "label": "Profi-Trick"
+      },
+      {
+        "q": "Welche Überschrift passt am besten zu dem Absatz?",
+        "s": "Igel rollen sich bei Gefahr ein. Ihre Stacheln schützen sie vor Feinden wie dem Fuchs.",
+        "a": "Wie sich Igel schützen",
+        "wrong": [
+          "Was Igel fressen",
+          "Wo Füchse wohnen",
+          "Wie Stacheln wachsen"
+        ],
+        "why": "Eine Überschrift nennt das Thema des ganzen Absatzes. Fuchs und Stacheln kommen vor, sind aber nur Einzelheiten, und vom Fressen steht nichts im Text.",
+        "label": "Worum geht es?",
+        "level": 3,
+        "skill": "Worum geht es?"
       }
     ],
     "redewiedergabe": [
@@ -2606,6 +3164,91 @@
         ],
         "why": "So bleibt erkennbar, dass es indirekte Rede ist: „sie haben“ wird zu „sie hätten“.",
         "label": "Ersatzform"
+      },
+      {
+        "q": "Setze den Konjunktiv I von „gehen“ ein.",
+        "kind": "gap",
+        "s": "Lena sagt, sie ___ morgen ins Schwimmbad.",
+        "a": "gehe",
+        "wrong": [
+          "geht",
+          "ging"
+        ],
+        "why": "Der Konjunktiv I endet in der 3. Person Singular auf -e. „Geht“ wäre Indikativ Präsens, „ging“ wäre Präteritum.",
+        "label": "Konjunktiv I",
+        "level": 1,
+        "skill": "Konjunktiv I"
+      },
+      {
+        "q": "Setze den Konjunktiv I von „müssen“ ein.",
+        "kind": "gap",
+        "s": "Papa sagt, er ___ heute länger arbeiten.",
+        "a": "müsse",
+        "wrong": [
+          "muss",
+          "musste"
+        ],
+        "why": "Auch Modalverben bilden den Konjunktiv I mit -e, und der Umlaut der Grundform bleibt. „Muss“ wäre Indikativ, „musste“ wäre Präteritum.",
+        "label": "Konjunktiv I",
+        "level": 2,
+        "skill": "Konjunktiv I"
+      },
+      {
+        "q": "Setze den Konjunktiv I von „sein“ ein.",
+        "kind": "gap",
+        "s": "Die Mädchen sagen, sie ___ müde.",
+        "a": "seien",
+        "wrong": [
+          "sind",
+          "waren"
+        ],
+        "why": "Bei „sein“ sieht der Konjunktiv I auch im Plural anders aus als das Präsens. „Sind“ wäre Indikativ, „waren“ wäre Präteritum.",
+        "label": "Konjunktiv I",
+        "level": 2,
+        "skill": "Konjunktiv I"
+      },
+      {
+        "q": "Tim spricht Ben an. Wer ist in der indirekten Rede mit „du“ gemeint?",
+        "kind": "gap",
+        "s": "Tim sagt zu Ben: „Du singst gut.“ Indirekt: Tim sagt zu Ben, ___ singe gut.",
+        "a": "er",
+        "accept": [
+          "Ben"
+        ],
+        "wrong": [
+          "du",
+          "ich"
+        ],
+        "why": "„Du“ meint Ben. Wer die Rede weitergibt, spricht nicht Ben an, sondern über ihn. Darum wird „du“ zu „er“.",
+        "label": "Umformen",
+        "level": 3,
+        "skill": "Umformen"
+      },
+      {
+        "q": "Forme in die indirekte Rede um: „Wir kommen morgen“, sagen die Nachbarn.",
+        "a": "Die Nachbarn sagen, sie kämen morgen.",
+        "wrong": [
+          "Die Nachbarn sagen, sie kommen morgen.",
+          "Die Nachbarn sagen, wir kämen morgen.",
+          "Die Nachbarn sagen, sie kamen morgen."
+        ],
+        "why": "Der Konjunktiv I „sie kommen“ sieht aus wie das Präsens, deshalb steht die Ersatzform „kämen“. „Wir“ wird zu „sie“, und „kamen“ wäre Präteritum.",
+        "label": "Ersatzform",
+        "level": 3,
+        "skill": "Ersatzform"
+      },
+      {
+        "q": "Warum steht in Zeitungen oft „Der Minister sagte, er plane keine Änderung“?",
+        "a": "So zeigt der Text, dass ein anderer das gesagt hat.",
+        "wrong": [
+          "So klingt der Satz spannender.",
+          "So zeigt der Text, dass die Aussage falsch ist.",
+          "So rückt die Aussage in die Zukunft."
+        ],
+        "why": "Der Konjunktiv I gibt die Worte eines anderen weiter. Er sagt nicht, dass sie falsch sind. Die Zeitung berichtet nur und übernimmt die Aussage nicht als eigene.",
+        "label": "Merkmale",
+        "level": 3,
+        "skill": "Merkmale"
       }
     ],
     "attribute": [
@@ -2748,6 +3391,124 @@
         ],
         "why": "Attributsatz: „Das Buch, das ich lese, …“. Adverbialsatz: „Weil es regnet, …“.",
         "label": "Unterschied"
+      },
+      {
+        "q": "Frage: Wessen Ende?",
+        "kind": "gap",
+        "s": "In „das Ende des Films“ ist „des Films“ ein ___.",
+        "a": "Genitivattribut",
+        "accept": [
+          "Genitiv-Attribut"
+        ],
+        "wrong": [
+          "Adjektivattribut",
+          "Präpositionalattribut"
+        ],
+        "why": "„Des Films“ steht im Genitiv, das zeigt die Frage „Wessen?“. Es gibt keine Präposition und kein Adjektiv.",
+        "label": "Attribut bestimmen",
+        "level": 1,
+        "skill": "Attribut bestimmen"
+      },
+      {
+        "q": "Schau auf das erste Wort des Attributs.",
+        "kind": "gap",
+        "s": "In „die Tasse aus Porzellan“ ist „aus Porzellan“ ein ___.",
+        "a": "Präpositionalattribut",
+        "accept": [
+          "Präpositional-Attribut"
+        ],
+        "wrong": [
+          "Genitivattribut",
+          "Attributsatz"
+        ],
+        "why": "Das Attribut beginnt mit der Präposition „aus“. Es hat kein gebeugtes Verb, ist also kein Attributsatz.",
+        "label": "Attribut bestimmen",
+        "level": 1,
+        "skill": "Attribut bestimmen"
+      },
+      {
+        "q": "Welche Wortgruppe enthält ein Adjektivattribut?",
+        "a": "die schmale Brücke",
+        "wrong": [
+          "die Brücke über den Fluss",
+          "die Brücke der Stadt",
+          "die Brücke, die wir bauen"
+        ],
+        "why": "„Schmale“ ist ein Adjektiv und steht vor dem Nomen. Die anderen Attribute sind Präpositionalattribut, Genitivattribut und Attributsatz.",
+        "label": "Attribut bestimmen",
+        "level": 1,
+        "skill": "Attribut bestimmen"
+      },
+      {
+        "q": "Das Wort richtet sich nach dem Nomen „Junge“.",
+        "kind": "gap",
+        "s": "Der Junge, ___ neben mir sitzt, ist neu.",
+        "a": "der",
+        "accept": [
+          "welcher"
+        ],
+        "wrong": [
+          "den",
+          "das"
+        ],
+        "why": "„Der Junge“ ist männlich, und im Attributsatz ist das Wort das Subjekt. Deshalb heißt es „der“, nicht „den“.",
+        "label": "Einleitewort",
+        "level": 2,
+        "skill": "Einleitewort"
+      },
+      {
+        "q": "Verkürze den Satz. Achte auf die Endung.",
+        "kind": "gap",
+        "s": "Der Hund, der klein ist, bellt. Kürzer: Der ___ Hund bellt.",
+        "a": "kleine",
+        "wrong": [
+          "kleiner",
+          "klein"
+        ],
+        "why": "Vor dem Nomen wird das Adjektiv gebeugt, nach „der“ endet es auf -e. „Der klein Hund“ hat keine Endung, und „kleiner“ passt nur nach „ein“.",
+        "label": "Attribut umformen",
+        "level": 2,
+        "skill": "Attribut umformen"
+      },
+      {
+        "q": "In welchem Satz steht ein Attributsatz?",
+        "a": "Das Spiel, das wir gestern gewonnen haben, war hart.",
+        "wrong": [
+          "Wir jubelten, als wir gewonnen hatten.",
+          "Wir gewannen, obwohl wir müde waren.",
+          "Wir wissen, dass das Spiel hart war."
+        ],
+        "why": "Nur „das wir gestern gewonnen haben“ gehört zu einem Nomen, nämlich zu „Spiel“. Die Sätze mit „als“ und „obwohl“ sind Adverbialsätze, der mit „dass“ hängt am Verb „wissen“.",
+        "label": "Unterschied",
+        "level": 2,
+        "skill": "Unterschied"
+      },
+      {
+        "q": "Verkürze den Satz. Frage: Wessen Auto?",
+        "kind": "gap",
+        "s": "Das Auto, das meinem Onkel gehört, ist rot. Kürzer: Das Auto meines ___ ist rot.",
+        "a": "Onkels",
+        "wrong": [
+          "Onkel",
+          "Onkeln"
+        ],
+        "why": "Nach „meines“ steht der Genitiv Singular, und das Nomen bekommt hier ein -s. Im Attributsatz stand „meinem Onkel“ dagegen im Dativ.",
+        "label": "Attribut umformen",
+        "level": 3,
+        "skill": "Attribut umformen"
+      },
+      {
+        "q": "In welchem Satz ist „im Garten“ ein Attribut?",
+        "a": "Der Baum im Garten blüht.",
+        "wrong": [
+          "Im Garten spielen die Kinder.",
+          "Die Kinder spielen im Garten.",
+          "Wir essen heute im Garten."
+        ],
+        "why": "„Im Garten“ sagt hier, welcher Baum gemeint ist, und wandert mit ihm mit. In den anderen Sätzen sagt es, wo etwas geschieht, und ist ein eigenes Satzglied.",
+        "label": "Umstellprobe",
+        "level": 3,
+        "skill": "Umstellprobe"
       }
     ],
     "wortarten": [
@@ -2924,6 +3685,75 @@
         ],
         "why": "Nach „weil“ steht das Verb am Ende, nach „und“ bleibt die normale Reihenfolge.",
         "label": "Konjunktionen"
+      },
+      {
+        "q": "Diese Wörter geben Umstände an und bekommen keine Endungen.",
+        "kind": "gap",
+        "s": "„Hier“, „bald“ und „oben“ gehören zur Wortart ___.",
+        "a": "Adverb",
+        "accept": [
+          "Adverbien"
+        ],
+        "wrong": [
+          "Konjunktion",
+          "Präposition"
+        ],
+        "why": "Die Wörter nennen Ort und Zeit. Sie verbinden keine Sätze und stehen nicht mit einem Fall vor einem Nomen.",
+        "label": "Wortart bestimmen",
+        "level": 1,
+        "skill": "Wortart bestimmen"
+      },
+      {
+        "q": "Setze „dem“ oder „das“ ein. Frage: Wo oder wohin?",
+        "kind": "gap",
+        "s": "Die Katze springt auf ___ Sofa.",
+        "a": "das",
+        "wrong": [
+          "dem"
+        ],
+        "why": "Die Katze springt hinauf, die Frage lautet: Wohin? Dann steht „auf“ mit dem Akkusativ, also „das Sofa“.",
+        "label": "Wo oder wohin?",
+        "level": 2,
+        "skill": "Wo oder wohin?"
+      },
+      {
+        "q": "Setze „der“ oder „die“ ein. Frage: Wo oder wohin?",
+        "kind": "gap",
+        "s": "Das Bild hängt an ___ Wand.",
+        "a": "der",
+        "wrong": [
+          "die"
+        ],
+        "why": "Das Bild hängt schon dort, die Frage lautet: Wo? Dann steht „an“ mit dem Dativ. „Wand“ ist weiblich, der Dativ heißt „der Wand“.",
+        "label": "Wo oder wohin?",
+        "level": 2,
+        "skill": "Wo oder wohin?"
+      },
+      {
+        "q": "Welches Wort kannst du nicht beugen, weil es ein Adverb ist?",
+        "a": "gern",
+        "wrong": [
+          "schön",
+          "klein",
+          "müde"
+        ],
+        "why": "Adjektive bekommen Endungen: das schöne Bild, der kleine Hund. Eine solche Endung gibt es bei „gern“ nicht, es steht auch nicht vor einem Nomen.",
+        "label": "Merkmal",
+        "level": 2,
+        "skill": "Merkmal"
+      },
+      {
+        "q": "In welchem Satz ist „während“ eine Konjunktion?",
+        "a": "Während ich koche, deckst du den Tisch.",
+        "wrong": [
+          "Während des Spiels regnete es.",
+          "Während der Pause essen wir.",
+          "Während des Films schlief er."
+        ],
+        "why": "Als Konjunktion leitet „während“ einen Nebensatz ein, das gebeugte Verb steht am Ende. Vor einem Nomen ist dasselbe Wort eine Präposition.",
+        "label": "Wortart bestimmen",
+        "level": 3,
+        "skill": "Wortart bestimmen"
       }
     ]
   }
