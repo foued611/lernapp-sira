@@ -74,3 +74,30 @@ Die Gruppen „Rechtschreiben vertiefen“ und „Grammatik“ sind neu in `mani
 ### Prüfung
 
 Die Aufgaben sind nicht amtlich geprüft. Eine Lehrkraft sollte sie gegenlesen, vor allem Fremdwörter (Bedeutungen), Silbentrennung und die Fälle bei Satzgliedern.
+
+## Deutsch 5/6: eigene App `deutsch-5-6`
+
+Die Lehrkraft empfiehlt auch das Förderheft „Gezielt fördern, Intensivkurs LRS 5/6“ (Cornelsen, 2025). Es ist ein Doppelband und wird deshalb eine eigene App (siehe AGENTS.md, Abschnitt Klassen): `content/deutsch-5-6/`, Katalog `klassen: [5, 6]`, `fach: deutsch`. Die App `deutsch` bleibt Klasse 7 und ihr Lernstand bleibt unberührt. Mit Klasse 5 und 6 im Katalog erscheint auf der Startseite die Klassenwahl. Das Profil startet weiter in Klasse 7, die neue App liegt dort unter „Aus früheren Klassen“.
+
+Übernommen sind nur die Themen, keine Texte, Wortlisten, Merkkästen oder Aufgaben. Es gibt 26 Seiten mit je 14 bis 16 Aufgaben (368 insgesamt). Die Seiten tragen kein Etikett `track`, weil die ganze App Förderung ist.
+
+| Kapitel | Seiten (`id`) | Themenfeld im Heft |
+|---|---|---|
+| Rechtschreiben: Wörter und Bausteine | `nachdenk-dt`, `nachdenk-aeau`, `laute-5`, `vorsilben`, `wieder`, `endungen`, `zusammen5` | Nachdenkwörter, besondere Laute, Wortbausteine, Nomen-Endungen, Zusammensetzungen |
+| Rechtschreiben: Vokale und s-Laute | `kurz-lang`, `tz-ck`, `slaute5`, `merk-ie`, `dehnung-h`, `xlaute5` | kurze und lange Vokale, tz und ck, s-Laute, langes i, Dehnung, x-Laute |
+| Groß- und Kleinschreibung | `gross-artikel`, `gross-pronomen`, `gross-nominal`, `klein` | Rechtschreibsonne (Großschreibung), Rechtschreibmond (Kleinschreibung) |
+| Grammatik | `verben`, `nomen`, `praep-fall`, `pronomen5`, `adjektive`, `wortfelder`, `dassdas5`, `woertl-rede`, `kommas5` | Grammatiktraining |
+
+Das Kapitel „Rechtschreiben“ ist geteilt, weil der Kapitel-Test nur zehn Plätze hat (`ROUND_SIZE.chapter`).
+
+### Nicht übernommen
+
+- Lesetraining (Kuckuckseier, Adleraugen, Stabreime, Zungenbrecher, Lesecheck): Lesetempo und Lesetexte sind am Bildschirm nicht prüfbar, die Texte sind geschützt.
+- Rechtschreibcheck, Lesecheck, Grammatikcheck: Kapitel-Tests und Endgegner übernehmen das.
+- Quatschsätze und Übungssätze zum Diktieren: nicht automatisch prüfbar.
+- Getrenntschreibung von Partizip und Verb sowie Nomen und Verb (zum Beispiel „Rad fahren“): Duden und Regelwerk lassen oft beide Schreibweisen zu.
+- Einzelne Merkwörter-Gruppen (ah/äh, eh, oh/öh, uh/üh, ieh): zu viele Einzelwörter, die auf Papier zu üben sind (siehe Merkwörter).
+
+### Prüfung
+
+Vier unabhängige Gegenleser haben alle Seiten auf Rechtschreibung, eindeutige Lücken und mögliches Abschreiben geprüft. Rund 170 Funde sind eingearbeitet: zu absolute Regeln („nach kurzem Vokal immer zwei Konsonanten“, „nach am steht ein Nomen“), falsche Beispiele und Lücken, in die mehrere Wörter passen (jetzt über `accept`). Amtlich geprüft sind die Aufgaben nicht. Eine Lehrkraft sollte sie gegenlesen, vor allem die Seiten zu Dehnungs-h, Merkwort-i, tz und ck, Zusammen- und Getrenntschreibung.

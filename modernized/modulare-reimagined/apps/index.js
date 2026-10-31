@@ -2,6 +2,7 @@
 // einem eigenen Paket. Eine App ohne Eintrag hat keine Logik. apps/tests/katalog.test.js prüft die Liste gegen den Katalog.
 const LOGIC = {
   deutsch: () => import('./deutsch/logic.js'),
+  'deutsch-5-6': () => import('./deutsch-5-6/logic.js'),
   mathe: () => import('./mathe/logic.js'),
   'info-zahlen': () => import('./info-zahlen/logic.js'),
   geometrie: () => import('./geometrie/logic.js'),
