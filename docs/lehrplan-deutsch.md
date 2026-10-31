@@ -24,6 +24,10 @@ Wichtig: Das Buch führt **Konjunktiv und indirekte Rede** (S. 222 bis 226) scho
 | Die Inhaltsangabe: Merkmale, Basissatz, Redewiedergabe | 36 bis 57 | `inhaltsangabe`, `redewiedergabe` |
 | Lesen: Lesetechniken und -strategien | 70 bis 79 | `lesen` |
 
+## Förderstrang LRS (Heft „Gezielt fördern, Intensivkurs LRS 7/8“)
+
+Eine Lehrkraft empfiehlt das Heft (Cornelsen, 2025, Doppelstufe 7/8). Es ist kein Schulbuch des Bildungsplans, sondern ein Förderheft. Die elf Seiten `bausteine`, `laute`, `xlaute`, `zusammen`, `trennbar`, `silben`, `gross-mehr`, `klein`, `fremd`, `satzglieder` und `zeitformen` behandeln dessen Themen mit eigenen Beispielen. Die Zuordnung steht in `docs/rechtschreib-plan.md`. Der Bildungsplan wurde dafür **nicht** geprüft. Alle Aufgaben dieser Seiten sind **ungeprüft**, bis eine Lehrkraft sie gelesen hat. Die Seiten gehören zum Strang `lrs`, nicht zum Standardprogramm.
+
 ## Offene Punkte (bewusst nicht umgesetzt)
 
 Regel: Die App deckt nur ab, was bekannt und im Buch eindeutig ist. Alles andere steht hier als offener Punkt und wird erst gebaut, wenn der Stoff geklärt ist.

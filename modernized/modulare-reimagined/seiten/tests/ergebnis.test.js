@@ -27,9 +27,9 @@ test('RULE-195 Das Ergebnis zeigt Titel, Sterne als Text und die Zahlen der Rund
   assert.match(markup, /100 %/);
 });
 
-test('RULE-195 Eine gescheiterte Runde heißt Knapp daneben, hat null Sterne und keinen Feier-Hinweis', () => {
+test('RULE-195 Eine gescheiterte Runde heißt Noch nicht geschafft, hat null Sterne und keinen Feier-Hinweis', () => {
   const result = model({ failed: true, stars: 0, accuracy: 0.4, xp: 0 });
-  assert.equal(result.title, 'Knapp daneben');
+  assert.equal(result.title, 'Noch nicht geschafft');
   assert.equal(result.stars, 0);
   assert.equal(result.celebrate, false);
   assert.equal(result.mood, 'hmm');

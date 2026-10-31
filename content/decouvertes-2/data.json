@@ -105,7 +105,8 @@
           "Je connaît Paul.",
           "Je connaître Paul."
         ],
-        "why": "Bei Personen steht connaître, mit je: connais."
+        "why": "Bei Personen steht connaître, mit je: connais.",
+        "label": "connaître oder savoir: Paul"
       },
       {
         "q": "Welcher Satz ist richtig?",
@@ -115,7 +116,8 @@
           "Tu connaît conduire ?",
           "Tu sais conduis ?"
         ],
-        "why": "conduire ist ein Infinitiv, also savoir: tu sais."
+        "why": "conduire ist ein Infinitiv, also savoir: tu sais.",
+        "label": "connaître oder savoir: conduire"
       }
     ],
     "quel": [
@@ -223,7 +225,8 @@
           "Quelle sont tes couleurs préférées ?",
           "Quels sont tes couleurs préférées ?"
         ],
-        "why": "couleurs ist weiblich und Plural: quelles."
+        "why": "couleurs ist weiblich und Plural: quelles.",
+        "label": "Form von quel: couleurs"
       },
       {
         "q": "Welcher Satz ist richtig?",
@@ -233,7 +236,8 @@
           "Quelles jours sommes-nous ?",
           "Quel jours sommes-nous ?"
         ],
-        "why": "jour ist männlich und Singular: quel jour."
+        "why": "jour ist männlich und Singular: quel jour.",
+        "label": "Form von quel: jour"
       }
     ],
     "relativ-pronomen": [
@@ -329,7 +333,8 @@
           "Le professeur où parle est gentil.",
           "Le professeur quel parle est gentil."
         ],
-        "why": "parle ist das Verb, also qui."
+        "why": "parle ist das Verb, also qui.",
+        "label": "Relativpronomen: professeur"
       },
       {
         "q": "Welcher Satz ist richtig?",
@@ -339,7 +344,8 @@
           "Voici le sac où j'ai acheté.",
           "Voici le sac quel j'ai acheté."
         ],
-        "why": "Danach steht das Subjekt j', also que."
+        "why": "Danach steht das Subjekt j', also que.",
+        "label": "Relativpronomen: sac"
       },
       {
         "q": "Der Tag, an dem ich geboren bin, ist der 3. Mai.",
@@ -447,7 +453,8 @@
           "Cette hôtel est très beau.",
           "Ces hôtel est très beau."
         ],
-        "why": "hôtel beginnt mit stummem h: cet."
+        "why": "hôtel beginnt mit stummem h: cet.",
+        "label": "Begleiter: hôtel"
       },
       {
         "q": "Welcher Satz ist richtig?",
@@ -457,7 +464,8 @@
           "Ce fleurs sont belles.",
           "Cet fleurs sont belles."
         ],
-        "why": "fleurs ist Plural: ces."
+        "why": "fleurs ist Plural: ces.",
+        "label": "Begleiter: fleurs"
       },
       {
         "q": "Ich mag diese Musik nicht.",
@@ -577,7 +585,8 @@
           "J'ai dire la vérité.",
           "Je suis dit la vérité."
         ],
-        "why": "dire hat das unregelmäßige Partizip dit und steht mit avoir."
+        "why": "dire hat das unregelmäßige Partizip dit und steht mit avoir.",
+        "label": "Passé composé: dire"
       },
       {
         "q": "Welcher Satz ist richtig?",
@@ -587,7 +596,8 @@
           "Nous avons écrire une lettre.",
           "Nous avont écrit une lettre."
         ],
-        "why": "écrire hat das Partizip écrit. Mit nous steht avons."
+        "why": "écrire hat das Partizip écrit. Mit nous steht avons.",
+        "label": "Passé composé: écrire"
       }
     ],
     "voir": [
@@ -695,7 +705,8 @@
           "Nous voyez souvent nos cousins.",
           "Nous vois souvent nos cousins."
         ],
-        "why": "Mit nous steht voyons."
+        "why": "Mit nous steht voyons.",
+        "label": "Form von voir: nous"
       },
       {
         "q": "Welcher Satz ist richtig?",
@@ -705,7 +716,8 @@
           "Ils ont voient le match.",
           "Ils ont vus le match."
         ],
-        "why": "Nach avoir bleibt das Partizip hier unverändert: vu."
+        "why": "Nach avoir bleibt das Partizip hier unverändert: vu.",
+        "label": "Form von voir: ils"
       }
     ],
     "vouloir-pouvoir": [
@@ -813,7 +825,8 @@
           "Je pouvoir un café, s'il vous plaît.",
           "Je voudrais un café à vous plaît."
         ],
-        "why": "voudrais ist die höfliche Form von veux."
+        "why": "voudrais ist die höfliche Form von veux.",
+        "label": "vouloir oder pouvoir: café"
       },
       {
         "q": "Welcher Satz ist richtig?",
@@ -823,7 +836,8 @@
           "Nous pouvez partir maintenant.",
           "Nous veut partir maintenant."
         ],
-        "why": "Mit nous steht pouvons."
+        "why": "Mit nous steht pouvons.",
+        "label": "vouloir oder pouvoir: partir"
       }
     ],
     "venir": [
@@ -931,7 +945,8 @@
           "Elle viens de partir.",
           "Elle venons de partir."
         ],
-        "why": "Mit elle steht vient, und venir de heißt gerade eben."
+        "why": "Mit elle steht vient, und venir de heißt gerade eben.",
+        "label": "Form von venir: elle"
       },
       {
         "q": "Welcher Satz ist richtig?",
@@ -941,7 +956,8 @@
           "Nous viennent d'arriver.",
           "Nous vient d'arriver."
         ],
-        "why": "Mit nous steht venons, und venir de heißt gerade eben."
+        "why": "Mit nous steht venons, und venir de heißt gerade eben.",
+        "label": "Form von venir: nous"
       }
     ],
     "pc-etre": [
@@ -1049,7 +1065,8 @@
           "Les filles sont parti tôt.",
           "Les filles ont partie tôt."
         ],
-        "why": "partir steht mit être, und filles ist weiblich Plural: parties."
+        "why": "partir steht mit être, und filles ist weiblich Plural: parties.",
+        "label": "Passé composé: filles"
       },
       {
         "q": "Welcher Satz ist richtig?",
@@ -1059,7 +1076,8 @@
           "Elle a née en mai.",
           "Elle est nez en mai."
         ],
-        "why": "naître steht mit être, und Elle ist weiblich: née."
+        "why": "naître steht mit être, und Elle ist weiblich: née.",
+        "label": "Passé composé: elle"
       }
     ],
     "teilungsartikel": [
@@ -1167,7 +1185,8 @@
           "Je prends un litre de le lait.",
           "Je prends un litre des lait."
         ],
-        "why": "Nach der Mengenangabe un litre steht nur de."
+        "why": "Nach der Mengenangabe un litre steht nur de.",
+        "label": "Artikel nach Mengenangabe"
       },
       {
         "q": "Welcher Satz ist richtig?",
@@ -1177,7 +1196,8 @@
           "Elle n'a pas du frères.",
           "Elle n'a pas de les frères."
         ],
-        "why": "Nach der Verneinung steht nur de."
+        "why": "Nach der Verneinung steht nur de.",
+        "label": "Artikel nach Verneinung"
       }
     ],
     "acheter-payer-boire": [
@@ -1636,7 +1656,8 @@
           "Elle dit que est malade.",
           "Elle dit qu'elle malade est."
         ],
-        "why": "Aussagen: que, danach das Subjekt und das Verb."
+        "why": "Aussagen: que, danach das Subjekt und das Verb.",
+        "label": "Indirekte Rede: dire"
       },
       {
         "q": "Welcher Satz ist richtig?",
@@ -1646,7 +1667,8 @@
           "Le prof demande si avons-nous compris.",
           "Le prof demande où nous avons compris."
         ],
-        "why": "Ja-Nein-Frage: si, danach keine Umstellung."
+        "why": "Ja-Nein-Frage: si, danach keine Umstellung.",
+        "label": "Indirekte Rede: demander"
       },
       {
         "q": "Wir fragen, ob ihr kommen wollt.",
@@ -1766,7 +1788,8 @@
           "Je suis sortir avec Léa.",
           "Je suis sort avec Léa."
         ],
-        "why": "sortir steht im passé composé mit être."
+        "why": "sortir steht im passé composé mit être.",
+        "label": "Passé composé: je"
       },
       {
         "q": "Welcher Satz ist richtig?",
@@ -1776,7 +1799,8 @@
           "Nous sommes sortir ensemble.",
           "Nous sommes sorti ensemble."
         ],
-        "why": "sortir steht mit être: sommes sortis."
+        "why": "sortir steht mit être: sommes sortis.",
+        "label": "Passé composé: nous"
       }
     ],
     "beau-nouveau-vieux": [
@@ -1884,7 +1908,8 @@
           "C'est une bel exercice.",
           "C'est un belle exercice."
         ],
-        "why": "exercice ist männlich und beginnt mit Vokal: bel."
+        "why": "exercice ist männlich und beginnt mit Vokal: bel.",
+        "label": "Form von beau: exercice"
       },
       {
         "q": "Welcher Satz ist richtig?",
@@ -1894,7 +1919,8 @@
           "C'est une nouvel voiture.",
           "C'est un nouvelle voiture."
         ],
-        "why": "voiture ist weiblich: nouvelle."
+        "why": "voiture ist weiblich: nouvelle.",
+        "label": "Form von nouveau: voiture"
       }
     ],
     "devoir-recevoir": [
@@ -2242,7 +2268,8 @@
           "Je parle à leur souvent.",
           "Je leurs parle souvent."
         ],
-        "why": "leur steht vor dem Verb und bekommt kein s."
+        "why": "leur steht vor dem Verb und bekommt kein s.",
+        "label": "Stellung von leur"
       },
       {
         "q": "Welcher Satz ist richtig?",
@@ -2252,7 +2279,8 @@
           "Il a donné lui son numéro.",
           "Il lui a donner son numéro."
         ],
-        "why": "lui steht vor avoir, danach folgt das Partizip donné."
+        "why": "lui steht vor avoir, danach folgt das Partizip donné.",
+        "label": "Stellung von lui"
       }
     ],
     "tout": [
@@ -2360,7 +2388,8 @@
           "Nous sommes ici tous la semaine.",
           "Nous sommes ici toutes la semaine."
         ],
-        "why": "semaine ist weiblich: toute la semaine."
+        "why": "semaine ist weiblich: toute la semaine.",
+        "label": "Richtige Form: semaine"
       },
       {
         "q": "Welcher Satz ist richtig?",
@@ -2370,7 +2399,8 @@
           "Tous est prêt.",
           "Toutes est prêt."
         ],
-        "why": "Als Pronomen heißt tout alles, mit est."
+        "why": "Als Pronomen heißt tout alles, mit est.",
+        "label": "Richtige Form: prêt"
       }
     ],
     "zahlen-grund": [

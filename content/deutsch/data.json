@@ -1784,7 +1784,7 @@
           "Wise"
         ],
         "why": "Das lange i schreibst du meistens ie: Wie-se.",
-        "label": "ie"
+        "label": "i oder ie?"
       },
       {
         "q": "Setze das richtige Wort ein.",
@@ -1795,7 +1795,7 @@
           "Tir"
         ],
         "why": "Das lange i wird zu ie: Tier, Tiere.",
-        "label": "ie"
+        "label": "i oder ie?"
       },
       {
         "q": "Setze das richtige Wort ein.",
@@ -1806,7 +1806,7 @@
           "Spigel"
         ],
         "why": "Langes i, geschrieben als ie: Spie-gel.",
-        "label": "ie"
+        "label": "i oder ie?"
       },
       {
         "q": "Setze das richtige Wort ein.",
@@ -1817,7 +1817,7 @@
           "Zil"
         ],
         "why": "Langes i, geschrieben als ie: Ziel.",
-        "label": "ie"
+        "label": "i oder ie?"
       },
       {
         "q": "Setze das richtige Wort ein.",
@@ -3773,6 +3773,1861 @@
         "label": "Wortart bestimmen",
         "level": 3,
         "skill": "Wortart bestimmen"
+      }
+    ],
+    "bausteine": [
+      {
+        "q": "Hier passt das Wort für die freien Tage zwischen den Schulzeiten (nur Mehrzahl).",
+        "kind": "gap",
+        "s": "In den großen ___ haben alle Kinder schulfrei.",
+        "a": "Ferien",
+        "wrong": [
+          "Verien",
+          "Ferrien"
+        ],
+        "why": "Ferien ist eines der wenigen Wörter mit fer-. Mit v am Anfang wäre es falsch.",
+        "label": "ver oder fer?"
+      },
+      {
+        "q": "Das Gegenteil von „gewinnen“.",
+        "kind": "gap",
+        "s": "Wer beim Würfeln Pech hat, kann das Spiel ___.",
+        "a": "verlieren",
+        "wrong": [
+          "ferlieren",
+          "verliren"
+        ],
+        "why": "Fast alle Wörter beginnen mit ver-. Nur wenige Ausnahmen wie Ferien und fertig haben fer-.",
+        "label": "ver oder fer?"
+      },
+      {
+        "q": "Verb mit ent- oder end-, das zum ersten Mal finden bedeutet. Es steht hier in der Vergangenheit.",
+        "kind": "gap",
+        "s": "Im Wald hat Nele einen versteckten Fuchsbau ___.",
+        "a": "entdeckt",
+        "wrong": [
+          "endeckt",
+          "endteckt"
+        ],
+        "why": "Entdecken hat nichts mit „Ende“ zu tun. Die Vorsilbe ent- schreibst du immer mit t und mit n.",
+        "label": "ent oder end?"
+      },
+      {
+        "q": "Ein Vogel mit Schwimmhäuten, der quakt.",
+        "kind": "gap",
+        "s": "Auf dem Teich schwimmt eine ___ mit ihren Küken.",
+        "a": "Ente",
+        "wrong": [
+          "Ende"
+        ],
+        "why": "Das Tier hat mit „Ende“ nichts zu tun. Deshalb schreibst du Ente mit t.",
+        "label": "ent oder end?"
+      },
+      {
+        "q": "Das Wort gehört zu „Ende“ und bedeutet „nach langem Warten, schließlich“.",
+        "kind": "gap",
+        "s": "Nach langem Warten kam der Bus ___.",
+        "a": "endlich",
+        "wrong": [
+          "entlich"
+        ],
+        "why": "Endlich gehört zu „Ende“. Die Ende-Probe zeigt dir das d.",
+        "label": "ent oder end?"
+      },
+      {
+        "q": "Hier bedeutet das Wort „noch einmal“.",
+        "kind": "gap",
+        "s": "Bis morgen, wir sehen uns bald ___!",
+        "a": "wieder",
+        "wrong": [
+          "wider"
+        ],
+        "why": "Wenn du „noch einmal“ einsetzen kannst, schreibst du wieder mit ie. Wider heißt „gegen“.",
+        "label": "wieder oder wider?"
+      },
+      {
+        "q": "Das Nomen zum Verb für „gegen etwas sprechen“: Du sagst „Nein, das stimmt nicht“.",
+        "kind": "gap",
+        "s": "Der Lehrer hörte meinen ___ und erklärte die Aufgabe noch einmal.",
+        "a": "Widerspruch",
+        "wrong": [
+          "Wiederspruch"
+        ],
+        "why": "Widersprechen heißt „gegen etwas sprechen“. Gegen heißt wider, also ohne ie.",
+        "label": "wieder oder wider?"
+      },
+      {
+        "q": "Anderes Wort für „wunderbar“. Merkhilfe: Denk an Herr.",
+        "kind": "gap",
+        "s": "Das Wetter ist heute einfach ___.",
+        "a": "herrlich",
+        "wrong": [
+          "herlich"
+        ],
+        "why": "Herrlich gehört zu „Herr“ und behält das rr. Beim Baustein her- (herauf, herein, Herkunft) steht nur ein r.",
+        "label": "rr oder r?"
+      },
+      {
+        "q": "Das Gegenteil von „Ankunft“. Das Nomen gehört zu „abfahren“.",
+        "kind": "gap",
+        "s": "Der Zug steht zur ___ bereit.",
+        "a": "Abfahrt",
+        "wrong": [
+          "Apfahrt"
+        ],
+        "why": "Der Baustein ab- bleibt immer gleich, auch wenn man das b leise spricht wie ein p.",
+        "label": "b oder p?"
+      },
+      {
+        "q": "Welche Probe hilft dir bei der Frage, ob ein Wort mit ent- oder end- beginnt?",
+        "a": "Ich frage, ob das Wort mit „Ende“ zu tun hat.",
+        "wrong": [
+          "Ich spreche das Wort ganz laut und langsam.",
+          "Ich bilde die Mehrzahl des Wortes.",
+          "Ich suche das Gegenteil des Wortes."
+        ],
+        "why": "Die Ende-Probe hilft: Gehört das Wort zu „Ende“, schreibst du end-. Sonst ent-.",
+        "label": "ent oder end?"
+      },
+      {
+        "q": "Welches Wort schreibst du mit wider-, weil es „gegen“ bedeutet?",
+        "a": "Widerstand",
+        "wrong": [
+          "Wiederholung",
+          "Wiedersehen",
+          "wiederkommen"
+        ],
+        "why": "Widerstand ist ein Druck gegen etwas. Bei Wiederholung, Wiedersehen und wiederkommen passt „noch einmal“, deshalb steht dort ie.",
+        "label": "wieder oder wider?"
+      },
+      {
+        "q": "Welches Wort schreibst du mit rr?",
+        "a": "herrlich",
+        "wrong": [
+          "herauf",
+          "herunter",
+          "herüber"
+        ],
+        "why": "Herrlich gehört zu „Herr“. Herauf, herunter und herüber bestehen aus her- und einem zweiten Wort, deshalb nur ein r.",
+        "label": "rr oder r?"
+      },
+      {
+        "q": "Was gilt für die Vorsilben be-, er-, ge-, ver- und zer-?",
+        "a": "Man schreibt sie immer gleich, auch wenn man sie nur leise spricht.",
+        "wrong": [
+          "Man schreibt sie so, wie man sie hört, deshalb wechseln sie.",
+          "Man verdoppelt den letzten Buchstaben der Vorsilbe.",
+          "Man schreibt sie am Satzanfang immer klein."
+        ],
+        "why": "Die Vorsilben sind feste Bausteine. Sie sehen in jedem Wort gleich aus.",
+        "label": "Vorsilben"
+      },
+      {
+        "q": "Welches Wort ist richtig geschrieben?",
+        "a": "Ferkel",
+        "wrong": [
+          "Verkel",
+          "Fehrkel",
+          "Ferrkel"
+        ],
+        "why": "Ferkel gehört zu den wenigen Wörtern mit fer-. Ein h oder ein doppeltes r gehört nicht dazu.",
+        "label": "ver oder fer?"
+      }
+    ],
+    "laute": [
+      {
+        "q": "Hier liegt der Sand am Meer.",
+        "kind": "gap",
+        "s": "Wir bauen im Urlaub am ___ eine Sandburg.",
+        "a": "Strand",
+        "wrong": [
+          "Schtrand",
+          "Strant"
+        ],
+        "why": "Du sprichst „schtr“, schreibst aber str. Am Wortanfang schreibst du immer st.",
+        "label": "st oder scht?"
+      },
+      {
+        "q": "Verb aus ver- und stehen: den Sinn begreifen.",
+        "kind": "gap",
+        "s": "Die Aufgabe ist schwer, ich kann sie nicht ___.",
+        "a": "verstehen",
+        "wrong": [
+          "verschtehen",
+          "ferstehen"
+        ],
+        "why": "Der Wortstamm „stehen“ beginnt mit st. Vorn steht der Baustein ver- mit v.",
+        "label": "st oder scht?"
+      },
+      {
+        "q": "Ein glibberiges, durchsichtiges Meerestier ohne Knochen, das bei Berührung schmerzen kann.",
+        "kind": "gap",
+        "s": "Im Meer schwimmt eine ___, die man nicht berühren sollte.",
+        "a": "Qualle",
+        "wrong": [
+          "Kwalle",
+          "Kualle"
+        ],
+        "why": "Den Laut „kw“ schreibst du qu. Ein k und ein w zusammen gibt es hier nicht.",
+        "label": "qu oder kw?"
+      },
+      {
+        "q": "Hier tritt das Wasser aus der Erde.",
+        "kind": "gap",
+        "s": "Der Bach beginnt an einer ___ am Berg.",
+        "a": "Quelle",
+        "wrong": [
+          "Kwelle",
+          "Quele"
+        ],
+        "why": "Das q steht immer mit u, und das ll bleibt doppelt: Quelle.",
+        "label": "qu oder kw?"
+      },
+      {
+        "q": "Das Gerät zum Braten, mit Stiel und flachem Boden.",
+        "kind": "gap",
+        "s": "Mama brät die Eier in der ___.",
+        "a": "Pfanne",
+        "wrong": [
+          "Fanne",
+          "Pfane"
+        ],
+        "why": "Bei pf sprichst du das p mit. Das p darf nicht fehlen, und das nn bleibt doppelt.",
+        "label": "pf oder f?"
+      },
+      {
+        "q": "So heißt eine geflochtene Frisur mit drei Strängen.",
+        "kind": "gap",
+        "s": "Sie flicht ihre langen Haare zu einem ___.",
+        "a": "Zopf",
+        "wrong": [
+          "Zopp",
+          "Zof"
+        ],
+        "why": "Am Ende hörst du p und f hintereinander. Du schreibst beides: pf.",
+        "label": "pf oder f?"
+      },
+      {
+        "q": "Das Gegenteil von „wenig“.",
+        "kind": "gap",
+        "s": "Im Zoo gab es ganz ___ zu sehen.",
+        "a": "viel",
+        "wrong": [
+          "fiel",
+          "vil"
+        ],
+        "why": "Viel ist ein Merkwort mit v. Fiel gehört zu „fallen“ und passt hier nicht.",
+        "label": "v oder f?"
+      },
+      {
+        "q": "Ein Tier mit Federn und Schnabel, das fliegen kann.",
+        "kind": "gap",
+        "s": "Auf dem Ast sitzt ein ___ und singt.",
+        "a": "Vogel",
+        "wrong": [
+          "Fogel",
+          "Fogl"
+        ],
+        "why": "Du hörst f, schreibst aber v. Vogel ist ein Merkwort.",
+        "label": "v oder f?"
+      },
+      {
+        "q": "Ein Berg, aus dem heiße Lava kommt. Das v klingt hier wie w.",
+        "kind": "gap",
+        "s": "Aus dem ___ fließt glühende Lava.",
+        "a": "Vulkan",
+        "wrong": [
+          "Wulkan",
+          "Fulkan"
+        ],
+        "why": "In vielen Fremdwörtern klingt das v wie w, du schreibst es aber mit v.",
+        "label": "v, f oder w?"
+      },
+      {
+        "q": "Wie schreibst du den Laut „schp“ am Wortanfang?",
+        "a": "sp",
+        "wrong": [
+          "schp",
+          "sb",
+          "sch"
+        ],
+        "why": "Am Wortanfang sprichst du „schp“, schreibst aber sp. Ein sch gehört nicht dazu.",
+        "label": "sp oder schp?"
+      },
+      {
+        "q": "Welches Wort ist richtig geschrieben?",
+        "a": "Quittung",
+        "wrong": [
+          "Kwittung",
+          "Qittung",
+          "Quitung"
+        ],
+        "why": "Du schreibst qu, nicht kw. Das q steht nie allein. Außerdem hat das Wort tt.",
+        "label": "qu oder kw?"
+      },
+      {
+        "q": "Welches Wort ist richtig geschrieben?",
+        "a": "Pfote",
+        "wrong": [
+          "Fote",
+          "Phote",
+          "Pote"
+        ],
+        "why": "Bei pf sprichst du beide Laute und schreibst beide. Das ph gehört hier nicht dazu.",
+        "label": "pf oder f?"
+      },
+      {
+        "q": "Bei welchem Wort sprichst du das v wie w?",
+        "a": "Vase",
+        "wrong": [
+          "Vogel",
+          "Vater",
+          "viel"
+        ],
+        "why": "Vase ist ein Fremdwort, dort klingt das v wie w. Bei Vogel, Vater und viel klingt es wie f.",
+        "label": "v, f oder w?"
+      },
+      {
+        "q": "Welches Wort ist richtig geschrieben?",
+        "a": "Vieh",
+        "wrong": [
+          "Fieh",
+          "Vie",
+          "Fih"
+        ],
+        "why": "Vieh ist ein Merkwort: v, ie und ein h am Ende, das du nicht hörst.",
+        "label": "v oder f?"
+      }
+    ],
+    "xlaute": [
+      {
+        "q": "Eine Frau im Märchen, die zaubern kann und auf einem Besen fliegt.",
+        "kind": "gap",
+        "s": "Im Märchen fliegt die ___ auf ihrem Besen durch die Nacht.",
+        "a": "Hexe",
+        "wrong": [
+          "Heckse",
+          "Hegse"
+        ],
+        "why": "Hexe schreibst du mit x. Hören hilft nicht, du lernst das Wort einzeln.",
+        "label": "Der Laut ks",
+        "skill": "x"
+      },
+      {
+        "q": "Ein Werkzeug mit scharfer Klinge und Stiel, mit dem man Holz spaltet.",
+        "kind": "gap",
+        "s": "Mit der ___ spaltet der Holzfäller das Holz.",
+        "a": "Axt",
+        "wrong": [
+          "Acks",
+          "Akst"
+        ],
+        "why": "Axt schreibst du mit x. Ein ck oder ein ks gehört nicht dazu.",
+        "label": "Der Laut ks",
+        "skill": "x"
+      },
+      {
+        "q": "Ein Tier mit rotbraunem Fell und buschigem Schwanz, das nachts jagt.",
+        "kind": "gap",
+        "s": "Der ___ schleicht nachts zum Hühnerstall.",
+        "a": "Fuchs",
+        "wrong": [
+          "Fuks",
+          "Fucks"
+        ],
+        "why": "Fuchs ist ein Merkwort mit chs. Es gibt kein verwandtes Wort mit ck.",
+        "label": "Der Laut ks",
+        "skill": "chs"
+      },
+      {
+        "q": "Das Zahlwort zwischen fünf und sieben.",
+        "kind": "gap",
+        "s": "Fünf plus eins ergibt ___.",
+        "a": "sechs",
+        "wrong": [
+          "seks",
+          "secks"
+        ],
+        "why": "Sechs ist ein Merkwort mit chs. Das ch gehört zur Zahl.",
+        "label": "Der Laut ks",
+        "skill": "chs"
+      },
+      {
+        "q": "Verb: größer werden, zum Beispiel eine Pflanze.",
+        "kind": "gap",
+        "s": "Pflanzen brauchen Licht und Wasser, damit sie ___ können.",
+        "a": "wachsen",
+        "wrong": [
+          "waksen",
+          "wacksen"
+        ],
+        "why": "Wachsen schreibst du mit chs, genauso wie Wuchs, Gewächs und erwachsen.",
+        "label": "Der Laut ks",
+        "skill": "chs"
+      },
+      {
+        "q": "Ein kleiner Fleck aus Tinte. Verwandt mit „kleckern“.",
+        "kind": "gap",
+        "s": "Mein Füller hat einen blauen ___ ins Heft gemacht.",
+        "a": "Klecks",
+        "wrong": [
+          "Kleks",
+          "Klechs"
+        ],
+        "why": "Das verwandte Wort „kleckern“ hat ck, deshalb schreibst du Klecks mit cks.",
+        "label": "Der Laut ks",
+        "skill": "cks"
+      },
+      {
+        "q": "Verwandt mit „knacken“. Ein kleiner Schaden an einem Gegenstand.",
+        "kind": "gap",
+        "s": "Die Tasse hat einen kleinen ___ und tropft.",
+        "a": "Knacks",
+        "wrong": [
+          "Knaks",
+          "Knachs"
+        ],
+        "why": "„Knacken“ hat ck, deshalb schreibst du Knacks mit cks.",
+        "label": "Der Laut ks",
+        "skill": "cks"
+      },
+      {
+        "q": "Das Wort ist der Genitiv von „der Rock“ (wessen?).",
+        "kind": "gap",
+        "s": "Der Saum des ___ ist ausgefranst.",
+        "a": "Rocks",
+        "wrong": [
+          "Rox",
+          "Rochs"
+        ],
+        "why": "Rock hat ck. Kommt das s der Endung dazu, entsteht cks.",
+        "label": "Der Laut ks",
+        "accept": [
+          "Rockes"
+        ],
+        "skill": "cks"
+      },
+      {
+        "q": "Ein Ort, an dem eine Ärztin ihre Patienten behandelt.",
+        "kind": "gap",
+        "s": "Die Ärztin hat eine neue ___ in der Stadtmitte eröffnet.",
+        "a": "Praxis",
+        "wrong": [
+          "Praksis",
+          "Pracksis"
+        ],
+        "why": "Praxis ist ein Fremdwort aus dem Griechischen und wird mit x geschrieben.",
+        "label": "Der Laut ks",
+        "skill": "x"
+      },
+      {
+        "q": "Wie kannst du bei „Klecks“ prüfen, dass du cks schreibst?",
+        "a": "Ich suche das verwandte Wort „kleckern“, dort steht ck.",
+        "wrong": [
+          "Ich sage das Wort ganz laut.",
+          "Ich suche das Gegenteil des Wortes.",
+          "Ich schaue, ob es mit einem Großbuchstaben beginnt."
+        ],
+        "why": "Bei cks hilft das verwandte Wort mit ck. Das Gegenteil oder die Lautstärke sagen nichts über die Schreibweise.",
+        "label": "Der Laut ks",
+        "skill": "cks"
+      },
+      {
+        "q": "In welchem Wort wird der Laut „ks“ mit x geschrieben?",
+        "a": "Hexe",
+        "wrong": [
+          "Keks",
+          "Fuchs",
+          "Klecks"
+        ],
+        "why": "Hexe hat ein x. Keks hat k und s, Fuchs hat chs, Klecks hat cks.",
+        "label": "Der Laut ks",
+        "skill": "x"
+      },
+      {
+        "q": "Welches Wort ist richtig geschrieben?",
+        "a": "Eidechse",
+        "wrong": [
+          "Eidexe",
+          "Eideckse",
+          "Eidekse"
+        ],
+        "why": "Eidechse ist ein Merkwort mit chs.",
+        "label": "Der Laut ks",
+        "skill": "chs"
+      },
+      {
+        "q": "Warum schreibst du „Wuchs“ mit chs?",
+        "a": "Es gehört zur Wortfamilie von „wachsen“.",
+        "wrong": [
+          "Es ist ein Fremdwort aus dem Englischen.",
+          "Es kommt von einem Wort mit ck.",
+          "Es endet auf s."
+        ],
+        "why": "Wuchs, wachsen, Gewächs und erwachsen gehören zusammen und haben alle chs.",
+        "label": "Der Laut ks",
+        "skill": "chs"
+      },
+      {
+        "q": "Welches Wort ist richtig geschrieben?",
+        "a": "Keks",
+        "wrong": [
+          "Kecks",
+          "Kegs",
+          "Kechs"
+        ],
+        "why": "Keks besteht aus k und s. Es hat weder x noch cks noch chs.",
+        "label": "Der Laut ks",
+        "skill": "ks"
+      }
+    ],
+    "zusammen": [
+      {
+        "q": "Aus „Katze“ und „Futter“ zusammengesetzt: Essen für Katzen.",
+        "kind": "gap",
+        "s": "Im Napf liegt das ___.",
+        "a": "Katzenfutter",
+        "wrong": [
+          "Katzefutter",
+          "Katzenfuter"
+        ],
+        "why": "Zwischen Katze und Futter steht die Fuge -n-. Beide Bausteine bleiben vollständig, auch das doppelte t in Futter.",
+        "label": "Fuge"
+      },
+      {
+        "q": "Das Wort setzt sich aus „Schiff“ und „Fahrt“ zusammen. Alle Buchstaben bleiben stehen.",
+        "kind": "gap",
+        "s": "Die ___ über den See dauert eine Stunde.",
+        "a": "Schifffahrt",
+        "wrong": [
+          "Schiffahrt",
+          "Schiffahrd"
+        ],
+        "why": "Schiff endet auf ff und Fahrt beginnt mit f. Beim Zusammensetzen bleiben alle drei f stehen.",
+        "label": "Gleiche Buchstaben",
+        "accept": [
+          "Schiff-Fahrt"
+        ]
+      },
+      {
+        "q": "Aus „brennen“ und „Nessel“: eine Pflanze, die auf der Haut juckt.",
+        "kind": "gap",
+        "s": "Im Garten wächst eine ___, die auf der Haut juckt.",
+        "a": "Brennnessel",
+        "wrong": [
+          "Brennessel",
+          "Brenessel"
+        ],
+        "why": "Brenn- endet auf nn und Nessel beginnt mit n. Es bleiben drei n stehen.",
+        "label": "Gleiche Buchstaben",
+        "accept": [
+          "Brenn-Nessel"
+        ]
+      },
+      {
+        "q": "Aus „Kaffee“ und „Ersatz“ zusammengesetzt: etwas, das echten Kaffee ersetzt.",
+        "kind": "gap",
+        "s": "Im Krieg gab es oft nur ___ aus Getreide.",
+        "a": "Kaffeeersatz",
+        "wrong": [
+          "Kaffeersatz",
+          "Kafeeersatz"
+        ],
+        "why": "Kaffee endet auf ee und Ersatz beginnt mit e. Es bleiben drei e stehen.",
+        "label": "Gleiche Buchstaben",
+        "accept": [
+          "Kaffee-Ersatz"
+        ]
+      },
+      {
+        "q": "Aus „Geburt“ und „Tag“ zusammengesetzt: der Jahrestag, an dem du auf die Welt kamst.",
+        "kind": "gap",
+        "s": "Heute feiere ich meinen ___ mit Kuchen.",
+        "a": "Geburtstag",
+        "wrong": [
+          "Geburttag",
+          "Geburtag"
+        ],
+        "why": "Sprich mit: Geburts-tag. Die Fuge -s- hörst du, und das t von Geburt bleibt stehen.",
+        "label": "Fuge"
+      },
+      {
+        "q": "Aus „Kind“ und „Wagen“ zusammengesetzt: ein Wagen, in dem ein Baby liegt.",
+        "kind": "gap",
+        "s": "Das Baby liegt im ___.",
+        "a": "Kinderwagen",
+        "wrong": [
+          "Kindwagen",
+          "Kindewagen"
+        ],
+        "why": "Der Plural von Kind ist Kinder. Die Fuge -er- passt dazu: Kinder-wagen.",
+        "label": "Fuge"
+      },
+      {
+        "q": "Aus „Schluss“ und „Strich“: das endgültige Ende einer Sache.",
+        "kind": "gap",
+        "s": "Nach dem langen Streit zog sie einen ___.",
+        "a": "Schlussstrich",
+        "wrong": [
+          "Schlusstrich",
+          "Schlußstrich"
+        ],
+        "why": "Schluss endet auf ss und Strich beginnt mit s. Es bleiben drei s stehen. Das ß gibt es hier nicht, weil das u kurz gesprochen wird.",
+        "label": "Gleiche Buchstaben",
+        "accept": [
+          "Schluss-Strich"
+        ]
+      },
+      {
+        "q": "Welcher Artikel gehört zu „Schultasche“?",
+        "a": "die",
+        "wrong": [
+          "der",
+          "das",
+          "den"
+        ],
+        "why": "Das Grundwort Tasche bestimmt den Artikel: die Tasche, also die Schultasche. Schule spielt dabei keine Rolle.",
+        "label": "Grundwort"
+      },
+      {
+        "q": "Mein Bruder ist so stark wie ein Bär. Welches Adjektiv ist richtig geschrieben?",
+        "a": "bärenstark",
+        "wrong": [
+          "Bärenstark",
+          "bärenstarck",
+          "bären stark"
+        ],
+        "why": "Nomen + Adjektiv ergibt ein Adjektiv. Es wird klein und zusammengeschrieben, wie schneeweiß oder hellblau.",
+        "label": "Groß oder klein?"
+      },
+      {
+        "q": "Welches Wort ist richtig geschrieben? Es besteht aus dem Verb „schreiben“ und dem Nomen „Tisch“.",
+        "a": "Schreibtisch",
+        "wrong": [
+          "schreibtisch",
+          "Schreib Tisch",
+          "Schreibetisch"
+        ],
+        "why": "Endet ein Wort auf ein Nomen, ist das ganze Wort ein Nomen. Es wird großgeschrieben und zusammen.",
+        "label": "Groß oder klein?"
+      },
+      {
+        "q": "Wie schreibst du das Gemüse aus dem Adjektiv „rot“ und dem Nomen „Kohl“?",
+        "a": "Rotkohl",
+        "wrong": [
+          "rotkohl",
+          "Rot Kohl",
+          "rot Kohl"
+        ],
+        "why": "Adjektiv + Nomen ergibt ein Nomen. Es wird groß und zusammengeschrieben, weil Kohl das Grundwort ist.",
+        "label": "Groß oder klein?"
+      },
+      {
+        "q": "Welche Fuge steht in „Freundschaftsspiel“ zwischen den beiden Bausteinen?",
+        "a": "ein s",
+        "wrong": [
+          "ein n",
+          "ein e",
+          "ein er"
+        ],
+        "why": "Nach Endungen wie -schaft, -ung, -heit und -keit steht meist ein s. Das zweite s gehört zu Spiel: Freundschaft-s-spiel.",
+        "label": "Fuge"
+      },
+      {
+        "q": "Wie prüfst du, ob in „Bilderbuch“ die Fuge -er- steht?",
+        "a": "Ich bilde den Plural: Bild, Bilder.",
+        "wrong": [
+          "Ich bilde die Vergangenheit: Bild, bildete.",
+          "Ich zähle die Buchstaben des ganzen Wortes.",
+          "Ich lasse den Artikel weg."
+        ],
+        "why": "Der Plural zeigt oft die Fuge: Bild, Bilder, Bilderbuch. Zusätzlich hilft Mitsprechen.",
+        "label": "Fuge"
+      },
+      {
+        "q": "In welche Bausteine zerfällt „Handyladekabel“?",
+        "a": "Handy + Lade + Kabel",
+        "wrong": [
+          "Hand + Yla + Dekabel",
+          "Handy + Ladek + Abel",
+          "Han + Dyla + Dekabel"
+        ],
+        "why": "Zerlege nach der Bedeutung, nicht nach Silben: ein Kabel zum Laden für das Handy.",
+        "label": "Bausteine"
+      }
+    ],
+    "trennbar": [
+      {
+        "q": "Partizip II von „abfahren“.",
+        "kind": "gap",
+        "s": "Der Zug ist schon vor einer Stunde ___.",
+        "a": "abgefahren",
+        "wrong": [
+          "abgefahrt",
+          "geabfahren",
+          "abfahren"
+        ],
+        "why": "Bei trennbaren Verben steht ge- in der Mitte: ab-ge-fahren. Fahren ist unregelmäßig, deshalb gefahren und nicht gefahrt.",
+        "label": "Partizip"
+      },
+      {
+        "q": "Gegenwart von „anfangen“ für er, sie, es. Die Vorsilbe steht am Satzende.",
+        "kind": "gap",
+        "s": "Der Film ___ um acht Uhr an.",
+        "a": "fängt",
+        "wrong": [
+          "fangt",
+          "anfängt"
+        ],
+        "why": "Im Hauptsatz wird an abgetrennt und steht hinten. Das Verb heißt fängt, mit Umlaut.",
+        "label": "Hauptsatz"
+      },
+      {
+        "q": "Setze „abfahren“ im Nebensatz ein (er, sie, es).",
+        "kind": "gap",
+        "s": "Ich weiß, dass der Bus pünktlich ___.",
+        "a": "abfährt",
+        "wrong": [
+          "fährt ab",
+          "abfahrt"
+        ],
+        "why": "Im Nebensatz steht das Verb am Ende und die Vorsilbe bleibt fest. Mit Umlaut: abfährt, nicht abfahrt.",
+        "label": "Nebensatz"
+      },
+      {
+        "q": "Infinitiv mit zu von „aufräumen“.",
+        "kind": "gap",
+        "s": "Ich habe keine Lust, mein Zimmer ___.",
+        "a": "aufzuräumen",
+        "wrong": [
+          "zu aufräumen",
+          "auf zu räumen",
+          "aufräumen zu"
+        ],
+        "why": "Auf- ist trennbar (Ich räume auf). Darum steht zu in der Mitte und alles wird zusammengeschrieben.",
+        "label": "Infinitiv mit zu"
+      },
+      {
+        "q": "Infinitiv mit zu von „verstehen“.",
+        "kind": "gap",
+        "s": "Diese Aufgabe ist nicht leicht ___.",
+        "a": "zu verstehen",
+        "wrong": [
+          "zuverstehen",
+          "verzustehen"
+        ],
+        "why": "Ver- bleibt fest am Verb. Deshalb steht zu davor, getrennt geschrieben: zu verstehen.",
+        "label": "Infinitiv mit zu"
+      },
+      {
+        "q": "Partizip II von „bestellen“.",
+        "kind": "gap",
+        "s": "Gestern habe ich eine Pizza ___.",
+        "a": "bestellt",
+        "wrong": [
+          "gebestellt",
+          "bestelt"
+        ],
+        "why": "Bei nicht trennbaren Vorsilben fehlt das ge-: bestellt. Das Verb bestellen hat zwei l, sie bleiben stehen.",
+        "label": "Partizip"
+      },
+      {
+        "q": "Infinitiv mit zu von „abwaschen“.",
+        "kind": "gap",
+        "s": "Nach dem Essen vergisst er oft, das Geschirr ___.",
+        "a": "abzuwaschen",
+        "wrong": [
+          "zu abwaschen",
+          "abwaschen zu"
+        ],
+        "why": "Ab- ist trennbar (Ich wasche ab). Das zu steht in der Mitte: abzuwaschen.",
+        "label": "Infinitiv mit zu"
+      },
+      {
+        "q": "Welcher Satz ist richtig geschrieben?",
+        "a": "Der Zug fährt gleich ab.",
+        "wrong": [
+          "Der Zug abfährt gleich.",
+          "Der Zug ab fährt gleich.",
+          "Der Zug gleich abfährt."
+        ],
+        "why": "Im Hauptsatz steht das Verb an zweiter Stelle. Die trennbare Vorsilbe ab steht am Satzende.",
+        "label": "Hauptsatz"
+      },
+      {
+        "q": "Wie heißt das Partizip II von „mitkommen“?",
+        "a": "mitgekommen",
+        "wrong": [
+          "gemitkommen",
+          "mitkommt",
+          "mitgekommt"
+        ],
+        "why": "Mit- ist trennbar, deshalb steht ge- in der Mitte. Kommen ist unregelmäßig: gekommen.",
+        "label": "Partizip"
+      },
+      {
+        "q": "Welche dieser Vorsilben ist trennbar?",
+        "a": "an- wie in anrufen",
+        "wrong": [
+          "be- wie in bestellen",
+          "ver- wie in verstehen",
+          "ent- wie in entdecken"
+        ],
+        "why": "An- wird betont (ANrufen) und im Satz abgetrennt: Ich rufe dich an. Be-, ver- und ent- bleiben fest.",
+        "label": "Trennbar oder nicht?"
+      },
+      {
+        "q": "Welcher Satz ist richtig geschrieben?",
+        "a": "Im Nebel ist nichts zu sehen.",
+        "wrong": [
+          "Im Nebel ist nichts zusehen.",
+          "Im Nebel ist nichts zu Sehen.",
+          "Im Nebel ist nichts zu seehen."
+        ],
+        "why": "Hier steht zu einzeln vor dem Verb sehen: Man kann nichts sehen. Das Verb zusehen ist etwas anderes.",
+        "label": "zu sehen oder zusehen?"
+      },
+      {
+        "q": "Warum schreibst du in „Ich möchte dir zusehen“ das Wort zusammen?",
+        "a": "Zusehen ist ein trennbares Verb: Ich sehe dir zu.",
+        "wrong": [
+          "Nach „möchte“ schreibt man immer zusammen.",
+          "Das zu verschmilzt vor jedem Verb mit ihm.",
+          "Das Wort „dir“ gehört zum Verb."
+        ],
+        "why": "Mach die Probe mit ich: Ich sehe dir zu. Die Vorsilbe zu wird abgetrennt, also ist zusehen ein Verb mit trennbarer Vorsilbe.",
+        "label": "zu sehen oder zusehen?"
+      },
+      {
+        "q": "Wie heißt der Infinitiv mit zu von „ankommen“?",
+        "a": "anzukommen",
+        "wrong": [
+          "zu ankommen",
+          "an zu kommen",
+          "ankommen zu"
+        ],
+        "why": "An- ist trennbar (Ich komme an). Deshalb steht zu in der Mitte: anzukommen.",
+        "label": "Infinitiv mit zu"
+      },
+      {
+        "q": "Wie heißt das Partizip II von „verstehen“?",
+        "a": "verstanden",
+        "wrong": [
+          "geverstanden",
+          "verstehnt",
+          "verstehet"
+        ],
+        "why": "Ver- ist nicht trennbar, deshalb gibt es kein ge-. Das Verb verstehen ist unregelmäßig: verstanden.",
+        "label": "Partizip"
+      }
+    ],
+    "silben": [
+      {
+        "q": "Aus „Hund“ und „Hütte“ zusammengesetzt: ein kleines Haus für den Hund.",
+        "kind": "gap",
+        "s": "Im Garten steht eine ___ aus Holz.",
+        "a": "Hundehütte",
+        "wrong": [
+          "Hundhütte",
+          "Hundenhütte"
+        ],
+        "why": "Zerlege erst in Bausteine: Hund + e + Hütte. Dann sprichst du Silbe für Silbe mit: Hun-de-hüt-te.",
+        "label": "Bausteine"
+      },
+      {
+        "q": "Ein süßes braunes Getränk, das aus Milch gemacht wird. Das Wort hat vier Silben.",
+        "kind": "gap",
+        "s": "Im Winter trinke ich gern heiße ___.",
+        "a": "Schokolade",
+        "wrong": [
+          "Schogolade",
+          "Schokolate"
+        ],
+        "why": "Sprich deutlich Silbe für Silbe: Scho-ko-la-de. Die zweite Silbe beginnt mit k. Die letzte Silbe ist de mit d.",
+        "label": "Mitsprechen"
+      },
+      {
+        "q": "Aus „Tisch“ und „Tennis“: eine Sportart mit kleinem Ball und Schläger.",
+        "kind": "gap",
+        "s": "In der Pause spielen wir ___ im Keller.",
+        "a": "Tischtennis",
+        "wrong": [
+          "Tischtenis",
+          "Tischennis"
+        ],
+        "why": "Tisch endet auf sch und Tennis beginnt mit t. Beide Bausteine bleiben vollständig, Tennis hat zwei n.",
+        "label": "Bausteine"
+      },
+      {
+        "q": "Eine gebogene gelbe Frucht. Das Wort hat drei Silben.",
+        "kind": "gap",
+        "s": "Zum Frühstück esse ich eine ___.",
+        "a": "Banane",
+        "wrong": [
+          "Bananne",
+          "Panane"
+        ],
+        "why": "Ba-na-ne hat drei Silben, jede mit einfachem Konsonanten. Ein doppeltes n gibt es nicht.",
+        "label": "Mitsprechen"
+      },
+      {
+        "q": "Gefäß mit Henkel, aus dem du trinkst. Das Wort hat zwei Silben.",
+        "kind": "gap",
+        "s": "Ich trinke Tee aus einer ___.",
+        "a": "Tasse",
+        "wrong": [
+          "Tase",
+          "Taße"
+        ],
+        "why": "Nach dem kurzen a steht ein doppeltes s: Tas-se. Beim Trennen siehst du beide s.",
+        "label": "Einfach oder doppelt?"
+      },
+      {
+        "q": "Ein Insekt mit bunten Flügeln. Das Wort hat drei Silben.",
+        "kind": "gap",
+        "s": "Aus der Raupe wird ein bunter ___.",
+        "a": "Schmetterling",
+        "wrong": [
+          "Schmeterling",
+          "Schmetterlink"
+        ],
+        "why": "Nach dem kurzen e steht tt: Schmet-ter-ling. Das Wort endet auf -ling mit g.",
+        "label": "Mitsprechen"
+      },
+      {
+        "q": "Ein süßes weißes Pulver zum Süßen von Tee und Kuchen. Das Wort hat zwei Silben.",
+        "kind": "gap",
+        "s": "Für den Kuchen brauche ich Mehl, Eier und ___.",
+        "a": "Zucker",
+        "wrong": [
+          "Zuker",
+          "Zukker"
+        ],
+        "why": "Nach dem kurzen u steht ck: Zu-cker. Beim Trennen bleibt ck zusammen.",
+        "label": "k oder ck?"
+      },
+      {
+        "q": "Wie viele Silben hat das Wort „Elefant“?",
+        "a": "3",
+        "wrong": [
+          "2",
+          "4",
+          "5"
+        ],
+        "why": "E-le-fant: Du klatschst dreimal. Jede Silbe hat einen Vokal als Kern.",
+        "label": "Silben zählen"
+      },
+      {
+        "q": "Wie viele Silben hat das Wort „Haustürschlüssel“?",
+        "a": "4",
+        "wrong": [
+          "3",
+          "5",
+          "6"
+        ],
+        "why": "Haus-tür-schlüs-sel hat vier Silben. Die Zahl 3 ist die Zahl der Bausteine, nicht der Silben.",
+        "label": "Silben zählen"
+      },
+      {
+        "q": "Wie viele Silben hat das Wort „Auto“?",
+        "a": "2",
+        "wrong": [
+          "3",
+          "4",
+          "1"
+        ],
+        "why": "Au-to: Das au am Anfang ist ein Doppellaut und bildet nur einen Kern. Deshalb sind es zwei Silben.",
+        "label": "Silben zählen"
+      },
+      {
+        "q": "Welcher Teil steckt in jeder Silbe?",
+        "a": "Ein Vokal, Umlaut oder Doppellaut",
+        "wrong": [
+          "Ein doppelter Konsonant",
+          "Ein großer Anfangsbuchstabe",
+          "Ein Konsonant am Ende"
+        ],
+        "why": "Der Kern jeder Silbe ist ein Vokal, ein Umlaut oder ein Doppellaut. Konsonanten stehen davor oder dahinter.",
+        "label": "Silbenkern"
+      },
+      {
+        "q": "Welche Zerlegung in Sprechsilben ist beim Wort „Kartoffel“ richtig?",
+        "a": "Kar-tof-fel",
+        "wrong": [
+          "Kart-of-fel",
+          "Kar-to-ffel",
+          "Ka-rtof-fel"
+        ],
+        "why": "Doppelte Konsonanten werden getrennt: tof-fel. Das ff steht auf beiden Seiten der Silbengrenze.",
+        "label": "Sprechsilben"
+      },
+      {
+        "q": "Welche Trennung am Zeilenende ist beim Wort „Katze“ richtig?",
+        "a": "Kat-ze",
+        "wrong": [
+          "Ka-tze",
+          "Katz-e",
+          "Ka-t-ze"
+        ],
+        "why": "Du trennst nach Sprechsilben: Kat-ze. Das tz wird getrennt, und „e“ allein ist keine Sprechsilbe dieses Wortes.",
+        "label": "Trennen"
+      },
+      {
+        "q": "Welche Trennung am Zeilenende ist beim Wort „Jacke“ richtig?",
+        "a": "Ja-cke",
+        "wrong": [
+          "Jac-ke",
+          "Jack-e",
+          "Ja-c-ke"
+        ],
+        "why": "Das ck bleibt zusammen und kommt auf die nächste Zeile: Ja-cke.",
+        "label": "Trennen"
+      }
+    ],
+    "gross-mehr": [
+      {
+        "q": "Nomen zu „dankbar“.",
+        "kind": "gap",
+        "s": "Meine Oma strahlte vor ___.",
+        "a": "Dankbarkeit",
+        "wrong": [
+          "Dankbarheit",
+          "Dankbarkeid",
+          "Dankbahrkeit"
+        ],
+        "why": "Nach den Endungen -bar, -ig, -lich und -sam folgt -keit: Dankbarkeit. Die Endung -heit steht zum Beispiel nach Gesund- und Schön-.",
+        "label": "-keit oder -heit?"
+      },
+      {
+        "q": "Nomen zu „gesund“.",
+        "kind": "gap",
+        "s": "Zum Geburtstag wünscht Opa mir Glück und ___.",
+        "a": "Gesundheit",
+        "wrong": [
+          "Gesundkeit",
+          "Gesundheid",
+          "Gesundhait"
+        ],
+        "why": "Zu „gesund“ passt die Endung -heit: Gesundheit. Die Endung -keit steht meist nach -bar, -ig, -lich und -sam.",
+        "label": "-keit oder -heit?"
+      },
+      {
+        "q": "Nomen zu „ergeben“: Das steht am Ende einer Rechnung oder eines Tests.",
+        "kind": "gap",
+        "s": "Das ___ der Klassenarbeit steht an der Tafel.",
+        "a": "Ergebnis",
+        "wrong": [
+          "Ergebniss",
+          "Ergebnies",
+          "Ergepnis"
+        ],
+        "why": "Im Singular endet das Wort auf -nis mit einem s: das Ergebnis. Erst im Plural kommt ein zweites s dazu: die Ergebnisse.",
+        "label": "Nomen-Endung"
+      },
+      {
+        "q": "Eine Jahreszeit: Sie kommt nach dem Winter.",
+        "kind": "gap",
+        "s": "Im ___ blühen die Krokusse.",
+        "a": "Frühling",
+        "wrong": [
+          "Früling",
+          "Frühlink",
+          "Frülling"
+        ],
+        "why": "Frühling kommt von „früh“ mit h und der Endung -ling. Das Wort ist ein Nomen: der Frühling.",
+        "label": "Nomen-Endung"
+      },
+      {
+        "q": "Verkleinerung von „Buch“ mit der Endung -lein.",
+        "kind": "gap",
+        "s": "Opa liest mir ein ___ vor.",
+        "a": "Büchlein",
+        "wrong": [
+          "Buchlein",
+          "Büchlain",
+          "Büchlien"
+        ],
+        "why": "Bei der Verkleinerung wird aus u ein ü und es folgt -lein: Büchlein. Ohne Umlaut stimmt das Wort nicht.",
+        "label": "Nomen-Endung"
+      },
+      {
+        "q": "Warum schreibst du „Freundlichkeit“ in „Mit Freundlichkeit kommst du weit“ groß, obwohl kein Artikel davorsteht?",
+        "a": "Die Endung -keit zeigt ein Nomen. Die Artikelprobe passt: die Freundlichkeit.",
+        "wrong": [
+          "Weil das Wort mehr als zehn Buchstaben hat.",
+          "Weil nach „mit“ immer ein großer Buchstabe folgt.",
+          "Weil Wörter auf -keit am Satzanfang stehen."
+        ],
+        "why": "Die Länge oder das Wort „mit“ entscheiden nichts. Wörter auf -keit sind Nomen, und mit der Artikelprobe kannst du das prüfen.",
+        "label": "Nomen-Endung"
+      },
+      {
+        "q": "Welcher Satz ist richtig geschrieben?",
+        "a": "Jeden Freitag spielt Lena Fußball.",
+        "wrong": [
+          "Jeden freitag spielt Lena Fußball.",
+          "Jeden Freitag spielt Lena fußball.",
+          "jeden Freitag spielt Lena Fußball."
+        ],
+        "why": "Freitag ist ein Nomen und wird großgeschrieben. Klein ist nur freitags mit -s.",
+        "label": "Wochentag"
+      },
+      {
+        "q": "Du fragst Frau Berger höflich, ob du helfen darfst. Welcher Satz ist richtig geschrieben?",
+        "a": "Darf ich Ihnen helfen, Frau Berger?",
+        "wrong": [
+          "Darf ich ihnen helfen, Frau Berger?",
+          "Darf ich Ihnen helfen, Frau berger?",
+          "darf ich Ihnen helfen, Frau Berger?"
+        ],
+        "why": "Die höfliche Anrede schreibst du immer groß: Ihnen. Ein kleines „ihnen“ würde über mehrere andere Personen sprechen.",
+        "label": "sie oder Sie?"
+      },
+      {
+        "q": "Zwei Mädchen werden nur erwähnt, aber nicht angesprochen. Welcher Satz ist richtig geschrieben?",
+        "a": "Ich kenne die beiden Mädchen, aber ihre Namen weiß ich nicht.",
+        "wrong": [
+          "Ich kenne die beiden Mädchen, aber Ihre Namen weiß ich nicht.",
+          "Ich kenne die beiden Mädchen, aber ihre namen weiß ich nicht.",
+          "ich kenne die beiden Mädchen, aber ihre Namen weiß ich nicht."
+        ],
+        "why": "Hier geht es um andere Personen, nicht um eine höfliche Anrede. Deshalb bleibt „ihre“ klein. Namen ist ein Nomen und wird großgeschrieben.",
+        "label": "sie oder Sie?"
+      },
+      {
+        "q": "Die Straße heißt „Hohe Straße“. Welcher Satz ist richtig geschrieben?",
+        "a": "Der Bus hält in der Hohen Straße.",
+        "wrong": [
+          "Der Bus hält in der hohen Straße.",
+          "Der Bus hält in der Hohen straße.",
+          "Der Bus hält in der hohen straße."
+        ],
+        "why": "Im Straßennamen „Hohe Straße“ wird auch das Adjektiv großgeschrieben, ebenso wenn es gebeugt ist: der Hohen Straße.",
+        "label": "Namen"
+      },
+      {
+        "q": "Es geht um den berühmten Dom in der Stadt Köln. Welcher Satz ist richtig geschrieben?",
+        "a": "Der Kölner Dom ist weltbekannt.",
+        "wrong": [
+          "Der kölner Dom ist weltbekannt.",
+          "Der Kölner dom ist weltbekannt.",
+          "Der kölner dom ist weltbekannt."
+        ],
+        "why": "Wörter auf -er, die aus einem Ortsnamen entstehen, schreibst du groß: Kölner. Dom ist ein Nomen.",
+        "label": "Namen"
+      },
+      {
+        "q": "Das Meer zwischen Rumänien und der Türkei heißt „Schwarzes Meer“. Welcher Satz ist richtig geschrieben?",
+        "a": "Wir reisen ans Schwarze Meer.",
+        "wrong": [
+          "Wir reisen ans schwarze Meer.",
+          "Wir reisen ans Schwarze meer.",
+          "Wir reisen ans schwarze meer."
+        ],
+        "why": "In geografischen Namen wird das Adjektiv großgeschrieben: Schwarzes Meer, genauso wie Pazifischer Ozean.",
+        "label": "Namen"
+      },
+      {
+        "q": "Welcher Satz ist richtig geschrieben?",
+        "a": "Die Sieben ist meine Glückszahl.",
+        "wrong": [
+          "Die sieben ist meine Glückszahl.",
+          "Die Sieben ist meine glückszahl.",
+          "Die sieben ist meine glückszahl."
+        ],
+        "why": "Mit dem Artikel „die“ wird die Zahl zu einem Nomen: die Sieben. Glückszahl ist ein zusammengesetztes Nomen.",
+        "label": "Zahl als Nomen"
+      },
+      {
+        "q": "Welcher Satz ist richtig geschrieben?",
+        "a": "Nach dem Hin und Her haben wir uns geeinigt.",
+        "wrong": [
+          "Nach dem hin und her haben wir uns geeinigt.",
+          "Nach dem Hin und her haben wir uns geeinigt.",
+          "Nach dem hin und Her haben wir uns geeinigt."
+        ],
+        "why": "Nach „dem“ wird die feste Verbindung zum Nomen: Hin und Her werden groß, das „und“ bleibt klein. Ohne Artikel („Er lief hin und her“) bleibt alles klein.",
+        "label": "Feste Verbindung"
+      }
+    ],
+    "klein": [
+      {
+        "q": "Die Zahl 30, in Buchstaben geschrieben.",
+        "kind": "gap",
+        "s": "Die Fahrt zur Schule dauert ___ Minuten.",
+        "a": "dreißig",
+        "wrong": [
+          "dreissig",
+          "dreisig",
+          "dreißich"
+        ],
+        "why": "Nach dem Doppellaut ei schreibst du ß: dreißig. Das Zahlwort bleibt klein.",
+        "label": "Zahl in Buchstaben"
+      },
+      {
+        "q": "Adjektiv zu „Durst“.",
+        "kind": "gap",
+        "s": "Nach dem Sport bin ich sehr ___.",
+        "a": "durstig",
+        "wrong": [
+          "durstich",
+          "durstik",
+          "durstieg"
+        ],
+        "why": "Die Endung ist -ig. Du hörst ein ch, aber du schreibst g: durstig. Ein Adjektiv auf -ig bleibt klein.",
+        "label": "-ig oder -ich?"
+      },
+      {
+        "q": "Adjektiv zu „halten“: Etwas, das lange hält, ist ...",
+        "kind": "gap",
+        "s": "Konserven sind sehr lange ___.",
+        "a": "haltbar",
+        "wrong": [
+          "halbar",
+          "haltbahr",
+          "haldbar"
+        ],
+        "why": "Haltbar kommt von „halten“, deshalb steht ein t im Wort. Die Endung -bar zeigt ein Adjektiv.",
+        "label": "Adjektiv-Endung"
+      },
+      {
+        "q": "Adjektiv zu „schweigen“: Wer kaum redet, ist ...",
+        "kind": "gap",
+        "s": "Mein Onkel ist ziemlich ___ und sagt kaum etwas.",
+        "a": "schweigsam",
+        "wrong": [
+          "schweigsahm",
+          "schweisam",
+          "schweigsan"
+        ],
+        "why": "Das Wort kommt von „schweigen“, also mit g im Stamm. Die Endung -sam zeigt ein Adjektiv.",
+        "label": "Adjektiv-Endung"
+      },
+      {
+        "q": "Zeitangabe mit der Bedeutung „jeden Tag zur Mittagszeit“.",
+        "kind": "gap",
+        "s": "Wir essen ___ in der Mensa.",
+        "a": "mittags",
+        "wrong": [
+          "mitags",
+          "mittagz",
+          "mittax"
+        ],
+        "why": "Mittags kommt von „Mittag“ mit zwei t und der Endung -s. Mit der Endung -s ist es ein Adverb und wird kleingeschrieben.",
+        "label": "Zeitangabe"
+      },
+      {
+        "q": "Superlativ von „schön“, nach „am“.",
+        "kind": "gap",
+        "s": "Im Mai sieht unser Garten am ___ aus.",
+        "a": "schönsten",
+        "wrong": [
+          "schönnsten",
+          "schöhnsten",
+          "schönsden"
+        ],
+        "why": "Der Superlativ endet auf -sten: schönsten. Nach „am“ bleibt er klein, weil er beschreibt, wie etwas aussieht.",
+        "label": "Superlativ"
+      },
+      {
+        "q": "Welcher Satz ist richtig geschrieben?",
+        "a": "Wir waren gestern zu dritt im Kino.",
+        "wrong": [
+          "Wir waren gestern zu Dritt im Kino.",
+          "Wir waren gestern Zu dritt im Kino.",
+          "wir waren gestern zu dritt im Kino."
+        ],
+        "why": "„zu dritt“ ist ein Zahlwort in Buchstaben und wird kleingeschrieben. Der Satzanfang ist groß.",
+        "label": "Zahlwort"
+      },
+      {
+        "q": "Welcher Satz ist richtig geschrieben?",
+        "a": "Ich wohne im dritten Stock.",
+        "wrong": [
+          "Ich wohne im Dritten Stock.",
+          "Ich wohne im dritten stock.",
+          "Ich wohne im Dritten stock."
+        ],
+        "why": "Eine Ordnungszahl vor einem Nomen ist ein Zahlwort und bleibt klein: dritten. Stock ist das Nomen und wird groß.",
+        "label": "Ordnungszahl"
+      },
+      {
+        "q": "Welcher Satz ist richtig geschrieben?",
+        "a": "Von allen Hunden läuft Rex am schnellsten.",
+        "wrong": [
+          "Von allen Hunden läuft Rex am Schnellsten.",
+          "Von allen Hunden läuft Rex Am schnellsten.",
+          "Von allen Hunden läuft Rex Am Schnellsten."
+        ],
+        "why": "Der Superlativ mit „am“ antwortet auf die Frage „wie?“ und bleibt klein: am schnellsten.",
+        "label": "Superlativ"
+      },
+      {
+        "q": "Welcher Satz ist richtig geschrieben?",
+        "a": "Es ist nachts still, aber am Morgen singen die Vögel.",
+        "wrong": [
+          "Es ist Nachts still, aber am Morgen singen die Vögel.",
+          "Es ist nachts still, aber am morgen singen die Vögel.",
+          "Es ist Nachts still, aber am morgen singen die Vögel."
+        ],
+        "why": "„nachts“ hat die Endung -s und bleibt klein. Nach „am“ wird Morgen zum Nomen: am Morgen.",
+        "label": "Zeitangabe"
+      },
+      {
+        "q": "Welcher Satz ist richtig geschrieben?",
+        "a": "Auf dem Flur war niemand zu sehen.",
+        "wrong": [
+          "Auf dem Flur war Niemand zu sehen.",
+          "Auf dem Flur war niemand zu Sehen.",
+          "Auf dem Flur war Niemand zu Sehen."
+        ],
+        "why": "niemand ist ein unbestimmtes Pronomen und bleibt klein. Auch „zu sehen“ schreibst du klein.",
+        "label": "Pronomen"
+      },
+      {
+        "q": "Du hast dir einige Sticker gekauft, nicht zwei, die zusammengehören. Welcher Satz ist richtig geschrieben?",
+        "a": "Ich habe mir ein paar Sticker gekauft.",
+        "wrong": [
+          "Ich habe mir ein Paar Sticker gekauft.",
+          "Ich habe mir Ein paar Sticker gekauft.",
+          "Ich habe mir ein pahr Sticker gekauft."
+        ],
+        "why": "„ein paar“ bedeutet einige und wird kleingeschrieben. Ein Paar sind zwei, die zusammengehören, zum Beispiel ein Paar Schuhe.",
+        "label": "paar oder Paar?"
+      },
+      {
+        "q": "Welcher Satz ist richtig geschrieben?",
+        "a": "Ich bin heute ein bisschen müde.",
+        "wrong": [
+          "Ich bin heute ein Bisschen müde.",
+          "Ich bin heute ein bischen müde.",
+          "Ich bin heute ein bißchen müde."
+        ],
+        "why": "„ein bisschen“ wird kleingeschrieben, mit ss und sch. Das ß gehört zur alten Schreibweise.",
+        "label": "Mengenwort"
+      },
+      {
+        "q": "Welcher Satz ist richtig geschrieben?",
+        "a": "Mir hat das Komische am besten gefallen.",
+        "wrong": [
+          "Mir hat das komische am besten gefallen.",
+          "Mir hat das Komische am Besten gefallen.",
+          "Mir hat das komische am Besten gefallen."
+        ],
+        "why": "Nach „das“ wird das Adjektiv zum Nomen: das Komische. Der Superlativ nach „am“ bleibt klein: am besten.",
+        "label": "Adjektiv als Nomen"
+      }
+    ],
+    "fremd": [
+      {
+        "q": "Das Nomen zum Verb „informieren“.",
+        "kind": "gap",
+        "s": "An der Tafel steht eine wichtige ___.",
+        "a": "Information",
+        "wrong": [
+          "Informazion",
+          "Informatzion",
+          "Infomation"
+        ],
+        "why": "Die Endung heißt -tion, nicht -zion: Information. Das Wort kommt von „informieren“.",
+        "label": "Fremdwort-Endung"
+      },
+      {
+        "q": "Fremdwort: Etwas Kaputtes wieder in Ordnung bringen.",
+        "kind": "gap",
+        "s": "Papa will morgen mein Fahrrad ___.",
+        "a": "reparieren",
+        "wrong": [
+          "repariren",
+          "reperieren",
+          "reparihren"
+        ],
+        "why": "Verben auf -ieren schreibst du mit ie und e: reparieren. Ein Verb ohne e (repariren) gibt es nicht.",
+        "label": "Fremdwort-Endung"
+      },
+      {
+        "q": "Fremdwort: gerade jetzt wichtig und neu.",
+        "kind": "gap",
+        "s": "Diese Meldung ist ganz ___.",
+        "a": "aktuell",
+        "wrong": [
+          "aktuel",
+          "aktuhll",
+          "aktull"
+        ],
+        "why": "Die Endung -ell wird mit zwei l geschrieben: aktuell. Mit einem l fehlt ein Buchstabe.",
+        "label": "Fremdwort-Endung"
+      },
+      {
+        "q": "Ein Berg, aus dem Lava und Asche kommen. Das v spricht man wie ein w.",
+        "kind": "gap",
+        "s": "Der ___ spuckt Asche und heiße Lava.",
+        "a": "Vulkan",
+        "wrong": [
+          "Wulkan",
+          "Fulkan",
+          "Vulcan"
+        ],
+        "why": "In Fremdwörtern wie Vulkan klingt das v wie ein w, du schreibst aber v. Die Schreibung mit c (Vulcan) ist nicht richtig.",
+        "label": "v, f oder w?"
+      },
+      {
+        "q": "Fremdwort für Vorhersage. Es beginnt mit Pro-.",
+        "kind": "gap",
+        "s": "Die ___ für das Wetter am Wochenende ist gut.",
+        "a": "Prognose",
+        "wrong": [
+          "Prognoze",
+          "Prognosse",
+          "Prognos"
+        ],
+        "why": "Eine Prognose ist eine Vorhersage. Das Wort endet auf -ose mit einem s: Prognose.",
+        "label": "Fremdwort schreiben"
+      },
+      {
+        "q": "Fremdwort für eine Einigung, bei der beide Seiten ein Stück nachgeben.",
+        "kind": "gap",
+        "s": "Nach langem Streit fanden wir einen ___.",
+        "a": "Kompromiss",
+        "wrong": [
+          "Kompromis",
+          "Kompromiß",
+          "Compromiss"
+        ],
+        "why": "Das Wort wird mit K und am Ende mit ss geschrieben, denn der Vokal vorher ist kurz: Kompromiss. Das ß wäre alte Schreibweise.",
+        "label": "Fremdwort schreiben"
+      },
+      {
+        "q": "Was bedeutet das Fremdwort „Archiv“?",
+        "a": "Ein Ort, an dem alte Unterlagen gesammelt werden",
+        "wrong": [
+          "Ein Raum für Musikproben",
+          "Ein Gerät zum Kopieren von Papier",
+          "Ein Geschäft für neue Bücher"
+        ],
+        "why": "Ein Archiv bewahrt alte Dokumente, Fotos und Akten auf. Ein Geschäft für Bücher heißt Buchhandlung.",
+        "label": "Bedeutung"
+      },
+      {
+        "q": "Was ist ein Idol?",
+        "a": "Eine Person, die jemand sehr verehrt und als Vorbild sieht",
+        "wrong": [
+          "Ein Gegenstand, der Glück bringen soll",
+          "Eine Person, die einen Streit schlichtet",
+          "Eine Veranstaltung mit viel Musik"
+        ],
+        "why": "Ein Idol ist ein verehrtes Vorbild, zum Beispiel eine Sängerin oder ein Sportler. Mit Glücksbringern oder Streitschlichtung hat das Wort nichts zu tun.",
+        "label": "Bedeutung"
+      },
+      {
+        "q": "Welches Wort bedeutet „etwas Erfundenes“ und steht im Gegensatz zu einer Tatsache?",
+        "a": "Fiktion",
+        "wrong": [
+          "Fakt",
+          "Debatte",
+          "Archiv"
+        ],
+        "why": "Fiktion ist etwas Erfundenes, zum Beispiel eine erfundene Geschichte. Ein Fakt ist eine Tatsache, eine Debatte ein Streitgespräch.",
+        "label": "Bedeutung"
+      },
+      {
+        "q": "Welches Wort ist richtig geschrieben?",
+        "a": "Strategie",
+        "wrong": [
+          "Strategi",
+          "Stratejie",
+          "Strategii"
+        ],
+        "why": "Das Nomen endet auf -ie, genau wie Biologie und Energie. Das Wort wird mit g geschrieben, nicht mit j.",
+        "label": "Fremdwort schreiben"
+      },
+      {
+        "q": "In welchem Wort sprichst du das v wie ein w?",
+        "a": "Virus",
+        "wrong": [
+          "Vogel",
+          "Vater",
+          "Vorsicht"
+        ],
+        "why": "In Virus klingt das v wie ein w. In Vogel, Vater und Vorsicht klingt es wie ein f.",
+        "label": "v, f oder w?"
+      },
+      {
+        "q": "Was bedeutet der Wortbaustein „anti-“ in „Antikörper“ und „antibakteriell“?",
+        "a": "gegen",
+        "wrong": [
+          "für",
+          "wieder",
+          "zusammen"
+        ],
+        "why": "Anti- bedeutet gegen. Ein Antikörper wirkt gegen Krankheitserreger, ein antibakterielles Mittel gegen Bakterien. Für heißt pro-.",
+        "label": "Wortbaustein"
+      },
+      {
+        "q": "Auf einem Feld mit Monokultur wächst nur Weizen. Was bedeutet der Wortbaustein „mono-“?",
+        "a": "einzig, allein",
+        "wrong": [
+          "zusammen",
+          "gegen",
+          "zurück"
+        ],
+        "why": "Mono- bedeutet einzig oder allein. Auch ein Monolog wird von einer Person allein gesprochen.",
+        "label": "Wortbaustein"
+      },
+      {
+        "q": "Was bedeutet der Wortbaustein „re-“ in „renovieren“ und „reparieren“?",
+        "a": "wieder, zurück",
+        "wrong": [
+          "gegen",
+          "einzig",
+          "auseinander"
+        ],
+        "why": "Re- bedeutet wieder oder zurück. Renovieren heißt wieder neu machen, reparieren wieder in Ordnung bringen.",
+        "label": "Wortbaustein"
+      }
+    ],
+    "satzglieder": [
+      {
+        "q": "Setze „mein“ im Dativ ein (Wem helfe ich?).",
+        "kind": "gap",
+        "s": "Ich helfe ___ Freund.",
+        "a": "meinem",
+        "wrong": [
+          "meinen",
+          "mein",
+          "meiner"
+        ],
+        "why": "Nach „Wem?“ steht der Dativ. Männlich heißt das „meinem Freund“. „Meinen Freund“ wäre der Akkusativ.",
+        "label": "Dativ"
+      },
+      {
+        "q": "Setze den bestimmten Artikel im Akkusativ ein (Wen oder was siehst du?).",
+        "kind": "gap",
+        "s": "Du siehst ___ Hund im Park.",
+        "a": "den",
+        "wrong": [
+          "der",
+          "dem",
+          "des"
+        ],
+        "why": "Auf „Wen oder was?“ folgt der Akkusativ. Männlich wird aus „der Hund“ dann „den Hund“.",
+        "label": "Akkusativ"
+      },
+      {
+        "q": "Setze den bestimmten Artikel im Genitiv ein (Wessen Fell?).",
+        "kind": "gap",
+        "s": "Das Fell ___ Hundes ist weich.",
+        "a": "des",
+        "wrong": [
+          "dem",
+          "den",
+          "der"
+        ],
+        "why": "Auf „Wessen?“ folgt der Genitiv. Männlich heißt er „des Hundes“, meist mit der Endung -es oder -s. „Des Hundes“ gehört hier zu „das Fell“ und ist kein eigenes Satzglied.",
+        "label": "Genitiv"
+      },
+      {
+        "q": "Setze den bestimmten Artikel im Nominativ ein (Wer oder was erklärt?).",
+        "kind": "gap",
+        "s": "___ Lehrer erklärt die Aufgabe.",
+        "a": "Der",
+        "wrong": [
+          "Den",
+          "Dem",
+          "Des"
+        ],
+        "why": "Das Subjekt steht im Nominativ. „Wer erklärt?“ – „der Lehrer“. „Den Lehrer“ wäre ein Akkusativ.",
+        "label": "Nominativ"
+      },
+      {
+        "q": "Setze den bestimmten Artikel im Dativ ein (Wem schenkt der Junge eine Blume?).",
+        "kind": "gap",
+        "s": "Der Junge schenkt ___ Mutter eine Blume.",
+        "a": "der",
+        "wrong": [
+          "die",
+          "den",
+          "das"
+        ],
+        "why": "Das Dativobjekt antwortet auf „Wem?“. Weiblich lautet der Dativ „der Mutter“, nicht „die Mutter“.",
+        "label": "Dativ"
+      },
+      {
+        "q": "Setze „ich“ im Dativ ein (Wem hilft der Lehrer?).",
+        "kind": "gap",
+        "s": "Der Lehrer hilft ___ bei der Aufgabe.",
+        "a": "mir",
+        "wrong": [
+          "mich",
+          "ich",
+          "mein"
+        ],
+        "why": "„Helfen“ fragt nach „Wem?“ und verlangt den Dativ: mir. „Mich“ ist der Akkusativ.",
+        "label": "Pronomen"
+      },
+      {
+        "q": "Setze „er“ im Akkusativ ein (Wen ruft Lena an?).",
+        "kind": "gap",
+        "s": "Lena ruft ___ an.",
+        "a": "ihn",
+        "wrong": [
+          "ihm",
+          "er",
+          "sein"
+        ],
+        "why": "„Wen ruft sie an?“ fragt nach dem Akkusativobjekt: ihn. „Ihm“ ist der Dativ. In der Standardsprache ruft man jemanden (Akkusativ) an.",
+        "label": "Pronomen"
+      },
+      {
+        "q": "Ergänze das Fragewort für das Subjekt.",
+        "kind": "gap",
+        "s": "Nach dem Subjekt fragst du mit „___ oder was?“",
+        "a": "Wer",
+        "wrong": [
+          "Wen",
+          "Wem",
+          "Wessen"
+        ],
+        "why": "Das Subjekt steht im Nominativ. Die Frage dafür lautet „Wer oder was?“.",
+        "label": "Fragewort"
+      },
+      {
+        "q": "Wie viele Satzglieder hat der Satz „Gestern spielte der kleine Hund im Park.“?",
+        "a": "vier",
+        "wrong": [
+          "drei",
+          "fünf",
+          "sieben"
+        ],
+        "why": "Bei der Umstellprobe bleiben „der kleine Hund“ und „im Park“ jeweils zusammen. Es gibt vier Satzglieder: Gestern / spielte / der kleine Hund / im Park. Sieben ist nur die Zahl der Wörter.",
+        "label": "Umstellprobe"
+      },
+      {
+        "q": "Welche Frage führt im Satz „Die Katze fängt eine Maus.“ zum Akkusativobjekt?",
+        "a": "Wen oder was fängt die Katze?",
+        "wrong": [
+          "Wer fängt eine Maus?",
+          "Wem fängt die Katze eine Maus?",
+          "Wessen Maus fängt die Katze?"
+        ],
+        "why": "Frage: „Wen oder was fängt die Katze?“ – eine Maus. „Die Katze“ ist das Subjekt (Wer fängt?).",
+        "label": "Akkusativobjekt"
+      },
+      {
+        "q": "Welche Frage führt im Satz „Ich schenke meiner Oma einen Schal.“ zum Dativobjekt?",
+        "a": "Wem schenke ich einen Schal?",
+        "wrong": [
+          "Wen schenke ich meiner Oma?",
+          "Wer schenkt meiner Oma einen Schal?",
+          "Wessen Oma schenke ich einen Schal?"
+        ],
+        "why": "Frage: „Wem schenke ich einen Schal?“ – meiner Oma. „Einen Schal“ antwortet auf „Wen oder was?“ und ist das Akkusativobjekt.",
+        "label": "Dativobjekt"
+      },
+      {
+        "q": "Welche Wörter bilden zusammen das Prädikat im Satz „Ich habe gestern laut gelacht.“?",
+        "a": "habe … gelacht",
+        "wrong": [
+          "Ich habe",
+          "gestern laut",
+          "laut gelacht"
+        ],
+        "why": "Das Prädikat besteht hier aus zwei Teilen. „Habe“ und „gelacht“ gehören zusammen, auch wenn andere Wörter dazwischenstehen.",
+        "label": "Prädikat"
+      },
+      {
+        "q": "Zu welcher Art Satzglied gehört „morgen“ im Satz „Wir spielen morgen im Park.“?",
+        "a": "adverbiale Bestimmung der Zeit",
+        "wrong": [
+          "Subjekt",
+          "Akkusativobjekt",
+          "Prädikat"
+        ],
+        "why": "„Wann spielen wir?“ – morgen. Das ist eine adverbiale Bestimmung der Zeit. „Im Park“ antwortet auf „Wo?“, „spielen“ ist das Prädikat.",
+        "label": "Satzglied bestimmen"
+      },
+      {
+        "q": "Welches Satzglied ist im Satz „Den Ball wirft Max.“ das Subjekt?",
+        "a": "Max",
+        "wrong": [
+          "Den Ball",
+          "wirft",
+          "Max wirft"
+        ],
+        "why": "Frage: „Wer wirft?“ – Max. Das Subjekt steht nicht immer am Satzanfang. „Den Ball“ ist ein Akkusativobjekt.",
+        "label": "Subjekt"
+      }
+    ],
+    "zeitformen": [
+      {
+        "q": "Setze „spielen“ im Perfekt (3. Person Singular) ein.",
+        "kind": "gap",
+        "s": "Er sagt, dass er gestern im Park Fußball ___.",
+        "a": "gespielt hat",
+        "wrong": [
+          "spielte hat",
+          "gespielt ist",
+          "gespielte hat"
+        ],
+        "why": "Das Perfekt besteht aus „haben“ oder „sein“ im Präsens und dem Partizip II. „Spielen“ ist weder Fortbewegung noch Zustandsänderung, deshalb „hat“.",
+        "label": "Perfekt"
+      },
+      {
+        "q": "Setze „essen“ im Plusquamperfekt (3. Person Singular) ein.",
+        "kind": "gap",
+        "s": "Nachdem sie ___, ging sie los.",
+        "a": "gegessen hatte",
+        "wrong": [
+          "gegessen hat",
+          "gegessen war",
+          "aß hatte"
+        ],
+        "why": "Das Essen war zuerst vorbei. Für das Vorzeitige steht das Plusquamperfekt: „hatte“ im Präteritum plus Partizip II.",
+        "label": "Plusquamperfekt"
+      },
+      {
+        "q": "Setze das Partizip II von „sehen“ ein.",
+        "kind": "gap",
+        "s": "Gestern habe ich einen Film ___.",
+        "a": "gesehen",
+        "wrong": [
+          "gesehte",
+          "gesah",
+          "gesehet"
+        ],
+        "why": "„Sehen“ ist unregelmäßig: sehen – sah – gesehen. Das Partizip II wird nicht mit -t gebildet.",
+        "label": "Partizip II"
+      },
+      {
+        "q": "Setze das Partizip II von „verstehen“ ein.",
+        "kind": "gap",
+        "s": "Zum Glück habe ich die Aufgabe ___.",
+        "a": "verstanden",
+        "wrong": [
+          "geverstanden",
+          "verstehen",
+          "verstand"
+        ],
+        "why": "Verben mit der Vorsilbe ver- bekommen im Partizip II kein ge-. Außerdem ist „verstehen“ unregelmäßig: verstanden.",
+        "label": "Partizip II"
+      },
+      {
+        "q": "Setze „gehen“ im Präteritum (1. Person Singular) ein.",
+        "kind": "gap",
+        "s": "Als es klingelte, ___ ich zur Tür.",
+        "a": "ging",
+        "wrong": [
+          "gehte",
+          "gang",
+          "gegangen"
+        ],
+        "why": "Das Präteritum von „gehen“ ist unregelmäßig: ich ging. „Gegangen“ ist das Partizip II für das Perfekt.",
+        "label": "Präteritum"
+      },
+      {
+        "q": "Setze „einschlafen“ im Perfekt (3. Person Singular) ein.",
+        "kind": "gap",
+        "s": "Ich glaube, dass der Hund schon ___.",
+        "a": "eingeschlafen ist",
+        "wrong": [
+          "eingeschlafen hat",
+          "geeinschlafen ist",
+          "einschlief ist"
+        ],
+        "why": "Einschlafen ist eine Zustandsänderung (wach, dann schlafend). Dann bildest du das Perfekt mit „sein“: ist eingeschlafen.",
+        "label": "sein oder haben"
+      },
+      {
+        "q": "Setze „werden“ für das Futur I (1. Person Singular) ein.",
+        "kind": "gap",
+        "s": "Ich ___ morgen pünktlich kommen.",
+        "a": "werde",
+        "wrong": [
+          "wurde",
+          "bin",
+          "werden"
+        ],
+        "why": "Das Futur I besteht aus „werden“ plus Infinitiv. Bei „ich“ heißt es „ich werde kommen“. „Wurde“ ist Präteritum.",
+        "label": "Futur I"
+      },
+      {
+        "q": "Setze „fahren“ im Perfekt (1. Person Singular) ein.",
+        "kind": "gap",
+        "s": "Ich weiß noch, dass ich mit dem Bus ___.",
+        "a": "gefahren bin",
+        "wrong": [
+          "gefahren habe",
+          "gefahrt bin",
+          "fuhr bin"
+        ],
+        "why": "Mit dem Bus fahren ist eine Fortbewegung, daher „sein“: ich bin gefahren. Das Partizip II von „fahren“ ist unregelmäßig.",
+        "label": "sein oder haben"
+      },
+      {
+        "q": "Der Satz lautet: „Sie war schon gegangen.“ In welcher Zeitform steht er?",
+        "a": "Plusquamperfekt",
+        "wrong": [
+          "Perfekt",
+          "Präteritum",
+          "Futur I"
+        ],
+        "why": "„War“ steht im Präteritum, dazu kommt das Partizip II „gegangen“. Das ist das Plusquamperfekt. Im Perfekt hieße es „ist gegangen“.",
+        "label": "Zeitform erkennen"
+      },
+      {
+        "q": "In welcher Zeitform steht der Satz „Wir werden morgen früh aufstehen.“?",
+        "a": "Futur I",
+        "wrong": [
+          "Präsens",
+          "Perfekt",
+          "Plusquamperfekt"
+        ],
+        "why": "„Werden“ plus Infinitiv bildet das Futur I. Es spricht von etwas, das noch kommt.",
+        "label": "Zeitform erkennen"
+      },
+      {
+        "q": "Wie lautet der Satz „Ich sehe den Film.“ im Perfekt?",
+        "a": "Ich habe den Film gesehen.",
+        "wrong": [
+          "Ich bin den Film gesehen.",
+          "Ich sah den Film.",
+          "Ich hatte den Film gesehen."
+        ],
+        "why": "„Sehen“ bildet das Perfekt mit „haben“ im Präsens plus Partizip II. „Ich sah“ ist Präteritum, „ich hatte gesehen“ ist Plusquamperfekt.",
+        "label": "Perfekt"
+      },
+      {
+        "q": "Erzähle in der Vergangenheit: Zuerst aß Tom, danach ging er los. Welcher Satz verbindet beides richtig?",
+        "a": "Nachdem Tom gegessen hatte, ging er los.",
+        "wrong": [
+          "Nachdem Tom isst, ging er los.",
+          "Nachdem Tom gegessen war, ging er los.",
+          "Nachdem Tom essen wird, ging er los."
+        ],
+        "why": "Was zuerst geschah, steht im Plusquamperfekt: „gegessen hatte“. Der spätere Satzteil steht im Präteritum: „ging“.",
+        "label": "Was war zuerst?"
+      },
+      {
+        "q": "Welcher Satz im Perfekt ist richtig gebildet?",
+        "a": "Ich bin heute früh aufgestanden.",
+        "wrong": [
+          "Ich habe heute früh aufgestanden.",
+          "Ich bin heute früh aufgestehen.",
+          "Ich habe heute früh aufgestehen."
+        ],
+        "why": "Aufstehen ist eine Zustandsänderung, daher „sein“. Das Partizip II ist unregelmäßig: aufgestanden, mit ge- in der Mitte.",
+        "label": "sein oder haben"
+      },
+      {
+        "q": "Welche Reihe ist richtig (Grundform – Präteritum – Partizip II)?",
+        "a": "nehmen – nahm – genommen",
+        "wrong": [
+          "nehmen – nehmte – genehmt",
+          "nehmen – nahm – genahm",
+          "nehmen – nam – genomen"
+        ],
+        "why": "„Nehmen“ ist unregelmäßig: Der Vokal wechselt zu „nahm“, das Partizip II lautet „genommen“ mit zwei m.",
+        "label": "Stammformen"
       }
     ]
   }

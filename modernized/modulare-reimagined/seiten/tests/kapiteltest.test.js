@@ -8,9 +8,10 @@ import { buildConfig } from '../../inhalte/index.js';
 import { finishRound } from '../../regeln/index.js';
 import { choiceQuestion, taskKey, typedQuestion } from '../../runde/index.js';
 import { AppHome } from '../apphome.js';
-import { appDefaults, chapterMissing, chapterQuestions, hasChapterTest, profileDefaults, startRound, stationAfter } from '../ablauf.js';
+import { appDefaults, chapterMissing, chapterQuestions, hasChapterTest, profileDefaults, ROUND_SIZE, startRound, stationAfter } from '../ablauf.js';
 import { resultModel, wordsFor } from '../ergebnis.js';
 import { APPS, logicFor, paketVon } from '../../apps/tests/laden.js';
+import { LIVE } from '../registry.js';
 import { configOf, DAY, questions } from './helpers.js';
 
 const h = createElement;
@@ -23,6 +24,16 @@ test('SEITE-KAPITELTEST Die Aufgaben kommen abwechselnd aus allen Seiten und nen
   assert.equal(list.length, 10);
   assert.equal(list.filter((q) => q.unitId === 'a').length, 5);
   assert.equal(list.filter((q) => q.unitId === 'b').length, 5);
+});
+
+// Jeder Platz gehört einer Seite. Hat ein Kapitel mehr Seiten als Plätze, kommen die letzten nie dran.
+test('SEITE-KAPITELTEST Kein Kapitel hat mehr Seiten als der Test Plätze', () => {
+  const zuGroß = APPS.filter((entry) => entry.status === LIVE).flatMap((entry) => {
+    const zahl = new Map();
+    for (const { group } of paketVon(entry.id).manifest.units) if (group) zahl.set(group, (zahl.get(group) || 0) + 1);
+    return [...zahl].filter(([, seiten]) => seiten > ROUND_SIZE.chapter).map(([id, seiten]) => `${entry.id}/${id}: ${seiten}`);
+  });
+  assert.deepEqual(zuGroß, []);
 });
 
 test('SEITE-KAPITELTEST Dieselbe Aufgabe auf zwei Seiten kommt nur einmal, ihr Platz geht an die nächste Frage der Seite', () => {

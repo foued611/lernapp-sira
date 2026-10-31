@@ -164,7 +164,7 @@
   {
     "id": "spelling-all",
     "n": "Rechtschreib-Meister",
-    "d": "Alle fünf Rechtschreib-Seiten geschafft",
+    "d": "Die fünf Grund-Seiten zur Rechtschreibung geschafft",
     "rule": {
       "type": "units",
       "ids": [
@@ -229,6 +229,47 @@
     "rule": {
       "type": "refresh",
       "count": 1
+    }
+  },
+  {
+    "id": "lrs-spelling",
+    "n": "Rechtschreib-Profi",
+    "d": "Alle Seiten im Kapitel „Rechtschreiben vertiefen“ geschafft",
+    "rule": {
+      "type": "units",
+      "ids": [
+        "bausteine",
+        "laute",
+        "xlaute",
+        "zusammen",
+        "trennbar",
+        "silben",
+        "gross-mehr",
+        "klein",
+        "fremd"
+      ]
+    }
+  },
+  {
+    "id": "lrs-grammar",
+    "n": "Satzbau-Fan",
+    "d": "Satzglieder und Zeitformen geschafft",
+    "rule": {
+      "type": "units",
+      "ids": [
+        "satzglieder",
+        "zeitformen"
+      ]
+    }
+  },
+  {
+    "id": "lrs-compound",
+    "n": "Fugen-Finder",
+    "d": "Drei Sterne bei Zusammensetzungen und Fugen",
+    "rule": {
+      "type": "unit",
+      "id": "zusammen",
+      "stars": 3
     }
   }
 ]

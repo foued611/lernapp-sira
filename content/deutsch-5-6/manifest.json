@@ -1,0 +1,766 @@
+{
+  "schema": 1,
+  "id": "deutsch-5-6",
+  "title": "Deutsch-Werkstatt 5/6",
+  "catalog": {
+    "fach": "deutsch",
+    "klassen": [
+      5,
+      6
+    ],
+    "lehrwerk": "Gezielt fördern, Intensivkurs LRS 5/6",
+    "subject": "Deutsch",
+    "desc": "Förderprogramm für Klasse 5 und 6: Rechtschreiben mit Nachdenkwörtern, kurzen und langen Vokalen, s-Lauten, Groß- und Kleinschreibung, dazu Grammatik von Verben bis Kommas.",
+    "order": 11
+  },
+  "greeting": "Hallo",
+  "intro": "Rechtschreiben, Groß- und Kleinschreibung und Grammatik für Klasse 5 und 6. Erst die Lektion, dann die Übung. Starte irgendwo. Die Reihenfolge ist nur ein Vorschlag.",
+  "bossTitle": "Der Rechtschreib-Boss",
+  "words": {
+    "levelTitles": [
+      "Wort-Neuling",
+      "Satz-Schreiber",
+      "Regel-Finder",
+      "Fehler-Jäger",
+      "Rechtschreib-Profi",
+      "Grammatik-Ass",
+      "Deutsch-Legende"
+    ]
+  },
+  "groups": [
+    {
+      "id": "rechtschreibung",
+      "title": "Rechtschreiben: Wörter und Bausteine"
+    },
+    {
+      "id": "vokale",
+      "title": "Rechtschreiben: Vokale und s-Laute"
+    },
+    {
+      "id": "gross-klein",
+      "title": "Groß- und Kleinschreibung"
+    },
+    {
+      "id": "grammatik",
+      "title": "Grammatik"
+    }
+  ],
+  "units": [
+    {
+      "id": "nachdenk-dt",
+      "group": "rechtschreibung",
+      "color": "#FF8A5B",
+      "ic": "dt",
+      "title": "Nachdenkwörter: d oder t, g oder k, b oder p",
+      "de": "Wörter verlängern und den Laut am Ende hören",
+      "card": {
+        "name": "Wort-Verlängerer",
+        "fact": "Am Wortende klingen d und t, g und k sowie b und p oft gleich, doch beim Verlängern wird der Laut deutlich hörbar."
+      }
+    },
+    {
+      "id": "nachdenk-aeau",
+      "group": "rechtschreibung",
+      "color": "#FF8A5B",
+      "ic": "äu",
+      "title": "ä oder e, äu oder eu",
+      "de": "Verwandte Wörter mit a oder au suchen",
+      "card": {
+        "name": "Wortfamilien-Detektiv",
+        "fact": "Meist gehört ein ä zu einem a und ein äu zu einem au: Aus Zahn wird Zähne, aus Baum wird Bäume."
+      }
+    },
+    {
+      "id": "laute-5",
+      "group": "rechtschreibung",
+      "color": "#FF8A5B",
+      "ic": "qu",
+      "title": "Besondere Laute: st, sp, qu, pf, v",
+      "de": "Hören und Schreiben passen hier nicht zusammen",
+      "card": {
+        "name": "Laut-Verkleider",
+        "fact": "Das Wort Stern sprichst du „schtern“, schreibst es aber mit st. Das q steht im Deutschen fast immer mit u."
+      }
+    },
+    {
+      "id": "vorsilben",
+      "group": "rechtschreibung",
+      "color": "#FF8A5B",
+      "ic": "vs",
+      "title": "Wortbausteine: Vorsilben, ent- und end-",
+      "de": "be, er, ver, zer, ge, auf, mit, Wortstamm end und Vorsilbe ent",
+      "card": {
+        "name": "Baustein-Baumeister",
+        "fact": "Die Vorsilbe ver klingt wie „fer“, wird aber immer mit v geschrieben."
+      }
+    },
+    {
+      "id": "wieder",
+      "group": "rechtschreibung",
+      "color": "#FF8A5B",
+      "ic": "wi",
+      "title": "wieder oder wider?",
+      "de": "Zwei Wörter, die gleich klingen: noch einmal oder gegen",
+      "card": {
+        "name": "Zwillings-Trenner",
+        "fact": "wider ohne e bedeutet meistens „gegen“, zum Beispiel im Wort Widerstand."
+      }
+    },
+    {
+      "id": "endungen",
+      "group": "rechtschreibung",
+      "color": "#FF8A5B",
+      "ic": "ung",
+      "title": "Nomen-Endungen: -ung, -heit, -keit, -nis, -schaft",
+      "de": "Aus Verben und Adjektiven werden Nomen",
+      "card": {
+        "name": "Endungs-Baumeister",
+        "fact": "Mit Endungen wie -ung, -heit, -keit und -schaft machst du aus Verben, Adjektiven und Nomen neue Nomen: Aus frei wird Freiheit."
+      }
+    },
+    {
+      "id": "zusammen5",
+      "group": "rechtschreibung",
+      "color": "#FF8A5B",
+      "ic": "zs",
+      "title": "Zusammensetzungen und Getrenntschreibung",
+      "de": "Grundwort Nomen, Grundwort Adjektiv, zwei Verben, sein",
+      "card": {
+        "name": "Grundwort-Detektiv",
+        "fact": "Bei einer Zusammensetzung entscheidet das letzte Wort über Wortart und Artikel: Ein Schulbus ist ein Bus (der), eine Busschule wäre eine Schule (die)."
+      }
+    },
+    {
+      "id": "kurz-lang",
+      "group": "vokale",
+      "color": "#F5A524",
+      "ic": "kl",
+      "title": "Kurze und lange Vokale: ein oder zwei Konsonanten",
+      "de": "Vokal hören, Silben klatschen, Reimwörter",
+      "card": {
+        "name": "Vokal-Ohr",
+        "fact": "Folgt auf einen kurzen betonten Vokal nur ein Konsonant-Laut, schreibst du ihn doppelt, zum Beispiel in Himmel und Kanne."
+      }
+    },
+    {
+      "id": "tz-ck",
+      "group": "vokale",
+      "color": "#F5A524",
+      "ic": "tz",
+      "title": "tz oder z, ck oder k",
+      "de": "Nach kurzem Vokal tz und ck, sonst z und k",
+      "card": {
+        "name": "Helm-Träger",
+        "fact": "In deutschen Wörtern steht nach einem kurzen Vokal tz oder ck statt zz oder kk, zum Beispiel in Platz und Decke."
+      }
+    },
+    {
+      "id": "slaute5",
+      "group": "vokale",
+      "color": "#F5A524",
+      "ic": "ss",
+      "title": "s, ss oder ß?",
+      "de": "summendes s, zischendes ss und ß",
+      "card": {
+        "name": "Zisch-Detektiv",
+        "fact": "Zischt das s nach einem kurzen Vokal, schreibst du meist ss. Zischt es nach einem langen Vokal oder einem Doppellaut wie ei und au, schreibst du meist ß."
+      }
+    },
+    {
+      "id": "merk-ie",
+      "group": "vokale",
+      "color": "#F5A524",
+      "ic": "ie",
+      "title": "Das lange i: ie, i, ih",
+      "de": "ie, Merkwörter mit i und die Wörter mit ih",
+      "card": {
+        "name": "ie-Sammler",
+        "fact": "Hörst du ein langes i, steht meistens ie. Nur wenige Merkwörter wie Tiger und Igel haben ein einfaches i."
+      }
+    },
+    {
+      "id": "dehnung-h",
+      "group": "vokale",
+      "color": "#F5A524",
+      "ic": "ah",
+      "title": "Lange Vokale: Dehnungs-h und doppelter Vokal",
+      "de": "stilles h und aa, ee, oo als Merkwörter",
+      "card": {
+        "name": "Dehnungs-Entdecker",
+        "fact": "Das Dehnungs-h hörst du nicht, aber es bleibt meist in der ganzen Wortfamilie: Zahl, zählen, bezahlen."
+      }
+    },
+    {
+      "id": "xlaute5",
+      "group": "vokale",
+      "color": "#F5A524",
+      "ic": "ks",
+      "title": "x, chs und cks",
+      "de": "der Laut ks: x, chs, cks, gs und ks",
+      "card": {
+        "name": "ks-Knacker",
+        "fact": "Der Laut ks wird auf fünf Arten geschrieben: x, chs, cks, gs und ks, zum Beispiel in Taxi, Fuchs, Klecks, unterwegs und Keks."
+      }
+    },
+    {
+      "id": "gross-artikel",
+      "group": "gross-klein",
+      "color": "#9B7BFF",
+      "ic": "ar",
+      "title": "Großschreibung: Artikel und Begleiter",
+      "de": "der, die, das, ein, eine, im, am, zum",
+      "card": {
+        "name": "Begleiter-Spürnase",
+        "fact": "Hinter dem Wort „im“ steckt „in dem“: Aus Präposition und Artikel wird ein Wort, und danach folgt meistens ein Nomen."
+      }
+    },
+    {
+      "id": "gross-pronomen",
+      "group": "gross-klein",
+      "color": "#9B7BFF",
+      "ic": "pr",
+      "title": "Großschreibung: Pronomen, Mengenwörter, Endungen, Anrede",
+      "de": "mein, dieser, etwas, -ung, -heit, Sie",
+      "card": {
+        "name": "Spurensucher",
+        "fact": "Die Endungen -ung, -heit, -keit, -schaft, -nis und -tum zeigen dir fast immer, dass ein Wort ein Nomen ist: die Zeitung, die Freiheit."
+      }
+    },
+    {
+      "id": "gross-nominal",
+      "group": "gross-klein",
+      "color": "#9B7BFF",
+      "ic": "nm",
+      "title": "Großschreibung: Nominalisierung, Zeitangaben, Namen, Zahlen",
+      "de": "das Singen, heute Abend, Kölner Dom, eine Zwei",
+      "card": {
+        "name": "Verwandlungs-Profi",
+        "fact": "„heute Abend“ schreibst du mit großem A, „abends“ mit kleinem a: Das Signalwort vor dem Wort entscheidet."
+      }
+    },
+    {
+      "id": "klein",
+      "group": "gross-klein",
+      "color": "#9B7BFF",
+      "ic": "kl",
+      "title": "Kleinschreibung",
+      "de": "Zahlen, Adjektive, Zeitangaben auf -s, unbestimmte Fürwörter",
+      "card": {
+        "name": "Klein-Kontrolleur",
+        "fact": "„abends“ endet auf -s und hat keinen Begleiter, darum bleibt es klein. Bei „heute Abend“ ist Abend ein Nomen."
+      }
+    },
+    {
+      "id": "verben",
+      "group": "grammatik",
+      "color": "#35B6A5",
+      "ic": "vb",
+      "title": "Verben",
+      "de": "Grundform, Personalform, Präsens, Präteritum, Perfekt",
+      "card": {
+        "name": "Verb-Verwandler",
+        "fact": "Das Perfekt bildest du mit haben oder sein und einer Verbform wie gelacht oder gelaufen: Sie hat gelacht, er ist gelaufen."
+      }
+    },
+    {
+      "id": "nomen",
+      "group": "grammatik",
+      "color": "#35B6A5",
+      "ic": "no",
+      "title": "Nomen",
+      "de": "Artikel, Einzahl, Mehrzahl, die vier Fälle",
+      "card": {
+        "name": "Fall-Detektiv",
+        "fact": "Im Dativ Mehrzahl bekommt das Nomen meistens ein -n: Der Trainer hilft den Spielern."
+      }
+    },
+    {
+      "id": "praep-fall",
+      "group": "grammatik",
+      "color": "#35B6A5",
+      "ic": "pr",
+      "title": "Präpositionen und Fall",
+      "de": "mit, für, in, auf: Dativ oder Akkusativ",
+      "card": {
+        "name": "Wegweiser-Wörter",
+        "fact": "Nach in, auf und an entscheidet die Frage: Bei Wo? steht der Dativ, bei Wohin? der Akkusativ."
+      }
+    },
+    {
+      "id": "pronomen5",
+      "group": "grammatik",
+      "color": "#35B6A5",
+      "ic": "pn",
+      "title": "Personal- und Possessivpronomen",
+      "de": "Fürwörter: ich, du, er ... und mein, dein, sein ...",
+      "card": {
+        "name": "Stellvertreter",
+        "fact": "Das Wort „ihr“ kann ein Personalpronomen sein (ihr spielt) oder ein Possessivpronomen (ihr Hund)."
+      }
+    },
+    {
+      "id": "adjektive",
+      "group": "grammatik",
+      "color": "#35B6A5",
+      "ic": "Aj",
+      "title": "Adjektive: beschreiben und steigern",
+      "de": "Grundstufe, Komparativ, Superlativ und Endungen vor dem Nomen",
+      "card": {
+        "name": "Wörter-Maler",
+        "fact": "Zu „viel“ gehören die Steigerungsformen „mehr“ und „am meisten“."
+      }
+    },
+    {
+      "id": "wortfelder",
+      "group": "grammatik",
+      "color": "#35B6A5",
+      "ic": "Wf",
+      "title": "Wortfelder: genauere Wörter finden",
+      "de": "Verben und Adjektive mit ähnlicher Bedeutung sammeln",
+      "card": {
+        "name": "Wort-Sammler",
+        "fact": "Zum Wortfeld „sagen“ gehören zum Beispiel flüstern, rufen und erzählen."
+      }
+    },
+    {
+      "id": "dassdas5",
+      "group": "grammatik",
+      "color": "#35B6A5",
+      "ic": "ds",
+      "title": "das oder dass?",
+      "de": "Probe mit dieses und welches, Konjunktion dass",
+      "card": {
+        "name": "Probe-Profi",
+        "fact": "Passt „dieses“ oder „welches“ an die Stelle, schreibst du „das“ mit einem s."
+      }
+    },
+    {
+      "id": "woertl-rede",
+      "group": "grammatik",
+      "color": "#35B6A5",
+      "ic": "wR",
+      "title": "Satzzeichen bei der wörtlichen Rede",
+      "de": "Anführungszeichen, Doppelpunkt und Komma beim Begleitsatz",
+      "card": {
+        "name": "Rede-Regisseur",
+        "fact": "Bei der wörtlichen Rede stehen die Anführungszeichen am Anfang unten und am Ende oben."
+      }
+    },
+    {
+      "id": "kommas5",
+      "group": "grammatik",
+      "color": "#35B6A5",
+      "ic": "Km",
+      "title": "Kommas: Aufzählung, Konjunktion, Satzgefüge",
+      "de": "Aufzählung, aber und sondern, Nebensatz mit weil, dass, wenn",
+      "card": {
+        "name": "Komma-Wächter",
+        "fact": "In einer Aufzählung steht vor „und“ und „oder“ kein Komma."
+      }
+    }
+  ],
+  "notes": {
+    "nachdenk-dt": [
+      [
+        "Verlängern",
+        "Unsicher am Wortende? Bilde die Mehrzahl, verlängere das Adjektiv oder nimm die Grundform des Verbs: Hund – Hunde."
+      ],
+      [
+        "Merkwörter",
+        "Manche Wörter lassen sich nicht verlängern, zum Beispiel „und“. Sie merkst du dir einzeln."
+      ],
+      [
+        "Profi-Trick",
+        "Schreibe das Wort zuerst hin und setze einen kleinen Punkt unter die unsichere Stelle. Danach verlängerst du und verbesserst."
+      ]
+    ],
+    "nachdenk-aeau": [
+      [
+        "Verwandte Wörter",
+        "Suche ein verwandtes Wort mit a oder au: Zahn – Zähne, Baum – Bäume. Dann schreibst du ä oder äu."
+      ],
+      [
+        "Kein a, kein ä",
+        "Findest du kein verwandtes Wort mit a oder au, schreibst du meistens e oder eu: Fenster, Feuer."
+      ],
+      [
+        "Profi-Trick",
+        "Schreibe zu einem unsicheren Wort das verwandte Wort mit a dazu und unterstreiche den gemeinsamen Teil. So siehst du die Wortfamilie."
+      ]
+    ],
+    "laute-5": [
+      [
+        "Hören und Schreiben",
+        "Am Wortanfang steht st, auch wenn es wie „scht“ klingt, und sp statt „schp“. Für den Laut „kw“ steht qu."
+      ],
+      [
+        "Merkwörter",
+        "Wörter mit v musst du dir merken: Vorhang, Vitamin. Bei pf hilft deutliches Sprechen: Zopf, Pfeil."
+      ],
+      [
+        "Profi-Trick",
+        "Male dir schwierige Wörter mit einem Farbstift an: die Stelle mit st, sp, qu, pf oder v in Farbe, der Rest in Bleistift."
+      ]
+    ],
+    "vorsilben": [
+      [
+        "Vorsilben",
+        "be, er, ver, zer, ge und ent stehen vorn am Wort und werden immer gleich geschrieben. Sie lösen sich nie vom Verb: Ich bestelle. Ich verstecke mich."
+      ],
+      [
+        "end oder ent?",
+        "end mit d gehört zu Ende und Schluss: die Endrunde. ent mit t ist eine Vorsilbe und hat damit nichts zu tun: entladen."
+      ],
+      [
+        "Profi-Trick",
+        "Frag dich: Ist es das Ende von etwas? Dann schreibst du end. Wenn nicht, ist es meist die Vorsilbe ent."
+      ]
+    ],
+    "wieder": [
+      [
+        "wieder",
+        "Heißt es „noch einmal“ oder „erneut“, schreibst du wieder mit ie: wiederholen, das Wiedersehen."
+      ],
+      [
+        "wider",
+        "Heißt es meistens „gegen“, schreibst du wider ohne e: der Widerstand, widersprechen."
+      ],
+      [
+        "Profi-Trick",
+        "Eselsbrücke: wieder hat einen Buchstaben mehr, so wie „noch einmal“ mehr ist als „einmal“."
+      ]
+    ],
+    "endungen": [
+      [
+        "Nomen-Endungen",
+        "Die Endungen -ung, -heit, -keit, -schaft und -nis machen ein Wort zum Nomen. Du schreibst es groß."
+      ],
+      [
+        "-heit oder -keit?",
+        "Nach -ig, -lich, -sam und -bar steht -keit: Möglichkeit, Dankbarkeit. Sonst oft -heit: Freiheit."
+      ],
+      [
+        "-nis",
+        "Einzahl ein s, Mehrzahl zwei s: das Erlebnis, die Erlebnisse. Lerne das Wort immer mit Artikel."
+      ]
+    ],
+    "zusammen5": [
+      [
+        "Grundwort",
+        "Das letzte Wort einer Zusammensetzung. Es bestimmt Wortart, Artikel und Groß- oder Kleinschreibung: die Sonnenbrille."
+      ],
+      [
+        "Adjektiv als Grundwort",
+        "Das ganze Wort wird klein und zusammengeschrieben: schneeweiß, bärenstark."
+      ],
+      [
+        "Getrennt schreiben",
+        "Zwei Verben: schwimmen gehen. Verbindungen mit „sein“: da sein, dabei sein."
+      ],
+      [
+        "Profi-Trick",
+        "Frag dich bei jedem langen Wort: Was ist der hintere Teil? Dann kennst du Artikel und Groß- oder Kleinschreibung."
+      ]
+    ],
+    "kurz-lang": [
+      [
+        "Kurz oder lang?",
+        "Sprich das Wort deutlich und höre auf den Vokal. Kurz: meist zwei Konsonanten (Himmel, Wolke). Lang: meist ein Konsonant (Rabe, Kugel)."
+      ],
+      [
+        "Reimwörter",
+        "Reimwörter klingen ab dem Vokal gleich und werden oft gleich geschrieben: Tanne, Kanne, Wanne. Prüfe trotzdem, denn auch Boot und Brot reimen sich."
+      ],
+      [
+        "Profi-Trick",
+        "Klatsche die Silben: Him-mel. Hörst du nach dem kurzen Vokal nur einen Konsonanten, steht er an der Silbengrenze doppelt. Bei Wol-ke stehen schon zwei verschiedene."
+      ]
+    ],
+    "tz-ck": [
+      [
+        "tz und ck",
+        "Nach einem kurzen Vokal schreibst du tz und ck: der Platz, die Decke. In deutschen Wörtern steht nie kk oder zz."
+      ],
+      [
+        "z und k",
+        "Nach langem Vokal, nach l, n, r und nach einem Doppellaut schreibst du nur z oder k: Haken, Pflanze, Dank, Kreuz."
+      ],
+      [
+        "Profi-Trick",
+        "Prüfe zuerst, ob l, n, r oder ein Doppellaut davor steht. Erst wenn nicht, entscheidet der Vokal: kurz heißt tz oder ck."
+      ]
+    ],
+    "slaute5": [
+      [
+        "Summt es?",
+        "Ein summendes s schreibst du immer mit s: Hase, Wiese, lesen. Verlängere das Wort, dann hörst du es: Haus, Häuser."
+      ],
+      [
+        "Zischt es?",
+        "Kurzer Vokal davor: ss (Wasser, Fluss). Langer Vokal oder Doppellaut davor: ß (Straße, heißen). Folgt noch ein Konsonant, bleibt es bei s: Kiste, Faust."
+      ],
+      [
+        "Profi-Trick: Mehrzahl",
+        "Die Mehrzahl hilft dir oft: Fluss, Flüsse (ss bleibt). Fuß, Füße (ß bleibt). Aber: Bus, Busse."
+      ]
+    ],
+    "merk-ie": [
+      [
+        "Meist ie",
+        "Hörst du ein langes i, schreibst du meistens ie: Tier, Ziel, Brief, Spiegel."
+      ],
+      [
+        "Merkwörter mit i",
+        "Ohne e schreibst du zum Beispiel: Tiger, Igel, Kino, Biber, mir, dir, wir."
+      ],
+      [
+        "Wörter mit ih",
+        "Die Pronomen (Fürwörter) ihm, ihr, ihn und ihnen schreibst du mit ih."
+      ],
+      [
+        "Profi-Trick: -ieren",
+        "Verben auf -ieren haben immer ie: probieren, trainieren, spazieren."
+      ]
+    ],
+    "dehnung-h": [
+      [
+        "Dehnungs-h",
+        "Es ist stumm und steht nach einem langen Vokal, oft vor l, m, n oder r: Zahl, Sohn, Uhr."
+      ],
+      [
+        "Verwandte Wörter",
+        "Das h bleibt in der Wortfamilie: wohnen, Wohnung, Bewohner."
+      ],
+      [
+        "aa, ee, oo",
+        "Nur wenige Wörter, du lernst sie einzeln: Saal, Meer, Boot, Tee, Haar."
+      ],
+      [
+        "Profi-Trick: Reim",
+        "Reimwörter mit gleicher Schreibung helfen beim Merken: Tee, Schnee, See. Vorsicht: Boot reimt sich auf Brot, hat aber oo."
+      ]
+    ],
+    "xlaute5": [
+      [
+        "x",
+        "Oft in Fremdwörtern: Taxi, Boxer, Text, Lexikon. Auch in Hexe."
+      ],
+      [
+        "chs",
+        "Wenige Merkwörter: sechs, Wachs, wachsen, Ochse, Luchs, Fuchs, Dachs."
+      ],
+      [
+        "cks",
+        "Selten. Es gibt immer ein verwandtes Wort mit ck: Knacks kommt von knacken."
+      ],
+      [
+        "Profi-Trick: gs und ks",
+        "Bei gs hilft ein verwandtes Wort: unterwegs gehört zu Weg. Keks lernst du als Merkwort."
+      ]
+    ],
+    "gross-artikel": [
+      [
+        "Artikel",
+        "Begleiter vor dem Nomen: der, die, das, den, dem, ein, eine, einen, einem, einer."
+      ],
+      [
+        "Verschmolzen",
+        "im (in dem), am (an dem), zum (zu dem), vom (von dem), beim (bei dem), ins (in das), ans (an das), aufs (auf das). Danach steht meistens ein Nomen. Ausnahme: am schnellsten, am höchsten bleiben klein."
+      ],
+      [
+        "Adjektiv dazwischen",
+        "Es bleibt klein. Nur das Nomen wird groß: die rote Mütze."
+      ],
+      [
+        "Profi-Trick",
+        "Begleiter-Probe: Siehst du einen Begleiter, suche rechts davon das Nomen und schreibe es groß."
+      ]
+    ],
+    "gross-pronomen": [
+      [
+        "Pronomen vor dem Nomen",
+        "mein, dein, sein, ihr, unser, euer und dieser, diese, dieses: Danach steht ein Nomen. Du schreibst es groß."
+      ],
+      [
+        "Mengenwörter",
+        "etwas, nichts, alles, viel, wenig, genug: Danach wird ein Adjektiv zum Nomen, zum Beispiel etwas Süßes."
+      ],
+      [
+        "Nomen-Endungen",
+        "-ung, -heit, -keit, -schaft, -nis, -tum und -chen zeigen ein Nomen: die Zeitung, die Nachbarschaft."
+      ],
+      [
+        "Höfliche Anrede",
+        "Sie, Ihnen, Ihr, Ihre schreibst du groß, wenn du jemanden höflich ansprichst."
+      ]
+    ],
+    "gross-nominal": [
+      [
+        "Signalwörter",
+        "Artikel (das), Präposition mit Artikel (beim, zum, im) oder Pronomen (sein, mein): Danach wird aus einem Verb oder Adjektiv ein Nomen, zum Beispiel das Singen, beim Kochen, sein Lachen."
+      ],
+      [
+        "Zeitangaben",
+        "heute Abend, am Abend, jeden Samstag: groß. abends, montags, nachts: klein."
+      ],
+      [
+        "Namen",
+        "Wörter von Ortsnamen mit -er schreibst du groß: Kölner Dom. Straßennamen mit Adjektiv auch: Neue Gasse."
+      ],
+      [
+        "Zahlen",
+        "Als Nomen benutzt, schreibst du sie groß: eine Zwei, die Vier. Als Zahlwort vor einem Nomen klein: zwei Katzen."
+      ]
+    ],
+    "klein": [
+      [
+        "Das schreibst du klein",
+        "Zahlwörter (zwölf, der dritte Platz), Adjektive (ehrlich, am höchsten), Zeitangaben auf -s (abends) und Fürwörter wie alles oder jeder."
+      ],
+      [
+        "Aber groß",
+        "heute Abend, gestern Morgen, am Montag und eine Million. Hier ist das Wort ein Nomen."
+      ],
+      [
+        "Profi-Trick",
+        "Steigerungsprobe: Kannst du das Wort steigern (ehrlich, ehrlicher, am ehrlichsten), ist es meistens ein Adjektiv und bleibt klein."
+      ]
+    ],
+    "verben": [
+      [
+        "Grundform",
+        "laufen, singen, wandern. Sie endet auf -en oder -n. Das Fachwort ist Infinitiv."
+      ],
+      [
+        "Drei Zeitformen",
+        "Präsens: sie lacht. Präteritum: sie lachte. Perfekt: sie hat gelacht."
+      ],
+      [
+        "Profi-Trick",
+        "Haben oder sein? Wenn sich jemand fortbewegt, nimmst du meistens sein: ich bin gelaufen. Sonst nimmst du haben: ich habe gelacht."
+      ]
+    ],
+    "nomen": [
+      [
+        "Artikel",
+        "der = männlich, die = weiblich, das = sächlich. Beispiele: der Tisch, die Lampe, das Fenster."
+      ],
+      [
+        "Vier Fälle",
+        "Nominativ: Wer oder was? Genitiv: Wessen? Dativ: Wem? Akkusativ: Wen oder was?"
+      ],
+      [
+        "Profi-Trick",
+        "Die Reihenfolge der Fälle merkst du dir mit einem Satz: Nette Giraffen dösen abends (Nominativ, Genitiv, Dativ, Akkusativ)."
+      ]
+    ],
+    "praep-fall": [
+      [
+        "Nur Dativ",
+        "mit, aus, bei, nach, von, zu. Beispiele: mit dem Bus, aus der Küche, bei dem Freund."
+      ],
+      [
+        "Nur Akkusativ",
+        "für, durch, ohne, gegen, um. Beispiele: für die Oma, durch den Wald, ohne das Buch."
+      ],
+      [
+        "Wechsel",
+        "in, auf, an, unter, über, vor, hinter, neben, zwischen. Wo? = Dativ. Wohin? = Akkusativ."
+      ],
+      [
+        "Profi-Trick",
+        "Stehen, liegen und sitzen zeigen Ruhe (Wo?). Stellen, legen und setzen zeigen Bewegung (Wohin?)."
+      ]
+    ],
+    "pronomen5": [
+      [
+        "Personalpronomen",
+        "ich, du, er, sie, es, wir, ihr, sie. Sie ersetzen Nomen: Mia wird zu sie, der Hund wird zu er."
+      ],
+      [
+        "Possessivpronomen",
+        "mein, dein, sein, ihr, unser, euer, ihr. Sie zeigen, wem etwas gehört."
+      ],
+      [
+        "Profi-Trick",
+        "Frag nach dem Besitzer: Wem gehört es? Tom: sein. Lena: ihr. Wir: unser."
+      ]
+    ],
+    "adjektive": [
+      [
+        "Adjektive",
+        "Sie sagen, wie etwas oder jemand ist: groß, schnell, freundlich. Du schreibst sie klein."
+      ],
+      [
+        "Steigerung",
+        "klein, kleiner, am kleinsten. Bei gut und viel ändert sich das Wort: gut, besser, am besten; viel, mehr, am meisten."
+      ],
+      [
+        "Profi-Trick",
+        "Stelle die Frage „Wie ist der Hund?“ Die Antwort („groß“) ist das Adjektiv."
+      ]
+    ],
+    "wortfelder": [
+      [
+        "Wortfeld",
+        "Eine Gruppe von Wörtern mit ähnlicher Bedeutung, zum Beispiel zu „sagen“: flüstern, rufen, erzählen."
+      ],
+      [
+        "Stufen",
+        "Wörter im Wortfeld unterscheiden sich oft in der Stärke: kühl, kalt, eisig."
+      ],
+      [
+        "Profi-Trick",
+        "Wörter wie „sagen“, „gehen“ und „schön“ sind Allerweltswörter. Ersetze sie beim Überarbeiten durch genauere."
+      ]
+    ],
+    "dassdas5": [
+      [
+        "Probe",
+        "Setze dieses, dies oder welches ein. Passt es, schreibst du das mit einem s."
+      ],
+      [
+        "Konjunktion",
+        "Ein dass leitet einen Nebensatz ein. Davor steht meistens ein Komma, das Verb steht am Ende."
+      ],
+      [
+        "Profi-Trick",
+        "Nach hoffen, sagen, finden und sicher sein folgt oft ein Nebensatz mit dass."
+      ]
+    ],
+    "woertl-rede": [
+      [
+        "Wörtliche Rede",
+        "Das, was jemand genau so sagt. Anführungszeichen: am Anfang unten, am Ende oben."
+      ],
+      [
+        "Begleitsatz",
+        "Er sagt, wer spricht. Steht er vorn, folgt ein Doppelpunkt. Steht er hinten, setzt du nach den Anführungszeichen ein Komma. Steht er in der Mitte, setzt du davor und danach ein Komma."
+      ],
+      [
+        "Profi-Trick",
+        "Folgt nach der Rede noch der Begleitsatz, bleiben Fragezeichen und Ausrufezeichen stehen. Nur der Punkt fällt weg."
+      ]
+    ],
+    "kommas5": [
+      [
+        "Aufzählung",
+        "Wörter hintereinander trennst du mit Kommas. Vor „und“ und „oder“ steht keins."
+      ],
+      [
+        "Konjunktion",
+        "Verbinden aber, sondern, doch oder denn zwei Teile, steht davor ein Komma."
+      ],
+      [
+        "Nebensatz",
+        "Ein Komma trennt den Nebensatz mit weil, dass oder wenn vom Hauptsatz, egal ob er vorn oder hinten steht. Das gebeugte Verb steht im Nebensatz am Ende."
+      ]
+    ]
+  },
+  "inputChars": [
+    "ä",
+    "ö",
+    "ü",
+    "ß"
+  ]
+}

@@ -2,14 +2,14 @@
   "schema": 1,
   "id": "deutsch",
   "title": "Deutsch-Werkstatt",
-  "catalog": { "fach": "deutsch", "klassen": [7], "lehrwerk": "deutsch.ideen 7", "subject": "Deutsch", "desc": "Inhaltsangabe, Adverbialsätze, Kommas, das und dass, Passiv, sprachliche Bilder, Rechtschreibung und Lesen.", "order": 6 },
+  "catalog": { "fach": "deutsch", "klassen": [7], "lehrwerk": "deutsch.ideen 7", "subject": "Deutsch", "desc": "Inhaltsangabe, Adverbialsätze, Kommas, das und dass, Passiv, sprachliche Bilder, Rechtschreibung und Lesen. Dazu der Förderstrang LRS mit Wortbausteinen, Großschreibung, Fremdwörtern, Satzgliedern und Zeitformen.", "order": 6 },
   "greeting": "Hallo",
-  "intro": "Inhaltsangabe, Adverbialsätze, Kommas, das und dass, Passiv und sprachliche Bilder. Dazu Rechtschreibung (doppelte Mitlaute, lange Vokale, s-Laute, Verlängern, Groß und klein) und Lesen mit Strategie. Starte irgendwo. Die Reihenfolge ist nur ein Vorschlag.",
+  "intro": "Inhaltsangabe, Adverbialsätze, Kommas, das und dass, Passiv und sprachliche Bilder. Dazu Rechtschreibung (doppelte Mitlaute, lange Vokale, s-Laute, Verlängern, Groß und klein) und Lesen mit Strategie. Der Förderstrang LRS ergänzt Wortbausteine, Groß- und Kleinschreibung, Fremdwörter, Satzglieder und Zeitformen. Starte irgendwo. Die Reihenfolge ist nur ein Vorschlag.",
   "bossTitle": "Der Grammatik-Boss",
   "tracks": {
     "lrs": {
       "label": "LRS-Förderung",
-      "desc": "Zusatzprogramm Rechtschreiben und Lesen. Nicht Teil des Standardprogramms."
+      "desc": "Zusatzprogramm Rechtschreiben, Lesen und Grammatik. Nicht Teil des Standardprogramms."
     }
   },
   "words": {
@@ -25,7 +25,9 @@
   },
   "groups": [
     { "id": "sprache", "title": "Sprache und Texte" },
-    { "id": "rechtschreibung", "title": "Rechtschreiben und Lesen" }
+    { "id": "rechtschreibung", "title": "Rechtschreiben und Lesen" },
+    { "id": "rechtschreibung-plus", "title": "Rechtschreiben vertiefen" },
+    { "id": "grammatik", "title": "Grammatik" }
   ],
   "units": [
     {
@@ -197,6 +199,149 @@
       "card": {
         "name": "Wort-Sortierer",
         "fact": "Präpositionen, Konjunktionen und Adverbien werden nicht gebeugt. Man nennt sie unveränderliche Wörter."
+      }
+    },
+    {
+      "id": "bausteine",
+      "group": "rechtschreibung-plus",
+      "track": "lrs",
+      "color": "#FF8A5B",
+      "ic": "be",
+      "title": "Wortbausteine",
+      "de": "Vorsilben, ent/end, wieder/wider, her-",
+      "card": {
+        "name": "Baustein-Baumeister",
+        "fact": "Mit der Ende-Probe findest du end- und ent-: „endlich“ gehört zu „Ende“, „entdecken“ nicht."
+      }
+    },
+    {
+      "id": "laute",
+      "group": "rechtschreibung-plus",
+      "track": "lrs",
+      "color": "#4DB6AC",
+      "ic": "sp",
+      "title": "Besondere Laute: sp, st, qu, pf, v",
+      "de": "schp/scht, kw, pf und das v",
+      "card": {
+        "name": "Laut-Detektiv",
+        "fact": "Den Laut „kw“ schreibst du qu: Quelle, Qualle, Quark."
+      }
+    },
+    {
+      "id": "xlaute",
+      "group": "rechtschreibung-plus",
+      "track": "lrs",
+      "color": "#A569BD",
+      "ic": "x",
+      "title": "x-Laute: chs, cks, x",
+      "de": "Der Laut „ks“ und seine Schreibweisen",
+      "card": {
+        "name": "ks-Knacker",
+        "fact": "Der Laut „ks“ wird meist chs, cks, x oder ks geschrieben: Fuchs, Klecks, Hexe, Keks. Steckt ein g im Wort, schreibst du gs: unterwegs."
+      }
+    },
+    {
+      "id": "zusammen",
+      "group": "rechtschreibung-plus",
+      "track": "lrs",
+      "color": "#5DADE2",
+      "ic": "+",
+      "title": "Zusammensetzungen und Fugen",
+      "de": "Bausteine, Grundwort, Fugen und Groß oder klein",
+      "card": {
+        "name": "Fugen-Finder",
+        "fact": "Das Grundwort am Ende bestimmt den Artikel: Schlüssel ist männlich, also heißt es der Haustürschlüssel."
+      }
+    },
+    {
+      "id": "trennbar",
+      "group": "rechtschreibung-plus",
+      "track": "lrs",
+      "color": "#F4D03F",
+      "ic": "ab",
+      "title": "Verben mit Vorsilbe und zu",
+      "de": "Trennbar oder nicht, Partizip und Infinitiv mit zu",
+      "card": {
+        "name": "Vorsilben-Detektiv",
+        "fact": "Bei trennbaren Verben steht zu mitten im Wort: abzuwaschen, anzukommen, einzupacken."
+      }
+    },
+    {
+      "id": "silben",
+      "group": "rechtschreibung-plus",
+      "track": "lrs",
+      "color": "#85C1E9",
+      "ic": "Si",
+      "title": "Silben und lange Wörter lesen",
+      "de": "Sprechsilben, Bausteine und Trennen am Zeilenende",
+      "card": {
+        "name": "Silben-Zähler",
+        "fact": "Jede Silbe hat einen Kern aus Vokal, Umlaut oder Doppellaut. Auto hat deshalb nur zwei Silben: Au-to."
+      }
+    },
+    {
+      "id": "gross-mehr",
+      "group": "rechtschreibung-plus",
+      "track": "lrs",
+      "color": "#E67E9B",
+      "ic": "GS",
+      "title": "Großschreibung: weitere Signale",
+      "de": "Endungen, Anrede, Namen und Zeitangaben",
+      "card": {
+        "name": "Signal-Sammler",
+        "fact": "Wörter auf -heit, -keit und -ung sind Nomen und werden großgeschrieben: Freiheit, Sauberkeit, Zeitung."
+      }
+    },
+    {
+      "id": "klein",
+      "group": "rechtschreibung-plus",
+      "track": "lrs",
+      "color": "#58D68D",
+      "ic": "kl",
+      "title": "Kleinschreibung",
+      "de": "Zahlen, Adjektive, Superlativ, Zeitangaben und Pronomen",
+      "card": {
+        "name": "Klein-Kenner",
+        "fact": "Zeitangaben auf -s sind klein: abends, montags, nachts. Mit „am“ davor wird es ein Nomen: am Abend."
+      }
+    },
+    {
+      "id": "fremd",
+      "group": "rechtschreibung-plus",
+      "track": "lrs",
+      "color": "#EB984E",
+      "ic": "Fw",
+      "title": "Fremdwörter",
+      "de": "Endungen, Wortbausteine und Bedeutungen",
+      "card": {
+        "name": "Wortbaustein-Detektiv",
+        "fact": "Der Wortbaustein anti- bedeutet „gegen“: Ein Antikörper wirkt gegen Krankheitserreger."
+      }
+    },
+    {
+      "id": "satzglieder",
+      "group": "grammatik",
+      "track": "lrs",
+      "color": "#AF7AC5",
+      "ic": "Sg",
+      "title": "Satzglieder und Fälle",
+      "de": "Umstellprobe, Subjekt, Objekte und die vier Fälle",
+      "card": {
+        "name": "Satzglieder-Detektiv",
+        "fact": "Der Satz „Der kleine Hund spielt im Park“ hat sechs Wörter, aber nur drei Satzglieder."
+      }
+    },
+    {
+      "id": "zeitformen",
+      "group": "grammatik",
+      "track": "lrs",
+      "color": "#48C9B0",
+      "ic": "Zt",
+      "title": "Zeitformen des Verbs",
+      "de": "Präsens, Präteritum, Perfekt, Plusquamperfekt, Futur I",
+      "card": {
+        "name": "Zeit-Reisender",
+        "fact": "Plusquamperfekt heißt wörtlich „mehr als vollendet“: Es beschreibt, was vor einem anderen Vergangenen geschah."
       }
     }
   ],
@@ -473,6 +618,200 @@
       [
         "Wechselpräpositionen",
         "Wo? Dativ. Wohin? Akkusativ."
+      ]
+    ],
+    "bausteine": [
+      [
+        "Vorsilben bleiben gleich",
+        "be-, er-, ent-, ge-, ver- und zer- schreibst du immer so, auch wenn du sie nur leise sprichst."
+      ],
+      [
+        "ver- oder fer-?",
+        "Fast immer ver-. Nur wenige Wörter beginnen mit fer-: Ferien, fertig, Ferne, Ferse, Ferkel."
+      ],
+      [
+        "Profi-Trick: Ende-Probe",
+        "Hat das Wort mit „Ende“ zu tun? Dann steckt der Stamm End- darin: endlich, enden. Sonst ist es die Vorsilbe ent-: entdecken. Die Ente schreibst du mit t."
+      ],
+      [
+        "wieder oder wider?",
+        "Passt „noch einmal“, schreibst du wieder. Bedeutet es „gegen“, schreibst du wider: Widerspruch."
+      ]
+    ],
+    "laute": [
+      [
+        "sp und st",
+        "Am Wortanfang sprichst du „schp“ und „scht“, schreibst aber sp und st: Spiel, Stein, Strand. Auch am Anfang des Wortstamms: verstehen, bestellen."
+      ],
+      [
+        "qu und pf",
+        "Den Laut „kw“ schreibst du qu: Quelle, Quark. Bei pf sprichst du p und f: Pferd, Kopf."
+      ],
+      [
+        "Merkwörter mit v",
+        "Wie f klingt das v in: Vater, Vogel, Vieh, viel, vier, voll, von, vor, vorn, Vers, verlieren."
+      ],
+      [
+        "Profi-Trick: v wie w",
+        "In vielen Fremdwörtern klingt das v wie w: Vase, Vulkan, Villa, Virus, Vokal, Violine."
+      ]
+    ],
+    "xlaute": [
+      [
+        "chs",
+        "Selten, aber wichtig. Merkwörter: wachsen, Wachs, sechs, Fuchs, Dachs, Luchs, Lachs, Ochse, Achse, Büchse."
+      ],
+      [
+        "cks",
+        "Kommt von ck: Klecks (kleckern), Knicks (knicken), Knacks (knacken), des Rocks (Rock)."
+      ],
+      [
+        "x",
+        "Text, Taxi, Box, Mixer, Praxis, Lexikon, Hexe, Axt: Lerne diese Wörter einzeln."
+      ],
+      [
+        "Profi-Trick: Keks",
+        "Keks hat kein x. Das Wort besteht aus k und s: Keks, Kekse."
+      ]
+    ],
+    "zusammen": [
+      [
+        "Grundwort",
+        "Das letzte Wort bestimmt Artikel und Wortart: die Fahrt, also die Schifffahrt. Vorn steht das Bestimmungswort. Es sagt genauer, um welche Fahrt es geht."
+      ],
+      [
+        "Groß oder klein?",
+        "Endet das Wort auf ein Nomen, schreibst du groß: Schreibtisch, Rotkohl. Endet es auf ein Adjektiv, schreibst du klein: schneeweiß, bärenstark, hellblau, dunkelgrün."
+      ],
+      [
+        "Fugen",
+        "Zwischen den Bausteinen steht oft ein s, n oder en, e oder er: Geburtstag, Blumenvase, Hundehütte, Kinderwagen. Nach Endungen wie -ung, -heit, -keit und -schaft steht meist ein s."
+      ],
+      [
+        "Profi-Trick",
+        "Sprich das Wort langsam und mach vor der Fuge eine kleine Pause. Prüfe dann den Plural des ersten Bausteins: Kind, Kinder, Kinderwagen. Das hilft oft, aber nicht beim s."
+      ]
+    ],
+    "trennbar": [
+      [
+        "Trennbar oder nicht?",
+        "Sprich das Verb und höre auf die Betonung. Ton vorn heißt trennbar: ABfahren, ANkommen. Ton auf dem Verb heißt nicht trennbar: verSTEhen, beSTELlen."
+      ],
+      [
+        "Partizip",
+        "Trennbar: ge- steht in der Mitte (abgefahren, angekommen). Nicht trennbar: kein ge- (bestellt, verstanden)."
+      ],
+      [
+        "Infinitiv mit zu",
+        "Einfaches Verb: zu davor, getrennt (zu singen). Trennbar: zu in der Mitte, alles zusammen (abzuwaschen). Nicht trennbar: zu davor (zu verstehen)."
+      ],
+      [
+        "Profi-Trick",
+        "Bilde einen kurzen Satz mit „ich“. Wird die Vorsilbe abgetrennt (Ich sehe dir zu), ist sie trennbar. Dann schreibst du im Infinitiv mit zu alles zusammen."
+      ]
+    ],
+    "silben": [
+      [
+        "Silben klatschen",
+        "Sprich das Wort langsam und klatsche bei jedem Takt: Scho-ko-la-de sind vier Klatscher. Jede Silbe hat einen Vokal, einen Umlaut oder einen Doppellaut als Kern."
+      ],
+      [
+        "Lange Wörter",
+        "Zerlege zuerst in Bausteine, dann jeden Baustein in Silben: Haus + Tür + Schlüssel wird Haus-tür-schlüs-sel."
+      ],
+      [
+        "Trennen am Zeilenende",
+        "Doppelte Konsonanten trennst du: Kan-ne, Tas-se, Mut-ter. ch, sch und ck bleiben zusammen: Ta-sche, Ku-chen, Zu-cker. tz wird getrennt: Kat-ze."
+      ],
+      [
+        "Profi-Trick",
+        "Tippe beim Lesen eines langen Wortes jede Silbe mit dem Stift an. So bleibt dein Auge nicht hängen. Beim Schreiben sprichst du genauso Silbe für Silbe mit."
+      ]
+    ],
+    "gross-mehr": [
+      [
+        "Nomen-Endungen",
+        "-ung, -heit, -keit, -schaft, -nis, -tum, -chen, -lein, -sal, -ling: Diese Wörter sind meistens Nomen."
+      ],
+      [
+        "Höfliche Anrede",
+        "Sie, Ihnen und das Besitzwort Ihr, Ihre (zu Sie) schreibst du immer groß: „Ihr Buch“, „Ihre Tasche“. Die Anrede an mehrere Personen („ihr Kinder“) bleibt klein, ebenso du, dir und dein. In Briefen darfst du du und dein auch großschreiben."
+      ],
+      [
+        "Namen",
+        "Hohe Straße, Kölner Dom, Schwarzes Meer: In Namen wird auch das Adjektiv großgeschrieben."
+      ],
+      [
+        "Profi-Trick: Artikelprobe",
+        "Kannst du der, die oder das davorsetzen? Dann ist es ein Nomen und du schreibst groß."
+      ]
+    ],
+    "klein": [
+      [
+        "Das bleibt klein",
+        "Zahlen unter einer Million (zwei, hundert), zu dritt, der dritte Stock, komisch, durstig, am besten, abends, man, jemand, niemand. Million und Milliarde sind Nomen."
+      ],
+      [
+        "Gegenprobe",
+        "Steht ein Artikel oder Signalwort davor und ist das Wort ein Nomen? Dann wird es groß: das Komische, am Abend."
+      ],
+      [
+        "ein paar oder ein Paar?",
+        "ein paar bedeutet einige und wird kleingeschrieben. ein Paar sind zwei, die zusammengehören, und wird großgeschrieben."
+      ],
+      [
+        "Profi-Trick: Superlativ",
+        "Probe: am + Wort auf -sten schreibst du klein (am schnellsten, am besten). Gegenprobe: Mit Artikel wird das Wort zum Nomen und groß: das Schönste. Auch am + Nomen ist groß: am Abend."
+      ]
+    ],
+    "fremd": [
+      [
+        "Endungen",
+        "Diese Endungen zeigen oft die Wortart. Nomen: -ion, -tion, -ie, -ik. Verben: -ieren. Adjektive: -iv, -ell, -al."
+      ],
+      [
+        "Wortbausteine",
+        "anti- und kontra- = gegen, pro- = für oder vor (Prognose ist ein Vorherwissen), re- = wieder, zurück, dis- = auseinander, kon- und syn- = zusammen, mono- = einzig."
+      ],
+      [
+        "v wie w",
+        "Vase, Vulkan, Villa, Virus, Vokal, Violine, Variante. In Vater, Vogel und viel klingt das v dagegen wie ein f."
+      ],
+      [
+        "Profi-Trick: Bausteine zerlegen",
+        "Teile ein Fremdwort in Bausteine und rate die Bedeutung. Im Zweifel schlägst du es im Wörterbuch nach."
+      ]
+    ],
+    "satzglieder": [
+      [
+        "Vier Fälle",
+        "Nominativ: Wer oder was? Genitiv: Wessen? Dativ: Wem? Akkusativ: Wen oder was?"
+      ],
+      [
+        "Reihenfolge",
+        "Erst das Prädikat finden, dann nach dem Subjekt fragen, dann nach den Objekten."
+      ],
+      [
+        "Profi-Trick: Umstellprobe",
+        "Schiebe Wortgruppen im Satz herum. Was zusammenbleibt, ist ein Satzglied. Im Aussagesatz steht die gebeugte Verbform immer als zweites Satzglied."
+      ]
+    ],
+    "zeitformen": [
+      [
+        "Haben oder sein",
+        "Sein bei Fortbewegung und Zustandsänderung: ich bin gelaufen, ich bin eingeschlafen. Auch sein, bleiben und werden bilden das Perfekt mit „sein“: ich bin gewesen. Sonst meist „haben“: ich habe gelacht."
+      ],
+      [
+        "Partizip II",
+        "Bei den Vorsilben be-, ge-, er-, ver-, zer-, ent- und bei Verben auf -ieren fehlt ge-: bestellt, verstanden, telefoniert. Bei trennbaren Verben steht ge- in der Mitte: aufgeräumt."
+      ],
+      [
+        "Unregelmäßig",
+        "gehen – ging – gegangen. sehen – sah – gesehen. nehmen – nahm – genommen. kommen – kam – gekommen. fahren – fuhr – gefahren."
+      ],
+      [
+        "Profi-Trick: Was war zuerst?",
+        "Erzählst du in der Vergangenheit und etwas geschah schon vorher, steht das Frühere im Plusquamperfekt, oft nach „nachdem“: Nachdem er gegessen hatte, ging er los."
       ]
     ]
   },

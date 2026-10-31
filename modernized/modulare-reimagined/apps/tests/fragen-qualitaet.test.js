@@ -58,6 +58,28 @@ for (const { id, items } of apps) {
     assert.deepEqual(fehler, []);
   });
 
+  // Das Etikett steht in der Auswahl über der Frage. "chs" bei Fuchs/Fuks wäre die Lösung im Titel.
+  test(`FRAGE ${id}: das Etikett verrät die Antwort nicht`, () => {
+    const nennt = (text, teil) => normalise(text).includes(teil);
+    const fehler = lücken
+      .filter((item) => item.label)
+      .filter((item) => {
+        const teil = normalise(item.label).replace(/^-/, '');
+        return nennt(item.a, teil) && !item.wrong.some((wrong) => nennt(wrong, teil));
+      })
+      .map((item) => `${item.wo}: ${item.label} -> ${item.a}`);
+    assert.deepEqual(fehler, []);
+  });
+
+  // Ohne Etikett ist der Fragetext die Kategorie (skillOf). Gleicher Text hieße: Der Fehler-Abruf hält eine fremde Aufgabe für die verfehlte.
+  test(`FRAGE ${id}: gleicher Fragetext auf einer Seite hat eine eigene Kategorie`, () => {
+    const fehler = Object.entries(items).flatMap(([unit, list]) => {
+      const ohne = list.filter((item) => !item.skill && !item.w && !item.label && !item.s).map((item) => item.q);
+      return [...new Set(ohne.filter((q, i) => ohne.indexOf(q) !== i))].map((q) => `${id}/${unit}: ${q}`);
+    });
+    assert.deepEqual(fehler, []);
+  });
+
   test(`FRAGE ${id}: die Antwort steht nicht schon im Satz oder in der Frage`, () => {
     const fehler = alle
       .filter((item) => item.a.length >= 4 && enthält(`${item.kind === 'gap' ? '' : item.q} ${item.s || ''}`.trim(), item.a))

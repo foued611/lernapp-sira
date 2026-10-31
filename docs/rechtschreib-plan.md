@@ -1,6 +1,6 @@
 # Rechtschreibung und Lesen in der Deutsch-Werkstatt
 
-Stand: sechs Seiten sind in `content/deutsch/` ergänzt. Sie stehen hinter den bisherigen sechs Seiten (neue Seiten werden immer hinten angefügt).
+Stand: sechs Seiten (Anfang) und elf weitere Seiten (siehe „Erweiterung nach Lehrkraft-Empfehlung“) sind in `content/deutsch/` ergänzt. Neue Seiten werden immer hinten angefügt.
 
 ## Kennzeichnung
 
@@ -8,7 +8,7 @@ Alle LRS-Inhalte tragen das Etikett „LRS-Förderung“, damit man sie vom Stan
 Die sechs Seiten (`doppelt`, `dehnung`, `slaute`, `ableiten`, `gross`, `lesen`) und das Merkwörter-PDF haben im Manifest `track: "lrs"`.
 Das Etikett erscheint auf der Startseite, im Kopf der Theorieseite und über jeder Übungsfrage dieser Seiten (auch in Schnellrunde, Blitz und Endgegner).
 Definiert ist der Strang in `manifest.tracks.lrs`. Ein weiterer Strang braucht nur einen neuen Eintrag dort und `track` an den Seiten.
-Offen: Ob `dassdas` ebenfalls zur Förderung zählen soll, ist noch nicht entschieden.
+Die elf neuen Seiten tragen ebenfalls `track: "lrs"`. Offen: Ob `dassdas` ebenfalls zur Förderung zählen soll, ist noch nicht entschieden.
 
 ## Profi-Tricks
 
@@ -29,7 +29,8 @@ Alle Texte und Beispielsätze sind eigene Formulierungen. Es wird nichts aus Leh
 
 ## Hinweise zu den Aufgaben
 
-- Lückenaufgaben haben genau eine falsche Schreibweise. Sie ist so gewählt, wie sie in der Praxis oft vorkommt (z. B. „Fluß“, „Hunt“).
+- Lückenaufgaben der ersten sechs Seiten haben genau eine falsche Schreibweise, die elf neuen Seiten eine bis drei. Sie sind so gewählt, wie sie in der Praxis oft vorkommen (z. B. „Fluß“, „Hunt“).
+- Eintippen prüft kein Groß und Klein. Deshalb üben die Lücken in `gross-mehr` und `klein` die Schreibung der Wörter, das Thema Groß und Klein prüfen dort die Auswahlaufgaben.
 - Eingaben mit „ß“: Die Sonderzeichen-Leiste (`inputChars`) bietet ä, ö, ü und ß an.
 - Der Vertragstest in `tests/deutsch.test.js` prüft Groß- und Kleinschreibung beim Eintippen mit wechselnder Schreibung, weil `toUpperCase()` aus „ß“ ein „SS“ machen würde.
 
@@ -40,3 +41,63 @@ Auf der Startseite der Deutsch-Werkstatt steht unter „Zum Ausdrucken“ die PD
 ## Merkwörter
 
 Die Merkwörter werden auf Papier geübt: in ein Merkwörterheft schreiben, die Sets in der PDF abhaken. Die App enthält dafür bewusst kein Karteikarten- oder Wörtertraining. Die Seiten zu Rechtschreibung und Lesen ergänzen das Heft mit Regeln und Übungen am Bildschirm.
+
+## Erweiterung nach Lehrkraft-Empfehlung
+
+Die Lehrkraft empfiehlt das Förderheft „Gezielt fördern, Intensivkurs LRS 7/8“ (Cornelsen, 2025). Aus seinen Themen sind elf Seiten entstanden. Übernommen sind nur die Themen, keine Texte, Wortlisten, Merkkästen oder Aufgaben: Alle Beispiele und Aufgaben sind eigene Formulierungen.
+
+| Seite (`id`) | Gruppe | Thema | Themenfeld im Heft |
+|---|---|---|---|
+| `bausteine` | Rechtschreiben vertiefen | Vorsilben, ent/end, wieder/wider, fer-, her- | Wortbausteine, Nachdenkwörter |
+| `laute` | Rechtschreiben vertiefen | sp, st, qu, pf, v | Besondere Laute |
+| `xlaute` | Rechtschreiben vertiefen | chs, cks, x | Ähnlich klingende x-Laute |
+| `zusammen` | Rechtschreiben vertiefen | Fugenelemente, Groß und klein bei Zusammensetzungen, drei gleiche Buchstaben | Zusammensetzungen |
+| `trennbar` | Rechtschreiben vertiefen | trennbare und nicht trennbare Verben, Infinitiv mit zu | Zusammengesetzte Verben, Infinitiv mit zu |
+| `silben` | Rechtschreiben vertiefen | Silben mitsprechen, lange Wörter gliedern | Leseflüssigkeit (Wortreihen), Mitsprechwörter |
+| `gross-mehr` | Rechtschreiben vertiefen | weitere Signale für Großschreibung | Großschreibung |
+| `klein` | Rechtschreiben vertiefen | Zahlen, Adjektivendungen, Superlativ, Zeitangaben auf -s | Kleinschreibung |
+| `fremd` | Rechtschreiben vertiefen | Endungen, Wortbausteine, Bedeutungen | Fremdwörter |
+| `satzglieder` | Grammatik | Subjekt, Prädikat, Objekte, vier Fälle | Satzglieder |
+| `zeitformen` | Grammatik | Präsens bis Futur I, haben und sein | Zeitformen |
+
+Die Gruppen „Rechtschreiben vertiefen“ und „Grammatik“ sind neu in `manifest.groups`. Die neun Rechtschreibseiten bilden ein eigenes Kapitel, weil der Kapitel-Test nur 10 Plätze hat und der Test im alten Kapitel offen bleiben soll. Drei Trophäen kommen dazu (`lrs-spelling`, `lrs-grammar`, `lrs-compound`).
+
+### Nicht übernommen
+
+- Lesetempo-Training mit der Stoppuhr (Wortreihen, Lesecheck): am Bildschirm nicht prüfbar. `silben` übt nur das Gliedern, nicht das Tempo.
+- Lesetexte mit Fragen (Herkules-Sage, Mansa Musa, Malalas Geschichte) und Zitate: Texte sind urheberrechtlich geschützt. Die Lesestrategie steht schon in `lesen`.
+- Schreibübungen und Stilübungen (Beschreiben, Erzählen, Reportage), Quatschsätze zum Diktieren: nicht automatisch prüfbar.
+- Wortarten (Verb, Nomen, Artikel, Adjektiv, Pronomen, Präposition, Adverb), Attribut, das/dass und Satzbau mit Kommas: stehen schon in `wortarten`, `attribute`, `dassdas` und `kommas`.
+- Lange i, Dehnungs-h, Doppelvokale, Verlängern, s-Laute: stehen schon in `dehnung`, `slaute`, `ableiten`, `doppelt`.
+- Rechtschreibcheck und Grammatikcheck: Die Kapitel-Tests und der Endgegner der App übernehmen das.
+
+### Prüfung
+
+Die Aufgaben sind nicht amtlich geprüft. Eine Lehrkraft sollte sie gegenlesen, vor allem Fremdwörter (Bedeutungen), Silbentrennung und die Fälle bei Satzgliedern.
+
+## Deutsch 5/6: eigene App `deutsch-5-6`
+
+Die Lehrkraft empfiehlt auch das Förderheft „Gezielt fördern, Intensivkurs LRS 5/6“ (Cornelsen, 2025). Es ist ein Doppelband und wird deshalb eine eigene App (siehe AGENTS.md, Abschnitt Klassen): `content/deutsch-5-6/`, Katalog `klassen: [5, 6]`, `fach: deutsch`. Die App `deutsch` bleibt Klasse 7 und ihr Lernstand bleibt unberührt. Mit Klasse 5 und 6 im Katalog erscheint auf der Startseite die Klassenwahl. Das Profil startet weiter in Klasse 7, die neue App liegt dort unter „Aus früheren Klassen“.
+
+Übernommen sind nur die Themen, keine Texte, Wortlisten, Merkkästen oder Aufgaben. Es gibt 26 Seiten mit je 14 bis 16 Aufgaben (368 insgesamt). Die Seiten tragen kein Etikett `track`, weil die ganze App Förderung ist.
+
+| Kapitel | Seiten (`id`) | Themenfeld im Heft |
+|---|---|---|
+| Rechtschreiben: Wörter und Bausteine | `nachdenk-dt`, `nachdenk-aeau`, `laute-5`, `vorsilben`, `wieder`, `endungen`, `zusammen5` | Nachdenkwörter, besondere Laute, Wortbausteine, Nomen-Endungen, Zusammensetzungen |
+| Rechtschreiben: Vokale und s-Laute | `kurz-lang`, `tz-ck`, `slaute5`, `merk-ie`, `dehnung-h`, `xlaute5` | kurze und lange Vokale, tz und ck, s-Laute, langes i, Dehnung, x-Laute |
+| Groß- und Kleinschreibung | `gross-artikel`, `gross-pronomen`, `gross-nominal`, `klein` | Rechtschreibsonne (Großschreibung), Rechtschreibmond (Kleinschreibung) |
+| Grammatik | `verben`, `nomen`, `praep-fall`, `pronomen5`, `adjektive`, `wortfelder`, `dassdas5`, `woertl-rede`, `kommas5` | Grammatiktraining |
+
+Das Kapitel „Rechtschreiben“ ist geteilt, weil der Kapitel-Test nur zehn Plätze hat (`ROUND_SIZE.chapter`).
+
+### Nicht übernommen
+
+- Lesetraining (Kuckuckseier, Adleraugen, Stabreime, Zungenbrecher, Lesecheck): Lesetempo und Lesetexte sind am Bildschirm nicht prüfbar, die Texte sind geschützt.
+- Rechtschreibcheck, Lesecheck, Grammatikcheck: Kapitel-Tests und Endgegner übernehmen das.
+- Quatschsätze und Übungssätze zum Diktieren: nicht automatisch prüfbar.
+- Getrenntschreibung von Partizip und Verb sowie Nomen und Verb (zum Beispiel „Rad fahren“): Duden und Regelwerk lassen oft beide Schreibweisen zu.
+- Einzelne Merkwörter-Gruppen (ah/äh, eh, oh/öh, uh/üh, ieh): zu viele Einzelwörter, die auf Papier zu üben sind (siehe Merkwörter).
+
+### Prüfung
+
+Vier unabhängige Gegenleser haben alle Seiten auf Rechtschreibung, eindeutige Lücken und mögliches Abschreiben geprüft. Rund 170 Funde sind eingearbeitet: zu absolute Regeln („nach kurzem Vokal immer zwei Konsonanten“, „nach am steht ein Nomen“), falsche Beispiele und Lücken, in die mehrere Wörter passen (jetzt über `accept`). Amtlich geprüft sind die Aufgaben nicht. Eine Lehrkraft sollte sie gegenlesen, vor allem die Seiten zu Dehnungs-h, Merkwort-i, tz und ck, Zusammen- und Getrenntschreibung.

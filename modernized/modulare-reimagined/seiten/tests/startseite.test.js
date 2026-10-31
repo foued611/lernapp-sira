@@ -65,6 +65,28 @@ test('RULE-202 Ein Speicher, der nicht startet, bricht die Startseite nicht ab u
   assert.match(markup, /Demnächst/, 'die Platzhalter-App bleibt sichtbar');
 });
 
+test('SEITE-LERNFLUSS Vor der ersten Runde zeigt die Startseite keine Nullen und kein Tagesziel', async () => {
+  const { state } = await full();
+  const markup = renderToStaticMarkup(h(Startseite, { state }));
+  assert.doesNotMatch(markup, /XP gesamt/);
+  assert.doesNotMatch(markup, /Tagesziel wählen/);
+  assert.match(markup, /Mathe-Werkstatt|Alle Lern-Apps/);
+});
+
+test('SEITE-LERNFLUSS Ab dem ersten XP zeigt die Startseite Stand und Tagesziel', async () => {
+  const { state } = await full((_app, profile) => { profile.xp = 5; });
+  const markup = renderToStaticMarkup(h(Startseite, { state }));
+  assert.match(markup, /XP gesamt/);
+  assert.match(markup, /Tagesziel wählen/);
+});
+
+test('SEITE-LERNFLUSS Die Weiter-Karte steht über der Begrüßung', async () => {
+  const { state } = await full((_app, profile) => { profile.xp = 5; profile.lastApp = 'mathe'; });
+  const markup = renderToStaticMarkup(h(Startseite, { state }));
+  assert.ok(markup.includes('Weiterlernen'));
+  assert.ok(markup.indexOf('Weiterlernen') < markup.indexOf('id="hero"'));
+});
+
 test('RULE-242 Training und Endgegner stehen nicht auf der Startseite aller Apps, sondern wie im Legacy in der App', async () => {
   const env = await full((app) => {
     app.stars = { start: 2 };
@@ -80,7 +102,7 @@ test('SEITE-MASKIERUNG Der Name erscheint nie im Klartext auf der Startseite', a
   const markup = renderToStaticMarkup(h(Startseite, { state: boot.state }));
   assert.equal(markup.includes(NAME), false);
   assert.equal(markup.includes('Zo'), false, 'auch kein Teil davon');
-  assert.match(markup, /Hallo, ••• !/, 'Legacy-Schreibweise mit Leerzeichen vor dem Ausrufezeichen');
+  assert.match(markup, /Hallo, •••!/, 'kein Leerzeichen vor dem Ausrufezeichen');
 });
 
 test('SEITE-MASKIERUNG Die Begrüßung zeigt nur das Muster, nie den Namen', () => {

@@ -1,0 +1,2285 @@
+{
+  "nachdenk-dt": {
+    "goal": "Du kannst bei Wörtern mit d oder t, g oder k, b oder p am Ende die richtige Schreibung finden, indem du das Wort verlängerst.",
+    "tldr": [
+      "Am Wortende klingen d und t, g und k sowie b und p oft gleich.",
+      "Verlängere das Wort: Bilde die Mehrzahl, setze das Adjektiv vor ein Nomen oder nimm die Grundform des Verbs.",
+      "Dann steht der Laut mitten im Wort, und du hörst ihn klar."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein müder Sänger",
+      "html": "<p>Am Ende eines Wortes ist der Laut wie ein müder Sänger: Er singt leise und undeutlich. Wenn du das Wort <b>verlängerst</b>, steht der Laut mitten im Wort. Dort ist er wach und laut, und du hörst genau, welcher Buchstabe gemeint ist.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Wort",
+            "Verlängert",
+            "Laut"
+          ],
+          [
+            [
+              "Hund",
+              "die Hunde",
+              "d"
+            ],
+            [
+              "bunt",
+              "bunte Vögel",
+              "t"
+            ],
+            [
+              "Berg",
+              "die Berge",
+              "g"
+            ],
+            [
+              "krank",
+              "ein kranker Mann",
+              "k"
+            ],
+            [
+              "Korb",
+              "die Körbe",
+              "b"
+            ]
+          ],
+          [
+            2,
+            3,
+            1
+          ],
+          "Tabelle: Wörter, ihre verlängerte Form und der Laut, den du hörst"
+        ]
+      },
+      "caption": "Beim Verlängern hörst du den Laut, der am Wortende versteckt ist."
+    },
+    "steps": {
+      "title": "So geht es: Hun_ oder Hunt?",
+      "items": [
+        "Du hörst am Ende ein t, bist aber nicht sicher.",
+        "<b>Verlängere</b> das Wort. Bei einem Nomen bildest du die Mehrzahl: die Hunde.",
+        "Jetzt hörst du ein d in der Mitte. Also schreibst du am Ende auch d: Hund.",
+        "Bei einem Adjektiv setzt du es vor ein Nomen: ein bunter Vogel. Bei einem Verb nimmst du die Grundform: er lobt, loben."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Nicht jedes Wort lässt sich verlängern. <b>Merkwörter</b> wie „und“ musst du dir einzeln merken.</p><p>Achte auch auf die Endung -ig: Du schreibst „mutig“, weil es „mutige“ heißt, nicht „mutich“.</p>"
+    },
+    "rule": "Unsicher am Wortende? Verlängere das Wort, dann hörst du den Laut: Hund, weil es Hunde heißt.",
+    "check": {
+      "q": "Du verlängerst ein Wort zu „die Felder“. Wie schreibst du die Einzahl?",
+      "options": [
+        {
+          "id": "Feld",
+          "html": "Feld"
+        },
+        {
+          "id": "Felt",
+          "html": "Felt"
+        },
+        {
+          "id": "Fehld",
+          "html": "Fehld"
+        }
+      ],
+      "answer": "Feld",
+      "why": "Bei „Felder“ hörst du ein d. Darum schreibst du auch die Einzahl mit d: das Feld."
+    }
+  },
+  "nachdenk-aeau": {
+    "goal": "Du kannst entscheiden, ob du ä oder e und äu oder eu schreibst, indem du nach einem verwandten Wort mit a oder au suchst.",
+    "tldr": [
+      "ä und e klingen gleich, äu und eu klingen auch gleich.",
+      "Suche ein verwandtes Wort mit a oder au. Findest du eins, schreibst du ä oder äu.",
+      "Findest du keins, schreibst du meistens e oder eu."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Stammbaum",
+      "html": "<p>Wörter haben Verwandte wie Menschen. „Zähne“ gehört zur <b>Wortfamilie</b> von „Zahn“. Das ä ist ein a mit zwei Punkten. Wer ein a in der Verwandtschaft hat, trägt die Punkte. Wer keinen Verwandten mit a hat, bleibt bei e.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Wort",
+            "Verwandt",
+            "Schreibung"
+          ],
+          [
+            [
+              "Zähne",
+              "der Zahn",
+              "ä"
+            ],
+            [
+              "Bäume",
+              "der Baum",
+              "äu"
+            ],
+            [
+              "Fenster",
+              "kein a",
+              "e"
+            ],
+            [
+              "Feuer",
+              "kein au",
+              "eu"
+            ]
+          ],
+          [
+            2,
+            2,
+            2
+          ],
+          "Tabelle: Wörter, ihr verwandtes Wort mit a oder au und die Schreibung"
+        ]
+      },
+      "caption": "Gibt es ein verwandtes Wort mit a oder au? Dann schreibst du ä oder äu."
+    },
+    "steps": {
+      "title": "So geht es: Zähne oder Zehne?",
+      "items": [
+        "Du hörst ein e und bist unsicher.",
+        "Suche ein <b>verwandtes Wort</b>. Aus der Mehrzahl bildest du die Einzahl: der Zahn.",
+        "In „Zahn“ steckt ein a. Also schreibst du ä: Zähne.",
+        "Bei Adjektiven nimmst du die Grundform: kälter, weil es kalt heißt. Sonst suchst du ein Wort aus der Wortfamilie: Gebäude, weil es bauen heißt."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Nicht jedes Wort mit ä hat ein verwandtes Wort mit a. Solche <b>Merkwörter</b> merkst du dir einzeln. Umgekehrt gibt es auch Ausnahmen, in denen du e schreibst, obwohl das Wort zu einem a-Wort passt: zum Beispiel „Eltern“ (zu „alt“).</p><p>Findest du nichts zum Ableiten und es ist kein Merkwort, schreibst du e oder eu.</p>"
+    },
+    "rule": "Gibt es ein verwandtes Wort mit a oder au, schreibst du ä oder äu. Sonst schreibst du meistens e oder eu.",
+    "check": {
+      "q": "Wie schreibst du die Mehrzahl von „der Raum“?",
+      "options": [
+        {
+          "id": "Räume",
+          "html": "Räume"
+        },
+        {
+          "id": "Reume",
+          "html": "Reume"
+        },
+        {
+          "id": "Räme",
+          "html": "Räme"
+        }
+      ],
+      "answer": "Räume",
+      "why": "Zu „Räume“ gehört das verwandte Wort „Raum“ mit au. Darum schreibst du äu."
+    }
+  },
+  "laute-5": {
+    "goal": "Du kannst Wörter mit st, sp, qu, pf und v richtig schreiben, auch wenn du beim Sprechen etwas anderes hörst.",
+    "tldr": [
+      "Am Wortanfang sprichst du „scht“ und „schp“, schreibst aber st und sp.",
+      "Du sprichst „kw“ und schreibst qu. Das q steht immer mit u.",
+      "Wörter mit pf und v sind oft Merkwörter: Du hörst nur f oder w."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: eine Verkleidung",
+      "html": "<p>Manche Laute tragen eine Verkleidung. Du hörst „schp“, aber darunter steckt <b>sp</b>. Du hörst „kw“, aber darunter steckt <b>qu</b>. Wer den Trick kennt, erkennt die Verkleidung sofort.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Du hörst",
+            "Du schreibst",
+            "Beispiel"
+          ],
+          [
+            [
+              "scht",
+              "st",
+              "Stern"
+            ],
+            [
+              "schp",
+              "sp",
+              "Spinne"
+            ],
+            [
+              "kw",
+              "qu",
+              "Qualle"
+            ],
+            [
+              "f",
+              "pf",
+              "Zopf"
+            ],
+            [
+              "f oder w",
+              "v",
+              "Vitamin"
+            ]
+          ],
+          [
+            2,
+            2,
+            2
+          ],
+          "Tabelle: Laute, die du hörst, und wie du sie schreibst"
+        ]
+      },
+      "caption": "Bei diesen Lauten passen Klang und Schrift nicht zusammen."
+    },
+    "steps": {
+      "title": "So geht es: Schtern oder Stern?",
+      "items": [
+        "Du hörst am Wortanfang „scht“ oder „schp“.",
+        "Hier schreibst du st oder sp. Das „sch“ schreibst du nicht mit: Stern, Spinne.",
+        "Bei „kw“ schreibst du immer qu. Das q kommt nie allein vor: Qualle.",
+        "Hörst du f oder w, kann dahinter pf oder v stecken. Dann hilft nur Merken: Zopf, Vitamin."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Mitten im Wort klingt st oft anders: In „Kiste“ hörst du s und t einzeln. Der Trick mit „scht“ gilt am <b>Wortanfang</b> und nach Vorsilben, zum Beispiel in „verstehen“.</p><p>Für v gibt es keine Regel. Wörter mit v musst du dir einzeln merken.</p>"
+    },
+    "rule": "Am Wortanfang klingt st wie „scht“ und sp wie „schp“. Den Laut „kw“ schreibst du als qu. Wörter mit pf und v lernst du als Merkwörter.",
+    "check": {
+      "q": "Wie schreibst du das Möbelstück zum Sitzen, das vier Beine und eine Lehne hat?",
+      "options": [
+        {
+          "id": "Stuhl",
+          "html": "Stuhl"
+        },
+        {
+          "id": "Schtuhl",
+          "html": "Schtuhl"
+        },
+        {
+          "id": "Stul",
+          "html": "Stul"
+        }
+      ],
+      "answer": "Stuhl",
+      "why": "Am Wortanfang hörst du „scht“, schreibst aber st. Dazu kommt das Dehnungs-h im Wort."
+    }
+  },
+  "vorsilben": {
+    "goal": "Du kannst Wörter aus Bausteinen bilden und die Vorsilben ver, zer, ent sowie den Wortstamm end richtig schreiben.",
+    "tldr": [
+      "Vorsilben wie be, er, ver, zer, ge und ent stehen vorn und werden immer gleich geschrieben.",
+      "ver klingt oft wie „fer“, wird aber mit v geschrieben.",
+      "Bausteine wie auf, mit oder weg kannst du vom Verb trennen: Ich nehme dich mit.",
+      "end mit d gehört zu Ende und Schluss. ent mit t ist eine Vorsilbe."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Baukasten",
+      "html": "<p>Wörter sind wie Bauwerke aus Klötzen. Der <b>Wortstamm</b> ist der Hauptklotz, zum Beispiel kauf in kaufen. Eine <b>Vorsilbe</b> ist ein kleiner Klotz, den du vorn ansetzt: ver plus kaufen ergibt verkaufen. Jeder Klotz sieht immer gleich aus, egal, an welches Wort du ihn baust.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Baustein",
+            "Wort",
+            "Neues Wort"
+          ],
+          [
+            [
+              "ver",
+              "kaufen",
+              "verkaufen"
+            ],
+            [
+              "zer",
+              "schneiden",
+              "zerschneiden"
+            ],
+            [
+              "ent",
+              "laden",
+              "entladen"
+            ],
+            [
+              "end",
+              "Runde",
+              "Endrunde"
+            ]
+          ],
+          [
+            2,
+            3,
+            3
+          ],
+          "Tabelle: Vorsilbe plus Stamm ergibt ein neues Wort"
+        ]
+      },
+      "caption": "Aus einem Baustein und einem Wort entsteht ein neues Wort."
+    },
+    "steps": {
+      "title": "So entscheidest du: end oder ent?",
+      "items": [
+        "Sprich das Wort laut. Du hörst am Anfang fast immer ein „ent“, ob mit d oder mit t.",
+        "Frag dich: Steckt das Nomen <b>Ende</b> darin? Die Endrunde ist die letzte Runde, sie kommt am Ende. Dann schreibst du end mit d.",
+        "Geht es nicht um Schluss, wie bei entladen, ist es die <b>Vorsilbe</b> ent mit t.",
+        "Kontrolle mit der Betonung: Bei end wird die erste Silbe betont (ENDrunde), bei der Vorsilbe ent nicht (entLAden)."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Die Vorsilbe ver klingt wie „fer“. Das ist eine Falle für die Ohren: Schreibe immer <b>ver</b> mit v. Mit „fer“ beginnen nur wenige Wörter, zum Beispiel Ferien und fertig. Die lernst du einzeln.</p>"
+    },
+    "rule": "Vorsilben schreibst du immer gleich: be, er, ver, zer, ge, ent. end mit d steht nur, wenn es um Ende oder Schluss geht.",
+    "check": {
+      "q": "Welches Wort ist richtig geschrieben?",
+      "options": [
+        {
+          "id": "vergleichen",
+          "html": "vergleichen"
+        },
+        {
+          "id": "fergleichen",
+          "html": "fergleichen"
+        },
+        {
+          "id": "vehrgleichen",
+          "html": "vehrgleichen"
+        }
+      ],
+      "answer": "vergleichen",
+      "why": "Die Vorsilbe ver wird mit v geschrieben, auch wenn sie wie „fer“ klingt."
+    }
+  },
+  "wieder": {
+    "goal": "Du kannst wieder und wider richtig schreiben, auch wenn sie in einem langen Wort stecken.",
+    "tldr": [
+      "wieder mit ie heißt „noch einmal“ oder „erneut“: wiederholen.",
+      "wider ohne e heißt meistens „gegen“: widersprechen.",
+      "Beide klingen genau gleich. Nur die Bedeutung entscheidet."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: zwei Zwillinge",
+      "html": "<p>Zwei Zwillinge sehen fast gleich aus und klingen gleich. Der eine kommt immer <b>wieder</b> und bringt dich noch einmal zum Ziel. Der andere stellt sich <b>wider</b> den Plan und ist dagegen. Du erkennst sie nicht an der Stimme, sondern daran, was sie tun.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Wort",
+            "Bedeutung",
+            "Beispiel"
+          ],
+          [
+            [
+              "wieder",
+              "noch einmal",
+              "wiederholen"
+            ],
+            [
+              "wieder",
+              "erneut",
+              "das Wiedersehen"
+            ],
+            [
+              "wider",
+              "gegen",
+              "widersprechen"
+            ],
+            [
+              "wider",
+              "gegen",
+              "der Widerstand"
+            ]
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          "Tabelle: wieder bedeutet noch einmal, wider bedeutet gegen"
+        ]
+      },
+      "caption": "Die Bedeutung zeigt dir, wie du das Wort schreibst."
+    },
+    "steps": {
+      "title": "So entscheidest du: wieder oder wider?",
+      "items": [
+        "Sprich das Wort. Du hörst keinen Unterschied, das i ist in beiden Wörtern lang.",
+        "Frag dich: Passt „noch einmal“ oder „erneut“? Dann schreibst du <b>wieder</b> mit ie.",
+        "Frag dich: Passt „gegen“? Dann schreibst du <b>wider</b> ohne e.",
+        "Das gilt auch im langen Wort: Das Wiedersehen ist ein erneutes Sehen. Widersprechen heißt, gegen etwas zu sprechen."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Schreibe nie nach dem Gehör. Wer bei Widerstand oder Widerspruch ein ie schreibt, hat nur auf den Klang gehört. Es gibt nur <b>wenige</b> Wörter mit wider. Wenn du sie als kleine Gruppe lernst, bist du sicher.</p>"
+    },
+    "rule": "wieder mit ie heißt noch einmal oder erneut. wider ohne e heißt meistens gegen.",
+    "check": {
+      "q": "Wie schreibst du das Verb, das „gegen etwas sprechen“ bedeutet?",
+      "options": [
+        {
+          "id": "widersprechen",
+          "html": "widersprechen"
+        },
+        {
+          "id": "wiedersprechen",
+          "html": "wiedersprechen"
+        },
+        {
+          "id": "wiederschprechen",
+          "html": "wiederschprechen"
+        }
+      ],
+      "answer": "widersprechen",
+      "why": "Es heißt „gegen“, deshalb schreibst du wider ohne e."
+    }
+  },
+  "endungen": {
+    "goal": "Du kannst Nomen mit den Endungen -ung, -heit, -keit, -schaft und -nis richtig schreiben und erkennst sie am Wortende.",
+    "tldr": [
+      "Die Endungen -ung, -heit, -keit, -schaft und -nis machen ein Wort zum Nomen. Du schreibst es groß.",
+      "-ung kommt von einem Verb (üben – Übung), -heit und -keit meist von einem Adjektiv (frei – Freiheit).",
+      "Nach -ig, -lich, -sam und -bar schreibst du -keit: Möglichkeit, Dankbarkeit. Sonst steht oft -heit: Freiheit.",
+      "Bei -nis steht in der Mehrzahl -nisse mit zwei s."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Baukasten",
+      "html": "<p>Mit <b>Endungen</b> baust du aus Verben und Adjektiven neue Nomen, wie mit Bausteinen. Aus „üben“ wird mit dem Baustein -ung die „Übung“. Aus „frei“ wird mit -heit die „Freiheit“. Die Endung ist wie ein Etikett: Wo sie steht, ist ein Nomen.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Ausgangswort",
+            "Endung",
+            "Nomen"
+          ],
+          [
+            [
+              "wohnen",
+              "-ung",
+              "Wohnung"
+            ],
+            [
+              "gesund",
+              "-heit",
+              "Gesundheit"
+            ],
+            [
+              "freundlich",
+              "-keit",
+              "Freundlichkeit"
+            ],
+            [
+              "Freund",
+              "-schaft",
+              "Freundschaft"
+            ],
+            [
+              "erleben",
+              "-nis",
+              "Erlebnis"
+            ]
+          ],
+          [
+            2,
+            2,
+            3
+          ],
+          "Tabelle: Ausgangswörter, Endungen und die neuen Nomen"
+        ]
+      },
+      "caption": "Aus Verben, Adjektiven und Nomen werden mit Endungen neue Nomen."
+    },
+    "steps": {
+      "title": "So geht es: Gesundheit oder Gesundkeit?",
+      "items": [
+        "Finde das Ausgangswort. Hier ist es das Adjektiv „gesund“.",
+        "Schau auf das Ende des Ausgangsworts. „gesund“ endet nicht auf -ig, -lich oder -sam.",
+        "Dann hängst du -heit an: Gesundheit. Bei „freundlich“ ist es anders: Es endet auf -lich, also folgt -keit: Freundlichkeit.",
+        "Schreibe das Nomen groß. Die Endung schreibst du immer gleich, nie „-hait“ oder „-schafft“."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Die Endungen -ig und -lich gehören zu Adjektiven. Die schreibst du klein: freundlich. Erst mit -keit wird daraus ein Nomen: Freundlichkeit.</p><p>Bei -nis steht in der Einzahl nur ein <b>s</b>, in der Mehrzahl zwei: das Ergebnis, die Ergebnisse. Die Wörter mit -nis haben nicht alle denselben Artikel. Lerne jedes Wort mit seinem Artikel.</p>"
+    },
+    "rule": "Die Endungen -ung, -heit, -keit, -schaft und -nis machen ein Wort zum Nomen, das du großschreibst. Nach -ig, -lich, -sam und -bar steht -keit.",
+    "check": {
+      "q": "Du machst aus dem Adjektiv „klug“ ein Nomen. Welches Wort ist richtig geschrieben?",
+      "options": [
+        {
+          "id": "Klugheit",
+          "html": "Klugheit"
+        },
+        {
+          "id": "Klugkeit",
+          "html": "Klugkeit"
+        },
+        {
+          "id": "Klughait",
+          "html": "Klughait"
+        }
+      ],
+      "answer": "Klugheit",
+      "why": "„klug“ endet nicht auf -ig, -lich oder -sam. Darum hängst du -heit an: Klugheit."
+    }
+  },
+  "zusammen5": {
+    "goal": "Du kannst Wörter richtig zusammenschreiben und weißt, wann du getrennt schreiben musst.",
+    "tldr": [
+      "Bei einer Zusammensetzung entscheidet das letzte Wort, das <b>Grundwort</b>. Ist es ein Nomen, schreibst du das Wort vorn groß: die Sonnenbrille. Der Artikel kommt vom Grundwort.",
+      "Ist das Grundwort ein Adjektiv, schreibst du das ganze Wort klein: schneeweiß.",
+      "Zwei Verben nebeneinander schreibst du in der Regel getrennt: schwimmen gehen. Verbindungen mit „sein“ schreibst du immer getrennt: da sein."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: Schulbus oder Busschule?",
+      "html": "<p>Ein <b>Schulbus</b> ist ein Bus. Eine Busschule wäre eine Schule. Das hintere Wort sagt, was es ist. Das vordere sagt nur, welche Art. Darum heißt das hintere Wort <b>Grundwort</b> und das vordere <b>Bestimmungswort</b>. Beide zusammen sind eine <b>Zusammensetzung</b>, ein neues Wort.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Teil 1",
+            "Teil 2",
+            "Neues Wort"
+          ],
+          [
+            [
+              "die Sonne",
+              "die Brille",
+              "die Sonnenbrille"
+            ],
+            [
+              "der Regen",
+              "der Schirm",
+              "der Regenschirm"
+            ],
+            [
+              "der Schnee",
+              "weiß",
+              "schneeweiß"
+            ],
+            [
+              "schwimmen",
+              "gehen",
+              "schwimmen gehen"
+            ],
+            [
+              "da",
+              "sein",
+              "da sein"
+            ]
+          ],
+          [
+            2,
+            2,
+            3
+          ],
+          "Tabelle: aus zwei Wörtern wird eine Zusammensetzung oder eine getrennte Verbindung"
+        ]
+      },
+      "caption": "Nomen und Adjektiv als Grundwort: zusammen. Zwei Verben und „sein“-Verbindungen: getrennt."
+    },
+    "steps": {
+      "title": "So schreibst du eine Verbindung richtig",
+      "items": [
+        "Schau auf das letzte Wort. Das ist das <b>Grundwort</b>. Bei „Sonne“ und „Brille“ ist „Brille“ das Grundwort.",
+        "Ist das Grundwort ein <b>Nomen</b>, schreibst du alles in einem Wort und vorn groß: die Sonnenbrille. Der Artikel kommt vom Grundwort.",
+        "Ist das Grundwort ein <b>Adjektiv</b>, schreibst du alles zusammen und klein: schneeweiß.",
+        "Stehen zwei Verben nebeneinander oder ist „sein“ dabei, schreibst du getrennt: schwimmen gehen, da sein."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Das erste Wort entscheidet nicht über Groß oder Klein. Bei <b>schneeweiß</b> ist „Schnee“ zwar ein Nomen, aber das Grundwort „weiß“ ist ein Adjektiv. Darum schreibst du das ganze Wort klein.</p>"
+    },
+    "rule": "Das Grundwort, der hintere Teil, entscheidet: Nomen wird groß, Adjektiv wird klein. Zwei Verben schreibst du in der Regel getrennt, Verbindungen mit „sein“ immer.",
+    "check": {
+      "q": "Welcher Satz ist richtig geschrieben?",
+      "options": [
+        {
+          "id": "Die Wiese ist grasgrün.",
+          "html": "Die Wiese ist grasgrün."
+        },
+        {
+          "id": "Die Wiese ist Grasgrün.",
+          "html": "Die Wiese ist Grasgrün."
+        },
+        {
+          "id": "Die Wiese ist gras grün.",
+          "html": "Die Wiese ist gras grün."
+        }
+      ],
+      "answer": "Die Wiese ist grasgrün.",
+      "why": "Das Grundwort „grün“ ist ein Adjektiv. Darum schreibst du das ganze Wort klein und zusammen."
+    }
+  },
+  "kurz-lang": {
+    "goal": "Du kannst am Klang hören, ob ein Vokal kurz oder lang ist, und danach entscheiden, ob ein oder zwei Konsonanten folgen.",
+    "tldr": [
+      "Sprich das Wort deutlich und höre auf den betonten Vokal, also den Vokal der Silbe, die du am lautesten sprichst: Er ist kurz oder lang.",
+      "Auf einen kurzen betonten Vokal folgen in der Regel zwei Konsonanten oder mehr: Himmel, Kanne, Wolke.",
+      "Nach einem langen Vokal folgt meist nur ein Konsonant: Rabe, Kugel.",
+      "Ist der Vokal kurz und folgt nur ein Konsonant-Laut, schreibst du diesen Buchstaben doppelt: Kanne. Aus k wird ck, aus z wird tz. ch, sch und x verdoppelst du nie. Reimwörter helfen dir bei der Probe."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Läufer",
+      "html": "<p>Ein <b>langer Vokal</b> ist wie ein Läufer auf einer langen Bahn. Er hat viel Platz, danach kommt ein einzelner <b>Konsonant</b>, also ein Mitlaut. Ein <b>kurzer Vokal</b> ist wie ein Läufer, der schnell gebremst wird. Dafür braucht es zwei Konsonanten als Bremse.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Vokal",
+            "Silben",
+            "Danach"
+          ],
+          [
+            [
+              "lang",
+              "Ra-be",
+              "ein Konsonant"
+            ],
+            [
+              "kurz",
+              "Him-mel",
+              "m doppelt"
+            ],
+            [
+              "kurz",
+              "Kan-ne",
+              "n doppelt"
+            ],
+            [
+              "kurz",
+              "Wol-ke",
+              "l und k"
+            ]
+          ],
+          [
+            2,
+            2,
+            3
+          ],
+          "Tabelle: Vokal kurz oder lang und was danach folgt"
+        ]
+      },
+      "caption": "Kurzer Vokal: zwei Konsonanten. Langer Vokal: meist einer."
+    },
+    "steps": {
+      "title": "So entscheidest du: Kanne oder Kane?",
+      "items": [
+        "Sprich das Wort langsam und klatsche die Silben: Kan-ne.",
+        "Höre auf den Vokal der ersten Silbe: Das a ist kurz.",
+        "Nach dem kurzen a hörst du nur ein n, aber du brauchst zwei Konsonanten. Darum schreibst du das n doppelt: Kanne.",
+        "Mache die Reimprobe: Tanne und Wanne reimen sich auf Kanne und werden gleich geschrieben."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Verdopple nicht, wenn schon <b>zwei verschiedene Konsonanten</b> folgen: Wolke, nicht Wollke. Auch kleine Wörter wie mit, an, ab, hat und bin haben einen kurzen Vokal und nur einen Konsonanten. Die lernst du als Ausnahmen.</p>"
+    },
+    "rule": "Kurzer betonter Vokal: meist zwei Konsonanten (Kanne, Wolke). Langer Vokal: meist ein Konsonant (Rabe). Kleine Wörter wie mit und an sind Ausnahmen.",
+    "check": {
+      "q": "Welches Wort ist richtig geschrieben?",
+      "options": [
+        {
+          "id": "Kanne",
+          "html": "Kanne"
+        },
+        {
+          "id": "Kane",
+          "html": "Kane"
+        },
+        {
+          "id": "Kahne",
+          "html": "Kahne"
+        }
+      ],
+      "answer": "Kanne",
+      "why": "Das a ist kurz. Nach einem kurzen Vokal brauchst du zwei Konsonanten, also nn."
+    }
+  },
+  "tz-ck": {
+    "goal": "Du kannst entscheiden, ob du tz oder z und ck oder k schreibst.",
+    "tldr": [
+      "Nach einem kurzen Vokal schreibst du tz und ck: Platz, Decke.",
+      "Nach einem langen Vokal, nach l, n, r und nach einem Doppellaut schreibst du nur z oder k: Haken, Pflanze, Kreuz.",
+      "In deutschen Wörtern steht tz statt zz und ck statt kk."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Schutzhelm",
+      "html": "<p>Das <b>z</b> und das <b>k</b> tragen nach einem kurzen Vokal einen Schutzhelm, weil der Aufprall hart ist. Der Helm ist ein <b>t</b> vor dem z und ein <b>c</b> vor dem k. Nach einem langen Vokal oder nach l, n, r brauchen sie keinen Helm.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Davor",
+            "Schreibe",
+            "Beispiel"
+          ],
+          [
+            [
+              "kurzer Vokal",
+              "tz oder ck",
+              "Platz, Decke"
+            ],
+            [
+              "langer Vokal",
+              "z oder k",
+              "Haken"
+            ],
+            [
+              "l, n oder r",
+              "z oder k",
+              "Pflanze, Dank"
+            ],
+            [
+              "Doppellaut",
+              "z oder k",
+              "Kreuz, Pauke"
+            ]
+          ],
+          [
+            3,
+            2,
+            3
+          ],
+          "Tabelle: wann tz und ck stehen und wann z und k"
+        ]
+      },
+      "caption": "Nur nach einem kurzen Vokal stehen tz und ck."
+    },
+    "steps": {
+      "title": "So entscheidest du: Decke oder Deke?",
+      "items": [
+        "Sprich das Wort in Silben: De-cke.",
+        "Prüfe, ob direkt vor dem k-Laut ein <b>l, n oder r</b> oder ein <b>Doppellaut</b> (au, ei, eu) steht. Bei Decke ist das nicht so.",
+        "Dann hörst du auf den Vokal: Das e ist kurz. Nach einem kurzen Vokal schreibst du <b>ck</b>: Decke.",
+        "Kontrolle mit „Haken“: Das a ist lang (Ha-ken), deshalb steht nur ein k."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Nach <b>l, n, r</b> steht nie tz oder ck, auch wenn der Vokal davor kurz ist: Pflanze, nicht Pflantze. Schrank, nicht Schranck. Einige Fremdwörter bleiben anders, zum Beispiel Pizza mit zz. Die lernst du einzeln.</p>"
+    },
+    "rule": "Nach kurzem Vokal: tz und ck. Nach langem Vokal, l, n, r und Doppellaut: z und k.",
+    "check": {
+      "q": "Wie schreibst du das Wort für etwas Grünes, das im Garten wächst, richtig?",
+      "options": [
+        {
+          "id": "Pflanze",
+          "html": "Pflanze"
+        },
+        {
+          "id": "Pflantze",
+          "html": "Pflantze"
+        },
+        {
+          "id": "Pflanzze",
+          "html": "Pflanzze"
+        }
+      ],
+      "answer": "Pflanze",
+      "why": "Nach dem n steht nur ein z, nie tz."
+    }
+  },
+  "slaute5": {
+    "goal": "Du kannst entscheiden, ob du ein s-Wort mit s, ss oder ß schreibst.",
+    "tldr": [
+      "Summt das s, schreibst du s: Hase, Wiese.",
+      "Zischt das s nach einem kurzen Vokal und folgt kein weiterer Konsonant, schreibst du ss: Wasser, Fluss. Bei Kiste oder Ast bleibt ein s.",
+      "Zischt es nach einem langen Vokal oder nach ei, au, eu, äu und folgt kein weiterer Konsonant, schreibst du ß: Straße, heißen. Aber: Faust, Geist."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: Kühlschrank und Reifen",
+      "html": "<p>Ein summendes s klingt wie ein Kühlschrank, der leise brummt. Ein zischendes s klingt wie Luft, die aus einem Reifen entweicht. Du musst also nur genau hinhören: Summt es oder zischt es?</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Klang",
+            "Vokal davor",
+            "Beispiel"
+          ],
+          [
+            [
+              "summt",
+              "egal",
+              "Hase, Wiese"
+            ],
+            [
+              "zischt",
+              "kurz",
+              "Wasser, Fluss"
+            ],
+            [
+              "zischt",
+              "lang, ei, au",
+              "Straße, heißen"
+            ],
+            [
+              "zischt + Konsonant",
+              "egal",
+              "Kiste, Faust"
+            ]
+          ],
+          [
+            4,
+            3,
+            3
+          ],
+          "Tabelle: s, ss oder ß je nach Klang und Vokal"
+        ]
+      },
+      "caption": "Erst hörst du auf den Klang, dann auf den Vokal davor."
+    },
+    "steps": {
+      "title": "So gehst du vor: Wiese, Wasser oder Straße?",
+      "items": [
+        "Sprich das Wort und hör auf das s. Bei „Wiese“ summt es, also schreibst du ein einfaches s.",
+        "Bei „Wasser“ zischt es. Der Vokal davor ist kurz, du sprichst ihn schnell. Also schreibst du ss.",
+        "Bei „Straße“ zischt es auch, aber der Vokal davor ist lang. Also schreibst du ß. Auch nach einem <b>Doppellaut</b> steht ß. Das ist ein Laut aus zwei Buchstaben, zum Beispiel ei in „heißen“ oder au in „draußen“.",
+        "Steht das s am Wortende, verlängere das Wort: Haus – Häuser (es summt, also s), Fuß – Füße (es zischt nach langem u, also ß)."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Viele hören ein Zischen und schreiben sofort ß. Schau aber erst auf den Vokal davor: Nach einem kurzen Vokal steht ss, nie ß. Es heißt also „Wasser“ und nicht „Waßer“. Das ß passt nur nach einem langen Vokal oder einem Doppellaut.</p>"
+    },
+    "rule": "Summt das s: s. Zischt es nach kurzem Vokal: ss. Zischt es nach langem Vokal oder Doppellaut: ß. Folgt noch ein Konsonant (Kiste, Faust), schreibst du s.",
+    "check": {
+      "q": "Welches Wort schreibst du mit ß?",
+      "options": [
+        {
+          "id": "Straße",
+          "html": "Straße"
+        },
+        {
+          "id": "Wasser",
+          "html": "Wasser"
+        },
+        {
+          "id": "Hase",
+          "html": "Hase"
+        }
+      ],
+      "answer": "Straße",
+      "why": "Bei „Straße“ zischt das s nach einem langen a, deshalb ß. „Wasser“ hat einen kurzen Vokal (ss), bei „Hase“ summt das s."
+    }
+  },
+  "merk-ie": {
+    "goal": "Du kannst ein lang gesprochenes i richtig schreiben: meistens mit ie, bei Merkwörtern mit i oder ih.",
+    "tldr": [
+      "Hörst du ein langes i, schreibst du meistens <b>ie</b>: Tier, Ziel, Brief.",
+      "Verben auf <b>-ieren</b> haben immer ie: probieren, spazieren.",
+      "Merkwörter haben nur <b>i</b> oder <b>ih</b>: Tiger, Igel, ihm, ihr.",
+      "Bei manchen Verben bleibt ein <b>h</b> aus der Grundform: ziehen, er zieht."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: Turnschuhe und Gummistiefel",
+      "html": "<p>In deiner Klasse tragen fast alle Turnschuhe. So ist es auch beim langen i: Fast alle Wörter haben ein <b>ie</b>. Nur wenige Wörter tragen Gummistiefel, zum Beispiel Tiger, Igel und Kino. Diese Ausnahmen lernst du einzeln kennen, dann kennst du sie für immer.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Schreibung",
+            "Wann?",
+            "Beispiel"
+          ],
+          [
+            [
+              "ie",
+              "meistens",
+              "Tier, Ziel"
+            ],
+            [
+              "ie",
+              "immer bei -ieren",
+              "probieren"
+            ],
+            [
+              "i",
+              "Merkwörter",
+              "Tiger, Igel"
+            ],
+            [
+              "ih",
+              "Pronomen",
+              "ihm, ihr, ihnen"
+            ],
+            [
+              "ieh",
+              "h aus Grundform",
+              "er zieht (ziehen)"
+            ]
+          ],
+          [
+            2,
+            2,
+            3
+          ],
+          "Tabelle: ie, i und ih beim langen i"
+        ]
+      },
+      "caption": "Das lange i schreibst du meist ie, selten i, ih oder ieh."
+    },
+    "steps": {
+      "title": "So gehst du vor: Tier oder Tiger?",
+      "items": [
+        "Sprich das Wort deutlich. Ist das i lang? Bei „Tier“ und bei „Tiger“ ist es lang.",
+        "Frage dich: Ist das Wort ein Verb auf -ieren? Dann schreibst du immer <b>ie</b>. Ist es kein Merkwort, gilt die Grundregel und du schreibst ebenfalls <b>ie</b>: Ziel, Brief.",
+        "Kennst du das Wort als <b>Merkwort</b>? Das ist ein Wort, das du dir einzeln einprägst. „Tiger“, „Igel“, „Kino“ und „Biber“ schreibst du nur mit i.",
+        "Bei „ihm“, „ihr“, „ihn“ und „ihnen“ gilt: Du lernst sie auswendig, sie haben ein h."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Nicht jedes lang gesprochene i hat ein e dahinter. Wörter wie <b>Tiger</b>, <b>Igel</b>, <b>Kino</b> und <b>Biber</b> musst du dir merken. Auch <b>mir</b>, <b>dir</b> und <b>wir</b> schreibst du nur mit i.</p>"
+    },
+    "rule": "Langes i schreibst du meist ie. Verben auf -ieren haben immer ie. Merkwörter haben i oder ih (ihm, ihr).",
+    "check": {
+      "q": "Welches Wort schreibst du mit ie?",
+      "options": [
+        {
+          "id": "Ziel",
+          "html": "Ziel"
+        },
+        {
+          "id": "Kino",
+          "html": "Kino"
+        },
+        {
+          "id": "Igel",
+          "html": "Igel"
+        }
+      ],
+      "answer": "Ziel",
+      "why": "„Ziel“ folgt der Grundregel: langes i, also ie. „Kino“ und „Igel“ sind Merkwörter mit einfachem i."
+    }
+  },
+  "dehnung-h": {
+    "goal": "Du kannst lange Vokale richtig schreiben, die ein Dehnungs-h oder einen doppelten Vokal haben.",
+    "tldr": [
+      "Viele lange Vokale haben kein besonderes Zeichen: Hase, Rose.",
+      "Manchmal steht ein stilles <b>Dehnungs-h</b> dahinter: Zahl, Uhr, wohnen.",
+      "Wenige Wörter haben einen doppelten Vokal: Meer, Boot, Tee, Haar."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein stiller Gast",
+      "html": "<p>Das <b>Dehnungs-h</b> ist wie ein Gast, der still in der Ecke sitzt. Du hörst ihn nicht, aber er gehört zur Feier. Wenn du die Verwandten eines Wortes kennst (Zahl, zählen, bezahlen), siehst du: Der stille Gast kommt überall mit.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Zeichen",
+            "Wann?",
+            "Beispiel"
+          ],
+          [
+            [
+              "Dehnungs-h",
+              "vor l, m, n, r",
+              "Zahl, Sohn, Uhr"
+            ],
+            [
+              "aa, ee, oo",
+              "nur Merkwörter",
+              "Saal, Meer, Boot"
+            ],
+            [
+              "nichts",
+              "sehr häufig",
+              "Hase, Rose"
+            ]
+          ],
+          [
+            2,
+            3,
+            3
+          ],
+          "Tabelle: Möglichkeiten, einen langen Vokal zu schreiben"
+        ]
+      },
+      "caption": "Ein langer Vokal kann mit h, mit Doppelvokal oder ohne Zeichen geschrieben werden."
+    },
+    "steps": {
+      "title": "So gehst du vor: Zahl oder Zal?",
+      "items": [
+        "Sprich das Wort. Ist der Vokal lang? Bei „Zahl“ ist das a lang.",
+        "Suche verwandte Wörter: zählen, Zahlen, bezahlen. Überall steht ein h. Also schreibst du auch „Zahl“ mit h.",
+        "Hilft keine Verwandtschaft, prüfe, ob das Wort ein Merkwort mit aa, ee oder oo ist: Meer, See, Tee, Boot, Haar, Saal.",
+        "Schreibe häufige Merkwörter mehrmals auf, bis sie sich richtig anfühlen."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Du sprichst das <b>Dehnungs-h</b> nicht mit. Der Vokal davor ist immer <b>lang</b>. Eine sichere Regel, welche Wörter es haben, gibt es nicht. Verwandte Wörter helfen oft, viele häufige Wörter merkst du dir einzeln.</p>"
+    },
+    "rule": "Das Dehnungs-h hörst du nicht, verwandte Wörter zeigen es (Zahl, zählen). aa, ee und oo sind Merkwörter.",
+    "check": {
+      "q": "Welches Wort hat ein Dehnungs-h?",
+      "options": [
+        {
+          "id": "Zahn",
+          "html": "Zahn"
+        },
+        {
+          "id": "Hase",
+          "html": "Hase"
+        },
+        {
+          "id": "Rose",
+          "html": "Rose"
+        }
+      ],
+      "answer": "Zahn",
+      "why": "„Zahn“ hat nach dem langen a ein stilles h. Bei „Hase“ und „Rose“ steht der lange Vokal ohne besonderes Zeichen."
+    }
+  },
+  "xlaute5": {
+    "goal": "Du kannst den Laut „ks“ richtig schreiben: mit x, chs, cks, gs oder ks.",
+    "tldr": [
+      "Den Laut „ks“ kannst du auf fünf Arten schreiben: x, chs, cks, gs und ks.",
+      "Wörter mit <b>x</b> kommen oft aus anderen Sprachen: Taxi, Boxer, Text.",
+      "Wörter mit <b>chs</b> sind wenige Merkwörter: Fuchs, sechs, Wachs."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Schauspieler mit vielen Verkleidungen",
+      "html": "<p>Der Laut „ks“ ist wie ein Schauspieler, der sich immer anders verkleidet. Er klingt immer gleich, aber mal trägt er ein <b>x</b>, mal ein <b>chs</b> oder ein <b>cks</b>. Du musst genau hinsehen, welche Verkleidung zum Wort passt.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Schreibung",
+            "Beispiel",
+            "Merkhilfe"
+          ],
+          [
+            [
+              "x",
+              "Taxi, Boxer",
+              "oft Fremdwort"
+            ],
+            [
+              "chs",
+              "Fuchs, sechs",
+              "Merkwörter"
+            ],
+            [
+              "cks",
+              "Klecks, Knacks",
+              "sehr selten"
+            ]
+          ],
+          [
+            2,
+            3,
+            3
+          ],
+          "Tabelle: x, chs und cks mit Beispielen"
+        ]
+      },
+      "caption": "Der Laut ks hat mehrere Schreibweisen."
+    },
+    "steps": {
+      "title": "So gehst du vor: Fuks, Fucks oder Fuchs?",
+      "items": [
+        "Sprich das Wort und achte auf das „ks“. Du hörst nicht, wie es geschrieben wird.",
+        "Kommt das Wort aus einer anderen Sprache, zum Beispiel „Taxi“ oder „Boxer“? Dann schreibst du es meistens mit <b>x</b>.",
+        "Ist es ein Tier wie „Fuchs“ oder „Dachs“, oder das Wort „sechs“? Dann ist es meist ein Merkwort mit <b>chs</b>.",
+        "Nur wenige Wörter schreibst du mit <b>cks</b>. Suche ein verwandtes Wort mit ck: „Knacks“ kommt von „knacken“."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Du hörst nicht, ob der Laut ks mit x, chs oder cks geschrieben wird. Alle klingen gleich. Darum lernst du Merkwörter wie <b>Fuchs</b>, <b>sechs</b> und <b>Wachs</b> und denkst bei <b>Taxi</b> oder <b>Boxer</b> an das x.</p>"
+    },
+    "rule": "Der Laut ks hat viele Schreibungen. x steht oft in Fremdwörtern, chs-Wörter sind Merkwörter. cks kommt von einem verwandten Wort mit ck.",
+    "check": {
+      "q": "Welche Schreibung des Tieres mit den schwarz-weißen Streifen im Gesicht ist richtig?",
+      "options": [
+        {
+          "id": "Dachs",
+          "html": "Dachs"
+        },
+        {
+          "id": "Daks",
+          "html": "Daks"
+        },
+        {
+          "id": "Dacks",
+          "html": "Dacks"
+        }
+      ],
+      "answer": "Dachs",
+      "why": "„Dachs“ gehört zu den Merkwörtern mit chs. Du hörst den Unterschied nicht, deshalb lernst du das Wort einzeln."
+    }
+  },
+  "gross-artikel": {
+    "goal": "Du kannst Nomen an Artikeln und verschmolzenen Artikeln erkennen und großschreiben.",
+    "tldr": [
+      "Ein <b>Artikel</b> ist ein Begleiter vor dem Nomen: der, die, das, ein, eine. Danach schreibst du das Nomen groß.",
+      "Auch verschmolzene Wörter sind Begleiter: im (in dem), am (an dem), zum (zu dem), ins (in das). Danach folgt meistens ein Nomen.",
+      "Zwischen Artikel und Nomen kann ein Adjektiv stehen. Es bleibt klein. Nur das Nomen wird groß: die rote Mütze."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: der Star und sein Begleiter",
+      "html": "<p>Ein Star kommt nie allein zur Preisverleihung. Vor ihm geht ein Begleiter. Siehst du den Begleiter, weißt du: Gleich kommt der Star. Bei Wörtern ist es genauso. Der Begleiter ist der <b>Artikel</b> (der, die, das, ein, eine). Der Star ist das <b>Nomen</b> und bekommt den großen Anfangsbuchstaben. Diesen Trick nennen wir die <b>Begleiter-Probe</b>.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Begleiter",
+            "Beispiel",
+            "Nomen groß"
+          ],
+          [
+            [
+              "bestimmt",
+              "der Hund",
+              "Hund"
+            ],
+            [
+              "unbestimmt",
+              "eine Maus",
+              "Maus"
+            ],
+            [
+              "mit Präposition",
+              "im Garten",
+              "Garten"
+            ],
+            [
+              "mit Adjektiv",
+              "die rote Mütze",
+              "Mütze"
+            ]
+          ],
+          [
+            3,
+            3,
+            2
+          ],
+          "Tabelle: Begleiter vor dem Nomen und das großgeschriebene Nomen"
+        ]
+      },
+      "caption": "Nach dem Begleiter kommt das Nomen. Du schreibst es groß, das Adjektiv dazwischen bleibt klein."
+    },
+    "steps": {
+      "title": "So machst du die Begleiter-Probe",
+      "items": [
+        "Suche einen <b>Artikel</b> wie der, die, das, ein, eine, einen. Im Satz „Ich sehe eine rote Mütze.“ steht „eine“.",
+        "Suche auch kurze, verschmolzene Wörter wie im, am, zum, vom, beim, ins, ans, aufs. Sie bestehen aus Präposition und Artikel: im heißt in dem.",
+        "Geh vom Begleiter nach rechts bis zum Nomen. Ein Adjektiv dazwischen bleibt klein: „rote“ beschreibt die Mütze.",
+        "Schreibe das Nomen groß: eine rote <b>Mütze</b>."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Nicht jedes Wort nach dem Artikel ist ein Nomen. Im Satz <b>Wir kaufen den neuen Ball.</b> bleibt „neuen“ klein, denn es beschreibt den Ball. Nur „Ball“ wird großgeschrieben.</p>"
+    },
+    "rule": "Nach einem Artikel oder einem verschmolzenen Artikel (im, am, zum, vom, beim, ins, ans, aufs) steht meistens ein Nomen. Du schreibst es groß, Adjektive davor bleiben klein. Ausnahme: „am“ mit Höchststufe bleibt klein: am schnellsten.",
+    "check": {
+      "q": "Welcher Satz ist richtig geschrieben?",
+      "options": [
+        {
+          "id": "Sie sitzt auf einer breiten Bank.",
+          "html": "Sie sitzt auf einer breiten Bank."
+        },
+        {
+          "id": "Sie sitzt auf einer Breiten Bank.",
+          "html": "Sie sitzt auf einer Breiten Bank."
+        },
+        {
+          "id": "Sie sitzt auf einer breiten bank.",
+          "html": "Sie sitzt auf einer breiten bank."
+        },
+        {
+          "id": "Sie sitzt auf Einer breiten Bank.",
+          "html": "Sie sitzt auf Einer breiten Bank."
+        }
+      ],
+      "answer": "Sie sitzt auf einer breiten Bank.",
+      "why": "„einer“ ist der Artikel und bleibt klein. „breiten“ ist ein Adjektiv und bleibt klein. Nur das Nomen „Bank“ schreibst du groß."
+    }
+  },
+  "gross-pronomen": {
+    "goal": "Du kannst bei Pronomen, Mengenwörtern, Nomen-Endungen und der höflichen Anrede richtig großschreiben.",
+    "tldr": [
+      "Nach <b>Possessivpronomen</b> (besitzanzeigend: mein, dein, unser) und <b>Demonstrativpronomen</b> (hinweisend: dieser, diese, dieses) steht ein Nomen. Du schreibst es groß.",
+      "Nach <b>Mengenwörtern</b> wie etwas, nichts, alles, viel, wenig, genug wird ein Adjektiv zum Nomen: etwas Süßes.",
+      "Die Endungen -ung, -heit, -keit, -schaft, -nis, -tum und -chen zeigen ein Nomen: die Zeitung.",
+      "Sprichst du jemanden höflich an, beginnen <b>Sie</b>, <b>Ihnen</b> und <b>Ihr</b> groß."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: du bist Spurensucher",
+      "html": "<p>Ein Nomen versteckt sich manchmal im Satz. Aber es hinterlässt Spuren: ein Wort davor wie <b>mein</b>, <b>dieser</b> oder <b>etwas</b>, oder eine Endung wie <b>-ung</b> oder <b>-heit</b>. Findest du die Spur, hast du das Nomen. Und das schreibst du groß.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Signal",
+            "Beispiel",
+            "Wird groß"
+          ],
+          [
+            [
+              "mein, dein",
+              "dein Fahrrad",
+              "Fahrrad"
+            ],
+            [
+              "dieser, diese",
+              "dieser Rucksack",
+              "Rucksack"
+            ],
+            [
+              "etwas, nichts",
+              "etwas Süßes",
+              "Süßes"
+            ],
+            [
+              "Endung -ung",
+              "die Zeitung",
+              "Zeitung"
+            ],
+            [
+              "Sie, Ihnen, Ihr",
+              "Haben Sie Zeit?",
+              "Sie"
+            ]
+          ],
+          [
+            3,
+            3,
+            2
+          ],
+          "Tabelle: Signale, Beispiele und das Wort, das großgeschrieben wird"
+        ]
+      },
+      "caption": "Jedes Signal zeigt dir, welches Wort du großschreibst."
+    },
+    "steps": {
+      "title": "So entscheidest du",
+      "items": [
+        "Suche das Signal vor dem Wort. Ist es ein Pronomen wie <b>mein</b> oder <b>dieser</b>, kommt ein Nomen: dein Fahrrad.",
+        "Steht davor ein Mengenwort wie <b>etwas</b>, <b>nichts</b> oder <b>alles</b>, wird ein Adjektiv zum Nomen: etwas Süßes.",
+        "Schau auch auf die Endung. Endet das Wort auf -ung, -heit, -keit, -schaft, -nis, -tum oder -chen, ist es ein Nomen: die Zeitung.",
+        "Sprichst du eine Person mit „Sie“ an, schreibst du <b>Sie</b>, <b>Ihnen</b> und <b>Ihr</b> groß: Haben Sie Ihre Brille dabei?"
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Nicht jedes „sie“ ist eine Anrede. In <b>Die Kinder lachen, weil sie sich freuen.</b> meint „sie“ die Kinder und bleibt klein. Nur wenn du jemanden höflich ansprichst, schreibst du „Sie“ groß.</p><p>Auch nicht jedes Wort auf „-chen“ ist ein Nomen: „welchen“ ist ein Fragewort und bleibt klein.</p>"
+    },
+    "rule": "Nach mein, dein, unser und dieser steht ein Nomen, nach etwas, nichts und alles wird ein Adjektiv zum Nomen: beides schreibst du groß. Nomen-Endungen zeigen ein Nomen. Die höfliche Anrede Sie, Ihnen, Ihr schreibst du immer groß.",
+    "check": {
+      "q": "Welcher Satz ist richtig geschrieben?",
+      "options": [
+        {
+          "id": "Heute gab es etwas Leckeres zum Mittag.",
+          "html": "Heute gab es etwas Leckeres zum Mittag."
+        },
+        {
+          "id": "Heute gab es etwas leckeres zum Mittag.",
+          "html": "Heute gab es etwas leckeres zum Mittag."
+        },
+        {
+          "id": "Heute gab es Etwas Leckeres zum Mittag.",
+          "html": "Heute gab es Etwas Leckeres zum Mittag."
+        },
+        {
+          "id": "Heute gab es etwas Leckeres zum mittag.",
+          "html": "Heute gab es etwas Leckeres zum mittag."
+        }
+      ],
+      "answer": "Heute gab es etwas Leckeres zum Mittag.",
+      "why": "Nach dem Mengenwort „etwas“ wird das Adjektiv zum Nomen und groß: etwas Leckeres. „etwas“ selbst bleibt klein. Nach „zum“ steht das Nomen „Mittag“."
+    }
+  },
+  "gross-nominal": {
+    "goal": "Du kannst Verben und Adjektive als Nomen, Zeitangaben, Namen und Zahlen richtig großschreiben.",
+    "tldr": [
+      "Verben und Adjektive werden zu <b>Nomen</b>, wenn ein Signalwort davor steht: das Singen, beim Kochen, das Gelb.",
+      "Bei Zeitangaben zählt das Signal: „heute Abend“ und „am Abend“ schreibst du groß, „abends“ schreibst du klein.",
+      "Namen mit -er (Kölner Dom) und Straßennamen mit Adjektiv (Neue Gasse) schreibst du groß. Eine Zahl wird groß, wenn sie wie ein Nomen benutzt wird: eine Zwei."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: Wörter im Kostüm",
+      "html": "<p>Ein Wort kann in eine neue Rolle schlüpfen. Das Verb „singen“ zieht ein Kostüm an und heißt jetzt <b>das Singen</b>. Das Kostüm ist ein Signalwort wie „das“, „beim“ oder „zum“. Dann ist das Wort ein <b>Nomen</b> und bekommt einen großen Anfangsbuchstaben.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Fall",
+            "Beispiel",
+            "Schreibung"
+          ],
+          [
+            [
+              "Verb mit Signal",
+              "beim Kochen",
+              "groß"
+            ],
+            [
+              "Farbe mit Signal",
+              "das Gelb",
+              "groß"
+            ],
+            [
+              "Zeit nach heute",
+              "heute Abend",
+              "groß"
+            ],
+            [
+              "Wort mit -s",
+              "abends",
+              "klein"
+            ],
+            [
+              "Name mit -er",
+              "Kölner Dom",
+              "groß"
+            ]
+          ],
+          [
+            3,
+            3,
+            2
+          ],
+          "Tabelle: Fälle, Beispiele und die Schreibung mit großem oder kleinem Anfangsbuchstaben"
+        ]
+      },
+      "caption": "Das Signal vor dem Wort entscheidet, ob du groß oder klein schreibst."
+    },
+    "steps": {
+      "title": "So entscheidest du bei Zeitangaben",
+      "items": [
+        "Suche ein Signal vor dem Wort: einen Artikel (der, das), eine Präposition mit Artikel (am, beim, zum) oder ein Wort wie „jeden“. Steht eins davor, ist das Wort ein Nomen: am <b>Abend</b>, jeden <b>Samstag</b>.",
+        "Steht „heute“, „gestern“ oder „morgen“ vor einer Tageszeit, schreibst du die Tageszeit groß: heute <b>Abend</b>, gestern <b>Nachmittag</b>. „heute“ selbst bleibt klein.",
+        "Endet die Zeitangabe auf -s und hat keinen Begleiter, bleibt sie klein: abends, montags, nachts.",
+        "Prüfe Namen und Zahlen. Aus dem Ortsnamen Köln wird mit -er das Wort <b>Kölner</b>, groß. Eine Zahl wird groß, wenn sie wie ein Nomen benutzt wird: eine <b>Zwei</b> im Zeugnis."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>„heute“, „gestern“ und „morgen“ sind keine Nomen. Nur die Tageszeit danach wird groß: heute Abend. Und „morgen“ im Sinn von „am nächsten Tag“ schreibst du klein: Ich komme morgen.</p><p>Ein Verb bleibt klein, wenn es als Verb benutzt wird: Wir wollen malen.</p>"
+    },
+    "rule": "Mit Signalwort wird ein Verb oder Adjektiv zum Nomen. Auch heute Abend, jeden Samstag, Kölner Dom und eine Zwei schreibst du groß, abends und montags schreibst du klein.",
+    "check": {
+      "q": "Welcher Satz ist richtig geschrieben?",
+      "options": [
+        {
+          "id": "Wir treffen uns heute Abend zum Basteln.",
+          "html": "Wir treffen uns heute Abend zum Basteln."
+        },
+        {
+          "id": "Wir treffen uns heute abend zum Basteln.",
+          "html": "Wir treffen uns heute abend zum Basteln."
+        },
+        {
+          "id": "Wir treffen uns heute Abend zum basteln.",
+          "html": "Wir treffen uns heute Abend zum basteln."
+        },
+        {
+          "id": "Wir treffen uns Heute Abend zum Basteln.",
+          "html": "Wir treffen uns Heute Abend zum Basteln."
+        }
+      ],
+      "answer": "Wir treffen uns heute Abend zum Basteln.",
+      "why": "Die Tageszeit nach „heute“ wird großgeschrieben: heute Abend. „heute“ bleibt klein. Nach „zum“ wird das Verb zum Nomen: zum Basteln."
+    }
+  },
+  "klein": {
+    "goal": "Du kannst erkennen, welche Wörter du kleinschreibst: Zahlen, Adjektive, Zeitangaben auf -s und unbestimmte Fürwörter.",
+    "tldr": [
+      "Zahlwörter bleiben meistens klein: zwölf Hühner, der dritte Platz. Groß wird eine Zahl nur als Nomen: eine Zwei.",
+      "Adjektive schreibst du klein, wenn kein Signalwort sie zum Nomen macht. Das gilt auch für gesteigerte Adjektive: ehrlich, am höchsten.",
+      "Wörter für Zeiten, die auf <b>-s</b> enden, sind keine Nomen. Sie bleiben klein: abends, montags.",
+      "Unbestimmte Fürwörter wie alles, jeder oder die meisten bleiben klein."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: eine Bühne",
+      "html": "<p>Nur Nomen dürfen auf die Bühne, das heißt: Sie haben einen großen Anfangsbuchstaben. Alle anderen Wörter sitzen im Publikum. Auch <b>zwölf</b>, <b>ehrlich</b>, <b>abends</b> und <b>alles</b> sitzen dort und bleiben klein.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Gruppe",
+            "Beispiel",
+            "Schreibung"
+          ],
+          [
+            [
+              "Zahlwörter",
+              "zwölf Hühner",
+              "klein"
+            ],
+            [
+              "Adjektive",
+              "ehrlich, sparsam",
+              "klein"
+            ],
+            [
+              "Höchststufe",
+              "am höchsten",
+              "klein"
+            ],
+            [
+              "Zeit mit -s",
+              "abends, montags",
+              "klein"
+            ],
+            [
+              "Fürwörter",
+              "alles, die meisten",
+              "klein"
+            ]
+          ],
+          [
+            2,
+            3,
+            2
+          ],
+          "Tabelle: Diese fünf Gruppen schreibst du klein."
+        ]
+      },
+      "caption": "Diese Gruppen schreibst du klein."
+    },
+    "steps": {
+      "title": "So prüfst du: montags oder Montags?",
+      "items": [
+        "Lies den Satz: „Wir turnen montags in der Halle.“ Frag dich: Passiert das jede Woche am Montag?",
+        "Ja. Das Wort sagt, <b>wann</b> etwas passiert, und endet auf <b>-s</b>. Das ist eine Zeitangabe.",
+        "Zeitangaben mit -s schreibst du klein: wir turnen <b>montags</b>."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Bei Zeitangaben gilt: Steht ein Artikel oder „am“ davor, ist das Wort ein Nomen: <b>am Montag</b>, <b>heute Abend</b>, <b>gestern Morgen</b>. Nur die Zeitangabe mit -s und ohne Begleiter bleibt klein: <b>montags</b>, <b>abends</b>.</p><p>Aber Vorsicht: Vor einer Höchststufe macht „am“ kein Nomen: <b>am höchsten</b>. Auch „die meisten“ bleibt klein.</p>"
+    },
+    "rule": "Zahlwörter, Adjektive, Zeitangaben auf -s (abends) und unbestimmte Fürwörter (alles, die meisten) schreibst du klein.",
+    "check": {
+      "q": "Welcher Satz ist richtig geschrieben?",
+      "options": [
+        {
+          "id": "Wir turnen donnerstags in der Halle.",
+          "html": "Wir turnen donnerstags in der Halle."
+        },
+        {
+          "id": "Wir turnen Donnerstags in der Halle.",
+          "html": "Wir turnen Donnerstags in der Halle."
+        },
+        {
+          "id": "Wir Turnen donnerstags in der Halle.",
+          "html": "Wir Turnen donnerstags in der Halle."
+        }
+      ],
+      "answer": "Wir turnen donnerstags in der Halle.",
+      "why": "Donnerstags endet auf -s und sagt, wann etwas immer wieder passiert. Solche Zeitangaben schreibst du klein. Turnen ist hier ein Verb und bleibt klein."
+    }
+  },
+  "verben": {
+    "goal": "Du kannst die Grundform und die Personalform eines Verbs erkennen und die Zeitformen Präsens, Präteritum und Perfekt bilden.",
+    "tldr": [
+      "Verben sagen, was jemand tut oder was passiert. Du schreibst sie klein.",
+      "Die <b>Grundform</b> (Infinitiv) endet meistens auf -en (lachen), manchmal nur auf -n (wandern, tun).",
+      "Die <b>Personalform</b> passt zur Person: ich lache, du lachst, er lacht.",
+      "Die Zeitform sagt, wann etwas geschieht: jetzt (Präsens), früher (Präteritum, Perfekt)."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Verb zieht sich um",
+      "html": "<p>Die <b>Grundform</b> ist wie ein Schauspieler ohne Kostüm: lachen. Für jede Rolle zieht er ein Kostüm an. Die Person bestimmt die Endung (ich lache, du lachst). Die Zeit bestimmt ein anderes Kostüm (er lachte, er hat gelacht).</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Grundform",
+            "Präsens",
+            "Präteritum",
+            "Perfekt"
+          ],
+          [
+            [
+              "lachen",
+              "er lacht",
+              "er lachte",
+              "er hat gelacht"
+            ],
+            [
+              "fliegen",
+              "er fliegt",
+              "er flog",
+              "er ist geflogen"
+            ],
+            [
+              "trinken",
+              "er trinkt",
+              "er trank",
+              "er hat getrunken"
+            ],
+            [
+              "kommen",
+              "er kommt",
+              "er kam",
+              "er ist gekommen"
+            ]
+          ],
+          [
+            2,
+            2,
+            2,
+            3
+          ],
+          "Tabelle: Vier Verben in Grundform, Präsens, Präteritum und Perfekt."
+        ]
+      },
+      "caption": "Aus der Grundform werden drei Zeitformen."
+    },
+    "steps": {
+      "title": "So bestimmst du die Zeitform: Er hat gelacht",
+      "items": [
+        "Such das Verb. Hier sind es zwei Teile: <b>hat</b> und <b>gelacht</b>.",
+        "Der erste Teil ist ein Hilfsverb (haben oder sein). Der zweite heißt <b>Partizip II</b> und beginnt oft mit ge-.",
+        "Zusammen ergibt das das <b>Perfekt</b>. Im Präsens heißt es „er lacht“, im Präteritum „er lachte“."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Bei unregelmäßigen Verben ändert sich oft der Wortstamm: er <b>fliegt</b>, aber er <b>flog</b>. „Er fliegte“ ist falsch. Achte auch auf das Hilfsverb: Wer sich fortbewegt, nimmt meistens <b>sein</b> (ich bin gelaufen), sonst <b>haben</b> (ich habe gelacht).</p>"
+    },
+    "rule": "Die Grundform endet auf -en oder -n. Die Personalform passt sich der Person an (ich lache, du lachst). Das Perfekt bildest du mit haben oder sein und dem Partizip II (hat gelacht, ist geflogen).",
+    "check": {
+      "q": "Welcher Satz steht im Präsens?",
+      "options": [
+        {
+          "id": "Der Bus kommt gleich.",
+          "html": "Der Bus kommt gleich."
+        },
+        {
+          "id": "Der Bus kam gestern zu spät.",
+          "html": "Der Bus kam gestern zu spät."
+        },
+        {
+          "id": "Der Bus ist gestern zu spät gekommen.",
+          "html": "Der Bus ist gestern zu spät gekommen."
+        }
+      ],
+      "answer": "Der Bus kommt gleich.",
+      "why": "Kommt beschreibt, was jetzt oder gleich geschieht: das ist das Präsens. Kam ist Präteritum, ist gekommen ist Perfekt."
+    }
+  },
+  "nomen": {
+    "goal": "Du kannst bei einem Nomen den Artikel, die Einzahl und die Mehrzahl bestimmen und den Fall mit der Frageprobe finden.",
+    "tldr": [
+      "Nomen nennen Lebewesen, Dinge und Gedanken. Du schreibst sie groß.",
+      "Der <b>Artikel</b> (der, die, das) zeigt das Geschlecht: der Hund, die Katze, das Haus.",
+      "Ein Nomen steht in der <b>Einzahl</b> (Singular) oder in der <b>Mehrzahl</b> (Plural): der Baum, die Bäume.",
+      "Mit den Fragen Wer? Wessen? Wem? Wen? findest du den <b>Fall</b>."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Nomen hat vier Rollen",
+      "html": "<p>In einem Theaterstück kann derselbe Schauspieler vier Rollen spielen. Das Nomen <b>Hund</b> auch: Mal handelt er (der Hund), mal gehört ihm etwas (des Hundes), mal bekommt er etwas (dem Hund), mal wird er gesehen (den Hund). Die Rolle heißt <b>Fall</b>. Der Artikel verrät sie dir.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Fall",
+            "Frage",
+            "Beispiel"
+          ],
+          [
+            [
+              "Nominativ",
+              "Wer oder was?",
+              "der Hund"
+            ],
+            [
+              "Genitiv",
+              "Wessen?",
+              "des Hundes"
+            ],
+            [
+              "Dativ",
+              "Wem?",
+              "dem Hund"
+            ],
+            [
+              "Akkusativ",
+              "Wen oder was?",
+              "den Hund"
+            ]
+          ],
+          [
+            2,
+            3,
+            3
+          ],
+          "Tabelle: Die vier Fälle mit Frage und Beispiel."
+        ]
+      },
+      "caption": "Jeder Fall hat seine eigene Frage."
+    },
+    "steps": {
+      "title": "So findest du die Fälle: Das Kind gibt dem Hund einen Knochen.",
+      "items": [
+        "Frag nach dem Verb: <b>Wer oder was</b> gibt? Das Kind. Das ist der <b>Nominativ</b>.",
+        "Frag weiter: <b>Wem</b> gibt das Kind etwas? Dem Hund. Das ist der <b>Dativ</b>.",
+        "Frag zuletzt: <b>Wen oder was</b> gibt das Kind? Einen Knochen. Das ist der <b>Akkusativ</b>."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Bei weiblichen Nomen sehen Dativ und Genitiv gleich aus: <b>der Katze</b>. Nur die Frage hilft. „Ich gebe <b>der Katze</b> Futter“ fragt: Wem? Das ist Dativ. „Das Fell <b>der Katze</b>“ fragt: Wessen Fell? Das ist Genitiv.</p>"
+    },
+    "rule": "Nomen schreibst du groß. Der Artikel zeigt Geschlecht, Zahl und Fall. Die vier Fälle erkennst du an den Fragen: Wer oder was? Wessen? Wem? Wen oder was?",
+    "check": {
+      "q": "Welcher Artikel gehört im Nominativ (Wer oder was?) zum Nomen „Katze“?",
+      "options": [
+        {
+          "id": "die",
+          "html": "die"
+        },
+        {
+          "id": "der",
+          "html": "der"
+        },
+        {
+          "id": "das",
+          "html": "das"
+        }
+      ],
+      "answer": "die",
+      "why": "Katze ist weiblich, also heißt es die Katze. Der Katze gibt es auch, aber nur im Dativ oder Genitiv."
+    }
+  },
+  "praep-fall": {
+    "goal": "Du kannst bei Präpositionen den richtigen Fall wählen: Dativ, Akkusativ oder je nach Frage Wo? und Wohin?.",
+    "tldr": [
+      "Eine <b>Präposition</b> (Verhältniswort) zeigt, wie Dinge zueinander stehen: wo etwas ist (auf dem Tisch), wohin es geht (in die Schule) oder mit wem und für wen (mit Mia, für Oma).",
+      "Manche verlangen immer den Dativ (mit, aus, bei) oder immer den Akkusativ (für, durch, ohne).",
+      "Bei in, auf, an, unter, über, vor, hinter, neben, zwischen fragst du: <b>Wo?</b> gibt Dativ, <b>Wohin?</b> gibt Akkusativ."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: Fußballtraining",
+      "html": "<p>Du wartest am Rand. Dann rennst du hinein auf das Spielfeld: Wohin? <b>auf den</b> Platz. Jetzt bist du dort und stehst still: Wo? <b>auf dem</b> Platz. Auch wenn du dort herumrennst, bleibst du am selben Ort: <b>auf dem</b> Platz. Der Fall hängt davon ab, ob du an einen neuen Ort kommst.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Fall",
+            "Präpositionen",
+            "Hinweis"
+          ],
+          [
+            [
+              "nur Dativ",
+              "mit, aus, bei",
+              "feste Regel"
+            ],
+            [
+              "nur Akkusativ",
+              "für, durch, ohne",
+              "feste Regel"
+            ],
+            [
+              "Wo? = Dativ",
+              "auf, in, an, unter",
+              "Ruhe"
+            ],
+            [
+              "Wohin? = Akk.",
+              "auf, in, an, unter",
+              "Bewegung"
+            ]
+          ],
+          [
+            3,
+            4,
+            3
+          ],
+          "Tabelle: Welche Präpositionen welchen Fall verlangen."
+        ]
+      },
+      "caption": "Wechselpräpositionen brauchen die Frage Wo? oder Wohin?."
+    },
+    "steps": {
+      "title": "So entscheidest du: auf dem oder auf den Tisch?",
+      "items": [
+        "Prüfe zuerst, ob es eine Wechselpräposition ist, zum Beispiel <b>auf</b>. Nur dann musst du entscheiden.",
+        "Frag: <b>Wo?</b> oder <b>Wohin?</b> Beispiel: „Ich lege das Buch auf den Tisch.“ Das Buch bewegt sich hin zum Tisch, also fragst du: Wohin?",
+        "Wohin? heißt Akkusativ: auf <b>den</b> Tisch. Bei „Das Buch liegt auf dem Tisch“ fragst du: Wo? Das heißt Dativ: auf <b>dem</b> Tisch."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Nicht jede Präposition wechselt. <b>Mit</b> verlangt immer den Dativ: mit dem Bus, nie „mit den Bus“. <b>Für</b> verlangt immer den Akkusativ: für den Freund, nie „für dem Freund“.</p>"
+    },
+    "rule": "Mit, aus, bei, nach, von, zu verlangen den Dativ. Für, durch, ohne, gegen, um verlangen den Akkusativ. Bei in, auf, an, unter, über, vor, hinter, neben, zwischen gilt: Wo? = Dativ, Wohin? = Akkusativ.",
+    "check": {
+      "q": "Welcher Satz ist richtig?",
+      "options": [
+        {
+          "id": "Wir gehen ohne den Hund spazieren.",
+          "html": "Wir gehen ohne den Hund spazieren."
+        },
+        {
+          "id": "Wir gehen ohne dem Hund spazieren.",
+          "html": "Wir gehen ohne dem Hund spazieren."
+        },
+        {
+          "id": "Wir gehen ohne der Hund spazieren.",
+          "html": "Wir gehen ohne der Hund spazieren."
+        }
+      ],
+      "answer": "Wir gehen ohne den Hund spazieren.",
+      "why": "Ohne verlangt immer den Akkusativ. Bei einem männlichen Nomen heißt er den Hund. Dem Hund wäre der Dativ, der Hund der Nominativ."
+    }
+  },
+  "pronomen5": {
+    "goal": "Du kannst Personalpronomen und Possessivpronomen erkennen und die passende Form einsetzen.",
+    "tldr": [
+      "<b>Personalpronomen</b> ersetzen ein Nomen: Der Hund bellt. Er bellt.",
+      "Sie ändern sich im Fall: ich, mir, mich. Du fragst Wer? Wem? Wen?",
+      "<b>Possessivpronomen</b> zeigen Besitz: mein Hund, dein Hund, sein Hund.",
+      "Welches Possessivpronomen du nimmst, entscheidet der Besitzer."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Stellvertreter",
+      "html": "<p>Stell dir vor, du sagst in einer Geschichte immer wieder „Mia“. Das klingt langweilig. Ein <b>Personalpronomen</b> springt als Stellvertreter ein: <b>sie</b>. Und wenn du sagen willst, was Mia gehört, hilft ein <b>Possessivpronomen</b>: <b>ihr</b> Rucksack.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Person",
+            "Personalpronomen",
+            "Possessiv"
+          ],
+          [
+            [
+              "ich",
+              "ich, mir, mich",
+              "mein"
+            ],
+            [
+              "du",
+              "du, dir, dich",
+              "dein"
+            ],
+            [
+              "er",
+              "er, ihm, ihn",
+              "sein"
+            ],
+            [
+              "es",
+              "es, ihm, es",
+              "sein"
+            ],
+            [
+              "sie (Einzahl)",
+              "sie, ihr, sie",
+              "ihr"
+            ],
+            [
+              "wir",
+              "wir, uns, uns",
+              "unser"
+            ]
+          ],
+          [
+            2,
+            4,
+            2
+          ],
+          "Tabelle: Personalpronomen in Wer?, Wem?, Wen? und das passende Possessivpronomen."
+        ]
+      },
+      "caption": "Die Personalpronomen stehen in der Reihenfolge Wer? Wem? Wen?."
+    },
+    "steps": {
+      "title": "So findest du das Possessivpronomen: Lena hat einen Hund",
+      "items": [
+        "Frag: <b>Wem</b> gehört der Hund? Lena. Lena ist ein Mädchen.",
+        "Zu Lena passt „ihr“: <b>ihr</b> Hund. Bei Tom wäre es „sein“: sein Hund.",
+        "Prüfe die Endung: In „Ihr Hund heißt Max“ steht Hund im Nominativ und ist männlich, deshalb hat <b>ihr</b> keine Endung. Bei „Katze“ kommt ein -e dazu: <b>ihre</b> Katze. In „Lena füttert ___ Hund“ heißt es <b>ihren</b> Hund."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Das Wort <b>ihr</b> hat mehrere Aufgaben. In „Ihr spielt Fußball“ ist es ein Personalpronomen für mehrere Angesprochene. In „Ich helfe ihr“ ist es auch ein Personalpronomen, der Dativ von sie. In „ihr Hund“ ist es ein Possessivpronomen: Der Hund gehört einer weiblichen Person oder mehreren Personen. Steht direkt ein Nomen dahinter, ist es meist das Possessivpronomen.</p>"
+    },
+    "rule": "Personalpronomen stehen für Personen oder Dinge (er, sie, es). Possessivpronomen zeigen den Besitz (mein, dein, sein, ihr, unser, euer, ihr). Der Besitzer bestimmt das Wort, das Nomen bestimmt die Endung.",
+    "check": {
+      "q": "Welches Wort ersetzt „die Kinder“ im Satz „Die Kinder spielen“?",
+      "options": [
+        {
+          "id": "sie",
+          "html": "sie"
+        },
+        {
+          "id": "er",
+          "html": "er"
+        },
+        {
+          "id": "es",
+          "html": "es"
+        },
+        {
+          "id": "wir",
+          "html": "wir"
+        }
+      ],
+      "answer": "sie",
+      "why": "Die Kinder sind mehrere Personen, über die du sprichst. Dafür passt sie. Er und es stehen für eine einzelne Person oder Sache, wir schließt dich selbst mit ein."
+    }
+  },
+  "adjektive": {
+    "goal": "Du kannst Adjektive erkennen, richtig steigern und mit der passenden Endung vor ein Nomen setzen.",
+    "tldr": [
+      "<b>Adjektive</b> sagen, wie etwas ist: groß, schnell, freundlich. Du schreibst sie klein.",
+      "Du kannst sie steigern: schnell, schneller, am schnellsten. Das sind die Grundstufe, der <b>Komparativ</b> (Vergleichsstufe) und der <b>Superlativ</b> (Höchststufe).",
+      "Steht ein Adjektiv vor einem Nomen, bekommt es eine Endung: ein großer Hund, eine kleine Katze."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Farbkasten mit Lautstärkeregler",
+      "html": "<p>Ein Nomen ist wie eine Zeichnung in Schwarz-Weiß. Adjektive malen sie bunt: der <b>rote</b> Ball, das <b>kluge</b> Kind.</p><p>Das Steigern ist wie ein Lautstärkeregler. Du drehst Stufe für Stufe weiter: leise, leiser, am leisesten.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Grundstufe",
+            "Komparativ",
+            "Superlativ"
+          ],
+          [
+            [
+              "schnell",
+              "schneller",
+              "am schnellsten"
+            ],
+            [
+              "alt",
+              "älter",
+              "am ältesten"
+            ],
+            [
+              "gut",
+              "besser",
+              "am besten"
+            ],
+            [
+              "viel",
+              "mehr",
+              "am meisten"
+            ]
+          ],
+          [
+            2,
+            2,
+            3
+          ],
+          "Tabelle: Steigerung von Adjektiven"
+        ]
+      },
+      "caption": "Die meisten Adjektive steigerst du mit -er und am ...-sten. Gut und viel verändern sich ganz."
+    },
+    "steps": {
+      "title": "So steigerst du ein Adjektiv",
+      "items": [
+        "Beginne mit der Grundstufe. Das ist das Adjektiv ohne Steigerung: <b>schnell</b>.",
+        "Für den <b>Komparativ</b> hängst du -er an: schneller. Damit vergleichst du zwei Dinge: Der Gepard ist schneller als der Löwe. Nach dem Komparativ steht „als“.",
+        "Für den <b>Superlativ</b> setzt du „am“ davor und hängst -sten an: am schnellsten. Endet das Adjektiv auf d, t, s, sch oder z, kommt meist ein e dazu: am ältesten, am kürzesten. Damit nennst du das Beste oder Meiste von allen.",
+        "Bei vielen kurzen Adjektiven wird aus a, o oder u ein ä, ö oder ü: alt, älter, am ältesten.",
+        "Bei <b>gut</b> und <b>viel</b> musst du die Formen lernen: gut, besser, am besten; viel, mehr, am meisten."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Vor einem Nomen braucht das Adjektiv eine Endung, die zum Nomen passt: <b>ein großer Hund</b>, <b>eine große Katze</b>, <b>ein großes Haus</b>. „Ein große Hund“ ist falsch. Nach „ist“ steht das Adjektiv ohne Endung: Der Hund ist groß.</p>"
+    },
+    "rule": "Adjektive schreibst du klein. Steigerung: klein, kleiner, am kleinsten. Vor einem Nomen bekommen sie eine Endung, die zum Nomen passt.",
+    "check": {
+      "q": "Welche Reihe ist richtig gesteigert?",
+      "options": [
+        {
+          "id": "klein, kleiner, am kleinsten",
+          "html": "klein, kleiner, am kleinsten"
+        },
+        {
+          "id": "klein, kleinr, am kleinsten",
+          "html": "klein, kleinr, am kleinsten"
+        },
+        {
+          "id": "klein, mehr klein, am kleinsten",
+          "html": "klein, mehr klein, am kleinsten"
+        }
+      ],
+      "answer": "klein, kleiner, am kleinsten",
+      "why": "Der Komparativ endet auf -er, der Superlativ auf -sten mit „am“ davor."
+    }
+  },
+  "wortfelder": {
+    "goal": "Du kannst zu einem Verb oder Adjektiv genauere Wörter aus demselben Wortfeld finden und passend einsetzen.",
+    "tldr": [
+      "Ein <b>Wortfeld</b> ist eine Gruppe von Wörtern mit ähnlicher Bedeutung, zum Beispiel für „gehen“: bummeln, wandern, hinken.",
+      "Die Wörter sind nicht ganz gleich. Sie unterscheiden sich in Stärke, Tempo und Stimmung.",
+      "Mit genauen Wörtern werden deine Texte lebendiger."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Stiftekasten",
+      "html": "<p>In einem Stiftekasten liegen viele Blautöne: hellblau, dunkelblau, türkis. Alle sind blau, aber jeder passt zu einem anderen Bild.</p><p>Ein Wortfeld ist genauso. „Flüstern“, „sprechen“ und „schreien“ gehören alle zu „sagen“. Du wählst den Ton, der zur Szene passt.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Wortfeld",
+            "schwach",
+            "mittel",
+            "stark"
+          ],
+          [
+            [
+              "sagen",
+              "flüstern",
+              "sprechen",
+              "schreien"
+            ],
+            [
+              "gehen",
+              "bummeln",
+              "gehen",
+              "rennen"
+            ],
+            [
+              "kalt",
+              "kühl",
+              "kalt",
+              "eisig"
+            ]
+          ],
+          [
+            1.5,
+            2.2,
+            2,
+            2.2
+          ],
+          "Tabelle: Wörter eines Wortfelds nach Stärke geordnet"
+        ]
+      },
+      "caption": "Wörter eines Wortfelds lassen sich oft von schwach bis stark ordnen."
+    },
+    "steps": {
+      "title": "So findest du das passende Wort",
+      "items": [
+        "Schau auf das Wort, das dir zuerst einfällt, zum Beispiel <b>gehen</b>.",
+        "Frage dich: Wie genau ist es passiert? Schnell oder langsam? Leise oder laut? Mit Mühe oder mit Freude?",
+        "Sammle Wörter aus dem <b>Wortfeld</b>: bummeln, wandern, hinken, rennen.",
+        "Wähle das Wort, das zur Situation passt. Lies den Satz danach noch einmal und prüfe, ob er stimmt."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Wörter im selben Wortfeld sind <b>ähnlich, aber nicht gleich</b>. „Flüstern“ und „schreien“ gehören beide zu „sagen“, doch sie passen nicht in dieselbe Szene. Ein Einbrecher, der durch den Flur „schreit“, wäre schnell entdeckt.</p>"
+    },
+    "rule": "Ein Wortfeld sammelt Wörter mit ähnlicher Bedeutung. Wähle das Wort, das zur Situation passt.",
+    "check": {
+      "q": "Welches Wort gehört zum Wortfeld „gehen“?",
+      "options": [
+        {
+          "id": "wandern",
+          "html": "wandern"
+        },
+        {
+          "id": "tippen",
+          "html": "tippen"
+        },
+        {
+          "id": "backen",
+          "html": "backen"
+        },
+        {
+          "id": "zeichnen",
+          "html": "zeichnen"
+        }
+      ],
+      "answer": "wandern",
+      "why": "Wandern bedeutet, zu Fuß unterwegs zu sein. Tippen, backen und zeichnen haben mit Gehen nichts zu tun."
+    }
+  },
+  "dassdas5": {
+    "goal": "Du kannst mit einer Probe entscheiden, ob du „das“ oder „dass“ schreibst.",
+    "tldr": [
+      "Du kannst <b>dieses</b>, <b>dies</b> oder <b>welches</b> einsetzen und der Satz klingt noch richtig? Dann schreibst du <b>das</b> mit einem s.",
+      "Passt keines davon, ist es die <b>Konjunktion</b> (ein Verbindungswort), und du schreibst <b>dass</b> mit zwei s.",
+      "Nach „dass“ beginnt ein Nebensatz. Davor steht meistens ein Komma, und das Verb steht am Ende."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Ersatzspieler",
+      "html": "<p>Das Wort <b>das</b> hat Ersatzspieler: dieses, dies und welches. Darf einer von ihnen aufs Feld und der Satz stimmt noch, schreibst du das mit einem s.</p><p>Das Wort <b>dass</b> hat keinen Ersatz. Es ist die <b>Konjunktion</b>, ein Verbindungswort, das einen Nebensatz einleitet.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Probe",
+            "Du schreibst",
+            "Beispiel"
+          ],
+          [
+            [
+              "dieses",
+              "das",
+              "das Eis"
+            ],
+            [
+              "welches",
+              "das",
+              "Kind, das weint"
+            ],
+            [
+              "dies",
+              "das",
+              "Ich merke das."
+            ],
+            [
+              "keins passt",
+              "dass",
+              "Ich weiß, dass …"
+            ]
+          ],
+          [
+            2,
+            2,
+            3
+          ],
+          "Tabelle: Probe für das und dass"
+        ]
+      },
+      "caption": "Passt dieses, welches oder dies, schreibst du das. Passt keins, schreibst du dass."
+    },
+    "steps": {
+      "title": "So entscheidest du: das oder dass?",
+      "items": [
+        "Setze an die Stelle des Wortes <b>dieses</b>, <b>dies</b> oder <b>welches</b> ein.",
+        "Klingt der Satz noch richtig? Dann schreibst du <b>das</b> mit einem s. Beispiel: „Dieses Eis schmeckt gut“ klingt richtig, also: Das Eis schmeckt gut.",
+        "Klingt der Satz falsch? Dann ist es die <b>Konjunktion</b> und du schreibst <b>dass</b> mit zwei s. Beispiel: „Ich weiß, dieses du kommst“ klingt falsch, also: Ich weiß, dass du kommst.",
+        "Achte auf das Verb: Im Nebensatz mit dass steht es am Ende. Davor steht ein Komma."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Nach Wörtern wie <b>hoffen</b>, <b>sagen</b> und <b>finden</b> folgt oft ein ganzer Satz mit <b>dass</b>: Ich hoffe, dass es klappt. Folgt kein Satz, steht das Wort für etwas, das vorher genannt wurde. Dann ist es <b>das</b>: Ich hoffe das.</p>"
+    },
+    "rule": "Passt dieses, dies oder welches, schreibst du das. Passt keins davon, ist es die Konjunktion, und du schreibst dass.",
+    "check": {
+      "q": "Welcher Satz ist richtig geschrieben?",
+      "options": [
+        {
+          "id": "Ich hoffe, dass du bald gesund wirst.",
+          "html": "Ich hoffe, dass du bald gesund wirst."
+        },
+        {
+          "id": "Ich hoffe, das du bald gesund wirst.",
+          "html": "Ich hoffe, das du bald gesund wirst."
+        },
+        {
+          "id": "Ich hoffe dass, du bald gesund wirst.",
+          "html": "Ich hoffe dass, du bald gesund wirst."
+        },
+        {
+          "id": "Ich hoffe das du bald gesund wirst.",
+          "html": "Ich hoffe das du bald gesund wirst."
+        }
+      ],
+      "answer": "Ich hoffe, dass du bald gesund wirst.",
+      "why": "Mit „dieses“ klingt der Satz falsch. Also ist es die Konjunktion dass, und davor steht ein Komma."
+    }
+  },
+  "woertl-rede": {
+    "goal": "Du kannst die Satzzeichen bei der wörtlichen Rede richtig setzen, wenn der Begleitsatz vorn, hinten oder in der Mitte steht.",
+    "tldr": [
+      "Die <b>wörtliche Rede</b> ist das, was jemand genau so sagt. Sie steht in Anführungszeichen: am Anfang unten, am Ende oben.",
+      "Der <b>Begleitsatz</b> sagt, wer spricht, zum Beispiel „sagte Mia“. Er kann vor der Rede stehen (<b>vorangestellt</b>), hinter ihr (<b>nachgestellt</b>) oder mitten in ihr (<b>eingeschoben</b>).",
+      "Je nach Platz ändern sich die Satzzeichen: Doppelpunkt, Komma oder zwei Kommas."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: eine Sprechblase",
+      "html": "<p>Die wörtliche Rede ist wie eine Sprechblase im Comic. Die Anführungszeichen sind der Rand der Blase.</p><p>Der <b>Begleitsatz</b> ist der kleine Text neben der Blase, der sagt, wer spricht: „sagte Mia“. Je nachdem, wo dieser Text steht, brauchst du andere Satzzeichen.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Begleitsatz",
+            "Beispiel"
+          ],
+          [
+            [
+              "vorn",
+              "Er rief: „Hallo!“"
+            ],
+            [
+              "hinten",
+              "„Hallo!“, rief er."
+            ],
+            [
+              "in der Mitte",
+              "„Ja“, sagt er, „klar.“"
+            ]
+          ],
+          [
+            2,
+            4
+          ],
+          "Tabelle: Platz des Begleitsatzes"
+        ]
+      },
+      "caption": "Vorn steht ein Doppelpunkt, hinten ein Komma, in der Mitte stehen zwei Kommas."
+    },
+    "steps": {
+      "title": "So setzt du die Zeichen",
+      "items": [
+        "Setze die Anführungszeichen: am Anfang der Rede unten, am Ende oben.",
+        "Steht der Begleitsatz <b>vorn</b>, folgt ein Doppelpunkt. Die Rede beginnt groß: Mia sagt: „Ich komme.“",
+        "Steht der Begleitsatz <b>hinten</b>, fällt der Punkt am Ende der Rede weg. Nach den Anführungszeichen steht ein Komma, und der Begleitsatz beginnt klein: „Ich komme“, sagt Mia.",
+        "Steht der Begleitsatz in der <b>Mitte</b>, setzt du davor und danach ein Komma. Geht derselbe Satz weiter, schreibst du klein weiter (außer bei Nomen): „Morgen“, sagt Mia, „fahren wir los.“"
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Bei einer Frage oder einem Ausruf bleibt das Fragezeichen oder Ausrufezeichen in der Rede, auch wenn danach noch der Begleitsatz folgt: „Kommst du?“, fragt sie. Nur der <b>Punkt</b> fällt weg.</p>"
+    },
+    "rule": "Begleitsatz vorn: Doppelpunkt. Begleitsatz hinten: Komma nach den Anführungszeichen. Begleitsatz in der Mitte: zwei Kommas.",
+    "check": {
+      "q": "Bei welchem Satz stimmen alle Satzzeichen?",
+      "options": [
+        {
+          "id": "Lena ruft: „Warte auf mich!“",
+          "html": "Lena ruft: „Warte auf mich!“"
+        },
+        {
+          "id": "Lena ruft, „Warte auf mich!“",
+          "html": "Lena ruft, „Warte auf mich!“"
+        },
+        {
+          "id": "Lena ruft: „warte auf mich!“",
+          "html": "Lena ruft: „warte auf mich!“"
+        },
+        {
+          "id": "Lena ruft „Warte auf mich!“",
+          "html": "Lena ruft „Warte auf mich!“"
+        }
+      ],
+      "answer": "Lena ruft: „Warte auf mich!“",
+      "why": "Der Begleitsatz steht vorn, also folgt ein Doppelpunkt. Die Rede beginnt mit einem großen Buchstaben."
+    }
+  },
+  "kommas5": {
+    "goal": "Du kannst Kommas bei Aufzählungen, vor Wörtern wie aber und sondern und beim Nebensatz richtig setzen.",
+    "tldr": [
+      "In einer <b>Aufzählung</b> trennst du die Wörter mit Kommas. Vor „und“ und „oder“ steht kein Komma.",
+      "Verbinden <b>aber</b>, <b>sondern</b>, <b>doch</b> oder <b>denn</b> zwei Sätze oder Satzteile, steht davor ein Komma.",
+      "Ein <b>Nebensatz</b> mit weil, dass oder wenn wird durch ein Komma vom Hauptsatz getrennt. Hauptsatz und Nebensatz zusammen heißen <b>Satzgefüge</b>."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein kleiner Zaun",
+      "html": "<p>Ein Komma ist wie ein kleiner Zaun. Er trennt Dinge, die in einer Reihe stehen: Äpfel, Birnen, Nüsse. Wo ein Wort wie „und“ die Dinge schon verbindet, brauchst du keinen Zaun.</p><p>Auch zwischen Satzteilen steht ein Zaun, wenn ein Wort wie „aber“ oder „weil“ einen neuen Teil beginnt.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Wort",
+            "Komma?",
+            "Beispiel"
+          ],
+          [
+            [
+              "und, oder",
+              "kein Komma",
+              "Tee, Kakao und Saft"
+            ],
+            [
+              "aber, sondern",
+              "Komma davor",
+              "Klein, aber stark"
+            ],
+            [
+              "denn, doch",
+              "Komma davor",
+              "Müde, doch glücklich"
+            ],
+            [
+              "weil, dass, wenn",
+              "Komma beim Nebensatz",
+              "Ich hoffe, dass es klappt"
+            ]
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          "Tabelle: Kommaregeln für Aufzählungen, Konjunktionen und Nebensätze"
+        ]
+      },
+      "caption": "Vor „und“ und „oder“ steht in einer Aufzählung kein Komma, vor aber, sondern, doch und denn schon."
+    },
+    "steps": {
+      "title": "So setzt du Kommas",
+      "items": [
+        "Suche zuerst Aufzählungen: mehrere Wörter hintereinander. Dazwischen steht ein Komma. Steht „und“ oder „oder“ dazwischen, bleibt das Komma weg: Ich mag Tee, Kakao und Saft.",
+        "Suche dann Verbindungswörter wie <b>aber</b>, <b>sondern</b>, <b>doch</b> und <b>denn</b>. Das sind <b>Konjunktionen</b>. Davor setzt du ein Komma: Ich will schwimmen, aber das Wasser ist kalt.",
+        "Suche zuletzt Nebensätze mit <b>weil</b>, <b>dass</b> oder <b>wenn</b>. Im Nebensatz steht das gebeugte Verb am Ende. Ein Komma trennt ihn ab: Ich bleibe hier, weil es regnet.",
+        "Beginnt der Satz mit dem Nebensatz, steht das Komma danach: Wenn es regnet, bleibe ich zu Hause."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Das Komma steht <b>vor</b> dem Verbindungswort, nicht dahinter: Ich bleibe, weil ich müde bin. „Ich bleibe weil, ich müde bin“ ist falsch. Und in einer Aufzählung steht vor „und“ kein Komma: nicht „Tee, Kakao, und Saft“.</p>"
+    },
+    "rule": "In einer Aufzählung trennst du mit Kommas, vor „und“ und „oder“ steht keins. Verbinden aber, sondern, doch oder denn zwei Teile, steht davor ein Komma. Ein Nebensatz wird immer mit Komma abgetrennt.",
+    "check": {
+      "q": "In welchem Satz stehen die Kommas richtig?",
+      "options": [
+        {
+          "id": "Ich mag Tee, Kakao und Saft.",
+          "html": "Ich mag Tee, Kakao und Saft."
+        },
+        {
+          "id": "Ich mag Tee, Kakao, und Saft.",
+          "html": "Ich mag Tee, Kakao, und Saft."
+        },
+        {
+          "id": "Ich mag Tee Kakao und Saft.",
+          "html": "Ich mag Tee Kakao und Saft."
+        },
+        {
+          "id": "Ich mag, Tee Kakao und Saft.",
+          "html": "Ich mag, Tee Kakao und Saft."
+        }
+      ],
+      "answer": "Ich mag Tee, Kakao und Saft.",
+      "why": "Zwischen Tee und Kakao steht ein Komma. Vor „und“ steht in einer Aufzählung keins."
+    }
+  }
+}
