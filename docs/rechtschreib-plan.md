@@ -1,6 +1,6 @@
 # Rechtschreibung und Lesen in der Deutsch-Werkstatt
 
-Stand: sechs Seiten sind in `content/deutsch/` ergänzt. Sie stehen hinter den bisherigen sechs Seiten (neue Seiten werden immer hinten angefügt).
+Stand: sechs Seiten (Anfang) und elf weitere Seiten (siehe „Erweiterung nach Lehrkraft-Empfehlung“) sind in `content/deutsch/` ergänzt. Neue Seiten werden immer hinten angefügt.
 
 ## Kennzeichnung
 
@@ -8,7 +8,7 @@ Alle LRS-Inhalte tragen das Etikett „LRS-Förderung“, damit man sie vom Stan
 Die sechs Seiten (`doppelt`, `dehnung`, `slaute`, `ableiten`, `gross`, `lesen`) und das Merkwörter-PDF haben im Manifest `track: "lrs"`.
 Das Etikett erscheint auf der Startseite, im Kopf der Theorieseite und über jeder Übungsfrage dieser Seiten (auch in Schnellrunde, Blitz und Endgegner).
 Definiert ist der Strang in `manifest.tracks.lrs`. Ein weiterer Strang braucht nur einen neuen Eintrag dort und `track` an den Seiten.
-Offen: Ob `dassdas` ebenfalls zur Förderung zählen soll, ist noch nicht entschieden.
+Die elf neuen Seiten tragen ebenfalls `track: "lrs"`. Offen: Ob `dassdas` ebenfalls zur Förderung zählen soll, ist noch nicht entschieden.
 
 ## Profi-Tricks
 
@@ -40,3 +40,36 @@ Auf der Startseite der Deutsch-Werkstatt steht unter „Zum Ausdrucken“ die PD
 ## Merkwörter
 
 Die Merkwörter werden auf Papier geübt: in ein Merkwörterheft schreiben, die Sets in der PDF abhaken. Die App enthält dafür bewusst kein Karteikarten- oder Wörtertraining. Die Seiten zu Rechtschreibung und Lesen ergänzen das Heft mit Regeln und Übungen am Bildschirm.
+
+## Erweiterung nach Lehrkraft-Empfehlung
+
+Die Lehrkraft empfiehlt das Förderheft „Gezielt fördern, Intensivkurs LRS 7/8“ (Cornelsen, 2025). Aus seinen Themen sind elf Seiten entstanden. Übernommen sind nur die Themen, keine Texte, Wortlisten, Merkkästen oder Aufgaben: Alle Beispiele und Aufgaben sind eigene Formulierungen.
+
+| Seite (`id`) | Gruppe | Thema | Themenfeld im Heft |
+|---|---|---|---|
+| `bausteine` | Rechtschreiben und Lesen | Vorsilben, ent/end, wieder/wider, fer-, her- | Wortbausteine, Nachdenkwörter |
+| `laute` | Rechtschreiben und Lesen | sp, st, qu, pf, v | Besondere Laute |
+| `xlaute` | Rechtschreiben und Lesen | chs, cks, x | Ähnlich klingende x-Laute |
+| `zusammen` | Rechtschreiben und Lesen | Fugenelemente, Groß und klein bei Zusammensetzungen, drei gleiche Buchstaben | Zusammensetzungen |
+| `trennbar` | Rechtschreiben und Lesen | trennbare und nicht trennbare Verben, Infinitiv mit zu | Zusammengesetzte Verben, Infinitiv mit zu |
+| `silben` | Rechtschreiben und Lesen | Silben mitsprechen, lange Wörter gliedern | Leseflüssigkeit (Wortreihen), Mitsprechwörter |
+| `gross-mehr` | Rechtschreiben und Lesen | weitere Signale für Großschreibung | Großschreibung |
+| `klein` | Rechtschreiben und Lesen | Zahlen, Adjektivendungen, Superlativ, Zeitangaben auf -s | Kleinschreibung |
+| `fremd` | Rechtschreiben und Lesen | Endungen, Wortbausteine, Bedeutungen | Fremdwörter |
+| `satzglieder` | Grammatik | Subjekt, Prädikat, Objekte, vier Fälle | Satzglieder |
+| `zeitformen` | Grammatik | Präsens bis Futur I, haben und sein | Zeitformen |
+
+Die Gruppe „Grammatik“ ist neu in `manifest.groups`. Drei Trophäen kommen dazu (`lrs-spelling`, `lrs-grammar`, `lrs-compound`).
+
+### Nicht übernommen
+
+- Lesetempo-Training mit der Stoppuhr (Wortreihen, Lesecheck): am Bildschirm nicht prüfbar. `silben` übt nur das Gliedern, nicht das Tempo.
+- Lesetexte mit Fragen (Herkules-Sage, Mansa Musa, Malalas Geschichte) und Zitate: Texte sind urheberrechtlich geschützt. Die Lesestrategie steht schon in `lesen`.
+- Schreibübungen und Stilübungen (Beschreiben, Erzählen, Reportage), Quatschsätze zum Diktieren: nicht automatisch prüfbar.
+- Wortarten (Verb, Nomen, Artikel, Adjektiv, Pronomen, Präposition, Adverb), Attribut, das/dass und Satzbau mit Kommas: stehen schon in `wortarten`, `attribute`, `dassdas` und `kommas`.
+- Lange i, Dehnungs-h, Doppelvokale, Verlängern, s-Laute: stehen schon in `dehnung`, `slaute`, `ableiten`, `doppelt`.
+- Rechtschreibcheck und Grammatikcheck: Die Kapitel-Tests und der Endgegner der App übernehmen das.
+
+### Prüfung
+
+Die Aufgaben sind nicht amtlich geprüft. Eine Lehrkraft sollte sie gegenlesen, vor allem Fremdwörter (Bedeutungen), Silbentrennung und die Fälle bei Satzgliedern.
