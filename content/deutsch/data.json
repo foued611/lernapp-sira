@@ -770,6 +770,131 @@
         ],
         "why": "„Man“ fällt weg. Das Akkusativobjekt wird zum Subjekt.",
         "label": "Umformen"
+      },
+      {
+        "q": "Im Satz „Das Rathaus wird renoviert“ fehlt etwas, und trotzdem ist er vollständig. Was fehlt?",
+        "a": "Die Angabe, wer renoviert",
+        "wrong": [
+          "Das Subjekt",
+          "Das Hilfsverb",
+          "Das Partizip II"
+        ],
+        "why": "Das Passiv kann den Handelnden weglassen, weil die Handlung zählt. Subjekt (das Rathaus), „wird“ und „renoviert“ stehen alle im Satz.",
+        "label": "Handelnder",
+        "level": 1,
+        "skill": "Handelnder"
+      },
+      {
+        "q": "Frage dich: Wer tut hier etwas, und steht er als Subjekt im Satz?",
+        "kind": "gap",
+        "s": "Das Subjekt handelt selbst: „Die Katze fängt die Maus.“ Diese Form heißt ___.",
+        "a": "Aktiv",
+        "accept": [
+          "das Aktiv"
+        ],
+        "wrong": [
+          "Passiv",
+          "Infinitiv"
+        ],
+        "why": "Die Katze ist Subjekt und tut etwas selbst, das ist das Aktiv. Im Passiv stünde die Maus als Subjekt vorn.",
+        "label": "Passiv erkennen",
+        "level": 1,
+        "skill": "Passiv erkennen"
+      },
+      {
+        "q": "In welchem Satz gehört „wird“ zum Passiv?",
+        "a": "Der Hof wird gefegt.",
+        "wrong": [
+          "Das Wetter wird schön.",
+          "Mein Bruder wird Koch.",
+          "Tim wird morgen kommen."
+        ],
+        "why": "Zum Passiv gehört „wird“ nur zusammen mit dem Partizip II. „Wird kommen“ ist Futur mit Infinitiv, „wird schön“ und „wird Koch“ nennen nur eine Veränderung.",
+        "label": "Bildung",
+        "level": 2,
+        "skill": "Bildung"
+      },
+      {
+        "q": "Bilde die passende Form von „streichen“.",
+        "kind": "gap",
+        "s": "Die Wände werden heute neu ___.",
+        "a": "gestrichen",
+        "wrong": [
+          "gestreicht",
+          "streichen"
+        ],
+        "why": "Nach „werden“ steht im Passiv das Partizip II. „Streichen“ ist unregelmäßig, „gestreicht“ gibt es nicht. Der Infinitiv ergäbe das Futur, und die Wände streichen nicht selbst.",
+        "label": "Bildung",
+        "level": 2,
+        "skill": "Bildung"
+      },
+      {
+        "q": "Das Hilfsverb muss zum Subjekt im Plural passen. Die Zeitform ist Präsens.",
+        "kind": "gap",
+        "s": "Die Fenster ___ jeden Frühling geputzt.",
+        "a": "werden",
+        "wrong": [
+          "wird",
+          "wurden"
+        ],
+        "why": "„Die Fenster“ ist Plural, und das Präsens verlangt „werden“. „Wird“ wäre Singular, „wurden“ wäre Präteritum.",
+        "label": "Zeitform",
+        "level": 2,
+        "skill": "Zeitform"
+      },
+      {
+        "q": "Forme ins Aktiv um. Die Zeitform bleibt gleich.",
+        "kind": "gap",
+        "s": "Der Rasen wird vom Nachbarn gemäht. Aktiv: Der Nachbar ___ den Rasen.",
+        "a": "mäht",
+        "wrong": [
+          "mähte",
+          "gemäht"
+        ],
+        "why": "„Wird“ zeigt das Präsens an, also bleibt es im Aktiv bei „mäht“. „Mähte“ wäre Präteritum, und „gemäht“ allein ist keine gebeugte Form.",
+        "label": "Umformen",
+        "level": 2,
+        "skill": "Umformen"
+      },
+      {
+        "q": "Achte auf zwei Dinge: die Zeitform des Aktivsatzes und die Zahl des neuen Subjekts.",
+        "kind": "gap",
+        "s": "Der Bauer fütterte die Kühe. Passiv: Die Kühe ___ vom Bauern gefüttert.",
+        "a": "wurden",
+        "wrong": [
+          "wurde",
+          "werden"
+        ],
+        "why": "„Fütterte“ ist Präteritum und „die Kühe“ sind Plural. „Wurde“ passt nur zu einem Subjekt im Singular, „werden“ wäre Präsens.",
+        "label": "Zeitform",
+        "level": 3,
+        "skill": "Zeitform"
+      },
+      {
+        "q": "Aus welchem Aktivsatz kannst du keinen Passivsatz mit neuem Subjekt bilden?",
+        "a": "Die Katze schläft auf dem Sofa.",
+        "wrong": [
+          "Der Hund holt den Ball.",
+          "Der Lehrer korrigiert die Hefte.",
+          "Oma strickt einen Schal."
+        ],
+        "why": "Neues Subjekt wird das Akkusativobjekt. „Die Katze schläft“ hat keins, denn „auf dem Sofa“ ist nur eine Ortsangabe. Die anderen Sätze haben eins.",
+        "label": "Satzglieder",
+        "level": 3,
+        "skill": "Satzglieder"
+      },
+      {
+        "q": "Forme in das Passiv um: „Der Trainer gibt dem Spieler einen Ball.“",
+        "a": "Ein Ball wird dem Spieler vom Trainer gegeben.",
+        "wrong": [
+          "Der Spieler wird vom Trainer einen Ball gegeben.",
+          "Ein Ball gibt dem Spieler vom Trainer.",
+          "Ein Ball wurde dem Spieler vom Trainer gegeben."
+        ],
+        "why": "Nur das Akkusativobjekt „einen Ball“ wird Subjekt, das Dativobjekt „dem Spieler“ bleibt, wie es ist. „Wurde“ wäre Präteritum, die Zeitform bleibt aber Präsens.",
+        "label": "Umformen",
+        "level": 3,
+        "skill": "Umformen"
       }
     ],
     "stilmittel": [
