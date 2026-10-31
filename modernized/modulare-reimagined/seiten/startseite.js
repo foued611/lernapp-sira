@@ -142,6 +142,8 @@ export function startseiteModel({ day, storage, profileStore, apps, subject = AL
     ...klassenInfo,
     greeting: greetingOf(profile.name),
     needsName: !profile.name,
+    // Vor der ersten Runde wären alle Zahlen 0. Dann zählt nur der Weg zur ersten App.
+    fresh: profile.xp === 0,
     minou: minouLine(x, goal),
     goal: { xp: Math.min(x, goal), goal, reached: x >= goal },
     streak: currentStreak(profile, day),
@@ -207,7 +209,7 @@ function NameForm({ onSave }) {
     'form',
     { className: 'name', onSubmit: (event) => { event.preventDefault(); onSave(value); } },
     h('input', { id: 'nm', type: 'text', value, maxLength: NAME_MAX, autoComplete: 'off', placeholder: 'Wie heißt du?', 'aria-label': 'Dein Name', onChange: (event) => setValue(event.target.value) }),
-    h('button', { type: 'submit', className: 'btn sun' }, 'Los')
+    h('button', { type: 'submit', className: 'btn sun' }, 'Speichern')
   );
 }
 
@@ -298,14 +300,25 @@ export function Startseite({ state }) {
     { className: 'shell dash' },
     h('div', { className: 'dashtop' }, h('div', { className: 'brand' }, 'Lernwerkstatt'), h(ThemeToggle)),
     h(Suche, { apps: state.apps.map((app) => app.entry) }),
+    // Wer wiederkommt, will weitermachen. Deshalb steht der Weg zurück über Begrüßung und Zahlen.
+    full && model.today.total ? h(TodayCard, { today: model.today }) : null,
+    cont
+      ? h(
+        'section',
+        { className: 'card cont', style: { '--c': cont.color } },
+        h('span', { className: 'dot' }),
+        h('div', null, h('h3', null, `Weiter mit ${cont.title}`), h('p', { className: 'muted' }, cont.info)),
+        h('a', { className: 'btn sun', href: cont.href }, 'Weiterlernen')
+      )
+      : null,
     h(
       'section',
       { className: 'card hero', id: 'hero' },
       h('div', { className: 'row1' }, h(Mascot, { mood: 'happy' }), h('div', null,
-        h('h1', null, full ? `${model.greeting.replace(/!$/, '')} !` : 'Hallo!'),
+        h('h1', null, full ? model.greeting : 'Hallo!'),
         h('div', { className: 'bubble', style: { marginTop: '10px' } }, full ? model.minou : 'Ohne Speicher zeigt diese Seite keinen Fortschritt.'))),
       full && model.needsName ? h(NameForm, { onSave: saveNameAndRedraw }) : null,
-      full
+      full && !model.fresh
         ? h(
           'div',
           { className: 'stats', style: { gap: '14px 24px', flexWrap: 'wrap' } },
@@ -319,20 +332,10 @@ export function Startseite({ state }) {
           h('div', { className: 'stat' }, h('b', null, String(model.trophies)), h('span', null, 'Trophäen'))
         )
         : null,
-      full ? h(GoalChoice, { goal: model.goal.goal, onChoose: chooseGoal }) : null,
+      full && !model.fresh ? h(GoalChoice, { goal: model.goal.goal, onChoose: chooseGoal }) : null,
       full && goalNote ? h('p', { className: 'notice', role: 'status' }, goalNote) : null
     ),
     model.message ? h('p', { className: 'notice', role: 'status' }, model.message) : null,
-    full && model.today.total ? h(TodayCard, { today: model.today }) : null,
-    cont
-      ? h(
-        'section',
-        { className: 'card cont', style: { '--c': cont.color } },
-        h('span', { className: 'dot' }),
-        h('div', null, h('h3', null, `Weiter mit ${cont.title}`), h('p', { className: 'muted' }, cont.info)),
-        h('a', { className: 'btn sun', href: cont.href }, 'Weiterlernen')
-      )
-      : null,
     h(
       'section',
       null,

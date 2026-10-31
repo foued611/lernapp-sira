@@ -32,14 +32,32 @@ test('SEITE-LERNFLUSS Geübt ist eine Seite ab einem Stern', () => {
 
 test('SEITE-LERNFLUSS Ohne Sterne zeigt der Kopf den Einstieg in die erste Seite statt der Zufallsrunde', () => {
   const markup = home({});
-  assert.match(markup, /Starte mit Erste Seite/);
+  assert.match(markup, /Los: Erste Seite/);
   assert.doesNotMatch(markup, /2-Minuten-Runde/);
 });
 
 test('SEITE-LERNFLUSS Mit einer geübten Seite zeigt der Kopf die 2-Minuten-Runde', () => {
   const markup = home({ stars: { start: 1 } });
   assert.match(markup, /2-Minuten-Runde/);
-  assert.doesNotMatch(markup, /Starte mit/);
+  assert.doesNotMatch(markup, /Los: /);
+});
+
+test('SEITE-LERNFLUSS Vor der ersten Runde fragt die App nicht nach dem Namen, danach schon', () => {
+  const profileStore = { state: profileDefaults() };
+  assert.doesNotMatch(home({}, { profileStore }), /Wie heißt du/);
+  assert.match(home({ stars: { start: 1 } }, { profileStore }), /Wie heißt du/);
+});
+
+test('SEITE-LERNFLUSS Der Lernpfad steht vor der Karte der Woche', () => {
+  const markup = home({});
+  assert.ok(markup.indexOf('Dein Lernpfad') < markup.indexOf('Diese Woche'));
+});
+
+test('SEITE-LERNFLUSS Die Trophäen sind zugeklappt und nennen den Stand', () => {
+  const config = configOf();
+  const first = config.badges[0].id;
+  const markup = home({ badges: { [first]: true } }, { config });
+  assert.match(markup, new RegExp(`<details[^>]*><summary><span>Trophäen</span><span class="muted">1 von ${config.badges.length}</span>`));
 });
 
 test('SEITE-LERNFLUSS Weiter geht es mit der nächsten offenen Seite hinter der aktuellen', () => {
