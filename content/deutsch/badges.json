@@ -230,5 +230,46 @@
       "type": "refresh",
       "count": 1
     }
+  },
+  {
+    "id": "lrs-spelling",
+    "n": "Rechtschreib-Profi",
+    "d": "Alle Seiten zu Wortbausteinen, Lauten, Zusammensetzungen, Groß- und Kleinschreibung geschafft",
+    "rule": {
+      "type": "units",
+      "ids": [
+        "bausteine",
+        "laute",
+        "xlaute",
+        "zusammen",
+        "trennbar",
+        "silben",
+        "gross-mehr",
+        "klein",
+        "fremd"
+      ]
+    }
+  },
+  {
+    "id": "lrs-grammar",
+    "n": "Satzbau-Fan",
+    "d": "Satzglieder und Zeitformen geschafft",
+    "rule": {
+      "type": "units",
+      "ids": [
+        "satzglieder",
+        "zeitformen"
+      ]
+    }
+  },
+  {
+    "id": "lrs-compound",
+    "n": "Fugen-Finder",
+    "d": "Drei Sterne bei Zusammensetzungen und Fugen",
+    "rule": {
+      "type": "unit",
+      "id": "zusammen",
+      "stars": 3
+    }
   }
 ]

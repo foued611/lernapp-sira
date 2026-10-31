@@ -1194,5 +1194,1030 @@
       "answer": "Adverb",
       "why": "„dort“ gibt den Ort an und lässt sich nicht verändern."
     }
+  },
+  "bausteine": {
+    "goal": "Du kannst Wortbausteine wie ver-, ent- und wieder- sicher richtig schreiben.",
+    "tldr": [
+      "Die Vorsilben be-, er-, ent-, ge-, ver- und zer- schreibst du immer gleich.",
+      "ent oder end? Frag dich: Hat das Wort mit „Ende“ zu tun? Dann steckt der Stamm End- darin, sonst die Vorsilbe ent-.",
+      "wieder heißt „noch einmal“, wider heißt „gegen“."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: Bausteine",
+      "html": "<p>Ein Wort ist wie ein kleines Bauwerk. Vorn sitzt oft ein Baustein, die <b>Vorsilbe</b> (ein Wortbaustein vor dem Wortstamm). Der Baustein bleibt immer gleich, auch wenn du ihn nur leise sprichst. Aus „fahren“ wird „Abfahrt“, aus „stellen“ wird „Vorstellung“.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Baustein",
+            "Beispiel",
+            "Merke"
+          ],
+          [
+            [
+              "be-, er-, ge-",
+              "beginnen, erzählen",
+              "immer gleich"
+            ],
+            [
+              "ver- / fer-",
+              "verlieren, Ferien",
+              "fer- ist selten"
+            ],
+            [
+              "ent- (Vorsilbe)",
+              "entdecken, entgehen",
+              "immer mit t"
+            ],
+            [
+              "End- (Stamm von Ende)",
+              "endlich, Endspiel",
+              "gehört zu Ende"
+            ],
+            [
+              "wieder / wider",
+              "Wiederholung, Widerstand",
+              "wider = gegen"
+            ],
+            [
+              "Herr / her-",
+              "herrlich, herauf",
+              "rr nur bei Herr"
+            ]
+          ],
+          [
+            3,
+            3,
+            2
+          ],
+          "Tabelle: Wortbausteine und ihre Schreibweise"
+        ]
+      },
+      "caption": "Die wichtigsten Bausteine mit je einem Beispiel."
+    },
+    "steps": {
+      "title": "So entscheidest du: ent oder end?",
+      "items": [
+        "Frag dich: Hat das Wort mit „Ende“ oder „Schluss“ zu tun?",
+        "Wenn ja, ist es keine Vorsilbe, sondern der Stamm von „Ende“. Du schreibst End- oder end-: endlich, Endspiel, enden, unendlich.",
+        "Wenn nein, ist es die Vorsilbe ent-: entdecken, Entscheidung, entgehen. Auch die Ente hat mit „Ende“ nichts zu tun und wird mit t geschrieben."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Am Anfang von „Ferien“ und „verlieren“ hörst du denselben Laut. Fast alle Wörter schreibst du mit <b>ver-</b>. Nur wenige beginnen mit <b>fer-</b>: Ferien, fertig, Ferne, Ferse, Ferkel.</p><p>Achtung bei „Herr“: Herr, Herrscher und herrlich schreibst du mit rr. Herauf, herunter und herüber schreibst du nur mit r.</p>"
+    },
+    "rule": "Vorsilben bleiben gleich. Meist ver-, nur wenige Wörter mit fer-. Gehört das Wort zu „Ende“, steckt der Stamm End- darin, sonst schreibst du die Vorsilbe ent-. Wieder heißt „noch einmal“, wider heißt „gegen“.",
+    "check": {
+      "q": "Welches Wort schreibst du mit d, weil es zu „Ende“ gehört?",
+      "options": [
+        {
+          "id": "endlich",
+          "html": "endlich"
+        },
+        {
+          "id": "entdecken",
+          "html": "entdecken"
+        },
+        {
+          "id": "entgehen",
+          "html": "entgehen"
+        }
+      ],
+      "answer": "endlich",
+      "why": "Endlich bedeutet „am Ende, nach langem Warten“. Es gehört zu „Ende“, deshalb schreibst du es mit d."
+    }
+  },
+  "laute": {
+    "goal": "Du kannst die Laute sp, st, qu, pf und v richtig schreiben, auch wenn du sie anders sprichst.",
+    "tldr": [
+      "Am Wortanfang sprichst du „schp“ und „scht“, schreibst aber sp und st: Spiel, Stein.",
+      "Den Laut „kw“ schreibst du qu: Quelle, Quark.",
+      "Bei pf sprichst du beide Laute: Pferd, Kopf. Das v klingt oft wie f: Vater, Vogel."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Geheimcode",
+      "html": "<p>Manche Buchstaben sind wie ein Geheimcode: Du hörst etwas anderes, als du schreibst. Bei <b>sp</b> hörst du „schp“, bei <b>qu</b> hörst du „kw“. Wenn du den Code einmal kennst, kannst du ihn immer wieder anwenden.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Du hörst",
+            "Du schreibst",
+            "Beispiel"
+          ],
+          [
+            [
+              "schp / scht",
+              "sp / st",
+              "Spiel, Stein"
+            ],
+            [
+              "kw",
+              "qu",
+              "Quelle, Quark"
+            ],
+            [
+              "p und f",
+              "pf",
+              "Pferd, Kopf"
+            ],
+            [
+              "f",
+              "v (Merkwort)",
+              "Vater, Vogel"
+            ],
+            [
+              "w",
+              "v (Fremdwort)",
+              "Vase, Vulkan"
+            ]
+          ],
+          [
+            2,
+            2,
+            3
+          ],
+          "Tabelle: Gehörter Laut und Schreibweise"
+        ]
+      },
+      "caption": "Was du hörst, ist nicht immer das, was du schreibst."
+    },
+    "steps": {
+      "title": "So schreibst du „verstehen“ richtig",
+      "items": [
+        "Hör genau hin: In der Wortmitte hörst du „schte“.",
+        "Frag dich: Wo beginnt der Wortstamm? Er beginnt bei „stehen“, vorn steht der Baustein ver-.",
+        "Am Anfang des Wortstamms schreibst du st, nicht scht: ver + stehen = verstehen."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Die Regel gilt nur am Wortanfang oder am Anfang des Wortstamms. Mitten im Wortstamm hörst du s und p oder t einzeln, zum Beispiel in „Wespe“ und „Kiste“.</p><p>Bei <b>v</b> hilft Hören nicht, denn es klingt wie f oder wie w. Lerne die häufigen Wörter einzeln: Vater, Vogel, viel, vier, von, vor.</p>"
+    },
+    "rule": "Am Anfang des Wortstamms schreibst du sp und st. Den Laut „kw“ schreibst du qu. Bei pf sprichst du beide Laute. Das v lernst du als Merkwort.",
+    "check": {
+      "q": "Wie schreibst du den Laut „kw“ in „Quelle“?",
+      "options": [
+        {
+          "id": "qu",
+          "html": "qu"
+        },
+        {
+          "id": "kw",
+          "html": "kw"
+        },
+        {
+          "id": "kv",
+          "html": "kv"
+        }
+      ],
+      "answer": "qu",
+      "why": "Den Laut „kw“ schreibst du qu: Quelle, Qualle, Quark."
+    }
+  },
+  "xlaute": {
+    "goal": "Du kannst den Laut „ks“ richtig schreiben: als chs, cks, x oder ks.",
+    "tldr": [
+      "Den Laut „ks“ schreibst du meist auf vier Arten: chs, cks, x oder ks. Steckt ein g im Wort, schreibst du gs: unterwegs.",
+      "chs ist selten, du lernst die Wörter: Fuchs, sechs, wachsen.",
+      "cks leitest du von ck ab: Klecks, kleckern. Das x steht oft in Fremdwörtern: Text, Taxi, Praxis."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Schauspieler",
+      "html": "<p>Der Laut „ks“ ist wie ein Schauspieler mit meist vier Kostümen: <b>chs</b>, <b>cks</b>, <b>x</b> und <b>ks</b>. Du hörst immer denselben Laut. Welches Kostüm er trägt, erkennst du am Wort. Steckt ein g im Wort, schreibst du gs: unterwegs.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Laut „ks“",
+            "Beispiel",
+            "Merkhilfe"
+          ],
+          [
+            [
+              "chs",
+              "Fuchs, wachsen",
+              "Merkwörter lernen"
+            ],
+            [
+              "cks",
+              "Klecks, des Rocks",
+              "von ck ableiten"
+            ],
+            [
+              "x",
+              "Hexe, Taxi, Mixer",
+              "oft Fremdwörter"
+            ],
+            [
+              "ks",
+              "Keks",
+              "k und s einzeln"
+            ]
+          ],
+          [
+            2,
+            3,
+            3
+          ],
+          "Tabelle: Meist vier Schreibweisen für den Laut ks"
+        ]
+      },
+      "caption": "Ein Laut, meist vier Schreibweisen."
+    },
+    "steps": {
+      "title": "So entscheidest du bei „Klecks“",
+      "items": [
+        "Du hörst „ks“ am Ende des Wortes.",
+        "Suche ein verwandtes Wort: kleckern. Dort steht ck.",
+        "Also schreibst du cks: Klecks. Findest du kein verwandtes Wort mit ck, ist es oft chs (Merkwort) oder x."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Das „ks“ in <b>Keks</b> schreibst du mit k und s, nicht mit x und nicht mit cks. Das Wort ist ein Merkwort.</p><p>Bei Hexe und Axt hörst du ks, schreibst aber x. Lerne diese Wörter einzeln.</p>"
+    },
+    "rule": "chs und x lernst du als Wörter. cks leitest du von ck ab. Keks schreibst du mit k und s. Steckt ein g im Wort, schreibst du gs: unterwegs.",
+    "check": {
+      "q": "Welches Wort ist richtig geschrieben?",
+      "options": [
+        {
+          "id": "Fuchs",
+          "html": "Fuchs"
+        },
+        {
+          "id": "Fucks",
+          "html": "Fucks"
+        },
+        {
+          "id": "Fuks",
+          "html": "Fuks"
+        }
+      ],
+      "answer": "Fuchs",
+      "why": "Fuchs ist ein Merkwort mit chs. Ein verwandtes Wort mit ck gibt es nicht."
+    }
+  },
+  "zusammen": {
+    "goal": "Du kannst zusammengesetzte Wörter in Bausteine zerlegen und mit der richtigen Fuge und Schreibweise zusammensetzen.",
+    "tldr": [
+      "Ein zusammengesetztes Wort hat vorn ein <b>Bestimmungswort</b> und hinten ein <b>Grundwort</b>. Das Grundwort bestimmt Artikel und Wortart: die Fahrt, also die Schifffahrt.",
+      "Treffen gleiche Buchstaben aufeinander, fällt keiner weg: Schifffahrt.",
+      "Manchmal steht zwischen den Bausteinen eine <b>Fuge</b>, ein kleines Stück als Verbindung: Geburtstag, Blumenvase, Hundehütte, Kinderwagen."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Bausatz",
+      "html": "<p>Ein langes Wort ist wie ein Bausatz. Jeder Stein ist ein Wort für sich: Haus, Tür, Schlüssel. Zusammen ergeben sie etwas Neues. Manchmal brauchst du einen kleinen Verbindungsstein dazwischen. Das ist die <b>Fuge</b>.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Anfang",
+            "Fuge",
+            "Grundwort",
+            "Ganzes Wort"
+          ],
+          [
+            [
+              "Geburt",
+              "-s-",
+              "Tag",
+              "Geburtstag"
+            ],
+            [
+              "Blume",
+              "-n-",
+              "Vase",
+              "Blumenvase"
+            ],
+            [
+              "Hund",
+              "-e-",
+              "Hütte",
+              "Hundehütte"
+            ],
+            [
+              "Kind",
+              "-er-",
+              "Wagen",
+              "Kinderwagen"
+            ]
+          ],
+          [
+            2,
+            1,
+            2,
+            3
+          ],
+          "Tabelle: Wörter mit Fuge"
+        ]
+      },
+      "caption": "Vorn der Anfang, in der Mitte die Fuge, hinten das Grundwort."
+    },
+    "steps": {
+      "title": "So zerlegst und schreibst du ein langes Wort",
+      "items": [
+        "Zerlege das Wort in Bausteine: <b>Haustürschlüssel</b> besteht aus Haus + Tür + Schlüssel.",
+        "Das Grundwort steht ganz hinten. Schlüssel ist männlich, also heißt es <b>der</b> Haustürschlüssel.",
+        "Suche eine Fuge: Sprich langsam und prüfe den Plural des ersten Bausteins. Bei Hund hilft „Hunde“, deshalb Hundehütte.",
+        "Schreibe beide Bausteine vollständig auf: Schiff + Fahrt wird Schifffahrt mit drei f."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Treffen beim Zusammensetzen gleiche Buchstaben aufeinander, fällt keiner weg. <b>Schifffahrt</b> hat drei f, <b>Brennnessel</b> drei n, <b>Kaffeeersatz</b> drei e und <b>Schlussstrich</b> drei s. Zähle beide Bausteine mit.</p><p>Du darfst auch einen Bindestrich setzen: Kaffee-Ersatz.</p>"
+    },
+    "rule": "Das Grundwort steht hinten und bestimmt Artikel und Wortart. Zwischen den Bausteinen kann eine Fuge stehen (-s, -n, -e, -er). Treffen gleiche Buchstaben aufeinander, fällt keiner weg: Schifffahrt.",
+    "check": {
+      "q": "Was bestimmt den Artikel eines zusammengesetzten Nomens?",
+      "options": [
+        {
+          "id": "Das Grundwort am Ende",
+          "html": "Das Grundwort am Ende"
+        },
+        {
+          "id": "Das Bestimmungswort am Anfang",
+          "html": "Das Bestimmungswort am Anfang"
+        },
+        {
+          "id": "Die Fuge in der Mitte",
+          "html": "Die Fuge in der Mitte"
+        }
+      ],
+      "answer": "Das Grundwort am Ende",
+      "why": "Das letzte Wort ist das Grundwort. Es bestimmt den Artikel: der Schlüssel, also der Haustürschlüssel, auch wenn vorn das Haus steht."
+    }
+  },
+  "trennbar": {
+    "goal": "Du kannst Verben mit trennbarer und nicht trennbarer Vorsilbe richtig verwenden und den Infinitiv mit „zu“ richtig schreiben.",
+    "tldr": [
+      "Eine <b>trennbare Vorsilbe</b> wie ab-, an-, auf-, aus-, ein-, mit-, zu- wird betont und im Satz abgetrennt: Ich fahre ab.",
+      "Eine <b>nicht trennbare Vorsilbe</b> wie be-, er-, ent-, ver-, zer- ist unbetont und bleibt am Verb: Ich bestelle.",
+      "Beim <b>Infinitiv mit zu</b> (Grundform mit zu) steht zu bei trennbaren Verben in der Mitte: abzuwaschen. Bei nicht trennbaren steht es davor: zu verstehen."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Anhänger",
+      "html": "<p>Eine trennbare Vorsilbe ist wie ein Anhänger am Auto. Er kann abgekoppelt werden und fährt dann hinterher: Ich fahre ab. Eine nicht trennbare Vorsilbe ist fest eingebaut wie die Hupe. Du kannst sie nicht abnehmen: Ich bestelle.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Verb",
+            "Im Satz",
+            "Partizip",
+            "Infinitiv mit zu"
+          ],
+          [
+            [
+              "abfahren",
+              "Ich fahre ab.",
+              "abgefahren",
+              "abzufahren"
+            ],
+            [
+              "anrufen",
+              "Ich rufe an.",
+              "angerufen",
+              "anzurufen"
+            ],
+            [
+              "bestellen",
+              "Ich bestelle.",
+              "bestellt",
+              "zu bestellen"
+            ],
+            [
+              "singen",
+              "Ich singe.",
+              "gesungen",
+              "zu singen"
+            ]
+          ],
+          [
+            2.2,
+            3,
+            3,
+            3.2
+          ],
+          "Tabelle: Verben mit und ohne trennbare Vorsilbe"
+        ]
+      },
+      "caption": "Trennbar: zu mitten im Wort. Nicht trennbar und einfach: zu davor."
+    },
+    "steps": {
+      "title": "So gehst du vor",
+      "items": [
+        "Sprich das Verb und höre auf den Ton: ABfahren hat den Ton vorn, verSTEhen hinten.",
+        "Ton vorn heißt trennbar. Im Hauptsatz steht die Vorsilbe hinten: Der Zug fährt ab. Im Nebensatz bleibt alles zusammen: …, dass der Zug abfährt.",
+        "Für den <b>Infinitiv mit zu</b>: Trennbar heißt zu in die Mitte (abzufahren). Nicht trennbar heißt zu davor (zu verstehen).",
+        "Für das Partizip: Trennbar mit ge- in der Mitte (abgefahren). Nicht trennbar ohne ge- (verstanden)."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Verwechsle nicht <b>zu sehen</b> und <b>zusehen</b>. In „Es ist nichts zu sehen“ steht zu einzeln vor dem Verb sehen. In „Ich möchte dir zusehen“ ist zusehen ein eigenes trennbares Verb: Ich sehe dir zu.</p>"
+    },
+    "rule": "Trennbare Vorsilben werden betont und im Satz abgetrennt. Nicht trennbare bleiben am Verb. Bei trennbaren Verben steht zu im Infinitiv in der Mitte: abzuwaschen.",
+    "check": {
+      "q": "Wie heißt der Infinitiv mit zu von „aufmachen“?",
+      "options": [
+        {
+          "id": "aufzumachen",
+          "html": "aufzumachen"
+        },
+        {
+          "id": "zu aufmachen",
+          "html": "zu aufmachen"
+        },
+        {
+          "id": "auf zu machen",
+          "html": "auf zu machen"
+        }
+      ],
+      "answer": "aufzumachen",
+      "why": "Auf- ist trennbar (Ich mache auf). Deshalb steht zu in der Mitte und alles wird zusammengeschrieben: aufzumachen."
+    }
+  },
+  "silben": {
+    "goal": "Du kannst Wörter in Sprechsilben gliedern, lange Wörter in Bausteine zerlegen und am Zeilenende richtig trennen.",
+    "tldr": [
+      "Eine <b>Silbe</b> ist ein Sprechtakt, den du klatschen kannst: Ba-na-ne hat drei.",
+      "Jede Silbe hat einen Kern: einen Vokal, einen Umlaut oder einen <b>Doppellaut</b>, zwei Buchstaben für einen Klang wie au oder ei.",
+      "Lange Wörter zerlegst du erst in Bausteine und dann in Silben. Wer beim Schreiben mitspricht, hört viele Fehler."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: eine Treppe",
+      "html": "<p>Ein Wort ist wie eine Treppe. Du nimmst es Stufe für Stufe. Jede Stufe ist eine <b>Silbe</b>. Bei einer langen Treppe mit Absätzen zählst du erst die Absätze, das sind die Bausteine, und dann die Stufen darin.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Wort",
+            "Sprechsilben",
+            "Anzahl"
+          ],
+          [
+            [
+              "Schokolade",
+              "Scho-ko-la-de",
+              "4"
+            ],
+            [
+              "Banane",
+              "Ba-na-ne",
+              "3"
+            ],
+            [
+              "Haustürschlüssel",
+              "Haus-tür-schlüs-sel",
+              "4"
+            ],
+            [
+              "Katze",
+              "Kat-ze",
+              "2"
+            ]
+          ],
+          [
+            3,
+            4,
+            2
+          ],
+          "Tabelle: Wörter mit ihren Sprechsilben"
+        ]
+      },
+      "caption": "Die Anzahl der Klatscher ist die Anzahl der Silben."
+    },
+    "steps": {
+      "title": "So zerlegst du ein langes Wort",
+      "items": [
+        "Zerlege das Wort in Bausteine: <b>Haustürschlüssel</b> besteht aus Haus, Tür und Schlüssel.",
+        "Sprich jeden Baustein langsam und klatsche die Silben: Haus - tür - schlüs - sel.",
+        "Zähle die Klatscher: Es sind vier Silben, obwohl es nur drei Bausteine gibt.",
+        "Willst du am Zeilenende trennen: Doppelte Konsonanten und tz trennst du (Tas-se, Kat-ze). ch, sch und ck bleiben zusammen (Ta-sche, Zu-cker)."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Silben und Bausteine sind nicht dasselbe. <b>Haustürschlüssel</b> hat drei Bausteine, aber vier Silben. Auch das Hören täuscht: In <b>Auto</b> sind es nur zwei Silben (Au-to), weil au ein Doppellaut ist.</p>"
+    },
+    "rule": "Jede Silbe hat einen Vokal, Umlaut oder Doppellaut als Kern. Lange Wörter zerlegst du erst in Bausteine, dann in Silben. Am Zeilenende trennst du doppelte Konsonanten und tz, aber nicht ch, sch und ck.",
+    "check": {
+      "q": "Welche Trennung am Zeilenende ist richtig?",
+      "options": [
+        {
+          "id": "Tas-se",
+          "html": "Tas-se"
+        },
+        {
+          "id": "Ta-sse",
+          "html": "Ta-sse"
+        },
+        {
+          "id": "Tass-e",
+          "html": "Tass-e"
+        }
+      ],
+      "answer": "Tas-se",
+      "why": "Du trennst nach Sprechsilben: Tas-se. Doppelte Konsonanten werden getrennt, und „e“ allein ist keine Sprechsilbe dieses Wortes."
+    }
+  },
+  "gross-mehr": {
+    "goal": "Du kannst weitere Signale für die Großschreibung erkennen: Endungen, Anrede, Namen, Zeitangaben und Zahlen.",
+    "tldr": [
+      "Wörter auf -ung, -heit, -keit, -schaft, -nis, -tum, -chen, -lein, -sal und -ling sind meistens Nomen. Die Artikelprobe bestätigt es: die Zeitung.",
+      "Wochentage sind Nomen. Tageszeiten nach Artikel, Präposition oder heute/gestern schreibst du groß: am Morgen, heute Mittag.",
+      "Die höfliche Anrede (Sie, Ihnen, Ihr Buch) und Namen wie Hohe Straße, Kölner Dom und Schwarzes Meer schreibst du groß.",
+      "Auch Zahlen mit Artikel (die Sieben) und feste Verbindungen wie das Hin und Her werden Nomen."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Stempel am Wortende",
+      "html": "<p>Manche Wortenden sind wie ein Stempel: Sie zeigen sofort, dass das Wort ein <b>Nomen</b> ist (ein Wort für Dinge, Lebewesen oder Ideen). Bei <b>Freiheit</b>, <b>Zeitung</b> oder <b>Frühling</b> musst du gar nicht lange nachdenken. Bei Namen bekommt sogar das Adjektiv den großen Buchstaben, so wie bei der <b>Hohen Straße</b>.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Signal",
+            "Beispiel",
+            "Schreibung"
+          ],
+          [
+            [
+              "Endung -heit/-keit/-ung",
+              "die Freiheit",
+              "groß"
+            ],
+            [
+              "Artikel + Tageszeit",
+              "am Morgen",
+              "groß"
+            ],
+            [
+              "Wochentag",
+              "jeden Freitag",
+              "immer groß"
+            ],
+            [
+              "höfliche Anrede",
+              "Haben Sie Zeit?",
+              "Sie groß"
+            ],
+            [
+              "Straßenname",
+              "Hohe Straße",
+              "beide groß"
+            ],
+            [
+              "Name auf -er",
+              "Kölner Dom",
+              "groß"
+            ],
+            [
+              "Meer im Namen",
+              "Schwarzes Meer",
+              "beide groß"
+            ],
+            [
+              "Zahl mit Artikel",
+              "die Sieben",
+              "groß"
+            ],
+            [
+              "feste Verbindung",
+              "das Hin und Her",
+              "Hin, Her groß, und klein"
+            ]
+          ],
+          [
+            3,
+            3,
+            3
+          ],
+          "Tabelle: weitere Signale für die Großschreibung mit Beispielen"
+        ]
+      },
+      "caption": "Diese Signale zeigen dir: Hier kommt ein Nomen oder ein Name."
+    },
+    "steps": {
+      "title": "So prüfst du: freundlichkeit oder Freundlichkeit?",
+      "items": [
+        "Sieh dir das Ende des Wortes an. Endet es auf -keit, -heit, -ung, -schaft, -nis, -tum, -chen, -lein, -sal oder -ling, ist es meistens ein Nomen.",
+        "Mach die Artikelprobe: Passt „die Freundlichkeit“? Ja, ein Artikel kann davorstehen.",
+        "Also ist es ein Nomen und wird großgeschrieben: <b>Freundlichkeit</b>."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Die höfliche Anrede <b>Sie</b> mit <b>Ihnen</b> schreibst du immer groß. Auch das Besitzwort zu Sie ist groß: <b>Ihr Buch</b>, <b>Ihre Tasche</b>. Ein kleines „sie“ oder „ihre“ meint andere Personen, über die du sprichst: „Ich kenne sie.“</p><p>Sprichst du mehrere Personen mit „ihr“ an, bleibt es klein: „ihr Kinder“. Auch das persönliche „du“ mit „dir“ und „dein“ bleibt in normalen Texten klein. In Briefen darfst du du und dein auch großschreiben.</p>"
+    },
+    "rule": "Wörter auf -ung, -heit, -keit und ähnliche Endungen sind meistens Nomen, die höfliche Anrede Sie, Ihnen und das Besitzwort Ihr schreibst du immer groß, und in Namen wie Hohe Straße oder Schwarzes Meer sind auch die Adjektive groß.",
+    "check": {
+      "q": "Welcher Satz ist richtig geschrieben?",
+      "options": [
+        {
+          "id": "Mit Übung wirst du besser.",
+          "html": "Mit Übung wirst du besser."
+        },
+        {
+          "id": "Mit übung wirst du besser.",
+          "html": "Mit übung wirst du besser."
+        },
+        {
+          "id": "mit Übung wirst du besser.",
+          "html": "mit Übung wirst du besser."
+        }
+      ],
+      "answer": "Mit Übung wirst du besser.",
+      "why": "Übung endet auf -ung und ist ein Nomen: die Übung. Der Satzanfang wird ebenfalls großgeschrieben."
+    }
+  },
+  "klein": {
+    "goal": "Du kannst erkennen, welche Wörter du kleinschreibst, und prüfst mit der Gegenprobe, wann sie doch zum Nomen werden.",
+    "tldr": [
+      "Zahlen in Buchstaben unter einer Million (zwei, hundert, zu dritt) und Ordnungszahlen vor einem Nomen (der dritte Stock) schreibst du klein. Million und Milliarde sind Nomen.",
+      "Adjektive auf -isch, -ig, -lich, -sam, -bar und -haft bleiben klein: komisch, durstig, ehrlich, schweigsam, haltbar, lebhaft.",
+      "Auch am + Superlativ (am besten), Zeitangaben auf -s (abends, montags) und Wörter wie man, jemand und niemand schreibst du klein.",
+      "Nur wenn ein Artikel oder Signalwort davorsteht und das Wort zum Nomen wird, schreibst du groß: das Komische, am Abend."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: Alltagskleidung und Kostüm",
+      "html": "<p>Ein Adjektiv wie <b>komisch</b> trägt normalerweise Alltagskleidung, also einen kleinen Anfangsbuchstaben. Erst wenn ein Artikel davorsteht, zieht es das Nomen-Kostüm an: <b>das Komische</b>. Ein <b>Adjektiv</b> ist ein Wort, das beschreibt, wie etwas ist.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Klein",
+            "Beispiel",
+            "Groß, wenn Nomen"
+          ],
+          [
+            [
+              "Zahl unter einer Million",
+              "dreißig, zu dritt",
+              "die Drei, eine Million"
+            ],
+            [
+              "Ordnungszahl + Nomen",
+              "der dritte Stock",
+              "der Dritte"
+            ],
+            [
+              "Adjektiv auf -isch, -ig",
+              "komisch, durstig",
+              "das Komische"
+            ],
+            [
+              "am + Superlativ",
+              "am schönsten",
+              "das Schönste"
+            ],
+            [
+              "Zeit auf -s",
+              "mittags, nachts",
+              "am Mittag, in der Nacht"
+            ],
+            [
+              "unbestimmtes Pronomen",
+              "jemand, niemand",
+              "kein Nomen"
+            ]
+          ],
+          [
+            3,
+            3,
+            3
+          ],
+          "Tabelle: Kleinschreibung mit Beispielen und Gegenprobe"
+        ]
+      },
+      "caption": "Ohne Artikel oder Signalwort bleiben diese Wörter klein."
+    },
+    "steps": {
+      "title": "So prüfst du: Komisch oder komisch?",
+      "items": [
+        "Frag dich: Ist das Wort ein Adjektiv, eine Zahl, eine Zeitangabe auf -s oder ein Pronomen wie man? Dann ist klein der Normalfall.",
+        "Mach die Gegenprobe: Steht ein Artikel oder ein Signalwort davor, und ist das Wort ein Nomen? „das Komische“ oder „am Abend“ schreibst du dann groß.",
+        "Findest du keinen Artikel und kein Nomen, bleibt <b>komisch</b> ein Adjektiv und wird kleingeschrieben."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Achte auf <b>am</b>. In „am Abend“ ist Abend ein Nomen und wird großgeschrieben. In „am schönsten“ ist schönsten ein Superlativ und bleibt klein. Auch <b>ein paar</b> (einige) und <b>ein Paar</b> (zwei, die zusammengehören) schreibst du verschieden.</p>"
+    },
+    "rule": "Zahlwörter, Adjektive auf -isch, -ig, -lich, -sam, -bar und -haft, am plus Superlativ, Zeitangaben auf -s und unbestimmte Pronomen schreibst du klein, solange kein Nomen daraus wird.",
+    "check": {
+      "q": "Welcher Satz ist richtig geschrieben?",
+      "options": [
+        {
+          "id": "Wir besuchen Oma sonntags.",
+          "html": "Wir besuchen Oma sonntags."
+        },
+        {
+          "id": "Wir besuchen Oma Sonntags.",
+          "html": "Wir besuchen Oma Sonntags."
+        },
+        {
+          "id": "wir besuchen Oma sonntags.",
+          "html": "wir besuchen Oma sonntags."
+        }
+      ],
+      "answer": "Wir besuchen Oma sonntags.",
+      "why": "Zeitangaben auf -s sind Adverbien und werden kleingeschrieben: sonntags. Nur der Satzanfang wird großgeschrieben."
+    }
+  },
+  "fremd": {
+    "goal": "Du kannst Fremdwörter an Endungen erkennen, Wortbausteine deuten und häufige Fremdwörter richtig schreiben.",
+    "tldr": [
+      "Fremdwörter erkennst du oft an Endungen: -ion, -ie und -ik bei Nomen, -ieren bei Verben, -iv, -ell und -al bei Adjektiven.",
+      "Wortbausteine verraten die Bedeutung: anti- heißt gegen, pro- heißt für oder vor, re- heißt wieder, mono- heißt einzig.",
+      "Das v klingt in Vulkan, Vase und Virus wie ein w. Du schreibst trotzdem v."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: Bausteine aus anderen Sprachen",
+      "html": "<p>Ein <b>Fremdwort</b> ist ein Wort, das aus einer anderen Sprache übernommen wurde, zum Beispiel aus dem Lateinischen oder Griechischen. Viele davon sind aus Bausteinen gebaut wie ein Haus aus Steinen. Dieselben Bausteine tauchen immer wieder auf. Wer sie kennt, kann neue Wörter oft lesen und deuten.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Endung",
+            "Wortart",
+            "Beispiel"
+          ],
+          [
+            [
+              "-ion, -tion",
+              "Nomen",
+              "Information"
+            ],
+            [
+              "-ie",
+              "Nomen",
+              "Strategie"
+            ],
+            [
+              "-ik",
+              "Nomen",
+              "Technik"
+            ],
+            [
+              "-ieren",
+              "Verb",
+              "reparieren"
+            ],
+            [
+              "-iv",
+              "Adjektiv",
+              "kreativ"
+            ],
+            [
+              "-ell",
+              "Adjektiv",
+              "aktuell"
+            ],
+            [
+              "-al",
+              "Adjektiv",
+              "regional"
+            ]
+          ],
+          [
+            2,
+            2,
+            3
+          ],
+          "Tabelle: typische Endungen von Fremdwörtern mit Wortart und Beispiel"
+        ]
+      },
+      "caption": "Die Endung verrät oft die Wortart eines Fremdworts."
+    },
+    "steps": {
+      "title": "So gehst du mit einem Fremdwort um",
+      "items": [
+        "Sieh dir das Ende an: -ion, -ie, -ik, -ieren, -iv, -ell oder -al zeigen oft ein Fremdwort. <b>reparieren</b> ist zum Beispiel ein Verb.",
+        "Suche Wortbausteine am Anfang: <b>anti-</b> heißt gegen, <b>re-</b> heißt wieder oder zurück, <b>mono-</b> heißt einzig.",
+        "Setze die Teile zusammen: Ein <b>Antikörper</b> wirkt gegen Krankheitserreger. So errätst du die Bedeutung und schreibst das Wort sicherer."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Das <b>v</b> wird nicht immer gleich gesprochen. In <b>Vulkan</b>, <b>Vase</b> und <b>Virus</b> klingt es wie ein w. In <b>Vater</b>, <b>Vogel</b> und <b>viel</b> klingt es wie ein f. Wer „Wulkan“ schreibt, hat nur nach dem Klang geschrieben.</p>"
+    },
+    "rule": "Fremdwörter erkennst du oft an Endungen wie -ion, -ie, -ik, -ieren, -iv, -ell und -al, und Wortbausteine wie anti- (gegen), re- (wieder) und mono- (einzig) helfen dir, die Bedeutung zu erraten.",
+    "check": {
+      "q": "Welches Wort ist richtig geschrieben?",
+      "options": [
+        {
+          "id": "Diskussion",
+          "html": "Diskussion"
+        },
+        {
+          "id": "Diskution",
+          "html": "Diskution"
+        },
+        {
+          "id": "Diskusion",
+          "html": "Diskusion"
+        }
+      ],
+      "answer": "Diskussion",
+      "why": "Das Nomen Diskussion hat zwei s und die Endung -ion. Es gehört zum Verb diskutieren."
+    }
+  },
+  "satzglieder": {
+    "goal": "Du kannst Satzglieder mit der Umstellprobe finden, das Prädikat bestimmen und Subjekt und Objekte mit den Fragen der Fälle erkennen.",
+    "tldr": [
+      "Ein Satzglied kann aus mehreren Wörtern bestehen. Beim Umstellen bleibt es zusammen.",
+      "Das Prädikat sagt, was geschieht. Nach dem Subjekt fragst du mit „Wer oder was?“.",
+      "Objekte findest du mit „Wem?“ (Dativ) und „Wen oder was?“ (Akkusativ)."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: Bausteine im Zug",
+      "html": "<p>Ein Satz ist wie ein Zug. Die Wagen lassen sich in anderer Reihenfolge ankoppeln, aber ein Wagen bleibt immer ganz. „Der kleine Hund“ ist ein Wagen mit drei Sitzen: Die Wörter sitzen zusammen und werden nie getrennt. Solche Wagen heißen <b>Satzglieder</b>.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Fall",
+            "Frage",
+            "Beispiel"
+          ],
+          [
+            [
+              "Nominativ",
+              "Wer oder was?",
+              "der Hund"
+            ],
+            [
+              "Genitiv",
+              "Wessen?",
+              "des Hundes"
+            ],
+            [
+              "Dativ",
+              "Wem?",
+              "dem Hund"
+            ],
+            [
+              "Akkusativ",
+              "Wen oder was?",
+              "den Hund"
+            ]
+          ],
+          [
+            3,
+            3,
+            3
+          ],
+          "Tabelle: Die vier Fälle mit Frage und Beispiel"
+        ]
+      },
+      "caption": "Bei männlichen Nomen verändert sich der Artikel mit dem Fall: der, des, dem, den."
+    },
+    "steps": {
+      "title": "So findest du die Satzglieder in „Der kleine Hund bringt dem Mädchen heute einen Ball.“",
+      "items": [
+        "Stelle um: „Heute bringt der kleine Hund dem Mädchen einen Ball.“ Wörter, die zusammenbleiben, bilden ein Satzglied.",
+        "Finde das <b>Prädikat</b> mit „Was geschieht?“: <b>bringt</b>.",
+        "Finde das <b>Subjekt</b> mit „Wer oder was bringt?“: <b>der kleine Hund</b> (Nominativ).",
+        "Finde das <b>Dativobjekt</b> mit „Wem?“: <b>dem Mädchen</b>.",
+        "Finde das <b>Akkusativobjekt</b> mit „Wen oder was?“: <b>einen Ball</b>.",
+        "Was übrig bleibt, beantwortet „Wann?“: <b>heute</b>. Das ist eine adverbiale Bestimmung, kein Objekt."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Das Subjekt steht nicht immer am Anfang. In „Den Ball wirft Max“ ist <b>Max</b> das Subjekt, weil du fragst: „Wer wirft?“</p><p>Das Prädikat kann auch aus zwei Teilen bestehen: „Ich <b>habe</b> gestern <b>gelacht</b>.“ Beide Teile gehören zum Prädikat.</p>"
+    },
+    "rule": "Satzglieder bleiben bei der Umstellprobe zusammen. Subjekt: Wer oder was? Dativobjekt: Wem? Akkusativobjekt: Wen oder was?",
+    "check": {
+      "q": "Welches Satzglied beantwortet die Frage „Wem?“ im Satz „Mia schenkt ihrem Bruder ein Buch.“?",
+      "options": [
+        {
+          "id": "ihrem Bruder",
+          "html": "ihrem Bruder"
+        },
+        {
+          "id": "ein Buch",
+          "html": "ein Buch"
+        },
+        {
+          "id": "Mia",
+          "html": "Mia"
+        },
+        {
+          "id": "schenkt",
+          "html": "schenkt"
+        }
+      ],
+      "answer": "ihrem Bruder",
+      "why": "„Wem schenkt Mia ein Buch?“ – ihrem Bruder. Das ist das Dativobjekt. „Ein Buch“ antwortet auf „Wen oder was?“."
+    }
+  },
+  "zeitformen": {
+    "goal": "Du kannst Verbformen in Präsens, Präteritum, Perfekt, Plusquamperfekt und Futur I erkennen und bilden.",
+    "tldr": [
+      "Jede Zeitform sagt, wann etwas geschieht: jetzt, vorbei, davor oder bald.",
+      "Perfekt und Plusquamperfekt brauchen „haben“ oder „sein“ plus Partizip II.",
+      "Das Futur I bildest du mit „werden“ plus Infinitiv."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Zeitstrahl",
+      "html": "<p>Du erzählst von deinem Tag. Was gerade passiert, sagst du im <b>Präsens</b>. Was vorbei ist, kommt in die Vergangenheit. Und wenn etwas noch <b>vor</b> dem Vergangenen geschah, gehst du eine Stufe weiter zurück: Das ist das <b>Plusquamperfekt</b>.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Zeitform",
+            "Beispiel",
+            "Bildung"
+          ],
+          [
+            [
+              "Präsens",
+              "ich gehe",
+              "Stamm + Endung"
+            ],
+            [
+              "Präteritum",
+              "ich ging",
+              "Stamm + -te / eigene Form"
+            ],
+            [
+              "Perfekt",
+              "ich bin gegangen",
+              "sein/haben + Part. II"
+            ],
+            [
+              "Plusquamperfekt",
+              "ich war gegangen",
+              "war/hatte + Part. II"
+            ],
+            [
+              "Futur I",
+              "ich werde gehen",
+              "werden + Infinitiv"
+            ]
+          ],
+          [
+            4,
+            3,
+            4
+          ],
+          "Tabelle: Fünf Zeitformen am Beispiel „gehen“"
+        ]
+      },
+      "caption": "Die fünf Zeitformen am Verb „gehen“."
+    },
+    "steps": {
+      "title": "So bildest du die Zeitformen von „gehen“",
+      "items": [
+        "<b>Präsens</b>: Stamm plus Endung, <b>ich gehe</b>.",
+        "<b>Präteritum</b>: eigene Form, bei „gehen“ <b>ich ging</b>. Regelmäßige Verben bekommen -te: ich lachte.",
+        "<b>Perfekt</b>: „haben“ oder „sein“ im Präsens plus Partizip II, <b>ich bin gegangen</b>.",
+        "<b>Plusquamperfekt</b>: „haben“ oder „sein“ im Präteritum plus Partizip II, <b>ich war gegangen</b>.",
+        "<b>Futur I</b>: „werden“ plus Infinitiv, <b>ich werde gehen</b>.",
+        "Wähle „sein“ bei Fortbewegung und Zustandsänderung (ich bin gelaufen, ich bin eingeschlafen) und bei sein, bleiben, werden. Sonst meist „haben“ (ich habe gelacht)."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Bei den Vorsilben <b>be-, ge-, er-, ver-, zer-, ent-</b> und bei Verben auf <b>-ieren</b> fehlt im Partizip II das ge-: bestellt, verstanden, telefoniert. Bei trennbaren Verben steht es in der Mitte: aufgeräumt.</p><p>Erzählst du in der Vergangenheit und etwas geschah schon vorher, steht das Frühere im <b>Plusquamperfekt</b>: „Nachdem er gegessen hatte, ging er los.“</p>"
+    },
+    "rule": "Perfekt: haben oder sein im Präsens plus Partizip II. Plusquamperfekt: haben oder sein im Präteritum plus Partizip II. Futur I: werden plus Infinitiv.",
+    "check": {
+      "q": "Welcher Satz steht im Plusquamperfekt?",
+      "options": [
+        {
+          "id": "Ich war nach Hause gegangen.",
+          "html": "Ich war nach Hause gegangen."
+        },
+        {
+          "id": "Ich bin nach Hause gegangen.",
+          "html": "Ich bin nach Hause gegangen."
+        },
+        {
+          "id": "Ich ging nach Hause.",
+          "html": "Ich ging nach Hause."
+        },
+        {
+          "id": "Ich werde nach Hause gehen.",
+          "html": "Ich werde nach Hause gehen."
+        }
+      ],
+      "answer": "Ich war nach Hause gegangen.",
+      "why": "„War“ im Präteritum plus Partizip II „gegangen“ ergibt das Plusquamperfekt. „Bin gegangen“ ist Perfekt, „ging“ Präteritum, „werde gehen“ Futur I."
+    }
   }
 }
