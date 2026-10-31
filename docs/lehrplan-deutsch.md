@@ -39,6 +39,7 @@ Regel: Die App deckt nur ab, was bekannt und im Buch eindeutig ist. Alles andere
 - Alle Aufgaben sind eigene Beispiele und keine Aufgaben aus dem Buch.
 - Begriffe stimmen mit dem Buch überein (z. B. „Adverbialsätze“, „Attributsätze“, „Redewiedergabe“), die Reihenfolge der App folgt dem Buch nicht.
 - Vor der Klassenarbeit prüfen, welche Kapitel in der Klasse wirklich behandelt wurden.
+- Die 66 Aufgaben, die 2026-10-31 dazugekommen sind (jede Seite jetzt mindestens 20, erkennbar an `level` und `skill`), hat noch keine Lehrkraft gegengelesen.
 
 ## Zu klären
 
