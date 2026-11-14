@@ -1,0 +1,5313 @@
+{
+  "items": {
+    "u6-alltag": [
+      {
+        "q": "die Ankunft",
+        "kind": "gap",
+        "s": "Nous attendons ___ du train.",
+        "a": "l'arrivée",
+        "wrong": [
+          "la arrivée",
+          "l'arrivé",
+          "l'arrivee"
+        ],
+        "why": "„l'arrivée“ heißt die Ankunft. Das Wort gehört zur Wortfamilie von arriver (ankommen). Es ist weiblich, vor dem Vokal steht l'.",
+        "w": 0
+      },
+      {
+        "q": "Was bedeutet „l'arrivée“?",
+        "a": "die Ankunft",
+        "wrong": [
+          "mit jemandem telefonieren, jemanden anrufen",
+          "eine Zeitung; Tagebuch",
+          "ein Hut"
+        ],
+        "why": "„l'arrivée“ heißt die Ankunft. Das Wort gehört zur Wortfamilie von arriver (ankommen). Es ist weiblich, vor dem Vokal steht l'.",
+        "w": 0,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Nous attendons l'arrivée du train."
+      },
+      {
+        "q": "Wie heißt „die Ankunft“ auf Französisch?",
+        "a": "l'arrivée",
+        "wrong": [
+          "rester",
+          "un journal",
+          "téléphoner"
+        ],
+        "why": "„l'arrivée“ heißt die Ankunft. Das Wort gehört zur Wortfamilie von arriver (ankommen). Es ist weiblich, vor dem Vokal steht l'.",
+        "w": 0,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "gestern",
+        "kind": "gap",
+        "s": "___, j'ai oublié mon chapeau.",
+        "a": "Hier",
+        "wrong": [
+          "Demain",
+          "Aujourd'hui",
+          "Maintenant"
+        ],
+        "why": "„hier“ heißt gestern. hier sieht aus wie das deutsche „hier“, heißt aber gestern. Heute heißt aujourd'hui, morgen heißt demain.",
+        "w": 1
+      },
+      {
+        "q": "Was bedeutet „hier“?",
+        "a": "gestern",
+        "wrong": [
+          "ein Sänger",
+          "ein Bahnhof",
+          "vielleicht"
+        ],
+        "why": "„hier“ heißt gestern. hier sieht aus wie das deutsche „hier“, heißt aber gestern. Heute heißt aujourd'hui, morgen heißt demain.",
+        "w": 1,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Hier, j'ai oublié mon chapeau."
+      },
+      {
+        "q": "Wie heißt „gestern“ auf Französisch?",
+        "a": "hier",
+        "wrong": [
+          "enfin",
+          "l'arrivée",
+          "un poème"
+        ],
+        "why": "„hier“ heißt gestern. hier sieht aus wie das deutsche „hier“, heißt aber gestern. Heute heißt aujourd'hui, morgen heißt demain.",
+        "w": 1,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "ein Problem",
+        "kind": "gap",
+        "s": "Oh là là, c'est ___ !",
+        "a": "un problème",
+        "wrong": [
+          "une problème",
+          "un probleme",
+          "un problême"
+        ],
+        "why": "„un problème“ heißt ein Problem. problème endet auf -e, ist aber männlich: un problème. Achte auf das è.",
+        "w": 2
+      },
+      {
+        "q": "Was bedeutet „un problème“?",
+        "a": "ein Problem",
+        "wrong": [
+          "mit jemandem telefonieren, jemanden anrufen",
+          "ein Sänger",
+          "ein Bahnhof"
+        ],
+        "why": "„un problème“ heißt ein Problem. problème endet auf -e, ist aber männlich: un problème. Achte auf das è.",
+        "w": 2,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Oh là là, c'est un problème !"
+      },
+      {
+        "q": "Wie heißt „ein Problem“ auf Französisch?",
+        "a": "un problème",
+        "wrong": [
+          "téléphoner",
+          "peut-être",
+          "oublier"
+        ],
+        "why": "„un problème“ heißt ein Problem. problème endet auf -e, ist aber männlich: un problème. Achte auf das è.",
+        "w": 2,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "telefonieren, anrufen (Grundform)",
+        "kind": "gap",
+        "s": "Je vais ___ à ma grand-mère.",
+        "a": "téléphoner",
+        "wrong": [
+          "téléphone",
+          "téléphoné",
+          "téléfoner"
+        ],
+        "why": "„téléphoner“ heißt mit jemandem telefonieren, jemanden anrufen. Nach téléphoner steht à: téléphoner à qn. Das Verb endet auf -er wie parler.",
+        "w": 3
+      },
+      {
+        "q": "Was bedeutet „téléphoner“?",
+        "a": "mit jemandem telefonieren, jemanden anrufen",
+        "wrong": [
+          "ein Sänger",
+          "vielleicht",
+          "ein Gedicht"
+        ],
+        "why": "„téléphoner“ heißt mit jemandem telefonieren, jemanden anrufen. Nach téléphoner steht à: téléphoner à qn. Das Verb endet auf -er wie parler.",
+        "w": 3,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Je vais téléphoner à ma grand-mère."
+      },
+      {
+        "q": "Wie heißt „mit jemandem telefonieren, jemanden anrufen“ auf Französisch?",
+        "a": "téléphoner",
+        "wrong": [
+          "peut-être",
+          "un problème",
+          "un journal"
+        ],
+        "why": "„téléphoner“ heißt mit jemandem telefonieren, jemanden anrufen. Nach téléphoner steht à: téléphoner à qn. Das Verb endet auf -er wie parler.",
+        "w": 3,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "bleiben (ich bleibe)",
+        "kind": "gap",
+        "s": "Il pleut, alors je ___ à la maison.",
+        "a": "reste",
+        "wrong": [
+          "restes",
+          "rester",
+          "restons"
+        ],
+        "why": "„rester“ heißt bleiben. rester heißt bleiben. Mit dem deutschen „Rest“ hat es nichts zu tun. Ich bleibe: je reste.",
+        "w": 4
+      },
+      {
+        "q": "Was bedeutet „rester“?",
+        "a": "bleiben",
+        "wrong": [
+          "die Ankunft",
+          "mit jemandem telefonieren, jemanden anrufen",
+          "ein Bahnhof"
+        ],
+        "why": "„rester“ heißt bleiben. rester heißt bleiben. Mit dem deutschen „Rest“ hat es nichts zu tun. Ich bleibe: je reste.",
+        "w": 4,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Il pleut, alors je reste à la maison."
+      },
+      {
+        "q": "Wie heißt „bleiben“ auf Französisch?",
+        "a": "rester",
+        "wrong": [
+          "hier",
+          "un problème",
+          "un chanteur"
+        ],
+        "why": "„rester“ heißt bleiben. rester heißt bleiben. Mit dem deutschen „Rest“ hat es nichts zu tun. Ich bleibe: je reste.",
+        "w": 4,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "eine Zeitung",
+        "kind": "gap",
+        "s": "Mon père lit ___ le matin.",
+        "a": "un journal",
+        "wrong": [
+          "une journal",
+          "un journaux",
+          "des journal"
+        ],
+        "why": "„un journal“ heißt eine Zeitung; Tagebuch. Der Plural ist unregelmäßig: des journaux. Je nach Satz kann journal auch Tagebuch heißen.",
+        "w": 5
+      },
+      {
+        "q": "Was bedeutet „un journal“?",
+        "a": "eine Zeitung; Tagebuch",
+        "wrong": [
+          "ein Sänger",
+          "die Ferien, der Urlaub",
+          "ein Bahnhof"
+        ],
+        "why": "„un journal“ heißt eine Zeitung; Tagebuch. Der Plural ist unregelmäßig: des journaux. Je nach Satz kann journal auch Tagebuch heißen.",
+        "w": 5,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Mon père lit un journal le matin."
+      },
+      {
+        "q": "Wie heißt „eine Zeitung; Tagebuch“ auf Französisch?",
+        "a": "un journal",
+        "wrong": [
+          "enfin",
+          "oublier",
+          "rester"
+        ],
+        "why": "„un journal“ heißt eine Zeitung; Tagebuch. Der Plural ist unregelmäßig: des journaux. Je nach Satz kann journal auch Tagebuch heißen.",
+        "w": 5,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "die Ferien",
+        "kind": "gap",
+        "s": "Nous allons à Paris pendant ___ .",
+        "a": "les vacances",
+        "wrong": [
+          "les vacance",
+          "la vacances",
+          "le vacances"
+        ],
+        "why": "„les vacances“ heißt die Ferien, der Urlaub. Das Wort steht immer im Plural: les vacances. Es gibt kein „une vacance“ für Ferien.",
+        "w": 6
+      },
+      {
+        "q": "Was bedeutet „les vacances“?",
+        "a": "die Ferien, der Urlaub",
+        "wrong": [
+          "mit jemandem telefonieren, jemanden anrufen",
+          "ein Bahnhof",
+          "schließlich, endlich"
+        ],
+        "why": "„les vacances“ heißt die Ferien, der Urlaub. Das Wort steht immer im Plural: les vacances. Es gibt kein „une vacance“ für Ferien.",
+        "w": 6,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Nous allons à Paris pendant les vacances ."
+      },
+      {
+        "q": "Wie heißt „die Ferien, der Urlaub“ auf Französisch?",
+        "a": "les vacances",
+        "wrong": [
+          "un problème",
+          "l'arrivée",
+          "un journal"
+        ],
+        "why": "„les vacances“ heißt die Ferien, der Urlaub. Das Wort steht immer im Plural: les vacances. Es gibt kein „une vacance“ für Ferien.",
+        "w": 6,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "der Bahnhof",
+        "kind": "gap",
+        "s": "Le train part de ___ .",
+        "a": "la gare",
+        "wrong": [
+          "le gare",
+          "la gar",
+          "la garre"
+        ],
+        "why": "„une gare“ heißt ein Bahnhof. Der Bahnhof ist im Französischen weiblich: la gare. Im Deutschen ist er männlich, das ist eine typische Falle.",
+        "w": 7
+      },
+      {
+        "q": "Was bedeutet „une gare“?",
+        "a": "ein Bahnhof",
+        "wrong": [
+          "ein Gedicht",
+          "ein Sänger",
+          "mit jemandem telefonieren, jemanden anrufen"
+        ],
+        "why": "„une gare“ heißt ein Bahnhof. Der Bahnhof ist im Französischen weiblich: la gare. Im Deutschen ist er männlich, das ist eine typische Falle.",
+        "w": 7,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Le train part de la gare ."
+      },
+      {
+        "q": "Wie heißt „ein Bahnhof“ auf Französisch?",
+        "a": "une gare",
+        "wrong": [
+          "hier",
+          "un poème",
+          "l'arrivée"
+        ],
+        "why": "„une gare“ heißt ein Bahnhof. Der Bahnhof ist im Französischen weiblich: la gare. Im Deutschen ist er männlich, das ist eine typische Falle.",
+        "w": 7,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "Sängerin",
+        "kind": "gap",
+        "s": "Ma tante est ___ .",
+        "a": "chanteuse",
+        "wrong": [
+          "chanteur",
+          "chanteuses",
+          "chanteure"
+        ],
+        "why": "„un chanteur“ heißt ein Sänger. Das Wort gehört zu chanter und la chanson. Die weibliche Form ist une chanteuse.",
+        "w": 8
+      },
+      {
+        "q": "Was bedeutet „un chanteur“?",
+        "a": "ein Sänger",
+        "wrong": [
+          "ein Hut",
+          "ein Gedicht",
+          "gestern"
+        ],
+        "why": "„un chanteur“ heißt ein Sänger. Das Wort gehört zu chanter und la chanson. Die weibliche Form ist une chanteuse.",
+        "w": 8,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Ma tante est chanteuse ."
+      },
+      {
+        "q": "Wie heißt „ein Sänger“ auf Französisch?",
+        "a": "un chanteur",
+        "wrong": [
+          "un problème",
+          "une gare",
+          "les vacances"
+        ],
+        "why": "„un chanteur“ heißt ein Sänger. Das Wort gehört zu chanter und la chanson. Die weibliche Form ist une chanteuse.",
+        "w": 8,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "vergessen (er vergisst)",
+        "kind": "gap",
+        "s": "Il ___ toujours son chapeau.",
+        "a": "oublie",
+        "wrong": [
+          "oublies",
+          "oublier",
+          "oublions"
+        ],
+        "why": "„oublier“ heißt etwas vergessen. oublier gehört zu den regelmäßigen -er-Verben: j'oublie, tu oublies, il oublie.",
+        "w": 9
+      },
+      {
+        "q": "Was bedeutet „oublier“?",
+        "a": "etwas vergessen",
+        "wrong": [
+          "gestern",
+          "mit jemandem telefonieren, jemanden anrufen",
+          "ein Bahnhof"
+        ],
+        "why": "„oublier“ heißt etwas vergessen. oublier gehört zu den regelmäßigen -er-Verben: j'oublie, tu oublies, il oublie.",
+        "w": 9,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Il oublie toujours son chapeau."
+      },
+      {
+        "q": "Wie heißt „etwas vergessen“ auf Französisch?",
+        "a": "oublier",
+        "wrong": [
+          "rester",
+          "peut-être",
+          "téléphoner"
+        ],
+        "why": "„oublier“ heißt etwas vergessen. oublier gehört zu den regelmäßigen -er-Verben: j'oublie, tu oublies, il oublie.",
+        "w": 9,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "ein Hut",
+        "kind": "gap",
+        "s": "Paul a ___ noir.",
+        "a": "un chapeau",
+        "wrong": [
+          "une chapeau",
+          "un chapeaux",
+          "un chapo"
+        ],
+        "why": "„un chapeau“ heißt ein Hut. Der Plural endet auf -x: des chapeaux. Chapeau ! heißt „Hut ab!“.",
+        "w": 10
+      },
+      {
+        "q": "Was bedeutet „un chapeau“?",
+        "a": "ein Hut",
+        "wrong": [
+          "schließlich, endlich",
+          "ein Bahnhof",
+          "ein Gedicht"
+        ],
+        "why": "„un chapeau“ heißt ein Hut. Der Plural endet auf -x: des chapeaux. Chapeau ! heißt „Hut ab!“.",
+        "w": 10,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Paul a un chapeau noir."
+      },
+      {
+        "q": "Wie heißt „ein Hut“ auf Französisch?",
+        "a": "un chapeau",
+        "wrong": [
+          "téléphoner",
+          "rester",
+          "les vacances"
+        ],
+        "why": "„un chapeau“ heißt ein Hut. Der Plural endet auf -x: des chapeaux. Chapeau ! heißt „Hut ab!“.",
+        "w": 10,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "ein Gedicht",
+        "kind": "gap",
+        "s": "Léa écrit ___ pour son père.",
+        "a": "un poème",
+        "wrong": [
+          "une poème",
+          "un poeme",
+          "un poême"
+        ],
+        "why": "„un poème“ heißt ein Gedicht. Wie problème endet poème auf -ème und ist trotzdem männlich: un poème.",
+        "w": 11
+      },
+      {
+        "q": "Was bedeutet „un poème“?",
+        "a": "ein Gedicht",
+        "wrong": [
+          "die Ankunft",
+          "ein Hut",
+          "eine Zeitung; Tagebuch"
+        ],
+        "why": "„un poème“ heißt ein Gedicht. Wie problème endet poème auf -ème und ist trotzdem männlich: un poème.",
+        "w": 11,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Léa écrit un poème pour son père."
+      },
+      {
+        "q": "Wie heißt „ein Gedicht“ auf Französisch?",
+        "a": "un poème",
+        "wrong": [
+          "téléphoner",
+          "hier",
+          "les vacances"
+        ],
+        "why": "„un poème“ heißt ein Gedicht. Wie problème endet poème auf -ème und ist trotzdem männlich: un poème.",
+        "w": 11,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "endlich, schließlich",
+        "kind": "gap",
+        "s": "Nous sommes ___ à Paris !",
+        "a": "enfin",
+        "wrong": [
+          "hier",
+          "surtout",
+          "très"
+        ],
+        "why": "„enfin“ heißt schließlich, endlich. enfin kann endlich oder schließlich heißen, je nach Satz.",
+        "w": 12
+      },
+      {
+        "q": "Was bedeutet „enfin“?",
+        "a": "schließlich, endlich",
+        "wrong": [
+          "ein Sänger",
+          "vielleicht",
+          "die Ankunft"
+        ],
+        "why": "„enfin“ heißt schließlich, endlich. enfin kann endlich oder schließlich heißen, je nach Satz.",
+        "w": 12,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Nous sommes enfin à Paris !"
+      },
+      {
+        "q": "Wie heißt „schließlich, endlich“ auf Französisch?",
+        "a": "enfin",
+        "wrong": [
+          "l'arrivée",
+          "un chapeau",
+          "hier"
+        ],
+        "why": "„enfin“ heißt schließlich, endlich. enfin kann endlich oder schließlich heißen, je nach Satz.",
+        "w": 12,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "vielleicht",
+        "kind": "gap",
+        "s": "– Tu viens demain ? – ___ .",
+        "a": "Peut-être",
+        "wrong": [
+          "Surtout",
+          "Enfin",
+          "Déjà"
+        ],
+        "why": "„peut-être“ heißt vielleicht. peut-être schreibst du mit Bindestrich und mit ê.",
+        "w": 13,
+        "accept": [
+          "peut être"
+        ]
+      },
+      {
+        "q": "Was bedeutet „peut-être“?",
+        "a": "vielleicht",
+        "wrong": [
+          "die Ferien, der Urlaub",
+          "eine Zeitung; Tagebuch",
+          "etwas vergessen"
+        ],
+        "why": "„peut-être“ heißt vielleicht. peut-être schreibst du mit Bindestrich und mit ê.",
+        "w": 13,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: – Tu viens demain ? – Peut-être ."
+      },
+      {
+        "q": "Wie heißt „vielleicht“ auf Französisch?",
+        "a": "peut-être",
+        "wrong": [
+          "un journal",
+          "enfin",
+          "une gare"
+        ],
+        "why": "„peut-être“ heißt vielleicht. peut-être schreibst du mit Bindestrich und mit ê.",
+        "w": 13,
+        "label": "Deutsch → Französisch"
+      }
+    ],
+    "u6-eigenschaften": [
+      {
+        "q": "letzter (männlich)",
+        "kind": "gap",
+        "s": "Samedi ___, il a fait beau à Paris.",
+        "a": "dernier",
+        "wrong": [
+          "dernière",
+          "derniers",
+          "dernières"
+        ],
+        "why": "„dernier / dernière“ heißt letzter / letzte / letztes. samedi dernier heißt letzten Samstag. Samedi ist männlich, deshalb steht dernier ohne -e.",
+        "w": 0
+      },
+      {
+        "q": "Was bedeutet „dernier / dernière“?",
+        "a": "letzter / letzte / letztes",
+        "wrong": [
+          "hübsch, nett",
+          "lang",
+          "sehr"
+        ],
+        "why": "„dernier / dernière“ heißt letzter / letzte / letztes. samedi dernier heißt letzten Samstag. Samedi ist männlich, deshalb steht dernier ohne -e.",
+        "w": 0,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Samedi dernier, il a fait beau à Paris."
+      },
+      {
+        "q": "Wie heißt „letzter / letzte / letztes“ auf Französisch?",
+        "a": "dernier / dernière",
+        "wrong": [
+          "intéressant / intéressante",
+          "joli / jolie",
+          "bon / bonne"
+        ],
+        "why": "„dernier / dernière“ heißt letzter / letzte / letztes. samedi dernier heißt letzten Samstag. Samedi ist männlich, deshalb steht dernier ohne -e.",
+        "w": 0,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "zufrieden (weiblich)",
+        "kind": "gap",
+        "s": "Léa est ___ : elle a une jolie robe.",
+        "a": "contente",
+        "wrong": [
+          "content",
+          "contents",
+          "contentes"
+        ],
+        "why": "„content / contente“ heißt zufrieden. Léa ist ein Mädchen, also steht die weibliche Form contente. Im Femininum hörst du das t.",
+        "w": 1
+      },
+      {
+        "q": "Was bedeutet „content / contente“?",
+        "a": "zufrieden",
+        "wrong": [
+          "klein",
+          "hübsch, nett",
+          "interessant"
+        ],
+        "why": "„content / contente“ heißt zufrieden. Léa ist ein Mädchen, also steht die weibliche Form contente. Im Femininum hörst du das t.",
+        "w": 1,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Léa est contente : elle a une jolie robe."
+      },
+      {
+        "q": "Wie heißt „zufrieden“ auf Französisch?",
+        "a": "content / contente",
+        "wrong": [
+          "petit / petite",
+          "très",
+          "intéressant / intéressante"
+        ],
+        "why": "„content / contente“ heißt zufrieden. Léa ist ein Mädchen, also steht die weibliche Form contente. Im Femininum hörst du das t.",
+        "w": 1,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "traurig",
+        "kind": "gap",
+        "s": "Paul est ___ : il pleut.",
+        "a": "triste",
+        "wrong": [
+          "tristes",
+          "trist",
+          "tristte"
+        ],
+        "why": "„triste“ heißt traurig. triste endet schon auf -e. Deshalb ist die männliche Form gleich der weiblichen: un garçon triste, une fille triste.",
+        "w": 2
+      },
+      {
+        "q": "Was bedeutet „triste“?",
+        "a": "traurig",
+        "wrong": [
+          "lang",
+          "klein",
+          "gut"
+        ],
+        "why": "„triste“ heißt traurig. triste endet schon auf -e. Deshalb ist die männliche Form gleich der weiblichen: un garçon triste, une fille triste.",
+        "w": 2,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Paul est triste : il pleut."
+      },
+      {
+        "q": "Wie heißt „traurig“ auf Französisch?",
+        "a": "triste",
+        "wrong": [
+          "dernier / dernière",
+          "content / contente",
+          "petit / petite"
+        ],
+        "why": "„triste“ heißt traurig. triste endet schon auf -e. Deshalb ist die männliche Form gleich der weiblichen: un garçon triste, une fille triste.",
+        "w": 2,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "interessant (männlich)",
+        "kind": "gap",
+        "s": "Ce reportage est très ___ .",
+        "a": "intéressant",
+        "wrong": [
+          "intéressante",
+          "intéressants",
+          "intéressantes"
+        ],
+        "why": "„intéressant / intéressante“ heißt interessant. reportage ist männlich, also steht intéressant ohne -e. Achte auf die Schreibung mit zwei s und é.",
+        "w": 3
+      },
+      {
+        "q": "Was bedeutet „intéressant / intéressante“?",
+        "a": "interessant",
+        "wrong": [
+          "gut",
+          "lang",
+          "sehr"
+        ],
+        "why": "„intéressant / intéressante“ heißt interessant. reportage ist männlich, also steht intéressant ohne -e. Achte auf die Schreibung mit zwei s und é.",
+        "w": 3,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Ce reportage est très intéressant ."
+      },
+      {
+        "q": "Wie heißt „interessant“ auf Französisch?",
+        "a": "intéressant / intéressante",
+        "wrong": [
+          "triste",
+          "petit / petite",
+          "dernier / dernière"
+        ],
+        "why": "„intéressant / intéressante“ heißt interessant. reportage ist männlich, also steht intéressant ohne -e. Achte auf die Schreibung mit zwei s und é.",
+        "w": 3,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "sehr",
+        "kind": "gap",
+        "s": "Il est ___ grand.",
+        "a": "très",
+        "wrong": [
+          "trop",
+          "tout",
+          "tres"
+        ],
+        "why": "„très“ heißt sehr. très hat einen Accent grave und steht vor Adjektiven: très grand, très content.",
+        "w": 4
+      },
+      {
+        "q": "Was bedeutet „très“?",
+        "a": "sehr",
+        "wrong": [
+          "lang",
+          "gut",
+          "letzter / letzte / letztes"
+        ],
+        "why": "„très“ heißt sehr. très hat einen Accent grave und steht vor Adjektiven: très grand, très content.",
+        "w": 4,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Il est très grand."
+      },
+      {
+        "q": "Wie heißt „sehr“ auf Französisch?",
+        "a": "très",
+        "wrong": [
+          "intéressant / intéressante",
+          "joli / jolie",
+          "long / longue"
+        ],
+        "why": "„très“ heißt sehr. très hat einen Accent grave und steht vor Adjektiven: très grand, très content.",
+        "w": 4,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "gut (männlich)",
+        "kind": "gap",
+        "s": "Le café est ___ .",
+        "a": "bon",
+        "wrong": [
+          "bonne",
+          "bons",
+          "bonnes"
+        ],
+        "why": "„bon / bonne“ heißt gut. café ist männlich, also bon. Beim weiblichen bonne sprichst du das n: [bɔn].",
+        "w": 5
+      },
+      {
+        "q": "Was bedeutet „bon / bonne“?",
+        "a": "gut",
+        "wrong": [
+          "hübsch, nett",
+          "lang",
+          "sehr"
+        ],
+        "why": "„bon / bonne“ heißt gut. café ist männlich, also bon. Beim weiblichen bonne sprichst du das n: [bɔn].",
+        "w": 5,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Le café est bon ."
+      },
+      {
+        "q": "Wie heißt „gut“ auf Französisch?",
+        "a": "bon / bonne",
+        "wrong": [
+          "content / contente",
+          "petit / petite",
+          "dernier / dernière"
+        ],
+        "why": "„bon / bonne“ heißt gut. café ist männlich, also bon. Beim weiblichen bonne sprichst du das n: [bɔn].",
+        "w": 5,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "klein (weiblich)",
+        "kind": "gap",
+        "s": "Ma ___ sœur a quatre ans.",
+        "a": "petite",
+        "wrong": [
+          "petit",
+          "petits",
+          "petites"
+        ],
+        "why": "„petit / petite“ heißt klein. sœur ist weiblich, also petite. petit steht meist vor dem Nomen: mon petit frère, ma petite sœur.",
+        "w": 6
+      },
+      {
+        "q": "Was bedeutet „petit / petite“?",
+        "a": "klein",
+        "wrong": [
+          "lang",
+          "sehr",
+          "gut"
+        ],
+        "why": "„petit / petite“ heißt klein. sœur ist weiblich, also petite. petit steht meist vor dem Nomen: mon petit frère, ma petite sœur.",
+        "w": 6,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Ma petite sœur a quatre ans."
+      },
+      {
+        "q": "Wie heißt „klein“ auf Französisch?",
+        "a": "petit / petite",
+        "wrong": [
+          "long / longue",
+          "content / contente",
+          "bon / bonne"
+        ],
+        "why": "„petit / petite“ heißt klein. sœur ist weiblich, also petite. petit steht meist vor dem Nomen: mon petit frère, ma petite sœur.",
+        "w": 6,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "hübsch (weiblich)",
+        "kind": "gap",
+        "s": "Léa a une ___ robe.",
+        "a": "jolie",
+        "wrong": [
+          "joli",
+          "jolis",
+          "jolies"
+        ],
+        "why": "„joli / jolie“ heißt hübsch, nett. robe ist weiblich, also jolie. Männlich und weiblich klingen gleich, nur die Schreibung ändert sich.",
+        "w": 7
+      },
+      {
+        "q": "Was bedeutet „joli / jolie“?",
+        "a": "hübsch, nett",
+        "wrong": [
+          "sehr",
+          "interessant",
+          "lang"
+        ],
+        "why": "„joli / jolie“ heißt hübsch, nett. robe ist weiblich, also jolie. Männlich und weiblich klingen gleich, nur die Schreibung ändert sich.",
+        "w": 7,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Léa a une jolie robe."
+      },
+      {
+        "q": "Wie heißt „hübsch, nett“ auf Französisch?",
+        "a": "joli / jolie",
+        "wrong": [
+          "dernier / dernière",
+          "content / contente",
+          "bon / bonne"
+        ],
+        "why": "„joli / jolie“ heißt hübsch, nett. robe ist weiblich, also jolie. Männlich und weiblich klingen gleich, nur die Schreibung ändert sich.",
+        "w": 7,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "lang (weiblich)",
+        "kind": "gap",
+        "s": "La jupe de Léa est ___ .",
+        "a": "longue",
+        "wrong": [
+          "long",
+          "longs",
+          "longues"
+        ],
+        "why": "„long / longue“ heißt lang. Das weibliche longue endet auf -gue, damit das g hörbar bleibt: [lɔ̃g].",
+        "w": 8
+      },
+      {
+        "q": "Was bedeutet „long / longue“?",
+        "a": "lang",
+        "wrong": [
+          "letzter / letzte / letztes",
+          "klein",
+          "sehr"
+        ],
+        "why": "„long / longue“ heißt lang. Das weibliche longue endet auf -gue, damit das g hörbar bleibt: [lɔ̃g].",
+        "w": 8,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: La jupe de Léa est longue ."
+      },
+      {
+        "q": "Wie heißt „lang“ auf Französisch?",
+        "a": "long / longue",
+        "wrong": [
+          "joli / jolie",
+          "intéressant / intéressante",
+          "très"
+        ],
+        "why": "„long / longue“ heißt lang. Das weibliche longue endet auf -gue, damit das g hörbar bleibt: [lɔ̃g].",
+        "w": 8,
+        "label": "Deutsch → Französisch"
+      }
+    ],
+    "u6-farben": [
+      {
+        "q": "Farbe",
+        "kind": "gap",
+        "s": "J'aime la ___ bleue.",
+        "a": "couleur",
+        "wrong": [
+          "colour",
+          "couleure",
+          "coleur"
+        ],
+        "why": "„une couleur“ heißt eine Farbe. Im Englischen heißt es colour, im Französischen couleur. Es ist weiblich: une couleur.",
+        "w": 0
+      },
+      {
+        "q": "Was bedeutet „une couleur“?",
+        "a": "eine Farbe",
+        "wrong": [
+          "schwarz",
+          "grün",
+          "rot"
+        ],
+        "why": "„une couleur“ heißt eine Farbe. Im Englischen heißt es colour, im Französischen couleur. Es ist weiblich: une couleur.",
+        "w": 0,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: J'aime la couleur bleue."
+      },
+      {
+        "q": "Wie heißt „eine Farbe“ auf Französisch?",
+        "a": "une couleur",
+        "wrong": [
+          "blanc / blanche",
+          "jaune",
+          "gris / grise"
+        ],
+        "why": "„une couleur“ heißt eine Farbe. Im Englischen heißt es colour, im Französischen couleur. Es ist weiblich: une couleur.",
+        "w": 0,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "blau (weiblich)",
+        "kind": "gap",
+        "s": "La mer est ___ .",
+        "a": "bleue",
+        "wrong": [
+          "bleu",
+          "bleus",
+          "bleues"
+        ],
+        "why": "„bleu / bleue“ heißt blau. Bleu und bleue sprichst du gleich aus. Nur die Schreibung zeigt, ob es männlich oder weiblich ist.",
+        "w": 1
+      },
+      {
+        "q": "Was bedeutet „bleu / bleue“?",
+        "a": "blau",
+        "wrong": [
+          "eine Farbe",
+          "rot",
+          "grün"
+        ],
+        "why": "„bleu / bleue“ heißt blau. Bleu und bleue sprichst du gleich aus. Nur die Schreibung zeigt, ob es männlich oder weiblich ist.",
+        "w": 1,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: La mer est bleue ."
+      },
+      {
+        "q": "Wie heißt „blau“ auf Französisch?",
+        "a": "bleu / bleue",
+        "wrong": [
+          "blanc / blanche",
+          "rouge",
+          "une couleur"
+        ],
+        "why": "„bleu / bleue“ heißt blau. Bleu und bleue sprichst du gleich aus. Nur die Schreibung zeigt, ob es männlich oder weiblich ist.",
+        "w": 1,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "weiß (weiblich)",
+        "kind": "gap",
+        "s": "Léa a une chemise ___ .",
+        "a": "blanche",
+        "wrong": [
+          "blanc",
+          "blanches",
+          "blance"
+        ],
+        "why": "„blanc / blanche“ heißt weiß. Das weibliche blanche endet auf -che, und du sprichst das [ʃ] am Ende.",
+        "w": 2
+      },
+      {
+        "q": "Was bedeutet „blanc / blanche“?",
+        "a": "weiß",
+        "wrong": [
+          "eine Farbe",
+          "blau",
+          "rot"
+        ],
+        "why": "„blanc / blanche“ heißt weiß. Das weibliche blanche endet auf -che, und du sprichst das [ʃ] am Ende.",
+        "w": 2,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Léa a une chemise blanche ."
+      },
+      {
+        "q": "Wie heißt „weiß“ auf Französisch?",
+        "a": "blanc / blanche",
+        "wrong": [
+          "bleu / bleue",
+          "noir / noire",
+          "jaune"
+        ],
+        "why": "„blanc / blanche“ heißt weiß. Das weibliche blanche endet auf -che, und du sprichst das [ʃ] am Ende.",
+        "w": 2,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "rot (weiblich, Plural)",
+        "kind": "gap",
+        "s": "Mes chaussures sont ___ .",
+        "a": "rouges",
+        "wrong": [
+          "rouge",
+          "rougee",
+          "rougues"
+        ],
+        "why": "„rouge“ heißt rot. rouge endet auf -e und bleibt im Singular gleich. Im Plural kommt ein -s dazu: des chaussures rouges.",
+        "w": 3
+      },
+      {
+        "q": "Was bedeutet „rouge“?",
+        "a": "rot",
+        "wrong": [
+          "gelb",
+          "grau",
+          "grün"
+        ],
+        "why": "„rouge“ heißt rot. rouge endet auf -e und bleibt im Singular gleich. Im Plural kommt ein -s dazu: des chaussures rouges.",
+        "w": 3,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Mes chaussures sont rouges ."
+      },
+      {
+        "q": "Wie heißt „rot“ auf Französisch?",
+        "a": "rouge",
+        "wrong": [
+          "une couleur",
+          "jaune",
+          "vert / verte"
+        ],
+        "why": "„rouge“ heißt rot. rouge endet auf -e und bleibt im Singular gleich. Im Plural kommt ein -s dazu: des chaussures rouges.",
+        "w": 3,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "gelb (männlich, Singular)",
+        "kind": "gap",
+        "s": "Le t-shirt de Paul est ___ .",
+        "a": "jaune",
+        "wrong": [
+          "jaunes",
+          "jaun",
+          "jaunne"
+        ],
+        "why": "„jaune“ heißt gelb. jaune endet auf -e. Im Singular ist es männlich und weiblich gleich, im Plural kommt -s dazu.",
+        "w": 4
+      },
+      {
+        "q": "Was bedeutet „jaune“?",
+        "a": "gelb",
+        "wrong": [
+          "weiß",
+          "eine Farbe",
+          "rot"
+        ],
+        "why": "„jaune“ heißt gelb. jaune endet auf -e. Im Singular ist es männlich und weiblich gleich, im Plural kommt -s dazu.",
+        "w": 4,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Le t-shirt de Paul est jaune ."
+      },
+      {
+        "q": "Wie heißt „gelb“ auf Französisch?",
+        "a": "jaune",
+        "wrong": [
+          "vert / verte",
+          "bleu / bleue",
+          "gris / grise"
+        ],
+        "why": "„jaune“ heißt gelb. jaune endet auf -e. Im Singular ist es männlich und weiblich gleich, im Plural kommt -s dazu.",
+        "w": 4,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "schwarz (weiblich)",
+        "kind": "gap",
+        "s": "Léa a une jupe ___ .",
+        "a": "noire",
+        "wrong": [
+          "noir",
+          "noirs",
+          "noires"
+        ],
+        "why": "„noir / noire“ heißt schwarz. noir und noire klingen gleich [nwaʁ]. Nur die Schreibung zeigt das Geschlecht.",
+        "w": 5
+      },
+      {
+        "q": "Was bedeutet „noir / noire“?",
+        "a": "schwarz",
+        "wrong": [
+          "rot",
+          "eine Farbe",
+          "weiß"
+        ],
+        "why": "„noir / noire“ heißt schwarz. noir und noire klingen gleich [nwaʁ]. Nur die Schreibung zeigt das Geschlecht.",
+        "w": 5,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Léa a une jupe noire ."
+      },
+      {
+        "q": "Wie heißt „schwarz“ auf Französisch?",
+        "a": "noir / noire",
+        "wrong": [
+          "blanc / blanche",
+          "bleu / bleue",
+          "jaune"
+        ],
+        "why": "„noir / noire“ heißt schwarz. noir und noire klingen gleich [nwaʁ]. Nur die Schreibung zeigt das Geschlecht.",
+        "w": 5,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "grau (männlich)",
+        "kind": "gap",
+        "s": "Paul a un pantalon ___ .",
+        "a": "gris",
+        "wrong": [
+          "grise",
+          "grises",
+          "griss"
+        ],
+        "why": "„gris / grise“ heißt grau. Beim weiblichen grise klingt das s wie ein weiches [z]: [gʁiz].",
+        "w": 6
+      },
+      {
+        "q": "Was bedeutet „gris / grise“?",
+        "a": "grau",
+        "wrong": [
+          "rot",
+          "grün",
+          "blau"
+        ],
+        "why": "„gris / grise“ heißt grau. Beim weiblichen grise klingt das s wie ein weiches [z]: [gʁiz].",
+        "w": 6,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Paul a un pantalon gris ."
+      },
+      {
+        "q": "Wie heißt „grau“ auf Französisch?",
+        "a": "gris / grise",
+        "wrong": [
+          "jaune",
+          "blanc / blanche",
+          "vert / verte"
+        ],
+        "why": "„gris / grise“ heißt grau. Beim weiblichen grise klingt das s wie ein weiches [z]: [gʁiz].",
+        "w": 6,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "grün (weiblich)",
+        "kind": "gap",
+        "s": "La salade est ___ .",
+        "a": "verte",
+        "wrong": [
+          "vert",
+          "verts",
+          "vertes"
+        ],
+        "why": "„vert / verte“ heißt grün. salade ist weiblich, also verte. Beim weiblichen verte sprichst du das t am Ende.",
+        "w": 7
+      },
+      {
+        "q": "Was bedeutet „vert / verte“?",
+        "a": "grün",
+        "wrong": [
+          "schwarz",
+          "gelb",
+          "blau"
+        ],
+        "why": "„vert / verte“ heißt grün. salade ist weiblich, also verte. Beim weiblichen verte sprichst du das t am Ende.",
+        "w": 7,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: La salade est verte ."
+      },
+      {
+        "q": "Wie heißt „grün“ auf Französisch?",
+        "a": "vert / verte",
+        "wrong": [
+          "bleu / bleue",
+          "blanc / blanche",
+          "une couleur"
+        ],
+        "why": "„vert / verte“ heißt grün. salade ist weiblich, also verte. Beim weiblichen verte sprichst du das t am Ende.",
+        "w": 7,
+        "label": "Deutsch → Französisch"
+      }
+    ],
+    "u6-kleidung": [
+      {
+        "q": "ein Kleidungsstück",
+        "kind": "gap",
+        "s": "Un pull est ___ .",
+        "a": "un vêtement",
+        "wrong": [
+          "une vêtement",
+          "un vetement",
+          "un vêtements"
+        ],
+        "why": "„un vêtement“ heißt ein Kleidungsstück. vêtement steht für jedes einzelne Kleidungsstück. Der Plural les vêtements heißt die Kleidung.",
+        "w": 0
+      },
+      {
+        "q": "Was bedeutet „un vêtement“?",
+        "a": "ein Kleidungsstück",
+        "wrong": [
+          "die Schuhe",
+          "eine Jacke",
+          "Shorts"
+        ],
+        "why": "„un vêtement“ heißt ein Kleidungsstück. vêtement steht für jedes einzelne Kleidungsstück. Der Plural les vêtements heißt die Kleidung.",
+        "w": 0,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Un pull est un vêtement ."
+      },
+      {
+        "q": "Wie heißt „ein Kleidungsstück“ auf Französisch?",
+        "a": "un vêtement",
+        "wrong": [
+          "un sweat",
+          "un pantalon",
+          "une chemise"
+        ],
+        "why": "„un vêtement“ heißt ein Kleidungsstück. vêtement steht für jedes einzelne Kleidungsstück. Der Plural les vêtements heißt die Kleidung.",
+        "w": 0,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "eine Hose",
+        "kind": "gap",
+        "s": "Paul a ___ gris.",
+        "a": "un pantalon",
+        "wrong": [
+          "une pantalon",
+          "un pantallon",
+          "un pantalons"
+        ],
+        "why": "„un pantalon“ heißt eine Hose. Im Deutschen ist die Hose weiblich, im Französischen männlich: un pantalon.",
+        "w": 1
+      },
+      {
+        "q": "Was bedeutet „un pantalon“?",
+        "a": "eine Hose",
+        "wrong": [
+          "ein Blouson",
+          "ein Hemd",
+          "ein T-Shirt"
+        ],
+        "why": "„un pantalon“ heißt eine Hose. Im Deutschen ist die Hose weiblich, im Französischen männlich: un pantalon.",
+        "w": 1,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Paul a un pantalon gris."
+      },
+      {
+        "q": "Wie heißt „eine Hose“ auf Französisch?",
+        "a": "un pantalon",
+        "wrong": [
+          "un pull",
+          "les chaussures",
+          "un blouson"
+        ],
+        "why": "„un pantalon“ heißt eine Hose. Im Deutschen ist die Hose weiblich, im Französischen männlich: un pantalon.",
+        "w": 1,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "eine Jeans",
+        "kind": "gap",
+        "s": "Mon frère a ___ bleu.",
+        "a": "un jean",
+        "wrong": [
+          "une jean",
+          "un jin",
+          "un geans"
+        ],
+        "why": "„un jean“ heißt eine Jeans. Im Französischen sagt man im Singular un jean. Der Plural des jeans meint mehrere Hosen.",
+        "w": 2
+      },
+      {
+        "q": "Was bedeutet „un jean“?",
+        "a": "eine Jeans",
+        "wrong": [
+          "Turnschuhe",
+          "ein Anorak",
+          "Shorts"
+        ],
+        "why": "„un jean“ heißt eine Jeans. Im Französischen sagt man im Singular un jean. Der Plural des jeans meint mehrere Hosen.",
+        "w": 2,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Mon frère a un jean bleu."
+      },
+      {
+        "q": "Wie heißt „eine Jeans“ auf Französisch?",
+        "a": "un jean",
+        "wrong": [
+          "des baskets",
+          "un pantalon",
+          "une jupe"
+        ],
+        "why": "„un jean“ heißt eine Jeans. Im Französischen sagt man im Singular un jean. Der Plural des jeans meint mehrere Hosen.",
+        "w": 2,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "Turnschuhe",
+        "kind": "gap",
+        "s": "Léa a ___ blanches.",
+        "a": "des baskets",
+        "wrong": [
+          "un basket",
+          "des basket",
+          "une baskets"
+        ],
+        "why": "„une basket / des baskets“ heißt Turnschuhe. baskets steht meistens im Plural: des baskets (f.). Das Wort ist weiblich, deshalb blanches.",
+        "w": 3
+      },
+      {
+        "q": "Was bedeutet „une basket / des baskets“?",
+        "a": "Turnschuhe",
+        "wrong": [
+          "eine Jeans",
+          "Shorts",
+          "eine Hose"
+        ],
+        "why": "„une basket / des baskets“ heißt Turnschuhe. baskets steht meistens im Plural: des baskets (f.). Das Wort ist weiblich, deshalb blanches.",
+        "w": 3,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Léa a des baskets blanches."
+      },
+      {
+        "q": "Wie heißt „Turnschuhe“ auf Französisch?",
+        "a": "des baskets",
+        "wrong": [
+          "un anorak",
+          "une veste",
+          "un blouson"
+        ],
+        "why": "„une basket / des baskets“ heißt Turnschuhe. baskets steht meistens im Plural: des baskets (f.). Das Wort ist weiblich, deshalb blanches.",
+        "w": 3,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "ein Rock",
+        "kind": "gap",
+        "s": "Elle a ___ noire.",
+        "a": "une jupe",
+        "wrong": [
+          "un jupe",
+          "une jup",
+          "une jupes"
+        ],
+        "why": "„une jupe“ heißt ein Rock. jupe ist weiblich: une jupe. Das e am Ende gehört dazu.",
+        "w": 4
+      },
+      {
+        "q": "Was bedeutet „une jupe“?",
+        "a": "ein Rock",
+        "wrong": [
+          "Shorts",
+          "ein Blouson",
+          "ein Pulli"
+        ],
+        "why": "„une jupe“ heißt ein Rock. jupe ist weiblich: une jupe. Das e am Ende gehört dazu.",
+        "w": 4,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Elle a une jupe noire."
+      },
+      {
+        "q": "Wie heißt „ein Rock“ auf Französisch?",
+        "a": "une jupe",
+        "wrong": [
+          "un t-shirt",
+          "un blouson",
+          "un jean"
+        ],
+        "why": "„une jupe“ heißt ein Rock. jupe ist weiblich: une jupe. Das e am Ende gehört dazu.",
+        "w": 4,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "ein Kleid",
+        "kind": "gap",
+        "s": "Inès a ___ verte.",
+        "a": "une robe",
+        "wrong": [
+          "un robe",
+          "une rob",
+          "une robbe"
+        ],
+        "why": "„une robe“ heißt ein Kleid. robe ist weiblich. Nur ein b, und am Ende steht ein e: une robe.",
+        "w": 5
+      },
+      {
+        "q": "Was bedeutet „une robe“?",
+        "a": "ein Kleid",
+        "wrong": [
+          "eine Hose",
+          "ein Anorak",
+          "ein Kleidungsstück"
+        ],
+        "why": "„une robe“ heißt ein Kleid. robe ist weiblich. Nur ein b, und am Ende steht ein e: une robe.",
+        "w": 5,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Inès a une robe verte."
+      },
+      {
+        "q": "Wie heißt „ein Kleid“ auf Französisch?",
+        "a": "une robe",
+        "wrong": [
+          "une chemise",
+          "des baskets",
+          "un pull"
+        ],
+        "why": "„une robe“ heißt ein Kleid. robe ist weiblich. Nur ein b, und am Ende steht ein e: une robe.",
+        "w": 5,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "ein Anorak",
+        "kind": "gap",
+        "s": "Il pleut : Paul a ___ jaune.",
+        "a": "un anorak",
+        "wrong": [
+          "une anorak",
+          "un anorack",
+          "un anorac"
+        ],
+        "why": "„un anorak“ heißt ein Anorak. anorak ist männlich und wird mit k geschrieben, wie im Deutschen: un anorak.",
+        "w": 6
+      },
+      {
+        "q": "Was bedeutet „un anorak“?",
+        "a": "ein Anorak",
+        "wrong": [
+          "Turnschuhe",
+          "ein Pulli",
+          "ein Kleidungsstück"
+        ],
+        "why": "„un anorak“ heißt ein Anorak. anorak ist männlich und wird mit k geschrieben, wie im Deutschen: un anorak.",
+        "w": 6,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Il pleut : Paul a un anorak jaune."
+      },
+      {
+        "q": "Wie heißt „ein Anorak“ auf Französisch?",
+        "a": "un anorak",
+        "wrong": [
+          "les chaussures",
+          "une robe",
+          "un blouson"
+        ],
+        "why": "„un anorak“ heißt ein Anorak. anorak ist männlich und wird mit k geschrieben, wie im Deutschen: un anorak.",
+        "w": 6,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "ein Hemd",
+        "kind": "gap",
+        "s": "Mon père a ___ blanche.",
+        "a": "une chemise",
+        "wrong": [
+          "un chemise",
+          "une chemize",
+          "une chemisse"
+        ],
+        "why": "„une chemise“ heißt ein Hemd. chemise ist weiblich. Das ch spricht man wie [ʃ] und das s zwischen den Vokalen weich wie [z].",
+        "w": 7
+      },
+      {
+        "q": "Was bedeutet „une chemise“?",
+        "a": "ein Hemd",
+        "wrong": [
+          "ein Rock",
+          "ein Blouson",
+          "ein Anorak"
+        ],
+        "why": "„une chemise“ heißt ein Hemd. chemise ist weiblich. Das ch spricht man wie [ʃ] und das s zwischen den Vokalen weich wie [z].",
+        "w": 7,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Mon père a une chemise blanche."
+      },
+      {
+        "q": "Wie heißt „ein Hemd“ auf Französisch?",
+        "a": "une chemise",
+        "wrong": [
+          "une robe",
+          "un jean",
+          "des baskets"
+        ],
+        "why": "„une chemise“ heißt ein Hemd. chemise ist weiblich. Das ch spricht man wie [ʃ] und das s zwischen den Vokalen weich wie [z].",
+        "w": 7,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "eine Jacke",
+        "kind": "gap",
+        "s": "Il a ___ noire.",
+        "a": "une veste",
+        "wrong": [
+          "un veste",
+          "une vest",
+          "une vaste"
+        ],
+        "why": "„une veste“ heißt eine Jacke. veste ist weiblich: une veste. Nicht mit dem deutschen „Weste“ verwechseln.",
+        "w": 8
+      },
+      {
+        "q": "Was bedeutet „une veste“?",
+        "a": "eine Jacke",
+        "wrong": [
+          "ein Kleidungsstück",
+          "ein T-Shirt",
+          "ein Anorak"
+        ],
+        "why": "„une veste“ heißt eine Jacke. veste ist weiblich: une veste. Nicht mit dem deutschen „Weste“ verwechseln.",
+        "w": 8,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Il a une veste noire."
+      },
+      {
+        "q": "Wie heißt „eine Jacke“ auf Französisch?",
+        "a": "une veste",
+        "wrong": [
+          "les chaussures",
+          "une robe",
+          "un short"
+        ],
+        "why": "„une veste“ heißt eine Jacke. veste ist weiblich: une veste. Nicht mit dem deutschen „Weste“ verwechseln.",
+        "w": 8,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "Schuhe (Plural)",
+        "kind": "gap",
+        "s": "Elle aime bien les ___ noires.",
+        "a": "chaussures",
+        "wrong": [
+          "chaussure",
+          "chausures",
+          "chaussurs"
+        ],
+        "why": "„une chaussure / les chaussures“ heißt die Schuhe. chaussure ist weiblich und steht oft im Plural: les chaussures. Das Plural-s hörst du nicht.",
+        "w": 9
+      },
+      {
+        "q": "Was bedeutet „une chaussure / les chaussures“?",
+        "a": "die Schuhe",
+        "wrong": [
+          "eine Jacke",
+          "ein Rock",
+          "ein Kleid"
+        ],
+        "why": "„une chaussure / les chaussures“ heißt die Schuhe. chaussure ist weiblich und steht oft im Plural: les chaussures. Das Plural-s hörst du nicht.",
+        "w": 9,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Elle aime bien les chaussures noires."
+      },
+      {
+        "q": "Wie heißt „die Schuhe“ auf Französisch?",
+        "a": "les chaussures",
+        "wrong": [
+          "un pantalon",
+          "une chemise",
+          "un short"
+        ],
+        "why": "„une chaussure / les chaussures“ heißt die Schuhe. chaussure ist weiblich und steht oft im Plural: les chaussures. Das Plural-s hörst du nicht.",
+        "w": 9,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "ein Pulli",
+        "kind": "gap",
+        "s": "J'ai froid, j'ai ___ .",
+        "a": "un pull",
+        "wrong": [
+          "une pull",
+          "un pul",
+          "un poull"
+        ],
+        "why": "„un pull“ heißt ein Pulli. pull kommt von pull-over. Es ist männlich: un pull.",
+        "w": 10,
+        "accept": [
+          "un pull-over",
+          "un pullover"
+        ]
+      },
+      {
+        "q": "Was bedeutet „un pull“?",
+        "a": "ein Pulli",
+        "wrong": [
+          "ein Blouson",
+          "ein Rock",
+          "Shorts"
+        ],
+        "why": "„un pull“ heißt ein Pulli. pull kommt von pull-over. Es ist männlich: un pull.",
+        "w": 10,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: J'ai froid, j'ai un pull ."
+      },
+      {
+        "q": "Wie heißt „ein Pulli“ auf Französisch?",
+        "a": "un pull",
+        "wrong": [
+          "un sweat",
+          "un short",
+          "un blouson"
+        ],
+        "why": "„un pull“ heißt ein Pulli. pull kommt von pull-over. Es ist männlich: un pull.",
+        "w": 10,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "ein T-Shirt",
+        "kind": "gap",
+        "s": "Paul a ___ rouge.",
+        "a": "un t-shirt",
+        "wrong": [
+          "une t-shirt",
+          "un t-chirt",
+          "un t-shirts"
+        ],
+        "why": "„un t-shirt“ heißt ein T-Shirt. t-shirt wird mit Bindestrich geschrieben und ist männlich.",
+        "w": 11
+      },
+      {
+        "q": "Was bedeutet „un t-shirt“?",
+        "a": "ein T-Shirt",
+        "wrong": [
+          "ein Hemd",
+          "ein Kleid",
+          "die Schuhe"
+        ],
+        "why": "„un t-shirt“ heißt ein T-Shirt. t-shirt wird mit Bindestrich geschrieben und ist männlich.",
+        "w": 11,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Paul a un t-shirt rouge."
+      },
+      {
+        "q": "Wie heißt „ein T-Shirt“ auf Französisch?",
+        "a": "un t-shirt",
+        "wrong": [
+          "un anorak",
+          "un blouson",
+          "une veste"
+        ],
+        "why": "„un t-shirt“ heißt ein T-Shirt. t-shirt wird mit Bindestrich geschrieben und ist männlich.",
+        "w": 11,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "Shorts",
+        "kind": "gap",
+        "s": "Il fait chaud : Paul a ___ bleu.",
+        "a": "un short",
+        "wrong": [
+          "une short",
+          "un shorte",
+          "un chort"
+        ],
+        "why": "„un short“ heißt Shorts. Im Deutschen heißt es die Shorts, im Französischen im Singular un short.",
+        "w": 12
+      },
+      {
+        "q": "Was bedeutet „un short“?",
+        "a": "Shorts",
+        "wrong": [
+          "ein Hemd",
+          "die Schuhe",
+          "ein Anorak"
+        ],
+        "why": "„un short“ heißt Shorts. Im Deutschen heißt es die Shorts, im Französischen im Singular un short.",
+        "w": 12,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Il fait chaud : Paul a un short bleu."
+      },
+      {
+        "q": "Wie heißt „Shorts“ auf Französisch?",
+        "a": "un short",
+        "wrong": [
+          "un vêtement",
+          "un anorak",
+          "un blouson"
+        ],
+        "why": "„un short“ heißt Shorts. Im Deutschen heißt es die Shorts, im Französischen im Singular un short.",
+        "w": 12,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "ein Sweatshirt",
+        "kind": "gap",
+        "s": "Léa a ___ gris.",
+        "a": "un sweat",
+        "wrong": [
+          "une sweat",
+          "un swet",
+          "un sueat"
+        ],
+        "why": "„un sweat“ heißt ein Sweatshirt. sweat ist die Kurzform von sweat-shirt und männlich: un sweat.",
+        "w": 13
+      },
+      {
+        "q": "Was bedeutet „un sweat“?",
+        "a": "ein Sweatshirt",
+        "wrong": [
+          "Shorts",
+          "ein Kleid",
+          "ein Blouson"
+        ],
+        "why": "„un sweat“ heißt ein Sweatshirt. sweat ist die Kurzform von sweat-shirt und männlich: un sweat.",
+        "w": 13,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Léa a un sweat gris."
+      },
+      {
+        "q": "Wie heißt „ein Sweatshirt“ auf Französisch?",
+        "a": "un sweat",
+        "wrong": [
+          "une robe",
+          "les chaussures",
+          "une veste"
+        ],
+        "why": "„un sweat“ heißt ein Sweatshirt. sweat ist die Kurzform von sweat-shirt und männlich: un sweat.",
+        "w": 13,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "ein Blouson",
+        "kind": "gap",
+        "s": "Mon frère a ___ noir.",
+        "a": "un blouson",
+        "wrong": [
+          "une blouson",
+          "un blouzon",
+          "un blousson"
+        ],
+        "why": "„un blouson“ heißt ein Blouson. blouson ist männlich und wird mit einem s geschrieben, ausgesprochen wie [z].",
+        "w": 14
+      },
+      {
+        "q": "Was bedeutet „un blouson“?",
+        "a": "ein Blouson",
+        "wrong": [
+          "ein Rock",
+          "ein Anorak",
+          "ein T-Shirt"
+        ],
+        "why": "„un blouson“ heißt ein Blouson. blouson ist männlich und wird mit einem s geschrieben, ausgesprochen wie [z].",
+        "w": 14,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Mon frère a un blouson noir."
+      },
+      {
+        "q": "Wie heißt „ein Blouson“ auf Französisch?",
+        "a": "un blouson",
+        "wrong": [
+          "des baskets",
+          "une jupe",
+          "une veste"
+        ],
+        "why": "„un blouson“ heißt ein Blouson. blouson ist männlich und wird mit einem s geschrieben, ausgesprochen wie [z].",
+        "w": 14,
+        "label": "Deutsch → Französisch"
+      }
+    ],
+    "u6-adjektive": [
+      {
+        "q": "Das Adjektiv „klein“ in der weiblichen Form.",
+        "kind": "gap",
+        "s": "Ma ___ sœur est triste.",
+        "a": "petite",
+        "wrong": [
+          "petit",
+          "petits",
+          "petites"
+        ],
+        "why": "sœur ist weiblich, deshalb steht die weibliche Form petite mit -e am Ende."
+      },
+      {
+        "q": "Das Adjektiv „grau“ in der männlichen Form.",
+        "kind": "gap",
+        "s": "Un pantalon ___ .",
+        "a": "gris",
+        "wrong": [
+          "grise",
+          "grises",
+          "grice"
+        ],
+        "why": "pantalon ist männlich und Singular, deshalb steht gris ohne -e und ohne -s."
+      },
+      {
+        "q": "Das Adjektiv „weiß“ in der weiblichen Form.",
+        "kind": "gap",
+        "s": "Une chemise ___ .",
+        "a": "blanche",
+        "wrong": [
+          "blanc",
+          "blanches",
+          "blance"
+        ],
+        "why": "chemise ist weiblich, deshalb blanche. Das weibliche Wort endet auf -che."
+      },
+      {
+        "q": "Das Adjektiv „schwarz“ in der weiblichen Mehrzahl.",
+        "kind": "gap",
+        "s": "Des chaussures ___ .",
+        "a": "noires",
+        "wrong": [
+          "noir",
+          "noire",
+          "noirs"
+        ],
+        "why": "chaussures ist weiblich und Plural. Du brauchst -e für weiblich und -s für Plural: noires."
+      },
+      {
+        "q": "Das Adjektiv „gelb“ in der männlichen Mehrzahl.",
+        "kind": "gap",
+        "s": "Des pulls ___ .",
+        "a": "jaunes",
+        "wrong": [
+          "jaune",
+          "jaun",
+          "jaunns"
+        ],
+        "why": "pulls ist männlich und Plural. jaune endet schon auf -e, im Plural kommt nur -s dazu: jaunes."
+      },
+      {
+        "q": "Das Adjektiv „rot“ in der weiblichen Einzahl.",
+        "kind": "gap",
+        "s": "Une robe ___ .",
+        "a": "rouge",
+        "wrong": [
+          "rougee",
+          "rouges",
+          "roug"
+        ],
+        "why": "rouge endet schon auf -e und bleibt im Singular unverändert: un pull rouge, une robe rouge."
+      },
+      {
+        "q": "Das Adjektiv „grün“ in der männlichen Einzahl.",
+        "kind": "gap",
+        "s": "Un t-shirt ___ .",
+        "a": "vert",
+        "wrong": [
+          "verte",
+          "verts",
+          "vertes"
+        ],
+        "why": "t-shirt ist männlich und Singular, deshalb vert ohne -e und ohne -s."
+      },
+      {
+        "q": "Das Adjektiv „lang“ in der weiblichen Einzahl.",
+        "kind": "gap",
+        "s": "La jupe est ___ .",
+        "a": "longue",
+        "wrong": [
+          "long",
+          "longs",
+          "longues"
+        ],
+        "why": "jupe ist weiblich und Singular. Die weibliche Form von long ist longue."
+      },
+      {
+        "q": "Das Adjektiv „interessant“ in der männlichen Einzahl.",
+        "kind": "gap",
+        "s": "Le reportage est ___ .",
+        "a": "intéressant",
+        "wrong": [
+          "intéressante",
+          "intéressants",
+          "intéressantes"
+        ],
+        "why": "reportage ist männlich und Singular, deshalb intéressant ohne -e und ohne -s."
+      },
+      {
+        "q": "Das Adjektiv „zufrieden“ in der weiblichen Mehrzahl.",
+        "kind": "gap",
+        "s": "Les filles sont ___ .",
+        "a": "contentes",
+        "wrong": [
+          "content",
+          "contente",
+          "contents"
+        ],
+        "why": "filles ist weiblich und Plural, also contentes mit -e und -s."
+      },
+      {
+        "q": "Welcher Satz ist richtig?",
+        "a": "Une robe verte.",
+        "wrong": [
+          "Une robe vert.",
+          "Un robe verte.",
+          "Une verte robe."
+        ],
+        "why": "robe ist weiblich, deshalb verte. Die Farbe steht im Französischen nach dem Nomen."
+      },
+      {
+        "q": "Bei welchem Adjektivpaar klingen die männliche und die weibliche Form gleich?",
+        "a": "bleu / bleue",
+        "wrong": [
+          "petit / petite",
+          "blanc / blanche",
+          "vert / verte"
+        ],
+        "why": "Bei bleu und bleue hörst du keinen Unterschied. Bei petite, blanche und verte kommt ein Laut dazu."
+      },
+      {
+        "q": "Welche Farbe bleibt in der Einzahl männlich und weiblich gleich?",
+        "a": "rouge",
+        "wrong": [
+          "blanc",
+          "noir",
+          "gris"
+        ],
+        "why": "rouge endet schon auf -e. Blanc, noir und gris bekommen in der weiblichen Form eine Endung."
+      },
+      {
+        "q": "Wo steht ein Farbadjektiv im französischen Satz?",
+        "a": "Nach dem Nomen: un pantalon vert",
+        "wrong": [
+          "Vor dem Nomen: un vert pantalon",
+          "Vor dem Artikel: vert un pantalon",
+          "Es steht immer allein am Satzanfang"
+        ],
+        "why": "Farben stehen im Französischen nach dem Nomen: un pantalon vert, une robe verte."
+      },
+      {
+        "q": "Wie lautet die Mehrzahl von „une robe rouge“?",
+        "a": "des robes rouges",
+        "wrong": [
+          "des robes rouge",
+          "des robe rouges",
+          "des robes rougés"
+        ],
+        "why": "Nomen und Adjektiv bekommen beide ein -s: des robes rouges."
+      }
+    ],
+    "u7-rappel": [
+      {
+        "q": "wirklich",
+        "kind": "gap",
+        "s": "Ce musée est ___ grand.",
+        "a": "vraiment",
+        "wrong": [
+          "déjà",
+          "même",
+          "demain"
+        ],
+        "why": "„vraiment“ heißt wirklich. vraiment gehört zu vrai (wahr, echt). Es steht meist vor dem Adjektiv oder nach dem Verb.",
+        "w": 0
+      },
+      {
+        "q": "Was bedeutet „vraiment“?",
+        "a": "wirklich",
+        "wrong": [
+          "morgen",
+          "alle, jeder",
+          "vor allem"
+        ],
+        "why": "„vraiment“ heißt wirklich. vraiment gehört zu vrai (wahr, echt). Es steht meist vor dem Adjektiv oder nach dem Verb.",
+        "w": 0,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Ce musée est vraiment grand."
+      },
+      {
+        "q": "Wie heißt „wirklich“ auf Französisch?",
+        "a": "vraiment",
+        "wrong": [
+          "je voudrais …",
+          "je ne sais pas",
+          "même"
+        ],
+        "why": "„vraiment“ heißt wirklich. vraiment gehört zu vrai (wahr, echt). Es steht meist vor dem Adjektiv oder nach dem Verb.",
+        "w": 0,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "sogar",
+        "kind": "gap",
+        "s": "Il pleut, mais Paul est ___ content.",
+        "a": "même",
+        "wrong": [
+          "demain",
+          "hier",
+          "aujourd'hui"
+        ],
+        "why": "„même“ heißt sogar. même hat ein ê und heißt hier sogar. Als Wort kennst du es auch aus moi-même.",
+        "w": 1
+      },
+      {
+        "q": "Was bedeutet „même“?",
+        "a": "sogar",
+        "wrong": [
+          "vor allem",
+          "ich möchte gern …",
+          "schon"
+        ],
+        "why": "„même“ heißt sogar. même hat ein ê und heißt hier sogar. Als Wort kennst du es auch aus moi-même.",
+        "w": 1,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Il pleut, mais Paul est même content."
+      },
+      {
+        "q": "Wie heißt „sogar“ auf Französisch?",
+        "a": "même",
+        "wrong": [
+          "surtout",
+          "tout le monde",
+          "je voudrais …"
+        ],
+        "why": "„même“ heißt sogar. même hat ein ê und heißt hier sogar. Als Wort kennst du es auch aus moi-même.",
+        "w": 1,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "schon",
+        "kind": "gap",
+        "s": "Léa a ___ une carte postale.",
+        "a": "déjà",
+        "wrong": [
+          "demain",
+          "hier",
+          "tout"
+        ],
+        "why": "„déjà“ heißt schon. déjà mit zwei Akzenten: é und à. Es heißt schon.",
+        "w": 2
+      },
+      {
+        "q": "Was bedeutet „déjà“?",
+        "a": "schon",
+        "wrong": [
+          "alle, jeder",
+          "sogar",
+          "wirklich"
+        ],
+        "why": "„déjà“ heißt schon. déjà mit zwei Akzenten: é und à. Es heißt schon.",
+        "w": 2,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Léa a déjà une carte postale."
+      },
+      {
+        "q": "Wie heißt „schon“ auf Französisch?",
+        "a": "déjà",
+        "wrong": [
+          "demain",
+          "aujourd'hui",
+          "tout le monde"
+        ],
+        "why": "„déjà“ heißt schon. déjà mit zwei Akzenten: é und à. Es heißt schon.",
+        "w": 2,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "vor allem",
+        "kind": "gap",
+        "s": "J'aime les musées, ___ le Louvre.",
+        "a": "surtout",
+        "wrong": [
+          "demain",
+          "hier",
+          "vraiment"
+        ],
+        "why": "„surtout“ heißt vor allem. surtout heißt vor allem und wird zusammengeschrieben.",
+        "w": 3
+      },
+      {
+        "q": "Was bedeutet „surtout“?",
+        "a": "vor allem",
+        "wrong": [
+          "wirklich",
+          "ich möchte gern …",
+          "heute"
+        ],
+        "why": "„surtout“ heißt vor allem. surtout heißt vor allem und wird zusammengeschrieben.",
+        "w": 3,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: J'aime les musées, surtout le Louvre."
+      },
+      {
+        "q": "Wie heißt „vor allem“ auf Französisch?",
+        "a": "surtout",
+        "wrong": [
+          "même",
+          "tout le monde",
+          "je ne sais pas"
+        ],
+        "why": "„surtout“ heißt vor allem. surtout heißt vor allem und wird zusammengeschrieben.",
+        "w": 3,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "ich möchte gern",
+        "kind": "gap",
+        "s": "Bonjour, ___ un croissant, s'il vous plaît.",
+        "a": "je voudrais",
+        "wrong": [
+          "je voudrai",
+          "je voudrait",
+          "tu voudrais"
+        ],
+        "why": "„je voudrais …“ heißt ich möchte gern …. je voudrais ist höflicher als je veux. Man benutzt es beim Bestellen.",
+        "w": 4
+      },
+      {
+        "q": "Was bedeutet „je voudrais …“?",
+        "a": "ich möchte gern …",
+        "wrong": [
+          "wirklich",
+          "alle, jeder",
+          "heute"
+        ],
+        "why": "„je voudrais …“ heißt ich möchte gern …. je voudrais ist höflicher als je veux. Man benutzt es beim Bestellen.",
+        "w": 4,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Bonjour, je voudrais un croissant, s'il vous plaît."
+      },
+      {
+        "q": "Wie heißt „ich möchte gern …“ auf Französisch?",
+        "a": "je voudrais …",
+        "wrong": [
+          "tout le monde",
+          "même",
+          "je ne sais pas"
+        ],
+        "why": "„je voudrais …“ heißt ich möchte gern …. je voudrais ist höflicher als je veux. Man benutzt es beim Bestellen.",
+        "w": 4,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "alle, jeder",
+        "kind": "gap",
+        "s": "___ aime Paris.",
+        "a": "Tout le monde",
+        "wrong": [
+          "Toute le monde",
+          "Tous le monde",
+          "Tout la monde"
+        ],
+        "why": "„tout le monde“ heißt alle, jeder. tout le monde steht mit dem Verb im Singular: Tout le monde aime Paris.",
+        "w": 5
+      },
+      {
+        "q": "Was bedeutet „tout le monde“?",
+        "a": "alle, jeder",
+        "wrong": [
+          "heute",
+          "ich möchte gern …",
+          "sogar"
+        ],
+        "why": "„tout le monde“ heißt alle, jeder. tout le monde steht mit dem Verb im Singular: Tout le monde aime Paris.",
+        "w": 5,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Tout le monde aime Paris."
+      },
+      {
+        "q": "Wie heißt „alle, jeder“ auf Französisch?",
+        "a": "tout le monde",
+        "wrong": [
+          "surtout",
+          "vraiment",
+          "déjà"
+        ],
+        "why": "„tout le monde“ heißt alle, jeder. tout le monde steht mit dem Verb im Singular: Tout le monde aime Paris.",
+        "w": 5,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "ich weiß nicht",
+        "kind": "gap",
+        "s": "– Où est la gare ? – ___ .",
+        "a": "Je ne sais pas",
+        "wrong": [
+          "Je ne sait pas",
+          "Je ne suis pas",
+          "Je n'ai pas"
+        ],
+        "why": "„je ne sais pas“ heißt ich weiß nicht. Bei je gehört die Form sais mit s: je sais. Die Verneinung steht um das Verb: ne … pas.",
+        "w": 6
+      },
+      {
+        "q": "Was bedeutet „je ne sais pas“?",
+        "a": "ich weiß nicht",
+        "wrong": [
+          "alle, jeder",
+          "sogar",
+          "wirklich"
+        ],
+        "why": "„je ne sais pas“ heißt ich weiß nicht. Bei je gehört die Form sais mit s: je sais. Die Verneinung steht um das Verb: ne … pas.",
+        "w": 6,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: – Où est la gare ? – Je ne sais pas ."
+      },
+      {
+        "q": "Wie heißt „ich weiß nicht“ auf Französisch?",
+        "a": "je ne sais pas",
+        "wrong": [
+          "aujourd'hui",
+          "vraiment",
+          "demain"
+        ],
+        "why": "„je ne sais pas“ heißt ich weiß nicht. Bei je gehört die Form sais mit s: je sais. Die Verneinung steht um das Verb: ne … pas.",
+        "w": 6,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "heute",
+        "kind": "gap",
+        "s": "___, il fait beau à Paris.",
+        "a": "Aujourd'hui",
+        "wrong": [
+          "Hier",
+          "Déjà",
+          "Même"
+        ],
+        "why": "„aujourd'hui“ heißt heute. aujourd'hui ist ein langes Wort mit Apostroph. Sein Gegenstück für morgen ist demain.",
+        "w": 7
+      },
+      {
+        "q": "Was bedeutet „aujourd'hui“?",
+        "a": "heute",
+        "wrong": [
+          "alle, jeder",
+          "schon",
+          "ich möchte gern …"
+        ],
+        "why": "„aujourd'hui“ heißt heute. aujourd'hui ist ein langes Wort mit Apostroph. Sein Gegenstück für morgen ist demain.",
+        "w": 7,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Aujourd'hui, il fait beau à Paris."
+      },
+      {
+        "q": "Wie heißt „heute“ auf Französisch?",
+        "a": "aujourd'hui",
+        "wrong": [
+          "même",
+          "vraiment",
+          "surtout"
+        ],
+        "why": "„aujourd'hui“ heißt heute. aujourd'hui ist ein langes Wort mit Apostroph. Sein Gegenstück für morgen ist demain.",
+        "w": 7,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "morgen",
+        "kind": "gap",
+        "s": "___, nous allons à Paris.",
+        "a": "Demain",
+        "wrong": [
+          "Hier",
+          "Déjà",
+          "Même"
+        ],
+        "why": "„demain“ heißt morgen. demain heißt morgen. Mit aujourd'hui und hier hast du alle drei Tage.",
+        "w": 8
+      },
+      {
+        "q": "Was bedeutet „demain“?",
+        "a": "morgen",
+        "wrong": [
+          "alle, jeder",
+          "wirklich",
+          "vor allem"
+        ],
+        "why": "„demain“ heißt morgen. demain heißt morgen. Mit aujourd'hui und hier hast du alle drei Tage.",
+        "w": 8,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Demain, nous allons à Paris."
+      },
+      {
+        "q": "Wie heißt „morgen“ auf Französisch?",
+        "a": "demain",
+        "wrong": [
+          "déjà",
+          "tout le monde",
+          "je voudrais …"
+        ],
+        "why": "„demain“ heißt morgen. demain heißt morgen. Mit aujourd'hui und hier hast du alle drei Tage.",
+        "w": 8,
+        "label": "Deutsch → Französisch"
+      }
+    ],
+    "u7-paris": [
+      {
+        "q": "eine Woche",
+        "kind": "gap",
+        "s": "Nous allons à Paris pour ___ .",
+        "a": "une semaine",
+        "wrong": [
+          "un semaine",
+          "une semain",
+          "une semane"
+        ],
+        "why": "„une semaine“ heißt eine Woche. semaine ist weiblich: une semaine. Die Wochentage zählen zur gleichen Wortfamilie.",
+        "w": 0
+      },
+      {
+        "q": "Was bedeutet „une semaine“?",
+        "a": "eine Woche",
+        "wrong": [
+          "eine Kathedrale",
+          "eine Reportage",
+          "ein Museum"
+        ],
+        "why": "„une semaine“ heißt eine Woche. semaine ist weiblich: une semaine. Die Wochentage zählen zur gleichen Wortfamilie.",
+        "w": 0,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Nous allons à Paris pour une semaine ."
+      },
+      {
+        "q": "Wie heißt „eine Woche“ auf Französisch?",
+        "a": "une semaine",
+        "wrong": [
+          "un musée",
+          "une cathédrale",
+          "une ville"
+        ],
+        "why": "„une semaine“ heißt eine Woche. semaine ist weiblich: une semaine. Die Wochentage zählen zur gleichen Wortfamilie.",
+        "w": 0,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "ein Bericht über ein Thema (Zeitung, Fernsehen)",
+        "kind": "gap",
+        "s": "Léa prépare ___ sur Paris.",
+        "a": "un reportage",
+        "wrong": [
+          "une reportage",
+          "un reportages",
+          "un repportage"
+        ],
+        "why": "„un reportage“ heißt eine Reportage. Im Deutschen ist die Reportage weiblich, im Französischen männlich: un reportage.",
+        "w": 1
+      },
+      {
+        "q": "Was bedeutet „un reportage“?",
+        "a": "eine Reportage",
+        "wrong": [
+          "etwas besichtigen",
+          "ein Ort, eine Stelle",
+          "eine Woche"
+        ],
+        "why": "„un reportage“ heißt eine Reportage. Im Deutschen ist die Reportage weiblich, im Französischen männlich: un reportage.",
+        "w": 1,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Léa prépare un reportage sur Paris."
+      },
+      {
+        "q": "Wie heißt „eine Reportage“ auf Französisch?",
+        "a": "un reportage",
+        "wrong": [
+          "visiter",
+          "une cathédrale",
+          "une semaine"
+        ],
+        "why": "„un reportage“ heißt eine Reportage. Im Deutschen ist die Reportage weiblich, im Französischen männlich: un reportage.",
+        "w": 1,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "eine Stadt",
+        "kind": "gap",
+        "s": "Lyon est ___ en France.",
+        "a": "une ville",
+        "wrong": [
+          "un ville",
+          "une vile",
+          "une villes"
+        ],
+        "why": "„une ville“ heißt eine Stadt. ville ist weiblich und hat zwei l, die du aber wie [l] sprichst: [vil].",
+        "w": 2
+      },
+      {
+        "q": "Was bedeutet „une ville“?",
+        "a": "eine Stadt",
+        "wrong": [
+          "etwas besichtigen",
+          "ein Ort, eine Stelle",
+          "eine Woche"
+        ],
+        "why": "„une ville“ heißt eine Stadt. ville ist weiblich und hat zwei l, die du aber wie [l] sprichst: [vil].",
+        "w": 2,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Lyon est une ville en France."
+      },
+      {
+        "q": "Wie heißt „eine Stadt“ auf Französisch?",
+        "a": "une ville",
+        "wrong": [
+          "une cathédrale",
+          "un assistant / une assistante",
+          "moderne"
+        ],
+        "why": "„une ville“ heißt eine Stadt. ville ist weiblich und hat zwei l, die du aber wie [l] sprichst: [vil].",
+        "w": 2,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "Assistentin",
+        "kind": "gap",
+        "s": "Marie travaille avec Léa : elle est ___ .",
+        "a": "assistante",
+        "wrong": [
+          "assistant",
+          "assistantes",
+          "assistent"
+        ],
+        "why": "„un assistant / une assistante“ heißt ein Assistent / eine Assistentin. Die weibliche Form bekommt ein -e: une assistante. Das Wort ist aus dem Deutschen bekannt.",
+        "w": 3
+      },
+      {
+        "q": "Was bedeutet „un assistant / une assistante“?",
+        "a": "ein Assistent / eine Assistentin",
+        "wrong": [
+          "ein Tourist / eine Touristin",
+          "eine Stadt",
+          "modern"
+        ],
+        "why": "„un assistant / une assistante“ heißt ein Assistent / eine Assistentin. Die weibliche Form bekommt ein -e: une assistante. Das Wort ist aus dem Deutschen bekannt.",
+        "w": 3,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Marie travaille avec Léa : elle est assistante ."
+      },
+      {
+        "q": "Wie heißt „ein Assistent / eine Assistentin“ auf Französisch?",
+        "a": "un assistant / une assistante",
+        "wrong": [
+          "un musée",
+          "visiter",
+          "une ville"
+        ],
+        "why": "„un assistant / une assistante“ heißt ein Assistent / eine Assistentin. Die weibliche Form bekommt ein -e: une assistante. Das Wort ist aus dem Deutschen bekannt.",
+        "w": 3,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "besichtigen (Grundform)",
+        "kind": "gap",
+        "s": "Nous allons ___ le Louvre.",
+        "a": "visiter",
+        "wrong": [
+          "visite",
+          "visité",
+          "visites"
+        ],
+        "why": "„visiter“ heißt etwas besichtigen. Nach aller + Infinitiv bleibt das Verb in der Grundform: aller visiter. visiter qc heißt etwas besichtigen.",
+        "w": 4
+      },
+      {
+        "q": "Was bedeutet „visiter“?",
+        "a": "etwas besichtigen",
+        "wrong": [
+          "ein Ort, eine Stelle",
+          "modern",
+          "eine Kathedrale"
+        ],
+        "why": "„visiter“ heißt etwas besichtigen. Nach aller + Infinitiv bleibt das Verb in der Grundform: aller visiter. visiter qc heißt etwas besichtigen.",
+        "w": 4,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Nous allons visiter le Louvre."
+      },
+      {
+        "q": "Wie heißt „etwas besichtigen“ auf Französisch?",
+        "a": "visiter",
+        "wrong": [
+          "un endroit",
+          "un assistant / une assistante",
+          "un reportage"
+        ],
+        "why": "„visiter“ heißt etwas besichtigen. Nach aller + Infinitiv bleibt das Verb in der Grundform: aller visiter. visiter qc heißt etwas besichtigen.",
+        "w": 4,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "ein Ort",
+        "kind": "gap",
+        "s": "Le Louvre est ___ très intéressant.",
+        "a": "un endroit",
+        "wrong": [
+          "une endroit",
+          "un endroits",
+          "un androit"
+        ],
+        "why": "„un endroit“ heißt ein Ort, eine Stelle. Im Plural sprichst du das s: les endroits [lezɑ̃dʁwa]. Das Wort ist männlich.",
+        "w": 5
+      },
+      {
+        "q": "Was bedeutet „un endroit“?",
+        "a": "ein Ort, eine Stelle",
+        "wrong": [
+          "ein Tourist / eine Touristin",
+          "etwas besichtigen",
+          "eine Reportage"
+        ],
+        "why": "„un endroit“ heißt ein Ort, eine Stelle. Im Plural sprichst du das s: les endroits [lezɑ̃dʁwa]. Das Wort ist männlich.",
+        "w": 5,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Le Louvre est un endroit très intéressant."
+      },
+      {
+        "q": "Wie heißt „ein Ort, eine Stelle“ auf Französisch?",
+        "a": "un endroit",
+        "wrong": [
+          "une ville",
+          "moderne",
+          "un touriste / une touriste"
+        ],
+        "why": "„un endroit“ heißt ein Ort, eine Stelle. Im Plural sprichst du das s: les endroits [lezɑ̃dʁwa]. Das Wort ist männlich.",
+        "w": 5,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "Touristen (Plural)",
+        "kind": "gap",
+        "s": "À Paris, les ___ aiment la tour Eiffel.",
+        "a": "touristes",
+        "wrong": [
+          "touriste",
+          "touristse",
+          "tourists"
+        ],
+        "why": "„un touriste / une touriste“ heißt ein Tourist / eine Touristin. touriste ist männlich und weiblich gleich, nur der Artikel ändert sich. Im Plural: les touristes.",
+        "w": 6
+      },
+      {
+        "q": "Was bedeutet „un touriste / une touriste“?",
+        "a": "ein Tourist / eine Touristin",
+        "wrong": [
+          "modern",
+          "eine Stadt",
+          "ein Ort, eine Stelle"
+        ],
+        "why": "„un touriste / une touriste“ heißt ein Tourist / eine Touristin. touriste ist männlich und weiblich gleich, nur der Artikel ändert sich. Im Plural: les touristes.",
+        "w": 6,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: À Paris, les touristes aiment la tour Eiffel."
+      },
+      {
+        "q": "Wie heißt „ein Tourist / eine Touristin“ auf Französisch?",
+        "a": "un touriste / une touriste",
+        "wrong": [
+          "visiter",
+          "une ville",
+          "un reportage"
+        ],
+        "why": "„un touriste / une touriste“ heißt ein Tourist / eine Touristin. touriste ist männlich und weiblich gleich, nur der Artikel ändert sich. Im Plural: les touristes.",
+        "w": 6,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "der Triumphbogen",
+        "kind": "gap",
+        "s": "___ est un monument à Paris.",
+        "a": "L'Arc de triomphe",
+        "wrong": [
+          "La Arc de triomphe",
+          "L'Arc de triompe",
+          "Le Arc de triomphe"
+        ],
+        "why": "„l'Arc de triomphe“ heißt der Triumphbogen. Arc ist männlich: l'Arc de triomphe. Vor dem Vokal steht l'.",
+        "w": 7
+      },
+      {
+        "q": "Was bedeutet „l'Arc de triomphe“?",
+        "a": "der Triumphbogen",
+        "wrong": [
+          "die berühmte Kathedrale im Zentrum von Paris",
+          "das moderne Stadtviertel von Paris",
+          "das berühmte Museum in Paris"
+        ],
+        "why": "„l'Arc de triomphe“ heißt der Triumphbogen. Arc ist männlich: l'Arc de triomphe. Vor dem Vokal steht l'.",
+        "w": 7,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: L'Arc de triomphe est un monument à Paris."
+      },
+      {
+        "q": "Wie heißt „der Triumphbogen“ auf Französisch?",
+        "a": "l'Arc de triomphe",
+        "wrong": [
+          "le Louvre",
+          "Notre-Dame",
+          "la Défense"
+        ],
+        "why": "„l'Arc de triomphe“ heißt der Triumphbogen. Arc ist männlich: l'Arc de triomphe. Vor dem Vokal steht l'.",
+        "w": 7,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "das berühmte Museum in Paris mit der Glaspyramide",
+        "kind": "gap",
+        "s": "Le ___ est un grand musée.",
+        "a": "Louvre",
+        "wrong": [
+          "Louvres",
+          "Louvr",
+          "Luvre"
+        ],
+        "why": "„le Louvre“ heißt das berühmte Museum in Paris. le Louvre ist das berühmteste Museum von Paris. Es steht mit dem Artikel le.",
+        "w": 8
+      },
+      {
+        "q": "Was bedeutet „le Louvre“?",
+        "a": "das berühmte Museum in Paris",
+        "wrong": [
+          "der Triumphbogen",
+          "das moderne Stadtviertel von Paris",
+          "die berühmte Kathedrale im Zentrum von Paris"
+        ],
+        "why": "„le Louvre“ heißt das berühmte Museum in Paris. le Louvre ist das berühmteste Museum von Paris. Es steht mit dem Artikel le.",
+        "w": 8,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Le Louvre est un grand musée."
+      },
+      {
+        "q": "Wie heißt „das berühmte Museum in Paris“ auf Französisch?",
+        "a": "le Louvre",
+        "wrong": [
+          "l'Arc de triomphe",
+          "Notre-Dame",
+          "la Défense"
+        ],
+        "why": "„le Louvre“ heißt das berühmte Museum in Paris. le Louvre ist das berühmteste Museum von Paris. Es steht mit dem Artikel le.",
+        "w": 8,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "ein Museum",
+        "kind": "gap",
+        "s": "Nous visitons ___ à Paris.",
+        "a": "un musée",
+        "wrong": [
+          "une musée",
+          "un musé",
+          "un musées"
+        ],
+        "why": "„un musée“ heißt ein Museum. musée ist männlich. Achte auf den Accent aigu am Ende: un musée.",
+        "w": 9
+      },
+      {
+        "q": "Was bedeutet „un musée“?",
+        "a": "ein Museum",
+        "wrong": [
+          "eine Reportage",
+          "ein Assistent / eine Assistentin",
+          "ein Tourist / eine Touristin"
+        ],
+        "why": "„un musée“ heißt ein Museum. musée ist männlich. Achte auf den Accent aigu am Ende: un musée.",
+        "w": 9,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Nous visitons un musée à Paris."
+      },
+      {
+        "q": "Wie heißt „ein Museum“ auf Französisch?",
+        "a": "un musée",
+        "wrong": [
+          "un touriste / une touriste",
+          "un endroit",
+          "un reportage"
+        ],
+        "why": "„un musée“ heißt ein Museum. musée ist männlich. Achte auf den Accent aigu am Ende: un musée.",
+        "w": 9,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "eine Kathedrale",
+        "kind": "gap",
+        "s": "Notre-Dame est ___ à Paris.",
+        "a": "une cathédrale",
+        "wrong": [
+          "un cathédrale",
+          "une cathedrale",
+          "une catédrale"
+        ],
+        "why": "„une cathédrale“ heißt eine Kathedrale. cathédrale ist weiblich und wird mit th und é geschrieben.",
+        "w": 10
+      },
+      {
+        "q": "Was bedeutet „une cathédrale“?",
+        "a": "eine Kathedrale",
+        "wrong": [
+          "eine Stadt",
+          "ein Museum",
+          "eine Woche"
+        ],
+        "why": "„une cathédrale“ heißt eine Kathedrale. cathédrale ist weiblich und wird mit th und é geschrieben.",
+        "w": 10,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Notre-Dame est une cathédrale à Paris."
+      },
+      {
+        "q": "Wie heißt „eine Kathedrale“ auf Französisch?",
+        "a": "une cathédrale",
+        "wrong": [
+          "un endroit",
+          "une semaine",
+          "visiter"
+        ],
+        "why": "„une cathédrale“ heißt eine Kathedrale. cathédrale ist weiblich und wird mit th und é geschrieben.",
+        "w": 10,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "die bekannte Kathedrale im Zentrum von Paris",
+        "kind": "gap",
+        "s": "Nous regardons ___ , dans le centre de Paris.",
+        "a": "Notre-Dame",
+        "wrong": [
+          "Notre-Dam",
+          "Notre-Damme",
+          "Nôtre-Dame"
+        ],
+        "why": "„Notre-Dame“ heißt die berühmte Kathedrale im Zentrum von Paris. Notre-Dame wird mit Bindestrich geschrieben und heißt „Unsere Liebe Frau“.",
+        "w": 11,
+        "accept": [
+          "notre dame"
+        ]
+      },
+      {
+        "q": "Was bedeutet „Notre-Dame“?",
+        "a": "die berühmte Kathedrale im Zentrum von Paris",
+        "wrong": [
+          "der Triumphbogen",
+          "das berühmte Museum in Paris",
+          "das moderne Stadtviertel von Paris"
+        ],
+        "why": "„Notre-Dame“ heißt die berühmte Kathedrale im Zentrum von Paris. Notre-Dame wird mit Bindestrich geschrieben und heißt „Unsere Liebe Frau“.",
+        "w": 11,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Nous regardons Notre-Dame , dans le centre de Paris."
+      },
+      {
+        "q": "Wie heißt „die berühmte Kathedrale im Zentrum von Paris“ auf Französisch?",
+        "a": "Notre-Dame",
+        "wrong": [
+          "l'Arc de triomphe",
+          "le Louvre",
+          "la Défense"
+        ],
+        "why": "„Notre-Dame“ heißt die berühmte Kathedrale im Zentrum von Paris. Notre-Dame wird mit Bindestrich geschrieben und heißt „Unsere Liebe Frau“.",
+        "w": 11,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "das moderne Stadtviertel von Paris",
+        "kind": "gap",
+        "s": "___ est un quartier moderne.",
+        "a": "La Défense",
+        "wrong": [
+          "Le Défense",
+          "La Defense",
+          "La Défence"
+        ],
+        "why": "„la Défense“ heißt das moderne Stadtviertel von Paris. la Défense ist weiblich und wird mit é und -nse geschrieben.",
+        "w": 12
+      },
+      {
+        "q": "Was bedeutet „la Défense“?",
+        "a": "das moderne Stadtviertel von Paris",
+        "wrong": [
+          "der Triumphbogen",
+          "die berühmte Kathedrale im Zentrum von Paris",
+          "das berühmte Museum in Paris"
+        ],
+        "why": "„la Défense“ heißt das moderne Stadtviertel von Paris. la Défense ist weiblich und wird mit é und -nse geschrieben.",
+        "w": 12,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: La Défense est un quartier moderne."
+      },
+      {
+        "q": "Wie heißt „das moderne Stadtviertel von Paris“ auf Französisch?",
+        "a": "la Défense",
+        "wrong": [
+          "le Louvre",
+          "l'Arc de triomphe",
+          "Notre-Dame"
+        ],
+        "why": "„la Défense“ heißt das moderne Stadtviertel von Paris. la Défense ist weiblich und wird mit é und -nse geschrieben.",
+        "w": 12,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "modern",
+        "kind": "gap",
+        "s": "Le musée est très ___ .",
+        "a": "moderne",
+        "wrong": [
+          "modern",
+          "modernes",
+          "moderné"
+        ],
+        "why": "„moderne“ heißt modern. Französisch moderne, deutsch modern: Im Französischen kommt ein -e dazu.",
+        "w": 13
+      },
+      {
+        "q": "Was bedeutet „moderne“?",
+        "a": "modern",
+        "wrong": [
+          "ein Ort, eine Stelle",
+          "ein Museum",
+          "etwas besichtigen"
+        ],
+        "why": "„moderne“ heißt modern. Französisch moderne, deutsch modern: Im Französischen kommt ein -e dazu.",
+        "w": 13,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Le musée est très moderne ."
+      },
+      {
+        "q": "Wie heißt „modern“ auf Französisch?",
+        "a": "moderne",
+        "wrong": [
+          "un endroit",
+          "un reportage",
+          "une ville"
+        ],
+        "why": "„moderne“ heißt modern. Französisch moderne, deutsch modern: Im Französischen kommt ein -e dazu.",
+        "w": 13,
+        "label": "Deutsch → Französisch"
+      }
+    ],
+    "u7-wetter": [
+      {
+        "q": "Wetter",
+        "kind": "gap",
+        "s": "Quel ___ fait-il à Paris ?",
+        "a": "temps",
+        "wrong": [
+          "temp",
+          "tant",
+          "tems"
+        ],
+        "why": "„le temps“ heißt das Wetter. le temps heißt das Wetter, aber auch die Zeit. Das s am Ende hörst du nicht.",
+        "w": 0
+      },
+      {
+        "q": "Was bedeutet „le temps“?",
+        "a": "das Wetter",
+        "wrong": [
+          "Es ist schlechtes Wetter.",
+          "Es regnet.",
+          "Es ist warm / heiß."
+        ],
+        "why": "„le temps“ heißt das Wetter. le temps heißt das Wetter, aber auch die Zeit. Das s am Ende hörst du nicht.",
+        "w": 0,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Quel temps fait-il à Paris ?"
+      },
+      {
+        "q": "Wie heißt „das Wetter“ auf Französisch?",
+        "a": "le temps",
+        "wrong": [
+          "Il neige.",
+          "beaucoup de",
+          "Il fait chaud."
+        ],
+        "why": "„le temps“ heißt das Wetter. le temps heißt das Wetter, aber auch die Zeit. Das s am Ende hörst du nicht.",
+        "w": 0,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "Was bedeutet „Quel temps fait-il ?“?",
+        "a": "Wie ist das Wetter?",
+        "wrong": [
+          "Es regnet.",
+          "Es ist schönes Wetter.",
+          "viel(e)"
+        ],
+        "why": "„Quel temps fait-il ?“ heißt Wie ist das Wetter?. Für das Wetter benutzt man im Französischen meistens faire: il fait.",
+        "w": 1,
+        "label": "Französisch → Deutsch"
+      },
+      {
+        "q": "Wie heißt „Wie ist das Wetter?“ auf Französisch?",
+        "a": "Quel temps fait-il ?",
+        "wrong": [
+          "Il y a du vent.",
+          "Il neige.",
+          "Il fait chaud."
+        ],
+        "why": "„Quel temps fait-il ?“ heißt Wie ist das Wetter?. Für das Wetter benutzt man im Französischen meistens faire: il fait.",
+        "w": 1,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "schön (Wetter)",
+        "kind": "gap",
+        "s": "Il fait ___ : nous allons au parc.",
+        "a": "beau",
+        "wrong": [
+          "belle",
+          "beaux",
+          "bien"
+        ],
+        "why": "„Il fait beau.“ heißt Es ist schönes Wetter.. Nach il fait steht die männliche Form beau, denn il ist hier nur ein Platzhalter.",
+        "w": 2
+      },
+      {
+        "q": "Was bedeutet „Il fait beau.“?",
+        "a": "Es ist schönes Wetter.",
+        "wrong": [
+          "Es schneit.",
+          "viel(e)",
+          "das Wetter"
+        ],
+        "why": "„Il fait beau.“ heißt Es ist schönes Wetter.. Nach il fait steht die männliche Form beau, denn il ist hier nur ein Platzhalter.",
+        "w": 2,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Il fait beau : nous allons au parc."
+      },
+      {
+        "q": "Wie heißt „Es ist schönes Wetter.“ auf Französisch?",
+        "a": "Il fait beau.",
+        "wrong": [
+          "Il neige.",
+          "Il y a du vent.",
+          "Il pleut."
+        ],
+        "why": "„Il fait beau.“ heißt Es ist schönes Wetter.. Nach il fait steht die männliche Form beau, denn il ist hier nur ein Platzhalter.",
+        "w": 2,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "warm, heiß",
+        "kind": "gap",
+        "s": "En été, il fait très ___ .",
+        "a": "chaud",
+        "wrong": [
+          "chaude",
+          "chauds",
+          "chaut"
+        ],
+        "why": "„Il fait chaud.“ heißt Es ist warm / heiß.. chaud heißt warm oder heiß. Das d am Ende hörst du nicht.",
+        "w": 3
+      },
+      {
+        "q": "Was bedeutet „Il fait chaud.“?",
+        "a": "Es ist warm / heiß.",
+        "wrong": [
+          "Es regnet.",
+          "viel(e)",
+          "Es schneit."
+        ],
+        "why": "„Il fait chaud.“ heißt Es ist warm / heiß.. chaud heißt warm oder heiß. Das d am Ende hörst du nicht.",
+        "w": 3,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: En été, il fait très chaud ."
+      },
+      {
+        "q": "Wie heißt „Es ist warm / heiß.“ auf Französisch?",
+        "a": "Il fait chaud.",
+        "wrong": [
+          "Il y a du vent.",
+          "Quel temps fait-il ?",
+          "Il neige."
+        ],
+        "why": "„Il fait chaud.“ heißt Es ist warm / heiß.. chaud heißt warm oder heiß. Das d am Ende hörst du nicht.",
+        "w": 3,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "kalt",
+        "kind": "gap",
+        "s": "En hiver, il fait ___ .",
+        "a": "froid",
+        "wrong": [
+          "froide",
+          "froids",
+          "froit"
+        ],
+        "why": "„Il fait froid.“ heißt Es ist kalt.. froid ist das Gegenstück zu chaud. Das d am Ende hörst du nicht.",
+        "w": 4
+      },
+      {
+        "q": "Was bedeutet „Il fait froid.“?",
+        "a": "Es ist kalt.",
+        "wrong": [
+          "Wie ist das Wetter?",
+          "das Wetter",
+          "Es regnet."
+        ],
+        "why": "„Il fait froid.“ heißt Es ist kalt.. froid ist das Gegenstück zu chaud. Das d am Ende hörst du nicht.",
+        "w": 4,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: En hiver, il fait froid ."
+      },
+      {
+        "q": "Wie heißt „Es ist kalt.“ auf Französisch?",
+        "a": "Il fait froid.",
+        "wrong": [
+          "Il y a du vent.",
+          "Il fait chaud.",
+          "le temps"
+        ],
+        "why": "„Il fait froid.“ heißt Es ist kalt.. froid ist das Gegenstück zu chaud. Das d am Ende hörst du nicht.",
+        "w": 4,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "schlecht (Wetter)",
+        "kind": "gap",
+        "s": "Il pleut, il fait ___ .",
+        "a": "mauvais",
+        "wrong": [
+          "mauvaise",
+          "mauvaiz",
+          "mauveis"
+        ],
+        "why": "„Il fait mauvais.“ heißt Es ist schlechtes Wetter.. mauvais ist das Gegenstück zu beau. Im Wetterwort bleibt es männlich.",
+        "w": 5
+      },
+      {
+        "q": "Was bedeutet „Il fait mauvais.“?",
+        "a": "Es ist schlechtes Wetter.",
+        "wrong": [
+          "viel(e)",
+          "das Wetter",
+          "Es schneit."
+        ],
+        "why": "„Il fait mauvais.“ heißt Es ist schlechtes Wetter.. mauvais ist das Gegenstück zu beau. Im Wetterwort bleibt es männlich.",
+        "w": 5,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Il pleut, il fait mauvais ."
+      },
+      {
+        "q": "Wie heißt „Es ist schlechtes Wetter.“ auf Französisch?",
+        "a": "Il fait mauvais.",
+        "wrong": [
+          "Il y a du vent.",
+          "beaucoup de",
+          "Quel temps fait-il ?"
+        ],
+        "why": "„Il fait mauvais.“ heißt Es ist schlechtes Wetter.. mauvais ist das Gegenstück zu beau. Im Wetterwort bleibt es männlich.",
+        "w": 5,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "regnen (es regnet)",
+        "kind": "gap",
+        "s": "À Paris, il ___ souvent.",
+        "a": "pleut",
+        "wrong": [
+          "pleure",
+          "pleuvoir",
+          "pleus"
+        ],
+        "why": "„Il pleut.“ heißt Es regnet.. pleuvoir (regnen) gibt es nur mit il: il pleut. Nicht mit pleurer (weinen) verwechseln.",
+        "w": 6
+      },
+      {
+        "q": "Was bedeutet „Il pleut.“?",
+        "a": "Es regnet.",
+        "wrong": [
+          "Es ist warm / heiß.",
+          "Es ist kalt.",
+          "das Wetter"
+        ],
+        "why": "„Il pleut.“ heißt Es regnet.. pleuvoir (regnen) gibt es nur mit il: il pleut. Nicht mit pleurer (weinen) verwechseln.",
+        "w": 6,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: À Paris, il pleut souvent."
+      },
+      {
+        "q": "Wie heißt „Es regnet.“ auf Französisch?",
+        "a": "Il pleut.",
+        "wrong": [
+          "beaucoup de",
+          "Quel temps fait-il ?",
+          "Il fait chaud."
+        ],
+        "why": "„Il pleut.“ heißt Es regnet.. pleuvoir (regnen) gibt es nur mit il: il pleut. Nicht mit pleurer (weinen) verwechseln.",
+        "w": 6,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "schneien (es schneit)",
+        "kind": "gap",
+        "s": "En hiver, il ___ .",
+        "a": "neige",
+        "wrong": [
+          "neigre",
+          "neiger",
+          "neiges"
+        ],
+        "why": "„Il neige.“ heißt Es schneit.. neiger (schneien) gibt es nur mit il: il neige. Das Nomen dazu ist la neige.",
+        "w": 7
+      },
+      {
+        "q": "Was bedeutet „Il neige.“?",
+        "a": "Es schneit.",
+        "wrong": [
+          "Es ist windig.",
+          "viel(e)",
+          "Es ist kalt."
+        ],
+        "why": "„Il neige.“ heißt Es schneit.. neiger (schneien) gibt es nur mit il: il neige. Das Nomen dazu ist la neige.",
+        "w": 7,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: En hiver, il neige ."
+      },
+      {
+        "q": "Wie heißt „Es schneit.“ auf Französisch?",
+        "a": "Il neige.",
+        "wrong": [
+          "le temps",
+          "Il y a du vent.",
+          "beaucoup de"
+        ],
+        "why": "„Il neige.“ heißt Es schneit.. neiger (schneien) gibt es nur mit il: il neige. Das Nomen dazu ist la neige.",
+        "w": 7,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "Wind",
+        "kind": "gap",
+        "s": "Sur la mer, il y a beaucoup de ___ .",
+        "a": "vent",
+        "wrong": [
+          "vente",
+          "vend",
+          "vin"
+        ],
+        "why": "„Il y a du vent.“ heißt Es ist windig.. le vent ist männlich, deshalb du vent. Das t am Ende hörst du nicht.",
+        "w": 8
+      },
+      {
+        "q": "Was bedeutet „Il y a du vent.“?",
+        "a": "Es ist windig.",
+        "wrong": [
+          "viel(e)",
+          "Es schneit.",
+          "das Wetter"
+        ],
+        "why": "„Il y a du vent.“ heißt Es ist windig.. le vent ist männlich, deshalb du vent. Das t am Ende hörst du nicht.",
+        "w": 8,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Sur la mer, il y a beaucoup de vent ."
+      },
+      {
+        "q": "Wie heißt „Es ist windig.“ auf Französisch?",
+        "a": "Il y a du vent.",
+        "wrong": [
+          "Il fait beau.",
+          "Il pleut.",
+          "beaucoup de"
+        ],
+        "why": "„Il y a du vent.“ heißt Es ist windig.. le vent ist männlich, deshalb du vent. Das t am Ende hörst du nicht.",
+        "w": 8,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "viele",
+        "kind": "gap",
+        "s": "Il y a ___ touristes à Paris.",
+        "a": "beaucoup de",
+        "wrong": [
+          "beaucoup des",
+          "beaucoup du",
+          "beaucoup"
+        ],
+        "why": "„beaucoup de“ heißt viel(e). Nach beaucoup steht de ohne Artikel: beaucoup de touristes. Vor Vokalen wird es beaucoup d'.",
+        "w": 9
+      },
+      {
+        "q": "Was bedeutet „beaucoup de“?",
+        "a": "viel(e)",
+        "wrong": [
+          "Es ist kalt.",
+          "Es schneit.",
+          "das Wetter"
+        ],
+        "why": "„beaucoup de“ heißt viel(e). Nach beaucoup steht de ohne Artikel: beaucoup de touristes. Vor Vokalen wird es beaucoup d'.",
+        "w": 9,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Il y a beaucoup de touristes à Paris."
+      },
+      {
+        "q": "Wie heißt „viel(e)“ auf Französisch?",
+        "a": "beaucoup de",
+        "wrong": [
+          "Il y a du vent.",
+          "Il pleut.",
+          "Quel temps fait-il ?"
+        ],
+        "why": "„beaucoup de“ heißt viel(e). Nach beaucoup steht de ohne Artikel: beaucoup de touristes. Vor Vokalen wird es beaucoup d'.",
+        "w": 9,
+        "label": "Deutsch → Französisch"
+      }
+    ],
+    "u7-karte": [
+      {
+        "q": "die Aussicht",
+        "kind": "gap",
+        "s": "De la tour Eiffel, ___ est super.",
+        "a": "la vue",
+        "wrong": [
+          "le vue",
+          "la vu",
+          "la vie"
+        ],
+        "why": "„la vue“ heißt die Aussicht. vue ist weiblich: la vue. Nicht mit la vie (das Leben) verwechseln.",
+        "w": 0
+      },
+      {
+        "q": "Was bedeutet „la vue“?",
+        "a": "die Aussicht",
+        "wrong": [
+          "ein Büro; hier: ein Arbeitszimmer",
+          "lesen; vorlesen",
+          "jemandem etwas schreiben"
+        ],
+        "why": "„la vue“ heißt die Aussicht. vue ist weiblich: la vue. Nicht mit la vie (das Leben) verwechseln.",
+        "w": 0,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: De la tour Eiffel, la vue est super."
+      },
+      {
+        "q": "Wie heißt „die Aussicht“ auf Französisch?",
+        "a": "la vue",
+        "wrong": [
+          "un souvenir",
+          "un bureau",
+          "une carte postale"
+        ],
+        "why": "„la vue“ heißt die Aussicht. vue ist weiblich: la vue. Nicht mit la vie (das Leben) verwechseln.",
+        "w": 0,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "ein Lokal, in dem man isst",
+        "kind": "gap",
+        "s": "Ce soir, nous mangeons dans ___ .",
+        "a": "un restaurant",
+        "wrong": [
+          "une restaurant",
+          "un restorant",
+          "un restaurante"
+        ],
+        "why": "„un restaurant“ heißt ein Restaurant. Das Wort sieht aus wie im Deutschen, ist aber im Französischen männlich: un restaurant.",
+        "w": 1
+      },
+      {
+        "q": "Was bedeutet „un restaurant“?",
+        "a": "ein Restaurant",
+        "wrong": [
+          "lesen; vorlesen",
+          "eine Boutique, ein Laden",
+          "die Aussicht"
+        ],
+        "why": "„un restaurant“ heißt ein Restaurant. Das Wort sieht aus wie im Deutschen, ist aber im Französischen männlich: un restaurant.",
+        "w": 1,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Ce soir, nous mangeons dans un restaurant ."
+      },
+      {
+        "q": "Wie heißt „ein Restaurant“ auf Französisch?",
+        "a": "un restaurant",
+        "wrong": [
+          "une boutique",
+          "papi",
+          "une carte"
+        ],
+        "why": "„un restaurant“ heißt ein Restaurant. Das Wort sieht aus wie im Deutschen, ist aber im Französischen männlich: un restaurant.",
+        "w": 1,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "ein Geschäft",
+        "kind": "gap",
+        "s": "Dans ___ , il y a des souvenirs.",
+        "a": "une boutique",
+        "wrong": [
+          "un boutique",
+          "une boutik",
+          "une boutiques"
+        ],
+        "why": "„une boutique“ heißt eine Boutique, ein Laden. boutique ist weiblich und endet auf -que. Une boutique de souvenirs ist ein Souvenirladen.",
+        "w": 2
+      },
+      {
+        "q": "Was bedeutet „une boutique“?",
+        "a": "eine Boutique, ein Laden",
+        "wrong": [
+          "lesen; vorlesen",
+          "ein Büro; hier: ein Arbeitszimmer",
+          "die Aussicht"
+        ],
+        "why": "„une boutique“ heißt eine Boutique, ein Laden. boutique ist weiblich und endet auf -que. Une boutique de souvenirs ist ein Souvenirladen.",
+        "w": 2,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Dans une boutique , il y a des souvenirs."
+      },
+      {
+        "q": "Wie heißt „eine Boutique, ein Laden“ auf Französisch?",
+        "a": "une boutique",
+        "wrong": [
+          "une carte",
+          "Cher … / Chère …",
+          "la vue"
+        ],
+        "why": "„une boutique“ heißt eine Boutique, ein Laden. boutique ist weiblich und endet auf -que. Une boutique de souvenirs ist ein Souvenirladen.",
+        "w": 2,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "ein Andenken",
+        "kind": "gap",
+        "s": "Paul achète ___ pour sa sœur.",
+        "a": "un souvenir",
+        "wrong": [
+          "une souvenir",
+          "un souvenire",
+          "un suvenir"
+        ],
+        "why": "„un souvenir“ heißt eine Erinnerung, ein Andenken. souvenir ist männlich. Das Wort steht auch für das Verb, aber hier ist es ein Nomen: un souvenir.",
+        "w": 3
+      },
+      {
+        "q": "Was bedeutet „un souvenir“?",
+        "a": "eine Erinnerung, ein Andenken",
+        "wrong": [
+          "lesen; vorlesen",
+          "ein Büro; hier: ein Arbeitszimmer",
+          "die Aussicht"
+        ],
+        "why": "„un souvenir“ heißt eine Erinnerung, ein Andenken. souvenir ist männlich. Das Wort steht auch für das Verb, aber hier ist es ein Nomen: un souvenir.",
+        "w": 3,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Paul achète un souvenir pour sa sœur."
+      },
+      {
+        "q": "Wie heißt „eine Erinnerung, ein Andenken“ auf Französisch?",
+        "a": "un souvenir",
+        "wrong": [
+          "un restaurant",
+          "une boutique",
+          "écrire"
+        ],
+        "why": "„un souvenir“ heißt eine Erinnerung, ein Andenken. souvenir ist männlich. Das Wort steht auch für das Verb, aber hier ist es ein Nomen: un souvenir.",
+        "w": 3,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "Büro",
+        "kind": "gap",
+        "s": "Mon père travaille dans son ___ .",
+        "a": "bureau",
+        "wrong": [
+          "buro",
+          "bureaux",
+          "burreau"
+        ],
+        "why": "„un bureau“ heißt ein Büro; hier: ein Arbeitszimmer. bureau und Büro klingen gleich, werden aber verschieden geschrieben. Der Plural ist des bureaux.",
+        "w": 4
+      },
+      {
+        "q": "Was bedeutet „un bureau“?",
+        "a": "ein Büro; hier: ein Arbeitszimmer",
+        "wrong": [
+          "lesen; vorlesen",
+          "die Aussicht",
+          "jemandem etwas schreiben"
+        ],
+        "why": "„un bureau“ heißt ein Büro; hier: ein Arbeitszimmer. bureau und Büro klingen gleich, werden aber verschieden geschrieben. Der Plural ist des bureaux.",
+        "w": 4,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Mon père travaille dans son bureau ."
+      },
+      {
+        "q": "Wie heißt „ein Büro; hier: ein Arbeitszimmer“ auf Französisch?",
+        "a": "un bureau",
+        "wrong": [
+          "un restaurant",
+          "écrire",
+          "un souvenir"
+        ],
+        "why": "„un bureau“ heißt ein Büro; hier: ein Arbeitszimmer. bureau und Büro klingen gleich, werden aber verschieden geschrieben. Der Plural ist des bureaux.",
+        "w": 4,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "schreiben (Grundform)",
+        "kind": "gap",
+        "s": "Je vais ___ une carte à Léa.",
+        "a": "écrire",
+        "wrong": [
+          "écris",
+          "écrit",
+          "écrivez"
+        ],
+        "why": "„écrire“ heißt jemandem etwas schreiben. écrire qc à qn heißt jemandem etwas schreiben. Nach aller steht die Grundform.",
+        "w": 5
+      },
+      {
+        "q": "Was bedeutet „écrire“?",
+        "a": "jemandem etwas schreiben",
+        "wrong": [
+          "ein Restaurant",
+          "Opi",
+          "eine Karte"
+        ],
+        "why": "„écrire“ heißt jemandem etwas schreiben. écrire qc à qn heißt jemandem etwas schreiben. Nach aller steht die Grundform.",
+        "w": 5,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Je vais écrire une carte à Léa."
+      },
+      {
+        "q": "Wie heißt „jemandem etwas schreiben“ auf Französisch?",
+        "a": "écrire",
+        "wrong": [
+          "une boutique",
+          "un bureau",
+          "lire"
+        ],
+        "why": "„écrire“ heißt jemandem etwas schreiben. écrire qc à qn heißt jemandem etwas schreiben. Nach aller steht die Grundform.",
+        "w": 5,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "eine Landkarte",
+        "kind": "gap",
+        "s": "Je regarde ___ de France : où est Paris ?",
+        "a": "une carte",
+        "wrong": [
+          "un carte",
+          "une cart",
+          "une karte"
+        ],
+        "why": "„une carte“ heißt eine Karte. carte ist weiblich und wird mit c geschrieben, nicht mit k wie im Deutschen.",
+        "w": 6
+      },
+      {
+        "q": "Was bedeutet „une carte“?",
+        "a": "eine Karte",
+        "wrong": [
+          "lesen; vorlesen",
+          "die Aussicht",
+          "ein Restaurant"
+        ],
+        "why": "„une carte“ heißt eine Karte. carte ist weiblich und wird mit c geschrieben, nicht mit k wie im Deutschen.",
+        "w": 6,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Je regarde une carte de France : où est Paris ?"
+      },
+      {
+        "q": "Wie heißt „eine Karte“ auf Französisch?",
+        "a": "une carte",
+        "wrong": [
+          "lire",
+          "un restaurant",
+          "un souvenir"
+        ],
+        "why": "„une carte“ heißt eine Karte. carte ist weiblich und wird mit c geschrieben, nicht mit k wie im Deutschen.",
+        "w": 6,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "eine Ansichtskarte",
+        "kind": "gap",
+        "s": "Léa écrit ___ à son grand-père.",
+        "a": "une carte postale",
+        "wrong": [
+          "un carte postale",
+          "une carte postal",
+          "une carte postalle"
+        ],
+        "why": "„une carte postale“ heißt eine Postkarte, eine Ansichtskarte. postale richtet sich nach carte und ist deshalb weiblich: une carte postale.",
+        "w": 7
+      },
+      {
+        "q": "Was bedeutet „une carte postale“?",
+        "a": "eine Postkarte, eine Ansichtskarte",
+        "wrong": [
+          "ein Büro; hier: ein Arbeitszimmer",
+          "eine Karte",
+          "die Aussicht"
+        ],
+        "why": "„une carte postale“ heißt eine Postkarte, eine Ansichtskarte. postale richtet sich nach carte und ist deshalb weiblich: une carte postale.",
+        "w": 7,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Léa écrit une carte postale à son grand-père."
+      },
+      {
+        "q": "Wie heißt „eine Postkarte, eine Ansichtskarte“ auf Französisch?",
+        "a": "une carte postale",
+        "wrong": [
+          "un souvenir",
+          "papi",
+          "Cher … / Chère …"
+        ],
+        "why": "„une carte postale“ heißt eine Postkarte, eine Ansichtskarte. postale richtet sich nach carte und ist deshalb weiblich: une carte postale.",
+        "w": 7,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "Lieber (Anrede an einen Mann)",
+        "kind": "gap",
+        "s": "___ papi, il fait beau à Paris !",
+        "a": "Cher",
+        "wrong": [
+          "Chère",
+          "Chers",
+          "Chaire"
+        ],
+        "why": "„Cher … / Chère …“ heißt Lieber … / Liebe …. Der Briefanfang richtet sich nach dem Empfänger: Cher papi (Mann), Chère mamie (Frau).",
+        "w": 8
+      },
+      {
+        "q": "Was bedeutet „Cher … / Chère …“?",
+        "a": "Lieber … / Liebe …",
+        "wrong": [
+          "ein Büro; hier: ein Arbeitszimmer",
+          "jemandem etwas schreiben",
+          "lesen; vorlesen"
+        ],
+        "why": "„Cher … / Chère …“ heißt Lieber … / Liebe …. Der Briefanfang richtet sich nach dem Empfänger: Cher papi (Mann), Chère mamie (Frau).",
+        "w": 8,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Cher papi, il fait beau à Paris !"
+      },
+      {
+        "q": "Wie heißt „Lieber … / Liebe …“ auf Französisch?",
+        "a": "Cher … / Chère …",
+        "wrong": [
+          "papi",
+          "une carte",
+          "un restaurant"
+        ],
+        "why": "„Cher … / Chère …“ heißt Lieber … / Liebe …. Der Briefanfang richtet sich nach dem Empfänger: Cher papi (Mann), Chère mamie (Frau).",
+        "w": 8,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "Opi",
+        "kind": "gap",
+        "s": "Cher ___ , je t'écris de Paris.",
+        "a": "papi",
+        "wrong": [
+          "papa",
+          "papie",
+          "pappi"
+        ],
+        "why": "„papi“ heißt Opi. papi ist die Umgangssprache für Opa. Man schreibt auch papy. Papa ist dagegen der Vater.",
+        "w": 9,
+        "accept": [
+          "papy"
+        ]
+      },
+      {
+        "q": "Was bedeutet „papi“?",
+        "a": "Opi",
+        "wrong": [
+          "die Aussicht",
+          "eine Erinnerung, ein Andenken",
+          "lesen; vorlesen"
+        ],
+        "why": "„papi“ heißt Opi. papi ist die Umgangssprache für Opa. Man schreibt auch papy. Papa ist dagegen der Vater.",
+        "w": 9,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Cher papi , je t'écris de Paris."
+      },
+      {
+        "q": "Wie heißt „Opi“ auf Französisch?",
+        "a": "papi",
+        "wrong": [
+          "une carte postale",
+          "une boutique",
+          "écrire"
+        ],
+        "why": "„papi“ heißt Opi. papi ist die Umgangssprache für Opa. Man schreibt auch papy. Papa ist dagegen der Vater.",
+        "w": 9,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "lesen (er liest)",
+        "kind": "gap",
+        "s": "Paul ___ le journal.",
+        "a": "lit",
+        "wrong": [
+          "lis",
+          "lisent",
+          "lire"
+        ],
+        "why": "„lire“ heißt lesen; vorlesen. lire hat unregelmäßige Formen: je lis, tu lis, il lit. lire qc à qn heißt jemandem etwas vorlesen.",
+        "w": 10
+      },
+      {
+        "q": "Was bedeutet „lire“?",
+        "a": "lesen; vorlesen",
+        "wrong": [
+          "eine Postkarte, eine Ansichtskarte",
+          "Opi",
+          "jemandem etwas schreiben"
+        ],
+        "why": "„lire“ heißt lesen; vorlesen. lire hat unregelmäßige Formen: je lis, tu lis, il lit. lire qc à qn heißt jemandem etwas vorlesen.",
+        "w": 10,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Paul lit le journal."
+      },
+      {
+        "q": "Wie heißt „lesen; vorlesen“ auf Französisch?",
+        "a": "lire",
+        "wrong": [
+          "écrire",
+          "une carte postale",
+          "un souvenir"
+        ],
+        "why": "„lire“ heißt lesen; vorlesen. lire hat unregelmäßige Formen: je lis, tu lis, il lit. lire qc à qn heißt jemandem etwas vorlesen.",
+        "w": 10,
+        "label": "Deutsch → Französisch"
+      }
+    ],
+    "u7-ecrire-lire": [
+      {
+        "q": "schreiben (ich schreibe)",
+        "kind": "gap",
+        "s": "J'___ une carte à mon père.",
+        "a": "écris",
+        "wrong": [
+          "écrit",
+          "écrivez",
+          "écrire"
+        ],
+        "why": "Bei je lautet écrire écris. Vor dem Vokal wird je zu j'."
+      },
+      {
+        "q": "schreiben (du schreibst)",
+        "kind": "gap",
+        "s": "Tu ___ un poème ?",
+        "a": "écris",
+        "wrong": [
+          "écrit",
+          "écrivons",
+          "écrire"
+        ],
+        "why": "Bei tu endet écrire auf -s: tu écris."
+      },
+      {
+        "q": "schreiben (sie schreibt)",
+        "kind": "gap",
+        "s": "Léa ___ une carte postale.",
+        "a": "écrit",
+        "wrong": [
+          "écris",
+          "écrivent",
+          "écrire"
+        ],
+        "why": "Bei il, elle und on endet écrire auf -t: elle écrit."
+      },
+      {
+        "q": "schreiben (wir schreiben)",
+        "kind": "gap",
+        "s": "Nous ___ à nos amis.",
+        "a": "écrivons",
+        "wrong": [
+          "écrivez",
+          "écrivent",
+          "écrions"
+        ],
+        "why": "Bei nous kommt die Endung -ons an den Stamm écriv-: nous écrivons."
+      },
+      {
+        "q": "schreiben (ihr schreibt)",
+        "kind": "gap",
+        "s": "Paul et Léa, vous ___ une carte ?",
+        "a": "écrivez",
+        "wrong": [
+          "écrivons",
+          "écrivent",
+          "écrissez"
+        ],
+        "why": "Bei vous endet das Verb auf -ez: vous écrivez."
+      },
+      {
+        "q": "schreiben (sie schreiben)",
+        "kind": "gap",
+        "s": "Ils ___ une lettre à leur grand-père.",
+        "a": "écrivent",
+        "wrong": [
+          "écrivons",
+          "écrivez",
+          "écrit"
+        ],
+        "why": "Bei ils und elles kommt -ent an den Stamm écriv-: ils écrivent."
+      },
+      {
+        "q": "lesen (ich lese)",
+        "kind": "gap",
+        "s": "Je ___ le journal.",
+        "a": "lis",
+        "wrong": [
+          "lit",
+          "lisons",
+          "lire"
+        ],
+        "why": "Bei je lautet lire lis, mit -s am Ende."
+      },
+      {
+        "q": "lesen (er liest)",
+        "kind": "gap",
+        "s": "Paul ___ un poème.",
+        "a": "lit",
+        "wrong": [
+          "lis",
+          "lisent",
+          "lisez"
+        ],
+        "why": "Bei il, elle und on endet lire auf -t: il lit."
+      },
+      {
+        "q": "lesen (wir lesen)",
+        "kind": "gap",
+        "s": "Nous ___ la carte de Paul.",
+        "a": "lisons",
+        "wrong": [
+          "lisez",
+          "lisent",
+          "lissons"
+        ],
+        "why": "Bei nous wird -ons an den Stamm lis- gehängt, mit einem s: nous lisons."
+      },
+      {
+        "q": "lesen (ihr lest)",
+        "kind": "gap",
+        "s": "Paul et Léa, vous ___ le journal ?",
+        "a": "lisez",
+        "wrong": [
+          "lisons",
+          "lisent",
+          "lit"
+        ],
+        "why": "Bei vous endet lire auf -ez: vous lisez."
+      },
+      {
+        "q": "lesen (sie lesen)",
+        "kind": "gap",
+        "s": "Ils ___ une lettre.",
+        "a": "lisent",
+        "wrong": [
+          "lisons",
+          "lisez",
+          "lit"
+        ],
+        "why": "Bei ils und elles kommt -ent an den Stamm lis-: ils lisent."
+      },
+      {
+        "q": "Wie lautet die Grundform (Infinitiv) von „il écrit“?",
+        "a": "écrire",
+        "wrong": [
+          "écrir",
+          "écrivre",
+          "écriter"
+        ],
+        "why": "Die Grundform von il écrit ist écrire. Sie endet auf -re wie lire."
+      },
+      {
+        "q": "Welche Endung haben écrire und lire bei il, elle und on in der Gegenwart?",
+        "a": "-t: il écrit, il lit",
+        "wrong": [
+          "-e: il écrite, il lite",
+          "-s: il écris, il lis",
+          "-nt: il écrivent, il lisent"
+        ],
+        "why": "Bei il, elle und on steht -t. Die Endung -s gehört zu je und tu, -nt gehört zu ils und elles."
+      },
+      {
+        "q": "Wie sagst du „Ich schreibe eine Postkarte an meine Eltern“?",
+        "a": "J'écris une carte postale à mes parents.",
+        "wrong": [
+          "J'écrit une carte postale à mes parents.",
+          "J'écris une carte postale de mes parents.",
+          "J'écrire une carte postale à mes parents."
+        ],
+        "why": "Bei je steht écris mit -s, und der Empfänger wird mit à angeschlossen: à mes parents."
+      }
+    ],
+    "u7-verkehr": [
+      {
+        "q": "mit dem Zug",
+        "kind": "gap",
+        "s": "Nous allons à Lyon ___ .",
+        "a": "en train",
+        "wrong": [
+          "à train",
+          "au train",
+          "dans train"
+        ],
+        "why": "„en train“ heißt mit dem Zug. Bei Zug, Bus, U-Bahn, Auto und Flugzeug steht en: en train, en bus, en métro, en voiture, en avion.",
+        "w": 0
+      },
+      {
+        "q": "Was bedeutet „en train“?",
+        "a": "mit dem Zug",
+        "wrong": [
+          "mit dem Bus",
+          "mit der U-Bahn",
+          "mit dem Fahrrad"
+        ],
+        "why": "„en train“ heißt mit dem Zug. Bei Zug, Bus, U-Bahn, Auto und Flugzeug steht en: en train, en bus, en métro, en voiture, en avion.",
+        "w": 0,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Nous allons à Lyon en train ."
+      },
+      {
+        "q": "Wie heißt „mit dem Zug“ auf Französisch?",
+        "a": "en train",
+        "wrong": [
+          "en bus",
+          "écologique",
+          "en métro"
+        ],
+        "why": "„en train“ heißt mit dem Zug. Bei Zug, Bus, U-Bahn, Auto und Flugzeug steht en: en train, en bus, en métro, en voiture, en avion.",
+        "w": 0,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "mit dem Bus",
+        "kind": "gap",
+        "s": "Paul va à l'école ___ .",
+        "a": "en bus",
+        "wrong": [
+          "à bus",
+          "au bus",
+          "sur bus"
+        ],
+        "why": "„en bus“ heißt mit dem Bus. Auch bei bus steht en, nicht à: en bus.",
+        "w": 1
+      },
+      {
+        "q": "Was bedeutet „en bus“?",
+        "a": "mit dem Bus",
+        "wrong": [
+          "ein Flugzeug",
+          "mit der U-Bahn",
+          "mit dem Auto"
+        ],
+        "why": "„en bus“ heißt mit dem Bus. Auch bei bus steht en, nicht à: en bus.",
+        "w": 1,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Paul va à l'école en bus ."
+      },
+      {
+        "q": "Wie heißt „mit dem Bus“ auf Französisch?",
+        "a": "en bus",
+        "wrong": [
+          "écologique",
+          "en train",
+          "à pied"
+        ],
+        "why": "„en bus“ heißt mit dem Bus. Auch bei bus steht en, nicht à: en bus.",
+        "w": 1,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "mit der U-Bahn",
+        "kind": "gap",
+        "s": "À Paris, nous allons au Louvre ___ .",
+        "a": "en métro",
+        "wrong": [
+          "à métro",
+          "au métro",
+          "en metro"
+        ],
+        "why": "„en métro“ heißt mit der U-Bahn. métro schreibst du mit é. Die Verbindung ist en métro.",
+        "w": 2
+      },
+      {
+        "q": "Was bedeutet „en métro“?",
+        "a": "mit der U-Bahn",
+        "wrong": [
+          "ökologisch, umweltfreundlich",
+          "ein Fahrschein, eine Fahrkarte",
+          "mit dem Fahrrad"
+        ],
+        "why": "„en métro“ heißt mit der U-Bahn. métro schreibst du mit é. Die Verbindung ist en métro.",
+        "w": 2,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: À Paris, nous allons au Louvre en métro ."
+      },
+      {
+        "q": "Wie heißt „mit der U-Bahn“ auf Französisch?",
+        "a": "en métro",
+        "wrong": [
+          "un avion",
+          "à vélo",
+          "en voiture"
+        ],
+        "why": "„en métro“ heißt mit der U-Bahn. métro schreibst du mit é. Die Verbindung ist en métro.",
+        "w": 2,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "mit dem Auto",
+        "kind": "gap",
+        "s": "Mon père va au bureau ___ .",
+        "a": "en voiture",
+        "wrong": [
+          "à voiture",
+          "en voitur",
+          "sur voiture"
+        ],
+        "why": "„en voiture“ heißt mit dem Auto. voiture ist weiblich, die Verbindung bleibt aber en voiture.",
+        "w": 3
+      },
+      {
+        "q": "Was bedeutet „en voiture“?",
+        "a": "mit dem Auto",
+        "wrong": [
+          "mit der U-Bahn",
+          "mit dem Zug",
+          "zu Fuß"
+        ],
+        "why": "„en voiture“ heißt mit dem Auto. voiture ist weiblich, die Verbindung bleibt aber en voiture.",
+        "w": 3,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Mon père va au bureau en voiture ."
+      },
+      {
+        "q": "Wie heißt „mit dem Auto“ auf Französisch?",
+        "a": "en voiture",
+        "wrong": [
+          "un ticket",
+          "à vélo",
+          "en bus"
+        ],
+        "why": "„en voiture“ heißt mit dem Auto. voiture ist weiblich, die Verbindung bleibt aber en voiture.",
+        "w": 3,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "mit dem Fahrrad",
+        "kind": "gap",
+        "s": "Inès va au parc ___ .",
+        "a": "à vélo",
+        "wrong": [
+          "au vélo",
+          "à vélos",
+          "en vélos"
+        ],
+        "why": "„à vélo“ heißt mit dem Fahrrad. Beim Fahrrad steht normalerweise à: à vélo. Man hört auch en vélo.",
+        "w": 4,
+        "accept": [
+          "en vélo"
+        ]
+      },
+      {
+        "q": "Was bedeutet „à vélo“?",
+        "a": "mit dem Fahrrad",
+        "wrong": [
+          "ein Flugzeug",
+          "mit dem Auto",
+          "ein Fahrschein, eine Fahrkarte"
+        ],
+        "why": "„à vélo“ heißt mit dem Fahrrad. Beim Fahrrad steht normalerweise à: à vélo. Man hört auch en vélo.",
+        "w": 4,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Inès va au parc à vélo ."
+      },
+      {
+        "q": "Wie heißt „mit dem Fahrrad“ auf Französisch?",
+        "a": "à vélo",
+        "wrong": [
+          "un ticket",
+          "en métro",
+          "en train"
+        ],
+        "why": "„à vélo“ heißt mit dem Fahrrad. Beim Fahrrad steht normalerweise à: à vélo. Man hört auch en vélo.",
+        "w": 4,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "zu Fuß",
+        "kind": "gap",
+        "s": "La gare est près : Paul va à la gare ___ .",
+        "a": "à pied",
+        "wrong": [
+          "en pied",
+          "au pied",
+          "à pieds"
+        ],
+        "why": "„à pied“ heißt zu Fuß. à pied heißt zu Fuß. Es steht immer im Singular.",
+        "w": 5
+      },
+      {
+        "q": "Was bedeutet „à pied“?",
+        "a": "zu Fuß",
+        "wrong": [
+          "ein Flugzeug",
+          "ökologisch, umweltfreundlich",
+          "mit dem Zug"
+        ],
+        "why": "„à pied“ heißt zu Fuß. à pied heißt zu Fuß. Es steht immer im Singular.",
+        "w": 5,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: La gare est près : Paul va à la gare à pied ."
+      },
+      {
+        "q": "Wie heißt „zu Fuß“ auf Französisch?",
+        "a": "à pied",
+        "wrong": [
+          "en train",
+          "en bus",
+          "à vélo"
+        ],
+        "why": "„à pied“ heißt zu Fuß. à pied heißt zu Fuß. Es steht immer im Singular.",
+        "w": 5,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "ein Flugzeug",
+        "kind": "gap",
+        "s": "Dans le ciel, il y a ___ .",
+        "a": "un avion",
+        "wrong": [
+          "une avion",
+          "un avions",
+          "un avyon"
+        ],
+        "why": "„un avion“ heißt ein Flugzeug. avion ist männlich: un avion. Mit dem Flugzeug heißt en avion.",
+        "w": 6
+      },
+      {
+        "q": "Was bedeutet „un avion“?",
+        "a": "ein Flugzeug",
+        "wrong": [
+          "mit dem Fahrrad",
+          "mit dem Auto",
+          "ökologisch, umweltfreundlich"
+        ],
+        "why": "„un avion“ heißt ein Flugzeug. avion ist männlich: un avion. Mit dem Flugzeug heißt en avion.",
+        "w": 6,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Dans le ciel, il y a un avion ."
+      },
+      {
+        "q": "Wie heißt „ein Flugzeug“ auf Französisch?",
+        "a": "un avion",
+        "wrong": [
+          "en train",
+          "à pied",
+          "en bus"
+        ],
+        "why": "„un avion“ heißt ein Flugzeug. avion ist männlich: un avion. Mit dem Flugzeug heißt en avion.",
+        "w": 6,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "eine Fahrkarte",
+        "kind": "gap",
+        "s": "Paul achète ___ pour le métro.",
+        "a": "un ticket",
+        "wrong": [
+          "une ticket",
+          "un tiquet",
+          "un tickets"
+        ],
+        "why": "„un ticket“ heißt ein Fahrschein, eine Fahrkarte. ticket ist männlich und kommt aus dem Englischen. Im Plural kommt -s: des tickets.",
+        "w": 7
+      },
+      {
+        "q": "Was bedeutet „un ticket“?",
+        "a": "ein Fahrschein, eine Fahrkarte",
+        "wrong": [
+          "mit dem Bus",
+          "ein Flugzeug",
+          "mit dem Zug"
+        ],
+        "why": "„un ticket“ heißt ein Fahrschein, eine Fahrkarte. ticket ist männlich und kommt aus dem Englischen. Im Plural kommt -s: des tickets.",
+        "w": 7,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Paul achète un ticket pour le métro."
+      },
+      {
+        "q": "Wie heißt „ein Fahrschein, eine Fahrkarte“ auf Französisch?",
+        "a": "un ticket",
+        "wrong": [
+          "à vélo",
+          "écologique",
+          "en bus"
+        ],
+        "why": "„un ticket“ heißt ein Fahrschein, eine Fahrkarte. ticket ist männlich und kommt aus dem Englischen. Im Plural kommt -s: des tickets.",
+        "w": 7,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "umweltfreundlich",
+        "kind": "gap",
+        "s": "Le vélo est très ___ .",
+        "a": "écologique",
+        "wrong": [
+          "écologiques",
+          "écologie",
+          "ecologique"
+        ],
+        "why": "„écologique“ heißt ökologisch, umweltfreundlich. écologique endet auf -e und ist männlich und weiblich gleich. Nicht mit écologie (die Ökologie) verwechseln.",
+        "w": 8
+      },
+      {
+        "q": "Was bedeutet „écologique“?",
+        "a": "ökologisch, umweltfreundlich",
+        "wrong": [
+          "zu Fuß",
+          "mit dem Zug",
+          "mit dem Bus"
+        ],
+        "why": "„écologique“ heißt ökologisch, umweltfreundlich. écologique endet auf -e und ist männlich und weiblich gleich. Nicht mit écologie (die Ökologie) verwechseln.",
+        "w": 8,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Le vélo est très écologique ."
+      },
+      {
+        "q": "Wie heißt „ökologisch, umweltfreundlich“ auf Französisch?",
+        "a": "écologique",
+        "wrong": [
+          "un ticket",
+          "à vélo",
+          "en train"
+        ],
+        "why": "„écologique“ heißt ökologisch, umweltfreundlich. écologique endet auf -e und ist männlich und weiblich gleich. Nicht mit écologie (die Ökologie) verwechseln.",
+        "w": 8,
+        "label": "Deutsch → Französisch"
+      }
+    ],
+    "u7-tageszeiten": [
+      {
+        "q": "heute Morgen",
+        "kind": "gap",
+        "s": "___ matin, il fait froid.",
+        "a": "Ce",
+        "wrong": [
+          "Cet",
+          "Cette",
+          "Ces"
+        ],
+        "why": "matin ist männlich und beginnt mit einem Konsonanten, deshalb ce matin."
+      },
+      {
+        "q": "heute Nachmittag",
+        "kind": "gap",
+        "s": "___ après-midi, nous visitons le musée.",
+        "a": "Cet",
+        "wrong": [
+          "Ce",
+          "Ces",
+          "Cets"
+        ],
+        "why": "Vor dem Vokal a wird ce zu cet: cet après-midi."
+      },
+      {
+        "q": "heute Abend",
+        "kind": "gap",
+        "s": "___ soir, nous mangeons au restaurant.",
+        "a": "Ce",
+        "wrong": [
+          "Cet",
+          "Cette",
+          "Ces"
+        ],
+        "why": "soir ist männlich und beginnt mit einem Konsonanten, deshalb ce soir."
+      },
+      {
+        "q": "heute Nacht",
+        "kind": "gap",
+        "s": "___ nuit, il neige.",
+        "a": "Cette",
+        "wrong": [
+          "Ce",
+          "Cet",
+          "Ces"
+        ],
+        "why": "nuit ist weiblich, deshalb cette nuit."
+      },
+      {
+        "q": "um acht Uhr morgens",
+        "kind": "gap",
+        "s": "Le train part à huit heures ___ matin.",
+        "a": "du",
+        "wrong": [
+          "de",
+          "au",
+          "des"
+        ],
+        "why": "Mit Uhrzeit heißt es du matin: à huit heures du matin."
+      },
+      {
+        "q": "um neun Uhr abends",
+        "kind": "gap",
+        "s": "Nous mangeons à neuf heures ___ soir.",
+        "a": "du",
+        "wrong": [
+          "de",
+          "au",
+          "le"
+        ],
+        "why": "Mit Uhrzeit heißt es du soir: à neuf heures du soir."
+      },
+      {
+        "q": "um drei Uhr nachmittags",
+        "kind": "gap",
+        "s": "Nous visitons le musée à trois heures ___ l'après-midi.",
+        "a": "de",
+        "wrong": [
+          "du",
+          "des",
+          "au"
+        ],
+        "why": "Bei après-midi steht de l': à trois heures de l'après-midi."
+      },
+      {
+        "q": "am Samstagmorgen",
+        "kind": "gap",
+        "s": "___ matin, je reste à la maison.",
+        "a": "Samedi",
+        "wrong": [
+          "Du samedi",
+          "De samedi",
+          "Au samedi"
+        ],
+        "why": "Für einen bestimmten Tag stehen Wochentag und Tageszeit direkt nebeneinander: samedi matin."
+      },
+      {
+        "q": "am Montagnachmittag",
+        "kind": "gap",
+        "s": "___ après-midi, nous allons au parc.",
+        "a": "Lundi",
+        "wrong": [
+          "Lund",
+          "Du lundi",
+          "À lundi"
+        ],
+        "why": "Wochentag und Tageszeit stehen ohne Artikel nebeneinander: lundi après-midi."
+      },
+      {
+        "q": "die Nacht (Substantiv)",
+        "kind": "gap",
+        "s": "Il y a du vent dans ___ de mardi.",
+        "a": "la nuit",
+        "wrong": [
+          "le nuit",
+          "la soir",
+          "le soir"
+        ],
+        "why": "nuit ist weiblich: la nuit. Die Nacht von Dienstag auf Mittwoch heißt la nuit de mardi."
+      },
+      {
+        "q": "Wie sagst du „um zwei Uhr nachts“?",
+        "a": "à deux heures du matin",
+        "wrong": [
+          "à deux heures de la nuit",
+          "à deux heures du soir",
+          "à deux heures de l'après-midi"
+        ],
+        "why": "Die Stunden nach Mitternacht zählen zum matin: à deux heures du matin."
+      },
+      {
+        "q": "Was bedeutet „ce soir“?",
+        "a": "heute Abend",
+        "wrong": [
+          "gestern Abend",
+          "jeden Abend",
+          "morgen früh"
+        ],
+        "why": "ce soir heißt heute Abend. Gestern Abend wäre hier soir."
+      },
+      {
+        "q": "Was bedeutet „vendredi soir“?",
+        "a": "Freitagabend",
+        "wrong": [
+          "heute Abend",
+          "Freitagmorgen",
+          "Freitagnachmittag"
+        ],
+        "why": "Wochentag und soir ergeben Freitagabend."
+      },
+      {
+        "q": "Wie sagst du „heute Nacht“?",
+        "a": "cette nuit",
+        "wrong": [
+          "ce nuit",
+          "cet nuit",
+          "la nuit de"
+        ],
+        "why": "nuit ist weiblich, deshalb cette nuit."
+      }
+    ],
+    "u7-aehnlich": [
+      {
+        "q": "eine Süßigkeit (französisch: männlich)",
+        "kind": "gap",
+        "s": "Léa mange ___ .",
+        "a": "un bonbon",
+        "wrong": [
+          "une bonbon",
+          "un bombon",
+          "un bonbont"
+        ],
+        "why": "„un bonbon“ heißt ein Bonbon. bonbon schreibt sich wie im Deutschen, ist aber männlich: un bonbon.",
+        "w": 0
+      },
+      {
+        "q": "Welcher Artikel (ein/eine) passt zu „bonbon“?",
+        "a": "un",
+        "wrong": [
+          "une",
+          "des",
+          "la"
+        ],
+        "why": "„un bonbon“ heißt ein Bonbon. bonbon schreibt sich wie im Deutschen, ist aber männlich: un bonbon.",
+        "w": 0,
+        "label": "Schreibweise und Artikel"
+      },
+      {
+        "q": "ein Getränk am Morgen",
+        "kind": "gap",
+        "s": "Mon père boit ___ le matin.",
+        "a": "un café",
+        "wrong": [
+          "une café",
+          "un cafe",
+          "un caffé"
+        ],
+        "why": "„un café“ heißt ein Café, ein Kaffee. café hat einen Accent aigu und ist männlich: un café.",
+        "w": 1
+      },
+      {
+        "q": "Welcher Artikel (ein/eine) passt zu „café“?",
+        "a": "un",
+        "wrong": [
+          "une",
+          "des",
+          "la"
+        ],
+        "why": "„un café“ heißt ein Café, ein Kaffee. café hat einen Accent aigu und ist männlich: un café.",
+        "w": 1,
+        "label": "Schreibweise und Artikel"
+      },
+      {
+        "q": "ein Licht auf dem Schreibtisch",
+        "kind": "gap",
+        "s": "Sur mon bureau, il y a ___ .",
+        "a": "une lampe",
+        "wrong": [
+          "un lampe",
+          "une lamppe",
+          "une lamp"
+        ],
+        "why": "„une lampe“ heißt eine Lampe. lampe ist weiblich und endet auf -e: une lampe.",
+        "w": 2
+      },
+      {
+        "q": "Welcher Artikel (ein/eine) passt zu „lampe“?",
+        "a": "une",
+        "wrong": [
+          "un",
+          "des",
+          "le"
+        ],
+        "why": "„une lampe“ heißt eine Lampe. lampe ist weiblich und endet auf -e: une lampe.",
+        "w": 2,
+        "label": "Schreibweise und Artikel"
+      },
+      {
+        "q": "eine ältere, höfliche Frau",
+        "kind": "gap",
+        "s": "Voilà ___ avec un chapeau jaune.",
+        "a": "une dame",
+        "wrong": [
+          "un dame",
+          "une damme",
+          "une dam"
+        ],
+        "why": "„une dame“ heißt eine Dame. dame ist weiblich: une dame. Sie hat ein m.",
+        "w": 3
+      },
+      {
+        "q": "Welcher Artikel (ein/eine) passt zu „dame“?",
+        "a": "une",
+        "wrong": [
+          "un",
+          "des",
+          "le"
+        ],
+        "why": "„une dame“ heißt eine Dame. dame ist weiblich: une dame. Sie hat ein m.",
+        "w": 3,
+        "label": "Schreibweise und Artikel"
+      },
+      {
+        "q": "ein Verwandter, Sohn von Onkel oder Tante",
+        "kind": "gap",
+        "s": "J'ai ___ à Lyon.",
+        "a": "un cousin",
+        "wrong": [
+          "une cousin",
+          "un cousain",
+          "un cousins"
+        ],
+        "why": "„un cousin“ heißt ein Cousin. cousin ist männlich. Die weibliche Form heißt une cousine.",
+        "w": 4
+      },
+      {
+        "q": "Welcher Artikel (ein/eine) passt zu „cousin“?",
+        "a": "un",
+        "wrong": [
+          "une",
+          "des",
+          "la"
+        ],
+        "why": "„un cousin“ heißt ein Cousin. cousin ist männlich. Die weibliche Form heißt une cousine.",
+        "w": 4,
+        "label": "Schreibweise und Artikel"
+      },
+      {
+        "q": "Fußball, Tennis und Schwimmen gehören dazu",
+        "kind": "gap",
+        "s": "J'aime ___ .",
+        "a": "le sport",
+        "wrong": [
+          "la sport",
+          "le spor",
+          "le sporte"
+        ],
+        "why": "„le sport“ heißt der Sport. sport ist männlich: le sport. Am Ende steht kein e.",
+        "w": 5
+      },
+      {
+        "q": "Welcher bestimmte Artikel (der/die) passt zu „sport“?",
+        "a": "le",
+        "wrong": [
+          "la",
+          "les",
+          "un"
+        ],
+        "why": "„le sport“ heißt der Sport. sport ist männlich: le sport. Am Ende steht kein e.",
+        "w": 5,
+        "label": "Schreibweise und Artikel"
+      },
+      {
+        "q": "eine Pappschachtel zum Verpacken",
+        "kind": "gap",
+        "s": "Dans ___ , il y a des vêtements.",
+        "a": "un carton",
+        "wrong": [
+          "une carton",
+          "un karton",
+          "un cartons"
+        ],
+        "why": "„un carton“ heißt ein Karton. Im Französischen schreibst du carton mit c, im Deutschen Karton mit K.",
+        "w": 6
+      },
+      {
+        "q": "Welche französische Schreibweise ist für „ein Karton“ richtig?",
+        "a": "un carton",
+        "wrong": [
+          "un karton",
+          "une carton",
+          "un cartonn"
+        ],
+        "why": "„un carton“ heißt ein Karton. Im Französischen schreibst du carton mit c, im Deutschen Karton mit K.",
+        "w": 6,
+        "label": "Schreibweise und Artikel"
+      },
+      {
+        "q": "ein guter Einfall",
+        "kind": "gap",
+        "s": "Tu as ___ ? Allons au parc !",
+        "a": "une idée",
+        "wrong": [
+          "un idée",
+          "une idee",
+          "une ideé"
+        ],
+        "why": "„une idée“ heißt eine Idee. idée ist weiblich und hat einen Accent aigu am Ende.",
+        "w": 7
+      },
+      {
+        "q": "Welche französische Schreibweise ist für „eine Idee“ richtig?",
+        "a": "une idée",
+        "wrong": [
+          "une idee",
+          "un idée",
+          "une ideé"
+        ],
+        "why": "„une idée“ heißt eine Idee. idée ist weiblich und hat einen Accent aigu am Ende.",
+        "w": 7,
+        "label": "Schreibweise und Artikel"
+      },
+      {
+        "q": "ein sehr großes Unglück",
+        "kind": "gap",
+        "s": "Il pleut dans le musée : c'est ___ !",
+        "a": "une catastrophe",
+        "wrong": [
+          "un catastrophe",
+          "une katastrophe",
+          "une catastrofe"
+        ],
+        "why": "„une catastrophe“ heißt eine Katastrophe. catastrophe wird mit c und ph geschrieben, nicht mit k und f.",
+        "w": 8
+      },
+      {
+        "q": "Welche französische Schreibweise ist für „eine Katastrophe“ richtig?",
+        "a": "une catastrophe",
+        "wrong": [
+          "une katastrophe",
+          "un catastrophe",
+          "une catastrofe"
+        ],
+        "why": "„une catastrophe“ heißt eine Katastrophe. catastrophe wird mit c und ph geschrieben, nicht mit k und f.",
+        "w": 8,
+        "label": "Schreibweise und Artikel"
+      },
+      {
+        "q": "Turnen im Sportunterricht",
+        "kind": "gap",
+        "s": "Léa aime ___ à l'école.",
+        "a": "la gymnastique",
+        "wrong": [
+          "le gymnastique",
+          "la gymnastic",
+          "la gymnastik"
+        ],
+        "why": "„la gymnastique“ heißt die Gymnastik. gymnastique endet auf -que und ist weiblich.",
+        "w": 9
+      },
+      {
+        "q": "Welche französische Schreibweise ist für „die Gymnastik“ richtig?",
+        "a": "la gymnastique",
+        "wrong": [
+          "la gymnastik",
+          "le gymnastique",
+          "la gymnastic"
+        ],
+        "why": "„la gymnastique“ heißt die Gymnastik. gymnastique endet auf -que und ist weiblich.",
+        "w": 9,
+        "label": "Schreibweise und Artikel"
+      },
+      {
+        "q": "großartig (Adjektiv)",
+        "kind": "gap",
+        "s": "La vue est ___ !",
+        "a": "fantastique",
+        "wrong": [
+          "phantastique",
+          "fantastic",
+          "fantastiques"
+        ],
+        "why": "„fantastique“ heißt fantastisch, phantastisch. Im Französischen schreibst du fantastique mit f, im Deutschen darf auch ph stehen.",
+        "w": 10
+      },
+      {
+        "q": "Welche französische Schreibweise ist für „fantastisch, phantastisch“ richtig?",
+        "a": "fantastique",
+        "wrong": [
+          "phantastique",
+          "fantastic",
+          "fantastik"
+        ],
+        "why": "„fantastique“ heißt fantastisch, phantastisch. Im Französischen schreibst du fantastique mit f, im Deutschen darf auch ph stehen.",
+        "w": 10,
+        "label": "Schreibweise und Artikel"
+      },
+      {
+        "q": "nützlich und einfach (Adjektiv)",
+        "kind": "gap",
+        "s": "Le vélo est très ___ à Paris.",
+        "a": "pratique",
+        "wrong": [
+          "praktique",
+          "pratik",
+          "pratiques"
+        ],
+        "why": "„pratique“ heißt praktisch. pratique wird ohne k geschrieben und endet auf -que.",
+        "w": 11
+      },
+      {
+        "q": "Welche französische Schreibweise ist für „praktisch“ richtig?",
+        "a": "pratique",
+        "wrong": [
+          "praktique",
+          "pratik",
+          "pratike"
+        ],
+        "why": "„pratique“ heißt praktisch. pratique wird ohne k geschrieben und endet auf -que.",
+        "w": 11,
+        "label": "Schreibweise und Artikel"
+      },
+      {
+        "q": "aus der Zeit von Mozart (Adjektiv)",
+        "kind": "gap",
+        "s": "Léa aime la musique ___ .",
+        "a": "classique",
+        "wrong": [
+          "klassique",
+          "classic",
+          "classiques"
+        ],
+        "why": "„classique“ heißt klassisch. classique wird mit c geschrieben und endet auf -que.",
+        "w": 12
+      },
+      {
+        "q": "Welche französische Schreibweise ist für „klassisch“ richtig?",
+        "a": "classique",
+        "wrong": [
+          "klassique",
+          "classic",
+          "clasique"
+        ],
+        "why": "„classique“ heißt klassisch. classique wird mit c geschrieben und endet auf -que.",
+        "w": 12,
+        "label": "Schreibweise und Artikel"
+      }
+    ],
+    "u7-parc": [
+      {
+        "q": "eine Achterbahn",
+        "kind": "gap",
+        "s": "Au parc d'attractions, il y a ___ .",
+        "a": "un grand huit",
+        "wrong": [
+          "une grand huit",
+          "un grande huit",
+          "un grand huite"
+        ],
+        "why": "„un grand huit“ heißt eine Achterbahn. grand huit heißt wörtlich „große Acht“. Mit der Achterbahn heißt sur le grand huit.",
+        "w": 0
+      },
+      {
+        "q": "Was bedeutet „un grand huit“?",
+        "a": "eine Achterbahn",
+        "wrong": [
+          "ein Freizeitpark, ein Erlebnispark",
+          "im Internet",
+          "ein Leser / eine Leserin"
+        ],
+        "why": "„un grand huit“ heißt eine Achterbahn. grand huit heißt wörtlich „große Acht“. Mit der Achterbahn heißt sur le grand huit.",
+        "w": 0,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Au parc d'attractions, il y a un grand huit ."
+      },
+      {
+        "q": "Wie heißt „eine Achterbahn“ auf Französisch?",
+        "a": "un grand huit",
+        "wrong": [
+          "alors",
+          "vrai / vraie",
+          "un parc d'attractions"
+        ],
+        "why": "„un grand huit“ heißt eine Achterbahn. grand huit heißt wörtlich „große Acht“. Mit der Achterbahn heißt sur le grand huit.",
+        "w": 0,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "echt (weiblich)",
+        "kind": "gap",
+        "s": "Léa a une ___ amie : Inès.",
+        "a": "vraie",
+        "wrong": [
+          "vrai",
+          "vrais",
+          "vraies"
+        ],
+        "why": "„vrai / vraie“ heißt wahr, richtig, echt. amie ist weiblich, also vraie. Aus vrai wird das Adverb vraiment.",
+        "w": 1
+      },
+      {
+        "q": "Was bedeutet „vrai / vraie“?",
+        "a": "wahr, richtig, echt",
+        "wrong": [
+          "ein Freizeitpark, ein Erlebnispark",
+          "im Internet",
+          "eine Achterbahn"
+        ],
+        "why": "„vrai / vraie“ heißt wahr, richtig, echt. amie ist weiblich, also vraie. Aus vrai wird das Adverb vraiment.",
+        "w": 1,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Léa a une vraie amie : Inès."
+      },
+      {
+        "q": "Wie heißt „wahr, richtig, echt“ auf Französisch?",
+        "a": "vrai / vraie",
+        "wrong": [
+          "sur Internet",
+          "adorer",
+          "un parc d'attractions"
+        ],
+        "why": "„vrai / vraie“ heißt wahr, richtig, echt. amie ist weiblich, also vraie. Aus vrai wird das Adverb vraiment.",
+        "w": 1,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "ein Freizeitpark",
+        "kind": "gap",
+        "s": "Dimanche, nous allons dans ___ .",
+        "a": "un parc d'attractions",
+        "wrong": [
+          "une parc d'attractions",
+          "un parc d'attraction",
+          "un parc de attractions"
+        ],
+        "why": "„un parc d'attractions“ heißt ein Freizeitpark, ein Erlebnispark. parc ist männlich. attractions steht im Plural, weil es viele Attraktionen gibt.",
+        "w": 2
+      },
+      {
+        "q": "Was bedeutet „un parc d'attractions“?",
+        "a": "ein Freizeitpark, ein Erlebnispark",
+        "wrong": [
+          "ein Leser / eine Leserin",
+          "also, dann, nun",
+          "jemanden / etwas sehr gern mögen"
+        ],
+        "why": "„un parc d'attractions“ heißt ein Freizeitpark, ein Erlebnispark. parc ist männlich. attractions steht im Plural, weil es viele Attraktionen gibt.",
+        "w": 2,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Dimanche, nous allons dans un parc d'attractions ."
+      },
+      {
+        "q": "Wie heißt „ein Freizeitpark, ein Erlebnispark“ auf Französisch?",
+        "a": "un parc d'attractions",
+        "wrong": [
+          "un lecteur / une lectrice",
+          "alors",
+          "Internet (m.)"
+        ],
+        "why": "„un parc d'attractions“ heißt ein Freizeitpark, ein Erlebnispark. parc ist männlich. attractions steht im Plural, weil es viele Attraktionen gibt.",
+        "w": 2,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "eine Leserin",
+        "kind": "gap",
+        "s": "Ma mère est ___ de ce journal.",
+        "a": "une lectrice",
+        "wrong": [
+          "un lectrice",
+          "une lecteur",
+          "une lecture"
+        ],
+        "why": "„un lecteur / une lectrice“ heißt ein Leser / eine Leserin. Die weibliche Form ist une lectrice. Nicht mit la lecture (das Lesen) verwechseln.",
+        "w": 3
+      },
+      {
+        "q": "Was bedeutet „un lecteur / une lectrice“?",
+        "a": "ein Leser / eine Leserin",
+        "wrong": [
+          "also, dann, nun",
+          "wahr, richtig, echt",
+          "eine Achterbahn"
+        ],
+        "why": "„un lecteur / une lectrice“ heißt ein Leser / eine Leserin. Die weibliche Form ist une lectrice. Nicht mit la lecture (das Lesen) verwechseln.",
+        "w": 3,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Ma mère est une lectrice de ce journal."
+      },
+      {
+        "q": "Wie heißt „ein Leser / eine Leserin“ auf Französisch?",
+        "a": "un lecteur / une lectrice",
+        "wrong": [
+          "sur Internet",
+          "Internet (m.)",
+          "un parc d'attractions"
+        ],
+        "why": "„un lecteur / une lectrice“ heißt ein Leser / eine Leserin. Die weibliche Form ist une lectrice. Nicht mit la lecture (das Lesen) verwechseln.",
+        "w": 3,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "sehr gern mögen (er mag)",
+        "kind": "gap",
+        "s": "Paul ___ le grand huit.",
+        "a": "adore",
+        "wrong": [
+          "adores",
+          "adorer",
+          "adorent"
+        ],
+        "why": "„adorer“ heißt jemanden / etwas sehr gern mögen. adorer gehört zu den regelmäßigen -er-Verben: j'adore, tu adores, il adore.",
+        "w": 4
+      },
+      {
+        "q": "Was bedeutet „adorer“?",
+        "a": "jemanden / etwas sehr gern mögen",
+        "wrong": [
+          "das Internet",
+          "ein Freizeitpark, ein Erlebnispark",
+          "eine Achterbahn"
+        ],
+        "why": "„adorer“ heißt jemanden / etwas sehr gern mögen. adorer gehört zu den regelmäßigen -er-Verben: j'adore, tu adores, il adore.",
+        "w": 4,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Paul adore le grand huit."
+      },
+      {
+        "q": "Wie heißt „jemanden / etwas sehr gern mögen“ auf Französisch?",
+        "a": "adorer",
+        "wrong": [
+          "alors",
+          "sur Internet",
+          "vrai / vraie"
+        ],
+        "why": "„adorer“ heißt jemanden / etwas sehr gern mögen. adorer gehört zu den regelmäßigen -er-Verben: j'adore, tu adores, il adore.",
+        "w": 4,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "das weltweite Netz (ohne Artikel)",
+        "kind": "gap",
+        "s": "Il y a beaucoup de choses sur ___ .",
+        "a": "Internet",
+        "wrong": [
+          "l'Internet",
+          "un Internet",
+          "le Internet"
+        ],
+        "why": "„Internet“ heißt das Internet. Im Französischen steht Internet ohne Artikel.",
+        "w": 5
+      },
+      {
+        "q": "Was bedeutet „Internet“?",
+        "a": "das Internet",
+        "wrong": [
+          "jemanden / etwas sehr gern mögen",
+          "ein Freizeitpark, ein Erlebnispark",
+          "wahr, richtig, echt"
+        ],
+        "why": "„Internet“ heißt das Internet. Im Französischen steht Internet ohne Artikel.",
+        "w": 5,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Il y a beaucoup de choses sur Internet ."
+      },
+      {
+        "q": "Wie heißt „das Internet“ auf Französisch?",
+        "a": "Internet (m.)",
+        "wrong": [
+          "adorer",
+          "un parc d'attractions",
+          "un grand huit"
+        ],
+        "why": "„Internet“ heißt das Internet. Im Französischen steht Internet ohne Artikel.",
+        "w": 5,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "im Internet",
+        "kind": "gap",
+        "s": "Je cherche une idée ___ .",
+        "a": "sur Internet",
+        "wrong": [
+          "dans Internet",
+          "à Internet",
+          "sur l'Internet"
+        ],
+        "why": "„sur Internet“ heißt im Internet. Französisch sur, deutsch im: sur Internet. Deutsch „im Internet“ wird nicht mit dans übersetzt.",
+        "w": 6
+      },
+      {
+        "q": "Was bedeutet „sur Internet“?",
+        "a": "im Internet",
+        "wrong": [
+          "wahr, richtig, echt",
+          "also, dann, nun",
+          "ein Leser / eine Leserin"
+        ],
+        "why": "„sur Internet“ heißt im Internet. Französisch sur, deutsch im: sur Internet. Deutsch „im Internet“ wird nicht mit dans übersetzt.",
+        "w": 6,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Je cherche une idée sur Internet ."
+      },
+      {
+        "q": "Wie heißt „im Internet“ auf Französisch?",
+        "a": "sur Internet",
+        "wrong": [
+          "Internet (m.)",
+          "un lecteur / une lectrice",
+          "alors"
+        ],
+        "why": "„sur Internet“ heißt im Internet. Französisch sur, deutsch im: sur Internet. Deutsch „im Internet“ wird nicht mit dans übersetzt.",
+        "w": 6,
+        "label": "Deutsch → Französisch"
+      },
+      {
+        "q": "also, dann",
+        "kind": "gap",
+        "s": "Il pleut ? ___ , nous restons à la maison.",
+        "a": "Alors",
+        "wrong": [
+          "Hier",
+          "Même",
+          "Demain"
+        ],
+        "why": "„alors“ heißt also, dann, nun. alors steht oft am Satzanfang und heißt also, dann oder nun.",
+        "w": 7
+      },
+      {
+        "q": "Was bedeutet „alors“?",
+        "a": "also, dann, nun",
+        "wrong": [
+          "ein Freizeitpark, ein Erlebnispark",
+          "im Internet",
+          "wahr, richtig, echt"
+        ],
+        "why": "„alors“ heißt also, dann, nun. alors steht oft am Satzanfang und heißt also, dann oder nun.",
+        "w": 7,
+        "label": "Französisch → Deutsch",
+        "s": "Im Satz: Il pleut ? Alors , nous restons à la maison."
+      },
+      {
+        "q": "Wie heißt „also, dann, nun“ auf Französisch?",
+        "a": "alors",
+        "wrong": [
+          "vrai / vraie",
+          "un grand huit",
+          "adorer"
+        ],
+        "why": "„alors“ heißt also, dann, nun. alors steht oft am Satzanfang und heißt also, dann oder nun.",
+        "w": 7,
+        "label": "Deutsch → Französisch"
+      }
+    ],
+    "v-paris": [
+      {
+        "q": "Wo sind Léa und ihr Vater laut dem Text?",
+        "a": "In Paris",
+        "wrong": [
+          "In Lyon",
+          "In Tunis",
+          "Am Meer"
+        ],
+        "why": "Der Text beginnt mit: Léa et son père sont à Paris."
+      },
+      {
+        "q": "Wie lange bleiben Léa und ihr Vater in Paris?",
+        "a": "eine Woche",
+        "wrong": [
+          "einen Tag",
+          "einen Monat",
+          "ein Wochenende"
+        ],
+        "why": "pour une semaine heißt für eine Woche."
+      },
+      {
+        "q": "Was haben Léa und ihr Vater gestern besichtigt?",
+        "a": "den Louvre",
+        "wrong": [
+          "Notre-Dame",
+          "die Défense",
+          "den Arc de triomphe"
+        ],
+        "why": "Hier, ils ont visité le Louvre. Hier heißt gestern."
+      },
+      {
+        "q": "Wie ist das Wetter im Text?",
+        "a": "schön, aber kalt",
+        "wrong": [
+          "schön und heiß",
+          "regnerisch und kalt",
+          "windig und warm"
+        ],
+        "why": "Il fait beau, mais il fait froid heißt schön, aber kalt."
+      },
+      {
+        "q": "grau (männlich)",
+        "kind": "gap",
+        "s": "Léa a un anorak jaune et un pantalon ___ .",
+        "a": "gris",
+        "wrong": [
+          "grise",
+          "grises",
+          "griss"
+        ],
+        "why": "pantalon ist männlich und Singular, deshalb gris."
+      },
+      {
+        "q": "mit der U-Bahn",
+        "kind": "gap",
+        "s": "Ils vont à Notre-Dame ___ .",
+        "a": "en métro",
+        "wrong": [
+          "à métro",
+          "au métro",
+          "en bus"
+        ],
+        "why": "Bei der U-Bahn steht en: en métro."
+      },
+      {
+        "q": "Wann essen Léa und ihr Vater im Restaurant?",
+        "a": "am Abend",
+        "wrong": [
+          "am Morgen",
+          "am Nachmittag",
+          "in der Nacht"
+        ],
+        "why": "Ce soir, ils mangent dans un restaurant. Ce soir heißt heute Abend."
+      },
+      {
+        "q": "Warum ist Léas Vater traurig?",
+        "a": "Er hat seinen Hut am Bahnhof vergessen.",
+        "wrong": [
+          "Es regnet in Paris.",
+          "Er hat die Kathedrale nicht gesehen.",
+          "Sein Zug kommt zu spät an."
+        ],
+        "why": "Il a oublié son chapeau à la gare heißt er hat seinen Hut am Bahnhof vergessen."
+      },
+      {
+        "q": "vergessen (er hat vergessen)",
+        "kind": "gap",
+        "s": "Le père de Léa a ___ son chapeau à la gare.",
+        "a": "oublié",
+        "wrong": [
+          "oublie",
+          "oublier",
+          "oublies"
+        ],
+        "why": "Nach a steht die Form auf -é: il a oublié."
+      },
+      {
+        "q": "Was ist die Défense im Text?",
+        "a": "ein modernes Stadtviertel",
+        "wrong": [
+          "eine Kathedrale",
+          "ein Museum",
+          "ein Restaurant"
+        ],
+        "why": "La Défense est un quartier moderne heißt ein modernes Stadtviertel."
+      },
+      {
+        "q": "Welcher Satz passt zum Text?",
+        "a": "Léa est très contente.",
+        "wrong": [
+          "Léa est très triste.",
+          "Léa a un chapeau.",
+          "Léa a une robe noire."
+        ],
+        "why": "Im Text steht Elle est très contente. Der Vater ist traurig, nicht Léa."
+      },
+      {
+        "q": "heute Nachmittag",
+        "kind": "gap",
+        "s": "Cet ___ , ils restent à la Défense.",
+        "a": "après-midi",
+        "wrong": [
+          "matin",
+          "soir",
+          "nuit"
+        ],
+        "why": "Cet après-midi heißt heute Nachmittag. Nach cet steht ein Wort mit Vokal am Anfang."
+      }
+    ],
+    "v-carte": [
+      {
+        "q": "Lieber (Anrede an einen Mann)",
+        "kind": "gap",
+        "s": "___ papi,",
+        "a": "Cher",
+        "wrong": [
+          "Chère",
+          "Chers",
+          "Chair"
+        ],
+        "why": "papi ist ein Mann, deshalb Cher. Für eine Frau schreibst du Chère."
+      },
+      {
+        "q": "schreiben (ich schreibe)",
+        "kind": "gap",
+        "s": "Je t'___ une carte postale de Paris.",
+        "a": "écris",
+        "wrong": [
+          "écrit",
+          "écrire",
+          "écrivons"
+        ],
+        "why": "Bei je lautet écrire écris."
+      },
+      {
+        "q": "Wie ist das Wetter in Paris laut der Karte?",
+        "a": "schön, aber kalt",
+        "wrong": [
+          "regnerisch",
+          "windig",
+          "heiß"
+        ],
+        "why": "Il fait beau, mais il fait froid heißt schön, aber kalt."
+      },
+      {
+        "q": "Aussicht",
+        "kind": "gap",
+        "s": "La ___ sur la ville est super !",
+        "a": "vue",
+        "wrong": [
+          "vie",
+          "vu",
+          "vent"
+        ],
+        "why": "la vue heißt die Aussicht. la vie wäre das Leben."
+      },
+      {
+        "q": "Was besichtigen Léa und ihre Familie laut Postkarte?",
+        "a": "Museen und interessante Orte",
+        "wrong": [
+          "nur ein Restaurant",
+          "nur ein Souvenirgeschäft",
+          "nur Kirchen"
+        ],
+        "why": "Nous visitons beaucoup de musées et d'endroits intéressants."
+      },
+      {
+        "q": "Freizeitpark (nur das erste Wort)",
+        "kind": "gap",
+        "s": "Demain, nous allons au ___ d'attractions.",
+        "a": "parc",
+        "wrong": [
+          "parcs",
+          "pare",
+          "park"
+        ],
+        "why": "Der Freizeitpark heißt un parc d'attractions, und au steht für à + le."
+      },
+      {
+        "q": "Wer mag die Achterbahn laut der Karte?",
+        "a": "Papa",
+        "wrong": [
+          "Léa",
+          "Opi",
+          "Mama"
+        ],
+        "why": "Papa adore le grand huit heißt Papa liebt die Achterbahn."
+      },
+      {
+        "q": "sehr gern mögen (er mag)",
+        "kind": "gap",
+        "s": "Papa ___ le grand huit.",
+        "a": "adore",
+        "wrong": [
+          "adores",
+          "adorer",
+          "adorent"
+        ],
+        "why": "Bei papa steht die il-Form ohne -s: il adore."
+      },
+      {
+        "q": "Was bedeutet „je ne sais pas“ auf der Karte?",
+        "a": "ich weiß nicht",
+        "wrong": [
+          "ich kann nicht",
+          "ich möchte nicht",
+          "ich sehe nichts"
+        ],
+        "why": "je ne sais pas heißt ich weiß nicht."
+      },
+      {
+        "q": "Geschäft, Laden",
+        "kind": "gap",
+        "s": "Dans une ___ , j'achète un souvenir.",
+        "a": "boutique",
+        "wrong": [
+          "boutiques",
+          "bureau",
+          "carte"
+        ],
+        "why": "une boutique ist weiblich und steht im Singular."
+      },
+      {
+        "q": "Wie verabschiedet sich Léa auf der Karte?",
+        "a": "À bientôt !",
+        "wrong": [
+          "Cher papi",
+          "Je ne sais pas",
+          "Il fait beau"
+        ],
+        "why": "Am Schluss steht À bientôt ! Das heißt Bis bald."
+      },
+      {
+        "q": "An wen schreibt Léa die Karte?",
+        "a": "an ihren Opa",
+        "wrong": [
+          "an ihre Mutter",
+          "an ihre Lehrerin",
+          "an eine Freundin"
+        ],
+        "why": "papi ist die Umgangssprache für Opa."
+      }
+    ],
+    "v-parc": [
+      {
+        "q": "Was ist Paul von Beruf laut Text?",
+        "a": "Assistent bei einer Zeitung",
+        "wrong": [
+          "Sänger",
+          "Tourist",
+          "Lehrer"
+        ],
+        "why": "Paul est assistant au journal de la ville."
+      },
+      {
+        "q": "Worüber schreibt Paul eine Reportage?",
+        "a": "über einen Freizeitpark",
+        "wrong": [
+          "über Notre-Dame",
+          "über ein Restaurant",
+          "über den Bahnhof"
+        ],
+        "why": "Il prépare un reportage sur un parc d'attractions."
+      },
+      {
+        "q": "ein Bericht über ein Thema (Zeitung, Fernsehen)",
+        "kind": "gap",
+        "s": "Paul prépare un ___ sur le parc.",
+        "a": "reportage",
+        "wrong": [
+          "reportages",
+          "reportager",
+          "repportage"
+        ],
+        "why": "reportage ist männlich und steht hier im Singular."
+      },
+      {
+        "q": "Fahrkarte, Eintrittskarte",
+        "kind": "gap",
+        "s": "Paul achète ___ pour le grand huit.",
+        "a": "un ticket",
+        "wrong": [
+          "une ticket",
+          "un tiquet",
+          "un tickets"
+        ],
+        "why": "ticket ist männlich: un ticket."
+      },
+      {
+        "q": "Was macht Paul am Grand huit?",
+        "a": "Er liebt die Achterbahn.",
+        "wrong": [
+          "Er hat Angst davor.",
+          "Er mag sie nicht.",
+          "Er wartet im Restaurant."
+        ],
+        "why": "Il adore le grand huit heißt Er liebt die Achterbahn."
+      },
+      {
+        "q": "Wer mag die Achterbahn nicht?",
+        "a": "Inès",
+        "wrong": [
+          "Paul",
+          "die Touristen",
+          "die Leser"
+        ],
+        "why": "Inès n'aime pas le grand huit heißt Inès mag die Achterbahn nicht."
+      },
+      {
+        "q": "Touristen (Mehrzahl)",
+        "kind": "gap",
+        "s": "Il y a beaucoup de ___ au parc.",
+        "a": "touristes",
+        "wrong": [
+          "touriste",
+          "tourists",
+          "touristse"
+        ],
+        "why": "Nach beaucoup de steht die Mehrzahl: touristes."
+      },
+      {
+        "q": "Wie ist das Wetter im Park laut Text?",
+        "a": "windig",
+        "wrong": [
+          "es schneit",
+          "es ist sehr heiß",
+          "es regnet"
+        ],
+        "why": "Il y a du vent heißt es ist windig."
+      },
+      {
+        "q": "lesen (sie liest)",
+        "kind": "gap",
+        "s": "Inès ___ le journal au restaurant.",
+        "a": "lit",
+        "wrong": [
+          "lis",
+          "lisent",
+          "lire"
+        ],
+        "why": "Bei elle endet lire auf -t: elle lit."
+      },
+      {
+        "q": "im weltweiten Netz (ohne Artikel)",
+        "kind": "gap",
+        "s": "Sur ___ , les lecteurs écrivent.",
+        "a": "Internet",
+        "wrong": [
+          "l'Internet",
+          "un Internet",
+          "le Internet"
+        ],
+        "why": "Internet steht im Französischen ohne Artikel: sur Internet."
+      },
+      {
+        "q": "Wann schreibt Paul seine Reportage?",
+        "a": "am Abend",
+        "wrong": [
+          "am Morgen",
+          "in der Nacht",
+          "am Nachmittag"
+        ],
+        "why": "Le soir, Paul écrit son reportage heißt am Abend."
+      },
+      {
+        "q": "Was schreiben die Leser im Internet?",
+        "a": "Der Park ist wirklich super.",
+        "wrong": [
+          "Der Park ist zu klein.",
+          "Das Wetter ist schlecht.",
+          "Die Tickets sind zu teuer."
+        ],
+        "why": "Le parc est vraiment super heißt Der Park ist wirklich super."
+      }
+    ]
+  }
+}

@@ -1,0 +1,1429 @@
+{
+  "u6-alltag": {
+    "goal": "Du kannst 14 Wörter aus Unité 6 auf Französisch und Deutsch und schreibst sie richtig.",
+    "tldr": [
+      "Auf dieser Seite stehen Wörter, mit denen du Alltägliches erzählen kannst: gestern, ein Problem, bleiben, anrufen.",
+      "Viele Nomen haben ein anderes Geschlecht als im Deutschen: la gare ist weiblich, un problème ist männlich."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: Pauls verrückter Tag",
+      "html": "<p><b>Hier</b>, Paul a <b>oublié</b> son <b>chapeau</b> à <b>la gare</b>. C'est <b>un problème</b> ! Il <b>téléphone</b> à sa sœur. <b>Enfin</b>, elle arrive. <b>L'arrivée</b> du train est à midi. Paul <b>reste</b> à la maison et lit <b>un journal</b>. Pendant <b>les vacances</b>, il écrit <b>peut-être</b> <b>un poème</b> pour <b>un chanteur</b>.</p><p>Auf Deutsch: Gestern hat Paul seinen Hut am Bahnhof vergessen. Das ist ein Problem! Er ruft seine Schwester an. Endlich kommt sie. Die Ankunft des Zuges ist um zwölf Uhr. Paul bleibt zu Hause und liest eine Zeitung. In den Ferien schreibt er vielleicht ein Gedicht für einen Sänger.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Französisch",
+            "Deutsch"
+          ],
+          [
+            [
+              "l'arrivée",
+              "die Ankunft"
+            ],
+            [
+              "hier",
+              "gestern"
+            ],
+            [
+              "un problème",
+              "ein Problem"
+            ],
+            [
+              "téléphoner",
+              "mit jemandem telefonieren, jemanden anrufen"
+            ],
+            [
+              "rester",
+              "bleiben"
+            ],
+            [
+              "un journal",
+              "eine Zeitung; Tagebuch"
+            ]
+          ],
+          [
+            1.4,
+            1.4
+          ],
+          "Tabelle: sechs Wörter von Alltag und Orte"
+        ]
+      },
+      "caption": "Diese sechs Wörter lernst du zuerst. Alle Wörter der Seite stehen im Merkzettel."
+    },
+    "steps": {
+      "title": "So lernst du diese Seite",
+      "items": [
+        "Lies den kleinen Text oben laut. Die fetten Wörter sind neu auf dieser Seite.",
+        "Lies den Merkzettel Wort für Wort. Hake ab, was du schon sicher kannst.",
+        "Decke die deutsche Seite ab und sage jedes französische Wort laut. Dann decke das Französische ab.",
+        "Schreibe die Wörter auf, die du noch nicht sicher weißt, und achte auf Accents und den Artikel.",
+        "Starte danach die Runde. Falsche Antworten kommen noch einmal dran."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Das Wort <b>hier</b> sieht aus wie „hier“, heißt aber <b>gestern</b>. Und <b>une gare</b> ist weiblich, obwohl der Bahnhof im Deutschen männlich ist.</p>"
+    },
+    "rule": "hier = gestern, aujourd'hui = heute, demain = morgen. la gare ist weiblich, un problème ist männlich.",
+    "check": {
+      "q": "Wie sagst du „gestern“ auf Französisch?",
+      "options": [
+        {
+          "id": "a",
+          "html": "hier"
+        },
+        {
+          "id": "b",
+          "html": "enfin"
+        },
+        {
+          "id": "c",
+          "html": "demain"
+        }
+      ],
+      "answer": "a",
+      "why": "hier heißt gestern. demain heißt morgen und enfin heißt endlich."
+    }
+  },
+  "u6-eigenschaften": {
+    "goal": "Du kannst 9 Adjektive und das Wort très auf Französisch und Deutsch und wählst die passende Form.",
+    "tldr": [
+      "Adjektive beschreiben Menschen und Dinge: klein, gut, zufrieden, traurig.",
+      "Sie haben oft eine männliche und eine weibliche Form: petit, petite. Endet das Adjektiv schon auf -e, bleibt es gleich: triste."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: der letzte Ferientag",
+      "html": "<p>Le <b>dernier</b> jour des vacances, Léa est <b>contente</b> : elle a une <b>jolie</b> robe <b>longue</b>. Paul est <b>triste</b>, mais son <b>petit</b> frère est <b>très</b> content. Le reportage est <b>intéressant</b> et le café est <b>bon</b>.</p><p>Auf Deutsch: Am letzten Ferientag ist Léa zufrieden: Sie hat ein hübsches langes Kleid. Paul ist traurig, aber sein kleiner Bruder ist sehr zufrieden. Die Reportage ist interessant und der Kaffee ist gut.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Französisch",
+            "Deutsch"
+          ],
+          [
+            [
+              "dernier / dernière",
+              "letzter / letzte / letztes"
+            ],
+            [
+              "content / contente",
+              "zufrieden"
+            ],
+            [
+              "triste",
+              "traurig"
+            ],
+            [
+              "intéressant / intéressante",
+              "interessant"
+            ],
+            [
+              "très",
+              "sehr"
+            ],
+            [
+              "bon / bonne",
+              "gut"
+            ]
+          ],
+          [
+            1.4,
+            1.4
+          ],
+          "Tabelle: sechs Wörter von Eigenschaften beschreiben"
+        ]
+      },
+      "caption": "Diese sechs Wörter lernst du zuerst. Alle Wörter der Seite stehen im Merkzettel."
+    },
+    "steps": {
+      "title": "So lernst du diese Seite",
+      "items": [
+        "Lies den kleinen Text oben laut. Die fetten Wörter sind neu auf dieser Seite.",
+        "Lies den Merkzettel Wort für Wort. Hake ab, was du schon sicher kannst.",
+        "Decke die deutsche Seite ab und sage jedes französische Wort laut. Dann decke das Französische ab.",
+        "Schreibe die Wörter auf, die du noch nicht sicher weißt, und achte auf Accents und den Artikel.",
+        "Starte danach die Runde. Falsche Antworten kommen noch einmal dran."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Das Adjektiv richtet sich nach dem Nomen. Für ein Mädchen heißt es <b>contente</b>, für einen Jungen <b>content</b>. Bei <b>triste</b> ändert sich nichts.</p>"
+    },
+    "rule": "petit/petite, content/contente, bon/bonne: weiblich bekommt -e oder eine ähnliche Endung. triste bleibt gleich.",
+    "check": {
+      "q": "Léa est ... (zufrieden). Welche Form passt?",
+      "options": [
+        {
+          "id": "a",
+          "html": "contentes"
+        },
+        {
+          "id": "b",
+          "html": "contente"
+        },
+        {
+          "id": "c",
+          "html": "content"
+        }
+      ],
+      "answer": "b",
+      "why": "Léa ist ein Mädchen, also steht die weibliche Einzahl contente."
+    }
+  },
+  "u6-farben": {
+    "goal": "Du kannst die Farben auf Französisch benennen und passt sie an Nomen an.",
+    "tldr": [
+      "Farben sind Adjektive und richten sich nach dem Nomen: un pantalon gris, une jupe grise.",
+      "Endet die Farbe schon auf -e (rouge, jaune), bleibt sie im Singular gleich."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: die Farben Frankreichs",
+      "html": "<p>Moi, j'aime la <b>couleur</b> <b>bleue</b>. <b>Bleu</b>, <b>blanc</b>, <b>rouge</b> : ce sont les couleurs de la France. La salade est <b>verte</b>, la banane est <b>jaune</b>, la nuit est <b>noire</b> et le pantalon de Paul est <b>gris</b>.</p><p>Auf Deutsch: Ich mag die Farbe Blau. Blau, Weiß, Rot: Das sind die Farben Frankreichs. Der Salat ist grün, die Banane ist gelb, die Nacht ist schwarz und Pauls Hose ist grau.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Französisch",
+            "Deutsch"
+          ],
+          [
+            [
+              "une couleur",
+              "eine Farbe"
+            ],
+            [
+              "bleu / bleue",
+              "blau"
+            ],
+            [
+              "blanc / blanche",
+              "weiß"
+            ],
+            [
+              "rouge",
+              "rot"
+            ],
+            [
+              "jaune",
+              "gelb"
+            ],
+            [
+              "noir / noire",
+              "schwarz"
+            ]
+          ],
+          [
+            1.4,
+            1.4
+          ],
+          "Tabelle: sechs Wörter von Farben"
+        ]
+      },
+      "caption": "Diese sechs Wörter lernst du zuerst. Alle Wörter der Seite stehen im Merkzettel."
+    },
+    "steps": {
+      "title": "So lernst du diese Seite",
+      "items": [
+        "Lies den kleinen Text oben laut. Die fetten Wörter sind neu auf dieser Seite.",
+        "Lies den Merkzettel Wort für Wort. Hake ab, was du schon sicher kannst.",
+        "Decke die deutsche Seite ab und sage jedes französische Wort laut. Dann decke das Französische ab.",
+        "Schreibe die Wörter auf, die du noch nicht sicher weißt, und achte auf Accents und den Artikel.",
+        "Starte danach die Runde. Falsche Antworten kommen noch einmal dran."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Auf Deutsch heißt es „ein grünes Kleid“. Auf Französisch steht die Farbe <b>nach</b> dem Nomen: <b>une robe verte</b>. Im Englischen heißt die Farbe colour, im Französischen <b>couleur</b>.</p>"
+    },
+    "rule": "Farbe steht nach dem Nomen und richtet sich nach ihm: un pantalon vert, une robe verte, des chaussures vertes.",
+    "check": {
+      "q": "Wie sagst du „eine weiße Bluse“?",
+      "options": [
+        {
+          "id": "a",
+          "html": "une chemise blanche"
+        },
+        {
+          "id": "b",
+          "html": "une chemise blanc"
+        },
+        {
+          "id": "c",
+          "html": "une blanche chemise"
+        }
+      ],
+      "answer": "a",
+      "why": "chemise ist weiblich, deshalb blanche. Die Farbe steht hinter dem Nomen."
+    }
+  },
+  "u6-kleidung": {
+    "goal": "Du kannst 15 Kleidungsstücke auf Französisch benennen und weißt, welcher Artikel dazu gehört.",
+    "tldr": [
+      "Hier lernst du Kleidungsstücke wie pantalon, robe, jupe und veste.",
+      "Das Geschlecht ist oft anders als im Deutschen: un pantalon ist männlich, une chemise ist weiblich."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: Léa und Paul packen den Koffer",
+      "html": "<p>Léa cherche <b>un vêtement</b> pour la fête. Elle a <b>une robe</b>, <b>une jupe</b> et <b>une veste</b>. Paul a <b>un pantalon</b>, <b>une chemise</b> et <b>un pull</b>. À l'école, il aime <b>un jean</b>, <b>un sweat</b> et <b>des baskets</b>. Il pleut ? Alors <b>un anorak</b> ou <b>un blouson</b>. En été, Paul a <b>un t-shirt</b> et <b>un short</b>. Et <b>les chaussures</b> ? Elles sont noires.</p><p>Auf Deutsch: Léa sucht ein Kleidungsstück für die Feier. Sie hat ein Kleid, einen Rock und eine Jacke. Paul hat eine Hose, ein Hemd und einen Pulli. In der Schule mag er eine Jeans, ein Sweatshirt und Turnschuhe. Es regnet? Dann einen Anorak oder einen Blouson. Im Sommer hat Paul ein T-Shirt und Shorts. Und die Schuhe? Sie sind schwarz.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Französisch",
+            "Deutsch"
+          ],
+          [
+            [
+              "un vêtement",
+              "ein Kleidungsstück"
+            ],
+            [
+              "un pantalon",
+              "eine Hose"
+            ],
+            [
+              "un jean",
+              "eine Jeans"
+            ],
+            [
+              "une basket / des baskets",
+              "Turnschuhe"
+            ],
+            [
+              "une jupe",
+              "ein Rock"
+            ],
+            [
+              "une robe",
+              "ein Kleid"
+            ]
+          ],
+          [
+            1.4,
+            1.4
+          ],
+          "Tabelle: sechs Wörter von Kleidung"
+        ]
+      },
+      "caption": "Diese sechs Wörter lernst du zuerst. Alle Wörter der Seite stehen im Merkzettel."
+    },
+    "steps": {
+      "title": "So lernst du diese Seite",
+      "items": [
+        "Lies den kleinen Text oben laut. Die fetten Wörter sind neu auf dieser Seite.",
+        "Lies den Merkzettel Wort für Wort. Hake ab, was du schon sicher kannst.",
+        "Decke die deutsche Seite ab und sage jedes französische Wort laut. Dann decke das Französische ab.",
+        "Schreibe die Wörter auf, die du noch nicht sicher weißt, und achte auf Accents und den Artikel.",
+        "Starte danach die Runde. Falsche Antworten kommen noch einmal dran."
+      ]
+    },
+    "pitfall": {
+      "html": "<p><b>Un pantalon</b> ist männlich, die Hose im Deutschen aber weiblich. Und <b>une veste</b> ist eine Jacke, keine Weste.</p>"
+    },
+    "rule": "un pantalon, un jean, un pull, un t-shirt: männlich. une robe, une jupe, une chemise, une veste: weiblich.",
+    "check": {
+      "q": "Welcher Artikel (ein/eine) passt zu „jupe“?",
+      "options": [
+        {
+          "id": "a",
+          "html": "un"
+        },
+        {
+          "id": "b",
+          "html": "des"
+        },
+        {
+          "id": "c",
+          "html": "une"
+        }
+      ],
+      "answer": "c",
+      "why": "jupe ist weiblich, deshalb une jupe. un ist männlich und des steht im Plural."
+    }
+  },
+  "u6-adjektive": {
+    "goal": "Du kannst Adjektive an Geschlecht und Zahl des Nomens anpassen und weißt, wo die Farbe im Satz steht.",
+    "tldr": [
+      "Das Adjektiv richtet sich nach dem Nomen: männlich oder weiblich, Einzahl oder Mehrzahl.",
+      "Weiblich bekommt meist ein -e: petit, petite. Die Mehrzahl bekommt meist ein -s: petites.",
+      "Endet das Adjektiv schon auf -e (rouge, jaune, triste), bleibt es im Femininum gleich."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: das Adjektiv als Schatten",
+      "html": "<p>Das Adjektiv ist wie ein Schatten: Es trägt immer das Geschlecht und die Zahl des Nomens mit sich. Ist das Nomen weiblich, wird auch das Adjektiv weiblich: <b>une robe verte</b>. Sind es mehrere, kommt ein -s: <b>des robes vertes</b>.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "männlich",
+            "weiblich",
+            "Aussprache"
+          ],
+          [
+            [
+              "petit",
+              "petite",
+              "bei petite hörst du das t"
+            ],
+            [
+              "blanc",
+              "blanche",
+              "bei blanche hörst du [ʃ]"
+            ],
+            [
+              "noir",
+              "noire",
+              "gleich, kein Unterschied"
+            ],
+            [
+              "bleu",
+              "bleue",
+              "gleich, kein Unterschied"
+            ],
+            [
+              "vert",
+              "verte",
+              "bei verte hörst du das t"
+            ],
+            [
+              "gris",
+              "grise",
+              "bei grise klingt s wie [z]"
+            ],
+            [
+              "rouge",
+              "rouge",
+              "bleibt gleich"
+            ]
+          ],
+          [
+            1,
+            1,
+            1.8
+          ],
+          "Tabelle: männliche und weibliche Form von sieben Adjektiven"
+        ]
+      },
+      "caption": "Sieben Adjektive mit ihrer männlichen und weiblichen Form und dem, was du hörst."
+    },
+    "steps": {
+      "title": "So gehst du vor",
+      "items": [
+        "Suche das Nomen und frage dich: männlich oder weiblich? Einzahl oder Mehrzahl?",
+        "Nimm die männliche Grundform aus dem Vokabelheft, zum Beispiel vert.",
+        "Weiblich? Hänge meist ein -e an: verte. Endet das Wort schon auf -e, ändere nichts: rouge. Manche ändern mehr: blanc wird blanche, long wird longue.",
+        "Mehrzahl? Hänge ein -s an: vertes, rouges.",
+        "Setze Farben hinter das Nomen: une robe verte. Das gilt für alle Farben, die du bisher kennst."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Im Deutschen steht die Farbe vor dem Nomen: „ein grünes Kleid“. Auf Französisch steht sie <b>danach</b>: <b>une robe verte</b>. Außerdem ändern <b>noir</b> und <b>noire</b> ihre Aussprache nicht, du musst die Endung also schreiben, nicht hören.</p>"
+    },
+    "rule": "Adjektiv = Nomen + Geschlecht + Zahl: un pantalon vert, une robe verte, des chaussures vertes. Die Farbe steht nach dem Nomen.",
+    "check": {
+      "q": "Welche Form ist richtig? Des chaussures ...",
+      "options": [
+        {
+          "id": "a",
+          "html": "noire"
+        },
+        {
+          "id": "b",
+          "html": "noires"
+        },
+        {
+          "id": "c",
+          "html": "noir"
+        }
+      ],
+      "answer": "b",
+      "why": "chaussures ist weiblich und Plural, deshalb noires mit -e und -s."
+    }
+  },
+  "u7-rappel": {
+    "goal": "Du kannst kleine Wörter wie vraiment, même und déjà sicher benutzen und kennst heute, gestern, morgen.",
+    "tldr": [
+      "Kleine Wörter stehen in fast jedem Satz: schon, sogar, vor allem, wirklich.",
+      "Mit hier, aujourd'hui und demain sagst du, wann etwas passiert."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Tag in Paris",
+      "html": "<p><b>Aujourd'hui</b>, il fait beau à Paris. <b>Demain</b>, nous allons au parc. Léa a <b>déjà</b> une carte postale. Paul aime <b>surtout</b> le Louvre. Ce musée est <b>vraiment</b> grand ! <b>Tout le monde</b> est content, <b>même</b> Paul. <b>Je voudrais</b> un croissant. – <b>Je ne sais pas</b> si c'est possible.</p><p>Auf Deutsch: Heute ist schönes Wetter in Paris. Morgen gehen wir in den Park. Léa hat schon eine Postkarte. Paul mag vor allem den Louvre. Dieses Museum ist wirklich groß! Alle sind zufrieden, sogar Paul. Ich möchte gern ein Croissant. – Ich weiß nicht, ob das möglich ist.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Französisch",
+            "Deutsch"
+          ],
+          [
+            [
+              "vraiment",
+              "wirklich"
+            ],
+            [
+              "même",
+              "sogar"
+            ],
+            [
+              "déjà",
+              "schon"
+            ],
+            [
+              "surtout",
+              "vor allem"
+            ],
+            [
+              "je voudrais …",
+              "ich möchte gern …"
+            ],
+            [
+              "tout le monde",
+              "alle, jeder"
+            ]
+          ],
+          [
+            1.4,
+            1.4
+          ],
+          "Tabelle: sechs Wörter von Kleine Wörter wiederholen"
+        ]
+      },
+      "caption": "Diese sechs Wörter lernst du zuerst. Alle Wörter der Seite stehen im Merkzettel."
+    },
+    "steps": {
+      "title": "So lernst du diese Seite",
+      "items": [
+        "Lies den kleinen Text oben laut. Die fetten Wörter sind neu auf dieser Seite.",
+        "Lies den Merkzettel Wort für Wort. Hake ab, was du schon sicher kannst.",
+        "Decke die deutsche Seite ab und sage jedes französische Wort laut. Dann decke das Französische ab.",
+        "Schreibe die Wörter auf, die du noch nicht sicher weißt, und achte auf Accents und den Artikel.",
+        "Starte danach die Runde. Falsche Antworten kommen noch einmal dran."
+      ]
+    },
+    "pitfall": {
+      "html": "<p><b>même</b> hat ein ê und heißt „sogar“. Und <b>je ne sais pas</b> braucht <b>sais</b> mit s, nicht „sait“.</p>"
+    },
+    "rule": "hier = gestern, aujourd'hui = heute, demain = morgen. je ne sais pas = ich weiß nicht.",
+    "check": {
+      "q": "Was bedeutet „je voudrais“?",
+      "options": [
+        {
+          "id": "a",
+          "html": "ich weiß nicht"
+        },
+        {
+          "id": "b",
+          "html": "ich möchte gern"
+        },
+        {
+          "id": "c",
+          "html": "ich habe schon"
+        }
+      ],
+      "answer": "b",
+      "why": "je voudrais heißt ich möchte gern. je ne sais pas heißt ich weiß nicht."
+    }
+  },
+  "u7-paris": {
+    "goal": "Du kannst 14 Wörter und Orte aus Paris nennen und in Sätzen benutzen.",
+    "tldr": [
+      "Hier lernst du Wörter für eine Stadtreise: besichtigen, Museum, Kathedrale, Tourist.",
+      "Dazu kommen Orte wie le Louvre, Notre-Dame und la Défense."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: eine Stadtreportage",
+      "html": "<p>Léa prépare <b>un reportage</b> sur <b>une ville</b> : Paris. Avec son <b>assistant</b>, elle reste <b>une semaine</b>. Ils vont <b>visiter</b> <b>le Louvre</b>, <b>un musée</b>, puis <b>Notre-Dame</b>, <b>une cathédrale</b>. À <b>la Défense</b>, ils regardent un quartier <b>moderne</b>. <b>L'Arc de triomphe</b> est <b>un endroit</b> pour les <b>touristes</b>.</p><p>Auf Deutsch: Léa bereitet eine Reportage über eine Stadt vor: Paris. Mit ihrem Assistenten bleibt sie eine Woche. Sie besichtigen den Louvre, ein Museum, dann Notre-Dame, eine Kathedrale. In der Défense sehen sie ein modernes Viertel. Der Arc de triomphe ist ein Ort für Touristen.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Französisch",
+            "Deutsch"
+          ],
+          [
+            [
+              "une semaine",
+              "eine Woche"
+            ],
+            [
+              "un reportage",
+              "eine Reportage"
+            ],
+            [
+              "une ville",
+              "eine Stadt"
+            ],
+            [
+              "un assistant / une assistante",
+              "ein Assistent / eine Assistentin"
+            ],
+            [
+              "visiter",
+              "etwas besichtigen"
+            ],
+            [
+              "un endroit",
+              "ein Ort, eine Stelle"
+            ]
+          ],
+          [
+            1.4,
+            1.4
+          ],
+          "Tabelle: sechs Wörter von Paris entdecken"
+        ]
+      },
+      "caption": "Diese sechs Wörter lernst du zuerst. Alle Wörter der Seite stehen im Merkzettel."
+    },
+    "steps": {
+      "title": "So lernst du diese Seite",
+      "items": [
+        "Lies den kleinen Text oben laut. Die fetten Wörter sind neu auf dieser Seite.",
+        "Lies den Merkzettel Wort für Wort. Hake ab, was du schon sicher kannst.",
+        "Decke die deutsche Seite ab und sage jedes französische Wort laut. Dann decke das Französische ab.",
+        "Schreibe die Wörter auf, die du noch nicht sicher weißt, und achte auf Accents und den Artikel.",
+        "Starte danach die Runde. Falsche Antworten kommen noch einmal dran."
+      ]
+    },
+    "pitfall": {
+      "html": "<p><b>Un reportage</b> ist männlich, obwohl die Reportage im Deutschen weiblich ist. Und <b>un assistant</b> wird für eine Frau zu <b>une assistante</b>.</p>"
+    },
+    "rule": "un reportage, un musée, un endroit: männlich. une ville, une semaine, une cathédrale: weiblich. visiter qc = etwas besichtigen.",
+    "check": {
+      "q": "Wie sagst du „etwas besichtigen“?",
+      "options": [
+        {
+          "id": "a",
+          "html": "rester"
+        },
+        {
+          "id": "b",
+          "html": "visiter"
+        },
+        {
+          "id": "c",
+          "html": "oublier"
+        }
+      ],
+      "answer": "b",
+      "why": "visiter heißt besichtigen. rester heißt bleiben und oublier heißt vergessen."
+    }
+  },
+  "u7-wetter": {
+    "goal": "Du kannst auf Französisch sagen, wie das Wetter ist, und danach fragen.",
+    "tldr": [
+      "Die meisten Wetterangaben bildest du mit il fait + Adjektiv: il fait beau, il fait chaud, il fait froid.",
+      "Regen und Schnee sind eigene Verben: il pleut, il neige. Wind heißt il y a du vent."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: eine Wetterkarte",
+      "html": "<p><b>Quel temps fait-il</b> aujourd'hui ? À Paris, <b>il fait beau</b>, mais <b>il fait froid</b>. À Marseille, <b>il fait chaud</b>. Dans les Alpes, <b>il neige</b>. En Bretagne, <b>il pleut</b> et <b>il fait mauvais</b>. Sur la mer, <b>il y a du vent</b> et <b>beaucoup de</b> nuages.</p><p>Auf Deutsch: Wie ist das Wetter heute? In Paris ist es schön, aber kalt. In Marseille ist es warm. In den Alpen schneit es. In der Bretagne regnet es und es ist schlechtes Wetter. Auf dem Meer ist es windig und es gibt viele Wolken.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Deutsch",
+            "Französisch"
+          ],
+          [
+            [
+              "Es ist schönes Wetter.",
+              "Il fait beau."
+            ],
+            [
+              "Es ist warm / heiß.",
+              "Il fait chaud."
+            ],
+            [
+              "Es ist kalt.",
+              "Il fait froid."
+            ],
+            [
+              "Es ist schlechtes Wetter.",
+              "Il fait mauvais."
+            ],
+            [
+              "Es regnet.",
+              "Il pleut."
+            ],
+            [
+              "Es schneit.",
+              "Il neige."
+            ],
+            [
+              "Es ist windig.",
+              "Il y a du vent."
+            ]
+          ],
+          [
+            1.4,
+            1.4
+          ],
+          "Tabelle: sieben Wetterangaben"
+        ]
+      },
+      "caption": "Sieben Sätze für das Wetter. Fast alle beginnen mit il fait."
+    },
+    "steps": {
+      "title": "So lernst du diese Seite",
+      "items": [
+        "Lies die Wetterkarte oben laut. Die fetten Teile sind die Wetterangaben.",
+        "Lerne die vier Wörter nach il fait: beau, chaud, froid, mauvais.",
+        "Merke dir zwei besondere Verben: il pleut (regnen) und il neige (schneien). Sie gibt es nur mit il.",
+        "Lerne das Muster für Wind: il y a du vent. Du kannst es auch mit beaucoup de benutzen: il y a beaucoup de vent.",
+        "Starte danach die Runde. Falsche Antworten kommen noch einmal dran."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Im Französischen sagt man nicht „es ist warm“ mit être, sondern mit <b>faire</b>: <b>il fait chaud</b>. Und <b>il pleut</b> (regnet) hat nichts mit <b>il pleure</b> (er weint) zu tun.</p>"
+    },
+    "rule": "Wetter mit faire: il fait beau, chaud, froid, mauvais. Sonderfälle: il pleut, il neige, il y a du vent.",
+    "check": {
+      "q": "Wie sagst du „Es regnet“?",
+      "options": [
+        {
+          "id": "a",
+          "html": "Il pleut."
+        },
+        {
+          "id": "b",
+          "html": "Il fait pleut."
+        },
+        {
+          "id": "c",
+          "html": "Il pleure."
+        }
+      ],
+      "answer": "a",
+      "why": "Regnen ist ein eigenes Verb: il pleut. il pleure heißt er weint."
+    }
+  },
+  "u7-karte": {
+    "goal": "Du kannst die Wörter für eine Postkarte benutzen und einen Brief an einen Mann oder eine Frau beginnen.",
+    "tldr": [
+      "Hier lernst du Wörter für eine Karte aus dem Urlaub: Aussicht, Souvenir, Postkarte, Laden.",
+      "Cher beginnt einen Brief an einen Mann, Chère an eine Frau. écrire heißt schreiben, lire heißt lesen."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: Léa schreibt nach Hause",
+      "html": "<p>Léa regarde <b>la vue</b> sur Paris. Elle va dans <b>une boutique</b> et achète <b>un souvenir</b>. Au <b>restaurant</b>, elle prend <b>une carte postale</b> et commence : « <b>Cher</b> <b>papi</b>, … » Elle va <b>écrire</b> sur <b>la carte</b>. Son père <b>lit</b> le journal dans son <b>bureau</b> à l'hôtel.</p><p>Auf Deutsch: Léa schaut auf die Aussicht auf Paris. Sie geht in einen Laden und kauft ein Souvenir. Im Restaurant nimmt sie eine Postkarte und beginnt: „Lieber Opi, …“ Sie wird auf die Karte schreiben. Ihr Vater liest im Arbeitszimmer des Hotels die Zeitung.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Französisch",
+            "Deutsch"
+          ],
+          [
+            [
+              "la vue",
+              "die Aussicht"
+            ],
+            [
+              "un restaurant",
+              "ein Restaurant"
+            ],
+            [
+              "une boutique",
+              "eine Boutique, ein Laden"
+            ],
+            [
+              "un souvenir",
+              "eine Erinnerung, ein Andenken"
+            ],
+            [
+              "un bureau",
+              "ein Büro; hier: ein Arbeitszimmer"
+            ],
+            [
+              "écrire",
+              "jemandem etwas schreiben"
+            ]
+          ],
+          [
+            1.4,
+            1.4
+          ],
+          "Tabelle: sechs Wörter von Eine Karte aus Paris"
+        ]
+      },
+      "caption": "Diese sechs Wörter lernst du zuerst. Alle Wörter der Seite stehen im Merkzettel."
+    },
+    "steps": {
+      "title": "So lernst du diese Seite",
+      "items": [
+        "Lies den kleinen Text oben laut. Die fetten Wörter sind neu auf dieser Seite.",
+        "Lies den Merkzettel Wort für Wort. Hake ab, was du schon sicher kannst.",
+        "Decke die deutsche Seite ab und sage jedes französische Wort laut. Dann decke das Französische ab.",
+        "Schreibe die Wörter auf, die du noch nicht sicher weißt, und achte auf Accents und den Artikel.",
+        "Starte danach die Runde. Falsche Antworten kommen noch einmal dran."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Im Deutschen schreibt man <b>Karte</b> mit K. Im Französischen heißt es <b>carte</b> mit c. Und ein Brief an eine Frau beginnt mit <b>Chère</b>, nicht mit <b>Cher</b>.</p>"
+    },
+    "rule": "Cher + Mann, Chère + Frau. une carte postale ist weiblich, un souvenir und un bureau sind männlich.",
+    "check": {
+      "q": "Wie beginnst du eine Karte an deinen Opa?",
+      "options": [
+        {
+          "id": "a",
+          "html": "Cher papi,"
+        },
+        {
+          "id": "b",
+          "html": "Chers papi,"
+        },
+        {
+          "id": "c",
+          "html": "Chère papi,"
+        }
+      ],
+      "answer": "a",
+      "why": "papi ist ein Mann, deshalb Cher. Chère steht für eine Frau."
+    }
+  },
+  "u7-ecrire-lire": {
+    "goal": "Du kannst die Gegenwart von écrire und lire bilden.",
+    "tldr": [
+      "écrire (schreiben) und lire (lesen) sind unregelmäßig: Sie folgen nicht dem Muster der -er-Verben.",
+      "Bei je und tu endet das Verb auf -s, bei il, elle und on auf -t. Das ist bei beiden Verben gleich."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Briefwechsel",
+      "html": "<p><b>J'écris</b> une carte à papi. <b>Tu lis</b> le journal. Léa <b>écrit</b> un poème et Paul <b>lit</b> un reportage. <b>Nous écrivons</b> des cartes, <b>vous lisez</b> des lettres, et <b>les touristes écrivent</b> sur Internet pendant que <b>les enfants lisent</b>.</p><p>Auf Deutsch: Ich schreibe eine Karte an Opi. Du liest die Zeitung. Léa schreibt ein Gedicht und Paul liest eine Reportage. Wir schreiben Karten, ihr lest Briefe, und die Touristen schreiben im Internet, während die Kinder lesen.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Person",
+            "écrire",
+            "lire"
+          ],
+          [
+            [
+              "je",
+              "j'écris",
+              "je lis"
+            ],
+            [
+              "tu",
+              "tu écris",
+              "tu lis"
+            ],
+            [
+              "il / elle / on",
+              "il écrit",
+              "il lit"
+            ],
+            [
+              "nous",
+              "nous écrivons",
+              "nous lisons"
+            ],
+            [
+              "vous",
+              "vous écrivez",
+              "vous lisez"
+            ],
+            [
+              "ils / elles",
+              "ils écrivent",
+              "ils lisent"
+            ]
+          ],
+          [
+            1.1,
+            1.3,
+            1.3
+          ],
+          "Tabelle: Gegenwart von écrire und lire"
+        ]
+      },
+      "caption": "Die Gegenwart von écrire und lire für alle sechs Personen."
+    },
+    "steps": {
+      "title": "So gehst du vor",
+      "items": [
+        "Schreibe die sechs Formen von écrire in eine Reihe und sprich sie laut.",
+        "Merke dir: je und tu haben -s, il, elle, on haben -t: écris, écris, écrit.",
+        "Bei nous, vous und ils/elles nimmst du den Stamm écriv-: écrivons, écrivez, écrivent.",
+        "Bei lire ist es genauso, aber mit dem Stamm lis-: lis, lis, lit, lisons, lisez, lisent.",
+        "Schreibe zu jeder Form einen kurzen Satz, zum Beispiel: Nous lisons un journal."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Bei <b>il</b> endet das Verb auf <b>-t</b>, nicht auf <b>-e</b> wie bei -er-Verben: <b>il écrit</b>, <b>il lit</b>, aber il parle. Und bei <b>je</b> steht <b>écris</b> mit s, nicht „écrit“.</p>"
+    },
+    "rule": "je/tu: -s (écris, lis). il/elle/on: -t (écrit, lit). nous: -ons. vous: -ez. ils/elles: -ent.",
+    "check": {
+      "q": "Welche Form ist richtig? Nous ... une lettre.",
+      "options": [
+        {
+          "id": "a",
+          "html": "écrivez"
+        },
+        {
+          "id": "b",
+          "html": "écrivons"
+        },
+        {
+          "id": "c",
+          "html": "écrissons"
+        }
+      ],
+      "answer": "b",
+      "why": "Bei nous steht -ons am Stamm écriv-: nous écrivons. écrivez gehört zu vous."
+    }
+  },
+  "u7-verkehr": {
+    "goal": "Du kannst sagen, womit du reist: en train, en bus, en métro, en voiture, à vélo, à pied.",
+    "tldr": [
+      "Mit Zug, Bus, U-Bahn, Auto und Flugzeug steht en.",
+      "Mit dem Fahrrad steht à: à vélo. Zu Fuß heißt à pied."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: Wege durch Paris",
+      "html": "<p>Paul va à la gare <b>à pied</b>. Il achète <b>un ticket</b>. Il va à Paris <b>en train</b>. À Paris, il va au Louvre <b>en métro</b>. Sa sœur va au parc <b>à vélo</b> : c'est <b>écologique</b>. Leur père va au bureau <b>en voiture</b>. Et leur cousin arrive <b>en avion</b> ou <b>en bus</b>.</p><p>Auf Deutsch: Paul geht zu Fuß zum Bahnhof. Er kauft ein Ticket. Er fährt mit dem Zug nach Paris. In Paris fährt er mit der U-Bahn zum Louvre. Seine Schwester fährt mit dem Fahrrad zum Park: Das ist umweltfreundlich. Ihr Vater fährt mit dem Auto ins Büro. Und ihr Cousin kommt mit dem Flugzeug oder mit dem Bus.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Deutsch",
+            "Französisch"
+          ],
+          [
+            [
+              "mit dem Zug",
+              "en train"
+            ],
+            [
+              "mit dem Bus",
+              "en bus"
+            ],
+            [
+              "mit der U-Bahn",
+              "en métro"
+            ],
+            [
+              "mit dem Auto",
+              "en voiture"
+            ],
+            [
+              "mit dem Fahrrad",
+              "à vélo"
+            ],
+            [
+              "zu Fuß",
+              "à pied"
+            ],
+            [
+              "mit dem Flugzeug",
+              "en avion"
+            ]
+          ],
+          [
+            1.4,
+            1.4
+          ],
+          "Tabelle: Verkehrsmittel mit en oder à"
+        ]
+      },
+      "caption": "Sieben Verkehrsmittel. Die meisten brauchen en, nur vélo und pied brauchen à."
+    },
+    "steps": {
+      "title": "So lernst du diese Seite",
+      "items": [
+        "Lies die kleine Geschichte oben laut. Achte auf die Wörter vor dem Verkehrsmittel: en und à.",
+        "Lerne die Regel: en vor Zug, Bus, U-Bahn, Auto und Flugzeug. à vor vélo und pied.",
+        "Decke die Tabelle ab und sage zu jedem deutschen Verkehrsmittel die französische Form.",
+        "Merke dir zwei Zusatzwörter: un ticket und écologique.",
+        "Starte danach die Runde. Falsche Antworten kommen noch einmal dran."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Auf Deutsch sagt man immer „mit“. Auf Französisch darfst du <b>nicht</b> immer <b>à</b> benutzen: <b>en train</b>, nicht „à train“. Für das Fahrrad wird <b>à vélo</b> verwendet, manchmal auch <b>en vélo</b>.</p>"
+    },
+    "rule": "en train, en bus, en métro, en voiture, en avion · à vélo, à pied.",
+    "check": {
+      "q": "Wie sagst du „mit dem Zug“?",
+      "options": [
+        {
+          "id": "a",
+          "html": "en train"
+        },
+        {
+          "id": "b",
+          "html": "au train"
+        },
+        {
+          "id": "c",
+          "html": "à train"
+        }
+      ],
+      "answer": "a",
+      "why": "Bei Fahrzeugen, in die man einsteigt, steht en: en train."
+    }
+  },
+  "u7-tageszeiten": {
+    "goal": "Du kannst Tageszeiten und Uhrzeiten mit matin, après-midi, soir und nuit richtig sagen.",
+    "tldr": [
+      "Die Tageszeiten heißen le matin, l'après-midi, le soir und la nuit.",
+      "Mit ce, cet und cette meinst du heute: ce matin, cet après-midi, ce soir, cette nuit.",
+      "Mit Wochentag meinst du einen bestimmten Tag: samedi matin, lundi après-midi."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: Léas Tagesplan",
+      "html": "<p><b>Ce matin</b>, Léa mange à <b>huit heures du matin</b>. <b>Cet après-midi</b>, à <b>trois heures de l'après-midi</b>, elle va au musée. <b>Ce soir</b>, à <b>neuf heures du soir</b>, elle écrit une carte. <b>Samedi matin</b>, elle reste à l'hôtel. <b>Lundi après-midi</b>, elle visite Notre-Dame. <b>Cette nuit</b>, il pleut.</p><p>Auf Deutsch: Heute Morgen isst Léa um acht Uhr. Heute Nachmittag um drei Uhr geht sie ins Museum. Heute Abend um neun Uhr schreibt sie eine Karte. Am Samstagmorgen bleibt sie im Hotel. Am Montagnachmittag besichtigt sie Notre-Dame. Heute Nacht regnet es.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Deutsch",
+            "Französisch"
+          ],
+          [
+            [
+              "um acht Uhr morgens",
+              "à huit heures du matin"
+            ],
+            [
+              "heute Morgen",
+              "ce matin"
+            ],
+            [
+              "Samstagmorgen",
+              "samedi matin"
+            ],
+            [
+              "heute Nachmittag",
+              "cet après-midi"
+            ],
+            [
+              "um drei Uhr nachmittags",
+              "à trois heures de l'après-midi"
+            ],
+            [
+              "heute Abend",
+              "ce soir"
+            ],
+            [
+              "heute Nacht",
+              "cette nuit"
+            ]
+          ],
+          [
+            1.4,
+            1.8
+          ],
+          "Tabelle: Tageszeiten auf Deutsch und Französisch"
+        ]
+      },
+      "caption": "Sieben Angaben zur Tageszeit."
+    },
+    "steps": {
+      "title": "So gehst du vor",
+      "items": [
+        "Lies Léas Tagesplan laut. Achte auf ce, cet, cette und auf du, de l'.",
+        "Merke dir: ce matin und ce soir (männlich), cet après-midi (vor Vokal), cette nuit (weiblich).",
+        "Bei Uhrzeiten: du matin, du soir, aber de l'après-midi.",
+        "Für einen bestimmten Tag stellst du Wochentag und Tageszeit nebeneinander: samedi matin.",
+        "Starte danach die Runde. Falsche Antworten kommen noch einmal dran."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Bei den Stunden nach Mitternacht sagt man <b>du matin</b>: <b>à deux heures du matin</b> heißt „um zwei Uhr nachts“. Und vor <b>après-midi</b> steht <b>cet</b>, nicht „ce“.</p>"
+    },
+    "rule": "ce matin, ce soir, cet après-midi, cette nuit. Uhrzeit: du matin, du soir, de l'après-midi.",
+    "check": {
+      "q": "Wie sagst du „heute Abend“?",
+      "options": [
+        {
+          "id": "a",
+          "html": "cette soir"
+        },
+        {
+          "id": "b",
+          "html": "cet soir"
+        },
+        {
+          "id": "c",
+          "html": "ce soir"
+        }
+      ],
+      "answer": "c",
+      "why": "soir ist männlich und beginnt mit einem Konsonanten, deshalb ce soir."
+    }
+  },
+  "u7-aehnlich": {
+    "goal": "Du kannst Wörter, die dem Deutschen ähneln, richtig schreiben und mit dem richtigen Artikel verwenden.",
+    "tldr": [
+      "Viele Wörter siehst du sofort: un café, une lampe, le sport. Sie sehen wie deutsche Wörter aus.",
+      "Aber Achtung: Manche werden anders geschrieben (carton, catastrophe), und das Geschlecht kann anders sein als im Deutschen."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Wörter-Detektiv",
+      "html": "<p>Léa mange <b>un bonbon</b> dans <b>un café</b>. Sur la table, il y a <b>une lampe</b>. <b>Une dame</b> parle de <b>sport</b> avec <b>un cousin</b>. Dans <b>un carton</b>, il y a <b>une idée</b> : pas de <b>catastrophe</b> ! Pour la <b>gymnastique</b>, c'est <b>fantastique</b>, <b>pratique</b> et <b>classique</b>.</p><p>Auf Deutsch: Léa isst ein Bonbon in einem Café. Auf dem Tisch steht eine Lampe. Eine Dame spricht mit einem Cousin über Sport. In einem Karton ist eine Idee: keine Katastrophe! Für die Gymnastik ist das fantastisch, praktisch und klassisch.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Französisch",
+            "Deutsch"
+          ],
+          [
+            [
+              "un bonbon",
+              "ein Bonbon"
+            ],
+            [
+              "un café",
+              "ein Café, ein Kaffee"
+            ],
+            [
+              "une lampe",
+              "eine Lampe"
+            ],
+            [
+              "une dame",
+              "eine Dame"
+            ],
+            [
+              "un cousin",
+              "ein Cousin"
+            ],
+            [
+              "le sport",
+              "der Sport"
+            ]
+          ],
+          [
+            1.4,
+            1.4
+          ],
+          "Tabelle: sechs Wörter von Wörter, die du schon kennst"
+        ]
+      },
+      "caption": "Diese sechs Wörter lernst du zuerst. Alle Wörter der Seite stehen im Merkzettel."
+    },
+    "steps": {
+      "title": "So lernst du diese Seite",
+      "items": [
+        "Lies die kleine Geschichte oben laut. Du erkennst fast jedes Wort, obwohl es französisch ist.",
+        "Vergleiche die Schreibweise mit dem Deutschen: carton mit c, catastrophe mit c und ph, fantastique mit f.",
+        "Lerne zu jedem Nomen den Artikel dazu: un bonbon, une lampe, le sport.",
+        "Lies die Adjektive laut: fantastique, pratique, classique. Sie ändern sich in der weiblichen Form nicht.",
+        "Starte danach die Runde. Falsche Antworten kommen noch einmal dran."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Schau genau hin: <b>un carton</b> schreibt man mit c, nicht mit k. <b>La gymnastique</b> endet auf <b>-que</b>, nicht auf „-k“. Und <b>le sport</b> ist männlich, <b>la gymnastique</b> weiblich.</p>"
+    },
+    "rule": "Wörter, die dem Deutschen ähneln, immer mit Artikel und mit französischer Schreibweise lernen.",
+    "check": {
+      "q": "Welcher Artikel (ein/eine) passt zu „café“?",
+      "options": [
+        {
+          "id": "a",
+          "html": "une"
+        },
+        {
+          "id": "b",
+          "html": "des"
+        },
+        {
+          "id": "c",
+          "html": "un"
+        }
+      ],
+      "answer": "c",
+      "why": "café ist männlich, deshalb un café. une ist weiblich und des steht im Plural."
+    }
+  },
+  "u7-parc": {
+    "goal": "Du kannst über einen Freizeitpark sprechen und weißt, wie man „im Internet“ sagt.",
+    "tldr": [
+      "Hier lernst du Wörter für einen Ausflug: Achterbahn, Freizeitpark, Leser, Internet.",
+      "adorer heißt sehr gern mögen. sur Internet heißt im Internet, ohne Artikel."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Ausflug",
+      "html": "<p>Léa va dans <b>un parc d'attractions</b>. Papa <b>adore</b> <b>le grand huit</b>. Léa cherche sur <b>Internet</b> : <b>sur Internet</b>, les lecteurs de son journal disent que c'est <b>vrai</b>. <b>Une lectrice</b> écrit : « C'est <b>vraiment</b> super ! » <b>Alors</b>, Léa reste avec Papa.</p><p>Auf Deutsch: Léa geht in einen Freizeitpark. Papa liebt die Achterbahn. Léa sucht im Internet: Im Internet sagen die Leser ihrer Zeitung, dass es wahr ist. Eine Leserin schreibt: „Es ist wirklich super!“ Also bleibt Léa bei Papa.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Französisch",
+            "Deutsch"
+          ],
+          [
+            [
+              "un grand huit",
+              "eine Achterbahn"
+            ],
+            [
+              "vrai / vraie",
+              "wahr, richtig, echt"
+            ],
+            [
+              "un parc d'attractions",
+              "ein Freizeitpark, ein Erlebnispark"
+            ],
+            [
+              "un lecteur / une lectrice",
+              "ein Leser / eine Leserin"
+            ],
+            [
+              "adorer",
+              "jemanden / etwas sehr gern mögen"
+            ],
+            [
+              "Internet",
+              "das Internet"
+            ]
+          ],
+          [
+            1.4,
+            1.4
+          ],
+          "Tabelle: sechs Wörter von Im Freizeitpark"
+        ]
+      },
+      "caption": "Diese sechs Wörter lernst du zuerst. Alle Wörter der Seite stehen im Merkzettel."
+    },
+    "steps": {
+      "title": "So lernst du diese Seite",
+      "items": [
+        "Lies den kleinen Text oben laut. Die fetten Wörter sind neu auf dieser Seite.",
+        "Lies den Merkzettel Wort für Wort. Hake ab, was du schon sicher kannst.",
+        "Decke die deutsche Seite ab und sage jedes französische Wort laut. Dann decke das Französische ab.",
+        "Schreibe die Wörter auf, die du noch nicht sicher weißt, und achte auf Accents und den Artikel.",
+        "Starte danach die Runde. Falsche Antworten kommen noch einmal dran."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Im Deutschen sagt man „<b>im</b> Internet“. Im Französischen heißt es <b>sur Internet</b>, ohne Artikel. Nicht „dans l'Internet“.</p>"
+    },
+    "rule": "sur Internet = im Internet. un grand huit = eine Achterbahn. adorer = sehr gern mögen.",
+    "check": {
+      "q": "Wie sagst du „im Internet“?",
+      "options": [
+        {
+          "id": "a",
+          "html": "à Internet"
+        },
+        {
+          "id": "b",
+          "html": "dans l'Internet"
+        },
+        {
+          "id": "c",
+          "html": "sur Internet"
+        }
+      ],
+      "answer": "c",
+      "why": "Im Internet heißt sur Internet, ohne Artikel."
+    }
+  },
+  "v-paris": {
+    "goal": "Du kannst einen kurzen französischen Text über Paris lesen und Fragen dazu beantworten.",
+    "tldr": [
+      "Lies den Text zuerst ganz durch. Du musst nicht jedes Wort kennen.",
+      "Suche dann die Antworten im Text. Die Fragen auf Deutsch führen dich durch den Text."
+    ],
+    "analogy": {
+      "title": "Lies den Text",
+      "html": "<p><b>Un week-end à Paris</b></p><p>Léa et son père sont à Paris pour une semaine. Hier, ils ont visité le Louvre. Aujourd'hui, il fait beau, mais il fait froid. Léa a un anorak jaune et un pantalon gris. Elle est très contente ! Ce matin, ils vont visiter Notre-Dame, la grande cathédrale. Ils vont à Notre-Dame en métro. Cet après-midi, ils restent à la Défense, un quartier moderne. Ce soir, ils mangent dans un restaurant. Le père de Léa est triste : il a oublié son chapeau à la gare !</p><p>Auf Deutsch: Léa und ihr Vater sind eine Woche in Paris. Gestern haben sie den Louvre besichtigt. Heute ist schönes, aber kaltes Wetter. Léa hat einen gelben Anorak und eine graue Hose. Sie ist sehr zufrieden. Heute Morgen besichtigen sie Notre-Dame, die große Kathedrale. Sie fahren mit der U-Bahn dorthin. Heute Nachmittag bleiben sie in der Défense, einem modernen Stadtviertel. Heute Abend essen sie in einem Restaurant. Léas Vater ist traurig: Er hat seinen Hut am Bahnhof vergessen.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "flowDiagram",
+        "args": [
+          [
+            "Hier|Louvre",
+            "Ce matin|Notre-Dame",
+            "Cet après-midi|La Défense",
+            "Ce soir|Restaurant"
+          ],
+          "Zeitleiste: Tagesablauf"
+        ]
+      },
+      "caption": "Der Tagesablauf im Text von gestern bis heute Abend."
+    },
+    "steps": {
+      "title": "So gehst du vor",
+      "items": [
+        "Lies den französischen Text einmal ganz durch, ohne die Übersetzung.",
+        "Unterstreiche alle Wörter, die du kennst, zum Beispiel Notre-Dame oder restaurant.",
+        "Lies dann die deutsche Übersetzung und vergleiche, was du verstanden hast.",
+        "Starte die Runde und beantworte die Fragen. Falsche Antworten kommen noch einmal dran."
+      ]
+    },
+    "pitfall": {
+      "html": "<p><b>Hier</b> bedeutet gestern. Und <b>cet après-midi</b> heißt heute Nachmittag. Lies auf solche Wörter genau.</p>"
+    },
+    "rule": "Erst das Ganze verstehen, dann die Einzelheiten: Wer? Wo? Wann? Was ist passiert?",
+    "check": {
+      "q": "Was bedeutet „il a oublié son chapeau“?",
+      "options": [
+        {
+          "id": "a",
+          "html": "Er hat seinen Hut gekauft."
+        },
+        {
+          "id": "b",
+          "html": "Er hat seinen Hut verloren."
+        },
+        {
+          "id": "c",
+          "html": "Er hat seinen Hut vergessen."
+        }
+      ],
+      "answer": "c",
+      "why": "oublier heißt vergessen. Verloren oder gekauft steht nicht im Text."
+    }
+  },
+  "v-carte": {
+    "goal": "Du kannst eine kurze Postkarte auf Französisch lesen und verstehst, wie man sie schreibt.",
+    "tldr": [
+      "Eine Postkarte beginnt mit Cher oder Chère und endet oft mit À bientôt !",
+      "Dazwischen stehen kurze Sätze: das Wetter, die Aussicht, was man besichtigt."
+    ],
+    "analogy": {
+      "title": "Lies die Postkarte",
+      "html": "<p><b>Une carte postale</b></p><p>Cher papi,</p><p>Je t'écris une carte postale de Paris. Il fait beau, mais il fait froid. La vue sur la ville est super ! Nous visitons beaucoup de musées et d'endroits intéressants. Demain, nous allons au parc d'attractions. Papa adore le grand huit, mais moi, je ne sais pas ! Dans une boutique, j'achète un souvenir pour toi. À bientôt ! Léa</p><p>Auf Deutsch: Lieber Opa, ich schreibe dir eine Postkarte aus Paris. Es ist schön, aber kalt. Die Aussicht auf die Stadt ist super! Wir besichtigen viele Museen und interessante Orte. Morgen gehen wir in den Freizeitpark. Papa liebt die Achterbahn, aber ich weiß nicht! In einem Laden kaufe ich ein Souvenir für dich. Bis bald! Léa</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "flowDiagram",
+        "args": [
+          [
+            "Cher papi,",
+            "Wetter und Aussicht",
+            "Was wir machen",
+            "À bientôt !"
+          ],
+          "Ablauf: Aufbau einer Postkarte"
+        ]
+      },
+      "caption": "So ist die Postkarte aufgebaut: Anrede, Wetter, Erlebnisse, Gruß."
+    },
+    "steps": {
+      "title": "So gehst du vor",
+      "items": [
+        "Lies die Karte einmal ganz durch.",
+        "Finde die Anrede am Anfang und den Gruß am Ende.",
+        "Suche die Wetterangabe und das, was Léa besichtigt.",
+        "Starte die Runde und beantworte die Fragen."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Der Anfang <b>Cher papi</b> richtet sich nach dem Empfänger. Für eine Frau schreibst du <b>Chère</b>.</p>"
+    },
+    "rule": "Postkarte = Anrede + Wetter/Aussicht + Erlebnisse + Gruß.",
+    "check": {
+      "q": "Wie endet die Karte?",
+      "options": [
+        {
+          "id": "a",
+          "html": "Cher papi"
+        },
+        {
+          "id": "b",
+          "html": "À bientôt !"
+        },
+        {
+          "id": "c",
+          "html": "Il fait beau"
+        }
+      ],
+      "answer": "b",
+      "why": "Am Ende steht À bientôt ! Cher papi ist der Anfang."
+    }
+  },
+  "v-parc": {
+    "goal": "Du kannst einen Bericht über einen Freizeitpark lesen und Fragen dazu beantworten.",
+    "tldr": [
+      "Der Text erzählt von Pauls Reportage über einen Freizeitpark.",
+      "Du erkennst viele Wörter: parc, ticket, restaurant, journal und Internet."
+    ],
+    "analogy": {
+      "title": "Lies den Text",
+      "html": "<p><b>Un reportage sur le parc</b></p><p>Paul est assistant au journal de la ville. Aujourd'hui, il prépare un reportage sur un parc d'attractions. Il achète un ticket et il adore le grand huit. Il y a beaucoup de touristes et il y a du vent. Inès n'aime pas le grand huit. Elle reste au restaurant et elle lit le journal. Le soir, Paul écrit son reportage. Sur Internet, les lecteurs écrivent : « Le parc est vraiment super ! »</p><p>Auf Deutsch: Paul ist Assistent bei der Stadtzeitung. Heute bereitet er eine Reportage über einen Freizeitpark vor. Er kauft ein Ticket und liebt die Achterbahn. Es sind viele Touristen da und es ist windig. Inès mag die Achterbahn nicht. Sie bleibt im Restaurant und liest die Zeitung. Am Abend schreibt Paul seine Reportage. Im Internet schreiben die Leser: „Der Park ist wirklich super!“</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "flowDiagram",
+        "args": [
+          [
+            "Un ticket|achète",
+            "Le grand huit|adore",
+            "Au restaurant|Inès",
+            "Sur Internet|les lecteurs"
+          ],
+          "Ablauf: Pauls Tag"
+        ]
+      },
+      "caption": "Wer was im Text macht: Paul im Park, Inès im Restaurant, die Leser im Internet."
+    },
+    "steps": {
+      "title": "So gehst du vor",
+      "items": [
+        "Lies den Text einmal ganz durch.",
+        "Unterstreiche die Namen: Paul und Inès. Was macht jeder?",
+        "Lies die Übersetzung und vergleiche.",
+        "Starte die Runde und beantworte die Fragen."
+      ]
+    },
+    "pitfall": {
+      "html": "<p><b>Un reportage</b> ist männlich. Und <b>sur Internet</b> steht ohne Artikel.</p>"
+    },
+    "rule": "Wer macht was? Wo? Wann? Diese Fragen helfen beim Lesen.",
+    "check": {
+      "q": "Was bedeutet „Elle reste au restaurant“?",
+      "options": [
+        {
+          "id": "a",
+          "html": "Sie geht ins Restaurant."
+        },
+        {
+          "id": "b",
+          "html": "Sie bleibt im Restaurant."
+        },
+        {
+          "id": "c",
+          "html": "Sie arbeitet im Restaurant."
+        }
+      ],
+      "answer": "b",
+      "why": "rester heißt bleiben. au restaurant heißt im Restaurant."
+    }
+  }
+}

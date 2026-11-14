@@ -1,0 +1,166 @@
+[
+  {
+    "id": "first",
+    "n": "Premier pas",
+    "d": "Die erste Seite geübt",
+    "rule": {
+      "type": "anyUnit"
+    }
+  },
+  {
+    "id": "perfect",
+    "n": "Sans faute",
+    "d": "Eine Runde ohne Fehler",
+    "rule": {
+      "type": "perfectRound"
+    }
+  },
+  {
+    "id": "combo",
+    "n": "En forme",
+    "d": "Fünf richtige Antworten hintereinander",
+    "rule": {
+      "type": "combo",
+      "min": 5
+    }
+  },
+  {
+    "id": "streak",
+    "n": "Persévérant",
+    "d": "Drei Tage in Folge geübt",
+    "rule": {
+      "type": "streak",
+      "days": 3
+    }
+  },
+  {
+    "id": "boss",
+    "n": "Le Grand Défi",
+    "d": "Den Endgegner besiegt",
+    "rule": {
+      "type": "boss"
+    }
+  },
+  {
+    "id": "unite6",
+    "n": "Unité 6 geschafft",
+    "d": "Alle Seiten der Unité 6 mit mindestens einem Stern",
+    "rule": {
+      "type": "units",
+      "ids": [
+        "u6-alltag",
+        "u6-eigenschaften",
+        "u6-farben",
+        "u6-kleidung",
+        "u6-adjektive"
+      ]
+    }
+  },
+  {
+    "id": "unite7",
+    "n": "Unité 7 geschafft",
+    "d": "Alle Seiten der Unité 7 mit mindestens einem Stern",
+    "rule": {
+      "type": "units",
+      "ids": [
+        "u7-rappel",
+        "u7-paris",
+        "u7-wetter",
+        "u7-karte",
+        "u7-ecrire-lire",
+        "u7-verkehr",
+        "u7-tageszeiten",
+        "u7-aehnlich",
+        "u7-parc"
+      ]
+    }
+  },
+  {
+    "id": "vertiefung",
+    "n": "Lecteur",
+    "d": "Alle drei Lesetexte mit mindestens einem Stern",
+    "rule": {
+      "type": "units",
+      "ids": [
+        "v-paris",
+        "v-carte",
+        "v-parc"
+      ]
+    }
+  },
+  {
+    "id": "alle",
+    "n": "Découvertes 1",
+    "d": "Alle Seiten mit mindestens einem Stern",
+    "rule": {
+      "type": "units",
+      "ids": [
+        "u6-alltag",
+        "u6-eigenschaften",
+        "u6-farben",
+        "u6-kleidung",
+        "u6-adjektive",
+        "u7-rappel",
+        "u7-paris",
+        "u7-wetter",
+        "u7-karte",
+        "u7-ecrire-lire",
+        "u7-verkehr",
+        "u7-tageszeiten",
+        "u7-aehnlich",
+        "u7-parc",
+        "v-paris",
+        "v-carte",
+        "v-parc"
+      ]
+    }
+  },
+  {
+    "id": "adjektive3",
+    "n": "Maître des Adjectifs",
+    "d": "Drei Sterne bei den Adjektiven",
+    "rule": {
+      "type": "unit",
+      "id": "u6-adjektive",
+      "stars": 3
+    }
+  },
+  {
+    "id": "wetter3",
+    "n": "Météo",
+    "d": "Drei Sterne beim Wetter",
+    "rule": {
+      "type": "unit",
+      "id": "u7-wetter",
+      "stars": 3
+    }
+  },
+  {
+    "id": "besser",
+    "n": "Besser geworden",
+    "d": "Bei den Adjektiven 20 Prozentpunkte besser als beim letzten Mal",
+    "rule": {
+      "type": "improved",
+      "unit": "u6-adjektive",
+      "by": 0.2
+    }
+  },
+  {
+    "id": "nicht-aufgegeben",
+    "n": "Nicht aufgegeben",
+    "d": "Zwei Fehler im zweiten Versuch richtig gemacht",
+    "rule": {
+      "type": "retryRecovered",
+      "min": 2
+    }
+  },
+  {
+    "id": "zurueckgekommen",
+    "n": "Zurückgekommen",
+    "d": "Eine Seite nach Pause wieder aufgefrischt",
+    "rule": {
+      "type": "refresh",
+      "count": 1
+    }
+  }
+]

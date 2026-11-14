@@ -1,0 +1,453 @@
+{
+  "schema": 1,
+  "id": "decouvertes-1",
+  "title": "Französisch-Werkstatt: Découvertes 1",
+  "catalog": {
+    "fach": "franzoesisch",
+    "klassen": [
+      6
+    ],
+    "lehrwerk": "Découvertes 1 (Série jaune)",
+    "subject": "Französisch",
+    "desc": "Grundwissen und Wortschatz aus Découvertes 1: Unité 6 und 7 mit Farben, Kleidung, Wetter, Verkehrsmitteln, Paris, écrire und lire, dazu Lesetexte zur Vertiefung.",
+    "order": 12
+  },
+  "greeting": "Salut",
+  "intro": "Der Stoff aus Découvertes 1, Klasse 6: erst Grundwissen und Vokabeln, dann Lesetexte zum Vertiefen. Jede Seite hat eine Lektion und eine Runde mit Fragen. Du kannst auch springen.",
+  "bossTitle": "Le Grand Défi",
+  "words": {
+    "praise": [
+      "Richtig!",
+      "Genau!",
+      "Très bien !",
+      "Parfait !",
+      "Bravo !",
+      "Super !"
+    ],
+    "resultTitles": [
+      "Bien joué !",
+      "Très bien !",
+      "Parfait !"
+    ],
+    "blitzTitle": "Éclair !",
+    "levelTitles": [
+      "Neuling",
+      "Wortlehrling",
+      "Vokabelprofi",
+      "Satzbauer",
+      "Grammatik-Profi",
+      "Maître des Mots",
+      "Légende"
+    ]
+  },
+  "inputChars": [
+    "é",
+    "è",
+    "ê",
+    "à",
+    "â",
+    "ç",
+    "î",
+    "ï",
+    "ô",
+    "û",
+    "œ"
+  ],
+  "groups": [
+    {
+      "id": "unite-6",
+      "title": "Unité 6"
+    },
+    {
+      "id": "unite-7",
+      "title": "Unité 7"
+    },
+    {
+      "id": "vertiefung",
+      "title": "Vertiefung: Texte und Aufgaben"
+    }
+  ],
+  "units": [
+    {
+      "id": "u6-alltag",
+      "group": "unite-6",
+      "color": "#9B7BFF",
+      "ic": "6a",
+      "title": "Alltag und Orte",
+      "de": "Wörter zum Erzählen · Unité 6, Vocabulaire S. 176",
+      "card": {
+        "name": "Wörter für den Alltag",
+        "fact": "hier heißt gestern. Das deutsche „hier“ heißt auf Französisch ici."
+      }
+    },
+    {
+      "id": "u6-eigenschaften",
+      "group": "unite-6",
+      "color": "#9B7BFF",
+      "ic": "6b",
+      "title": "Eigenschaften beschreiben",
+      "de": "Gefühle und Adjektive · Unité 6, Vocabulaire S. 176",
+      "card": {
+        "name": "Zwei Formen, ein Adjektiv",
+        "fact": "Viele Adjektive haben eine männliche und eine weibliche Form: petit und petite."
+      }
+    },
+    {
+      "id": "u6-farben",
+      "group": "unite-6",
+      "color": "#9B7BFF",
+      "ic": "6c",
+      "title": "Farben",
+      "de": "Bleu, blanc, rouge · Unité 6, Vocabulaire S. 176 und 178",
+      "card": {
+        "name": "Bleu, blanc, rouge",
+        "fact": "Blau, Weiß und Rot sind die Farben der französischen Flagge."
+      }
+    },
+    {
+      "id": "u6-kleidung",
+      "group": "unite-6",
+      "color": "#9B7BFF",
+      "ic": "6d",
+      "title": "Kleidung",
+      "de": "Les vêtements · Unité 6, Vocabulaire S. 178",
+      "card": {
+        "name": "Kleider machen Leute",
+        "fact": "Kleidung heißt im Plural les vêtements. Ein einzelnes Kleidungsstück heißt un vêtement."
+      }
+    },
+    {
+      "id": "u6-adjektive",
+      "group": "unite-6",
+      "color": "#9B7BFF",
+      "ic": "6e",
+      "title": "Adjektive angleichen",
+      "de": "Männlich, weiblich, Plural · Grundwissen",
+      "card": {
+        "name": "Das Adjektiv zieht sich um",
+        "fact": "Das Adjektiv übernimmt Geschlecht und Zahl des Nomens: une robe verte, des robes vertes."
+      },
+      "needs": [
+        "u6-eigenschaften",
+        "u6-farben"
+      ]
+    },
+    {
+      "id": "u7-rappel",
+      "group": "unite-7",
+      "color": "#FF6B88",
+      "ic": "7a",
+      "title": "Kleine Wörter wiederholen",
+      "de": "Tu te rappelles ? · Unité 7, Vocabulaire S. 180",
+      "card": {
+        "name": "Kleine Wörter, große Wirkung",
+        "fact": "aujourd'hui, hier und demain sind das Dreigestirn der Zeit: heute, gestern, morgen."
+      }
+    },
+    {
+      "id": "u7-paris",
+      "group": "unite-7",
+      "color": "#FF6B88",
+      "ic": "7b",
+      "title": "Paris entdecken",
+      "de": "Ein Reportage über Paris · Unité 7, Vocabulaire S. 180",
+      "card": {
+        "name": "Paris, die Stadt der Museen",
+        "fact": "Le Louvre ist eines der berühmtesten Museen der Welt, Notre-Dame eine der berühmtesten Kathedralen."
+      }
+    },
+    {
+      "id": "u7-wetter",
+      "group": "unite-7",
+      "color": "#FF6B88",
+      "ic": "7c",
+      "title": "Das Wetter",
+      "de": "Quel temps fait-il ? · Unité 7, Vocabulaire S. 182",
+      "card": {
+        "name": "Il fait beau",
+        "fact": "Für das Wetter benutzt du fast immer faire: il fait beau, il fait froid."
+      }
+    },
+    {
+      "id": "u7-karte",
+      "group": "unite-7",
+      "color": "#FF6B88",
+      "ic": "7d",
+      "title": "Eine Karte aus Paris",
+      "de": "Briefe und Karten · Unité 7, Vocabulaire S. 182",
+      "card": {
+        "name": "Cher papi",
+        "fact": "Briefe beginnen im Französischen mit Cher oder Chère und enden oft mit À bientôt."
+      }
+    },
+    {
+      "id": "u7-ecrire-lire",
+      "group": "unite-7",
+      "color": "#FF6B88",
+      "ic": "7e",
+      "title": "écrire und lire",
+      "de": "Zwei wichtige Verben · Grundwissen",
+      "card": {
+        "name": "Zwei Verben mit eigenem Kopf",
+        "fact": "écrire und lire folgen nicht dem Muster der -er-Verben. Merke dir die Formen von je bis ils."
+      },
+      "needs": [
+        "u7-karte"
+      ]
+    },
+    {
+      "id": "u7-verkehr",
+      "group": "unite-7",
+      "color": "#FF6B88",
+      "ic": "7f",
+      "title": "Verkehrsmittel",
+      "de": "Mit dem Zug, mit dem Bus … · Unité 7, Vocabulaire S. 184",
+      "card": {
+        "name": "En train ou à vélo ?",
+        "fact": "Mit dem Zug, Bus und Auto steht en. Mit dem Fahrrad steht à, und zu Fuß heißt à pied."
+      }
+    },
+    {
+      "id": "u7-tageszeiten",
+      "group": "unite-7",
+      "color": "#FF6B88",
+      "ic": "7g",
+      "title": "Vom Morgen bis zum Abend",
+      "de": "Du matin au soir · Unité 7, Auf einen Blick",
+      "card": {
+        "name": "Du matin au soir",
+        "fact": "Mit ce, cet und cette sagst du heute Morgen, heute Nachmittag und heute Nacht."
+      },
+      "needs": [
+        "u7-rappel"
+      ]
+    },
+    {
+      "id": "u7-aehnlich",
+      "group": "unite-7",
+      "color": "#FF6B88",
+      "ic": "7h",
+      "title": "Wörter, die du schon kennst",
+      "de": "Fast wie im Deutschen · Unité 7, Auf einen Blick S. 186",
+      "card": {
+        "name": "Fast wie im Deutschen",
+        "fact": "Viele französische Wörter erkennst du sofort, aber Schreibweise und Geschlecht sind oft anders."
+      }
+    },
+    {
+      "id": "u7-parc",
+      "group": "unite-7",
+      "color": "#FF6B88",
+      "ic": "7i",
+      "title": "Im Freizeitpark",
+      "de": "Au parc Astérix · Unité 7, Vocabulaire S. 186",
+      "card": {
+        "name": "Au parc d'attractions",
+        "fact": "Auf Internet steht kein Artikel: sur Internet heißt im Internet."
+      }
+    },
+    {
+      "id": "v-paris",
+      "group": "vertiefung",
+      "color": "#3DD6B0",
+      "ic": "va",
+      "title": "Lesetext: Un week-end à Paris",
+      "de": "Lesen und verstehen · Vertiefung",
+      "card": {
+        "name": "Lesen auf Französisch",
+        "fact": "Du musst nicht jedes Wort kennen. Die bekannten Wörter helfen dir, den Rest zu verstehen."
+      },
+      "needs": [
+        "u6-kleidung",
+        "u7-paris",
+        "u7-tageszeiten"
+      ]
+    },
+    {
+      "id": "v-carte",
+      "group": "vertiefung",
+      "color": "#3DD6B0",
+      "ic": "vb",
+      "title": "Lesetext: Une carte postale",
+      "de": "Lesen und schreiben · Vertiefung",
+      "card": {
+        "name": "Eine Karte schreiben",
+        "fact": "Cher, Chère, À bientôt: mit wenigen Wörtern schreibst du eine Postkarte."
+      },
+      "needs": [
+        "u7-karte",
+        "u7-wetter",
+        "u7-ecrire-lire"
+      ]
+    },
+    {
+      "id": "v-parc",
+      "group": "vertiefung",
+      "color": "#3DD6B0",
+      "ic": "vc",
+      "title": "Lesetext: Un reportage sur le parc",
+      "de": "Lesen und verstehen · Vertiefung",
+      "card": {
+        "name": "Ein Bericht aus dem Park",
+        "fact": "Ein reportage verbindet Wörter, die du kennst, zu einer Geschichte."
+      },
+      "needs": [
+        "u7-parc",
+        "u7-verkehr",
+        "u7-aehnlich"
+      ]
+    }
+  ],
+  "notes": {
+    "u6-alltag": [
+      [
+        "Wörter",
+        "l'arrivée = die Ankunft · hier = gestern · un problème = ein Problem · téléphoner = mit jemandem telefonieren, jemanden anrufen · rester = bleiben · un journal = eine Zeitung; Tagebuch · les vacances = die Ferien, der Urlaub · une gare = ein Bahnhof · un chanteur = ein Sänger · oublier = etwas vergessen · un chapeau = ein Hut · un poème = ein Gedicht · enfin = schließlich, endlich · peut-être = vielleicht"
+      ],
+      [
+        "Tipp",
+        "Lerne Nomen immer mit dem Artikel: un problème, une gare, les vacances."
+      ]
+    ],
+    "u6-eigenschaften": [
+      [
+        "Wörter",
+        "dernier / dernière = letzter / letzte / letztes · content / contente = zufrieden · triste = traurig · intéressant / intéressante = interessant · très = sehr · bon / bonne = gut · petit / petite = klein · joli / jolie = hübsch, nett · long / longue = lang"
+      ],
+      [
+        "Aussprache",
+        "Bei intéressant hörst du zwei Nasale, und das s am Ende wird nicht gesprochen. bon klingt wie in bonjour."
+      ]
+    ],
+    "u6-farben": [
+      [
+        "Wörter",
+        "une couleur = eine Farbe · bleu / bleue = blau · blanc / blanche = weiß · rouge = rot · jaune = gelb · noir / noire = schwarz · gris / grise = grau · vert / verte = grün"
+      ],
+      [
+        "Flagge",
+        "bleu, blanc, rouge sind die Farben der Trikolore, also der französischen Nationalflagge."
+      ]
+    ],
+    "u6-kleidung": [
+      [
+        "Wörter",
+        "un vêtement = ein Kleidungsstück · un pantalon = eine Hose · un jean = eine Jeans · une basket / des baskets = Turnschuhe · une jupe = ein Rock · une robe = ein Kleid · un anorak = ein Anorak · une chemise = ein Hemd · une veste = eine Jacke · une chaussure / les chaussures = die Schuhe · un pull = ein Pulli · un t-shirt = ein T-Shirt · un short = Shorts · un sweat = ein Sweatshirt · un blouson = ein Blouson"
+      ],
+      [
+        "Wortfamilie",
+        "Wortbildung hilft: un pull ist die Kurzform von pull-over, un sweat die von sweat-shirt."
+      ]
+    ],
+    "u6-adjektive": [
+      [
+        "Weiblich",
+        "Meist -e: petit, petite. Sonderformen: blanc, blanche · long, longue · bon, bonne."
+      ],
+      [
+        "Mehrzahl",
+        "Meist -s. Farben gleich wie Nomen: des robes rouges."
+      ]
+    ],
+    "u7-rappel": [
+      [
+        "Wörter",
+        "vraiment = wirklich · même = sogar · déjà = schon · surtout = vor allem · je voudrais … = ich möchte gern … · tout le monde = alle, jeder · je ne sais pas = ich weiß nicht · aujourd'hui = heute · demain = morgen"
+      ],
+      [
+        "Tipp",
+        "Diese Wörter hast du schon gelernt. Wiederhole sie, damit du sie in Texten schneller erkennst."
+      ]
+    ],
+    "u7-paris": [
+      [
+        "Wörter",
+        "une semaine = eine Woche · un reportage = eine Reportage · une ville = eine Stadt · un assistant / une assistante = ein Assistent / eine Assistentin · visiter = etwas besichtigen · un endroit = ein Ort, eine Stelle · un touriste / une touriste = ein Tourist / eine Touristin · l'Arc de triomphe = der Triumphbogen · le Louvre = das berühmte Museum in Paris · un musée = ein Museum · une cathédrale = eine Kathedrale · Notre-Dame = die berühmte Kathedrale im Zentrum von Paris · la Défense = das moderne Stadtviertel von Paris · moderne = modern"
+      ],
+      [
+        "Sehenswürdigkeiten",
+        "le Louvre, Notre-Dame, l'Arc de triomphe, la Défense. Die Namen musst du genau schreiben können."
+      ]
+    ],
+    "u7-wetter": [
+      [
+        "Wörter",
+        "le temps = das Wetter · Quel temps fait-il ? = Wie ist das Wetter? · Il fait beau. = Es ist schönes Wetter. · Il fait chaud. = Es ist warm / heiß. · Il fait froid. = Es ist kalt. · Il fait mauvais. = Es ist schlechtes Wetter. · Il pleut. = Es regnet. · Il neige. = Es schneit. · Il y a du vent. = Es ist windig. · beaucoup de = viel(e)"
+      ],
+      [
+        "Wetter fragen",
+        "Quel temps fait-il ? heißt Wie ist das Wetter?"
+      ]
+    ],
+    "u7-karte": [
+      [
+        "Wörter",
+        "la vue = die Aussicht · un restaurant = ein Restaurant · une boutique = eine Boutique, ein Laden · un souvenir = eine Erinnerung, ein Andenken · un bureau = ein Büro; hier: ein Arbeitszimmer · écrire = jemandem etwas schreiben · une carte = eine Karte · une carte postale = eine Postkarte, eine Ansichtskarte · Cher … / Chère … = Lieber … / Liebe … · papi = Opi · lire = lesen; vorlesen"
+      ],
+      [
+        "Briefende",
+        "Am Ende schreibt man oft À bientôt ! (Bis bald!)."
+      ]
+    ],
+    "u7-ecrire-lire": [
+      [
+        "Merke",
+        "écrire qc à qn = jemandem etwas schreiben · lire qc à qn = jemandem etwas vorlesen."
+      ]
+    ],
+    "u7-verkehr": [
+      [
+        "Wörter",
+        "en train = mit dem Zug · en bus = mit dem Bus · en métro = mit der U-Bahn · en voiture = mit dem Auto · à vélo = mit dem Fahrrad · à pied = zu Fuß · un avion = ein Flugzeug · un ticket = ein Fahrschein, eine Fahrkarte · écologique = ökologisch, umweltfreundlich"
+      ],
+      [
+        "Bahnhöfe",
+        "In Paris gibt es mehrere Bahnhöfe, zum Beispiel la gare de l'Est, la gare du Nord und la gare de Lyon."
+      ]
+    ],
+    "u7-tageszeiten": [
+      [
+        "Merke",
+        "Mit Wochentag ohne Artikel: samedi matin = Samstagmorgen."
+      ]
+    ],
+    "u7-aehnlich": [
+      [
+        "Wörter",
+        "un bonbon = ein Bonbon · un café = ein Café, ein Kaffee · une lampe = eine Lampe · une dame = eine Dame · un cousin = ein Cousin · le sport = der Sport · un carton = ein Karton · une idée = eine Idee · une catastrophe = eine Katastrophe · la gymnastique = die Gymnastik · fantastique = fantastisch, phantastisch · pratique = praktisch · classique = klassisch"
+      ],
+      [
+        "Schreibweise",
+        "c statt k: un carton, une catastrophe. -que am Ende: la gymnastique, pratique, classique."
+      ]
+    ],
+    "u7-parc": [
+      [
+        "Wörter",
+        "un grand huit = eine Achterbahn · vrai / vraie = wahr, richtig, echt · un parc d'attractions = ein Freizeitpark, ein Erlebnispark · un lecteur / une lectrice = ein Leser / eine Leserin · adorer = jemanden / etwas sehr gern mögen · Internet = das Internet · sur Internet = im Internet · alors = also, dann, nun"
+      ],
+      [
+        "Wortfamilie",
+        "vrai (wahr) und vraiment (wirklich) gehören zusammen."
+      ]
+    ],
+    "v-paris": [
+      [
+        "Strategie",
+        "Bekannte Wörter markieren, Unbekanntes aus dem Zusammenhang erschließen."
+      ]
+    ],
+    "v-carte": [
+      [
+        "Zum Schreiben",
+        "Schreibe selbst eine Karte an jemanden und benutze mindestens vier Wörter dieser Seite."
+      ]
+    ],
+    "v-parc": [
+      [
+        "Strategie",
+        "Wer macht was? Fasse jeden Abschnitt in einem deutschen Satz zusammen."
+      ]
+    ]
+  }
+}
