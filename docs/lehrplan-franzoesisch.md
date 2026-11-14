@@ -9,7 +9,7 @@ Buch: Découvertes 1, Série jaune (Klett, Ausgabe ab 2012), Klasse 6. Als Vorla
 - Unité 6: Seiten 176 und 178 (Wörter zu Atelier A2 bis B11, Farben, Kleidung, „Auf einen Blick: Les vêtements“)
 - Unité 7: Seiten 180 (Atelier A1, „Tu te rappelles ?“), 182 (Station 1: Wetter, Postkarte, écrire, lire), 184 (Station 2: Verkehrsmittel; „Du matin au soir“), 186 („Un croissant, s'il vous plaît“, Station 4: Freizeitpark)
 
-Das Buch diente nur als Auswahl der Wörter und Themen. Alle Merkhilfen, Beispielsätze, Geschichten, Lesetexte und Aufgaben sind eigene Formulierungen.
+Für die Seiten aus Unité 6 und 7 diente das Buch nur als Auswahl der Wörter und Themen. Alle Merkhilfen, Beispielsätze, Geschichten, Lesetexte und Aufgaben sind eigene Formulierungen.
 
 ## Was die App abdeckt und was nicht
 
@@ -29,9 +29,10 @@ Das Buch diente nur als Auswahl der Wörter und Themen. Alle Merkhilfen, Beispie
 | u7-tageszeiten | Unité 7, S. 184 („Du matin au soir“) | Grundwissen |
 | u7-aehnlich | Unité 7, S. 186 („Auf einen Blick“) | Vokabeln (Schreibweise, Artikel) |
 | u7-parc | Unité 7, S. 186 | Vokabeln |
+| g-artikel bis g-futur (8 Seiten) | nicht aus dem Buch, siehe Abschnitt „Grammatik-Grundwissen“ | Grundwissen |
 | v-paris, v-carte, v-parc | eigene Texte zu den Themen der Unité 7 | Vertiefung (Lesetexte) |
 
-Nicht enthalten, weil nicht vorgelegt: Inhaltsverzeichnis des Buchs, Unités 1 bis 5 und Bienvenue, die Grammatikteile („Grammatik“ im Anhang) und die Lektionstexte. Die Seiten dieser Unités fehlen also. Sie lassen sich nachliefern, die App ist dafür vorbereitet (neue Seiten hinten anfügen).
+Nicht enthalten, weil nicht vorgelegt: Inhaltsverzeichnis des Buchs, Unités 1 bis 5 und Bienvenue, das Grammatikheft des Buchs und die Lektionstexte. Die Seiten dieser Unités fehlen also, das Grammatik-Grundwissen unten ersetzt das Grammatikheft nur sinngemäß. Sie lassen sich nachliefern, die App ist dafür vorbereitet (neue Seiten hinten anfügen).
 
 Zwei Wörter stehen im Buch an zwei Stellen und sind in der App nur einmal: *enfin* (Unité 6 und „Tu te rappelles ?“ in Unité 7) steht auf `u6-alltag`, *surtout* nur auf `u7-rappel`. *aujourd'hui* und *demain* stammen aus einer Randnotiz zu Unité 6 und stehen auf `u7-rappel`.
 
@@ -52,6 +53,29 @@ Nicht geprüft:
 - Abweichungen der Schule oder der Lehrkraft. Die Reihenfolge der Unités richtet sich nach dem Buch.
 
 Eine Lehrkraft sollte die Aufgaben und Merkhilfen gegenlesen, vor allem die Lesetexte und die Hinweise zur Aussprache.
+
+## Grammatik-Grundwissen (acht Seiten, Gruppe „grundwissen“)
+
+Das Buch lag für diese Seiten nicht vor. Der Auftraggeber hat ausdrücklich verlangt, das Grundwissen im Stil der App für Klasse 7 (`decouvertes-2`) und nach dem Bildungsplan BW zu ergänzen. Die Seiten stehen zwischen Unité 7 und den Lesetexten.
+
+| Seite | Thema |
+|---|---|
+| g-artikel | bestimmter und unbestimmter Artikel, l', Mehrzahl |
+| g-verneinung | ne … pas, n', pas de |
+| g-fragen | Satzmelodie, est-ce que, où, qui, quand, comment, combien, pourquoi, parce que |
+| g-possessiv | mon, ma, mes bis leur, leurs |
+| g-praep | à und de mit Artikel: au, aux, du, des |
+| g-ilya | il y a, c'est, ce sont, voilà, il n'y a pas de |
+| g-imperativ | Imperativ (tu, nous, vous), Verneinung |
+| g-futur | futur composé: aller + Infinitiv |
+
+Nicht doppelt gebaut, weil `decouvertes-2` sie schon hat: être, avoir, aller, faire und Verben auf -er (Cahier de Verbes), Zahlen, Teilungsartikel, quel, ce/cet/cette/ces. Ebenfalls schon in dieser App: Adjektive angleichen, écrire und lire, Tageszeiten.
+
+**Nicht geprüft:**
+
+- Die Auswahl der acht Themen beruht auf der üblichen Grundgrammatik des ersten Lernjahres Französisch. Der Wortlaut des Bildungsplans (Abschnitt 3.1.3.8, Klassen 6/7/8) war nicht abrufbar, die Seite lieferte nur die Gliederung. Ob jedes Thema in Klasse 6 oder erst in Klasse 7 steht, ist offen.
+- Ob und in welcher Reihenfolge Découvertes 1 diese Themen behandelt. Wo das Buch anders vorgeht, bitte die Seiten anpassen oder entfernen.
+- Die Beispielsätze sind eigene Formulierungen und sollten von einer Lehrkraft gegengelesen werden.
 
 ## Stufe
 

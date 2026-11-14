@@ -65,7 +65,7 @@ test('Diagramme tragen einen Alternativtext', () => {
 
 test('Aufbau: erst Grundwissen und Vokabeln, dann die Vertiefung; jede Seite hat mindestens 10 Aufgaben', () => {
   const gruppen = paket.manifest.groups.map((g) => g.id);
-  assert.deepEqual(gruppen, ['unite-6', 'unite-7', 'vertiefung']);
+  assert.deepEqual(gruppen, ['unite-6', 'unite-7', 'grundwissen', 'vertiefung']);
   const letzte = UNITS.findLastIndex((u) => u.group !== 'vertiefung');
   const erste = UNITS.findIndex((u) => u.group === 'vertiefung');
   assert.ok(erste > letzte, 'Vertiefungsseiten stehen vor Grundwissen');
@@ -95,7 +95,7 @@ test('Vokabeln: jedes Wort hat mindestens zwei Aufgaben und steht nur auf einer 
     for (const [nummer, anzahl] of nachWort) assert.ok(anzahl >= 2, `${unit.id}: Wort ${nummer} hat nur ${anzahl} Aufgabe`);
   }
   assert.equal(VOKABELN.length, 11);
-  assert.equal(GRAMMATIK.length, 6);
+  assert.equal(GRAMMATIK.length, 14);
 });
 
 test('Vokabeln: falsche Antworten sind nie doppelt und nie die richtige', () => {
