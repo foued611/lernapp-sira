@@ -76,6 +76,24 @@
     }
   },
   {
+    "id": "grundwissen",
+    "n": "Grammatik-Profi",
+    "d": "Alle Seiten des Grammatik-Grundwissens mit mindestens einem Stern",
+    "rule": {
+      "type": "units",
+      "ids": [
+        "g-artikel",
+        "g-verneinung",
+        "g-fragen",
+        "g-possessiv",
+        "g-praep",
+        "g-ilya",
+        "g-imperativ",
+        "g-futur"
+      ]
+    }
+  },
+  {
     "id": "vertiefung",
     "n": "Lecteur",
     "d": "Alle drei Lesetexte mit mindestens einem Stern",
@@ -109,6 +127,14 @@
         "u7-tageszeiten",
         "u7-aehnlich",
         "u7-parc",
+        "g-artikel",
+        "g-verneinung",
+        "g-fragen",
+        "g-possessiv",
+        "g-praep",
+        "g-ilya",
+        "g-imperativ",
+        "g-futur",
         "v-paris",
         "v-carte",
         "v-parc"

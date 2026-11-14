@@ -4913,6 +4913,1113 @@
         "label": "Deutsch → Französisch"
       }
     ],
+    "g-artikel": [
+      {
+        "q": "Der bestimmte Artikel vor „garçon“ (männlich).",
+        "kind": "gap",
+        "s": "Voilà ___ garçon.",
+        "a": "le",
+        "wrong": [
+          "la",
+          "les",
+          "un"
+        ],
+        "why": "garçon ist männlich und steht in der Einzahl, deshalb le."
+      },
+      {
+        "q": "Der bestimmte Artikel vor „fille“ (weiblich).",
+        "kind": "gap",
+        "s": "Voilà ___ fille.",
+        "a": "la",
+        "wrong": [
+          "le",
+          "les",
+          "une"
+        ],
+        "why": "fille ist weiblich und steht in der Einzahl, deshalb la."
+      },
+      {
+        "q": "Der unbestimmte Artikel vor „sœur“ (weiblich).",
+        "kind": "gap",
+        "s": "Léa a ___ sœur.",
+        "a": "une",
+        "wrong": [
+          "un",
+          "la",
+          "des"
+        ],
+        "why": "sœur ist weiblich, und unbestimmt heißt es une."
+      },
+      {
+        "q": "Der unbestimmte Artikel vor „frère“ (männlich).",
+        "kind": "gap",
+        "s": "Paul a ___ frère.",
+        "a": "un",
+        "wrong": [
+          "une",
+          "le",
+          "des"
+        ],
+        "why": "frère ist männlich, und unbestimmt heißt es un."
+      },
+      {
+        "q": "Der unbestimmte Artikel für mehrere Hefte.",
+        "kind": "gap",
+        "s": "Il y a ___ cahiers sur la table.",
+        "a": "des",
+        "wrong": [
+          "un",
+          "les",
+          "une"
+        ],
+        "why": "cahiers steht in der Mehrzahl. Unbestimmt heißt der Plural des, bestimmt les."
+      },
+      {
+        "q": "Der bestimmte Artikel vor „élèves“ (Mehrzahl).",
+        "kind": "gap",
+        "s": "___ élèves de la classe sont là.",
+        "a": "les",
+        "wrong": [
+          "le",
+          "la",
+          "un"
+        ],
+        "why": "élèves steht in der Mehrzahl, deshalb der bestimmte Plural les."
+      },
+      {
+        "q": "Im Plural gibt es für männliche und weibliche Nomen nur eine unbestimmte Form (mehrere Hosen).",
+        "kind": "gap",
+        "s": "Elle porte ___ pantalons noirs.",
+        "a": "des",
+        "wrong": [
+          "un",
+          "une",
+          "le"
+        ],
+        "why": "Der unbestimmte Plural heißt für männliche und weibliche Nomen gleich: des."
+      },
+      {
+        "q": "Wie lautet die Mehrzahl von „un livre“?",
+        "a": "des livres",
+        "wrong": [
+          "des livre",
+          "les livre",
+          "un livres"
+        ],
+        "why": "Der Artikel wird zu des und das Nomen bekommt meist ein -s: des livres."
+      },
+      {
+        "q": "Welche Form ist richtig für „die Schule“ mit bestimmtem Artikel?",
+        "a": "l'école",
+        "wrong": [
+          "la école",
+          "le école",
+          "les école"
+        ],
+        "why": "Vor einem Vokal wird aus le und la ein l'. école beginnt mit é."
+      },
+      {
+        "q": "Welche Form ist richtig für „der Freund“ mit bestimmtem Artikel?",
+        "a": "l'ami",
+        "wrong": [
+          "le ami",
+          "la ami",
+          "les ami"
+        ],
+        "why": "ami beginnt mit einem Vokal, deshalb wird der Artikel zu l'."
+      },
+      {
+        "q": "Welcher Satz heißt „Ich habe eine Freundin“?",
+        "a": "J'ai une amie.",
+        "wrong": [
+          "J'ai un amie.",
+          "J'ai des amie.",
+          "J'ai le amie."
+        ],
+        "why": "amie ist weiblich, deshalb steht der unbestimmte Artikel une."
+      },
+      {
+        "q": "Woran erkennst du beim Hören meist, dass ein Nomen im Plural steht?",
+        "a": "Am Artikel: les oder des",
+        "wrong": [
+          "Am -s am Wortende, das man hört",
+          "Am Wortende -x, das man hört",
+          "An der Länge des Wortes"
+        ],
+        "why": "Das Plural-s sprichst du nicht mit. Der Artikel les oder des verrät dir die Mehrzahl."
+      }
+    ],
+    "g-verneinung": [
+      {
+        "q": "Das zweite Verneinungswort: „nicht“.",
+        "kind": "gap",
+        "s": "Je ne parle ___ anglais.",
+        "a": "pas",
+        "wrong": [
+          "non",
+          "rien",
+          "aucun"
+        ],
+        "why": "Die Verneinung besteht aus ne vor dem Verb und pas dahinter."
+      },
+      {
+        "q": "Das erste Verneinungswort vor dem Verb.",
+        "kind": "gap",
+        "s": "Tu ___ aimes pas le sport.",
+        "a": "ne",
+        "wrong": [
+          "non",
+          "pas",
+          "ni"
+        ],
+        "why": "Vor das Verb kommt ne, hinter das Verb pas."
+      },
+      {
+        "q": "Verneine mit être: Ich bin nicht müde.",
+        "kind": "gap",
+        "s": "Je ne suis ___ fatigué.",
+        "a": "pas",
+        "wrong": [
+          "non",
+          "rien",
+          "aucun"
+        ],
+        "why": "Auch bei être steht ne vor und pas hinter dem Verb."
+      },
+      {
+        "q": "Nach der Verneinung: „keine Zeit“ (ohne Artikel).",
+        "kind": "gap",
+        "s": "Je n'ai pas ___ temps.",
+        "a": "de",
+        "wrong": [
+          "du",
+          "le",
+          "un"
+        ],
+        "why": "Nach pas wird ein Artikel wie un, une oder des zu de. Bei temps wäre sonst du falsch."
+      },
+      {
+        "q": "Er hat keinen Bruder (nach pas steht kein un).",
+        "kind": "gap",
+        "s": "Il n'a pas ___ frère.",
+        "a": "de",
+        "wrong": [
+          "un",
+          "le",
+          "des"
+        ],
+        "why": "Nach pas wird un zu de: Il n'a pas de frère."
+      },
+      {
+        "q": "Wir haben keinen Hund (nach pas steht kein un).",
+        "kind": "gap",
+        "s": "Nous n'avons pas ___ chien.",
+        "a": "de",
+        "wrong": [
+          "un",
+          "le",
+          "du"
+        ],
+        "why": "Nach pas wird un zu de: Nous n'avons pas de chien."
+      },
+      {
+        "q": "Welcher Satz heißt „Ich mag den Sport nicht“?",
+        "a": "Je n'aime pas le sport.",
+        "wrong": [
+          "Je aime pas le sport.",
+          "Je n'aime le sport pas.",
+          "Je ne pas aime le sport."
+        ],
+        "why": "ne steht vor dem Verb, pas dahinter. Vor aime wird ne zu n'."
+      },
+      {
+        "q": "Was passiert mit ne vor einem Vokal?",
+        "a": "Es wird zu n'.",
+        "wrong": [
+          "Es fällt immer weg.",
+          "Es wird zu nes.",
+          "Es bleibt ne."
+        ],
+        "why": "Vor einem Vokal oder stummem h wird ne zu n': Je n'aime pas."
+      },
+      {
+        "q": "Wie heißt „Ich habe keine Hausaufgaben“?",
+        "a": "Je n'ai pas de devoirs.",
+        "wrong": [
+          "Je n'ai pas des devoirs.",
+          "Je ne pas ai de devoirs.",
+          "Je n'ai non devoirs."
+        ],
+        "why": "Nach pas wird des zu de, und ne wird vor ai zu n'."
+      },
+      {
+        "q": "Wo steht pas im verneinten Satz?",
+        "a": "Hinter dem konjugierten Verb",
+        "wrong": [
+          "Vor dem Verb",
+          "Am Satzende",
+          "Vor dem Nomen"
+        ],
+        "why": "ne steht vor und pas hinter dem Verb. Beide zusammen umschließen es."
+      },
+      {
+        "q": "Wie antwortest du mit Nein auf „Tu aimes le chocolat ?“",
+        "a": "Non, je n'aime pas le chocolat.",
+        "wrong": [
+          "Non, je aime pas le chocolat.",
+          "Non, je ne aime pas le chocolat.",
+          "Non, j'aime ne pas le chocolat."
+        ],
+        "why": "Vor aime wird ne zu n', und pas folgt dem Verb. Der bestimmte Artikel le bleibt."
+      },
+      {
+        "q": "Welcher Satz heißt „Sie ist nicht in der Schule“?",
+        "a": "Elle n'est pas à l'école.",
+        "wrong": [
+          "Elle n'est à l'école pas.",
+          "Elle ne est pas à l'école.",
+          "Elle pas est à l'école."
+        ],
+        "why": "ne wird vor est zu n', und pas steht direkt hinter dem Verb."
+      }
+    ],
+    "g-fragen": [
+      {
+        "q": "Ein Fragewort für „wo“.",
+        "kind": "gap",
+        "s": "___ est la gare ?",
+        "a": "où",
+        "wrong": [
+          "qui",
+          "quand",
+          "combien"
+        ],
+        "why": "Mit où fragst du nach dem Ort."
+      },
+      {
+        "q": "Ein Fragewort für „wer“.",
+        "kind": "gap",
+        "s": "___ est ce garçon ?",
+        "a": "qui",
+        "wrong": [
+          "où",
+          "quand",
+          "combien"
+        ],
+        "why": "Mit qui fragst du nach einer Person."
+      },
+      {
+        "q": "Ein Fragewort für „wann“.",
+        "kind": "gap",
+        "s": "___ commence le film ?",
+        "a": "quand",
+        "wrong": [
+          "où",
+          "qui",
+          "combien"
+        ],
+        "why": "Mit quand fragst du nach der Zeit."
+      },
+      {
+        "q": "Ein Fragewort für „wie viele“.",
+        "kind": "gap",
+        "s": "___ de frères as-tu ?",
+        "a": "combien",
+        "wrong": [
+          "comment",
+          "quand",
+          "où"
+        ],
+        "why": "Mit combien de fragst du nach einer Menge."
+      },
+      {
+        "q": "Ein Fragewort für „wie“ (Art und Weise).",
+        "kind": "gap",
+        "s": "___ ça va ?",
+        "a": "comment",
+        "wrong": [
+          "combien",
+          "quand",
+          "qui"
+        ],
+        "why": "Mit comment fragst du nach der Art und Weise."
+      },
+      {
+        "q": "Mit diesen Wörtern beginnst du eine Ja-Nein-Frage.",
+        "kind": "gap",
+        "s": "___ tu aimes le sport ?",
+        "a": "est-ce que",
+        "wrong": [
+          "qu'est-ce que",
+          "est-ce qui",
+          "c'est que"
+        ],
+        "why": "Mit est-ce que vor dem Satz machst du aus einer Aussage eine Ja-Nein-Frage.",
+        "accept": [
+          "est ce que"
+        ]
+      },
+      {
+        "q": "Die Antwort auf pourquoi: „weil“.",
+        "kind": "gap",
+        "s": "Pourquoi est-ce que Léa est triste ? – ___ elle est malade.",
+        "a": "parce que",
+        "wrong": [
+          "pourquoi",
+          "pour que",
+          "parce"
+        ],
+        "why": "Auf pourquoi antwortest du mit parce que."
+      },
+      {
+        "q": "Welche Frage entsteht nur durch die Satzmelodie?",
+        "a": "Tu aimes le sport ?",
+        "wrong": [
+          "Est-ce que tu aimes le sport ?",
+          "Aimes-tu le sport ?",
+          "Qui aime le sport ?"
+        ],
+        "why": "Du sprichst einen normalen Satz und hebst am Ende die Stimme. Alle anderen Fragen haben ein Zusatzwort oder drehen die Wörter um."
+      },
+      {
+        "q": "Wie fragst du „Wo wohnst du?“",
+        "a": "Où est-ce que tu habites ?",
+        "wrong": [
+          "Qui est-ce que tu habites ?",
+          "Quand est-ce que tu habites ?",
+          "Est-ce que où tu habites ?"
+        ],
+        "why": "où heißt wo und steht vor est-ce que."
+      },
+      {
+        "q": "Welches Wort fragt nach dem Preis in „___ coûte le pull ?“",
+        "a": "Combien",
+        "wrong": [
+          "Comment",
+          "Quand",
+          "Qui"
+        ],
+        "why": "Nach dem Preis fragst du mit combien: Wie viel kostet der Pulli?"
+      },
+      {
+        "q": "Welche Frage heißt „Ist Léa da?“",
+        "a": "Est-ce que Léa est là ?",
+        "wrong": [
+          "Est-ce que est Léa là ?",
+          "Est-ce Léa que est là ?",
+          "Que est-ce Léa là ?"
+        ],
+        "why": "est-ce que steht am Anfang, danach folgt der Aussagesatz in der gewohnten Reihenfolge."
+      },
+      {
+        "q": "Wie fragst du, wer dort ist?",
+        "a": "Qui est là ?",
+        "wrong": [
+          "Où est là ?",
+          "Quand est là ?",
+          "Combien est là ?"
+        ],
+        "why": "qui heißt wer und fragt nach der Person."
+      }
+    ],
+    "g-possessiv": [
+      {
+        "q": "„mein“ vor „frère“ (männlich).",
+        "kind": "gap",
+        "s": "___ frère s'appelle Paul.",
+        "a": "mon",
+        "wrong": [
+          "ma",
+          "mes",
+          "ton"
+        ],
+        "why": "frère ist männlich und Singular, deshalb mon."
+      },
+      {
+        "q": "„meine“ vor „sœur“ (weiblich).",
+        "kind": "gap",
+        "s": "___ sœur est petite.",
+        "a": "ma",
+        "wrong": [
+          "mon",
+          "mes",
+          "ta"
+        ],
+        "why": "sœur ist weiblich und Singular, deshalb ma."
+      },
+      {
+        "q": "„meine“ vor „amis“ (Mehrzahl).",
+        "kind": "gap",
+        "s": "___ amis sont là.",
+        "a": "mes",
+        "wrong": [
+          "mon",
+          "ma",
+          "tes"
+        ],
+        "why": "amis steht in der Mehrzahl, deshalb mes."
+      },
+      {
+        "q": "„dein“ vor „livre“ (männlich).",
+        "kind": "gap",
+        "s": "C'est ___ livre ?",
+        "a": "ton",
+        "wrong": [
+          "ta",
+          "tes",
+          "mon"
+        ],
+        "why": "livre ist männlich und Singular, deshalb ton."
+      },
+      {
+        "q": "„deine“ vor „maison“ (weiblich).",
+        "kind": "gap",
+        "s": "Où est ___ maison ?",
+        "a": "ta",
+        "wrong": [
+          "ton",
+          "tes",
+          "ma"
+        ],
+        "why": "maison ist weiblich und Singular, deshalb ta."
+      },
+      {
+        "q": "„sein“ vor „père“, es geht um Paul.",
+        "kind": "gap",
+        "s": "Paul aime ___ père.",
+        "a": "son",
+        "wrong": [
+          "sa",
+          "ses",
+          "mon"
+        ],
+        "why": "père ist männlich und Singular, deshalb son."
+      },
+      {
+        "q": "„ihre“ vor „mère“, es geht um Léa.",
+        "kind": "gap",
+        "s": "Léa aime ___ mère.",
+        "a": "sa",
+        "wrong": [
+          "son",
+          "ses",
+          "ta"
+        ],
+        "why": "mère ist weiblich und Singular, deshalb sa. Dass Léa ein Mädchen ist, spielt keine Rolle."
+      },
+      {
+        "q": "„unsere“ vor „classe“.",
+        "kind": "gap",
+        "s": "___ classe est grande.",
+        "a": "notre",
+        "wrong": [
+          "nos",
+          "votre",
+          "ma"
+        ],
+        "why": "Bei wir gibt es notre für den Singular und nos für den Plural. classe steht im Singular."
+      },
+      {
+        "q": "„eure“ vor „amis“ (Mehrzahl).",
+        "kind": "gap",
+        "s": "___ amis sont sympas.",
+        "a": "vos",
+        "wrong": [
+          "votre",
+          "notre",
+          "nos"
+        ],
+        "why": "amis steht in der Mehrzahl, und bei ihr heißt der Plural vos."
+      },
+      {
+        "q": "„ihre“ (mehrere Personen) vor „maison“.",
+        "kind": "gap",
+        "s": "Les enfants aiment ___ maison.",
+        "a": "leur",
+        "wrong": [
+          "leurs",
+          "sa",
+          "son"
+        ],
+        "why": "maison steht im Singular, deshalb leur ohne -s."
+      },
+      {
+        "q": "Welche Form heißt „meine Freundin“?",
+        "a": "mon amie",
+        "wrong": [
+          "ma amie",
+          "mes amie",
+          "m'amie"
+        ],
+        "why": "Vor einem Vokal steht mon, auch wenn das Nomen weiblich ist."
+      },
+      {
+        "q": "Wonach richtet sich son, sa, ses?",
+        "a": "Nach dem Nomen, das danach kommt",
+        "wrong": [
+          "Nach der Person, die etwas besitzt",
+          "Nach dem Verb im Satz",
+          "Nach dem Satzanfang"
+        ],
+        "why": "Die Form hängt von Geschlecht und Zahl des Nomens ab, nicht vom Besitzer."
+      }
+    ],
+    "g-praep": [
+      {
+        "q": "à + le: „ins Kino“.",
+        "kind": "gap",
+        "s": "Nous allons ___ cinéma.",
+        "a": "au",
+        "wrong": [
+          "à le",
+          "à la",
+          "aux"
+        ],
+        "why": "à und le verschmelzen zu au."
+      },
+      {
+        "q": "à + la: „zum Bahnhof“ (weiblich).",
+        "kind": "gap",
+        "s": "Je vais à ___ gare.",
+        "a": "la",
+        "wrong": [
+          "le",
+          "au",
+          "les"
+        ],
+        "why": "gare ist weiblich. Bei la bleiben à und la getrennt."
+      },
+      {
+        "q": "à + les: „zu den Geschäften“.",
+        "kind": "gap",
+        "s": "Elles vont ___ magasins.",
+        "a": "aux",
+        "wrong": [
+          "au",
+          "à les",
+          "à"
+        ],
+        "why": "à und les verschmelzen zu aux."
+      },
+      {
+        "q": "de + le: „das Buch des Lehrers“ (männlich).",
+        "kind": "gap",
+        "s": "Voilà le livre ___ professeur.",
+        "a": "du",
+        "wrong": [
+          "de le",
+          "de la",
+          "des"
+        ],
+        "why": "de und le verschmelzen zu du."
+      },
+      {
+        "q": "de + les: „die Zimmer der Kinder“.",
+        "kind": "gap",
+        "s": "Voilà les chambres ___ enfants.",
+        "a": "des",
+        "wrong": [
+          "du",
+          "de les",
+          "de la"
+        ],
+        "why": "de und les verschmelzen zu des. Hier ist es der bestimmte Artikel mit de."
+      },
+      {
+        "q": "de vor la bleibt unverändert: „die Tasche der Freundin“.",
+        "kind": "gap",
+        "s": "C'est le sac ___ la copine.",
+        "a": "de",
+        "wrong": [
+          "du",
+          "des",
+          "d'"
+        ],
+        "why": "de und la verschmelzen nicht. Du schreibst de la."
+      },
+      {
+        "q": "à + le beim Sport: „Fußball spielen“.",
+        "kind": "gap",
+        "s": "Léa joue ___ foot.",
+        "a": "au",
+        "wrong": [
+          "à le",
+          "à la",
+          "aux"
+        ],
+        "why": "Bei Sportarten sagst du jouer à. Mit le wird daraus au."
+      },
+      {
+        "q": "à + les: „Ich spreche mit den Mädchen“.",
+        "kind": "gap",
+        "s": "Je parle ___ filles.",
+        "a": "aux",
+        "wrong": [
+          "au",
+          "à les",
+          "à la"
+        ],
+        "why": "à und les verschmelzen zu aux."
+      },
+      {
+        "q": "Welcher Satz heißt „Wir gehen in den Park“?",
+        "a": "Nous allons au parc.",
+        "wrong": [
+          "Nous allons à le parc.",
+          "Nous allons à la parc.",
+          "Nous allons aux parc."
+        ],
+        "why": "parc ist männlich und steht im Singular. à + le wird zu au."
+      },
+      {
+        "q": "Was wird aus „à + les“?",
+        "a": "aux",
+        "wrong": [
+          "au",
+          "des",
+          "du"
+        ],
+        "why": "à und les verschmelzen zu aux, de und les zu des."
+      },
+      {
+        "q": "Welcher Satz heißt „Das ist das Buch des Lehrers“?",
+        "a": "C'est le livre du professeur.",
+        "wrong": [
+          "C'est le livre de le professeur.",
+          "C'est le livre des professeur.",
+          "C'est le livre de la professeur."
+        ],
+        "why": "de und le verschmelzen zu du."
+      },
+      {
+        "q": "Bei welcher Verbindung ändert sich nichts?",
+        "a": "à + la = à la",
+        "wrong": [
+          "à + le = au",
+          "à + les = aux",
+          "de + le = du"
+        ],
+        "why": "Nur le und les verschmelzen mit à und de. la und l' bleiben getrennt."
+      },
+      {
+        "q": "Welcher Satz heißt „Léa geht in die Schule“?",
+        "a": "Léa va à l'école.",
+        "wrong": [
+          "Léa va au école.",
+          "Léa va à la école.",
+          "Léa va aux école."
+        ],
+        "why": "Vor einem Vokal wird der Artikel zu l', und à bleibt getrennt."
+      }
+    ],
+    "g-ilya": [
+      {
+        "q": "„Es gibt“ in einer Stadt.",
+        "kind": "gap",
+        "s": "Dans la ville, il ___ un parc.",
+        "a": "y a",
+        "wrong": [
+          "est",
+          "a",
+          "y est"
+        ],
+        "why": "il y a heißt es gibt. Es sind drei Wörter: il, y, a."
+      },
+      {
+        "q": "„Das ist“ vor einer Einzahl.",
+        "kind": "gap",
+        "s": "___ un chat.",
+        "a": "c'est",
+        "wrong": [
+          "ce sont",
+          "il est",
+          "il y a"
+        ],
+        "why": "c'est stellt eine Einzahl vor: Das ist ein Kater.",
+        "accept": [
+          "c’est",
+          "cest"
+        ]
+      },
+      {
+        "q": "„Das sind“ vor einer Mehrzahl.",
+        "kind": "gap",
+        "s": "___ des chats.",
+        "a": "ce sont",
+        "wrong": [
+          "c'est",
+          "il y a",
+          "voilà"
+        ],
+        "why": "ce sont stellt eine Mehrzahl vor: Das sind Kater."
+      },
+      {
+        "q": "Mit dem Finger zeigen: „Da ist der Bahnhof!“",
+        "kind": "gap",
+        "s": "___ la gare !",
+        "a": "voilà",
+        "wrong": [
+          "il y a",
+          "c'est",
+          "ce sont"
+        ],
+        "why": "voilà benutzt du, wenn du auf etwas zeigst."
+      },
+      {
+        "q": "Es gibt keinen Park (Verneinung).",
+        "kind": "gap",
+        "s": "Il n'y a pas ___ parc.",
+        "a": "de",
+        "wrong": [
+          "un",
+          "le",
+          "du"
+        ],
+        "why": "Nach pas wird un zu de: Il n'y a pas de parc."
+      },
+      {
+        "q": "Welcher Satz sagt „Es gibt ein Café in der Straße“?",
+        "a": "Il y a un café dans la rue.",
+        "wrong": [
+          "C'est un café dans la rue.",
+          "Ce sont un café dans la rue.",
+          "Il est un café dans la rue."
+        ],
+        "why": "Mit il y a sagst du, dass es etwas gibt."
+      },
+      {
+        "q": "Wann sagst du „ce sont“?",
+        "a": "Wenn du mehrere Personen oder Dinge vorstellst",
+        "wrong": [
+          "Bei einer einzelnen Person",
+          "Nur in Fragen",
+          "Nur nach pas"
+        ],
+        "why": "ce sont ist die Mehrzahl von c'est."
+      },
+      {
+        "q": "Welcher Satz heißt „Das sind meine Freunde“?",
+        "a": "Ce sont mes amis.",
+        "wrong": [
+          "Ce sont mon ami.",
+          "Ce est mes amis.",
+          "Voilà sont mes amis."
+        ],
+        "why": "Mehrere Freunde: ce sont und die Mehrzahl mes."
+      },
+      {
+        "q": "Wie sagst du „Es gibt keine Banane“?",
+        "a": "Il n'y a pas de banane.",
+        "wrong": [
+          "Il n'y a pas une banane.",
+          "Il ne y a pas de banane.",
+          "Il y n'a pas de banane."
+        ],
+        "why": "Nach pas wird une zu de. ne und y rücken zusammen: n'y."
+      },
+      {
+        "q": "Welcher Satz heißt „Das ist Léa, meine Freundin“?",
+        "a": "C'est Léa, ma copine.",
+        "wrong": [
+          "Il y a Léa, ma copine.",
+          "Voilà est Léa, ma copine.",
+          "Ce sont Léa, ma copine."
+        ],
+        "why": "Eine Person stellst du mit c'est vor."
+      },
+      {
+        "q": "Welcher Satz heißt „Da ist der Bahnhof!“, wenn du darauf zeigst?",
+        "a": "Voilà la gare !",
+        "wrong": [
+          "Il y a la gare !",
+          "C'est la gare est !",
+          "Ce sont la gare !"
+        ],
+        "why": "voilà zeigt auf etwas. Dahinter folgt direkt das Nomen mit Artikel."
+      },
+      {
+        "q": "Was bedeutet „Dans ma classe, il y a vingt élèves“?",
+        "a": "In meiner Klasse gibt es zwanzig Schüler.",
+        "wrong": [
+          "Meine Klasse ist zwanzig Schüler.",
+          "In meiner Klasse sind zehn Schüler.",
+          "Meine Klasse hat zwanzig Jahre."
+        ],
+        "why": "il y a heißt es gibt, und vingt heißt zwanzig."
+      }
+    ],
+    "g-imperativ": [
+      {
+        "q": "Befehl an einen Freund (tu): „Hör zu!“",
+        "kind": "gap",
+        "s": "___ , Léa !",
+        "a": "écoute",
+        "wrong": [
+          "écoutes",
+          "écouter",
+          "écoutez"
+        ],
+        "why": "Bei Verben auf -er fällt in der tu-Form des Imperativs das -s weg."
+      },
+      {
+        "q": "Befehl an mehrere Personen (vous): „Hört zu!“",
+        "kind": "gap",
+        "s": "___ , les enfants !",
+        "a": "écoutez",
+        "wrong": [
+          "écoute",
+          "écoutes",
+          "écoutons"
+        ],
+        "why": "Für mehrere Personen nimmst du die vous-Form ohne Pronomen: écoutez."
+      },
+      {
+        "q": "Vorschlag an alle, auch dich (nous): „Lasst uns singen!“",
+        "kind": "gap",
+        "s": "___ une chanson !",
+        "a": "chantons",
+        "wrong": [
+          "chantez",
+          "chante",
+          "chantes"
+        ],
+        "why": "Mit -ons lädst du eine Gruppe ein, zu der du gehörst."
+      },
+      {
+        "q": "Befehl an einen Freund: „Mach die Tür zu!“",
+        "kind": "gap",
+        "s": "___ la porte !",
+        "a": "ferme",
+        "wrong": [
+          "fermes",
+          "fermer",
+          "fermez"
+        ],
+        "why": "Bei Verben auf -er fällt in der tu-Form das -s weg."
+      },
+      {
+        "q": "Befehl an einen Freund mit aller: „Geh!“",
+        "kind": "gap",
+        "s": "___ à l'école !",
+        "a": "va",
+        "wrong": [
+          "vas",
+          "aller",
+          "allez"
+        ],
+        "why": "aller verliert in der tu-Form des Imperativs das -s: Va !"
+      },
+      {
+        "q": "Befehl an mehrere: „Nehmt den Bus!“",
+        "kind": "gap",
+        "s": "___ le bus !",
+        "a": "prenez",
+        "wrong": [
+          "prends",
+          "prenons",
+          "prendez"
+        ],
+        "why": "Die vous-Form von prendre heißt prenez, ohne Pronomen davor."
+      },
+      {
+        "q": "Verneinter Befehl an einen Freund: „Iss nicht!“",
+        "kind": "gap",
+        "s": "Ne ___ pas !",
+        "a": "mange",
+        "wrong": [
+          "manges",
+          "manger",
+          "mangez"
+        ],
+        "why": "Auch verneint fällt bei -er-Verben das -s der tu-Form weg."
+      },
+      {
+        "q": "Was passiert bei Verben auf -er in der tu-Form des Imperativs?",
+        "a": "Das -s fällt weg: Écoute !",
+        "wrong": [
+          "Das -s bleibt: Écoutes !",
+          "Es kommt ein -z dazu: Écoutez !",
+          "Es kommt ein -ons dazu: Écoutons !"
+        ],
+        "why": "Bei -er-Verben und bei aller streichst du das -s der tu-Form."
+      },
+      {
+        "q": "Wie verneinst du „Geh nicht!“?",
+        "a": "Ne va pas !",
+        "wrong": [
+          "Va ne pas !",
+          "Ne vas pas !",
+          "Ne pas va !"
+        ],
+        "why": "ne und pas umschließen das Verb, und die tu-Form hat kein -s: Ne va pas !"
+      },
+      {
+        "q": "Wie sagst du „Lasst uns schauen!“?",
+        "a": "Regardons !",
+        "wrong": [
+          "Regardez !",
+          "Regarde !",
+          "Regardes !"
+        ],
+        "why": "Mit -ons sprichst du eine Gruppe an, zu der du selbst gehörst."
+      },
+      {
+        "q": "Wie sagst du zu deiner Lehrerin höflich „Wiederholen Sie!“?",
+        "a": "Répétez !",
+        "wrong": [
+          "Répète !",
+          "Répétons !",
+          "Répètes !"
+        ],
+        "why": "Höflich und für mehrere Personen nimmst du die vous-Form ohne Pronomen."
+      },
+      {
+        "q": "Woran erkennst du einen Imperativ im Satz?",
+        "a": "Das Verb steht ohne Pronomen am Anfang",
+        "wrong": [
+          "Es steht immer pas dabei",
+          "Es endet immer auf -ment",
+          "Das Verb steht am Satzende"
+        ],
+        "why": "Der Imperativ lässt das Pronomen weg und beginnt mit dem Verb."
+      }
+    ],
+    "g-futur": [
+      {
+        "q": "aller mit je: Ich werde spielen.",
+        "kind": "gap",
+        "s": "Je ___ jouer.",
+        "a": "vais",
+        "wrong": [
+          "vas",
+          "va",
+          "vont"
+        ],
+        "why": "Mit je heißt aller vais."
+      },
+      {
+        "q": "aller mit tu: Du wirst essen.",
+        "kind": "gap",
+        "s": "Tu ___ manger.",
+        "a": "vas",
+        "wrong": [
+          "vais",
+          "va",
+          "vont"
+        ],
+        "why": "Mit tu heißt aller vas."
+      },
+      {
+        "q": "aller mit elle: Sie wird einen Film ansehen.",
+        "kind": "gap",
+        "s": "Elle ___ regarder un film.",
+        "a": "va",
+        "wrong": [
+          "vas",
+          "vais",
+          "vont"
+        ],
+        "why": "Mit il, elle und on heißt aller va."
+      },
+      {
+        "q": "aller mit nous: Wir werden singen.",
+        "kind": "gap",
+        "s": "Nous ___ chanter.",
+        "a": "allons",
+        "wrong": [
+          "allez",
+          "vont",
+          "va"
+        ],
+        "why": "Mit nous heißt aller allons."
+      },
+      {
+        "q": "aller mit vous: Ihr werdet Paris besichtigen.",
+        "kind": "gap",
+        "s": "Vous ___ visiter Paris.",
+        "a": "allez",
+        "wrong": [
+          "allons",
+          "vont",
+          "vas"
+        ],
+        "why": "Mit vous heißt aller allez."
+      },
+      {
+        "q": "aller mit ils: Sie werden die Metro nehmen.",
+        "kind": "gap",
+        "s": "Ils ___ prendre le métro.",
+        "a": "vont",
+        "wrong": [
+          "vais",
+          "allons",
+          "vas"
+        ],
+        "why": "Mit ils und elles heißt aller vont."
+      },
+      {
+        "q": "Das Verb „spielen“ im Infinitiv.",
+        "kind": "gap",
+        "s": "Demain, je vais ___ au foot.",
+        "a": "jouer",
+        "wrong": [
+          "joue",
+          "joues",
+          "joué"
+        ],
+        "why": "Nach aller steht das zweite Verb im Infinitiv."
+      },
+      {
+        "q": "Wie sagst du „Morgen werde ich Pizza essen“?",
+        "a": "Demain, je vais manger une pizza.",
+        "wrong": [
+          "Demain, je vais mange une pizza.",
+          "Demain, je mange vais une pizza.",
+          "Demain, je vas manger une pizza."
+        ],
+        "why": "aller wird konjugiert: je vais. Das zweite Verb bleibt im Infinitiv: manger."
+      },
+      {
+        "q": "Wie verneinst du „Ich werde nicht spielen“?",
+        "a": "Je ne vais pas jouer.",
+        "wrong": [
+          "Je vais ne pas jouer.",
+          "Je ne vais jouer pas.",
+          "Je ne pas vais jouer."
+        ],
+        "why": "ne und pas umschließen aller, danach folgt der Infinitiv."
+      },
+      {
+        "q": "Wozu benutzt du das futur composé?",
+        "a": "Für Dinge, die bald oder in der Zukunft passieren",
+        "wrong": [
+          "Für Dinge, die gestern passiert sind",
+          "Für Dinge, die gerade passieren",
+          "Nur für Befehle"
+        ],
+        "why": "aller plus Infinitiv sagt, was du vorhast oder was bald passiert."
+      },
+      {
+        "q": "Wie sagst du „Wir werden unsere Hausaufgaben machen“?",
+        "a": "Nous allons faire nos devoirs.",
+        "wrong": [
+          "Nous allons faisons nos devoirs.",
+          "Nous allez faire nos devoirs.",
+          "Nous vont faire nos devoirs."
+        ],
+        "why": "Mit nous heißt aller allons, und faire bleibt im Infinitiv."
+      },
+      {
+        "q": "Was gilt für das Verb nach aller?",
+        "a": "Es steht im Infinitiv",
+        "wrong": [
+          "Es wird konjugiert wie aller",
+          "Es bekommt immer ein -s",
+          "Es steht immer im Plural"
+        ],
+        "why": "Nur aller wird an die Person angepasst, das zweite Verb bleibt im Infinitiv."
+      }
+    ],
     "v-paris": [
       {
         "q": "Wo sind Léa und ihr Vater laut dem Text?",

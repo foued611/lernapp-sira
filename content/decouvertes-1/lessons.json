@@ -1252,6 +1252,741 @@
       "why": "Im Internet heißt sur Internet, ohne Artikel."
     }
   },
+  "g-artikel": {
+    "goal": "Du kannst zu einem Nomen den richtigen Artikel wählen und die Mehrzahl bilden.",
+    "tldr": [
+      "Jedes Nomen ist männlich oder weiblich. Der Artikel zeigt es dir.",
+      "Bestimmt heißt es le, la, les. Unbestimmt heißt es un, une, des. Vor einem Vokal wird aus le und la ein l'.",
+      "Die Mehrzahl endet meist auf -s, das man nicht hört. Den Plural erkennst du am Artikel."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: das Namensschild",
+      "html": "<p>Der Artikel ist das Namensschild des Nomens. Darauf steht, ob es männlich oder weiblich ist: <b>le garçon</b>, <b>la fille</b>. Und ob es eines gibt oder mehrere: <b>un livre</b>, <b>des livres</b>.</p><p>Lerne deshalb jedes neue Nomen immer zusammen mit seinem Artikel.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Artikel",
+            "männlich",
+            "weiblich",
+            "Mehrzahl"
+          ],
+          [
+            [
+              "bestimmt",
+              "le (l')",
+              "la (l')",
+              "les"
+            ],
+            [
+              "unbestimmt",
+              "un",
+              "une",
+              "des"
+            ]
+          ],
+          [
+            1.2,
+            1,
+            1,
+            1
+          ],
+          "Tabelle: bestimmte und unbestimmte Artikel"
+        ]
+      },
+      "caption": "Bestimmt und unbestimmt, männlich, weiblich und Plural auf einen Blick."
+    },
+    "steps": {
+      "title": "So gehst du vor",
+      "items": [
+        "Schau, ob das Nomen männlich oder weiblich ist. Das steht im Vokabelheft beim Artikel.",
+        "Willst du etwas Bestimmtes sagen, nimm le, la oder l'. Nennst du etwas Neues, nimm un oder une.",
+        "Beginnt das Nomen mit einem Vokal oder stummen h, wird aus le und la ein l': l'ami, l'école.",
+        "Die Mehrzahl bildest du meist mit -s und dem Artikel les oder des: les livres, des livres.",
+        "Prüfe die Mehrzahl am Artikel, denn das -s hörst du nicht."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Das Geschlecht stimmt oft nicht mit dem Deutschen überein: <b>der Tisch</b> heißt <b>la table</b>, also weiblich. Verlass dich nicht auf das deutsche Wort, sondern lerne den französischen Artikel mit.</p>"
+    },
+    "rule": "le, la, les = bestimmt · un, une, des = unbestimmt · l' vor Vokal · Mehrzahl meist mit -s.",
+    "check": {
+      "q": "Welcher Artikel passt zu „___ filles“ (mehrere Mädchen, unbestimmt)?",
+      "options": [
+        {
+          "id": "a",
+          "html": "des"
+        },
+        {
+          "id": "b",
+          "html": "la"
+        },
+        {
+          "id": "c",
+          "html": "une"
+        }
+      ],
+      "answer": "a",
+      "why": "Der unbestimmte Plural heißt des. une und la stehen nur in der Einzahl."
+    }
+  },
+  "g-verneinung": {
+    "goal": "Du kannst Sätze verneinen und weißt, was nach pas mit un, une und des passiert.",
+    "tldr": [
+      "Verneinen heißt: ne vor das Verb, pas dahinter: Je ne parle pas.",
+      "Vor einem Vokal wird ne zu n': Je n'aime pas.",
+      "Nach pas werden un, une und des zu de: Je n'ai pas de frère."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: das Sandwich",
+      "html": "<p>Die Verneinung ist wie ein Sandwich: Das Verb liegt in der Mitte, <b>ne</b> und <b>pas</b> sind die zwei Brothälften. <b>Je ne parle pas.</b></p><p>Beginnt das Verb mit einem Vokal, rutscht ne eng an das Verb heran: <b>Je n'aime pas.</b></p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Bejaht",
+            "Verneint",
+            "Deutsch"
+          ],
+          [
+            [
+              "Je parle.",
+              "Je ne parle pas.",
+              "Ich spreche nicht."
+            ],
+            [
+              "J'aime le sport.",
+              "Je n'aime pas le sport.",
+              "Ich mag den Sport nicht."
+            ],
+            [
+              "Elle a un frère.",
+              "Elle n'a pas de frère.",
+              "Sie hat keinen Bruder."
+            ],
+            [
+              "Il y a des élèves.",
+              "Il n'y a pas d'élèves.",
+              "Es gibt keine Schüler."
+            ]
+          ],
+          [
+            1.4,
+            1.6,
+            1.4
+          ],
+          "Tabelle: vier Sätze bejaht und verneint"
+        ]
+      },
+      "caption": "Links der bejahte Satz, in der Mitte der verneinte, rechts die deutsche Übersetzung."
+    },
+    "steps": {
+      "title": "So gehst du vor",
+      "items": [
+        "Suche das konjugierte Verb im Satz.",
+        "Setze ne davor und pas dahinter: Je ne mange pas.",
+        "Beginnt das Verb mit einem Vokal oder stummen h, schreibe n': Il n'habite pas ici.",
+        "Folgt nach dem Verb un, une oder des, wird daraus de: Je n'ai pas de frère.",
+        "Der bestimmte Artikel bleibt: Je n'aime pas le sport."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Im Gespräch hörst du oft nur <b>pas</b>, weil ne leise ist. Beim Schreiben darfst du ne aber nie weglassen. Und für „keinen Bruder“ sagst du nicht „pas un frère“, sondern <b>pas de frère</b>.</p>"
+    },
+    "rule": "ne + Verb + pas · n' vor Vokal · pas de statt pas un, pas une, pas des.",
+    "check": {
+      "q": "Wie heißt „Sie hat keine Schwester“?",
+      "options": [
+        {
+          "id": "a",
+          "html": "Elle ne a pas sœur."
+        },
+        {
+          "id": "b",
+          "html": "Elle n'a pas une sœur."
+        },
+        {
+          "id": "c",
+          "html": "Elle n'a pas de sœur."
+        }
+      ],
+      "answer": "c",
+      "why": "Nach pas wird une zu de, und ne wird vor a zu n'."
+    }
+  },
+  "g-fragen": {
+    "goal": "Du kannst Fragen auf Französisch stellen: mit Satzmelodie, mit est-ce que und mit Fragewörtern.",
+    "tldr": [
+      "Es gibt drei Wege zur Frage: Satzmelodie, est-ce que oder ein Fragewort.",
+      "Ja-Nein-Fragen: Tu aimes le sport ? oder Est-ce que tu aimes le sport ?",
+      "Fragewörter: où, qui, quand, comment, combien, pourquoi."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: drei Schlüssel",
+      "html": "<p>Eine Frage hat drei Schlüssel. Der einfachste: Du sprichst einen normalen Satz und hebst am Ende die Stimme: <b>Tu aimes le sport ?</b></p><p>Etwas sicherer klingt <b>Est-ce que tu aimes le sport ?</b> Und willst du mehr wissen, setzt du vorne ein Fragewort ein: <b>Où est la gare ?</b></p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Fragewort",
+            "Bedeutung",
+            "Beispiel"
+          ],
+          [
+            [
+              "où",
+              "wo",
+              "Où est la gare ?"
+            ],
+            [
+              "qui",
+              "wer",
+              "Qui est là ?"
+            ],
+            [
+              "quand",
+              "wann",
+              "Quand commence le film ?"
+            ],
+            [
+              "comment",
+              "wie",
+              "Comment ça va ?"
+            ],
+            [
+              "combien",
+              "wie viel",
+              "Combien coûte le pull ?"
+            ],
+            [
+              "pourquoi",
+              "warum",
+              "Pourquoi est-ce que tu es triste ?"
+            ]
+          ],
+          [
+            1,
+            1,
+            2.2
+          ],
+          "Tabelle: sechs Fragewörter mit Beispiel"
+        ]
+      },
+      "caption": "Sechs Fragewörter, ihre deutsche Bedeutung und je ein Beispiel."
+    },
+    "steps": {
+      "title": "So gehst du vor",
+      "items": [
+        "Überlege, was du wissen willst: Ja oder Nein, oder eine Information?",
+        "Bei Ja-Nein: Sprich den Satz mit steigender Stimme oder setze est-ce que davor.",
+        "Bei einer Information: Setze das Fragewort an den Anfang und danach est-ce que: Où est-ce que tu habites ?",
+        "Auf pourquoi antwortest du mit parce que.",
+        "Lies jede Frage laut und hebe am Ende die Stimme."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Benutze nicht beides zugleich: <b>Est-ce que tu aimes ?</b> reicht völlig. Vor einem Vokal wird <b>est-ce que</b> zu <b>est-ce qu'</b>: <b>Est-ce qu'il aime le sport ?</b></p>"
+    },
+    "rule": "Frage = Satzmelodie oder est-ce que oder Fragewort (où, qui, quand, comment, combien, pourquoi).",
+    "check": {
+      "q": "Wie fragst du „Wann kommt der Bus?“",
+      "options": [
+        {
+          "id": "a",
+          "html": "Qui est-ce que le bus arrive ?"
+        },
+        {
+          "id": "b",
+          "html": "Où est-ce que le bus arrive ?"
+        },
+        {
+          "id": "c",
+          "html": "Quand est-ce que le bus arrive ?"
+        }
+      ],
+      "answer": "c",
+      "why": "quand heißt wann, où heißt wo und qui heißt wer."
+    }
+  },
+  "g-possessiv": {
+    "goal": "Du kannst mein, dein, sein, ihr, unser und euer richtig sagen und an das Nomen anpassen.",
+    "tldr": [
+      "Der Possessivbegleiter richtet sich nach dem Nomen, das folgt, nicht nach der Person.",
+      "mon, ma, mes · ton, ta, tes · son, sa, ses · notre, nos · votre, vos · leur, leurs.",
+      "Vor einem Vokal steht mon, ton, son: mon amie."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: Léa und Paul",
+      "html": "<p>Léa und Paul haben beide eine Mutter. Trotzdem sagen beide <b>sa mère</b>. Das Wort richtet sich nach <b>mère</b> (weiblich) und nicht danach, ob Léa oder Paul spricht.</p><p>Im Deutschen entscheidet der Besitzer („sein“ oder „ihr“). Im Französischen entscheidet das Nomen.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Person",
+            "männlich",
+            "weiblich",
+            "Mehrzahl"
+          ],
+          [
+            [
+              "ich",
+              "mon",
+              "ma",
+              "mes"
+            ],
+            [
+              "du",
+              "ton",
+              "ta",
+              "tes"
+            ],
+            [
+              "er, sie, man",
+              "son",
+              "sa",
+              "ses"
+            ],
+            [
+              "wir",
+              "notre",
+              "notre",
+              "nos"
+            ],
+            [
+              "ihr",
+              "votre",
+              "votre",
+              "vos"
+            ],
+            [
+              "sie (mehrere)",
+              "leur",
+              "leur",
+              "leurs"
+            ]
+          ],
+          [
+            1.4,
+            1,
+            1,
+            1
+          ],
+          "Tabelle: Possessivbegleiter nach Person und Nomen"
+        ]
+      },
+      "caption": "Zeile: wem gehört es. Spalte: Geschlecht und Zahl des Nomens."
+    },
+    "steps": {
+      "title": "So gehst du vor",
+      "items": [
+        "Frage dich: Wem gehört es? Das bestimmt die Zeile: mon, ton, son …",
+        "Frage dich: Ist das Nomen männlich, weiblich oder Plural? Das bestimmt die Spalte.",
+        "Beginnt ein weibliches Nomen mit Vokal, nimm mon, ton oder son: mon amie.",
+        "Bei notre, votre und leur gibt es nur Singular und Plural: notre classe, nos classes.",
+        "Denke daran: son und sa heißen sein und ihr. Entscheidend ist das Nomen."
+      ]
+    },
+    "pitfall": {
+      "html": "<p><b>sa mère</b> kann „seine Mutter“ oder „ihre Mutter“ heißen. Und <b>mon amie</b> klingt ungewohnt, ist aber richtig: amie beginnt mit einem Vokal, deshalb mon statt ma.</p>"
+    },
+    "rule": "mon, ma, mes: Das Nomen entscheidet. Vor Vokal steht mon, ton, son.",
+    "check": {
+      "q": "Wie heißt „ihre Brüder“ (Léas Brüder)?",
+      "options": [
+        {
+          "id": "a",
+          "html": "ses frères"
+        },
+        {
+          "id": "b",
+          "html": "sa frères"
+        },
+        {
+          "id": "c",
+          "html": "son frères"
+        }
+      ],
+      "answer": "a",
+      "why": "frères steht im Plural, deshalb ses. Dass Léa ein Mädchen ist, ändert nichts."
+    }
+  },
+  "g-praep": {
+    "goal": "Du kannst à und de mit dem bestimmten Artikel richtig verbinden: au, aux, du, des.",
+    "tldr": [
+      "à und de verschmelzen mit le und les: au, aux, du, des.",
+      "Mit la und l' bleiben sie getrennt: à la, à l', de la, de l'.",
+      "Du brauchst sie für Orte (aller à, au cinéma) und für Besitz (le livre du professeur)."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: zwei Magnete",
+      "html": "<p>Die Wörter <b>à</b> und <b>de</b> sind wie zwei Magnete. Sie ziehen <b>le</b> und <b>les</b> an, dann verschmelzen sie: <b>au, aux, du, des</b>.</p><p>Bei <b>la</b> und <b>l'</b> sind die Magnete aus. Dort bleibt alles getrennt: <b>à la gare, à l'école</b>.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Wort",
+            "+ le",
+            "+ la",
+            "+ l'",
+            "+ les"
+          ],
+          [
+            [
+              "à",
+              "au",
+              "à la",
+              "à l'",
+              "aux"
+            ],
+            [
+              "de",
+              "du",
+              "de la",
+              "de l'",
+              "des"
+            ]
+          ],
+          [
+            0.8,
+            1,
+            1,
+            1,
+            1
+          ],
+          "Tabelle: à und de mit bestimmtem Artikel"
+        ]
+      },
+      "caption": "Die vier Verschmelzungen au, aux, du und des stehen in den Spalten le und les."
+    },
+    "steps": {
+      "title": "So gehst du vor",
+      "items": [
+        "Welches Wort brauchst du: à (nach, in, bei) oder de (von)?",
+        "Welcher Artikel folgt: le, la, l' oder les?",
+        "Bei le und les verschmelzen die Wörter: au, aux, du, des.",
+        "Bei la und l' bleiben sie getrennt: à la, de la, à l'.",
+        "Sprich zur Probe laut: Nous allons au cinéma. C'est le livre du professeur."
+      ]
+    },
+    "pitfall": {
+      "html": "<p><b>des</b> hat zwei Gesichter. In <b>les livres des élèves</b> ist es <b>de + les</b> („von den Schülern“). In <b>des livres</b> ist es der unbestimmte Artikel („Bücher“). Schau, ob ein „von“ davorsteht.</p>"
+    },
+    "rule": "à + le = au · à + les = aux · de + le = du · de + les = des. Bei la und l' bleibt alles getrennt.",
+    "check": {
+      "q": "Wie heißt „Wir gehen in die Bibliothek“ (la bibliothèque)?",
+      "options": [
+        {
+          "id": "a",
+          "html": "Nous allons aux bibliothèque."
+        },
+        {
+          "id": "b",
+          "html": "Nous allons à la bibliothèque."
+        },
+        {
+          "id": "c",
+          "html": "Nous allons au bibliothèque."
+        }
+      ],
+      "answer": "b",
+      "why": "bibliothèque ist weiblich, deshalb bleibt à la getrennt."
+    }
+  },
+  "g-ilya": {
+    "goal": "Du kannst sagen, was es gibt (il y a), und etwas vorstellen oder zeigen (c'est, ce sont, voilà).",
+    "tldr": [
+      "il y a heißt es gibt und steht bei Einzahl und Mehrzahl gleich.",
+      "c'est und ce sont stellen vor: Das ist … Das sind …",
+      "voilà zeigt auf etwas: Da ist …!"
+    ],
+    "analogy": {
+      "title": "Stell dir vor: der Schulhof",
+      "html": "<p>Du stehst auf dem Schulhof und zeigst: <b>Voilà la porte !</b> Du erzählst: <b>Dans la cour, il y a un arbre.</b> Und du stellst vor: <b>C'est Léa, ma copine.</b></p><p>Mehrere Personen: <b>Ce sont mes amis.</b></p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Ausdruck",
+            "Bedeutung",
+            "Beispiel"
+          ],
+          [
+            [
+              "il y a",
+              "es gibt",
+              "Il y a un parc."
+            ],
+            [
+              "c'est",
+              "das ist",
+              "C'est mon frère."
+            ],
+            [
+              "ce sont",
+              "das sind",
+              "Ce sont mes amis."
+            ],
+            [
+              "voilà",
+              "da ist, hier ist",
+              "Voilà la gare !"
+            ],
+            [
+              "il n'y a pas de",
+              "es gibt kein",
+              "Il n'y a pas de parc."
+            ]
+          ],
+          [
+            1.2,
+            1.3,
+            1.8
+          ],
+          "Tabelle: il y a, c'est, ce sont, voilà"
+        ]
+      },
+      "caption": "Fünf Ausdrücke mit ihrer Bedeutung und je einem Beispiel."
+    },
+    "steps": {
+      "title": "So gehst du vor",
+      "items": [
+        "Willst du sagen, dass es etwas gibt? Nimm il y a: Il y a un café.",
+        "Willst du jemanden oder etwas vorstellen? Nimm c'est: C'est mon prof.",
+        "Stellst du mehrere vor? Nimm ce sont: Ce sont mes amis.",
+        "Zeigst du mit dem Finger? Nimm voilà.",
+        "Verneinst du il y a, sage il n'y a pas de: Il n'y a pas de parc."
+      ]
+    },
+    "pitfall": {
+      "html": "<p><b>il y a</b> besteht aus drei Wörtern und bleibt immer gleich, egal ob es ein Ding oder viele gibt: <b>Il y a un chat. Il y a deux chats.</b> Bei der Vorstellung dagegen ändert sich die Form: <b>c'est</b> für einen, <b>ce sont</b> für mehrere.</p>"
+    },
+    "rule": "il y a = es gibt · c'est, ce sont = das ist, das sind · voilà = da ist · il n'y a pas de = es gibt kein.",
+    "check": {
+      "q": "Wie sagst du „Es gibt einen Park in der Stadt“?",
+      "options": [
+        {
+          "id": "a",
+          "html": "Ce sont un parc dans la ville."
+        },
+        {
+          "id": "b",
+          "html": "Voilà est un parc dans la ville."
+        },
+        {
+          "id": "c",
+          "html": "Il y a un parc dans la ville."
+        }
+      ],
+      "answer": "c",
+      "why": "il y a sagt, dass es etwas gibt. c'est und voilà stellen vor oder zeigen."
+    }
+  },
+  "g-imperativ": {
+    "goal": "Du kannst Befehle und Aufforderungen im Imperativ bilden und verneinen.",
+    "tldr": [
+      "Der Imperativ hat drei Formen: tu, nous und vous, jeweils ohne Pronomen.",
+      "Verben auf -er und aller verlieren in der tu-Form das -s: Écoute ! Va !",
+      "Verneint wird mit ne … pas um das Verb: Ne va pas !"
+    ],
+    "analogy": {
+      "title": "Stell dir vor: das Klassenzimmer",
+      "html": "<p>Im Unterricht hörst du ihn ständig: <b>Écoute !</b> <b>Ouvrez vos livres !</b> <b>Regardons le tableau.</b> Das ist der Imperativ. Du nimmst die Verbform des Präsens und lässt das Pronomen weg.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Verb",
+            "tu",
+            "nous",
+            "vous"
+          ],
+          [
+            [
+              "écouter",
+              "écoute",
+              "écoutons",
+              "écoutez"
+            ],
+            [
+              "parler",
+              "parle",
+              "parlons",
+              "parlez"
+            ],
+            [
+              "aller",
+              "va",
+              "allons",
+              "allez"
+            ],
+            [
+              "prendre",
+              "prends",
+              "prenons",
+              "prenez"
+            ],
+            [
+              "faire",
+              "fais",
+              "faisons",
+              "faites"
+            ]
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          "Tabelle: Imperativ von fünf Verben"
+        ]
+      },
+      "caption": "Die drei Formen des Imperativs von écouter, parler, aller, prendre und faire."
+    },
+    "steps": {
+      "title": "So gehst du vor",
+      "items": [
+        "Nimm die Präsensform: tu écoutes, nous écoutons, vous écoutez.",
+        "Streiche das Pronomen: écoutes, écoutons, écoutez.",
+        "Bei Verben auf -er und bei aller streichst du auch das -s der tu-Form: écoute, va.",
+        "Verneinung: ne und pas stehen um das Verb: Ne mange pas !",
+        "Sprich den Befehl mit Nachdruck und achte auf das Ausrufezeichen."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Das -s fällt nur bei den Verben auf <b>-er</b> und bei <b>aller</b> weg: <b>Écoute !</b> und <b>Va !</b> Bei <b>prendre</b> bleibt es: <b>Prends !</b> Die Form für eine Gruppe, zu der du gehörst, endet immer auf <b>-ons</b>: <b>Allons-y !</b></p>"
+    },
+    "rule": "Imperativ = Präsens ohne Pronomen · bei -er-Verben und aller kein -s in der tu-Form · Verneinung mit ne … pas.",
+    "check": {
+      "q": "Wie sagst du zu einem Freund „Hör zu!“?",
+      "options": [
+        {
+          "id": "a",
+          "html": "Écoutez !"
+        },
+        {
+          "id": "b",
+          "html": "Écoute !"
+        },
+        {
+          "id": "c",
+          "html": "Écoutes !"
+        }
+      ],
+      "answer": "b",
+      "why": "Bei Verben auf -er fällt in der tu-Form des Imperativs das -s weg."
+    }
+  },
+  "g-futur": {
+    "goal": "Du kannst mit aller und dem Infinitiv sagen, was du bald tun wirst.",
+    "tldr": [
+      "Das futur composé bildest du mit aller und dem Infinitiv: Je vais jouer.",
+      "aller: je vais, tu vas, il va, nous allons, vous allez, ils vont.",
+      "Verneint wird aller: Je ne vais pas jouer."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: Motor und Anhänger",
+      "html": "<p>Du planst den nächsten Tag: <b>Demain, je vais jouer au foot. Après, nous allons visiter le parc.</b></p><p>Das Verb <b>aller</b> ist der Motor, der Infinitiv ist der Anhänger. Der Motor wird an die Person angepasst, der Anhänger bleibt, wie er ist.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Person",
+            "aller",
+            "Beispiel"
+          ],
+          [
+            [
+              "je",
+              "vais",
+              "Je vais manger."
+            ],
+            [
+              "tu",
+              "vas",
+              "Tu vas chanter."
+            ],
+            [
+              "il, elle, on",
+              "va",
+              "Elle va jouer."
+            ],
+            [
+              "nous",
+              "allons",
+              "Nous allons visiter Paris."
+            ],
+            [
+              "vous",
+              "allez",
+              "Vous allez prendre le bus."
+            ],
+            [
+              "ils, elles",
+              "vont",
+              "Ils vont regarder un film."
+            ]
+          ],
+          [
+            1.2,
+            1,
+            2.2
+          ],
+          "Tabelle: aller in sechs Personen mit Beispielsatz"
+        ]
+      },
+      "caption": "Die sechs Formen von aller, jeweils mit einem Beispiel im futur composé."
+    },
+    "steps": {
+      "title": "So gehst du vor",
+      "items": [
+        "Wähle die Person und setze aller in die richtige Form: je vais, tu vas, il va …",
+        "Wähle das Verb, das du sagen willst, und lass es im Infinitiv: jouer, manger, chanter.",
+        "Setze beides zusammen: Je vais jouer.",
+        "Verneinung: ne und pas stehen um aller: Je ne vais pas jouer.",
+        "Passende Zeitwörter: demain (morgen), bientôt (bald)."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Nach <b>aller</b> bleibt das zweite Verb im <b>Infinitiv</b>: <b>je vais jouer</b>, nicht „je vais joue“. Und die Verneinung steht um <b>aller</b>: <b>Je ne vais pas jouer.</b></p>"
+    },
+    "rule": "futur composé = aller (konjugiert) + Infinitiv. Verneinung: ne vais pas + Infinitiv.",
+    "check": {
+      "q": "Wie sagst du „Wir werden singen“?",
+      "options": [
+        {
+          "id": "a",
+          "html": "Nous allons chanter."
+        },
+        {
+          "id": "b",
+          "html": "Nous allons chantons."
+        },
+        {
+          "id": "c",
+          "html": "Nous vont chanter."
+        }
+      ],
+      "answer": "a",
+      "why": "Mit nous heißt aller allons, und danach steht der Infinitiv chanter."
+    }
+  },
   "v-paris": {
     "goal": "Du kannst einen kurzen französischen Text über Paris lesen und Fragen dazu beantworten.",
     "tldr": [

@@ -9,7 +9,7 @@
     ],
     "lehrwerk": "Découvertes 1 (Série jaune)",
     "subject": "Französisch",
-    "desc": "Grundwissen und Wortschatz aus Découvertes 1: Unité 6 und 7 mit Farben, Kleidung, Wetter, Verkehrsmitteln, Paris, écrire und lire, dazu Lesetexte zur Vertiefung.",
+    "desc": "Französisch Klasse 6: Wortschatz der Unité 6 und 7 (Farben, Kleidung, Wetter, Paris), Grammatik-Grundwissen (Artikel, Verneinung, Fragen, Imperativ, futur composé) und Lesetexte zur Vertiefung.",
     "order": 12
   },
   "greeting": "Salut",
@@ -61,6 +61,10 @@
     {
       "id": "unite-7",
       "title": "Unité 7"
+    },
+    {
+      "id": "grundwissen",
+      "title": "Grammatik-Grundwissen"
     },
     {
       "id": "vertiefung",
@@ -247,6 +251,125 @@
       }
     },
     {
+      "id": "g-artikel",
+      "group": "grundwissen",
+      "color": "#FFB547",
+      "ic": "g1",
+      "title": "Artikel und Mehrzahl",
+      "de": "Le, la, les · un, une, des · Grundwissen",
+      "card": {
+        "name": "Das Namensschild",
+        "fact": "Der Artikel verrät Geschlecht und Zahl: le garçon, la fille, les amis."
+      }
+    },
+    {
+      "id": "g-verneinung",
+      "group": "grundwissen",
+      "color": "#FFB547",
+      "ic": "g2",
+      "title": "Verneinung mit ne … pas",
+      "de": "Nicht und kein · Grundwissen",
+      "card": {
+        "name": "Sandwich-Verneinung",
+        "fact": "ne und pas schließen das Verb ein wie zwei Brothälften: Je ne parle pas."
+      },
+      "needs": [
+        "g-artikel"
+      ]
+    },
+    {
+      "id": "g-fragen",
+      "group": "grundwissen",
+      "color": "#FFB547",
+      "ic": "g3",
+      "title": "Fragen stellen",
+      "de": "Satzmelodie, est-ce que, Fragewörter · Grundwissen",
+      "card": {
+        "name": "Drei Wege zur Frage",
+        "fact": "Satzmelodie, est-ce que oder ein Fragewort: So fragst du alles."
+      },
+      "needs": [
+        "g-verneinung"
+      ]
+    },
+    {
+      "id": "g-possessiv",
+      "group": "grundwissen",
+      "color": "#FFB547",
+      "ic": "g4",
+      "title": "Besitz: mon, ma, mes",
+      "de": "Possessivbegleiter · Grundwissen",
+      "card": {
+        "name": "Das Nomen entscheidet",
+        "fact": "son, sa, ses: Entscheidend ist das Nomen, nicht der Besitzer."
+      },
+      "needs": [
+        "g-artikel"
+      ]
+    },
+    {
+      "id": "g-praep",
+      "group": "grundwissen",
+      "color": "#FFB547",
+      "ic": "g5",
+      "title": "à und de mit Artikel",
+      "de": "au, aux, du, des · Grundwissen",
+      "card": {
+        "name": "Zwei Magnete",
+        "fact": "à und de ziehen le und les an: au, aux, du, des."
+      },
+      "needs": [
+        "g-artikel"
+      ]
+    },
+    {
+      "id": "g-ilya",
+      "group": "grundwissen",
+      "color": "#FFB547",
+      "ic": "g6",
+      "title": "Es gibt, das ist, da ist",
+      "de": "Es gibt, das ist, da ist · Grundwissen",
+      "card": {
+        "name": "Zeigen und sagen",
+        "fact": "voilà zeigt, c'est stellt vor und il y a sagt, was es gibt."
+      },
+      "needs": [
+        "g-artikel",
+        "g-verneinung"
+      ]
+    },
+    {
+      "id": "g-imperativ",
+      "group": "grundwissen",
+      "color": "#FFB547",
+      "ic": "g7",
+      "title": "Der Imperativ",
+      "de": "Befehle und Aufforderungen · Grundwissen",
+      "card": {
+        "name": "Ohne Pronomen",
+        "fact": "Der Imperativ lässt das Pronomen weg: Écoute ! Écoutons ! Écoutez !"
+      },
+      "needs": [
+        "g-verneinung"
+      ]
+    },
+    {
+      "id": "g-futur",
+      "group": "grundwissen",
+      "color": "#FFB547",
+      "ic": "g8",
+      "title": "Das futur composé",
+      "de": "aller + Infinitiv · Grundwissen",
+      "card": {
+        "name": "Motor und Anhänger",
+        "fact": "aller wird konjugiert, das zweite Verb bleibt im Infinitiv: Je vais jouer."
+      },
+      "needs": [
+        "g-verneinung",
+        "g-imperativ"
+      ]
+    },
+    {
       "id": "v-paris",
       "group": "vertiefung",
       "color": "#3DD6B0",
@@ -429,6 +552,122 @@
       [
         "Wortfamilie",
         "vrai (wahr) und vraiment (wirklich) gehören zusammen."
+      ]
+    ],
+    "g-artikel": [
+      [
+        "Bestimmt",
+        "le · la · l' · les"
+      ],
+      [
+        "Unbestimmt",
+        "un · une · des"
+      ],
+      [
+        "Merken",
+        "Nomen immer mit Artikel lernen: le livre, la table."
+      ]
+    ],
+    "g-verneinung": [
+      [
+        "Merksatz",
+        "ne vor das Verb, pas dahinter."
+      ],
+      [
+        "Vokal",
+        "ne wird zu n': je n'aime pas, il n'a pas."
+      ],
+      [
+        "pas de",
+        "Nach pas stehen un, une und des nicht mehr. Dafür kommt de."
+      ]
+    ],
+    "g-fragen": [
+      [
+        "Ja-Nein",
+        "Satzmelodie oder est-ce que + Aussagesatz."
+      ],
+      [
+        "Fragewörter",
+        "où = wo · qui = wer · quand = wann · comment = wie · combien = wie viel · pourquoi = warum"
+      ],
+      [
+        "Antwort",
+        "pourquoi ? – parce que …"
+      ]
+    ],
+    "g-possessiv": [
+      [
+        "Reihe 1",
+        "mon · ma · mes (mein)"
+      ],
+      [
+        "Reihe 2",
+        "ton · ta · tes (dein)"
+      ],
+      [
+        "Reihe 3",
+        "son · sa · ses (sein, ihr)"
+      ],
+      [
+        "Gruppe",
+        "notre · nos, votre · vos, leur · leurs"
+      ]
+    ],
+    "g-praep": [
+      [
+        "à",
+        "au (à + le) · aux (à + les) · à la · à l'"
+      ],
+      [
+        "de",
+        "du (de + le) · des (de + les) · de la · de l'"
+      ],
+      [
+        "Merken",
+        "Nur le und les verschmelzen."
+      ]
+    ],
+    "g-ilya": [
+      [
+        "il y a",
+        "es gibt · il n'y a pas de = es gibt kein"
+      ],
+      [
+        "Vorstellen",
+        "c'est = das ist · ce sont = das sind"
+      ],
+      [
+        "Zeigen",
+        "voilà = da ist"
+      ]
+    ],
+    "g-imperativ": [
+      [
+        "Formen",
+        "tu · nous · vous, ohne Pronomen"
+      ],
+      [
+        "-er-Verben",
+        "tu-Form ohne -s: écoute, parle, ferme"
+      ],
+      [
+        "Verneinung",
+        "Ne va pas ! Ne mange pas !"
+      ]
+    ],
+    "g-futur": [
+      [
+        "Bildung",
+        "aller + Infinitiv: je vais jouer"
+      ],
+      [
+        "aller",
+        "vais · vas · va · allons · allez · vont"
+      ],
+      [
+        "Verneinung",
+        "Je ne vais pas jouer."
       ]
     ],
     "v-paris": [
