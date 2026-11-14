@@ -7,6 +7,7 @@ const LOGIC = {
   'info-zahlen': () => import('./info-zahlen/logic.js'),
   geometrie: () => import('./geometrie/logic.js'),
   englisch: () => import('./englisch/logic.js'),
+  'decouvertes-1': () => import('./decouvertes-1/logic.js'),
   'decouvertes-2': () => import('./decouvertes/logic.js'),
   physik: () => import('./physik/logic.js'),
   geographie: () => import('./geographie/logic.js'),
