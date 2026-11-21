@@ -122,7 +122,7 @@ Regeln für Texte und Bilder:
 
 - Inhalt entspricht dem Gymnasium Baden-Württemberg und der Klasse in `catalog.klassen`, heute Klasse 7, nur die App `deutsch-5-6` gilt für Klasse 5 und 6. Kein Stoff aus höheren Klassen.
 - Orientierung an den Lehrwerken: Lambacher Schweizer 7 (Mathe), deutsch.ideen 7 Baden-Württemberg (Deutsch, Schulbuch; Abgleich in `docs/lehrplan-deutsch.md`), Gezielt fördern, Intensivkurs LRS 7/8 und 5/6 (Deutsch, Förderhefte; Abgleich in `docs/rechtschreib-plan.md`), Green Line 3 / Access 3 (Englisch, Grammatik), Access 2 Unit 6 (Englisch, Wortschatz; Abgleich in `docs/lehrplan-englisch.md`), Découvertes 2 (Französisch, Klasse 7) und Découvertes 1 (Französisch, Klasse 6, App `decouvertes-1`; Abgleich in `docs/lehrplan-franzoesisch.md`).
-- Der Abgleich der Mathe-App mit dem Bildungsplan steht in `docs/lehrplan-mathe.md`. Dort ist auch vermerkt, was nicht amtlich geprüft ist. Neue Themen dort eintragen.
+- Der Abgleich der Python-Werkstatt (Informatik, App `info-python`) steht in `docs/lehrplan-informatik.md`; der Bildungsplan-Wortlaut ist dort als nicht geprüft vermerkt. Der Abgleich der Mathe-App mit dem Bildungsplan steht in `docs/lehrplan-mathe.md`. Dort ist auch vermerkt, was nicht amtlich geprüft ist. Neue Themen dort eintragen.
 - Korrekte Fachbegriffe verwenden und kurz erklären.
 - Jede Frage hat eine Erklärung (`why`), die den Denkfehler benennt. Keine Fragen, deren Antwort ohne Vorwissen zu erraten ist.
 - Jede Frage ist für sich verständlich: `q` ist bei Auswahlfragen eine vollständige Frage, kein Stichwort. Bei Lücken ist `q` ein Hinweis, der die Antwort ableitbar macht, ohne sie zu nennen. Falsche Antworten sind plausibel und wirklich falsch. `apps/tests/fragen-qualitaet.test.js` prüft den mechanischen Teil.
