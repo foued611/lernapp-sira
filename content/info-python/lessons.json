@@ -1,0 +1,442 @@
+{
+  "python-start": {
+    "goal": "Du kannst mit print Text und Rechnungen ausgeben und eine einfache Fehlermeldung lesen.",
+    "tldr": [
+      "Ein Programm ist eine Liste von Befehlen. Python führt sie von oben nach unten aus.",
+      "Mit print(…) zeigt Python etwas an. Text steht dabei in Anführungszeichen.",
+      "Eine Fehlermeldung ist ein Hinweis: Sie nennt die Zeile und das Problem."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Kochrezept",
+      "html": "<p>Ein Rezept hat Schritte in fester Reihenfolge. Wer erst backt und dann den Teig anrührt, hat ein Problem. Python liest dein Programm genauso: Zeile 1, dann Zeile 2, dann Zeile 3.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "flowDiagram",
+        "args": [
+          [
+            "Zeile 1|print(\"Hallo\")",
+            "Zeile 2|print(\"Welt\")",
+            "Bildschirm|Hallo, dann Welt"
+          ],
+          "Ablauf: Python führt zwei print-Zeilen nacheinander aus"
+        ]
+      },
+      "caption": "Jede print-Zeile erzeugt eine neue Zeile auf dem Bildschirm, in der Reihenfolge des Programms."
+    },
+    "steps": {
+      "title": "So schreibst du dein erstes Programm",
+      "items": [
+        "Schreibe print( und danach den Text in Anführungszeichen, zum Beispiel print(\"Hallo\").",
+        "Schließe die Klammer. Jede öffnende Klammer braucht eine schließende.",
+        "Drücke auf Ausführen und lies darunter die Ausgabe.",
+        "Erscheint eine Fehlermeldung, lies die Zeilennummer, prüfe die Zeile und verbessere sie."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Ohne Anführungszeichen hält Python ein Wort für einen Namen. <b>print(Hallo)</b> meldet deshalb einen <b>NameError</b>. Text steht immer in Anführungszeichen.</p>"
+    },
+    "rule": "Ein Befehl pro Zeile, von oben nach unten. Mit print(…) zeigt Python etwas an, Text steht in Anführungszeichen.",
+    "check": {
+      "q": "Welche Zeile gibt den Text Hallo aus?",
+      "options": [
+        {
+          "id": "a",
+          "html": "print(\"Hallo\")"
+        },
+        {
+          "id": "b",
+          "html": "print(Hallo)"
+        },
+        {
+          "id": "c",
+          "html": "Print \"Hallo\""
+        }
+      ],
+      "answer": "a",
+      "why": "Der Text steht in Anführungszeichen und hinter print in Klammern. Großes P und fehlende Klammern kennt Python nicht."
+    }
+  },
+  "variablen": {
+    "goal": "Du kannst Werte in Variablen speichern, damit rechnen und Text mit Zahlen verbinden.",
+    "tldr": [
+      "Eine Variable ist ein Name für einen gespeicherten Wert, zum Beispiel alter = 12.",
+      "Ein einzelnes = speichert. Links steht der Name, rechts der Wert.",
+      "Zahlen kannst du verrechnen, Text kannst du mit + verbinden. Eine Zahl wird mit str(…) zu Text."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein beschrifteter Karton",
+      "html": "<p>Auf dem Karton steht ein Name, zum Beispiel <b>punkte</b>. Im Karton liegt ein Wert. Mit <b>punkte = 40</b> legst du die 40 hinein. Mit <b>punkte = punkte + 10</b> nimmst du den Wert heraus, rechnest und legst das Ergebnis zurück.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Zeile",
+            "Bedeutung",
+            "punkte danach"
+          ],
+          [
+            [
+              "punkte = 40",
+              "Karton füllen",
+              "40"
+            ],
+            [
+              "punkte = punkte + 10",
+              "um 10 erhöhen",
+              "50"
+            ],
+            [
+              "print(punkte)",
+              "Wert anzeigen",
+              "50"
+            ]
+          ],
+          [
+            1.5,
+            1.4,
+            1
+          ],
+          "Tabelle: Wie sich der Wert der Variable punkte verändert"
+        ]
+      },
+      "caption": "Zuerst liegt 40 im Karton, nach der zweiten Zeile 50."
+    },
+    "steps": {
+      "title": "So benutzt du Variablen",
+      "items": [
+        "Wähle einen Namen ohne Leerzeichen und ohne Ziffer am Anfang, zum Beispiel seite_a.",
+        "Speichere den Wert mit =, zum Beispiel seite_a = 6.",
+        "Rechne mit dem Namen statt mit der Zahl, zum Beispiel seite_a * 4.",
+        "Gib das Ergebnis mit print(…) aus."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Das = in Python ist <b>kein</b> Gleichsetzen wie in Mathe. <b>x = x + 1</b> ist in Python sinnvoll: Nimm den alten Wert, rechne +1 und speichere neu. Zum Vergleichen gibt es später ein doppeltes ==.</p>"
+    },
+    "rule": "Variable = Name + Wert. Links vom = steht der Name, rechts der Wert oder die Rechnung.",
+    "check": {
+      "q": "Welchen Wert hat x nach den beiden Zeilen x = 4 und x = x * 2?",
+      "options": [
+        {
+          "id": "a",
+          "html": "8"
+        },
+        {
+          "id": "b",
+          "html": "4"
+        },
+        {
+          "id": "c",
+          "html": "2"
+        }
+      ],
+      "answer": "a",
+      "why": "Zuerst steht 4 in x. Dann wird 4 * 2 gerechnet und die 8 wieder in x gespeichert."
+    }
+  },
+  "turtle-start": {
+    "goal": "Du kannst die Schildkröte mit forward, left, right, penup und pendown steuern und eine Figur zeichnen.",
+    "tldr": [
+      "Die Schildkröte startet in der Mitte und schaut nach rechts.",
+      "forward(n) läuft n Schritte. left(w) und right(w) drehen auf der Stelle um w Grad.",
+      "Mit penup() zeichnet sie nicht mehr, mit pendown() wieder."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein ferngesteuertes Auto mit Stift",
+      "html": "<p>Du gibst Befehle wie „fahr 100 vor“ und „dreh dich um 90 Grad“. Das Auto weiß nur, was du ihm befiehlst. Es sieht die Zeichnung nicht, also denkst du dir den Weg vorher aus.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Befehl",
+            "Was passiert",
+            "Beispiel"
+          ],
+          [
+            [
+              "forward(n)",
+              "n Schritte vor",
+              "forward(100)"
+            ],
+            [
+              "backward(n)",
+              "n Schritte zurück",
+              "backward(50)"
+            ],
+            [
+              "left(w)",
+              "w Grad nach links drehen",
+              "left(90)"
+            ],
+            [
+              "right(w)",
+              "w Grad nach rechts drehen",
+              "right(90)"
+            ],
+            [
+              "penup()",
+              "Stift heben",
+              "penup()"
+            ],
+            [
+              "pendown()",
+              "Stift senken",
+              "pendown()"
+            ]
+          ],
+          [
+            1.1,
+            1.7,
+            1.2
+          ],
+          "Tabelle: Die wichtigsten Turtle-Befehle"
+        ]
+      },
+      "caption": "Mit diesen sechs Befehlen zeichnest du schon fast jede Figur mit geraden Linien."
+    },
+    "steps": {
+      "title": "So zeichnest du ein Quadrat von Hand",
+      "items": [
+        "Zeichne eine Seite mit forward(80).",
+        "Drehe dich mit left(90) um eine Vierteldrehung.",
+        "Wiederhole diese beiden Zeilen noch dreimal, bis die Schildkröte wieder am Start ist.",
+        "Zähle nach: vier Seiten und vier Drehungen."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>left und right drehen die Schildkröte nur auf der Stelle. Sie zeichnet dabei <b>nichts</b>. Gezeichnet wird erst bei forward oder backward. Der Winkel sagt, wie viel sie <b>dreht</b>, nicht wie groß der Winkel in der Figur aussieht.</p>"
+    },
+    "rule": "Eine Seite zeichnen, an der Ecke drehen, die nächste Seite zeichnen. Erst forward, dann left oder right.",
+    "check": {
+      "q": "Die Schildkröte schaut nach rechts. In welche Richtung schaut sie nach left(90)?",
+      "options": [
+        {
+          "id": "a",
+          "html": "Nach oben"
+        },
+        {
+          "id": "b",
+          "html": "Nach unten"
+        },
+        {
+          "id": "c",
+          "html": "Nach links"
+        }
+      ],
+      "answer": "a",
+      "why": "Eine Vierteldrehung nach links dreht den Blick von rechts nach oben."
+    }
+  },
+  "schleifen": {
+    "goal": "Du kannst mit for und range Befehle wiederholen und erkennen, welche Zeilen zur Schleife gehören.",
+    "tldr": [
+      "Eine Schleife wiederholt Befehle, damit du sie nicht immer wieder abtippen musst.",
+      "for i in range(4): wiederholt die eingerückten Zeilen viermal.",
+      "Die Einrückung mit vier Leerzeichen zeigt, was zur Schleife gehört."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: Treppen steigen",
+      "html": "<p>Statt „eine Stufe, eine Stufe, eine Stufe …“ sagst du „zehnmal: eine Stufe“. Das ist kürzer und du vertippst dich nicht. Genau das macht eine Schleife.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "flowDiagram",
+        "args": [
+          [
+            "for i in range(4):|Schleife beginnt",
+            "forward(80)|eingerückt, 4 Mal",
+            "left(90)|eingerückt, 4 Mal",
+            "danach|Programm geht weiter"
+          ],
+          "Ablauf: Eine for-Schleife wiederholt die eingerückten Zeilen"
+        ]
+      },
+      "caption": "Die beiden eingerückten Zeilen laufen viermal durch, erst danach geht das Programm weiter."
+    },
+    "steps": {
+      "title": "So baust du eine Schleife",
+      "items": [
+        "Finde heraus, was sich wiederholt, zum Beispiel forward(80) und left(90).",
+        "Schreibe darüber for i in range(…): mit der Zahl der Wiederholungen. Der Doppelpunkt am Ende ist wichtig.",
+        "Rücke die Zeilen darunter mit vier Leerzeichen ein.",
+        "Führe das Programm aus und prüfe das Bild."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Die häufigsten Fehler sind die vergessene Einrückung und der vergessene Doppelpunkt. Eine Zeile, die nicht eingerückt ist, gehört <b>nicht</b> zur Schleife und läuft erst danach. Fehlt der Doppelpunkt, meldet Python einen <b>SyntaxError</b>.</p>"
+    },
+    "rule": "Drehung pro Ecke = 360 geteilt durch die Zahl der Ecken. Quadrat 90, Dreieck 120, Sechseck 60.",
+    "check": {
+      "q": "Wie oft läuft forward(10) bei for i in range(3): mit eingerücktem forward(10)?",
+      "options": [
+        {
+          "id": "a",
+          "html": "3 Mal"
+        },
+        {
+          "id": "b",
+          "html": "10 Mal"
+        },
+        {
+          "id": "c",
+          "html": "1 Mal"
+        }
+      ],
+      "answer": "a",
+      "why": "range(3) steht für drei Durchläufe. Die eingerückte Zeile läuft bei jedem Durchlauf."
+    }
+  },
+  "muster": {
+    "goal": "Du kannst Variablen in Schleifen benutzen und damit Vielecke, Spiralen und Kreismuster zeichnen.",
+    "tldr": [
+      "Mit einer Variable wie seite oder n änderst du das ganze Bild an einer einzigen Stelle.",
+      "Für ein Vieleck mit n Ecken drehst du bei jeder Ecke um 360 / n Grad.",
+      "Wird die Seitenlänge in der Schleife größer, entsteht eine Spirale."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: ein Schnittmuster",
+      "html": "<p>Ein Schnittmuster passt sich der Größe an. Du änderst eine Zahl und alle Teile werden größer oder kleiner. Mit <b>seite = 40</b> oder <b>seite = 80</b> zeichnet dasselbe Programm eine kleine oder große Figur.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "tableDiagram",
+        "args": [
+          [
+            "Ecken n",
+            "Drehung 360 / n",
+            "Figur"
+          ],
+          [
+            [
+              "3",
+              "120 Grad",
+              "Dreieck"
+            ],
+            [
+              "4",
+              "90 Grad",
+              "Quadrat"
+            ],
+            [
+              "5",
+              "72 Grad",
+              "Fünfeck"
+            ],
+            [
+              "6",
+              "60 Grad",
+              "Sechseck"
+            ],
+            [
+              "8",
+              "45 Grad",
+              "Achteck"
+            ]
+          ],
+          [
+            1,
+            1.4,
+            1.2
+          ],
+          "Tabelle: Drehwinkel regelmäßiger Vielecke"
+        ]
+      },
+      "caption": "Mehr Ecken heißen kleinerer Drehwinkel. Nach einer Gesamtdrehung von 360 Grad schließt sich die Figur."
+    },
+    "steps": {
+      "title": "So zeichnest du ein Vieleck mit Variablen",
+      "items": [
+        "Lege n und seite fest, zum Beispiel n = 6 und seite = 50.",
+        "Schreibe for i in range(n): als Schleife.",
+        "Zeichne darin forward(seite) und left(360 / n).",
+        "Ändere n und führe das Programm noch einmal aus: Dieselben Zeilen zeichnen eine andere Figur."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Für eine Spirale muss die Seitenlänge <b>in</b> der Schleife wachsen, zum Beispiel mit <b>seite = seite + 5</b>. Steht die Zeile vor der Schleife, wächst nichts.</p>"
+    },
+    "rule": "Eine Zahl ändern, ein neues Bild: Vieleck = n Ecken mit 360 / n Grad, Spirale = Seite wächst in jeder Runde.",
+    "check": {
+      "q": "Welchen Winkel berechnet left(360 / n), wenn n = 6 ist?",
+      "options": [
+        {
+          "id": "a",
+          "html": "60 Grad"
+        },
+        {
+          "id": "b",
+          "html": "36 Grad"
+        },
+        {
+          "id": "c",
+          "html": "90 Grad"
+        }
+      ],
+      "answer": "a",
+      "why": "360 geteilt durch 6 ergibt 60. Sechs Drehungen zu 60 Grad ergeben eine ganze Drehung."
+    }
+  },
+  "entscheiden": {
+    "goal": "Du kannst mit if, elif und else Entscheidungen programmieren und mit % erkennen, ob eine Zahl gerade ist.",
+    "tldr": [
+      "Mit if prüft Python eine Bedingung. Nur wenn sie stimmt, laufen die eingerückten Zeilen.",
+      "else steht für den Fall, dass die Bedingung nicht stimmt.",
+      "Verglichen wird mit == (gleich) und mit Zeichen wie > (größer). Ein einzelnes = speichert nur einen Wert."
+    ],
+    "analogy": {
+      "title": "Stell dir vor: eine Weiche am Gleis",
+      "html": "<p>Ein Zug kommt zu einer Weiche. Stimmt die Bedingung, fährt er nach links, sonst nach rechts. Dein Programm geht immer nur einen der beiden Wege.</p>"
+    },
+    "figure": {
+      "diagram": {
+        "name": "flowDiagram",
+        "args": [
+          [
+            "Bedingung prüfen|punkte > 10 ?",
+            "Ja|if-Teil läuft",
+            "Nein|else-Teil läuft"
+          ],
+          "Ablauf: Ein if prüft, dann läuft entweder der if-Teil oder der else-Teil"
+        ]
+      },
+      "caption": "Nach der Prüfung läuft genau einer der beiden Teile, nie beide."
+    },
+    "steps": {
+      "title": "So baust du eine Entscheidung",
+      "items": [
+        "Schreibe if und die Bedingung, zum Beispiel if punkte > 10: mit Doppelpunkt.",
+        "Rücke die Zeilen ein, die nur bei Ja laufen sollen.",
+        "Schreibe else: auf die Höhe von if und rücke die Zeilen für den Nein-Fall ein.",
+        "Probiere beide Fälle aus, indem du den Wert der Variable änderst."
+      ]
+    },
+    "pitfall": {
+      "html": "<p>Zum Vergleichen brauchst du <b>zwei</b> Gleichheitszeichen: <b>==</b>. Ein einzelnes <b>=</b> speichert einen Wert und gehört nicht in eine Bedingung.</p>"
+    },
+    "rule": "Rest einer Division: i % 2 == 0 heißt gerade, i % 2 == 1 heißt ungerade.",
+    "check": {
+      "q": "Was gibt print(10 % 3) aus?",
+      "options": [
+        {
+          "id": "a",
+          "html": "1"
+        },
+        {
+          "id": "b",
+          "html": "3"
+        },
+        {
+          "id": "c",
+          "html": "0"
+        }
+      ],
+      "answer": "a",
+      "why": "10 geteilt durch 3 ist 3 mit Rest 1. Das Zeichen % liefert genau diesen Rest."
+    }
+  }
+}

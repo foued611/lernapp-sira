@@ -1,0 +1,1471 @@
+{
+  "items": {
+    "python-start": [
+      {
+        "q": "Welcher Befehl gibt einen Text auf dem Bildschirm aus?",
+        "kind": "gap",
+        "s": "___(\"Hallo\")",
+        "a": "print",
+        "wrong": [
+          "input",
+          "write",
+          "show"
+        ],
+        "why": "Mit print(…) zeigt Python etwas an. input wartet dagegen auf eine Eingabe.",
+        "level": 1,
+        "skill": "print"
+      },
+      {
+        "q": "Wie schreibst du den Text Hallo, damit Python ihn ausgeben kann?",
+        "a": "print(\"Hallo\")",
+        "wrong": [
+          "print(Hallo)",
+          "print \"Hallo\"",
+          "Print(\"Hallo\")"
+        ],
+        "why": "Text braucht Anführungszeichen und print braucht Klammern. Außerdem zählt die Kleinschreibung: Print kennt Python nicht.",
+        "level": 1,
+        "skill": "Text"
+      },
+      {
+        "q": "In welcher Reihenfolge führt Python die Zeilen eines Programms aus?",
+        "a": "Von oben nach unten, Zeile für Zeile",
+        "wrong": [
+          "Von unten nach oben",
+          "Alle Zeilen gleichzeitig",
+          "Die kürzeste Zeile zuerst"
+        ],
+        "why": "Python liest ein Programm wie einen Text: von oben nach unten, eine Zeile nach der anderen.",
+        "level": 1,
+        "skill": "Reihenfolge"
+      },
+      {
+        "q": "Wie nennt man eine Folge von Befehlen, die ein Computer der Reihe nach ausführt?",
+        "kind": "gap",
+        "s": "Ein ___ ist eine Folge von Befehlen.",
+        "a": "Programm",
+        "wrong": [
+          "Passwort",
+          "Bildschirm",
+          "Speicher"
+        ],
+        "why": "Eine Folge von Befehlen, die der Computer abarbeitet, heißt Programm.",
+        "level": 1,
+        "skill": "Programm"
+      },
+      {
+        "q": "Was erscheint auf dem Bildschirm?",
+        "s": "print(\"Eins\") | print(\"Zwei\")",
+        "a": "Zwei Zeilen: Eins, dann Zwei",
+        "wrong": [
+          "Eine Zeile: EinsZwei",
+          "Zwei Zeilen: Zwei, dann Eins",
+          "Es erscheint nichts"
+        ],
+        "why": "Jedes print beginnt eine neue Zeile. Die Reihenfolge im Programm ist die Reihenfolge auf dem Bildschirm.",
+        "level": 1,
+        "skill": "Ausgabe",
+        "label": "Code lesen (| = neue Zeile, → = eingerückt)"
+      },
+      {
+        "q": "Was gibt dieser Befehl aus?",
+        "s": "print(3 + 4 * 2)",
+        "a": "11",
+        "wrong": [
+          "14",
+          "9",
+          "24"
+        ],
+        "why": "Auch in Python gilt Punkt vor Strich: Erst 4 * 2 = 8, dann 3 + 8 = 11.",
+        "level": 2,
+        "skill": "Rechnen mit print",
+        "label": "Code lesen (| = neue Zeile, → = eingerückt)"
+      },
+      {
+        "q": "Was gibt dieser Befehl aus?",
+        "s": "print(\"3\" + \"4\")",
+        "a": "34",
+        "wrong": [
+          "7",
+          "3 + 4",
+          "Es gibt einen Fehler"
+        ],
+        "why": "Mit Anführungszeichen sind 3 und 4 Text. Das Plus hängt Text aneinander, es rechnet nicht.",
+        "level": 2,
+        "skill": "Text verbinden",
+        "label": "Code lesen (| = neue Zeile, → = eingerückt)"
+      },
+      {
+        "q": "Mit welchem Zeichen beginnt in Python ein Kommentar, den der Computer überspringt?",
+        "a": "#",
+        "wrong": [
+          "//",
+          "--",
+          "/*"
+        ],
+        "why": "Alles hinter einem # in der Zeile ist ein Kommentar für Menschen. Python führt es nicht aus.",
+        "level": 2,
+        "skill": "Kommentar"
+      },
+      {
+        "q": "Was ist an dieser Zeile falsch?",
+        "s": "print(\"Hallo)",
+        "a": "Das schließende Anführungszeichen fehlt",
+        "wrong": [
+          "Das Wort print ist falsch geschrieben",
+          "Es ist eine Klammer zu viel",
+          "Es fehlt ein Doppelpunkt"
+        ],
+        "why": "Der Text beginnt mit einem Anführungszeichen, wird aber nie beendet. Python meldet einen SyntaxError.",
+        "level": 2,
+        "skill": "Fehler lesen",
+        "label": "Code lesen (| = neue Zeile, → = eingerückt)"
+      },
+      {
+        "q": "Was meldet Python bei dieser Zeile?",
+        "s": "prnt(\"Hallo\")",
+        "a": "Einen NameError, weil prnt unbekannt ist",
+        "wrong": [
+          "Nichts, Python gibt Hallo trotzdem aus",
+          "Einen Fehler, weil die Klammern fehlen",
+          "Nichts, Python überspringt die Zeile"
+        ],
+        "why": "Python kennt nur Namen, die es gibt. prnt ist ein Tippfehler, deshalb kommt ein NameError.",
+        "level": 2,
+        "skill": "Tippfehler",
+        "label": "Code lesen (| = neue Zeile, → = eingerückt)"
+      },
+      {
+        "q": "Wie heißt ein Fehler, bei dem der Aufbau einer Zeile nicht zu Python passt, zum Beispiel wenn eine Klammer fehlt?",
+        "kind": "gap",
+        "s": "Das ist ein ___.",
+        "a": "SyntaxError",
+        "wrong": [
+          "NameError",
+          "TypeError",
+          "ZeroDivisionError"
+        ],
+        "why": "Ein SyntaxError bedeutet: Die Schreibweise der Zeile ist kein gültiges Python. Ein NameError meint dagegen einen unbekannten Namen.",
+        "level": 2,
+        "skill": "Fehlerart"
+      },
+      {
+        "q": "Erst Hallo, dann Tschüss soll erscheinen, jeweils in einer eigenen Zeile. Welches Programm macht das?",
+        "a": "print(\"Hallo\") | print(\"Tschüss\")",
+        "wrong": [
+          "print(\"Tschüss\") | print(\"Hallo\")",
+          "print(\"Hallo\", \"Tschüss\")",
+          "print(\"Hallo\")"
+        ],
+        "why": "Zwei Zeilen brauchen zwei print-Befehle in der richtigen Reihenfolge. Zwei Werte in einem print stehen nebeneinander in einer Zeile.",
+        "level": 3,
+        "skill": "Reihenfolge ändern",
+        "label": "Code lesen (| = neue Zeile, → = eingerückt)"
+      },
+      {
+        "q": "Was gibt dieser Befehl aus?",
+        "s": "print(\"Alter:\", 12)",
+        "a": "Alter: 12",
+        "wrong": [
+          "Alter:12",
+          "Alter: , 12",
+          "Es gibt einen Fehler"
+        ],
+        "why": "Mehrere Werte in print trennt Python mit einem Leerzeichen. Mit dem Komma darf man Text und Zahl mischen.",
+        "level": 3,
+        "skill": "print mit Komma",
+        "label": "Code lesen (| = neue Zeile, → = eingerückt)"
+      }
+    ],
+    "variablen": [
+      {
+        "q": "Wie speicherst du die Zahl 12 in einer Variablen namens alter?",
+        "a": "alter = 12",
+        "wrong": [
+          "12 = alter",
+          "alter == 12",
+          "alter -> 12"
+        ],
+        "why": "Der Name steht links, der Wert rechts, dazwischen ein einzelnes =. Zwei Gleichheitszeichen würden vergleichen.",
+        "level": 1,
+        "skill": "Zuweisen"
+      },
+      {
+        "q": "Welcher Name ist für eine Variable erlaubt?",
+        "a": "punkte_neu",
+        "wrong": [
+          "2punkte",
+          "meine punkte",
+          "punkte-neu"
+        ],
+        "why": "Ein Name darf nicht mit einer Ziffer beginnen und kein Leerzeichen oder Minus enthalten. Der Unterstrich ist erlaubt.",
+        "level": 1,
+        "skill": "Variablenname"
+      },
+      {
+        "q": "Wie heißt in Python der Datentyp für Text, abgekürzt auf Englisch?",
+        "kind": "gap",
+        "s": "Text heißt in Python ___.",
+        "a": "str",
+        "wrong": [
+          "int",
+          "float",
+          "bool"
+        ],
+        "why": "str steht für string, also Zeichenkette. int ist für ganze Zahlen, float für Kommazahlen.",
+        "level": 1,
+        "skill": "Datentyp"
+      },
+      {
+        "q": "Was gibt dieses Programm aus?",
+        "s": "x = 5 | print(x)",
+        "a": "5",
+        "wrong": [
+          "x",
+          "print",
+          "Es gibt einen Fehler"
+        ],
+        "why": "print(x) zeigt den Wert, der in x gespeichert ist, nicht den Buchstaben x.",
+        "level": 1,
+        "skill": "Wert lesen",
+        "label": "Code lesen (| = neue Zeile, → = eingerückt)"
+      },
+      {
+        "q": "Was gibt dieses Programm aus?",
+        "s": "a = 6 | b = 4 | print(a * b)",
+        "a": "24",
+        "wrong": [
+          "10",
+          "64",
+          "a * b"
+        ],
+        "why": "Python setzt für a und b die gespeicherten Werte ein und rechnet 6 * 4.",
+        "level": 2,
+        "skill": "Rechnen mit Variablen",
+        "label": "Code lesen (| = neue Zeile, → = eingerückt)"
+      },
+      {
+        "q": "Welchen Wert gibt dieses Programm aus?",
+        "s": "x = 3 | x = x + 2 | print(x)",
+        "a": "5",
+        "wrong": [
+          "3",
+          "2",
+          "32"
+        ],
+        "why": "Zuerst steht 3 in x. Dann wird 3 + 2 gerechnet und das Ergebnis 5 wieder in x gespeichert.",
+        "level": 2,
+        "skill": "Überschreiben",
+        "label": "Code lesen (| = neue Zeile, → = eingerückt)"
+      },
+      {
+        "q": "Was gibt dieser Befehl aus?",
+        "s": "print(7 / 2)",
+        "a": "3.5",
+        "wrong": [
+          "3",
+          "4",
+          "3,5"
+        ],
+        "why": "Python rechnet mit einem Punkt statt dem Komma. Die Division / liefert eine Kommazahl: 3.5.",
+        "level": 2,
+        "skill": "Division",
+        "label": "Code lesen (| = neue Zeile, → = eingerückt)"
+      },
+      {
+        "q": "Was gibt dieser Befehl aus?",
+        "s": "print(2 * 3 + 4)",
+        "a": "10",
+        "wrong": [
+          "14",
+          "9",
+          "24"
+        ],
+        "why": "Punkt vor Strich: Erst 2 * 3 = 6, dann 6 + 4 = 10.",
+        "level": 2,
+        "skill": "Punkt vor Strich",
+        "label": "Code lesen (| = neue Zeile, → = eingerückt)"
+      },
+      {
+        "q": "Welche Funktion macht aus dem Text mit Ziffern eine ganze Zahl?",
+        "kind": "gap",
+        "s": "zahl = ___(\"42\")",
+        "a": "int",
+        "wrong": [
+          "str",
+          "float",
+          "round"
+        ],
+        "why": "int(…) wandelt Text mit Ziffern in eine ganze Zahl um. str macht das Gegenteil.",
+        "level": 2,
+        "skill": "Umwandeln"
+      },
+      {
+        "q": "Was gibt dieses Programm aus?",
+        "s": "name = \"Mia\" | print(\"Hallo \" + name)",
+        "a": "Hallo Mia",
+        "wrong": [
+          "Hallo name",
+          "Hallo + Mia",
+          "Es gibt einen Fehler"
+        ],
+        "why": "Python setzt den Wert von name ein und hängt die beiden Texte aneinander. Das Leerzeichen steht schon in \"Hallo \".",
+        "level": 2,
+        "skill": "Text verbinden",
+        "label": "Code lesen (| = neue Zeile, → = eingerückt)"
+      },
+      {
+        "q": "Was meldet Python bei dieser Zeile?",
+        "s": "print(\"Punkte: \" + 5)",
+        "a": "Einen TypeError, weil Text und Zahl nicht mit + verbunden werden",
+        "wrong": [
+          "Es erscheint Punkte: 5",
+          "Es erscheint Punkte: + 5",
+          "Es erscheint nur Punkte:"
+        ],
+        "why": "Das Plus verbindet nur Text mit Text oder rechnet mit Zahlen. Text plus Zahl geht nicht. Die Zahl muss erst mit str(…) zu Text werden.",
+        "level": 3,
+        "skill": "Text und Zahl",
+        "label": "Code lesen (| = neue Zeile, → = eingerückt)"
+      },
+      {
+        "q": "Wie hängst du die Zahl 5 an den Text Punkte: an?",
+        "a": "print(\"Punkte: \" + str(5))",
+        "wrong": [
+          "print(\"Punkte: \" + int(5))",
+          "print(\"Punkte: \" + 5)",
+          "print(Punkte: str(5))"
+        ],
+        "why": "str(5) macht aus der Zahl den Text 5. Dann sind beide Teile Text und das Plus kann sie verbinden.",
+        "level": 3,
+        "skill": "str"
+      },
+      {
+        "q": "Welche Zeile erhöht die Variable punkte um 1?",
+        "a": "punkte = punkte + 1",
+        "wrong": [
+          "punkte + 1 = punkte",
+          "punkte == punkte + 1",
+          "1 + punkte"
+        ],
+        "why": "Rechts wird mit dem alten Wert gerechnet, links wird das Ergebnis gespeichert. Die anderen Zeilen speichern nichts oder sind keine gültige Zuweisung.",
+        "level": 3,
+        "skill": "Erhöhen"
+      }
+    ],
+    "turtle-start": [
+      {
+        "q": "Welcher Befehl bewegt die Schildkröte nach vorn?",
+        "kind": "gap",
+        "s": "___(100)",
+        "a": "forward",
+        "wrong": [
+          "back",
+          "left",
+          "walk"
+        ],
+        "why": "forward(100) läuft 100 Schritte in Blickrichtung. back läuft rückwärts, left dreht nur.",
+        "level": 1,
+        "skill": "forward",
+        "accept": [
+          "fd"
+        ]
+      },
+      {
+        "q": "Mit welchem Befehl dreht sich die Schildkröte auf der Stelle nach links?",
+        "kind": "gap",
+        "s": "___(90)",
+        "a": "left",
+        "wrong": [
+          "forward",
+          "up",
+          "turn"
+        ],
+        "why": "left(90) dreht um 90 Grad nach links. Dabei läuft sie nicht und zeichnet nichts.",
+        "level": 1,
+        "skill": "left",
+        "accept": [
+          "lt"
+        ]
+      },
+      {
+        "q": "In welche Richtung schaut die Schildkröte am Anfang?",
+        "a": "Nach rechts",
+        "wrong": [
+          "Nach oben",
+          "Nach links",
+          "Nach unten"
+        ],
+        "why": "Die Schildkröte startet in der Mitte des Zeichenblatts und schaut nach rechts. forward zeichnet deshalb zuerst nach rechts.",
+        "level": 1,
+        "skill": "Startrichtung"
+      },
+      {
+        "q": "Wie viel Grad ist eine Vierteldrehung, also ein rechter Winkel?",
+        "a": "90",
+        "wrong": [
+          "45",
+          "180",
+          "360"
+        ],
+        "why": "Eine ganze Drehung hat 360 Grad. Ein Viertel davon sind 90 Grad.",
+        "level": 1,
+        "skill": "Winkel"
+      },
+      {
+        "q": "Was zeichnet dieses Programm?",
+        "s": "forward(100) | left(90) | forward(100)",
+        "a": "Einen rechten Winkel aus zwei Linien",
+        "wrong": [
+          "Eine einzige lange Linie",
+          "Ein geschlossenes Quadrat",
+          "Ein Dreieck"
+        ],
+        "why": "Erst eine Linie nach rechts, dann Vierteldrehung nach links, dann eine Linie nach oben. Zwei Linien, rechter Winkel.",
+        "level": 2,
+        "skill": "Zeichnung lesen",
+        "label": "Code lesen (| = neue Zeile, → = eingerückt)"
+      },
+      {
+        "q": "Welcher Befehl hebt den Stift an, damit beim Laufen nichts gezeichnet wird?",
+        "a": "penup()",
+        "wrong": [
+          "pendown()",
+          "stop()",
+          "hide()"
+        ],
+        "why": "penup() hebt den Stift an, pendown() setzt ihn wieder ab.",
+        "level": 2,
+        "skill": "Stift"
+      },
+      {
+        "q": "Welcher Befehl setzt den Stift wieder auf das Papier?",
+        "kind": "gap",
+        "s": "___()",
+        "a": "pendown",
+        "wrong": [
+          "penup",
+          "begin",
+          "paper"
+        ],
+        "why": "Nach pendown() zeichnet die Schildkröte wieder. penup() macht das Gegenteil.",
+        "level": 2,
+        "skill": "pendown",
+        "accept": [
+          "pd",
+          "down"
+        ]
+      },
+      {
+        "q": "Wie viele Drehungen braucht die Schildkröte für ein Quadrat, wenn sie an jeder Ecke um 90 Grad dreht?",
+        "a": "4",
+        "wrong": [
+          "3",
+          "2",
+          "8"
+        ],
+        "why": "Ein Quadrat hat vier Ecken. An jeder Ecke wird einmal gedreht. Viermal 90 Grad sind eine ganze Drehung.",
+        "level": 2,
+        "skill": "Quadrat zählen"
+      },
+      {
+        "q": "In welche Richtung schaut die Schildkröte nach diesen Befehlen?",
+        "s": "forward(50) | right(90)",
+        "a": "Nach unten",
+        "wrong": [
+          "Nach oben",
+          "Nach rechts",
+          "Nach links"
+        ],
+        "why": "Sie schaut zuerst nach rechts. right(90) dreht um eine Vierteldrehung im Uhrzeigersinn, also nach unten.",
+        "level": 2,
+        "skill": "Rechts drehen",
+        "label": "Code lesen (| = neue Zeile, → = eingerückt)"
+      },
+      {
+        "q": "Wo steht die Schildkröte nach diesen Befehlen im Verhältnis zum Start?",
+        "s": "forward(100) | left(90) | forward(50)",
+        "a": "100 nach rechts und 50 nach oben",
+        "wrong": [
+          "100 nach rechts und 50 nach unten",
+          "50 nach rechts und 100 nach oben",
+          "100 nach oben und 50 nach links"
+        ],
+        "why": "forward(100) geht nach rechts. left(90) dreht nach oben, forward(50) geht dann 50 nach oben.",
+        "level": 2,
+        "skill": "Position",
+        "label": "Code lesen (| = neue Zeile, → = eingerückt)"
+      },
+      {
+        "q": "Was ist an dieser Zeile falsch?",
+        "s": "forward 100",
+        "a": "Die Klammern fehlen, richtig ist forward(100)",
+        "wrong": [
+          "Das Wort forward gibt es nicht",
+          "100 ist zu groß",
+          "Es fehlt ein Doppelpunkt"
+        ],
+        "why": "Befehle brauchen Klammern. Die Zahl, die der Befehl bekommt, steht in der Klammer.",
+        "level": 3,
+        "skill": "Klammern",
+        "label": "Code lesen (| = neue Zeile, → = eingerückt)"
+      },
+      {
+        "q": "Du willst eine unterbrochene Linie zeichnen. Was musst du zwischen den Strichen tun?",
+        "a": "Stift heben, ein Stück laufen, Stift senken",
+        "wrong": [
+          "Nur forward mit einer kleineren Zahl benutzen",
+          "Die Schildkröte nach links drehen",
+          "Die Farbe wechseln"
+        ],
+        "why": "Nur bei gehobenem Stift entsteht eine Lücke: penup(), forward(…), pendown().",
+        "level": 3,
+        "skill": "Gestrichelt"
+      },
+      {
+        "q": "Welcher Befehl ändert die Stiftfarbe?",
+        "kind": "gap",
+        "s": "___(\"red\")",
+        "a": "color",
+        "wrong": [
+          "paint",
+          "pen",
+          "fill"
+        ],
+        "why": "color(\"red\") macht den Stift rot. Die Farbe steht als Text in Anführungszeichen.",
+        "level": 2,
+        "skill": "Farbe",
+        "accept": [
+          "pencolor"
+        ]
+      },
+      {
+        "q": "Welches Programm zeichnet ein Quadrat mit der Seitenlänge 50?",
+        "a": "forward(50) left(90) forward(50) left(90) forward(50) left(90) forward(50) left(90)",
+        "wrong": [
+          "forward(50) left(90) forward(50) left(90) forward(50) left(90)",
+          "forward(50) left(60) forward(50) left(60) forward(50) left(60) forward(50) left(60)",
+          "forward(50) left(90) forward(100) left(90) forward(50) left(90) forward(100) left(90)"
+        ],
+        "why": "Vier gleich lange Seiten und vier Drehungen um 90 Grad. Drei Seiten ergeben nur ein offenes U, 60 Grad schließt die Figur nicht, und 50 und 100 abwechselnd ergibt ein Rechteck.",
+        "level": 3,
+        "skill": "Quadrat erkennen"
+      }
+    ],
+    "schleifen": [
+      {
+        "q": "Mit welchem Wort beginnt eine Schleife, die Befehle mehrmals wiederholt?",
+        "kind": "gap",
+        "s": "___ i in range(4):",
+        "a": "for",
+        "wrong": [
+          "if",
+          "while",
+          "loop"
+        ],
+        "why": "Eine Zählschleife beginnt mit for. if prüft eine Bedingung und wiederholt nichts.",
+        "level": 1,
+        "skill": "for"
+      },
+      {
+        "q": "Welcher Befehl liefert die Zahlen, über die die Schleife zählt?",
+        "kind": "gap",
+        "s": "for i in ___(4):",
+        "a": "range",
+        "wrong": [
+          "count",
+          "repeat",
+          "times"
+        ],
+        "why": "range(4) liefert die Zahlen 0, 1, 2 und 3. Das sind vier Durchläufe.",
+        "level": 1,
+        "skill": "range"
+      },
+      {
+        "q": "Wie oft läuft forward(10) in diesem Programm?",
+        "s": "for i in range(3): | → forward(10)",
+        "a": "3 Mal",
+        "wrong": [
+          "1 Mal",
+          "2 Mal",
+          "10 Mal"
+        ],
+        "why": "range(3) steht für drei Durchläufe. Die eingerückte Zeile läuft bei jedem Durchlauf.",
+        "level": 1,
+        "skill": "Wiederholungen",
+        "label": "Code lesen (| = neue Zeile, → = eingerückt)"
+      },
+      {
+        "q": "Woran erkennt Python, welche Zeilen zur Schleife gehören?",
+        "a": "An der Einrückung am Zeilenanfang",
+        "wrong": [
+          "An den Klammern",
+          "An der Zeilennummer",
+          "An einem Semikolon"
+        ],
+        "why": "In Python gehören alle eingerückten Zeilen unter dem Doppelpunkt zur Schleife.",
+        "level": 1,
+        "skill": "Einrückung"
+      },
+      {
+        "q": "Welches Zeichen steht am Ende der Zeile mit for?",
+        "a": "Ein Doppelpunkt",
+        "wrong": [
+          "Ein Semikolon",
+          "Ein Punkt",
+          "Eine Klammer"
+        ],
+        "why": "Der Doppelpunkt kündigt an: Jetzt kommen die eingerückten Zeilen, die dazugehören.",
+        "level": 1,
+        "skill": "Doppelpunkt"
+      },
+      {
+        "q": "Wie oft soll sich die Schleife wiederholen, wenn jede Runde eine Seite eines Quadrats zeichnet?",
+        "kind": "gap",
+        "s": "for i in range(___):",
+        "a": "4",
+        "wrong": [
+          "3",
+          "90",
+          "5"
+        ],
+        "why": "Ein Quadrat hat vier Seiten, also vier Runden.",
+        "level": 2,
+        "skill": "Anzahl"
+      },
+      {
+        "q": "Ein Quadrat von Hand braucht 8 Zeilen. Wie viele Zeilen braucht es mit Schleife?",
+        "a": "3 Zeilen",
+        "wrong": [
+          "8 Zeilen",
+          "4 Zeilen",
+          "2 Zeilen"
+        ],
+        "why": "Eine Zeile mit for, eine mit forward und eine mit left. Die Schleife macht den Rest.",
+        "level": 2,
+        "skill": "Zeilen sparen"
+      },
+      {
+        "q": "Welchen Winkel dreht die Schildkröte bei jeder Ecke eines gleichseitigen Dreiecks?",
+        "a": "120 Grad",
+        "wrong": [
+          "60 Grad",
+          "90 Grad",
+          "180 Grad"
+        ],
+        "why": "Die Drehungen ergeben zusammen 360 Grad, bei drei Ecken also 120 Grad pro Ecke. 60 Grad ist der Winkel im Inneren, nicht die Drehung.",
+        "level": 2,
+        "skill": "Dreieck"
+      },
+      {
+        "q": "Welche Zahl gehört in left, damit ein Sechseck entsteht?",
+        "kind": "gap",
+        "s": "for i in range(6): | → forward(50) | → left(___)",
+        "a": "60",
+        "wrong": [
+          "90",
+          "120",
+          "6"
+        ],
+        "why": "360 geteilt durch 6 Ecken ergibt 60 Grad pro Ecke.",
+        "level": 2,
+        "skill": "Sechseck"
+      },
+      {
+        "q": "Wie viele Linien zeichnet dieses Programm?",
+        "s": "for i in range(5): | → forward(20) | → left(72)",
+        "a": "5 Linien",
+        "wrong": [
+          "4 Linien",
+          "72 Linien",
+          "20 Linien"
+        ],
+        "why": "Pro Durchlauf entsteht eine Linie. Fünf Durchläufe ergeben fünf Linien.",
+        "level": 2,
+        "skill": "Linien zählen",
+        "label": "Code lesen (| = neue Zeile, → = eingerückt)"
+      },
+      {
+        "q": "Was meldet Python bei diesem Programm?",
+        "s": "for i in range(4): | forward(50) | left(90)",
+        "a": "Einen IndentationError, weil die Einrückung fehlt",
+        "wrong": [
+          "Es zeichnet ein Quadrat",
+          "Es wiederholt nur die erste Zeile",
+          "Nichts, die Zeilen werden übersprungen"
+        ],
+        "why": "Nach dem Doppelpunkt muss eine eingerückte Zeile folgen. Ohne Einrückung weiß Python nicht, was wiederholt werden soll.",
+        "level": 3,
+        "skill": "Einrückung fehlt",
+        "label": "Code lesen (| = neue Zeile, → = eingerückt)"
+      },
+      {
+        "q": "Was zeichnet dieses Programm?",
+        "s": "for i in range(4): | → forward(50) | left(90)",
+        "a": "Eine gerade Linie der Länge 200",
+        "wrong": [
+          "Ein Quadrat",
+          "Vier getrennte Linien",
+          "Eine Linie der Länge 50"
+        ],
+        "why": "Nur forward(50) ist eingerückt und wird viermal wiederholt. left(90) gehört nicht zur Schleife und läuft erst danach.",
+        "level": 3,
+        "skill": "Zeile außerhalb",
+        "label": "Code lesen (| = neue Zeile, → = eingerückt)"
+      },
+      {
+        "q": "Warum zeichnet forward(120) mit right(144) fünfmal einen Stern statt eines Fünfecks?",
+        "a": "Die Schildkröte dreht sich bei jeder Spitze fast um, deshalb springt sie zur übernächsten Ecke",
+        "wrong": [
+          "Weil 144 Grad die Seiten kürzer macht",
+          "Weil right(144) nur Sterne zeichnen kann",
+          "Weil fünf Durchläufe immer einen Stern ergeben"
+        ],
+        "why": "Bei 72 Grad Drehung entsteht ein Fünfeck. Bei 144 Grad ist die Drehung doppelt so groß, die Linien führen jeweils zur übernächsten Ecke und es entsteht ein Stern.",
+        "level": 3,
+        "skill": "Stern"
+      }
+    ],
+    "muster": [
+      {
+        "q": "Wie weit läuft die Schildkröte?",
+        "s": "seite = 40 | forward(seite)",
+        "a": "40 Schritte",
+        "wrong": [
+          "seite Schritte",
+          "4 Schritte",
+          "0 Schritte"
+        ],
+        "why": "Python setzt für seite den gespeicherten Wert 40 ein.",
+        "level": 1,
+        "skill": "Seite",
+        "label": "Code lesen (| = neue Zeile, → = eingerückt)"
+      },
+      {
+        "q": "Warum lohnt sich eine Variable für die Seitenlänge?",
+        "a": "Man ändert die Zahl nur an einer Stelle, und das ganze Bild wächst mit",
+        "wrong": [
+          "Python zeichnet dadurch schneller",
+          "Ohne Variable kann man kein Quadrat zeichnen",
+          "Die Schildkröte wird dadurch größer"
+        ],
+        "why": "Steht die Länge in einer Variable, genügt eine Änderung. Das Programm bleibt gleich.",
+        "level": 1,
+        "skill": "Variable nützlich"
+      },
+      {
+        "q": "Durch welche Zahl wird die Zahl der Ecken geteilt, um den Drehwinkel eines Vielecks zu bekommen?",
+        "kind": "gap",
+        "s": "left(___ / n)",
+        "a": "360",
+        "wrong": [
+          "90",
+          "180",
+          "100"
+        ],
+        "why": "Die Drehungen aller Ecken ergeben zusammen eine ganze Drehung, also 360 Grad.",
+        "level": 2,
+        "skill": "Drehwinkel"
+      },
+      {
+        "q": "Welchen Winkel berechnet left(360 / n), wenn n = 8 ist?",
+        "a": "45 Grad",
+        "wrong": [
+          "8 Grad",
+          "90 Grad",
+          "60 Grad"
+        ],
+        "why": "360 geteilt durch 8 ergibt 45. Acht Drehungen zu 45 Grad ergeben eine ganze Drehung.",
+        "level": 2,
+        "skill": "Achteck"
+      },
+      {
+        "q": "Welche Figur zeichnet dieses Programm?",
+        "s": "n = 5 | for i in range(n): | → forward(60) | → left(360 / n)",
+        "a": "Ein Fünfeck",
+        "wrong": [
+          "Ein Viereck",
+          "Ein Sechseck",
+          "Einen Stern"
+        ],
+        "why": "n = 5 heißt fünf Durchläufe und 72 Grad pro Ecke. Das ergibt ein regelmäßiges Fünfeck.",
+        "level": 2,
+        "skill": "Vieleck erkennen",
+        "label": "Code lesen (| = neue Zeile, → = eingerückt)"
+      },
+      {
+        "q": "Warum ergeben alle Drehwinkel eines Vielecks zusammen 360 Grad?",
+        "a": "Die Schildkröte dreht sich am Ende einmal ganz herum und schaut wieder wie am Anfang",
+        "wrong": [
+          "Weil jedes Vieleck 360 Ecken hat",
+          "Weil Python bei 360 aufhört",
+          "Weil die Seiten zusammen 360 lang sind"
+        ],
+        "why": "Nur wenn sie am Ende wieder in die Startrichtung schaut und am Start steht, schließt sich die Figur.",
+        "level": 2,
+        "skill": "360 Grad"
+      },
+      {
+        "q": "Welchen Wert hat seite am Ende?",
+        "s": "seite = 10 | seite = seite + 5 | seite = seite + 5",
+        "a": "20",
+        "wrong": [
+          "10",
+          "15",
+          "5"
+        ],
+        "why": "Zweimal wird 5 dazugerechnet: 10, dann 15, dann 20.",
+        "level": 2,
+        "skill": "Variable wächst",
+        "label": "Code lesen (| = neue Zeile, → = eingerückt)"
+      },
+      {
+        "q": "Wie entsteht eine Quadratspirale?",
+        "a": "Die Seitenlänge wird in jeder Runde größer, der Winkel bleibt 90 Grad",
+        "wrong": [
+          "Der Winkel wird in jeder Runde größer, die Seite bleibt gleich",
+          "Die Schildkröte dreht nach rechts statt nach links",
+          "Man benutzt ein einziges sehr langes forward"
+        ],
+        "why": "Bei gleichem Winkel und wachsender Seite läuft die Schildkröte immer weiter nach außen.",
+        "level": 3,
+        "skill": "Spirale"
+      },
+      {
+        "q": "Wie viele Linien zeichnet dieses Programm?",
+        "s": "seite = 5 | for i in range(20): | → forward(seite) | → left(90) | → seite = seite + 5",
+        "a": "20 Linien",
+        "wrong": [
+          "4 Linien",
+          "90 Linien",
+          "5 Linien"
+        ],
+        "why": "Pro Durchlauf gibt es ein forward, also eine Linie. Es gibt 20 Durchläufe.",
+        "level": 3,
+        "skill": "Spirale zählen",
+        "label": "Code lesen (| = neue Zeile, → = eingerückt)"
+      },
+      {
+        "q": "Welcher Befehl zeichnet einen Kreis mit Radius 40?",
+        "kind": "gap",
+        "s": "___(40)",
+        "a": "circle",
+        "wrong": [
+          "round",
+          "ring",
+          "dot"
+        ],
+        "why": "circle(40) zeichnet einen Kreis mit Radius 40. dot setzt nur einen einzelnen Punkt.",
+        "level": 3,
+        "skill": "circle"
+      },
+      {
+        "q": "Was zeichnet dieses Programm?",
+        "s": "for i in range(12): | → circle(30) | → left(30)",
+        "a": "Zwölf Kreise, die sich zu einer Blume drehen",
+        "wrong": [
+          "Einen großen Kreis",
+          "Ein Zwölfeck",
+          "Zwölf getrennte Linien"
+        ],
+        "why": "Jeder Kreis startet leicht gedreht. Zwölf Drehungen zu 30 Grad ergeben eine ganze Drehung, die Kreise bilden eine Blume.",
+        "level": 3,
+        "skill": "Kreise",
+        "label": "Code lesen (| = neue Zeile, → = eingerückt)"
+      },
+      {
+        "q": "Du willst ein Achteck statt eines Fünfecks. Was änderst du in diesem Programm?",
+        "s": "n = 5 | for i in range(n): | → forward(60) | → left(360 / n)",
+        "a": "Nur n = 8 setzen",
+        "wrong": [
+          "left(8) schreiben",
+          "forward(8) schreiben",
+          "range(360) schreiben"
+        ],
+        "why": "Weil Schleife und Winkel mit n rechnen, passt sich alles an, wenn du n änderst.",
+        "level": 3,
+        "skill": "n ändern",
+        "label": "Code lesen (| = neue Zeile, → = eingerückt)"
+      }
+    ],
+    "entscheiden": [
+      {
+        "q": "Mit welchem Wort beginnt in Python eine Bedingung?",
+        "kind": "gap",
+        "s": "___ punkte > 10:",
+        "a": "if",
+        "wrong": [
+          "for",
+          "when",
+          "then"
+        ],
+        "why": "if heißt „wenn“. Dahinter steht die Bedingung, dann ein Doppelpunkt.",
+        "level": 1,
+        "skill": "if"
+      },
+      {
+        "q": "Welches Wort steht für den Fall, dass die Bedingung nicht stimmt?",
+        "kind": "gap",
+        "s": "if x > 3: | → print(\"groß\") | ___: | → print(\"klein\")",
+        "a": "else",
+        "wrong": [
+          "then",
+          "otherwise",
+          "not"
+        ],
+        "why": "else heißt „sonst“ und bekommt keine eigene Bedingung, nur einen Doppelpunkt.",
+        "level": 1,
+        "skill": "else"
+      },
+      {
+        "q": "Welches Zeichen vergleicht zwei Werte auf Gleichheit?",
+        "a": "==",
+        "wrong": [
+          "=",
+          "!=",
+          "=>"
+        ],
+        "why": "Zwei Gleichheitszeichen vergleichen. Ein einzelnes = speichert einen Wert.",
+        "level": 1,
+        "skill": "Gleichheit"
+      },
+      {
+        "q": "Was ist der Unterschied zwischen = und == in Python?",
+        "a": "= speichert einen Wert, == vergleicht zwei Werte",
+        "wrong": [
+          "= vergleicht zwei Werte, == speichert einen Wert",
+          "Es gibt keinen Unterschied",
+          "== rechnet, = zeichnet"
+        ],
+        "why": "Das einfache = ist die Zuweisung, das doppelte == ist der Vergleich mit Ergebnis wahr oder falsch.",
+        "level": 1,
+        "skill": "Vergleichen und speichern"
+      },
+      {
+        "q": "Was gibt dieses Programm aus?",
+        "s": "x = 7 | if x > 5: | → print(\"groß\") | else: | → print(\"klein\")",
+        "a": "Es erscheint groß",
+        "wrong": [
+          "Es erscheint klein",
+          "Es erscheinen groß und klein",
+          "Es erscheint nichts"
+        ],
+        "why": "7 ist größer als 5, die Bedingung stimmt, also läuft der if-Teil und der else-Teil wird übersprungen.",
+        "level": 2,
+        "skill": "if lesen",
+        "label": "Code lesen (| = neue Zeile, → = eingerückt)"
+      },
+      {
+        "q": "Was gibt dieser Befehl aus?",
+        "s": "print(7 % 2)",
+        "a": "1",
+        "wrong": [
+          "3",
+          "3.5",
+          "0"
+        ],
+        "why": "Das Zeichen % liefert den Rest einer Division. 7 geteilt durch 2 ist 3 mit Rest 1.",
+        "level": 2,
+        "skill": "Rest",
+        "label": "Code lesen (| = neue Zeile, → = eingerückt)"
+      },
+      {
+        "q": "Welche Bedingung prüft, ob die Zahl i gerade ist?",
+        "a": "i % 2 == 0",
+        "wrong": [
+          "i / 2 == 0",
+          "i % 2 == 1",
+          "i = 2"
+        ],
+        "why": "Bei geraden Zahlen bleibt beim Teilen durch 2 kein Rest, also 0. Mit nur einem = würde nichts verglichen.",
+        "level": 2,
+        "skill": "Gerade"
+      },
+      {
+        "q": "Was gibt dieses Programm aus?",
+        "s": "for i in range(1, 4): | → if i % 2 == 0: | → → print(\"gerade\") | → else: | → → print(\"ungerade\")",
+        "a": "ungerade, gerade, ungerade (drei Zeilen)",
+        "wrong": [
+          "gerade, ungerade, gerade (drei Zeilen)",
+          "ungerade, ungerade, ungerade (drei Zeilen)",
+          "ungerade, gerade (zwei Zeilen)"
+        ],
+        "why": "range(1, 4) liefert 1, 2 und 3. Nur die 2 ist gerade, also ungerade, gerade, ungerade.",
+        "level": 2,
+        "skill": "Schleife mit if",
+        "label": "Code lesen (| = neue Zeile, → = eingerückt)"
+      },
+      {
+        "q": "Was meldet Python bei diesem Programm?",
+        "s": "if 5 > 3 | → print(\"ja\")",
+        "a": "Einen SyntaxError, weil der Doppelpunkt fehlt",
+        "wrong": [
+          "Es erscheint ja",
+          "Es erscheint nichts",
+          "Einen NameError, weil print unbekannt ist"
+        ],
+        "why": "Hinter der Bedingung braucht if einen Doppelpunkt. Fehlt er, meldet Python einen SyntaxError.",
+        "level": 3,
+        "skill": "Doppelpunkt fehlt",
+        "label": "Code lesen (| = neue Zeile, → = eingerückt)"
+      },
+      {
+        "q": "Was gibt dieses Programm aus?",
+        "s": "punkte = 10 | if punkte > 10: | → print(\"Sieg\") | else: | → print(\"Weiter\")",
+        "a": "Es erscheint Weiter",
+        "wrong": [
+          "Es erscheint Sieg",
+          "Es erscheinen Sieg und Weiter",
+          "Es erscheint nichts"
+        ],
+        "why": "10 ist nicht größer als 10, die Bedingung stimmt nicht, also läuft der else-Teil.",
+        "level": 3,
+        "skill": "Grenzfall",
+        "label": "Code lesen (| = neue Zeile, → = eingerückt)"
+      },
+      {
+        "q": "Du willst ein Rechteck zeichnen, dessen Seiten abwechselnd 100 und 50 lang sind. Was brauchst du dazu in der Schleife?",
+        "a": "Eine Bedingung mit i % 2 == 0, die die Seitenlänge auswählt",
+        "wrong": [
+          "Ein zweites forward direkt unter dem ersten",
+          "Eine Variable mit dem Namen rechteck",
+          "Nur left(180) statt left(90)"
+        ],
+        "why": "Gerade und ungerade Durchläufe sollen etwas Verschiedenes tun. Diese Fallunterscheidung macht if mit i % 2 == 0.",
+        "level": 3,
+        "skill": "Rechteck mit Bedingung"
+      },
+      {
+        "q": "Welches Wort prüft eine weitere Bedingung, wenn die erste nicht gestimmt hat?",
+        "kind": "gap",
+        "s": "if x > 10: | → print(\"groß\") | ___ x > 5: | → print(\"mittel\")",
+        "a": "elif",
+        "wrong": [
+          "else",
+          "then",
+          "also"
+        ],
+        "why": "elif ist „sonst wenn“ und prüft eine neue Bedingung. else hat keine eigene Bedingung.",
+        "level": 3,
+        "skill": "elif"
+      }
+    ]
+  },
+  "missions": [
+    {
+      "id": "python-start-hallo-welt",
+      "unit": "python-start",
+      "level": 1,
+      "title": "Hallo Welt",
+      "task": "Gib den Text Hallo Welt auf dem Bildschirm aus.",
+      "hint": "Benutze print und setze den Text in Anführungszeichen.",
+      "solution": "print(\"Hallo Welt\")",
+      "kind": "print",
+      "expect": [
+        "Hallo Welt"
+      ],
+      "start": "# Schreibe dein Programm hier\n"
+    },
+    {
+      "id": "python-start-drei-zeilen",
+      "unit": "python-start",
+      "level": 1,
+      "title": "Drei Zeilen",
+      "task": "Gib die Wörter eins, zwei und drei aus, jedes in einer eigenen Zeile.",
+      "hint": "Jedes Wort braucht ein eigenes print.",
+      "solution": "print(\"eins\")\nprint(\"zwei\")\nprint(\"drei\")",
+      "kind": "print",
+      "expect": [
+        "eins",
+        "zwei",
+        "drei"
+      ],
+      "start": ""
+    },
+    {
+      "id": "python-start-rechnen",
+      "unit": "python-start",
+      "level": 2,
+      "title": "Rechnen mit print",
+      "task": "Lass Python 12 mal 7 rechnen und gib das Ergebnis aus.",
+      "hint": "Das Malzeichen in Python ist *. Die Rechnung steht direkt in der Klammer von print.",
+      "solution": "print(12 * 7)",
+      "kind": "print",
+      "expect": [
+        "84"
+      ],
+      "start": ""
+    },
+    {
+      "id": "python-start-fehler-suchen",
+      "unit": "python-start",
+      "level": 2,
+      "title": "Fehler suchen",
+      "task": "Dieses Programm soll Hallo ausgeben, hat aber einen Fehler. Finde ihn und verbessere ihn.",
+      "hint": "Lies die Fehlermeldung: Welches Wort kennt Python nicht?",
+      "solution": "print(\"Hallo\")",
+      "kind": "print",
+      "expect": [
+        "Hallo"
+      ],
+      "start": "prnt(\"Hallo\")\n"
+    },
+    {
+      "id": "variablen-text-variable",
+      "unit": "variablen",
+      "level": 1,
+      "title": "Eine Textvariable",
+      "task": "Speichere den Text Mia in der Variable name und gib den Satz Hallo Mia aus. Der Satz soll mit name gebaut sein.",
+      "hint": "Text verbindest du mit +. Das Leerzeichen steht hinter Hallo.",
+      "solution": "name = \"Mia\"\nprint(\"Hallo \" + name)",
+      "kind": "print",
+      "expect": [
+        "Hallo Mia"
+      ],
+      "start": "",
+      "must": [
+        "name"
+      ]
+    },
+    {
+      "id": "variablen-punkte",
+      "unit": "variablen",
+      "level": 2,
+      "title": "Punkte erhöhen",
+      "task": "Lege punkte = 40 an, erhöhe punkte um 10 und gib punkte aus.",
+      "hint": "Die Zeile punkte = punkte + 10 nimmt den alten Wert und speichert den neuen.",
+      "solution": "punkte = 40\npunkte = punkte + 10\nprint(punkte)",
+      "kind": "print",
+      "expect": [
+        "50"
+      ],
+      "start": "",
+      "must": [
+        "punkte = punkte + 10"
+      ]
+    },
+    {
+      "id": "variablen-flaeche",
+      "unit": "variablen",
+      "level": 2,
+      "title": "Fläche berechnen",
+      "task": "Ein Rechteck ist 6 lang und 4 breit. Speichere beide Maße in Variablen und gib den Flächeninhalt aus.",
+      "hint": "Die Fläche ist lang mal breit. Rechne mit den Namen, nicht mit den Zahlen.",
+      "solution": "lang = 6\nbreit = 4\nprint(lang * breit)",
+      "kind": "print",
+      "expect": [
+        "24"
+      ],
+      "start": "",
+      "must": [
+        "*"
+      ]
+    },
+    {
+      "id": "variablen-hefte",
+      "unit": "variablen",
+      "level": 3,
+      "title": "Zahl im Satz",
+      "task": "Die Variable hefte hat den Wert 3. Gib den Satz Ich habe 3 Hefte aus. Die 3 soll aus der Variable kommen.",
+      "hint": "Mit str(…) wird eine Zahl zu Text. Dann kannst du sie mit + anhängen.",
+      "solution": "hefte = 3\nprint(\"Ich habe \" + str(hefte) + \" Hefte\")",
+      "kind": "print",
+      "expect": [
+        "Ich habe 3 Hefte"
+      ],
+      "start": "hefte = 3\n",
+      "must": [
+        "str(hefte)"
+      ]
+    },
+    {
+      "id": "turtle-start-linie",
+      "unit": "turtle-start",
+      "level": 1,
+      "title": "Eine Linie",
+      "task": "Zeichne eine Linie nach rechts, 100 Schritte lang.",
+      "hint": "forward(100) läuft 100 Schritte in Blickrichtung.",
+      "solution": "forward(100)",
+      "start": ""
+    },
+    {
+      "id": "turtle-start-winkel",
+      "unit": "turtle-start",
+      "level": 1,
+      "title": "Ein Winkel",
+      "task": "Zeichne zwei Linien mit einem rechten Winkel dazwischen: erst 100 Schritte vor, dann nach links drehen und 60 Schritte vor.",
+      "hint": "Zwischen den beiden Linien steht left(90).",
+      "solution": "forward(100)\nleft(90)\nforward(60)",
+      "start": ""
+    },
+    {
+      "id": "turtle-start-quadrat",
+      "unit": "turtle-start",
+      "level": 2,
+      "title": "Quadrat von Hand",
+      "task": "Zeichne ein Quadrat mit der Seitenlänge 80. Schreibe jeden Befehl einzeln.",
+      "hint": "Eine Seite zeichnen, dann drehen. Das viermal.",
+      "solution": "forward(80)\nleft(90)\nforward(80)\nleft(90)\nforward(80)\nleft(90)\nforward(80)\nleft(90)",
+      "start": ""
+    },
+    {
+      "id": "turtle-start-treppe",
+      "unit": "turtle-start",
+      "level": 2,
+      "title": "Treppe",
+      "task": "Zeichne eine Treppe mit drei Stufen. Jede Stufe geht 30 nach rechts und 30 nach oben.",
+      "hint": "Nach jeder Stufe schaust du wieder nach rechts: erst links drehen, dann wieder rechts.",
+      "solution": "forward(30)\nleft(90)\nforward(30)\nright(90)\nforward(30)\nleft(90)\nforward(30)\nright(90)\nforward(30)\nleft(90)\nforward(30)\nright(90)",
+      "start": ""
+    },
+    {
+      "id": "turtle-start-luecke",
+      "unit": "turtle-start",
+      "level": 2,
+      "title": "Lücke in der Linie",
+      "task": "Zeichne eine Linie mit einer Lücke: 60 Schritte zeichnen, 40 Schritte ohne Zeichnen, dann wieder 60 Schritte zeichnen.",
+      "hint": "Hebe den Stift mit penup() und setze ihn mit pendown() wieder ab.",
+      "solution": "forward(60)\npenup()\nforward(40)\npendown()\nforward(60)",
+      "start": ""
+    },
+    {
+      "id": "turtle-start-haus",
+      "unit": "turtle-start",
+      "level": 3,
+      "title": "Das Haus",
+      "task": "Zeichne ein Haus: Boden, rechte Wand, Dach und linke Wand. Die obere Quadratseite fehlt. Alle Seiten sind 80 lang, das Dach ist ein gleichseitiges Dreieck.",
+      "hint": "Nach der rechten Wand drehst du 30 Grad nach links für die erste Dachseite, an der Spitze 120 Grad, am linken Dachende wieder 30 Grad.",
+      "solution": "forward(80)\nleft(90)\nforward(80)\nleft(30)\nforward(80)\nleft(120)\nforward(80)\nleft(30)\nforward(80)",
+      "start": ""
+    },
+    {
+      "id": "schleifen-quadrat-schleife",
+      "unit": "schleifen",
+      "level": 1,
+      "title": "Quadrat mit Schleife",
+      "task": "Zeichne ein Quadrat mit Seitenlänge 80, diesmal mit einer for-Schleife.",
+      "hint": "Viermal wiederholen: forward(80) und left(90). Rücke beide Zeilen ein.",
+      "solution": "for i in range(4):\n    forward(80)\n    left(90)",
+      "start": "for i in range(4):\n    \n",
+      "must": [
+        "for"
+      ]
+    },
+    {
+      "id": "schleifen-dreieck",
+      "unit": "schleifen",
+      "level": 2,
+      "title": "Dreieck",
+      "task": "Zeichne ein gleichseitiges Dreieck mit Seitenlänge 90 mit einer Schleife.",
+      "hint": "An jeder Ecke drehst du 360 geteilt durch 3 Grad.",
+      "solution": "for i in range(3):\n    forward(90)\n    left(120)",
+      "start": "",
+      "must": [
+        "for"
+      ]
+    },
+    {
+      "id": "schleifen-sechseck",
+      "unit": "schleifen",
+      "level": 2,
+      "title": "Sechseck",
+      "task": "Zeichne ein Sechseck mit Seitenlänge 50 mit einer Schleife.",
+      "hint": "Sechs Ecken: bei jeder Ecke 360 geteilt durch 6 Grad.",
+      "solution": "for i in range(6):\n    forward(50)\n    left(60)",
+      "start": "",
+      "must": [
+        "for"
+      ]
+    },
+    {
+      "id": "schleifen-treppe-schleife",
+      "unit": "schleifen",
+      "level": 2,
+      "title": "Treppe mit Schleife",
+      "task": "Zeichne eine Treppe mit fünf Stufen, jede Stufe 20 nach rechts und 20 nach oben, mit einer Schleife.",
+      "hint": "Alles, was sich pro Stufe wiederholt, kommt eingerückt in die Schleife.",
+      "solution": "for i in range(5):\n    forward(20)\n    left(90)\n    forward(20)\n    right(90)",
+      "start": "",
+      "must": [
+        "for"
+      ]
+    },
+    {
+      "id": "schleifen-gestrichelt",
+      "unit": "schleifen",
+      "level": 2,
+      "title": "Gestrichelte Linie",
+      "task": "Zeichne eine gestrichelte Linie aus 10 Strichen: 10 Schritte zeichnen, 10 Schritte Lücke, immer im Wechsel.",
+      "hint": "Eine Runde besteht aus Strich, Stift heben, Lücke, Stift senken.",
+      "solution": "for i in range(10):\n    forward(10)\n    penup()\n    forward(10)\n    pendown()",
+      "start": "",
+      "must": [
+        "for"
+      ]
+    },
+    {
+      "id": "schleifen-stern",
+      "unit": "schleifen",
+      "level": 3,
+      "title": "Fünfzackiger Stern",
+      "task": "Zeichne einen Stern mit fünf Spitzen: fünfmal 120 Schritte vor und 144 Grad nach rechts drehen.",
+      "hint": "Bei jeder Spitze dreht sich die Schildkröte fast um: right(144).",
+      "solution": "for i in range(5):\n    forward(120)\n    right(144)",
+      "start": "",
+      "must": [
+        "for"
+      ]
+    },
+    {
+      "id": "muster-seite",
+      "unit": "muster",
+      "level": 1,
+      "title": "Seite als Variable",
+      "task": "Setze seite = 70 und zeichne mit forward(seite) ein Quadrat mit einer Schleife.",
+      "hint": "Statt forward(70) schreibst du forward(seite).",
+      "solution": "seite = 70\nfor i in range(4):\n    forward(seite)\n    left(90)",
+      "start": "seite = 70\n",
+      "must": [
+        "forward(seite)",
+        "for"
+      ]
+    },
+    {
+      "id": "muster-vieleck",
+      "unit": "muster",
+      "level": 2,
+      "title": "Vieleck mit n",
+      "task": "Setze n = 8 und seite = 40 und zeichne ein Achteck. Der Drehwinkel soll aus 360 / n berechnet werden.",
+      "hint": "left(360 / n) rechnet den Winkel selbst aus.",
+      "solution": "n = 8\nseite = 40\nfor i in range(n):\n    forward(seite)\n    left(360 / n)",
+      "start": "n = 8\nseite = 40\n",
+      "must": [
+        "360 / n",
+        "range(n)"
+      ]
+    },
+    {
+      "id": "muster-spirale",
+      "unit": "muster",
+      "level": 3,
+      "title": "Quadratspirale",
+      "task": "Zeichne eine Quadratspirale: Starte mit seite = 5, mache 20 Runden mit forward(seite) und left(90) und mache seite in jeder Runde um 5 größer.",
+      "hint": "Die Zeile seite = seite + 5 gehört eingerückt in die Schleife.",
+      "solution": "seite = 5\nfor i in range(20):\n    forward(seite)\n    left(90)\n    seite = seite + 5",
+      "start": "seite = 5\n",
+      "must": [
+        "seite = seite + 5"
+      ]
+    },
+    {
+      "id": "muster-blume",
+      "unit": "muster",
+      "level": 3,
+      "title": "Kreisblume",
+      "task": "Zeichne zwölf Kreise mit Radius 30. Nach jedem Kreis drehst du dich um 30 Grad nach links.",
+      "hint": "circle(30) zeichnet einen Kreis. Zwölfmal 30 Grad ist eine ganze Drehung.",
+      "solution": "for i in range(12):\n    circle(30)\n    left(30)",
+      "start": "",
+      "must": [
+        "circle"
+      ]
+    },
+    {
+      "id": "entscheiden-gerade-ungerade",
+      "unit": "entscheiden",
+      "level": 2,
+      "title": "Gerade oder ungerade",
+      "task": "Gib für die Zahlen 1 bis 5 jeweils in einer Zeile das Wort gerade oder ungerade aus.",
+      "hint": "i % 2 == 0 stimmt, wenn i gerade ist. Mit range(1, 6) zählst du von 1 bis 5.",
+      "solution": "for i in range(1, 6):\n    if i % 2 == 0:\n        print(\"gerade\")\n    else:\n        print(\"ungerade\")",
+      "kind": "print",
+      "expect": [
+        "ungerade",
+        "gerade",
+        "ungerade",
+        "gerade",
+        "ungerade"
+      ],
+      "start": "",
+      "must": [
+        "if",
+        "%"
+      ]
+    },
+    {
+      "id": "entscheiden-bestanden",
+      "unit": "entscheiden",
+      "level": 2,
+      "title": "Bestanden oder nicht",
+      "task": "Die Variable punkte hat den Wert 7. Gib bestanden aus, wenn sie mindestens 10 ist, sonst noch einmal.",
+      "hint": "Mindestens 10 heißt größer oder gleich: >=.",
+      "solution": "punkte = 7\nif punkte >= 10:\n    print(\"bestanden\")\nelse:\n    print(\"noch einmal\")",
+      "kind": "print",
+      "expect": [
+        "noch einmal"
+      ],
+      "start": "punkte = 7\n",
+      "must": [
+        "if",
+        "else"
+      ]
+    },
+    {
+      "id": "entscheiden-rechteck",
+      "unit": "entscheiden",
+      "level": 3,
+      "title": "Rechteck mit Bedingung",
+      "task": "Zeichne ein Rechteck mit einer Schleife und einer Bedingung. Bei geradem i (0 und 2) ist die Seite 100 lang, bei ungeradem i (1 und 3) ist sie 50 lang. Gedreht wird immer um 90 Grad.",
+      "hint": "Die Zeile left(90) steht in der Schleife, aber nicht in if oder else.",
+      "solution": "for i in range(4):\n    if i % 2 == 0:\n        forward(100)\n    else:\n        forward(50)\n    left(90)",
+      "start": "",
+      "must": [
+        "if",
+        "else"
+      ]
+    },
+    {
+      "id": "entscheiden-groesse",
+      "unit": "entscheiden",
+      "level": 3,
+      "title": "Klein, mittel, groß",
+      "task": "Die Variable zahl hat den Wert 15. Gib groß aus, wenn sie über 20 liegt, mittel, wenn sie über 10 liegt, und sonst klein.",
+      "hint": "Für die mittlere Bedingung brauchst du elif. Prüfe die größere Grenze zuerst.",
+      "solution": "zahl = 15\nif zahl > 20:\n    print(\"groß\")\nelif zahl > 10:\n    print(\"mittel\")\nelse:\n    print(\"klein\")",
+      "kind": "print",
+      "expect": [
+        "mittel"
+      ],
+      "start": "zahl = 15\n",
+      "must": [
+        "elif"
+      ]
+    }
+  ],
+  "labor": {
+    "python-start": {
+      "start": "print(\"Hallo!\")\n",
+      "canvas": false
+    },
+    "variablen": {
+      "start": "punkte = 40\npunkte = punkte + 10\nprint(punkte)\n",
+      "canvas": false
+    },
+    "turtle-start": {
+      "start": "forward(100)\nleft(90)\nforward(50)\n",
+      "canvas": true
+    },
+    "schleifen": {
+      "start": "for i in range(4):\n    forward(80)\n    left(90)\n",
+      "canvas": true
+    },
+    "muster": {
+      "start": "n = 6\nseite = 50\nfor i in range(n):\n    forward(seite)\n    left(360 / n)\n",
+      "canvas": true
+    },
+    "entscheiden": {
+      "start": "zahl = 7\nif zahl % 2 == 0:\n    print(\"gerade\")\nelse:\n    print(\"ungerade\")\n",
+      "canvas": false
+    }
+  }
+}

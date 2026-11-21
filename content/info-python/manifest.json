@@ -1,0 +1,252 @@
+{
+  "schema": 1,
+  "id": "info-python",
+  "title": "Python-Werkstatt",
+  "catalog": {
+    "fach": "informatik",
+    "klassen": [
+      7
+    ],
+    "subject": "Informatik",
+    "order": 6,
+    "desc": "Extra-Thema: Python-Grundlagen spielerisch mit der Schildkröte. Schreibe kleine Programme und sieh sofort, was passiert: print, Variablen, Schleifen und Entscheidungen."
+  },
+  "greeting": "Hallo",
+  "intro": "Python lernst du am besten durch Ausprobieren. Auf jeder Seite gibt es erst die Theorie, dann ein Code-Labor mit kleinen Missionen von leicht nach schwer, und danach die Übung mit Fragen.",
+  "bossTitle": "Der Bug-Boss",
+  "words": {
+    "praise": [
+      "Richtig!",
+      "Genau!",
+      "Sauber programmiert!",
+      "Stark!",
+      "Kein Bug!"
+    ],
+    "resultTitles": [
+      "Geschafft!",
+      "Sehr gut!",
+      "Alles richtig!"
+    ],
+    "blitzTitle": "Code-Blitz!",
+    "levelTitles": [
+      "Code-Neuling",
+      "Print-Profi",
+      "Variablen-Sammler",
+      "Schleifen-Läufer",
+      "Muster-Zeichner",
+      "Bug-Jäger",
+      "Python-Meister"
+    ]
+  },
+  "groups": [
+    {
+      "id": "grundlagen",
+      "title": "Python-Grundlagen"
+    },
+    {
+      "id": "turtle",
+      "title": "Die Schildkröte zeichnet"
+    },
+    {
+      "id": "denken",
+      "title": "Muster und Entscheidungen"
+    }
+  ],
+  "units": [
+    {
+      "id": "python-start",
+      "group": "grundlagen",
+      "color": "#4CC3F5",
+      "ic": "py",
+      "title": "Python und print",
+      "de": "Befehle der Reihe nach, Fehler lesen",
+      "card": {
+        "name": "Der Name Python",
+        "fact": "Python ist nach der englischen Comedy-Gruppe Monty Python benannt, nicht nach der Schlange."
+      }
+    },
+    {
+      "id": "variablen",
+      "group": "grundlagen",
+      "needs": [
+        "python-start"
+      ],
+      "color": "#FFC933",
+      "ic": "x=",
+      "title": "Variablen und Rechnen",
+      "de": "Werte speichern und benutzen",
+      "card": {
+        "name": "Der beschriftete Karton",
+        "fact": "Der Name einer Variable darf keine Leerzeichen enthalten und nicht mit einer Ziffer beginnen."
+      }
+    },
+    {
+      "id": "turtle-start",
+      "group": "turtle",
+      "needs": [
+        "python-start"
+      ],
+      "color": "#3DD6B0",
+      "ic": "fd",
+      "title": "Turtle: Befehle",
+      "de": "forward, left, right und der Stift",
+      "card": {
+        "name": "Die Schildkröte",
+        "fact": "Die Turtle-Grafik stammt aus der Programmiersprache Logo, die in den 1960er Jahren zum Lernen entwickelt wurde."
+      }
+    },
+    {
+      "id": "schleifen",
+      "group": "turtle",
+      "needs": [
+        "turtle-start"
+      ],
+      "color": "#FF8AD0",
+      "ic": "for",
+      "title": "Schleifen mit for",
+      "de": "Wiederholen statt abtippen",
+      "card": {
+        "name": "Die Einrückung",
+        "fact": "In Python entscheidet die Einrückung, welche Zeilen zu einer Schleife gehören. Üblich sind vier Leerzeichen."
+      }
+    },
+    {
+      "id": "muster",
+      "group": "denken",
+      "needs": [
+        "schleifen",
+        "variablen"
+      ],
+      "color": "#9B7BFF",
+      "ic": "n",
+      "title": "Variablen und Muster",
+      "de": "Vielecke, Spiralen und Blumen",
+      "card": {
+        "name": "Die ganze Drehung",
+        "fact": "Bei jedem regelmäßigen Vieleck drehen sich die Schildkröte und alle Ecken zusammen genau einmal um 360 Grad."
+      }
+    },
+    {
+      "id": "entscheiden",
+      "group": "denken",
+      "needs": [
+        "schleifen",
+        "variablen"
+      ],
+      "color": "#FF6B88",
+      "ic": "if",
+      "title": "Entscheiden mit if",
+      "de": "Wenn, sonst und der Rest mit %",
+      "card": {
+        "name": "Der Rest",
+        "fact": "Mit dem Zeichen % bekommst du den Rest einer Division. 7 % 2 ist 1, deshalb erkennt man damit gerade und ungerade Zahlen."
+      }
+    }
+  ],
+  "notes": {
+    "python-start": [
+      [
+        "print",
+        "print(\"Text\") zeigt Text an. Zahlen und Rechnungen brauchen keine Anführungszeichen: print(3 + 4)."
+      ],
+      [
+        "Reihenfolge",
+        "Python führt ein Programm von oben nach unten aus, eine Zeile nach der anderen."
+      ],
+      [
+        "Kommentar",
+        "Alles hinter einem # ist ein Kommentar für Menschen. Python überspringt es."
+      ],
+      [
+        "Fehler",
+        "Eine Fehlermeldung nennt die Zeile und die Art: SyntaxError (Aufbau falsch), NameError (Name unbekannt), TypeError (Typen passen nicht)."
+      ]
+    ],
+    "variablen": [
+      [
+        "Zuweisung",
+        "name = wert speichert den Wert unter dem Namen. Links steht der Name, rechts der Wert."
+      ],
+      [
+        "Datentypen",
+        "int ist eine ganze Zahl, float eine Kommazahl (mit Punkt: 3.5), str ist Text in Anführungszeichen."
+      ],
+      [
+        "Rechnen",
+        "+ - * / rechnen. Es gilt Punkt vor Strich. Die Division / liefert immer eine Kommazahl."
+      ],
+      [
+        "Text und Zahl",
+        "Text plus Text geht, Text plus Zahl nicht. Mit str(zahl) wird eine Zahl zu Text."
+      ]
+    ],
+    "turtle-start": [
+      [
+        "Bewegen",
+        "forward(n) vor, backward(n) zurück, jeweils n Schritte."
+      ],
+      [
+        "Drehen",
+        "left(w) und right(w) drehen um w Grad auf der Stelle. 90 Grad sind eine Vierteldrehung."
+      ],
+      [
+        "Stift",
+        "penup() hebt den Stift, pendown() senkt ihn. color(\"red\") ändert die Farbe."
+      ],
+      [
+        "Start",
+        "Die Schildkröte startet in der Mitte und schaut nach rechts."
+      ]
+    ],
+    "schleifen": [
+      [
+        "for-Schleife",
+        "for i in range(4): wiederholt die eingerückten Zeilen viermal. Der Doppelpunkt am Ende ist Pflicht."
+      ],
+      [
+        "Einrückung",
+        "Was zur Schleife gehört, ist mit vier Leerzeichen eingerückt. Die erste nicht eingerückte Zeile beendet die Schleife."
+      ],
+      [
+        "Winkel",
+        "Drehung pro Ecke = 360 geteilt durch die Zahl der Ecken. Quadrat 90, Dreieck 120, Sechseck 60."
+      ]
+    ],
+    "muster": [
+      [
+        "Variablen im Bild",
+        "Mit seite = 50 und forward(seite) änderst du die Größe an einer einzigen Stelle."
+      ],
+      [
+        "Vieleck",
+        "for i in range(n): forward(seite) und left(360 / n). Ändere n für eine andere Figur."
+      ],
+      [
+        "Spirale",
+        "Wächst die Seite in der Schleife (seite = seite + 5), entsteht eine Spirale."
+      ],
+      [
+        "Kreis",
+        "circle(r) zeichnet einen Kreis mit Radius r."
+      ]
+    ],
+    "entscheiden": [
+      [
+        "if und else",
+        "if bedingung: führt die eingerückten Zeilen nur aus, wenn die Bedingung stimmt. else: gilt für den anderen Fall."
+      ],
+      [
+        "Vergleiche",
+        "== gleich, != ungleich, > größer, >= größer oder gleich. Kleiner schreibst du mit dem gespiegelten Zeichen, dessen Spitze nach links zeigt."
+      ],
+      [
+        "Rest",
+        "a % b ist der Rest von a geteilt durch b. i % 2 == 0 heißt: i ist gerade."
+      ],
+      [
+        "elif",
+        "elif bedingung: prüft eine weitere Bedingung, wenn die vorherige nicht gestimmt hat."
+      ]
+    ]
+  }
+}

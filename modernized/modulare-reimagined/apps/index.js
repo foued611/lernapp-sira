@@ -5,6 +5,7 @@ const LOGIC = {
   'deutsch-5-6': () => import('./deutsch-5-6/logic.js'),
   mathe: () => import('./mathe/logic.js'),
   'info-zahlen': () => import('./info-zahlen/logic.js'),
+  'info-python': () => import('./info-python/logic.js'),
   geometrie: () => import('./geometrie/logic.js'),
   englisch: () => import('./englisch/logic.js'),
   'decouvertes-1': () => import('./decouvertes-1/logic.js'),
@@ -19,6 +20,7 @@ const LOGIC = {
 const STYLE = {
   'decouvertes-2': () => import('./decouvertes/verben/app.css'),
   'info-zahlen': () => import('./info-zahlen/app.css'),
+  'info-python': () => import('./info-python/app.css'),
   geometrie: () => import('./geometrie/app.css')
 };
 
