@@ -9,7 +9,7 @@
     ],
     "subject": "Informatik",
     "order": 6,
-    "desc": "Python-Grundlagen mit der Schildkröte: print, Variablen, Schleifen, Muster und Entscheidungen. Schreibe Code und sieh sofort, was passiert."
+    "desc": "Extra-Thema: Python-Grundlagen spielerisch mit der Schildkröte. Schreibe kleine Programme und sieh sofort, was passiert: print, Variablen, Schleifen und Entscheidungen."
   },
   "greeting": "Hallo",
   "intro": "Python lernst du am besten durch Ausprobieren. Auf jeder Seite gibt es erst die Theorie, dann ein Code-Labor mit kleinen Missionen von leicht nach schwer, und danach die Übung mit Fragen.",
